@@ -2,6 +2,6 @@
 
 Building your own connected Things made easy
 
-[HomeDing Concept Paper](HomeDingConceptPaper2018.md)
+[HomeDing Concept Paper](HomeDingConceptPaper)
 
 
