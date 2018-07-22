@@ -1,5 +1,7 @@
 # Welcome to the HomeDing wiki!
 
-HomeDing Concept Paper
 Building your own connected Things made easy
+
+[HomeDing Concept Paper](HomeDingConceptPaper2018.md)
+
 
