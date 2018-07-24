@@ -15,6 +15,8 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 ## Examples
 
-- [HomeBlink](Example-HomeBlink)
+- [The HomeDing - HomeBlink Example](Example-HomeBlink)
 
   This simple example also includes a description on how to setup the environment.
+
+- [Into in the buildin WebServer](Example-WebServer)

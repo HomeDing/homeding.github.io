@@ -45,8 +45,7 @@ When you use different boards or processor types in the Arduino Environment you 
 
 For a NodeMCU Board the settings should look like this:
 
-
-???
+![NodeMCU Configuration](ConfigMenu.png)
 
 You may have to adjust the USB port as this varies on different computers.
 
@@ -54,17 +53,18 @@ You may have to adjust the USB port as this varies on different computers.
 
 Because you will need to change the network identification it is a good idea to make a copy of the example project to your Arduino sketch folder.
 
-Important:
-
-Be sure to include the data folder as well as it contains the necessary files for the web server.
+> **Important**
+>
+> Be sure to include the data folder as well as it contains the necessary files for the web server.
 
 ## Adjust your network identification
 
 In the sketch file you find the 2 settings you need to adopt to your own wireless network environment:
 
-Network:
-
-Password:
+```C++
+const char *ssid = "NetworkName";
+const char *password = "NetworkPass";
+```
 
 ## Upload the project
 
@@ -75,3 +75,27 @@ You can open the serial monitor and will see some diagnostics messages. Because 
 You can reach your new device under [http://HomeDing](http://homeding/)
 
 ## Upload the webserver files and configuration
+
+Using the menu *ESP8266 Sketch Data Upload* the files from the data folder are packed into a SPIFFS format and uploaded into the Flash Memory of the Board.
+
+These files contain the required files for the UI part of the web server and the configuration file of the Ding.
+
+## Elements used
+
+* **Timer Element**
+
+  The Timer Element is used to create the on and off actions and send them to the Digital Out Element and log output.
+
+* **DigitalOut Element**
+
+  This Element implements using a digital ouput pin.
+  The Actions from the Timer Element is used to set the level ON and OFF. 
+  Because the LED is on when output is LOW the logical output is inverted to the Physical output.
+
+* **Device Element**
+
+  This Element is used to define the name of the Ding on the network.
+
+* **SSDP Element**
+
+  This Element is used to broadcast the Ding on the network using SSDP Protocol.
