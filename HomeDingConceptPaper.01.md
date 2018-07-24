@@ -10,13 +10,18 @@ Today also more powerful processors and boards are available for even less money
 
 The HomeDing project is exactly starting from this situation and offers an out of the box solution building these types of Things that retain their power when connected to the internet at home.
 
+## Requirements and Design Rules
+
+To make building your own connected things easy the following Design was choosen:
+
 * It is designed to be used in a home network.
-* No central Hub system is required to make it easy to start building Things.
+* No central Hub system is required to make it easy to start building a Thing on its own.
 * Things are self-contained and need no support or connectivity to a cloud solution. Using cloud services is a option only.
 * It directly supports WLAN for the network level.
 * It is using the simple protocol REST over http that can directly be used by every browser.
 * For many simple solutions it is possible to start without actively programming, just configure the functionality.
 * Open and extendable.
+* Optimized for a small footprint not for maximal performance.
 * Build by using the Arduino programming experience.
 * It must be easy to contribute new Elements.
 
