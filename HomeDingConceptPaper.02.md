@@ -1,6 +1,7 @@
-# Architecture and Requirements
+# Software Architecture
 
-## Software Architecture Overview
+## Overview
+
 This picture shows how the main parts of the architecture of the HomeDing library evolved from the POC:
 
 ![ArchitectureBlocks.png](ArchitectureBlocks.png)
@@ -60,5 +61,6 @@ After a setup of the Arduino environment only a few typical steps will be requir
 * Upload the Web files.
 
 Start browser and see...
+
 
 >> HomeDing Tutorial 1

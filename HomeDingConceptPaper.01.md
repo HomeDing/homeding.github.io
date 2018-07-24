@@ -42,3 +42,5 @@ This concept paper was written together with a “Proof if concept” implementa
 This POC implementation is available on GitHub at [https://github.com/mathertel/iot-board](https://github.com/mathertel/iot-board).
 
 Once it is in a valid beta state it will be continued here.
+
+### Next: [Software Architecture](HomeDingConceptPaper.02)

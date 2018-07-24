@@ -11,10 +11,10 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 ## HomeDing Concept Papers
 
 - [Building your own connected Things made easy](HomeDingConceptPaper.01)
-- [Architecture and Requirements](HomeDingConceptPaper.02)
+- [Software Architecture](HomeDingConceptPaper.02)
 
 ## Examples
 
 - [HomeBlink](Example-HomeBlink)
 
-  Includes a description on how to setup the environment.
+  This simple example also includes a description on how to setup the environment.
