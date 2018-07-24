@@ -8,6 +8,16 @@ This allows building small self-contained Things that are easy to be created.
 
 It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
-[HomeDing Concept Paper](HomeDingConceptPaper)
+## HomeDing Concept Papers
 
+- [Building your own connected Things made easy](HomeDingConceptPaper.01.md)
+- [Architecture and Requirements](HomeDingConceptPaper.02.md)
 
+## Examples
+
+- [HomeBlink](Example-HomeBlink.md)
+ 
+  Includes a description on how to setup the environment.
+
+- [HomeBlink](Example-HomeBlink.md)
+  full

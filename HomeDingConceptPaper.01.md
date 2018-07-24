@@ -1,6 +1,4 @@
-# HomeDing Concept Paper
-
-## Building your own connected Things made easy
+# HomeDing Concept Paper - Building your own connected Things made easy
 
 It is fascinating to see the power of microprocessors growing while costs go down.
 
