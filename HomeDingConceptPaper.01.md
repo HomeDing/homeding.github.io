@@ -1,4 +1,4 @@
-# HomeDing Concept Paper - Building your own connected Things made easy
+# Building your own connected Things made easy
 
 It is fascinating to see the power of microprocessors growing while costs go down.
 
@@ -10,13 +10,15 @@ Today also more powerful processors and boards are available for even less money
 
 The HomeDing project is exactly starting from this situation and offers an out of the box solution building these types of Things that retain their power when connected to the internet at home.
 
-•	It is designed to be used in a home network
-•	No central Hub system is required to make it easy to start building Things.
-•	Things are self-contained and need no support or connectivity to a cloud solution. Using cloud services is a option only.
-•	It directly supports WLAN for the network level
-•	It is using the simple protocol REST over http that can directly be used by every browser
-•	For many simple solutions it is possible to start without actively programming, just configure the functionality.
-•	Open and extendable
+* It is designed to be used in a home network.
+* No central Hub system is required to make it easy to start building Things.
+* Things are self-contained and need no support or connectivity to a cloud solution. Using cloud services is a option only.
+* It directly supports WLAN for the network level.
+* It is using the simple protocol REST over http that can directly be used by every browser.
+* For many simple solutions it is possible to start without actively programming, just configure the functionality.
+* Open and extendable.
+* Build by using the Arduino programming experience.
+* It must be easy to contribute new Elements.
 
 As a welcome side effect, the HomeDing library will be documented to make it easy for beginners to understand the basics of the various technologies used and for advanced programmers to understand the architecture and how to contribute to the community around it.
 

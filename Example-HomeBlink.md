@@ -1,4 +1,6 @@
-# How to setup your first HomeDing
+# The HomeDing - HomeBlink Example
+
+## How to setup your first HomeDing
 
 The BlinkDing Example is a perfect project that you can use for your first experience with the HomeDing library. It only requires a NodeMCU Board
 

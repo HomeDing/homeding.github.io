@@ -1,4 +1,4 @@
-# HomeDing Concept Paper - Architecture and Requirements
+# Architecture and Requirements
 
 ## Software Architecture Overview
 This picture shows how the main parts of the architecture of the HomeDing library evolved from the POC:
