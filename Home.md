@@ -12,6 +12,7 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 - [Building your own connected Things made easy](HomeDingConceptPaper.01)
 - [Software Architecture](HomeDingConceptPaper.02)
+- [Elements and Actions](HomeDingConceptPaper.03)
 
 ## Examples
 
