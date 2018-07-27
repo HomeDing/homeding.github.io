@@ -1,5 +1,5 @@
 [Home](Home)
 
-[Concept Paper](HomeDingConceptPaper.01)
+[Concept Papers](HomeDingConceptPaper)
 
 [Class Documentation](Classes)
