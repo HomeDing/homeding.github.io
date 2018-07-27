@@ -44,7 +44,7 @@ while the properties coming from the configuration that will never change are no
 
 This is not a limitation because the configuration values are available anyhow by reading the config.json file.
 
-The [webserver] offers a resfull endpoint to retrieve these values from the browser or from remote.
+[The buildin WebServer](WebServer) offers a resfull endpoint to retrieve these values from the browser or from remote.
 
 Samples can be found in the provided Element implementations.
 
