@@ -36,7 +36,7 @@ where configuring elements and receiving actions is the same implementation appr
 
 The standard interface of every Element is defined by the Element class and every specific Element is derived from this class and adding the specific functionality.
 
-A detailled description of the common Element Interface can be found in [ElementsInterface](ElementsInterface).
+A detailled description of the common Element Interface can be found in [ElementInterface](ElementInterface).
 
 ## Actions
 

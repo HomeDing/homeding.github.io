@@ -74,7 +74,16 @@ Some Elements will have some more advanced features and therefore some more virt
 
 The ```init``` function is called immediately after a Element is created and before the first configuration property is passed to the Element implementation.
 
+It is preferred to initialize component or class not in the creation function of the class because:
+
+* some initialization routines will start after the creattion of static classes
+* some initialization of libraries require parameters that are likely to be available after the configuration is passed.
+
+In the HomeDing Library therefore the creation is primarialy done in the ```init``` function and not in the class creator functions. (e.g. see <https://stackoverflow.com/questions/18806141/move-object-creation-to-setup-function-of-arduino>).
+
 This function is implemented in the base Element class and stores the passed board class reference to the common ```_board``` member variable.
+
+
 
 ### term() – deactivate this Element
 
