@@ -3,8 +3,7 @@
 ## How to setup your first HomeDing
 
 The BlinkDing Example is a perfect project that you can use for your first experience with the HomeDing library. It only requires a NodeMCU Board
-
-or another ESP8266 based Board that has at least 4 MByte 
+or another ESP8266 based Board that has at least 4 MByte Flash Memory.
 
 runs in ESP-01 with 1MByte ???
 
@@ -16,17 +15,15 @@ Use the board manager to setup the tools required for targeting the ESP8266 boar
 
 For this step everything is already documented by the ESP8266 Team at
 
->> [https://arduino-esp8266.readthedocs.io/en/2.4.1/installing.html](https://arduino-esp8266.readthedocs.io/en/2.4.1/installing.html)
+> [https://arduino-esp8266.readthedocs.io/en/2.4.1/installing.html](https://arduino-esp8266.readthedocs.io/en/2.4.1/installing.html)
 
-It takes some time but runs smoothly from my experience.
-
-Now you can verify and upload sketches to the ESP8266 board.
+It takes some time but runs smoothly from my experience. This enables you to verify and upload sketches to the ESP8266 boards.
 
 ## Setup the SPIFFS ESP8266 filesystem uploader
 
 For this step everything is already documented by the ESP8266 Team at 
 
->> [https://github.com/esp8266/arduino-esp8266fs-plugin](https://github.com/esp8266/arduino-esp8266fs-plugin)
+> [https://github.com/esp8266/arduino-esp8266fs-plugin](https://github.com/esp8266/arduino-esp8266fs-plugin)
 
 ## Install the HomeDing Library
 
