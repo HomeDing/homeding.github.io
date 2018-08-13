@@ -66,7 +66,7 @@ As long as the Element is inside the project folder beside the sketch file the r
 MyElement.cpp file at the end and looks like this:
 
 ```CPP
-// Register the DisplayTextElement onto the ElementRegistry.
+// Register MyElement in the ElementRegistry.
 bool MyElement::registered =
     ElementRegistry::registerElement("my", MyElement::create);
 ```
@@ -77,7 +77,7 @@ When transferred to the HomeDing library a ```#define HOMEDING_INCLUDE_My``` sho
 
 ```CPP
 #ifdef HOMEDING_REGISTER
-// Register the DisplayTextElement onto the ElementRegistry.
+// Register MyElement in the ElementRegistry.
 bool MyElement::registered =
     ElementRegistry::registerElement("my", MyElement::create);
 #endif

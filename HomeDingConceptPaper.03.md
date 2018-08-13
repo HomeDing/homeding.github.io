@@ -53,11 +53,10 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 ### Initialization Phase
 
-* Start the board and make unique components like the file service, the display and the web server available by initializing them.
+* Start the board and make unique components like the file service, the web server
+  and the optional display available by initializing them.
 
-  The part that differs most among different Things is the availability of a display. The HomeDing Library can run completely without a local display or can support different types of displays.
-
-  This can be adjusted by changing the setup of the display abd board in the sketch file.
+  See [Displays](Displays)
 
 * Parse the config.json file.
 
