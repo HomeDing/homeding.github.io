@@ -7,7 +7,7 @@ The following Element implementations are available in the current version of th
 | [Element](ElementClass)         | Base Element class implementing the default functionality. <br /> All Elements must derive from this class.	| -
 | Button Element                  | Core Input Element typicaly used with momentary buttons or switches. | -
 | Device Element                  | Core Element to manage device level settings. | -
-| DHT Element                     | Input Element of the HomeDong Board Library to read DHT11 and DHT22 sensors and create actions. | [DHTesp](https://github.com/beegee-tokyo/DHTesp)
+| [DHT Element](DHTElement)       | Input Element to read DHT11 and DHT22 sensors with temperature and humidity and create actions. | [DHTesp](https://github.com/beegee-tokyo/DHTesp)
 | DigitalOut Element              | Output Element to output an digital signals based on actions. | -
 | DisplayDot Element              |                   | -
 | DisplayText Element             |                   | -
@@ -19,7 +19,6 @@ The following Element implementations are available in the current version of th
 | Timer Element                   | Element for creating timer based actions. | -
 | [PWMOut Element](PWMOutElement) | Output Element to output an pwm signals based on actions. Typically for driving LEDs. | -
 | [Value Element](ValueElement)   | Control a value by actions | -
- 
 
 ## planed Elements
 

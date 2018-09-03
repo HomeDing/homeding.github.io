@@ -4,31 +4,30 @@ This element is used to capture button events as digital input and emit correspo
 
 The physical input level can differ from the logical input level because some buttons are pulling an input down to ground others pull them up. Also switches can be used with this Element.
 
-## Properties
+## Element Configuration
 
-The following properties are available for config, actions and state of a button element:
+The following properties are available for configuration of the element:
 
-| Properties | Type | Description |
-| --- | --- | --- | 
+| Property | Description |
+| ---      | --- |
+| pin*     | Specifies the hardware number of the pin.
+| invers   | In normal mode a HIGH input value is reported as level 1. In inverse mode a LOW input value is reported as level 1. Normal mode is default.
+| type     | Without specified type the Button will report the current state of the input. <br/> “TOGGLE” enables switching the level between 1 and 0.
+| onon     | Actions.<br/>These actions are emitted when the logical level is switched to 1.
+| onoff    | Actions. <br/> These actions are emitted when the logical level is switched to 0.
 
-| pin	Config	Specifies the hardware number of the pin. <br/> This parameter must be specified.
-| invers	Config	In normal mode a HIGH input value is reported as level 1.
-In inverse mode a LOW input value is reported as level 1. 
-Normal mode is default.
+\* This parameter must be specified.
 
-| Type	Config	Without specified type the Button will report the current state of the input.
-“TOGGLE” enables switching the level between 1 and 0.
+## Element State
 
-| onon	Config	Actions.
-These actions are emitted when the logical level is switched to 1.
+The following properties are available with the current values at runtime
 
-| onoff	Config	Actions.
-These actions are emitted when the logical level is switched to 0.
+| Property | Description |
+| ---      | --- |
+| active   | Is set to true when the Element is active.
+| level    | Current logical level of the button input.
 
-| active	State	Is set to true when the Element is active.
-level	State	Current logical level of the button input.
-
-### Example for Configuration
+## Example Configuration
 
 ```JSON
 "button": {
@@ -42,11 +41,11 @@ level	State	Current logical level of the button input.
 }
 ```
 
-Example for State
+## Example State
 
 ```JSON
-'button/start': {
-  'active':'true',
-  'level':'1'
+"button/start": {
+  "active":"true",
+  "level":"1"
 }
 ```
