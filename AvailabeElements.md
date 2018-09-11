@@ -31,6 +31,7 @@ The following Element implementations are available in the current version of th
 | | Detect noise using a microphone |
 | Rotary | Imput element that creates actions based on a rotary encoder.
 | LiquidCrystalElement | use a Arduino Standard LCD with HD44780 chip as display | LiquidCrystal_PCF8574
+| BME680 | Input Element to read DBME680 sensor data with temperature, humidity and preassure and create actions.
 
 ## Supported Displays
 

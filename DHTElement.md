@@ -23,6 +23,19 @@ The following sensor chips from the DHT family are supported by the DHTesp libra
 
 more details can be found at <https://github.com/beegee-tokyo/DHTesp>
 
+## Connecting a Sensor
+
+The sample configuration comming with the DHT22Ding example is configured to use a DHT22 type of sensor with the data line attached to D4 (GPIO2)
+
+| ESP8266  | DHT22 | Description   |
+| -------- |:-----:| ------------- |
+| 3.3v     | 1     | Power Supply  |
+| D4       | 2     | Data |
+| GND      | 4     | Ground |
+
+The configuration can be changed easily by modifying the env.json and config.json file.
+
+
 ## Element Configuration
 
 The following properties are available for configuration of the element:
@@ -47,19 +60,58 @@ The following properties are available with the current values at runtime
 | temperature   | The last read temperature value from the sensor.
 | humidity    | The last read humidity value from the sensor.
 
-Example for Configuration
+## Example for Configuration
+
+```JSON
 "dht": {
   "on": {
-    "pin": 0,
+    "pin": "D4",
     "type": "DHT22",
+    "readtime": "30s",
+    "resendtime": "2m",
     "onTemperature": "device/main?log=temp: $v°C",
     "onHumidity": "device/main?log=hum: $v%"
   }
 },
+```
 
-Implementation Details
+## Example State
+
+```JSON
+"dht/on": {
+  "active":"true",
+  "temperature":"27.30",
+  "humidity":"50.50"
+},
+```
+
+## Implementation Details
+
 The implementation uses the DHTesp / “DHT_sensor_library_for_ESPx” library from beegee_tokyo. You need to load this library using the library manager or get it directly from
 <https://github.com/beegee-tokyo/DHTesp>
 
 More documentation can be found at:
 <https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/>
+
+
+## More
+
+* 10K VCC - Data
+
+## Example Configuration
+
+```JSON
+"dht": {
+  "on": {
+    "pin": 0,
+    "type": "DHT22",
+    "onTemperature": "device/0?log=temp:$v,displaytext/temp?show=$v,remote/display-t?show=$v",
+    "onHumidity": "device/0?log=hum:$v%,displaytext/hum?show=$v,remote/display-h?show=$v",
+    "description": "Local DHT sensor"
+  }
+},
+```
+
+More: 
+Shut down DHT22 Power by output pin
+
