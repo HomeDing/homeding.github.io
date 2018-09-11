@@ -1,17 +1,17 @@
-# The ValueElement
+# The Value Element
 
-The ValueElement combines receiving and sending actions and a internal state value.
+The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
 
 ![Value Properties and Actions](ValueAPI.PNG)
 
 It is used to implement a property or parameter independent from a specific Element that can send actions to multiple dependent elements.
 The Values defined using a ValueElement can be modified by other Elements using several actions even through elements in a web UI.
 
-Example:
+### Example
 
-* Two Buttons should be used to increment and decrement the brightness of an attached LED.
+Two Buttons should be used to increment and decrement the brightness of an attached LED.
 
-Solution:
+### Solution
 
 * Two ButtonElements are created to capture this input from digital input lines.
 * Each button will trigger an up / down action for a ValueElement.
@@ -38,6 +38,7 @@ The following properties are available for configuration of the element:
 | max      | Defines the maximum of the value.
 | value    | An initial/default value can be set using the configuration.
 | onChange | Actions.<br/>These actions are emitted when the value has changed. 
+|
 
 \* This parameter must be specified.
 
@@ -51,6 +52,7 @@ The following actions can be used with this element:
 | down     | This action decrements the value and eventually triggers an outgoing onChange Event.
 | value    | This action sets the value.
 | change   | The change actions are created when the actual value really changes. Trying to ncrementing an value that has already reached its maximum value will not create a chang action.
+|
 
 ## Element State
 
