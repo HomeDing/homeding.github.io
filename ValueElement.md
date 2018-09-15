@@ -2,7 +2,7 @@
 
 The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
 
-![Value Properties and Actions](ValueAPI.PNG)
+![Value Properties and Actions](ValueAPI.png)
 
 It is used to implement a property or parameter independent from a specific Element that can send actions to multiple dependent elements.
 The Values defined using a ValueElement can be modified by other Elements using several actions even through elements in a web UI.
