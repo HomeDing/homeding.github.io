@@ -7,10 +7,10 @@ Because they do not depend on other libraries they are available by default:
 
 | Type                 | Functionality
 | -----------------    | -------------
-| [Element]            | Base Element class implementing the default functionality. <br /> All Elements must derive from this class.
-| [Button Element]     | Input Element typicaly used with momentary buttons or switches.
+| [Element](ElementClass) | Base Element class implementing the default functionality. <br /> All Elements must derive from this class.
+| [Button Element](ButtonElement)     | Input Element typicaly used with momentary buttons or switches.
 | Device Element       | Element to manage device level settings.
-| [DigitalOut Element] | Output element to create digital output signals based on actions.
+| [DigitalOut Element](DigitalOutElement) | Output element to create digital output signals based on actions.
 | DisplayDot Element   |      
 | DisplayText Element  |      
 | NTPTime Element      |      
@@ -23,7 +23,6 @@ Because they do not depend on other libraries they are available by default:
 |
 [Element]:(ElementClass) "Base Element implementation"
 [Button Element]: ButtonElement "digital input for a momentary button"
-[DHT Element]: DHTElement "DHT Temperature and Humidity Sensor"
 [DigitalOut Element]: DigitalOutElement "Element to create digital output signals"
 [PWMOut Element]: PWMOutElement
 [Value Element]: ValueElement
@@ -36,6 +35,8 @@ Because they do not depend on other libraries they are available by default:
 | RFSend Element      | send RF signals e.g. on 433 MHz for controlling switch boxes. | [TabRF]
 | Rotary              | Input element that creates actions based on a rotary encoder. | [RotaryEncoder]
 |
+
+[DHT Element]: DHTElement "DHT Temperature and Humidity Sensor"
 
 [DHTesp]: https://github.com/beegee-tokyo/DHTesp "DHT library for ESP boards."
 [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library"
