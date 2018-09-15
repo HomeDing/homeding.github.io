@@ -21,7 +21,7 @@ Because they do not depend on other libraries they are available by default:
 | [PWMOut Element]     | Output Element to output an pwm signals based on actions. Typically for driving LEDs.
 | [Value Element]      | The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
 |
-[Element]: (ElementClass) "Base Element implementation"
+[Element]:(ElementClass) "Base Element implementation"
 [Button Element]: ButtonElement "digital input for a momentary button"
 [DHT Element]: DHTElement "DHT Temperature and Humidity Sensor"
 [DigitalOut Element]: DigitalOutElement "Element to create digital output signals"
