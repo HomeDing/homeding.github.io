@@ -2,7 +2,7 @@
 
 The ButtonElement is used to capture button events as digital input and emit corresponding events.
 
-![Button Properties and Actions](ButtonAPI.PNG)
+![Button Properties and Actions](ButtonAPI.png)
 
 The physical input level can differ from the logical input level because some buttons are pulling an input down to ground others pull them up. Also switches can be used with this Element.
 
