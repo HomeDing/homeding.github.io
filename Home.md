@@ -14,6 +14,11 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 - [Software Architecture](HomeDingConceptPaper.02)
 - [Elements and Actions](HomeDingConceptPaper.03)
 
+## Available Elements
+
+The existing Elements can be found in the HomeDing Repository.
+Documentation can be found here: [AvailableElements](AvailableElements)
+
 ## Examples
 
 - [The HomeDing - HomeBlink Example](Example-HomeBlink)
