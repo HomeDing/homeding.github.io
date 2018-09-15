@@ -18,25 +18,18 @@ Because they do not depend on other libraries they are available by default:
 | Remote Element       |      
 | SSDP Element         |      
 | Timer Element        | Element for creating timer based actions.
-| [PWMOut Element]     | Output Element to output an pwm signals based on actions. Typically for driving LEDs.
-| [Value Element]      | The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
+| [PWMOut Element](PWMOutElement)     | Output Element to output an pwm signals based on actions. Typically for driving LEDs.
+| [Value Element](ValueElement)      | The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
 |
-[Element]:(ElementClass) "Base Element implementation"
-[Button Element]: ButtonElement "digital input for a momentary button"
-[DigitalOut Element]: DigitalOutElement "Element to create digital output signals"
-[PWMOut Element]: PWMOutElement
-[Value Element]: ValueElement
 
 ## Elements based on Arduino Libraries
 
 | Type                | Functionality | Library used |
 | -----------------   | ------------- | :----------: |
-| [DHT Element]       | Input Element to read DHT11 and DHT22 sensors with temperature and humidity and create actions. | [DHTesp]
+| [DHT Element](DHTElement) | Input Element to read DHT11 and DHT22 sensors with temperature and humidity and create actions. | [DHTesp]
 | RFSend Element      | send RF signals e.g. on 433 MHz for controlling switch boxes. | [TabRF]
 | Rotary              | Input element that creates actions based on a rotary encoder. | [RotaryEncoder]
 |
-
-[DHT Element]: DHTElement "DHT Temperature and Humidity Sensor"
 
 [DHTesp]: https://github.com/beegee-tokyo/DHTesp "DHT library for ESP boards."
 [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library"

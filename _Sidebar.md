@@ -2,6 +2,6 @@
 
 [Concept Papers](HomeDingConceptPaper)
 
-[AvailabeElements](AvailabeElements)
+[Availabe Elements](AvailabeElements)
 
 [Class Documentation](Classes)
