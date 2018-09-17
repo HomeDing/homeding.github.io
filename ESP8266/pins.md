@@ -93,3 +93,7 @@ There are boards that already have a display and use other lines. Be sure to rea
 GPIO14(D5) for digital input and output signals is a good ideas as long as they are available on the board.
 * Using GPIO0(D3) and GPIO2(D4) as ouput with inverted logic (LOW as ACTIVE) is without problems  and a need for using ESP-1 based devices.
 * GPIO0(D3) will atready have momentary switch on many boards and can be used after booting for any purpose.
+
+[ESP8266 Technical Reference]: (https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
+[ESP8266EX Datasheet]: (https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
+[NodeMCU Documentation]: (https://nodemcu.readthedocs.io/en/master/)
