@@ -38,4 +38,4 @@ The following classes have been implemented:
 
 Based on these classes many Elements have been implemented.
 
-See [AvailabeElements](AvailabeElements)
+See [AvailableElements](availableelements)
