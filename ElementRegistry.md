@@ -26,7 +26,7 @@ When an Element implementation needs very much program memory so even when no El
 When the Element implementation depends on another library that might not be installed on every users environment.
 In this case, beside the HomeDing library another library is required to be installed using the Arduino Library Manager.
 
-In the [AvailabeElements List](AvailabeElements) you can find these Elements because they are marked with the required library.
+In the [AvailableElements List](availableelements) you can find these Elements because they are marked with the required library.
 
 ### System and Core Elements
 

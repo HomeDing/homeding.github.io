@@ -17,7 +17,7 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 ## Available Elements
 
 The existing Elements can be found in the HomeDing Repository.
-Documentation can be found here: [AvailableElements](AvailableElements)
+Documentation can be found here: [AvailableElements](availableelements)
 
 ## Examples
 

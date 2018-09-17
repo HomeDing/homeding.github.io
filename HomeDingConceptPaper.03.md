@@ -96,7 +96,7 @@ The standard board already includes a lot of Elements when being compiled. There
 
 Other Elements require a specific library. These Elements must be activated in the sketch and the sketch will only compile properly when you have installed the required library in the Arduino Environment.
 
-See Table [Availabe Elements](AvailabeElements)
+See Table [Available Elements](availableelements)
 
 As the ESP chips offer a lot of memory this approach works fine here. For compiling to different architectures like the original Arduino it is possible to compile with a reduced set of elements to make the program fit into memory.
 
