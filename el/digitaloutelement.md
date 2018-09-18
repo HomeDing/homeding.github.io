@@ -6,7 +6,6 @@ The DigitalOutElement is used to set the level of a digital output pin. This can
 
 The physical output level can differ from the logical output value because some external components require am active HIGH and other active LOW signal.
 
-
 ## Element Configuration
 
 The following properties are available for configuration of the element:
