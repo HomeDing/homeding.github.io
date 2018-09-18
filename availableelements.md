@@ -10,14 +10,14 @@ Because they do not depend on other libraries they are available by default:
 | [Element](ElementClass)                 | Base Element class implementing the default functionality. <br /> All Elements must derive from this class.                  |
 | [Button Element](ButtonElement)         | Input Element typicaly used with momentary buttons or switches.                                                              |
 | Device Element                          | Element to manage device level settings.                                                                                     |
-| [DigitalOut Element](DigitalOutElement) | Output element to create digital output signals based on actions.                                                            |
+| [DigitalOut Element](el/digitaloutelement) | Output element to create digital output signals based on actions.                                                            |
 | DisplayDot Element                      |
 | DisplayText Element                     |
 | NTPTime Element                         |
 | OTA Element                             |
 | Remote Element                          |
 | SSDP Element                            |
-| Schedule Element                        | Element for creating real time based on and off actions.                                                                     |
+| [Schedule Element](ScheduleElement)     | Element for creating real time based on and off actions.                                                                     |
 | Timer Element                           | Element for creating timer based actions.                                                                                    |
 | [PWMOut Element](PWMOutElement)         | Output Element to output an pwm signals based on actions. Typically for driving LEDs.                                        |
 | [Value Element](ValueElement)           | The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value. |
