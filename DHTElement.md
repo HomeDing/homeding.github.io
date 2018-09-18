@@ -1,6 +1,6 @@
-# DHTElement
+# The DHT Element
 
-This element allows retrieving temperature and humidity values from the DHT sensors and creates actions when new values are available.
+The DHTElement allows retrieving temperature and humidity values from the DHT family sensors and creates actions when new values are available.
 
 The current values are also sent out using actions when they stay the same for some time to allow remote things to resume to the current values after reboot or network outages.
 
@@ -25,29 +25,28 @@ more details can be found at <https://github.com/beegee-tokyo/DHTesp>
 
 ## Connecting a Sensor
 
-The sample configuration comming with the DHT22Ding example is configured to use a DHT22 type of sensor with the data line attached to D4 (GPIO2)
+The sample configuration coming with the DHT22Ding example is configured to use a DHT22 type of sensor with the data line attached to D4 (GPIO2)
 
-| ESP8266  | DHT22 | Description   |
-| -------- |:-----:| ------------- |
-| 3.3v     | 1     | Power Supply  |
-| D4       | 2     | Data |
-| GND      | 4     | Ground |
+| ESP8266 | DHT22 | Description  |
+| ------- | :---: | ------------ |
+| 3.3v    | 1     | Power Supply |
+| D4      | 2     | Data         |
+| GND     | 4     | Ground       |
 
 The configuration can be changed easily by modifying the env.json and config.json file.
-
 
 ## Element Configuration
 
 The following properties are available for configuration of the element:
 
-| Property   | Description |
-| ---        | --- |
-| pin*       | Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
-| readtime   | Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.
-| type       | The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
-| resendtime | The current values of the probe are resent after this sepcified time even when not changing.
-| onTemperature | These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same.
-| onhumidity    | These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
+| Property        | Description                                                                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pin`*          | Specifies the hardware number of the pin that is used to connect the DHT sensor for data.                                                                     |
+| `readtime`      | Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.                                                        |
+| `type`          | The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"                                                                                               |
+| `resendTime`    | The current values of the probe are resent after this specified time even when not changing.                                                                  |
+| `onTemperature` | These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same. |
+| `onHumidity`    | These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.    |
 
 \* This parameter must be specified.
 
@@ -55,10 +54,10 @@ The following properties are available for configuration of the element:
 
 The following properties are available with the current values at runtime
 
-| Property | Description |
-| ---      | --- |
-| temperature   | The last read temperature value from the sensor.
-| humidity    | The last read humidity value from the sensor.
+| Property      | Description                                      |
+| ------------- | ------------------------------------------------ |
+| `temperature` | The last read temperature value from the sensor. |
+| `humidity`    | The last read humidity value from the sensor.    |
 
 ## Example for Configuration
 
@@ -69,8 +68,8 @@ The following properties are available with the current values at runtime
     "type": "DHT22",
     "readtime": "30s",
     "resendtime": "2m",
-    "onTemperature": "device/main?log=temp: $v°C",
-    "onHumidity": "device/main?log=hum: $v%"
+    "onTemperature": "device/0?log=temp: $v\u00dfC",
+    "onHumidity": "device/0?log=hum: $v%"
   }
 },
 ```
@@ -94,24 +93,7 @@ More documentation can be found at:
 <https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/>
 
 
-## More
+## more
 
 * 10K VCC - Data
-
-## Example Configuration
-
-```JSON
-"dht": {
-  "on": {
-    "pin": 0,
-    "type": "DHT22",
-    "onTemperature": "device/0?log=temp:$v,displaytext/temp?show=$v,remote/display-t?show=$v",
-    "onHumidity": "device/0?log=hum:$v%,displaytext/hum?show=$v,remote/display-h?show=$v",
-    "description": "Local DHT sensor"
-  }
-},
-```
-
-More: 
-Shut down DHT22 Power by output pin
-
+* Enable Shut down of sensor by supplying power through an ouput pin.
