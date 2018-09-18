@@ -10,7 +10,7 @@ Because they do not depend on other libraries they are available by default:
 | [Element](ElementClass)             | Base Element class implementing the default functionality. <br /> All Elements must derive from this class.                  |
 | [Button Element](ButtonElement)     | Input Element typicaly used with momentary buttons or switches.                                                              |
 | Device Element                      | Element to manage device level settings.                                                                                     |
-| [DigitalOut Element](el_digitalout) | Output element to create digital output signals based on actions.                                                            |
+| [DigitalOut Element](digitaloutelement) | Output element to create digital output signals based on actions.                                                            |
 | DisplayDot Element                  |
 | DisplayText Element                 |
 | NTPTime Element                     |
