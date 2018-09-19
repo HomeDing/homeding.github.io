@@ -5,37 +5,36 @@
 The following Core Element implementations are available in the current version of the HomeDing Library as core Elements.
 Because they do not depend on other libraries they are available by default:
 
-| Type                                | Functionality                                                                                                                |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| [Element](ElementClass)             | Base Element class implementing the default functionality. <br /> All Elements must derive from this class.                  |
-| [Button Element](ButtonElement)     | Input Element typicaly used with momentary buttons or switches.                                                              |
-| Device Element                      | Element to manage device level settings.                                                                                     |
-| [DigitalOut Element](digitaloutelement) | Output element to create digital output signals based on actions.                                                            |
-| DisplayDot Element                  |
-| DisplayText Element                 |
-| NTPTime Element                     |
-| OTA Element                         |
-| Remote Element                      |
-| SSDP Element                        |
-| [Schedule Element](ScheduleElement) | Element for creating real time based on and off actions.                                                                     |
-| Timer Element                       | Element for creating timer based actions.                                                                                    |
-| [PWMOut Element](PWMOutElement)     | Output Element to output an pwm signals based on actions. Typically for driving LEDs.                                        |
-| [Value Element](ValueElement)       | The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value. |
-|                                     |
+| Type                                    | Functionality                                                        |
+| --------------------------------------- | -------------------------------------------------------------------- |
+| [Element](ElementClass)                 | Base Element class implementing the default functionality.           |
+| [Button Element](ButtonElement)         | Input Element typicaly used with momentary buttons or switches.      |
+| Device Element                          | Element to manage device level settings.                             |
+| [DigitalOut Element](digitaloutelement) | Output element to create digital output signals based on actions.    |
+| DisplayDot Element                      |
+| DisplayText Element                     |
+| NTPTime Element                         |
+| OTA Element                             |
+| Remote Element                          |
+| SSDP Element                            |
+| [Schedule Element](ScheduleElement)     | Element for creating real time based on and off actions.             |
+| Timer Element                           | Element for creating timer based actions.                            |
+| [PWMOut Element](PWMOutElement)         | Output Element to output an pwm signals based on actions. e.g. LEDs. |
+| [Value Element](ValueElement)           | Receiving and sending actions to use and control an internal value.  |
+|                                         |
 
 ## Elements based on Arduino Libraries
 
-| Type                      | Functionality                                                                                   | Library used    |
-| ------------------------- | ----------------------------------------------------------------------------------------------- | :-------------: |
-| [DHT Element](DHTElement) | Input Element to read DHT11 and DHT22 sensors with temperature and humidity and create actions. | [DHTesp]        |
-| RFSend Element            | send RF signals e.g. on 433 MHz for controlling switch boxes.                                   | [TabRF]         |
-| Rotary                    | Input element that creates actions based on a rotary encoder.                                   | [RotaryEncoder] |
+| Type                      | Functionality                                                                | Library used    |
+| ------------------------- | ---------------------------------------------------------------------------- | :-------------: |
+| [DHT Element](DHTElement) | Use DHT11 and DHT22 sensors for temperature and humidity and create actions. | [DHTesp]        |
+| RFSend Element            | send RF signals e.g. on 433 MHz for controlling switch boxes.                | [TabRF]         |
+| Rotary                    | Input element that creates actions based on a rotary encoder.                | [RotaryEncoder] |
 |                           |
 
 [DHTesp]: https://github.com/beegee-tokyo/DHTesp "DHT library for ESP boards."
 [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library"
 [RotaryEncoder]: http://www.mathertel.de/Arduino/RotaryEncoderLibrary.aspx "A library for using a rotary encoder as an input."
-
 
 ## planed Elements
 
@@ -46,7 +45,7 @@ Because they do not depend on other libraries they are available by default:
 | (t.b.d.)       | send actions to a MQTT broker                                                                          |
 | (t.b.d.)       | Detect movement                                                                                        |
 | (t.b.d.)       | Detect noise using a microphone                                                                        |
-| BME680         | Input Element to read DBME680 sensor data with temperature, humidity and preassure and create actions. |
+| BME680         | Input Element to read DBME680 sensor data with temperature, humidity and pressure and create actions. |
 | DisplayBar     | Display a progress bar.                                                                                |
 |                |
 
