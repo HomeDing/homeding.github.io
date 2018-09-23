@@ -8,23 +8,23 @@ A battery holder is on the back.
 
 ## Overview table
 
-| Feature                   | Connector | pin          |
-| ------------------------- | --------- | ------------ |
-| connector                 | AD        | Analog input |
-| connector                 | D4        | digital GPIO |
-| connector                 | D8        | digital GPIO |
-| connector                 | D9        | digital GPIO |
-| connector                 | D10       | digital GPIO |
-| Display Number on I2C bus | ---       | 60 (=0x3c)   |
-| SDA                       | ---       | GPIO5        |
-| SCL                       | ---       | GPIO4        |
-| Display size              | ---       | 128 * 64     |
-| Button Left               | D3        | GPIO0(D3)    |
-| Button Right              |           | Reset        |
-| Button UP                 |           | GPIO12(D6)   |
-| Button Down               |           | GPIO13(D7)   |
-| Button Press              |           | GPIO14(D5)   |
-| green LED                 |           | GPIO16(D0)   |
+| Connector | Feature             | pin          |
+| --------- | ------------------- | ------------ |
+| AD        | connector           | Analog input |
+| D4        | connector           | digital GPIO |
+| D8        | connector           | digital GPIO |
+| D9        | connector           | digital GPIO |
+| D10       | connector           | digital GPIO |
+| ---       | I2C bus for display | 60 (=0x3c)   |
+| ---       | SDA                 | GPIO5        |
+| ---       | SCL                 | GPIO4        |
+| ---       | Display size        | 128 * 64     |
+| D3        | Button Left         | GPIO0(D3)    |
+|           | Button Right        | Reset        |
+|           | Button UP           | GPIO12(D6)   |
+|           | Button Down         | GPIO13(D7)   |
+|           | Button Press        | GPIO14(D5)   |
+|           | green LED           | GPIO16(D0)   |
 
 ## Features
 
@@ -58,12 +58,36 @@ The internally used I2C Bus for the connection with the OLED is not available at
 The display configuration is the only specific entry in env.json:
 
 ```JSON
-"DisplaySSD1306": {
-  "0": {
-    "address": "60",
-    "SDA": 5,
-    "SCL": 4,
-    "height": 64
+{
+  "device": {
+    "0": {
+      "name": "wroomding",
+      "reboottime": "1h",
+      "description": "Esp-Wroom-02 Modul ESP8266 with OLED and 18650"
+    }
+  },
+
+  "ota": {
+    "0": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "Listen for 'over the air' OTA Updates"
+    }
+  },
+
+  "ssdp": {
+    "0": {
+      "ModelUrl": "https://www.mathertel.de/Arduino"
+    }
+  },
+
+ "DisplaySSD1306": {
+    "0": {
+      "address": "60",
+      "SDA": "D1",
+      "SCL": "D2",
+      "height": 64
+    }
   }
 }
 ```
