@@ -5,23 +5,23 @@
 The following Core Element implementations are available in the current version of the HomeDing Library as core Elements.
 Because they do not depend on other libraries they are available by default:
 
-| Type                                    | Functionality                                                        |
-| --------------------------------------- | -------------------------------------------------------------------- |
-| [Element](ElementClass)                 | Base Element class implementing the default functionality.           |
-| [Button Element](ButtonElement)         | Input Element typicaly used with momentary buttons or switches.      |
-| Device Element                          | Element to manage device level settings.                             |
-| [DigitalOut Element](digitaloutelement) | Output element to create digital output signals based on actions.    |
-| DisplayDot Element                      |
-| DisplayText Element                     |
-| NTPTime Element                         |
-| OTA Element                             |
-| Remote Element                          |
-| SSDP Element                            |
-| [Schedule Element](ScheduleElement)     | Element for creating real time based on and off actions.             |
-| Timer Element                           | Element for creating timer based actions.                            |
-| [PWMOut Element](PWMOutElement)         | Output Element to output an pwm signals based on actions. e.g. LEDs. |
-| [Value Element](ValueElement)           | Receiving and sending actions to use and control an internal value.  |
-|                                         |
+| Type                                      | Functionality                                                        |
+| ----------------------------------------- | -------------------------------------------------------------------- |
+| [Element](ElementClass)                   | Base Element class implementing the default functionality.           |
+| [Button Element](ButtonElement)           | Input Element typicaly used with momentary buttons or switches.      |
+| Device Element                            | Element to manage device level settings.                             |
+| [DigitalOut Element](digitaloutelement)   | Output element to create digital output signals based on actions.    |
+| [DisplayText Element](displaytextelement) | Show values as text on the display.                                  |
+| DisplayDot Element                        |
+| NTPTime Element                           |
+| [OTA Element](otaelement)                 | Enable and configure Over The Air Updates                            |
+| Remote Element                            |
+| [SSDP Element](ssdpelement)               | Enable and configure discovering devices on the network.             |
+| [Schedule Element](ScheduleElement)       | Element for creating real time based on and off actions.             |
+| Timer Element                             | Element for creating timer based actions.                            |
+| [PWMOut Element](PWMOutElement)           | Output Element to output an pwm signals based on actions. e.g. LEDs. |
+| [Value Element](ValueElement)             | Receiving and sending actions to use and control an internal value.  |
+|                                           |
 
 ## Elements based on Arduino Libraries
 
@@ -38,15 +38,15 @@ Because they do not depend on other libraries they are available by default:
 
 ## planed Elements
 
-| Type           | Functionality                                                                                          |
-| -------------- | ------------------------------------------------------------------------------------------------------ |
-| WeatherElement | call a service on the internet like OpenWeatherMap to get the forecast of the local weather.           |
-| (t.b.d.)       | Meassure Distance using a sonar sensor                                                                 |
-| (t.b.d.)       | send actions to a MQTT broker                                                                          |
-| (t.b.d.)       | Detect movement                                                                                        |
-| (t.b.d.)       | Detect noise using a microphone                                                                        |
+| Type           | Functionality                                                                                         |
+| -------------- | ----------------------------------------------------------------------------------------------------- |
+| WeatherElement | call a service on the internet like OpenWeatherMap to get the forecast of the local weather.          |
+| (t.b.d.)       | Meassure Distance using a sonar sensor                                                                |
+| (t.b.d.)       | send actions to a MQTT broker                                                                         |
+| (t.b.d.)       | Detect movement                                                                                       |
+| (t.b.d.)       | Detect noise using a microphone                                                                       |
 | BME680         | Input Element to read DBME680 sensor data with temperature, humidity and pressure and create actions. |
-| DisplayBar     | Display a progress bar.                                                                                |
+| DisplayBar     | Display a progress bar.                                                                               |
 |                |
 
 ## Supported Displays
