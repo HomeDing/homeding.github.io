@@ -85,11 +85,13 @@ More documentation can be found at:
 
 * [https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/](https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/)
 
+---
 
 # DCFTimeElement
 
 This time element implements listening to a digital input where a DCF signal is available. 
 
+---
 
 # ChipTimeElement
 

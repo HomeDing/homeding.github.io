@@ -17,23 +17,23 @@ Be aware that the positions and fontsize of the configurations must match to the
 
 The following properties are available for configuration of the element:
 
-| Property        | Description                  |
-| --------------- | ---------------------------- |
-| `x`   | Specifies the x position of the text.
-| `y`   | Specifies the y position of the text.
-| `value` | This value will be send to the display.
-| `prefix` | This text is always send to the display as a prefix to the value.
-| `postfix` |This text is always send to the display as a postfix to the value.
-| `fontsize` | This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize.
+| Property   | Description                                                                                    |
+| ---------- | ---------------------------------------------------------------------------------------------- |
+| `x`        | Specifies the x position of the text.                                                          |
+| `y`        | Specifies the y position of the text.                                                          |
+| `value`    | This value will be send to the display.                                                        |
+| `prefix`   | This text is always send to the display as a prefix to the value.                              |
+| `postfix`  | This text is always send to the display as a postfix to the value.                             |
+| `fontsize` | This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize. |
 
 
 ## Element State
 
 The following properties are available with the current values at runtime
 
-| Property      | Description                                      |
-| ------------- | ------------------------------------------------ |
-| `value` | The actual value to be displayed.
+| Property | Description                       |
+| -------- | --------------------------------- |
+| `value`  | The actual value to be displayed. |
 
 
 ## Example for Configuration

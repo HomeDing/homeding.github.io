@@ -39,7 +39,7 @@ While the core library is portable to other processors there will be some ESP826
 
 This concept paper was written together with a “Proof if concept” implementation to ensure not only having a paper concept.
 
-This POC implementation is available on GitHub at [https://github.com/mathertel/iot-board](https://github.com/mathertel/iot-board).
+This POC implementation is available on GitHub at [https://github.com/HomeDing/HomeDing](https://github.com/HomeDing/HomeDing).
 
 Once it is in a valid beta state it will be continued here.
 

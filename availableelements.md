@@ -1,29 +1,43 @@
-# Availabe Elements
+# Available Elements
 
-## Core Elements
+The following element implementations are available in the current version of the HomeDing library.
 
-The following Core Element implementations are available in the current version of the HomeDing Library as core Elements.
-Because they do not depend on other libraries they are available by default:
+Some of the elements depend on other libraries that must be installed to compile.
 
-| Type                                      | Functionality                                                        |
-| ----------------------------------------- | -------------------------------------------------------------------- |
-| [Element](ElementClass)                   | Base Element class implementing the default functionality.           |
-| [Button Element](ButtonElement)           | Input Element typicaly used with momentary buttons or switches.      |
-| Device Element                            | Element to manage device level settings.                             |
-| [DigitalOut Element](digitaloutelement)   | Output element to create digital output signals based on actions.    |
-| [DisplayText Element](displaytextelement) | Show values as text on the display.                                  |
-| DisplayDot Element                        |
-| NTPTime Element                           |
-| [OTA Element](otaelement)                 | Enable and configure Over The Air Updates                            |
-| Remote Element                            |
-| [SSDP Element](ssdpelement)               | Enable and configure discovering devices on the network.             |
-| [Schedule Element](ScheduleElement)       | Element for creating real time based on and off actions.             |
-| Timer Element                             | Element for creating timer based actions.                            |
-| [PWMOut Element](PWMOutElement)           | Output Element to output an pwm signals based on actions. e.g. LEDs. |
-| [Value Element](ValueElement)             | Receiving and sending actions to use and control an internal value.  |
-|                                           |
+| Type                                      | Functionality                                                                                      |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [Element](ElementClass)                   | Base Element class implementing the default functionality required by every Element.               |
+| **System Elements**                       |
+| Device Element                            | Element to manage device level settings.                                                           |
+| [OTA Element](otaelement)                 | Enable and configure Over The Air Updates                                                          |
+| [SSDP Element](ssdpelement)               | Enable and configure discovering devices on the network.                                           |
+| [Value Element](ValueElement)             | Receiving and sending actions to use and control an internal value.                                |
+| Remote Element                            |                                                                                                    |
+| [Menu Element](MenuElement)               |                                                                                                    |
+| **Sensor and Input Elements**             |                                                                                                    |
+| [Button Element](ButtonElement)           | Input Element typicaly used with momentary buttons or switches.                                    |
+| Rotary Element                            |                                                                                                    |
+| [DHT Element](DHTElement)*                | Use DHT11 and DHT22 sensors for temperature and humidity and create actions.                       |
+| **Display Elements**                      |                                                                                                    |
+| [DisplayText Element](displaytextelement) | Show values as text on the display.                                                                |
+| DisplayDot Element                        |                                                                                                    |
+| DisplayBar Element                        | Display a progress bar.                                                                            |
+| DisplayAdapterSSD1306*                    | Element for configuring a SSD1306 compatible monochrome OLED display with 128\*32 or 128\*64 dots. |
+| DisplayAdapterLCD*                        | Element for configuring a HD44780 compatible LCDs using I2C adapter.                               |
+| **Time related Elements**                 |                                                                                                    |
+| [Time Element](timeelement)               | Send actions based on the actual local time.                                                       |
+| [NTPTime Element](ntptimeelement)         | Get the actual local time using the NTP protocol from a NTP server.                                |
+| [DCFTime Element](dcftimeelement)*        | Get the actual local time from a DCF 77kHz signal over the air.                                    |
+| [Schedule Element](ScheduleElement)       | Creating on and off actions based on the actual local time.                                        |
+| [Timer Element](timerelement)             | Element for creating timer (duration) based actions.                                               |
+| **Actor and Output Elements**             |                                                                                                    |
+| [PWMOut Element](PWMOutElement)           | Output Element to output an pwm signals based on actions. e.g. LEDs.                               |
+| [DigitalOut Element](digitaloutelement)   | Output element to create digital output signals based on actions.                                  |
+| RFSend Element*                           | Send out RF codes on the 433 MHz band to control remote sockets.                                   |
 
-## Elements based on Arduino Libraries
+\* For these Elements a specific library is requires. See below.
+
+## Elements based on external Arduino Libraries
 
 | Type                      | Functionality                                                                | Library used    |
 | ------------------------- | ---------------------------------------------------------------------------- | :-------------: |
@@ -46,7 +60,6 @@ Because they do not depend on other libraries they are available by default:
 | (t.b.d.)       | Detect movement                                                                                       |
 | (t.b.d.)       | Detect noise using a microphone                                                                       |
 | BME680         | Input Element to read DBME680 sensor data with temperature, humidity and pressure and create actions. |
-| DisplayBar     | Display a progress bar.                                                                               |
 |                |
 
 ## Supported Displays

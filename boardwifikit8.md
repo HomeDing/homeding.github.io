@@ -14,6 +14,7 @@ The official documentation can be found at heltec.cn. There is a possibility to 
 | Display size              | 128 * 32   |
 | Display chip              | SSD1306    |
 | 4 Mbyte Flash             |            |
+| USB Adapter chip          | CP2104     |
 
 Here is the connector / function Overview. Be aware hat the SCL and SDA labels are not corresponding to the I2C bus used for the OLED.
 
