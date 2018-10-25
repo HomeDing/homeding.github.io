@@ -12,19 +12,19 @@ The DisplayDotElement is included in the collection of core elements.
 
 The following properties are available for configuration of the element:
 
-| Property        | Description                  |
-| --------------- | ---------------------------- |
-| `x`   | Specifies the x position of the text.
-| `y`   | Specifies the y position of the text.
-| `value` | This value will be send to the display.
+| Property | Description                             |
+| -------- | --------------------------------------- |
+| `x`      | Specifies the x position of the text.   |
+| `y`      | Specifies the y position of the text.   |
+| `value`  | This value will be send to the display. |
 
 ## Element State
 
 The following properties are available with the current values at runtime
 
-| Property      | Description                                      |
-| ------------- | ------------------------------------------------ |
-| `value` | The actual value to be displayed.
+| Property | Description                       |
+| -------- | --------------------------------- |
+| `value`  | The actual value to be displayed. |
 
 ## Example for Configuration
 

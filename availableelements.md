@@ -60,6 +60,7 @@ Some of the elements depend on other libraries that must be installed to compile
 | (t.b.d.)       | Detect movement                                                                                       |
 | (t.b.d.)       | Detect noise using a microphone                                                                       |
 | BME680         | Input Element to read DBME680 sensor data with temperature, humidity and pressure and create actions. |
+| DisplayBar     | Display a progress bar.                                                                               |
 |                |
 
 ## Supported Displays
