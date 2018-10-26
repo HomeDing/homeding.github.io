@@ -19,6 +19,10 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 The existing Elements can be found in the HomeDing Repository.
 Documentation can be found here: [AvailableElements](availableelements)
 
+## Features
+
+Logging : [Logger](logger)
+
 ## Examples
 
 - [The HomeDing - HomeBlink Example](Example-HomeBlink)
