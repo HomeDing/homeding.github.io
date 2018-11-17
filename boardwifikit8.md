@@ -8,13 +8,29 @@ The official documentation can be found at heltec.cn. There is a possibility to 
 
 ## Overview
 
-| Feature                   | pin        |
-| ------------------------- | ---------- |
-| Display Number on I2C bus | 60 (=0x3c) |
-| Display size              | 128 * 32   |
-| Display chip              | SSD1306    |
-| 4 Mbyte Flash             |            |
-| USB Adapter chip          | CP2104     |
+Programming of this board can be done using the `NodeMCU 1.0 (ESP12-E Module)` setup of the standard boards.
+
+The board settings and the additional features can be found here:
+
+| Feature                   | Specific                     |
+| ------------------------- | ---------------------------- |
+| Display Number on I2C bus | 60 (=0x3c)                   |
+| Display size              | 128 * 32                     |
+| Display chip              | SSD1306                      |
+| 4 Mbyte Flash             |                              |
+| USB Adapter chip          | CP2104                       |
+| Integrierted Charger      | LiPo batteries 3.7V          |
+| Battery connector         | JST 1.25mm 2 pins            |
+| Selected Board            | NodeMCU 1.0 (ESP12-E Module) |
+| CPU Frequency             | 80 MHz                       |
+| VTables                   | Flash                        |
+| Flash Size                | 4M (1M SPIFFS)               |
+| IwIP Variant              | v2 Lower Memory              |
+| Debug Port                | Serial                       |
+| Debug Level               | None                         |
+| Erase Sketch              | Only Sketch                  |
+| Upload Speed              | 115200                       |
+| Builtin LED               | none                         |
 
 Here is the connector / function Overview. Be aware hat the SCL and SDA labels are not corresponding to the I2C bus used for the OLED.
 
@@ -57,9 +73,9 @@ digitalWrite(D2, HIGH); // while OLED is running, must set D2 in high
 ```
 
 ## OnBoard LED
+
 There is no usable LED on board.
 The orange one is connected to the MIC73831 charching circuit 
-
 
 ## Battery Connector
 
@@ -113,4 +129,5 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
 * <http://www.heltec.cn/download/WIFI_Kit_Series&Instructions.pdf>
 * The Wifi-Kit 8 SDK is a copy of the ESPRESSIV project and a selected list of libraries. It is a good source for ideas, however, I prefer using the golden sources of the SDK and libraries:
 <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series>
+* A summary to use this board <https://robotzero.one/heltec-wifi-kit-8/>
 

@@ -40,6 +40,15 @@ The blue LED on the ESP-12 can also be used GPIO2(D4).
 
 ## Critics
 
+## Onboard LED
+
+The green LED at GPIO16 (D0) only can be used when there is no need for deep sleep functionality and only can be switched on and off.
+
+In cannot be dimmed using by PWM  because GPIO16 is not supporting this.
+
+I find it a poor design to add aLED to this port for these reasons.
+
+
 ### joystick
 
 The joystick button is bound to 4 input pins and to the reset pin as well this makes this button almost useless for games and menu selection functionality because it will happen by accident that the reset direction (move to the right) is activated.
