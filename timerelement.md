@@ -6,7 +6,8 @@ When started after the specified wait time a pulse start is emitted and after th
 The cycle time and the type LOOP can be specified to restart the timer automatically.
 
 ```
-                +--> "on" event   +--> "off" event
+        events: +--> "on"         +--> "off"
+                +--> "value=1"    +--> "value=0"
                 |                 |
 ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\______________
 
@@ -19,28 +20,26 @@ Properties
 
 The following properties are available for config, actions and state of a timer element:
 
-Properties	Type	Description
-type	Config	When set to “LOOP” the timer restarts after the cycle.
-waittime	Config	time before "on" action
-pulsetime	Config	time between "on" and "off" action.
-cycletime	Config	time of a complete timer cycle.
-When not specified or tool low the cycletime gets adjusted to the waittime+pulsetime
-onon	Config	Actions.
-These actions are emitted when the pulse time starts.
-onoff	Config	Actions.
+| Properties   | Type   | Description                                              |
+| ------------ | ------ | -------------------------------------------------------- |
+| type         | Config | When set to “LOOP” the timer restarts after the cycle. |
+| waittime     | Config | time before "on" action                                  |
+| pulsetime\*1 | Config | time between "on" and "off" action.                      |
+| cycletime\*2 | Config | time of a complete timer cycle.                          |
+| onon         | Config | Actions dispatched when the pulse time starts.           |
+| onoff        | Config | Actions dispatched when the pulse time ends.             |
+| onvalue      | Config | Actions dispatched when the pulse time starts or ends    |
+| active       | State  | Is set to true when the Element is active.               |
+| state        | State  | Current state. See diagram above                         |
+| Time         | State  | Current time (in seconds) in the current cycle.          |
+| Level        | State  | Current level of the timer. See diagram above.           |
 
-These actions are emitted when the pulse time ends.
-active	State	Is set to true when the Element is active.
-state	State	Current state. See diagram above
-Time	State	Current time (in seconds) in the current cycle.
-Level	State	Current level of the timer. See diagram above.
+\*1 required property
+\*2 When cycletime is not not specified or too low the cycletime gets adjusted to waittime+pulsetime.
 
-The Timer Element can be activated when the following conditions are met:
-•	The pulsetime is specified and > 0.
-•	The cycletime is greater than the pulsetime.
+### Example for Configuration
 
-Example for Configuration
-
+```JSON
 "timer": {
   "relais": {
     "type": "LOOP",
@@ -50,12 +49,16 @@ Example for Configuration
     "onoff": "digitalout/led?off"
   }
 }
+```
 
-Example for State
-'timer/relais': {
-  'active':'true',
-  'state':'0',
-  'time':'8',
-  'level':'0'
+### Example for State
+
+```JSON
+"timer/relais": {
+  "active": "true",
+  "state": "0",
+  "time": "8",
+  "level": "0"
 }
+```
 
