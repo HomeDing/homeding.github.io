@@ -37,7 +37,7 @@ This project is using a node.js / express server to mock some of the features of
 
 The minimalistic CSS of the UI implementation can be found in the iostyle.css file that is created using the scss technology from the iostyle.scss. The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.
 
-For Details see [Micro-CSS](microcss.md)
+For Details see [Micro-Style](microstyle.md)
 
 ## micro JavaScript Library
 

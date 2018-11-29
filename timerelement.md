@@ -29,6 +29,8 @@ The following properties are available for config, actions and state of a timer 
 | onon         | Config | Actions dispatched when the pulse time starts.           |
 | onoff        | Config | Actions dispatched when the pulse time ends.             |
 | onvalue      | Config | Actions dispatched when the pulse time starts or ends    |
+| start        | Action | Start the timer                                          |
+| stop         | Action | Stop the timer                                           |
 | active       | State  | Is set to true when the Element is active.               |
 | state        | State  | Current state. See diagram above                         |
 | Time         | State  | Current time (in seconds) in the current cycle.          |

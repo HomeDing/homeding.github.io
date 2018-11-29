@@ -27,3 +27,10 @@ t.b.c.
 | value    | ![value](https://www.mathertel.de/HomeDing/i/value.svg)
 | water    | ![water](https://www.mathertel.de/HomeDing/i/water.svg)
 | wifi     | ![wifi](https://www.mathertel.de/HomeDing/i/wifi.svg)
+
+
+## See also
+
+* [manifest](_manifest)
+
+
