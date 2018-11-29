@@ -37,13 +37,13 @@ This project is using a node.js / express server to mock some of the features of
 
 The minimalistic CSS of the UI implementation can be found in the iostyle.css file that is created using the scss technology from the iostyle.scss. The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.
 
-For Details see [Micro-Style](microstyle.md)
+For Details see [Micro-Style](microstyle)
 
 ## micro JavaScript Library
 
 The minimalistic JavaScript implementation that implements templating, function and data binding and is available to the HomeDing devices.
 
-For Details see [Micro-JavaScript](microjavascript.md)
+For Details see [Micro-JavaScript](microjavascript)
 
 ## micro JSON Parser
 
@@ -53,7 +53,7 @@ To handle JSON based files in a C++ programming environment a parser for this fi
 
 The micro JSON Parser is implemented in the `MicroJsonParser` class.
 
-For Details see [Micro-JSON](microjson.md)
+For Details see [Micro-JSON](microjson)
 
 ## More reading material
 
