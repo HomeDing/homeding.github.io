@@ -7,12 +7,12 @@ The Logger implementation solves the major logging topics when implementing thin
 
 The logger supports 3 levels of logging and a direct logging is also supported:
 
-| Level | Description                     |
-| ----- | ------------------------------- |
-| Info  | Explicit information            |
-| Error | + Error conditions              |
-| Trace | + Tracing details               |
-| Raw   | Direct logging to Serial output |
+| Level | #   | Description                     |
+| ----- | --- | ------------------------------- |
+| Info  | 0   | Explicit information            |
+| Error | 1   | + Error conditions              |
+| Trace | 2   | + Tracing details               |
+| Raw   |     | Direct logging to Serial output |
 
 ## Logging for problem analysis
 
@@ -37,14 +37,13 @@ Changing the port or disabling serial output can only be applied at compile time
 
 To make logging information available a `/ding-log.htm` page is available that gets the logging text from the device displayed in the browser.
 
-
 ## Raw level logging LOGGER_RAW(...)
 
 This macro is intended to be used for very detailed debug output during the development that will be removed later.
 The output is sent to the Serial output port only. The macro is completely disabled when specifying no debug port in the settings.
 
 This macro will directly push all information to the serial port specified by the debug port option.
-The formatting from printf is used and lines will have a `__>` prefix.
+The formatting from printf is used and lines will have a `>` prefix.
 
 **Example:**
 
@@ -54,25 +53,24 @@ LOGGER_RAW("init: path=%s cache_header=%s", path, cache_header);
 
 **Output:**
 ```
-__>init: path=/ cache_header=NO-CACHE
+  >init: path=/ cache_header=NO-CACHE
 ```
 
 
 ## Trace level logging LOGGER\_TRACE(...) and LOGGER\_ETRACE(...)
 
-This macro is intended to be used for function level tracing e.g. to log the called function and the parameters
+This macro is intended to be used for function level tracing e.g. to log the called function and the parameters.
+
 Like the LOGGER_RAW macro the output is sent to the Serial output port only.
-The macro is completely disabled when specifying no debug port in the settings.
 
-It is completely disabled when specifying no debug port in the settings.
-
->sys:e:sketch setup done.
+The functionality of this macro is completely disabled when specifying no debug port in the settings.
+Disabling the debug port in the board settings will reduce the program size because these logging lines will produce no code and will consume no cpu time.
 
 The `LOGGER_TRACE` macro can be used everywhere for logging with the trace level.
-The formatting from printf is used and lines will have a `>sys:t:` prefix with type and id coming from the element definition.
+The formatting from printf is used and lines will have a `HH:MM:SS sys:t:` prefix with type and id coming from the element definition.
 
 The `LOGGER_ETRACE` macro is especially made for logging the trace level in element implementations.
-The formatting from printf is used and lines will have a `>[type]/[id]:t:` prefix with type and id coming from the element definition.
+The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:t:` prefix with type and id coming from the element definition.
 
 **Example:**
 
@@ -82,7 +80,7 @@ LOGGER_ETRACE("set(%s:%s)", name, value);
 
 **Output:**
 ```
->displaydot/b:t:set(show:1)
+19:01:03 displaydot/b:t:set(show:1)
 ```
 
 
@@ -97,7 +95,7 @@ The macro is never completely disabled because logging to the file system is wor
 The `LOGGER_ERR` macro can be used everywhere for logging while the 
 `LOGGER_EERR` macro is especially made for logging in element implementations.
 
-The formatting from printf is used and lines will have a `>[type]/[id]:e:` or `>sys:e:` prefix with type and id coming from the element definition.
+The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:e:` or `HH:MM:SS sys:e:` prefix with type and id coming from the element definition.
 
 **Example:**
 
@@ -107,7 +105,7 @@ LOGGER_ETRACE("set(%s:%s)", name, value);
 
 **Output:**
 ```
->displaydot/b:t:set(show:1)
+19:08:36 displaydot/b:t:set(show:1)
 ```
 
 ## Trace level logging LOGGER\_INFO(...) and LOGGER\_EINFO(...)
@@ -121,7 +119,7 @@ The macro is never completely disabled because logging to the file system is wor
 The `LOGGER_INFO` macro can be used everywhere for logging while the 
 `LOGGER_EINFO` macro is especially made for logging in element implementations.
 
-The formatting from printf is used and lines will have a `>sys:i:` or `>[type]/[id]:i:` prefix with type and id coming from the element definition.
+The formatting from printf is used and lines will have a `HH:MM:SS sys:i:` or `HH:MM:SS [type]/[id]:i:` prefix with type and id coming from the element definition.
 
 **Example:**
 
@@ -131,7 +129,7 @@ LOGGER_INFO("device restart initiated.");
 
 **Output:**
 ```
->sys:i:device restart initiated.
+19:12:05 sys:i:device restart initiated.
 ```
 
 ## Remote logging 
@@ -149,3 +147,23 @@ An logging will eb appended to the /log.txt file.
 When this files reaches the maximum size an existing `/log_old.txt` file will be deleted, the `/log.txt` file will be renamed to `/log_old.txt` and a new `/log.txt` file will be written.
 
 Using this procedure the actual existing log is always minimum the last 2k of up to 4k of the last log texts.
+
+## Set loglevel for individual classes
+
+It is possible to set the logging level for a specific element in the config.json file so trace information can be produced of a specific element but not for all elements.
+The default is to have an overall error level for logging and trace level logging should be enabled on the element level.
+
+**Example:**
+
+```JSON
+"button": {
+  "in": {
+    "pin": "D4",
+    "type": "toggle",
+    "inverse": 1,
+    "pullup": 1,
+    "loglevel": 2,
+    "onvalue": "digitalout/led?value=$v"
+  }
+},
+```

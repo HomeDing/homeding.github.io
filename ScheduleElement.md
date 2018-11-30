@@ -6,7 +6,14 @@ When using this element a real time retrieving element must be configured as wel
 
 One Schedule Element can be used to create a timespan during a day that creates 2 possible events. The first one when the ``on``-time has passed and a secone one when the ``off``-time has passed.
 
-When starting the devine during the day in the middle of this time span the ``on``-event will be send out as well.
+When starting the device the following events are emitted:
+
+* When starting before the defined time span the `off`-event will be emitted.
+* When starting the device in the middle of this time span the `on`-event will be emitted.
+* When starting after the defined time span the `off`-event will be emitted.
+
+The `onvalue` event is always emitted together with the `on` and `off` event situations.
+ 
 
 ## Element Configuration
 
@@ -18,6 +25,7 @@ The following properties are available for configuration of the element:
 | `offtime` | Specifies the end of the time span.                                  |
 | `onon`    | Actions.<br/>These actions are emitted when the on time has passed.  |
 | `onoff`   | Actions.<br/>These actions are emitted when the off time has passed. |
+| `onvalue` | Actions.<br/>These actions are emitted when the value is changing.   |
 
 ## Element State
 
