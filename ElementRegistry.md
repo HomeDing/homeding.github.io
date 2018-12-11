@@ -13,9 +13,13 @@ so to make it life and working.
 
 Element implementations should not automatically register themselfes in some cases.
 
-* System level Elements will register themselfes any time (like device and ota).
-* Core Elements can be included all together or individually.
-* Optional Elements can be included individually.
+* System level elements will register themselves any time (like device and ota).
+* Core elements can be included all together or individually.
+* Optional elements can be included individually.
+
+## Using Elements for configuration
+
+- [ ] like displayLCD elements configuring the display adapter
 
 ### Complex Elements and Huge Elements
 

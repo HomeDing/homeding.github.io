@@ -65,6 +65,11 @@ The following properties are available with the current values at runtime
 ## Example State
 
 ```JSON
+"analog/0": {
+  "active":"true",
+  "value":"1024",
+  "reference":"1"
+}
 ```
 
 ## See also

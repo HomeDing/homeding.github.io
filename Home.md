@@ -36,3 +36,19 @@ Logging : [Logger](logger)
 
 - [Element Interface](ElementInterface)
 - [Element Registry](ElementRegistry)
+
+
+## Read more
+
+There are many good resources available to get more information about the ESP8266 boards. Here my recommendations:
+
+**From Espressif**
+* [The ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
+* [ESP8266EX Datasheet](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
+* [NodeMCU Documentation](https://nodemcu.readthedocs.io/en/master/)
+
+**General Guides**
+* [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)
+  
+
+

@@ -38,6 +38,13 @@ The following properties are available with the current values at runtime
 }
 ```
 
+@verbatim
+
+http://devdevice/$board/pwmout/led?value=0
+http://devdevice/$board/pwmout/led?value=100
+http://devdevice/$board/pwmout/led?value=255
+
+
 ## Example State
 
 ```JSON
