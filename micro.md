@@ -1,11 +1,16 @@
-# Implementing a minimalistic UI for usage in Things
+# Implementing a minimalist UI for usage in Things
 
-There are many use cases where a web-based UI to an internet connected device is needed to provide functionality and services.
+There are many web front end frameworks that offer components that are combined to build the UI and the functionality for specific use cases.
+Some well known are Angular, react and Vue. 
 
-Therefore, the HomeDing library has implemented a web server that offers the following pages:
+But when implementing on a memory restricted device the size of basis functionality and components becomes the most limiting factor.
+
+So the framework the HomeDing UI implementation has to be as small as possible and provides only the required functionality to visualize the internal available elements, the actions and their state.
+
+The HomeDing library comes with a web server implementation and a small web site that can be stored in the file system of a ESP8266 base device that offers the following pages:
 
 * A home page providing a static welcome screen and some further navigation links.
-* A device specific UI that shows the actual state of the elements inside the device and offers triggering actions and modifying settings.
+* A dashboard that presents all active elements and their actual data.
 * A minimal web-based IDE page that allows changing the text based files of the web server including the configuration files.
 * A generic diagram that displays all existing elements and the configured actions in between.
 
@@ -35,13 +40,22 @@ This project is using a node.js / express server to mock some of the features of
 
 ## micro StyleSheet
 
-The minimalistic CSS of the UI implementation can be found in the iostyle.css file that is created using the scss technology from the iostyle.scss. The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.
+The minimalist CSS of the UI implementation can be found in the iostyle.css file that is created using the scss technology from the iostyle.scss. The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.
 
 For Details see [Micro-Style](microstyle)
 
 ## micro JavaScript Library
 
-The minimalistic JavaScript implementation that implements templating, function and data binding and is available to the HomeDing devices.
+The minimalist JavaScript implementation that implements templating, function and data binding and is available to the HomeDing devices.
+
+The functionality offers
+* to create new controls from given templates into the web page 
+* load data given in a JSON format
+* fill data into placeholders
+* visualize data by using  bars and charts
+* capture user input that create actions on the internal elements
+* apply changes to the data model 
+* send data back to the year device to update the configuration.
 
 For Details see [Micro-JavaScript](microjavascript)
 

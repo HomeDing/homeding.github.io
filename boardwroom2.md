@@ -16,8 +16,8 @@ A battery holder is on the back.
 | D9        | connector           | digital GPIO |
 | D10       | connector           | digital GPIO |
 | ---       | I2C bus for display | 60 (=0x3c)   |
-| ---       | SDA                 | GPIO5        |
-| ---       | SCL                 | GPIO4        |
+| ---       | SDA                 | GPIO5(D1)    |
+| ---       | SCL                 | GPIO4(D2)    |
 | ---       | Display size        | 128 * 64     |
 | D3        | Button Left         | GPIO0(D3)    |
 |           | Button Right        | Reset        |
