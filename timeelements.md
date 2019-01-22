@@ -1,98 +1,57 @@
-# Time services
+# Time Elements
 
-* retrieving the local time
-* actions based on local time 
-* using the local time in implementations
+Using the real local tme on devices on one of the available core features. The HomeDing library supports
 
-Other methods are using an local time clock chip or a radio receiver for a local available signal.
+* elements that retrieve the local time from the internet, using radio receiver or from a local RTC chip.
+* elements that create actions based on the local time like alarms and timers
+* elements that use the local time to add the current timestamp to sensor data
 
-
+The ESP boards to have a system timer that keeps and updates a local time with a accuracy that is acceptable for some hours.
+However this timer needs to be initialized every time the system reboots and must be adjusted every some hours to keep it accurate.
 
 ## accessing and adjusting the local time
 
+The [NTPTime Element](ntptimeelement) retrieves the current time from a NTP server and can translate it into the local time by using to local timezone setting.
+Devices that can reach a NTP internet service can use this option.
+
+After a reboot the elements that require a accurate local time will not start working when the NTP time request fails.
+As this can happen it is not an option for devices that must operate even when the internet is not available like heating systems.
+
+The [DSTime Element](dstimeelement) retrieves the current local time from a local attached RTC Chip like the DS3231.
+After a reboot the time will be restored from the chip. This is a good option for devices that must operate even when the internet is not available like heating systems.
+
+The DCFTime Element will ...
+
+
+## Using time in element implementations
+
 Because timing is required by many Elements the time and real-time feature is directly supported by the board class.
 
-Board->getSeconds ()
- Because most of the timings are based on seconds the getSeconds() function in the board Returns the seconds since starting the board. This can be used as the timing reference for emitting events when real time is not required.
+**Board->getSeconds()**
 
-Board->getTimeOfDay() returns the seconds since starting the day.
+The `getSeconds()` method in the `board` class returns the full seconds since starting the device. 
 
-Board getTime () returns the milliseconds since 1.1.1970 a usual binary format for  times.
-To set the real time to an actual value this function must be called and the milliseconds since 1970 must be passed. The offset to the current millis is recorded order adjusted.
+Because most of the timings are based on seconds this methon can be used as the timing reference for emitting events when real time is not required.
+
+Using the getSeconds function is preferred over using (millis() / 1000).
+
+**Board->getTimeOfDay()**
+
+When a real time is available this method return the seconds since starting the day. It returns 0 when the real time is not available.
+
+To use this functionality a [NTPTime Element](ntptimeelement) or [DSTime Element](dstimeelement) needs to be configured.
+
+**Board->getTime ()**
+
+When a real time is available this method returns the milliseconds since 1.1.1970 a usual binary format for times in C++.
+
+To use this functionality a [NTPTime Element](ntptimeelement) or [DSTime Element](dstimeelement) needs to be configured.
+
+
+<!-- To set the real time to an actual value this function must be called and the milliseconds since 1970 must be passed. The offset to the current millis is recorded order adjusted.
 The board internally uses the millis function from the Arduino Library to calculate the current real-time. 
-Be aware that when using the  deep sleep mode that the millis can …
+Be aware that when using the deep sleep mode that the millis can … -->
 
+<!-- Using actions dispatched over the network to exchange a current time has a latency that may be too much to be accurate for a specific use case. Local actions are better to be used for this so you may consider using a local Time Element on the devices that have real-time requirements.
 
-# NTPTime Element
-
-The NTPTimeElement is one of the element implementations to get a local time from an external source and to adjust the ***real local*** time on the board. This element gets the local time from an external server using the Network Time Protocol.
-
-![NTPTime Properties and Actions](ntptime-api.png)
-
-In the SDK of some platforms like the ESP8266 the functionality to get a NTP based time sync is already available but it must be configured and activated. This is what the NTPTimeElement does for the ESP8266 (and ESP32 later).
-
-Because retrieving the right local time can be done using different methods the NTPTime Element an extension to the building functionality of the board that keeps the current time available as accurate as the internal quartz oscillator can do.
-
-## Network Time Protocol
-
-The Network Time Protocol (NTP) 
-
-???
-* Where to find good ntp servers ?
-
-Because it takes some time to get a package from the server and of course sometimes the server doesn't answer at all or network packages are lost you cannot rely on getting a correct time immediately after starting the board or coming back from a deep sleep mode. If you have a device with these requirements a chip based real-time may be better.
-
-Using actions dispatched over the network to exchange a current time has a latency that may be too much to be accurate for a specific use case. Local actions are better to be used for this so you may consider using a local Time Element on the devices that have real-time requirements.
-
-Some interesting use cases are using the real time like clock displays and Things that need to know it is day or night or just log sensor data that must be analyzed later.
-
-## Element Configuration
-
-The following properties are available for configuration of the element:
-
-| Property      | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| `Ntpserver`   | The hostname of the ntp server to be used like `"pool.ntp.org"`    |
-| `readtime`    | Config Time between 2                                              |
-| `zone`        | Config                                                             |
-| `onTime`      | Actions.<br/>These actions are emitted when ...                    |
-| `onMinute`    | Actions.<br/>These actions are emitted by the Element when the ... |
-| `ondate`      |
-| `ontimestamp` |
-|               |
-
-## Element State
-
-
-****Time****	State	
-
-
-### Example for Configuration
-
-"ntptime": \{
-  "main": \{
-    "readtime": "2m",
-    "zone": 2,
-    "ontime": "device/main?log=time:$v"
-  }
-}
-
-
-### Implementation Details
-
-
-More documentation can be found at:
-
-* [https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/](https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/)
-
----
-
-# DCFTimeElement
-
-This time element implements listening to a digital input where a DCF signal is available. 
-
----
-
-# ChipTimeElement
-
-This time element implements using a local high precision time chip to get a local time. 
+Some interesting use cases are using the real time like clock displays and Things that need to know it is day or night or just log sensor data that must be analyzed later. -->
