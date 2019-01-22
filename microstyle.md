@@ -1,15 +1,16 @@
-# Micro Style
+# Micro StyleSheet
 
-The micro-css is a minimal collection of CSS rules for styling UI pages of the HomeDing devices.
+The micro-css is a minimal collection of CSS rules for styling UI pages of the HomeDing devices. The CSS technology is required to give the different UI implementations of the HomeDing devices a unified look & feel and to share download files among these implementations.
 
-The CSS technology is required to give the different UI implementations of the HomeDing devices a unified look & feel and to share download files among these implementations.
+The CSS rules can be found in the iostyle.css file that is created using the scss technology from the iostyle.scss. The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.
 
-The iotstyle.css file contains some of the basics required to build responsive UI:
+The micro styleSheet file contains some of the basics required to build responsive UI:
 
 * some basic normalization CSS rules
 * mobile first approach to the Device UI screens and desktop design for the embedded IDE.
 * a grid with a 6 column layout (not 12 or 24 to avoid too much CSS code).
 * card style components
+* .
 * support of once buttons, ???
 * header
 
@@ -22,10 +23,9 @@ Defining the CSS on a global level in a shared css file allows implementing smal
 > Remark
 Using the BEM naming convention is very popular to style implementations but here another approach and notation was used to reduce text size. A concept to a similar approach can be found at <https://www.sitepoint.com/title-css-simple-approach-css-class-naming/>. While this implementation is more complete the micro css implementation for the HomeDing devices ony supports some of the constructs.
 
+## Cards
 
-## cards
-
-The cards layout element is used to wrap one context in a visual area. In the homeding UIs it is used to wrap one element or a sumary of the complete device.
+The cards layout element is used to wrap one context in a visual area. In the HomeDing UIs it is used to wrap one element or a summary of the complete device.
 
 ```html
 <div class="col">

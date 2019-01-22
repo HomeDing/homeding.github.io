@@ -6,6 +6,11 @@ The value to be displayed can be changed by passing the new value using an actio
 Because there may be more values presented on a display at the same time the 
 DisplayDotElement may exist multiple times in the configuration by using different positions.
 
+It is not required for all displays to support all these Elements and when a device only has a simple LCD
+attached maybe only using the DisplayTextElements is appropriate.
+
+You can even use the DisplayDotElement without having an actual Display attached that supports it.
+
 The DisplayDotElement is included in the collection of core elements.
 
 ## Element Configuration
