@@ -15,7 +15,7 @@ The following properties are available for configuration of the element:
 | `pin`*    | Specifies the hardware number of the pin.                                                                                                   |
 | `inverse` | In normal mode a HIGH input value is reported as value 1. In inverse mode a LOW input value is reported as value 1. Normal mode is default. |
 | `pullup`  | When defining with true the internal pullup resistor for the input pin will be activated.                                                   |
-| `type`    | The button supports different types of behaviour. See below.                                                                                |
+| `type`    | The button supports different types of behavior. See below.                                                                                |
 | `onon`    | Actions.<br/>These actions are emitted when the logical level is switched to 1.                                                             |
 | `onoff`   | Actions. <br/> These actions are emitted when the logical level is switched to 0.                                                           |
 

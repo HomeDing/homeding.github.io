@@ -31,14 +31,14 @@ Here the ValueElement can help. It allows
 
 The following properties are available for configuration of the element:
 
-| Property | Description |
-| ---      | --- |
-| id*      | Specifies the logical name of the value.
-| min      | Defines the minimum of the value.
-| max      | Defines the maximum of the value.
-| value    | An initial/default value can be set using the configuration.
-| onChange | Actions.<br/>These actions are emitted when the value has changed. 
-|
+| Property | Description                                                        |
+| -------- | ------------------------------------------------------------------ |
+| id*      | Specifies the logical name of the value.                           |
+| min      | Defines the minimum of the value.                                  |
+| max      | Defines the maximum of the value.                                  |
+| value    | An initial/default value can be set using the configuration.       |
+| onChange | Actions.<br/>These actions are emitted when the value has changed. |
+|  |
 
 \* This parameter must be specified.
 
@@ -46,13 +46,24 @@ The following properties are available for configuration of the element:
 
 The following actions can be used with this element:
 
-| Action   | Description |
-| ---      | --- |
-| up       | This action increments the value and eventually triggers an outgoing onChange Event.
-| down     | This action decrements the value and eventually triggers an outgoing onChange Event.
-| value    | This action sets the value.
-| change   | The change actions are created when the actual value really changes. Trying to ncrementing an value that has already reached its maximum value will not create a chang action.
-|
+| Action | Description                                                                                                                                                                     |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| up     | This action increments the value and eventually triggers an outgoing onChange Event.                                                                                            |
+| down   | This action decrements the value and eventually triggers an outgoing onChange Event.                                                                                            |
+| value  | This action sets the value.                                                                                                                                                     |
+| change | The change actions are created when the actual value really changes. Trying to incrementing an value that has already reached its maximum value will not create a chang action. |
+|  |
+
+The up and down actions can take also negative values as input. This allows e.g. to use a rotary encoder as input by using one action.
+
+## Examples for actions
+
+The value element accepts actions like
+
+* `value/led?up=1` to increment by 1
+* `value/led?up=10` to increment by maximal 10
+* `value/led?down=1` to decrement by 1
+* `value/led?up=-1` to decrement by 1
 
 ## Element State
 
@@ -60,3 +71,8 @@ The following actions can be used with this element:
 
 ## Example State
 
+## See also
+
+* Rotary Encoder
+* Menu Element
+* LED Recipe

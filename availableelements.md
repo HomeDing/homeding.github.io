@@ -29,6 +29,7 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | **Time related Elements**                 |                                                                                         |
 | [Time Element](timeelement)               | Send actions based on the actual local time.                                            |
 | [NTPTime Element](ntptimeelement)         | Get the actual local time using the NTP protocol from a NTP server.                     |
+| [DSTime Element](ntptimeelement)          | Get the actual local time using the RTC DS3231 chip.                                    |
 | [DCFTime Element](dcftimeelement)*        | Get the actual local time from a DCF 77kHz signal over the air.                         |
 | [Schedule Element](ScheduleElement)       | Creating on and off actions based on the actual local time.                             |
 | [Timer Element](timerelement)             | Element for creating timer (duration) based actions.                                    |
@@ -41,10 +42,10 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 
 ## Elements based on external Arduino Libraries
 
-| Type                            | Functionality                                                                | Library used    |
+| Type                            | Functionality                                                                |  Library used   |
 | ------------------------------- | ---------------------------------------------------------------------------- | :-------------: |
-| [DHT Element](DHTElement)       | Use DHT11 and DHT22 sensors for temperature and humidity and create actions. | [DHTesp]        |
-| [RFSend Element](rfsendelement) | send RF signals e.g. on 433 MHz for controlling switch boxes.                | [TabRF]         |
+| [DHT Element](DHTElement)       | Use DHT11 and DHT22 sensors for temperature and humidity and create actions. |    [DHTesp]     |
+| [RFSend Element](rfsendelement) | send RF signals e.g. on 433 MHz for controlling switch boxes.                |     [TabRF]     |
 | [Rotary Element](rotaryelement) | Input element that creates actions based on a rotary encoder.                | [RotaryEncoder] |
 |                                 |
 

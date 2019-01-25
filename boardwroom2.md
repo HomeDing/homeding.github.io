@@ -1,4 +1,4 @@
-# Board Review of Esp-Wroom-02 Modul ESP8266 with OLED and 18650
+# Board Review ESP8266 -12 with OLED and 18650
 
 ![boardwroom2.png](boardwroom2.png)
 
@@ -61,6 +61,14 @@ That makes this combination almost useless for pure battery appliances when a lo
 ### I2C / WIRE Bus
 
 The internally used I2C Bus for the connection with the OLED is not available at a connector. Therefore it is difficult to add more I2C bus devices to this bus.
+
+Also the board doesn't use the common and default pins that are defined by 
+SCL=GPIO5(D1) and SDA=GPIO4(D2).
+
+The board uses 
+
+* `SCL` = `GPIO4` (`D2`) (yellow) and
+* `SDA` = `GPIO5` (`D1`) (blue)
 
 # Board configuration
 

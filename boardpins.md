@@ -81,7 +81,12 @@ When connecting chips for displays or other more complex solutions the I2C (also
 Only 2 lines are required to communicate with many participants on this bus.
 
 ESP8266 supports this bus by using a software approach. Therefore almost any combination of GPIO lines can be used.
-The NodeMCU even when not using it offers to use the `SDA` and `SCL` constants that default to GPIO5(D1) and GPIO4(D2).
+
+Configuring a NodeMCU1.0 (ESP-12E) includes the definitions for `SCL` and `SDA` as constants that default to
+* SCL=GPIO5(D1) (yellow) and
+* SDA=GPIO4(D2) (blue).
+
+When using a plain NodeMCU or ESP-12 board I stick to these ports but other boards don't follow this standard.
 
 There are boards that already have a display and use other lines. Be sure to read the manual.
 
@@ -91,9 +96,9 @@ There are boards that already have a display and use other lines. Be sure to rea
 * Using the I2C bus is a good idea. It is possible to use extension chips.
 * Preferring the IO lines GPIO4(D2), GPIO5(D1), GPIO12(D6), GPIO13(D7) and     |
 GPIO14(D5) for digital input and output signals is a good ideas as long as they are available on the board.
-* Using GPIO0(D3) and GPIO2(D4) as ouput with inverted logic (LOW as ACTIVE) is without problems  and a need for using ESP-1 based devices.
+* Using GPIO0(D3) and GPIO2(D4) as output with inverted logic (LOW as ACTIVE) is without problems  and a need for using ESP-1 based devices.
 * GPIO0(D3) will already have momentary switch on many boards and can be used after booting for any purpose.
 
 [ESP8266 Technical Reference]: (https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
-[ESP8266EX Datasheet]: (https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
+[ESP8266EX datasheet]: (https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
 [NodeMCU Documentation]: (https://nodemcu.readthedocs.io/en/master/)
