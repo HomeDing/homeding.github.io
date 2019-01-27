@@ -19,16 +19,14 @@ The central networking feature of the board only allows one current remote actio
 On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these. 
 
 ```JSON
-"display": {
+"displaytext": {
   "t": {
-    "type": "TEXT",
     "x": 0,
     "y": 36,
     "prefix": "Temp:",
     "postfix": "°C"
   },
   "h": {
-    "type": "TEXT",
     "x": 0,
     "y": 50,
     "prefix": "Hum: ",
@@ -59,11 +57,11 @@ On the device named **dht22-probe** the dht element is configured to create acti
 "remote": {
   "display-t": {
     "host": "logger",
-    "remoteid": "display/t"
+    "remoteid": "displaytext/t"
   }, 
   "display-h": {
     "host": "logger",
-    "remoteid": "display/h"
+    "remoteid": "displaytext/h"
   }
 }
 ```
@@ -71,5 +69,5 @@ On the device named **dht22-probe** the dht element is configured to create acti
 ## TODO
 - [ ] keep/queue messages when network is not available.
 - [ ] detect that remote element is not available -> slow down, retry
-- [ ] Define what to don in case of an overflow
+- [ ] Define what to do in case of an overflow.
 

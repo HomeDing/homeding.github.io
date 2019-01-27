@@ -12,7 +12,7 @@ The HomeDing project is exactly starting from this situation and offers an out o
 
 ## Requirements and Design Rules
 
-To make building your own connected things easy the following Design was choosen:
+To make building your own connected things easy the following Design was chosen:
 
 * It is designed to be used in a home network.
 * No central Hub system is required to make it easy to start building a Thing on its own.

@@ -41,7 +41,7 @@ Other Elements are lightweight and also need no special libraries. As long as th
 ## The Registry Mechanism
 
 Therefore the HomeDing library has a specific mechanism implemented to allow specifying what Elements are compiled and registered.
-This can be seen in all Example Sketches just before the ```#include <HomeDing.h>``` statement:
+This can be seen in all Example Sketches just before the `#include <HomeDing.h>` statement:
 
 ```C++
 // Use all Core Elements of the HomeDing Library
@@ -77,7 +77,7 @@ bool MyElement::registered =
 
 ## Element registration for library Elements
 
-When transferred to the HomeDing library a ```#define HOMEDING_INCLUDE_My``` should be used to allow the sketch to select the available Elements.
+When transferred to the HomeDing library a `#define HOMEDING_INCLUDE_My` should be used to allow the sketch to select the available Elements.
 
 ```CPP
 #ifdef HOMEDING_REGISTER
@@ -87,7 +87,7 @@ bool MyElement::registered =
 #endif
 ```
 
-See ```<HomeDing.h```.
+See `<HomeDing.h`.
 
 The mechanism to do this relies on a little "trick" by using the assignment of a static variable.
 

@@ -9,11 +9,11 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | ----------------------------------------- | --------------------------------------------------------------------------------------- |
 | [Element](ElementClass)                   | Base Element class implementing the default functionality required by every Element.    |
 | **System Elements**                       |
-| Device Element                            | Element to manage device level settings.                                                |
+| [Device Element](devicelement)                            | Element to manage device level settings.                                                |
 | [OTA Element](otaelement)                 | Enable and configure Over The Air Updates                                               |
 | [SSDP Element](ssdpelement)               | Enable and configure discovering devices on the network.                                |
 | [Value Element](ValueElement)             | Receiving and sending actions to use and control an internal value.                     |
-| Remote Element                            |                                                                                         |
+| [Remote Element](remoteelement)     | sending actions to other devices over the local network.                                                                                         |
 | [Menu Element](MenuElement)               |                                                                                         |
 | **Sensor and Input Elements**             |                                                                                         |
 | [Button Element](ButtonElement)           | Input Element typicaly used with momentary buttons or switches.                         |
@@ -36,7 +36,7 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | **Actor and Output Elements**             |                                                                                         |
 | [PWMOut Element](PWMOutElement)           | Output Element to output an pwm signals based on actions. e.g. LEDs.                    |
 | [DigitalOut Element](digitaloutelement)   | Output element to create digital output signals based on actions.                       |
-| RFSend Element*                           | Send out RF codes on the 433 MHz band to control remote sockets.                        |
+| [RFSend Element](rfsendelement)*                           | Send out RF codes on the 433 MHz band to control remote sockets.                        |
 
 \* For these Elements a specific library is requires. See below.
 

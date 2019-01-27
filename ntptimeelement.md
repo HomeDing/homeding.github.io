@@ -1,7 +1,7 @@
-# NTPTime Element
+O# NTPTime Element
 
 The NTPTimeElement is one of the element implementations to get a local time from an external source
-and to adjust the ***real local*** time on the board.
+and to adjust the `real local time`w on the board.
 This element gets the local time from an external server using the Network Time Protocol.
 
 <!-- ![NTPTime Properties and Actions](ntptime-api.png) -->
@@ -27,18 +27,20 @@ Some interesting use cases are using the real time like clock displays and thing
 
 The following properties are available for configuration of the element:
 
-| Property      | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| `ntpserver`   | The hostname of the ntp server to be used like `"pool.ntp.org"`    |
-| `readtime`    | Config Time between 2                                              |
-| `zone`        | Config                                                             |
+| Property    | Description                                                       |
+| ----------- | ----------------------------------------------------------------- |
+| `ntpserver` | The hostname of the ntp server to be used like `"pool.ntp.org"`   |
+| `readtime`  | Time span between synchronizations.                               |
+| `retrytime` | Time span between synchronizations when no valid time is present. |
+| `zone`      | Timezone of the device                                            |
 
 
 
 ```JSON
 "ntptime": {
   "0": {
-    "readtime": "8h",
+    "readtime": "08:00:00",
+    "retrytime": "00:05:00",p
     "zone": 2
   }
 }
@@ -46,9 +48,17 @@ The following properties are available for configuration of the element:
 
 ## Element State
 
+The following properties are available with the current values at runtime
+
+| Property | Description                                |
+| -------- | ------------------------------------------ |
+| `active` | Is set to true when the element is active. |
+| `now`    | the current time of the board.             |
+
+## Element State Example
+
 ```JSON
 "ntptime/0": {
    "active": "true",
    "now": "2018-11-22 20:43:08"
 }```
-

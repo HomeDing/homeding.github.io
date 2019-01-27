@@ -43,7 +43,7 @@ The following properties are available with the current values at runtime
 | Property | Description                                |
 | -------- | ------------------------------------------ |
 | `active` | Is set to true when the element is active. |
-| `value`  | Current logical output value.              |
+| `value`  | Current logical output ovalue.              |
 
 ## Example for Configuration
 
