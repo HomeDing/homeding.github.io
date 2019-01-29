@@ -10,9 +10,9 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 ## HomeDing Concept Papers
 
-- [Building your own connected Things made easy](HomeDingConceptPaper.01)
-- [Software Architecture](HomeDingConceptPaper.02)
-- [Elements and Actions](HomeDingConceptPaper.03)
+- [Building your own connected Things made easy](HomeDingConceptPaper01)
+- [Software Architecture](HomeDingConceptPaper02)
+- [Elements and Actions](HomeDingConceptPaper03)
 
 ## Available Elements
 
@@ -29,12 +29,12 @@ Logging : [Logger](logger)
 
   This simple example also includes a description on how to setup the environment.
 
-- [The buildin WebServer](WebServer)
-- [The buildin WebServices](WebServices)
+- [The build-in WebServer](WebServer)
+- [The build-in Web-Services](webservices)
 
 ## more
 
-- [Element Interface](ElementInterface)
+- [Element Implementation](ElementClass)
 - [Element Registry](ElementRegistry)
 
 

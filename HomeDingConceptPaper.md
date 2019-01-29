@@ -1,6 +1,6 @@
 # The HomeDing Concept Papers
 
-+ [Building your own connected Things made easy](HomeDingConceptPaper.01)
-+ [Software Architecture](HomeDingConceptPaper.02)
-+ [Elements and Actions](HomeDingConceptPaper.03)
++ [Building your own connected Things made easy](HomeDingConceptPaper01)
++ [Software Architecture](HomeDingConceptPaper02)
++ [Elements and Actions](HomeDingConceptPaper03)
 + [Builtin Web server](WebServer)

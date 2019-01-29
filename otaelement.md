@@ -1,16 +1,22 @@
-# OTA Element
+# OTA Element ???
 
-System Element
-can be discovered by Arduino IDE
 
-Upload batch:
+The OTAElement allows uploading new sketches to the board over the network.
+
+By configuration this element for a device the   device shows up in the list of ports in the Arduino programming environment.
+
+The WebServer must be enabled on the device to use this protocol.
+
+The OTAelement is a system element to configure this functionality and cannot send or receive actions.
+
+
+## Upload batch:
 
 :: python script with parameters
 
 :: 
 
 
-OTAElement Over The Air Updates
 
 ## Example Configuration
 
@@ -23,3 +29,7 @@ OTAElement Over The Air Updates
   }
 }
 ```
+
+See also
+
+* Hardening the IoT device.

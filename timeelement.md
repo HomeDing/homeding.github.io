@@ -32,13 +32,21 @@ The following properties are available with the current values at runtime
 ## Example Configuration
 
 ```JSON
-"time": {
-  "clock": {
-    "ontime": "displaytext/time?value=$v"
+{
+  "time": {
+    "clock": {
+      "ontime": "displaytext/time?value=$v"
+    }
   }
 }
 ```
 
 ## Example State
 
-???
+```JSON
+{
+  "time/0": {
+    "active":"true"
+  }
+}
+```
