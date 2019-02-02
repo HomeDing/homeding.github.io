@@ -1,6 +1,6 @@
 # The Device Element ???
 
-The DeviceElement allows configuration of the principal behavior of the device and it's features.
+The DeviceElement allows configuration of the behavior of the device and it's features.
 
 Because there is only one device configuration the full id is always `/device/0`.
 When the web server is active you can reach the device using http://{name}.

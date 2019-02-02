@@ -1,20 +1,14 @@
 # Web Services ???
 
-* restfull
-* URLs
-* actions
-* status
+When retrieving HTML from the server just return the content of the files in the filesystem and doesn't execute any functionality related to elements or actions.
 
-* file list
-* statistics and runtime parameters
+The web services support getting access to the inner values and state of the system and elements of the device based on the HomeDing library.
 
+All services provide a REST base interface and start using a `$` character.
 
-As an implementation principle the UI presented in the browser only acts as a visual interface but doesn't execute any functionality related to actions.
-The actions will only be processed inside the device using the implemented elements.
+### /$sysinfo
 
-To support the web based UI the following REST based services are available:
-
-**/$sysinfo** returns information from the system level like the flash memory available to the file system.
+This service returns information from the system level like the flash memory available to the file system.
 
 Example with comments
 
@@ -33,49 +27,88 @@ Example with comments
 
 This information is read only.
 
-**/$reboot**
+### /$reboot
 
 This service reboots the device.
 
-**/$reset**
+### /$reset <span style="color:red">\*</span>
 
 This service wipes out the network configuration and then restarts the device.
 
-TODO: ??? disable in "save-mode`
+### /$elements
 
-**/$elements** This REST service returns an array with all elements that are implemented in the firmware of the device.
+This REST service returns an array with all elements that are implemented in the firmware of the device.
 
 Example:
 ```JSON
-["ssdp","ota","device","time","remote","ntptime","dstime","serialcmd","my","value","button","analog","timer","schedule","digitalout","pwmout","displaytext","displaydot","displayLCD","displaySSD1306","displaySH1106","dht","rfsend","rotary","alarm"]
+[ "ssdp", "ota", "device", "time", "remote", "ntptime",
+  "dstime", "serialcmd", "my", "value", "button", "analog",
+  "timer", "schedule", "digitalout", "pwmout", "displaytext",
+  "displaydot", "displayLCD" ,"displaySSD1306", "displaySH1106",
+  "dht", "rfsend", "rotary", "alarm"
+]
 ```
 
-**/$upload** This URL returns a minimal html page that can be used to upload files to the server using drag & drop.
+### /$upload <span style="color:red">\*</span>
+
+This URL returns a minimal HTML page that can be used to upload files to the server using drag & drop.
 
 ![Minimal Upload Form](upload.png)
 
-**/$scan** This service is required for the network configuration page (/setup.htm) and returns an array with all available networks.
+### /$scan <span style="color:red">\*</span>
+
+This service is required for the network configuration page (/setup.htm) and returns an array with all available networks.
 
 This service has to be called multiple times. The first time starts scanning and results will be available some seconds later.
 
 ```JSON
-[{"id":"VVBLHH0909 2","rssi":"-83","open":"0"},{"id":"devnet","rssi":"-67","open":"0"},{"id":"DIRECT-D9-HP OfficeJet 4650","rssi":"-75","open":"0"}]
+[
+  {"id":"VVBLHH0909 2", "rssi":"-83", "open":"0"},
+  {"id":"devnet", "rssi":"-67", "open":"0"},
+  {"id":"DIRECT-D9-HP OfficeJet 4650", "rssi":"-75" ,"open":"0"}
+]
 ```
 
-**/$connect?n=...&p=...** &wps=...
+### /$connect=...&p=...** &wps=... <span style="color:red">\*</span>
 
 This service is required for the network configuration page (/setup.htm) and allows changing the network configuration. 
 
-**/$list**
+### /$list
 
 This service is required for the IDE page implementation (/ding-ide.htm) and returns a list of all files on the filesystem.
 
-**/$board/...**
+### /$board
 
+This service returns the state of all existing elements running in the device.
 
+```JSON
+{
+  "device/0":  {"active":"true", "name":"DHTdevice", "description":"IoT Dev-Device with a DHT Sensor", "nextboot":"90"},
+  "ota/0": {"active":"true"},
+  "ssdp/0": {"active":"true"},
+  "remote/display-t": {"active":"true"},
+  "remote/display-h": {"active":"true"},
+  "dht/on": {"active":"true", "temperature":"21.60", "humidity":"46.00"}}
+```
 
+### /$boardht/on**
 
-GET  /Type/id
-SET / type/ id?property=value. 
+This service returns the state of the element addressed by the more specific url.
 
-Also PUT ???
+```JSON
+{
+  "dht/on": {
+    "active":"true",
+    "temperature":"21.60",
+    "humidity":"46.00"
+  }
+}
+```
+
+### /$boardisplaytext/t?value=21.60**
+
+This service sends an action to the element specified by the URL to set the value.
+
+This is how the remote element will send actions across the network to other devices. 
+
+> \* this service is not available when the device runs in the save mode. See [Save Mode](savemode) for details.

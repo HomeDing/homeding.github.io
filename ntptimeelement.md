@@ -1,4 +1,4 @@
-O# NTPTime Element
+# NTPTime Element
 
 The NTPTimeElement is one of the element implementations to get a local time from an external source
 and to adjust the `real local time`w on the board.

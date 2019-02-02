@@ -5,8 +5,12 @@
 The ElementRegistry is the central class that knows all included and available
 Element classes to allow further creation of new Elements by name at runtime.
 
-In the Sketches for the HomeDing library it is not required to define the Elements you need for the ting you like to build.
-It is possible to add new Elements to your thing just by specifying them in the config.json.
+This allows specifying the `known elements` at compile time to optimize the programs size  to the available flash memory on the smaller boards but can include all elements for bigger boards.
+
+At runtime the elements not in use will not consume dynamic memory leaving this rare space for the active elements.
+
+In the Sketches using the HomeDing library it is not required to define the active Elements you need.
+It is possible to activate new Elements just by specifying them in the env.json or config.json.
 
 Therefore the Element classes are *known* and every Element class has a static function that can be called to create a new Element
 so to make it life and working.
@@ -19,18 +23,30 @@ Element implementations should not automatically register themselfes in some cas
 
 ## Using Elements for configuration
 
-- [ ] like displayLCD elements configuring the display adapter
+Some elements only exist to capture configuration properties. Most of them specific system related features like the devicename or the availabe hardware.
+
+Examples are:
+
+* [Device](deviceelement)
+* [Display Adapter](display)
+* [OTA](otaelement)
+* [SSPD](ssdpelement)
+
+Most of these elements don't use actions to communicate. 
+
 
 ### Complex Elements and Huge Elements
 
 When an Element implementation needs very much program memory so even when no Element is configured this memory is occupied.
 
+
 ### Elements with compiletime dependencies
 
-When the Element implementation depends on another library that might not be installed on every users environment.
-In this case, beside the HomeDing library another library is required to be installed using the Arduino Library Manager.
+Some elements rely on a the functionality given by an external library. You may consider not including them by compile time.
 
-In the [AvailableElements List](availableelements) you can find these Elements because they are marked with the required library.
+E.g. it is sufficient to only include the display adapter and the according library that fits to the attached display.
+
+In the [AvailableElements List](availableelements) you can find these Elements marked with the required library.
 
 ### System and Core Elements
 
@@ -43,7 +59,7 @@ Other Elements are lightweight and also need no special libraries. As long as th
 Therefore the HomeDing library has a specific mechanism implemented to allow specifying what Elements are compiled and registered.
 This can be seen in all Example Sketches just before the `#include <HomeDing.h>` statement:
 
-```C++
+```CPP
 // Use all Core Elements of the HomeDing Library
 #define HOMEDING_INCLUDE_CORE
 
@@ -87,9 +103,18 @@ bool MyElement::registered =
 #endif
 ```
 
-See `<HomeDing.h`.
+You can see the whole list of elements and how they are bundled to some groups in the `HomeDing.h`inckude file.
 
-The mechanism to do this relies on a little "trick" by using the assignment of a static variable.
+The mechanism to do this relies on a little "trick" by using the assignment of a static variables.
 
 The compiler automatically generates the code to execute this assignment and registration before the sketch starts
 and also automatically detects multiple implementations and throws an error.
+
+## See also
+ 
+*  allow registration of Element Types to avoid hard references.<br> <https://www.bfilipek.com/2018/02/factory-selfregister.html>
+
+* http://www.drdobbs.com/cpp/self-registering-objects-in-c/184410633
+* https://stackoverflow.com/questions/5120768/how-to-implement-the-factory-method-pattern-in-c-correctly
+* https://www.codeproject.com/Articles/363338/Factory-Pattern-in-Cplusplus
+

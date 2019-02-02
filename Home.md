@@ -16,36 +16,45 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 ## Available Elements
 
-The existing Elements can be found in the HomeDing Repository.
-Documentation can be found here: [AvailableElements](availableelements)
+The Elements in the HomeDing library support amny different features, sensors, displays and other periphery.
 
-## Features
+> OTA, SSDP, Value, Remote, Menu, Input Button, Analog Input, Rotary, DHT, Displays, SSD1306, SH1106, LCD, Time, NTPTime, DSTime, DCFTime, Schedule, Timer, *PWMOut, DigitalOut, RF433 and more...
 
-Logging : [Logger](logger)
+A full list can be found here: [AvailableElements](availableelements)
+
+It is easy to implement your own specific custom elements as you can see in the [Examples](examples)
+
 
 ## Examples
 
-- [The HomeDing - HomeBlink Example](Example-HomeBlink)
+??? 
+- [List of availabe Examples with the HomeDing Library](examples)
 
+- [The HomeDing - HomeBlink Example](exampleblink)
   This simple example also includes a description on how to setup the environment.
 
 - [The build-in WebServer](WebServer)
 - [The build-in Web-Services](webservices)
 
-## more
 
-- [Element Implementation](ElementClass)
-- [Element Registry](ElementRegistry)
+## Supported boards
+
+See: [Supported boards](boards)
+
+## Extend and Implement for your needs
+
+See: [Implementation References and Concepts](implementation)
 
 
 ## Read more
+
+In the documentation you find related links to material that is available on the internet and worth reading.
 
 There are many good resources available to get more information about the ESP8266 boards. Here my recommendations:
 
 **From Espressif**
 * [The ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
 * [ESP8266EX Datasheet](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
-* [NodeMCU Documentation](https://nodemcu.readthedocs.io/en/master/)
 
 **General Guides**
 * [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)
