@@ -1,11 +1,9 @@
-# The HomeDing - Blink Example
+# The HomeDing - Blink Example ???
 
 ## How to setup your first HomeDing
 
 The BlinkDing Example is a perfect project that you can use for your first experience with the HomeDing library. It only requires a NodeMCU Board
 or another ESP8266 based Board that has at least 4 MByte Flash Memory.
-
-runs in ESP-01 with 1MByte ???
 
 But let’s start at the beginning:
 
@@ -32,9 +30,11 @@ Open the Library Manager in Arduino Environment and search for the HomeBlink Lib
 Now the library implementation and the examples are available to be used.
 
 
-## Connect the NodeMCO with the computer via USB
+## Connect the Board
 
+The NodeMCU boards all come with a USB port that just needs to be connected to any of the computer USB ports.
 
+Please watch out for messages about a missing driver that you might need to instal. As these boards have different USB bridge chips you might need to find out yourself. Most of the USB bridge chips are detected and driver download starts automatically in most cases.
 
 ## Adjust the Configuration
 
@@ -52,16 +52,21 @@ Because you will need to change the network identification it is a good idea to 
 
 > **Important**
 >
-> Be sure to include the data folder as well as it contains the necessary files for the web server.
+> Be sure to include the `data` folder as well as it contains the necessary files for the web server.
+
+<!-- 
 
 ## Adjust your network identification
 
 In the sketch file you find the 2 settings you need to adopt to your own wireless network environment:
 
-```C++
+
+```c++
 const char *ssid = "NetworkName";
 const char *password = "NetworkPass";
 ```
+
+-->
 
 ## Upload the project
 

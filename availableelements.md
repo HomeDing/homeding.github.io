@@ -16,10 +16,13 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | [Remote Element](remoteelement)           | sending actions to other devices over the local network.                                |
 | [Menu Element](MenuElement)               |                                                                                         |
 | **Sensor and Input Elements**             |                                                                                         |
-| [Button Element](ButtonElement)           | Input Element typicaly used with momentary buttons or switches.                         |
+| [Digital In Element](digitalinelement)    | Input Element typicaly used with momentary buttons or switches.                         |
 | [Analog Element](analogelement)           | Input Element to capture a analog voltage from the builtin ADC.                         |
-| [Rotary Element](rotaryelement)           |                                                                                         |
+| [Rotary Element](rotaryelement)           | Input Element for using a rotary encoder.                                               |
 | [DHT Element](DHTElement)*                | Use DHT11 and DHT22 sensors for temperature and humidity and create actions.            |
+| **Logic Elements**                        |                                                                                         |
+| [Button Element](ButtonElement)           | Input Element typicaly used with momentary buttons or switches.                         |
+| [Switch Element](switchElement)           | Input Element typicaly used with momentary buttons or switches.                         |
 | **Display Elements**                      |                                                                                         |
 | [DisplayText Element](displaytextelement) | Show values as text on the display.                                                     |
 | [DisplayDot Element](displaydotelement)   |                                                                                         |
