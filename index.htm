@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+Markdown viewer SPA
+
+using
+* http://showdownjs.com/
+* https://github.com/Bloggify/showdown-highlight
+https://highlightjs.org/download/
+
+<div class="s-md">
+  get loaded in here
+</div>
+
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual</title>
+  <link href="mathertel.css" rel="stylesheet" type="text/css"> 
+
+  <link rel="stylesheet" href="showdown/github.css">
+  <script src="showdown/highlight.pack.js"></script>
+  <script src="showdown/showdown.js"></script>
+
+  <style>
+    html {
+      font-size: 100%
+    }
+
+    .s-md {
+      min-height: 4em;
+      padding: 0.4em;
+    }
+
+    a.verify {
+      background-color: #FFFFcc;
+    }
+
+    a.bad {
+      background-color: #FFcccc;
+    }
+
+
+    table {
+      empty-cells: show;
+      border-collapse: collapse;
+      background-color: white;
+      border-left: solid 1px #203050;
+      border-right: solid 1px #203050;
+      margin-top: 0.4em;
+      margin-bottom: 0.4em;
+    }
+
+    table thead tr {
+      background-color: #203050;
+    }
+
+    table thead tr th {
+      vertical-align: top;
+      padding: 0.2em 0.6em;
+      color: white;
+      font-weight: bold;
+    }
+
+    table td {
+      vertical-align: top;
+      padding: 0.2em 0.6em;
+      border-bottom: 1px solid #203050;
+    }
+  </style>
+</head>
+
+<body scroll="0" style="padding:12px;">
+  <div>MD Doku</div>
+  <div class="s-md"></div>
+
+  <h4>Found Pages:</h4>
+  <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+  </div>
+  <h4>Missing Pages:</h4>
+  <div id="missingFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+  </div>
+
+  <script>
+    var ffObj = document.querySelector('#foundFiles');
+    var mfObj = document.querySelector('#missingFiles');
+
+    function getHashParam(param, defValue) {
+      var h = window.location.hash;
+      if (h) {
+        var params = (h.substr(1)).split('&');
+        for (i = 0; i < params.length; i++) {
+          var p = params[i].split('=');
+          if (p[0] == param)
+            return (p[1]);
+        } // for
+      }
+      return (defValue);
+    } // getHashParam
+
+
+    /** load a JSON using a URL / rest service or static file */
+    function loadFile(url, loadCallback, errorCallback) {
+      var req = new XMLHttpRequest;
+      req.overrideMimeType("application/text");
+      req.open('GET', url);
+      // req.onload  = func;  
+      req.onload = function (x) {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            loadCallback(this.responseText);
+          } else {
+            errorCallback(this);
+          }
+        }
+      };
+      req.onerror = errorCallback;
+      req.send(null);
+    } // loadFile
+
+    function forAllNodeList(nodeList, callbackFn) {
+      for (var n = 0; n < nodeList.length; n++) {
+        callbackFn(nodeList[n]);
+      }
+    } // forAllNodeList()
+
+    // === Markdown Loader ===
+
+    var mdClass = {
+      _found: [], // list of verified existing files
+      _missing: [], // list of verified existing files
+      _checking: false,
+      checkLinkTimer: 0,
+
+      pushFound: function (pName) {
+        if (this._found.indexOf(pName) < 0)
+          this._found.push(pName);
+        ffObj.textContent = this._found;
+      },
+
+      pushMissing: function (pName) {
+        if (this._missing.indexOf(pName) < 0)
+          this._missing.push(pName);
+        mfObj.textContent = this._missing;
+      },
+
+      checkLink: function () {
+        if (!this._checking) {
+          var aObj = document.querySelector('a.verify');
+          if (!aObj) {
+            // finished checking.
+            window.clearInterval(this.checkLinkTimer);
+          } else {
+            var m = aObj.href.match(/=(\w*.md)$/);
+            var fName = m[1].toLowerCase();
+
+            if (this._found.indexOf(fName) >= 0) {
+              aObj.classList.remove('verify'); // good link
+            } else if (this._missing.indexOf(fName) >= 0) {
+              aObj.classList.remove('verify');
+              aObj.classList.add('bad'); // bad link
+            } else {
+              this._checking = true;
+
+              loadFile(/* "md/" + */ fName, function (txt) {
+                // found
+                this.pushFound(fName);
+                this._checking = false;
+              }.bind(this),
+                function (x) {
+                  this.pushMissing(fName);
+                  this._checking = false;
+                }.bind(this)
+              );
+            }
+
+          } // if
+        } // if
+      }, // checkLink()
+
+
+      // show given text as html.
+      setText: function (fName, txt) {
+        var converter = new showdown.Converter();
+        converter.setFlavor("github");
+        var hText = converter.makeHtml(txt);
+        // modify links to work:
+        hText = hText.replace(/href="(\w*).md"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="(\w*)"/g, 'href="#page=$1.md"');
+        this.innerHTML = hText;
+
+        // verify all local .md links
+        forAllNodeList(this.querySelectorAll('a[href]'),
+          function (aObj) {
+            if (aObj.href.match(/=(\w*.md)$/))
+              aObj.classList.add('verify');
+          }.bind(this)
+        );
+        
+        // highlight code
+        forAllNodeList(document.querySelectorAll('pre code'), function (block) { hljs.highlightBlock(block); });
+      },
+
+      // init, when slide behavior is attached.
+      init: function () {
+        this.onhashchange(); // initial navigation
+        this._checking = false;
+      },
+
+      // check for #page=xxx.md
+      onhashchange: function (/* evt */) {
+        var pName = getHashParam("page", "home.md").toLowerCase();
+
+        loadFile(/* "md/" + */ pName, function (txt) {
+          this.setText(pName, txt);
+          this.pushFound(pName);
+          this.checkLinkTimer = window.setInterval(this.checkLink.bind(this), 100);
+
+        }.bind(this),
+          function (x) {
+            this.setText(pName, ">> File with name " + pName + " not found.");
+          }.bind(this)
+        );
+      }
+    }
+
+    // manually attach md container
+    var mdObj = document.querySelector('.s-md');
+    if (mdObj) {
+      mdObj._found = mdClass._found;
+      mdObj._missing = mdClass._missing;
+      mdObj.init = mdClass.init;
+      mdObj.checkLink = mdClass.checkLink;
+      mdObj.pushFound = mdClass.pushFound;
+      mdObj.pushMissing = mdClass.pushMissing;
+      mdObj.setText = mdClass.setText;
+      mdObj.onhashchange = mdClass.onhashchange;
+      window.addEventListener("hashchange", mdObj.onhashchange.bind(mdObj))
+      mdObj.init();
+    }
+
+  </script>
+
+</body>
+
+</html>

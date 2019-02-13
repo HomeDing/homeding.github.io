@@ -86,15 +86,15 @@ To use a momentary button at another device the digital input there can use a re
     "pin": "D3",
     "inverse": 1,
     "pullup": 1,
-    "onLow": "remote/kitchenlight?toggle=1"
+    "onLow": "remote/light?toggle=1"
   }
 },
 
 "remote": {
-  "kitchenlight": {
+  "light": {
     "description": "Light at kitchen device",
     "host": "kitchending",
-    "remoteid": "digitalout/led"
+    "remoteid": "switch/light"
   }
 },
 ```
