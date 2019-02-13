@@ -2,7 +2,7 @@
 
 The DigitalOutElement is used to set the level of a digital output pin. This can e.g. be used to drive a LED or a relay.
 
-![DigitalOutProperties and Actions](DigitalOutAPI.png)
+![DigitalOutProperties and Actions](digitaloutapi.png)
 
 The physical output level can differ from the logical output value because some external components require am active HIGH and other active LOW signal.
 

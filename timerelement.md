@@ -2,6 +2,8 @@
 
 The TimerElement creates events based on a one-time or cyclic timing pattern.
 
+![Timer Properties and Actions](timerapi.png)
+
 When started after the specified wait time a pulse start is emitted and after the pulse time a pulse end event is emitted.
 The cycle time and the type LOOP can be specified to restart the timer automatically.
 

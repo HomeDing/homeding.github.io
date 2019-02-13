@@ -3,7 +3,7 @@
 The DisplayTextElement allows sending a value to the display and place it at a specified position as text including a prefix and postfix.
 The value to be displayed can be changed by passing the new value using an action.
 
-![displaytextelement](displaytextelement.png)
+![DisplayText Properties and Actions](displaytextapi.png)
 
 Because there may be more values presented on a display at the same time the 
 DisplayTextElement may exist multiple times in the configuration by using different positions and fontsize.

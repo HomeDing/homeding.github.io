@@ -3,6 +3,8 @@
 The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot.
 The value to be displayed can be changed by passing the new value using an action.
 
+![DisplayDot Properties and Actions](displaydotapi.png)
+
 Because there may be more values presented on a display at the same time the 
 DisplayDotElement may exist multiple times in the configuration by using different positions.
 
