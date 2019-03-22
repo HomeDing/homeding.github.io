@@ -6,7 +6,7 @@ NodeMCU also had defined a board for development purpose that is based on the ES
 
 However there are many derivate versions on the market:
 
-* The pin names Dnn are unified and correspond to GPIO pins with different numbers. Some older boards had different mappings. See also [boardpins](boardpins.md).
+* The pin names Dnn are unified and correspond to GPIO pins with different numbers. Some older boards had different mappings. See also [boardpins](boardpins).
 
 * There is a USB to Serial chip but version varies.
 
@@ -34,7 +34,7 @@ Most of the cases the diode between the USB 5V line and the onboard regulator wa
 
 ## See also
 
-* [boards](boards.md)
+* [boards](boards)
 * [NodeMCU Documentation](https://nodemcu.readthedocs.io/en/master/)
 * <https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/>
 * <https://www.nodemcu.com/index_en.html>

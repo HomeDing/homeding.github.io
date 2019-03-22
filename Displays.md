@@ -56,6 +56,11 @@ This should be done in the `env.json` file:
 }
 ```
 
+### DISPLAYSH1106Adapter
+
++ 24 kByte 
+
+
 ### DisplaySSD1306Adapter
 
 This is a DisplayAdapter for OLED displays based on the SSD1306 chips.
@@ -73,6 +78,8 @@ This should be done in the `env.json` file:
   }
 }
 ```
+
++ 24 kByte 
 
 ### Base Display Adapter
 

@@ -18,7 +18,7 @@ ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\___________
 <- _state=0  --> <- _state=1 ----> <- _state=2 -> <- _state=3 (no LOOP) ...
 ```
 
-Properties
+## Properties
 
 The following properties are available for config, actions and state of a timer element:
 
@@ -66,3 +66,6 @@ The following properties are available for config, actions and state of a timer 
 }
 ```
 
+## See also
+
+* [Time Elements](timeelements)

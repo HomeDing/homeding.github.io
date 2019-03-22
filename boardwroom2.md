@@ -8,23 +8,23 @@ A battery holder is on the back.
 
 ## Overview table
 
-| Connector | Feature             | pin          |
-| --------- | ------------------- | ------------ |
-| AD        | connector           | Analog input |
-| D4        | connector           | digital GPIO |
-| D8        | connector           | digital GPIO |
-| D9        | connector           | digital GPIO |
-| D10       | connector           | digital GPIO |
-| ---       | I2C bus for display | 60 (=0x3c)   |
-| ---       | SDA                 | GPIO5(D1)    |
-| ---       | SCL                 | GPIO4(D2)    |
-| ---       | Display size        | 128 * 64     |
-| D3        | Button Left         | GPIO0(D3)    |
-|           | Button Right        | Reset        |
-|           | Button UP           | GPIO12(D6)   |
-|           | Button Down         | GPIO13(D7)   |
-|           | Button Press        | GPIO14(D5)   |
-|           | green LED           | GPIO16(D0)   |
+| GPIO   | Pin | Functionality       | Remarks    |
+| ------ | --- | ------------------- | ---------- |
+|        | AD  | Analog input        |            |
+| GPIO0  | D3  | Button Left         |            |
+| GPIO2  | D4  | connector           |            |
+| GPIO15 | D8  | connector           |            |
+| GPIO3  | D9  | connector           |            |
+| GPIO1  | D10 | connector           |            |
+| GPIO5  | --- | SDA                 | (D1)       |
+| GPIO4  | --- | SCL                 | (D2)       |
+|        | --- | I2C bus for display | 60 (=0x3c) |
+|        | --- | Display size        | 128 * 64   |
+| Reset  |     | Button Right        |            |
+| GPIO12 |     | Button UP           | (D6)       |
+| GPIO13 |     | Button Down         | (D7)       |
+| GPIO14 |     | Button Press        | (D5)       |
+| GPIO16 |     | green LED           | (D0)       |
 
 ## Features
 

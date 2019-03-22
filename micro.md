@@ -85,6 +85,36 @@ The micro JSON Parser is implemented in the `MicroJsonParser` class.
 
 For Details see [Micro-JSON](microjson)
 
+## micro Hub and Store
+
+The problem the Micro Hub and Store solves is passing data from various sources over to the UI components that implement the visualization.
+
+When visualizing data structures in Web Applications the Flux pattern is known to be a good approach. A full featured implementation is maintained by facebook and was adopted to many reactive web applications.
+
+For the UI of the HomeDing devices the most important features of the FLUX pattern are implemented within the miro hub implementation.
+It was created by extending the original OpenAjax Hub idea and implementation that the OpenAjax Alliance published around 2007 as a minimal implementation of a publish and subscribe mechanism to exchange messages between libraries.
+
+At these days a dedicated store was not part of the specification and is now added into the micro hub implementation.
+This allows replaying data messages to the components based on the actual data in the store.
+
+
+```
+actions -(publish)- > [data store] -> [filter] -> [library/component]
+                          |                               |
+                          +  <----- (subscribe) --------- + 
+```
+
+The data store here is a native javascript structured data object representing a tree of nodes and key-values.
+
+All data changes are serialized and passed through a filter that only forwards relevant changes to the component.
+It is focusing on a one way data flow but updates initiated by the components can be processed as well.
+
+A component that wants to participate in the data flows needs to register a callback function to the 
+
+The filter gets all data changes 
+
+
+
 ## More reading material
 
 * <https://css-tricks.com/a-minimal-javascript-setup/>

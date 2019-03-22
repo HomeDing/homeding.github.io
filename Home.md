@@ -53,6 +53,7 @@ In the documentation you find related links to material that is available on the
 There are many good resources available to get more information about the ESP8266 boards. Here my recommendations:
 
 **From Espressif**
+* [ESP8266 documents at espressif](https://www.espressif.com/en/support/download/documents?keys=ESP8266)
 * [The ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
 * [ESP8266EX Datasheet](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
 

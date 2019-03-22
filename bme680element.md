@@ -39,7 +39,17 @@ The actions emitted by the BME680 Element has read some new data (with changed v
 
 **onGas** these actions are send when a new gas resistance value has beed read. The value given in the actions is actual gas resistance value in kOhm.
 
+## State
 
+```JSON
+"bme680/0": {
+  "active":"true",
+  "temperature":"21.21",
+  "humidity":"43.48",
+  "pressure":"99784",
+  "gas":"72724"
+},
+```
 
 ## See also
 

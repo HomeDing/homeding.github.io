@@ -17,7 +17,7 @@ These boards offer an easy start into the ESP8266 development. The have all you 
 * breadboard friendly (most versions)
 * LED
  
-See [boardnodemcu](boardnodemcu.md)
+See [boardnodemcu](boardnodemcu)
 
 
 ## Esp8266 with 1 MByte flash memory
@@ -60,4 +60,4 @@ lsts; ESP8285 = ESP8266 + 1M Flash in the same chip.
 * <http://www.forward.com.au/pfod/ESP8266/GPIOpins/index.html>
 * <https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process>
 
-* [boardpins](boardpins.md)
+* [boardpins](boardpins)

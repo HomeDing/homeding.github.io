@@ -11,6 +11,45 @@ Some rotary encoders already have a built-in momentary button when pressing the 
 * Visualization
 
 
+Configuration
+
+Rotary, digitalin ---> menu
+
+List of elements with label
+Turn to change
+Press to select
+
+1: label
+2: other value label
+3: other button
+
+Press
+
+Label: current value
+turn to change
+press to Set and return
+
+Displaytext
+
+Number: label
+Label: value
+
+```JSON
+{"menu": {
+  "radio": {
+    display: "displaytext/set",
+    menuprefix: "$v:", 
+    valueprefix: "$v=",
+    items: "type/id,type/id,...",
+    Ilabels: "Volume,Frequency"
+  }
+}
+}
+```
+
+Later: labels are fetched from config.json
+
+
 ## See also 
 
-* [availableelements](availableelements.md)
+* [availableelements](availableelements)
