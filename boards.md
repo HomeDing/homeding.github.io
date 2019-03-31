@@ -19,6 +19,11 @@ These boards offer an easy start into the ESP8266 development. The have all you 
  
 See [boardnodemcu](boardnodemcu)
 
+The example [fullding](fullding) can be flashed onto these boards by providing most of the [available elements](availableelements) and [display adapters](displays).
+The functionality will be activated through the configuration.
+
+The web interface is working out of the box and includes IDE features and logging cababilities.
+
 
 ## Esp8266 with 1 MByte flash memory
  
@@ -29,6 +34,11 @@ Older boards with 512 KByte are still available but should be avoided because OT
 **[ESP-01](boardesp01)** is the cheapest base minimum ESP8266 board available. Event the connector only supports few GPIO pins but small and enough for simple sensors and relais appliances.
 
 See [boardesp01](boardesp01)
+
+The example [minding](minding) can be flashed onto these boards by providing the typical sensor elements and most core elements but no display adapters.
+The functionality will be activated through the configuration.
+
+The web interface can be tailored to visualise the current sensor values.
 
 **[Sonoff Basic]()** is a off-the-shelf solution to switch main power consumers. If you have experience in building high voltage solutions this one is interesting. Similar Sonoff devices are available. The Tasmota library has a wiki with much details.
 

@@ -19,7 +19,8 @@ The following properties are available for configuration of the element:
 | `description` | A line of description used in the web UI.                                                         |
 | `connecttime` | The available time after a reboot of the device to start network configuration. Default is "10s". |
 | `connectmode` | The priorities of the network connection options. Default is "LAST,AP"                            |
-| `led`         | The GPIO pin of the system LED. Defaults is 'D4'                                                  |
+| `led`         | The GPIO pin of the system LED. Defaults is `no LED`.                                             |
+| `button`      | The GPIO pin of the system button. Defaults is 'GPIO0(D3)'                                        |
 
 Detailed description for `ConnectTime`, `ConnectMode` and `LED` see [WiFiManager](wifimanager).
 

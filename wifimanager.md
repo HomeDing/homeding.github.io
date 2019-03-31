@@ -4,20 +4,16 @@ The board has a implementation that enables registration of the device in a loca
 
 Under regular conditions after adding the device to the network the startup sequence after a reboot automatically connects the device to the last known network. This typically needs a few seconds.
 
-The ssid and credentials are stored by the SDK of the ESP8266 in flash memory so they are available next time the device starts up.
+The board starts automatically into the WiFiManager mode when no network configuration is available. The WiFiManager mode can also be started manually by pressing the system button during startup while the system led is blinking.
 
-The board starts automatically into the WiFiManager mode when no network connectivity is available or when no network configuration is available.
-
-The WiFiManager mode can also be started manually by pressing the system button during startup while the system led is blinking.
-
-After several minutes the WiFiManager will stop and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had a outage and WiFiManager was started automatically caused by the missing network.
+After 30 minutes the WiFiManager will stop and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had a outage and WiFiManager was started automatically caused by the missing network.
 
 ![WiFiManager dialog.png](wifimanager.png)
 
 
 ## private wifi
 
-To allow accessing the WiFiManager a local unsecured network is created by the device with the name `HomeDing_xxxx`.
+To allow accessing the WiFiManager a local unsecured network is created by the device with the name `HomeDing`.
 
 The last 4 digits are taken from the MAC address of the device to make the network unique when multiple devices open their private WiFiManager network.
 
