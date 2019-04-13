@@ -15,16 +15,18 @@ counterpart in the sensor.
 
 The sensor sends data probe results quiet frequently and can be started and stopped by a command sent to the sensor.
 
-Using the element configuration it is possible to take a current probe value every n seconds using the `interval` configuration and combine multiple values by taking the average using the `combine` configuration.
+Using the element configuration it is possible to take a current probe value every n seconds using the `readtime` configuration and combine multiple values by taking the average using the `combine` configuration.
 
 ## Element Configuration
 
 | Property   | Description                                         |
-| ---------- | --------------------------------------------------- |
-| `rxpin`\*  | Specifies the pin top receive data from the sensor. |
-| `txpin`\*  | Specifies the pin top send data to the sensor       |
-| `interval` | default 60 seconds                                  |
-| `combine`  | default 1                                           |
+| ---------- | --------------------------------------------------- |b
+| `pinrx`\*  | Specifies the pin top receive data from the sensor. |
+| `pintx`\*  | Specifies the pin top send data to the sensor       |
+| `readtime` | default 60 seconds                                  |
+| `combine` | not done.                                  |
+| `onChange`  |                                            |
+| `loglevel`  |                                            |
 
 \* This parameter must be specified.
 

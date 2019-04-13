@@ -7,8 +7,9 @@ By configuration this element for a device the   device shows up in the list of 
 
 The WebServer must be enabled on the device to use this protocol.
 
-The OTAelement is a system element to configure this functionality and cannot send or receive actions.
+The OTAElement is a system element to configure this functionality and cannot send or receive actions.
 
+Since the OTA Element initializes  the mDNS protocol as well no mDNS library needs to be used and initiated explicitly.
 
 ## Upload batch:
 

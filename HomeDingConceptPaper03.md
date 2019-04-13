@@ -100,7 +100,7 @@ See Table [Available Elements](availableelements)
 
 As the ESP chips offer a lot of memory this approach works fine here. For compiling to different architectures like the original Arduino it is possible to compile with a reduced set of elements to make the program fit into memory.
 
-See sample [ESP01](ESP01)
+See example [MinDing](minding)
 
 Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for variables.
 

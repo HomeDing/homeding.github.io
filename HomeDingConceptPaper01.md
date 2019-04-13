@@ -4,6 +4,8 @@ It is fascinating to see the power of microprocessors growing while costs go dow
 
 As we have seen in the Arduino movement it is possible to get all you need to build your own gadgets and appliances without investing much into the required equipment.
 
+For the simplest Things a board and USB cable is all you need beside the free Arduino program.
+
 With the classic Arduino UNO board, it is possible to build wonderful gadgets that run on their own supported by many libraries to handle sensors, sound, light, motors, displays...
 
 Today also more powerful processors and boards are available for even less money offering much more processing power and adding networking. Here the ESP8266 on the NodeMCU board is the most famous solution available and is perfectly integrated into the Arduino environment. More chips and boards are coming even more powerful adding also Bluetooth and High-Quality Sound solutions.
