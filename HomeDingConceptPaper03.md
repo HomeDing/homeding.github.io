@@ -1,6 +1,6 @@
 # Elements and Actions
 
-The power and flexibility and the extensibility of the HomeDing library comes from 2 main designs
+The power, flexibility and the extensibility of the HomeDing library comes from 2 main designs
 
 * the unified implementation of I/O and logic in the Elements of the Architecture.
 * the way Elements are addressed in the messages.
@@ -130,4 +130,3 @@ This schema can be found in many places:
 The messages passed around are quite simple and reuse the addressing notation for elements and properties. This also allows sending them across a network easily.
 
 The board class implements a queuing mechanism that can quickly receive some new messages and will emitted them to the mentioned elements one by one.
-

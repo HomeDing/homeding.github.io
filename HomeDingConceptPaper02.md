@@ -6,6 +6,7 @@ This picture shows how the main parts of the architecture of the HomeDing librar
 
 ![ArchitectureBlocks.png](ArchitectureBlocks.png)
 
+
 The Core part is covering the implementation of the main board class, the configuration and the web server. A micro implementation of a JSON parser and some more utilities will always be part of every Ding.
 
 The Elements are used to make the sensors and services able to be controlled by configuration and the actions. In the standard example many of the elements are already part of the uploaded program and can be activated by just modifying the configuration. It is easily possible to implement new Elements or modify existing elements to create specific solutions based on new devices or other options chips.
@@ -63,4 +64,3 @@ After a setup of the Arduino environment only a few typical steps will be requir
 Start browser and see...
 
 ### Next: [Elements and Actions](HomeDingConceptPaper03)
-
