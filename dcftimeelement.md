@@ -12,7 +12,7 @@ The configuration for this element is only the pin with the digital input signal
 pin* | GPIO pin with the decoded DCF77 signal
 When a valid time had been decoded the board time will be adjusted.
 
-This element is not sending out actions. When time based actions are required the [time element](timeelement) can be used.
+This element is not sending out actions. When time based actions are required the [time element](elements/time) can be used.
 
 # Element Configuration
 

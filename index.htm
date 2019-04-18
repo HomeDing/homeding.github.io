@@ -19,17 +19,13 @@ https://highlightjs.org/download/
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Manual</title>
-  <link href="mathertel.css" rel="stylesheet" type="text/css"> 
+  <link Content-Type="text/css" href="iotstyle.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="showdown/github.css">
   <script src="showdown/highlight.pack.js"></script>
   <script src="showdown/showdown.js"></script>
 
   <style>
-    html {
-      font-size: 100%
-    }
-
     .s-md {
       min-height: 4em;
       padding: 0.4em;
@@ -70,18 +66,46 @@ https://highlightjs.org/download/
       padding: 0.2em 0.6em;
       border-bottom: 1px solid #203050;
     }
+
+    .u-navbar {
+      background-color: #304878;
+      padding: 1rem;
+      color: white;
+    }
+
+    .u-navbar>a {
+      color: white;
+    }
+
+    .container-fluid {
+      padding: 1rem;
+    }
   </style>
 </head>
 
-<body scroll="0" style="padding:12px;">
-  <div>MD Doku</div>
-  <div class="s-md"></div>
-
-  <h4>Found Pages:</h4>
-  <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+<body scroll="0" style="padding:0;">
+  <div class="container-fluid">
+    <div class="u-header">
+      <a href="/" title="Startpage"><img class="icon" src="i/default.svg" /></a>
+      <h1>HomeDing</h1>
+    </div>
   </div>
-  <h4>Missing Pages:</h4>
-  <div id="missingFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+  <div class="u-navbar">
+    <a href="#">Home</a>
+    <a href="#page=concepts/paper01.md">Concepts</a>
+    <a href="#page=availableelements.md">Elements</a>
+  </div>
+  <div class="container-fluid">
+    <div class="row"></div>
+
+    <div class="s-md"></div>
+
+    <h4>Found Pages:</h4>
+    <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+    </div>
+    <h4>Missing Pages:</h4>
+    <div id="missingFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+    </div>
   </div>
 
   <script>
@@ -188,8 +212,8 @@ https://highlightjs.org/download/
         converter.setFlavor("github");
         var hText = converter.makeHtml(txt);
         // modify links to work:
-        hText = hText.replace(/href="(\w*).md"/g, 'href="#page=$1.md"');
-        hText = hText.replace(/href="(\w*)"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="([\w\/]+).md"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="([\w\/]+)"/g, 'href="#page=$1.md"');
         this.innerHTML = hText;
 
         // verify all local .md links
@@ -199,7 +223,7 @@ https://highlightjs.org/download/
               aObj.classList.add('verify');
           }.bind(this)
         );
-        
+
         // highlight code
         forAllNodeList(document.querySelectorAll('pre code'), function (block) { hljs.highlightBlock(block); });
       },
