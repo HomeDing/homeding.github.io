@@ -58,4 +58,4 @@ The following properties are available with the current values at runtime
 
 # See also
 
-* [Switch Element](switchelement)
+* [Switch Element](elements/switch)

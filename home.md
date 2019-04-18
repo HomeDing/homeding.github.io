@@ -33,7 +33,7 @@ It is easy to implement your own specific custom elements as you can see in the 
 - [The HomeDing - HomeBlink Example](exampleblink)
   This simple example also includes a description on how to setup the environment.
 
-- [The build-in WebServer](WebServer)
+- [The build-in WebServer](webserver)
 - [The build-in Web-Services](webservices)
 
 
@@ -60,5 +60,3 @@ There are many good resources available to get more information about the ESP826
 **General Guides**
 * [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)
   
-
-

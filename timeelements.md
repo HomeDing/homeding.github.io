@@ -11,13 +11,13 @@ However this timer needs to be initialized every time the system reboots and mus
 
 ## accessing and adjusting the local time
 
-The [NTPTime Element](ntptimeelement) retrieves the current time from a NTP server and can translate it into the local time by using to local timezone setting.
+The [NTPTime Element](elements/ntptime) retrieves the current time from a NTP server and can translate it into the local time by using to local timezone setting.
 Devices that can reach a NTP internet service can use this option.
 
 After a reboot the elements that require a accurate local time will not start working when the NTP time request fails.
 As this can happen it is not an option for devices that must operate even when the internet is not available like heating systems.
 
-The [DSTime Element](dstimeelement) retrieves the current local time from a local attached RTC Chip like the DS3231.
+The [DSTime Element](elements/dstime) retrieves the current local time from a local attached RTC Chip like the DS3231.
 After a reboot the time will be restored from the chip. This is a good option for devices that must operate even when the internet is not available like heating systems.
 
 The DCFTime Element will ...
@@ -39,13 +39,13 @@ Using the getSeconds function is preferred over using (millis() / 1000).
 
 When a real time is available this method return the seconds since starting the day. It returns 0 when the real time is not available.
 
-To use this functionality a [NTPTime Element](ntptimeelement) or [DSTime Element](dstimeelement) needs to be configured.
+To use this functionality a [NTPTime Element](elements/ntptime) or [DSTime Element](elements/dstime) needs to be configured.
 
 **Board->getTime ()**
 
 When a real time is available this method returns the milliseconds since 1.1.1970 a usual binary format for times in C++.
 
-To use this functionality a [NTPTime Element](ntptimeelement) or [DSTime Element](dstimeelement) needs to be configured.
+To use this functionality a [NTPTime Element](elements/ntptime) or [DSTime Element](elements/dstime) needs to be configured.
 
 
 <!-- To set the real time to an actual value this function must be called and the milliseconds since 1970 must be passed. The offset to the current millis is recorded order adjusted.

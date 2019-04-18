@@ -130,10 +130,10 @@ There are some elements that can receive actions and create the appropriate outp
 ### DisplayTextElement
 
 This element can receive actions with a textual value. This is placed on the display as defined in the configuration of the Displaytext Element.
-[DisplayTextElement](DisplayTextElement)
+[DisplayTextElement](elements/displaytext)
 
 ### DisplayDotElement
 
 This element can receive actions with a Boolean value. This is placed on the display using a filled circle (true) or unfilled (false) circle as defined in the configuration of the DisplayText Element.
 
-[DisplayDotElement](DisplayDotElement)
+[DisplayDotElement](elements/displaydot)

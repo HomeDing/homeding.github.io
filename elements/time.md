@@ -2,7 +2,7 @@
 
 With the time element the local time of the internal clock of the board can be used to create actions with the current local time as value.
 
-When using this element a real time retrieving element must be configured as well like the [NTPTime](ntptimeelement) , [DSTime](dstimeelement) or [DCFTime](dcftimeelement).
+When using this element a real time retrieving element must be configured as well like the [NTPTime](elements/ntptime) , [DSTime](elements/dstime) or [DCFTime](elements/dcftime).
 
 There are four different kind of actions supported that have different values and occur on different situations.
 
