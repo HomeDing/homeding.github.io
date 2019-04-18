@@ -26,7 +26,7 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | [Button Element](elements/Button)             | Input Element typicaly used with momentary buttons or switches.                  |
 | [Switch Element](elements/switch)             | Input Element typicaly used with momentary buttons or switches.                  |
 | **Display Adapters**                        |                                                                                  |
-| [DisplaySSD1306](displaySSD1306.md)         | Adapter for SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.       |
+| [DisplaySSD1306](displays/ssd1306.md)         | Adapter for SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.       |
 | DisplayAdapterSH1106*                       | Adapter for SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.        |
 | DisplayAdapterLCD*                          | Adapter for HD44780 compatible LCDs displays using I2C adapter.                  |
 | **Display Elements**                        |                                                                                  |
