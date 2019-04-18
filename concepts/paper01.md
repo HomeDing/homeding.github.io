@@ -45,4 +45,4 @@ This POC implementation is available on GitHub at [https://github.com/HomeDing/H
 
 Once it is in a valid beta state it will be continued here.
 
-### Next: [Software Architecture](HomeDingConceptPaper02)
+### Next: [Software Architecture](concepts/paper02)
