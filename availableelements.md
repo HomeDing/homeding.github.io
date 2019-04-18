@@ -17,8 +17,8 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | [Menu Element](menuelement)               |                                                                                  |
 | [Log Element](logelement)                 | storing timestamp based sensor values.                                           |
 | **Sensor and Input Elements**             |                                                                                  |
-| [Digital In Element](digitalinelement)    | Input Element typicaly used with momentary buttons or switches.                  |
-| [Analog Element](analogelement)           | Input Element to capture a analog voltage from the builtin ADC.                  |
+| [Digital In Element](elements/digitalin)    | Input Element typicaly used with momentary buttons or switches.                  |
+| [Analog Element](elements/analog)           | Input Element to capture a analog voltage from the builtin ADC.                  |
 | [Rotary Element](rotaryelement)           | Input Element for using a rotary encoder.                                        |
 | [DHT Element](DHTElement)*                | Use DHT11 and DHT22 sensors for temperature and humidity and create actions.     |
 | [BME680 Element](bme680element)           | Read BME680 sensor data with temperature, humidity, pressure and gas resistance. |
@@ -43,7 +43,7 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | [Timer Element](timerelement)             | Element for creating timer (duration) based actions.                             |
 | **Actor and Output Elements**             |                                                                                  |
 | [PWMOut Element](pwmoutelement)           | Output Element to output an pwm signals based on actions. e.g. LEDs.             |
-| [DigitalOut Element](digitaloutelement)   | Output element to create digital output signals based on actions.                |
+| [DigitalOut Element](elements/digitalout)   | Output element to create digital output signals based on actions.                |
 | [RFSend Element](rfsendelement)*          | Send out RF codes on the 433 MHz band to control remote sockets.                 |
 
 \* For these Elements a specific library is requires. See below.

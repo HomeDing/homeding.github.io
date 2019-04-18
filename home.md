@@ -10,9 +10,9 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 ## HomeDing Concept Papers
 
-- [Building your own connected Things made easy](HomeDingConceptPaper01)
-- [Software Architecture](HomeDingConceptPaper02)
-- [Elements and Actions](HomeDingConceptPaper03)
+- [Building your own connected Things made easy](concepts/paper01)
+- [Software Architecture](concepts/paper02)
+- [Elements and Actions](concepts/paper03)
 
 ## Available Elements
 
