@@ -4,8 +4,8 @@ t.b.c.
 
 | name     | Icon |
 | ---      | --- |
-| bulb     | ![bulb](https://www.mathertel.de/HomeDing/i/bulb.svg)
-| button   | ![button](https://www.mathertel.de/HomeDing/i/button.svg)
+| bulb     | ![bulb](i/bulb.svg)
+| button   | ![button](i/button.svg)
 | clock    | ![clock](https://www.mathertel.de/HomeDing/i/clock.svg)
 | config   | ![config](https://www.mathertel.de/HomeDing/i/config.svg)
 | default  | ![default](https://www.mathertel.de/HomeDing/i/default.svg)

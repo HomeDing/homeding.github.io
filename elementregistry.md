@@ -27,10 +27,10 @@ Some elements only exist to capture configuration properties. Most of them speci
 
 Examples are:
 
-* [Device](deviceelement)
+* [Device](elements/device)
 * [Display Adapter](display)
-* [OTA](otaelement)
-* [SSPD](ssdpelement)
+* [OTA](elements/ota)
+* [SSPD](elements/ssdp)
 
 Most of these elements don't use actions to communicate. 
 
@@ -79,7 +79,7 @@ or use the "MyTemplate" example as a starting point.
 
 The intension is that it is easy to add any Element to the Library later so anyone can add new functionality to the HomeDing Library.
 
-When implementing an Element (here: MyElement) for a single project / sketch
+When implementing an Element (elements/here: My) for a single project / sketch
 the MyElement needs to be registered into the ElementRegistry too (and only once).
 
 As long as the Element is inside the project folder beside the sketch file the registration is placed in the
