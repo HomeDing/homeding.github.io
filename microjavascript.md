@@ -21,14 +21,14 @@ var newControl = insertTemplate(container, controlName, initialProperties)
 
 The placeholders ${type} and ${id} will be replaced by the corresponding values of the initial properties. 
 
-For adding functionality to the new object the value of the `u-behavior` property specifies what behavior will be added.
+For adding functionality to the new object the value of the `u-behavior` property specifies what behavior will be added to the created component.
 
-Here's an example of a simple control that displays a card with some specific information for a button control.
+Here is an example of a simple control that displays a card with some specific information for a button control.
 
 ```HTML
-<div class='col card' u-control='button' id='${id}' microID="${id}" u-behavior='button'>
+<div class='card' microID="${id}" u-control='button' u-behavior='button'>
   <div class="block header">
-    <h2><img src="/i/button.svg" class='Icon'/>${id}</h2>
+    <h2>${id}</h2>
       <h4 property='description'></h4>
       <span class="activeState" u-active='active'></span>
       <span class="config"></span>
@@ -38,6 +38,10 @@ Here's an example of a simple control that displays a card with some specific in
   </div>
 </div>
 ```
+
+How templates for elements are implemented and how to use the functionalities of the landingpage and config page 
+is explained in detail in [WebServer UI](webserverui.md) and [Templates for Elements](elementcards.md).
+
 
 In this example the outer element and the block structure of this control is given by the design of cards similar to the one you can find in the bootstrap framework.
 

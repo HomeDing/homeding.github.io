@@ -30,7 +30,7 @@ The following properties are available for configuration of the element:
 
 <!-- \* This parameter must be specified. -->
 
-The ESP8266 chip has only one analog input pit so specifying a pin is not required.
+The ESP8266 chip has only one analog input pin so specifying a pin is not required.
 
 **Examples**
 

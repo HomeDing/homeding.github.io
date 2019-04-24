@@ -1,0 +1,1 @@
+C:\Users\Matthias\Downloads\allmark_windows_amd64.exe serve -livereload -reindex

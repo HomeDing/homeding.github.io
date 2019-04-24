@@ -4,14 +4,18 @@
 
 This picture shows how the main parts of the architecture of the HomeDing library evolved from the POC:
 
-![ArchitectureBlocks.png](ArchitectureBlocks.png)
+<img src="concepts/architectureblocks.png" alt="drawing" style="width:600px;height:420px"/>
 
 
-The Core part is covering the implementation of the main board class, the configuration and the web server. A micro implementation of a JSON parser and some more utilities will always be part of every Ding.
+The heart if the HomeDing library implementation is the board class that covers the creation and configuration of the elements and enables exchanging actions among the elements and the web server. A micro implementation of a JSON parser and some utilities are provided for this central role.
 
-The Elements are used to make the sensors and services able to be controlled by configuration and the actions. In the standard example many of the elements are already part of the uploaded program and can be activated by just modifying the configuration. It is easily possible to implement new Elements or modify existing elements to create specific solutions based on new devices or other options chips.
+The Elements are the implementation blocks that are that are covering the specific adaption for sensors, actors, other IO attached modules and are also used for timer based actions and logic modules. They are created and initialized on demand by the board when reading the configuration files.
 
-The Script of a Ding contains only the setup of the core and the required elements.
+In the standard example many of the elements are already part of the uploaded program and can be activated by just modifying the configuration. 
+
+It is easy to implement new Elements or modify existing elements to create specific solutions based for other attached modules or to for specific functionaliyty
+
+The script of a Ding is used for starting the available functionality and add additional elements if required while the configuration is  the place that specifies what elements are active and how they operate and interact.
 
 ## Building self-contained Things
 

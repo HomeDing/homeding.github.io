@@ -67,18 +67,9 @@ https://highlightjs.org/download/
       border-bottom: 1px solid #203050;
     }
 
-    .u-navbar {
-      background-color: #304878;
-      padding: 1rem;
-      color: white;
-    }
-
-    .u-navbar>a {
-      color: white;
-    }
-
-    .container-fluid {
-      padding: 1rem;
+    p>img {
+      width: auto;
+      height: auto
     }
   </style>
 </head>
@@ -91,20 +82,29 @@ https://highlightjs.org/download/
     </div>
   </div>
   <div class="u-navbar">
-    <a href="#">Home</a>
-    <a href="#page=concepts/paper01.md">Concepts</a>
-    <a href="#page=availableelements.md">Elements</a>
+    <button onclick="location.hash=''">Home</button>
+    <button onclick="location.hash='page=concepts/paper01.md'">Concepts</button>
+    <button onclick="location.hash='page=availableelements.md'">Elements</button>
   </div>
   <div class="container-fluid">
     <div class="row"></div>
 
     <div class="s-md"></div>
 
-    <h4>Found Pages:</h4>
-    <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+    <div class="row" style="display:none">
+      <div class="col">
+        <h4>Found Pages:</h4>
+        <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+        </div>
+      </div>
     </div>
-    <h4>Missing Pages:</h4>
-    <div id="missingFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+    <div class="row">
+      <div class="col">
+        <h4>Missing Pages:</h4>
+        <div id="missingFiles"
+          style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
+        </div>
+      </div>
     </div>
   </div>
 

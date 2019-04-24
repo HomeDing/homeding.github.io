@@ -16,9 +16,9 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 ## Available Elements
 
-The Elements in the HomeDing library support amny different features, sensors, displays and other periphery.
+The [Available Elements](availableelements) in the HomeDing library are the blocks for building the overall functionality of a device.
 
-> OTA, SSDP, Value, Remote, Menu, Input Button, Analog Input, Rotary, DHT, Displays, SSD1306, SH1106, LCD, Time, NTPTime, DSTime, DCFTime, Schedule, Timer, *PWMOut, DigitalOut, RF433 and more...
+Each of them supports a unique feature, reads a sensor, drives displays and other periphery or implements some internal logic.
 
 A full list can be found here: [AvailableElements](availableelements)
 
