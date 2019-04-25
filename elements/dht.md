@@ -4,7 +4,19 @@ The DHTElement allows retrieving temperature and humidity values from the DHT fa
 
 The current values are also sent out using actions when they stay the same for some time to allow remote things to resume to the current values after reboot or network outages.
 
-For the low level communication to the chips the DHTesp library is used and needs to be installed when you want to use this element using the Arduino library manager.
+## Web UI for the DHT Element
+
+There is a dedicated card for this element available that will be used for the web server config and landing pages:
+
+![DHT Sensor UI](/elements/dhtui.png)
+
+The web ui for the DHT element shows the actual temperature and humidity.
+
+## Using the DHT Element
+
+The DHT Element is not part of the core set of elements because the low level communication to the chips the `DHTesp` library is used and needs to be installed using the Arduino library manager.
+
+Install the `DHT sensor library for ESPx` library by beegee-tokyo before including this element.
 
 The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and register the element.
 
@@ -13,6 +25,8 @@ The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and
 #define HOMEDING_INCLUDE_DHT
 #include <HomeDing.h>
 ```
+
+<!-- The DHT Sensor exampe shows how to configure a sensor device that reads the sensor values from a DHT and shows them in the Web UI. -->
 
 The following sensor chips from the DHT family are supported by the DHTesp library:
 
@@ -29,11 +43,11 @@ The sample configuration coming with the DHT22Ding example is configured to use 
 
 | ESP8266 | DHT22 | Description  |
 | ------- | :---: | ------------ |
-| 3.3v    | 1     | Power Supply |
-| D4      | 2     | Data         |
-| GND     | 4     | Ground       |
+| 3.3v    |   1   | Power Supply |
+| D4      |   2   | Data         |
+| GND     |   4   | Ground       |
 
-The configuration can be changed easily by modifying the env.json and config.json file.
+The configuration can be changed easily by modifying the config.json file.
 
 ## Element Configuration
 
@@ -50,16 +64,7 @@ The following properties are available for configuration of the element:
 
 \* This parameter must be specified.
 
-## Element State
-
-The following properties are available with the current values at runtime
-
-| Property      | Description                                      |
-| ------------- | ------------------------------------------------ |
-| `temperature` | The last read temperature value from the sensor. |
-| `humidity`    | The last read humidity value from the sensor.    |
-
-## Example for Configuration
+### Example for Configuration
 
 ```JSON
 "dht": {
@@ -74,7 +79,17 @@ The following properties are available with the current values at runtime
 },
 ```
 
-## Example State
+## Element State
+
+The following properties are available with the current values at runtime
+
+| Property      | Description                                      |
+| ------------- | ------------------------------------------------ |
+| `active`      | Is set to true when the Element is active.       |
+| `temperature` | The last read temperature value from the sensor. |
+| `humidity`    | The last read humidity value from the sensor.    |
+
+### Example State
 
 ```JSON
 "dht/on": {
@@ -86,14 +101,28 @@ The following properties are available with the current values at runtime
 
 ## Implementation Details
 
-The implementation uses the DHTesp / “DHT_sensor_library_for_ESPx” library from beegee_tokyo. You need to load this library using the library manager or get it directly from
+The implementation uses the DHTesp / `DHT_sensor_library_for_ESPx` library from beegee_tokyo. You need to load this library using the library manager or get it directly from
 <https://github.com/beegee-tokyo/DHTesp>
 
 More documentation can be found at:
 <https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/>
 
+The chip is designed to run on 3.3 - 6.0 volts with a typical voltage of 5 volts.
+It has been observed that when operating on 3.3 volts the chip sometimes gets out of order and needs a reset by disconnecting and reconnecting the sensor from the VCC. Before reading data 1 second waittime is required.
+
+As the sensor has a sensor period of 2 seconds it doesn't make sense to read the values from the sensor more frequently.
+
 
 ## more
 
+* DataSheet:
+<https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf> and
+<https://cdn-shop.adafruit.com/datasheets/Digital+humidity+and+temperature+sensor+AM2302.pdf>
+
+
 * 10K VCC - Data
+  
 * Enable Shut down of sensor by supplying power through an ouput pin.
+
+https://forum.arduino.cc/index.php?topic=355137.0
+
