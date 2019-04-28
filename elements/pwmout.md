@@ -1,6 +1,14 @@
 # The PWMOut Element
 
-This element is used to create a variable PWM signal at the specified output pin.
+The PWMOutElement is used to create a variable PWM signal at the specified output pin.
+
+## Web UI for the PWMOut Element
+
+There is a dedicated card for this element available that will be used for the web server config and landing pages:
+
+![PWMOut Web UI](/elements/pwmoutui.png)
+
+The Web UI for the PWMout element shows the actual output level in values and by showing a simple bar chart.
 
 ## Element Configuration
 
