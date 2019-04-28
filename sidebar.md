@@ -1,6 +1,6 @@
 [Home](home)
 
-[Concept Papers](concepts/paper)
+[Concept Papers](/concepts/paper)
 
 [Available Elements](availableelements)
 

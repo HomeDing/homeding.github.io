@@ -10,9 +10,9 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 ## HomeDing Concept Papers
 
-- [Building your own connected Things made easy](concepts/paper01)
-- [Software Architecture](concepts/paper02)
-- [Elements and Actions](concepts/paper03)
+- [Building your own connected Things made easy](/concepts/paper01)
+- [Software Architecture](/concepts/paper02)
+- [Elements and Actions](/concepts/paper03)
 
 ## Available Elements
 
@@ -30,7 +30,7 @@ It is easy to implement your own specific custom elements as you can see in the 
 ??? 
 - [List of availabe Examples with the HomeDing Library](examples)
 
-- [The HomeDing - HomeBlink Example](exampleblink)
+- [The HomeDing - HomeBlink Example](/examples/blink)
   This simple example also includes a description on how to setup the environment.
 
 - [The build-in WebServer](webserver)
