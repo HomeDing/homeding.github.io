@@ -8,6 +8,8 @@ This allows building small self-contained Things that are easy to be created.
 
 It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
+The project is Open Souce and all files are licensed under a BSD style license. See http://www.mathertel.de/License.aspx
+
 ## HomeDing Concept Papers
 
 - [Building your own connected Things made easy](/concepts/paper01)
@@ -16,18 +18,15 @@ It is made especially for the ESP8266 boards like the NodeMCU or similar ones.
 
 ## Available Elements
 
-The [Available Elements](availableelements) in the HomeDing library are the blocks for building the overall functionality of a device.
+The full list of [Available Elements](availableelements) in the HomeDing library are the functional blocks available for building and configuring a device.
 
-Each of them supports a unique feature, reads a sensor, drives displays and other periphery or implements some internal logic.
+Each of them supports a unique feature, reads a sensor, drives displays and other periphery or implements some internal logic. The configuration of the device acvtivates and configures the required elements as well as defining how the interact with each other and to the outer world over network. 
 
-A full list can be found here: [AvailableElements](availableelements)
-
-It is easy to implement your own specific custom elements as you can see in the [Examples](examples)
+It is intentionally easy to implement your own specific elements as you can see in the [Examples](examples).
 
 
 ## Examples
 
-??? 
 - [List of availabe Examples with the HomeDing Library](examples)
 
 - [The HomeDing - HomeBlink Example](/examples/blink)

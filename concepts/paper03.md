@@ -25,12 +25,12 @@ inner implementation. This is the concept of the Elements you find in the HomeDI
 
 The common interface is about supporting the lifecycle:
 
-1. creating new elements
-2. configure elements
-3. start and running elements
-4. receiving actions
-5. sending actions
-6. terminating elements
+* creating new elements
+* configure elements
+* start and running elements
+* receiving actions
+* sending actions
+* terminating elements
 
 where configuring elements and receiving actions is the same implementation approach.
 
