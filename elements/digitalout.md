@@ -1,6 +1,11 @@
 # The DigitalOut Element
 
-The DigitalOutElement is used to set the level of a digital output pin. This can e.g. be used to drive a LED or a relay.
+<div class="excerpt">
+  <img src="/i/digitalout.svg">
+  <p>The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element.</p>
+  <p>This can e.g. be used to drive a LED or a relay.</p>
+</div>
+
 
 ## Web UI for the Timer Element
 

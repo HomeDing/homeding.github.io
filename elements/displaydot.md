@@ -1,9 +1,10 @@
 # The DisplayDot Element
 
-The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot.
-The value to be displayed can be changed by passing the new value using an action.
-
-![DisplayDot Properties and Actions](displaydotapi.png)
+<div class="excerpt">
+  <img src="/i/displaydot.svg">
+  <p>The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot.</p>
+  <p>The value can be changed by using an action.</p>
+</div>
 
 Because there may be more values presented on a display at the same time the 
 DisplayDotElement may exist multiple times in the configuration by using different positions.
@@ -15,6 +16,8 @@ You can even use the DisplayDotElement without having an actual Display attached
 
 The DisplayDotElement is included in the collection of core elements.
 
+![DisplayDot Properties and Actions](/elements/displaydotapi.png)
+
 ## Element Configuration
 
 The following properties are available for configuration of the element:
@@ -25,6 +28,18 @@ The following properties are available for configuration of the element:
 | `y`      | Specifies the y position of the text.   |
 | `value`  | This value will be send to the display. |
 
+### Example for Configuration
+
+```JSON
+"displaydot": {
+  "b": {
+    "x": 15,
+    "y": 0,
+    "description": "Display a bink"
+  }
+}
+```
+
 ## Element State
 
 The following properties are available with the current values at runtime
@@ -33,20 +48,12 @@ The following properties are available with the current values at runtime
 | -------- | --------------------------------- |
 | `value`  | The actual value to be displayed. |
 
-## Example for Configuration
+### Example State
 
 ```JSON
-"displayDot": {
-  ???
-```
-
-## Example State
-
-```JSON
-"displayText/on": {
-  "value":"true",
-  "temperature":"27.30",
-  "humidity":"50.50"
+"displaydot/b": {
+  "active": "true",
+  "value": "1"
 },
 ```
 

@@ -1,17 +1,20 @@
 # The DisplayText Element
 
-The DisplayTextElement allows sending a value to the display and place it at a specified position as text including a prefix and postfix.
-The value to be displayed can be changed by passing the new value using an action.
+<div class="excerpt">
+  <img src="/i/displaytext.svg">
+  <p>The DisplayTextElement allows sending a value to the display and place it at a specified position as text including a prefix and postfix.</p>
+  <p>The value can be changed by using an action.</p>
+</div>
 
-![DisplayText Properties and Actions](displaytextapi.png)
 
 Because there may be more values presented on a display at the same time the 
 DisplayTextElement may exist multiple times in the configuration by using different positions and fontsize.
 
 The DisplayTextElement is included in the collection of core elements.
 
-Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
+![DisplayText Properties and Actions](/elements/displaytextapi.png)
 
+Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
 
 ## Element Configuration
 
@@ -29,16 +32,7 @@ The following properties are available for configuration of the element:
 
 For the OLED drivers the font sizes 10, 16 and 24 are supported.
 
-## Element State
-
-The following properties are available with the current values at runtime
-
-| Property | Description                       |
-| -------- | --------------------------------- |
-| `value`  | The actual value to be displayed. |
-
-
-## Example for Configuration
+### Example for Configuration
 
 ```JSON
 "displaytext": {
@@ -57,7 +51,16 @@ The `value` property can be used to make the displaytext to be visible. Using th
 The `clear ` property can be used to remove the text. <http://nodeding/$board/displaytext/val?clear=1>
 
 
-## Example State
+## Element State
+
+The following properties are available with the current values at runtime
+
+| Property | Description                       |
+| -------- | --------------------------------- |
+| `value`  | The actual value to be displayed. |
+
+
+### Example State
 
 ```JSON
 "displaytext/val": {
