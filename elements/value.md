@@ -1,6 +1,11 @@
 # The Value Element
 
-The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
+<div class="excerpt">
+  <img src="/i/value.svg">
+  <p>The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.</p>
+  <p>This can e.g. be used to drive a LED or a relay.</p>
+</div>
+
 
 ![Value Properties and Actions](valueapi.png)
 
@@ -34,10 +39,10 @@ The following properties are available for configuration of the element:
 | Property | Description                                                        |
 | -------- | ------------------------------------------------------------------ |
 | id*      | Specifies the logical name of the value.                           |
-| min      | Defines the minimum of the value.                                  |
-| max      | Defines the maximum of the value.                                  |
-| value    | An initial/default value can be set using the configuration.       |
-| onChange | Actions.<br/>These actions are emitted when the value has changed. |
+| `min`      | Defines the minimum of the value.                                  |
+| `max`      | Defines the maximum of the value.                                  |
+| `value`    | An initial/default value can be set using the configuration.       |
+| `onChange` | These actions are emitted when the value has changed. |
 |  |
 
 \* This parameter must be specified.

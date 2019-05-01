@@ -1,6 +1,11 @@
 # DSTime Element ???
 
-This element gets the local time from a chip that contains a high accurate clock running independently from the main board and processor. A small battery is required to keep the clock running when power is failing and a crystal oscillator for exact timing is used often.
+<div class="excerpt">
+  <img src="/i/dstime.svg">
+  <p>The DSTime Element gets the local time from a chip that contains a high accurate clock running independently from the main board and processor.</p>
+</div>
+
+A small battery is required to keep the clock running when power is failing and a crystal oscillator for exact timing is used.
 
 The DSTimeElement is one of the element implementations to get a local time from an external source and to adjust the real local timew on the board.
 

@@ -1,8 +1,9 @@
 # Switch Element
 
-The SwitchElement is used to toggle the state of a boolean value to on or off by a single Action.
-
-The PWMOutElement is used to create a variable PWM signal at the specified output pin.
+<div class="excerpt">
+  <img src="/i/switch.svg">
+  <p>The SwitchElement is used to toggle the state of a boolean value to on or off by a single Action.</p>
+</div>
 
 ## Web UI for the Switch Element
 
