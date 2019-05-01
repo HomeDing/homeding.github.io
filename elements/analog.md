@@ -1,9 +1,19 @@
 # The Analog Element
 
-The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.
-It also handles some of the often occurring problems around capturing analog values.
+<div class="excerpt">
+  <img src="/i/alarm.svg">
+  <p>The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.</p>
+  <p>It also handles some of the often occurring problems around capturing analog values.</p>
+</div>
+
 
 <!-- ![Button Properties and Actions](ButtonAPI.png) -->
+
+<!--
+## Web UI for the Analog Element
+
+There is a dedicated card for this element available that will be used on the web server config and landing pages:
+-->
 
 The analog input signals like such from analog sensors often have the characteristic that they constantly change around an average value.
 In many cases these small changes are not relevant to start an action and can be ignored. 
@@ -25,32 +35,14 @@ The following properties are available for configuration of the element:
 | `readtime`    | time between capturing input values.                                                                 |
 | `hysteresis`  | The value action is emitted only when the value differs more than defined by hysteresis. Default=10. |
 | `reference`   | The reference action is emitted when the value goes below / above the reference value.               |
-| `onValue`     | Actions.<br/>These actions are emitted when the input level has changed.                             |
-| `onReference` | Actions. <br/>These actions are emitted when the input level goes across the reference level.         |
+| `onValue`     | These actions are emitted when the input level has changed.                                          |
+| `onReference` | These actions are emitted when the input level goes across the reference level.                      |
 
 <!-- \* This parameter must be specified. -->
 
 The ESP8266 chip has only one analog input pin so specifying a pin is not required.
 
-**Examples**
-
-A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.
-
-A analog measuring element for weight can produce many values around. When the weight changes sigificantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.  
-
-
-## Element State
-
-The following properties are available with the current values at runtime
-
-| Property    | Description                                |
-| ----------- | ------------------------------------------ |
-| `active`    | Is set to true when the Element is active. |
-| `value`     | Current analog value from the input.       |
-| `reference` | Below or above the reference value.        |
-
-
-## Example Configuration
+### Example Configuration
 
 ```JSON
 "analog": {
@@ -62,7 +54,25 @@ The following properties are available with the current values at runtime
 }
 ```
 
-## Example State
+**Examples**
+
+A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.
+
+A analog measuring element for weight can produce many values around. When the weight changes sigificantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.  
+
+
+## State
+
+The following properties are available with the current values at runtime
+
+| Property    | Description                                |
+| ----------- | ------------------------------------------ |
+| `active`    | Is set to true when the Element is active. |
+| `value`     | Current analog value from the input.       |
+| `reference` | Below or above the reference value.        |
+
+
+### Example State
 
 ```JSON
 "analog/0": {
