@@ -1,6 +1,12 @@
-# The Device Element ???
+# The Device Element
 
-The DeviceElement allows configuration of the behavior of the device and it's features.
+<div class="excerpt">
+  <img src="/i/device.svg">
+  <p>The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.</p>
+</div>
+
+
+
 
 ![Device Properties and actions](deviceapi.png)
 

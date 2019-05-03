@@ -9,49 +9,49 @@ Some of the elements support multiple external sensors. See [Sensor Support](sen
 | ------------------------------------------- | -------------------------------------------------------------------------------- |
 | [Element](elementclass)                     | Base Element class implementing the functionality required by every Element.     |
 | **System Elements**                         |
-| [Device Element](elements/device)             | Element to manage device level settings.                                         |
-| [OTA Element](elements/ota)                   | Enable and configure Over The Air Updates                                        |
-| [SSDP Element](elements/ssdp)                 | Enable and configure discovering devices on the network.                         |
-| [Value Element](elements/value)               | Receiving and sending actions to use and control an internal value.              |
-| [Remote Element](elements/remote)             | sending actions to other devices over the local network.                         |
-| [Menu Element](elements/menu)                 |                                                                                  |
-| [Log Element](elements/log)                   | storing timestamp based sensor values.                                           |
+| [Device Element](elements/device)           | Element to manage device level settings.                                         |
+| [OTA Element](elements/ota)                 | Enable and configure Over The Air Updates                                        |
+| [SSDP Element](elements/ssdp)               | Enable and configure discovering devices on the network.                         |
+| [Value Element](elements/value)             | Receiving and sending actions to use and control an internal value.              |
+| [Remote Element](elements/remote)           | sending actions to other devices over the local network.                         |
+| [Menu Element](elements/menu)               |                                                                                  |
+| [Log Element](elements/log)                 | storing timestamp based sensor values.                                           |
 | **Sensor and Input Elements**               |                                                                                  |
 | [Digital In Element](elements/digitalin)    | Input Element typicaly used with momentary buttons or switches.                  |
 | [Analog Element](elements/analog)           | Input Element to capture a analog voltage from the builtin ADC.                  |
-| [Rotary Element](elements/rotary)             | Input Element for using a rotary encoder.                                        |
-| [DHT Element](elements/DHT)*                  | Use DHT11 and DHT22 sensors for temperature and humidity and create actions.     |
-| [BME680 Element](elements/bme680)             | Read BME680 sensor data with temperature, humidity, pressure and gas resistance. |
+| [Rotary Element](elements/rotary)           | Input Element for using a rotary encoder.                                        |
+| [DHT Element](elements/DHT)*                | Use DHT11 and DHT22 sensors for temperature and humidity and create actions.     |
+| [BME680 Element](elements/bme680)           | Read BME680 sensor data with temperature, humidity, pressure and gas resistance. |
 | **Logic Elements**                          |                                                                                  |
-| [Button Element](elements/Button)             | Input Element typicaly used with momentary buttons or switches.                  |
-| [Switch Element](elements/switch)             | Input Element typicaly used with momentary buttons or switches.                  |
+| [Button Element](elements/Button)           | Input Element typicaly used with momentary buttons or switches.                  |
+| [Switch Element](elements/switch)           | Input Element typicaly used with momentary buttons or switches.                  |
 | **Display Adapters**                        |                                                                                  |
-| [DisplaySSD1306](displays/ssd1306.md)         | Adapter for SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.       |
-| DisplayAdapterSH1106*                       | Adapter for SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.        |
+| [DisplaySSD1306](displays/ssd1306.md)       | Adapter for SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.       |
+| [DisplayAdapterSH1106](displays/sh1106.md)  | Adapter for SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.        |
 | DisplayAdapterLCD*                          | Adapter for HD44780 compatible LCDs displays using I2C adapter.                  |
 | **Display Elements**                        |                                                                                  |
 | [DisplayText Element](elements/displaytext) | Show values as text on the display.                                              |
 | [DisplayDot Element](elements/displaydot)   | Show binary values as dot on the display.                                        |
 | DisplayBar Element                          | Display a progress bar.                                                          |
 | **Time related Elements**                   |                                                                                  |
-| [Time Element](elements/time)                 | Send actions with the actual local time.                                         |
-| [NTPTime Element](elements/ntptime)           | Get the actual local time using the NTP protocol from a NTP server.              |
-| [DSTime Element](elements/ntptime)            | Get the actual local time using the RTC DS3231 chip.                             |
-| [DCFTime Element](elements/dcftime)*          | Get the actual local time from a DCF 77kHz signal over the air.                  |
-| [Schedule Element](elements/schedule)         | Creating on and off actions based on the actual local time.                      |
-| [Alarm Element](elements/alarm)               | Element for creating a action based on the time of day.                          |
-| [Timer Element](elements/timer)               | Element for creating timer (duration) based actions.                             |
+| [Time Element](elements/time)               | Send actions with the actual local time.                                         |
+| [NTPTime Element](elements/ntptime)         | Get the actual local time using the NTP protocol from a NTP server.              |
+| [DSTime Element](elements/ntptime)          | Get the actual local time using the RTC DS3231 chip.                             |
+| [DCFTime Element](elements/dcftime)*        | Get the actual local time from a DCF 77kHz signal over the air.                  |
+| [Schedule Element](elements/schedule)       | Creating on and off actions based on the actual local time.                      |
+| [Alarm Element](elements/alarm)             | Element for creating a action based on the time of day.                          |
+| [Timer Element](elements/timer)             | Element for creating timer (duration) based actions.                             |
 | **Actor and Output Elements**               |                                                                                  |
-| [PWMOut Element](elements/pwmout)             | Output Element to output an pwm signals based on actions. e.g. LEDs.             |
+| [PWMOut Element](elements/pwmout)           | Output Element to output an pwm signals based on actions. e.g. LEDs.             |
 | [DigitalOut Element](elements/digitalout)   | Output element to create digital output signals based on actions.                |
-| [RFSend Element](elements/rfsend)*            | Send out RF codes on the 433 MHz band to control remote sockets.                 |
+| [RFSend Element](elements/rfsend)*          | Send out RF codes on the 433 MHz band to control remote sockets.                 |
 
 \* For these Elements a specific library is requires. See below.
 
 ## Elements based on external Arduino Libraries
 
-| Type                            | Functionality                                                                |   Library used    |
-| ------------------------------- | ---------------------------------------------------------------------------- | :---------------: |
+| Type                              | Functionality                                                                |   Library used    |
+| --------------------------------- | ---------------------------------------------------------------------------- | :---------------: |
 | [DHT Element](elements/DHT)       | Use DHT11 and DHT22 sensors for temperature and humidity and create actions. |     [DHTesp]      |
 | [RFSend Element](elements/rfsend) | send RF signals e.g. on 433 MHz for controlling switch boxes.                |      [TabRF]      |
 | [Rotary Element](elements/rotary) | Input element that creates actions based on a rotary encoder.                |  [RotaryEncoder]  |  |
