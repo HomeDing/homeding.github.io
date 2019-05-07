@@ -10,25 +10,34 @@
 
 ![Device Properties and actions](deviceapi.png)
 
-Because there is only one device configuration the full id is always `/device/0`.
-When the web server is active you can reach the device using http://{name}.
-This name is specified in the device configuration and is used by some of the elements.
+By specifying the configuration for the `device/0` element the general settings for the device can be controlled.
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+### Basic settings
+
+**name** - The device name is specifying zhe hostname that is used to register the device on the network. The device can be accessed by any browser on the same network using the URL `http://<name>`.
+
+**reboottime** - Specifies the duration after the device is rebooted to fully clean up the memory.
+
+**description** - A line of text that gives a short description of the device used in the web UI.
+
+**room** - The location of the device.
+
+### WiFi-Manager settings
+
+**led** - The GPIO pin of the system LED. Defaults is `no LED`.
+
+**button** - The GPIO pin of the system button. Defaults is 'GPIO0(D3)'
+
 
 | Property      | Description                                                                                     |
 | ------------- | ----------------------------------------------------------------------------------------------- |
-| `name`        | The device name is used to register the device on the network.                                  |
-| `reboottime`  | Specifies the duration after the device is rebooted to fully clean up the memory.               |
-| `description` | A line of description used in the web UI.                                                       |
 | `connecttime` | The available time after a reboot of the device to start network configuration. Default: "10s". |
 | `connectmode` | The priorities of the network connection options. Default is "LAST,AP"                          |
-| `led`         | The GPIO pin of the system LED. Defaults is `no LED`.                                           |
-| `button`      | The GPIO pin of the system button. Defaults is 'GPIO0(D3)'                                      |
 | `title`       | short title to be displayed in the web UI                                                       |
-| `room`        | location of the device                                                                          |
 | `homepage`    | starting web page of the web ui. default: `/index.htm`                                          |
 | `logfile`     | set to 1 to enable storing lines from the system log to files. default: 0                       |
 

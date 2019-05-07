@@ -13,11 +13,9 @@ This element implements the following properties and actions:
 
 <!-- ![DigitalOutProperties and Actions](/elements/alarmapi.png) -->
 
-| Property | Description                                             |
-| -------- | ------------------------------------------------------- |
-| `time`   | the time of day when the a the actions will be emitted. |
-| `onTime` | The actions to be emitted.                              |
+**time**  the time of day when the a the actions will be emitted.
 
+**onTime** The actions to be emitted.
 
 ### Example for Configuration
 
