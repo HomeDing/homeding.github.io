@@ -1,18 +1,29 @@
-# Logger
+# Device Logging
 
-The Logger implementation solves the major logging topics when implementing things:
+The HomeDing library offers an easy way to create logging output for information or debugging purpose
+as well as a web UI that allows viewing the latest logging informaion.
+
+This is implemented by the Logger class.
+
+> There is also a value logging feature available that keeps e.g. values from sensors.
+> This is implemented by the [Log Element](elements/log).
+
+The Logger class implementation solves the major logging topics when implementing things:
 
 * Information for debugging and problem analysis
 * In the field logging of major problems.
 
-The logger supports 3 levels of logging and a direct logging is also supported:
+The Logger class supports 3 levels of logging and a unconditional logging is also supported:
 
 | Level | #   | Description                     |
 | ----- | --- | ------------------------------- |
 | Info  | 0   | Explicit information            |
-| Error | 1   | + Error conditions              |
+| Error | 1   | + Error conditions (default)    |
 | Trace | 2   | + Tracing details               |
 | Raw   |     | Direct logging to Serial output |
+
+The default level of logging is `Error(1)`
+
 
 ## Logging for problem analysis
 
@@ -35,11 +46,24 @@ Changing the port or disabling serial output can only be applied at compile time
 
 ## Logging for remote analysis
 
-To make logging information available a `/ding-log.htm` page is available that gets the logging text from the device displayed in the browser.
+To make logging information available a Web UI page `/ding-log.htm`  is available that gets the logging text from the device displayed in the browser.
 
-## Raw level logging LOGGER_RAW(...)
+Because logging information on the trace level is producing much text and the log output storage is limited only the info and error loggings are saved to the log files.
 
-This macro is intended to be used for very detailed debug output during the development that will be removed later.
+There are 2 files beeing used:
+
+* `/log.txt` is the file where new log output gets appended. This file will grow until about 4kBytes of text is stored.
+* `/log_old.txt` is the previous file with log output.
+
+Every time the active log file `/log.txt` has reached almost 4kByte of text the files will be rotated. The log_old.txt file is deleted and the current log.txt is renamed to log_old.txt. Then all new log output will be written to the log.txt file.
+
+## Logging Functions
+
+The following C Macros and functions are available to create log entries.
+
+### Raw level logging LOGGER_RAW(...)
+
+This macro is intended to be used for very detailed debug output during the development without looking for a logging level that will be removed later.
 The output is sent to the Serial output port only. The macro is completely disabled when specifying no debug port in the settings.
 
 This macro will directly push all information to the serial port specified by the debug port option.
@@ -57,7 +81,7 @@ LOGGER_RAW("init: path=%s cache_header=%s", path, cache_header);
 ```
 
 
-## Trace level logging LOGGER\_TRACE(...) and LOGGER\_ETRACE(...)
+### Trace level logging LOGGER\_TRACE(...) and LOGGER\_ETRACE(...)
 
 This macro is intended to be used for function level tracing e.g. to log the called function and the parameters.
 
@@ -84,7 +108,7 @@ LOGGER_ETRACE("set(%s:%s)", name, value);
 ```
 
 
-## Trace level logging LOGGER\_ERR(...) and LOGGER\_EERR(...)
+### Trace level logging LOGGER\_ERR(...) and LOGGER\_EERR(...)
 
 This macro is intended to be used for error level tracing e.g. to log the error conditions that cause aborting some functionality.
 
@@ -108,7 +132,7 @@ LOGGER_ETRACE("set(%s:%s)", name, value);
 19:08:36 displaydot/b:t:set(show:1)
 ```
 
-## Trace level logging LOGGER\_INFO(...) and LOGGER\_EINFO(...)
+### Trace level logging LOGGER\_INFO(...) and LOGGER\_EINFO(...)
 
 This macro is intended to be used for explicit tracing information e.g. events like starting a service or specific system information.
 
@@ -132,23 +156,21 @@ LOGGER_INFO("device restart initiated.");
 19:12:05 sys:i:device restart initiated.
 ```
 
-## Remote logging 
+## Set loglevel for the device
 
-Sometimes the internal activity of the elements needs observation after the development phase is over and the device in installed somewhere.
+By using the configuration of the [Device Element](elements/device) the device wide log level can be specified.
 
-Especially when your devices are enrolled to your home they very likely will not be attached to the serial interface so any error happening will not be visible.
+```JSON
+"device": {
+  "0": {
+    "loglevel": 2,
+    ...
+  }
+},
+```
 
-For this purpose the info and error information is also written to the file system into the files /log.txt and /log_old.txt.
 
-To avoid too long files and to get rid of old information in the log files they are limited to a size of 2k of text each.
-
-An logging will eb appended to the /log.txt file.
-
-When this files reaches the maximum size an existing `/log_old.txt` file will be deleted, the `/log.txt` file will be renamed to `/log_old.txt` and a new `/log.txt` file will be written.
-
-Using this procedure the actual existing log is always minimum the last 2k of up to 4k of the last log texts.
-
-## Set loglevel for individual classes
+## Set loglevel for individual Elements
 
 It is possible to set the logging level for a specific element in the config.json file so trace information can be produced of a specific element but not for all elements.
 The default is to have an overall error level for logging and trace level logging should be enabled on the element level.
@@ -158,12 +180,13 @@ The default is to have an overall error level for logging and trace level loggin
 ```JSON
 "button": {
   "in": {
-    "pin": "D4",
-    "type": "toggle",
-    "inverse": 1,
-    "pullup": 1,
     "loglevel": 2,
-    "onvalue": "digitalout/led?value=$v"
+    ...
   }
 },
 ```
+
+## See also
+
+* [Log Element](elements/log)
+* [Device Element](elements/device)

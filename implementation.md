@@ -1,6 +1,6 @@
 # Implementation topics ???
 
-- [Logger Class](logger)
+- [Device Logging](logger)
 
 - [Element Implementation](ElementClass)
 - [Element Registry](ElementRegistry)

@@ -34,6 +34,8 @@ The following classes have been implemented:
 
 ### Logger
 
+See: [Device Logging](logger)
+
 ## Elements
 
 Based on these classes many Elements have been implemented.

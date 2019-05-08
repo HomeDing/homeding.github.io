@@ -26,22 +26,24 @@ The following properties are available for configuration of the element.
 
 **room** - The location of the device.
 
-### WiFi-Manager settings
+**loglevel** - By specifying a loglevel for the device **all** elements will use this loglevel to output debug messages over the serial interface and into the system log file. See also [Device Logging](logger).
+
+### WiFi-Manager and Startup settings
 
 **led** - The GPIO pin of the system LED. Defaults is `no LED`.
 
 **button** - The GPIO pin of the system button. Defaults is 'GPIO0(D3)'
 
+**connecttime** - The available time after a reboot of the device to start network configuration. Default: "6s".
+
+**homepage** - When the device starts in normal mode this page will be shown when opening the device web UI using the url without specifying the page. This defaults to `/index.htm` 
 
 | Property      | Description                                                                                     |
 | ------------- | ----------------------------------------------------------------------------------------------- |
-| `connecttime` | The available time after a reboot of the device to start network configuration. Default: "10s". |
-| `connectmode` | The priorities of the network connection options. Default is "LAST,AP"                          |
 | `title`       | short title to be displayed in the web UI                                                       |
-| `homepage`    | starting web page of the web ui. default: `/index.htm`                                          |
 | `logfile`     | set to 1 to enable storing lines from the system log to files. default: 0                       |
 
-Detailed description for `ConnectTime`, `ConnectMode` and `LED` see [WiFiManager](wifimanager).
+Detailed description for `ConnectTime`, `button` and `led` see [WiFiManager](wifimanager).
 
 ## Configuration Example
 
@@ -64,4 +66,5 @@ Detailed description for `ConnectTime`, `ConnectMode` and `LED` see [WiFiManager
 
 ## See also
 
-* [WiFiManager](wifimanager)
+* [WiFiManager](/wifimanager)
+* [Device Logging](logger)
