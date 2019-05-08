@@ -55,7 +55,7 @@ It requires no special library and logs the raw data and some calculated values 
 
 You can use this sketch to verify that the sensor is communicating correctly in the standard mode.
 
-See 
+See
 
 
 
@@ -65,7 +65,7 @@ See
 
 https://www.epa.gov/pm-pollution/particulate-matter-pm-basics
 
-* Some insights to accuracy of the sensors and pictures from a tear-down: 
+* Some insights to accuracy of the sensors and pictures from a tear-down:
 https://aqicn.org/sensor/pms5003-7003/de/
 
 http://raphuscucullatus.blogspot.com/2017/08/pms5003-will-schlafen.html?m=1

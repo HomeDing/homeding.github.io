@@ -21,7 +21,7 @@ The following classes have been implemented:
 ### DisplayAdapterSSD1306
 
 > DisplayAdapter implementation for the HomeDing library adapting OLED displays using the SSD1306 chip.
- 
+
 ### Element
 
 > The Element class acts as the base class for all kind of Elements and implements some generic functionality.

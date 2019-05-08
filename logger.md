@@ -99,7 +99,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:t
 **Example:**
 
 ```CPP
-LOGGER_ETRACE("set(%s:%s)", name, value); 
+LOGGER_ETRACE("set(%s:%s)", name, value);
 ```
 
 **Output:**
@@ -116,7 +116,7 @@ The output is send to the Serial debug port when configured but is also written 
 
 The macro is never completely disabled because logging to the file system is working even when no serial output port is available.
 
-The `LOGGER_ERR` macro can be used everywhere for logging while the 
+The `LOGGER_ERR` macro can be used everywhere for logging while the
 `LOGGER_EERR` macro is especially made for logging in element implementations.
 
 The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:e:` or `HH:MM:SS sys:e:` prefix with type and id coming from the element definition.
@@ -124,7 +124,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:e
 **Example:**
 
 ```CPP
-LOGGER_ETRACE("set(%s:%s)", name, value); 
+LOGGER_ETRACE("set(%s:%s)", name, value);
 ```
 
 **Output:**
@@ -140,7 +140,7 @@ The output is send to the Serial debug port when configured but is also written 
 
 The macro is never completely disabled because logging to the file system is working even when no serial output port is available.
 
-The `LOGGER_INFO` macro can be used everywhere for logging while the 
+The `LOGGER_INFO` macro can be used everywhere for logging while the
 `LOGGER_EINFO` macro is especially made for logging in element implementations.
 
 The formatting from printf is used and lines will have a `HH:MM:SS sys:i:` or `HH:MM:SS [type]/[id]:i:` prefix with type and id coming from the element definition.
@@ -161,12 +161,14 @@ LOGGER_INFO("device restart initiated.");
 By using the configuration of the [Device Element](elements/device) the device wide log level can be specified.
 
 ```JSON
-"device": {
-  "0": {
-    "loglevel": 2,
-    ...
+{
+  "device": {
+    "0": {
+      "loglevel": 2,
+      ...
+    }
   }
-},
+}
 ```
 
 
@@ -178,12 +180,14 @@ The default is to have an overall error level for logging and trace level loggin
 **Example:**
 
 ```JSON
-"button": {
-  "in": {
-    "loglevel": 2,
-    ...
+{
+  "button": {
+    "in": {
+      "loglevel": 2,
+      ...
+    }
   }
-},
+}
 ```
 
 ## See also

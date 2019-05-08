@@ -19,7 +19,7 @@ A hash value of this password will be stored in the file $savemode.json, a file 
 With an existing password the `save-mode` is enabled and the builtin webserver will disable the critical modifications.
 Only by knowing and sending the password the save-modecan be disabled.
 
-This mechanism is not completely save and when you have physical access to the chip and can use a USB cable / Serial interface you can upload new firmware anyhow but it is a reasonable measurement against external attempts to change and misuse the device over the network. 
+This mechanism is not completely save and when you have physical access to the chip and can use a USB cable / Serial interface you can upload new firmware anyhow but it is a reasonable measurement against external attempts to change and misuse the device over the network.
 
 For any improvements you may find necessary please create an issue or a pull request on the project on github.
 

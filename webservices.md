@@ -71,7 +71,7 @@ This service has to be called multiple times. The first time starts scanning and
 
 ### /$connect=...&p=...** &wps=... <span style="color:red">\*</span>
 
-This service is required for the network configuration page (/setup.htm) and allows changing the network configuration. 
+This service is required for the network configuration page (/setup.htm) and allows changing the network configuration.
 
 ### /$list
 
@@ -109,6 +109,6 @@ This service returns the state of the element addressed by the more specific url
 
 This service sends an action to the element specified by the URL to set the value.
 
-This is how the remote element will send actions across the network to other devices. 
+This is how the remote element will send actions across the network to other devices.
 
 > \* this service is not available when the device runs in the save mode. See [Save Mode](savemode) for details.

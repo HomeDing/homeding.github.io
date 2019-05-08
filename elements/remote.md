@@ -16,7 +16,7 @@ The central networking feature of the board only allows one current remote actio
 
 ## Example
 
-On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these. 
+On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these.
 
 ```JSON
 "displaytext": {
@@ -41,7 +41,7 @@ You can test these by using the following URLs to trigger the actions with your 
 
 <http://logger/$board/display/h?show=45.00>
 
-On the device named **dht22-probe** the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes: 
+On the device named **dht22-probe** the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:
 
 ```JSON
 "dht": {
@@ -58,7 +58,7 @@ On the device named **dht22-probe** the dht element is configured to create acti
   "display-t": {
     "host": "logger",
     "remoteid": "displaytext/t"
-  }, 
+  },
   "display-h": {
     "host": "logger",
     "remoteid": "displaytext/h"

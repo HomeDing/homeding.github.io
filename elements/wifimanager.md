@@ -14,7 +14,7 @@ After connecting to this network the browser should be opened automatically and 
 
 If the automatic start of the configuration UI is not working the UI can be started using the URL <http://192.168.4.1/setup.htm>
 
-![WiFi-Manger UI](wifimanagerui.png) 
+![WiFi-Manger UI](wifimanagerui.png)
 
 List available networks.
 
@@ -26,14 +26,14 @@ Confirm message?
 
 ## Setup again
 
-The configuration UI is also available when the device is running in normal mode 
+The configuration UI is also available when the device is running in normal mode
 using the url <http://{name}/setup.htm>
 
 The other option implemented is to power up the device and then press the flash button while the led is blinking for 10 seconds.
 
 (Do not press the button while pressing the reset button or powering up the device because this would start the program upload mode.)
 
-The GPIO port used for the system led and the GPIO port used for the button to enter the configuration mode can be modified by specifying the properties of the [device element](/elements/device). 
+The GPIO port used for the system led and the GPIO port used for the button to enter the configuration mode can be modified by specifying the properties of the [device element](/elements/device).
 
 
 ## Reset the network configuration

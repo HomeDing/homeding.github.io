@@ -56,14 +56,18 @@ The configuration can be changed easily by modifying the config.json file.
 
 The following properties are available for configuration of the element:
 
-| Property        | Description                                                                                                                                                   |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `pin`*          | Specifies the hardware number of the pin that is used to connect the DHT sensor for data.                                                                     |
-| `readtime`      | Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.                                                        |
-| `type`          | The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"                                                                                               |
-| `resendTime`    | The current values of the probe are resent after this specified time even when not changing.                                                                  |
-| `onTemperature` | These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same. |
-| `onHumidity`    | These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.    |
+**pin**\* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
+
+**readtime** - Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.
+
+**type** - The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
+
+**resendTime** - The current values of the probe are resent after this specified time even when not changing.
+
+**onTemperature** - hese actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same.
+
+**onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
+
 
 \* This parameter must be specified.
 
@@ -86,11 +90,12 @@ The following properties are available for configuration of the element:
 
 The following properties are available with the current values at runtime
 
-| Property      | Description                                      |
-| ------------- | ------------------------------------------------ |
-| `active`      | Is set to true when the Element is active.       |
-| `temperature` | The last read temperature value from the sensor. |
-| `humidity`    | The last read humidity value from the sensor.    |
+**active** - Is set to true when the Element is active.
+
+**temperature** - The last read temperature value from the sensor.
+
+**humidity** - The last read humidity value from the sensor.
+
 
 ### Example State
 
@@ -124,7 +129,7 @@ As the sensor has a sensor period of 2 seconds it doesn't make sense to read the
 
 
 * 10K VCC - Data
-  
+
 * Enable Shut down of sensor by supplying power through an ouput pin.
 
 https://forum.arduino.cc/index.php?topic=355137.0

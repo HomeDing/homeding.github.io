@@ -3,7 +3,7 @@
 The following element implementations are available in the current version of the HomeDing library.
 
 Some of the elements depend on other libraries that must be installed to compile.
-Some of the elements support multiple external sensors. See [Sensor Support](sensorsupport).    
+Some of the elements support multiple external sensors. See [Sensor Support](sensorsupport).
 
 | Type                                        | Functionality                                                                    |
 | ------------------------------------------- | -------------------------------------------------------------------------------- |

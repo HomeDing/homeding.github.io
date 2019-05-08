@@ -32,7 +32,7 @@ These examples are for a minimal board like ESP-01 or Sonoff basic devices with 
 
 
 
-## See also 
+## See also
 
 * Boards
 

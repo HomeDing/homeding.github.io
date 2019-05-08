@@ -6,7 +6,7 @@
   <p>The value can be changed by using an action.</p>
 </div>
 
-Because there may be more values presented on a display at the same time the 
+Because there may be more values presented on a display at the same time the
 DisplayDotElement may exist multiple times in the configuration by using different positions.
 
 It is not required for all displays to support all these Elements and when a device only has a simple LCD

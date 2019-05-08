@@ -38,7 +38,7 @@ Label: value
 {"menu": {
   "radio": {
     display: "displaytext/set",
-    menuprefix: "$v:", 
+    menuprefix: "$v:",
     valueprefix: "$v=",
     items: "type/id,type/id,...",
     Ilabels: "Volume,Frequency"
@@ -50,6 +50,6 @@ Label: value
 Later: labels are fetched from config.json
 
 
-## See also 
+## See also
 
 * [availableelements](availableelements)

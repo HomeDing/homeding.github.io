@@ -44,5 +44,5 @@ It is intended to save these hardware and environment specific configuration int
 ## TODO
 
 * [ ] PCF8574
-* [ ] Create new Element on first level, when element is registered 
+* [ ] Create new Element on first level, when element is registered
 

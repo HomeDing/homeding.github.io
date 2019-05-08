@@ -26,7 +26,7 @@ There are multiple versions of the ESP-01 board available. In the early days als
 
 ## ESP-01 LEDs
 
-![board-esp01](boardesp01.jpg) 
+![board-esp01](boardesp01.jpg)
 
 The original version of the ESP-01 board has 2 LEDs:
 
@@ -35,7 +35,7 @@ The original version of the ESP-01 board has 2 LEDs:
 
 ## ESP-01S LEDs
 
-This board is a newer version that 
+This board is a newer version that
 
 1Mbyte of flash memory.
 No power LED
@@ -52,10 +52,10 @@ Blue LED on GPIO2(D4)
 
 ## Minimum adapter
 
-The minimum 
+The minimum
 CH_PD and RST with 10k to VCC
 
-## GPIO 0 
+## GPIO 0
 
 This pin has to be high while booting or resetting the chip when you like to start the regular uploaded program.
 After starting the program you can use it for input and output.
@@ -73,5 +73,4 @@ For example attaching a Led with resistor to ground will prohibit starting becau
 # MOD for Deep sleep
 
 # MOD for low memory
- 
- 
+

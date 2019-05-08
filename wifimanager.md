@@ -31,11 +31,11 @@ The WiFiManager presents a minimal UI that shows some minimal information about 
 * Using the `re-scan` the available networks are scanned again.
 * Using the `Connect` button the device tries to connect the selected network and then return into the normal operation mode.
 
-When the WiFiManager is active only the system elements are started.  
+When the WiFiManager is active only the system elements are started.
 
 The WiFi manager UI can also be accessed during normal operation using the link <http://devicename/setup.htm>
 
-<!-- 
+<!--
 # WiFiManager Configuration if the  ???
 
 The device configuration has some properties to control some of the WiFi Manager behavior in detail.
@@ -48,7 +48,7 @@ The device configuration has some properties to control some of the WiFi Manager
 * "doubleclick": "WPS" => a double click on the configuration button will start WPS mode.
 
 * All elements will be started only after the network connectivity is given in STA mode.
-* element->startupMode = 
+* element->startupMode =
     - `STARTUP_ON_SYS`,  // The element is started immediately after loading the configurations.
     - `STARTUP_ON_NET`,  // The element is started after a network connectivity in AP Mode was established.
     - `STARTUP_ON_TIME`  // The element is started after a valid local time was set.
@@ -58,7 +58,7 @@ The device configuration has some properties to control some of the WiFi Manager
 
 NOT IMPLEMENTED YET
 
-<!-- 
+<!--
 
 ```CPP
 bool ESPSerialWiFiManager::_connect_wps(){
@@ -88,7 +88,7 @@ bool ESPSerialWiFiManager::_connect_wps(){
 ## More
 
 <!--
-* <https://esp-forum.de/index.php/forum/codebesprechung/35-wifi-mode-fuer-ap-und-sta-richtig-anwenden> 
+* <https://esp-forum.de/index.php/forum/codebesprechung/35-wifi-mode-fuer-ap-und-sta-richtig-anwenden>
 * <https://www.hackster.io/kosme/esp8266-sniffer-9e4770?utm_campaign=new_projects&utm_content=0&utm_medium=email&utm_source=hackster&utm_term=project_name>
 -->
 

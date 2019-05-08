@@ -16,7 +16,7 @@ These boards offer an easy start into the ESP8266 development. The have all you 
 * automatic programming mode
 * breadboard friendly (most versions)
 * LED
- 
+
 See [boardnodemcu](boardnodemcu)
 
 The example [fullding](fullding) can be flashed onto these boards by providing most of the [available elements](availableelements) and [display adapters](displays).
@@ -26,7 +26,7 @@ The web interface is working out of the box and includes IDE features and loggin
 
 
 ## Esp8266 with 1 MByte flash memory
- 
+
 Less memory is cheaper. These boards have no difference regarding the CPU and SOC features but these boards.
 
 Older boards with 512 KByte are still available but should be avoided because OTA probably will not work because of this memory restriction.

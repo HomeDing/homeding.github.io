@@ -20,7 +20,7 @@ The project is Open Souce and all files are licensed under a BSD style license. 
 
 The full list of [Available Elements](availableelements) in the HomeDing library are the functional blocks available for building and configuring a device.
 
-Each of them supports a unique feature, reads a sensor, drives displays and other periphery or implements some internal logic. The configuration of the device acvtivates and configures the required elements as well as defining how the interact with each other and to the outer world over network. 
+Each of them supports a unique feature, reads a sensor, drives displays and other periphery or implements some internal logic. The configuration of the device acvtivates and configures the required elements as well as defining how the interact with each other and to the outer world over network.
 
 It is intentionally easy to implement your own specific elements as you can see in the [Examples](examples).
 
@@ -58,4 +58,4 @@ There are many good resources available to get more information about the ESP826
 
 **General Guides**
 * [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)
-  
+

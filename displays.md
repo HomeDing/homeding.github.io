@@ -22,10 +22,10 @@ The Elements that currently support sending information to the displays are:
 * The DisplayText Element
 * The DisplayDot Element
 
-The DisplayAdapters can only support the functionality that the attached display and the used display library can support 
+The DisplayAdapters can only support the functionality that the attached display and the used display library can support
 e.g. text oriented display cannot show graphical elements or color.
 
-This is why the DisplayAdapters can just ignore the functional requests that they cannot support. 
+This is why the DisplayAdapters can just ignore the functional requests that they cannot support.
 
 When a specific HomeDing based device is assembled and configured it is known that a specific functionality can or cannot be supported.
 
@@ -45,7 +45,7 @@ See [http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx](http://mathertel.de
 
 The library used to drive these displays is "LiquidCrystal_PCF8574".
 
-The DisplayLCDElement can be used to configure the LCDDisplayAdapter. 
+The DisplayLCDElement can be used to configure the LCDDisplayAdapter.
 This should be done in the `env.json` file:
 
 ```JSON
@@ -58,14 +58,14 @@ This should be done in the `env.json` file:
 
 ### DISPLAYSH1106Adapter
 
-+ 24 kByte 
++ 24 kByte
 
 
 ### DisplaySSD1306Adapter
 
 This is a DisplayAdapter for OLED displays based on the SSD1306 chips.
 
-The DisplaySSD1306Adapter can be used to configure the LCDDisplayAdapter. 
+The DisplaySSD1306Adapter can be used to configure the LCDDisplayAdapter.
 This should be done in the `env.json` file:
 
 ```JSON
@@ -79,7 +79,7 @@ This should be done in the `env.json` file:
 }
 ```
 
-+ 24 kByte 
++ 24 kByte
 
 ### Base Display Adapter
 

@@ -15,7 +15,7 @@ When starting the device the following events are emitted:
 * When starting after the defined time span the `off`-event will be emitted.
 
 The `onvalue` event is always emitted together with the `on` and `off` event situations.
- 
+
 
 ## Element Configuration
 

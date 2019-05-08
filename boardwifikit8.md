@@ -75,7 +75,7 @@ digitalWrite(D2, HIGH); // while OLED is running, must set D2 in high
 ## OnBoard LED
 
 There is no usable LED on board.
-The orange one is connected to the MIC73831 charching circuit 
+The orange one is connected to the MIC73831 charching circuit
 
 ## Battery Connector
 

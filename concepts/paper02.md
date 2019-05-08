@@ -11,7 +11,7 @@ The heart if the HomeDing library implementation is the board class that covers 
 
 The Elements are the implementation blocks that are that are covering the specific adaption for sensors, actors, other IO attached modules and are also used for timer based actions and logic modules. They are created and initialized on demand by the board when reading the configuration files.
 
-In the standard example many of the elements are already part of the uploaded program and can be activated by just modifying the configuration. 
+In the standard example many of the elements are already part of the uploaded program and can be activated by just modifying the configuration.
 
 It is easy to implement new Elements or modify existing elements to create specific solutions based for other attached modules or to for specific functionaliyty
 
@@ -58,7 +58,7 @@ The setup to use the HomeDing library is just the standard setup for ESP8266 boa
 
 * Download and install the Arduino Environment
 * Download and install the board
-* Download and install the SPIFFS plugin for supporting uploading files to the onboard filesystem 
+* Download and install the SPIFFS plugin for supporting uploading files to the onboard filesystem
 
 After a setup of the Arduino environment only a few typical steps will be required to have the first Ding setup:
 

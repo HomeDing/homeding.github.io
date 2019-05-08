@@ -19,7 +19,7 @@ It takes some time but runs smoothly from my experience. This enables you to ver
 
 ## Setup the SPIFFS ESP8266 filesystem uploader
 
-For this step everything is already documented by the ESP8266 Team at 
+For this step everything is already documented by the ESP8266 Team at
 
 > [https://github.com/esp8266/arduino-esp8266fs-plugin](https://github.com/esp8266/arduino-esp8266fs-plugin)
 
@@ -54,7 +54,7 @@ Because you will need to change the network identification it is a good idea to 
 >
 > Be sure to include the `data` folder as well as it contains the necessary files for the web server.
 
-<!-- 
+<!--
 
 ## Adjust your network identification
 
@@ -91,7 +91,7 @@ These files contain the required files for the UI part of the web server and the
 * **DigitalOut Element**
 
   This Element implements using a digital ouput pin.
-  The Actions from the Timer Element is used to set the level ON and OFF. 
+  The Actions from the Timer Element is used to set the level ON and OFF.
   Because the LED is on when output is LOW the logical output is inverted to the Physical output.
 
 * **Device Element**

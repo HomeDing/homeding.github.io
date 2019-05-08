@@ -20,7 +20,7 @@ Some good readings about this model can be found at
 
 ## Elements
 
-Like in the Actor Model the functionality is encapsulated inside the components that have a unified interface to the outer world but differ in the 
+Like in the Actor Model the functionality is encapsulated inside the components that have a unified interface to the outer world but differ in the
 inner implementation. This is the concept of the Elements you find in the HomeDIng library.
 
 The common interface is about supporting the lifecycle:
@@ -73,7 +73,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 * Start all Elements
 
   After all Elements are created and configured they are activated.
-  
+
   Now the show can begin.
 
 ### Working Phase
@@ -106,7 +106,7 @@ Be aware that the number of configured elements is also a limiting factor becaus
 
 ## Addressing Elements, properties and actions
 
-When technically addressing an active element, an element property or sending an actionto an element 
+When technically addressing an active element, an element property or sending an actionto an element
 the same 2-level syntax and parameters of addressing is used as it is known from the URL syntax.
 
 The usual notation is using lowercase characters only. The comparisation is internally case-insensitive by comparing always the lowercase variants.

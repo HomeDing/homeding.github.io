@@ -17,11 +17,11 @@ simplified Example with comments:
 var ExampleBehavior = {
   // Any property can be used for data.
   // When the HTML Element has an custom attribute with the same name
-  // the value of the attribute will be copied into the property as an initial value. 
+  // the value of the attribute will be copied into the property as an initial value.
   microid: "",
   data: {},
 
-  // The init() function is executed after the Behavior is attached to the Element 
+  // The init() function is executed after the Behavior is attached to the Element
   init: function () {
     // here some more initialization can be implemented.
     // The HTML element can be modified and extended.
@@ -35,12 +35,12 @@ var ExampleBehavior = {
 
   // functions starting with 'on' will be used to handle events.
   onchange: function (evt) {
-    var src = evt.srcElement; 
+    var src = evt.srcElement;
     // ...
   },
 
   onclick: function (evt) {
-    var src = evt.srcElement; 
+    var src = evt.srcElement;
     // In event functions `this` is the attached HTML Element.
     // e.g. this.microid;
   }

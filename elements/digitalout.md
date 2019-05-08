@@ -63,7 +63,7 @@ The physical output depends on `inverse`.
 }
 ```
 
-## State 
+## State
 
 The state of the digitalout element includes:
 

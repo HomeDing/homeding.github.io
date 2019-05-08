@@ -17,7 +17,7 @@ The actions are emitted every time the button is pressed (going from 0 to 1).
 
 The [value element](/elements/value) specifies the valid range of of 0...255 and gets controlled by the actions from the input element to increment or decrement the value. When the maximum level is reached no further increment will be done.
 
-Every time the value of the value element is changed an action with the new value is passed to the pwmout element driving the LED. 
+Every time the value of the value element is changed an action with the new value is passed to the pwmout element driving the LED.
 
 The [pwmout element](/elements/pwmout) is configured to allow values within the same range as passed from the value element corresponding to 0 up to the maxium of the pwm output level at the `D4` GPIO.
 
@@ -74,8 +74,8 @@ The `rotary` element takes the input value from the encoder connected to `D5` an
 
 Rotary Encoder to dim a LED
 "rotary": {
-  "0": {   
-    "description": "Rotary Input",   
+  "0": {
+    "description": "Rotary Input",
     "pin1": "D5",
     "pin2": "D6",
     "step": 10,

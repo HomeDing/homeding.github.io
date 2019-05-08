@@ -50,10 +50,10 @@ That makes this combination almost useless for pure battery appliances when a lo
 The internally used I2C Bus for the connection with the OLED is also available on the connectors.
 Therefore it is possible to add more I2C bus devices on the same bus.
 
-Also the board doesn't use the common and default pins that are defined by 
+Also the board doesn't use the common and default pins that are defined by
 SCL=GPIO5(D1) and SDA=GPIO4(D2).
 
-The board uses 
+The board uses
 
 * `SCL` = `GPIO4` (`D2`) (yellow) and
 * `SDA` = `GPIO5` (`D1`) (blue)

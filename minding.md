@@ -25,4 +25,4 @@ Not included elements of the library can be added by defining the Element to be 
 
 When you implement your own elements you can just add them to the sketch folder.
 
-See 
+See

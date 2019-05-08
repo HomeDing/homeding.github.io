@@ -19,9 +19,9 @@ The following properties are available for config, actions and state of a timer 
 | Properties   | Type   | Description                                              |
 | ------------ | ------ | -------------------------------------------------------- |
 | Filename | Config | name of the main logfile.   |
-| Filesize | config | maximum size of the logfile 
+| Filesize | config | maximum size of the logfile
 | interval     | Config |             |
-| 
+|
 | Value | action | new actual values to be logged |
 | realtime | coNfig | true only logs when a valid real time is available.
 
@@ -68,4 +68,4 @@ filename: "templog.txt"
 ## Aggregation of values
 
 * Max or average
-* New interval typically n times of the logging interval 
+* New interval typically n times of the logging interval

@@ -7,7 +7,7 @@
 </div>
 
 
-Because there may be more values presented on a display at the same time the 
+Because there may be more values presented on a display at the same time the
 DisplayTextElement may exist multiple times in the configuration by using different positions and fontsize.
 
 The DisplayTextElement is included in the collection of core elements.

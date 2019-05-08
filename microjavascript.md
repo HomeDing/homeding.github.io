@@ -1,7 +1,7 @@
 ## micro JavaScript Library
 
 
-t.b.c 
+t.b.c
 
 
 
@@ -19,7 +19,7 @@ When using the template to create a new control a clone of the complete template
 var newControl = insertTemplate(container, controlName, initialProperties)
 ```
 
-The placeholders ${type} and ${id} will be replaced by the corresponding values of the initial properties. 
+The placeholders ${type} and ${id} will be replaced by the corresponding values of the initial properties.
 
 For adding functionality to the new object the value of the `u-behavior` property specifies what behavior will be added to the created component.
 
@@ -39,7 +39,7 @@ Here is an example of a simple control that displays a card with some specific i
 </div>
 ```
 
-How templates for elements are implemented and how to use the functionalities of the landingpage and config page 
+How templates for elements are implemented and how to use the functionalities of the landingpage and config page
 is explained in detail in [WebServer UI](webserverui.md) and [Templates for Elements](elementcards.md).
 
 

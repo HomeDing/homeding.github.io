@@ -29,7 +29,7 @@ The following properties are available for configuration of the element:
 | `pin2`*   | Specifies the hardware number of the second input pin.
 | `step`    | Default:1 the increment/decrement value of one rotary step
 value Internal starting value. (deprecated)
-| `onchange` | Actions.<br/>These actions are emitted when the value has changed. The delta from the last position is used as the value in this event.   
+| `onchange` | Actions.<br/>These actions are emitted when the value has changed. The delta from the last position is used as the value in this event.
 
 \* This parameter must be specified.
 

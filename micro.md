@@ -1,7 +1,7 @@
 # Implementing a minimalist UI for usage in Things
 
 There are many web front end frameworks that offer components that are combined to build the UI and the functionality for specific use cases.
-Some well known are Angular, react and Vue. 
+Some well known are Angular, react and Vue.
 
 But when implementing on a memory restricted device the size of basis functionality and components becomes the most limiting factor and therefore the HomeDing UI implementation has to be as small as possible and provides only the required functionality to visualize the internal available elements, the actions and their state.
 
@@ -48,7 +48,7 @@ The way how the web server is implemented is based on avoiding consuming server 
 > Implementing minimal javascript and CSS libraries is also part of the strategy of many web interfaces that must run smoothly on mobile devices because the network bandwidth is the most restricted resource for these use-cases as well.
 
 > Some ***"micro"*** implementations are available on the internet that just offer basic features with the focus on size.
-> More on this can be found in links provided below. 
+> More on this can be found in links provided below.
 
 ### Implementing the web files
 
@@ -65,12 +65,12 @@ This project is using a node.js / express server to mock some of the features of
 The minimalist JavaScript implementation that implements templating, function and data binding and is available to the HomeDing devices.
 
 The functionality offers
-* to create new controls from given templates into the web page 
+* to create new controls from given templates into the web page
 * load data given in a JSON format
 * fill data into placeholders
 * visualize data by using  bars and charts
 * capture user input that create actions on the internal elements
-* apply changes to the data model 
+* apply changes to the data model
 * send data back to the year device to update the configuration.
 
 For Details see [Micro-JavaScript](microjavascript)
@@ -101,7 +101,7 @@ This allows replaying data messages to the components based on the actual data i
 ```
 actions -(publish)- > [data store] -> [filter] -> [library/component]
                           |                               |
-                          +  <----- (subscribe) --------- + 
+                          +  <----- (subscribe) --------- +
 ```
 
 The data store here is a native javascript structured data object representing a tree of nodes and key-values.
@@ -109,9 +109,9 @@ The data store here is a native javascript structured data object representing a
 All data changes are serialized and passed through a filter that only forwards relevant changes to the component.
 It is focusing on a one way data flow but updates initiated by the components can be processed as well.
 
-A component that wants to participate in the data flows needs to register a callback function to the 
+A component that wants to participate in the data flows needs to register a callback function to the
 
-The filter gets all data changes 
+The filter gets all data changes
 
 
 

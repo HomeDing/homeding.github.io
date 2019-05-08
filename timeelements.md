@@ -29,7 +29,7 @@ Because timing is required by many Elements the time and real-time feature is di
 
 **Board->getSeconds()**
 
-The `getSeconds()` method in the `board` class returns the full seconds since starting the device. 
+The `getSeconds()` method in the `board` class returns the full seconds since starting the device.
 
 Because most of the timings are based on seconds this methon can be used as the timing reference for emitting events when real time is not required.
 
@@ -49,7 +49,7 @@ To use this functionality a [NTPTime Element](elements/ntptime) or [DSTime Eleme
 
 
 <!-- To set the real time to an actual value this function must be called and the milliseconds since 1970 must be passed. The offset to the current millis is recorded order adjusted.
-The board internally uses the millis function from the Arduino Library to calculate the current real-time. 
+The board internally uses the millis function from the Arduino Library to calculate the current real-time.
 Be aware that when using the deep sleep mode that the millis can … -->
 
 <!-- Using actions dispatched over the network to exchange a current time has a latency that may be too much to be accurate for a specific use case. Local actions are better to be used for this so you may consider using a local Time Element on the devices that have real-time requirements.

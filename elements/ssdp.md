@@ -10,7 +10,7 @@ If you like your device to show up with some hints about the configured function
 
 The SSDP element is a system element to configure this functionality and cannot send or receive actions.
 
-## Element Configuration 
+## Element Configuration
 
 ???
 

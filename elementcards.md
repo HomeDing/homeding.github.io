@@ -14,14 +14,14 @@ The following Elements have special templates implemented:
 | Element | Configuration fetaures                                                |
 | ------- | --------------------------------------------------------------------- |
 | dstime  | Setting the on-chip time using the actual time of the browser. |
-| [timer](elements/timer) | 
+| [timer](elements/timer) |
 
 
 ## Implementing a Template
 
 Using card design with 3 blocks
 
-header 
+header
 body
 config
 

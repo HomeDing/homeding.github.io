@@ -32,7 +32,7 @@ Examples are:
 * [OTA](elements/ota)
 * [SSPD](elements/ssdp)
 
-Most of these elements don't use actions to communicate. 
+Most of these elements don't use actions to communicate.
 
 
 ### Complex Elements and Huge Elements
@@ -111,7 +111,7 @@ The compiler automatically generates the code to execute this assignment and reg
 and also automatically detects multiple implementations and throws an error.
 
 ## See also
- 
+
 *  allow registration of Element Types to avoid hard references.<br> <https://www.bfilipek.com/2018/02/factory-selfregister.html>
 
 * http://www.drdobbs.com/cpp/self-registering-objects-in-c/184410633

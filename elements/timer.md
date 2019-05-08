@@ -2,7 +2,7 @@
 
 The TimerElement creates events based on a one-time or cyclic timing pattern.
 
-During the specified time period the output value will be switched on and off once. 
+During the specified time period the output value will be switched on and off once.
 
 ## Web UI for the Timer Element
 
@@ -57,7 +57,7 @@ The timer elements implements the following properties and actions:
 \*1 required property
 \*2 When cycletime is not not specified or too low the cycletime gets adjusted to waittime+pulsetime.
 
-## Control the Element 
+## Control the Element
 
 The timer element can run on it's own but can also be controlled by the following incomming actions:
 
@@ -83,7 +83,7 @@ The timer element can run on it's own but can also be controlled by the followin
 }
 ```
 
-## State 
+## State
 
 The state of the timer element includes:
 
