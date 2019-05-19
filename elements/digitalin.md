@@ -21,6 +21,7 @@ The following properties are available for configuration of the element:
 | `pullup`  | When defining with true the internal pullup resistor for the input pin will be activated.                                                   |
 | `onHigh`  | Actions.<br/>These actions are emitted when the logical level is switched to `1`.                                                           |
 | `onLow`   | Actions.<br/>These actions are emitted when the logical level is switched to `0`.                                                           |
+| `onValue` | Actions.<br/>These actions are emitted when the logical level is switched.                                                                  |
 
 \* This parameter must be specified.
 

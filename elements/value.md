@@ -42,7 +42,7 @@ The following properties are available for configuration of the element:
 | `min`      | Defines the minimum of the value.                                  |
 | `max`      | Defines the maximum of the value.                                  |
 | `value`    | An initial/default value can be set using the configuration.       |
-| `onChange` | These actions are emitted when the value has changed. |
+| `onValue` | These actions are emitted when the value has changed. |
 |  |
 
 \* This parameter must be specified.
@@ -53,8 +53,8 @@ The following actions can be used with this element:
 
 | Action | Description                                                                                                                                                                     |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| up     | This action increments the value and eventually triggers an outgoing onChange Event.                                                                                            |
-| down   | This action decrements the value and eventually triggers an outgoing onChange Event.                                                                                            |
+| up     | This action increments the value and eventually triggers an outgoing onValue Event.                                                                                            |
+| down   | This action decrements the value and eventually triggers an outgoing onValue Event.                                                                                            |
 | value  | This action sets the value.                                                                                                                                                     |
 | change | The change actions are created when the actual value really changes. Trying to incrementing an value that has already reached its maximum value will not create a chang action. |
 |  |

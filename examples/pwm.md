@@ -21,9 +21,9 @@ Example dimming a LED using PWM Analog output and buttons.
   "value": {
     "led": {
       "value": 20,
-       "min": 0,
-       "max": 255,
-     "onchange": "pwmout/led?value=$v",
+      "min": 0,
+      "max": 255,
+      "onValue": "pwmout/led?value=$v",
       "description": "Build-in LED"
     }
   },

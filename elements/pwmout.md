@@ -46,7 +46,7 @@ The following properties are available with the current values at runtime
     "range": 255,
     "value": 10,
     "inverse": "true",
-    "description": "Build-in LED"
+    "description": "ESP-12 blue led (D4) can be dimmed"
   }
 }
 ```

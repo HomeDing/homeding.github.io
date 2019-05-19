@@ -4,7 +4,7 @@ This recipe uses 2 digital input signals to change the brightness level of a LED
 
 This is can be accieved by using 2 [digital inputs](/elements/digitalin), a [value](/elements/value) and a [pwm](/elements/pwmout) element connected by some actions.
 
-[Element used in led recipe](ledflow.png)
+![Elements used in led recipe](ledflow.png)
 
 The 2 [digital input elements](/elements/digitalin) either increment or decrement like volume up and down buttons.
 Each of them send an action for increment or decrement to the value element.
@@ -48,7 +48,7 @@ The [pwmout element](/elements/pwmout) is configured to allow values within the 
       "value": 20,
       "min": 0,
       "max": 255,
-      "onchange": "pwmout/led?value=$v",
+      "onValue": "pwmout/led?value=$v",
       "description": "value for the LED"
     }
   },
@@ -67,48 +67,53 @@ The [pwmout element](/elements/pwmout) is configured to allow values within the 
 
 ## Variation using a Rotary Element
 
-Instead of using 2 buttons it is possible to connect a rotary encoder.
+Instead of using 2 buttons it is possible to connect a 
+[rotary encoder](/elements/rotary) and modify the value and dim level of the LED by turning a knob.
+
+![Elements used in led recipe](ledrotaryflow.png)
 
 The `rotary` element takes the input value from the encoder connected to `D5` and `D6` and generates actions with values of +10 or -10, sometimes a multiple of them and sends them to the value.
 
+The `value` and the `pwmout` element keep doing the same as before.
 
-Rotary Encoder to dim a LED
-"rotary": {
-  "0": {
-    "description": "Rotary Input",
-    "pin1": "D5",
-    "pin2": "D6",
-    "step": 10,
-    "onchange": "value/led?up=$v"
-  }
-},
+```JSON
+{
+  "rotary": {
+    "0": {
+      "description": "Rotary Input",
+      "pin1": "D5",
+      "pin2": "D6",
+      "step": 10,
+      "onValue": "value/led?up=$v"
+    }
+  },
 
-"value": {
-  "led": {
-    "value": 20,
-    "min": 0,
-    "max": 255,
-    "onchange": "pwmout/led?value=$v",
-    "description": "a value"
-  }
-},
+  "value": {
+    "led": {
+      "loglevel": 2,
+      "value": 20,
+      "min": 0,
+      "max": 255,
+      "onValue": "pwmout/led?value=$v",
+      "description": "value for the LED"
+    }
+  },
 
-"pwmout": {
-  "led": {
-    "pin": "D4",
-    "range": 255,
-    "value": 0,
-    "inverse": "true",
-    "description": "ESP-12 blue led (D4) can be dimmed"
+  "pwmout": {
+    "led": {
+      "pin": "D4",
+      "range": 255,
+      "value": 10,
+      "invers": "true",
+      "description": "Build-in LED"
+    }
   }
 }
+```
 
+## See also
 
-
-Instead of 2 buttons a rotary encoder can be used as well. See recipe [???].
-
-
-======
-
-
-
+* [digital input element](/elements/digitalin)
+* [rotary encoder](/elements/rotary)
+* [value element](/elements/value)
+* [pwmout element](/elements/pwmout) 
