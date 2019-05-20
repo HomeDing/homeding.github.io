@@ -1,17 +1,42 @@
 # Menu Element ???
 
-DRAFT
+`**DRAFT**`
 
-The MenuElement allows controlling multiple value element using only one rotary encoder and one button and using a display to show the actual menu selection and value.
+The MenuElement allows controlling multiple value elements using
+* one rotary encoder or up/down buttons
+* one **selegt** button
+* and a display
+
+to show the actual menu selection and value.
 
 Some rotary encoders already have a built-in momentary button when pressing the knob down. The menu element is especially made for using these as input but an extra button works well also.
 
+There is actually a direct dependency between the menu element and the value element because the menu implementation directly knows and uses the public members of the ValueElement class.
 
-* Screenshot
-* Visualization
+## web UI 
+
+Picture???
+
+Display foto
 
 
-Configuration
+## Element configuration
+
+**indicator** A single chatacter is used as an indicator of the current menu or value that will be changed when using the rotary encoder.
+
+Index the actual value that is focussed  
+
+Mode: select, change
+
+**onDisplay** the action that will be dispatched whenever a change happens
+
+**onSelection**
+
+**onValue**
+
+displaytext element
+
+### Configuration Example
 
 Rotary, digitalin ---> menu
 
