@@ -9,13 +9,13 @@ The input can come from a digitalin[Digital Input Element](/elements/digitalin) 
 
 It can also be used to define a Button Element in the Web UI of the device.
 
-![Button Properties and Actions](buttonapi.png)
+![Button Properties and Actions](elements/buttonapi.png)
 
 ## Web UI for the Button Element
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-![Button UI](/elements/buttonui.png)
+<!-- ![Button UI](elements/buttonui.png) -->
 
 Pressing the button will trigger the events defined in the configuration.
 
