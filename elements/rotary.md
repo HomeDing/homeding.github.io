@@ -1,7 +1,7 @@
 # The Rotary Element
 
 <div class="excerpt">
-  <img src="/i/digitalout.svg">
+  <img src="/i/rotary.svg">
   <p>The RotaryElement is used to capture increments and decrements for values using a rotary encoder.</p>
 </div>
 
