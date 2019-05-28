@@ -106,5 +106,5 @@ Rotary, digitalin ---> menu
 
 ## See also
 
-* [availableelements](availableelements)
+* [Elements](elements)
 * [Radio Example](examples/radio)

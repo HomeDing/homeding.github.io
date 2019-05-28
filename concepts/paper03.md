@@ -96,13 +96,15 @@ The standard board already includes a lot of Elements when being compiled. There
 
 Other Elements require a specific library. These Elements must be activated in the sketch and the sketch will only compile properly when you have installed the required library in the Arduino Environment.
 
-See Table [Available Elements](availableelements)
+Examples are [DHT Element](elements/dht), [RFSend Element](elements/rfsend) or [DCFTime Element](elements/dcftime).
 
-As the ESP chips offer a lot of memory this approach works fine here. For compiling to different architectures like the original Arduino it is possible to compile with a reduced set of elements to make the program fit into memory.
+As the ESP8266 chips offer a lot of program memory this approach works fine when boards habe a 4MByte Flash memory.
+The [FullDing](examples/fullding) includes all available elements of the library and can be used to flash many boards and hardware setups. 
 
-See example [MinDing](minding)
+For compiling to different memory setups, like the ESP-01 board it is possible to compile with a reduced set of elements so to make the program fit into memory.
+See example [MinDing](examples/minding).
 
-Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for variables.
+Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for the classes and variables.
 
 ## Addressing Elements, properties and actions
 

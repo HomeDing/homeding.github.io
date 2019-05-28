@@ -19,7 +19,7 @@ These boards offer an easy start into the ESP8266 development. The have all you 
 
 See [boardnodemcu](boardnodemcu)
 
-The example [fullding](fullding) can be flashed onto these boards by providing most of the [available elements](availableelements) and [display adapters](displays).
+The example [fullding](fullding) can be flashed onto these boards by providing most of the [elements](elements) and [display adapters](displays).
 The functionality will be activated through the configuration.
 
 The web interface is working out of the box and includes IDE features and logging cababilities.

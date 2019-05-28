@@ -2,6 +2,6 @@
 
 [Concept Papers](/concepts/paper)
 
-[Available Elements](availableelements)
+[Elements](elements)
 
 [Class Documentation](classes)

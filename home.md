@@ -18,7 +18,7 @@ The project is Open Souce and all files are licensed under a BSD style license. 
 
 ## Available Elements
 
-The full list of [Available Elements](availableelements) in the HomeDing library are the functional blocks available for building and configuring a device.
+The full list of available [elements](elements) in the HomeDing library are the functional blocks available for building and configuring a device.
 
 Each of them supports a unique feature, reads a sensor, drives displays and other periphery or implements some internal logic. The configuration of the device acvtivates and configures the required elements as well as defining how the interact with each other and to the outer world over network.
 
