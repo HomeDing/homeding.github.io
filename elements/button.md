@@ -23,14 +23,18 @@ Pressing the button will trigger the events defined in the configuration.
 
 The following properties are available for configuration of the element:
 
-| Properties    | Description                                                          |
-| ------------- | -------------------------------------------------------------------- |
-| value         |                                                                      |
-| clicktime     | time to wait for another click before sending out the onclick action |
-| presstime     | time to wait before sending out the onpress action                   |
-| onclick       | A single press gesture was detected.                                 |
-| ondoubleclick |                                                                      |
-| onpress       |                                                                      |
+**value** - This is the incoming logical value that is typically emitted by a igital input element.  
+
+**clicktime** - time to wait for another click before sending out the onclick action
+
+**presstime** - time to wait before sending out the onpress action                  
+
+**onclick** - These Actions are emeited when a single press gesture was detected.                                
+
+**ondoubleclick** - These Actions are emeited when a double click gesture was detected.                                                                         
+
+**onpress** - These Actions are emeited when a long press gesture was detected.                      
+
 
 ## Control the Element
 
@@ -48,23 +52,14 @@ that provides the input value to the Button Element.
   },
 
   "button": {
-    "start": {
-      "pin": "14",
-      "type": "TOGGLE",
-      "inverse": "true",
-      "onon": "device/main?log=start.",
-      "onoff": " device/main?log=stop."
+    "c": {
+      "onclick": "device/main?log=click.",
+      "ondoubleclick": " device/main?log=dclick.",
+      "onpress": " device/main?log=press."
     }
   }
 }
 ```
-
-<!-- The Button Element can also be used without a physical input signal by using the Web UI only.
-
-| Action | Description                                                |
-| ------ | ---------------------------------------------------------- |
-| input  | Receiving this action sets the input level to high or low. |
--->
 
 
 ## Element State
