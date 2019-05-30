@@ -1,17 +1,23 @@
 # PMS Element
 
-The particles with the size of 2.5 µm are too small to be visible individually but when present in high concentration can be seen as dust or smog.
-
 The PMSElement allows using the air pollution sensors like the PMS5003 from Plantower to report the number of micro particles in the air.
 
-This sensor has its own onboard processor driving a laser based particle detection in a constant flow of air
+## About the sensor 
+
+The particles with the size of 2.5 µm are too small to be visible individually but when present in high concentration can be seen as dust or smog.
+
+This fine dust particulates have the ability to penetrate deep into the lungs causing some bad disease. Some of them come from automotive polutions.  
+
+This sensor has its own onboard processor driving a laser based particle detection in a constant flow of air. 
 It communicates the results of measurement every second using a 9600 baud serial interface.
 
-Inside the ESP8266 chip only 1 UART / Serial port is available that can receive and send data and is usually connected to the USB bridge. The second UART
-implementation can only transmit data.
+## Sensor Interface 
 
-Therefore the SoftwareSerial library that is part of the ESP8266 board implementation for Arduino is used to communicate with another serial
-counterpart in the sensor.
+Data from the sensor is passed using a serial protocol with 9600 baud. 
+
+Inside the ESP8266 chip only 1 UART / Serial port is available that can receive and send data using builtin hardware and is usually connected to the USB bridge. The second UART implementation can only transmit data.
+
+Therefore the SoftwareSerial library that is part of the ESP8266 board implementation for Arduino is used to communicate with another serial counterpart in the sensor.
 
 The sensor sends data probe results quiet frequently and can be started and stopped by a command sent to the sensor.
 
