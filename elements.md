@@ -2,7 +2,7 @@
 
 The following element implementations are available in the current version of the HomeDing library.
 
-\* For some Elements a specific library is requires.
+\* For some Elements a specific library is required.
 
 ## Sensor and Input Elements
 
@@ -22,19 +22,19 @@ These elements are used to create an action based on a specific input or a speci
 
 <div class="short">
   <a href="#page=elements/rotary.md"><img src="/i/rotary.svg"></a>
-  <p><strong><a href="#page=elements/rotary.md">Rotary Element</a></strong><br/>
+  <p><strong><a href="#page=elements/rotary.md">Rotary Element</a> *</strong><br/>
   Input Element for using a rotary encoder.</p>
 </div>
 
 <div class="short">
   <a href="#page=elements/DHT.md"><img src="/i/DHT.svg"></a>
-  <p><strong><a href="#page=elements/DHT.md">DHT Element</a></strong><br/>
+  <p><strong><a href="#page=elements/DHT.md">DHT Element</a> *</strong><br/>
   Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
 </div>
 
 <div class="short">
   <a href="#page=elements/bme680.md"><img src="/i/bme680.svg"></a>
-  <p><strong><a href="#page=elements/bme680.md">BME680 Element</a></strong><br/>
+  <p><strong><a href="#page=elements/bme680.md">BME680 Element</a> *</strong><br/>
   Read BME680 sensor data with temperature, humidity, pressure and gas resistance.</p>
 </div>
 
@@ -43,6 +43,29 @@ These elements are used to create an action based on a specific input or a speci
   <p><strong><a href="#page=elements/pms.md">PMS Element</a></strong><br/>
   Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
 </div>
+
+
+## Output and Actor Elements
+
+<div class="short">
+  <a href="#page=elements/pwmout.md"><img src="/i/pwmout.svg"></a>
+  <p><strong><a href="#page=elements/pwmout.md">PWMOut Element</a></strong><br/>
+  Output Element to output an pwm signals based on actions. e.g. LEDs.</p>
+</div>
+
+<div class="short">
+  <a href="#page=elements/digitalout.md"><img src="/i/digitalout.svg"></a>
+  <p><strong><a href="#page=elements/digitalout.md">DigitalOut Element</a></strong><br/>
+  Output element to create digital output signals based on actions.</p>
+</div>
+
+<div class="short">
+  <a href="#page=elements/rfsend.md"><img src="/i/rfsend.svg"></a>
+  <p><strong><a href="#page=elements/rfsend.md">RFSend Element</a> *</strong><br/>
+  Send out RF codes on the 433 MHz band to control remote sockets.</p>
+</div>
+
+
 
 ## Logic Elements
 
@@ -60,68 +83,27 @@ Logic elements implement using on/off values expressed as 1/0 values.
   Element to switch a value on and off using a digital input witgh a monetary button.</p>
 </div>
 
-## System Elements
-
-<div class="short">
-  <a href="#page=elements/device.md"><img src="/i/device.svg"></a>
-  <p><strong><a href="#page=elements/device.md">Device Element</a></strong><br/>
-  Element to manage device level settings.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/ota.md"><img src="/i/ota.svg"></a>
-  <p><strong><a href="#page=elements/ota.md">OTA Element</a></strong><br/>
-  Enable and configure Over The Air Updates</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/ssdp.md"><img src="/i/ssdp.svg"></a>
-  <p><strong><a href="#page=elements/ssdp.md">SSDP Element</a></strong><br/>
-  Enable and configure discovering devices on the network.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/value.md"><img src="/i/value.svg"></a>
-  <p><strong><a href="#page=elements/value.md">Value Element</a></strong><br/>
-  Receiving and sending actions to use and control an internal value.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/remote.md"><img src="/i/remote.svg"></a>
-  <p><strong><a href="#page=elements/remote.md">Remote Element</a></strong><br/>
-  sending actions to other devices over the local network.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/menu.md"><img src="/i/menu.svg"></a>
-  <p><strong><a href="#page=elements/menu.md">Menu Element</a></strong><br/>
-  elements/menu)               |</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/log.md"><img src="/i/log.svg"></a>
-  <p><strong><a href="#page=elements/log.md">Log Element</a></strong><br/>
-  storing timestamp based sensor values.</p>
-</div>
 
 
 ## Display Elements
 
+Of course HomeDing devices work without a local display attached but for some use cases they are helpful. 
+
 <div class="short">
   <a href="#page=displays/ssd1306.md"><img src="/i/displayssd1306.svg"></a>
-  <p><strong><a href="#page=displays/ssd1306.md">DisplaySSD1306</a></strong><br/>
+  <p><strong><a href="#page=displays/ssd1306.md">DisplaySSD1306</a> *</strong><br/>
   Adapter for SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.</p>
 </div>
 
 <div class="short">
   <a href="#page=displays/sh1106.md"><img src="/i/displaysh1106.svg"></a>
-  <p><strong><a href="#page=displays/sh1106.md">DisplaySH1106</a></strong><br/>
+  <p><strong><a href="#page=displays/sh1106.md">DisplaySH1106</a> *</strong><br/>
   Adapter for SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.</p>
 </div>
 
 <div class="short">
   <a href="#page=displays/lcd.md"><img src="/i/displaylcd.svg"></a>
-  <p><strong><a href="#page=displays/lcd.md">DisplayLCD</a></strong><br/>
+  <p><strong><a href="#page=displays/lcd.md">DisplayLCD</a> *</strong><br/>
   Adapter for HD44780 compatible LCDs displays using I2C adapter.</p>
 </div>
 
@@ -187,40 +169,71 @@ Logic elements implement using on/off values expressed as 1/0 values.
   Element for creating timer (duration) based actions.</p>
 </div>
 
-## Output and Actor Elements
+
+
+## System Elements
 
 <div class="short">
-  <a href="#page=elements/pwmout.md"><img src="/i/pwmout.svg"></a>
-  <p><strong><a href="#page=elements/pwmout.md">PWMOut Element</a></strong><br/>
-  Output Element to output an pwm signals based on actions. e.g. LEDs.</p>
+  <a href="#page=elements/device.md"><img src="/i/device.svg"></a>
+  <p><strong><a href="#page=elements/device.md">Device Element</a></strong><br/>
+  Element to manage device level settings.</p>
 </div>
 
 <div class="short">
-  <a href="#page=elements/digitalout.md"><img src="/i/digitalout.svg"></a>
-  <p><strong><a href="#page=elements/digitalout.md">DigitalOut Element</a></strong><br/>
-  Output element to create digital output signals based on actions.</p>
+  <a href="#page=elements/ota.md"><img src="/i/ota.svg"></a>
+  <p><strong><a href="#page=elements/ota.md">OTA Element</a></strong><br/>
+  Enable and configure Over The Air Updates</p>
 </div>
 
 <div class="short">
-  <a href="#page=elements/rfsend.md"><img src="/i/rfsend.svg"></a>
-  <p><strong><a href="#page=elements/rfsend.md">RFSend Element</a></strong><br/>
-  Send out RF codes on the 433 MHz band to control remote sockets.</p>
+  <a href="#page=elements/ssdp.md"><img src="/i/ssdp.svg"></a>
+  <p><strong><a href="#page=elements/ssdp.md">SSDP Element</a></strong><br/>
+  Enable and configure discovering devices on the network.</p>
 </div>
+
+<div class="short">
+  <a href="#page=elements/value.md"><img src="/i/value.svg"></a>
+  <p><strong><a href="#page=elements/value.md">Value Element</a></strong><br/>
+  Receiving and sending actions to use and control an internal value.</p>
+</div>
+
+<div class="short">
+  <a href="#page=elements/remote.md"><img src="/i/remote.svg"></a>
+  <p><strong><a href="#page=elements/remote.md">Remote Element</a></strong><br/>
+  sending actions to other devices over the local network.</p>
+</div>
+
+<div class="short">
+  <a href="#page=elements/menu.md"><img src="/i/menu.svg"></a>
+  <p><strong><a href="#page=elements/menu.md">Menu Element</a></strong><br/>
+  elements/menu)               |</p>
+</div>
+
+<div class="short">
+  <a href="#page=elements/log.md"><img src="/i/log.svg"></a>
+  <p><strong><a href="#page=elements/log.md">Log Element</a></strong><br/>
+  storing timestamp based sensor values.</p>
+</div>
+
 
 
 ## Elements based on external Arduino Libraries
 
-| Type                              | Functionality                                                                |   Library used    |
-| --------------------------------- | ---------------------------------------------------------------------------- | :---------------: |
-| [DHT Element](elements/DHT)       | Use DHT11 and DHT22 sensors for temperature and humidity and create actions. |     [DHTesp]      |
-| [RFSend Element](elements/rfsend) | send RF signals e.g. on 433 MHz for controlling switch boxes.                |      [TabRF]      |
-| [Rotary Element](elements/rotary) | Input element that creates actions based on a rotary encoder.                |  [RotaryEncoder]  |  |
-| [BME680 Element](elements/bme680) | The BME680 sensor requires the Adafruit BME680 library.                      | [Adafruit BME680] |
+| Type                              | Library used                                        |
+| --------------------------------- | --------------------------------------------------- |
+| [DHT Element](elements/DHT)       | [DHTesp]                                            |
+| [RFSend Element](elements/rfsend) | [TabRF]                                             |
+| [Rotary Element](elements/rotary) | [RotaryEncoder]                                     |
+| [BME680 Element](elements/bme680) | [Adafruit BME680]                                   |
+| SDD1306 and SH1106 displays       | [ESP8266 and ESP32 Oled Driver for SSD1306 display] |
+| LiquidCrystal displays in I2C     | [LiquidCrystal_PCF8574]                             |
 
-[DHTesp]: https://github.com/beegee-tokyo/DHTesp "DHT library for ESP boards."
+[DHTesp]: https://www.arduinolibraries.info/libraries/dht-sensor-library-for-es-px "DHT library for ESP boards."
 [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library"
-[RotaryEncoder]: http://www.mathertel.de/Arduino/RotaryEncoderLibrary.aspx "A library for using a rotary encoder as an input."
-[Adafruit BME680]: (https://github.com/adafruit/Adafruit_BME680)
+[RotaryEncoder]: https://www.arduinolibraries.info/libraries/rotary-encoder "A library for using a rotary encoder as an input."
+[Adafruit BME680]: https://www.arduinolibraries.info/libraries/adafruit-bme680-library
+[ESP8266 and ESP32 Oled Driver for SSD1306 display]: https://www.arduinolibraries.info/libraries/esp8266-and-esp32-oled-driver-for-ssd1306-display
+[LiquidCrystal_PCF8574]: https://www.arduinolibraries.info/libraries/liquid-crystal_pcf8574
 
 ## Planed Elements
 
@@ -231,19 +244,7 @@ Logic elements implement using on/off values expressed as 1/0 values.
 | (t.b.d.)       | send actions to a MQTT broker                                                                |
 | (t.b.d.)       | Detect movement                                                                              |
 | (t.b.d.)       | Detect noise using a microphone                                                              |
-|                |
 
-## Supported Displays
-
-| chip / type   | description                                                                  | Library                                             |
-| ------------- | ---------------------------------------------------------------------------- | --------------------------------------------------- |
-| displayless   | of course HomeDing devices work without a local display attached.            |                                                     |
-| SDD1306       | Monochrome OLED display with 128\*32 or 128\*64                              | [ESP8266 and ESP32 Oled Driver for SSD1306 display] |
-| LiquidCrystal | HD44780 compatible LCDs with 2 or 4 lines of 20 characters using I2C adapter | [LiquidCrystal_PCF8574]                             |
-|               |
-
-[ESP8266 and ESP32 Oled Driver for SSD1306 display]: ()
-[LiquidCrystal_PCF8574]: (https://www.mathertel.de/arduino/LiquidCrystal_PCF8574.aspx)
 
 ## See also
 
