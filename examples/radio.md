@@ -2,6 +2,33 @@
 
 > #Draft
 
+The radio example shows how to build a more complex internet connected device that has a dedicated
+element for controlling a FM radio chip (and a I2C bus controllable amplifier)
+
+The hardware required for this example are:
+
+* a NodeMCU board with ESP8266
+* a radio chip like the RDA5807 that can receive FM and is controllable using the I2C bus
+* a mobile phone headset (at minimum) or
+* an amplifier and speakers.
+* The TPA2016 amplifier chip is supported as well by this example
+* some buttons or a rotary encoder
+* a display like the LCD
+
+The elements used in this example are from the standard element set:
+
+* rotary encoder or digitalin element
+* menu element
+* value elements
+
+The elements that come with the example are
+
+* radio element
+* TPA2016 element
+
+
+```TEXT
+
 // http://lcddevice/$board/radio/r?volume=1
 // http://lcddevice/$board/radio/r?volume=12
 // http://lcddevice/$board/board/0?loglevel=1

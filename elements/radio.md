@@ -19,7 +19,7 @@ To make it available for configuration it needs to be included into the sketch c
 The RadioDing example uses this element to create a remote activateable and controllable radio that uses the 
 RDA5807M radio chip from RDA Microelectronics.
 
-Look into the [Radio example](exampleradio) for details.
+Look into the [Radio example](/examples/radio) for details.
 
 ## Properties
 
