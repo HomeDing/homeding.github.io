@@ -94,68 +94,11 @@ I added a 100nF capacitor next to the radio.
 // http://lcddevice/$board/value/frequency?value=8930
 // http://lcddevice/$board/value/frequency?value=9560
 // http://lcddevice/$board/value/frequency?value=9440
+```
 
+## Example configuration
 
-bool RadioElement::set(const char *name, const char *value)
-{
-  LOGGER_ETRACE("set(%s, %s)", name, value);
-  bool ret = true;
-  int v;
-
-  if (_stricmp(name, "volume") == 0) {
-    v = _atoi(value);
-    if (active && v != _volume) {
-      radio.setVolume(v);
-      _board->dispatch(_volumeAction, v);
-    }
-    _volume = v;
-
-  } else if (_stricmp(name, "frequency") == 0) {
-    v = _atoi(value);
-    if (active && v != _freq) {
-      radio.setFrequency(v);
-      _board->dispatch(_frequencyAction, v);
-    }
-    _freq = _atoi(value);
-
-  } else if (_stricmp(name, "mono") == 0) {
-    if (active) {
-      radio.setMono(_atob(value));
-    }
-
-  } else if (_stricmp(name, "mute") == 0) {
-    if (active) {
-      radio.setMute(_atob(value));
-    }
-
-  } else if (_stricmp(name, "softmute") == 0) {
-    if (active) {
-      radio.setSoftMute(_atob(value));
-    }
-
-  } else if (_stricmp(name, "bassboost") == 0) {
-    if (active) {
-      radio.setBassBoost(_atob(value));
-    }
-
-  } else if (_stricmp(name, "onStationName") == 0) {
-    _stationAction = value;
-
-  } else if (_stricmp(name, "onRDSText") == 0) {
-    _rdsTextAction = value;
-
-  } else if (_stricmp(name, "onFrequency") == 0) {
-    _frequencyAction = value;
-
-  } else if (_stricmp(name, "onVolume") == 0) {
-    _volumeAction = value;
-
-  } else if (_stricmp(name, "onRSSI") == 0) {
-    _rssiAction = value;
-
-
-
-'''JSON
+```JSON
 {
   "rotary": {
     "0": {
