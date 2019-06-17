@@ -215,7 +215,22 @@ Of course HomeDing devices work without a local display attached but for some us
   storing timestamp based sensor values.</p>
 </div>
 
+## Other Elements
 
+<div class="short">
+  <a href="#page=elements/radio.md"><img src="/i/radio.svg"></a>
+  <p><strong><a href="#page=elements/radio.md">Radio Element</a></strong><br/>
+  This element is part of the <a href="#page=examples/radio.md">Radio Example</a>
+  and uses the external <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>
+  to configure various FM radio boards.</p>
+</div>
+
+<div class="short">
+<a href="#page=elements/xxx.md"><img src="/i/default.svg"></a>
+<p>
+  This element is part of the <a href="#page=examples/radio.md">Radio Example</a>
+   and enables the configuration of a XXX amplifier chip e.g to set volume.</p>
+</div>
 
 ## Elements based on external Arduino Libraries
 

@@ -3,32 +3,43 @@
 > #Draft
 
 The radio example shows how to build a more complex internet connected device that has a dedicated
-element for controlling a FM radio chip (and a I2C bus controllable amplifier)
+element for controlling a FM radio chip and a TPA2016 chip that is a stereo amplifier with a volume control.
+The example here is using the RDA5807 FM receiver chip. There are other chips supported by the radio library
+so it should be easy to use other chips as well.
 
-![radio](examples/radio.jpg)
-![radio](examples/radio2.jpg)
-![radio](examples/radio3.jpg)
+These chips all are connected using the I2C bus for control and us analog audio signals.
 
-The hardware required for this example are:
+  * The board and other hardware required for this example. 
+    ![radio](examples/radio.jpg)
+  * The unconnected main board and amplifier board.
+    ![radio](examples/radio2.jpg)
+  * Closer picture of the FM chip.
+    ![radio](examples/radio3.jpg)
 
-* a NodeMCU board with ESP8266
-* a radio chip like the RDA5807 that can receive FM and is controllable using the I2C bus
-* a mobile phone headset (at minimum) or
-* an amplifier and speakers.
+## Board and Hardware to build the example
+
+The following hardware is required for building all of this example:
+
+* A NodeMCU board with ESP8266
+* A radio chip like the RDA5807 that can receive FM and is controllable using the I2C bus
+* A mobile phone headset (at minimum) or
+* An amplifier and speakers.
 * The TPA2016 amplifier chip is supported as well by this example
-* some buttons or a rotary encoder
-* a display like the LCD
+* Some buttons for input or a rotary encoder
+* A display like the LCD
 
-The elements used in this example are from the standard element set:
+The element configuration that is used in this example are:
 
 * rotary encoder or digitalin element
 * menu element
 * value elements
 
-The elements that come with the example are
+The elements that come with the example code are
 
 * radio element
 * TPA2016 element
+
+These elements also show how elements can be implemented together with the sketch and are extending the capablilites of the device without the need to include them into the library. 
 
 ## Using a Rotary encoder
 
