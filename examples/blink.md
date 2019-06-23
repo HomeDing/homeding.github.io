@@ -2,13 +2,15 @@
 
 > #Draft
 
-The Blink-Ding Example is a perfect project that you can use for your first experience with the HomeDing library.
+The Blink-Ding Example is a perfect project that you can use for your first experience with the HomeDing library or programming a ESP8266 board.
 
-It only requires a NodeMCU Board only or another ESP8266 based Board that has at least 4 MByte Flash Memory.
+It only requires a NodeMCU Board only or any other ESP8266 based board that has at least 4 MByte Flash Memory.
 
 Be sure your environment is prepared as lined out in the [setup instructions](examples/setup).
 
 ## Uploading the sketch
+
+
 
 ...
 

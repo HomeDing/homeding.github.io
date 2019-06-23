@@ -1,13 +1,44 @@
 # Radio Example
 
+This example is more complex to be implemented. 
+
+The [setup](examples|setup) article explains how to setup all the tools required to work with ESP8266 based boards.
+
+To ensure that all tools work as expected the [Blink example](exampkes/blink) should be used first.
+
 > #Draft
 
-The radio example shows how to build a more complex internet connected device that has a dedicated
-element for controlling a FM radio chip and a TPA2016 chip that is a stereo amplifier with a volume control.
+## Components for the Radio Example
+
+The radio example shows how to build a internet connected device
+that has a dedicated element for controlling a FM radio chip and a TPA2016 chip that is a stereo amplifier with a volume control.
 The example here is using the RDA5807 FM receiver chip. There are other chips supported by the radio library
 so it should be easy to use other chips as well.
 
-These chips all are connected using the I2C bus for control and us analog audio signals.
+The used components and the principle wiring can be seen in this block diagram:
+
+![Radio Buidling Blocks](examples\radioblocks.png)
+
+## Wiring
+
+The chips and the LCD all are connected using the I2C bus. This is used to drive the display and to control the radio and the amplifier functionality.
+
+The rotary encoder is directly connected to the ESP8266 board.
+
+The audio signals are analog and must be   connected from the radio chip to the amplifier board. The speakers are connected to the amplifier board and the antenna to the radio board.
+
+The following table contains all signal lines including the pin numbers:
+
+Signal | ESP8266 | LCD | Radio | Amp
+---|---|---|---|---
+ I2C Data | D2 | Data
+I2C Clock | D3 | CLK| #4 | #5
+VCC 3.3 |
+VCC 5 |
+ GND | GND | GND | #4 | #5
+
+
+## Pictures
 
   * The board and other hardware required for this example. 
     ![radio](examples/radio.jpg)
@@ -34,12 +65,21 @@ The element configuration that is used in this example are:
 * menu element
 * value elements
 
+## Power supply
+
+I strongly propose to add a separate power source for the amplifier and the radio chip and not use the power from the Esp8266 board. The USB bus cannot provide much power and the *noise* on the USB power is usually bad for audio.
+
+You also risk to burn the Regulator on the ESP board.
+
+# Elements in use
+
 The elements that come with the example code are
 
 * radio element
 * TPA2016 element
 
 These elements also show how elements can be implemented together with the sketch and are extending the capablilites of the device without the need to include them into the library. 
+
 
 ## Using a Rotary encoder
 
@@ -61,6 +101,14 @@ When using the closing to ground approach the builtin pull up resistors of the c
 
 When the turn is in the wrong direction you just have to switch the two rotary signals.
 
+## Alternative use up and down buttons
+
+???
+
+Long press the buttons to create repeated up and down actions.
+
+???
+
 ## Using the LCD 
 
 The LCD is one of the standard display types that is used in many Arduino solutions. Here a backpack is added to allow using the LCD display on the I2C bus.
@@ -74,6 +122,10 @@ The LCD uses 5V power but accepts 3.3 V signals in the I2C bus.
 * VCC => VIN (red) (the 5V directly connected to the USB adapter) 
 * SDA => D2 (blue)
 * SCL => D1 (yellow)
+
+The text on the display is using several displaytext elements to show the actual values of frequency, volume and RSSI.
+
+The text in the second line is used by the menu element and for showing the station name from RDS.
 
 ## Base PCB
 
