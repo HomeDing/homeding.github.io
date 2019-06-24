@@ -2,11 +2,13 @@
 
 NodeMCU is an open-source firmware for ESP8266 boards that enables scripting a IOT device using the Lua script language.
 
-NodeMCU also had defined a board for development purpose that is based on the ESP-12 module with 4 Mbyte Flash and a USB to Serial converter.
+![nodencm board](/boards/nodemcu.jpg)
 
-However there are many derivate versions on the market:
+NodeMCU also had defined a board for development purpose that is based on the ESP-12 / ESP-12E module with 4 Mbyte Flash, an USB to Serial converter and a 3.3 V power supply.
 
-- The pin names Dnn are unified and correspond to GPIO pins with different numbers. Some older boards had different mappings. See also [boardpins](boardpins).
+However there are many derivate versions on the market but usually they follow the published design:
+
+- The pin names Dnn are unified and correspond to GPIO pins with different numbers. Some older boards had different mappings. See also [ESP8266 pins](/boards/pins).
 
 - There is a USB to Serial chip but version varies.
 
@@ -33,7 +35,7 @@ Most of the cases the diode between the USB 5V line and the onboard regulator wa
 
 ## See also
 
-- [boards](boards)
+- [boards](/boards)
 - [NodeMCU Documentation](https://nodemcu.readthedocs.io/en/master/)
 - <https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/>
 - <https://www.nodemcu.com/index_en.html>
