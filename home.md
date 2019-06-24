@@ -24,13 +24,26 @@ Each of them supports a unique feature, reads a sensor, drives displays and othe
 
 It is intentionally easy to implement your own specific elements as you can see in the [Examples](examples).
 
-
 ## Examples
+
+There a some examples included with the library that show some of techniques of implementing on the sketch level.
+
+More examples are available as recipies that show how to configure the elements. The recipies can all be used with the standard example sketch.
+
+The general procedures to setup the development environment can be found in the [setup instructions](examples/setup).
+
+**[Blink](examples/blink)** This very simple example needs just a ESP8266 board and can be used to check the correct setup of the environment.
+
+**[Standard](examples/Standard)**
+
+* [PWM](examples/pwm)
+* [Radio](examples/radio)
+* [minimal](examples/minimal)
+* [full](examples/full)
 
 - [List of availabe Examples with the HomeDing Library](examples)
 
 - [The HomeDing - HomeBlink Example](/examples/blink)
-  This simple example also includes a description on how to setup the environment.
 
 - [The build-in WebServer](webserver)
 - [The build-in Web-Services](webservices)

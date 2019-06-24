@@ -248,7 +248,7 @@ h2 {
       // show given text as html.
       setText: function (fName, txt) {
         var converter = new showdown.Converter();
-        converter.setFlavor("github");
+        // converter.setFlavor("github");
         var hText = converter.makeHtml(txt);
         // modify links to work:
         hText = hText.replace(/href="([\w\/]+).md"/g, 'href="#page=$1.md"');
