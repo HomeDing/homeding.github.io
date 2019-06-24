@@ -17,10 +17,9 @@ These boards offer an easy start into the ESP8266 development. The have all you 
 * breadboard friendly (most versions)
 * LED
 
-See [boardnodemcu](boardnodemcu)
+See [Nodemcu board details](/boards/nodemcu)
 
-The example [fullding](fullding) can be flashed onto these boards by providing most of the [elements](elements) and [display adapters](displays).
-The functionality will be activated through the configuration.
+The [full example](/examples/full) can be flashed onto these boards by providing most of the [elements](/elements) and [display adapters](/displays). The functionality will be activated through the configuration.
 
 The web interface is working out of the box and includes IDE features and logging cababilities.
 
@@ -31,18 +30,18 @@ Less memory is cheaper. These boards have no difference regarding the CPU and SO
 
 Older boards with 512 KByte are still available but should be avoided because OTA probably will not work because of this memory restriction.
 
-**[ESP-01](boardesp01)** is the cheapest base minimum ESP8266 board available. Event the connector only supports few GPIO pins but small and enough for simple sensors and relais appliances.
+**[ESP-01](/boards/esp01)** is the cheapest base minimum ESP8266 board available. Event the connector only supports few GPIO pins but small and enough for simple sensors and relais appliances.
 
-See [boardesp01](boardesp01)
+See [Esp-01 details](boards/esp01)
 
-The example [minding](minding) can be flashed onto these boards by providing the typical sensor elements and most core elements but no display adapters.
-The functionality will be activated through the configuration.
+The [minimal example](/examples/minimal) can be flashed onto these boards by providing the typical sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration.
 
-The web interface can be tailored to visualise the current sensor values.
+The web interface can be tailored e.g. to visualise the current sensor values.
 
+<!-- 
 **[Sonoff Basic]()** is a off-the-shelf solution to switch main power consumers. If you have experience in building high voltage solutions this one is interesting. Similar Sonoff devices are available. The Tasmota library has a wiki with much details.
 
-See [boardsonoff](boardsonoff)
+See [boardsonoff](boardsonoff) -->
 
 
 ## ESP8285 based boards
@@ -55,9 +54,9 @@ lsts; ESP8285 = ESP8266 + 1M Flash in the same chip.
 ## Boards with Extras
 
 
-**[Esp-Wroom-02 Modul ESP8266 with OLED and 18650](boardwroom2)** is a ESP-12E with OLED display, LiIon Battery support and switch.
+**[Esp-Wroom-02 Modul ESP8266 with OLED and 18650](/boards/wroom2)** is a ESP-12E with OLED display, LiIon Battery support and switch.
 
-[Wifi Kit 8 Module ESP8266 with OLED](boardwifikit8) is a ESP-12E with OLED display and Li-Polymer battery support.
+[Wifi Kit 8 Module ESP8266 with OLED](/boards/wifikit8) is a ESP-12E with OLED display and Li-Polymer battery support.
 
 
 
@@ -70,4 +69,4 @@ lsts; ESP8285 = ESP8266 + 1M Flash in the same chip.
 * <http://www.forward.com.au/pfod/ESP8266/GPIOpins/index.html>
 * <https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process>
 
-* [boardpins](boardpins)
+* [ESP8266 pins](boards/pins)
