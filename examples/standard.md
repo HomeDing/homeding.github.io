@@ -1,6 +1,12 @@
-# Full Feature example
+# Standard example
+
 
 > #Draft
+
+acts as a starting point
+
+can run all the recipies that ..
+
 
 A typical board for this is a [NodeMCU board](boards/nodemcu) with 4GByte Flash Memory, an integrated USB adapter and a regulator for 3.3 V power supply.
 
