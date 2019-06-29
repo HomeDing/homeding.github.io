@@ -1,42 +1,55 @@
 # Software Architecture
 
-## Overview
-
-This picture shows how the main parts of the architecture of the HomeDing library evolved from the POC:
+These are the functional blocks of a device based on the HomeDing library:
 
 <img src="concepts/architectureblocks.png" alt="drawing" style="width:600px;height:420px"/>
 
+The heart if the HomeDing library implementation is the board class that covers the creation and configuration of the elements and enables exchanging actions among the elements and the web server.
 
-The heart if the HomeDing library implementation is the board class that covers the creation and configuration of the elements and enables exchanging actions among the elements and the web server. A micro implementation of a JSON parser and some utilities are provided for this central role.
+The web server is the `door` to the network that enables to use the UI from the files on the filesystem and by providing REST based services to interact with the device.  
 
-The Elements are the implementation blocks that are that are covering the specific adaption for sensors, actors, other IO attached modules and are also used for timer based actions and logic modules. They are created and initialized on demand by the board when reading the configuration files.
+A micro implementation of a JSON parser and some utilities are provided for this central role.
 
-In the standard example many of the elements are already part of the uploaded program and can be activated by just modifying the configuration.
-
-It is easy to implement new Elements or modify existing elements to create specific solutions based for other attached modules or to for specific functionaliyty
-
-The script of a Ding is used for starting the available functionality and add additional elements if required while the configuration is  the place that specifies what elements are active and how they operate and interact.
-
-## Building self-contained Things
+## Building self-contained and autonomous Things
 
 In the market many Home Automation systems and gadgets are available that require to buy, build or use a central system that controls the Things.
 
 ### No Cloud please – but as an option
 
-Amazon, Google and others are proving such a central system on the internet "in the cloud". Things like voice-controlled speakers and power sockets need to be connected to the internet all time and some of your personal data needs to be shared with the cloud providers.
+Amazon, Google and others are proving such a central system on the internet "in the cloud" that are used by companies to build central portals to control the IoT devices e.g. by voice.
+Power sockets or bulbs e.g. need to be connected to the internet all time and some of your personal data needs to be shared with the cloud providers.
 
 Some of these systems offer real powerful features and cannot be easily replaced by a private system inside your household.
 
-Using these services may be something you consider for some solutions but is is not required to connect to the internet when building Things that do not need such a service.
+But without these cloud based systems your devices might not work or have some functional limitations.
+
+Using these services may be something you consider for specific solutions but is is not required to connect to the internet when building Things that do not need such a service.
 Therefore, you also do not need to register yourself or your thing anywhere. It is all yours.
 
 ### No Hub or central device required
 
-Some systems like Philips Hue system or the IKEA TRÅDFRI systems requires to buy a hub as a central controller because the Things in these systems cannot connect directly to the Home WLAN. They use another network to communicate and the hub is required to „translate“ between these different protocols.
+Some systems like Philips Hue system or the IKEA TRÅDFRI systems requires to buy a hub as a central controller because the Things in these systems cannot connect directly to the Home WLAN. They use another network protocol to communicate and the hub is required to „translate“ between these protocols like ZigBee or Z-Wave and the regular WLAN.
 
 Because the processors today include the WLAN networking capabilities directly this kind of design is not required any more and is even a bad design because Things may fail to operate because of the possible central failure of the hub.
 
 For simple solutions this also adds too much overhead and complexity to have a smart easy start building your own things.
+
+## Elements 
+
+The Elements are the implementation blocks for the adaption of sepcific sensors, actors, other IO attached modules and for more time and logic modules. They are created and initialized on demand by the board when reading the configuration files.
+
+When creating the upload program for a device many elements can be included. As they are configured they will be activated by using the parameters from the configurarion files.
+
+For many devices the standard example contains already all the element implementations that are used by the recipies available in the documentation. These can be adopted by just modifying the configuration.
+
+## Web based configuration
+
+Every device with a standard board can also host the functionality of a web interface that can be used to create or modify the configurarion by dragging new elements into the activation area and changing the parameters.
+For this level no programming skills are required.  
+
+It is aslo easy to implement new Elements or modify existing elements to create specific solutions based for other attached modules or to for specific functionaliyty.
+
+The base sketch of a device can also be modified for using very specific boards like ESP-01 boards that do not have full memory options available. Yu can find examples for this in the library.
 
 ### Web User Interface always built-in
 

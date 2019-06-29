@@ -2,14 +2,14 @@
 
 The power, flexibility and the extensibility of the HomeDing library comes from 2 main designs
 
-* the unified implementation of I/O and logic in the Elements of the Architecture.
-* the way Elements are addressed in the messages.
+* the unified implementation of I/O and logic in the Elements and 
+* the way Elements can interact locally or over the network by using messages.
 
 These were influenced by the well-known Actor Model concept and the REST full adressing.
 
 ## Actor Model
 
-The implementation has borrowed some of the ideas and principles of the “Actor Model” that is a complete distributed, concurrent computing model..
+The implementation has borrowed some of the ideas and principles of the “Actor Model” that is a complete distributed, concurrent computing model.
 
 The “Actors” and “Messages” in this computation model is similar to the “Elements” and “Actions” in the HomeDing Library implementation. However, the HomeDing Library implementation need to respect the limited CPU and memory power of and the things and the network in between. Some pragmatic design decisions of the implementations have been necessary.
 
@@ -18,10 +18,11 @@ Some good readings about this model can be found at
 * https://en.wikipedia.org/wiki/Actor_model
 * http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor
 
-## Elements
+## Elements 
 
-Like in the Actor Model the functionality is encapsulated inside the components that have a unified interface to the outer world but differ in the
-inner implementation. This is the concept of the Elements you find in the HomeDIng library.
+Like in the Actor Model the functionality is encapsulated inside the components that have a unified interface
+to the outer world but differ in the inner implementation.
+This is the concept of the Elements you find in the HomeDing library.
 
 The common interface is about supporting the lifecycle:
 
@@ -32,15 +33,18 @@ The common interface is about supporting the lifecycle:
 * sending actions
 * terminating elements
 
-where configuring elements and receiving actions is the same implementation approach.
+where configuring elements and receiving actions is the same implementation.
 
 The standard interface of every Element is defined by the Element class and every specific Element is derived from this class and adding the specific functionality.
+
+![Methods of Element implementations](elementapi.png) ???
 
 A detailled description of the common Element Interface can be found in [ElementInterface](ElementInterface).
 
 ## Actions
 
-Actions or you may call it Events is the functionally that allows Elements to communicate using messages and build more complex things.
+Actions or you may call it Events is the functionally that allows Elements to communicate.
+By using multiple elements that interact this way more complex things can be created.
 
 Because of some experience with responsiveness of things the messages are not dispatched immediately by the board.
 Calling the loop function will be prioritized over sending a message.
