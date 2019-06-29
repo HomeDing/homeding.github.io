@@ -1,5 +1,10 @@
 # OTA Element ???
 
+<div class="excerpt">
+  <img src="/i/ota.svg">
+  <p><strong><a href="#page=elements/ota.md">OTA Element</a></strong><br/>
+  Enable and configure Over The Air Updates</p>
+</div>
 
 The OTAElement allows uploading new sketches to the board over the network.
 

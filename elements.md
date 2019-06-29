@@ -74,7 +74,7 @@ Logic elements implement using on/off values expressed as 1/0 values.
 <div class="short">
   <a href="#page=elements/button.md"><img src="/i/button.svg"></a>
   <p><strong><a href="#page=elements/button.md">Button Element</a></strong><br/>
-  Element that can differentiate clicks, dounbleclicks and long press gestures to send out actions.</p>
+  Element that can differentiate clicks, dounble clicks and long press gestures to send out actions.</p>
 </div>
 
 <div class="short">
@@ -176,8 +176,9 @@ Of course HomeDing devices work without a local display attached but for some us
 <div class="short">
   <a href="#page=elements/device.md"><img src="/i/device.svg"></a>
   <p><strong><a href="#page=elements/device.md">Device Element</a></strong><br/>
-  Element to manage device level settings.</p>
+  configuration of the device and board.</p>
 </div>
+
 
 <div class="short">
   <a href="#page=elements/ota.md"><img src="/i/ota.svg"></a>
@@ -200,7 +201,7 @@ Of course HomeDing devices work without a local display attached but for some us
 <div class="short">
   <a href="#page=elements/remote.md"><img src="/i/remote.svg"></a>
   <p><strong><a href="#page=elements/remote.md">Remote Element</a></strong><br/>
-  sending actions to other devices over the local network.</p>
+  sending actions to elements in other devices over the local network.</p>
 </div>
 
 <div class="short">

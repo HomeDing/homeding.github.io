@@ -39,7 +39,7 @@ These examples are for a minimal board like ESP-01 or Sonoff basic devices with 
 * [Recipies](recipies)
 
 
-## Base Example
+## Standard Example
 
 This example can be used on any board that has a 4MByte Flash memory. This includes all the nodemcu boards.
 No additional hardware is required to start this example and the Serial interface is used to transfer some internal actions and infos.

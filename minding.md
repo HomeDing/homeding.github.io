@@ -4,7 +4,7 @@
 
 This example project is targeting ESP8266 based devices that only have 1 Mbyte of flash memory.
 
-Candidates are the [Esp-01 board](boardesp01.md), [Sonoff devices](boardsonoff.md), Bulb and maybe more.
+Candidates are the [Esp-01 board](/boards/esp01), [Sonoff devices](/boards/sonoff), Bulb and maybe more.
 
 The sketch only includes the sensor and the core elements jut not displays so the sketch still can be uploaded using OTA because it fits regarding the size.
 

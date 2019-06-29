@@ -12,29 +12,34 @@ The project is Open Souce and all files are licensed under a BSD style license. 
 
 ## HomeDing Concept Papers
 
+Some text on the concepts and architecture of this library.
+
 - [Building your own connected Things made easy](/concepts/paper01)
 - [Software Architecture](/concepts/paper02)
 - [Elements and Actions](/concepts/paper03)
 
 ## Available Elements
 
-The full list of available [elements](elements) in the HomeDing library are the functional blocks available for building and configuring a device.
+Elemens are the functional blocks available for building and configuring a device.
 
-Each of them supports a unique feature, reads a sensor, drives displays and other periphery or implements some internal logic. The configuration of the device acvtivates and configures the required elements as well as defining how the interact with each other and to the outer world over network.
+The list of [elements](elements) in this library and examples will show you the power already available. More elements are on the [wishlist](wishlist).
 
-It is intentionally easy to implement your own specific elements as you can see in the [Examples](examples).
+Each of the elements supports a unique feature, e.g. reads a sensor, drives displays and other periphery or implements some internal logic.
+The configuration of the device acvtivates and configures the required elements as well as defining how the interact with each other and to the outer world over network.
+
+It is intentionally easy to implement your own specific elements as you can see in some of the [Examples](examples).
 
 ## Examples
 
-There a some examples included with the library that show some of techniques of implementing on the sketch level.
+There a some examples included with the library that just needs to be configured to start acting in your device.
 
-More examples are available as recipies that show how to configure the elements. The recipies can all be used with the standard example sketch.
+More examples are available as recipies that show how to configure the elements. The recipies can all be used with the [standard](examples/standard) sketch.
 
 The general procedures to setup the development environment can be found in the [setup instructions](examples/setup).
 
 **[Blink](examples/blink)** This very simple example needs just a ESP8266 board and can be used to check the correct setup of the environment.
 
-**[Standard](examples/Standard)**
+**[Standard](examples/standard)**
 
 * [PWM](examples/pwm)
 * [Radio](examples/radio)

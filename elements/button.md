@@ -1,11 +1,13 @@
 # The Button Element
 
-The ButtonElement allows detecting multiple button press gestures like
-* single short click
-* double click
-* long press
+<div class="excerpt">
+  <img src="/i/button.svg">
+  <p>The ButtonElement allows detecting multiple button press gestures like
+ single short click, double click and long press.</p>
+</div>
 
-The input can come from a digitalin[Digital Input Element](/elements/digitalin) or anynother element that generates boolean alike values.
+
+The input can come from a digitalin[Digital Input Element](/elements/digitalin) or anynother element that generates boolean values.
 
 It can also be used to define a Button Element in the Web UI of the device.
 
@@ -31,7 +33,7 @@ The following properties are available for configuration of the element:
 
 **onclick** - These Actions are emeited when a single press gesture was detected.                                
 
-**ondoubleclick** - These Actions are emeited when a double click gesture was detected.                                                                         
+**ondoubleclick** - These Actions are emeited when a double click gesture was detected.     
 
 **onpress** - These Actions are emeited when a long press gesture was detected.                      
 
@@ -64,12 +66,9 @@ that provides the input value to the Button Element.
 
 ## Element State
 
-The following properties are available with the current values at runtime
+The `active` property Is set to true when the Element is active.
 
-| Property | Description                                |
-| -------- | ------------------------------------------ |
-| `active` | Is set to true when the Element is active. |
-
+The `value` property correspons to the current output of the element.
 
 ## Example State
 
