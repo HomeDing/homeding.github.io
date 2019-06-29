@@ -1,312 +1,300 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-
-<!--
+  <!--
 Markdown viewer SPA
 
 using
-* http://showdownjs.com/
-* https://github.com/Bloggify/showdown-highlight
-https://highlightjs.org/download/
+* http://marked.js.org/
+* https://highlightjs.org/download/
+-->S
 
-<div class="s-md">
-  get loaded in here
-</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manual</title>
+    <link Content-Type="text/css" href="iotstyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="marked/github.css">
+    <script src="marked/marked.min.js"></script>
+    <script src="marked/highlight.pack.js"></script>
 
--->
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manual</title>
-  <link Content-Type="text/css" href="iotstyle.css" rel="stylesheet" />
-
-  <link rel="stylesheet" href="showdown/github.css">
-  <script src="showdown/highlight.pack.js"></script>
-  <script src="showdown/showdown.js"></script>
-
-  <style>
-    .s-md {
-      min-height: 4em;
-      padding: 0.4em;
-    }
-
-    a.verify {
-      /* background-color: #FFFFcc; */
-    }
-
-    a.bad {
-      background-color: #FFcccc;
-    }
-
-
-    table {
-      empty-cells: show;
-      border-collapse: collapse;
-      background-color: white;
-      border-left: solid 1px #203050;
-      border-right: solid 1px #203050;
-      margin-top: 0.4em;
-      margin-bottom: 0.4em;
-    }
-
-    table thead tr {
-      background-color: #203050;
-    }
-
-    table thead tr th {
-      vertical-align: top;
-      padding: 0.2em 0.6em;
-      color: white;
-      font-weight: bold;
-    }
-
-    table td {
-      vertical-align: top;
-      padding: 0.2em 0.6em;
-      border-bottom: 1px solid #203050;
-    }
-
-    p>img {
-      width: auto;
-      height: auto
-    }
-
-    .excerpt {
-      padding: 1rem;
-      min-height: 6rem;
-      max-width: 36rem;
-      background-color: white;
-      margin-bottom: 1rem;
-    }
-
-    .excerpt>img {
-      float: left;
-      margin-right: 1rem;
-      height: 4rem
-    }
-
-h2 {
-  clear:both;
-}
-    .short {
-      position: relative;
-      padding: 0.5rem 0.5rem 0.5rem 4rem;
-      margin-right:0.5rem;
-      min-height: 6rem;
-      width: 32rem;
-      max-width: 32rem;
-      background-color: white;
-      margin-bottom: 1rem;
-      float:left;
-    }
-
-    .short img {
-      position: absolute;
-      top:0.5rem;
-      left:0.5rem;
-      height: 3rem
-    }
-  </style>
-
-</head>
-
-<body scroll="0" style="padding:0;">
-  <div class="container-fluid">
-    <div class="u-header">
-      <a href="/" title="Startpage"><img class="icon" src="i/default.svg" /></a>
-      <h1>HomeDing</h1>
-    </div>
-  </div>
-  <div class="u-navbar">
-    <button onclick="location.hash=''">Home</button>
-    <button onclick="location.hash='page=concepts/paper01.md'">Concepts</button>
-    <button onclick="location.hash='page=elements.md'">Elements</button>
-  </div>
-  <div class="container-fluid">
-    <div class="row"></div>
-
-    <div class="s-md"></div>
-
-    <div class="row" style="display:none">
-      <div class="col">
-        <h4>Found Pages:</h4>
-        <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h4>Missing Pages:</h4>
-        <div id="missingFiles"
-          style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    var ffObj = document.querySelector('#foundFiles');
-    var mfObj = document.querySelector('#missingFiles');
-
-    function getHashParam(param, defValue) {
-      var h = window.location.hash;
-      if (h) {
-        var params = (h.substr(1)).split('&');
-        for (i = 0; i < params.length; i++) {
-          var p = params[i].split('=');
-          if (p[0] == param)
-            return (p[1]);
-        } // for
+    <style>
+      .s-md {
+        min-height: 4em;
+        padding: 0.4em;
       }
-      return (defValue);
-    } // getHashParam
 
+      a.verify {
+        /* background-color: #FFFFcc; */
+      }
 
-    /** load a JSON using a URL / rest service or static file */
-    function loadFile(url, loadCallback, errorCallback) {
-      var req = new XMLHttpRequest;
-      req.overrideMimeType("application/text");
-      req.open('GET', url);
-      // req.onload  = func;
-      req.onload = function (x) {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            loadCallback(this.responseText);
-          } else {
-            errorCallback(this);
+      a.bad {
+        background-color: #ffcccc;
+      }
+
+      table {
+        empty-cells: show;
+        border-collapse: collapse;
+        background-color: white;
+        border-left: solid 1px #203050;
+        border-right: solid 1px #203050;
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+      }
+
+      table thead tr {
+        background-color: #203050;
+      }
+
+      table thead tr th {
+        vertical-align: top;
+        padding: 0.2em 0.6em;
+        color: white;
+        font-weight: bold;
+      }
+
+      table td {
+        vertical-align: top;
+        padding: 0.2em 0.6em;
+        border-bottom: 1px solid #203050;
+      }
+
+      p > img {
+        width: auto;
+        height: auto;
+      }
+
+      .excerpt {
+        padding: 1rem;
+        min-height: 6rem;
+        max-width: 36rem;
+        background-color: white;
+        margin-bottom: 1rem;
+      }
+
+      .excerpt > img {
+        float: left;
+        margin-right: 1rem;
+        height: 4rem;
+      }
+
+      h2 {
+        clear: both;
+      }
+      .short {
+        position: relative;
+        padding: 0.5rem 0.5rem 0.5rem 4rem;
+        margin-right: 0.5rem;
+        min-height: 6rem;
+        width: 32rem;
+        max-width: 32rem;
+        background-color: white;
+        margin-bottom: 1rem;
+        float: left;
+      }
+
+      .short img {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        height: 3rem;
+      }
+    </style>
+  </head>
+
+  <body scroll="0" style="padding:0;">
+    <div class="container-fluid">
+      <div class="u-header">
+        <a href="/" title="Startpage"><img class="icon" src="i/default.svg"/></a>
+        <h1>HomeDing</h1>
+      </div>
+    </div>
+    <div class="u-navbar">
+      <button onclick="location.hash=''">Home</button>
+      <button onclick="location.hash='page=concepts/paper01.md'">Concepts</button>
+      <button onclick="location.hash='page=elements.md'">Elements</button>
+    </div>
+    <div class="container-fluid">
+      <div class="row"></div>
+
+      <div class="s-md"></div>
+
+      <div class="row" style="display:none">
+        <div class="col">
+          <h4>Found Pages:</h4>
+          <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4>Missing Pages:</h4>
+          <div id="missingFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var ffObj = document.querySelector('#foundFiles');
+      var mfObj = document.querySelector('#missingFiles');
+
+      marked.setOptions({
+        renderer: new marked.Renderer(),
+        langPrefix: 'hljs ',
+        highlight: function(code) {
+          return hljs.highlightAuto(code).value;
+        },
+        gfm: true,
+        breaks: false,
+        sanitize: false,
+        smartLists: true
+      });
+
+      function getHashParam(param, defValue) {
+        var h = window.location.hash;
+        if (h) {
+          var params = h.substr(1).split('&');
+          for (i = 0; i < params.length; i++) {
+            var p = params[i].split('=');
+            if (p[0] == param) return p[1];
+          } // for
+        }
+        return defValue;
+      } // getHashParam
+
+      /** load a JSON using a URL / rest service or static file */
+      function loadFile(url, loadCallback, errorCallback) {
+        var req = new XMLHttpRequest();
+        req.overrideMimeType('application/text');
+        req.open('GET', url);
+        // req.onload  = func;
+        req.onload = function(x) {
+          if (this.readyState == 4) {
+            if (this.status == 200) {
+              loadCallback(this.responseText);
+            } else {
+              errorCallback(this);
+            }
           }
+        };
+        req.onerror = errorCallback;
+        req.send(null);
+      } // loadFile
+
+      function forAllNodeList(nodeList, callbackFn) {
+        for (var n = 0; n < nodeList.length; n++) {
+          callbackFn(nodeList[n]);
+        }
+      } // forAllNodeList()
+
+      // === Markdown Loader ===
+
+      var mdClass = {
+        _found: [], // list of verified existing files
+        _missing: [], // list of verified existing files
+        _checking: false,
+        checkLinkTimer: 0,
+
+        pushFound: function(pName) {
+          if (this._found.indexOf(pName) < 0) this._found.push(pName);
+          ffObj.textContent = this._found;
+        },
+
+        pushMissing: function(pName) {
+          if (this._missing.indexOf(pName) < 0) this._missing.push(pName);
+          mfObj.textContent = this._missing;
+        },
+
+        checkLink: function() {
+          if (!this._checking) {
+            var aObj = document.querySelector('a.verify');
+            if (!aObj) {
+              // finished checking.
+              window.clearInterval(this.checkLinkTimer);
+            } else {
+              var m = aObj.href.match(/=(\w*.md)$/);
+              var fName = m[1].toLowerCase();
+
+              if (this._found.indexOf(fName) >= 0) {
+                aObj.classList.remove('verify'); // good link
+              } else if (this._missing.indexOf(fName) >= 0) {
+                aObj.classList.remove('verify');
+                aObj.classList.add('bad'); // bad link
+              } else {
+                this._checking = true;
+
+                loadFile(
+                  /* "md/" + */ fName,
+                  function(txt) {
+                    // found
+                    this.pushFound(fName);
+                    this._checking = false;
+                  }.bind(this),
+                  function(x) {
+                    this.pushMissing(fName);
+                    this._checking = false;
+                  }.bind(this)
+                );
+              }
+            } // if
+          } // if
+        }, // checkLink()
+
+        // show given text as html.
+        setText: function(fName, txt) {
+          var hText = marked(txt);
+
+          // modify links to work:
+
+          hText = hText.replace(/href="([\w\/]+).md"/g, 'href="#page=$1.md"');
+          hText = hText.replace(/href="([\w\/]+)"/g, 'href="#page=$1.md"');
+          this.innerHTML = hText;
+
+          // verify all local .md links
+          forAllNodeList(
+            this.querySelectorAll('a[href]'),
+            function(aObj) {
+              if (aObj.href.match(/=(\w*.md)$/)) aObj.classList.add('verify');
+            }.bind(this)
+          );
+        },
+
+        // init, when slide behavior is attached.
+        init: function() {
+          this.onhashchange(); // initial navigation
+          this._checking = false;
+        },
+
+        // check for #page=xxx.md
+        onhashchange: function(/* evt */) {
+          var pName = getHashParam('page', 'home.md').toLowerCase();
+
+          loadFile(
+            /* "md/" + */ pName,
+            function(txt) {
+              this.setText(pName, txt);
+              this.pushFound(pName);
+              this.checkLinkTimer = window.setInterval(this.checkLink.bind(this), 100);
+            }.bind(this),
+            function(x) {
+              this.setText(pName, '>> File with name ' + pName + ' not found.');
+            }.bind(this)
+          );
         }
       };
-      req.onerror = errorCallback;
-      req.send(null);
-    } // loadFile
 
-    function forAllNodeList(nodeList, callbackFn) {
-      for (var n = 0; n < nodeList.length; n++) {
-        callbackFn(nodeList[n]);
+      // manually attach md container
+      var mdObj = document.querySelector('.s-md');
+      if (mdObj) {
+        mdObj._found = mdClass._found;
+        mdObj._missing = mdClass._missing;
+        mdObj.init = mdClass.init;
+        mdObj.checkLink = mdClass.checkLink;
+        mdObj.pushFound = mdClass.pushFound;
+        mdObj.pushMissing = mdClass.pushMissing;
+        mdObj.setText = mdClass.setText;
+        mdObj.onhashchange = mdClass.onhashchange;
+        window.addEventListener('hashchange', mdObj.onhashchange.bind(mdObj));
+        mdObj.init();
       }
-    } // forAllNodeList()
-
-    // === Markdown Loader ===
-
-    var mdClass = {
-      _found: [], // list of verified existing files
-      _missing: [], // list of verified existing files
-      _checking: false,
-      checkLinkTimer: 0,
-
-      pushFound: function (pName) {
-        if (this._found.indexOf(pName) < 0)
-          this._found.push(pName);
-        ffObj.textContent = this._found;
-      },
-
-      pushMissing: function (pName) {
-        if (this._missing.indexOf(pName) < 0)
-          this._missing.push(pName);
-        mfObj.textContent = this._missing;
-      },
-
-      checkLink: function () {
-        if (!this._checking) {
-          var aObj = document.querySelector('a.verify');
-          if (!aObj) {
-            // finished checking.
-            window.clearInterval(this.checkLinkTimer);
-          } else {
-            var m = aObj.href.match(/=(\w*.md)$/);
-            var fName = m[1].toLowerCase();
-
-            if (this._found.indexOf(fName) >= 0) {
-              aObj.classList.remove('verify'); // good link
-            } else if (this._missing.indexOf(fName) >= 0) {
-              aObj.classList.remove('verify');
-              aObj.classList.add('bad'); // bad link
-            } else {
-              this._checking = true;
-
-              loadFile(/* "md/" + */ fName, function (txt) {
-                // found
-                this.pushFound(fName);
-                this._checking = false;
-              }.bind(this),
-                function (x) {
-                  this.pushMissing(fName);
-                  this._checking = false;
-                }.bind(this)
-              );
-            }
-
-          } // if
-        } // if
-      }, // checkLink()
-
-
-      // show given text as html.
-      setText: function (fName, txt) {
-        var converter = new showdown.Converter();
-        // converter.setFlavor("github");
-        var hText = converter.makeHtml(txt);
-        // modify links to work:
-        hText = hText.replace(/href="([\w\/]+).md"/g, 'href="#page=$1.md"');
-        hText = hText.replace(/href="([\w\/]+)"/g, 'href="#page=$1.md"');
-        this.innerHTML = hText;
-
-        // verify all local .md links
-        forAllNodeList(this.querySelectorAll('a[href]'),
-          function (aObj) {
-            if (aObj.href.match(/=(\w*.md)$/))
-              aObj.classList.add('verify');
-          }.bind(this)
-        );
-
-        // highlight code
-        forAllNodeList(document.querySelectorAll('pre code'), function (block) { hljs.highlightBlock(block); });
-      },
-
-      // init, when slide behavior is attached.
-      init: function () {
-        this.onhashchange(); // initial navigation
-        this._checking = false;
-      },
-
-      // check for #page=xxx.md
-      onhashchange: function (/* evt */) {
-        var pName = getHashParam("page", "home.md").toLowerCase();
-
-        loadFile(/* "md/" + */ pName, function (txt) {
-          this.setText(pName, txt);
-          this.pushFound(pName);
-          this.checkLinkTimer = window.setInterval(this.checkLink.bind(this), 100);
-
-        }.bind(this),
-          function (x) {
-            this.setText(pName, ">> File with name " + pName + " not found.");
-          }.bind(this)
-        );
-      }
-    }
-
-    // manually attach md container
-    var mdObj = document.querySelector('.s-md');
-    if (mdObj) {
-      mdObj._found = mdClass._found;
-      mdObj._missing = mdClass._missing;
-      mdObj.init = mdClass.init;
-      mdObj.checkLink = mdClass.checkLink;
-      mdObj.pushFound = mdClass.pushFound;
-      mdObj.pushMissing = mdClass.pushMissing;
-      mdObj.setText = mdClass.setText;
-      mdObj.onhashchange = mdClass.onhashchange;
-      window.addEventListener("hashchange", mdObj.onhashchange.bind(mdObj))
-      mdObj.init();
-    }
-
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>
