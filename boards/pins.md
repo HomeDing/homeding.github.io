@@ -55,16 +55,16 @@ As long as you need to upload new sketches and see your debug output these pins 
 
 ### Booting
 
-The pins GPIO0, GPIO2 and GPIO15 do have a special meaning when the chip is started after a reset. They control to
+The pins GPIO0(D3), GPIO2(D4) and GPIO15 do have a special meaning when the chip is started after a reset. They control to
 
 * load a sketch from the onboard flash file system
 * start uploading a new sketch into the flash
 * load a sketch from a SD card (not used by current boards)
 
-For a normal program execution the GPIO0 and GPIO2 pins must have a HIGH signal.
+For a normal program execution the GPIO0(D3) and GPIO2(D4) pins must have a HIGH signal.
 
-For a starting an upload the GPIO0 pin must have a LOW signal.
-This is why many boards have a momentary button to pull the GPIO0 pin down labeled with **flash**.
+For a starting an upload the GPIO0(D3) pin must have a LOW signal.
+This is why many boards have a momentary button to pull the GPIO0(D3) pin down labeled with **flash**.
 
 The GPIO15 needs a LOW signal after reset as long as you do not use booting from a SD card.
 
