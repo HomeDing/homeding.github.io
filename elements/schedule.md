@@ -1,6 +1,9 @@
 # The ScheduleElement
 
-This element is used to create actions based on the time of day.
+<div class="excerpt">
+  <img src="/i/schedule.svg">
+  <p>The ScheduleElement creates actions based on the time of day.</p>
+</div>
 
 ![Schedule Properties and Actions](scheduleapi.png)
 

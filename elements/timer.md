@@ -1,8 +1,11 @@
 # Timer Element
 
-The TimerElement creates events based on a one-time or cyclic timing pattern.
+<div class="excerpt">
+  <img src="/i/timer.svg">
+  <p>The TimerElement creates events based on a one-time or cyclic timing pattern.</p>
+</div>
 
-During the specified time period the output value will be switched on and off once.
+During the specified time period the output value will be switched on and off once. The timer can be restarted automatically.
 
 ## Web UI for the Timer Element
 

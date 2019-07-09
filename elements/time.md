@@ -1,6 +1,9 @@
 # Time Element
 
-With the time element the local time of the internal clock of the board can be used to create actions with the current local time as value.
+<div class="excerpt">
+  <img src="/i/time.svg">
+  <p>The time element creates actions with the current local time as value.</p>
+</div>
 
 When using this element a real time retrieving element must be configured as well like the [NTPTime](elements/ntptime) , [DSTime](elements/dstime) or [DCFTime](elements/dcftime).
 

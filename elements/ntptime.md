@@ -1,5 +1,10 @@
 # NTPTime Element
 
+<div class="excerpt">
+  <img src="/i/ntptime.svg">
+  <p>The NTPTimeElement can retrieve the local time from an external ntp server.</p>
+</div>
+
 The NTPTimeElement is one of the element implementations to get a local time from an external source
 and to adjust the `real local time`w on the board.
 This element gets the local time from an external server using the Network Time Protocol.

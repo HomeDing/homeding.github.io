@@ -1,20 +1,18 @@
-# OTA Element ???
+# OTA Element
 
+> draft ???
 <div class="excerpt">
   <img src="/i/ota.svg">
   <p><strong><a href="#page=elements/ota.md">OTA Element</a></strong><br/>
-  Enable and configure Over The Air Updates</p>
+  This element allows to upload new firmware and files Over The Air.</p>
 </div>
 
-The OTAElement allows uploading new sketches to the board over the network.
+The OTAElement is a system element to enable this functionality only.
+It cannot send or receive actions.
 
-By configuration this element for a device the   device shows up in the list of ports in the Arduino programming environment.
+When this element is configued the device shows up in the list of ports in the Arduino programming environment.
 
-The WebServer must be enabled on the device to use this protocol.
-
-The OTAElement is a system element to configure this functionality and cannot send or receive actions.
-
-Since the OTA Element initializes  the mDNS protocol as well no mDNS library needs to be used and initiated explicitly.
+Since the OTA Element initializes the mDNS protocol as well no mDNS library needs to be used and initiated explicitly.
 
 ## Upload batch:
 
