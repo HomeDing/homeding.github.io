@@ -1,3 +1,7 @@
+---
+tags: LED RECIPE
+...
+
 # LED Recipe
 
 This recipe uses 2 digital input signals to change the brightness level of a LED.
@@ -35,7 +39,7 @@ The [pwmout element](/elements/pwmout) is configured to allow values within the 
     },
     "down": {
       "loglevel": 2,
-      "pin": "D5",
+      "pin": "D6",
       "inverse": "true",
       "pullup": "true",
       "onlow": "value/led?down=10"
@@ -65,55 +69,9 @@ The [pwmout element](/elements/pwmout) is configured to allow values within the 
 }
 ```
 
-## Variation using a Rotary Element
-
-Instead of using 2 buttons it is possible to connect a 
-[rotary encoder](/elements/rotary) and modify the value and dim level of the LED by turning a knob.
-
-![Elements used in led recipe](ledrotaryflow.png)
-
-The `rotary` element takes the input value from the encoder connected to `D5` and `D6` and generates actions with values of +10 or -10, sometimes a multiple of them and sends them to the value.
-
-The `value` and the `pwmout` element keep doing the same as before.
-
-```JSON
-{
-  "rotary": {
-    "0": {
-      "description": "Rotary Input",
-      "pin1": "D5",
-      "pin2": "D6",
-      "step": 10,
-      "onValue": "value/led?up=$v"
-    }
-  },
-
-  "value": {
-    "led": {
-      "loglevel": 2,
-      "value": 20,
-      "min": 0,
-      "max": 255,
-      "onValue": "pwmout/led?value=$v",
-      "description": "value for the LED"
-    }
-  },
-
-  "pwmout": {
-    "led": {
-      "pin": "D4",
-      "range": 255,
-      "value": 10,
-      "invers": "true",
-      "description": "Build-in LED"
-    }
-  }
-}
-```
-
 ## See also
 
 * [digital input element](/elements/digitalin)
-* [rotary encoder](/elements/rotary)
 * [value element](/elements/value)
-* [pwmout element](/elements/pwmout) 
+* [pwmout element](/elements/pwmout)
+* [Dimming using rotary encoder](/recipes/ledrotary.md)
