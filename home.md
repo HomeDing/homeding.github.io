@@ -48,7 +48,7 @@ It is intentionally easy to implement your own specific elements as you can see 
 
 There a some [examples](examples.md) included with the library that just need to be uploaded to start acting in your device.
 
-More examples are available as recipies that show how to configure the elements. All recipies can all be used with the [standard](examples/standard) sketch.
+More examples are available as recipes that show how to configure the elements. All recipes can all be used with the [standard](examples/standard) sketch.
 
 The general procedures to setup the development environment can be found in the [setup instructions](examples/setup).
 

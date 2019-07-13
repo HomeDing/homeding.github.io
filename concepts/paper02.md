@@ -44,7 +44,7 @@ The Elements are the implementation blocks for the adaption of sepcific sensors,
 
 When creating the upload program for a device many elements can be included. As they are configured they will be activated by using the parameters from the configurarion files.
 
-For many devices the standard example contains already all the element implementations that are used by the recipies available in the documentation. These can be adopted by just modifying the configuration.
+For many devices the standard example contains already all the element implementations that are used by the recipes available in the documentation. These can be adopted by just modifying the configuration.
 
 Some elements are started right after reading the configuration, some after the network is available and some when the local time was received.
 
