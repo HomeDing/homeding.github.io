@@ -1,12 +1,12 @@
 # Displays
 
-Some Things require a display to fulfill the required functionality for
+Some things require a display to fulfill the required functionality for
 
 * show the current status
 * present a menu
-* show information from a sensor
+* show information from a sensor on the device
 
-The HomeDing library therefore supports text based local attached displays but also works fine without a local display.
+The HomeDing library therefore supports local attached displays but also works fine without a local display.
 
 ## Unified Display Adapter
 
@@ -31,7 +31,10 @@ When a specific HomeDing based device is assembled and configured it is known th
 
 ## Supported Display Types
 
-### LCDDisplayAdapter
+
+### LCDDisplay
+
+
 
 This is a DisplayAdapter for Monochrome LCDs based on HD44780 chips.
 

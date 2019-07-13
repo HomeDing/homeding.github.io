@@ -42,6 +42,27 @@ When creating the upload program for a device many elements can be included. As 
 
 For many devices the standard example contains already all the element implementations that are used by the recipies available in the documentation. These can be adopted by just modifying the configuration.
 
+Some elements are started right after reading the configuration, some after the network is available and some when the local time was received.
+
+
+## Configuration at runtime
+
+The standard board already includes a lot of Elements when being compiled. Therefore, it is possible to use them in a configuration without recompiling the program itself.
+
+As the ESP chips offer a lot of memory this approach works fine. For compiling to different board layout like the ESP-01 board or the ESP 85??? Chip with less flash memory it is possible to compile with a reduced set of elements to make the program fit into memory. See example ???
+
+Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for variables.
+
+The configuration of the HomeDing device is using in 2 files:
+
+* The system, hardware related features and the network configuration is defined in the `env.json` file. This file contains the device, ota, sspd and optional display configurations. There is no real need to change this file frequently.
+* The configuration of other elements is  placed in the `config.json` file. This file can be updated to change the behaviour of the device.
+
+The web based configuration features will update the `config.json` file only.
+
+The configuration is splitted this way to make sure the device can start and can be reached over the network even when the configuration of the non-system elements is not correct.
+
+
 ## Web based configuration
 
 Every device with a standard board can also host the functionality of a web interface that can be used to create or modify the configurarion by dragging new elements into the activation area and changing the parameters.

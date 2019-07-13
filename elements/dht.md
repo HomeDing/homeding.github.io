@@ -42,13 +42,13 @@ more details can be found at <https://github.com/beegee-tokyo/DHTesp>
 
 ## Connecting a Sensor
 
-The sample configuration coming with the DHT22Ding example is configured to use a DHT22 type of sensor with the data line attached to GPIO2(D4)
+The sample configuration coming with the DHT22 recipes is configured to use a DHT22 type of sensor with the data line attached to GPIO2(D4).
 
-| ESP8266 | DHT22 | Description  |
-| ------- | :---: | ------------ |
-| 3.3v    |   1   | Power Supply |
-| D4      |   2   | Data         |
-| GND     |   4   | Ground       |
+| ESP8266   | DHT22 | Description  |
+| --------- | :---: | ------------ |
+| 3.3v      |   1   | Power Supply |
+| GPIO2(D4) |   2   | Data         |
+| GND       |   4   | Ground       |
 
 The configuration can be changed easily by modifying the config.json file.
 

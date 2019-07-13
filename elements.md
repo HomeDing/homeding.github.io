@@ -9,7 +9,7 @@ The following element implementations are available in the current version of th
 These elements are used to create an action based on a specific input or a specific sensor.
 
 <div class="short">
-  <a href="#page=elements/digitalin.md"><img src="/i/digitalin.svg"></a>
+  <a href="#page=elements/digitalin.md"><img src="i/digitalin.svg"></a>
   <p><strong><a href="#page=elements/digitalin.md">DigitalIn Element</a></strong><br />
   Input Element typicaly used with momentary buttons or switches.</p>
 </div>
@@ -74,7 +74,7 @@ Logic elements implement using on/off values expressed as 1/0 values.
 <div class="short">
   <a href="#page=elements/button.md"><img src="/i/button.svg"></a>
   <p><strong><a href="#page=elements/button.md">Button Element</a></strong><br/>
-  Element that can differentiate clicks, dounble clicks and long press gestures to send out actions.</p>
+  Element that can differentiate clicks, double clicks and long press gestures to send out actions.</p>
 </div>
 
 <div class="short">
@@ -83,7 +83,11 @@ Logic elements implement using on/off values expressed as 1/0 values.
   Element to switch a value on and off using a digital input witgh a monetary button.</p>
 </div>
 
-
+<div class="short">
+  <a href="#page=elements/and.md"><img src="/i/and.svg"></a>
+  <p><strong><a href="#page=elements/and.md">AND Element</a></strong><br/>
+  combines multiple logic input values to a single output value.</p>
+</div>
 
 ## Display Elements
 
@@ -250,16 +254,6 @@ Of course HomeDing devices work without a local display attached but for some us
 [Adafruit BME680]: https://www.arduinolibraries.info/libraries/adafruit-bme680-library
 [ESP8266 and ESP32 Oled Driver for SSD1306 display]: https://www.arduinolibraries.info/libraries/esp8266-and-esp32-oled-driver-for-ssd1306-display
 [LiquidCrystal_PCF8574]: https://www.arduinolibraries.info/libraries/liquid-crystal_pcf8574
-
-## Planed Elements
-
-| Type           | Functionality                                                                                |
-| -------------- | -------------------------------------------------------------------------------------------- |
-| WeatherElement | call a service on the internet like OpenWeatherMap to get the forecast of the local weather. |
-| (t.b.d.)       | Meassure Distance using a sonar sensor                                                       |
-| (t.b.d.)       | send actions to a MQTT broker                                                                |
-| (t.b.d.)       | Detect movement                                                                              |
-| (t.b.d.)       | Detect noise using a microphone                                                              |
 
 
 ## See also
