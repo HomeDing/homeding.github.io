@@ -27,8 +27,8 @@ These elements are used to create an action based on a specific input or a speci
 </div>
 
 <div class="short">
-  <a href="#page=elements/DHT.md"><img src="/i/DHT.svg"></a>
-  <p><strong><a href="#page=elements/DHT.md">DHT Element</a> *</strong><br/>
+  <a href="#page=elements/dht.md"><img src="/i/dht.svg"></a>
+  <p><strong><a href="#page=elements/dht.md">DHT Element</a> *</strong><br/>
   Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
 </div>
 
@@ -138,15 +138,15 @@ Of course HomeDing devices work without a local display attached but for some us
 </div>
 
 <div class="short">
-  <a href="#page=elements/ntptime.md"><img src="/i/ntptime.svg"></a>
-  <p><strong><a href="#page=elements/ntptime.md">NTPTime Element</a></strong><br/>
-  Get the actual local time using the NTP protocol from a NTP server.</p>
+  <a href="#page=elements/dstime.md"><img src="/i/dstime.svg"></a>
+  <p><strong><a href="#page=elements/dstime.md">DSTime Element</a></strong><br/>
+  Get the actual local time using the RTC DS3231 chip.</p>
 </div>
 
 <div class="short">
   <a href="#page=elements/ntptime.md"><img src="/i/ntptime.svg"></a>
-  <p><strong><a href="#page=elements/ntptime.md">DSTime Element</a></strong><br/>
-  Get the actual local time using the RTC DS3231 chip.</p>
+  <p><strong><a href="#page=elements/ntptime.md">NTPTime Element</a></strong><br/>
+  Get the actual local time using the NTP protocol from a NTP server.</p>
 </div>
 
 <div class="short">
