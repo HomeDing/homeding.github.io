@@ -1,5 +1,9 @@
 # Building your own connected Things made easy
 
+1. **Building your own connected Things made easy**
+2. [Software Architecture](/concepts/paper02)
+3. [Elements and Actions](/concepts/paper03)
+
 It is fascinating to see the power of microprocessors growing while costs go down.
 
 As we have seen in the Arduino movement it is possible to get all you need to build your own gadgets and appliances without investing much into the equipment you need.

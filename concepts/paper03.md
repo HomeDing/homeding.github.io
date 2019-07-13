@@ -1,5 +1,9 @@
 # Elements and Actions
 
+1. [Building your own connected Things made easy](/concepts/paper01)
+2. [Software Architecture](/concepts/paper02)
+3. **Elements and Actions**
+
 The power, flexibility and the extensibility of the HomeDing library comes from 2 main designs
 
 * the unified implementation of I/O and logic in the Elements and 
