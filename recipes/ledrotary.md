@@ -1,5 +1,5 @@
 ---
-tags:led,rotary,recipe
+tags: led,rotary,recipe
 ...
 
 # Dimming a LED using a Rotary Encoder
