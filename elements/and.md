@@ -28,8 +28,8 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 ```JSON
 "and": {
   "both": {
-    "value1": "0",
-    "value2": "0",
+    "value01": "true",
+    "value02": "false",
     "invert": "false",
     "onValue": "device/0?log=and-output: $v"
   }
@@ -48,8 +48,17 @@ The following properties are available with the current values at runtime
 When input values have changed event is not created immediately but when the next loop function is called.
 This avoids fickering values on the output for a certain degree.
 
+You can set values using a browser by sending actions to the element by requesting for the URLs like:
+
+* <http://nodeding/$board/and/both?value02=1> to set the vaue02 input to true
+* <http://nodeding/$board/and/both?value02=0> to set the vaue02 input to false
+
+
+
 ## See also
 
-* or element
+* [Elements](/elements.md)
+  
+<!-- * or element -->
 
 
