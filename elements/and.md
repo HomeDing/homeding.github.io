@@ -1,15 +1,28 @@
 # Logical AND Element
 
-> Draft ???
-
-<div class="short">
+<div class="excerpt">
   <a href="#page=/elements/and.md"><img src="/i/and.svg"></a>
   <p><strong><a href="#page=/elements/and.md">AND Element</a></strong><br/>
   combines multiple logic input values to a single output value.</p>
 </div>
 
+
 Actions can be send to this element using the properties value1 and value2.
 Every time the value changes the onValue event is emitted.
+
+## Web UI for the AND Element
+
+There is a dedicated card for this element available that will be used for the web server config and landing pages:
+
+![AND Web UI](/elements/andui.png)
+
+This card shows the current output computed from the last logical input values.
+It is updated every time the status of the device is polled by the page.
+
+## Element Interface
+
+![AND Properties and Actions](/elements/andapi.png)
+
 
 ## Element Configuration
 
@@ -23,11 +36,12 @@ The input values can be preset and the output can be inverted:
 
 The non-inverted output value is on HIGH level when all input values are on HIGH level.
 
+
 ### Example for Configuration
 
 ```JSON
 "and": {
-  "both": {
+  "a": {
     "value01": "true",
     "value02": "false",
     "invert": "false",
@@ -50,8 +64,8 @@ This avoids fickering values on the output for a certain degree.
 
 You can set values using a browser by sending actions to the element by requesting for the URLs like:
 
-* <http://nodeding/$board/and/both?value02=1> to set the vaue02 input to true
-* <http://nodeding/$board/and/both?value02=0> to set the vaue02 input to false
+* <http://nodeding/$board/and/a?value02=1> to set the vaue02 input to true
+* <http://nodeding/$board/and/a?value02=0> to set the vaue02 input to false
 
 
 
