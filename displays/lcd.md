@@ -15,6 +15,27 @@ These displays ae available with
 * 2 lines of 16 characters (most common and default)
 * 4 lines of 16 characters
 
+## Web UI for the DisplaySH1106 Element
+
+There is a dedicated card for this element available that will be used for the web server config and landing pages:
+
+![LCD Web UI](/displays/lcdui.png)
+
+This card shows the current output that can also be seen on the local attached display. It is updated every time the status of the device is polled by the page.
+
+## Element Interface
+
+![LCD Properties and Actions](/displays/lcdapi.png)
+
+## Properties
+
+The following properties are available for configuration of the element:
+
+**address** the address of the display on the I2C bus. Defaults to 0x3C.
+
+**height** the number of lines the display supports.
+
+
 The initialization of the I2C bus uses the default SDA (D4) and SCL (D3) GPIOs. When you use different GPIO lines you can adjust this in the scl and sda parameters of the board.
 
 To show some output on the display use the [DisplayText Element](/elements/displaytext) and the [DisplayDot Element](/elements/displaydot)
