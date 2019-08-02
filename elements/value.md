@@ -1,7 +1,7 @@
 # The Value Element
 
 <div class="excerpt">
-  <img src="/i/value.svg">
+  <img src="i/value.svg">
   <p>The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.</p>
   <p>This can e.g. be used to drive a LED or a relay.</p>
 </div>
@@ -36,30 +36,22 @@ Here the ValueElement can help. It allows
 
 The following properties are available for configuration of the element:
 
-| Property | Description                                                        |
-| -------- | ------------------------------------------------------------------ |
-| id*      | Specifies the logical name of the value.                           |
-| `min`      | Defines the minimum of the value.                                  |
-| `max`      | Defines the maximum of the value.                                  |
-| `value`    | An initial/default value can be set using the configuration.       |
-| `onValue` | These actions are emitted when the value has changed. |
-|  |
+**min** Defines the minimum of the value.                                  
 
-\* This parameter must be specified.
+**max** Defines the maximum of the value.                                  
 
-## Element Actions
+**step** The value will be incrementd / decremented by the multiple of the step value
+when using the up / down actions.
 
-The following actions can be used with this element:
+**value** An initial/default value can be set using the configuration.       
 
-| Action | Description                                                                                                                                                                     |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| up     | This action increments the value and eventually triggers an outgoing onValue Event.                                                                                            |
-| down   | This action decrements the value and eventually triggers an outgoing onValue Event.                                                                                            |
-| value  | This action sets the value.                                                                                                                                                     |
-| change | The change actions are created when the actual value really changes. Trying to incrementing an value that has already reached its maximum value will not create a chang action. |
-|  |
+**onValue** These actions will be emitted whenever the value has changed.
 
-The up and down actions can take also negative values as input. This allows e.g. to use a rotary encoder as input by using one action.
+**up** the value can be incremented by the passed value. Negative values are allowed.
+
+**down** the value can be decremented by the passed value.
+
+**label** The label is used together with the menu element to show the current selected value.
 
 ## Examples for actions
 
@@ -72,9 +64,28 @@ The value element accepts actions like
 
 ## Element State
 
+The current value is reported as the state of a value element.
+
+```JSON
+{
+  "value/volume": { "active": "true", "value": "4" }
+}
+```
+
 ## Example Configuration
 
-## Example State
+```JSON
+{
+  "value": {
+    "volume": {
+      "min": 0,
+      "max": 15,
+      "value": 3,
+      "onchange": "radio/r?volume=$v"
+    }
+  }
+}
+```
 
 ## See also
 

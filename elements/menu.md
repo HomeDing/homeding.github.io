@@ -36,9 +36,12 @@ Every incoming `select` action will advance the menu in the list of values by on
 
 Usually this event can be directly bound to a digitalinput element as shown in the configuration example to scroll through the menu items.
 
+The select action can also be send using the <http://nodeding/$board/menu/0?select=1>
+
 ### Value actions
 
-The value actions are used to change the selected value. 
+The value actions are used to change the selected value.
+ 
 Every incoming value action will be forwarded to the selected value using a `up` action with the given value from the incomming event. This is typically an increment or decrement by 1 but the value element can be configured for other steps. 
 
 Usually 2 buttons for up/down or a rotary encoder can be used to create these actions as shown in the configuration example.

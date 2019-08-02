@@ -1,15 +1,18 @@
 # Switch Element
 
 <div class="excerpt">
-  <img src="/i/switch.svg">
+  <img src="i/switch.svg">
   <p>The SwitchElement is used to toggle the state of a boolean value to on or off by a single Action.</p>
 </div>
+
+It is implemented as a special value element using the range 0 to 1 and can be used with the menu element.
+
 
 ## Web UI for the Switch Element
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-![Switch Web UI](/elements/switchui.png)
+![Switch Web UI](elements/switchui.png)
 
 The Web UI for the Switch Element shows the actual state of the switch and the ouput value as a green/red signal.
 
