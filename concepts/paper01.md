@@ -1,8 +1,8 @@
 # Building your own connected Things made easy
 
 1. **Building your own connected Things made easy**
-2. [Software Architecture](/concepts/paper02)
-3. [Elements and Actions](/concepts/paper03)
+2. [Software Architecture](/concepts/paper02.md)
+3. [Elements and Actions](/concepts/paper03.md)
 
 It is fascinating to see the power of microprocessors growing while costs go down.
 
@@ -42,8 +42,8 @@ While the core library is portable to other processors there will be some ESP826
 > "Ding" not only sounds friendly, it is the German word for "Thing". 
 > As this library targets building small devices for a typical home environment "HomeDing" chosen for the project name.
 
-The documentation is available on GitHub at [https://github.com/HomeDing/HomeDing](https://github.com/HomeDing/HomeDing).
+The documentation is available on GitHub at [https://github.com/HomeDing/HomeDing](https://github.com/HomeDing/HomeDing.md).
 
 Once it is in a valid beta state it will be continued here.
 
-### Next: [Software Architecture](/concepts/paper02)
+### Next: [Software Architecture](/concepts/paper02.md)

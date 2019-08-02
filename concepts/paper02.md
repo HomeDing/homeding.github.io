@@ -1,8 +1,8 @@
 # Software Architecture
 
-1. [Building your own connected Things made easy](/concepts/paper01)
+1. [Building your own connected Things made easy](/concepts/paper01.md)
 2. **Software Architecture**
-3. [Elements and Actions](/concepts/paper03)
+3. [Elements and Actions](/concepts/paper03.md)
 
 These are the functional blocks of a device based on the HomeDing library:
 
@@ -80,7 +80,7 @@ The base sketch of a device can also be modified for using very specific boards 
 
 Instead it is possible to connect to a Thing directly to watch and control it by using a standard browser.
 
-Things built with the HomeDing library support a programming interface (API) that you can use by directly typing the requests and commands into the Address field and see the results on the Thing or as a response in the browser.
+Things built with the HomeDing library support a programming interface (API.md) that you can use by directly typing the requests and commands into the Address field and see the results on the Thing or as a response in the browser.
 
 The standard interface provided by the HomeDing library allows to configure and control any internal Element out of thee box just by using the browser.
 
@@ -105,4 +105,4 @@ After a setup of the Arduino environment only a few typical steps will be requir
 
 Start browser and see...
 
-### Next: [Elements and Actions](/concepts/paper03)
+### Next: [Elements and Actions](/concepts/paper03.md)

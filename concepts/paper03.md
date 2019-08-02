@@ -1,7 +1,7 @@
 # Elements and Actions
 
-1. [Building your own connected Things made easy](/concepts/paper01)
-2. [Software Architecture](/concepts/paper02)
+1. [Building your own connected Things made easy](/concepts/paper01.md)
+2. [Software Architecture](/concepts/paper02.md)
 3. **Elements and Actions**
 
 The power, flexibility and the extensibility of the HomeDing library comes from 2 main designs
@@ -41,9 +41,9 @@ where configuring elements and receiving actions is the same implementation.
 
 The standard interface of every Element is defined by the Element class and every specific Element is derived from this class and adding the specific functionality.
 
-![Methods of Element implementations](elementapi.png) ???
+![Methods of Element implementations](elementapi.png.md) ???
 
-A detailled description of the common Element Interface can be found in [ElementInterface](ElementInterface).
+A detailled description of the common Element Interface can be found in [ElementInterface](ElementInterface.md).
 
 ## Actions
 
@@ -64,7 +64,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 * Start the board and make unique components like the file service, the web server
   and the optional display available by initializing them.
 
-  See [Displays](Displays)
+  See [displays](displays.md)
 
 * Parse the config.json file.
 
@@ -76,7 +76,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 * Set the configuration properties of all Elements as defined by the configuration.
 
-  Every time a 3. level in the config.json file is found the ```set``` function of the Element will be called and the value will be passed as a parameter.
+  Every time a 3. level in the config.json file is found the `set` function of the Element will be called and the value will be passed as a parameter.
 
 * Start all Elements
 
@@ -88,7 +88,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 * Run all Elements and dispatch all actions among them.
 
-  The ```loop``` function of all active Elements is called and when Actions should be passed the board will dispatch them to the right Element.
+  The `loop` function of all active Elements is called and when Actions should be passed the board will dispatch them to the right Element.
 
 ## Restarting and Reconfiguration
 
@@ -104,13 +104,13 @@ The standard board already includes a lot of Elements when being compiled. There
 
 Other Elements require a specific library. These Elements must be activated in the sketch and the sketch will only compile properly when you have installed the required library in the Arduino Environment.
 
-Examples are [DHT Element](elements/dht), [RFSend Element](elements/rfsend) or [DCFTime Element](elements/dcftime).
+Examples are [DHT Element](elements/dht.md), [RFSend Element](elements/rfsend.md) or [DCFTime Element](elements/dcftime.md).
 
 As the ESP8266 chips offer a lot of program memory this approach works fine when boards habe a 4MByte Flash memory.
-The [FullDing](examples/fullding) includes all available elements of the library and can be used to flash many boards and hardware setups. 
+The [FullDing](examples/fullding.md) includes all available elements of the library and can be used to flash many boards and hardware setups. 
 
 For compiling to different memory setups, like the ESP-01 board it is possible to compile with a reduced set of elements so to make the program fit into memory.
-See example [MinDing](examples/minding).
+See example [MinDing](examples/minding.md).
 
 Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for the classes and variables.
 
@@ -123,13 +123,13 @@ The usual notation is using lowercase characters only. The comparisation is inte
 
 Examples are:
 
-* ```digitalout/relais?value=1```
-* ```display/d3?show=1```
+* `digitalout/relais?value=1`
+* `display/d3?show=1`
 
 The first level is the type of the element.
 The first level is the local id of the element (you can have a button and a output element with the same name)
 
-The parameter is appeded by using ```?``` as a separator and a parameter value can be specified using ```=``` when required.
+The parameter is appeded by using `?` as a separator and a parameter value can be specified using `=` when required.
 
 This schema can be found in many places:
 
