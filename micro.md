@@ -1,13 +1,15 @@
-# Implementing a minimalist UI for usage in Things
+# Micro Implementations
 
-There are many web front end frameworks that offer components that are combined to build the UI and the functionality for specific use cases.
-Some well known are Angular, react and Vue.
-
-But when implementing on a memory restricted device the size of basis functionality and components becomes the most limiting factor and therefore the HomeDing UI implementation has to be as small as possible and provides only the required functionality to visualize the internal available elements, the actions and their state.
+There are many frameworks for building a Web UI but when implementing on a memory restricted device the size of basis functionality and components becomes the most limiting factor and therefore the HomeDing UI implementation has to be as small as possible and provides only the required functionality to visualize the internal available elements, the actions and their state.
 
 ## Using the Single Page Application (SPA) implementation pattern
 
-In general, the model of loading a static web application into the browser and using Ajax calls to the web server to get data and trigger functionality is a good architecture for the web browsers available on desktops and phones. Modern frameworks like Angular, react or Vue give you a good set of tools to efficiently implement applications. However, the size of these applications tends to get huge.
+By using the SPA pattern the server needs to implement
+
+* the delivery of static files for loading the web application into the browser
+* acting on Ajax calls to the web server to get data and trigger functionality.
+
+This is a good architecture for the web browsers available on desktops and phones. Modern frameworks like Angular, react or Vue give you a good set of tools to efficiently implement applications. However, the size of these applications tends to get huge.
 
 In contrast to these full-blown frameworks the micro frameworks offer only the essential required functionality. They support better the current available boards for IoT things that will not have enough space nor enough power to host server web applications like those built in Angular, react or Vue.
 
@@ -26,13 +28,13 @@ More in: [Micro Behaviors](microbehaviors)
 
 **The micro databinding** is the functionality to transfer data from the device or other JSON formatted data into the HTML components.
 
-**The micro stylesheet** contains a collection of CSS rules that are available from a central file.
+**The micro stylesheet** contains a collection of CSS rules that are available in a central file. By using the SCSS technology the resulting CSS file can be compressed to save memory and bandwidth while offering a well structured input.
 
-**Icons** are available for all elements and general purpose.
+**Icons** are available for all elements and general purpose. They are implemented in SVG format that results in minimal size while supporting a good  scalability.
 More in: [Micro Icons](microicons)
 
 
-## WebServer on board
+## Web Site on board
 
 The HomeDing library comes with a web server implementation and a small web site that can be stored in the file system of a ESP8266 base device that offers the following pages:
 
