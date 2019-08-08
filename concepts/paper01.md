@@ -3,6 +3,7 @@
 1. **Building your own connected Things made easy**
 2. [Software Architecture](/concepts/paper02.md)
 3. [Elements and Actions](/concepts/paper03.md)
+4. [Builtin Web server](/concepts/paper04.md)
 
 It is fascinating to see the power of microprocessors growing while costs go down.
 

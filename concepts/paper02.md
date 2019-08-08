@@ -3,6 +3,7 @@
 1. [Building your own connected Things made easy](/concepts/paper01.md)
 2. **Software Architecture**
 3. [Elements and Actions](/concepts/paper03.md)
+4. [Builtin Web server](/concepts/paper04.md)
 
 These are the functional blocks of a device based on the HomeDing library:
 

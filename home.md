@@ -63,7 +63,7 @@ More elements are on the [wishlist](wishlist).
 Every device based on the Homeding library is connected to the local WiFi network and has a [Web Server](concepts/paper04.md)
 With a small Web Site built-in to visualise the current functionality or to configure some new functionality using a standard web browser. 
 
-The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](webservsices.md).
+The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](webservices.md).
 
 
 ## Extend and Implement for your needs

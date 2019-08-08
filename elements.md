@@ -44,6 +44,8 @@ These elements are used to create an action based on a specific input or a speci
   Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
 </div>
 
+<div style="clear:both"></div>
+
 
 ## Output and Actor Elements
 
@@ -91,7 +93,7 @@ Logic elements implement using on/off values expressed as 1/0 values.
 
 ## Display Elements
 
-Of course HomeDing devices work without a local display attached but for some use cases they are helpful. 
+The HomeDing library supports local attached displays but also works fine without a local display.
 
 <div class="short">
   <a href="#page=displays/ssd1306.md"><img src="/i/displayssd1306.svg"></a>
@@ -128,6 +130,11 @@ Of course HomeDing devices work without a local display attached but for some us
   <p><strong><a href="#page=elements/displaybar.md">DisplayBar Element</a></strong><br/>
   Display a progress bar.</p>
 </div>
+
+<div style="clear:both"></div>
+
+More detailled information on displays and related elements can be found in [displays](/displays.md)
+
 
 ## Time related Elements
 

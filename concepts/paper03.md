@@ -3,6 +3,7 @@
 1. [Building your own connected Things made easy](/concepts/paper01.md)
 2. [Software Architecture](/concepts/paper02.md)
 3. **Elements and Actions**
+4. [Builtin Web server](/concepts/paper04.md)
 
 The power, flexibility and the extensibility of the HomeDing library comes from 2 main designs
 
