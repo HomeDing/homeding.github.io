@@ -23,18 +23,18 @@ Some text on the concepts and architecture of this library.
 - [Build your own things easily](/concepts/paper01)
 - [Software Architecture](/concepts/paper02)
 - [Elements and Actions](/concepts/paper03)
+- [Web Server](concepts/paper04.md)
 
 ## Available Elements
 
-Elemens are the functional blocks for building and configuring a device.
+Elemens are the functional blocks for building and configuring a device and they interact using actions.
 
 Each element supports a unique feature, e.g. reads a sensor, drives a display, connects some peripheries or implements some internal logic.
 
 The list of [elements](elements.md) already provided within this library, the [examples](examples.md) and the [recipes](recipes.md) show you the available features that can be configured.
 
-Building your own specific elements only needs some implementation effort.
+Building your own specific elements only needs some reasonable programming effort.
 
-More elements are on the [wishlist](wishlist).
 
 ## Configuration
 
@@ -42,15 +42,21 @@ Instead of compiling and uploading a new firmware to the device every time a cha
 
 The configuration of the device implemented as a JSON file acvtivates and configures the required elements as well as defining how the interact with each other and to the outer world over network.
 
-It is intentionally easy to implement your own specific elements as you can see in some of the [Examples](examples).
+It is intentionally easy to implement your own specific elements as you can see in some of the [examples](examples).
 
-## Examples
 
-There a some [examples](examples.md) included with the library that just need to be uploaded to start acting in your device.
+## Boards
 
-More examples are available as recipes that show how to configure the elements. All recipes can all be used with the [standard](examples/standard) sketch.
+The HomeDing library can be used with almost any board that is using a ESP8266 processor.
+For some [boards](boards.md) you can find reviews and summaries with a suitable the configuration of the system.
 
 The general procedures to setup the development environment can be found in the [setup instructions](examples/setup).
+
+
+## Wishlist
+
+More elements are on the [wishlist](wishlist).
+
 
 ## Web interface
 
@@ -59,27 +65,6 @@ With a small Web Site built-in to visualise the current functionality or to conf
 
 The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](webservsices.md).
 
-Old:
-
-**[Blink](examples/blink)** This very simple example needs just a ESP8266 board and can be used to check the correct setup of the environment.
-
-**[Standard](examples/standard)**
-
-* [PWM](examples/pwm)
-* [Radio](examples/radio)
-* [minimal](examples/minimal)
-* [full](examples/full)
-
-
-- [The HomeDing - HomeBlink Example](examples/blink)
-
-- [The build-in WebServer](webserver)
-- [The build-in Web-Services](webservices)
-
-
-## Supported boards
-
-See: [Supported boards](boards)
 
 ## Extend and Implement for your needs
 

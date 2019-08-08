@@ -2,18 +2,24 @@
 
 <div class="excerpt">
   <img src="/i/displaylcd.svg">
-  <p>The RemoteElement allows sending actions to other elements in HomeDing devices on the network.</p>
+  <p>The Display Configuration for Monochrome LCDs based on HD44780 chips.</p>
 </div>
 
-The DisplayLCDElement needs to be configured to activate the display adapter for LiquidCrystal displays based on HD44780 chips. It is required to also have a I2C bus adapter for the display because a diret connection will require 8 IO ports not available on ESP8266 boards. 
-
-The library LiquidCrystal_PCF8574 needs to be installed using the Arduino Library Manager.
-
-These displays ae available with
+In the Arduino Environment the LiquidCrystal library exits for a long time and supports HD44780 compatible LCDs with up to 4 lines of 20 characters. Displays ae available with
 
 * 2 lines of 8 characters
 * 2 lines of 16 characters (most common and default)
-* 4 lines of 16 characters
+* 4 lines of 20 characters
+
+## Connecting
+
+Connecting this display type to Arduino was often made using many IO lines by driving the 4-bit interface mode directly.
+
+For ESP8266 and the limited number of GPIO ports a I2C adapter solution is more adequate. The most frequent found of such an solution ist the PCF8574 remote 8-bit IO adapter chip that converts between the I2C bus and up to 8 digital IO lines.
+
+See [http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx](http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx)
+
+The library used to drive these displays is "LiquidCrystal_PCF8574".
 
 ## Web UI for the DisplaySH1106 Element
 
@@ -35,15 +41,19 @@ The following properties are available for configuration of the element:
 
 **height** the number of lines the display supports.
 
-
 The initialization of the I2C bus uses the default SDA (D4) and SCL (D3) GPIOs. When you use different GPIO lines you can adjust this in the scl and sda parameters of the board.
 
 To show some output on the display use the [DisplayText Element](/elements/displaytext) and the [DisplayDot Element](/elements/displaydot)
 
-## configuration
+
+## Configuration
+
+The DisplayLCD Element can be used to configure the LCDDisplayAdapter.
+
+This should be done in the `env.json` file:
 
 ```JSON
-"displayLCD": {
+"displaylcd": {
   "0": {
     "description": "LCD",
     "address": "0x27",
@@ -52,3 +62,4 @@ To show some output on the display use the [DisplayText Element](/elements/displ
   }
 }
 ```
+

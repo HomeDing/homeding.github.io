@@ -1,6 +1,6 @@
 # Board Review ESP8266 -12 with OLED
 
-![boardwemosoled.png](boardwemosoled.png)
+![wemosoled.png](wemosoled.png)
 
 This board is offered on eBay by some local and Chinese vendors and combines a ESP8266 with an OLED display.
 

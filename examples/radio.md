@@ -29,13 +29,13 @@ The audio signals are analog and must be   connected from the radio chip to the 
 
 The following table contains all signal lines including the pin numbers:
 
-Signal | ESP8266 | LCD | Radio | Amp
----|---|---|---|---
- I2C Data | D2 | Data
-I2C Clock | D3 | CLK| #4 | #5
-VCC 3.3 |
-VCC 5 |
- GND | GND | GND | #4 | #5
+| Signal    | ESP8266 | LCD  | Radio | Amp |
+| --------- | ------- | ---- | ----- | --- |
+| I2C Data  | D2      | Data |
+| I2C Clock | D3      | CLK  | #4    | #5  |
+| VCC 3.3   |
+| VCC 5     |
+| GND       | GND     | GND  | #4    | #5  |
 
 
 ## Pictures

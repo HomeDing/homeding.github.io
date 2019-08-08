@@ -6,17 +6,31 @@ In the very generic examples you can of course configure different combinations 
 
 **Important Notice:** Examples will not only require to upload the sketch. It is as also required to upload the files from the `data` folder to the filesystem.
 
-This is explained step by step in the [Blink Example](exampleblink).
+This is explained step by step in the [Blink Example](examples/blink.md).
 
 ## Examples
 
-These examples just need the nodeMCU board and no specific external hardware:
+These examples that come with the library need the nodeMCU board and no specific external hardware:
 
-* [Standard](examples/standard.md)
+* [Standard](/examples/standard.md) This is the sketch and the web site for a NodeMCU or similar board. Many of the recipes work with this example.
 
-[The HomeDing - Blink Example](exampleblink)
-[The HomeDing - PWM Example](examplepwm)
-Dash button simple
+* [Blink](examples/blink.md) This is a sketch that ...
+
+* [minimal](examples/minimal.md) This example shows how to reduce the number of available elements and the embedded web site to fit into a ESP8266 board with only 1 MByte Flash memory.
+
+* Dash ... This example shows how to implement a device that ...
+
+* [Radio](examples/radio.md) this...
+
+* Clock ...
+
+* Water ... irrigation system for garden or balcony plants.
+
+
+---
+
+OLD
+
 
 These examples require a specific hardware setup like sensors or displays to solve the use case.
 
@@ -28,7 +42,25 @@ These examples require a specific hardware setup like sensors or displays to sol
 
 These examples are for a minimal board like ESP-01 or Sonoff basic devices with 1 MByte Flash only
 
-##  Build a custom element
+Old:
+
+**[Blink](examples/blink)** This very simple example needs just a ESP8266 board and can be used to check the correct setup of the environment.
+
+**[Standard](examples/standard)**
+
+* [PWM](examples/pwm)
+* [Radio](examples/radio)
+* [minimal](examples/minimal)
+* [full](examples/full)
+
+
+- [The HomeDing - HomeBlink Example](examples/blink)
+
+- [The build-in WebServer](webserver)
+- [The build-in Web-Services](webservices)
+
+
+
 
 ## Recipes
 
@@ -36,8 +68,8 @@ These examples are for a minimal board like ESP-01 or Sonoff basic devices with 
 
 ## See also
 
-* [Boards](boards.md)
-* [Recipes](recipes.md)
+* [Boards](/boards.md)
+* [Recipes](/recipes.md)
 
 
 # NTPClock with display Example
@@ -50,9 +82,9 @@ In addition to the Base Example this configuration requires a display where the 
 + Display Adapter
 
 
-[HomeBlink](Example-HomeBlink)
+[HomeBlink](Example-HomeBlink.md)
 
-[Example-PWMLED](Example-PWMLED)
+[Example-PWMLED](Example-PWMLED.md)
 
 Example-DHT22
 

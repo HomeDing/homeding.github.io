@@ -3,7 +3,7 @@
 This is the example that runs on the ESP8266 boards that only have a small amount of Flash Memory available and supports typical sockets and lights.
 
 A typical board for this is a [ESP8266-01 board](/boards/boardesp01) with 1MByte (not 512kBype) Flash Memory. But you can also find retail IoT devices with this chip
-like those from [sonoff](/boards/boardsonoff)
+like those from [sonoff](/boards/sonoff.md)
 or the bulbs from tuya.
 
 From the 1 MByte of memory only 128kByte of memory is used for the file system leaving 896 -- 448 kByte for the sketch.

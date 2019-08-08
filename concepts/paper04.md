@@ -5,6 +5,7 @@
 3. [Elements and Actions](/concepts/paper03.md)
 4. **WebServer and Web UI**
 
+
 Building things without the need to use a cloud solution is possible because every device can be directly reached using a standard browser.
 A small web server in every devices enables
 
@@ -12,17 +13,17 @@ A small web server in every devices enables
 * pages that visualise the current values
 * pages that allow changing the configuration and upload new files
 * intersacting with the elements using http+REST based services
+* connecting independant devices over the network.
 
 
 ## WebServer for static files
 
-The HomeDing library includes a web server implementation that delivers the files stored in the SPIFFS file system of an ESP8266 device.
+The HomeDing library includes a web server implementation that delivers the files stored in the file system of the device.
+This is the key machanism that allows the pages the images and other ressources that build this embedded web site to be loaded into the browser.
 
-The pages the images and other ressources that build this embedded web site can be downloaded into the browser.
+Beside delivering files the web server also supports listing the existing files as well as update and delete operations.
 
-You can reach the embedded web site by opening the URL: <http://homeding/> \*
-
-See [Web site structure and Pages](website.md)
+You can reach the embedded web site by opening the URL: <http://homeding/> ^^\*1^^
 
 
 ## The embedded Web Site
@@ -41,7 +42,8 @@ Included functionality:
 * Network setup dialog
 * A graphical overview of the defined actions between elements 
 
-More detailled information on the embedded web site can be found in [Web site structure and Pages](website.md).
+See also
+[Embedded Web Site for HomeDing Devices](website.md).
 
 There is a reduced web site available for the boards and devices that have only 1MByte of Flash on board.
 
@@ -63,5 +65,4 @@ More detailled information on the implemented services can be found in [Web Serv
 * services
 * micro implementations
 
-\* replace `homeding` with the network name of your device.
-
+^^\*1^^ replace `homeding` with the network name of your device.

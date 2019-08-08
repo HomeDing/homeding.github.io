@@ -1,11 +1,44 @@
 # Embedded Web Site for HomeDing Devices
 
+Every device can be directly reached by  using a standard browser thanks to the embedded web site and the built-in web server.
+
+Implementing a web site that fits into the very limited space of the flash memory is a challenge on its own but can be solved by using the power of the current browsers.
+
+To make development of this web site less painful a nodejs based web site project is available that also simulates configured elements to a certain degree.
+
+The structure of the provided web site with details on the individual pages can be found in [websitemap](websitemap.md)
+
+
 ## Web site structure -> another file
 
 * A home page providing a static welcome screen and some further navigation links.
 * A dashboard that presents all active elements and their actual data.
 * A minimal web-based IDE page that allows changing the text based files of the web server including the configuration files.
 * A generic diagram that displays all existing elements and the configured actions in between.
+
+
+## Technology selection
+
+Some reasonable decisions have to be made today (2019) so that all current browsers can be used to run the embedded web site.
+
+**Images** are implemented using SVG format wherever possible. It is nicely supported by all browsers today so no fallback needs to be implemented. As a welcome effect the SVG files for icons are smaller than bitmap based images.
+
+See
+<https://caniuse.com/#feat=svg>
+
+**Scripts** are implemented in JavaScript using the ES5 version or by using Typescript that is compiled and minified to ES5 version.
+
+See
+<https://caniuse.com/#feat=es5>
+
+**CSS Style sheets** are implemented by using SCSS files beeing compiled to stndard CSS. This allows structuring and commending the source code as well as  minimizing the output.
+
+**Promises** are really helpful when building SPA web applications using REST services. They are supported by most browsers and can be emulated for IE11 with a reasonable space.
+
+A polyfill for IE11 is provided.
+ 
+See
+<https://caniuse.com/#feat=promises>
 
 
 ## Implementation Details
