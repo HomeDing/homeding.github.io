@@ -1,0 +1,31 @@
+{
+  "name": "homeding",
+  "version": "1.0.0",
+  "description": "Homeding documentation web site",
+  "main": "server.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HomeDing/homeding.github.io.git"
+  },
+  "keywords": [
+    "Homeding",
+    "doku"
+  ],
+  "author": "Matthias Hertel",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/HomeDing/homeding.github.io/issues"
+  },
+  "homepage": "https://github.com/HomeDing/homeding.github.io#readme",
+  "dependencies": {
+    "express": "~4.16.1",
+    "debug": "~2.6.9"
+  }
+}
