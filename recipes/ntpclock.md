@@ -7,7 +7,7 @@ This recipe uses the ntptime element to get a current local time and displays cu
 Panel ???
 ![image](ntpclock.png)
 
-In `env.json` the system and hardware should be configured:
+In `env.json` the system and hardware should be configured to get a local time and to initialise the display:
 
 ```JSON
 {
@@ -64,4 +64,3 @@ In `config.json` the display items and the time related actions are configured:
 ```
 
 The 2 display text elements are placed on the display and will show current time and date.
-

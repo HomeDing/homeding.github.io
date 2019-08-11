@@ -1,12 +1,14 @@
-# Web Services ???
+# Web Services
 
-When retrieving HTML from the server just return the content of the files in the filesystem and doesn't execute any functionality related to elements or actions.
+To interact with the elements and some device features the integrated web server exposes some services.
 
-The web services support getting access to the inner values and state of the system and elements of the device based on the HomeDing library.
+All services use a URL that starts using a `$` character.
 
-All services provide a REST base interface and start using a `$` character.
+With some exceptions, these services are using the http GET schema so they can also be called using the address bar of the browser. Thi is handsome for test purpose.
 
 ### /$sysinfo
+
+GET <http://homeding/$sysinfo> <sup>*1</sup>
 
 This service returns information from the system level like the flash memory available to the file system.
 
@@ -27,35 +29,50 @@ Example with comments
 
 This information is read only.
 
+
 ### /$reboot
+
+GET <http://homeding/$reboot> <sup>*1</sup>
 
 This service reboots the device.
 
-### /$reset <span style="color:red">\*</span>
+
+### /$reset
+
+GET <http://homeding/$reset> <sup>*1</sup>
 
 This service wipes out the network configuration and then restarts the device.
 
+TODO: ??? disable in "save-mode`
+
+
 ### /$elements
+
+GET <http://homeding/$elements> <sup>*1</sup>
 
 This REST service returns an array with all elements that are implemented in the firmware of the device.
 
 Example:
 ```JSON
-[ "ssdp", "ota", "device", "time", "remote", "ntptime",
-  "dstime", "serialcmd", "my", "value", "button", "analog",
-  "timer", "schedule", "digitalout", "pwmout", "displaytext",
-  "displaydot", "displayLCD" ,"displaySSD1306", "displaySH1106",
+[ "ssdp", "ota", "device", "time", "remote", "ntptime", "dstime", "serialcmd", "my", "value", "button", "analog",
+  "timer", "schedule", "digitalout", "pwmout", "displaytext", "displaydot", "displayLCD" ,"displaySSD1306", "displaySH1106",
   "dht", "rfsend", "rotary", "alarm"
 ]
 ```
 
-### /$upload <span style="color:red">\*</span>
+### /$upload
+
+GET <http://homeding/$upload> <sup>*1</sup>
+
+This is not strictly a service but builtin the web server to allow initial uploads.
+This GET request returns a minimal HTML page that can be used to upload files to the server using drag & drop.
 
 This URL returns a minimal HTML page that can be used to upload files to the server using drag & drop.
 
-![Minimal Upload Form](upload.png)
+It is described in detail in [Web Sitemap](websitemap.md).Q
 
-### /$scan <span style="color:red">\*</span>
+
+### /$scan
 
 This service is required for the network configuration page (/setup.htm) and returns an array with all available networks.
 
@@ -73,6 +90,9 @@ This service has to be called multiple times. The first time starts scanning and
 
 This service is required for the network configuration page (/setup.htm) and allows changing the network configuration.
 
+TODO: ??? disable in "save-mode`
+
+
 ### /$list
 
 This service is required for the IDE page implementation (/ding-ide.htm) and returns a list of all files on the filesystem.
@@ -80,6 +100,8 @@ This service is required for the IDE page implementation (/ding-ide.htm) and ret
 ### /$board
 
 This service returns the state of all existing elements running in the device.
+
+Example:
 
 ```JSON
 {
@@ -91,9 +113,9 @@ This service returns the state of all existing elements running in the device.
   "dht/on": {"active":"true", "temperature":"21.60", "humidity":"46.00"}}
 ```
 
-### /$boardht/on**
+### /$board/dht/on**
 
-This service returns the state of the element addressed by the more specific url.
+This service returns the state of the element addressed by the more specific url. It is an excerpt of the full state above.
 
 ```JSON
 {
@@ -105,10 +127,26 @@ This service returns the state of the element addressed by the more specific url
 }
 ```
 
-### /$boardisplaytext/t?value=21.60**
+### /$board/displaytext/t?value=21.60**
 
 This service sends an action to the element specified by the URL to set the value.
 
 This is how the remote element will send actions across the network to other devices.
 
-> \* this service is not available when the device runs in the save mode. See [Save Mode](savemode) for details.
+### Implementation
+
+As an implementation principle the UI presented in the browser only acts as a visual interface but doesn't execute any functionality related to actions.
+The actions will only be processed inside the device using the implemented elements completely independant from a possible open browser.
+
+Restfull services using the URL for adressing and JSON for data and results have been choosen to have an acceptable size of JSON parser andcompising functions in the device while making implementation in the browser relatively easy.
+
+As of now there are no advances web services features like websockets implemented.
+
+---
+
+**1**: replace `homeding` with the network name of your device to use this link.
+
+**2**: this service is not available when the device runs in the save mode.
+See [Save Mode](savemode) for details.
+
+

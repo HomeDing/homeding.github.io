@@ -7,7 +7,7 @@
 </div>
 
 
-The input can come from a digitalin[Digital Input Element](/elements/digitalin) or anynother element that generates boolean values.
+The input can come from a [Digital Input Element](/elements/digitalin) or another element that generates boolean values.
 
 It can also be used to define a Button Element in the Web UI of the device.
 
@@ -17,26 +17,31 @@ It can also be used to define a Button Element in the Web UI of the device.
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-<!-- ![Button UI](elements/buttonui.png) -->
+> [Button UI](elements/buttonui.png) ???
 
-Pressing the button will trigger the events defined in the configuration.
+In the HTML element the gestures `click`, `doubleclick` and `press` are detected and send to the element.
+These will trigger the events defined in the configuration.
+
 
 ## Element Configuration
 
 The following properties are available for configuration of the element:
 
-**value** - This is the incoming logical value that is typically emitted by a igital input element.  
+**value** - This is the incoming logical value that is typically emitted by a digital input element.  
 
 **clicktime** - time to wait for another click before sending out the onclick action
 
 **presstime** - time to wait before sending out the onpress action                  
 
-**onclick** - These Actions are emeited when a single press gesture was detected.                                
+**onclick** - These actions are emited when a single press gesture was detected.                                
 
-**ondoubleclick** - These Actions are emeited when a double click gesture was detected.     
+**ondoubleclick** - These actions are emited when a double click gesture was detected.     
 
-**onpress** - These Actions are emeited when a long press gesture was detected.                      
+**onpress** - These actions are emited when a long press gesture was detected.                      
 
+**action** - when receiving this event the specified actions are emitted ??? 
+
+**onaction** - These actions are emited any time a click double-click or press gesture was detected. The given value is `click`, `doubleclick` or `press`. This allows button actions to be send to other buttons even remote buttons.
 
 ## Control the Element
 
@@ -78,3 +83,8 @@ The `value` property correspons to the current output of the element.
   "value": "1"
 }
 ```
+
+## See also
+
+* [Light timer recipe](???)
+* [Remotebutton recipe](???)

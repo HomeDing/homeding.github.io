@@ -5,7 +5,10 @@
   <p>The RotaryElement is used to capture increments and decrements for values using a rotary encoder.</p>
 </div>
 
-It can be used in combination with a [Value Element](elements/value) to define a logical value that can be changed using the rotary encoder.
+It can be used in combination with a [Value Element](elements/value) to define a logical or numeric value that can be changed using the rotary encoder.
+
+This element uses the RotaryEncoder library available in the Arduino Library Manager.
+
 
 ## Web UI for the Rotary Element
 
@@ -13,10 +16,7 @@ There is a dedicated card for this element available that will be used on the we
 
 ![Rotary Web UI](/elements/rotaryui.png)
 
-
 See example in [value element](elements/value).
-
-This element uses the RotaryEncoder library available in the Arduino Library Manager.
 
 
 ## Element Configuration
@@ -34,16 +34,6 @@ value Internal starting value. (deprecated)
 \* This parameter must be specified.
 
 
-## Element State
-
-The following properties are available with the current values at runtime
-
-| Property | Description                                |
-| -------- | ------------------------------------------ |
-| `active` | Is set to true when the Element is active. |
-| `value`  | Current internal value of the rotary position. |
-
-
 ## Example Configuration
 
 ```JSON
@@ -58,10 +48,20 @@ The following properties are available with the current values at runtime
 }
 ```
 
+
+## Element State
+
+The following properties are available with the current values at runtime
+
+| Property | Description                                |
+| -------- | ------------------------------------------ |
+| `active` | Is set to true when the Element is active. |
+| `value`  | Current internal value of the rotary position. |
+
+
 ## Example State
 
 The internal value can be seen in the rotary state but should not directly be used as a value.
-
 
 ```JSON
 "rotary/in": {
@@ -71,8 +71,7 @@ The internal value can be seen in the rotary state but should not directly be us
 ```
 
 
-
-## See also
+  ## See also
 
 * Value Element
 * LED Recipe
