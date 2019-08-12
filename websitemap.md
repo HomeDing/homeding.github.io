@@ -10,8 +10,6 @@ The web site allows accessing and configuring any device directly with a standar
 /panel.htm
 ```
 
-
-
 These UI pages are hosted on the device itself. They are implemented respecting the small available memory but provide some powerful functions to even configure and customise the device.
 
 ## Home Page

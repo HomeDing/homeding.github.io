@@ -5,6 +5,7 @@
 3. [Elements and Actions](/concepts/paper03.md)
 4. **WebServer and Web UI**
 
+## Overview 
 
 Building things without the need to use a cloud solution is possible because every device can be directly reached using a standard browser.
 A small web server in every devices enables
@@ -50,13 +51,15 @@ There is a reduced web site available for the boards and devices that have only 
 
 ## WebServer for services
 
-The web server also implements some services that allow to interace with the elements and the board functionality of the device.
+The web server also implements services that allow to interact with the elements and the board functionality of the device.
+
+This is used by the embedded web-site and for linking multiple devices that exchange actions.
 
 These are not static responses but computed results. The URLs used for the services all start with a ressource name using a `$` character.
 
 E.g. the current state of the elements can be requested from the device by asking for using the URL: <http://homeding/$board> \*
 
-More detailled information on the implemented services can be found in [Web Services](webservices.md).
+More detailled information on the implemented services can be found in [Web Services](/webservices.md).
 
 
 ## See also
@@ -65,4 +68,6 @@ More detailled information on the implemented services can be found in [Web Serv
 * services
 * micro implementations
 
-^^\*1^^ replace `homeding` with the network name of your device.
+---
+
+**\*1**: replace `homeding` with the network name of your device.

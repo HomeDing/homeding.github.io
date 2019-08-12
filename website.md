@@ -9,14 +9,6 @@ To make development of this web site less painful a nodejs based web site projec
 The structure of the provided web site with details on the individual pages can be found in [websitemap](websitemap.md)
 
 
-## Web site structure -> another file
-
-* A home page providing a static welcome screen and some further navigation links.
-* A dashboard that presents all active elements and their actual data.
-* A minimal web-based IDE page that allows changing the text based files of the web server including the configuration files.
-* A generic diagram that displays all existing elements and the configured actions in between.
-
-
 ## Technology selection
 
 Some reasonable decisions have to be made today (2019) so that all current browsers can be used to run the embedded web site.
