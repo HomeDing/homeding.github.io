@@ -1,6 +1,6 @@
 # Board Review ESP8266 -12 with OLED and 18650
 
-![boardwroom2.png](boards/wroom2.png)
+![wroom2.png](/boards/wroom2.png)
 
 This board is offered on eBay by some local and Chinese vendors and combines a ESP8266, a OLED display a „joystick“ type of button and the hardware to charge and use an LI-ION standard 18650 battery.
 
@@ -44,9 +44,9 @@ The blue LED on the ESP-12 can also be used GPIO2(D4).
 
 The green LED at GPIO16 (D0) only can be used when there is no need for deep sleep functionality and only can be switched on and off.
 
-In cannot be dimmed using by PWM  because GPIO16 is not supporting this.
+In cannot be dimmed using by PWM because GPIO16 is not supporting this.
 
-I find it a poor design to add aLED to this port for these reasons.
+I find it a poor design to add a LED to this port for these reasons.
 
 
 ### joystick
@@ -88,7 +88,7 @@ The display configuration is the only specific entry in env.json:
     "0": {
       "port": 8266,
       "passwd": "123",
-      "description": "Listen for 'over the air' OTA Updates"
+      "description": "Listen for 'over the air' Updates"
     }
   },
 
@@ -104,6 +104,27 @@ The display configuration is the only specific entry in env.json:
       "SDA": "D1",
       "SCL": "D2",
       "height": 64
+    }
+  }
+}
+```
+
+```JSON
+{
+  "digitalin": {
+    "up": {
+      "pin": "D6",
+      "description": "up button signal",
+      "inverse": "true",
+      "pullup": "true",
+      "onvalue": "device/0?log=up-input:$v"
+    },
+    "down": {
+      "pin": "D7",
+      "description": "down button signal",
+      "inverse": "true",
+      "pullup": "true",
+      "onvalue": "device/0?log=down-input:$v"
     }
   }
 }
