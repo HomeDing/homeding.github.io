@@ -53,13 +53,17 @@ that provides the input value to the Button Element.
 ```JSON
 {
   "digitalin": {
-    "0": {
-      "onvalue": "button/c?input=$v"
+    "up": {
+      "pin": "D6",
+      "description": "up button signal",
+      "inverse": "true",
+      "pullup": "true",
+      "onvalue": "button/up?value=$v"
     }
   },
 
   "button": {
-    "c": {
+    "up": {
       "onclick": "device/main?log=click.",
       "ondoubleclick": " device/main?log=dclick.",
       "onpress": " device/main?log=press."
