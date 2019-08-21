@@ -109,6 +109,8 @@ The display configuration is the only specific entry in env.json:
 }
 ```
 
+These are the basic element configurations for the joystick button and the 2 onboard LEDs.
+
 ```JSON
 {
   "digitalin": {
@@ -117,7 +119,7 @@ The display configuration is the only specific entry in env.json:
       "description": "up button signal",
       "inverse": "true",
       "pullup": "true",
-      "onvalue": "device/0?log=up-input:$v"
+      "onvalue": "button/up?value=$v"
     },
     "down": {
       "pin": "D7",
@@ -125,7 +127,38 @@ The display configuration is the only specific entry in env.json:
       "inverse": "true",
       "pullup": "true",
       "onvalue": "device/0?log=down-input:$v"
+    },
+    "left": {
+      "pin": "D3",
+      "description": "left button signal",
+      "inverse": "true",
+      "pullup": "true",
+      "onvalue": "device/0?log=left-input:$v"
+    },
+    "press": {
+      "pin": "D5",
+      "description": "press button signal",
+      "inverse": "true",
+      "pullup": "true",
+      "onvalue": "device/0?log=press-input:$v"
     }
-  }
+  },
+  "digitalout": {
+    "led": {
+      "pin": "D0",
+      "inverse": "true",
+      "value": "0",
+      "description": "Builtin LED is on Port D0 = GPIO16"
+    }
+  },
+  "pwmout": {
+    "led": {
+      "pin": "D4",
+      "range": 255,
+      "value": 10,
+      "inverse": "true",
+      "description": "Build-in LED on module"
+    }
+  },
 }
 ```
