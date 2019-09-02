@@ -43,12 +43,12 @@ i/timer.svg
 i/value.svg
 i/water.svg
 i/wifi.svg
-ft/css.svg 
-ft/dir.svg 
+ft/css.svg
+ft/dir.svg
 ft/file.svg
-ft/htm.svg 
-ft/ico.svg 
-ft/js.svg  
+ft/htm.svg
+ft/ico.svg
+ft/js.svg
 ft/json.svg
 ft/svg.svg
 ft/txt.svg
@@ -79,7 +79,6 @@ index.htm
 iotstyle.css
 lineChart.js
 lineChart.svg
-list.txt
 manifest.json
 micro.js
 microsvg.js
