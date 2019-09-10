@@ -67,3 +67,4 @@ micro.insertTemplate(root: HTMLElement, controlName: string, props: Object): HTM
 * [microbehaviors](microbehaviors.md)
 * https://www.webcomponents.org/
 * https://html.spec.whatwg.org/multipage/scripting.html#the-template-element
+* https://johnresig.com/blog/javascript-micro-templating/
