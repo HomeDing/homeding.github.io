@@ -98,8 +98,9 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
   "device": {
     "main": {
       "name": "wifikitding",
-      "reboottime": "4h",
-      "description": "Wifi Kit 8 Module"
+      "description": "Wifi Kit 8 Module",
+      "reboottime": "24h",
+      "button": "D3"
     }
   },
 
@@ -122,7 +123,23 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
   }
 }
 ```
-## Links
+
+The onboard button labeled "PRG" pulls D3 down and can be used with a digital input:
+
+```JSON
+"digitalin": {
+  "D3": {
+    "loglevel": 2,
+    "pin": "D3",
+    "description": "onboard button signal",
+    "inverse": "true",
+    "pullup": "true",
+    "onvalue": "device/0?log=D3:$v"
+  }
+}
+```
+
+## See also
 
 * Product page at heltec.cn: <http://www.heltec.cn/project/wifi-kit-8/?lang=en>
 * Diagram <http://www.heltec.cn/download/WIFI_Kit_8_Diagram(new).pdf> Be aware that there is another diagram picture there that is wrong for my board.
@@ -130,4 +147,3 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
 * The Wifi-Kit 8 SDK is a copy of the ESPRESSIV project and a selected list of libraries. It is a good source for ideas, however, I prefer using the golden sources of the SDK and libraries:
 <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series>
 * A summary to use this board <https://robotzero.one/heltec-wifi-kit-8/>
-
