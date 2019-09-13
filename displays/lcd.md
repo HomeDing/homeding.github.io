@@ -41,7 +41,7 @@ The following properties are available for configuration of the element:
 
 **height** the number of lines the display supports.
 
-The initialization of the I2C bus uses the default SDA (D4) and SCL (D3) GPIOs. When you use different GPIO lines you can adjust this in the scl and sda parameters of the board.
+The initialization of the I2C bus uses the SDA and SCL pins defined in the device configuration.
 
 To show some output on the display use the [DisplayText Element](/elements/displaytext) and the [DisplayDot Element](/elements/displaydot)
 

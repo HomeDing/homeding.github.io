@@ -14,8 +14,12 @@ To enable a locally attached display a display element needs to be configured (p
 
 Supported display are: 
 
-* Monochrome OLED displays using the chips [SH1106](/displays/sh1106.md) and [SSD1306](/displays/ssd1306.md).
-* Monochrome [Liquid Chrystal](/displays/lcd.md) displays with a HD44780 chip attached in the I2C bus using a PCF8574 chip.
+* Monochrome OLED displays using the chips
+    * [SH1106](/displays/sh1106.md)
+    * [SSD1306](/displays/ssd1306.md)
+
+* Monochrome LCD displays
+    * [Liquid Chrystal](/displays/lcd.md) displays with a HD44780 chip attached in the I2C bus using a PCF8574 chip.
 
 The configured and therefore activated display element will automatically activate the corresponding display adapter implementation and will configure it according to the setting given in the configuration.
 
@@ -30,6 +34,16 @@ Supported information types are:
 * boolean (on/off)
 * The DisplayText Element
 * The DisplayDot Element
+
+
+## Web UI for displays
+
+For the display elements a special Web UI is implemented that shows the current display on the web UI of the device.
+
+The frame is created from the display adapter elements while displaytext and displaydot elements put their information into the frame.
+
+To keep the initialization in the required order it is recommended to configure the display adapter in the env.json and configure the text and dot elements in the config.json file.
+
 
 ## Startup and system information
 
