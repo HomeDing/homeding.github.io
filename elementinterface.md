@@ -1,212 +1,107 @@
-# Element interface
+# Elements API
 
-> draft ???
+To implement an element a new class has to be created to implement the functions required for the specific element.
+
+This is supported by an empty element implemented by the `Element` class that  is used as the parent class of every element.
+
+
+## Using the MyElement class as a template
+
+The [devding example](devding.md) has a class named `MyElement` that can be used as a starting point it contains all functions partly commented that might be implemented.
+
+You can copy the 2 files `MyElement.cpp` and `MyElement.h` over to your sketch folder and rename all occurrences if `MyElement` to your element name.
+
+Be aware that there is a name for the element `my` defined in the registration function thatneeds to be changed to something unique.
+
+
+## main functions
+
+As with normal Arduino sketches there are 2 functions init??? And loop??? that are used to initialize and run the element. 
+
+Because every element also participates in  exchanging actions there is a third function named set that gets called for receiving actions. 
+
+
+### init()
+
+This function is called just after a new element object is created from the class. You can do further initializions in here.
+
+Within this method the init() of the master??? class needs to be called.
+
+If there is no need for initialization of your element you can leave this method unimplemented in MyElement.cpp and can remove it from the class definition in MyElement.h.
+
+
+### set()
+
+This method that gets called whenever a parameter gets initialized or an action is sent by another element to this element.
+
+The action name and the parameters are already given as 2 parameters the action `name` and action `value` to make implementation easy.
+
+You need to implement some code for all incoming actions that are element specific.
+
+The easiest case is to initialize a member of the class with a new value. There are some methods available to convert the parameter given as a string    
+to the appropriate type like 
+
+* `_atopin` for pin definitions
+* `_atob` for boolean values
+* `_atoi` for numeric values
+* `_atotime` for time values
+
+
+Within this method the set() of the master??? class needs to be called whenever the action is not handled in a meaningful way or the name is unknown. 
+
+
+### start()
+
+In some cases the element need to implement a further initialision after all configuration properties are known but before the loop starts. This can be implemented in the start method.
+
+As a default elements are started after a network was connected only so they will not be activated in case of the network is not available or not configured yet.
+
+
+### Class initialize
+
+Some elements need a valid local time to operate. The event when the element normal operation is started can be configured in
+the class initializer like you can find in the LogElement:
 
 ```CPP
-/**
- * @file Element.h
- * @brief Base Element class of the HomeDing Library implementing the default
- * functionality. All Elements must derive from this class.
- * @author Matthias Hertel, https://www.mathertel.de
- */
-//
-// This work is licensed under a BSD style license.
-// See https://www.mathertel.de/License.aspx.
-// More information on https://www.mathertel.de/Arduino
-// -----
-// 23.04.2018 created by Matthias Hertel
-// 27.04.2018 parameter pushing & loading added.
-// 29.04.2018 action passing added.
-// 15.05.2018 set = properties and action interface.
-// -----
-
-#ifndef ELEMENT_H
-#define ELEMENT_H
-
-#include <Arduino.h>
-#include <functional>
-
-// forward class declarations
-class Board;
-class Element;
-
-#include <core/Logger.h>
-
-/**
- * @brief Startup Mode specifies when is the right moment to try
- * starting/activating the element.
- */
-enum Element_StartupMode {
-  System = 1, // right after loading the configurations.
-  Network = 2, // after a network connectivity in AP Mode was established.
-  Time = 3, // after a valid local time was set.
-  Manual = 9 // manually started.
-};
-
-#define ACTION_SEPARATOR ','
-
-// id can be multi-level when using the slash as a separator.
-// like "device/name"
-#define MAX_ID_LENGTH 32
-#define ELEM_ID_SEPARATOR '/'
-#define ELEM_PARAMETER '?'
-#define ELEM_VALUE '='
-
-
-/**
- * @brief This is the base class for all Elements that can be managed by the
- * Board.
- */
-class Element
+LogElement::LogElement()
 {
-public:
-  /**
-   * @brief The id of the Element. Visible to anyone.
-   */
-  char id[MAX_ID_LENGTH]; // TODO: convert to String
-
-  int loglevel = LOGGER_LEVEL_ERR;
-
-  /**
-   * @brief The Element will be marked active after passing valid parameters and
-   * calling start().
-   */
-  bool active = false;
-
-
-  /**
-   * @brief when the element should be started.
-   */
-  Element_StartupMode startupMode = Element_StartupMode::Network;
-
-
-  /**
-   * @brief The pointer to the next Element in the list of all Elements.
-   */
-  Element *next = NULL;
-
-
-  // ===== Livetime management =====
-
-  /**
-   * @brief initialize a new Element.
-   * @param board The board reference.
-   */
-  virtual void init(Board *board);
-
-
-  /**
-   * @brief Set a parameter or property to a new value or start an action.
-   * @param name Name of property.
-   * @param value Value of property.
-   * @return true when property could be changed and the corresponding action
-   * could be executed.
-   */
-  virtual bool set(const char *name, const char *value);
-
-
-  /**
-   * @brief Get a property value.
-   * @param name Name of property.
-   * @return actual value of property.
-   */
-  virtual const char *get(const char *name);
-
-
-  /**
-   * @brief Activate the Element.
-   * @return true when activation was good.
-   * @return false when activation failed.
-   */
-  virtual void start();
-
-
-  /**
-   * @brief Give some processing time to the element to do something on its own
-   */
-  virtual void loop();
-
-
-  /**
-   * @brief stop all activities and go inactive.
-   */
-  virtual void term();
-
-
-  /**
-   * @brief push the current value of all properties to the callback.
-   * @param callback callback function that is used for every property.
-   */
-  virtual void pushState(
-      std::function<void(const char *pName, const char *eValue)> callback);
-
-protected:
-  /**
-   * @brief Return an integer value from a string.
-   * @param value Given value as string.
-   * @return value
-   */
-  static int _atoi(const char *value);
-
-  /**
-   * @brief Return a boolean value from a string.
-   * @param value Given value as string.
-   * @return true Return for "true", "on", "1", "high".
-   * @return false Return false as the default case.
-   */
-  static bool _atob(const char *value);
-
-  /**
-   * @brief Return a time value from a string.
-   * @details Time values as represented using a long integer containing the
-   * time / duration as seconds.
-   *
-   * A unit modifier can be appended:
-   * * "d" for days
-   * * "h" for hours
-   * * "m" for minutes
-   * * "s" for seconds
-   * The format hh:mm[:ss] can also be used.
-   *
-   * @param value Given value as string.
-   * @return time or duration as seconds.
-   */
-  static unsigned long _atotime(const char *value);
-
-  /**
-   * @brief Return a pin value from a string.
-   * @details pin values can be entered using the "D0" or "A0" syntax or by
-   * specifying a GPIO number. Mappings are taken from NodeMCU.
-   *
-   * * D0  = GPIO 16
-   * * D1  = GPIO 5
-   * * D2  = GPIO 4
-   * * D3  = GPIO 0
-   * * D4  = GPIO 2
-   * * D5  = GPIO 14
-   * * D6  = GPIO 12
-   * * D7  = GPIO 13
-   * * D8  = GPIO 15
-   * * D9  = GPIO 3
-   * * D10 = GPIO 1
-   *
-   * @param value Given value as string.
-   * @return GPIO Number.
-   */
-  static int _atopin(const char *value);
-
-  /**
-   * @brief replacement of the CPP stricmp function not available on Arduino.
-   */
-  static int _stricmp(const char *str1, const char *str2);
-
-  /**
-   * @brief A reference to the board the Element is on.
-   */
-  Board *_board;
-
-  // private:
-};
-
-#endif
+  startupMode = Element_StartupMode::Time;
+}
 ```
+
+See also [wifimanager](wifimanager.md)
+
+
+### loop()
+
+This method is called from time to time like the loop function in standard Arduino sketches.
+This is where the element can do something on its own like getting some data from a sensor or checking some conditions.
+
+
+### pushState(cbFunc)
+
+ELements report some internal state when the pushState method is called.
+This is in addition to sending events when the state changes and allows other elements and the Web UI to question for the actual state.
+
+This is done by calling the callback function for every property that might change durin operation.
+
+
+## Members derived from the general Element class
+
+**loglevel** This variable holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1???
+  This can be changed in the configuration of the element by the `loglevel` attribute.
+
+**active** This variable is set to true after the element has started without problems in the start() function.
+
+**startupMode** This variable specifies when the element can be started. It is a common topic to many elements that the network must work or a local time is available.
+The default value is Network ???
+
+
+## Registering an element
+
+The ElementRegistry holds references to all element classes to enable creating of new Elements by name at runtime.
+
+This is done by initializing a static calss member to enforce calling the registerElement methob before anything else on every class.
+
+For more information on this see [Element Registry](elementregistry.md).
+
