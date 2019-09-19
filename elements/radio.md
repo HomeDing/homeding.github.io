@@ -1,8 +1,12 @@
 # Radio Element
 
-> #Draft
+> #Draft incomplete doku
 
-The RadioElement is used to control a FM radio chip that is connected to the board.
+<div class="excerpt">
+  <img src="/i/radio.svg">
+  <p><strong><a href="#page=elements/radio.md">Radio Element</a></strong><br/>
+  This element allows to control a FM radio chip that is connected to the board.</p>
+</div>
 
 It is not part of the  collection of core elements because it relies on the external radio library that offers a unified api for multiple radio chips.
 

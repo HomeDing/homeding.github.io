@@ -1,6 +1,6 @@
 # SSDP Element
 
-> draft ???
+> #Draft incomplete doku
 
 <div class="excerpt">
   <img src="/i/ssdp.svg">
