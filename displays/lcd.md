@@ -53,6 +53,17 @@ The DisplayLCD Element can be used to configure the LCDDisplayAdapter.
 This should be done in the `env.json` file:
 
 ```JSON
+"device": {
+  "0": {
+    "name": "lcddevice",
+    "led": 2,
+    "reboottime": "8h",
+    "i2c-sda": "D2",
+    "i2c-scl": "D1",
+    "description": "IoT Dev-Device with LCD"
+  }
+},
+
 "displaylcd": {
   "0": {
     "description": "LCD",
@@ -62,4 +73,3 @@ This should be done in the `env.json` file:
   }
 }
 ```
-
