@@ -58,3 +58,5 @@ A multi purpose volt meter ??? is helpful.
 - <https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/>
 - <https://www.nodemcu.com/index_en.html>
 - <https://github.com/nodemcu/nodemcu-devkit-v1.0/blob/master/README.md>
+- ESP8266 board adoption for Arduino: <https://arduino-esp8266.readthedocs.io/en/latest/index.html>
+

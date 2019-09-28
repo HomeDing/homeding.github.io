@@ -1,12 +1,10 @@
-## Board ESP8266 ESP-01
+# Board ESP8266 ESP-01
 
-<style>img {height:150px}</style>
-
-The ESP­01 module contains a ESP8266 MCU and a up to 1 MByte flash memory chip.
+The ESP-­01 and ESP-­01S modules contain a ESP8266 MCU and a up to 1 MByte flash memory chip.
 
 ## Overview table
 
-![board-esp01-pins](boardesp01-pins.png)
+![board-esp01-pins](/boards/esp01-pins.png)
 
 | Connector | Feature                       |
 | --------- | ----------------------------- |
@@ -26,20 +24,22 @@ There are multiple versions of the ESP-01 board available. In the early days als
 
 ## ESP-01 LEDs
 
-![board-esp01](boardesp01.jpg)
-
 The original version of the ESP-01 board has 2 LEDs:
+
+![board-esp01-leds](/boards/esp01-leds.jpg)
 
 * The red LED is connected to the 3.3V Power supply and lights up constantly.
 * The blue LED is connected to the Serial output pin and lights up when data is sent. When not using the TX Serial output the pin and LED can be used as a digital output too.
+
+There have been critics about these 2 LEDs and some recomment to unsolder them e.g. to save power for battery driven solutions. 
 
 ## ESP-01S LEDs
 
 This board is a newer version that
 
-1Mbyte of flash memory.
-No power LED
-Blue LED on GPIO2(D4)
+* 1Mbyte of flash memory.
+* No power LED
+* Blue LED on GPIO2(D4)
 
 
 ## self-made adaptor
@@ -50,27 +50,69 @@ Blue LED on GPIO2(D4)
 * LED on Dy
 * USB to serial including a 3.3 V regulator
 
+
 ## Minimum adapter
 
-The minimum
-CH_PD and RST with 10k to VCC
+The minimum wiring to use this board is to have the following external wiring:
+
+* pull up CH_PD with 10k to VCC
+* pull up RST with 10k to VCC
+* connect 3.3V and GND to power supply
+
+
+<!-- ## cheap USB adapter on eBay to run the chip
+
+There are some cheap USB adapters 
+
+![board-esp01-adapter](/boards/esp01-adapter.png)
+
+-->
+
 
 ## GPIO 0
 
 This pin has to be high while booting or resetting the chip when you like to start the regular uploaded program.
 After starting the program you can use it for input and output.
 
-For example attaching a Led with resistor to ground will prohibit starting because the level of the pin is pulled to low. It is better to design all the io functionality using a high level for the inactive state and have a resistor in place to pull the default level to high.
-
-## GPIO 1
-
-?? You CAN control the blue LED if you do not need the TX function. TX is actually GPIO1 so by setting GPIO1 to HIGH it will light up. Ofcourse sending output to serial will spoil things.
+For example attaching a led with resistor to ground will prohibit starting because the level of the pin is pulled to low. It is better to design all the io functionality using a high level for the inactive state and have a resistor in place to pull the default level to high.
 
 
-## cheap USB adapter on eBay to run the chip
+## GPIO 1 / Serial TX
+
+You CAN control the blue LED if you do not need the TX function. TX is actually GPIO1 so by setting GPIO1 to HIGH will light up the LED of a ESP-01 board. Of course sending output to serial will spoil things.
 
 
-# MOD for Deep sleep
+## GPIO2
 
-# MOD for low memory
+This pin has to be high while booting or resetting the chip when you like to start the regular uploaded program.
+After starting the program you can use it for input and output.
+
+
+## Modification for deep sleep mode
+
+The ESP8266 supports a deep sleep mode that needs an external connection between the GPIO16 and the RESET.
+
+Here is a picture on how to create such a connection on an ESP-01:
+
+![board-esp01-with-deep-sleep](/boards/esp01-wire.jpg)
+
+More details and hints on using the deep sleep mode can be found in [deepsleep](/boards/deepsleep.md)
+
+
+## Modification for supporting PUYA Flash chips
+
+Some of the ESP8266 ESP-01 boards use a (cheper) flash chip from the vendor PUYA. This chip has a slightly different behavior when writing data to the flash memory than the original flash chips that have been used. Therefore a modification in the code needs to be activated.
+
+For version 2.5.2 of the ESP8266 board package this can be enabled by addingthe following code to the Esp.h file in `packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\Esp.h`.
+
+```CPP
+#ifndef PUYA_SUPPORT
+  #define PUYA_SUPPORT 1
+#endif
+```
+
+For the next version this option may be activated by default. See  
+https://github.com/esp8266/Arduino/pull/6362
+
+Background information can be found in: https://github.com/esp8266/Arduino/issues/6221
 

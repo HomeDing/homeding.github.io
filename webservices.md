@@ -10,7 +10,9 @@ With some exceptions, these services are using the http GET schema so they can a
 
 GET <http://homeding/$sysinfo> <sup>*1</sup>
 
-This service returns information from the system level like the flash memory available to the file system.
+This service returns some information from the system level like the flash memory available to the file system.
+
+A link to this URL is also present on the default page index.htm.
 
 Example with comments
 
@@ -28,6 +30,23 @@ Example with comments
 ```
 
 This information is read only.
+
+
+### Example
+
+```JSON
+{
+  "build": "Oct 10 2018"
+  "free heap": 32456,
+  "flash-size": 4194304,
+  "flash-real-size": 4194304,
+  "fs-totalBytes": 957314,
+  "fs-usedBytes": 80822,
+  "ssid": "KHMH",
+  "bssid": "74:DA:38:2C:70:B8"
+}
+```
+
 
 
 ### /$reboot
