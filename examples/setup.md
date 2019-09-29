@@ -12,7 +12,7 @@ There is a good tutorial about how to setup the Arduino environment at <https://
 ## ESP8266 programming support
 
 To enable "verify" and "upload" programs to a ESP8266 based board you can follow the instructions at
- <https://arduino-esp8266.readthedocs.io/en/2.4.1/installing.html> ???
+ <https://arduino-esp8266.readthedocs.io/en/latest/installing.html> ???
 
 It takes some time but runs smoothly from my experience. This enables you to verify and upload sketches to the ESP8266 boards.
 
@@ -53,3 +53,7 @@ You may have to adjust the USB port as this varies on different computers.
 ## Next steps
 
 After having setup your environment and having configured the board correctly you can start using o e of the examples providing together with the HomeDing library.
+
+## See also
+
+* ESP8266 board adoption for Arduino: <https://arduino-esp8266.readthedocs.io/en/latest/index.html>
