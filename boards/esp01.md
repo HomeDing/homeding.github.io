@@ -116,3 +116,7 @@ https://github.com/esp8266/Arduino/pull/6362
 
 Background information can be found in: https://github.com/esp8266/Arduino/issues/6221
 
+## See also
+
+* <https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/>
+* <https://www.esp8266.com/viewtopic.php?t=11657>

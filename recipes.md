@@ -1,4 +1,4 @@
-# Recipes 2
+# Recipes
 
 > Draft ???
 

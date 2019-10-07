@@ -80,6 +80,8 @@ The display configuration is the only specific entry in env.json:
     "0": {
       "name": "wroomding",
       "reboottime": "1h",
+      "i2c-sda": "D1",
+      "i2c-scl": "D2",
       "description": "Esp-Wroom-02 Modul ESP8266 with OLED and 18650"
     }
   },
@@ -101,8 +103,6 @@ The display configuration is the only specific entry in env.json:
  "DisplaySSD1306": {
     "0": {
       "address": "60",
-      "SDA": "D1",
-      "SCL": "D2",
       "height": 64
     }
   }
