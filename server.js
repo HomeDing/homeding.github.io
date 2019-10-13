@@ -2,6 +2,8 @@ const express = require("express");
 const debug = require("debug");
 // const fs = require("fs");
 
+debug.enable('iot:info');
+
 console.log('Homeding Doku Web Server starting...');
 
 const app = express();
@@ -13,8 +15,6 @@ const log = {
 log.info.log = console.log.bind(console);
 log.error.log = console.error.bind(console);
 log.send.log = console.log.bind(console);
-
-debug.enable('*:info');
 
 
 // ===== Start =====
