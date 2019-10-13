@@ -1,9 +1,10 @@
-var express = require("express");
-var app = express();
-
-const fs = require("fs");
+const express = require("express");
 const debug = require("debug");
+// const fs = require("fs");
 
+console.log('Homeding Emulation Web Server starting...');
+
+const app = express();
 const log = {
   info: debug("iot:info"),
   error: debug("iot:error"),
@@ -12,6 +13,9 @@ const log = {
 log.info.log = console.log.bind(console);
 log.error.log = console.error.bind(console);
 log.send.log = console.log.bind(console);
+
+debug.enable('*:info');
+
 
 // ===== Start =====
 
@@ -82,6 +86,8 @@ app.use(function (req, res, next) {
   res.status(404).send("Sorry, can't find that.");
 });
 
+
 app.listen(3123, () => {
-  log.info("open http://localhost:3123/");
+  console.log('Homeding Emulation Web Server...');
+  console.log("open http://localhost:3123/");
 });
