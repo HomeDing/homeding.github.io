@@ -2,7 +2,7 @@ const express = require("express");
 const debug = require("debug");
 // const fs = require("fs");
 
-console.log('Homeding Emulation Web Server starting...');
+console.log('Homeding Doku Web Server starting...');
 
 const app = express();
 const log = {
@@ -88,6 +88,6 @@ app.use(function (req, res, next) {
 
 
 app.listen(3123, () => {
-  console.log('Homeding Emulation Web Server...');
+  console.log('Homeding Doku Web Server...');
   console.log("open http://localhost:3123/");
 });
