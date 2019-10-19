@@ -51,7 +51,7 @@
   },
 
   "pwmout": {
-    "properties": ["loglevel", "description", "value", "range", "pin", "inverse"],
+    "properties": ["loglevel", "description", "range", "pin", "inverse"],
     "events": ["on", "off", "value"]
   },
 
@@ -68,7 +68,7 @@
 
   "rotary": {
     "properties": ["loglevel", "description", "pin1", "pin2", "step", "value"],
-    "actions": ["onchange"]
+    "actions": ["onvalue"]
   },
 
   "switch": {
@@ -80,7 +80,7 @@
   "value": {
     "properties": ["loglevel", "description", "min", "max"],
     "events": ["value", "up", "down"],
-    "actions": ["onChange"]
+    "actions": ["onValue"]
   },
 
   "ota": {

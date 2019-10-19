@@ -1,7 +1,8 @@
-<div u-control="modalNewElement" u-is="createElementDlg" class="card">
+<!-- Dialogs for configuration -->
+<div u-control="newelementdlg" u-is="createElementDlg" class="card">
   <div class="block header">
     <h2>Add a new Element</h2>
-    <div class="modalClose" onclick='closeModal()' style="background-color: red;text-align: center">&#x00D7;</div>
+    <div class="closedlg" u-action="close">&#x00D7;</div>
   </div>
   <div class="block" style="font-size: 1.4">
     <div class="form-group">
@@ -14,17 +15,32 @@
       <label>ID:</label>
       <input placeholder="choose a name..." aria-label="theID" class="newID">
     </div>
-    </div>
+  </div>
 
-    <hr />
-    <div class="block">
-      <button class="next" style="float:right">Next</button>
-    </div>
+  <hr />
+  <div class="block">
+    <button u-action="next" style="float:right">Next</button>
   </div>
 </div>
 
+
+<div u-control="configelementdlg" u-is="configElementDlg" class="card">
+  <div class="block header">
+    <h2>Config ${id}</h2>
+    <div class="closedlg" u-action="close">&#x00D7;</div>
+  </div>
+  <div class="block" style="font-size: 1.4">
+  </div>
+
+  <hr />
+  <div class="block">
+    <button u-action="save" style="float:right">Save</button>
+  </div>
+</div>
+
+
 <script>
-  var CreateElementDlgBehavior = {
+  micro.define("createElementDlg", {
     objType: null,
     objID: null,
 
@@ -50,19 +66,83 @@
             sel.appendChild(opt);
           })
         });
-    }, // init()
+    }, // connectedCallback()
 
     onclick: function (evt /*:PointerEvent*/) {
-      var src = evt.srcElement;
-      if (src.classList.contains("next")) {
+      var src /*:HTMLElement */ = evt.srcElement;
+      var ua = src.getAttribute('u-action');
+
+      if (ua === 'close') {
+        micro.closeModal();
+
+      } else if (ua === 'next') {
         if (this.objID.value === "") {
           alert('Please specify a name');
         } else {
-          openModal('modalNewElement', {});
+          micro.openModal('configelementdlg', {
+            id: '/' + this.objType.value + '/' + this.objID.value
+          });
         }
       }
-    }
-  }; // CreateElementDlgBehavior
+    } // onclick()
 
-  micro.define("createElementDlg", CreateElementDlgBehavior);
+  }); // CreateElementDlgBehavior
+
+  micro.define("configElementDlg", {
+    config: {},
+    /** @type HTMLElement */
+    _blk: null,
+    _id: '',
+
+    _add: function (k) {
+      var g = this._blk.appendChild(document.createElement('div'));
+      g.className = 'form-group';
+      g.appendChild(document.createElement('label')).textContent = k + ':';
+      var i = g.appendChild(document.createElement('input'));
+      i.name = k;
+      if (this.params[k.toLowerCase()] !== undefined)
+        i.value = this.params[k.toLowerCase()];
+    }, // add()
+
+    connectedCallback: function () {
+      var scope = this;
+      this._blk = this.querySelector('.block:not(.header)');
+      this._type = this.params.id.split('/')[1];
+      this._id = this.params.id.split('/')[2];
+
+      // get implemented elements and populate the dropdown
+      fetch('/elements.json')
+        .then(function (result) {
+          return (result.json())
+
+        }).then(function (elList) {
+          var d = elList[scope._type];
+          if (d) {
+            for (n in d.properties) scope._add(d.properties[n]);
+            for (n in d.events) scope._add(d.events[n]);
+            for (n in d.actions) scope._add(d.actions[n]);
+          }
+        });
+    }, // connectedCallback()
+
+    onclick: function (evt) {
+      var ua = evt.srcElement.getAttribute('u-action');
+
+      if (ua === 'close') {
+        micro.closeModal();
+
+      } else if (ua === 'save') {
+        // var b: HTMLElement;
+        var c = {};
+        var l = this._blk.querySelectorAll('input[name]');
+
+        l.forEach(function (e) {
+          c[e.name] = e.value;
+        });
+        changeConfig(this._id, c);
+        micro.closeModal();
+      }
+    }
+  }); // ConfigElementDlgBehavior
+
 </script>

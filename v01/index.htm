@@ -34,27 +34,33 @@
 
       <div class="u-navbar">
         <button onclick="window.location='/'">Home</button>
+        <button onclick="window.location='/ding-info.htm'">Board</button>
         <button onclick="window.location='/ding-ide.htm'">IDE</button>
-        <button onclick="window.location='/ding-info.htm'">Config</button>
         <button onclick="window.location='/ding-log.htm'">Log</button>
       </div>
 
-      <!-- <div class="container-flex"> -->
       <div class="row wrap">
         <div class="col card">
           <div class="block header">
             <h2><img style="margin-right:0.4em;height:1em" src="/i/home.svg" />Device Pages</h2>
             <h4>Collection for use-cases</h4>
           </div>
-          <!-- <div class="block">
-            <p><a href="ding.htm">Current configured Device Page</a></p>
-            <p><a href="ding-timer.htm">Timer</a>: Visualization and actions for a timer.</p>
-            <p><a href="ding-rfsend.htm">RFSend</a>: Sending defined RF commands.</p>
-          </div> -->
           <div class="block">
             <p><a href="setup.htm">Network setup</a></p>
             <p><a href="ding-log.htm">Log output</a></p>
             <p><a href="panel.htm">Panel</a></p>
+            <p><a href="boot.htm">Boot</a></p>
+          </div>
+        </div>
+
+        <div class="col card">
+          <div class="block header">
+            <h2>Build-in Setup Pages</h2>
+          </div>
+          <div class="block">
+            <p><a href="$setup">WiFi Setup</a></p>
+            <p><a href="$boot">Web Udate</a></p>
+            <p><a href="$upload">File Upload</a></p>
           </div>
         </div>
 
@@ -132,7 +138,6 @@
           </div>
         </div>
       </div>
-      <!-- </div> -->
     </div>
 
     <script>

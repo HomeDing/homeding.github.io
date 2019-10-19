@@ -56,46 +56,31 @@
       width: 100%;
       height: 100%;
       background-color: silver;
-      opacity: 0.8;
+      opacity: 0.75;
     }
 
     #modalContainer {
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      opacity: 1;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
     }
 
-    .modalClose {
+    .closedlg {
       position: absolute;
       top: 0.4rem;
       right: 0.4rem;
       height: 1.8rem;
       width: 1.8rem;
       font-size: 1.6rem;
+      background-color: red;
+      text-align: center;
     }
 
     img,
     #panel {
       user-select: none;
       -ms-user-select: none;
-    }
-
-    div[u-control] div.block.config {
-      background-color: yellow;
-      display: none;
-    }
-
-    div[u-control].configmode div.block {
-      display: none;
-    }
-
-    div[u-control].configmode div.block.config,
-    div[u-control].configmode div.block.header {
-      display: block;
     }
   </style>
   <script src="polyfill.js"></script>
@@ -112,8 +97,8 @@
     </div>
     <div class="u-navbar">
       <button onclick="window.location='/'">Home</button>
+      <button onclick="window.location='/ding-info.htm'">Board</button>
       <button onclick="window.location='/ding-ide.htm'">IDE</button>
-      <button onclick="window.location='/ding-info.htm'">Config</button>
       <button onclick="window.location='/ding-log.htm'">Log</button>
       <button id="sysButton" class="func">sys</button>
       <button id="addButton" class="func">+</button>
@@ -133,17 +118,11 @@
         <div class="block">
           <div class="form-group"><label>Value:</label><span u-text="value"></span></div>
         </div>
-        <div class="block config Element">
-          <div class="form-group"><label>loglevel:</label><input u-value="loglevel" /></div>
-        </div>
       </div>
-
-      <div u-control="kv" class="form-group KV"><label>${key}:</label><span u-text="${key}"></span></div>
-      <div u-control="kve" class="form-group KV"><label>${key}:</label><input u-value="${key}" /></div>
 
       <div class="col card" u-control="schedule" id="${id}" u-is="generic" microID="${id}">
         <div class="block header">
-          <img src="/i/${type}.svg" class="icon" />
+          <img src="/i/schedule.svg" class="icon" />
           <h3>${id}</h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -159,17 +138,6 @@
             <span u-text="offtime"></span>
           </div>
           <span class="u-bool ux-value" u-active="value"></span>
-        </div>
-
-        <div class="block config Element">
-          <div class="form-group">
-            <label>Start:</label>
-            <input u-value="ontime" type="time" step="60" class="text-right" style="width:6em;padding-right:0.2em" />
-          </div>
-          <div class="form-group">
-            <label>End:</label>
-            <input u-value="offtime" type="time" step="60" class="text-right" style="width:6em;padding-right:0.2em" />
-          </div>
         </div>
       </div>
 
@@ -190,8 +158,6 @@
             <label>Now:</label>
             <span u-text="now"></span>
           </div>
-        </div>
-        <div class="block config">
           <div class="form-group">
             <label>set Time:</label>
             <span class="now"></span>
@@ -220,19 +186,6 @@
         </div>
       </div>
 
-      <div class="col card" u-control="value1" u-is="generic" microID="${id}">
-        <div class="block header">
-          <img src="/i/${type}.svg" class="icon" />
-          <h3>${id}</h3>
-          <h4 u-text="description"></h4>
-          <span class="activeState" u-active="active"></span>
-          <span class="setconfig"></span>
-        </div>
-        <div class="block">
-        </div>
-      </div>
-      
-      
       <div class="col card" u-control="value" u-is="slider" microID="${id}">
         <div class="block header">
           <img src="/i/value.svg" class="icon" />
@@ -245,13 +198,11 @@
           <div class="form-group"><label>value:</label><span u-text="value"></span></div>
           <div class="u-slider">
             <label class="down"><img src="i/minus.svg"></label>
-            <div class="box"  style="width:240px">
+            <div class="box" style="width:240px">
               <div class="handle"></div>
             </div>
             <label class="up"><img src="i/plus.svg"></label>
           </div>
-        </div>
-        <div class="block config Element">
         </div>
       </div>
 
@@ -268,14 +219,12 @@
           <div class="form-group"><label>value:</label><span u-text="value"></span></div>
         </div>
       </div>
-
-
     </div>
   </div>
 
   <div id="modal" class="hidden">
     <div id="modalBack"></div>
-    <div onclick="closeModal()" style="position:absolute;background-color: cyan;padding:1rem">X</div>
+    <div class="closedlg" onclick="micro.closeModal()">&#x00D7;</div>
     <div id="modalContainer" style="width:260px;height:260px">Hello, this is modal</div>
   </div>
 
@@ -284,7 +233,6 @@
     var addObj = document.getElementById('addButton');
     var sysObj = document.getElementById('sysButton');
     var updateTimer;
-
     var elementDef;
     var params = getHashParams({
       sys: false
@@ -293,32 +241,13 @@
       window.location.reload();
     });
 
-    function openModal(tmplName, data) {
-      var modalObj = document.getElementById('modal');
-      var containerObj = document.getElementById('modalContainer');
-
-      // open Dialog, replace existing.
-      containerObj.innerHTML = '';
-      var dlgObj /*:HTMLDivElement*/ = micro.insertTemplate(containerObj, tmplName);
-      modalObj.classList.remove('hidden');
-      containerObj.style.width = dlgObj.scrollWidth + 'px';
-      containerObj.style.height = dlgObj.scrollHeight + 'px';
-    } // openModal
-
-    function closeModal(data) {
-      var modalObj = document.getElementById('modal');
-      var containerObj = document.getElementById('modalContainer');
-      modalObj.classList.add('hidden');
-      containerObj.innerHTML = '';
-    } // closeModal()
-
     sysObj.addEventListener('click', function (evt) {
       params.sys = !toBool(params.sys);
       window.location.hash = 'sys=' + params.sys;
     });
 
     addObj.addEventListener('click', function (evt) {
-      openModal('modalNewElement');
+      micro.openModal('newelementdlg');
     });
 
     function createElement(path, key, value) {
@@ -338,27 +267,7 @@
         } // if
       } // if
     } // createElement()
-
-    function addValueInfo(path, key, value) {
-      var hText;
-      if (key && key != 'active' && path.match(/^\/.*\/.*/)) {
-        var hElem = document.querySelector("[microID='" + path + "']");
-        if (hElem) {
-          var elem = hElem.querySelector("[u-text='" + key + "'],[u-value='" + key + "'],[u-active='" + key + "']");
-          if (!elem) {
-            hElem = hElem.querySelector('.Element');
-            if (hElem) {
-              micro.insertTemplate(hElem,
-                hElem.classList.contains('config') ? 'kve' : 'kv',
-                { key: key });
-            }
-          } // if
-        } // if
-      } // if
-    } // addValueInfo
-
     hub.subscribe('/*/*', createElement);
-    hub.subscribe('/**/**?**', addValueInfo);
 
     function updateAsap(ev) {
       if (updateTimer)
@@ -424,7 +333,7 @@
     window.addEventListener('load', init);
 
     window.addEventListener('error', function (err) {
-      alert(err);
+      alert(JSON.stringify(err, null, 1));
     })
   </script>
 </body>
