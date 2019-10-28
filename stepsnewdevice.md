@@ -49,11 +49,14 @@ Using the built-in WiFi Manager is the preferred method for connecting to a netw
 Connect to the unsecured network called "HomeDing" by using any mobile device or computer with WiFi adapter.
 Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
 automatically open the network configuration page. If this is not working please open
-http://192.168.4.1/ manually.
+http://192.168.4.1/ or http://192.168.4.1/$setup manually.
 
 ![WiFi Manager UI](wifimanager.png)
 
 Here you select your private WiFi Network and enter the passphrase. Press "Connect" to connect.
+
+<!-- TODO: ???
+* [ ] add configuration of device name. -->
 
 It may take some time and if everything is fine you will see the HomeDing network disapear and you can re-join your local network. You may also look into the Serial output using the `Serial Monitor` of the Arduino Environment to see some messages about what is happening inside the device.
 
@@ -66,6 +69,14 @@ As long as there is no configuration the device will register itself on the loca
 
 * automatic generated device name 
 > Draft ???
+
+SDK:2.2.1(cfd48f3)/Core:2.5.2=20502000/lwIP:STABLE-2_1_2_RELEASE/glue:1.1-7-g82abda3/BearSSL:a143020
+00:00:00 sys:e HomeDing Device is starting... (External System)
+00:00:02 sys:e setup done.
+00:00:02 sys:e n3-status = 3 <ESPA6013A>
+00:00:02 sys:e HomeDing
+00:00:06 sys:e ESPA6013A
+00:00:06 sys:e 192.168.2.200
 
 
 ## Upload the Web UI files to the onboard file system

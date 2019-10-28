@@ -95,11 +95,6 @@ It is described in detail in [Web Sitemap](websitemap.md).Q
 
 GET <http://homeding/$boot> <sup>*1</sup>
 
-This is not strictly a service but builtin the web server to allow initial uploads.
-This GET request returns a minimal HTML page that can be used to upload files to the server using drag & drop.
-
-This URL returns a minimal HTML page that can be used to upload files to the server using drag & drop.
-
 It is described in detail in [Web Sitemap](websitemap.md).Q
 
 
