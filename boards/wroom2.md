@@ -26,6 +26,7 @@ A battery holder is on the back.
 | GPIO14 |     | Button Press        | (D5)       |
 | GPIO16 |     | green LED           | (D0)       |
 
+
 ## Features
 
 It is a board that combines some of the standard components available with libraries for the ESP8266 chip
@@ -38,9 +39,8 @@ The display is using the OLED technology and the SSD1306 chip is attached using 
 There is a green LED at GPIO16 (D0).
 The blue LED on the ESP-12 can also be used GPIO2(D4).
 
-## Critics
 
-## Onboard LED
+### Onboard LED
 
 The green LED at GPIO16 (D0) only can be used when there is no need for deep sleep functionality and only can be switched on and off.
 
@@ -49,14 +49,24 @@ In cannot be dimmed using by PWM because GPIO16 is not supporting this.
 I find it a poor design to add a LED to this port for these reasons.
 
 
-### joystick
+### Joystick
 
 The joystick button is bound to 4 input pins and to the reset pin as well this makes this button almost useless for games and menu selection functionality because it will happen by accident that the reset direction (move to the right) is activated.
+
+| Joystick | Pin        |
+| -------- | ---------- |
+| Right    | Reset      |
+| Up       | GPIO12(D6) |
+| Down     | GPIO13(D7) |
+| Press    | GPIO14(D5) |
+| Left     | GPIO0(D3)  |
+
 
 ### No real Low Power
 
 The OLED display is good quality, but it is taking some power even when not used.
 That makes this combination almost useless for pure battery appliances when a long lifetime is required.
+
 
 ### I2C / WIRE Bus
 
@@ -70,18 +80,23 @@ The board uses
 * `SCL` = `GPIO4` (`D2`) (yellow) and
 * `SDA` = `GPIO5` (`D1`) (blue)
 
+
 # Board configuration
 
-The display configuration is the only specific entry in env.json:
+The display configuration is defined in env.json together with the system button and led for configuration.
+When pressing the joystick while the LED is blinking the device switches to config mode.
 
 ```JSON
 {
   "device": {
     "0": {
       "name": "wroomding",
-      "reboottime": "1h",
+      "reboottime": "24h",
       "i2c-sda": "D1",
       "i2c-scl": "D2",
+      "logfile": 1,
+      "led": "D0",
+      "button": "D5",
       "description": "Esp-Wroom-02 Modul ESP8266 with OLED and 18650"
     }
   },

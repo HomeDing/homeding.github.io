@@ -22,21 +22,32 @@ There are many derivate versions on the market but usually they follow the publi
 
 - There is an onboard Power regulator on most boards but their maximum power varies.
 
+## Overview table
+
+| GPIO  | Pin | Functionality |
+| ----- | --- | ------------- |
+| GPIO0 | D3  | Flash Button  |
+| RESET |     | RESET Button  |
+| GPIO2 | D4  | Blue LED      |
+
+
 ## Onboard Momentary Buttons
 
 There are 2 Buttons on the Boards:
 
-**Reset**<br />
+**Reset** 
 This button pulls the reset pin down to GND.
 
-**Flash**<br />
+**Flash** 
 This button pulls the GPIO0(D3) pin down to GND. It can be used to manually start the program upload mode when is it pushed while resetting or powering up. Later it can be used for any input purpose as long it is leaving the pin in HIGH input when not used.
+
 
 ## More to know
 
 If you are most sure what characteristics a board has, try to find pictures and web sites that focus on describing the differences. Most of the boards behave the same.
 
 There are boards that have a bigger PCB board that doesn't work well with breadboards.
+
 
 ## Burned boards
 
@@ -50,6 +61,7 @@ After cutting the regulator the USB to serial chip may still work.
 Some boards have a diode between the USB 5V line and the onboard regulator that is burned down and can be replaced.
 
 A multi purpose volt meter ??? is helpful.
+
 
 ## See also
 
