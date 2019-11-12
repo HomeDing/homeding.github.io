@@ -112,6 +112,14 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
     }
   },
 
+  "ssdp": {
+    "0": {
+      "manufacturer": "Matthias Hertel",
+      "ManufacturerURL": "https://www.mathertel.de",
+      "ModelURL": "http://www.mathertel.de/HomeDing"
+    }
+  },
+
   "DisplaySSD1306": {
     "0": {
       "address": "60",
@@ -124,7 +132,8 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
 }
 ```
 
-The onboard button labeled "PRG" pulls D3 down and can be used with a digital input:
+The onboard button labeled "PRG" pulls D3 down and can be used with a digital input and the display can be used to show some information.
+tEXT:
 
 ```JSON
 "digitalin": {
@@ -135,6 +144,13 @@ The onboard button labeled "PRG" pulls D3 down and can be used with a digital in
     "inverse": "true",
     "pullup": "true",
     "onvalue": "device/0?log=D3:$v"
+  },
+  "displaytext": {
+    "t": {
+      "x": 10,
+      "y": 10,
+      "value": "defaulttext"
+    }
   }
 }
 ```

@@ -1,14 +1,37 @@
 # The minimal footprint example
 
-This is the example that runs on the ESP8266 boards that only have a small amount of Flash Memory available and supports typical sockets and lights.
+This is the example that runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage.
 
-A typical board for this is a [ESP8266-01 board](/boards/boardesp01) with 1MByte (not 512kBype) Flash Memory. But you can also find retail IoT devices with this chip
-like those from [sonoff](/boards/sonoff.md)
-or the bulbs from tuya.
+This can be used as a firmware for some lights and socket switches like the [sonoff](/boards/sonoff.md) S20 device. 
 
-From the 1 MByte of memory only 128kByte of memory is used for the file system leaving 896 -- 448 kByte for the sketch.
+A typical board for this is a [ESP8266-01 board](/boards/boardesp01) with 1MByte (not 512kBype) Flash Memory.
+
+You can also find retail IoT devices with this chip like those from [sonoff](/boards/sonoff.md) or the bulbs from tuya but they are not really usable during development.
+
+## Reducing the Memory footprint 
+
+From the 1 MByte of memory only 128kByte of memory is used for the file system leaving about 445 kByte for program space while still enabling OTA / network based updates.
 
 When compiling the sketch to create a firmware only some elements are included (see below). The web files are also minimized and reduced in functionality to allow a minimal UI implementation and logging is disabled to save memory in the filesystem.
+Compared to the Standard example about 52 kByte less program space is required.
+When disabling the debug port in the Board configuration another 1.5 kByte can be saved. 
+
+
+## Reducing the set of Elements 
+
+The elements that are included in this example sketch are those that support sockets, switches and lights but no sensors and displays. The logical, time and remote elements are included as well to support integration.
+
+* Value, Button, Switch
+* AND
+* Analog
+* Timer, NTPTime Schedule, Alarm
+* digitalin, digitalout
+* PWMOut
+* PMS
+* DHT, BME680, DS18B20
+
+You can control what elements are included in the minimal.ino sketch file by enabling or disabling the #define statements for registering the elements. 
+
 
 ## How to Configure and Upload
 
@@ -31,16 +54,7 @@ To upload either the Flash utility or the drag&drop upload tool can be used. The
 The upload options are explained in detail in [file upload](examples/fileupload).
 
 
-## Included Elements 
 
-The elements that are included in this example are those that support sockets, switches and lights but no sensors and displays. The logical, time and remote elements are included as well:
-
-* digitalin
-* digitalout
-
-* button, switch
-
-* timer, schedule
 
 
 ## Included Web UI
@@ -74,7 +88,6 @@ https://www.heise.de/ct/artikel/Tuya-Convert-Escaping-the-IoT-Cloud-no-solder-ne
 
 https://goblinsleg.wordpress.com/category/sonoff-tasmota/
 https://goblinsleg.wordpress.com/2017/12/28/diy-home-automation-with-openhab-2-part-3/
-
 
 
 
