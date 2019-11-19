@@ -1,7 +1,3 @@
----
-tags: led,rotary,recipe
-...
-
 # Dimming a LED using a Rotary Encoder
 
 The following elements and hardware is used by this recipe:
@@ -66,4 +62,5 @@ On many boards there is a built-in LED attached to the GPIO2(D4).
 
 ## See also
 
-* [LED](/recipes/led)
+* [Recipe: LED](/recipes/led)
+* [Element: PWMOut](/element/pwmout)
