@@ -91,4 +91,9 @@ There are some simple colors vailabe by name:
 
 # See also
 
+* Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
 * [RGBElement](elements/rgb.md)
+
+
+
+
