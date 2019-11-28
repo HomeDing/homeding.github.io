@@ -1,7 +1,6 @@
 board-new.htm
 board.htm
-ding-ide.htm
-ding-ide.js
+browserconfig.xml
 ding-log.htm
 ding-templates.htm
 element.svg
@@ -86,9 +85,12 @@ lineChart.js
 lineChart.svg
 manifest.json
 micro.js
+microide.htm
+microide.js
 microsvg.js
 panel.htm
 panel.js
 pieChart.js
 pieChart.svg
 polyfill.js
+spinner.gif
