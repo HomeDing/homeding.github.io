@@ -21,17 +21,17 @@ The HomeDing library is also using this approach by using "micro" implementation
 By using the following micro implementations a small component framework is available that fits in to web servers with the space restrictions we can find in the boards and chips.
 
 **The micro templates** are used to build HTML components that can be used at different places to visualize elements, data and other UI components like dialogs.
-More in: [Micro Templates](microtemplates)
+More in: [Micro Templates](microtemplates.md)
 
 **The micro behaviors** are modules covering the functionality required to work with a component itself.
-More in: [Micro Behaviors](microbehaviors)
+More in: [Micro Behaviors](microbehaviors.md)
 
 **The micro databinding** is the functionality to transfer data from the device or other JSON formatted data into the HTML components.
 
 **The micro stylesheet** contains a collection of CSS rules that are available in a central file. By using the SCSS technology the resulting CSS file can be compressed to save memory and bandwidth while offering a well structured input.
 
 **Icons** are available for all elements and general purpose. They are implemented in SVG format that results in minimal size while supporting a good  scalability.
-More in: [Micro Icons](microicons)
+More in: [Micro Icons](microicons.md)
 
 
 ## Web Site on board

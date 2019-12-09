@@ -21,4 +21,5 @@ Artnet Receiver
 
 ## See also
 
-[_ws2812](_ws2812.md)
+* [Neo element](/elements/neo.md)
+* [RGBElement](/elements/rgb.md)
