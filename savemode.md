@@ -1,47 +1,81 @@
-## Save Mode ???
+## Save-Mode
 
-The reason to enable the `save-mode` is about making the implementation of the device inmutable against configuration and firmware changes after bringing the device into a stable operating mode.
+The Safe Mode should be enabled on all HomeDing based devices in regular operating conditions. It is reasonable measurement against external attempts to change and misuse the device over the network.
 
-While you change the configuration or firmware of the device to improve the functionality anything that prevents you from doing this easily is not welcome.
+The reason to enable the `savemode` is about making the implementation of the device immutable against configuration and firmware changes after bringing the device into a stable operating mode.
 
-But after the device is running good and should do this for a longer time the `save-mode` disables changes that may harm the device like
+The `save-mode` cannot make everything save but closes some otherwise open doors that are not required during normal operation mode but especially it doesn't make the communication to and from the device encrypted.
 
-* uploading new firmware using over the air uploads
-* modifying any configuration files
-* resetting or changing the network configuration
+You need to have physical access to the device to disable savemode or change firmware or configuration. 
+
+While you work on the configuration or firmware of a device to improve the functionality anything that prevents you from doing this easily is not welcome.
+But after the device is running good and should do this for a longer time the `savemode` disables changes that may harm the device.
+
+This mechanism is not completely save and
 
 ## Enabling Save Mode
 
-To enable or disable the `save-mode` you use the /savemode.htm page and enter a password.
+The save mode is enabled permanently by adding the `savemode` property with `true` to the device configuration.
 
-A hash value of this password will be stored in the file $savemode.json, a file that cannot be retrieved or changed by using the build-in server and the IDE.
+```JSON
+{
+  "device": {
+    "0": {
+      "savemode": "true",
+      // ...
+    }
+  }
+}
+```
+This should be done by changing the `env.json` file using the IDE or by uploading a new env.json file with the setting enabled.
+Starting with the next boot the device will run in this mode until the mode is disabled using one of the methods mentioned below.
+It is best practice to configure the `device` element first in `env.json`
 
-With an existing password the `save-mode` is enabled and the builtin webserver will disable the critical modifications.
-Only by knowing and sending the password the save-modecan be disabled.
-
-This mechanism is not completely save and when you have physical access to the chip and can use a USB cable / Serial interface you can upload new firmware anyhow but it is a reasonable measurement against external attempts to change and misuse the device over the network.
-
-For any improvements you may find necessary please create an issue or a pull request on the project on github.
 
 ## Effects of save mode
 
-When when using the `save mode` the following functions are deactivated:
+After enabling the `savemode` the following functions are deactivated:
 
-* [ ] Any upload or file change operations are rejected.
-* [ ] OTA Element
-*
+* Any upload or file change operations are rejected.
+* The OTA Element when configured will stay in the deactivated state so firmware uploads are not possible
+* savemode cannot be changed using URL action
+* resetting the SPIFFS filesystem.
+* listing the files in the SPIFFS filesystem
+* resetting or changing the network configuration.
+* rendering the builtin pages $setup, $boot, $upload
+* network scan
+
+
+## Save mode after uploading
+
+Because uploading a new sketch over the USB interface somehow boots twice
+the savemode will be disabled after the upload has finished and the device starts operating.
+
+
+## Temporarily disabling the savemode by double reset
+
+To disable the savemode you need to have physical access to the RESET button of the device.
+
+When you reset the device using the reset button and reset it again in less than seconds the device starts in non-savemode even when configured for it.
+
+Now you can use the built-in IDE or the file upload functionality to change configuration or any of the files. As long as the device is not rebooted the savemode stays disabled.
+
+
+## Uploading new firmware
+
+Even when savemode is enabled you can upload a new sketch using the USB port. The OTA upload is disabled to avoid reconfiguration or reprogramming from a remote location.
+
 
 ## Programming for the Save-Mode
 
-The board class has a Boolean member `savemode` that is set to true when the save mode has been set. This variable is validated when the board class is initiated before any of the elements are created.
+The board class has a public boolean member `savemode` that is set to true when the save mode has been set.
+This variable is set to the configured value while reading the configuration and creating the elements.
 
 To implement functions that only work when save mode is not set use
 
 ```cpp
-if (! board->savemode) {
+if (! _board->savemode) {
+  // execute unsave stuff
    ...
 }
 ```
-
-The board class checks if this variable has been changed (by accident or intension) and then reboots the device.
-
