@@ -1,8 +1,8 @@
 board-new.htm
+board-templates.htm
 board.htm
 browserconfig.xml
-ding-log.htm
-ding-templates.htm
+ding.htm
 element.svg
 elements.json
 elementsvg.js
@@ -12,8 +12,8 @@ favicon144.png
 favicon180.png
 favicon192.png
 favicon270.png
+favicon48.png
 favicon512.png
-favicons.zip
 ft/css.svg
 ft/dir.svg
 ft/file.svg
@@ -72,6 +72,7 @@ i/switch.svg
 i/template48.svg
 i/time.svg
 i/timer.svg
+i/tool.svg
 i/value.svg
 i/water.svg
 i/wifi.svg
@@ -79,6 +80,7 @@ index.htm
 iotstyle.css
 lineChart.js
 lineChart.svg
+log.htm
 manifest.json
 micro.js
 microide.htm

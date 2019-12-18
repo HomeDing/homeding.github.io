@@ -8,33 +8,20 @@
 
   <title>Board</title>
 
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon192.png" />
-
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
   <meta name="application-name" content="Ding" />
   <meta name="msapplication-config" content="/browserconfig.xml" />
   <meta name="msapplication-TileColor" content="#2b5797" />
   <meta name="msapplication-TileImage" content="/favicon144.png" />
-
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon180.png" />
   <meta name="mobile-web-app-capable" content="yes" />
-
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
 
   <link Content-Type="text/css" href="/iotstyle.css" rel="stylesheet" />
-  
+
   <style>
-    .card img.active {
-      background-color: limegreen;
-    }
-
-    .Element .KV {
-      display: block;
-      clear: both;
-      height: 1.5em;
-    }
-
     .activeState {
       position: absolute;
       top: 0.5rem;
@@ -104,10 +91,10 @@
       background: linear-gradient(to right, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
     }
   </style>
-  <script src="polyfill.js"></script>
-  <script src="es6-promise.auto.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script> -->
-  <script src="micro.js"></script>
+  <script src="/polyfill.js"></script>
+  <script src="/es6-promise.auto.js"></script>
+  <!-- <script src="/https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script> -->
+  <script src="/micro.js"></script>
 </head>
 
 <body>
@@ -120,14 +107,14 @@
       <a class="button" href="/">Home</a>
       <a class="button" href="/board.htm">Board</a>
       <a class="button" href="/microide.htm">IDE</a>
-      <a class="button" href="/ding-log.htm">Log</a>
+      <a class="button" href="/log.htm">Log</a>
       <button id="sysButton" class="func">sys</button>
       <button id="addButton" class="func">+</button>
     </div>
 
     <div id="panel" class="row wrap"></div>
 
-    <div id="u-templates" style="border:2px solid green;padding:1rem;display:none">
+    <div id="u-templates" style="display:none">
       <div class="col card" u-control="generic" u-is="generic" microID="${id}">
         <div class="block header">
           <img data-src="/i/${type}.svg" class="icon" />
@@ -218,11 +205,11 @@
         <div class="block">
           <div class="form-group"><label>value:</label><span u-text="value"></span></div>
           <div class="u-slider">
-            <label class="down"><img src="i/minus.svg"></label>
+            <label class="down"><img src="/i/minus.svg"></label>
             <div class="box" style="width:240px">
               <div class="handle"></div>
             </div>
-            <label class="up"><img src="i/plus.svg"></label>
+            <label class="up"><img src="/i/plus.svg"></label>
           </div>
         </div>
       </div>
@@ -261,8 +248,7 @@
   </div>
 
   <div id="modal" class="hidden">
-    <div id="modalBack"></div>
-    <div class="closedlg" onclick="micro.closeModal()">&#x00D7;</div>
+    <div id="modalBack" onclick="micro.closeModal()"></div>
     <div id="modalContainer" style="width:260px;height:260px">Hello, this is modal</div>
   </div>
 
@@ -290,6 +276,7 @@
 
     function createElement(path, key, value) {
       if (path) {
+        path = path.toLowerCase();
         var hElem = document.querySelector("[microID='" + path + "']");
         if (!hElem) {
           var t = path.split('/')[1];
@@ -333,7 +320,7 @@
 
     function init() {
       // load templates from other file.
-      var p0 = Promise.all([micro.loadFile('/ding-templates.htm'), micro.loadFile('/board-new.htm')]);
+      var p0 = Promise.all([micro.loadFile('/board-templates.htm'), micro.loadFile('/board-new.htm')]);
 
       // element definitions -> env.json -> config.json
       var p1 = fetch('/elements.json')
