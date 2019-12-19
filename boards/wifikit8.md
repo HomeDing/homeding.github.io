@@ -100,7 +100,10 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
       "name": "wifikitding",
       "description": "Wifi Kit 8 Module",
       "reboottime": "24h",
-      "button": "D3"
+      "button": "D3",
+      "I2C-SDA": "D2",
+      "I2C-SCL": "D1"
+
     }
   },
 
@@ -123,8 +126,6 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
   "DisplaySSD1306": {
     "0": {
       "address": "60",
-      "SDA": "D2",
-      "SCL": "D1",
       "resetpin" : "D0",
       "height": 32
     }

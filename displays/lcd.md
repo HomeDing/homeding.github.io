@@ -56,11 +56,13 @@ This should be done in the `env.json` file:
 "device": {
   "0": {
     "name": "lcddevice",
+    "description": "IoT Dev-Device with LCD",
     "led": 2,
-    "reboottime": "8h",
-    "i2c-sda": "D2",
+    "button": "D5",
+    "reboottime": "24h",
+    "savemode": "false",
     "i2c-scl": "D1",
-    "description": "IoT Dev-Device with LCD"
+    "i2c-sda": "D2"
   }
 },
 

@@ -71,7 +71,9 @@ The display configuration is the only specific entry in env.json:
       "description": "IoT Ding with display",
       "logfile": 1,
       "led": "D4",
-      "button": "D3"
+      "button": "D3",
+      "I2C-SDA": "D1",
+      "I2C-SCL": "D2"
     }
   },
   "ota": {
@@ -91,8 +93,6 @@ The display configuration is the only specific entry in env.json:
       "description": "local display",
       "address": "0x3C",
       "loglevel": 2,
-      "SDA": "D1",
-      "SCL": "D2",
       "height": 64
     }
   }

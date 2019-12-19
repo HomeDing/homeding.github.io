@@ -16,14 +16,14 @@ In `env.json` the system and hardware should be configured to get a local time a
   "ntptime": {
     "on": {
       "readtime": "2m",
-      "zone": 2
+      "zone": 2,
+      "I2C-SDA": "D2",
+      "I2C-SCL": "D1"
     },
     
   "DisplaySSD1306": {
     "0": {
       "address": "60",
-      "SDA": "D2",
-      "SCL": "D1",
       "resetpin": "D0",
       "height": 32
     }

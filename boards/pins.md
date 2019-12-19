@@ -90,6 +90,12 @@ When using a plain NodeMCU or ESP-12 board I stick to these ports but other boar
 
 There are boards that already have a display and use other lines. Be sure to read the manual.
 
+The configuration of the I2C bus is required for many elements and is handled centrally by setting the 
+`I2C-SDA` and `I2C-SCL` properties in the device element.
+
+See also [Device Element](../elements/device.md).
+
+
 ## Summary
 
 * Many pins but already occupied by some functionality.
@@ -99,6 +105,8 @@ GPIO14(D5) for digital input and output signals is a good ideas as long as they 
 * Using GPIO0(D3) and GPIO2(D4) as output with inverted logic (LOW as ACTIVE) is without problems  and a need for using ESP-1 based devices.
 * GPIO0(D3) will already have momentary switch on many boards and can be used after booting for any purpose.
 
-[ESP8266 Technical Reference]: (https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
-[ESP8266EX datasheet]: (https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
-[NodeMCU Documentation]: (https://nodemcu.readthedocs.io/en/master/)
+## See also
+
+* [ESP8266 Technical Reference]: (https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
+* [ESP8266EX datasheet]: (https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
+* [NodeMCU Documentation]: (https://nodemcu.readthedocs.io/en/master/)

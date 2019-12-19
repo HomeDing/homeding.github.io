@@ -24,7 +24,7 @@ This is the key machanism that allows the pages the images and other ressources 
 
 Beside delivering files the web server also supports listing the existing files as well as update and delete operations.
 
-You can reach the embedded web site by opening the URL: <http://homeding/> ^^\*1^^
+You can reach the embedded web site by opening the URL: <http://homeding/> <sup>\*1</sup>
 
 
 ## The embedded Web Site
