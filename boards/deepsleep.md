@@ -16,6 +16,12 @@ https://www.hackster.io/dante/wifi-air-quality-station-4a2407
 
 https://www.instructables.com/id/How-to-Build-a-Dashbutton-for-the-Internet-of-Thin/
 
+
+### Save power by using rtc memory
+
+https://www.bakke.online/index.php/2017/06/24/esp8266-wifi-power-reduction-avoiding-network-scan/
+
+
 ### Auto power off
 
 - <https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/>
