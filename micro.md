@@ -31,7 +31,11 @@ More in: [Micro Behaviors](microbehaviors.md)
 **The micro stylesheet** contains a collection of CSS rules that are available in a central file. By using the SCSS technology the resulting CSS file can be compressed to save memory and bandwidth while offering a well structured input.
 
 **Icons** are available for all elements and general purpose. They are implemented in SVG format that results in minimal size while supporting a good  scalability.
-More in: [Micro Icons](microicons.md)
+<br />More in: [Micro Icons](microicons.md)
+
+**Charts** There are some charting elements available for the HTML UI that are implemented using SVG and JavaScript.
+They are implemented in SVG format that results in minimal size while supporting a good  scalability.
+<br />More in: [Micro Charts](microcharts.md)
 
 
 ## Web Site on board
