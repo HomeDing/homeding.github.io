@@ -127,14 +127,6 @@
         </div>
       </div>
 
-      <!-- <div class="col card" u-control="generic" u-is="generic" microID="${id}">
-        <div class="block">
-          <h4>${id} - <span u-text="description"></span></h4>
-          <span class="u-bool ux-value" u-active="value"></span>
-          <div class="form-group"><label>Value:</label><span u-text="value"></span></div>
-        </div>
-      </div> -->
-
       <div class="col card" u-control="neo" id="${id}" u-is="neo" microID="${id}">
         <div class="block header">
           <img src="/i/neo.svg" class="icon" />
@@ -151,6 +143,11 @@
         </div>
       </div>
 
+      <div class="col card" u-control="webbutton" id="${id}" u-is="generic" microID="${id}">
+        <div class="block">
+          <button u-action="${onclick}" u-text="description" ></button>
+        </div>
+      </div>
     </div>
 
     <hr />
@@ -229,12 +226,10 @@
         })
         .then(function (json) {
           hub.write('config', JSON.stringify(json));
-          hub.write('config2', json);
           hub.publishObj(json);
         })
         .then(function () {
           updateState();
-          // window.setTimeout(updateState, 4000);
         });
     } // init()
 
