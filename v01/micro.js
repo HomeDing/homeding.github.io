@@ -260,6 +260,7 @@ var GenericWidgetClass = (function (_super) {
         _this.microid = '';
         _this.data = {};
         _this.subId = 0;
+        _this.actions = [];
         return _this;
     }
     GenericWidgetClass.prototype.connectedCallback = function () {
@@ -288,7 +289,7 @@ var GenericWidgetClass = (function (_super) {
                 });
             }
         }, this);
-        ['h2', 'h4', 'span'].forEach(function (elType) {
+        ['h2', 'h4', 'span', 'button'].forEach(function (elType) {
             if (this.el) {
                 this.el.querySelectorAll(elType + "[u-text='" + key + "']").forEach(function (elem) {
                     if (elem.textContent != value)
@@ -304,13 +305,42 @@ var GenericWidgetClass = (function (_super) {
                 });
             }
         }, this);
+        ['button'].forEach(function (elType) {
+            if (this.el) {
+                this.el.querySelectorAll(elType + "[u-action='${" + key + "}']").forEach(function (elem) {
+                    setAttr(elem, 'u-action', value ? value : '');
+                });
+            }
+        }, this);
+    };
+    GenericWidgetClass.prototype.dispatchNext = function () {
+        var _this = this;
+        if (this.actions) {
+            var a = this.actions.shift();
+            if (a) {
+                fetch(a).then(function () {
+                    if (_this.actions.length > 0) {
+                        debounce(_this.dispatchNext.bind(_this))();
+                    }
+                    else {
+                        if (updateAsap)
+                            updateAsap();
+                    }
+                });
+            }
+        }
     };
     GenericWidgetClass.prototype.dispatchAction = function (prop, val) {
+        var _this = this;
         if (prop !== null && val !== null) {
-            fetch("/$board" + this.microid + "?" + prop + "=" + encodeURI(val)).then(function () {
-                if (updateAsap)
-                    updateAsap();
-            });
+            if (prop.includes('/')) {
+                prop.replace('${v}', encodeURI(val));
+                prop.split(',').forEach(function (a) { return _this.actions.push('/$board/' + a); });
+            }
+            else {
+                this.actions.push("/$board" + this.microid + "?" + prop + "=" + encodeURI(val));
+            }
+            debounce(this.dispatchNext.bind(this))();
         }
     };
     GenericWidgetClass.prototype.onchange = function (e) {
@@ -611,8 +641,15 @@ var LogWidgetClass = (function (_super) {
 var NeoWidgetClass = (function (_super) {
     __extends(NeoWidgetClass, _super);
     function NeoWidgetClass() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._colorObj = null;
+        return _this;
     }
+    NeoWidgetClass.prototype.connectedCallback = function () {
+        _super.prototype.connectedCallback.call(this);
+        if (this.el)
+            this._colorObj = this.el.querySelector('.color');
+    };
     NeoWidgetClass.prototype.x16 = function (d) {
         var x = Number(d).toString(16);
         if (x.length === 1)
@@ -620,17 +657,16 @@ var NeoWidgetClass = (function (_super) {
         return (x);
     };
     NeoWidgetClass.prototype.onclick = function (e) {
-        if (this.el) {
+        if (document.defaultView && this.el && this._colorObj) {
             var src = e.srcElement;
             if (src.className == "hueband") {
+                var h = src.clientWidth * 360 / e.offsetX;
                 var color = "hsl(" + Math.round(e.offsetX) + ", 100%, 50%)";
-                src.style.backgroundColor = color;
-                if (document && document.defaultView) {
-                    var ccol = document.defaultView.getComputedStyle(src, null).backgroundColor;
-                    var l = String(ccol).replace(/[^0-9,]/g, "").split(',');
-                    var col = 'x' + this.x16(l[0]) + this.x16(l[1]) + this.x16(l[2]);
-                    this.dispatchAction('value', col);
-                }
+                this._colorObj.style.backgroundColor = color;
+                var c = document.defaultView.getComputedStyle(this._colorObj, null).backgroundColor;
+                var l = String(c).replace(/[^0-9,]/g, "").split(',');
+                var col = 'x' + this.x16(l[0]) + this.x16(l[1]) + this.x16(l[2]);
+                this.dispatchAction('value', col);
             }
             else {
                 _super.prototype.onclick.call(this, e);
@@ -816,22 +852,52 @@ var SwitchWidgetClass = (function (_super) {
     ], SwitchWidgetClass);
     return SwitchWidgetClass;
 }(GenericWidgetClass));
-function upload(filename, content) {
-    var formData = new FormData();
-    var blob = new Blob([content], {
-        type: 'text/html'
-    });
-    formData.append(filename, blob, filename);
-    var objHTTP = new XMLHttpRequest();
-    objHTTP.open('POST', '/');
-    objHTTP.addEventListener('readystatechange', function () {
-        if (this.readyState == 4 && this.status >= 200 && this.status < 300) {
-            alert('saved.');
-        }
-    });
-    objHTTP.send(formData);
+function toBool(s) {
+    if (!s)
+        return false;
+    switch (s.toLowerCase().trim()) {
+        case 'true':
+        case 'yes':
+            return true;
+        case 'false':
+        case 'no':
+        case '0':
+        case null:
+            return false;
+        default:
+            return Boolean(s);
+    }
+}
+function toSeconds(v) {
+    var ret = 0;
+    v = v.toLowerCase();
+    if (v.endsWith('h')) {
+        ret = parseInt(v, 10) * 60 * 60;
+    }
+    else if (v.endsWith('m')) {
+        ret = parseInt(v, 10) * 60;
+    }
+    else if (v.endsWith('s')) {
+        ret = parseInt(v, 10);
+    }
+    else if (v.includes(':')) {
+        ret = (Date.parse('1.1.1970 ' + v) - Date.parse('1.1.1970')) / 1000;
+    }
+    else {
+        ret = Number(v);
+    }
+    return ret;
+}
+function setTextContent(el, txt) {
+    if (el.textContent !== txt)
+        el.textContent = txt;
+}
+function setAttr(el, name, value) {
+    if (el.getAttribute(name) !== value)
+        el.setAttribute(name, value);
 }
 function changeConfig(id, newConfig) {
+    var fName = '/config.json';
     var c = JSON.parse(hub.read('config'));
     var node = jsonFind(c, id);
     for (var n in newConfig) {
@@ -842,7 +908,41 @@ function changeConfig(id, newConfig) {
             delete node[n];
         }
     }
-    upload('/config.json', JSON.stringify(c));
+    var formData = new FormData();
+    formData.append(fName, new Blob([JSON.stringify(c)], { type: 'text/html' }), fName);
+    var objHTTP = new XMLHttpRequest();
+    objHTTP.open('POST', '/');
+    objHTTP.addEventListener('readystatechange', function () {
+        if (this.readyState == 4 && this.status >= 200 && this.status < 300) {
+            alert('saved.');
+        }
+    });
+    objHTTP.send(formData);
+}
+function debounce(func, wait) {
+    if (wait === void 0) { wait = 20; }
+    var timer;
+    return function () {
+        var scope = this;
+        var args = arguments;
+        if (timer)
+            clearTimeout(timer);
+        timer = setTimeout(function () {
+            timer = 0;
+            func.apply(scope, args);
+        }, wait);
+    };
+}
+function getHashParams(defaults) {
+    var params = __assign({}, defaults);
+    window.location.hash
+        .substr(1)
+        .split('&')
+        .forEach(function (p) {
+        var pa = p.split('=');
+        params[pa[0]] = pa[1];
+    });
+    return params;
 }
 var TimerWidgetClass = (function (_super) {
     __extends(TimerWidgetClass, _super);
@@ -854,36 +954,19 @@ var TimerWidgetClass = (function (_super) {
         _this.time = 0;
         return _this;
     }
-    TimerWidgetClass.prototype._timeToSec = function (v) {
-        var ret = 0;
-        v = v.toLowerCase();
-        if (v.endsWith('h')) {
-            ret = parseInt(v, 10) * 60 * 60;
-        }
-        else if (v.endsWith('m')) {
-            ret = parseInt(v, 10) * 60;
-        }
-        else if (v.endsWith('s')) {
-            ret = parseInt(v, 10);
-        }
-        else {
-            ret = Number(v);
-        }
-        return ret;
-    };
     TimerWidgetClass.prototype.newData = function (path, key, value) {
         _super.prototype.newData.call(this, path, key, value);
         if (key == 'waittime') {
-            this.wt = this._timeToSec(value);
+            this.wt = toSeconds(value);
         }
         else if (key == 'pulsetime') {
-            this.pt = this._timeToSec(value);
+            this.pt = toSeconds(value);
         }
         else if (key == 'cycletime') {
-            this.ct = this._timeToSec(value);
+            this.ct = toSeconds(value);
         }
         else if (key == 'time') {
-            this.time = this._timeToSec(value);
+            this.time = toSeconds(value);
         }
         if (this.ct < this.wt + this.pt)
             this.ct = this.wt + this.pt;
@@ -1031,39 +1114,4 @@ var MicroHub = (function () {
 }());
 var hub = new MicroHub();
 window.addEventListener('unload', hub.onunload.bind(hub), false);
-function toBool(s) {
-    if (!s)
-        return false;
-    switch (s.toLowerCase().trim()) {
-        case 'true':
-        case 'yes':
-            return true;
-        case 'false':
-        case 'no':
-        case '0':
-        case null:
-            return false;
-        default:
-            return Boolean(s);
-    }
-}
-function setTextContent(el, txt) {
-    if (el.textContent !== txt)
-        el.textContent = txt;
-}
-function setAttr(el, name, value) {
-    if (el.getAttribute(name) !== value)
-        el.setAttribute(name, value);
-}
-function getHashParams(defaults) {
-    var params = __assign({}, defaults);
-    window.location.hash
-        .substr(1)
-        .split('&')
-        .forEach(function (p) {
-        var pa = p.split('=');
-        params[pa[0]] = pa[1];
-    });
-    return params;
-}
 //# sourceMappingURL=micro.js.map

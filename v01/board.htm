@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,6 @@
   </style>
   <script src="/polyfill.js"></script>
   <script src="/es6-promise.auto.js"></script>
-  <!-- <script src="/https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script> -->
   <script src="/micro.js"></script>
 </head>
 
@@ -237,13 +236,19 @@
           <span class="setconfig"></span>
         </div>
         <div class="block">
-          <div class="form-group"><label>value:</label><span u-text="value"></span></div>
+          <div class="form-group"><label>value:</label><span u-text="value"></span><span class="color" style="width:6rem;"></span></div>
           <div class="hueband" style="height:1.4rem;width:100%;margin-bottom: 0.4rem;"></div>
           <button u-action="mode" value="flow">flow</button>
           <button u-action="mode" value="wheel">wheel</button>
+          <button u-action="mode" value="pulse">pulse</button>
         </div>
       </div>
 
+      <div class="col card" u-control="webbutton" id="${id}" u-is="generic" microID="${id}">
+        <div class="block">
+          <button u-action="${onclick}" u-text="description" ></button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -345,13 +350,11 @@
         })
         .then(function (json) {
           hub.write('config', JSON.stringify(json));
-          hub.write('config2', json);
           hub.publishObj(json);
         });
 
       Promise.all([p0, p1]).then(function () {
         updateState();
-        // window.setTimeout(updateState, 4000);
       });
     } // init()
 
