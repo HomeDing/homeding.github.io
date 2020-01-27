@@ -661,13 +661,11 @@ var NeoWidgetClass = (function (_super) {
             var src = e.srcElement;
             if (src.className == "hueband") {
                 var h = src.clientWidth * 360 / e.offsetX;
-                console.log('off:', h, Math.round(e.offsetX));
                 var color = "hsl(" + Math.round(e.offsetX) + ", 100%, 50%)";
                 this._colorObj.style.backgroundColor = color;
                 var c = document.defaultView.getComputedStyle(this._colorObj, null).backgroundColor;
                 var l = String(c).replace(/[^0-9,]/g, "").split(',');
                 var col = 'x' + this.x16(l[0]) + this.x16(l[1]) + this.x16(l[2]);
-                console.log('col:', col);
                 this.dispatchAction('value', col);
             }
             else {
