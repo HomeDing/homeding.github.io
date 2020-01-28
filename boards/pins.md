@@ -110,3 +110,4 @@ GPIO14(D5) for digital input and output signals is a good ideas as long as they 
 * [ESP8266 Technical Reference]: (https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
 * [ESP8266EX datasheet]: (https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
 * [NodeMCU Documentation]: (https://nodemcu.readthedocs.io/en/master/)
+* <https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/>

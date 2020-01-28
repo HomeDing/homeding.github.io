@@ -17,15 +17,19 @@ The following properties are available for configuration of the element.
 
 **name** - The device name is specifying the hostname that is used to register the device on the network. The device can be accessed by any browser on the same network using the URL `http://<name>`.
 
-**reboottime** - Specifies the duration after the device is rebooted to fully clean up the memory.
+**rebootTime** - Specifies the duration after the device is rebooted to fully clean up the memory.
 
 **description** - A line of text that gives a short description of the device used in the web UI.
 
 **room** - The location of the device.
 
-**loglevel** - By specifying a loglevel for the device **all** elements will use this loglevel to output debug messages over the serial interface and into the system log file. See also [Device Logging](logger).
+**logLevel** - By specifying a loglevel for the device **all** elements will use this loglevel to output debug messages over the serial interface and into the system log file. See also [Device Logging](logger).
 
-**logfile** - set to 1/true to enable storing lines from the system log to files. default: 0
+**logFile** - set to 1/true to enable storing lines from the system log to files. default: 0
+
+**onSysStart** - These actions are dispatched when the elements are activated. Element that require a valid local time are not started at this point.  
+
+**onStart** - These actions are dispatched when all elements are active. 
 
 
 ### WiFi-Manager and Startup settings
@@ -34,7 +38,7 @@ The following properties are available for configuration of the element.
 
 **button** - The GPIO pin of the system button. Defaults is 'GPIO0(D3)'
 
-**connecttime** - The available time after a reboot of the device to start network configuration. Default: "6s".
+**connectTime** - The available time after a reboot of the device to start network configuration. Default: "6s".
 
 Detailed description for `ConnectTime`, `button` and `led` see [WiFiManager](wifimanager).
 
@@ -59,6 +63,12 @@ The device Element is only defining what pins are used for the I2C bus but does 
 **title** - short title to be displayed in the web UI
 
 
+## Control the Device
+
+The following action is implemented:
+
+**reset** - This action wil immediately restart the device like using a reset button. No settings are changed or wiped. 
+
 
 ## Configuration Example
 
@@ -77,7 +87,7 @@ The device Element is only defining what pins are used for the I2C bus but does 
       "homepage": "ding-info.htm",
       "logfile": 1,
       "I2C-SDA" : "D4",
-      "I2C-SCL" : "D3"
+      "I2C-SCL" : "D5"
     }
   }
 }

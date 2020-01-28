@@ -6,12 +6,15 @@ It is available on every device by using the URL: <http://{name}/$setup.htm>
 
 ![WiFiManager dialog.png](wifimanager.png)
 
-Under normal operting conditions after the device was added to the network the startup sequence after a reboot automatically connects the device to the last known network. This typically needs a few seconds only.
+The board starts into the WiFiManager mode
+* when no network configuration is available
+* when started manually by pressing the system button during startup while the system led is blinking
+* when rebooting ??? two times in a row in-between ??? seconds.
 
-The board starts automatically into the WiFiManager mode when no network configuration is available
-or when started manually by pressing the system button during startup while the system led is blinking.
 
-After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had a outage and WiFiManager was started automatically caused by the missing network.
+After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had an outage and WiFiManager was started caused by the missing network.
+
+Under normal operting conditions when the device was added to the network the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.
 
 
 ## Using the WiFi Manager
@@ -117,5 +120,4 @@ bool ESPSerialWiFiManager::_connect_wps(){
 <https://github.com/esp8266/Arduino/issues/2735>
 
 <https://internetofhomethings.com/homethings/?p=631>
-
 

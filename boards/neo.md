@@ -54,7 +54,9 @@ A config.json file for enabling the neopixels:
 {
   "neo": {
     "0": {
-      "pin": "2","count":16,"value":"red"
+      "pin": "2",
+      "count":16,
+      "value":"red"
     }
   }
 }

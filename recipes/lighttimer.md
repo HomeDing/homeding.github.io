@@ -4,25 +4,42 @@ This recipe implements a light switch that keeps light on for a specific time be
 
 > (lightimerflow.png) ???
 
-The simple configuration combines an digitalinput, a timer and an digitaloutput.
+The configuration combines an digitalin, a timer, a switch and a digitalout element.
 
-* When the input driven by a momentary button is going down an action is sent to the timer making the timer starting from the beginning of it's sequence.
+* When the input driven by a momentary button is going low an action is sent to the timer and the switch element.
 
-* The timer is configured to have a pulse time of 3 minutes and no waiting time. When the timer starts the output value is  going HIGH immediately and drops to LOW in the end. The timer will end because no loop mode is specified.
+* The switch will toggle the value so you can use the input for switching on and off.
+* The timer is started and will run only once until the pulsetime is over.
+* When the timer pulsetime ends the switch is forced to the value 0 to switch the light off.
 
-* The timer value is sent to the digital output that can drive a LED or a relais module.
+* The switch value is sent to the digital output driving a LED or a relais.
 
 ```JSON
 {
   "digitalin": {
-  ...???
+    "up": {
+      "pin": "D6",
+      "description": "up button signal",
+      "inverse": "true",
+      "pullup": "true",
+      "onLow": "switch/light?toggle=1,timer/done?start=1"
+    }
   },
-  
+
   "timer": {
+    "done": {
+      "loglevel": "0",
+      "description": "reset after timeout",
+      "pulsetime": "00:05:00",
+      "onend": "switch/light?value=0"
+    }
+  }, 
+
+  "switch": {
     "light": {
-      "pulsetime": "00:03:00",
-      "loglevel": 1,
-      "onvalue": "digitalout/light?value=$v"
+      "description": "Control light level",
+      "value": 0,
+      "onValue": "digitalout/light?value=$v"
     }
   },
 
@@ -47,3 +64,5 @@ more functions can be supported:
 * A `doubleclick` will turn off the light immediately by sending an action to the timer that sets the timer to the end state.
 
 * When more momentary buttons are required to control the light you can use other device that have a configuration from the remotebutton recipe???.
+
+

@@ -52,7 +52,7 @@ In the [Elements](elements) list you can find these Elements marked with the req
 
 Some Elements are almost always helpful, are registered always and can be used without the need for special libraries. These are the System Elements.
 
-Other Elements are lightweight and also need no special libraries. As long as the Programm Memory fits into the flash of your board you can include these libraries at once using the HOMEDING_INCLUDE_CORE definition.
+Other Elements are lightweight and also need no special libraries. As long as the program memory fits into the flash of your board you can include these libraries at once using the HOMEDING_INCLUDE_CORE definition.
 
 ## The Registry Mechanism
 
