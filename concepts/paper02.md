@@ -15,9 +15,11 @@ The web server is the `door` to the network that enables to use the UI from the 
 
 A micro implementation of a JSON parser and some utilities are provided for this central role.
 
+
 ## Building self-contained and autonomous Things
 
 In the market many Home Automation systems and gadgets are available that require to buy, build or use a central system that controls the Things.
+
 
 ### No Cloud please – but as an option
 
@@ -31,6 +33,7 @@ But without these cloud based systems your devices might not work or have some f
 Using these services may be something you consider for specific solutions but is is not required to connect to the internet when building Things that do not need such a service.
 Therefore, you also do not need to register yourself or your thing anywhere. It is all yours.
 
+
 ### No Hub or central device required
 
 Some systems like Philips Hue system or the IKEA TRÅDFRI systems requires to buy a hub as a central controller because the Things in these systems cannot connect directly to the Home WLAN. They use another network protocol to communicate and the hub is required to „translate“ between these protocols like ZigBee or Z-Wave and the regular WLAN.
@@ -39,9 +42,10 @@ Because the processors today include the WLAN networking capabilities directly t
 
 For simple solutions this also adds too much overhead and complexity to have a smart easy start building your own things.
 
+
 ## Elements 
 
-The Elements are the implementation blocks for the adaption of sepcific sensors, actors, other IO attached modules and for more time and logic modules. They are created and initialized on demand by the board when reading the configuration files.
+The Elements are the implementation blocks for the adaption of specific sensors, actors, other IO attached modules and for more time and logic modules. They are created and initialized on demand by the board when reading the configuration files.
 
 When creating the upload program for a device many elements can be included. As they are configured they will be activated by using the parameters from the configurarion files.
 
@@ -54,28 +58,30 @@ Some elements are started right after reading the configuration, some after the 
 
 The standard board already includes a lot of Elements when being compiled. Therefore, it is possible to use them in a configuration without recompiling the program itself.
 
-As the ESP chips offer a lot of memory this approach works fine. For compiling to different board layout like the ESP-01 board or the ESP 85??? Chip with less flash memory it is possible to compile with a reduced set of elements to make the program fit into memory. See example ???
+As the ESP chips offer a lot of memory this approach works fine. For compiling to different board layout like the ESP-01 board or the ESP8285 chip with less flash memory it is possible to compile with a reduced set of elements to make the program fit into memory. See more on this topic in the [minimal example](/examples/minimal.md)
 
 Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for variables.
 
 The configuration of the HomeDing device is using in 2 files:
 
-* The system, hardware related features and the network configuration is defined in the `env.json` file. This file contains the device, ota, sspd and optional display configurations. There is no real need to change this file frequently.
+* The system, hardware related features and the network configuration is defined in the `env.json` file. This file contains the configuration of the device, ota, sspd and optional display elements. There is no real need to change this file frequently and it stays the same for a specific board. In the documentation about the boards I know you can find samples for the env.json files. 
+
 * The configuration of other elements is  placed in the `config.json` file. This file can be updated to change the behaviour of the device.
 
-The web based configuration features will update the `config.json` file only.
+* The web based configuration features will update the `config.json` file only.
 
-The configuration is splitted this way to make sure the device can start and can be reached over the network even when the configuration of the non-system elements is not correct.
+* The configuration is divided into these 2 files this way to make sure the device can start and can be reached over the network even when the configuration of the non-system elements is corrupted.
 
 
 ## Web based configuration
 
-Every device with a standard board can also host the functionality of a web interface that can be used to create or modify the configurarion by dragging new elements into the activation area and changing the parameters.
+Every device with a standard board can also host the functionality of a web interface that can be used to create or modify the configuration by dragging new elements into the activation area and changing the parameters.
 For this level no programming skills are required.  
 
-It is aslo easy to implement new Elements or modify existing elements to create specific solutions based for other attached modules or to for specific functionaliyty.
+It is also easy to implement new Elements or modify existing elements to create specific solutions based for other attached modules or to for specific functionality.
 
 The base sketch of a device can also be modified for using very specific boards like ESP-01 boards that do not have full memory options available. Yu can find examples for this in the library.
+
 
 ### Web User Interface always built-in
 

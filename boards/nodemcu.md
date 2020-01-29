@@ -60,7 +60,9 @@ After cutting the regulator the USB to serial chip may still work.
 
 Some boards have a diode between the USB 5V line and the onboard regulator that is burned down and can be replaced.
 
-A multi purpose volt meter ??? is helpful.
+Those boards may also be used by applying external power on +5V and +3.3V pins.
+
+A multi purpose voltmeter is helpful.
 
 
 ## See also

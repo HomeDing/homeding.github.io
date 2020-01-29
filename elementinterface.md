@@ -11,7 +11,7 @@ The [devding example](devding.md) has a class named `MyElement` that can be used
 
 You can copy the 2 files `MyElement.cpp` and `MyElement.h` over to your sketch folder and rename all occurrences if `MyElement` to your element name.
 
-Be aware that there is a name for the element `my` defined in the registration function thatneeds to be changed to something unique.
+Be aware that there is a name for the element `my` defined in the registration function that needs to be changed to something unique.
 
 
 ## main functions
@@ -23,11 +23,13 @@ Because every element also participates in  exchanging actions there is a third 
 
 ### init()
 
-This function is called just after a new element object is created from the class. You can do further initializions in here.
+This function is called just after a new element object is created from the class and before any property is set from the configuration. You can create default settings in here.
 
-Within this method the init() of the master??? class needs to be called.
+A reference to the board object is passed to allow access to the common features supported by the board class. 
 
-If there is no need for initialization of your element you can leave this method unimplemented in MyElement.cpp and can remove it from the class definition in MyElement.h.
+Within this method the init() of the master??? class (e.g. `Element::init(board);`) needs to be called.
+
+If there is no need for initialization of your element you can leave this method unimplemented in the XXXElement.cpp file and can remove the function definition from the class definition in XXXElement.h.
 
 
 ### set()
@@ -41,13 +43,13 @@ You need to implement some code for all incoming actions that are element specif
 The easiest case is to initialize a member of the class with a new value. There are some methods available to convert the parameter given as a string    
 to the appropriate type like 
 
+* `_atotime` for time and duration values
 * `_atopin` for pin definitions
+* `_atoColor` for single color values
 * `_atob` for boolean values
-* `_atoi` for numeric values
-* `_atotime` for time values
+* `atoi` for numeric values is given from the esp8266 library.
 
-
-Within this method the set() of the master??? class needs to be called whenever the action is not handled in a meaningful way or the name is unknown. 
+Within this method the set() of the master class (e.g. `ret = Element::set(name, value);`) needs to be called whenever the action is not handled in a meaningful way or when the name is unknown. 
 
 
 ### start()
@@ -83,25 +85,25 @@ This is where the element can do something on its own like getting some data fro
 ELements report some internal state when the pushState method is called.
 This is in addition to sending events when the state changes and allows other elements and the Web UI to question for the actual state.
 
-This is done by calling the callback function for every property that might change durin operation.
+This is done by calling the callback function for every property that might change during operation.
 
 
 ## Members derived from the general Element class
 
-**loglevel** This variable holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1???
-  This can be changed in the configuration of the element by the `loglevel` attribute.
+**loglevel** - This variable holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
+This can be changed in the configuration of the element by the `loglevel` attribute.
 
-**active** This variable is set to true after the element has started without problems in the start() function.
+**active** - This variable is set to true after the element has started without problems in the start() function.
 
-**startupMode** This variable specifies when the element can be started. It is a common topic to many elements that the network must work or a local time is available.
-The default value is Network ???
+**startupMode** - This variable specifies when the element can be started. It is a common topic to many elements that the network must work or a local time is available.
+The default value is Element_StartupMode::Network.
 
 
 ## Registering an element
 
 The ElementRegistry holds references to all element classes to enable creating of new Elements by name at runtime.
 
-This is done by initializing a static calss member to enforce calling the registerElement methob before anything else on every class.
+This is done by initializing a static class member to enforce calling the registerElement method before anything else on every class.
 
 For more information on this see [Element Registry](elementregistry.md).
 
