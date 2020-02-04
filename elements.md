@@ -237,11 +237,18 @@ More detailled information on displays and related elements can be found in [dis
   to configure various FM radio boards.</p>
 </div>
 
-<div class="short">
+<!-- <div class="short">
 <a href="#page=elements/xxx.md"><img src="/i/default.svg"></a>
 <p>
   This element is part of the <a href="#page=examples/radio.md">Radio Example</a>
    and enables the configuration of a XXX amplifier chip e.g to set volume.</p>
+</div> -->
+
+<div class="short">
+<a href="#page=elements/webbutton.md"><img src="/i/button.svg"></a>
+<p>
+  This element configurs a button in the web ui to trigger an action by clicking.
+</p>
 </div>
 
 ## Elements based on external Arduino Libraries

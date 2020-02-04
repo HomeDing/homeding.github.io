@@ -29,19 +29,21 @@ The following properties are available for configuration of the element:
 
 **value** - This is the incoming logical value that is typically emitted by a digital input element.  
 
-**clicktime** - time to wait for another click before sending out the onclick action
+**clickTime** - time to wait for another click before sending out the onclick action
 
-**presstime** - time to wait before sending out the onpress action                  
+**pressTime** - time to wait before sending out the `onPress` action                  
 
-**onclick** - These actions are emited when a single press gesture was detected.                                
+**onClick** - These actions are emitted when a single press gesture was detected.                                
 
-**ondoubleclick** - These actions are emited when a double click gesture was detected.     
+**onDoubleClick** - These actions are emitted when a double click gesture was detected.     
 
-**onpress** - These actions are emited when a long press gesture was detected.                      
+**onPress** - These actions are emitted when a long press gesture was detected.                      
 
 **action** - when receiving this event the specified actions are emitted ??? 
 
-**onaction** - These actions are emited any time a click double-click or press gesture was detected. The given value is `click`, `doubleclick` or `press`. This allows button actions to be send to other buttons even remote buttons.
+**onAction** - These actions are emitted any time a click double-click or press gesture was detected.
+The given value is `click`, `doubleclick` or `press`. This allows button actions to be send to other buttons even remote buttons.
+
 
 ## Control the Element
 
@@ -64,9 +66,9 @@ that provides the input value to the Button Element.
 
   "button": {
     "up": {
-      "onclick": "device/main?log=click.",
-      "ondoubleclick": " device/main?log=dclick.",
-      "onpress": " device/main?log=press."
+      "onClick": "device/main?log=click.",
+      "onDoubleClick": " device/main?log=dclick.",
+      "onPress": " device/main?log=press."
     }
   }
 }
@@ -77,7 +79,7 @@ that provides the input value to the Button Element.
 
 The `active` property Is set to true when the Element is active.
 
-The `value` property correspons to the current output of the element.
+The `value` property corresponds to the current output of the element.
 
 ## Example State
 
