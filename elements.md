@@ -4,9 +4,11 @@ The following element implementations are available in the current version of th
 
 \* For some Elements a specific library is required.
 
-## Sensor and Input Elements
 
-These elements are used to create an action based on a specific input or a specific sensor.
+## Input Elements
+
+These elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals.
+They can be used with all kind of switches, buttons, potentiometers and even some sensors will produce digital or analog signal values.
 
 <div class="short">
   <a href="#page=elements/digitalin.md"><img src="i/digitalin.svg"></a>
@@ -26,6 +28,14 @@ These elements are used to create an action based on a specific input or a speci
   Input Element for using a rotary encoder.</p>
 </div>
 
+<div style="clear:both"></div>
+
+
+## Sensor Elements
+
+These elements implement a adoption to a very specific sensor or sensor family. They share
+some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
+
 <div class="short">
   <a href="#page=elements/dht.md"><img src="/i/dht.svg"></a>
   <p><strong><a href="#page=elements/dht.md">DHT Element</a> *</strong><br/>
@@ -43,6 +53,11 @@ These elements are used to create an action based on a specific input or a speci
   <p><strong><a href="#page=elements/pms.md">PMS Element</a></strong><br/>
   Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
 </div>
+
+<!-- DS18B20 -->
+<!-- BME280 -->
+<!-- BMP280 -->
+<!-- MPU9250 -->
 
 <div style="clear:both"></div>
 
