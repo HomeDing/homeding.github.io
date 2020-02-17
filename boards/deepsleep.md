@@ -4,6 +4,8 @@
 
 ## Deep Sleep
 
+- <https://diyprojects.io/esp8266-deep-sleep-mode-test-wake-pir-motion-detector/#.XkmIu0eSkuU>
+
 - <https://randomnerdtutorials.com/esp8266-deep-sleep-with-arduino-ide/>
 - Voltage Regulator MCP1700-3302E
 - <https://www.esp8266.com/viewtopic.php?t=10987>
