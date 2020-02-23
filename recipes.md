@@ -13,7 +13,7 @@ They show how multiple elements can be combined to create functionality beyond u
 * Dimming LED using a rotary encoder
 * Display temperature from local sensor
 * [Display the current time and date](recipes/ntpclock.md)
-* Display Time, temperature and humidity
+* [Display Time, temperature and humidity](recipes/tempdisplay.md)
 * [Alarm with timer for duration](recipes/alarm.md)
 
 ## Combining Devices
