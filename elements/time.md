@@ -1,9 +1,8 @@
 # Time Element
 
-<div class="excerpt">
-  <img src="/i/time.svg">
-  <p>The time element creates actions with the current local time as value.</p>
-</div>
+::: excerpt time
+The time element creates actions with the current local time as value.
+:::
 
 When using this element a real time retrieving element must be configured as well like the [NTPTime](elements/ntptime) , [DSTime](elements/dstime) or [DCFTime](elements/dcftime).
 

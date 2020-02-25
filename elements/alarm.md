@@ -1,9 +1,8 @@
 # Alarm Element
 
-<div class="excerpt">
-  <img src="/i/alarm.svg">
-  <p>The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.</p>
-</div>
+::: excerpt alarm
+The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.
+:::
 
 <!-- ## Web UI for the Timer Element -->
 

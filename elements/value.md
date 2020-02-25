@@ -1,10 +1,9 @@
 # The Value Element
 
-<div class="excerpt">
-  <img src="i/value.svg">
-  <p>The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.</p>
-  <p>This can e.g. be used to drive a LED or a relay.</p>
-</div>
+::: excerpt value.svg
+The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
+This can e.g. be used to drive a LED or a relay.
+:::
 
 
 ![Value Properties and Actions](valueapi.png)

@@ -1,14 +1,14 @@
 # Radio Element
 
-> #Draft incomplete doku
+> #Draft ??? incomplete doku
 
-<div class="excerpt">
-  <img src="/i/radio.svg">
-  <p><strong><a href="#page=elements/radio.md">Radio Element</a></strong><br/>
-  This element allows to control a FM radio chip that is connected to the board.</p>
-</div>
+::: excerpt radio
+The Radio Element allows to control FM radio chips that is connected to the board.
+:::
 
-It is not part of the  collection of core elements because it relies on the external radio library that offers a unified api for multiple radio chips.
+This element is not part of the collection of core elements because it relies on the external radio library that offers a unified api for multiple radio chips.
+
+
 
 See <https://www.arduinolibraries.info/libraries/radio>
 

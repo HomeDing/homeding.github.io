@@ -1,24 +1,24 @@
 # OTA Element
 
+::: excerpt ota
+  The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA).
+:::
+
 > draft ??? incomplete docu
 
 The OTAElement enables the upload of new sketch versions to the device over the network.
  
-<div class="excerpt">
-  <img src="/i/ota.svg">
-  <p><strong><a href="#page=elements/ota.md">OTA Element</a></strong><br/>
-  This element allows to upload new firmware and files Over The Air (OTA).</p>
-</div>
+
 
 The OTAElement is a system element to enable this functionality only.
 It cannot send or receive actions.
 
-When this element is configued the device shows up in the list of ports in the Arduino programming environment.
+When this element is configured the device shows up in the list of ports in the Arduino programming environment.
 
 Since the OTA Element initializes the mDNS protocol to register on the network no mDNS library needs to be used and initiated explicitly.
 
 > ---
-> Over The Air (OTA) updates require that a sketch is already uploded to the device that supports receiving updates. 
+> Over The Air (OTA) updates require that a sketch is already uploaded to the device that supports receiving updates. 
 > Also the memory layout and especially the size of the SPIFFS space cannot be changed using this method.
 > 
 > The first upload must be done using the USB cable.

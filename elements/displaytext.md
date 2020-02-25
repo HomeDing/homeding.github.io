@@ -1,10 +1,9 @@
 # The DisplayText Element
 
-<div class="excerpt">
-  <img src="/i/displaytext.svg">
-  <p>The DisplayTextElement allows sending a value to the display and place it at a specified position as text including a prefix and postfix.</p>
-  <p>The value can be changed by using an action.</p>
-</div>
+::: excerpt displaytext
+The DisplayTextElement allows sending a value to the display and place it at a specified position as text including a prefix and postfix.
+The value can be changed by using an action.
+:::
 
 
 Because there may be more values presented on a display at the same time the

@@ -1,9 +1,8 @@
 # The Device Element
 
-<div class="excerpt">
-  <img src="/i/device.svg">
-  <p>The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.</p>
-</div>
+::: excerpt device
+The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.
+:::
 
 ![Device Properties and actions](/elements/deviceapi.png)
 

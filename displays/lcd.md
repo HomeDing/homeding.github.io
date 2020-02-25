@@ -1,9 +1,8 @@
 # The DisplayLCD Element
 
-<div class="excerpt">
-  <img src="/i/displaylcd.svg">
-  <p>The Display Configuration for Monochrome LCDs based on HD44780 chips.</p>
-</div>
+::: excerpt displaylcd
+The Display Configuration for Monochrome LCDs based on HD44780 chips.
+:::
 
 In the Arduino Environment the LiquidCrystal library exits for a long time and supports HD44780 compatible LCDs with up to 4 lines of 20 characters. Displays ae available with
 

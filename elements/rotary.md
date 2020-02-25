@@ -1,9 +1,8 @@
 # The Rotary Element
 
-<div class="excerpt">
-  <img src="/i/rotary.svg">
-  <p>The RotaryElement is used to capture increments and decrements for values using a rotary encoder.</p>
-</div>
+::: excerpt rotary
+The RotaryElement is used to capture increments and decrements for values using a rotary encoder.
+:::
 
 It can be used in combination with a [Value Element](elements/value) to define a logical or numeric value that can be changed using the rotary encoder.
 

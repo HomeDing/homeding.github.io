@@ -7,19 +7,18 @@ The following element implementations are available in the current version of th
 
 ## Input Elements
 
-These elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals.
-They can be used with all kind of switches, buttons, potentiometers and even some sensors will produce digital or analog signal values.
+These elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors .
 
 <div class="short">
   <a href="#page=elements/digitalin.md"><img src="i/digitalin.svg"></a>
   <p><strong><a href="#page=elements/digitalin.md">DigitalIn Element</a></strong><br />
-  Input Element typicaly used with momentary buttons or switches.</p>
+  Input Element used with momentary buttons or switches but also from sensors giving a HIGH/LOW value.</p>
 </div>
 
 <div class="short">
   <a href="#page=elements/analog.md"><img src="/i/analog.svg"></a>
   <p><strong><a href="#page=elements/analog.md">Analog Element</a></strong><br/>
-  Input Element to capture a analog voltage from the builtin ADC.</p>
+  Input Element to capture a analog voltage using the builtin ADC.</p>
 </div>
 
 <div class="short">
@@ -30,10 +29,9 @@ They can be used with all kind of switches, buttons, potentiometers and even som
 
 <div style="clear:both"></div>
 
-
 ## Sensor Elements
 
-These elements implement a adoption to a very specific sensor or sensor family. They share
+The [sensor elements](elements/_sensors.md) implement the adoption to a very specific sensor or sensor family. They share
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
 
 <div class="short">
@@ -61,6 +59,8 @@ some common implementation to allow gathering values on a regular basis and upda
 
 <div style="clear:both"></div>
 
+More detailed information on the sensor implementation can be found in [sensor elements](/elements/_sensors.md).
+
 
 ## Output and Actor Elements
 
@@ -82,6 +82,7 @@ some common implementation to allow gathering values on a regular basis and upda
   Send out RF codes on the 433 MHz band to control remote sockets.</p>
 </div>
 
+<div style="clear:both"></div>
 
 
 ## Logic Elements
@@ -105,6 +106,9 @@ Logic elements implement using on/off values expressed as 1/0 values.
   <p><strong><a href="#page=elements/and.md">AND Element</a></strong><br/>
   combines multiple logic input values to a single output value.</p>
 </div>
+
+<div style="clear:both"></div>
+
 
 ## Display Elements
 
@@ -148,7 +152,7 @@ The HomeDing library supports local attached displays but also works fine withou
 
 <div style="clear:both"></div>
 
-More detailled information on displays and related elements can be found in [displays](/displays.md)
+More detailed information on displays and related elements can be found in [displays](/displays.md)
 
 
 ## Time related Elements
@@ -262,7 +266,7 @@ More detailled information on displays and related elements can be found in [dis
 <div class="short">
 <a href="#page=elements/webbutton.md"><img src="/i/button.svg"></a>
 <p>
-  This element configurs a button in the web ui to trigger an action by clicking.
+  This element configures a button in the web ui to trigger an action by clicking.
 </p>
 </div>
 

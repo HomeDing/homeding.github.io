@@ -1,10 +1,8 @@
 # The Button Element
 
-<div class="excerpt">
-  <img src="/i/button.svg">
-  <p>The ButtonElement allows detecting multiple button press gestures like
- single short click, double click and long press.</p>
-</div>
+::: excerpt button
+The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.
+:::
 
 
 The input can come from a [Digital Input Element](/elements/digitalin) or another element that generates boolean values.

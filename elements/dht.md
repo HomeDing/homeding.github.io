@@ -1,9 +1,8 @@
 # The DHT Element
 
-<div class="excerpt">
-  <img src="/i/dht.svg">
-  <p>The DHTElement allows retrieving temperature and humidity values from the DHT family sensors and creates actions when new values are available.</p>
-</div>
+::: excerpt dht
+The DHTElement allows retrieving temperature and humidity values from the DHT family sensors and creates actions when new values are available.
+:::
 
 The current values are also sent out using actions when they stay the same for some time to allow remote things to resume to the current values after reboot or network outages.
 

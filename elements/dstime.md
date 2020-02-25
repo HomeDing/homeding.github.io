@@ -1,9 +1,8 @@
 # DSTime Element ???
 
-<div class="excerpt">
-  <img src="/i/dstime.svg">
-  <p>The DSTime Element gets the local time from a chip that contains a high accurate clock running independently from the main board and processor.</p>
-</div>
+::: excerpt dstime
+The DSTime Element gets the local time from a chip that contains a high accurate clock running independently from the main board and processor.
+:::
 
 A small battery is required to keep the clock running when power is failing and a crystal oscillator for exact timing is used.
 

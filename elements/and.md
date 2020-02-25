@@ -1,10 +1,8 @@
 # Logical AND Element
 
-<div class="excerpt">
-  <a href="#page=/elements/and.md"><img src="/i/and.svg"></a>
-  <p><strong><a href="#page=/elements/and.md">AND Element</a></strong><br/>
-  combines multiple logic input values to a single output value.</p>
-</div>
+::: excerpt and
+The AND Element combines multiple logic input values to a single output value.
+:::
 
 
 Actions can be send to this element using the properties value1 and value2.

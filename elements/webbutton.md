@@ -1,9 +1,8 @@
 # The WebButton Element
 
-<div class="excerpt">
-  <img src="/i/button.svg">
-  <p>The WebButton Element allows sending actions directly from the web UI without a corresponding active element in the device.</p>
-</div>
+::: excerpt button
+The WebButton Element allows sending actions directly from the web UI without a corresponding active element in the device.
+:::
 
 The element is displayed as a single button by using the caption given by the description property.
 As this element is never created and active in the device

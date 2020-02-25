@@ -1,10 +1,10 @@
 # The DisplayDot Element
 
-<div class="excerpt">
-  <img src="/i/displaydot.svg">
-  <p>The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot.</p>
-  <p>The value can be changed by using an action.</p>
-</div>
+::: excerpt displaydot
+The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot.
+The value can be changed by using an action.
+:::
+
 
 Because there may be more values presented on a display at the same time the
 DisplayDotElement may exist multiple times in the configuration by using different positions.

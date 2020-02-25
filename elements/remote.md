@@ -1,9 +1,9 @@
 # Remote element
 
-<div class="excerpt">
-  <img src="/i/remote.svg">
-  <p>The RemoteElement allows sending actions to other elements in HomeDing devices on the network.</p>
-</div>
+::: excerpt remote
+The RemoteElement allows sending actions to other elements in HomeDing devices on the network.
+:::
+
 
 Every local defined remote element is a shadow of another element on a remote board and acts as a proxy for addressing the remote element as if it was part of the local configuration.
 

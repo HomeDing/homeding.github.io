@@ -1,9 +1,8 @@
 # Timer Element
 
-<div class="excerpt">
-  <img src="/i/timer.svg">
-  <p>The TimerElement creates events based on a one-time or cyclic timing pattern.</p>
-</div>
+::: excerpt timer
+The TimerElement creates events based on a one-time or cyclic timing pattern.
+:::
 
 During the specified time period the output value will be switched on and off once. The timer can be restarted automatically.
 

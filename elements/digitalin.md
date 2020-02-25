@@ -1,10 +1,10 @@
 # The Digital Input Element
 
-<div class="excerpt">
-  <img src="/i/digitalin.svg">
-  <p>The DigitalInElement is used to capture digital input signal and create actions based on level changes.</p>
-  <p>This can e.g. be used to capture actiiveviy from buttons and switches but also some sensors offer a digital output.</p>
-</div>
+::: excerpt digitalin
+The DigitalInElement is used to capture digital input signal and create actions based on level changes.
+This can e.g. be used to capture actiiveviy from buttons and switches but also some sensors offer a digital output.
+:::
+
 
 ![DigitalIn Properties and Actions](elements/digitalinapi.png)
 

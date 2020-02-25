@@ -1,10 +1,9 @@
 # The Analog Element
 
-<div class="excerpt">
-  <img src="/i/alarm.svg">
-  <p>The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.</p>
-  <p>It also handles some of the often occurring problems around capturing analog values.</p>
-</div>
+::: excerpt alarm
+The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.
+It also handles some of the often occurring problems around capturing analog values.
+:::
 
 
 <!-- ![Button Properties and Actions](ButtonAPI.png) -->

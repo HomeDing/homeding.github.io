@@ -1,10 +1,9 @@
 # The PWMOut Element
 
-<div class="excerpt">
-  <img src="/i/pwmout.svg">
-  <p>The PWMOutElement is used to create a variable PWM signal at the specified output pin.</p>
-  <p>This can e.g. be used to drive a LED or a servo motor.</p>
-</div>
+::: excerpt pwmout
+The PWMOutElement is used to create a variable PWM signal at the specified output pin.
+This can e.g. be used to drive a LED or a servo motor.
+:::
 
 
 ## Web UI for the PWMOut Element

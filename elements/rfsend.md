@@ -1,10 +1,10 @@
 # RFSend Element
 
-<div class="excerpt">
-  <img src="/i/rfsend.svg">
-  <p>The RFSendElement is used send RF signals triggered by actions sent to the element.</p>
-  <p>This can e.g. be used control rf based power switch sockets.</p>
-</div>
+::: excerpt rfsend
+The RFSendElement is used send RF signals triggered by actions sent to the element.
+This can e.g. be used control rf based power switch sockets.
+:::
+
 
 This element is built upon the tabRF library that allows specifying rf codes and their timing by using a declarative table.
 Multiple codes can be specified if you do have switchable plugs with different codes.
