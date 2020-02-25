@@ -1,14 +1,10 @@
----
-tags: LED RECIPE
-...
-
 # LED Recipe
 
 This recipe uses 2 digital input signals to change the brightness level of a LED.
 
-This is can be accieved by using 2 [digital inputs](/elements/digitalin), a [value](/elements/value) and a [pwm](/elements/pwmout) element connected by some actions.
+This is can be achieved by using 2 [digital inputs](/elements/digitalin), a [value](/elements/value) and a [pwm](/elements/pwmout) element connected by some actions.
 
-![Elements used in led recipe](ledflow.png)
+![Elements used in led recipe](/recipes/ledflow.png)
 
 The 2 [digital input elements](/elements/digitalin) either increment or decrement like volume up and down buttons.
 Each of them send an action for increment or decrement to the value element.

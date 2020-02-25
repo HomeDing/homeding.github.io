@@ -75,3 +75,16 @@ This should be done in the `env.json` file:
   }
 }
 ```
+
+## Special characters
+
+The HD44780 displays do have a special character set that is explained in the datasheet. These characters e.g. can be used in the 
+postfix text using the 16-bit UTC notation like `"postfix": "\u00dfC"`.
+
+However the WebUI will use the standard unicode codes as expected in the browser so the special character may look different in the Web UI.
+
+
+## See also
+
+* [DisplayText Element](elements/displaytext.md)
+* [Display Dot](elements/displaydot.md)
