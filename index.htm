@@ -11,9 +11,10 @@ Markdown viewer SPA using
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HomeDing Documentation</title>
   <link Content-Type="text/css" href="iotstyle.css" rel="stylesheet" />
-  <link rel="stylesheet" href="marked/github.css" />
-  <script src="marked/marked.min.js"></script>
-  <script src="marked/highlight.pack.js"></script>
+  <link rel="stylesheet" href="md/default.min.css" />
+  <script src="md/markdown-it.min.js"></script>
+  <script src="md/markdown-it-container.min.js"></script>
+  <script src="md/highlight.pack.js"></script>
 
   <style>
     .s-md {
@@ -138,17 +139,30 @@ Markdown viewer SPA using
     var ffObj = document.querySelector('#foundFiles');
     var mfObj = document.querySelector('#missingFiles');
 
-    marked.setOptions({
-      renderer: new marked.Renderer(),
-      langPrefix: 'hljs ',
-      highlight: function (code) {
-        return hljs.highlightAuto(code).value;
-      },
-      gfm: true,
-      breaks: false,
-      sanitize: false,
-      smartLists: true
+    var md = new markdownit('default',
+      {
+        html: true,
+        // breaks: false,
+        linkify: true,
+        langPrefix: 'hljs language-',
+        highlight: function (str, lang) {
+          var t = hljs.highlight(lang, str);
+          return (t.value);
+        }
+      });
+
+      var mdc = new markdownitContainer(md, 'excerpt', {
+      render: function (tokens, idx) {
+        var t = tokens[idx];
+        if (t.nesting === 1) {
+          var m = t.info.trim().match(/^\s*excerpt\s+(.*)$/);
+          return '<div class="excerpt"><img src="/i/' + m[1] + '.svg">\n';
+        } else {
+          return '</div>\n';
+        }
+      }
     });
+
 
     function getHashParam(param, defValue) {
       var h = window.location.hash;
@@ -242,7 +256,7 @@ Markdown viewer SPA using
 
       // show given text as html.
       setText: function (fName, txt) {
-        var hText = marked(txt);
+        var hText = md.render(txt);
 
         // modify links to work:
 
