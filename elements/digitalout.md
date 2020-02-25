@@ -1,10 +1,10 @@
 # The DigitalOut Element
 
-<div class="excerpt">
-  <img src="/i/digitalout.svg">
-  <p>The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element.</p>
-  <p>This can e.g. be used to drive a LED or a relay.</p>
-</div>
+::: excerpt digitalout
+The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element.
+
+This can e.g. be used to drive a LED or a relay.
+:::
 
 
 ## Web UI for the Timer Element
@@ -53,12 +53,14 @@ The physical output depends on `inverse`.
 ### Example for Configuration
 
 ```JSON
-"digitalout": {
-  "led": {
-    "pin": "D0",
-    "inverse": "true",
-    "value": "0",
-    "description": "Builtin LED is on Port D0 = GPIO16"
+{
+  "digitalout": {
+    "led": {
+      "pin": "D0",
+      "inverse": "true",
+      "value": "0",
+      "description": "Builtin LED is on Port D0 = GPIO16"
+    }
   }
 }
 ```
@@ -75,8 +77,10 @@ The state of the digitalout element includes:
 ### Example State
 
 ```JSON
-"digitalout/led": {
-  "active":"false",
-  "value":"0"
+{
+  "digitalout/led": {
+    "active":"false",
+    "value":"0"
+  }
 }
 ```

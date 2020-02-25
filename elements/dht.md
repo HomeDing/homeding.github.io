@@ -44,6 +44,11 @@ more details can be found at <https://github.com/beegee-tokyo/DHTesp>
 
 The sample configuration coming with the DHT22 recipes is configured to use a DHT22 type of sensor with the data line attached to GPIO2(D4).
 
+    ESP8266 board     DHT22
+    GND ------------- (4) GND
+    3.3v ------------ (1) VCC
+    GPIO2(D4) ------- (2) Data
+    
 | ESP8266   | DHT22 | Description  |
 | --------- | :---: | ------------ |
 | 3.3v      |   1   | Power Supply |

@@ -6,7 +6,7 @@
   <p>This can e.g. be used to capture actiiveviy from buttons and switches but also some sensors offer a digital output.</p>
 </div>
 
-![DigitalIn Properties and Actions](digitalinapi.png)
+![DigitalIn Properties and Actions](elements/digitalinapi.png)
 
 The physical input level can differ from the logical input level. E.g. momentary input buttons may pull an input down to ground while others pull them up. Also switches can be used with this Element.
 
@@ -39,14 +39,16 @@ The following properties are available with the current values at runtime
 ## Example Configuration
 
 ```JSON
-"digitalin": {
-  "start": {
-    "pin": "D7",
-    "inverse": "true",
-    "pullup": "true",
-    "onHigh": "device/0?log=start.",
-    "onLow": " device/0?log=stop.",
-    "onValue": "device/0?log=input($v)"
+{
+  "digitalin": {
+    "start": {
+      "pin": "D7",
+      "inverse": "true",
+      "pullup": "true",
+      "onHigh": "device/0?log=start.",
+      "onLow": " device/0?log=stop.",
+      "onValue": "device/0?log=input($v)"
+    }
   }
 }
 ```
@@ -55,9 +57,11 @@ The following properties are available with the current values at runtime
 ## Example State
 
 ```JSON
-"digitalin/start": {
-  "active": "true",
-  "value": "1"
+{
+  "digitalin/start": {
+    "active": "true",
+    "value": "1"
+  }
 }
 ```
 

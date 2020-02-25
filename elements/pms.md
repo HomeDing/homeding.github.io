@@ -1,6 +1,8 @@
 # PMS Element
 
-The PMSElement allows using the air pollution sensors like the PMS5003 from Plantower to report the number of micro particles in the air.
+> draft ???
+
+The PMSElement allows using the air pollution sensors like the PMS5003 from plantower to report the number of micro particles in the air.
 
 ## About the sensor 
 
@@ -26,7 +28,7 @@ Using the element configuration it is possible to take a current probe value eve
 ## Element Configuration
 
 | Property   | Description                                         |
-| ---------- | --------------------------------------------------- |b
+| ---------- | --------------------------------------------------- |
 | `pinrx`\*  | Specifies the pin top receive data from the sensor. |
 | `pintx`\*  | Specifies the pin top send data to the sensor       |
 | `readtime` | default 60 seconds                                  |
@@ -40,19 +42,18 @@ Using the element configuration it is possible to take a current probe value eve
 
 The PMS5003 device should be attached using the following connections:
 
-ESP8266         PMS5003
-+5V             pin1, VCC
-GND             pin2, GND
-+3.3V -- 10k -- pin3 SET
-D3 (TX)         pin4 RXD
-D4 (RX)         pin5 TXD
-+3.3V -- 10k -- pin6 RESET
+    ESP8266         PMS5003
+    +5V             pin1, VCC
+    GND             pin2, GND
+    +3.3V -- 10k -- pin3 SET
+    D3 (TX)         pin4 RXD
+    D4 (RX)         pin5 TXD
+    +3.3V -- 10k -- pin6 RESET
 
 (as suggested by the plantower-pms5003-manual_v2-3.pdf)
 
 
-The sketch constantly reads data from the port and log is as hex data to the
-output.
+The sketch constantly reads data from the port and log is as hex data to the output.
 
 ## Diagnostic example
 
