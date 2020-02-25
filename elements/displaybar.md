@@ -39,16 +39,21 @@ The following properties are available with the current values at runtime
 ## Example for Configuration
 
 ```JSON
-"displayDot": {
-  ???
+{
+  "displayBar": {
+    ???
+  }
+}
 ```
 
 ## Example State
 
 ```JSON
-"displayText/on": {
-  "value":"true",
-  "temperature":"27.30",
-  "humidity":"50.50"
-},
+{
+  "displayBar/on": {
+    "value":"true",
+    "temperature":"27.30",
+    "humidity":"50.50"
+  }
+}
 ```

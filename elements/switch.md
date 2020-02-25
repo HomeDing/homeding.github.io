@@ -66,51 +66,55 @@ The switch has the current value modified and send a action to the digital outpu
 ![Input Switch Output](reciepe-in-switch-out.png)
 
 ```JSON
-"digitalin": {
-  "in": {
-    "description": "Input momentary button",
-    "pin": "D3",
-    "inverse": 1,
-    "pullup": 1,
-    "onLow": "switch/light?toggle=1"
-  }
-},
-
-"switch": {
-  "light": {
-    "description": "Control light level",
-    "value": 0,
-    "onValue": "digitalout/led?value=$v"
-  }
-},
-
-"digitalout": {
-  "led": {
-    "pin": "D0",
-    "inverse": "true",
-    "description": "Builtin LED is on Port D0 = GPIO16"
+{
+  "digitalin": {
+    "in": {
+      "description": "Input momentary button",
+      "pin": "D3",
+      "inverse": 1,
+      "pullup": 1,
+      "onLow": "switch/light?toggle=1"
+    }
   },
+
+  "switch": {
+    "light": {
+      "description": "Control light level",
+      "value": 0,
+      "onValue": "digitalout/led?value=$v"
+    }
+  },
+
+  "digitalout": {
+    "led": {
+      "pin": "D0",
+      "inverse": "true",
+      "description": "Builtin LED is on Port D0 = GPIO16"
+    }
+  }
 }
 ```
 
 To use a momentary button at another device the digital input there can use a remote device to send actions to the same switch element.
 
 ```JSON
-"digitalin": {
-  "in": {
-    "description": "Input momentary button",
-    "pin": "D3",
-    "inverse": 1,
-    "pullup": 1,
-    "onLow": "remote/light?toggle=1"
-  }
-},
+{
+  "digitalin": {
+    "in": {
+      "description": "Input momentary button",
+      "pin": "D3",
+      "inverse": 1,
+      "pullup": 1,
+      "onLow": "remote/light?toggle=1"
+    }
+  },
 
-"remote": {
-  "light": {
-    "description": "Light at kitchen device",
-    "host": "kitchending",
-    "remoteid": "switch/light"
+  "remote": {
+    "light": {
+      "description": "Light at kitchen device",
+      "host": "kitchending",
+      "remoteid": "switch/light"
+    }
   }
-},
+}
 ```

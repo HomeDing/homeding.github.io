@@ -79,16 +79,18 @@ The following properties are available for configuration of the element:
 ### Example for Configuration
 
 ```JSON
-"dht": {
-  "on": {
-    "pin": "D4",
-    "type": "DHT22",
-    "readtime": "30s",
-    "resendtime": "2m",
-    "onTemperature": "device/0?log=temp: $v\u00dfC",
-    "onHumidity": "device/0?log=hum: $v%"
+{
+  "dht": {
+    "on": {
+      "pin": "D4",
+      "type": "DHT22",
+      "readtime": "30s",
+      "resendtime": "2m",
+      "onTemperature": "device/0?log=temp: $v\u00dfC",
+      "onHumidity": "device/0?log=hum: $v%"
+    }
   }
-},
+}
 ```
 
 ## Element State
@@ -105,11 +107,13 @@ The following properties are available with the current values at runtime
 ### Example State
 
 ```JSON
-"dht/on": {
-  "active":"true",
-  "temperature":"27.30",
-  "humidity":"50.50"
-},
+{
+  "dht/on": {
+    "active":"true",
+    "temperature":"27.30",
+    "humidity":"50.50"
+  }
+}
 ```
 
 ## Implementation Details
@@ -135,7 +139,7 @@ As the sensor has a sensor period of 2 seconds it doesn't make sense to read the
 
 * 10K VCC - Data
 
-* Enable Shut down of sensor by supplying power through an ouput pin.
+* Enable Shut down of sensor by supplying power through an output pin.
 
 https://forum.arduino.cc/index.php?topic=355137.0
 

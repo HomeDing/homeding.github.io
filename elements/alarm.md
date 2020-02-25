@@ -20,10 +20,12 @@ This element implements the following properties and actions:
 ### Example for Configuration
 
 ```JSON
-"alarm": {
-  "wakeup": {
-    "time": "06:00",
-    "onTime": "digitalout/light?value=1"
+{
+  "alarm": {
+    "wakeup": {
+      "time": "06:00",
+      "onTime": "digitalout/light?value=1"
+    }
   }
 }
 ```

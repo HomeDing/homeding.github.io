@@ -40,13 +40,15 @@ The following properties are available with the current values at runtime
 ## Example Configuration
 
 ```JSON
-"pwmout": {
-  "led": {
-    "pin": "D4",
-    "range": 255,
-    "value": 10,
-    "inverse": "true",
-    "description": "ESP-12 blue led (D4) can be dimmed"
+{
+  "pwmout": {
+    "led": {
+      "pin": "D4",
+      "range": 255,
+      "value": 10,
+      "inverse": "true",
+      "description": "ESP-12 blue led (D4) can be dimmed"
+    }
   }
 }
 ```

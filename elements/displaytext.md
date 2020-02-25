@@ -35,13 +35,15 @@ For the OLED drivers the font sizes 10, 16 and 24 are supported.
 ### Example for Configuration
 
 ```JSON
-"displaytext": {
-  "val": {
-    "x": 0,
-    "y": 1,
-    "prefix": "val=",
-    "postfix": "",
-    "description": "Display the value"
+{
+  "displaytext": {
+    "val": {
+      "x": 0,
+      "y": 1,
+      "prefix": "val=",
+      "postfix": "",
+      "description": "Display the value"
+    }
   }
 }
 ```
@@ -63,8 +65,10 @@ The following properties are available with the current values at runtime
 ### Example State
 
 ```JSON
-"displaytext/val": {
-  "active":"true",
-  "value":"10"
+{
+  "displaytext/val": {
+    "active":"true",
+    "value":"10"
+  }
 }
 ```

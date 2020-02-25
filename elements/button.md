@@ -84,9 +84,11 @@ The `value` property corresponds to the current output of the element.
 ## Example State
 
 ```JSON
-"button/start": {
-  "active": "true",
-  "value": "1"
+{
+  "button/start": {
+    "active": "true",
+    "value": "1"
+  }
 }
 ```
 

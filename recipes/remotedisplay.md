@@ -11,10 +11,12 @@ There is a configuration required that corresponds to the chip inside the displa
 ** Example:**
 
 ```JSON
-"DisplaySSD1306": {
-  "0": {
-    "address": "60",
-    "height": 64
+{
+  "DisplaySSD1306": {
+    "0": {
+      "address": "60",
+      "height": 64
+    }
   }
 }
 ```

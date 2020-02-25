@@ -44,12 +44,14 @@ The following properties are available with the current values at runtime
 ## Example Configuration
 
 ```JSON
-"schedule": {
-  "lights": {
-    "ontime": "04:00:00",
-    "offtime": "18:00:00",
-    "onon": "device/main?log=now on.",
-    "onoff": " device/main?log=now off."
+{
+  "schedule": {
+    "lights": {
+      "ontime": "04:00:00",
+      "offtime": "18:00:00",
+      "onon": "device/main?log=now on.",
+      "onoff": " device/main?log=now off."
+    }
   }
 }
 ```
@@ -57,9 +59,11 @@ The following properties are available with the current values at runtime
 ## Example State
 
 ```JSON
-"button/start": {
-  "active": "true",
-  "value": ???
+{
+  "button/start": {
+    "active": "true",
+    "value": ???
+  }
 }
 ```
 

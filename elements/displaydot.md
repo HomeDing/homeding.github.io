@@ -31,11 +31,13 @@ The following properties are available for configuration of the element:
 ### Example for Configuration
 
 ```JSON
-"displaydot": {
-  "b": {
-    "x": 15,
-    "y": 0,
-    "description": "Display a bink"
+{
+  "displaydot": {
+    "b": {
+      "x": 15,
+      "y": 0,
+      "description": "Display a bink"
+    }
   }
 }
 ```
@@ -51,9 +53,11 @@ The following properties are available with the current values at runtime
 ### Example State
 
 ```JSON
-"displaydot/b": {
-  "active": "true",
-  "value": "1"
-},
+{
+  "displaydot/b": {
+    "active": "true",
+    "value": "1"
+  }
+}
 ```
 

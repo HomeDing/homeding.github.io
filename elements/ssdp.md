@@ -80,12 +80,14 @@ If you like your device to show up with some hints about the configured function
 ## Example Configuration
 
 ```JSON
-"ssdp": {
-  "0": {
-    "Manufacturer": "Matthias Hertel",
-    "ManufacturerURL": "https://www.mathertel.de",
-    "ModelUrl": "https://www.mathertel.de/Arduino",
-    "ModelNumber": "v01.12"
+{
+  "ssdp": {
+    "0": {
+      "Manufacturer": "Matthias Hertel",
+      "ManufacturerURL": "https://www.mathertel.de",
+      "ModelUrl": "https://www.mathertel.de/Arduino",
+      "ModelNumber": "v01.12"
+    }
   }
 }
 ```

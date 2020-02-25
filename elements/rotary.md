@@ -37,13 +37,15 @@ value Internal starting value. (deprecated)
 ## Example Configuration
 
 ```JSON
-"rotary": {
-  "in": {
-    "description": "Rotary Input",
-    "pin1": "D5",
-    "pin2": "D6",
-    "step": 10,
-    "onValue": "value/led?up=$v"
+{
+  "rotary": {
+    "in": {
+      "description": "Rotary Input",
+      "pin1": "D5",
+      "pin2": "D6",
+      "step": 10,
+      "onValue": "value/led?up=$v"
+    }
   }
 }
 ```
@@ -64,9 +66,11 @@ The following properties are available with the current values at runtime
 The internal value can be seen in the rotary state but should not directly be used as a value.
 
 ```JSON
-"rotary/in": {
-  "active": "true",
-  "value": "4"
+{
+  "rotary/in": {
+    "active": "true",
+    "value": "4"
+  }
 }
 ```
 

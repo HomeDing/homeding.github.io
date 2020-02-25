@@ -35,21 +35,25 @@ The following properties are available for configuration of the element:
 ## Example Configuration
 
 ```JSON
-"dstime": {
-  "0": {
-    "readtime": "2h",
-    "address": "0x68"
+{
+  "dstime": {
+    "0": {
+      "readtime": "2h",
+      "address": "0x68"
+    }
   }
-},
+}
 ```
 
 ## Element State
 
 
 ```JSON
-"dstime/0": {
-  "active":"true",
-  "now":"2019-01-25 08:14:04"
+{
+  "dstime/0": {
+    "active":"true",
+    "now":"2019-01-25 08:14:04"
+  }
 }
 ```
 

@@ -22,18 +22,20 @@ The central networking feature of the board only allows one current remote actio
 On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these.
 
 ```JSON
-"displaytext": {
-  "t": {
-    "x": 0,
-    "y": 36,
-    "prefix": "Temp:",
-    "postfix": "°C"
-  },
-  "h": {
-    "x": 0,
-    "y": 50,
-    "prefix": "Hum: ",
-    "postfix": "%"
+{
+  "displaytext": {
+    "t": {
+      "x": 0,
+      "y": 36,
+      "prefix": "Temp:",
+      "postfix": "°C"
+    },
+    "h": {
+      "x": 0,
+      "y": 50,
+      "prefix": "Hum: ",
+      "postfix": "%"
+    }
   }
 }
 ```
@@ -47,24 +49,26 @@ You can test these by using the following URLs to trigger the actions with your 
 On the device named **dht22-probe** the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:
 
 ```JSON
-"dht": {
-  "on": {
-    "pin": 0,
-    "type": "DHT22",
-    "readtime" : "10s",
-    "onTemperature": "remote/display-t?show=$v",
-    "onHumidity": "remote/display-h?show=$v"
-  }
-},
-
-"remote": {
-  "display-t": {
-    "host": "logger",
-    "remoteid": "displaytext/t"
+{
+  "dht": {
+    "on": {
+      "pin": 0,
+      "type": "DHT22",
+      "readtime" : "10s",
+      "onTemperature": "remote/display-t?show=$v",
+      "onHumidity": "remote/display-h?show=$v"
+    }
   },
-  "display-h": {
-    "host": "logger",
-    "remoteid": "displaytext/h"
+
+  "remote": {
+    "display-t": {
+      "host": "logger",
+      "remoteid": "displaytext/t"
+    },
+    "display-h": {
+      "host": "logger",
+      "remoteid": "displaytext/h"
+    }
   }
 }
 ```

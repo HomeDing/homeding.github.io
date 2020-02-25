@@ -40,14 +40,16 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 ### Example for Configuration
 
 ```JSON
-"and": {
-  "a": {
-    "value01": "true",
-    "value02": "false",
-    "invert": "false",
-    "onValue": "device/0?log=and-output: $v"
+{
+  "and": {
+    "a": {
+      "value01": "true",
+      "value02": "false",
+      "invert": "false",
+      "onValue": "device/0?log=and-output: $v"
+    }
   }
-},
+}
 ```
 
 ## Element State

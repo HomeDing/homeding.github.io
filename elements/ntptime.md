@@ -42,11 +42,13 @@ The following properties are available for configuration of the element:
 
 
 ```JSON
-"ntptime": {
-  "0": {
-    "readtime": "08:00:00",
-    "retrytime": "00:05:00",p
-    "zone": 2
+{
+  "ntptime": {
+    "0": {
+      "readtime": "08:00:00",
+      "retrytime": "00:05:00",p
+      "zone": 2
+    }
   }
 }
 ```
@@ -63,10 +65,13 @@ The following properties are available with the current values at runtime
 ## Element State Example
 
 ```JSON
-"ntptime/0": {
-   "active": "true",
-   "now": "2018-11-22 20:43:08"
-}```
+{
+  "ntptime/0": {
+    "active": "true",
+    "now": "2018-11-22 20:43:08"
+  }
+}
+```
 
 ## See also
 

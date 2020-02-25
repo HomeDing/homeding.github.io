@@ -96,14 +96,16 @@ Receiving this action advances the timer to on / off .
 ### Example for Configuration
 
 ```JSON
-"timer": {
-  "led": {
-    "type": "LOOP",
-    "waittime": "4s",
-    "pulsetime": "8s",
-    "cycletime": "20s",
-    "onon": "digitalout/led?on",
-    "onoff": "digitalout/led?off"
+{
+  "timer": {
+    "led": {
+      "type": "LOOP",
+      "waittime": "4s",
+      "pulsetime": "8s",
+      "cycletime": "20s",
+      "onon": "digitalout/led?on",
+      "onoff": "digitalout/led?off"
+    }
   }
 }
 ```
@@ -127,11 +129,13 @@ Current output value.
 ### Example for State
 
 ```JSON
-"timer/relais": {
-  "active": "true",
-  "state": "0",
-  "time": "2",
-  "value": "0"
+{
+  "timer/relais": {
+    "active": "true",
+    "state": "0",
+    "time": "2",
+    "value": "0"
+  }
 }
 ```
 

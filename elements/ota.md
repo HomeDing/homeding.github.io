@@ -62,11 +62,13 @@ This script will push an OTA update to the ESP
 ## Example Configuration
 
 ```JSON
-"ota": {
-  "0": {
-    "port": 8266,
-    "passwd": "123",
-    "description": "Listen for 'over the air' OTA Updates"
+{
+  "ota": {
+    "0": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "Listen for 'over the air' OTA Updates"
+    }
   }
 }
 ```
