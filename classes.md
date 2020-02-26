@@ -4,15 +4,15 @@ The following classes have been implemented:
 
 ### Board
 
-> The Board class helps organizing the instanciated Elements and dispatching Actions.
+> The Board class helps organizing the instantiated Elements and dispatching Actions.
 
 ### BoardServer
 
-> Implementation of a web server request hander to handle the IoT board REST services.
+> Implementation of a web server request handler to handle the IoT board REST services.
 
 ### DisplayAdapter
 
-> Abstract class, defining the functionlaity the HomeDing requires to be implemented for a local attached display.
+> Abstract class, defining the functionality the HomeDing requires to be implemented for a local attached display.
 
 ### DisplayAdapterLCD
 

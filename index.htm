@@ -92,6 +92,7 @@ Markdown viewer SPA using
     }
 
     @media print {
+
       html,
       body {
         font-size: 0.9em;
@@ -126,7 +127,7 @@ Markdown viewer SPA using
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="display:none">
       <div class="col">
         <h4>Missing Pages:</h4>
         <div id="missingFiles"
@@ -139,19 +140,18 @@ Markdown viewer SPA using
     var ffObj = document.querySelector('#foundFiles');
     var mfObj = document.querySelector('#missingFiles');
 
-    var md = new markdownit('default',
-      {
-        html: true,
-        // breaks: false,
-        linkify: true,
-        langPrefix: 'hljs language-',
-        highlight: function (str, lang) {
-          var t = hljs.highlight(lang, str);
-          return (t.value);
-        }
-      });
+    var md = new markdownit('default', {
+      html: true,
+      // breaks: false,
+      linkify: true,
+      langPrefix: 'hljs language-',
+      highlight: function (str, lang) {
+        var t = hljs.highlight(lang, str);
+        return (t.value);
+      }
+    });
 
-      var mdc = new markdownitContainer(md, 'excerpt', {
+    var mdc = new markdownitContainer(md, 'excerpt', {
       render: function (tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
