@@ -1,7 +1,9 @@
-# Device Logging
+# Logging
+
+The Arduino programming environment today is not offering a debugger. Therefore logging information from the executed code to the Serial interface is often the approach to find out what is actually going on inside the device.
 
 The HomeDing library offers an easy way to create logging output for information or debugging purpose
-as well as a web UI that allows viewing the latest logging informaion.
+as well as a web UI that allows viewing some of the latest logging information from remote.
 
 This is implemented by the Logger class.
 
@@ -76,7 +78,7 @@ LOGGER_RAW("init: path=%s cache_header=%s", path, cache_header);
 ```
 
 **Output:**
-```
+```plaintext
   >init: path=/ cache_header=NO-CACHE
 ```
 

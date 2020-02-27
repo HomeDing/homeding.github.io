@@ -58,7 +58,7 @@ To make this a JavaScript Date to factor 1000 must be applied because Javascript
 
 The Elements retrieves new values through the value action. Here are soime examples:
 
-```text
+```plaintext
 log/temp?value=140
 log/temp?value=21.80;42.3
 log/temp?value[1]=42.3
@@ -87,7 +87,7 @@ The interval is calculated from the local system time.
 
 The log file will contain text lines with the current time and the given values:
 
-```text
+```JSON
 1558409166,15
 1558409466,16
 1558409766,18

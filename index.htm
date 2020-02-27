@@ -91,12 +91,48 @@ Markdown viewer SPA using
       height: 3rem;
     }
 
+    nav {
+      position: fixed;
+      /* height: 100%; */
+      width: 280px;
+      z-index: 1;
+      left: -280px;
+      transition: all 0.1s;
+      padding-top: 1rem;
+      /* background-color: #d0d0d0; */
+    }
+
+    nav.inpage {
+      position: absolute;
+    }
+
+    nav.open {
+      left: 0;
+    }
+
+    nav.open+div {
+      margin-left: 280px;
+    }
+
     @media print {
 
       html,
       body {
-        font-size: 0.9em;
+        font-size: 0.66em;
+        background-color: white;
       }
+
+      nav,.u-navbar {
+        display: none
+      }
+
+      nav.open+div {
+        margin-left: 0;
+      }
+
+      .short {
+      border: 1px solid silver;
+    }
     }
   </style>
 </head>
@@ -115,6 +151,7 @@ Markdown viewer SPA using
     <a href="#page=boards.md" class="button">Boards</a>
     <a href="#page=recipes.md" class="button">Recipes</a>
   </div>
+  <nav class="open inpage"></nav>
   <div class="container-fluid">
     <div class="row"></div>
 
@@ -146,6 +183,8 @@ Markdown viewer SPA using
       linkify: true,
       langPrefix: 'hljs language-',
       highlight: function (str, lang) {
+        if (! hljs.getLanguage(lang))
+          lang="plaintext";
         var t = hljs.highlight(lang, str);
         return (t.value);
       }
@@ -297,6 +336,21 @@ Markdown viewer SPA using
         );
       }
     };
+
+    var tocObj = document.querySelector('nav');
+
+    loadFile('toc.md',
+      function (txt) {
+        var hText = md.render(txt);
+        hText = hText.replace(/href="([\w\/]+).md"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="([\w\/]+)"/g, 'href="#page=$1.md"');
+        tocObj.innerHTML = hText;
+      }.bind(this),
+      function (x) {
+        this.setText(pName, '>> File with name ' + pName + ' not found.');
+      }.bind(this)
+    );
+
 
     // manually attach md container
     var mdObj = document.querySelector('.s-md');

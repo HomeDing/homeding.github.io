@@ -1,19 +1,19 @@
 # HTML Templates for Elements
 
-For displaying elements of a HomeDing device on the config and landing pages of the [WebServer UI](webserverui) there are is collection of templates using a card design available.
+  For displaying elements of a HomeDing device on the config and landing pages of the [Builtin Web server](/concepts/paper04.md) there are is collection of templates using a card design available.
 
 These templates are included manually or automatically into the pages when a corresponding element is configured.
 
 There are 2 versions of these templates available:
 
-* Inside the file `ding-templates.htm` all implemented templates can be found that support vizualization and configuration of the elements.
-*  Inside the fie `min-templates.htm` some templates can be found that vizualize the elements that can typially be found in sensor and actor devices that us only 1MByte of flash ram. They do not all support configuration because of the limited space avaialble.
+* Inside the file `ding-templates.htm` all implemented templates can be found that support visualization and configuration of the elements.
+*  Inside the fie `min-templates.htm` some templates can be found that visualize the elements that can typically be found in sensor and actor devices that us only 1MByte of flash ram. They do not all support configuration because of the limited space available.
 
 The following Elements have special templates implemented:
 
-| Element | Configuration fetaures                                                |
-| ------- | --------------------------------------------------------------------- |
-| dstime  | Setting the on-chip time using the actual time of the browser. |
+| Element                 | Configuration features                                         |
+| ----------------------- | -------------------------------------------------------------- |
+| dstime                  | Setting the on-chip time using the actual time of the browser. |
 | [timer](elements/timer) |
 
 

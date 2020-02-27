@@ -1,5 +1,6 @@
 # Class implementation documentation
 
+> Rework ???
 The following classes have been implemented:
 
 ### Board

@@ -145,8 +145,7 @@ I added a 100nF capacitor next to the radio.
 ![radio chip](examples/rda2.jpg)
 ![100nF capacitor](examples/100nf.jpg)
 
-```TEXT
-
+```plaintext
 // http://lcddevice/$board/radio/r?volume=1
 // http://lcddevice/$board/radio/r?volume=12
 // http://lcddevice/$board/board/0?loglevel=1
