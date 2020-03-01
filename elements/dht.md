@@ -6,13 +6,15 @@ The DHTElement allows retrieving temperature and humidity values from the DHT fa
 
 The current values are also sent out using actions when they stay the same for some time to allow remote things to resume to the current values after reboot or network outages.
 
+![DHT22 pins](dht22pins.jpg) ![DHT22 on Breadboard](dht22board.jpg)
+
+
 ## Web UI for the DHT Element
 
-There is a dedicated card for this element available that will be used for the web server config and landing pages:
+There is a dedicated card for this element available that shows the actual temperature and humidity.
 
 ![DHT Sensor UI](/elements/dhtui.png)
 
-The web ui for the DHT element shows the actual temperature and humidity.
 
 ## Using the DHT Element
 
@@ -68,7 +70,7 @@ The following properties are available for configuration of the element:
 
 **resendTime** - The current values of the probe are resent after this specified time even when not changing.
 
-**onTemperature** - hese actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same.
+**onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same.
 
 **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
 
