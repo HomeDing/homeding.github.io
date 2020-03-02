@@ -1,44 +1,60 @@
 # Class implementation documentation
 
-> Rework ???
-The following classes have been implemented:
+Beside the Element implementations in the \<type\>Element classes there are some classes that implement common functionality or utilities:
 
-### Board
 
-> The Board class helps organizing the instantiated Elements and dispatching Actions.
+### Board.cpp
 
-### BoardServer
+The Board class helps creating and organizing the configured elements and dispatching actions. There are also some utility functions implemented in this class.
 
-> Implementation of a web server request handler to handle the IoT board REST services.
+### BoardServer.cpp
 
-### DisplayAdapter
+Implementation of the web server request handler to handle the IoT board REST services and the built-in web pages.
 
-> Abstract class, defining the functionality the HomeDing requires to be implemented for a local attached display.
+### displays/DisplayAdapter.h
 
-### DisplayAdapterLCD
+Abstract class, defining the functionality the HomeDing requires to be implemented for a local attached displays.
+The display implementations derive from this class.
 
-> DisplayAdapter implementation for the HomeDing library adapting LCD displays using the HD44780 chip.
 
-### DisplayAdapterSSD1306
+### Element.cpp
 
-> DisplayAdapter implementation for the HomeDing library adapting OLED displays using the SSD1306 chip.
+This is the base class for all Elements. It also implements some generic and utility functionality.
 
-### Element
+See [Element Class Definition](ElementClass)
 
-> The Element class acts as the base class for all kind of Elements and implements some generic functionality.
->
-> See [Element Class Definition](ElementClass)
 
-### FileServer
+### FileServer.h
 
-### HomeDing
+Implementation of the web server request handler to handle access and upload of the files on the SPIFFS file sysem.
+
+
+### HomeDing.h
+
+This file organizes including the elements into the sketch. This is described in detail in the [Element Class Registration](ElementRegistry).
+
+
+### ElementRegistry.cpp
+
+The Element Registry knows all the Element classes that can be configured.
+This is described in detail in the [Element Class Registration](ElementRegistry).
+
 
 ### Logger
 
+The Information, Errors and Traces that are produced during runtime are routed through this class inElement Registry knows all the Element classes that can be configured.
+In case the logging feature of the device is switched on the errors are also stored to the log files.
+
 See: [Device Logging](logger)
 
-## Elements
 
-Based on these classes many Elements have been implemented.
+### MicroJsonComposer.cpp
 
-See [Elements](elements)
+This class helps producing a JSON formatted string used in the responses from server calls.  
+
+
+### MicroJsonParser.cpp
+
+This class helps parsing JSON formatted strings used to read config files and web requests.  
+
+

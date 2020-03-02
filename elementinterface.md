@@ -2,7 +2,7 @@
 
 To implement an element a new class has to be created to implement the functions required for the specific element.
 
-This is supported by an empty element implemented by the `Element` class that  is used as the parent class of every element.
+This is supported by a base element implementation in the `Element` class that is used as the parent class of every element.
 
 
 ## Using the MyElement class as a template
@@ -16,23 +16,23 @@ Be aware that there is a name for the element `my` defined in the registration f
 
 ## main functions
 
-As with normal Arduino sketches there are 2 functions init??? And loop??? that are used to initialize and run the element. 
+As with normal Arduino sketches there are 2 functions init() and loop() that are used to initialize and run the element. 
 
-Because every element also participates in  exchanging actions there is a third function named set that gets called for receiving actions. 
+Because every element also participates in exchanging actions there is a third function named set that gets called for receiving actions. 
 
 
-### init()
+### init(base)
 
 This function is called just after a new element object is created from the class and before any property is set from the configuration. You can create default settings in here.
 
 A reference to the board object is passed to allow access to the common features supported by the board class. 
 
-Within this method the init() of the master??? class (e.g. `Element::init(board);`) needs to be called.
+The Elements that deriving from the Element class must call the init() method of the Element class (e.g. `Element::init(board);`).
 
-If there is no need for initialization of your element you can leave this method unimplemented in the XXXElement.cpp file and can remove the function definition from the class definition in XXXElement.h.
+If there is no need for initialization of your element you can leave this method unimplemented in the AlarmElement.cpp file and can remove the function definition from the class definition in AlarmElement.h.
 
 
-### set()
+### set(name, value)
 
 This method that gets called whenever a parameter gets initialized or an action is sent by another element to this element.
 
@@ -49,14 +49,23 @@ to the appropriate type like
 * `_atob` for boolean values
 * `atoi` for numeric values is given from the esp8266 library.
 
-Within this method the set() of the master class (e.g. `ret = Element::set(name, value);`) needs to be called whenever the action is not handled in a meaningful way or when the name is unknown. 
+Within this method the set() of the Element class (e.g. `ret = Element::set(name, value);`) needs to be called whenever the action is not handled in a meaningful way or when the name is unknown. 
 
 
 ### start()
 
-In some cases the element need to implement a further initialision after all configuration properties are known but before the loop starts. This can be implemented in the start method.
+In some cases the element need to implement a further initialization after all configuration properties are known but before the loop starts. This can be implemented in the start method.
+
+If there is no need for initialization of your element you can leave this method unimplemented in the SwitchElement.cpp file and can remove the function definition from the class definition in SwitchElement.h.
 
 As a default elements are started after a network was connected only so they will not be activated in case of the network is not available or not configured yet.
+
+
+### loop()
+
+This function is called constantly like usual in the Arduino framework. It should return as fast as possible to give time to all the other activated elements.
+
+There are several mechanisms like state machines to split a more complex task into smaller pieces. This approach should be followed in implementing the loop() function for longer running processes.
 
 
 ### Class initialize
@@ -72,12 +81,6 @@ LogElement::LogElement()
 ```
 
 See also [wifimanager](wifimanager.md)
-
-
-### loop()
-
-This method is called from time to time like the loop function in standard Arduino sketches.
-This is where the element can do something on its own like getting some data from a sensor or checking some conditions.
 
 
 ### pushState(cbFunc)
