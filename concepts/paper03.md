@@ -29,7 +29,7 @@ Like in the Actor Model the functionality is encapsulated inside the components 
 to the outer world but differ in the inner implementation.
 This is the concept of the Elements you find in the HomeDing library.
 
-The common interface is about supporting the lifecycle:
+The common interface is about supporting the life cycle:
 
 * creating new elements
 * configure elements
@@ -44,7 +44,7 @@ The standard interface of every Element is defined by the Element class and ever
 
 ![Methods of Element implementations](elementapi.png.md) ???
 
-A detailled description of the common Element Interface can be found in [ElementInterface](ElementInterface.md).
+A detailed description of the common Element Interface can be found in [ElementInterface](ElementInterface.md).
 
 ## Actions
 
@@ -56,7 +56,7 @@ Calling the loop function will be prioritized over sending a message.
 This is why the board implements a store and forward mechanism with a queue.
 The order of the messages is guaranteed to be stable as long as they are not send via network.
 
-## The Lifecycle of the Board and Elements
+## The Life Cycle of the Board and Elements
 
 The implementation of the Board class is the part of the HomeDing Library that organizes all created Elements and dispatches the actions.
 

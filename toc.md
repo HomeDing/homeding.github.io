@@ -18,7 +18,7 @@
 * [Switch](/elements/switch.md)
 * [Value](/elements/value.md)
 
-### [Sensor Elements](/elements/_sensors.md)
+### [Sensor Elements](/elements/sensors.md)
 * [bme680](/elements/bme680.md)
 * [dht](/elements/dht.md)
 * [dmx](/elements/dmx.md)

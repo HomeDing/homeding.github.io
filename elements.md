@@ -31,7 +31,7 @@ These elements are used to create an action based on a specific input signal lik
 
 ## Sensor Elements
 
-The [sensor elements](elements/_sensors.md) implement the adoption to a very specific sensor or sensor family. They share
+The [sensor elements](elements/sensors.md) implement the adoption to a very specific sensor or sensor family. They share
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
 
 <div class="short">
@@ -59,7 +59,7 @@ some common implementation to allow gathering values on a regular basis and upda
 
 <div style="clear:both"></div>
 
-More detailed information on the sensor implementation can be found in [sensor elements](/elements/_sensors.md).
+More detailed information on the sensor implementation can be found in [sensor elements](/elements/sensors.md).
 
 
 ## Output and Actor Elements
