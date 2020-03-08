@@ -31,7 +31,7 @@ The original version of the ESP-01 board has 2 LEDs:
 * The red LED is connected to the 3.3V Power supply and lights up constantly.
 * The blue LED is connected to the Serial output pin and lights up when data is sent. When not using the TX Serial output the pin and LED can be used as a digital output too.
 
-There have been critics about these 2 LEDs and some recomment to unsolder them e.g. to save power for battery driven solutions. 
+There have been critics about these 2 LEDs and some recommend to unsolder them e.g. to save power for battery driven solutions. 
 
 ## ESP-01S LEDs
 
@@ -42,31 +42,32 @@ This board is a newer version that
 * Blue LED on GPIO2(D4)
 
 
-## self-made adaptor
+## Self-Made Adaptors
 
-* reset to ground
-* button for  Dx? to ground starting programming
-* LED on Dx
-* LED on Dy
-* USB to serial including a 3.3 V regulator
+With some soldering and a USB-to-Serial adapter you can build your own adapter board:
+
+![selfmade adapter1](/boards/esp01adapt1.jpg)
+![selfmade adapter2](/boards/esp01adapt2.jpg)
+
+Some of the USB Adapters like the on I use also have a 3.3 V regulator available, but they usually so not offer much current.
+
+Be sure to add a reset (RST) and flash GPIO0(D3) button with 10k resistor to VCC and button to GND.
+
+The 3 LEDs show the actual level of GPIO0(D3) and GPIO2(D4).
+
+Another idea is to use a ESP01 USB adapter and add the reset (RST) and flash GPIO0(D3) buttons as you can see here.
+
+![customized adapter1](/boards/esp01prog1.jpg)
+![customized adapter2](/boards/esp01prog2.jpg)
 
 
 ## Minimum adapter
 
-The minimum wiring to use this board is to have the following external wiring:
+The minimum wiring to use (run) this board is to have the following external wiring:
 
 * pull up CH_PD with 10k to VCC
 * pull up RST with 10k to VCC
 * connect 3.3V and GND to power supply
-
-
-<!-- ## cheap USB adapter on eBay to run the chip
-
-There are some cheap USB adapters 
-
-![board-esp01-adapter](/boards/esp01-adapter.png)
-
--->
 
 
 ## GPIO 0
@@ -116,7 +117,9 @@ https://github.com/esp8266/Arduino/pull/6362
 
 Background information can be found in: https://github.com/esp8266/Arduino/issues/6221
 
+
 ## See also
 
-* <https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/>
-* <https://www.esp8266.com/viewtopic.php?t=11657>
+* https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/
+* https://www.esp8266.com/viewtopic.php?t=11657
+* https://www.instructables.com/id/USB-to-ESP-01-Board-Adapter-Modification/
