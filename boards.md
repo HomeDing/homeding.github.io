@@ -11,6 +11,7 @@ The following boards with 4 MBytes flash memory have been used for development a
 
 * [NodeMCU development boards](/boards/nodemcu)
 * [Wifi Kit 8 Module ESP8266 with OLED](/boards/wifikit8.md) is a ESP-12E with OLED display and Li-Polymer battery support.
+* [Witty board](/boards/witty.md) offers a ESP8266-12F solution with a RGB LED, a LDR sensor and an input button. It can eb used on a breadboard.
 * [Esp-Wroom-02 Modul ESP8266 with OLED and 18650](/boards/wroom2) is a ESP-12E with OLED display, LiIon Battery support and switch.
 * ESP-12 and ESP-12E used directly.
 
