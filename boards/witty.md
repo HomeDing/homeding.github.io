@@ -19,6 +19,25 @@ ESP8266-12F used offers 4 MB of flash memory.
 
 The lower board hosts the CH340 USB to Serial bridge chip, the RST momentary switch and the GPIO0(D3) FLASH momentary switch.
 
+## System configuration
+
+The device settings in env.json may look like this:
+
+```JSON
+{
+  "device": {
+    "0": {
+      "name": "witty",
+      "reboottime": "24h",
+      "logfile": 1,
+      "led": "D0",
+      "button": "D5",
+      "description": "Witty board with RGB LED and LCD"
+    }
+  }
+}
+```
+
 
 ## RGB LED on board
 
@@ -37,7 +56,22 @@ This is a good solution for using the LED as an indicator but not as a source of
 It can be driven by the LightElement using the following configuration:
 
 ```JSON
-???
+{
+  "light": {
+    "l": {
+      "loglevel": 2,
+      "pin": "D8,D6,D7",
+      "value": "x203050"
+    }
+  },
+  "analog": {
+    "0": {
+      "reference" : 300,
+      "onvalue": "device/0?log=analogvalue=$v",
+      "onreference": "device/0?log=analogref=$v"
+    }
+  }
+}
 ```
 
 ## LDR
