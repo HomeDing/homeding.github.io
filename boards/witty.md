@@ -2,9 +2,8 @@
 
 The Witty board is a cheap ESP8266 board that has a RGB LED, a LDR sensor and an input button. It can eb used on a breadboard.
 
-![witty board 1](witty1.jpg)
-![witty board 2](witty2.jpg)
-
+![witty board 1](/boards/witty1.jpg)
+![witty board 2](/boards/witty2.jpg)
 
 ## 2 Boards
 
@@ -18,6 +17,11 @@ The upper board hosts a momentary switch at GPIO4(D2), the LED and a LDR sensor.
 ESP8266-12F used offers 4 MB of flash memory.
 
 The lower board hosts the CH340 USB to Serial bridge chip, the RST momentary switch and the GPIO0(D3) FLASH momentary switch.
+
+Here are the signals on the connectors:
+
+![witty pins](/boards/wittypins.png )
+
 
 ## System configuration
 

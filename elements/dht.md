@@ -4,7 +4,7 @@
 The DHTElement allows retrieving temperature and humidity values from the DHT family sensors and creates actions when new values are available.
 :::
 
-The current values are also sent out using actions when they stay the same for some time to allow remote things to resume to the current values after reboot or network outages.
+The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.
 
 ![DHT22 pins](dht22pins.jpg) ![DHT22 on Breadboard](dht22board.jpg)
 
@@ -30,7 +30,7 @@ The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and
 #include <HomeDing.h>
 ```
 
-<!-- The DHT Sensor exampe shows how to configure a sensor device that reads the sensor values from a DHT and shows them in the Web UI. -->
+<!-- The DHT Sensor example shows how to configure a sensor device that reads the sensor values from a DHT and shows them in the Web UI. -->
 
 The following sensor chips from the DHT family are supported by the DHTesp library:
 
@@ -143,4 +143,3 @@ As the sensor has a sensor period of 2 seconds it doesn't make sense to read the
 * Enable Shut down of sensor by supplying power through an output pin.
 
 https://forum.arduino.cc/index.php?topic=355137.0
-
