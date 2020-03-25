@@ -1,6 +1,6 @@
 <div class="col card" u-control="dht" id="${id}" microID="${id}" u-is="generic">
   <div class="block">
-    <img data-src="/i/dht.svg" style="float: left;height:5rem;margin-right:0.8rem" />
+    <img data-src="/i/dht.svg" class="icon" />
     <span class="activeState" u-active="active"></span>
     <span class="setconfig"></span>
     <table>
@@ -21,6 +21,44 @@
         <td>Temperature</td>
         <td></td>
         <td>Humidity</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="col card" u-control="bme680" id="${id}" microID="${id}" u-is="generic">
+  <div class="block">
+    <img data-src="/i/bme680.svg" class="icon" />
+    <span class="activeState" u-active="active"></span>
+    <span class="setconfig"></span>
+    <table>
+      <tr>
+        <td colspan="3">
+          <h4 u-text="title"></h4>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><span u-text="description"></span></td>
+      </tr>
+      <tr>
+        <td style="font-size: 1.8rem"><span u-text="temperature">__.__</span>&deg;C</td>
+        <td style="width:1rem"></td>
+        <td style="font-size: 1.8rem"><span u-text="humidity">__.__</span>%</td>
+      </tr>
+      <tr>
+        <td>Temperature</td>
+        <td></td>
+        <td>Humidity</td>
+      </tr>
+      <tr>
+        <td style="font-size: 1.8rem"><span u-text="pressure">_____</span></td>
+        <td style="width:1rem"></td>
+        <td style="font-size: 1.8rem"><span u-text="gas">_____</span></td>
+      </tr>
+      <tr>
+        <td>Pressure</td>
+        <td></td>
+        <td>Gas Quality</td>
       </tr>
     </table>
   </div>
@@ -194,4 +232,3 @@
     <div class="form-group"><label>Value:</label><span u-text="value"></span></div>
   </div>
 </div>
-
