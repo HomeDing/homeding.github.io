@@ -59,11 +59,6 @@ For some [boards](boards.md) you can find reviews and summaries with a suitable 
 The general procedures to setup the development environment can be found in the [setup instructions](examples/setup).
 
 
-## Wishlist
-
-More elements are on the [wishlist](wishlist).
-
-
 ## Web interface
 
 Every device based on the Homeding library is connected to the local WiFi network and has a [Web Server](concepts/paper04.md)

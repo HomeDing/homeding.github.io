@@ -1,5 +1,5 @@
 # Table of Content
-* [HomeDing Library Documentation](/home.md)
+* [HomeDing Library Documentation](/readme.md)
 
 
 ### [Concepts of the library](/concepts/paper.md)

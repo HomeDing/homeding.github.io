@@ -22,4 +22,4 @@ They show how multiple elements can be combined to create functionality beyond u
 * Switch a remote LED on and off
 
 
-[home](home.md)
+[home](readme.md)
