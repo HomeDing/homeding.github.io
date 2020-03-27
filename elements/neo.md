@@ -20,11 +20,11 @@ These properties are used to setup the attached WDs:
 
 **pin** - The pin that is used for data transmission to the first ws2812 in the chain. Defaults to GPIO2(D4).
 
-**Count** - Number of pixels that are attached. The default is 8 and must be specified in the config only.
+**count** - Number of pixels that are attached. The default is 8 and must be specified in the config only.
 
-**Brightness** - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..255. The default is 64.
+**brightness** - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..100. The default is 50.
 
-**Value** - Is used for color mode to pass a list of colors like `red,blue,green,white` . See explanation for `Color mode` below, 
+**value** - Is used for color mode to pass a list of colors like `red,blue,green,white` . See explanation for `Color mode` below, 
 
 **mode** - The effect to be used. See below
 
@@ -108,7 +108,7 @@ Example:
 # See also
 
 * Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
-* [RGBElement](elements/rgb.md)
+* [LightElement](elements/light.md)
 
 
 

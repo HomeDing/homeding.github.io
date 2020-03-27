@@ -2,6 +2,8 @@
 
 The ESP-­01 and ESP-­01S modules contain a ESP8266 MCU and a up to 1 MByte flash memory chip.
 
+It is the cheapest available board with the ESP8266 and comes with a standard male adaptor.
+
 ## Overview table
 
 ![board-esp01-pins](/boards/esp01-pins.png)
