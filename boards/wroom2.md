@@ -1,6 +1,6 @@
 # Board Review ESP8266 -12 with OLED and 18650
 
-![wroom2.png](/boards/wroom2.png)
+![wroom2.jpg](/boards/wroom2.jpg)
 
 This board is offered on eBay by some local and Chinese vendors and combines a ESP8266, a OLED display a „joystick“ type of button and the hardware to charge and use an LI-ION standard 18650 battery.
 

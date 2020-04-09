@@ -166,3 +166,56 @@ tEXT:
 * The Wifi-Kit 8 SDK is a copy of the ESPRESSIV project and a selected list of libraries. It is a good source for ideas, however, I prefer using the golden sources of the SDK and libraries:
 <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series>
 * A summary to use this board <https://robotzero.one/heltec-wifi-kit-8/>
+
+
+<!-- 
+https://www.ebay.com/itm/10PCS-76-108MHz-TEA5767-FM-IC-Low-noise-RF-Amplifer-Stereo-Audio-Radio-Module-/133270600197
+
+Example:
+#include <Wire.h>
+#include "OLED.h"
+//0.91s OLED connection:
+//SDA -- D4
+//SCL -- D5
+//RST -- D2
+OLED display(SDA, SCL);
+void setup() {
+pinMode(D2, OUTPUT);
+digitalWrite(D2, LOW); // turn D2 low to reset OLED
+delay(50);
+digitalWrite(D2, HIGH); // while OLED is running, must set D2 in high
+Serial.begin(9600);
+Serial.println("OLED test!");
+// Initialize display
+display.begin();
+// Test message
+display.print("Hello ");
+delay(3*1000);
+// Test long message
+display.print("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
+delay(3*1000);
+// Test display clear
+display.clear();
+delay(3*1000);
+// Test message postioning
+display.print("TOP-LEFT");
+display.print("4th row", 4);
+display.print("RIGHT-BOTTOM", 7, 4);
+delay(3*1000);
+// Test display OFF
+display.off();
+display.print("3rd row", 3, 8);
+delay(3*1000);
+// Test display ON
+display.on();
+delay(3*1000);
+}
+int r = 0, c = 0;
+void loop() {
+r = r % 4;
+c = micros() % 6;
+if (r == 0) display.clear();
+display.print("Hello ", r++, c++);
+delay(500);
+}
+Size: 5x1.8cm/1.97x0.71inch -->

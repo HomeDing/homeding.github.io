@@ -12,7 +12,7 @@ These boards offer an easy start into the ESP8266 development. The have all you 
 
 NodeMCU is an open-source firmware for ESP8266 boards that enables scripting a IOT device using the Lua script language.
 
-![nodencm board](/boards/nodemcu.jpg)
+![nodencu boards](/boards/nodemcu-compare.jpg)
 
 There are many derivate versions on the market but usually they follow the published design:
 
@@ -20,7 +20,10 @@ There are many derivate versions on the market but usually they follow the publi
 
 - There is a USB to Serial chip but version varies.
 
-- There is an onboard Power regulator on most boards but their maximum power varies.
+- There is an onboard power regulator on most boards but their maximum power supply capacities varies.
+
+- There are multiple  versions with different sizes. If you can choose take the smaller (right) one when used on a breadboard still offers space for using jumpers. The bigger (left) one leaves no place because it consumes the whole available breadboard width 
+
 
 ## Overview table
 
