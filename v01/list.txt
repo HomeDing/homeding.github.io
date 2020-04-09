@@ -14,16 +14,6 @@ favicon192.png
 favicon270.png
 favicon48.png
 favicon512.png
-ft/css.svg
-ft/dir.svg
-ft/file.svg
-ft/htm.svg
-ft/ico.svg
-ft/js.svg
-ft/json.svg
-ft/svg.svg
-ft/txt.svg
-ft/xml.svg
 i/alarm.svg
 i/analog.svg
 i/and.svg
