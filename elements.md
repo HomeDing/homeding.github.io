@@ -270,23 +270,28 @@ More detailed information on displays and related elements can be found in [disp
 </p>
 </div>
 
-## Elements based on external Arduino Libraries
+## Required external libraries
 
-| Type                              | Library used                                        |
-| --------------------------------- | --------------------------------------------------- |
-| [DHT Element](elements/DHT)       | [DHTesp]                                            |
-| [RFSend Element](elements/rfsend) | [TabRF]                                             |
-| [Rotary Element](elements/rotary) | [RotaryEncoder]                                     |
-| [BME680 Element](elements/bme680) | [Adafruit BME680]                                   |
-| SDD1306 and SH1106 displays       | [ESP8266 and ESP32 Oled Driver for SSD1306 display] |
-| LiquidCrystal displays in I2C     | [LiquidCrystal_PCF8574]                             |
+| Library used                                        | Elements effected                                                                 |
+| --------------------------------------------------- | --------------------------------------------------------------------------------- |
+| [Adafruit NeoPixel]                                 | [Neo](/elements/neo.md)                                                           |
+| [LiquidCrystal_PCF8574]                             | [LCD display](/displays/lcd.md)                                                   |
+| [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SDD1306 display](/displays/ssd1306.md) and [SH1106 display](/displays/sh1106.md) |
+| [RotaryEncoder]                                     | [Rotary Element](elements/rotary)                                                 |
+| [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT)                                                       |
+| [OneWire]                                           | [DS18B20 Element](elements/ds18b20.md)                                            |
 
-[DHTesp]: https://www.arduinolibraries.info/libraries/dht-sensor-library-for-es-px "DHT library for ESP boards."
-[TabRF]: https://github.com/mathertel/tabrf "Table driven RF library"
-[RotaryEncoder]: https://www.arduinolibraries.info/libraries/rotary-encoder "A library for using a rotary encoder as an input."
-[Adafruit BME680]: https://www.arduinolibraries.info/libraries/adafruit-bme680-library
-[ESP8266 and ESP32 Oled Driver for SSD1306 display]: https://www.arduinolibraries.info/libraries/esp8266-and-esp32-oled-driver-for-ssd1306-display
-[LiquidCrystal_PCF8574]: https://www.arduinolibraries.info/libraries/liquid-crystal_pcf8574
+<!-- | [TabRF] | [RFSend Element](elements/rfsend) -->
+<!-- + Wire + SoftwareSerial -->
+
+[Adafruit NeoPixel]: https://github.com/adafruit/Adafruit_NeoPixel
+[LiquidCrystal_PCF8574]: https://github.com/mathertel/LiquidCrystal_PCF8574
+[ESP8266 and ESP32 Oled Driver for SSD1306 display]: https://github.com/ThingPulse/esp8266-oled-ssd1306
+[RotaryEncoder]: https://github.com/mathertel/RotaryEncoder
+[DHT sensor library for ESPx]: 
+[OneWire]:
+
+<!-- [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library" -->
 
 
 ## See also

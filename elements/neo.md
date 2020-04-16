@@ -51,7 +51,7 @@ The format #RRGGBB is used like in the css web standard and some plain color nam
 
 The '#' sign has to been avoided in URLs because it will not be passed from a URL to the server.
 
-Colors are transformend internally to a 32 values like 0x00RRGGBB.
+Colors are transformed internally to a 32 value like 0x00RRGGBB.
 
 There are some simple colors available by name:
 
