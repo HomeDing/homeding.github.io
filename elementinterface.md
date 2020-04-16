@@ -93,7 +93,8 @@ This is done by calling the callback function for every property that might chan
 
 ## Members derived from the general Element class
 
-**loglevel** - This variable holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
+**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
+
 This can be changed in the configuration of the element by the `loglevel` attribute.
 
 **active** - This variable is set to true after the element has started without problems in the start() function.

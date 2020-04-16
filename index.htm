@@ -66,7 +66,7 @@ Markdown viewer SPA using
       clear: both;
     }
 
-    .short,
+    .short, .board,
     .excerpt {
       position: relative;
       padding: 0.5rem 0.5rem 0.5rem 4rem;
@@ -83,13 +83,31 @@ Markdown viewer SPA using
       float: left;
     }
 
+    .board {
+      padding: 0.5rem 0.5rem 0.5rem 11rem;
+      min-height: 7rem;
+      width: 100%;
+      max-width: 100%;
+      background-color: #e8e8e8;
+    }
+
     .short img,
-    .excerpt img {
+    .excerpt img, .board img {
       position: absolute;
       top: 0.5rem;
       left: 0.5rem;
       height: 3rem;
     }
+
+     .board img {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      height: auto; width:auto;
+      max-height:6rem;
+      max-width: 10rem;
+    }
+
 
     nav {
       position: fixed;
@@ -202,6 +220,18 @@ Markdown viewer SPA using
       }
     });
 
+
+    var mdc2 = new markdownitContainer(md, 'board', {
+      render: function (tokens, idx) {
+        var t = tokens[idx];
+        if (t.nesting === 1) {
+          var m = t.info.trim().match(/^\s*board\s+(.*)$/);
+          return '<div class="board"><a href="#page=/boards/' + m[1] + '.md"> <img src="/boards/' + m[1] + '.jpg"></a>\n';
+        } else {
+          return '</div>\n';
+        }
+      }
+    });
 
     function getHashParam(param, defValue) {
       var h = window.location.hash;

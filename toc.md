@@ -7,16 +7,24 @@
 * [Software Architecture](/concepts/paper02.md)
 * [Elements and Actions](/concepts/paper03.md)
 * [Builtin Web server](/concepts/paper04.md)
- 
+
+
+### Examples
+* [Standard](/examples/standard.md)
+* [Minimal](/examples/minimal.md)
+* [Development](/examples/develop.md)
+  
+
 ### [General Elements](/elements.md)
-* [Analog input](/elements/analog.md)
+* [Digital Input](/elements/digitalin.md)
+* [Analog Input](/elements/analog.md)
+* [Digital Output](/elements/digitalout.md)
+* [PWM Output](/elements/pwmout.md)
 * [Button](/elements/button.md)
-* [Digital-In](/elements/digitalin.md)
-* [Digital-Out](/elements/digitalout.md)
-* [PWM-out](/elements/pwmout.md)
-* [Rotary](/elements/rotary.md)
 * [Switch](/elements/switch.md)
+* [Rotary](/elements/rotary.md)
 * [Value](/elements/value.md)
+* 
 
 ### [Sensor Elements](/elements/sensors.md)
 * [bme680](/elements/bme680.md)
@@ -28,7 +36,7 @@
 * [pms](/elements/pms.md)
 * [rfsend](/elements/rfsend.md)
 * [rgb](/elements/rgb.md)
-* [_ad5258](/elements/_ad5258.md)
+<!-- * [_ad5258](/elements/_ad5258.md)
 * [_bme280](/elements/_bme280.md)
 * [_bmp280](/elements/_bmp280.md)
 * [_ds18b20](/elements/_ds18b20.md)
@@ -42,7 +50,7 @@
 * [_pcf8574](/elements/_pcf8574.md)
 * [_pull](/elements/_pull.md)
 * [_tpa2016](/elements/_tpa2016.md)
-* [_weatherfeed](/elements/_weatherfeed.md)
+* [_weatherfeed](/elements/_weatherfeed.md) -->
 
 ### System Elements
 * [Device](/elements/device.md)
@@ -51,13 +59,13 @@
 * [ssdp](/elements/ssdp.md)
 
 ### [Time related Elements](/timeelements.md)
-* [alarm](/elements/alarm.md)
-* [dstime](/elements/dstime.md)
-* [schedule](/elements/schedule.md)
 * [ntptime](/elements/ntptime.md)
+* [dstime](/elements/dstime.md)
+* [alarm](/elements/alarm.md)
+* [schedule](/elements/schedule.md)
 * [time](/elements/time.md)
 * [timer](/elements/timer.md)
-* [_dcftimeelement](/elements/_dcftimeelement.md)
+<!-- * [_dcftimeelement](/elements/_dcftimeelement.md) -->
 
 ### [Displays](/displays.md)
 * [displays/lcd](/displays/lcd.md)
@@ -65,6 +73,7 @@
 * [displays/ssd1306](/displays/ssd1306.md)
 * [displaybar](/elements/displaybar.md)
 * [displaydot](/elements/displaydot.md)
+* [displayline](/elements/displayline.md)
 * [displaytext](/elements/displaytext.md)
 
 ### [Utility Elements](/elements.md)
@@ -108,8 +117,8 @@
 * [logger](/elements/logger.md)
 * [elementclass](/elementclass.md)
 * [elementregistry](/elementregistry.md)
-* [_microjson](/_microjson.md)
-* [_customelement](/_customelement.md)
+<!-- * [_microjson](/_microjson.md) -->
+<!-- * [_customelement](/_customelement.md) -->
 * [wifimanager](/wifimanager.md)
 * [savemode](/savemode.md)
 * [startupnet](/startupnet.md)
@@ -125,13 +134,15 @@
 * [microtemplates](/microtemplates.md)
 * [website](/website.md)
 * [websitemap](/websitemap.md)
-* [_iconsforthings](/_iconsforthings.md)
+<!-- * [_iconsforthings](/_iconsforthings.md) -->
 
 
-### Examples
+### Elements from examples 
+
 * [radio](/elements/radio.md)
 
-  ---
+
+### More
 
 * [classes](/classes.md)
 * [elementcards](/elementcards.md)
@@ -139,28 +150,26 @@
 * [examples](/examples.md)
 * [webservices](/webservices.md)
 * [webversions](/webversions.md)
-* [_backend](/_backend.md)
-* [_exampledashbutton](/_exampledashbutton.md)
-* [_i2c](/_i2c.md)
-* [_linechart](/_linechart.md)
-* [_manifest](/_manifest.md)
-* [_moisturesonsor](/_moisturesonsor.md)
+<!-- * [_backend](/_backend.md) -->
+<!-- * [_exampledashbutton](/_exampledashbutton.md) -->
+<!-- * [_i2c](/_i2c.md) -->
+<!-- * [_linechart](/_linechart.md) -->
+<!-- * [_manifest](/_manifest.md) -->
+<!-- * [_moisturesonsor](/_moisturesonsor.md) -->
 
 ### Examples
 * [examples/blink](/examples/blink.md)
 * [examples/fileupload](/examples/fileupload.md)
-* [examples/minimal](/examples/minimal.md)
 * [examples/radio](/examples/radio.md)
 * [examples/setup](/examples/setup.md)
-* [examples/standard](/examples/standard.md)
-* [examples/_batteryswitch](/examples/_batteryswitch.md)
-* [examples/_devding](/examples/_devding.md)
-* [examples/_RFGateway](/examples/_RFGateway.md)
+<!-- * [examples/_batteryswitch](/examples/_batteryswitch.md) -->
+<!-- * [examples/_devding](/examples/_devding.md) -->
+<!-- * [examples/_RFGateway](/examples/_RFGateway.md) -->
 
-### Rework:
-* [examples/pwm](/examples/pwm.md)
-* [wishlist](/wishlist.md)
-* [_private](/_private.md)
-* [_reset](/_reset.md)
-* [__memo](/__memo.md)
-* [_robust](/_robust.md)
+<!-- ### Rework: -->
+<!-- * [examples/pwm](/examples/pwm.md) -->
+<!-- * [wishlist](/wishlist.md) -->
+<!-- * [_private](/_private.md) -->
+<!-- * [_reset](/_reset.md) -->
+<!-- * [__memo](/__memo.md) -->
+<!-- * [_robust](/_robust.md) -->

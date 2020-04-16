@@ -4,6 +4,8 @@ The HomeDing library supports a range of boards that use a ESP8266 or ESP32 syst
 
 On the market you find a lot of solutions like bare chip adapters, development boards, IoT devices off-the-shelf and even complete kits that use these chips. Here you find some common species that you may consider to use but also hints to use the processor directly.
 
+Another good source of board descriptions and hints as well as references can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
+
 
 ## Full feature boards with 4 MByte flash memory
 

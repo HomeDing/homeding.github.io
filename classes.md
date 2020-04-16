@@ -58,3 +58,12 @@ This class helps producing a JSON formatted string used in the responses from se
 This class helps parsing JSON formatted strings used to read config files and web requests.  
 
 
+### WireUtil Class
+
+This class implements some of the common procedures that help implementing I2C based communication to sensors and other chips.
+
+Often I2C adaptions are using a (logical) register based access pattern.
+Here a data centric access is implemented that separates reading / writing data to a buffer from interpretation of the data in the buffer.
+That fits well to those processor implementations that support I2C data exchange through dma implementations.
+
+
