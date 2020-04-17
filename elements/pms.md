@@ -2,11 +2,16 @@
 
 The PMSElement allows using the laser based air particle and pollution sensor PMS5003 from plantower to report the number of micro particles in the air.
 
+![PMS5003 sensor](/elements/pms5003.jpg)
+
 This Element is not included into the standard firmware but can be included by defining:
 
-    #define HOMEDING_INCLUDE_PMS
+```CPP
+#define HOMEDING_INCLUDE_PMS
+```
 
 in the element register section of the sketch.
+
 
 ## About the sensor 
 
@@ -29,6 +34,8 @@ The PMS5003 device should be attached using the following connections:
 
 (as suggested by the plantower-pms5003-manual_v2-3.pdf)
 
+The 10k resistors are not strictly required as the pins seem to be internally pulled to VCC as well.
+
 
 ## Sensor Interface 
 
@@ -47,9 +54,9 @@ Using the element configuration it is possible to take a current probe value eve
 
 The following properties are available for configuration of the element:
 
-**pinrx** - The property specifies the pin to receive data from the sensor. This property must be specified.
+**pinrx** - The property specifies the pin of the board to receive data from the sensor. This property must be specified.
 
-**pintx** - The property specifies the pin to send data to the sensor. This property must be specified.
+**pintx** - The property specifies the pin of the board to send data to the sensor. This property must be specified.
 
 **readtime** - The time between capturing 2 probes from the sensor.
 
@@ -57,6 +64,20 @@ The following properties are available for configuration of the element:
 
 **loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
 
+
+## Example configuration
+
+```JSON
+"pms": {
+  "pm25": {
+    "pinrx": "D6",
+    "pintx": "D5",
+    "readtime": 300,
+    "description": "read out pm25 sensor",
+    "onvalue": "log/pm?value=$v"
+  }
+}
+```
 
 ## Diagnostic example
 

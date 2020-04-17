@@ -64,13 +64,13 @@ Be aware that the number of configured elements is also a limiting factor becaus
 
 The configuration of the HomeDing device is using in 2 files:
 
-* The system, hardware related features and the network configuration is defined in the `env.json` file. This file contains the configuration of the device, ota, sspd and optional display elements. There is no real need to change this file frequently and it stays the same for a specific board. In the documentation about the boards I know you can find samples for the env.json files. 
+* The system, hardware related features and the network configuration is defined in the `env.json` file. This file contains the configuration of the device, ota, sspd and optional display elements. There is no real need to change this file frequently and it stays the same for a specific board. In the documentation about the boards I know you can find samples for typical env.json files. 
 
-* The configuration of other elements is  placed in the `config.json` file. This file can be updated to change the behaviour of the device.
+* The configuration of other elements is  placed in the `config.json` file. This file can be updated to change the behavior of the device.
 
 * The web based configuration features will update the `config.json` file only.
 
-* The configuration is divided into these 2 files this way to make sure the device can start and can be reached over the network even when the configuration of the non-system elements is corrupted.
+* The configuration is split into these 2 files this way to make sure the device can start and can be reached over the network even when the configuration of the non-system elements in `config.json` is corrupted.
 
 
 ## Web based configuration

@@ -79,16 +79,48 @@ After starting the program you can use it for input and output.
 
 For example attaching a led with resistor to ground will prohibit starting because the level of the pin is pulled to low. It is better to design all the io functionality using a high level for the inactive state and have a resistor in place to pull the default level to high.
 
+## GPIO0 as Momentary input
+
+A momentary button that pulls the GPIO0 down to ground when pressed.
+
+This is one of the often-found wiring for the GPIO0 pin because it is possible to start uploading a new program after resetting the chip while pushing this button. Therefore it often is labeled with "FLASH".
+
+After a regular boot you can define the GPIO0 pin as an input and check the given level by using digital read function. When you detect a LOW level the switch was pushed.
+
+It is a not so good idea to replace the push button by a switch because you may start or reset the chip while the switch is closed and then don’t start the program.
+
+## GPIO0 with LED output
+
+A LED and a resistor in series to VCC.
+
+The LED and the Resistor will pull the IO level to high. There is no further need for an additional resistor in this cases. To switch the LED on you have to pull the digital output level to LOW.
+
+The maximum current that the ESP8266 can drive directly is about 10 to 20 mA. For a LED used as an indicator 5 mA may be enough.
+
+It is a not so good idea to activate the LED by using a HIGH signal. For this you have to wire LED and resistor to GND.
+and this will cause to start the cip in upload FLASH mode every time the device boots and don’t start the program.
+
+
+## GPIO0 with relais
+
+Relays need more current then a pin of the ESP8266 can deliver. Therefore, a transistor is often used for amplifying the signal.
+
+When attaching a transistor to the IO pin you also have to face not pulling the level to low. Therefore a PNP transistor to high is a good solution. When the output current you need is higher than the amount the chip can deliver directly. If you don't have a relays that is driven by 3.3 volts  (very likely) you can use a second transistor to drive the relay using another voltage.
+
+Here is a sample off driving a 5V relais:
+
+![GPIO driving a relais](gpio-relais.png)
+
 
 ## GPIO 1 / Serial TX
 
-You CAN control the blue LED if you do not need the TX function. TX is actually GPIO1 so by setting GPIO1 to HIGH will light up the LED of a ESP-01 board. Of course sending output to serial will spoil things.
+You can control the blue LED if you do not need the TX function. TX is actually GPIO1 so by setting GPIO1 to HIGH will light up the LED of a ESP-01 board. Of course sending output to serial will spoil things.
 
 
 ## GPIO2
 
 This pin has to be high while booting or resetting the chip when you like to start the regular uploaded program.
-After starting the program you can use it for input and output.
+After starting the program you can use it for input and output like the GPIO0 pin.
 
 
 ## Modification for deep sleep mode
@@ -106,7 +138,7 @@ More details and hints on using the deep sleep mode can be found in [deepsleep](
 
 Some of the ESP8266 ESP-01 boards use a (cheper) flash chip from the vendor PUYA. This chip has a slightly different behavior when writing data to the flash memory than the original flash chips that have been used. Therefore a modification in the code needs to be activated.
 
-For version 2.5.2 of the ESP8266 board package this can be enabled by addingthe following code to the Esp.h file in `packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\Esp.h`.
+For version 2.5.2 of the ESP8266 board package this can be enabled by adding the following code to the Esp.h file in `packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\Esp.h`.
 
 ```CPP
 #ifndef PUYA_SUPPORT

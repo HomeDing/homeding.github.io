@@ -15,7 +15,7 @@ it is recommended to use a board like a [NodeMCU](/boards/nodemcu.md) but keep a
 
 ## Reduced memory footprint 
 
-Compared to the [Standard example](standard.md) some measures have been taken to reduce required program memory. 
+Compared to the [Standard example](/examples/standard.md) some measures have been taken to reduce required program memory. 
 
 From the 1 MByte of memory only 128kByte of memory is used for the SPIFFS file system
 leaving about 445 kByte for program space while still enabling OTA / network based updates.

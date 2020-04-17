@@ -1,4 +1,4 @@
-## Save-Mode
+# Save-Mode
 
 The Safe Mode should be enabled on all HomeDing based devices in regular operating conditions. It is reasonable measurement against external attempts to change and misuse the device over the network.
 
