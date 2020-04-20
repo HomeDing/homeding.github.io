@@ -9,14 +9,14 @@
 * [Builtin Web server](/concepts/paper04.md)
 
 
+### Stories
+* [Air Quality Monitor](/stories/story-airquality.md)\*
+
+
 ### Examples
 * [Standard](/examples/standard.md)
 * [Minimal](/examples/minimal.md)
 * [Development](/examples/develop.md)
-
-
-### Stories
-* [Air Quality Monitor](/examples/standard.md)\*
 
 
 ### [General Elements](/elements.md)
