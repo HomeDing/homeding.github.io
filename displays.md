@@ -17,10 +17,14 @@ Supported display are:
 * Monochrome OLED displays using the chips
     * [SH1106](/displays/sh1106.md)
     * [SSD1306](/displays/ssd1306.md)
+    * SSD1309 supported through compatibility with SSD1306
 
 * Monochrome LCD displays
     * [Liquid Chrystal](/displays/lcd.md) displays with a HD44780 chip attached in the I2C bus using a PCF8574 chip.
 
+* Color OLED Displays
+    * SSD 1331 (in planning)
+ 
 The configured and therefore activated display element will automatically activate the corresponding display adapter implementation and will configure it according to the setting given in the configuration.
 
 ## Display Information Elements
