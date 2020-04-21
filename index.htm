@@ -329,15 +329,15 @@ Markdown viewer SPA using
 
         // modify links to work:
 
-        hText = hText.replace(/href="([\w\/]+).md"/g, 'href="#page=$1.md"');
-        hText = hText.replace(/href="([\w\/]+)"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="([\w\-\/]+).md"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="([\w\-\/]+)"/g, 'href="#page=$1.md"');
         this.innerHTML = hText;
 
         // verify all local .md links
         forAllNodeList(
           this.querySelectorAll('a[href]'),
           function (aObj) {
-            if (aObj.href.match(/=(\w*.md)$/)) aObj.classList.add('verify');
+            if (aObj.href.match(/=([\w\-\/]+.md)$/)) aObj.classList.add('verify');
           }.bind(this)
         );
       },
@@ -372,8 +372,8 @@ Markdown viewer SPA using
     loadFile('toc.md',
       function (txt) {
         var hText = md.render(txt);
-        hText = hText.replace(/href="([\w\/]+).md"/g, 'href="#page=$1.md"');
-        hText = hText.replace(/href="([\w\/]+)"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="([\w\-\/]+).md"/g, 'href="#page=$1.md"');
+        hText = hText.replace(/href="([\w\-\/]+)"/g, 'href="#page=$1.md"');
         tocObj.innerHTML = hText;
       }.bind(this),
       function (x) {

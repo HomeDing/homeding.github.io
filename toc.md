@@ -10,7 +10,7 @@
 
 
 ### Stories
-* [Air Quality Monitor](/stories/story-airquality.md)\*
+* [Air Quality Monitor](/stories/story-airquality.md)
 
 
 ### Examples
