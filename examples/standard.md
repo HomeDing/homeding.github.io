@@ -1,9 +1,27 @@
 # Standard Example
 
-> #Draft
+Th standard example can be used on any board that has a 4MByte Flash memory and is a good jumpstart for any project you may have. This example e.G. runs on all the [nodemcu boards](/boards/nodemcu.md).
 
-This example can be used on any board that has a 4MByte Flash memory. This includes all the nodemcu boards.
 No additional hardware is required to start this example and the Serial interface is used to transfer some internal actions and infos.
+
+If this is the first time you use an ESP8266 board, some instructions on how to setup your development environment can be found here:
+
+[Step by Step setting up a development environment](/stepssetup.md)
+
+There are some options in uploading the requiredsoftware and registration on the network that s described here:
+
+[Step by Step Bring your device to work](/stepsnewdevice.md)
+
+
+## Upload the sketch and Web UI
+
+Connect the board to your computer and select the COM port that fits to the new attached board.
+
+
+
+
+
+upload the sketch and 
 
 After flashing the software and the web files the web interface is fully functional. The following elements are configured:
 
