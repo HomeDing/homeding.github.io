@@ -57,6 +57,11 @@ Markdown viewer SPA using
       border-bottom: 1px solid #203050;
     }
 
+    img {
+      max-width: 600px;
+      height: auto;
+    }
+
     p>img {
       width: auto;
       height: auto;
@@ -66,7 +71,8 @@ Markdown viewer SPA using
       clear: both;
     }
 
-    .short, .board,
+    .short,
+    .board,
     .excerpt {
       position: relative;
       padding: 0.5rem 0.5rem 0.5rem 4rem;
@@ -92,19 +98,21 @@ Markdown viewer SPA using
     }
 
     .short img,
-    .excerpt img, .board img {
+    .excerpt img,
+    .board img {
       position: absolute;
       top: 0.5rem;
       left: 0.5rem;
       height: 3rem;
     }
 
-     .board img {
+    .board img {
       position: absolute;
       top: 0.5rem;
       left: 0.5rem;
-      height: auto; width:auto;
-      max-height:6rem;
+      height: auto;
+      width: auto;
+      max-height: 6rem;
       max-width: 10rem;
     }
 
@@ -115,7 +123,7 @@ Markdown viewer SPA using
       width: 280px;
       z-index: 1;
       left: -280px;
-      transition: all 0.1s;
+      transition: all 0.2s;
       padding-top: 1rem;
       /* background-color: #d0d0d0; */
     }
@@ -126,6 +134,10 @@ Markdown viewer SPA using
 
     nav.open {
       left: 0;
+    }
+
+    nav+div {
+      transition: all 0.2s;
     }
 
     nav.open+div {
@@ -140,7 +152,8 @@ Markdown viewer SPA using
         background-color: white;
       }
 
-      nav,.u-navbar {
+      nav,
+      .u-navbar {
         display: none
       }
 
@@ -149,8 +162,8 @@ Markdown viewer SPA using
       }
 
       .short {
-      border: 1px solid silver;
-    }
+        border: 1px solid silver;
+      }
     }
   </style>
 </head>
@@ -163,13 +176,19 @@ Markdown viewer SPA using
     </div>
   </div>
   <div class="u-navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button"
+      style="xvertical-align: middle; height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <!-- <a href="#" class="button"><img src="menu.svg"></a> -->
     <a href="#" class="button">Home</a>
     <a href="#page=concepts/paper01.md" class="button">Concepts</a>
     <a href="#page=elements.md" class="button">Elements</a>
     <a href="#page=boards.md" class="button">Boards</a>
     <a href="#page=recipes.md" class="button">Recipes</a>
   </div>
-  <nav class="open inpage"></nav>
+  <nav class="inpage"></nav>
   <div class="container-fluid">
     <div class="row"></div>
 
@@ -194,6 +213,15 @@ Markdown viewer SPA using
   <script>
     var ffObj = document.querySelector('#foundFiles');
     var mfObj = document.querySelector('#missingFiles');
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    // alert(window.innerWidth);
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
 
     var md = new markdownit('default', {
       html: true,
@@ -201,8 +229,8 @@ Markdown viewer SPA using
       linkify: true,
       langPrefix: 'hljs language-',
       highlight: function (str, lang) {
-        if (! hljs.getLanguage(lang))
-          lang="plaintext";
+        if (!hljs.getLanguage(lang))
+          lang = "plaintext";
         var t = hljs.highlight(lang, str);
         return (t.value);
       }
