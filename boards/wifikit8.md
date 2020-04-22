@@ -91,7 +91,12 @@ to be pulled to low to reset the  - causing a reset.
 
 Anyhow, the OLED on the board requires some relevant current so long term operation on battery was not in focus for this board.
 
+
 ## System configuration
+
+The following env.json file can be used on these boards:
+
+**env.json**
 
 ```JSON
 {
@@ -101,25 +106,23 @@ Anyhow, the OLED on the board requires some relevant current so long term operat
       "description": "Wifi Kit 8 Module",
       "reboottime": "24h",
       "button": "D3",
+      "led": "D4",
       "I2C-SDA": "D2",
       "I2C-SCL": "D1"
-
     }
   },
 
   "ota": {
     "main": {
       "port": 8266,
-      "NOpasswd": "123",
+      "passwd": "123",
       "description": "allow Over the Air Updates"
     }
   },
 
   "ssdp": {
     "0": {
-      "manufacturer": "Matthias Hertel",
-      "ManufacturerURL": "https://www.mathertel.de",
-      "ModelURL": "http://www.mathertel.de/HomeDing"
+      "manufacturer": "Matthias Hertel"
     }
   },
 
