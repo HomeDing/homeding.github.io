@@ -8,9 +8,7 @@ This is a step by step instruction to bring a device based on the HomeDing libra
 - [Register the device on the local WiFi network](#register-the-device-on-the-local-wifi-network)
 - [Find the new device on the network](#find-the-new-device-on-the-network)
 - [Upload the Web UI files to the onboard file system](#upload-the-web-ui-files-to-the-onboard-file-system)
-- [Configure /env.json](#configure-envjson)
-- [Configure /config.json](#configure-configjson)
-- [Start with recipes and explore the available elements](#start-with-recipes-and-explore-the-available-elements)
+- [See also](#see-also)
 
 
 
@@ -82,7 +80,8 @@ using a temporary device name and then start into normal operating mode.
 
 Without any configuration the devicename is constructed by "ESP-" and a device specific hex number given by the digits of the uniques network adapter MAC address.
 
-try: 
+try:
+
 * http://\<devicename from the WIFI Manager dialog\>
 * http://\<devicename from the Serial Monitor\> (should be identical)
 * http://\<ip-address from the Serial Monitor\>
@@ -90,37 +89,54 @@ try:
 
 ## Upload the Web UI files to the onboard file system
 
-> Draft ???
+There are 3 sources where you can find the files to upload for the web UI.
 
-GET <http://homeding/$upload> <sup>*1</sup>
+* The `data` folder in the standard example has a copy of the WebUI files that fits to the set of elements of the standard example and some more.
+* On homeding.github.io these files are available as well and can be downloaded.   
+* The `WebFiles` project on https://www.github.com/HomeDing/WebFiles is used to create files for the WebUI. 
 
-GET <http://homeding/$boot> <sup>*1</sup>
-
-Upload data folder
-
-
-## Configure /env.json
-
-> Draft ???
-
-```JSON
-{
-  "device": {
-    "0": {
-      "name": "newdevice"
-    }
-  }
-}
-```
-
-## Configure /config.json
-
-> Draft ???
-
-* blink sample
-
-## Start with recipes and explore the available elements
+To transfer the files to the device 4 methods are available:
 
 
+* Using the ESP8266 filesystem Upload utility can be used to upload all files from a `data` folder at once.
+
+  This method has the bad effect that all existing files will be deleted because a complete filesystem image is created and transferred.
+
+  This method is useful when starting with a new board.
+
+* The firmware offers an upload interface as part of the embedded web server. This upload service can be used by the builtin minimal UI available at 
+<http://homeding/$upload.htm>. This UI is implemented with minimal size (looks plain ugly) but is part of the firmware.
+
+  This method is useful when uploading new files or update individual files. Cannot delete files and keeps other files.
+
+  ![Builtin Upload Utility](/upload.png)
+
+  Upload works by using drag&drop. select the files (not folders) and drop them over the "drop here" region. All files will be uploaded.
+
+  To upload icon files for the elements in the `/i` folder you can click the `I-Upload` link before dropping these files.
+
+* The firmware offers an update interface as part of the embedded web server.
+This is available at <http://homeding/$boot.htm>.
+By pressing the start button all files from the homeding documentation website are transferred to the device.
+The list of files is available at: https://homeding.github.io/v01/list.txt.
+
+  This method is useful when updating a standard firmware by a new version and the UI files need to be updated.
+
+  This method is also useful when starting with a new board.
+
+  ![Builtin Upload Utility](/boot.png)
+
+* The [Micro IDE](/_microide.md) has a upload area that can be used to upload files into the filesystem. Only files in the root folder (not /i/*.svg) can be uploaded.
+
+* The [Micro IDE](/_microide.md) can create new files and can update existing files by entering text and saving it to a (new) filename.
+
+* When working with commandline tools the following cURL statement can be used to upload individual files.
+
+    curl --form "fileupload=test.txt;filename=/test.txt" http://homeding/
+
+
+## See also
+
+* [Standard Example](/examples/standard.md)
 * [Recipes](recipes.md)
 * [Elements](elements.md)
