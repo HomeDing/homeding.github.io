@@ -25,17 +25,17 @@ Not mentioned here are the pin numbers on the real chip. If you need to used the
 | GPIO1  | D10 | Serial0-TX                 | Limited usage for IO                       |
 | GPIO2  | D4  | PWM, Serial1-TX, Boot, LED | Keep HIGH while booting, output-active-LOW |
 | GPIO3  | D9  | Serial0-RX                 | Limited usage for IO                       |
-| GPIO4  | D2  | I2C                        |
-| GPIO5  | D1  | I2C                        |
+| GPIO4  | D2  | I2C                        |                                            |
+| GPIO5  | D1  | I2C                        |                                            |
 | GPIO6  | --  | SDIO                       | cannot be used                             |
 | GPIO7  | --  | SDIO                       | cannot be used                             |
 | GPIO8  | --  | Serial1-RX, SDIO           | cannot be used                             |
 | GPIO9  | D11 | SDIO                       | cannot be used                             |
 | GPIO10 | D12 | SDIO                       | cannot be used                             |
 | GPIO11 | --  | SDIO                       | cannot be used                             |
-| GPIO12 | D6  | PWM                        |
-| GPIO13 | D7  |                            |
-| GPIO14 | D5  | PWM                        |
+| GPIO12 | D6  | PWM                        |                                            |
+| GPIO13 | D7  |                            |                                            |
+| GPIO14 | D5  | PWM                        |                                            |
 | GPIO15 | D8  | PWM, Boot                  | Keep LOW while booting, output-active-HIGH |
 | GPIO16 | D0  | deep sleep reset, LED      | cannot be used when using deep sleep mode  |
 

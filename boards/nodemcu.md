@@ -2,17 +2,17 @@
 
 These boards offer an easy start into the ESP8266 development. The have all you need for programming, offer much memory and a LED for `first step` projects is on board.
 
-* 4 Mbyte Flash ROM
 * Based on ESP-12 or ESP-12E
-* USB to serial adapter on board
+* 4 Mbyte Flash ROM
+* USB to serial adapter
 * automatic programming mode
 * breadboard friendly (most versions)
 * 3.3 volts regulator
-* On-board LED
+* On-board extra LED
 
 NodeMCU is an open-source firmware for ESP8266 boards that enables scripting a IOT device using the Lua script language.
 
-![nodencu boards](/boards/nodemcu-compare.jpg)
+![nodencu boards](/boards/nodemcu-compare-led.jpg)
 
 There are many derivate versions on the market but usually they follow the published design:
 
@@ -27,11 +27,12 @@ There are many derivate versions on the market but usually they follow the publi
 
 ## Overview table
 
-| GPIO  | Pin | Functionality |
-| ----- | --- | ------------- |
-| GPIO0 | D3  | Flash Button  |
-| RESET |     | RESET Button  |
-| GPIO2 | D4  | Blue LED      |
+| GPIO   | Pin | Functionality      |
+| ------ | --- | ------------------ |
+| GPIO0  | D3  | Flash Button       |
+| RESET  |     | RESET Button       |
+| GPIO2  | D4  | Blue LED on module |
+| GPIO16 | D0  | Blue LED on board  |
 
 
 ## Onboard Momentary Buttons
@@ -67,6 +68,50 @@ Those boards may also be used by applying external power on +5V and +3.3V pins.
 
 A multi purpose voltmeter is helpful.
 
+
+## System configuration
+
+The following env.json file can be used on these boards:
+
+**env.json**
+
+```JSON
+{
+  "device": {
+    "main": {
+      "name": "nodeding",
+      "description": "nodeMCU board config",
+      "reboottime": "24h",
+      "button": "D3",
+      "led": "D4",
+      "I2C-SDA": "D2",
+      "I2C-SCL": "D1"
+    }
+  },
+
+  "ota": {
+    "main": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "allow Over the Air Updates"
+    }
+  },
+
+  "ssdp": {
+    "0": {
+      "manufacturer": "Matthias Hertel"
+    }
+  },
+
+  "DisplaySSD1306": {
+    "0": {
+      "address": "60",
+      "resetpin" : "D0",
+      "height": 32
+    }
+  }
+}
+```
 
 ## See also
 
