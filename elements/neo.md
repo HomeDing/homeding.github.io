@@ -1,11 +1,12 @@
 # Neo Element
 
 Neopixels is a brand name for LED stripes with the ws2812 chip.
+
 These LED stripes and RGB LEDs are using the ws2812 or similar protocol that sends RGB values over a 1 wire data line. Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.
 
 The neo allows driving these LEDs by using the Adafruit Neopixel Library and by providing some color animations and transitions.
 
-A very similar functionality applies to the [RGBElement](elements/rgb.md) that can drive a single RGB LED or light.
+A very similar functionality applies to the [Light Element](/elements/light.md) that can drive a single RGB or single color LED.
 
 <!--
 If you require more complex light situations and light animations 
@@ -108,7 +109,8 @@ Example:
 # See also
 
 * Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
-* [LightElement](elements/light.md)
+* [Light Element](/elements/light.md)
+
 
 
 

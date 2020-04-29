@@ -13,10 +13,11 @@
 * [Air Quality Monitor](/stories/story-airquality.md)
 
 
-### Examples
+### [Examples](/examples.md)
 * [Standard](/examples/standard.md)
 * [Minimal](/examples/minimal.md)
 * [Development](/examples/develop.md)
+<!-- * [examples/radio](/examples/radio.md) -->
 
 
 ### [General Elements](/elements.md)
@@ -31,20 +32,26 @@
 * 
 
 ### [Sensor Elements](/elements/sensors.md)
-* [bme680](/elements/bme680.md)
+* [ds18b20](/elements/ds18b20.md)
 * [bmp280](/elements/bmp280.md)
+<!-- * [_bme280](/elements/_bme280.md) -->
+* [bme680](/elements/bme680.md)
 * [dht](/elements/dht.md)
-* [dmx](/elements/dmx.md)
-* [log](/elements/log.md)
-* [menu](/elements/menu.md)
-* [neo](/elements/neo.md)
 * [pms](/elements/pms.md)
-<!-- * [rfsend](/elements/rfsend.md) -->
-* [rgb](/elements/rgb.md)
+  
+### Data logging
+* [log](/elements/log.md)
+
+### Light Elements
+* [Light](/elements/light.md)
+* [neo](/elements/neo.md)
+
+### Other
+* [dmx](/elements/dmx.md)
+* [menu](/elements/menu.md)
 * 
+<!-- * [rfsend](/elements/rfsend.md) -->
 <!-- * [_ad5258](/elements/_ad5258.md)
-* [_bme280](/elements/_bme280.md)
-* [_ds18b20](/elements/_ds18b20.md)
 * [_gy91](/elements/_gy91.md)
 * [_max30105](/elements/_max30105.md)
 * [_MCP4725](/elements/_MCP4725.md)
@@ -96,6 +103,7 @@
 * [servo](/recipes/servo.md)
 * [tempdisplay](/recipes/tempdisplay.md)
 * [water](/recipes/water.md)
+* [blink](/recipes/blink.md)
 
 ### How To
 * [stepsnewdevice](/stepsnewdevice.md)
@@ -152,7 +160,6 @@
 * [classes](/classes.md)
 * [elementcards](/elementcards.md)
 * [elementinterface](/elementinterface.md)
-* [examples](/examples.md)
 * [webservices](/webservices.md)
 * [webversions](/webversions.md)
 <!-- * [_backend](/_backend.md) -->
@@ -178,3 +185,8 @@
 <!-- * [_reset](/_reset.md) -->
 <!-- * [__memo](/__memo.md) -->
 <!-- * [_robust](/_robust.md) -->
+
+<!-- ### Examples
+* [examples/setup](/examples/setup.md) -->
+
+

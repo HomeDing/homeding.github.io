@@ -1,3 +1,0 @@
-# File upload options
-
-> #draft 
