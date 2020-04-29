@@ -13,13 +13,13 @@ The ESP boards to have a system timer that keeps and updates a local time with a
 
 ## accessing and adjusting the local time
 
-The [NTPTime Element](elements/ntptime.md) retrieves the current time from a NTP server and can translate it into the local time by using to local timezone setting.
+The [NTPTime Element](/elements/ntptime.md) retrieves the current time from a NTP server and can translate it into the local time by using to local timezone setting.
 Devices that can reach a NTP internet service can use this option.
 
 After a reboot the elements that require a accurate local time will not start working when the NTP time request fails.
 As this can happen it is not an option for devices that must operate even when the internet is not available like heating systems.
 
-The [DSTime Element](elements/dstime.md) retrieves the current local time from a local attached RTC Chip like the DS3231.
+The [DSTime Element](/elements/dstime.md) retrieves the current local time from a local attached RTC Chip like the DS3231.
 After a reboot the time will be restored from the chip. This is a good option for devices that must operate even when the internet is not available like heating systems.
 
 <!-- The DCFTime Element will ... -->
@@ -29,14 +29,14 @@ After a reboot the time will be restored from the chip. This is a good option fo
 
 Because timing is required by many Elements the time and real-time feature is directly supported by the board class.
 
-The [Time Element](elements/time.md) send actions with the actual local time as a value. This can be used e.g. to display the current time on a display.
+The [Time Element](/elements/time.md) send actions with the actual local time as a value. This can be used e.g. to display the current time on a display.
 
-The [Schedule Element](elements/schedule.md) send on and off actions based on the actual local time. This can be used e.g. to switch a light.
+The [Schedule Element](/elements/schedule.md) send on and off actions based on the actual local time. This can be used e.g. to switch a light.
 
-The [Alarm Element](elements/alarm.md) sends a single action when the configured alarm time passes.
+The [Alarm Element](/elements/alarm.md) sends a single action when the configured alarm time passes.
 This can be used e.g. to start a wakeup procedure.
 
-The [Timer Element](elements/timer.md) is not working based on a local time and creates timer (duration) based actions. This element can be used even when no current local time is known to the device.
+The [Timer Element](/elements/timer.md) is not working based on a local time and creates timer (duration) based actions. This element can be used even when no current local time is known to the device.
 
 
 **Board->getSeconds()**
@@ -52,14 +52,14 @@ Using the getSeconds function is preferred over using (millis() / 1000).
 
 When a real time is available this method return the seconds since starting the day. It returns 0 when the real time is not available.
 
-To use this functionality a [NTPTime Element](elements/ntptime) or [DSTime Element](elements/dstime) needs to be configured.
+To use this functionality a [NTPTime Element](/elements/ntptime) or [DSTime Element](/elements/dstime) needs to be configured.
 
 
 **Board->getTime()**
 
 When a real time is available this method returns the milliseconds since 1.1.1970 a usual binary format for times in C++.
 
-To use this functionality a [NTPTime Element](elements/ntptime) or [DSTime Element](elements/dstime) needs to be configured.
+To use this functionality a [NTPTime Element](/elements/ntptime) or [DSTime Element](/elements/dstime) needs to be configured.
 
 
 <!-- To set the real time to an actual value this function must be called and the milliseconds since 1970 must be passed. The offset to the current millis is recorded order adjusted.
