@@ -21,7 +21,7 @@ The HomeDing library is also using this approach by using "micro" implementation
 By using the following micro implementations a small component framework is available that fits in to web servers with the space restrictions we can find in the boards and chips.
 
 **The micro IDE** is a simple text editing utility primary use case is to modify the env.json and config.json configuration files.
-More in: [Micro IDE](_microide.md)
+More in: [Micro IDE](/microide.md)
 
 **The micro templates** are used to build HTML components that can be used at different places to visualize elements, data and other UI components like dialogs.
 More in: [Micro Templates](microtemplates.md)

@@ -45,7 +45,7 @@ This is described in detail in the [Element Class Registration](ElementRegistry)
 The Information, Errors and Traces that are produced during runtime are routed through this class inElement Registry knows all the Element classes that can be configured.
 In case the logging feature of the device is switched on the errors are also stored to the log files.
 
-See: [Device Logging](logger)
+See: [Device Logging](logger.md)
 
 
 ### MicroJsonComposer.cpp

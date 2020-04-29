@@ -18,7 +18,7 @@ this will be modified by the logging level in the device configuration shortly a
 
 This is an Element implementation that only contains the empty functions and some additional information as comments that help implementing new Elements.
 
-The 2 files (TemplateElement.*) can be copies / renamed and the class name should be adjusted as well.
+The 2 files (TemplateElement.*) can be copied / renamed and the class name should be adjusted as well.
 
 Then implement the inner part of the set, loop and other functions as required.
 

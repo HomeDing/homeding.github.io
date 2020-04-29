@@ -14,7 +14,8 @@ The following properties are available for configuration of the element.
 
 ### Basic settings
 
-**name** - The device name is specifying the hostname that is used to register the device on the network. The device can be accessed by any browser on the same network using the URL `http://<name>`.
+**name** - The device name is specifying the hostname that is used to register the device on the network.
+The device can be accessed by any browser on the same network using the URL `http://<name>`.
 
 **rebootTime** - Specifies the duration after the device is rebooted to fully clean up the memory.
 
@@ -22,7 +23,8 @@ The following properties are available for configuration of the element.
 
 **room** - The location of the device.
 
-**logLevel** - By specifying a loglevel for the device **all** elements will use this loglevel to output debug messages over the serial interface and into the system log file. See also [Device Logging](logger).
+**logLevel** - By specifying a logLevel for the device **all** elements will use this loglevel to output debug messages over the serial interface and into the system log file.
+See also [Device Logging](logger.md).
 
 **logFile** - set to 1/true to enable storing lines from the system log to files. default: 0
 
@@ -97,4 +99,4 @@ The following action is implemented:
 ## See also
 
 * [WiFiManager](/wifimanager)
-* [Device Logging](logger)
+* [Device Logging](logger.md)
