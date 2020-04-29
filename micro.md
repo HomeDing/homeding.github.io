@@ -20,6 +20,9 @@ The HomeDing library is also using this approach by using "micro" implementation
 
 By using the following micro implementations a small component framework is available that fits in to web servers with the space restrictions we can find in the boards and chips.
 
+**The micro IDE** is a simple text editing utility primary use case is to modify the env.json and config.json configuration files.
+More in: [Micro IDE](_microide.md)
+
 **The micro templates** are used to build HTML components that can be used at different places to visualize elements, data and other UI components like dialogs.
 More in: [Micro Templates](microtemplates.md)
 
@@ -65,10 +68,16 @@ This project is using a node.js / express server to mock some of the features of
 <https://github.com/HomeDing/WebFiles>
 
 
+## Micro IDE
+
+The Web UI implementation from the HomeDing library supports a minimal **Integrated Development Environment** (IDE)
+that allows modifying text based files using any browser.
+
+For Details see [Micro-IDE](microide.md).
 
 ## micro JavaScript Library
 
-The minimalist JavaScript implementation that implements templating, function and data binding and is available to the HomeDing devices.
+The minimalist JavaScript implementation that implements templates, function and data binding and is available to the HomeDing devices.
 
 The functionality offers
 * to create new controls from given templates into the web page
