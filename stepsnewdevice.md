@@ -126,9 +126,9 @@ The list of files is available at: https://homeding.github.io/v01/list.txt.
 
   ![Builtin Upload Utility](/boot.png)
 
-* The [Micro IDE](/_microide.md) has a upload area that can be used to upload files into the filesystem. Only files in the root folder (not /i/*.svg) can be uploaded.
+* The [Micro IDE](/microide.md) has a upload area that can be used to upload files into the filesystem. Only files in the root folder (not /i/*.svg) can be uploaded.
 
-* The [Micro IDE](/_microide.md) can create new files and can update existing files by entering text and saving it to a (new) filename.
+* The [Micro IDE](/microide.md) can create new files and can update existing files by entering text and saving it to a (new) filename.
 
 * When working with commandline tools the following cURL statement can be used to upload individual files.
 
