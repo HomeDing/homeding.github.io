@@ -60,12 +60,16 @@ The generic behavior implementation uses the following properties on HTML elemen
 
 **u-value='<propertyname>'** Using this attribute on a HTML element causes that the data from the specified property will be put into the `value` of the HTML element.
 
+**u-bool** as classname
+This attribute on a HTML element can be used to visualize boolean (0/1) values.
+A HTML element with this classname and a value 1 will get a green color assigned where a value 0 will assign a red value.
+
 **u-active='<propertyname>'** Using this property the class name of the HTML element will be set to `active` when the specified property has a true value.
 
 **u-text='<propertyname>'** Using this attribute on a HTML element causes that the data from the specified property will be put into the `text` of the HTML element.
 
-* once buttons
+<!-- * once buttons -->
 
-* function binding
+<!-- * function binding -->
 
-* data binding
+<!-- * data binding -->

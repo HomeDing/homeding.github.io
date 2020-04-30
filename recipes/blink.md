@@ -27,7 +27,7 @@ Therefore the `inverse` mode is enabled and the initial (logical input) value is
   },
   "digitalout": {
     "led": {
-      "pin": "D0",
+      "pin": "D4",
       "inverse": "true",
       "value": "0",
       "description": "Builtin LED is on Port D0 = GPIO16"

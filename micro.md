@@ -98,7 +98,7 @@ To handle JSON based files in a C++ programming environment a parser for this fi
 
 The micro JSON Parser is implemented in the `MicroJsonParser` class.
 
-For Details see [Micro-JSON](microjson)
+For Details see [Micro-JSON](microjson.md)
 
 ## micro Hub and Store
 

@@ -43,7 +43,7 @@ The [Timer Element](/elements/timer.md) is not working based on a local time and
 
 The `getSeconds()` method in the `board` class returns the full seconds since starting the device.
 
-Because most of the timings are based on seconds this methon can be used as the timing reference for emitting events when real time is not required.
+Because most of the timings are based on seconds this method can be used as the timing reference for emitting events when real time is not required.
 
 Using the getSeconds function is preferred over using (millis() / 1000).
 
