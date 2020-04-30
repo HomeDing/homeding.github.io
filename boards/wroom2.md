@@ -6,25 +6,23 @@ This board is offered on eBay by some local and Chinese vendors and combines a E
 
 A battery holder is on the back.
 
-## Overview table
+## GPIO Pins in use
 
-| GPIO   | Pin | Functionality       | Remarks    |
-| ------ | --- | ------------------- | ---------- |
-|        | AD  | Analog input        |            |
-| GPIO0  | D3  | Button Left         |            |
-| GPIO2  | D4  | connector           |            |
-| GPIO15 | D8  | connector           |            |
-| GPIO3  | D9  | connector           |            |
-| GPIO1  | D10 | connector           |            |
-| GPIO5  | --- | SDA                 | (D1)       |
-| GPIO4  | --- | SCL                 | (D2)       |
-|        | --- | I2C bus for display | 60 (=0x3c) |
-|        | --- | Display size        | 128 * 64   |
-| Reset  |     | Button Right        |            |
-| GPIO12 |     | Button UP           | (D6)       |
-| GPIO13 |     | Button Down         | (D7)       |
-| GPIO14 |     | Button Press        | (D5)       |
-| GPIO16 |     | green LED           | (D0)       |
+| GPIO       | Pin | Functionality |
+| ---------- | --- | ------------- |
+|            | AD  | Analog input  |
+| GPIO0(D3)  | D3  | Button Left   |
+| GPIO2(D4)  | D4  | connector     |
+| GPIO15(D8) | D8  | connector     |
+| GPIO3(D9)  | D9  | connector     |
+| GPIO1(D10) | D10 | connector     |
+| GPIO5(D1)  | --- | SDA           |
+| GPIO4(D2)  | --- | SCL           |
+| Reset      |     | Button Right  |
+| GPIO12(D6) |     | Button UP     |
+| GPIO13(D7) |     | Button Down   |
+| GPIO14(D5) |     | Button Press  |
+| GPIO16(D0) |     | green LED     |
 
 
 ## Features
@@ -34,15 +32,26 @@ in a robust and reliable way.
 
 Because it comes with a LI-ION standard 18650 battery holder and a power management for Li-ION charging it is portable for the time the battery offers power (> 8h).
 
-The display is using the OLED technology and the SSD1306 chip is attached using the I2C bus. A library for driving this chip is available "ESP8266 and ESP32 Oled Driver for SSD1306 display". It Supports 128x64 and 182x32 displays.
+There is a green LED at GPIO16(D0).
 
-There is a green LED at GPIO16 (D0).
 The blue LED on the ESP-12 can also be used GPIO2(D4).
+
+
+## Display
+
+The display is using the OLED technology and the  chip is attached using the internal I2C bus
+and is supported by the SSD1306 Element and Display adapter.
+
+It Supports 128x64 and 182x32 displays.
+
+I2C Address is 60 (=0x3c).
+
+The display size is 128 * 64 pixels.
 
 
 ### Onboard LED
 
-The green LED at GPIO16 (D0) only can be used when there is no need for deep sleep functionality and only can be switched on and off.
+The green LED at GPIO16(D0) only can be used when there is no need for deep sleep functionality and only can be switched on and off.
 
 In cannot be dimmed using by PWM because GPIO16 is not supporting this.
 
