@@ -2,6 +2,7 @@ board-new.htm
 board-templates.htm
 board.htm
 browserconfig.xml
+clock.svg
 ding.htm
 element.svg
 elements.json
@@ -31,10 +32,8 @@ i/displaylcd.svg
 i/displaysh1106.svg
 i/displayssd1306.svg
 i/displaytext.svg
-i/door.svg
 i/dstime.svg
 i/element.svg
-i/home.svg
 i/ide.svg
 i/log.svg
 i/menu.svg
@@ -59,13 +58,9 @@ i/ssdp.svg
 i/start.svg
 i/stop.svg
 i/switch.svg
-i/template48.svg
 i/time.svg
 i/timer.svg
-i/tool.svg
 i/value.svg
-i/water.svg
-i/wifi.svg
 index.htm
 iotstyle.css
 lineChart.js
@@ -82,3 +77,4 @@ pieChart.js
 pieChart.svg
 polyfill.js
 spinner.gif
+updateicons.htm
