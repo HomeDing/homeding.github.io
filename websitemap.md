@@ -4,17 +4,17 @@ The web site allows accessing and configuring the device directly with a standar
 
 The following files are part of the web UI implementation: 
 
-| File          | description                        |
-| ------------- | ---------------------------------- |
-| /index.htm    | Home Page                          |
-| /board.htm    | Dashboard with configured elements |
-| /microide.htm | IDE for modifying configuration    |
-| /log.htm      | system log viewer                  |
-| /ding.htm     | reduced Dashboard                  |
-| /panel.htm    | elements and actions as graph      |
-| /favicon*.*   | icon support                       |
-| /i/*.svg      | icons for elements                 |
-| /*.js, *.css  | supporting files                   |
+| File          | description                                         |
+| ------------- | --------------------------------------------------- |
+| /index.htm    | Home Page                                           |
+| /board.htm    | [Dashboard](/dashboard.md) with configured elements |
+| /microide.htm | IDE for modifying configuration                     |
+| /log.htm      | system log viewer                                   |
+| /ding.htm     | reduced Dashboard                                   |
+| /panel.htm    | elements and actions as graph                       |
+| /favicon*.*   | icon support                                        |
+| /i/*.svg      | icons for elements                                  |
+| /*.js, *.css  | supporting files                                    |
 
 
 These UI pages are hosted on the device itself. They are implemented respecting the small available memory but provide some powerful functions to even configure and customize the device.

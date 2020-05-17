@@ -46,7 +46,7 @@ They are implemented in SVG format that results in minimal size while supporting
 The HomeDing library comes with a web server implementation and a small web site that can be stored in the file system of a ESP8266 base device that offers the following pages:
 
 * A home page providing a static welcome screen and some further navigation links.
-* A dashboard that presents all active elements and their actual data.
+* A [dashboard](/dashboard.md) that presents all active elements and their actual data.
 * A minimal web-based IDE page that allows changing the text based files of the web server including the configuration files.
 * A generic diagram that displays all existing elements and the configured actions in between.
 
