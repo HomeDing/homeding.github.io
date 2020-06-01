@@ -13,6 +13,12 @@
 * [Air Quality Monitor](/stories/story-airquality.md)
 
 
+### Step-by-Step Guides
+* [Setup a new device](/stepsnewdevice.md)
+* [Update Web files](/stepsupdateweb.md)
+* [Setup a Arduino environment](/examples/setup.md)
+
+
 ### [Examples](/examples.md)
 * [Standard](/examples/standard.md)
 * [Minimal](/examples/minimal.md)
@@ -32,24 +38,23 @@
 * 
 
 ### [Sensor Elements](/elements/sensors.md)
-* [ds18b20](/elements/ds18b20.md)
-* [bmp280](/elements/bmp280.md)
-<!-- * [_bme280](/elements/_bme280.md) -->
-* [bme680](/elements/bme680.md)
-* [dht](/elements/dht.md)
-* [pms](/elements/pms.md)
+* [DS18B20/Dallas sensor](/elements/ds18b20.md)
+* [DHT11/DHT22 sensor](/elements/dht.md)
+* [Bosch BMP280](/elements/bmp280.md)
+* [Bosch BME680](/elements/bme680.md)
+* [PMS5003 Air Particle sensor](/elements/pms.md)
   
 ### Data logging
-* [log](/elements/log.md)
+* [Log File Element](/elements/log.md)
 
 ### Light Elements
-* [Light](/elements/light.md)
-* [neo](/elements/neo.md)
+* [Simple Light](/elements/light.md)
+* [Neopixels / WS2812](/elements/neo.md)
 
-### Other
+<!-- ### Other
 * [dmx](/elements/dmx.md)
-* [menu](/elements/menu.md)
-* 
+* [menu](/elements/menu.md) -->
+  
 <!-- * [rfsend](/elements/rfsend.md) -->
 <!-- * [_ad5258](/elements/_ad5258.md)
 * [_gy91](/elements/_gy91.md)
@@ -66,87 +71,85 @@
 
 ### System Elements
 * [Device](/elements/device.md)
-* [ota](/elements/ota.md)
-* [remote](/elements/remote.md)
-* [ssdp](/elements/ssdp.md)
+* [Over the Air updates](/elements/ota.md)
+* [Remote Actions](/elements/remote.md)
+* [SSDP / UPnP Device announcement](/elements/ssdp.md)
 
 ### [Time related Elements](/timeelements.md)
-* [ntptime](/elements/ntptime.md)
-* [dstime](/elements/dstime.md)
-* [alarm](/elements/alarm.md)
-* [schedule](/elements/schedule.md)
-* [time](/elements/time.md)
-* [timer](/elements/timer.md)
+* [Network Time](/elements/ntptime.md)
+* [DS3231 RTC chip](/elements/dstime.md)
+* [Alarm actions](/elements/alarm.md)
+* [Schedule actions](/elements/schedule.md)
+* [Local Time actions](/elements/time.md)
+* [Timer based actions](/elements/timer.md)
 <!-- * [_dcftimeelement](/elements/_dcftimeelement.md) -->
 
 ### [Displays](/displays.md)
-* [displays/lcd](/displays/lcd.md)
-* [displays/sh1106](/displays/sh1106.md)
-* [displays/ssd1306](/displays/ssd1306.md)
-* [displaybar](/elements/displaybar.md)
-* [displaydot](/elements/displaydot.md)
-* [displayline](/elements/displayline.md)
-* [displaytext](/elements/displaytext.md)
+* [HD44780 LCDs](/displays/lcd.md)
+* [SH1106 based OLED](/displays/sh1106.md)
+* [SSD1306 based OLED](/displays/ssd1306.md)
+<!-- * [displaybar](/elements/displaybar.md) -->
+* [display text](/elements/displaytext.md)
+* [display a dot](/elements/displaydot.md)
+* [display a line](/elements/displayline.md)
 
 ### [Utility Elements](/elements.md)
-* [Logic and](/elements/and.md)
+* [AND](/elements/and.md)
 * [webbutton](/elements/webbutton.md)
 
 ### [Recipes](/recipes.md)
-* [alarm](/recipes/alarm.md)
-* [led](/recipes/led.md)
-* [ledrotary](/recipes/ledrotary.md)
-* [lighttimer](/recipes/lighttimer.md)
-* [ntpclock](/recipes/ntpclock.md)
-* [remotebutton](/recipes/remotebutton.md)
-* [remotedisplay](/recipes/remotedisplay.md)
-* [servo](/recipes/servo.md)
-* [tempdisplay](/recipes/tempdisplay.md)
-* [water](/recipes/water.md)
-* [blink](/recipes/blink.md)
-
-### How To
-* [stepsnewdevice](/stepsnewdevice.md)
-* [stepsupdateweb](/stepsupdateweb.md)
+* [Create Alarm actions](/recipes/alarm.md)
+* [Attach a LED](/recipes/led.md)
+* [Use a Rotary encocer](/recipes/ledrotary.md)
+* [Use a timer for lights](/recipes/lighttimer.md)
+* [Use Network Time](/recipes/ntpclock.md)
+* [Use a remote button](/recipes/remotebutton.md)
+* [Use a remote display](/recipes/remotedisplay.md)
+* [Use a servo](/recipes/servo.md)
+* [Display temperature](/recipes/tempdisplay.md)
+* [Create plant watering](/recipes/water.md)
+* [Simple LED blink](/recipes/blink.md)
 
 
 ### [Boards](/boards.md)
-* [deepsleep](/boards/deepsleep.md)
-* [esp01](/boards/esp01.md)
-* [neo](/boards/neo.md)
 * [nodemcu](/boards/nodemcu.md)
-* [pins](/boards/pins.md)
+* [esp01](/boards/esp01.md)
+* [deepsleep](/boards/deepsleep.md)
+* [neo](/boards/neo.md)
 * [sonoff](/boards/sonoff.md)
 * [wemosoled](/boards/wemosoled.md)
 * [wifikit8](/boards/wifikit8.md)
 * [wroom2](/boards/wroom2.md)
-* [esp32/esp32azureiotkit](/boards/esp32/esp32azureiotkit.md)
+* [pins](/boards/pins.md)
+<!-- * [esp32/esp32azureiotkit](/boards/esp32/esp32azureiotkit.md)
 * [esp32/readme](/boards/esp32/readme.md)
 * [esp32/_g](/boards/esp32/_g.md)
-* [esp32/_ttgogallery](/boards/esp32/_ttgogallery.md)
+* [esp32/_ttgogallery](/boards/esp32/_ttgogallery.md) -->
 
 
 ### [Device Implementation doku](/implementation.md)
-* [logger](/elements/logger.md)
-* [elementclass](/elementclass.md)
-* [elementregistry](/elementregistry.md)
+* [Serial Logger](/elements/logger.md)
+* [Element class](/elementclass.md)
+* [Element registry](/elementregistry.md)
 <!-- * [_microjson](/_microjson.md) -->
 <!-- * [_customelement](/_customelement.md) -->
-* [wifimanager](/wifimanager.md)
-* [savemode](/savemode.md)
-* [startupnet](/startupnet.md)
+* [WiFi manager](/wifimanager.md)
+* [The savemode](/savemode.md)
+* [startup networking](/startupnet.md)
 
 
 ### Web-UI Implementation doku
-* [micro](/micro.md)
-* [microbehaviors](/microbehaviors.md)
-* [microcharts](/microcharts.md)
-* [microicons](/microicons.md)
-* [microjavascript](/microjavascript.md)
-* [microstyle](/microstyle.md)
-* [microtemplates](/microtemplates.md)
+* [Introduction](/micro.md)
+* [micro behaviors](/microbehaviors.md)
+* [micro charts](/microcharts.md)
+* [micro icons](/microicons.md)
+* [micro javascript utils](/microjavascript.md)
+* [micro style](/microstyle.md)
+* [micro templates](/microtemplates.md)
 * [website](/website.md)
 * [websitemap](/websitemap.md)
+* [monitor](monitor.md)
+* [Portal](microportal.md)
 <!-- * [_iconsforthings](/_iconsforthings.md) -->
 
 
@@ -171,9 +174,7 @@
 
 ### Examples
 * [examples/blink](/examples/blink.md)
-* [examples/fileupload](/examples/fileupload.md)
 * [examples/radio](/examples/radio.md)
-* [examples/setup](/examples/setup.md)
 <!-- * [examples/_batteryswitch](/examples/_batteryswitch.md) -->
 <!-- * [examples/_devding](/examples/_devding.md) -->
 <!-- * [examples/_RFGateway](/examples/_RFGateway.md) -->
