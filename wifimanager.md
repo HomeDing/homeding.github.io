@@ -4,7 +4,7 @@ The WiFi-Manager is a module of every device that helps to register a device in 
 
 It is available on every device by using the URL: <http://{name}/$setup.htm>
 
-![WiFiManager dialog.png](wifimanager.png)
+![WiFiManager dialog](wifimanager.png)
 
 The board starts into the WiFiManager mode
 * when no network configuration is available
