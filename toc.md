@@ -66,8 +66,11 @@
 * [_pca9685](/elements/_pca9685.md)
 * [_pcf8574](/elements/_pcf8574.md)
 * [_pull](/elements/_pull.md)
-* [_tpa2016](/elements/_tpa2016.md)
-* [_weatherfeed](/elements/_weatherfeed.md) -->
+* [_tpa2016](/elements/_tpa2016.md) -->
+
+### Other Elements
+
+* [WeatherFeed](/elements/weatherfeed.md)
 
 ### System Elements
 * [Device](/elements/device.md)
@@ -95,7 +98,7 @@
 
 ### [Utility Elements](/elements.md)
 * [AND](/elements/and.md)
-* [webbutton](/elements/webbutton.md)
+* [WebButton](/elements/webbutton.md)
 
 ### [Recipes](/recipes.md)
 * [Create Alarm actions](/recipes/alarm.md)
