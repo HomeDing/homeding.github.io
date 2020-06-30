@@ -13,7 +13,7 @@ var activeFileName;
 function handleLoadFile(e) {
   var s = e.target.innerText;
   activeFileName = s.split(' ')[0];
-  activeFileObj.innerText = activeFileName; 
+  activeFileObj.innerText = activeFileName;
 
   fetch(activeFileName)
     .then(function (result) {
@@ -28,7 +28,6 @@ function handleLoadFile(e) {
 function handleDeleteFile(e) {
   e.stopPropagation();
   e.preventDefault();
-
   var s = e.target.parentElement.firstElementChild.innerText;
   s = s.split(' ')[0];
   var yn = window.confirm("Delete " + s + " ?");

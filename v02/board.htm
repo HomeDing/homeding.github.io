@@ -319,6 +319,7 @@
           return result.json();
         })
         .then(function (json) {
+          hub.write('env', JSON.stringify(json));
           hub.publishObj(json);
 
           return fetch('/config.json');

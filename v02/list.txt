@@ -22,11 +22,11 @@
 -ft/svg.svg
 -ft/tt.svg
 -ft/ml.svg
+-clock.svg
 board-new.htm
 board-templates.htm
 board.htm
 browserconfig.xml
-clock.svg
 ding.htm
 element.svg
 elements.json
@@ -73,6 +73,7 @@ i/pms.svg
 i/power.svg
 i/pwmout.svg
 i/radio.svg
+i/reload.svg
 i/remote.svg
 i/rfsend.svg
 i/rotary.svg
@@ -90,7 +91,6 @@ index.htm
 iotstyle.css
 lineChart.js
 lineChart.svg
-lineChart2.svg
 list.txt
 log.htm
 manifest.json
