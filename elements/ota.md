@@ -1,20 +1,16 @@
 # OTA Element
 
 ::: excerpt ota
-  The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA).
+  The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA). **The update doesn't work in savemode** see [savemode](../savemode.md);
 :::
 
-> draft ??? incomplete docu
 
-The OTAElement enables the upload of new sketch versions to the device over the network.
+
+The OTAElement enables the upload of new sketch versions to the device over the network using the standard Arduino network based upload procedure. When this element is configured the device shows up in the list of ports in the Arduino programming environment.
  
+The OTAElement is a system element to enable this functionality only. It cannot send or receive actions.
 
-
-The OTAElement is a system element to enable this functionality only.
-It cannot send or receive actions.
-
-When this element is configured the device shows up in the list of ports in the Arduino programming environment.
-
+It uses the mDNS implementation to advertise the device for beeing reachable for updates.
 Since the OTA Element initializes the mDNS protocol to register on the network no mDNS library needs to be used and initiated explicitly.
 
 > ---
@@ -29,9 +25,7 @@ Since the OTA Element initializes the mDNS protocol to register on the network n
 ## Uploading tools
 
 If you use the Arduino IDE the device will show up in the list of ports.
-
 The underlying thing is a python script that can be used directly as well.
-
 
 
 
@@ -39,11 +33,13 @@ The underlying thing is a python script that can be used directly as well.
 
 There is a python 3 based tool available within the tools folder of the Arduino package. to use this tool you need to install Python 3 on your computer as well.
 
-```CMD
-python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.5.2\tools\espota.py -i %devicename% -p 8266 --auth=123 -f ..\temp\DevDing.ino.bin 
-```
-
 This script will push an OTA update to the ESP
+
+```CMD
+python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.7.1\tools\espota.py -i %devicename% -p 8266 --auth=123 -f ..\temp\DevDing.ino.bin 
+```
+(the version number and path to the ers8266 tools may vary)
+
 
 # use it like: python3 espota.py -i <ESP_IP_address> -I <Host_IP_address> -p <ESP_port> -P <Host_port> [-a password] -f <sketch.bin>
 
@@ -73,8 +69,7 @@ This script will push an OTA update to the ESP
 }
 ```
 
-See also
+## See also
 
-* Hardening the IoT device.
-
-https://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html
+* [savemode](../savemode.md)
+* Hardening the IoT device: https://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html
