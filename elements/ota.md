@@ -10,7 +10,7 @@ The OTAElement enables the upload of new sketch versions to the device over the 
  
 The OTAElement is a system element to enable this functionality only. It cannot send or receive actions.
 
-It uses the mDNS implementation to advertise the device for beeing reachable for updates.
+It uses the mDNS implementation to advertise the device for being reachable for updates.
 Since the OTA Element initializes the mDNS protocol to register on the network no mDNS library needs to be used and initiated explicitly.
 
 > ---

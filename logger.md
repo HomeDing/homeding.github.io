@@ -52,7 +52,7 @@ To make logging information available a Web UI page `/ding-log.htm`  is availabl
 
 Because logging information on the trace level is producing much text and the log output storage is limited only the info and error loggings are saved to the log files.
 
-There are 2 files beeing used:
+There are 2 files being used:
 
 * `/log.txt` is the file where new log output gets appended. This file will grow until about 4kBytes of text is stored.
 * `/log_old.txt` is the previous file with log output.

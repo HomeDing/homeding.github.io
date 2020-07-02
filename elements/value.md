@@ -8,8 +8,14 @@ This can e.g. be used to drive a LED or a relay.
 
 ![Value Properties and Actions](valueapi.png)
 
-It is used to implement a property or parameter independent from a specific Element that can send actions to multiple dependent elements.
-The Values defined using a ValueElement can be modified by other Elements using several actions even through elements in a web UI.
+The Value Element is used to implement a property or parameter as a single value independent from a specific Element. The Value Element can send actions to other Elements whenever the value changes.
+
+The values itself can be modified by other Elements using several modifying actions and by the corresponding web UI.
+
+<!-- 
+ToDo: A default value can be specified in the configuration but can be saved to  survive restarting the device.
+  -->
+
 
 ### Example
 
@@ -39,7 +45,7 @@ The following properties are available for configuration of the element:
 
 **max** Defines the maximum of the value.                                  
 
-**step** The value will be incrementd / decremented by the multiple of the step value
+**step** The value will be incremented / decremented by the multiple of the step value
 when using the up / down actions.
 
 **value** An initial/default value can be set using the configuration.       
@@ -67,7 +73,10 @@ The current value is reported as the state of a value element.
 
 ```JSON
 {
-  "value/volume": { "active": "true", "value": "4" }
+  "value/volume": {
+    "active": "true",
+    "value": "4"
+  }
 }
 ```
 

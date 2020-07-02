@@ -34,9 +34,7 @@ To build the request URL you need several parameters:
 
 Using these parameters the URL will look like this (with a fake API key):
 
-https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=50.23&lon=8.65&appid=12345678901234567890123456789012
-
-https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=50.23&lon=8.65&exclude=current,hourly&appid=be08655106f49633a8ccb4b54fbffc98
+https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=50.23&lon=8.65&exclude=current,hourly&appid=12345678901234567890123456789012
 
 ### Weatherfeed element parameters
 
@@ -162,6 +160,5 @@ Here is a shortened example with comments from the response:
 * Anonymously accessible server is http://metaweather.com.
 
 * https://circuits4you.com/2019/03/22/esp8266-weather-station-arduino/
-
 
 

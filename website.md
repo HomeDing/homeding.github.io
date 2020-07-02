@@ -52,6 +52,5 @@ is implemented using the modern Single Page Applications (SPA) approach for web 
 * `/setup.htm` => Network setup dialog
 * `/panel.htm` => A graphical overview of the defined actions between elements 
 
-* `/ft/*.svg` icons for filetypes, used in the ide.
 * `/i/*.svg` icons for elements.
 * `/src/*.ts` Typescript sources for micro ???.
