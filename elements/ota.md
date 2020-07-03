@@ -31,7 +31,8 @@ The underlying thing is a python script that can be used directly as well.
 
 ## Upload batch
 
-There is a python 3 based tool available within the tools folder of the Arduino package. to use this tool you need to install Python 3 on your computer as well.
+There is a python 3 based tool available within the tools folder of the Arduino package for the ESP8266 board.
+To use this tool you need to install Python 3 on your computer as well.
 
 This script will push an OTA update to the ESP
 
@@ -41,18 +42,13 @@ python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.7.1\tool
 (the version number and path to the ers8266 tools may vary)
 
 
-# use it like: python3 espota.py -i <ESP_IP_address> -I <Host_IP_address> -p <ESP_port> -P <Host_port> [-a password] -f <sketch.bin>
+use it like: 
 
-# Or to upload SPIFFS image:
+    python3 espota.py -i <ESP_IP_address> -I <Host_IP_address> -p <ESP_port> -P <Host_port> [-a password] -f <sketch.bin>
 
-# python3 espota.py -i <ESP_IP_address> -I <Host_IP_address> -p <ESP_port> -P <HOST_port> [-a password] -s -f <spiffs.bin>
+or to upload a SPIFFS image:
 
-#
-
-:: python script with parameters
-
-::
-
+    python3 espota.py -i <ESP_IP_address> -I <Host_IP_address> -p <ESP_port> -P <HOST_port> [-a password] -s -f <spiffs.bin>
 
 
 ## Example Configuration

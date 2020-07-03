@@ -21,7 +21,7 @@ The **[NodeMCU development boards](/boards/nodemcu)** is one of the most common 
 :::
 
 :::board wifikit8
-The **[Wifi Kit 8 Module ESP8266 with OLED](/boards/wifikit8.md)** is a ESP-12E with OLED display and Li-Polymer battery support.
+The **[Wifi Kit 8 Module ESP8266 with OLED](/boards/wifikit8.md)** is a ESP8266 with 4k Flash, OLED display and Li-Polymer battery support.
 :::
 
 :::board witty
