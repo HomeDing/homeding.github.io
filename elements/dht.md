@@ -44,11 +44,6 @@ more details can be found at <https://github.com/beegee-tokyo/DHTesp>
 ## Connecting a Sensor
 
 The sample configuration coming with the DHT22 recipes is configured to use a DHT22 type of sensor with the data line attached to GPIO2(D4).
-
-    ESP8266 board     DHT22
-    GND ------------- (4) GND
-    3.3v ------------ (1) VCC
-    GPIO2(D4) ------- (2) Data
     
 | ESP8266   | DHT22 | Description  |
 | --------- | :---: | ------------ |
@@ -126,9 +121,9 @@ More documentation can be found at:
 <https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/>
 
 The chip is designed to run on 3.3 - 6.0 volts with a typical voltage of 5 volts.
-It has been observed that when operating on 3.3 volts the chip sometimes gets out of order and needs a reset by disconnecting and reconnecting the sensor from the VCC. Before reading data 1 second waittime is required.
+It has been observed that when operating on 3.3 volts the chip sometimes gets out of order and needs a reset by disconnecting and reconnecting the sensor from the VCC. Before reading data 1 second wait-time is required.
 
-As the sensor has a sensor period of 2 seconds it doesn't make sense to read the values from the sensor more frequently.
+As the sensor has a builtin sensor period of 2 seconds it doesn't make sense to read the values from the sensor more frequently.
 
 
 ## more
