@@ -23,30 +23,28 @@ You can find many NTP servers on the internet. The web site <https://www.pool.nt
 
 Because it takes some time to get a package from the server and of course sometimes the server doesn't answer at all or network packages are lost you cannot rely on getting a correct time immediately after starting the board or coming back from a deep sleep mode. If you have a device with these requirements a chip based real-time like the  [DSTime Element](elements/dstime) may be a better option.
 
-<!-- Using actions dispatched over the network to exchange a current time has a latency that may be too much to be accurate for a specific use case. Local actions are better to be used for this so you may consider using a local Time Element on the devices that have real-time requirements.
-
-Some interesting use cases are using the real time like clock displays and things that need to know it is day or night or just log sensor data that must be analyzed later. -->
 
 ## Element Configuration
 
 The following properties are available for configuration of the element:
 
-| Property    | Description                                                       |
-| ----------- | ----------------------------------------------------------------- |
-| `ntpserver` | The hostname of the ntp server to be used like `"pool.ntp.org"`   |
-| `readtime`  | Time span between synchronizations.                               |
-| `retrytime` | Time span between synchronizations when no valid time is present. |
-| `zone`      | Timezone of the device                                            |
+**ntpServer** - The hostname of the ntp server to be used like `"pool.ntp.org"`
+
+**zone** - Timezone of the device
+
+The Timezone contains the name and offset and can include summer time adjustments. It is using the format used for the POSIX TZ environment variable. 
+
+See https://sites.google.com/a/usapiens.com/opnode/time-zones for examples.
 
 
+### Example for Configuration
 
 ```JSON
 {
   "ntptime": {
     "0": {
-      "readtime": "08:00:00",
-      "retrytime": "00:05:00",p
-      "zone": 2
+        "ntpserver": "pool.ntp.org",
+        "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
     }
   }
 }
@@ -75,3 +73,4 @@ The following properties are available with the current values at runtime
 ## See also
 
 * [Time Elements](timeelements)
+
