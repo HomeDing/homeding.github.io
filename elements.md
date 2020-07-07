@@ -85,6 +85,17 @@ More detailed information on the sensor implementation can be found in [sensor e
 <div style="clear:both"></div>
 
 
+## Service Elements
+
+Service elements interact with services to get or publish data using actions. 
+
+<div class="short">
+  <a href="#page=elements/weatherfeed.md"><img src="/i/weatherfeed.svg"></a>
+  <p><strong><a href="#page=elements/weatherfeed.md">Weatherfeed Element</a></strong><br/>
+  Element that get the weather forecast from an internet service.</p>
+</div>
+
+
 ## Logic Elements
 
 Logic elements implement using on/off values expressed as 1/0 values. 
@@ -237,7 +248,7 @@ More detailed information on displays and related elements can be found in [disp
 <div class="short">
   <a href="#page=elements/menu.md"><img src="/i/menu.svg"></a>
   <p><strong><a href="#page=elements/menu.md">Menu Element</a></strong><br/>
-  elements/menu)               |</p>
+  Menu Element for displaying and changing multiple values.</p>
 </div>
 
 <div class="short">
