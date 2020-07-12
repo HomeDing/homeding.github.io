@@ -9,9 +9,22 @@ The `save-mode` cannot make everything save but closes some otherwise open doors
 You need to have physical access to the device to disable savemode or change firmware or configuration. 
 
 While you work on the configuration or firmware of a device to improve the functionality anything that prevents you from doing this easily is not welcome.
-But after the device is running good and should do this for a longer time the `savemode` disables changes that may harm the device.
+But after the device is running good and should do this for a longer time the `savemode` disables changes and services that may harm the device.
 
-This mechanism is not completely save and
+> #### Important node:
+> Savemode is `on` by default so you cannot configure it using the integrated IDE.<br/>
+> While setting up a device it is recommended that the env.json configuration file should contain `"savemode": "false"`.<br/>
+> In the case the device has no element configured the savemode is disabled by the system.
+
+## How save is savemode
+
+This mechanism is not completely `save` but is a valid measurement against remote attacks modifying the device.
+
+It is possible to upload new sketches when you have physical access to the device and use the USB port for uploading even in savemode.
+
+It is possible disable savemode by using the physical RESET button (see below).
+
+
 
 ## Enabling Save Mode
 
@@ -37,13 +50,13 @@ It is best practice to configure the `device` element first in `env.json`
 After enabling the `savemode` the following functions are deactivated:
 
 * Any upload or file change operations are rejected.
-* The OTA Element when configured will stay in the deactivated state so firmware uploads are not possible
-* savemode cannot be changed using URL action
-* resetting the SPIFFS filesystem.
-* listing the files in the SPIFFS filesystem
-* resetting or changing the network configuration.
-* rendering the builtin pages $setup, $boot, $upload
-* network scan
+* The OTA Element will set a random password so firmware uploads are rejected.
+* Many device parameters including `savemode` cannot be changed by using an URL action
+* Resetting the filesystem.
+* Listing the files in the SPIFFS filesystem.
+* Resetting or changing the network configuration.
+* Rendering the builtin UI $setup.htm, $boot.htm, $upload.htm.
+* network scan.
 
 
 ## Save mode after uploading
@@ -63,7 +76,8 @@ Now you can use the built-in IDE or the file upload functionality to change conf
 
 ## Uploading new firmware
 
-Even when savemode is enabled you can upload a new sketch using the USB port. The OTA upload is disabled to avoid reconfiguration or reprogramming from a remote location.
+Even when savemode is enabled you can upload a new sketch using the USB port.
+The OTA upload is disabled to avoid reconfiguration or reprogramming from a remote location.
 
 
 ## Programming for the Save-Mode
@@ -79,3 +93,7 @@ if (! _board->savemode) {
    ...
 }
 ```
+
+## See also
+
+* secure parameters

@@ -1,8 +1,4 @@
-# Table of Content
 * [HomeDing Library Documentation](/readme.md)
-
-
-### [Concepts of the library](/concepts/paper.md)
 * [Making IoT easy](/concepts/paper01.md)
 * [Software Architecture](/concepts/paper02.md)
 * [Elements and Actions](/concepts/paper03.md)
@@ -11,6 +7,7 @@
 
 ### Stories
 * [Air Quality Monitor](/stories/story-airquality.md)
+* [Weather forecast Display](/stories/story-weatherdisplay.md)
 
 
 ### Step-by-Step Guides
@@ -35,7 +32,7 @@
 * [Switch](/elements/switch.md)
 * [Rotary](/elements/rotary.md)
 * [Value](/elements/value.md)
-* 
+
 
 ### [Sensor Elements](/elements/sensors.md)
 * [DS18B20/Dallas sensor](/elements/ds18b20.md)
@@ -44,6 +41,10 @@
 * [Bosch BME680](/elements/bme680.md)
 * [PMS5003 Air Particle sensor](/elements/pms.md)
   
+### Service Elements
+
+* [WeatherFeed](/elements/weatherfeed.md)
+
 ### Data logging
 * [Log File Element](/elements/log.md)
 
@@ -67,10 +68,6 @@
 * [_pcf8574](/elements/_pcf8574.md)
 * [_pull](/elements/_pull.md)
 * [_tpa2016](/elements/_tpa2016.md) -->
-
-### Other Elements
-
-* [WeatherFeed](/elements/weatherfeed.md)
 
 ### System Elements
 * [Device](/elements/device.md)
@@ -160,6 +157,13 @@
 
 * [radio](/elements/radio.md)
 
+### Developer Support
+
+* [DevDing Example](/examples/_devding.md)
+* diag Element
+* cli Element
+* cli scripts
+
 
 ### More
 
@@ -179,7 +183,6 @@
 * [examples/blink](/examples/blink.md)
 * [examples/radio](/examples/radio.md)
 <!-- * [examples/_batteryswitch](/examples/_batteryswitch.md) -->
-<!-- * [examples/_devding](/examples/_devding.md) -->
 <!-- * [examples/_RFGateway](/examples/_RFGateway.md) -->
 
 <!-- ### Rework: -->
