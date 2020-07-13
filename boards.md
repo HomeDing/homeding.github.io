@@ -62,9 +62,9 @@ The [standard example](examples/standard) can be flashed onto these boards by pr
 
 The following are boards and solutions with 1 MBytes flash memory chips.
 
-The [minimal example](examples/minimal) can be flashed onto these boards by providing the typical switch elements and most core elements but no sensor and display adapters. The functionality will be activated through the configuration.
+The [minimal example](/examples/minimal) can be flashed onto these boards by providing the typical switch elements and most core elements but no sensor and display adapters. The functionality will be activated through the configuration.
 
-The [sensor example](examples/sensor) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration.
+The [sensor example](/examples/sensor) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration.
 
 :::board esp01
 The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relais appliances.
@@ -74,7 +74,7 @@ An external power supply is required and only 2-4 GPIO signals can be used.
 
 
 :::board sonoff
-The **[Sonoff Switch](boards/sonoff.md))** is a off-the-shelf solution to switch main power consumers. Similar Sonoff devices are available that also contain the ESP8266 CPU.
+The **[Sonoff Switch](/boards/sonoff.md))** is a off-the-shelf solution to switch main power consumers. Similar Sonoff devices are available that also contain the ESP8266 CPU.
 If you have experience in building high voltage solutions this one is interesting and ready to be programmed.
 :::
 

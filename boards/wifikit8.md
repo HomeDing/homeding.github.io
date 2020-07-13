@@ -1,6 +1,6 @@
 # Board Review of Wifi Kit 8 Module ESP8266 with OLED
 
-![boardwifikit8.jpg](boardwifikit8.jpg)
+![boardwifikit8.jpg](wifikit8.jpg)
 
 I bought a Wifi-Kit 8 from eBay because I was searching for small size ESP8266 boards with onboard display.
 
@@ -54,8 +54,8 @@ There are 2 pin diagrams on this site. BVe sure to get the right one. (see Links
 
 ## OLED Display
 
-The OLED display is the only embedded component on this board. It uses the same driver chip like the on in the
-[boardwroom2](boardwroom2) board but only provides 32px in height.
+The OLED display is the only embedded component on this board. It uses the same SSD1306 driver chip like the on in the
+[wroom2 board](wroom2.md) board but only provides 32px in height.
 
 The I2C bus for the display is using GPIO4 and GPIO5 and the I2C address is 0x3c.
 
