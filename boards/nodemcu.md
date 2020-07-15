@@ -45,6 +45,19 @@ This button pulls the reset pin down to GND.
 **Flash** 
 This button pulls the GPIO0(D3) pin down to GND. It can be used to manually start the program upload mode when is it pushed while resetting or powering up. Later it can be used for any input purpose as long it is leaving the pin in HIGH input when not used.
 
+## Vin / VUSB
+
+There is a subtile difference in the nodeMCU bards from vendors regarding the availability and the usage of the 5V power supply.
+
+**Vin**
+
+* Some boards directly make the 5V power from the USB bus available on th Vin pin. This can then be used as a power output to drive 5V components like displays.
+* Other boards us a diode to protect the board when this pin is really used as a power supply. Here the Vin pin cannot be used for output 5V power. 
+
+**VU**
+
+* Some boards use the 2 reserved pins next to A0 to offer a dedicated pin attached to the 5V USB power supply and an additional GND pin.
+  This can be used to power external chips and displays. 
 
 ## More to know
 
