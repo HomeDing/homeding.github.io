@@ -1,6 +1,6 @@
 # Board Review of Wifi Kit 8 Module ESP8266 with OLED
 
-![boardwifikit8.jpg](wifikit8.jpg)
+![boardwifikit8.jpg](/boards/wifikit8.jpg)
 
 I bought a Wifi-Kit 8 from eBay because I was searching for small size ESP8266 boards with onboard display.
 
@@ -12,29 +12,29 @@ Programming of this board can be done using the `NodeMCU 1.0 (ESP12-E Module)` s
 
 The board settings and the additional features can be found here:
 
-| Feature                   | Specific                     |
-| ------------------------- | ---------------------------- |
-| Display Number on I2C bus | 60 (=0x3c)                   |
-| Display size              | 128 * 32                     |
-| Display chip              | SSD1306                      |
-| 4 Mbyte Flash             |                              |
-| USB Adapter chip          | CP2104                       |
-| Integrierted Charger      | LiPo batteries 3.7V          |
-| Battery connector         | JST 1.25mm 2 pins            |
-| Selected Board            | NodeMCU 1.0 (ESP12-E Module) |
-| CPU Frequency             | 80 MHz                       |
-| VTables                   | Flash                        |
-| Flash Size                | 4M (1M SPIFFS)               |
-| IwIP Variant              | v2 Lower Memory              |
-| Debug Port                | Serial                       |
-| Debug Level               | None                         |
-| Erase Sketch              | Only Sketch                  |
-| Upload Speed              | 115200                       |
-| Builtin LED               | none                         |
+| Feature             | Specific                     |
+| ------------------- | ---------------------------- |
+| I2C display address | 60 (=0x3c)                   |
+| Display size        | 128 * 32                     |
+| Display chip        | SSD1306                      |
+| Flash               | 4 Mbyte                      |
+| USB Adapter chip    | CP2104                       |
+| Integrated Charger  | LiPo batteries 3.7V          |
+| Battery connector   | JST 1.25mm 2 pins            |
+| Selected Board      | NodeMCU 1.0 (ESP12-E Module) |
+| CPU Frequency       | 80 MHz                       |
+| VTables             | Flash                        |
+| Flash Size          | 4M (1M SPIFFS)               |
+| IwIP Variant        | v2 Lower Memory              |
+| Debug Port          | Serial                       |
+| Debug Level         | None                         |
+| Erase Sketch        | Only Sketch                  |
+| Upload Speed        | 115200                       |
+| Builtin LED         | none                         |
 
 Here is the connector / function Overview. Be aware hat the SCL and SDA labels are not corresponding to the I2C bus used for the OLED.
 
-There are 2 pin diagrams on this site. BVe sure to get the right one. (see Links).
+There are 2 pin diagrams on this site. Be sure to get the right one. (see Links).
 
 | Connector | Feature                |
 | --------- | ---------------------- |
@@ -66,28 +66,28 @@ This board also connects the RESET pin of the display. Here the GPIO16(D0) was c
 This pin needs also requires some coding because a short LOW impulse is required to start the display properly and then the pin must be set to HIGH again during operation.
 
 ```CPP
-pinMode(D2, OUTPUT);
-digitalWrite(D2, LOW);  // pull low to reset OLED
+pinMode(D0, OUTPUT);
+digitalWrite(D0, LOW);  // pull low to reset OLED
 delay(50);
-digitalWrite(D2, HIGH); // while OLED is running, must set D2 in high
+digitalWrite(D0, HIGH); // while OLED is running, must set D0 in high
 ```
 
 ## OnBoard LED
 
 There is no usable LED on board.
-The orange one is connected to the MIC73831 charching circuit
+The orange one is connected to the MIC73831 charging circuit
 
 ## Battery Connector
 
 On Board is a 3.7 V Lithium battery charging circuit available. The +/- is printed on the board.
-The Lipo connector is type JST with 1.25mm pin distance.
-I never tried.
+The LiPo connector is type JST with 1.25mm pin distance.
 
 ## Critics
 
-The Wifi Kit 8 Module is not designed to be used for deep sleep mode.
+The Wifi Kit 8 Module is not designed to be used for deep sleep mode:
+
 The GPIO16(D0) pin is required to be connected to RESET to support Deep Sleep but it is also required
-to be pulled to low to reset the  - causing a reset.
+to be pulled to low to reset the display - causing a reset.
 
 Anyhow, the OLED on the board requires some relevant current so long term operation on battery was not in focus for this board.
 
@@ -101,19 +101,23 @@ The following env.json file can be used on these boards:
 ```JSON
 {
   "device": {
-    "main": {
+    "0": {
       "name": "wifikitding",
       "description": "Wifi Kit 8 Module",
+      "loglevel": 0,
       "reboottime": "24h",
       "button": "D3",
       "led": "D4",
+      "savemode": "false",
       "I2C-SDA": "D2",
-      "I2C-SCL": "D1"
+      "I2C-SCL": "D1",
+      "logfile": "true"
+
     }
   },
 
   "ota": {
-    "main": {
+    "0": {
       "port": 8266,
       "passwd": "123",
       "description": "allow Over the Air Updates"
@@ -137,7 +141,6 @@ The following env.json file can be used on these boards:
 ```
 
 The onboard button labeled "PRG" pulls D3 down and can be used with a digital input and the display can be used to show some information.
-tEXT:
 
 ```JSON
 {
@@ -149,13 +152,6 @@ tEXT:
       "inverse": "true",
       "pullup": "true",
       "onvalue": "device/0?log=D3:$v"
-    },
-    "displaytext": {
-      "t": {
-        "x": 10,
-        "y": 10,
-        "value": "defaulttext"
-      }
     }
   }
 }
@@ -170,55 +166,3 @@ tEXT:
 <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series>
 * A summary to use this board <https://robotzero.one/heltec-wifi-kit-8/>
 
-
-<!-- 
-https://www.ebay.com/itm/10PCS-76-108MHz-TEA5767-FM-IC-Low-noise-RF-Amplifer-Stereo-Audio-Radio-Module-/133270600197
-
-Example:
-#include <Wire.h>
-#include "OLED.h"
-//0.91s OLED connection:
-//SDA -- D4
-//SCL -- D5
-//RST -- D2
-OLED display(SDA, SCL);
-void setup() {
-pinMode(D2, OUTPUT);
-digitalWrite(D2, LOW); // turn D2 low to reset OLED
-delay(50);
-digitalWrite(D2, HIGH); // while OLED is running, must set D2 in high
-Serial.begin(9600);
-Serial.println("OLED test!");
-// Initialize display
-display.begin();
-// Test message
-display.print("Hello ");
-delay(3*1000);
-// Test long message
-display.print("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
-delay(3*1000);
-// Test display clear
-display.clear();
-delay(3*1000);
-// Test message postioning
-display.print("TOP-LEFT");
-display.print("4th row", 4);
-display.print("RIGHT-BOTTOM", 7, 4);
-delay(3*1000);
-// Test display OFF
-display.off();
-display.print("3rd row", 3, 8);
-delay(3*1000);
-// Test display ON
-display.on();
-delay(3*1000);
-}
-int r = 0, c = 0;
-void loop() {
-r = r % 4;
-c = micros() % 6;
-if (r == 0) display.clear();
-display.print("Hello ", r++, c++);
-delay(500);
-}
-Size: 5x1.8cm/1.97x0.71inch -->

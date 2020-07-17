@@ -89,7 +89,7 @@ The current value is reported as the state of a value element.
       "min": 0,
       "max": 15,
       "value": 3,
-      "onchange": "radio/r?volume=$v"
+      "onvalue": "radio/r?volume=$v"
     }
   }
 }
