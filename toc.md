@@ -88,10 +88,11 @@
 * [HD44780 LCDs](/displays/lcd.md)
 * [SH1106 based OLED](/displays/sh1106.md)
 * [SSD1306 based OLED](/displays/ssd1306.md)
+* [SSD1309 based OLED](/displays/ssd1309.md)
+* [Display text](/elements/displaytext.md)
+* [Display a dot](/elements/displaydot.md)
+* [Display a line](/elements/displayline.md)
 <!-- * [displaybar](/elements/displaybar.md) -->
-* [display text](/elements/displaytext.md)
-* [display a dot](/elements/displaydot.md)
-* [display a line](/elements/displayline.md)
 
 ### [Utility Elements](/elements.md)
 * [AND](/elements/and.md)
