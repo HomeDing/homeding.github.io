@@ -1,6 +1,6 @@
 # Board Review of Wifi Kit 8 Module ESP8266 with OLED
 
-![boardwifikit8.jpg](/boards/wifikit8.jpg)
+![wifikit8 board](/boards/wifikit8.jpg)
 
 I bought a Wifi-Kit 8 from eBay because I was searching for small size ESP8266 boards with onboard display.
 
@@ -36,20 +36,7 @@ Here is the connector / function Overview. Be aware hat the SCL and SDA labels a
 
 There are 2 pin diagrams on this site. Be sure to get the right one. (see Links).
 
-| Connector | Feature                |
-| --------- | ---------------------- |
-| AD        | Analog input           |
-| D0        | GPIO16(D0), OLED RESET |
-| SCL       | GPIO14(D5)             |
-| D6        | GPIO12(D6)             |
-| D7        | GPIO13(D7)             |
-| D8        | GPIO15(D8)             |
-| D3        | GPIO0(D3)              |
-| D2        | GPIO4(D2), I2C SDA     |
-| SDA       | GPIO2(D4)              |
-| RX        | GPIO3(D6), RX          |
-| TX        | GPIO1(D10), TX         |
-| D1        | GPIO5(D1), I2C SCL     |
+![wifikit8  pins](/boards/wifikit8pins.png)
 
 
 ## OLED Display
