@@ -21,8 +21,8 @@
 -ft/js.svg
 -ft/json.svg
 -ft/svg.svg
--ft/tt.svg
--ft/ml.svg
+-ft/txt.svg
+-ft/xml.svg
 -clock.svg
 board-new.htm
 board-templates.htm
