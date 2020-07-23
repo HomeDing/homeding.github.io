@@ -48,10 +48,16 @@ The sample configuration coming with the DHT22 recipes is configured to use a DH
 | ESP8266   | DHT22 | Description  |
 | --------- | :---: | ------------ |
 | 3.3v      |   1   | Power Supply |
-| GPIO2(D4) |   2   | Data         |
+| GPI14(D5) |   2   | Data         |
 | GND       |   4   | Ground       |
 
 The configuration can be changed easily by modifying the config.json file.
+
+There is a 10k resistor required between pin 1 and 2 to pull the signal up. This can be done by software when the ESP8266 internal pullup feature on input pin configuration is used.
+However the data line is used in both directions and a physical resistor is not too expensive to be added.
+
+The datasheet also suggests using a 100nf capacitor between pin 1 (VCC) and pin 4 (GND) to make power more stable.
+
 
 ## Element Configuration
 
@@ -59,16 +65,26 @@ The following properties are available for configuration of the element:
 
 **pin**\* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
 
-**readtime** - Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.
-
 **type** - The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
-
-**resendTime** - The current values of the probe are resent after this specified time even when not changing.
 
 **onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same.
 
 **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
 
+**powerpin** -This output pin can be specified to switch the sensor on and off.
+This output pin can be specified and can be used to re-start the DHT sensor by using the circuit described below.
+
+**powerinverse** -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
+
+From the generalized sensor element the following properties are available for configuration:
+
+**readtime** - Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.
+
+**resendTime** - The current values of the probe are resent after this specified time even when not changing.
+
+**warmupTime** - ??? 3 sec. default
+
+**restart** - ???
 
 \* This parameter must be specified.
 
@@ -78,7 +94,7 @@ The following properties are available for configuration of the element:
 {
   "dht": {
     "on": {
-      "pin": "D4",
+      "pin": "D5",
       "type": "DHT22",
       "readtime": "30s",
       "resendtime": "2m",
@@ -100,6 +116,7 @@ The following properties are available with the current values at runtime
 **humidity** - The last read humidity value from the sensor.
 
 
+
 ### Example State
 
 ```JSON
@@ -111,6 +128,29 @@ The following properties are available with the current values at runtime
   }
 }
 ```
+
+## DHT reset and power control
+
+I had the problem with unresponsive sensors that is also discussed on the internet.
+
+This occurs after some successful operation time and seems to happen more often when the sensor is using a 3.3 V power supply instead of 5V.
+
+I recommend to power the sensor with 5 V when ever this is possible but here is the approach to reset the sensor by powering off for some time.
+
+This is done by the following circuit that switches the GND level power to the sensor. The 2N9000 MOSFET 
+
+```
+powerpin -- 10k --> mosfet (gate)
+```
+
+* [ ] schema here ???.
+
+The DHT Element recognizes a unresponsive sensor and will turn off operation using the `term()` function.
+
+If this happens during a sensor data read and the `restart` property is set to true the sensor is switched on again and after the warmup time has passed another data read try is started.
+
+If failing repeats the sensor is switched off completely.
+
 
 ## Implementation Details
 
@@ -138,3 +178,11 @@ As the sensor has a builtin sensor period of 2 seconds it doesn't make sense to 
 * Enable Shut down of sensor by supplying power through an output pin.
 
 https://forum.arduino.cc/index.php?topic=355137.0
+
+
+https://tzapu.com/minimalist-battery-powered-esp8266-wifi-temperature-logger/
+
+https://homecircuits.eu/blog/battery-powered-esp8266-iot-logger/
+
+https://cdn-learn.adafruit.com/downloads/pdf/dht.pdf
+
