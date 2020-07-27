@@ -20,7 +20,8 @@
 
 ## Intro
 
-The quality of the indoor or outdoor air depends on many sources of pollution and also by th weather. This device captures some of common and some of the most interesting parameters: by using 2 sensor chips.
+The quality of the indoor or outdoor air depends on many sources of pollution and also by the weather.
+This device captures some of common and some of the most interesting parameters: by using 2 sensor chips.
 
 * Temperature
 * Humidity

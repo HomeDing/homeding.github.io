@@ -1,26 +1,29 @@
-# Examples for the HomeDing library ???
+# Examples for the HomeDing library
 
-There are some example projects coming with the Homeding library that can be loaded by using the Arduino examples menu. Some of them also require other libraries to be installed using the library manager.
+There are some example projects coming with the Homeding library that can be loaded into the IDE by using the Arduino examples menu.
 
-In the very generic examples you can of course configure different combinations of elements for different purposes. You can find these as recipes that show how combinations of elements can be used to solve a specific problem.
+Because the functionality of the target device is mostly defined by the configuration and not by the sketch itself
+you can find a lot of examples for configuration and recipes combining multiple elements to fulfill a specific need.
 
-**Important Notice:** Examples will not only require to upload the sketch. It is as also required to upload the files from the `data` folder to the filesystem.
+The standard example can be used as a good starting point.
 
-This is explained step by step in the [Blink Example](examples/blink.md).
+**Important Notice:** Examples will not only require to upload the sketch. It is as also required to upload the files from the `data` folder to the filesystem. If you like to see a full start-to-end building a device look into one of the [stories](/stories.md).
+
 
 ## Examples
 
 These examples that come with the library need the nodeMCU board and no specific external hardware:
 
 * **[Standard](/examples/standard.md)**
-This example has a sketch and the web site for a NodeMCU or similar board. Many of the recipes work with this sketch.
+This example has a sketch and the web site for a NodeMCU or similar board. Most of the recipes work with this sketch.
 
 * **[Minimal](examples/minimal.md)** 
-This example shows how to reduce the number of available elements and use only a bare minimum part of the embedded web site so the whole solution fits into a ESP8266 board with only 1 MByte Flash memory.
+This example shows how to reduce the number of available elements and use only a bare minimum part of the embedded web site so the whole solution fits into a ESP8266 board with only 1 MByte Flash memory like the ESP-01.
 
 * **[Radio](examples/radio.md)** This example is built as an extension of the standard example but shows how a special element that is only used for this sketch can be included.
 There is also a special WebUI page for the remote control of the radio.
 
+<!-- This is explained step by step in the [Blink Example](examples/blink.md). -->
 <!-- * [DevDing](examples/devding.md) 
 This sketch...
 
@@ -50,7 +53,6 @@ In the *.ino file of every example you can find a list of HOMEDING_INCLUDE_xxx d
 The [Minimal Example](examples/minimal.md) is derived from the standard example by just disabling elements this way.
 
 Some elements that require a specific external library that are disables in the [Standard Example](/examples/standard.md) can be included this way.
-
 
 
 ### Implement local elements.
@@ -130,6 +132,7 @@ Example-Dev -->
 
 ## See also
 
+* [Stories](/stories.md)
 * [Boards](/boards.md)
 * [Recipes](/recipes.md)
 

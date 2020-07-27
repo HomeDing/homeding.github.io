@@ -5,7 +5,7 @@
 * [Builtin Web server](/concepts/paper04.md)
 
 
-### Stories
+### [Stories](/stories.md)
 * [Air Quality Monitor](/stories/story-airquality.md)
 * [Weather forecast Display](/stories/story-weatherdisplay.md)
 

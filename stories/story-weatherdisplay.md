@@ -1,15 +1,21 @@
 # Build a Weather forecast display
 
+**This is Work in progress**
+<!-- ??? -->
+
 **Table of Contents**
 
 - [Intro](#intro)
+- [Information in browser](#information-in-browser)
 - [Supplies](#supplies)
 - [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
 - [Include required libraries](#include-required-libraries)
 - [Customize the standard example sketch](#customize-the-standard-example-sketch)
-- [Upload the web ui](#upload-the-web-ui)
-- [Add the BME680 Sensor](#add-the-bme680-sensor)
-- [Add the PMS5003 Sensor](#add-the-pms5003-sensor)
+- [Upload the web UI Files](#upload-the-web-ui-files)
+- [Add the DHT22 Sensor](#add-the-dht22-sensor)
+- [Add the DHT22 Sensor Configuration](#add-the-dht22-sensor-configuration)
+- [Add the Display Configuration](#add-the-display-configuration)
+- [Add the Weatherfeed Configuration](#add-the-weatherfeed-configuration)
 - [Adding some network features](#adding-some-network-features)
 - [Adding some logging](#adding-some-logging)
 - [Actions](#actions)
@@ -21,7 +27,10 @@
 ## Intro
 
 The weather of today is a fact, just look outside or use some sensors.
+
 The weather of tomorrow is relevant for planning.
+
+![Weather display](/stories/weatherdisp1.jpg)
 
 This solution combines both using a ESP8266 board, a DHT22 sensor and a OLED display that you can get under 7€.
 
@@ -39,28 +48,37 @@ By using the HomeDing library it is easy to build a device that is connected to 
 
 It also brings a complete solution for hosting a web side inside device instead of using a cloud based solution to display the sensor data and interact with the device.
 
+## Information in browser
 
-![Web UI](/stories/airding01.jpg)
+The display content is also available when using a browser and open the Web UI of the device.
 
-![AirDing picture](/stories/airding02.jpg)
+The Homeding library provides a web version when opening the http://<devicename>/board.htm:
 
-![AirDing picture](/stories/airding03.jpg)
+![Weather board screenshot](/stories/weatherboard.png)
 
-![AirDing picture](/stories/airding04.jpg)
-
-* [ ] picture : small display and DHT22
-* [ ] picture : board screenshot
-
-* [ ] picture : sonoff , ESP12 direct usage, BMP280 icon
 
 
 ## Supplies
+
+![Weather display](/stories/weatherdisp2.jpg)
+
+
 
 The hardware parts you need to build this project and used in this story are
 
 * 1 **[Wifi Kit 8 Module ESP8266 with OLED](https://homeding.github.io/#page=/boards/wifikit8.md)** (used in this description).
 * 1 **[DHT22 sensor](https://homeding.github.io/#page=/elements/dht.md)**
 * 1 USB plug and a micro-usb cable for power supply.
+* 1 10K resistor when using a plain DHt22 sensor. When using an adapter board it may be included already.
+
+
+??? 
+* [ ] picture : small display and DHT22
+* [ ] picture : sonoff , ESP12 direct usage, BMP280 icon
+
+
+
+
 
 Alternates are 
 
@@ -76,7 +94,7 @@ Alternates are
 
 1. Install latest version of Arduino IDE (currently version 1.8.2).
 
-2. Use Board Manager to install the install the esp8266 support. 
+2. Use Board Manager to install the esp8266 support. 
    
    A detailed instruction can be found here: <https://arduino-esp8266.readthedocs.io/en/latest/installing.html#boards-manager>
 
@@ -84,7 +102,7 @@ Alternates are
 
    A detailed instruction can be found here: <https://github.com/esp8266/arduino-esp8266fs-plugin>
 
-4. Setup the board options for a NodeMCU 1.0 with 1MByte SPIFFS File System
+4. Setup the board options for a NodeMCU 1.0 with 1MByte reserved memory for the File System
 
 ![board options](/stories/arduino-boardoptions.png)
 
@@ -111,17 +129,23 @@ This is the list of current required libraries:
 * DHT sensor library for ESPx
 * OneWire
 
-The PMS5003 air particle laser sensor communicates using a 9600 baud serial line signal. This signal is captured by using the SoftwareSerial library that comes with the installation of the ESP8266 tools.
-Be sure not to have an older version installed as a library. 
-
 
 ## Customize the standard example sketch
 
 The [Standard Example] already includes some of the more common sensors as elements so only some configuration will be required.
 
-This applies to the BME680 sensor that is supported by the [BME680 Element].
+This applies to the WeatherFeed element [WeatherFeed Element] that needs to be activated by including the [WeatherFeed Element] into the firmware.
+This is done by by defining `#define HOMEDING_INCLUDE_WEATHERFEED` in the element register section of the sketch before the `Arduino.h` file inclusion.
 
-The PMS5003 sensor is less common and needs to be activated by including the [PMS Element] into the firmware. This is done by by defining `#define HOMEDING_INCLUDE_PMS` in the element register section of the sketch.
+```CPP
+...
+#define HOMEDING_INCLUDE_DISPLAYSH1106
+
+#define HOMEDING_INCLUDE_WEATHERFEED
+
+#include <Arduino.h>
+...
+```
 
 For simplicity on adding the new device to the network you may add the SSID and passphrase of your home WiFi in the `secrets.h` file next to the `standard.ino` sketch file. But you can also use the built-in WiFi Manager to add the device to the network without this hard-coded configuration.
 
@@ -130,77 +154,106 @@ For simplicity on adding the new device to the network you may add the SSID and 
 Now everything regarding implementation of the sketch is done and the firmware can be compiled and uploaded.
 
 
-## Upload the web ui
+## Upload the web UI Files
 
-The standard example comes with a data folder that contains all file for the web UI.
+The standard example comes with a `data` folder that contains all file for the web UI.
 
 Before you upload these files you may want to add the env.json and config.json file you can find with this article because this will make things easier.
 
-The content of these files is what makes the IoT device special and behaving as an Air Quality sensor.
-It is explained in detail in this story.
+The content of these files is what makes the IoT device special and behaving as an Weather forecast display.
+It is explained in detail in this story what needs to be configured in these files.
 
 The use the ESP8266 file upload utility and upload all the files.
 It needs a reboot to activate the configuration.
 
 
-## Add the BME680 Sensor
+## Add the DHT22 Sensor
 
-The BME680 Sensor is communicating with the board using the I2C bus.
+The DHT22 Sensor is communicating with the board using the a single data line with a specific protocol.
+It is connected to the 3.3 V power supply, GND and the GPIOx(Dx) ??? pin of the ESP8266 board.
 
-As this is possibly shared with other extensions like other sensors or displays is is configured on the device level in env.json together with the network name of the device. Here is a extracted sample of device and I2C settings:
+The GPIOx(Dx) ??? pin needs to be configured in the `config.json` file you can see below.
 
-```JSON
-"device": {
-  "0": {
-    "name": "airding",
-    "description": "Air Quality Sensor",
-    ...
-    "i2c-scl": "D2",
-    "i2c-sda": "D1"
-  }
-},
-```
+    ESP8266 board     DHT22
+    GND ------------- (4) GND
+    3.3v ------------ (1) VCC
+    GPIO2(D4???) ------- (2) Data
 
-On the breadboard you can see the connection cables to the sensor:
 
-![bme680-connection](/stories/air-bme680-connection.jpg)
+## Add the DHT22 Sensor Configuration
 
-    3.3V=red, GND=black, SCL=yellow, SDA=blue
-
-The configuration for BME680 can be used in config.json:
+The configuration of the DHT22 sensor should be placed into the `config.json` file.
+Here the following configuration is used to read the values from the sensor once every minute.
 
 ```JSON
-"bme680": {
-  "bd": {
-    "address": "0x77",
-    "readTime": "10s"
+{
+  "dht": {
+    "on": {
+      "pin": "D4???",
+      "type": "DHT22",
+      "readtime": "60s",
+      "onTemperature": "device/0?log=temp: $v\u00dfC",
+      "onHumidity": "device/0?log=hum: $v%"
+    }
   }
 }
 ```
-We will add the actions later.
 
-To test the setup just use a browser and open http://airding/board.htm and you will see the actual values of the sensor displayed and they will be updated about every 10 seconds:
+As we like to see the actual values on the displace the `onTemperature` and `onHumidity` actions will send the values to the display using a [DisplayText Element].
 
-![bme680 UI](/stories/air-bme680ui.png)
+As these values from the sensor do not change frequently the are only sent when changing. No `resendtime`is required.
 
 
-## Add the PMS5003 Sensor
+## Add the Display Configuration
 
-I didn't got a sensor with a breadboard friendly connector so I had to cut of one of the connectors on the cable use my soldering iron to directly attach it to the nodemcu board. You can see it still on the final pictures.
+The configuration of the [Display Element] should be placed into the `env.json` file. The I2C bus configuration must also be done in this file in the device configuration. Here are the relevant parts, the full file can be found below.  
 
-The power for this sensor must be taken from the Vin that is normally powered by the USB bus. GND is the same but also available next to the Vin pin.
-
-The data from the sensor is transferred in a standard 9600 baud serial format so the rx and tx pins and reading time needs to be configured:
+when using other boards the pin assignments may differ.
 
 ```JSON
-"pms": {
-  "pm25": {
-    "description": "pm25 particle sensor",
-    "pinRX": "D6",
-    "pinTX": "D5",
-    "readTime": "10s"
+  "device": {
+    "0": {
+      "I2C-SDA": "D2",
+      "I2C-SCL": "D1"
+      ...
+
+  "DisplaySSD1306": {
+    "0": {
+      "address": "60",
+      "resetpin" : "D0",
+      "height": 32
+    }
   }
+```
+
+The display is used to show some values from the sensor and the forecast. The [DisplayText element]s are used and configured to display values
+on the display. Here you can find the names and positions of the values including some default texts, units and positions.
+The lower line of text is used to display the verbal result of the rain forecast.
+
+The full definition with all used [DisplayText Element]s can be found below. This on is defining a position where the actua temperature from the sensor is shown:
+
+```JSON
+{
+    "displaytext": {
+      "temp": {
+        "x": 0,
+        "y": 0,
+        "value": "__.__"
+        "postfix": "°C"
+      }
+    }
 }
+```
+
+The values themselves will be "pushed" to the display using actions defined on the `DHT` and `weatherfeed` elements.
+
+
+## Add the Weatherfeed Configuration
+
+???
+
+
+```JSON
 ```
 
 We will add the actions later.
@@ -218,7 +271,7 @@ Now you can put everything in a nice housing because all the other configuration
 
 The following configuration extract in env.json is enabling
 * updating the firmware over the air
-* allows detecting the network using the SSDP network protocol and retrieves the current time from an ntp server.
+* allows detecting the network using the SSDP network protocol.
 
 ```json
 {
@@ -238,13 +291,13 @@ The following configuration extract in env.json is enabling
   "ntpTime": {
     "0": {
       "readTime": "36h",
-      "zone": 2
+      "zone": "-2"
     }
   }
 }
 ```
 
-You should adjust the timezone to your location. If you are in doubt you can use the web site https://www.timeanddate.com/ to get the offset from UTC/GMT. "2" is right for Germany summertime.
+You should adjust the timezone to your location. If you are in doubt you can use the web site https://www.timeanddate.com/ to get the offset from UTC/GMT. "-2" is right for Germany summertime.
 
 You may also adjust the ota password after reading the instructions regarding the save mode in the documentation at 
 <https://homeding.github.io/index.htm#page=/savemode.md>.
@@ -280,7 +333,7 @@ The following configuration creates the 2 log elements for gas and particles:
 
 ## Actions
 
-Now we need to transfer the actual values to the log elements by using actions. The actions are using an URL notation to pass a kay and value to the target element. Many Elements support emitting actions on certain events that happen like capturing a new sensor value.
+Now we need to transfer the actual values to the log elements by using actions. The actions are using an URL notation to pass a key and value to the target element. Many Elements support emitting actions on certain events that happen like capturing a new sensor value.
 
 Actions are configured at the element that emits actions 2 entries are required:
 
@@ -317,32 +370,36 @@ Now all the elements are configured like this:
 {
   "device": {
     "0": {
-      "name": "airding",
-      "reboottime": "24h",
-      "description": "IoT Air-Ding monitoring air quality",
-      "logfile": 1,
-      "led": "D0",
-      "button": "D4",
-      "i2c-scl": "D2",
-      "i2c-sda": "D1"
+      "name": "weatherding",
+      "description": "Weather Display",
+      "reboottime": "96h",
+      "button": "D3",
+      "led": "D4",
+      "securemode": "false",
+      "I2C-SDA": "D2",
+      "I2C-SCL": "D1"
     }
   },
+
   "ota": {
-    "0": {
+    "main": {
       "port": 8266,
       "passwd": "123",
-      "description": "Listen for 'over the air' OTA Updates"
+      "description": "Over the Air Updates"
     }
   },
+
   "ssdp": {
     "0": {
-      "ModelUrl": "https://www.mathertel.de/Arduino"
+      "manufacturer": "Matthias Hertel"
     }
   },
-  "ntptime": {
+
+  "DisplaySSD1306": {
     "0": {
-      "readtime": "36h",
-      "zone": 1
+      "address": "60",
+      "resetpin" : "D0",
+      "height": 32
     }
   }
 }
@@ -388,14 +445,22 @@ Now all the elements are configured like this:
 
 * HomeDing Source Code Repository: <https://github.com/HomeDing/HomeDing>
 * HomeDing Documentation: <https://homeding.github.io/>
-* Standard Example: <https://homeding.github.io/#page=/examples/standard.md>
-* BME680 Element: <https://homeding.github.io/#page=/elements/bme680.md>
+* About the Standard Example: <https://homeding.github.io/#page=/examples/standard.md>
+* The DHT Element: <https://homeding.github.io/#page=/elements/dht.md>
+* WeatherFeed Element: <https://homeding.github.io/#page=/elements/WeatherFeed.md>
+
+Display
+DisplayText
+
 * PMS Element: <https://homeding.github.io/#page=/elements/pms.md>
 * Log element: <https://homeding.github.io/#page=/elements/log.md>
 * NPTTime Element: <https://homeding.github.io/#page=/elements/ntptime.md>
 
 
 [Standard Example]: https://homeding.github.io/#page=/examples/standard.md
+[DHT Element]: https://homeding.github.io/#page=/elements/dht.md
+[WeatherFeed Element]: <https://homeding.github.io/#page=/elements/WeatherFeed.md>
+
 [BME680 Element]: https://homeding.github.io/#page=/elements/bme680.md
 [PMS Element]: https://homeding.github.io/#page=/elements/pms.md
 [Log element]: https://homeding.github.io/#page=/elements/log.md
