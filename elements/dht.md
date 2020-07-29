@@ -1,4 +1,4 @@
-# The DHT Element
+P# The DHT Element
 
 ::: excerpt dht
 The DHTElement allows retrieving temperature and humidity values from the DHT family sensors and creates actions when new values are available.
@@ -43,21 +43,19 @@ more details can be found at <https://github.com/beegee-tokyo/DHTesp>
 
 ## Connecting a Sensor
 
-The sample configuration coming with the DHT22 recipes is configured to use a DHT22 type of sensor with the data line attached to GPIO2(D4).
-    
-| ESP8266   | DHT22 | Description  |
-| --------- | :---: | ------------ |
-| 3.3v      |   1   | Power Supply |
-| GPI14(D5) |   2   | Data         |
-| GND       |   4   | Ground       |
+The sample configuration coming with the DHT22 recipes is configured to use a DHT22 type of sensor with the data line attached to a GPIO like (D5).
 
-The configuration can be changed easily by modifying the config.json file.
+![DHT Wiring](/elements/dhtwires.png)
+
+The configuration can be changed easily by modifying the element properties in the config.json file.
 
 There is a 10k resistor required between pin 1 and 2 to pull the signal up. This can be done by software when the ESP8266 internal pullup feature on input pin configuration is used.
+
 However the data line is used in both directions and a physical resistor is not too expensive to be added.
 
-The datasheet also suggests using a 100nf capacitor between pin 1 (VCC) and pin 4 (GND) to make power more stable.
+The datasheet also suggests using a 100nf capacitor between pin 1 (VCC) and pin 4 (GND) to make power more stable that is also appropriate when a long cable is used.
 
+There is an option to switch the sensor on and off by using another GPIO pin. See below.
 
 ## Element Configuration
 
@@ -82,9 +80,10 @@ From the generalized sensor element the following properties are available for c
 
 **resendTime** - The current values of the probe are resent after this specified time even when not changing.
 
-**warmupTime** - ??? 3 sec. default
+**warmupTime** - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
+The default time is set to 3 seconds.
 
-**restart** - ???
+**restart** - This property can be set to true to enable an automated restart when the sensor was not responding data.
 
 \* This parameter must be specified.
 
@@ -137,19 +136,17 @@ This occurs after some successful operation time and seems to happen more often 
 
 I recommend to power the sensor with 5 V when ever this is possible but here is the approach to reset the sensor by powering off for some time.
 
-This is done by the following circuit that switches the GND level power to the sensor. The 2N9000 MOSFET 
+This is done by the following circuit that switches the GND level power to the sensor: 
 
-```
-powerpin -- 10k --> mosfet (gate)
-```
+![DHT Power switch](/elements/dhtpower.png)
 
-* [ ] schema here ???.
+The voltage drop on the 2N7000 MOSFET is very small so the sensor is still working. 
 
-The DHT Element recognizes a unresponsive sensor and will turn off operation using the `term()` function.
+The DHT Element recognizes a unresponsive sensor that war working before and will turn off operation using the `term()` function.
 
 If this happens during a sensor data read and the `restart` property is set to true the sensor is switched on again and after the warmup time has passed another data read try is started.
 
-If failing repeats the sensor is switched off completely.
+If failing repeats the sensor is switched off completely but can be restarted by another `start` action.
 
 
 ## Implementation Details
@@ -160,10 +157,10 @@ The implementation uses the DHTesp / `DHT_sensor_library_for_ESPx` library from 
 More documentation can be found at:
 <https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/>
 
-The chip is designed to run on 3.3 - 6.0 volts with a typical voltage of 5 volts.
-It has been observed that when operating on 3.3 volts the chip sometimes gets out of order and needs a reset by disconnecting and reconnecting the sensor from the VCC. Before reading data 1 second wait-time is required.
+There is the plan to optimize memory consumption by coding the DHTxx protocol directly so all additional code in the library is removed from the firmware.
 
-As the sensor has a builtin sensor period of 2 seconds it doesn't make sense to read the values from the sensor more frequently.
+As the sensor has a builtin sensor period of 0.5 to 2 seconds depending on the model
+it doesn't make sense to read the values from the sensor more frequently.
 
 
 ## more
@@ -172,17 +169,7 @@ As the sensor has a builtin sensor period of 2 seconds it doesn't make sense to 
 <https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf> and
 <https://cdn-shop.adafruit.com/datasheets/Digital+humidity+and+temperature+sensor+AM2302.pdf>
 
+* A regular reset of the sensor also may be required when sensor readings are ´jumping´: https://forum.arduino.cc/index.php?topic=355137.0
 
-* 10K VCC - Data
-
-* Enable Shut down of sensor by supplying power through an output pin.
-
-https://forum.arduino.cc/index.php?topic=355137.0
-
-
-https://tzapu.com/minimalist-battery-powered-esp8266-wifi-temperature-logger/
-
-https://homecircuits.eu/blog/battery-powered-esp8266-iot-logger/
-
-https://cdn-learn.adafruit.com/downloads/pdf/dht.pdf
-
+* To run a ESP8266 and a sensor on low power see [Low Power Modes](../boards/_lowpower.md)
+  
