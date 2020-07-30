@@ -32,6 +32,8 @@ See also [Device Logging](logger.md).
 
 **onStart** - These actions are dispatched when all elements are active. 
 
+**sd** - The mDNS based service discobery can be switched off by setting this property to `false`.
+
 
 ### WiFi-Manager and Startup settings
 
