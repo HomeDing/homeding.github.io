@@ -1,12 +1,24 @@
 # The Value Element
 
-::: excerpt value.svg
+::: excerpt value
 The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
 This can e.g. be used to drive a LED or a relay.
 :::
 
+## Web UI
 
-![Value Properties and Actions](valueapi.png)
+On the board page this element is presented by using a specialized widget that visualizes and enables controlling the actual value:
+
+![Value Widget](/elements/valueui.png)
+
+The slider can be used to adjust the value interactively and the arrows allow single step changes.
+
+The setup icon opens a dialog to change the configuration properties.
+
+
+## Value Properties and actions
+
+![Value Properties and Actions](/elements/valueapi.png)
 
 The Value Element is used to implement a property or parameter as a single value independent from a specific Element. The Value Element can send actions to other Elements whenever the value changes.
 
