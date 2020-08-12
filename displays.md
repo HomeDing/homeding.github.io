@@ -51,7 +51,7 @@ To keep the initialization in the required order it is recommended to configure 
 
 ## Startup and system information
 
-On startup, when a display is configured some system information is dispayed before the elements are started.
+On startup, when a display is configured some system information is displayed before the elements are started.
 The same information is also written to the Serial interface and can be observed using the Serial Monitor.
 
 1. "HomeDing"
@@ -61,4 +61,7 @@ The same information is also written to the Serial interface and can be observed
 2. Devicename and IP address
 
 3. cleared
-   
+
+## See also
+
+* [Using the I2C bus](/i2c.md)

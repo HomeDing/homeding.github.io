@@ -75,7 +75,7 @@ that provides the input value to the Button Element.
   "button": {
     "up": {
       "onClick": "device/main?log=click.",
-      "onDoubleClick": " device/main?log=dclick.",
+      "onDoubleClick": " device/main?log=doubleclick.",
       "onPress": " device/main?log=press."
     }
   }
@@ -103,5 +103,5 @@ The `value` property corresponds to the current output of the element.
 
 ## See also
 
-* [Light timer recipe](???)
-* [Remotebutton recipe](???)
+* [Light timer recipe](/recipes/lighttimer.md)
+* [Remote Button recipe](/recipes/remotebutton.md)

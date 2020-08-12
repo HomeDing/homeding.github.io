@@ -175,7 +175,7 @@
 * [webversions](/webversions.md)
 <!-- * [_backend](/_backend.md) -->
 <!-- * [_exampledashbutton](/_exampledashbutton.md) -->
-<!-- * [_i2c](/_i2c.md) -->
+* [Using the I2C bus](/i2c.md)
 <!-- * [_linechart](/_linechart.md) -->
 <!-- * [_manifest](/_manifest.md) -->
 <!-- * [_moisturesonsor](/_moisturesonsor.md) -->

@@ -1,4 +1,4 @@
-P# The DHT Element
+# The DHT Element
 
 ::: excerpt dht
 The DHTElement allows retrieving temperature and humidity values from the DHT family sensors and creates actions when new values are available.
@@ -47,11 +47,19 @@ The sample configuration coming with the DHT22 recipes is configured to use a DH
 
 ![DHT Wiring](/elements/dhtwires.png)
 
-The configuration can be changed easily by modifying the element properties in the config.json file.
+The configuration of the used pin can be changed easily by modifying the element properties in the config.json file.
 
-There is a 10k resistor required between pin 1 and 2 to pull the signal up. This can be done by software when the ESP8266 internal pullup feature on input pin configuration is used.
+### About the pull-up resistor
 
-However the data line is used in both directions and a physical resistor is not too expensive to be added.
+There is a 10k resistor required between pin 1 and 2 to pull the signal up. Both sides, the sensor and teh processor only hav to pull the signal to LOW
+when the protocol requires it; the resistors sets the bus level to HIGH in the case none of participants pulls the level to LOW.
+
+Adding a resistor can be done by software using the ESP8266 internal pullup feature on an input pin by using the pin configuration. But because we switch from input to output frequently is is good to have a constant solution using a external resistor.
+
+Some sensors are known to have a pullup already inside, but it doesn't hurt to add another one!
+In the end a physical resistor is not too expensive to be added, it might work without.
+
+
 
 The datasheet also suggests using a 100nf capacitor between pin 1 (VCC) and pin 4 (GND) to make power more stable that is also appropriate when a long cable is used.
 

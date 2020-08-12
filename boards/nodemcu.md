@@ -12,7 +12,7 @@ These boards offer an easy start into the ESP8266 development. The have all you 
 
 NodeMCU is an open-source firmware for ESP8266 boards that enables scripting a IOT device using the Lua script language.
 
-![nodencu boards](/boards/nodemcu-compare-led.jpg)
+![nodemcu boards](/boards/nodemcu-compare-led.jpg)
 
 There are many derivate versions on the market but usually they follow the published design:
 
@@ -114,14 +114,6 @@ The following env.json file can be used on these boards:
     "0": {
       "manufacturer": "Matthias Hertel"
     }
-  },
-
-  "DisplaySSD1306": {
-    "0": {
-      "address": "60",
-      "resetpin" : "D0",
-      "height": 32
-    }
   }
 }
 ```
@@ -130,8 +122,10 @@ The following env.json file can be used on these boards:
 
 - [Boards overview](/boards.md)
 - [NodeMCU Documentation](https://nodemcu.readthedocs.io/en/master/)
+- [Using the I2C bus](/i2c.md)
 - <https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/>
 - <https://www.nodemcu.com/index_en.html>
 - <https://github.com/nodemcu/nodemcu-devkit-v1.0/blob/master/README.md>
 - ESP8266 board adoption for Arduino: <https://arduino-esp8266.readthedocs.io/en/latest/index.html>
+
 
