@@ -9,10 +9,10 @@ The configuration combines an digitalin, a timer, a switch and a digitalout elem
 * When the input driven by a momentary button is going low an action is sent to the timer and the switch element.
 
 * The switch will toggle the value so you can use the input for switching on and off.
-* The timer is started and will run only once until the pulsetime is over.
-* When the timer pulsetime ends the switch is forced to the value 0 to switch the light off.
+* The timer is started and will run only once until the pulseTime is over.
+* When the timer pulseTime ends the switch is forced to the value 0 to switch the light off.
 
-* The switch value is sent to the digital output driving a LED or a relais.
+* The switch value is sent to the digital output driving a LED or a relays.
 
 ```JSON
 {
@@ -30,8 +30,8 @@ The configuration combines an digitalin, a timer, a switch and a digitalout elem
     "done": {
       "loglevel": "0",
       "description": "reset after timeout",
-      "pulsetime": "00:05:00",
-      "onend": "switch/light?value=0"
+      "pulseTime": "00:05:00",
+      "onEnd": "switch/light?value=0"
     }
   }, 
 
@@ -60,9 +60,7 @@ By adding a button element in-between the digital input and the timer
 more functions can be supported:
 
 * The `click` action of the button will start the timer as before.
-
 * A `doubleclick` will turn off the light immediately by sending an action to the timer that sets the timer to the end state.
-
-* When more momentary buttons are required to control the light you can use other device that have a configuration from the remotebutton recipe???.
+* When more momentary buttons are required to control the light you can use other device that have a configuration from the [Remote Button recipe](/recipes/remotebutton.md).
 
 

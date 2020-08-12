@@ -1,65 +1,95 @@
-# LED Recipe
+# LED On/OFF Recipe
 
-This recipe uses 2 digital input signals to change the brightness level of a LED.
+This recipe uses a single button as an input to switch a LED on and off.
 
-This is can be achieved by using 2 [digital inputs](/elements/digitalin), a [value](/elements/value) and a [pwm](/elements/pwmout) element connected by some actions.
+This recipe can run this on a board like the [NodeMCU development boards](/boards/nodemcu)
+with a button and a LED.
+
+![NodeMCU with LED and Button](/recipes/led.jpg)
+
+Here the FLASH button (D3) is used to switch on and off one of the LEDs (D4).
+
+This is can be achieved by using 3 elements:
+
+* The [digital input element](/elements/digitalin) captures the signal from the momentary button
+* The [switch element](/elements/switch.md) handles the on/off logic
+* The [digital output element](/elements/digitalout.md) controls the voltage level of the output pin with the LED.
 
 ![Elements used in led recipe](/recipes/ledflow.png)
 
-The 2 [digital input elements](/elements/digitalin) either increment or decrement like volume up and down buttons.
-Each of them send an action for increment or decrement to the value element.
+The [digital input elements](/elements/digitalin) transfers the physical signal (LOW when the button in pressed) to a logical level (1 when the button is pressed) using the "inverse" property with 1.
+The internal pullup is enabled to keep the input on HIGH when no button is pressed. On nodemcu boards there is also an external resistor doing this but on other pins this is required.
 
-The increment button must be connected to `D5` and groud. The decrement button mst be connected to `D6`and ground. Both inputs are configured to use the internal pull up resistors to create a physical HIGH level when the buttons are not pressen. By pressing the buttons the physical level ist pulled to ground.
+When the input signal goes low an action is sent to the switch for toggling.
 
-Because this is logically seen as 0 (not pressed) and 1 (pressed) the inverse mode is used.
+The [switch element](/elements/switch.md) exactly was built to get the wanted on/off toggling. 
+The onValue action will be send every time the output value is changing and the action with the actual value is sent to the digital output.
 
-The actions are emitted every time the button is pressed (going from 0 to 1).
+The [digital output element](/elements/digitalout.md) is configured to create a LOW level when the LED should light up.
 
-The [value element](/elements/value) specifies the valid range of of 0...255 and gets controlled by the actions from the input element to increment or decrement the value. When the maximum level is reached no further increment will be done.
 
-Every time the value of the value element is changed an action with the new value is passed to the pwmout element driving the LED.
+## env.json Configuration
 
-The [pwmout element](/elements/pwmout) is configured to allow values within the same range as passed from the value element corresponding to 0 up to the maxium of the pwm output level at the `D4` GPIO.
+The `env.json` can be taken from the board description because it has no special logic for this recipe:
 
-## Configuration
+```JSON
+{
+  "device": {
+    "main": {
+      "name": "nodeding",
+      "description": "nodeMCU board config",
+      "reboottime": "24h",
+      "button": "D3",
+      "led": "D4",
+      "I2C-SDA": "D2",
+      "I2C-SCL": "D1"
+    }
+  },
+
+  "ota": {
+    "main": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "allow Over the Air Updates"
+    }
+  },
+
+  "ssdp": {
+    "0": {
+      "manufacturer": "Matthias Hertel"
+    }
+  }
+}
+```
+
+
+## config.json Configuration
 
 ```JSON
 {
   "digitalin": {
-    "up": {
-      "loglevel": 2,
-      "pin": "D5",
-      "inverse": "true",
-      "pullup": "true",
-      "onlow": "value/led?up=10"
-    },
-    "down": {
-      "loglevel": 2,
-      "pin": "D6",
-      "inverse": "true",
-      "pullup": "true",
-      "onlow": "value/led?down=10"
+    "in": {
+      "description": "Input momentary button",
+      "pin": "D3",
+      "inverse": 1,
+      "pullup": 1,
+      "onLow": "switch/light?toggle=1"
     }
   },
 
-  "value": {
-    "led": {
-      "loglevel": 2,
-      "value": 20,
-      "min": 0,
-      "max": 255,
-      "onValue": "pwmout/led?value=$v",
-      "description": "value for the LED"
+  "switch": {
+    "light": {
+      "description": "Control light level",
+      "value": 0,
+      "onValue": "digitalout/led?value=$v"
     }
   },
 
-  "pwmout": {
+  "digitalout": {
     "led": {
       "pin": "D4",
-      "range": 255,
-      "value": 10,
-      "invers": "true",
-      "description": "Build-in LED"
+      "inverse": "true",
+      "description": "Builtin LED on Port D4"
     }
   }
 }
@@ -67,7 +97,7 @@ The [pwmout element](/elements/pwmout) is configured to allow values within the 
 
 ## See also
 
-* [digital input element](/elements/digitalin)
-* [value element](/elements/value)
-* [pwmout element](/elements/pwmout)
-* [Dimming using rotary encoder](/recipes/ledrotary.md)
+* [digital input element](/elements/digitalin.md)
+* [switch element](/elements/switch.md)
+* [digital output element](/elements/digitalout.md)
+* [Dimmable LED recipe](/recipes/leddim.md)

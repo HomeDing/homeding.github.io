@@ -8,13 +8,17 @@ They show how multiple elements can be combined to create functionality beyond u
 
 ## Combining Elements
 
-* switch a LED on and off
-* [Dimming a LED using 2 momentary buttons](recipes/led.md)
-* Dimming LED using a rotary encoder
+* [LED recipe](/recipes/led.md) - Using a button switch a digital output with a LED on and off.
+* [LED Dimming recipe](/recipes/led.md) - Dimming a LED using 2 momentary buttons.
+* [LED Rotary recipe](/recipes/ledrotary.md) - Dimming LED using a rotary encoder.
+* [NTP Clock](/recipes/ntpclock.md) - Display the current time and date from the internet time service.
+* 
 * Display temperature from local sensor
-* [Display the current time and date](recipes/ntpclock.md)
-* [Display Time, temperature and humidity](recipes/tempdisplay.md)
-* [Alarm with timer for duration](recipes/alarm.md)
+
+* [Display Time, temperature and humidity](/recipes/tempdisplay.md)
+
+* [Alarm with timer for duration](/recipes/alarm.md)
+
 
 ## Combining Devices
 
