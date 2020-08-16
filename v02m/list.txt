@@ -11,6 +11,7 @@
 -favicon48.png
 -favicon512.png
 -favicon558.png
+-polyfill.js
 -es6-promise.auto.js
 -ft/css.svg
 -ft/dir.svg
@@ -20,8 +21,8 @@
 -ft/js.svg
 -ft/json.svg
 -ft/svg.svg
--ft/tt.svg
--ft/ml.svg
+-ft/txt.svg
+-ft/xml.svg
 -clock.svg
 browserconfig.xml
 ding.htm
@@ -33,9 +34,11 @@ favicon512.png
 i/default.svg
 i/ide.svg
 i/minus.svg
+i/plus.svg
 i/start.svg
 i/stop.svg
 iotstyle.css
+list.txt
 manifest.json
 micro.js
 microide.htm
