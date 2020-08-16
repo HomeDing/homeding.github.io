@@ -76,9 +76,7 @@ var MicroRegistry = (function () {
     MicroRegistry.prototype._setPlaceholders = function (obj, props) {
         var _this = this;
         function fill(val) {
-            for (var p in props) {
-                val = val.replace(new RegExp('\\$\\{' + p + '\\}', 'g'), props[p]);
-            }
+            Object.getOwnPropertyNames(props).forEach(function (p) { return val = val.replace(new RegExp('\\$\\{' + p + '\\}', 'g'), props[p]); });
             return val;
         }
         if (obj.nodeType === Node.TEXT_NODE) {
@@ -176,16 +174,15 @@ var MicroRegistry = (function () {
         this._registry[name] = mixin;
     };
     MicroRegistry.prototype.onunload = function (_evt) {
-        for (var n in this.List) {
-            var obj = this.List[n];
+        this.List.forEach(function (obj) {
             if (obj && obj.term) {
                 obj.term();
             }
             for (var a = 0; a < obj.attributes.length; a++) {
                 obj[obj.attributes[a].name] = null;
             }
-        }
-        for (var n in this.List) {
+        });
+        for (var n = 0; n < this.List.length; n++) {
             delete this.List[n];
         }
         this.List = [];
@@ -355,6 +352,9 @@ var GenericWidgetClass = (function (_super) {
         if (src.classList.contains('setconfig')) {
             modal.open('configelementdlg', this.data);
         }
+        else if (src.classList.contains('setactive')) {
+            this.dispatchAction(toBool(this.data.active) ? 'stop' : 'start', '1');
+        }
         else if (src.tagName === 'H3') {
             modal.openFocus(this);
         }
@@ -367,21 +367,54 @@ var GenericWidgetClass = (function (_super) {
 var ButtonWidgetClass = (function (_super) {
     __extends(ButtonWidgetClass, _super);
     function ButtonWidgetClass() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._onclick = '';
+        _this._ondoubleclick = '';
+        _this._onpress = '';
+        _this._timer = 0;
+        _this._start = 0;
+        _this._duration = 0;
+        return _this;
     }
-    ButtonWidgetClass.prototype.on_pointerdown = function (e) {
-        var src = e.target;
-        if ((src) && (src.classList.contains('u-button'))) {
-            src.classList.add('active');
-            this.dispatchAction('value', '1');
+    ButtonWidgetClass.prototype.newData = function (path, key, value) {
+        _super.prototype.newData.call(this, path, key, value);
+        if (key === 'onclick') {
+            this._onclick = value;
+        }
+        else if (key === 'ondoubleclick') {
+            this._ondoubleclick = value;
+        }
+        else if (key === 'onpress') {
+            this._onpress = value;
         }
     };
-    ButtonWidgetClass.prototype.on_pointerup = function (e) {
-        var src = e.target;
-        if (src.classList.contains('u-button')) {
-            src.classList.remove('active');
-            this.dispatchAction('value', '0');
+    ButtonWidgetClass.prototype.on_click = function () {
+        if (this._duration > 800) {
+            if (this._onpress) {
+                this.dispatchAction(this._onpress, '1');
+            }
         }
+        else {
+            var scope_1 = this;
+            if (this._timer) {
+                clearTimeout(this._timer);
+            }
+            this._timer = setTimeout(function () {
+                scope_1.dispatchAction(scope_1._onclick, '1');
+            }, 250);
+        }
+    };
+    ButtonWidgetClass.prototype.on_dblclick = function () {
+        if (this._timer) {
+            clearTimeout(this._timer);
+        }
+        this.dispatchAction(this._ondoubleclick, '1');
+    };
+    ButtonWidgetClass.prototype.on_pointerdown = function () {
+        this._start = new Date().valueOf();
+    };
+    ButtonWidgetClass.prototype.on_pointerup = function () {
+        this._duration = new Date().valueOf() - this._start;
     };
     ButtonWidgetClass = __decorate([
         MicroControl('button')
@@ -606,9 +639,7 @@ function jsonParse(obj, cbFunc) {
         }
         else if (typeof value === 'object') {
             cbFunc(path2, null, null);
-            for (var k in value) {
-                _jsonParse(path2, k, value[k]);
-            }
+            Object.getOwnPropertyNames(value).forEach(function (k) { return _jsonParse(path2, k, value[k]); });
         }
         else {
             cbFunc(path, key, String(value));
@@ -645,13 +676,25 @@ var LogWidgetClass = (function (_super) {
         hub.subscribe(this.microid + '?*', this.newValue.bind(this), true);
     };
     LogWidgetClass.prototype.loadData = function () {
-        fetch(this.filename)
+        var fName = this.filename;
+        var allData = '';
+        var p1 = fetch(fName)
             .then(function (result) {
             return result.text();
         })
-            .then(function (pmValues) {
-            var re = /^\d{2,},\d+/;
-            var pmArray = pmValues.split('\n').filter(function (e) {
+            .then(function (txt) {
+            allData = allData + '\n' + txt;
+        });
+        var p2 = fetch(fName.replace('.txt', '_old.txt'))
+            .then(function (result) {
+            return result.text();
+        })
+            .then(function (txt) {
+            allData = txt + '\n' + allData;
+        });
+        Promise.allSettled([p1, p2]).then(function () {
+            var re = /^\d{4,},\d+/;
+            var pmArray = allData.split('\n').filter(function (e) {
                 return e.match(re);
             });
             this.api.updateLineChartData(this.lChart, pmArray.map(function (v) {
@@ -1211,10 +1254,9 @@ var MicroHub = (function () {
             });
         }
     };
-    MicroHub.prototype.onunload = function (_evt) {
-        for (var n in this._registrations) {
-            delete this._registrations[n];
-        }
+    MicroHub.prototype.onunload = function () {
+        var _this = this;
+        Object.getOwnPropertyNames(this._registrations).forEach(function (n) { return delete _this._registrations[n]; });
     };
     MicroHub.prototype._findStoreObject = function (path) {
         var p = this._store;
