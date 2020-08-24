@@ -32,7 +32,7 @@ See also [Device Logging](logger.md).
 
 **onStart** - These actions are dispatched when all elements are active. 
 
-**sd** - The mDNS based service discobery can be switched off by setting this property to `false`.
+**sd** - The mDNS based service discovery can be switched off by setting this property to `false`.
 
 
 ### WiFi-Manager and Startup settings
@@ -68,6 +68,16 @@ More hints on the I2C bus implementation see [I2C](/i2c.md)
 **title** - short title to be displayed in the web UI
 
 
+### Deep Sleep mode
+
+**sleep** -  To start a deep sleep a `sleep=true` action needs to be send to the device element.
+A `sleep=false` action will disable any sleep mode until next restart.
+
+
+**sleeptime** -  The time a devices sleeps when a sleep action was sent to the device element.
+
+
+
 ## Control the Device
 
 The following action is implemented:
@@ -87,6 +97,7 @@ The following action is implemented:
       "description": "Monitor water leaks at the washing machine",
       "room": "Celler",
       "reboottime": "24h",
+      "sleeptime": 600,
       "led": "D0",
       "button": "D3",
       "homepage": "ding-info.htm",
