@@ -15,21 +15,34 @@ The DisplayTextElement is included in the collection of core elements.
 
 Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
 
+
 ## Element Configuration
 
 The following properties are available for configuration of the element:
 
-| Property   | Description                                                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------- |
-| `x`        | Specifies the x position of the text.                                                          |
-| `y`        | Specifies the y position of the text.                                                          |
-| `value`    | This value will be send to the display.                                                        |
-| `clear`    | This property set to any value will remove the text from the display.                          |
-| `prefix`   | This text is always send to the display as a prefix to the value.                              |
-| `postfix`  | This text is always send to the display as a postfix to the value.                             |
-| `fontsize` | This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize. |
+**x** -- Specifies the x position of the text.                                                          
 
+**y** -- Specifies the y position of the text.                                                          
+
+**clear** -- This property set to any value will remove the text from the display.                          
+
+**prefix** -- This text is always send to the display as a prefix to the value.                              
+
+**postfix** -- This text is always send to the display as a postfix to the value.                             
+
+**fontsize** -- This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize. 
 For the OLED drivers the font sizes 10, 16 and 24 are supported.
+
+## Element Actions
+
+The following actions can be sent to the element:
+
+**value** -- This value is sent to the display including prefix and postfix texts.
+
+**clear** -- The value is cleared and the display is updated by sending prefix and postfix texts.
+
+**redraw** -- The value is sent to the display including prefix and postfix texts.                                                        
+
 
 ### Example for Configuration
 

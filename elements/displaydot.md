@@ -1,7 +1,7 @@
 # The DisplayDot Element
 
 ::: excerpt displaydot
-The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot.
+The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot/circle.
 The value can be changed by using an action.
 :::
 
@@ -18,15 +18,25 @@ The DisplayDotElement is included in the collection of core elements.
 
 ![DisplayDot Properties and Actions](/elements/displaydotapi.png)
 
+
 ## Element Configuration
 
 The following properties are available for configuration of the element:
 
-| Property | Description                             |
-| -------- | --------------------------------------- |
-| `x`      | Specifies the x position of the text.   |
-| `y`      | Specifies the y position of the text.   |
-| `value`  | This value will be send to the display. |
+**x** -- Specifies the x position of the dot/circle.                                                          
+
+**y** -- Specifies the y position of the dot/circle.                                                          
+
+## Element Actions
+
+The following actions can be sent to the element:
+
+**value** -- This boolean interpreted value is sent to the display.
+
+**clear** -- The value is set to false and the display is updated.
+
+**redraw** -- The display is updated.                                                        
+
 
 ### Example for Configuration
 
@@ -36,7 +46,7 @@ The following properties are available for configuration of the element:
     "b": {
       "x": 15,
       "y": 0,
-      "description": "Display a bink"
+      "description": "Display a blinking dot"
     }
   }
 }
