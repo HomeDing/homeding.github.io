@@ -51,9 +51,7 @@ The following actions can be sent to the element:
 
 The following properties are available with the current values at runtime
 
-| Property | Description                         |
-| -------- | ----------------------------------- |
-| `active` | The elem ent is in activated state. |
+**active** -- The element is in activated state.
 
 
 ### Example State
