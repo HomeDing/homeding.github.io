@@ -41,18 +41,19 @@
   "displaydot": {
     "sys": "false",
     "properties": ["loglevel", "description", "x", "y", "value"],
-    "events": ["value", "clear"]
+    "events": ["value", "clear", "redraw"]
   },
 
   "displaytext": {
     "sys": "false",
     "properties": ["loglevel", "description", "x", "y", "fontsize", "value", "prefix", "postfix"],
-    "events": ["value", "clear"]
+    "events": ["value", "clear", "redraw"]
   },
 
   "displayline": {
     "sys": "false",
-    "properties": ["loglevel", "description", "x0", "y0", "x1", "y1"]
+    "properties": ["loglevel", "description", "x0", "y0", "x1", "y1"],
+    "events": ["redraw"]
   },
 
   "pwmout": {
@@ -146,6 +147,10 @@
     "actions": ["onTime"]
   },
 
+  "diag": {
+    "sys": "true"
+  },
+
   "dstime": {
     "sys": "true",
     "properties": ["loglevel", "description", "address", "time", "readtime"]
@@ -162,6 +167,7 @@
   },
 
   "time": {
+    "sys": "true",
     "properties": ["loglevel", "description"],
     "actions": ["onminute", "ontimestamp", "ontime", "ondate"]
   },

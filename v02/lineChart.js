@@ -124,7 +124,7 @@ function boxEqual(box1, box2) {
     && (box1.left === box2.left)
     && (box1.right === box2.right);
   return (result);
-} // outerBox()
+} // boxEqual()
 
 
 /** reduce-function: combine to boxes to a new box covering both. */
@@ -137,36 +137,15 @@ function calcOuterBox(box, graph) {
 } // calcOuterBox()
 
 
-
-/** calculate the box of a graph from the data */
-function calcGraphBox(graph) {
-  if (!graph.data) {
-    graph.box = null;
-
-  } else {
-    var xValues = graph.data.map(function (p) {
-      return p.x;
-    });
-    var yValues = graph.data.map(function (p) {
-      return p.y;
-    });
-
-    graph.box = {
-      left: Math.min.apply(null, xValues),
-      right: Math.max.apply(null, xValues),
-      minY: Math.min.apply(null, yValues),
-      maxY: Math.max.apply(null, yValues)
-    };
-  }
-} // calcGraphBox
-
-
 // ====== Line Charts
 
 LineChartClass = function (options) {
+  options = Object.assign({ linetype: "line", color: "black" }, options);
   return {
-    type: "lineChart",
+    type: 'line',
     data: null,
+    linetype: options.linetype,
+    color: options.color,
     redraw: false,
     svgObj: null,
 
@@ -181,7 +160,6 @@ LineChartClass = function (options) {
       if (points) {
         var xValues = points.map(function (p) { return p.x; });
         var yValues = points.map(function (p) { return p.y; });
-        debugger;
         box = {
           left: Math.min(...xValues),
           right: Math.max(...xValues),
@@ -201,8 +179,14 @@ LineChartClass = function (options) {
       this.data = values;
       this.box = this._calcBox(values);
       this.redraw = true;
+      _startRedraw();
     }, // draw
 
+    clear: function () {
+      if (this.svgObj) this.svgObj.remove();
+    },
+
+    fBox: null,
 
     XfBox: function (box, g) {
       if (box) {
@@ -219,14 +203,25 @@ LineChartClass = function (options) {
       if (values) {
         var scaleX = 128 / (box.right - box.left);
         var scaleY = REGION_HEIGHT / (box.maxY - box.minY);
+        var points;
 
-        var points = values.map(function (p) {
-          return [(p.x - box.left) * scaleX, (p.y - box.minY) * scaleY].join(',');
-        });
+        if (this.linetype == 'steps') {
+          points = values.map(function (p, n) {
+            return 'H' + (p.x - box.left) * scaleX + ' V' + (p.y - box.minY) * scaleY;
+          });
+          // starting point
+          points[0] = "M" + (values[0].x - box.left) * scaleX + ',' + (values[0].y - box.minY) * scaleY;
 
-        this.svgObj = createSVGNode(panelObj, 'polyline', {
+        } else if (this.linetype == 'line') {
+          points = values.map(function (p, n) {
+            return (n > 0 ? 'L' : 'M') + (p.x - box.left) * scaleX + ',' + (p.y - box.minY) * scaleY;
+          });
+        }
+
+        this.svgObj = createSVGNode(panelObj, 'path', {
           class: 'linechart',
-          points: points.join(' ')
+          style: 'stroke:' + this.color,
+          d: points.join(' ')
         });
       }
     } // fDraw()
@@ -234,51 +229,21 @@ LineChartClass = function (options) {
 };
 
 
-function addLineChart(options) {
-  var obj = new LineChartClass(options);
-
-  var n = Math.max(0, graphs.findIndex(function (g) { return g.type == 'lineChart' }));
-  graphs.splice(n, 0, obj);
-  return (n);
-} // addLineChart()
-
-
-// add a new data to the data  of a line
-function _addLineChartData(gID, values) {
-  var g = graphs[gID];
-  if (g) {
-    g.data.push(values);
-    calcGraphBox(g);
-    g.redraw = true;
-    setRedraw();
-  }
-} // _addLineChartData()
-
-
-// Update the values for a line and defer redrawing
-function updateLineChartData(gID, values) {
-  var g = graphs[gID];
-  if (g) {
-    g.draw(values);
-    calcGraphBox(g);
-    g.redraw = true;
-    setRedraw();
-  }
-} // updateLineChartData
-
-
 // ===== HLine horizontal lines =====
 
-HLineClass = function (y) {
+HLineClass = function (options) {
+  options = Object.assign({ data: 0, color: 'black' }, options);
   return {
     type: "hLine",
-    data: y,
+    data: options.data,
+    color: options.color,
     redraw: false,
     svgObj: null,
+
     fBox: function (box, g) {
       if (box) {
-        box.minY = Math.min(y, box.minY);
-        box.maxY = Math.max(y, box.maxY);
+        box.minY = Math.min(this.data, box.minY);
+        box.maxY = Math.max(this.data, box.maxY);
       }
       return (box);
     },
@@ -290,21 +255,15 @@ HLineClass = function (y) {
       var y = (this.data - box.minY) * scaleY;
 
       this.svgObj = createSVGNode(panelObj, 'line', {
+        class: 'hline',
+        style: 'stroke:' + this.color,
         x1: 0, y1: y,
-        x2: 128, y2: y,
-        class: 'hline'
+        x2: 128, y2: y
       });
     } // fDraw()
   }
 };
 
-
-function addHLine(y) {
-  debugger; // add like a data bound graph
-  var obj = new HLineClass(y);
-  n = graphs.push(obj);
-  return (n - 1);
-}
 
 // ===== Vertical Axis =====
 
@@ -397,7 +356,7 @@ function redraw() {
   var bx = graphs.reduce(calcOuterBox, null);
 
   // has the displaybox changed because of new data ? 
-  var doAll = (! boxEqual(bx, displayBox));
+  var doAll = (!boxEqual(bx, displayBox));
   displayBox = bx;
 
   graphs.forEach(function (g) {
@@ -410,14 +369,19 @@ function redraw() {
   redrawTimer = null;
 } // redraw()
 
-function setRedraw() {
+function _startRedraw() {
   if (!redrawTimer) redrawTimer = window.setTimeout(redraw, 20);
-}
+} // _startRedraw()
+
 
 // remove all data and data bound graphs. 
 function _clear() {
-
-}
+  graphs.forEach(function (g) {
+    if (g.clear)
+      g.clear();
+  });
+  graphs = [];
+} // _clear()
 
 
 function setIndicator(box, data) {
@@ -483,11 +447,19 @@ panelObj.addEventListener('mousemove', function (evt) {
  */
 function _addChart(type, options) {
   var newClass;
+  var n = -1;
   var isData = false;
+
+  type = type.toLowerCase();
+  options = Object.assign({}, options);
 
   if (type === 'line') {
     newClass = new LineChartClass(options);
     isData = true;
+
+  } else if (type == 'hline') {
+    newClass = new HLineClass(options);
+
   } else {
     debugger; // not implemented  
 
@@ -495,21 +467,30 @@ function _addChart(type, options) {
 
   if (newClass) {
     if (isData) {
-      var n = Math.max(0, graphs.findIndex(function (g) { return g.type == 'lineChart' }));
-      graphs.splice(n, 0, obj);
+      n = Math.max(0, graphs.findIndex(function (g) { return g.type == 'line' }));
+      graphs.splice(n, 0, newClass);
+    } else {
+      n = graphs.push(newClass) - 1;
     }
   } // if
+  return (n);
 } // _addChart
 
 
+function _add(config) {
+}
+
 document['api'] = {
   clear: _clear,
+  add: _add,
   addChart: _addChart,
-  addLineChart: addLineChart,
-  addLineChartData: _addLineChartData,
-  updateLineChartData: updateLineChartData,
+  draw: function (gID, values) {
+    var g = graphs[gID] || graphs[0];
+    if ((g) && (g.type === 'line')) {
+      g.draw(values);
+    }
+  }, // draw()
 
-  addHLine: addHLine,
   addVAxis: addVAxis,
   addHAxis: _addHAxis,
   options: {
