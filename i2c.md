@@ -78,3 +78,4 @@ https://i2cdevices.org/addresses
 * <https://www.adafruit.com/product/3950>
 * <https://www.sparkfun.com/qwiic#faqs>
 * <https://www.smart-prototyping.com/Qwiic.html>
+* <https://diyi0t.com/i2c-tutorial-for-arduino-and-esp8266/>

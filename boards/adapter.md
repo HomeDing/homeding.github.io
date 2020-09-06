@@ -41,15 +41,15 @@ To add a regulator to the bottom layer of the board the following steps must be 
 
 * Remove the Resistor/Bridge in the middle
 
-* add a compatible Regulator like MCP1703A with SOT-89 package. Ths signals must be like this:
+* add a compatible Regulator like MCP1703A with SOT-89 package. The signals must be like this:
 
     ```
-           IN
+          |IN|
      +-------------+
      |             |
      +-------------+
       |     |     |
-     GND -  IN - OUT
+     GND - IN -  OUT
 ```
 
-* add condensators at leas 100nF to the IN and OUT VCC level.
+* add capacitors at least 100nF to the IN and OUT VCC level.
