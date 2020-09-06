@@ -67,3 +67,8 @@ See also [Remote Button](../recipes/remotebutton.md)
 * https://www.itead.cc/sonoff-dw2.html
 * https://www.microchip.com/design-centers/lowpower
 * http://iot-bits.com/reducing-esp8266-deep-sleep-wakeup-time-current/
+
+
+## See also
+
+* [Watchdog](watchdog.md)
