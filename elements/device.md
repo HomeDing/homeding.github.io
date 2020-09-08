@@ -32,6 +32,10 @@ See also [Device Logging](logger.md).
 
 **onStart** - These actions are dispatched when all elements are active. 
 
+**cache** - This property can be used to replace the default http `cache-control` header for accessing the static files by a custom value.
+The default cache header is `"no-cache"` that is good while developing and configuring.
+But when have a stable configuration caching can be switched on using a value like `"max-age=120"` 
+
 **sd** - The mDNS based service discovery can be switched off by setting this property to `false`.
 
 
@@ -113,3 +117,6 @@ The following action is implemented:
 
 * [WiFiManager](/wifimanager)
 * [Device Logging](logger.md)
+* Cache-control http header : <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>
+
+
