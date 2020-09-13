@@ -135,7 +135,7 @@
 <!-- * [_microjson](/_microjson.md) -->
 <!-- * [_customelement](/_customelement.md) -->
 * [WiFi manager](/wifimanager.md)
-* [The savemode](/savemode.md)
+* [The safemode](/safemode.md)
 * [startup networking](/startupnet.md)
 
 

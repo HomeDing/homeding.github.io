@@ -173,6 +173,6 @@ As of now there are no advances web services features like websockets implemente
 **1**: replace `homeding` with the network name of your device to use this link.
 
 **2**: this service is not available when the device runs in the save mode.
-See [Save Mode](savemode) for details.
+See [Save Mode](safemode.md) for details.
 
 

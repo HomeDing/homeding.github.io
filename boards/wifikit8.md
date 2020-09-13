@@ -95,7 +95,7 @@ The following env.json file can be used on these boards:
       "reboottime": "24h",
       "button": "D3",
       "led": "D4",
-      "savemode": "false",
+      "safemode": "false",
       "I2C-SDA": "D2",
       "I2C-SCL": "D1",
       "logfile": "true"

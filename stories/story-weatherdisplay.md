@@ -300,7 +300,7 @@ The following configuration extract in env.json is enabling
 You should adjust the timezone to your location. If you are in doubt you can use the web site https://www.timeanddate.com/ to get the offset from UTC/GMT. "-2" is right for Germany summertime.
 
 You may also adjust the ota password after reading the instructions regarding the save mode in the documentation at 
-<https://homeding.github.io/index.htm#page=/savemode.md>.
+<https://homeding.github.io/index.htm#page=/safemode.md>.
 
 After a restart you may find the airding device on the network and after getting a reply from the ntp server the local time is available.
 

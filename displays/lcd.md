@@ -60,7 +60,7 @@ This should be done in the `env.json` file:
       "led": 2,
       "button": "D5",
       "reboottime": "24h",
-      "savemode": "false",
+      "safemode": "false",
       "i2c-scl": "D1",
       "i2c-sda": "D2"
     }

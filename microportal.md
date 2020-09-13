@@ -33,7 +33,7 @@ This is a monitoring implementation that summarizes some useful technical inform
 * The actual free heap memory of the device. If this value constantly drops a memory leak is likely to be there that needs to be identified and removed.
 * The version of the firmware
 * The uptime of the device. 
-* The savemode status of the device.
+* The safemode status of the device.
 
 
 ## Homeding mDNS service announcements
