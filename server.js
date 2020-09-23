@@ -87,7 +87,7 @@ app.use(function (req, res, next) {
 });
 
 
-app.listen(3123, () => {
+app.listen(3122, () => {
   console.log('Homeding Doku Web Server...');
-  console.log("open http://localhost:3123/");
+  console.log("open http://localhost:3122/");
 });

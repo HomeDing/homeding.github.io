@@ -39,16 +39,24 @@ The approach is very different to many other IoT solutions regarding these reaso
 
 > One of the powerful features of the HomeDing library is the availability of specialized elements that can be configured to work together and build solutions.
 > 
-> Start by building your first IoT devices by using some of the confguration examples from the [recipies](recipes.md). 
+> Start by building your first IoT device by using some of the configuration examples from the [recipes](recipes.md). 
 
 
 **Web enabled** 
 
-> The IoT devices all offer a full functional web frontend User Interface based on non-Arduino technologies like HTML+CSS+JavaScript.
+> The IoT devices all offer a full functional web frontend User Interface (UI) based on the web technologies HTML+CSS+JavaScript.
 >
-> Again, just using the given implementation is an option to start quickly.
->
-> If you are not familiar with these technologies but you can find some documentation to learn how to build a full functional Web UI in less than 200k code size. 
+> Again, just using the given implementation is an option to start quickly as there are widgets for many of the elements
+> that allow inspecting, controlling and configuration using a standard browser.
+> 
+> If you are not familiar with these technologies you can find some documentation here to learn
+> how to build a full functional Web UI in less than 200k code size. 
+
+Special widgets are e.g. available for:
+
+* [Switch](/elements/switch.md) 
+* [Button](/elements/button.md) 
+* [Value](/elements/value.md)
 
 
 The library is currently made especially for the ESP8266 based boards like the NodeMCU or similar ones.
@@ -100,7 +108,7 @@ The general procedures to setup the development environment can be found in the 
 ## Web interface
 
 Every device based on the Homeding library is connected to the local WiFi network and has a [Web Server](concepts/paper04.md)
-With a small Web Site built-in to visualise the current functionality or to configure some new functionality using a standard web browser. 
+With a small Web Site built-in to visualize the current functionality or to configure some new functionality using a standard web browser. 
 
 The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](webservices.md).
 
@@ -119,9 +127,11 @@ In the documentation you find related links to material that is available on the
 There are many good resources available to get more information about the ESP8266 boards. Here my recommendations:
 
 ### From Espressif
+
 * [ESP8266 documents at espressif](https://www.espressif.com/en/support/download/documents?keys=ESP8266)
 * [The ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
 * [ESP8266EX Datasheet](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
 
 ### General Guides
+
 * [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)

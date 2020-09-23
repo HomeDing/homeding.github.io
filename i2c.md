@@ -41,9 +41,15 @@ They use a different connector and color scheme but the same order of signals.
 
 Some chips and boards that use the I2C bus for communication also have some more signals to be controlled
 like signals to reset the chips or power on/off.
-These are not connected using the 4 core signals and need to be connected ba an additional wiring.
 
-The [OLED Display SH1106](/displays\sh1106.md) is an example that offers a reset pin to enable the display before using the I2C bus.
+These are not connected using the 4 core signals and need to be connected by additional wiring.
+
+**Examples:**
+
+* The [OLED Display SH1106](/displays/sh1106.md) is an example that offers a reset pin
+  to also enable/disable the display and controlling power consumption before using the I2C bus.
+* The CCS811 sensor offers a signal (INT) that can be used to trigger a software interrupt
+  when data is ready instead of polling for state. 
 
 
 ## Wire Library and supporting utilities
