@@ -21,7 +21,7 @@ The display implementations derive from this class.
 
 This is the base class for all Elements. It also implements some generic and utility functionality.
 
-See [Element Class Definition](ElementClass)
+See [Element Class Definition](ElementClass.md)
 
 
 ### FileServer.h
@@ -31,13 +31,13 @@ Implementation of the web server request handler to handle access and upload of 
 
 ### HomeDing.h
 
-This file organizes including the elements into the sketch. This is described in detail in the [Element Class Registration](ElementRegistry).
+This file organizes including the elements into the sketch. This is described in detail in the [Element Class Registration](ElementRegistry.md).
 
 
 ### ElementRegistry.cpp
 
 The Element Registry knows all the Element classes that can be configured.
-This is described in detail in the [Element Class Registration](ElementRegistry).
+This is described in detail in the [Element Class Registration](ElementRegistry.md).
 
 
 ### Logger

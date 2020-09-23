@@ -46,7 +46,7 @@ to add some specific elements for a specific solution. This can be done using th
 
 ### HOMEDING_INCLUDE_xxx Definitions.
 
-The HOMEDING_INCLUDE_xxx definitions control what elements will be registered in the [Element Registry](ElementRegistry).
+The HOMEDING_INCLUDE_xxx definitions control what elements will be registered in the [Element Registry](ElementRegistry.md).
 
 In the *.ino file of every example you can find a list of HOMEDING_INCLUDE_xxx definitions that can be commented out or activated to specify what elements are later available for configuration. By disabling the definitions you can remove individual elements when they are not required to save program space.
 
@@ -81,20 +81,20 @@ These examples are for a minimal board like ESP-01 or Sonoff basic devices with 
 
 Old:
 
-**[Blink](examples/blink)** This very simple example needs just a ESP8266 board and can be used to check the correct setup of the environment.
+**[Blink](examples/blink.md)** This very simple example needs just a ESP8266 board and can be used to check the correct setup of the environment.
 
-**[Standard](examples/standard)**
+**[Standard](examples/standard.md)**
 
-* [PWM](examples/pwm)
-* [Radio](examples/radio)
-* [minimal](examples/minimal)
-* [full](examples/full)
+* [PWM](examples/pwm.md)
+* [Radio](examples/radio.md)
+* [minimal](examples/minimal.md)
+* [full](examples/full.md)
 
 
-- [The HomeDing - HomeBlink Example](examples/blink)
+- [The HomeDing - HomeBlink Example](examples/blink.md)
 
-- [The build-in WebServer](webserver)
-- [The build-in Web-Services](webservices)
+- [The build-in WebServer](webserver.md)
+- [The build-in Web-Services](webservices.md)
 
 
 

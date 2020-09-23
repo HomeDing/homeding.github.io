@@ -160,7 +160,7 @@ LOGGER_INFO("device restart initiated.");
 
 ## Set loglevel for the device
 
-By using the configuration of the [Device Element](elements/device) the device wide log level can be specified.
+By using the configuration of the [Device Element](elements/device.md) the device wide log level can be specified.
 
 ```JSON
 {
@@ -194,5 +194,5 @@ The default is to have an overall error level for logging and trace level loggin
 
 ## See also
 
-* [Log Element](elements/log)
-* [Device Element](elements/device)
+* [Log Element](elements/log.md)
+* [Device Element](elements/device.md)

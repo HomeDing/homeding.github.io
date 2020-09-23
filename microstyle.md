@@ -66,7 +66,7 @@ Links can be used trigger a navigation.
 
 ## Icons
 
-see [microicons](microicons)
+see [microicons](microicons.md)
 
 
 ### u-valueindicator

@@ -11,13 +11,13 @@ Another good source of board descriptions and hints as well as references can be
 
 The following boards with 4 MBytes flash memory have been used for development and their specialties can be found in the board reviews.
 
-* The [standard example](examples/standard) can be flashed onto these boards by providing most of the [elements](/elements) and [display adapters](/displays).
+* The [standard example](examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements.md) and [display adapters](/displays.md).
 * The web interface is working out of the box by using 1MByte of the flash memory and includes the Web UI, IDE features and logging capabilities.
 * These devices are used for `always-on` scenarios to provide the webserver functionality. Using a battery based power source will only result in a short lifetime maybe a few hours or days.
 * These devices have enough flash capacity to be updated over the network by using the OTA method.
 
 :::board nodemcu
-The **[NodeMCU development boards](/boards/nodemcu)** is one of the most common development boards including an usb to serial converter chip.
+The **[NodeMCU development boards](/boards/nodemcu.md)** is one of the most common development boards including an usb to serial converter chip.
 :::
 
 :::board wifikit8
@@ -49,7 +49,7 @@ This solution is especially suitable for creating devices that run on battery or
 The following boards with 4 MBytes flash memory are often used as board-on-board solutions but when used alone
 an external power supply and some minimal wiring is required.
 
-The [standard example](examples/standard) can be flashed onto these boards by providing most of the [elements](/elements) and [display adapters](/displays).
+The [standard example](examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements.md) and [display adapters](/displays.md).
 
 :::board ESP12
 * ESP-12 and ESP-12E used directly.
@@ -82,9 +82,9 @@ not strictly the same form factor this module is directly made by espressif as a
 
 The following are boards and solutions with 1 MBytes flash memory chips.
 
-The [minimal example](/examples/minimal) can be flashed onto these boards by providing the typical switch elements and most core elements but no sensor and display adapters. The functionality will be activated through the configuration.
+The [minimal example](/examples/minimal.md) can be flashed onto these boards by providing the typical switch elements and most core elements but no sensor and display adapters. The functionality will be activated through the configuration.
 
-The [sensor example](/examples/sensor) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration.
+The [sensor example](/examples/sensor.md) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration.
 
 :::board esp01
 The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relais appliances.
@@ -137,11 +137,9 @@ Older boards with 512 KByte are still available but should be avoided because OT
 
 The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relais appliances.
 
-The web interface can be tailored e.g. to visualise the current sensor values.
+The web interface can be tailored e.g. to visualize the current sensor values.
 
-<!-- 
-**[Sonoff Basic]()** is a off-the-shelf solution to switch main power consumers. If you have experience in building high voltage solutions this one is interesting. Similar Sonoff devices are available. The Tasmota library has a wiki with much details.
- -->
+**[Sonoff Basic](/boards/sonoff.md)** is a off-the-shelf solution to switch main power consumers. If you have experience in building high voltage solutions this one is interesting. Similar Sonoff devices are available. The Tasmota library has a wiki with much details.
 
 
 
@@ -154,4 +152,4 @@ The web interface can be tailored e.g. to visualise the current sensor values.
 * <http://www.forward.com.au/pfod/ESP8266/GPIOpins/index.html>
 * <https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process>
 
-* [ESP8266 pins](boards/pins)
+* [ESP8266 pins](boards/pins.md)

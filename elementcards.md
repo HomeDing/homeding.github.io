@@ -14,7 +14,7 @@ The following Elements have special templates implemented:
 | Element                 | Configuration features                                         |
 | ----------------------- | -------------------------------------------------------------- |
 | dstime                  | Setting the on-chip time using the actual time of the browser. |
-| [timer](elements/timer) |
+| [timer](elements/timer.md) |
 
 
 ## Implementing a Template

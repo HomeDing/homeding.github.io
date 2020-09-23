@@ -72,9 +72,9 @@ The full documentation is available at: https://homeding.github.io/
 
 Some text on the concepts and architecture of this library.
 
-- [Build your own things easily](/concepts/paper01)
-- [Software Architecture](/concepts/paper02)
-- [Elements and Actions](/concepts/paper03)
+- [Build your own things easily](/concepts/paper01.md)
+- [Software Architecture](/concepts/paper02.md)
+- [Elements and Actions](/concepts/paper03.md)
 - [Web Server](concepts/paper04.md)
 
 
@@ -86,7 +86,7 @@ Each element supports a unique feature, e.g. reads a sensor, drives a display, c
 
 The list of the [elements](elements.md) already provided within this library, the [examples](examples.md) and the [recipes](recipes.md) show you the available features that can be configured.
 
-It is intentionally easy to implement your own specific elements as you can see in some of the [examples](examples).
+It is intentionally easy to implement your own specific elements as you can see in some of the [examples](examples.md).
 
 
 ## Configuration
@@ -102,7 +102,7 @@ The HomeDing library can be used with almost any board that is using a ESP8266 p
 
 For some [boards](boards.md) you can find reviews and summaries with a suitable the configuration of the system.
 
-The general procedures to setup the development environment can be found in the [setup instructions](examples/setup).
+The general procedures to setup the development environment can be found in the [setup instructions](examples/setup.md).
 
 
 ## Web interface

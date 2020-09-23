@@ -288,11 +288,11 @@ More detailed information on displays and related elements can be found in [disp
 | [Adafruit NeoPixel]                                 | [Neo](/elements/neo.md)                                                           |
 | [LiquidCrystal_PCF8574]                             | [LCD display](/displays/lcd.md)                                                   |
 | [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SDD1306 display](/displays/ssd1306.md) and [SH1106 display](/displays/sh1106.md) |
-| [RotaryEncoder]                                     | [Rotary Element](elements/rotary)                                                 |
-| [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT)                                                       |
+| [RotaryEncoder]                                     | [Rotary Element](elements/rotary.md)                                                 |
+| [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT.md)                                                       |
 | [OneWire]                                           | [DS18B20 Element](elements/ds18b20.md)                                            |
 
-<!-- | [TabRF] | [RFSend Element](elements/rfsend) -->
+<!-- | [TabRF] | [RFSend Element](elements/rfsend.md) -->
 <!-- + Wire + SoftwareSerial -->
 
 [Adafruit NeoPixel]: https://github.com/adafruit/Adafruit_NeoPixel
@@ -307,4 +307,4 @@ More detailed information on displays and related elements can be found in [disp
 
 ## See also
 
-* [Element](elementclass)
+* [Element](elementclass.md)
