@@ -7,7 +7,7 @@
 - [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
 - [Include required libraries](#include-required-libraries)
 - [Customize the standard example sketch](#customize-the-standard-example-sketch)
-- [Upload the web ui](#upload-the-web-ui)
+- [Upload the web UI](#upload-the-web-ui)
 - [Add the BME680 Sensor](#add-the-bme680-sensor)
 - [Add the PMS5003 Sensor](#add-the-pms5003-sensor)
 - [Adding some network features](#adding-some-network-features)
@@ -117,7 +117,7 @@ For simplicity on adding the new device to the network you may add the SSID and 
 Now everything regarding implementation of the sketch is done and the firmware can be compiled and uploaded.
 
 
-## Upload the web ui
+## Upload the web UI
 
 The standard example comes with a data folder that contains all file for the web UI.
 

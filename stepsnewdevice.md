@@ -13,7 +13,7 @@ This is a step by step instruction to bring a device based on the HomeDing libra
   - [Web based Update](#web-based-update)
   - [File Upload in IDE](#file-upload-in-ide)
   - [File Save in IDE](#file-save-in-ide)
-  - [Using Upload tools lie cUrl](#using-upload-tools-lie-curl)
+  - [Using Upload tools like cUrl](#using-upload-tools-like-curl)
 - [Choose an icon](#choose-an-icon)
 - [See also](#see-also)
 
@@ -163,7 +163,7 @@ Only files in the root folder (not /i/*.svg) can be uploaded.
 The [Micro IDE](/microide.md) can create new files and can update existing files by entering text and saving it to a (new) filename.
 
 
-### Using Upload tools lie cUrl
+### Using Upload tools like cUrl
 
 * When working with commandline tools the following cURL statement can be used to upload individual files.
 
