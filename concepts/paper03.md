@@ -31,28 +31,41 @@ This is the concept of the Elements you find in the HomeDing library.
 
 The common interface is about supporting the life cycle:
 
-* creating new elements
-* configure elements
-* start and running elements
-* receiving actions
-* sending actions
-* terminating elements
+* creating new elements - static `create()` method, constructor and `init()`
+* configure elements - `set()` method
+* start and running elements - `start()` method
+* receiving actions - `set()` method
+* terminating / stopping elements - `term()` method
 
-where configuring elements and receiving actions is the same implementation.
+The both functionalities of configuring elements and receiving actions
+are sharing the same implementation in the `set()` method.
 
-The standard interface of every Element is defined by the Element class and every specific Element is derived from this class and adding the specific functionality.
+The standard interface of every Element is defined by the base Element class
+and every specific Element is derived from this class and adding the specific functionality.
 
-![Methods of Element implementations](elementapi.png.md) ???
+![Members of Element implementations](/concepts/elementapi.png)
 
 A detailed description of the common Element Interface can be found in [ElementInterface](ElementInterface.md).
 
 ## Actions
 
-Actions or you may call it Events is the functionally that allows Elements to communicate.
+Actions or you may call it events is the functionally that allows Elements to communicate.
+
+Actions are always send by the origin when required.
+
 By using multiple elements that interact this way more complex things can be created.
 
-Because of some experience with responsiveness of things the messages are not dispatched immediately by the board.
-Calling the loop function will be prioritized over sending a message.
+When an Element is active the `loop()` function is called periodically so the Element can so something meaningful. Here some elements will get sensor values or check the state of some GPIO pins and will then create a named action like `displaytext/info?value=Hello` and hand it over to the action dispatcher in the board class.
+
+This example action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `Hello`. The notation of actions is using the URL syntax by intention so the same action can also be triggered from outside using the web server interface:
+
+* open the url: http://(devicename)/$board/displaytext/info?value=Hello
+* use a command line tool like: curl http://(devicename)/$board/displaytext/info?value=Hello
+* use the remote element in another HomeDing based device.
+
+Inside the board class the action dispatcher is available. Actions are collected in a queue and will be dispatched to the target element shortly after they have been handed over.
+
+Calling the loop() function / executing the element code is prioritized over sending a message.
 This is why the board implements a store and forward mechanism with a queue.
 The order of the messages is guaranteed to be stable as long as they are not send via network.
 
@@ -62,34 +75,42 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 ### Initialization Phase
 
-* Start the board and make unique components like the file service, the web server
-  and the optional display available by initializing them.
+* Start the board and make unique facilitating classes like the file service
+  and the web server available by initializing them. 
 
-  See [displays](displays.md)
+* Parse the env.json file.
+
+  Here the system elements like the [Device](/elements/device.md), the [displays](displays.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
+
+  These elements will be created.
 
 * Parse the config.json file.
 
-  Open the config.json file and use the micro JSON parser to report all configurations to the board initialization implementation.
+  Same with the config.json file. Here the functional elements are configured.
+  
+  These elements will be created too.
 
 * Create all Elements as defined by the configuration.
 
   Every time a 2. level in the config.json file is found a Element with this type and id will be created.
 
-* Set the configuration properties of all Elements as defined by the configuration.
-
-  Every time a 3. level in the config.json file is found the `set` function of the Element will be called and the value will be passed as a parameter.
+  All configuration properties of the Elements as defined by the configuration.
 
 * Start all Elements
 
-  After all Elements are created and configured they are activated.
+  All `system` elements will be started/activated at this time.
 
   Now the show can begin.
+
+  When a network (other than board manager) is available the 'network' elements will be started and when a local time is defined the `time` elements are started too.
+
 
 ### Working Phase
 
 * Run all Elements and dispatch all actions among them.
 
-  The `loop` function of all active Elements is called and when Actions should be passed the board will dispatch them to the right Element.
+  The `loop()` function of all active Elements is called and when Actions should be passed the board will dispatch them to the right Element.
+
 
 ## Restarting and Reconfiguration
 
@@ -98,6 +119,7 @@ When a configuration change is required the configuration file in the SPIFFS nee
 The new configuration will not be effective immediately but only by restarting the whole thing.
 
 However, it is possible to change properties of the current active Elements be using the REST methods of the web server. These changes will be effective immediately but are not saved to the configuration file.
+
 
 ## Compile time vs runtime configuration
 
