@@ -158,7 +158,7 @@ Opening the url `http://outdoor` will redirect directly to the built-in dashboar
       "reboottime": "24h",
       "description": "Outdoor sensor",
       "logfile": 1,
-      "savemode": "false",
+      "safemode": "false",
       "homepage":"/board.htm",
       "led": "D0",
       "button": "D4"

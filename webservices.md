@@ -62,7 +62,16 @@ GET <http://homeding/$reset> <sup>*1</sup>
 
 This service wipes out the network configuration and then restarts the device.
 
-TODO: ??? disable in "save-mode`
+This service is disabled in [safemode](safemode.md).
+
+
+### /$resetall
+
+GET <http://homeding/$resetall> <sup>*1</sup>
+
+This service wipes out the filesystem, the network configuration and then restarts the device.
+
+This service is disabled in [safemode](safemode.md).
 
 
 ### /$elements
@@ -115,8 +124,6 @@ This service has to be called multiple times. The first time starts scanning and
 ### /$connect=...&p=...** &wps=... <span style="color:red">\*</span>
 
 This service is required for the network configuration page (/setup.htm) and allows changing the network configuration.
-
-TODO: ??? disable in "save-mode`
 
 
 ### /$list
