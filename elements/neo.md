@@ -112,6 +112,5 @@ Example:
 * [Light Element](/elements/light.md)
 
 
-
-
-
+## Tags
+#element #output

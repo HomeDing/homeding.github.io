@@ -87,4 +87,7 @@ The following properties are available with the current values at runtime
 
 ## See also
 
-* <https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations  >
+* <https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations>
+
+## Tags
+#element #input

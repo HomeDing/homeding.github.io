@@ -97,3 +97,7 @@ You can use this sketch to verify that the sensor is communicating correctly in 
 * http://www.aqmd.gov/docs/default-source/aq-spec/resources-page/plantower-pms5003-manual_v2-3.pdf
 * http://luftdaten.info/
 * https://github.com/avaldebe/PMserial/blob/master/README.md
+
+
+## Tags
+#element #sensor

@@ -62,3 +62,7 @@ There are no actions being sent by this element.
 
 * [NeoElement](elements/neo.md)
 * Gamma correction tricks <https://learn.adafruit.com/led-tricks-gamma-correction>
+
+
+## Tags
+#element #output

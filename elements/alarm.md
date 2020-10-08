@@ -29,3 +29,5 @@ This element implements the following properties and actions:
 }
 ```
 
+## Tags
+#element #time

@@ -105,3 +105,6 @@ The `value` property corresponds to the current output of the element.
 
 * [Light timer recipe](/recipes/lighttimer.md)
 * [Remote Button recipe](/recipes/remotebutton.md)
+
+## Tags
+#element #input

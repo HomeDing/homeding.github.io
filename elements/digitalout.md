@@ -83,3 +83,7 @@ The state of the digitalout element includes:
   }
 }
 ```
+
+
+## Tags
+#element #output-element

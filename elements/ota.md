@@ -69,3 +69,7 @@ or to upload a SPIFFS image:
 
 * [safemode](../safemode.md)
 * Hardening the IoT device: https://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html
+
+
+## Tags
+#element #system

@@ -47,3 +47,7 @@ The following properties are available for configuration of the element:
 
 * [Light timer recipe](???)
 * [Remotebutton recipe](???)
+
+
+## Tags
+#webelement

@@ -57,9 +57,12 @@ The following properties are available for configuration of the element:
 ```
 
 
-
 ## See also
 
 * [Using the I2C bus](/i2c.md)
 * <https://makezine.com/2019/01/18/getting-started-with-real-time-clocks/>
 * <https://richard.burtons.org/2015/04/23/real-time-clock-ds1307ds3231-for-the-esp8266/>
+
+
+## Tags
+#element #time

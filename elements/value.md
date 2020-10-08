@@ -112,3 +112,8 @@ The current value is reported as the state of a value element.
 * Rotary Encoder
 * Menu Element
 * LED Recipe
+
+
+## Tags
+#element #data
+

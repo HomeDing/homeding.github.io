@@ -114,3 +114,7 @@ filename: "templog.txt"
 
 * Max or average
 * New interval typically n times of the logging interval
+
+
+## Tags
+#element #data
