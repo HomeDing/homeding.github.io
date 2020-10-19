@@ -126,6 +126,7 @@ GPIO14(D5) for digital input and output signals is a good ideas as long as they 
 
 ## See also
 
+* [deep sleep mode](/boards/deepsleep.md)
 * [ESP8266 Technical Reference]
 * [ESP8266EX datasheet]
 * [NodeMCU Documentation]

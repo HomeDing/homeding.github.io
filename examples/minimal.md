@@ -84,7 +84,7 @@ The Web UI that comes with this example fits into 128 kByte and provides showing
 
 ## Modifications
 
-This example also acts as a starting point for other sensors that need no extensive ui capabilities or use the deep sleep and wake-up modus to save energy when powered by battery or solar.
+This example also acts as a starting point for other sensors that need no extensive ui capabilities or use the [deep sleep mode](/boards/deepsleep.md) and wake-up modus to save energy when powered by battery or solar.
 
 Not included elements of the library can be added by defining the Element to be included in the sketch. There are some commented lines in the source code that show how this can be achieved.
 

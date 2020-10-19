@@ -35,15 +35,14 @@ The GPIO0 signal should be pulled up to HIGH to start the board.
 Some boards (at least some ESP-12E) already have an internal resistor for the same reason but to add another one is not harmful.
 
 
-## Adding a Regulator:
+## Adding a Regulator
 
 To add a regulator to the bottom layer of the board the following steps must be done.
 
-* Remove the Resistor/Bridge in the middle
+* Remove the Resistor/Bridge in the middle on the upper side.
+* add a compatible regulator like MCP1703A with SOT-89 package. The signals must be like this:
 
-* add a compatible Regulator like MCP1703A with SOT-89 package. The signals must be like this:
-
-    ```
+```
           |IN|
      +-------------+
      |             |
@@ -51,5 +50,6 @@ To add a regulator to the bottom layer of the board the following steps must be 
       |     |     |
      GND - IN -  OUT
 ```
-
 * add capacitors at least 100nF to the IN and OUT VCC level.
+
+<!-- picture of adapter board with added regulator ??? -->

@@ -125,7 +125,7 @@ After starting the program you can use it for input and output like the GPIO0 pi
 
 ## Modification for deep sleep mode
 
-The ESP8266 supports a deep sleep mode that needs an external connection between the GPIO16 and the RESET.
+The ESP8266 supports a [deep sleep mode](/boards/deepsleep.md) that needs an external connection between the GPIO16 and the RESET.
 
 Here is a picture on how to create such a connection on an ESP-01:
 

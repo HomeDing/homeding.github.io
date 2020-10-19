@@ -22,7 +22,7 @@ The Network Time Protocol (NTP) is supported by many operating systems and is th
 You can find many NTP servers on the internet. The web site <https://www.pool.ntp.org/en/> has a repository of available servers. Inside companies usually a local server is available.
 
 Because it takes some time to get a package from the server and of course sometimes the server doesn't answer at all or network packages
-are lost you cannot rely on getting a correct time immediately after starting the board or coming back from a deep sleep mode.
+are lost you cannot rely on getting a correct time immediately after starting the board or coming back from a [deep sleep mode](/boards/deepsleep.md).
 If you have a device with these requirements a chip based real-time like the  [DSTime Element](elements/dstime.md) may be a better option.
 
 

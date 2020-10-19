@@ -51,7 +51,7 @@ The display size is 128 * 64 pixels.
 
 ### Onboard LED
 
-The green LED at GPIO16(D0) only can be used when there is no need for deep sleep functionality and only can be switched on and off.
+The green LED at GPIO16(D0) only can be used when there is no need for [deep sleep](/boards/deepsleep.md) functionality and only can be switched on and off.
 
 In cannot be dimmed using by PWM because GPIO16 is not supporting this.
 
