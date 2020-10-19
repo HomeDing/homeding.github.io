@@ -40,7 +40,7 @@ Some boards (at least some ESP-12E) already have an internal resistor for the sa
 To add a regulator to the bottom layer of the board the following steps must be done.
 
 * Remove the Resistor/Bridge in the middle on the upper side.
-* add a compatible regulator like MCP1703A with SOT-89 package. The signals must be like this:
+* add a compatible regulator like MCP1703A or HT7333A with SOT-89 package. The signals must be like this:
 
 ```
           |IN|

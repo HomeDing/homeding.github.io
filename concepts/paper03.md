@@ -69,6 +69,27 @@ Calling the loop() function / executing the element code is prioritized over sen
 This is why the board implements a store and forward mechanism with a queue.
 The order of the messages is guaranteed to be stable as long as they are not send via network.
 
+
+## Sensor Elements
+
+Many IoT devices include special chips that can retrieve some environment parameters like temperature, humidity but also power consumption and voltage level.
+
+These elements are usually asking for new values by implementing the chip specific hardware protocol or read registers using the standard protocols I2C or SPI. I2C is very common for many sensor chips and is well supported by the Homeding library. Other hardware based protocols are supported by directly or by including specific libraries from the Arduino library collection.
+
+When new sensor values are found the Element will send out a configurable action to inform other elements about it. Displays, Logging and even elements on remote devices are connected this way.  
+
+
+## Consuming internet based services 
+
+There are services on the internet that offer interesting data or services that can be consumed by calling the external website. These services sometimes require a registration to get an access key but still are called without using an inbound communication and open incoming boards.
+
+In contrast to actions where changes are dispatched using actions to the receiving elements the information must be polled from the service provider on the internet.
+
+The `HttpClientElement` takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific  url.
+
+Implementing a specific service can now be done using this base class like implementing the `WeatherFeedElement` that can retrieve weather from openweathermap.org. 
+
+
 ## The Life Cycle of the Board and Elements
 
 The implementation of the Board class is the part of the HomeDing Library that organizes all created Elements and dispatches the actions.
