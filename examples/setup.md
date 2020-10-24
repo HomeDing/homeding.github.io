@@ -1,8 +1,8 @@
 # Setup the Arduino environment
 
-> #Draft
+> #Draft ???
 
-To upload one of the exaples or implementing your own devices using the Homeding library your environment must be prepared. 
+To upload one of the examples or implementing your own devices using the Homeding library your environment must be prepared. 
 The following steps are required to use ESP boards:
 
 ## Arduino development environment
@@ -45,14 +45,14 @@ When you use different boards or processor types in the Arduino Environment you 
 
 For a NodeMCU Board the settings should look like this:
 
-![NodeMCU Configuration](ConfigMenu.png)
+![NodeMCU Configuration](/stories/arduino-boardoptions.png)
 
 You may have to adjust the USB port as this varies on different computers.
 
 
 ## Next steps
 
-After having setup your environment and having configured the board correctly you can start using o e of the examples providing together with the HomeDing library.
+After having setup your environment and having configured the board correctly you can start using one of the examples providing together with the HomeDing library.
 
 ## See also
 
