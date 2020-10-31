@@ -1,8 +1,8 @@
-# Available Elements
+# Elements
+
+Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like [sensors](/sensors/sensors.md). 
 
 The following element implementations are available in the current version of the HomeDing library.
-
-\* For some Elements a specific library is required.
 
 
 ## Input Elements
@@ -13,6 +13,12 @@ These elements are used to create an action based on a specific input signal lik
   <a href="#page=elements/digitalin.md"><img src="i/digitalin.svg"></a>
   <p><strong><a href="#page=elements/digitalin.md">DigitalIn Element</a></strong><br />
   Input Element used with momentary buttons or switches but also from sensors giving a HIGH/LOW value.</p>
+</div>
+
+<div class="short">
+  <a href="#page=/elements/digitalsignal.md"><img src="i/digitalsignal.svg"></a>
+  <p><strong><a href="#page=/elements/digitalsignal.md">DigitalSignal Element</a></strong><br />
+  Input Element used to handle digital input with short time level changes using interrupts.<p>
 </div>
 
 <div class="short">
@@ -288,8 +294,8 @@ More detailed information on displays and related elements can be found in [disp
 | [Adafruit NeoPixel]                                 | [Neo](/elements/neo.md)                                                           |
 | [LiquidCrystal_PCF8574]                             | [LCD display](/displays/lcd.md)                                                   |
 | [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SDD1306 display](/displays/ssd1306.md) and [SH1106 display](/displays/sh1106.md) |
-| [RotaryEncoder]                                     | [Rotary Element](elements/rotary.md)                                                 |
-| [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT.md)                                                       |
+| [RotaryEncoder]                                     | [Rotary Element](elements/rotary.md)                                              |
+| [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT.md)                                                    |
 | [OneWire]                                           | [DS18B20 Element](elements/ds18b20.md)                                            |
 
 <!-- | [TabRF] | [RFSend Element](elements/rfsend.md) -->

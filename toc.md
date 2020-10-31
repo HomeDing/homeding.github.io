@@ -25,6 +25,7 @@
 
 ### [General Elements](/elements.md)
 * [Digital Input](/elements/digitalin.md)
+* [Digital Signal](/elements/digitalsignal.md)
 * [Analog Input](/elements/analog.md)
 * [Digital Output](/elements/digitalout.md)
 * [PWM Output](/elements/pwmout.md)
