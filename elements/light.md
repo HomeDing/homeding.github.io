@@ -65,4 +65,4 @@ There are no actions being sent by this element.
 
 
 ## Tags
-#element #output
+#element #output #light

@@ -16,7 +16,8 @@ This element implements the following properties and actions:
 
 **onTime** The actions to be emitted.
 
-### Example for Configuration
+### Configuration Example
+
 
 ```JSON
 {

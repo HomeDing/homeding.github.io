@@ -44,7 +44,8 @@ The following actions can be sent to the element:
 **redraw** -- The value is sent to the display including prefix and postfix texts.                                                        
 
 
-### Example for Configuration
+### Configuration Example
+
 
 ```JSON
 {

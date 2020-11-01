@@ -6,7 +6,7 @@ The DHTElement allows retrieving temperature and humidity values from the DHT fa
 
 The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.
 
-![DHT22 pins](/elements/dht22pins.jpg) ![DHT22 on Breadboard](/elements/dht22board.jpg)
+![DHT22 pins](/elements/dht22pins.jpg) q![DHT22 on Breadboard](/elements/dht22board.jpg)
 
 
 ## Web UI for the DHT Element
@@ -95,7 +95,8 @@ The default time is set to 3 seconds.
 
 \* This parameter must be specified.
 
-### Example for Configuration
+### Configuration Example
+
 
 ```JSON
 {

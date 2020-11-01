@@ -38,7 +38,8 @@ The following actions can be sent to the element:
 **redraw** -- The display is updated.                                                        
 
 
-### Example for Configuration
+### Configuration Example
+
 
 ```JSON
 {

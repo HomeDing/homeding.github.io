@@ -35,7 +35,8 @@ The following properties are available with the current values at runtime
 | -------- | --------------------------------- |
 | `value`  | The actual value to be displayed. |
 
-## Example for Configuration
+## Configuration Example
+
 
 ```JSON
 {

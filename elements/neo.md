@@ -113,4 +113,4 @@ Example:
 
 
 ## Tags
-#element #output
+#element #output #light

@@ -41,7 +41,8 @@ See <https://developer.ibm.com/technologies/systems/articles/au-aix-posix/> that
 See <https://sites.google.com/a/usapiens.com/opnode/time-zones> for examples.
 
 
-### Example for Configuration
+### Configuration Example
+
 
 ```JSON
 {

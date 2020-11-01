@@ -63,3 +63,6 @@ http://devdevice/$board/pwmout/led?value=255
 
 ```JSON
 ```
+
+## Tags
+#element #output

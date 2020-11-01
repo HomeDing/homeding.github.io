@@ -49,7 +49,8 @@ The following actions are available to change the output level:
 
 The physical output depends on `inverse`.
 
-### Example for Configuration
+
+### Configuration Example
 
 ```JSON
 {
@@ -73,6 +74,7 @@ The state of the digitalout element includes:
 | active   | Is set to true when the Element is active. |
 | value    | Current output value.                      |
 
+
 ### Example State
 
 ```JSON
@@ -86,4 +88,4 @@ The state of the digitalout element includes:
 
 
 ## Tags
-#element #output-element
+#element #output

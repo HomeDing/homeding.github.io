@@ -35,7 +35,8 @@ The input values can be preset and the output can be inverted:
 The non-inverted output value is on HIGH level when all input values are on HIGH level.
 
 
-### Example for Configuration
+### Configuration Example
+
 
 ```JSON
 {

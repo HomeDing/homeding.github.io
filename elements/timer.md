@@ -82,17 +82,15 @@ A timer with type=`once` must be started with a `start` action and will end afte
 
 The timer element can run on it's own but can also be controlled by the following incomming actions:
 
-**start** -
-Receiving this action starts the timer from the beginning.
+**start** - Receiving this action starts the timer from the beginning.
 
-**stop** -
-Receiving this action stop the timer.
+**stop** - Receiving this action stop the timer.
 
-**next** -
-Receiving this action advances the timer to on / off .
+**next** - Receiving this action advances the timer to on / off .
 
 
-### Example for Configuration
+### Configuration Example
+
 
 ```JSON
 {
