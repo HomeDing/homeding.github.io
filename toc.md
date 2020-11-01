@@ -1,4 +1,4 @@
-* [HomeDing Library Documentation](/readme.md)
+* [HomeDing Library Documentation](/start.md)
 * [Making IoT easy](/concepts/paper01.md)
 * [Software Architecture](/concepts/paper02.md)
 * [Elements and Actions](/concepts/paper03.md)
