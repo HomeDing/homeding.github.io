@@ -190,10 +190,6 @@ Markdown viewer SPA using
   </div>
   <nav class="inpage"></nav>
   <div class="container-fluid">
-    <div class="row"></div>
-
-    <div class="s-md"></div>
-
     <div class="row" style="display:none">
       <div class="col">
         <h4>Found Pages:</h4>
@@ -205,9 +201,13 @@ Markdown viewer SPA using
       <div class="col">
         <h4>Missing Pages:</h4>
         <div id="missingFiles"
-          style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em"></div>
+          style="background-color: pink;border: solid 1px red;padding: 2px;min-height:2em"></div>
       </div>
     </div>
+    <div class="row"></div>
+
+    <div class="s-md"></div>
+
   </div>
 
   <script>
@@ -249,12 +249,36 @@ Markdown viewer SPA using
     });
 
 
-    var mdc2 = new markdownitContainer(md, 'board', {
+    new markdownitContainer(md, 'board', {
       render: function (tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*board\s+(.*)$/);
           return '<div class="board"><a href="#page=/boards/' + m[1] + '.md"> <img src="/boards/' + m[1] + '.jpg"></a>\n';
+        } else {
+          return '</div>\n';
+        }
+      }
+    });
+
+    new markdownitContainer(md, 'element', {
+      render: function (tokens, idx) {
+        var t = tokens[idx];
+        if (t.nesting === 1) {
+          var m = t.info.trim().match(/^\s*element\s+(\S+)/);
+          return '<div class="board"><img src="/elements/' + m[1] + '.jpg">\n';
+        } else {
+          return '</div>\n';
+        }
+      }
+    });
+
+    new markdownitContainer(md, 'sensor', {
+      render: function (tokens, idx) {
+        var t = tokens[idx];
+        if (t.nesting === 1) {
+          var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
+          return '<div class="board"><img src="/sensors/' + m[1] + '.jpg">\n';
         } else {
           return '</div>\n';
         }
@@ -378,7 +402,7 @@ Markdown viewer SPA using
 
       // check for #page=xxx.md
       onhashchange: function (/* evt */) {
-        var pName = getHashParam('page', 'readme.md').toLowerCase();
+        var pName = getHashParam('page', 'index.md').toLowerCase();
 
         loadFile(
           pName,
