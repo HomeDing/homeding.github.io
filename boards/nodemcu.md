@@ -1,3 +1,6 @@
+<style>
+img[title=nodeboard] { width:200px;}
+</style>
 # The NodeMCU development boards
 
 These boards offer an easy start into the ESP8266 development. The have all you need for programming, offer much memory and a LED for `first step` projects is on board.
@@ -10,19 +13,28 @@ These boards offer an easy start into the ESP8266 development. The have all you 
 * 3.3 volts regulator
 * On-board extra LED
 
-NodeMCU is an open-source firmware for ESP8266 boards that enables scripting a IOT device using the Lua script language.
+NodeMCU is an open-source firmware for ESP8266 boards that enables scripting a IOT device using the Lua scripting language.
 
-![nodemcu boards](/boards/nodemcu-compare-led.jpg)
+In general all these boards are exchangeable and can be used as replacements. 
 
 There are many derivate versions on the market but usually they follow the published design:
 
 - The pin names Dnn are unified and correspond to GPIO pins with different numbers. Some older boards had different mappings. See also [ESP8266 pins](/boards/pins).
-
-- There is a USB to Serial chip but version varies.
-
-- There is an onboard power regulator on most boards but their maximum power supply capacities varies.
-
+- There is a USB to Serial chip but version varies between CP2102 and CH340.
+If you upload sketches using more than 115200 baud or have problems finding USB adapter firmware this may be of interest.
+- There is an onboard 3.3 V power regulator.
+When you have sensors or other peripherals that use the 3.3V from the board be sure you have a regulator that can drive the required current and that doesn't get too hot.
 - There are multiple  versions with different sizes. If you can choose take the smaller (right) one when used on a breadboard still offers space for using jumpers. The bigger (left) one leaves no place because it consumes the whole available breadboard width 
+
+Here is a collection of pictures of known boards:
+
+![node-00](/boards/nodemcu-00.jpg "nodeboard")
+![node-01](/boards/nodemcu-01.jpg "nodeboard")
+![node-02](/boards/nodemcu-02.jpg "nodeboard")
+![node-03](/boards/nodemcu-03.jpg "nodeboard")
+![node-04](/boards/nodemcu-04.jpg "nodeboard")
+
+I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 regulator.
 
 
 ## Overview table
