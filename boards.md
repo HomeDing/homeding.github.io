@@ -36,46 +36,48 @@ The **[Wemos labeled board with OLED](/boards/wemosoled.md)** is a ESP-12E with 
 The **[Esp-Wroom-02 Module ESP8266 with OLED and 18650](/boards/wroom2.md)** is a ESP-12E with OLED display, LiIon Battery support and switch.
 :::
 
-:::board esp12dev
-The **[Esp-12 development boards](/boards/esp12dev.md)** is a adapter board that can be used to program a ESP12 board before adding it to a device.
 
+
+## Bare ESP-12 boards
+
+These boards help implementing things using the ESP-12 boards directly.
+When used alone an external power supply and some minimal wiring is required.
+
+:::board esp12dev
+The **[Esp-12 development boards](/boards/esp12dev.md)** is a adapter board that can be used to program a ESP-12 boards before adding it to a device.
 This solution is especially suitable for creating devices that run on battery or low power conditions and therefore do not need USB chips.
 :::
 
 
-
-## Bare Esp8266 boards with 4 MByte flash memory
-
-The following boards with 4 MBytes flash memory are often used as board-on-board solutions but when used alone
-an external power supply and some minimal wiring is required.
-
-The [standard example](examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements.md) and [display adapters](/displays.md).
-
-:::board ESP12
-* ESP-12 and ESP-12E used directly.
+:::board whiteadapter
+The **[White ESP-12 adapter](/boards/whiteadapter.md)** enables using ESP-12 type boards on a breadboad and includes some resistors and a power regulator option.
 :::
 
 
-### ESP-12 module types
+## ESP-12 module types
+
+ON the ESP-12 with 4 GByte Flash the [standard example](examples/standard.md) can be uploaded by providing most of the [elements](/elements.md) and [display adapters](/displays.md) out of the box.
 
 The ESP-12 format is a common format but there are different sub-versions available. The all use the ESP8266 SoC but flash size and available pins differ:
 
-**ESP-12** (old) and **ESP-12E** 
+:::board esp12e
+The **ESP-12** (old) and **ESP-12E** modules offer 8+8 pins at the sides where most of the interesting pins from the ESP8266 SoC chips are available.
 
-These modules offer 8+8 pins at the sides where most of the interesting pins from the ESP8266 SoC chips are available.
+They are manufactured by different vendors.
+:::
 
-**ESP-12F** 
+:::board esp12f
+On the **ESP-12F**, in addition to the ESP-12E some more pins are available on the "bottom" side that are th signals to the FLASH memory. They are not of much use in most scenarios but in the case you want to add some SPI RAM.
+:::
 
-In addition to the ESP-12E some more pins are available on the "bottom" side that are th signals to the FLASH memory. They are not of much use in most scenarios but in the case you want to add some SPI RAM.
+:::board esp12s
+The **ESP-12S** is an optimized version from esp-12f with a better antenna signal. FLASH SPI signals are not available.
+::: 
 
-**ESP-12S** 
-
-Optimized version from esp-12f with a better antenna singal. FLASH SPI signals are not available. 
-
-**ESP-WROOM-02** 
-
-not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte.
-
+:::board espwroom02
+The **ESP-WROOM-02** is not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte.
+I found it mounted on the 
+::: 
 
 
 ## Bare Esp8266 boards with 1 MByte flash memory
@@ -93,6 +95,10 @@ An external power supply is required and only 2-4 GPIO signals can be used.
 :::
 
 
+## Devices based on Esp8266
+
+ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.  
+
 :::board sonoffbasic
 The **[Sonoff Basic](/boards/sonoffbasic.jpg)** is a off-the-shelf solution to switch main power consumers.
 
@@ -101,21 +107,17 @@ Similar Sonoff devices are available that also contain the ESP8266 CPU.
 If you have experience in building high voltage solutions this one is interesting and ready to be programmed.
 :::
 
+:::board sp111
+These small sockets from Gosund or Blitzwolf have 1 GByte Flash and can be used with the
+[Minimal Example](/examples/minimal.md)  
+:::
 
 <!-- ESP8266 Module Series
-ESP-12F	Common ESP8266 module version
-ESP-12S	 Optimized from esp-12f, better antenna singal
 ESP-07S	 Pin compatible with esp-12, IPEX connector to get greater signal
 ESP-01S	 General DIP PTH version, less pin lead out, easy to use
 ESP-01M	 Vertical stand on your PCBsave space and better signal
 WROOM-02	Most certificated, best design by original Espressif.
-ESP-12E, ESP-12F, ESP-14
-
-
-Adapter board:
-https://www.esp8266.com/viewtopic.php?t=6505
-
-
+ESP-14
 -->
 
 

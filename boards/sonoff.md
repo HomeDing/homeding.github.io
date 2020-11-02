@@ -75,7 +75,8 @@ The relay is attached to the GPIO12 and is activated on LOW level
       "inverse": "false"
     }
   }
-}```
+}
+```
 
 ##  Relais
 

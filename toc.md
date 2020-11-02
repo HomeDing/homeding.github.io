@@ -116,17 +116,22 @@
 ### [Boards](/boards.md)
 * [nodemcu](/boards/nodemcu.md)
 * [esp01](/boards/esp01.md)
-* [deepsleep](/boards/deepsleep.md)
-* [neo](/boards/neo.md)
-* [sonoff](/boards/sonoff.md)
 * [wemosoled](/boards/wemosoled.md)
 * [wifikit8](/boards/wifikit8.md)
+* [Witty](/boards/witty.md)
 * [wroom2](/boards/wroom2.md)
+* [neo](/boards/neo.md)
+* [ESP-12 Adapter](/boards/whiteadapter.md)
+* [ESP-12 dev boards](/boards/esp12dev.md)
+* [sonoff devices](/boards/sonoff.md)
 * [pins](/boards/pins.md)
-<!-- * [esp32/esp32azureiotkit](/boards/esp32/esp32azureiotkit.md)
+* [deepsleep](/boards/deepsleep.md)
+<!--
+* [esp32/esp32azureiotkit](/boards/esp32/esp32azureiotkit.md)
 * [esp32/readme](/boards/esp32/readme.md)
 * [esp32/_g](/boards/esp32/_g.md)
-* [esp32/_ttgogallery](/boards/esp32/_ttgogallery.md) -->
+* [esp32/_ttgogallery](/boards/esp32/_ttgogallery.md)
+*  -->
 
 
 ### [Device Implementation doku](/implementation.md)
