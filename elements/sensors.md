@@ -1,6 +1,8 @@
 # Sensor Elements
 
-The sensor elements enable reading values from a sensor chip on a specific time interval.
+Some elements are based on the abstract implementation of the "SensorElement" class.
+
+These sensor elements enable reading values from a sensor chip on a specific time interval.
 When new values could be retrieved these are emitted to other elements like
 [displays](/displays.md) or [logs](/elements/log.md) to be shown or recorded.
 

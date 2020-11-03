@@ -6,23 +6,6 @@ Many of the sensors offer simple digital or analog signals to be used by the gen
 
 Others others are using data transported over a bus like [I2C bus](/i2c.md) or even specific protocols and need special elements.
 
-- [Sensors giving digital signals](#sensors-giving-digital-signals)
-  - [Mechanical sensors](#mechanical-sensors)
-  - [Magnetic sensors](#magnetic-sensors)
-  - [Light sensors](#light-sensors)
-  - [Temperature sensors](#temperature-sensors)
-  - [Sound sensors](#sound-sensors)
-- [Digital output](#digital-output)
-- [Sensor Elements with impulse/frequency transfers](#sensor-elements-with-impulsefrequency-transfers)
-- [Sensor Elements with data exchange](#sensor-elements-with-data-exchange)
-  - [Environment sensing](#environment-sensing)
-  - [Motion](#motion)
-  - [Measurements](#measurements)
-  - [Chips for Digital and Analog I/O](#chips-for-digital-and-analog-io)
-- [Light control](#light-control)
-- [Radio](#radio)
-- [See also](#see-also)
-
 ## Sensors giving digital signals
 
 Many sensors offer direct usable digital signals that can be detected and used as an input to create actions.
@@ -171,13 +154,6 @@ On loud sounds many short signal spikes occur that can be catched by the [Digita
 [Digital Output](/elements/digitalout.md) 
 :::
 
-:::sensor no led
-**LED**
-
-[Digital Output](/elements/digitalout.md) 
-[PWM Output Element](/elements/pwmout.md)
-:::
-
 
 ## Sensor Elements with impulse/frequency transfers
 
@@ -280,11 +256,11 @@ The BMP280 is a combination of a temperature and absolute barometric pressure se
 :::
 -->
 
-:::sensor ccs811
+<!-- :::sensor ccs811
 **CJMCU-811** or **CCS811**
 
 not yet supported.
-:::
+::: -->
 
 ### Motion
 
@@ -296,10 +272,18 @@ not yet supported.
 ### Measurements
 
 :::sensor ina219
-The **ina219** chip can meassure voltage and current for power consumer in the low voltage and low power range.
+The **ina219** chip can measure voltage and current for power consumer in the low voltage and low power range.
 
-This chiop is not yet fully supported by the HomeDing library.
+This chip is not yet fully supported by the HomeDing library.
 An experimental state implementation in the [INA219 Element](/elements/_ina219.md) in the DevDing example is available.
+:::
+
+:::sensor soil
+**soil**
+:::
+
+:::sensor capasoil
+**capasoil**
 :::
 
 ### Chips for Digital and Analog I/O
@@ -323,21 +307,51 @@ I2C PWM output
 
 ## Light control
 
-p9813: Groove chainable LED driver
+:::sensor no led
+**LEDs** that are directly attached to a GPIO port can be driven by the
+[Digital Output Element](/elements/digitalout.md) that supports switching the LED on or off.
 
-:::sensor no neo
+The [PWM Output Element](/elements/pwmout.md) can dim a LED using PWM signals.
+:::
+
+
+:::sensor p9813
+The chip **p9813** als known as **Groove LED driver** is used to control 12V RGB stripes using a special protocol that can control many driver chips n a row.
+:::
+
+:::sensor neo
 **Neopixel** or **WS2811** are chips with a RGB led and an embedded driver chip that can directly be controlled by a GPIO pin. Multiple LEDs of this type can be chained on stripes or can build a LED grid.
 
 The [Neo Element](/elements/neo.md) supports these LED chains for colors and patterns.
+There is also a special [Neopixel board](/boards/neo.md) available especially for controlling these LEDs. 
 :::
 
 
 [Light Element](/elements/light.md) : PWM values for single color or RGB Leds attached directly on GPIO pins. 
 
 
+## Input Components
+
+:::sensor no button
+A simple momentary button can be use directly with a [DigitalInput Element](/elements/digitalIn.md).
+to create actions on the button signal.
+
+The [Switch Element](/elements/switch.md) implements the behavior for using a button to start/stop or on/of a signal.
+:::
+
+
+:::sensor no switch
+A switch that can give a binary signal and can be use directly with a [DigitalInput Element](/elements/digitalIn.md).
+:::
+
+:::sensor rotary
+The [Rotary Element](/elements/rotary.md) enables decoding the 2 signals from a rotary encoder. 
+:::
 
 
 ## Radio
+
+There is a very specific example that shows how to use the HomeDing and the radio library to build a full functional radio that can be controlled by some local input but also from remote.
 
 :::sensor si4721
 **si4721**: FM Transiever with receiving radio stations functionality only.
