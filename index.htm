@@ -116,6 +116,15 @@ Markdown viewer SPA using
       max-width: 10rem;
     }
 
+    .warning {
+      border:0.2rem solid #ebccd1;
+      color:#a94442;
+      background-color: #f2dede;
+      border-radius: 0.4rem;
+    }
+    .warning > h3 {
+      color:#a94442;
+    }
 
     nav {
       position: fixed;
@@ -200,8 +209,7 @@ Markdown viewer SPA using
     <div class="row" style="display:none">
       <div class="col">
         <h4>Missing Pages:</h4>
-        <div id="missingFiles"
-          style="background-color: pink;border: solid 1px red;padding: 2px;min-height:2em"></div>
+        <div id="missingFiles" style="background-color: pink;border: solid 1px red;padding: 2px;min-height:2em"></div>
       </div>
     </div>
     <div class="row"></div>
@@ -285,6 +293,18 @@ Markdown viewer SPA using
       }
     });
 
+    new markdownitContainer(md, 'warning', {
+      render: function (tokens, idx) {
+        var t = tokens[idx];
+        if (t.nesting === 1) {
+          var m = t.info.trim().match(/^\s*warning\s+(.*)$/);
+          return '<div class="warning"><h3>Warning</h3>\n';
+        } else {
+          return '</div>\n';
+        }
+      }
+    });
+
     function getHashParam(param, defValue) {
       var h = window.location.hash;
       if (h) {
@@ -348,28 +368,28 @@ Markdown viewer SPA using
             window.clearInterval(this.checkLinkTimer);
           } else {
             var m = aObj.href.match(/=(\w*.md)$/);
-            var fName = m[1].toLowerCase();
-
-            if (this._found.indexOf(fName) >= 0) {
-              aObj.classList.remove('verify'); // good link
-            } else if (this._missing.indexOf(fName) >= 0) {
-              aObj.classList.remove('verify');
-              aObj.classList.add('bad'); // bad link
-            } else {
-              this._checking = true;
-
-              loadFile(
+            if (m) {
+              var fName = m[1].toLowerCase();
+              if (this._found.indexOf(fName) >= 0) {
+                aObj.classList.remove('verify'); // good link
+              } else if (this._missing.indexOf(fName) >= 0) {
+                aObj.classList.remove('verify');
+                aObj.classList.add('bad'); // bad link
+              } else {
+                this._checking = true;
+                loadFile(
                   /* "md/" + */ fName,
-                function (txt) {
-                  // found
-                  this.pushFound(fName);
-                  this._checking = false;
-                }.bind(this),
-                function (x) {
-                  this.pushMissing(fName);
-                  this._checking = false;
-                }.bind(this)
-              );
+                  function (txt) {
+                    // found
+                    this.pushFound(fName);
+                    this._checking = false;
+                  }.bind(this),
+                  function (x) {
+                    this.pushMissing(fName);
+                    this._checking = false;
+                  }.bind(this)
+                );
+              }
             }
           } // if
         } // if
