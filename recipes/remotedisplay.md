@@ -1,10 +1,17 @@
 # Remote Display for Temperature and Humidity
 
-> draft ???
+This recipe shows how to implement 2 devices
+* A device named "displayding" with a locally attached display to display some information.
+* Another device with a DHT sensor that sends the sensor to the display.
 
-This recipe implements a device with a locally attached display to display some information from another device.
 
-## Display configuration
+## Configuration of the display device
+
+The display device has no need to know about the sensor device because the sensor device will always send the actions across the network.
+Only the general display configuration and the displayText elements need to be configured.
+
+
+### Display general configuration
 
 There is a configuration required that corresponds to the chip inside the display and the protocol used to communicate with the display.
 
@@ -21,13 +28,16 @@ There is a configuration required that corresponds to the chip inside the displa
 }
 ```
 
-This is specified typically in the env.json file that holds all the configurations for the board and the directly connected actors, sensors and displays. Samples for this configuration can be found in the description of the display elements and some board descriptions.
+This is specified typically in the `env.json` file that holds all the configurations for the board
+and the directly connected actors, sensors and displays.
+Samples for this configuration can be found in the description of the display elements and some board descriptions.
 
 See also [displays](/displays.md) for a list of the supported displays.
 
 Having done this configuration the display will be used on system startup showing the devicename and the assigned ip-address. 
 
-## Display elements
+
+### Display elements configuration
 
 The following configuration used 2 display elements for text to define 
 the position and size of the information that will be shown:
@@ -53,13 +63,15 @@ the position and size of the information that will be shown:
 }
 ```
 
-The prefix and postfix fits to the purpose of the information that is send to the display device from another device that has a sensor for temperature and humidity.
+The prefix and postfix fits to the purpose of the information that is send to the display device
+from the device that has a sensor for temperature and humidity.
 
 
-## Remote sending actions
+## Configuration of the sensor device
 
-The device that has the sensors attached needs to have the elements configures so that actions are sent to the display device.
-This is done by using the element for the sensor and elements for the remote actions an elements.
+
+The sensor device needs to have the elements configures so that actions are sent to the display device.
+This is done by using a remote element for every action that is send across the network.
 
 Here a DHT22 sensor is configured on pin D4.
 
@@ -93,3 +105,5 @@ For sending out to 2 remote elements the 2 remote configurations are used.
 }
 ```
 
+## Tags
+#recipe #sensor #remote #display
