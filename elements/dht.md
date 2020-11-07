@@ -95,8 +95,8 @@ The default time is set to 3 seconds.
 
 \* This parameter must be specified.
 
-### Configuration Example
 
+### Configuration Example
 
 ```JSON
 {

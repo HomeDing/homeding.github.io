@@ -188,7 +188,7 @@ Not yet fully supported by the HomeDing library. Experimental implementation in 
 :::sensor no bl0937
 Power monitoring chips : **HLW8012 BL0937**
 
-[BL0937 Element](/elements/_bl0937.md) 
+[BL0937 Element](/elements/bl0937.md) 
 :::
 
 
