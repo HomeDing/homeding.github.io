@@ -332,7 +332,7 @@ There is also a special [Neopixel board](/boards/neo.md) available especially fo
 
 ## Input Components
 
-:::sensor no button
+:::sensor button
 A simple momentary button can be use directly with a [DigitalInput Element](/elements/digitalIn.md).
 to create actions on the button signal.
 
@@ -340,7 +340,7 @@ The [Switch Element](/elements/switch.md) implements the behavior for using a bu
 :::
 
 
-:::sensor no switch
+:::sensor switch
 A switch that can give a binary signal and can be use directly with a [DigitalInput Element](/elements/digitalIn.md).
 :::
 
