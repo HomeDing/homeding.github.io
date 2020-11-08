@@ -9,29 +9,23 @@ The following element implementations are available in the current version of th
 
 These elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors .
 
-<div class="short">
-  <a href="#page=elements/digitalin.md"><img src="i/digitalin.svg"></a>
-  <p><strong><a href="#page=elements/digitalin.md">DigitalIn Element</a></strong><br />
-  Input Element used with momentary buttons or switches but also from sensors giving a HIGH/LOW value.</p>
-</div>
+:::element digitalin digitalin
+The [DigitalIn Element](/elements/digitalin.md)
+is used with momentary buttons or switches but also from sensors giving a HIGH/LOW value.
+:::
 
-<div class="short">
-  <a href="#page=/elements/digitalsignal.md"><img src="i/digitalsignal.svg"></a>
-  <p><strong><a href="#page=/elements/digitalsignal.md">DigitalSignal Element</a></strong><br />
-  Input Element used to handle digital input with short time level changes using interrupts.<p>
-</div>
+:::element digitalsignal digitalin
+Input Element used to handle digital input
+with short time level changes using interrupts.
+:::
 
-<div class="short">
-  <a href="#page=elements/analog.md"><img src="/i/analog.svg"></a>
-  <p><strong><a href="#page=elements/analog.md">Analog Element</a></strong><br/>
-  Input Element to capture a analog voltage using the builtin ADC.</p>
-</div>
+:::element analog analog
+Input Element to capture a analog voltage using the builtin ADC.
+:::
 
-<div class="short">
-  <a href="#page=elements/rotary.md"><img src="/i/rotary.svg"></a>
-  <p><strong><a href="#page=elements/rotary.md">Rotary Element</a> *</strong><br/>
-  Input Element for using a rotary encoder.</p>
-</div>
+:::element rotary rotary
+Input Element for using a rotary encoder.
+:::
 
 <div style="clear:both"></div>
 
@@ -40,32 +34,34 @@ These elements are used to create an action based on a specific input signal lik
 The [sensor elements](elements/sensors.md) implement the adoption to a very specific sensor or sensor family. They share
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
 
-<div class="short">
-  <a href="#page=elements/dht.md"><img src="/i/dht.svg"></a>
-  <p><strong><a href="#page=elements/dht.md">DHT Element</a> *</strong><br/>
-  Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
-</div>
+:::element dht dht
+Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
+:::
 
-<div class="short">
-  <a href="#page=elements/bme680.md"><img src="/i/bme680.svg"></a>
-  <p><strong><a href="#page=elements/bme680.md">BME680 Element</a> *</strong><br/>
-  Read BME680 sensor data with temperature, humidity, pressure and gas resistance.</p>
-</div>
+:::element ds18b20 ds18b20
+The DS18B20Element retrieves temperature values from DS18B20 aka.
+Dallas Temperature sensors and creates actions.
+:::
 
-<div class="short">
-  <a href="#page=elements/pms.md"><img src="/i/pms.svg"></a>
-  <p><strong><a href="#page=elements/pms.md">PMS Element</a></strong><br/>
-  Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
-</div>
+:::element bme680 bme680
+Read BME680 sensor data with temperature, humidity, pressure and gas resistance.</p>
+:::
 
-<!-- DS18B20 -->
+:::element pms pms
+Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
+:::
+
+:::element bmp280 bmp280
+Read sensor values from a BMP280 sensor with temperature and absolute barometric pressure.
+:::
+
+
 <!-- BME280 -->
-<!-- BMP280 -->
 <!-- MPU9250 -->
 
 <div style="clear:both"></div>
 
-More detailed information on the sensor implementation can be found in [sensor elements](/elements/sensors.md).
+More detailed information on sensor implementation can be found in [sensor elements implementation](/elements/sensors.md).
 
 
 ## Output and Actor Elements
@@ -90,6 +86,10 @@ More detailed information on the sensor implementation can be found in [sensor e
 
 <div style="clear:both"></div>
 
+
+## Light Elements
+* [Simple Light](/elements/light.md)
+* [Neopixels / WS2812](/elements/neo.md)
 
 ## Service Elements
 
@@ -192,11 +192,13 @@ More detailed information on displays and related elements can be found in [disp
   Get the actual local time using the NTP protocol from a NTP server.</p>
 </div>
 
+<!--
 <div class="short">
   <a href="#page=elements/dcftime.md"><img src="/i/dcftime.svg"></a>
   <p><strong><a href="#page=elements/dcftime.md">DCFTime Element</a></strong><br/>
   Get the actual local time from a DCF 77kHz signal over the air.</p>
 </div>
+-->
 
 <div class="short">
   <a href="#page=elements/schedule.md"><img src="/i/schedule.svg"></a>
@@ -216,6 +218,9 @@ More detailed information on displays and related elements can be found in [disp
   Element for creating timer (duration) based actions.</p>
 </div>
 
+<div style="clear:both"></div>
+
+More detailed information on time element and time related implementation can be found in [time elements implementation](/timeelements.md).
 
 
 ## System Elements
@@ -263,29 +268,35 @@ More detailed information on displays and related elements can be found in [disp
   storing timestamp based sensor values.</p>
 </div>
 
+
+## Web UI Elements
+
+These elements starting with **web** in their name are only known to the Web UI implementation but are not part of the firmware- The intention is to enrich and customize the Web UI dashboard with elements like presets and macros.
+
+:::element webbutton button
+  This element adds a button the Web UI of the board. The button can be used to trigger actions by clicking.
+:::
+
+
 ## Other Elements
 
-<div class="short">
-  <a href="#page=elements/radio.md"><img src="/i/radio.svg"></a>
-  <p><strong><a href="#page=elements/radio.md">Radio Element</a></strong><br/>
-  This element is part of the <a href="#page=examples/radio.md">Radio Example</a>
-  and uses the external <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>
-  to configure various FM radio boards.</p>
-</div>
+You can find some more elements in the DevDing example folder.
+These implementations are still experimental cases but are published already maybe with some restricted functionality.
 
-<!-- <div class="short">
-<a href="#page=elements/xxx.md"><img src="/i/default.svg"></a>
-<p>
-  This element is part of the <a href="#page=examples/radio.md">Radio Example</a>
-   and enables the configuration of a XXX amplifier chip e.g to set volume.</p>
-</div> -->
+:::element ina219 default
+INA219 sensor, voltage and current.
+:::
 
-<div class="short">
-<a href="#page=elements/webbutton.md"><img src="/i/button.svg"></a>
-<p>
-  This element configures a button in the web ui to trigger an action by clicking.
-</p>
-</div>
+:::element radio radio
+This element is part of the [Radio Example](/examples/radio.md)
+and uses the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+to configure various FM radio boards.
+:::
+
+:::element rfsend rfsend
+for sending rf 433 signals.
+:::
+
 
 ## Required external libraries
 

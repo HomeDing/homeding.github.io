@@ -23,81 +23,9 @@
 <!-- * [examples/radio](/examples/radio.md) -->
 
 
-### [General Elements](/elements.md)
-* [Digital Input](/elements/digitalin.md)
-* [Digital Signal](/elements/digitalsignal.md)
-* [Analog Input](/elements/analog.md)
-* [Digital Output](/elements/digitalout.md)
-* [PWM Output](/elements/pwmout.md)
-* [Button](/elements/button.md)
-* [Switch](/elements/switch.md)
-* [Rotary](/elements/rotary.md)
-* [Value](/elements/value.md)
-
-
-### [Sensor Elements](/elements/sensors.md)
-* [DS18B20/Dallas sensor](/elements/ds18b20.md)
-* [DHT11/DHT22 sensor](/elements/dht.md)
-* [Bosch BMP280](/elements/bmp280.md)
-* [Bosch BME680](/elements/bme680.md)
-* [PMS5003 Air Particle sensor](/elements/pms.md)
-  
-### Service Elements
-
-* [WeatherFeed](/elements/weatherfeed.md)
-
-### Data logging
-* [Log File Element](/elements/log.md)
-
-### Light Elements
-* [Simple Light](/elements/light.md)
-* [Neopixels / WS2812](/elements/neo.md)
-
-<!-- ### Other
-* [dmx](/elements/dmx.md)
-* [menu](/elements/menu.md) -->
-  
-<!-- * [rfsend](/elements/rfsend.md) -->
-<!-- * [_ad5258](/elements/_ad5258.md)
-* [_gy91](/elements/_gy91.md)
-* [_max30105](/elements/_max30105.md)
-* [_MCP4725](/elements/_MCP4725.md)
-* [_monitor](/elements/_monitor.md)
-* [_mpu9250](/elements/_mpu9250.md)
-* [_p9813](/elements/_p9813.md)
-* [_pca9685](/elements/_pca9685.md)
-* [_pcf8574](/elements/_pcf8574.md)
-* [_pull](/elements/_pull.md)
-* [_tpa2016](/elements/_tpa2016.md) -->
-
-### System Elements
-* [Device](/elements/device.md)
-* [Over the Air updates](/elements/ota.md)
-* [Remote Actions](/elements/remote.md)
-* [SSDP / UPnP Device announcement](/elements/ssdp.md)
-
-### [Time related Elements](/timeelements.md)
-* [Network Time](/elements/ntptime.md)
-* [DS3231 RTC chip](/elements/dstime.md)
-* [Alarm actions](/elements/alarm.md)
-* [Schedule actions](/elements/schedule.md)
-* [Local Time actions](/elements/time.md)
-* [Timer based actions](/elements/timer.md)
-<!-- * [_dcftimeelement](/elements/_dcftimeelement.md) -->
-
-### [Displays](/displays.md)
-* [HD44780 LCDs](/displays/lcd.md)
-* [SH1106 based OLED](/displays/sh1106.md)
-* [SSD1306 based OLED](/displays/ssd1306.md)
-* [SSD1309 based OLED](/displays/ssd1309.md)
-* [Display text](/elements/displaytext.md)
-* [Display a dot](/elements/displaydot.md)
-* [Display a line](/elements/displayline.md)
-<!-- * [displaybar](/elements/displaybar.md) -->
-
-### [Utility Elements](/elements.md)
-* [AND](/elements/and.md)
-* [WebButton](/elements/webbutton.md)
+### [Elements](/elements.md)
+### [Sensor Support](/sensors/sensors.md)
+### [Display Support](/displays.md)
 
 ### [Recipes](/recipes.md)
 * [Create Alarm actions](/recipes/alarm.md)

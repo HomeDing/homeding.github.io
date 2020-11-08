@@ -1,52 +1,25 @@
-# Sensor Elements
+# Sensor Element Implementaation
 
-Some elements are based on the abstract implementation of the "SensorElement" class.
+Many sensor elements offer similar functionality and configuration
+and therefore are based on the abstract implementation of the "SensorElement" class.
 
-These sensor elements enable reading values from a sensor chip on a specific time interval.
-When new values could be retrieved these are emitted to other elements like
-[displays](/displays.md) or [logs](/elements/log.md) to be shown or recorded.
+These sensor elements enable reading values from a sensor chip on a specific time interval. When new values could be retrieved these are emitted to other elements using actions.
 
 On the board of the device in the Web UI the actual sensor values are shown as well.
 
 The HomeDing library supports a collection of common sensor chips:
 
-<div class="short">
-  <a href="#page=elements/ds18b20.md"><img src="/i/element.svg"></a>
-  <p><strong><a href="#page=elements/ds18b20.md">DS18B20 Element</a></strong><br/>
-  The DS18B20Element allows retrieving temperature values from DS18B20 aka. Dallas Temperature sensors
-  and creates actions when new values are available.</p>
-</div>
+* [DS18B20 Element](/elements/ds18b20.md) supports the DS18B20 aka. Dallas Temperature sensor.
+* [DHT Element](/elements/dht.md) supports the DHT11, DHT22 and AM2302 temperature+humidity sensors.
+* [BMP280 Element](/elements/bmp280.md) supports the BMP280 temperature and absolute barometric pressure sensor.
+* [BMP680 Element](/elements/bme680.md) supports the BME680 temperature, humidity, pressure and gas resistance sensor.
+* [PMS Element](/elements/pms.md) supports the PMS5003 sensor by plantdata to count micro particles in the air.
 
-<div class="short">
-  <a href="#page=elements/dht.md"><img src="/i/dht.svg"></a>
-  <p><strong><a href="#page=elements/dht.md">DHT Element</a> *</strong><br/>
-  Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/bmp280.md"><img src="/i/bmp280.svg"></a>
-  <p><strong><a href="#page=elements/bmp280.md">BMP280 Element</a> *</strong><br/>
-  The BMP280 is a combination of a temperature and absolute barometric pressure sensor.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/bme680.md"><img src="/i/bme680.svg"></a>
-  <p><strong><a href="#page=elements/bme680.md">BME680 Element</a> *</strong><br/>
-  Read BME680 sensor data with temperature, humidity, pressure and gas resistance.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/pms.md"><img src="/i/pms.svg"></a>
-  <p><strong><a href="#page=elements/pms.md">PMS Element</a></strong><br/>
-  Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
-</div>
-
-
-<div style="clear:both"></div>
+<!-- * [INA219 Element](/elements/_ina219.md) ??? -->
 
 ## Common Sensor Implementation
 
-To simplify the implementation of sensors  there is a special Element with some common functionality available.
+To simplify the implementation of sensors like these there is a special Element with some common functionality available.
 It that can be used as a base class for Elements that implement the data exchange with a special sensor chip.
 
 Only 2 functions need to be implemented instead of the `loop()` function.
@@ -102,12 +75,5 @@ When data from the sensor has not changed it may be necessary to trigger the act
 By specifying the `resendtime` property the resent values are sent even when not changed. 
 
 
-## Elements using the sensor base implementation
-
-* [DS18B20 or Dallas Temperature](/elements/ds18b20.md)  
-* [DHT element](/elements/dht.md)
-* [DS18B20 Element](/elements/ds18b20.md)
-<!-- * [INA219 Element](/elements/_ina219.md) ??? -->
-* [PMS element](/elements/pms.md)
-* [BME680 element](/elements/bme680.md)
-
+## Tags
+#implementation
