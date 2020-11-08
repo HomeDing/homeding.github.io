@@ -75,7 +75,7 @@ Markdown viewer SPA using
     .board,
     .excerpt {
       position: relative;
-      padding: 0.5rem 0.5rem 0.5rem 4rem;
+      padding: 0.5rem 0.5rem 0 4rem;
       margin-right: 0.5rem;
       min-height: 6rem;
       width: 32rem;
@@ -87,10 +87,11 @@ Markdown viewer SPA using
 
     .short {
       float: left;
+      min-height: 7rem;
     }
 
     .board {
-      padding: 0.5rem 0.5rem 0.5rem 11rem;
+      padding: 0.5rem 0.5rem 0 11rem;
       min-height: 7rem;
       width: 100%;
       max-width: 100%;
@@ -117,13 +118,14 @@ Markdown viewer SPA using
     }
 
     .warning {
-      border:0.2rem solid #ebccd1;
-      color:#a94442;
+      border: 0.2rem solid #ebccd1;
+      color: #a94442;
       background-color: #f2dede;
       border-radius: 0.4rem;
     }
-    .warning > h3 {
-      color:#a94442;
+
+    .warning>h3 {
+      color: #a94442;
     }
 
     nav {
@@ -244,6 +246,20 @@ Markdown viewer SPA using
       }
     });
 
+    function renderContainer(cn, linkFolder, link, icon) {
+      // if no icon is given assume img and content in the link folder
+      var div = '<div class="' + cn + '">';
+      var img;
+      if (icon) {
+        img = '<img src="/i/' + icon + '.svg">';
+      } else {
+        img = '<img src="/' + linkFolder + '/' + link + '.jpg">';
+      }
+      var l = '<a href="#page=/' + linkFolder + '/' + link + '.md">';
+
+      return (div + l + img + '<h3>' + link + '</h3>' + '</a>');
+    }
+
     var mdc = new markdownitContainer(md, 'excerpt', {
       render: function (tokens, idx) {
         var t = tokens[idx];
@@ -273,8 +289,8 @@ Markdown viewer SPA using
       render: function (tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*element\s+(\S+)/);
-          return '<div class="board"><img src="/elements/' + m[1] + '.jpg">\n';
+          var m = t.info.trim().match(/^\s*element\s+(\S+)\s*(\S*)/);
+          return renderContainer('short', 'elements', m[1], m[2]);
         } else {
           return '</div>\n';
         }

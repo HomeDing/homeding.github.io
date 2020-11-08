@@ -88,18 +88,7 @@
 <!-- * [_iconsforthings](/_iconsforthings.md) -->
 
 
-### Elements from examples 
-
-* [radio](/elements/radio.md)
-
-### Developer Support
-
-* [DevDing Example](/examples/_devding.md)
-* diag Element
-* cli Element
-* cli scripts
-
-
+<!--
 ### More
 
 * [classes](/classes.md)
@@ -107,18 +96,21 @@
 * [elementinterface](/elementinterface.md)
 * [webservices](/webservices.md)
 * [webversions](/webversions.md)
-<!-- * [_backend](/_backend.md) -->
-<!-- * [_exampledashbutton](/_exampledashbutton.md) -->
+* [_backend](/_backend.md)
+* [_exampledashbutton](/_exampledashbutton.md)
 * [Using the I2C bus](/i2c.md)
-<!-- * [_linechart](/_linechart.md) -->
-<!-- * [_manifest](/_manifest.md) -->
-<!-- * [_moisturesonsor](/_moisturesonsor.md) -->
+* [_linechart](/_linechart.md)
+* [_manifest](/_manifest.md)
+* [_moisturesonsor](/_moisturesonsor.md)
+ -->
 
+<!--
 ### Examples
 * [examples/blink](/examples/blink.md)
 * [examples/radio](/examples/radio.md)
-<!-- * [examples/_batteryswitch](/examples/_batteryswitch.md) -->
-<!-- * [examples/_RFGateway](/examples/_RFGateway.md) -->
+* [examples/_batteryswitch](/examples/_batteryswitch.md)
+* [examples/_RFGateway](/examples/_RFGateway.md)
+-->
 
 <!-- ### Rework: -->
 <!-- * [examples/pwm](/examples/pwm.md) -->

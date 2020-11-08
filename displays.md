@@ -8,6 +8,15 @@ There are many use cases that required a small display used togther with a ESP82
 * present a menu
 * show information from a sensor on the device
 
+* [HD44780 LCDs](/displays/lcd.md)
+* [SH1106 based OLED](/displays/sh1106.md)
+* [SSD1306 based OLED](/displays/ssd1306.md)
+* [SSD1309 based OLED](/displays/ssd1309.md)
+* [Display text](/elements/displaytext.md)
+* [Display a dot](/elements/displaydot.md)
+* [Display a line](/elements/displayline.md)
+<!-- * [displaybar](/elements/displaybar.md) -->
+
 ## Display Elements
 
 To enable a locally attached display a display element needs to be configured (preferred in `env.json`). It needs to match to the display type and the chip that is driving the display.
