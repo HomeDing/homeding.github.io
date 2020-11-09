@@ -1,10 +1,16 @@
-# HomeDing Library documentation project 
+# HomeDing Library Documentation
 
-The HomeDing library is a low code to build small IoT devices
-without the need for cloud services
-connected to the local WiFi by using the Arduino development environment.
+The HomeDing library is a low code approach to build small IoT devices
+without the need for cloud services to be used.
+
+The devices connect to the local WiFi and offer a direct control using a standard web browser.
+
+Implementation is done by using the Arduino development environment.
 
 **This is the project containing documentation for the HomeDing library.**
+
+[Start browsing the documentation](/index.htm)
+using index.htm.
 
 ## Install the library
 

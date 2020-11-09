@@ -157,3 +157,7 @@ Background information can be found in: https://github.com/esp8266/Arduino/issue
 * https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/
 * https://www.esp8266.com/viewtopic.php?t=11657
 * https://www.instructables.com/id/USB-to-ESP-01-Board-Adapter-Modification/
+
+## Tags
+
+#board

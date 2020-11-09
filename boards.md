@@ -69,7 +69,7 @@ These boards help implementing things using the ESP-12 boards directly.
 When used alone an external power supply and some minimal wiring is required.
 
 :::board esp12dev
-The **[Esp-12 development boards](/boards/esp12dev.md)** is a adapter board that can be used to program a ESP-12 boards before adding it to a device.
+The **[Esp-12 development boards](/boards/esp12dev.md)** is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
 This solution is especially suitable for creating devices that run on battery or low power conditions and therefore do not need USB chips.
 :::
 

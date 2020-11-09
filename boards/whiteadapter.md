@@ -54,8 +54,14 @@ To add a regulator to the bottom layer of the board the following steps must be 
 * add capacitors at least 100nF to the IN and OUT VCC level.
 
 
-<!-- picture of adapter board with added regulator ??? -->
+<!-- TODO: picture of adapter board with added regulator ??? -->
+
 
 ## See also
 
 * [Witty board](/boards/witty.md)
+
+
+## Tags
+
+#board
