@@ -107,9 +107,9 @@ When covering the LDR sensor with a finger the values drops below.
 }
 ```
 
-<!-- 
-TODO: ??? how to implement LDR and [Switch Element](/elements/switch.md)
--->
+The recipe [LDR switch](/recipes/ldrswitch.md) you can find a configuration that 
+uses a LDR to create a touchless on/off switch.
+
 
 ## Buttons
 
@@ -149,3 +149,7 @@ Taster: GPIO4(D2)
 * https://www.faranux.com/product/witty-cloud-board/
 * https://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/
 
+
+## Tags
+
+#board

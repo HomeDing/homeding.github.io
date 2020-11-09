@@ -12,12 +12,14 @@ They show how multiple elements can be combined to create functionality beyond u
 * [LED Dimming recipe](/recipes/led.md) - Dimming a LED using 2 momentary buttons.
 * [LED Rotary recipe](/recipes/ledrotary.md) - Dimming LED using a rotary encoder.
 * [NTP Clock](/recipes/ntpclock.md) - Display the current time and date from the internet time service.
-* 
-* Display temperature from local sensor
+* [LDR switch](/recipes/ldrswitch.md) - use a LDR to create a touchless on/off switch.
+  
 
-* [Display Time, temperature and humidity](/recipes/tempdisplay.md)
+<!-- * Display temperature from local sensor -->
 
-* [Alarm with timer for duration](/recipes/alarm.md)
+<!-- * [Display Time, temperature and humidity](/recipes/tempdisplay.md) -->
+
+<!-- * [Alarm with timer for duration](/recipes/alarm.md) -->
 
 
 ## Combining Devices
@@ -27,3 +29,7 @@ They show how multiple elements can be combined to create functionality beyond u
 
 
 [home](index.md)
+
+## Tags
+
+#recipe
