@@ -85,9 +85,9 @@ that provides the input value to the Button Element.
 
 ## Element State
 
-The `active` property Is set to true when the Element is active.
+**active** - Is set to true when the element is active.
 
-The `value` property corresponds to the current output of the element.
+**value** - Current output value of the element.
 
 
 ### Example State

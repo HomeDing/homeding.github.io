@@ -68,7 +68,7 @@ The following properties are available with the current values at runtime
 
 **active** - Is set to true when the Element is active.
 
-**value** - The current analog value from the input.
+**value** - Current output value of the element.
 
 **reference** - below or above the reference value.
 

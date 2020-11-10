@@ -111,16 +111,15 @@ The timer element can run on it's own but can also be controlled by the followin
 
 The state of the timer element includes:
 
-**active** -
-Is set to true when the Element is active.
+**active** - Is set to true when the element is active.
 
 **state**  -
 Current state state of the element (0...3). See diagram above
 
 **time**   -
 time passed since starting the cycle (in seconds).           
-**value**  -
-Current output value.
+
+**value** - Current output value of the element.
 
 
 ### Example for State

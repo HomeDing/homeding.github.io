@@ -97,7 +97,8 @@ This is done by calling the callback function for every property that might chan
 
 This can be changed in the configuration of the element by the `loglevel` attribute.
 
-**active** - This variable is set to true after the element has started without problems in the start() function.
+**active** - This variable is set to true after the element has started
+without problems in the `start()` function.
 
 **startupMode** - This variable specifies when the element can be started. It is a common topic to many elements that the network must work or a local time is available.
 The default value is Element_StartupMode::Network.

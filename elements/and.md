@@ -55,7 +55,9 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 
 The following properties are available with the current values at runtime
 
-**value** - actual output value.
+**active** - Is set to true when the element is active.
+
+**value** - Current output value of the element.
 
 
 ## Implementation Details

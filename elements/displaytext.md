@@ -70,9 +70,9 @@ The `clear ` property can be used to remove the text. <http://nodeding/$board/di
 
 The following properties are available with the current values at runtime
 
-| Property | Description                       |
-| -------- | --------------------------------- |
-| `value`  | The actual value to be displayed. |
+**active** - Is set to true when the element is active.
+
+**value** - Current output value of the element.
 
 
 ### Example State

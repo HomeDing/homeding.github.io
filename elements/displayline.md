@@ -52,7 +52,7 @@ The following actions can be sent to the element:
 
 The following properties are available with the current values at runtime
 
-**active** -- The element is in activated state.
+**active** - Is set to true when the element is active.
 
 
 ### Example State

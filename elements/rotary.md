@@ -54,10 +54,9 @@ value Internal starting value. (deprecated)
 
 The following properties are available with the current values at runtime
 
-| Property | Description                                |
-| -------- | ------------------------------------------ |
-| `active` | Is set to true when the Element is active. |
-| `value`  | Current internal value of the rotary position. |
+**active** - Is set to true when the element is active.
+
+**value** - Current output value of the element.
 
 
 ## Example State

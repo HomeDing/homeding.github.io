@@ -60,10 +60,9 @@ See <https://raw.githubusercontent.com/nayarsystems/posix_tz_db/master/zones.csv
 
 The following properties are available with the current values at runtime
 
-| Property | Description                                |
-| -------- | ------------------------------------------ |
-| `active` | Is set to true when the element is active. |
-| `now`    | the current time of the board.             |
+**active** - Is set to true when the element is active.
+
+**now**  the current time of the board.            
 
 ## Element State Example
 

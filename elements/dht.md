@@ -117,7 +117,7 @@ The default time is set to 3 seconds.
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the Element is active.
+**active** - Is set to true when the element is active.
 
 **temperature** - The last read temperature value from the sensor.
 

@@ -27,9 +27,8 @@ The following properties are available for configuration of the element:
 
 The following properties are available with the current values at runtime
 
-| Property | Description                                  |
-| -------- | -------------------------------------------- |
-| `active` | Is set to true when the element is active.   |
+**active** - Is set to true when the element is active.
+
 
 ## Example Configuration
 
