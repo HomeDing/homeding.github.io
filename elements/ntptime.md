@@ -38,7 +38,8 @@ The Timezone contains the name and offset and can include summer time adjustment
 
 See <https://developer.ibm.com/technologies/systems/articles/au-aix-posix/> that explains the format for this configuration.
 
-See <https://sites.google.com/a/usapiens.com/opnode/time-zones> for examples.
+See <https://raw.githubusercontent.com/nayarsystems/posix_tz_db/master/zones.csv> or **TZ.h** for examples.
+
 
 
 ### Configuration Example
