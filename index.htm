@@ -265,7 +265,8 @@ Markdown viewer SPA using
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*excerpt\s+(.*)$/);
-          return '<div class="excerpt"><img src="/i/' + m[1] + '.svg">\n';
+          var img = (m ? m[1] : 'default');
+          return '<div class="excerpt"><img src="/i/' + img + '.svg">\n';
         } else {
           return '</div>\n';
         }
