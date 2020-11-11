@@ -42,16 +42,21 @@ The **[Esp-Wroom-02 Module ESP8266 with OLED and 18650](/boards/wroom2.md)** is 
 ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.  
 
 :::board sonoffbasic
-The **[Sonoff Basic](/boards/sonoffbasic.jpg)** is a off-the-shelf solution to switch main power consumers.
+The **[Sonoff Basic](/boards/sonoffbasic.md)** is a off-the-shelf solution to switch main power consumers.
 
-Similar Sonoff devices are available that also contain the ESP8266 CPU.
+It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
+:::
 
-If you have experience in building high voltage solutions this one is interesting and ready to be programmed.
+:::board sonoffs20
+The **[Sonoff S20](/boards/sonoffs20.md)** is a off-the-shelf plug available for different plug types. 
+
+It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
 :::
 
 :::board sp111
-These small sockets from Gosund or Blitzwolf have 1 GByte Flash and can be used with the
-[Minimal Example](/examples/minimal.md)  
+These are small sockets from Gosund or Blitzwolf.
+
+It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
 :::
 
 <!-- ESP8266 Module Series
@@ -118,9 +123,9 @@ The [minimal example](/examples/minimal.md) can be flashed onto these boards by 
 The [sensor example](/examples/sensor.md) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration.
 
 :::board esp01
-The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relais appliances.
+The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.
 
-An external power supply is required and only 2-4 GPIO signals can be used.
+There are variants of this board with different antenna and different flash sizes.
 :::
 
 
@@ -148,12 +153,10 @@ The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board availa
 
 
 ## See also
+
+* [ESP8266 pins](boards/pins.md)
 * <https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/>
 * <https://blog.squix.org/2015/03/esp8266-module-comparison-esp-01-esp-05.html>
-
-
 * <https://www.mikrocontroller.net/topic/425242>
 * <http://www.forward.com.au/pfod/ESP8266/GPIOpins/index.html>
 * <https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process>
-
-* [ESP8266 pins](boards/pins.md)
