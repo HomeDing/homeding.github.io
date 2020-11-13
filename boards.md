@@ -54,9 +54,11 @@ It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal 
 :::
 
 :::board sp111
-These are small sockets from Gosund or Blitzwolf.
+These **[Gosund or Blitzwolf Sockets](/boards/sp111.md)** can switch on/off and can meassure power consumption
+of the plugged-in load.
 
-It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
+It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md)
+and the [BL0937 chip](/elements/bl0937.md).
 :::
 
 <!-- ESP8266 Module Series
