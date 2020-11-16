@@ -59,6 +59,7 @@ i/displayline.svg
 i/displaysh1106.svg
 i/displayssd1306.svg
 i/displaytext.svg
+i/ds18b20.svg
 i/dstime.svg
 i/edit.svg
 i/element.svg
