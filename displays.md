@@ -12,6 +12,7 @@ There are many use cases that required a small display used togther with a ESP82
 * [SH1106 based OLED](/displays/sh1106.md)
 * [SSD1306 based OLED](/displays/ssd1306.md)
 * [SSD1309 based OLED](/displays/ssd1309.md)
+<!-- * ssd1327 OLED 128*128 -->
 * [Display text](/elements/displaytext.md)
 * [Display a dot](/elements/displaydot.md)
 * [Display a line](/elements/displayline.md)
