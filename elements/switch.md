@@ -40,11 +40,14 @@ All other passed values will set the value of the switch to `1`.
 
 The actions emitted by the switch element are following the common naming conventions also found in other elements.
 
-**onHigh** these actions are send when a logical level from a digital input a timer or a switch is changing to a HIGH value. The value given in the actions is `1`.
+**onHigh** - these actions are send when a logical level from a digital input a timer or a switch is changing to a HIGH value.
+The value given in the actions is `1`.
 
-**onLow** these actions are send when a logical level from a digital input a timer or a switch is changing to a LOW value. The value given in the actions is `0`.
+**onLow** - these actions are send when a logical level from a digital input a timer or a switch is changing to a LOW value.
+The value given in the actions is `0`.
 
-**onValue** these actions are send when a logical level from a digital input a timer or a switch is changing its value. The value given in the actions is `0` or `1`.
+**onValue** - these actions are send when a logical level from a digital input a timer or a switch is changing its value.
+The value given in the actions is `0` or `1`.
 
 
 ## State

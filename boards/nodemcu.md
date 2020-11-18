@@ -44,7 +44,7 @@ I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 r
 | GPIO0  | D3  | Flash Button       |
 | RESET  |     | RESET Button       |
 | GPIO2  | D4  | Blue LED on module |
-| GPIO16 | D0  | Blue LED on board  |
+| GPIO16 | D0  | LED on board       |
 
 
 ## Onboard Momentary Buttons
@@ -56,6 +56,14 @@ This button pulls the reset pin down to GND.
 
 **Flash** 
 This button pulls the GPIO0(D3) pin down to GND. It can be used to manually start the program upload mode when is it pushed while resetting or powering up. Later it can be used for any input purpose as long it is leaving the pin in HIGH input when not used.
+
+
+## Onboard LEDs
+
+There are two LEDs that can be used without any external components:
+
+[NodeMCU LEDs](/boards/nodemcu-compare-led.jpg)
+
 
 ## Vin / VUSB
 
