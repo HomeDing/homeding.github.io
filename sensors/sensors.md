@@ -283,8 +283,13 @@ An experimental state implementation in the [INA219 Element](/elements/_ina219.m
 :::
 
 :::sensor capasoil
-**capasoil**
+The **Capacitive Soil Moisture Sensor** is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.
+
+The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
+
+The [Capacitive Soil Moisture Sensor Recipe](/recipes/capasoil.md) shows more details on using such a sensor.
 :::
+
 
 ### Chips for Digital and Analog I/O
 
