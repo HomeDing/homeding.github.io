@@ -29,15 +29,29 @@ On the ESP8266 chip the input value has a precision of 2^10 bits and the input v
 
 The following properties are available for configuration of the element:
 
-**readtime** - The time between capturing input values.
+**readtimems** - The time between capturing input values in milliseconds.
 
 **hysteresis** - The value action is emitted only when the value differs more than defined by hysteresis. Default=10.
 
 **reference** - The reference action is emitted when the value goes below / above the reference value.
 
+**mapInMin** - This is the lower bound of the rawvalue. This will be mapped to the value given by **mapOutMin**.
+
+**mapInMax** - This is the upper bound of the rawvalue. This will be mapped to the value given by **mapOutMax**.
+
+**mapOutMin** - This is the lower bound of the output value.
+
+**mapOutMax** - This is the upper bound of the output value.
+
 **onValue** - These actions are emitted when the input level has changed.
 
 **onReference** -These actions are emitted when the input level goes across the reference level.
+
+**onHigh** - These actions are send when the value is above the reference value.
+The value given in the actions is `1`.
+
+**onLow** - These actions are send when the value is below the reference value.
+The value given in the actions is `0`.
 
 The ESP8266 chip has only one analog input pin so specifying a pin is not required.
 
@@ -59,18 +73,21 @@ The ESP8266 chip has only one analog input pin so specifying a pin is not requir
 
 A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.
 
-A analog measuring element for weight can produce many values around. When the weight changes sigificantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.
+A analog measuring element for weight can produce many values around. When the weight changes significantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.
 
 
 ## State
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the Element is active.
+**active** - Is set to true when the element is active.
 
-**value** - Current output value of the element.
+**rawvalue** - This is the original value from the ADC pin.
 
-**reference** - below or above the reference value.
+**value** - When no mapping boundaries are given this is equal the rawvalue.
+When mapping boundaries are given this is the calculated value.
+
+**reference** - This is 1 when the value is above the reference value otherwise 0.
 
 
 ### Example State
@@ -79,11 +96,13 @@ The following properties are available with the current values at runtime
 {
   "analog/0": {
     "active":"true",
-    "value":"1024",
-    "reference":"1"
+    "value":"13",
+    "rawvalue":"721",
+    "reference":"0"
   }
 }
 ```
+
 
 ## See also
 
