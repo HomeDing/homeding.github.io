@@ -42,3 +42,7 @@ an onReference action with a value of 0 is triggered that will switch the LED on
   }
 }
 ```
+
+## See also
+
+* <https://diyi0t.com/soil-moisture-sensor-tutorial-for-arduino-and-esp8266/>
