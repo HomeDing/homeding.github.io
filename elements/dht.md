@@ -6,7 +6,8 @@ The DHTElement allows retrieving temperature and humidity values from the DHT fa
 
 The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.
 
-![DHT22 pins](/elements/dht22pins.jpg) q![DHT22 on Breadboard](/elements/dht22board.jpg)
+![DHT22 pins](/elements/dht22pins.jpg)
+![DHT22 on Breadboard](/elements/dht22board.jpg)
 
 
 ## Web UI for the DHT Element
@@ -73,7 +74,7 @@ The following properties are available for configuration of the element:
 
 **type** - The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
 
-**onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same.
+**onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that stay the same.
 
 **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
 

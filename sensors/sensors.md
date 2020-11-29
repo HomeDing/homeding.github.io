@@ -224,6 +224,15 @@ The [DHT Element](/elements/dht.md) creates actions based on the values polled f
 :::
 
 
+:::sensor sht20 dht
+The **SHT20** is a **air temperature and humidity** sensor with high precision for temperature humidity.
+
+The sensor communicate using the i2c bus.
+
+The [SHT20 Element](/elements/sht20.md) creates actions based on the values polled from the chip.
+:::
+
+
 :::sensor bme680
 The **BME680** is a sensor providing **air temperature, humidity, pressure and gas resistance**.
 
