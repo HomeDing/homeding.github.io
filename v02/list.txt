@@ -23,6 +23,8 @@
 -ft/svg.svg
 -ft/txt.svg
 -ft/xml.svg
+-i/alarm.svg
+-i/sht20.svg
 -clock.svg
 board-new.htm
 board-templates.htm
@@ -39,10 +41,10 @@ favicon192.png
 favicon270.png
 favicon48.png
 favicon512.png
-i/alarm.svg
 i/analog.svg
 i/and.svg
 i/bme680.svg
+i/bmp280.svg
 i/bulb.svg
 i/button.svg
 i/config.svg
@@ -59,6 +61,7 @@ i/displayline.svg
 i/displaysh1106.svg
 i/displayssd1306.svg
 i/displaytext.svg
+i/door.svg
 i/ds18b20.svg
 i/dstime.svg
 i/edit.svg
@@ -66,6 +69,7 @@ i/element.svg
 i/ide.svg
 i/led.svg
 i/log.svg
+i/max7219.svg
 i/menu.svg
 i/menui.svg
 i/minus.svg
