@@ -146,12 +146,21 @@ On loud sounds many short signal spikes occur that can be catched by the [Digita
 :::
 
 
+:::sensor hcsr04
+The **Ultrasonic range** sensor using the hcsr04 board is using Ultrasonic sound impulses that will be reflected by objects and can be used to measure the distance.
+
+<!-- The [HCSR04 Element](/elements/hcsr04.md) can be used to trigger this sensor and calculate the distance. -->
+This sensor is not yet supported directly by the HomeDing library. 
+:::
+
+
+
 ## Digital output
  
-:::sensor relais
-**Relais**
+:::sensor relay
+The **relay** can be switched using the [Digital Output Element](/elements/digitalout.md) when the board includes a transistor or mosfet to handle the high load demand of a relay.
 
-[Digital Output](/elements/digitalout.md) 
+A relay cannot be used directly with a GPIO pin. There is a example how to control a relay in [ESP-01 Board page](/boards/esp01.md).
 :::
 
 
@@ -199,10 +208,6 @@ These sensor deliver data sets instead of digital or analog values.
 They communicate by their specific protocol and actions can be created based on the
 retrieved values.
  . Often these sensors provide multiple values or implement more complex I/O needs.                                                                                                                                                                                                                          
-
-<!-- :::sensor hcsr04
-hc-sr04 **Ultrasonic range**
-::: -->
 
 ### Environment sensing
 
@@ -288,7 +293,7 @@ An experimental state implementation in the [INA219 Element](/elements/_ina219.m
 :::
 
 :::sensor soil
-**soil**
+The **Soil Moisture Sensor** is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.
 :::
 
 :::sensor capasoil
@@ -302,6 +307,8 @@ The [Capacitive Soil Moisture Sensor Recipe](/recipes/capasoil.md) shows more de
 
 ### Chips for Digital and Analog I/O
 
+More Digital and Analog I/O can be handled when using special elements for specific chips.
+
 ::: sensor pcf8574
 The **PCF8574** is a 8-Bit I/O Expander for I2C Bus to control 8 digital input or output signals.
 
@@ -309,6 +316,28 @@ Supported for using LCD displays on the I2C bus.
 <!-- The special [PCF8574 Element](/elements/_pcf8574.md) supports this chip. -->
 :::
 
+::: sensor pcf8591
+The **PCF8591** is a 4 channel 8 bit ADC + 1 channel 8 bit DAC for the I2C bus.
+<!-- The special [PCF8591 Element](/elements/_pcf8591.md) supports this chip. -->
+:::
+
+::: sensor ads1115
+The **ADS1115** is a 4 channel 16 bit analog to digital converter (ADC) using the I2C bus.
+<!-- The special [ADS1115 Element](/elements/_ads1115.md) supports this chip. -->
+:::
+
+::: sensor max7219
+**MAX7219** is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
+Multiple displays can be chained to form a bigger matrix.
+
+The special [MAX7219 Element](/elements/_max7219.md) supports this chip.
+:::
+
+::: sensor max7219n
+**MAX7219** is a LED driver for the I2C bus that can be used to control a 8x 7-segment LEDs.
+
+The special [MAX7219 Element](/elements/_max7219.md) supports this chip.
+:::
 
 <!-- 
 
@@ -365,14 +394,20 @@ The [Rotary Element](/elements/rotary.md) enables decoding the 2 signals from a 
 
 ## Radio
 
-There is a very specific example that shows how to use the HomeDing and the radio library to build a full functional radio that can be controlled by some local input but also from remote.
+There is a very specific example that shows how to use the HomeDing and the [Radio library](https://github.com/mathertel/Radio) to build a full functional radio that can be controlled by some local input but also from remote.
 
 :::sensor si4721
-**si4721**: FM Transiever with receiving radio stations functionality only.
+The **si4721** is a FM Transiever that can receive and send FM Audio.
 
-radio library
+The [Radio Element](/elements/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library supporting only receiving mode.
 :::
 
+
+:::sensor si4730
+The **si4730** is a AM/FM Radio Receiver chip and module.  
+
+The [Radio Element](/elements/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library.
+:::
 
 
 ---

@@ -126,7 +126,7 @@ time passed since starting the cycle (in seconds).
 
 ```JSON
 {
-  "timer/relais": {
+  "timer/relay": {
     "active": "true",
     "state": "0",
     "time": "2",

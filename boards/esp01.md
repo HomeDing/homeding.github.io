@@ -101,15 +101,15 @@ It is a not so good idea to activate the LED by using a HIGH signal. For this yo
 and this will cause to start the cip in upload FLASH mode every time the device boots and don’t start the program.
 
 
-## GPIO0 with relais
+## GPIO0 with relay
 
 Relays need more current then a pin of the ESP8266 can deliver. Therefore, a transistor is often used for amplifying the signal.
 
 When attaching a transistor to the IO pin you also have to face not pulling the level to low. Therefore a PNP transistor to high is a good solution. When the output current you need is higher than the amount the chip can deliver directly. If you don't have a relays that is driven by 3.3 volts  (very likely) you can use a second transistor to drive the relay using another voltage.
 
-Here is a sample off driving a 5V relais:
+Here is a sample off driving a 5V relay:
 
-![GPIO driving a relais](gpio-relais.png)
+![GPIO driving a relay](gpio-relay.png)
 
 
 ## GPIO 1 / Serial TX

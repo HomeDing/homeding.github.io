@@ -167,7 +167,7 @@ The usual notation is using lowercase characters only. The comparisation is inte
 
 Examples are:
 
-* `digitalout/relais?value=1`
+* `digitalout/relay?value=1`
 * `display/d3?show=1`
 
 The first level is the type of the element.
