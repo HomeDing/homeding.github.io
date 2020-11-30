@@ -10,15 +10,6 @@ There are different housings and boards for the sensor available.
 
 ![SHT20 Sensor](/elements/sht20.jpg)
 
-```txt
-        +-----------+
-VDD ----|1 XXXXXXXXX|
-SDA ----|2 XXXXXXXXX|\
-GND ----|3 XXXXXXXXX|/
-SCL ----|4 XXXXXXXXX|
-        +-----------+
-```
-
 
 ## Web UI for the SHT20 Element
 
