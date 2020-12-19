@@ -136,6 +136,13 @@ The [neo board](/boards/neo.md) is a very specific adapter
 to run a neopixel stripe, wheel or array using a ESP8266 ESP-01 board.
 :::
 
+
+:::board esp01-dht
+The [ESP-01 with DHT22 board](/boards/esp01-dht.md) is a very specific adapter
+to run a DHT22 sensor using  a ESP8266 ESP-01 board.
+:::
+
+
 ## ESP8285 based boards
 
 The ESP8285 was released in 2016 as a cheaper replacement for ESp8266 with an internal Flash Ram chip.
@@ -151,7 +158,7 @@ Less memory is cheaper. These boards have no difference regarding the CPU and RA
 
 Older boards with 512 KByte are still available but should be avoided because OTA probably will not work caused by this small memory size.
 
-The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relais appliances.
+The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances.
 
 
 ## See also
@@ -162,3 +169,8 @@ The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board availa
 * <https://www.mikrocontroller.net/topic/425242>
 * <http://www.forward.com.au/pfod/ESP8266/GPIOpins/index.html>
 * <https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process>
+
+
+## Tags
+
+#board

@@ -149,3 +149,6 @@ The following env.json file can be used on these boards:
 - ESP8266 board adoption for Arduino: <https://arduino-esp8266.readthedocs.io/en/latest/index.html>
 
 
+## Tags
+
+#board
