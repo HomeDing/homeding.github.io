@@ -59,18 +59,24 @@ The [Analog Element](/elements/analog.md) can create actions based in the analog
 
 ### Light sensors
 
+:::sensor ldr
+This is a **light sensitive sensor** using a light defined resistor (LDR) component. This board already has a 10K resistor that creates a variable analog input signal.
+
+The [Analog Element](/elements/analog.md) can create actions based in the input signal.
+:::
+
+
+<!-- 
+:::sensor SI1145
+This is an UV-index sensor.
+:::
+ -->
+
 :::sensor linetrack
 This is a **light reflection sensor** using a identify reflecting (white) or non-reflecting (black) surfaces. There is a IR transmitting diode and a IR receiving diode producing a digital output signal.
 The sensitivity can be adjusted.
 
 The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the digital input signal.
-:::
-
-
-:::sensor ldr
-This is a **light sensitive sensor** using a light defined resistor (LDR) component. This board already has a 10K resistor that creates a variable analog input signal.
-
-The [Analog Element](/elements/analog.md) can create actions based in the input signal.
 :::
 
 
@@ -122,7 +128,13 @@ As the signals can be very short the [DigitalInterrupt Element](/elements/_digit
 :::
 
 
-### Temperature sensors
+<!-- 
+:::sensor BH1750
+t.b.d. i2c bus enables sensor for light.
+:::
+ -->
+
+### Analog Temperature Sensors
 
 :::sensor ntc
 This is a **temperature sensor** that uses a **temperature variable resistor** ntc to create a analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range. 
@@ -133,6 +145,8 @@ The [Analog Element](/elements/analog.md) can create actions based in the analog
 Some sensor boards also contain an adjustable reference the sensor value can be compared to to produce a digital output signal.
 The [DigitalInput Element](/elements/digitalIn.md) can create actions based on this digital input signal.
 :::
+
+See also environmental sensors below.
 
 
 ### Sound sensors
@@ -260,6 +274,13 @@ The special [DS18B20 Element](/elements/ds18b20.md) supports this sensor.
 :::
 
 
+<!--
+:::sensor MCP9808
+High precision Temperature Sensor
+:::
+-->
+
+
 <!-- 
 :::sensor bme280
 The BME280 is a combination of a temperature, humidity and absolute barometric pressure sensor.
@@ -340,13 +361,23 @@ The special [MAX7219 Element](/elements/_max7219.md) supports this chip.
 :::
 
 <!-- 
-
 I2C PWM output
  -->
 
- <!--
- ADC in i2c
-   -->
+<!--
+:::sensor 
+ADC in i2c
+:::
+-->
+
+<!-- 
+:::sensor no X9C104S
+100 step potentiometer 100k
+:::
+-->
+
+PWM
+
 
 ## Light control
 
