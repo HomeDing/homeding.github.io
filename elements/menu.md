@@ -1,20 +1,27 @@
 # Menu Element
 
-The MenuElement allows controlling multiple value elements by sharing the same input elements
+::: excerpt default
+The MenuElement allows controlling multiple values or switches by using a single rotary encoder.
+:::
 
-* one [rotary encoder](elements/rotary) or 2 up/down [digitalin elements](elements/digitalin) with buttons
-* one [digitalin element](elements/digitalin) with a button to **select**
-* and a display to show the actual selected value.
+In the configuration a list of elements is defined that can be controlled.
 
-The select input is used to circle through the list of values while the rotary encoder will change the value.
+To select the actual element from the list the **select** action is used typically a **DigitalInputElement** with a momentary button can be used.
+The select input is used to circle through the list of values.
+
+To change the selected value a **RotaryElement** or up/down buttons can be used.
 
 Some rotary encoders already have a built-in momentary button when pressing the knob down. The menu element is especially made for using these as input but an extra button works well also.
 
-There is actually a direct dependency between the menu element and the value element because the menu implementation directly knows and uses the public members of the ValueElement class.
+For visualization of the actual selected value actions are created by the menu element that can be sent to display elements.
+
+The Elements that can be controlled by the MenuElement are the **ValueElement** with numbers and the **SwitchElement** with the values 0 and 1. There is actually a direct dependency between the MenuElement and these value elements because the menu implementation directly knows and uses the public members of the ValueElement and SwitchElement implementation class.
+ 
 
 ## Web UI for the menu element
 
 There is no special card made for this element because the values can be controlled directly. 
+
 
 ## Using a display
 
@@ -109,5 +116,5 @@ Rotary, digitalin ---> menu
 
 ## See also
 
-* [Elements](elements)
-* [Radio Example](examples/radio)
+* [Elements](elements.md)
+* [Radio Example](examples/radio.md)

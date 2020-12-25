@@ -1,8 +1,14 @@
 # Standard Example
 
-Th standard example can be used on any board that has a 4MByte Flash memory and is a good jumpstart for any project you may have. This example e.G. runs on all the [nodemcu boards](/boards/nodemcu.md).
+:::excerpt
+The **standard example** can be used with any board that has a 4MByte Flash memory and is a good jumpstart for any project you may have.
+This example e.G. runs on all the [nodemcu boards](/boards/nodemcu.md).
+:::
 
 No additional hardware is required to start this example and the Serial interface is used to transfer some internal actions and infos.
+
+
+## Setup the development environment and board
 
 If this is the first time you use an ESP8266 board, some instructions on how to setup your development environment can be found here:
 
@@ -20,9 +26,21 @@ This includes:
 
 After flashing the software and the web files the web interface is fully functional but not yet configured.
 
+
+## Components for the Standard Example
+
+When using nodemcu board there is a LED on the ESP-12 module and another LED on the board itself. The example uses both. When using different boards an external LED can be used.
+
+
+## Device configuration
+
 The following env.json file can be used as a starting point:
 
 **env.json**
+
+The boot process can show it's state on a LED. Here the LED(D4) from the ESP-12 module is configured for this purpose.
+
+The FLASH button(D3) can be used to start the config mode manually.
 
 ```JSON
 {
@@ -38,10 +56,10 @@ The following env.json file can be used as a starting point:
 }
 ```
 
-As a starting configuration the blink recipe can be used when your board is a
-[NodeMCU board](boards/nodemcu) with a ESP-12 module the led will blink slowly.
-
 **config.json:**
+
+As a starting configuration the blink recipe can be used when your board is a
+[NodeMCU board](boards/nodemcu.md) with a ESP-12 module the led will blink slowly.
 
 ```JSON
 {

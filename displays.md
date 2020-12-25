@@ -2,17 +2,19 @@
 
 The HomeDing library supports local attached displays but also works fine without a local display.
 
-There are many use cases that required a small display used togther with a ESP8266 board. Some boards like the [Wifi Kit 8](/boards/wifikit8.md) or the [Wemos OLED](/boards/wemosoled.md) already come with an onboard display:
+There are many use cases that required a small display used together with a ESP8266 board. Some boards like the [Wifi Kit 8](/boards/wifikit8.md) or the [Wemos OLED](/boards/wemosoled.md) already come with an onboard display:
 
 * show the current status
 * present a menu
 * show information from a sensor on the device
 
 * [HD44780 LCDs](/displays/lcd.md)
-* [SH1106 based OLED](/displays/sh1106.md)
-* [SSD1306 based OLED](/displays/ssd1306.md)
-* [SSD1309 based OLED](/displays/ssd1309.md)
-<!-- * ssd1327 OLED 128*128 -->
+* [SH1106 based OLED](/displays/sh1106.md) <!-- BW -->
+* [SSD1306 based OLED](/displays/ssd1306.md) <!-- 128*64 or 128*32 BW -->
+* [SSD1309 based OLED](/displays/ssd1309.md) <!-- BW -->
+<!-- * ssd1322 OLED 480*128 -->
+<!-- * ssd1325 OLED 128*80 Gray Scale -->
+<!-- * ssd1327 OLED 128*128 Gray Scale -->
 * [Display text](/elements/displaytext.md)
 * [Display a dot](/elements/displaydot.md)
 * [Display a line](/elements/displayline.md)

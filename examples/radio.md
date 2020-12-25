@@ -1,23 +1,43 @@
 # Radio Example
 
-This example is more complex to be implemented. 
+:::excerpt
+The **radio example** can be used with any board that has a 4MByte Flash memory, a FM radio receiving board, a display and a rotary encoder with button. 
+:::
 
-The [setup](examples|setup) article explains how to setup all the tools required to work with ESP8266 based boards.
+In addition some wiring for amplifier and speaker or headphone connectors are required to create a full functional and remote controllable radio.
 
-To ensure that all tools work as expected the [Blink example](exampkes/blink) should be used first.
+## Setup the development environment and board
 
-> #Draft
+If this is the first time you use an ESP8266 board, some instructions on how to setup your development environment can be found here:
+
+[Step by Step setting up a development environment](/stepssetup.md)
+
+There are some options in uploading the required software and registration on the network that s described here:
+
+[Step by Step Bring your device to work](/stepsnewdevice.md)
+
+This includes: 
+
+* Upload the sketch and Web UI
+* Connect to the network
+* Upload the Web UI files
+
+After flashing the software and the web files the web interface is fully functional but not yet configured.
+
+To ensure that all tools work as expected the [Standard example](exampkes/standard.md) should be used first.
+
 
 ## Components for the Radio Example
 
-The radio example shows how to build a internet connected device
-that has a dedicated element for controlling a FM radio chip and a TPA2016 chip that is a stereo amplifier with a volume control.
-The example here is using the RDA5807 FM receiver chip. There are other chips supported by the radio library
-so it should be easy to use other chips as well.
+By default the radio example shows how to build a internet connected device
+that has a dedicated element for controlling a RDA5807 FM radio chip and a TPA2016 chip that is a stereo amplifier with a volume control.
+
+There are other chips supported by the radio library and some of them also provide volume control. To re-configure the example for SI473x chips see below.
 
 The used components and the principle wiring can be seen in this block diagram:
 
 ![Radio Buidling Blocks](examples\radioblocks.png)
+
 
 ## Wiring
 

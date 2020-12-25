@@ -128,48 +128,12 @@ Markdown viewer SPA using
       color: #a94442;
     }
 
-    nav {
-      position: fixed;
-      /* height: 100%; */
-      width: 280px;
-      z-index: 1;
-      left: -280px;
-      transition: all 0.2s;
-      padding-top: 1rem;
-      /* background-color: #d0d0d0; */
-    }
-
-    nav.inpage {
-      position: absolute;
-    }
-
-    nav.open {
-      left: 0;
-    }
-
-    nav+div {
-      transition: all 0.2s;
-    }
-
-    nav.open+div {
-      margin-left: 280px;
-    }
-
     @media print {
 
       html,
       body {
         font-size: 0.66em;
         background-color: white;
-      }
-
-      nav,
-      .u-navbar {
-        display: none
-      }
-
-      nav.open+div {
-        margin-left: 0;
       }
 
       .short {
@@ -186,7 +150,7 @@ Markdown viewer SPA using
       <h1>HomeDing</h1>
     </div>
   </div>
-  <div class="u-navbar">
+  <div class="u-navbar" style="margin-bottom: 0;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button"
       style="xvertical-align: middle; height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
@@ -200,7 +164,7 @@ Markdown viewer SPA using
     <a href="#page=recipes.md" class="button">Recipes</a>
   </div>
   <nav class="inpage"></nav>
-  <div class="container-fluid">
+  <main class="container-fluid">
     <div class="row" style="display:none">
       <div class="col">
         <h4>Found Pages:</h4>
@@ -218,7 +182,7 @@ Markdown viewer SPA using
 
     <div class="s-md"></div>
 
-  </div>
+  </main>
 
   <script>
     var ffObj = document.querySelector('#foundFiles');
