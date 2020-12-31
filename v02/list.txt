@@ -74,6 +74,7 @@ i/menu.svg
 i/menui.svg
 i/minus.svg
 i/neo.svg
+i/no.svg
 i/ntptime.svg
 i/ota.svg
 i/pin.svg
@@ -99,6 +100,7 @@ i/timer.svg
 i/value.svg
 i/washing.svg
 i/weatherfeed.svg
+icons.svg
 index.htm
 iotstyle.css
 lineChart.js

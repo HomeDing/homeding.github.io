@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -150,7 +150,10 @@ var MicroRegistry = (function () {
                 }
             }
             for (var p in b) {
-                if (p.substr(0, 3) === 'on_') {
+                if (p === 'on_touchstart') {
+                    obj.addEventListener(p.substr(3), b[p].bind(obj), { passive: true });
+                }
+                else if (p.substr(0, 3) === 'on_') {
                     obj.addEventListener(p.substr(3), b[p].bind(obj), false);
                 }
                 else if (p.substr(0, 2) === 'on') {
@@ -193,9 +196,7 @@ var MicroRegistry = (function () {
         this._state = MicroState.INIT;
         this._tco = document.getElementById('u-templates');
         if (!this._tco) {
-            var t = document.createElement('div');
-            t.id = 'u-templates';
-            this._tco = document.body.appendChild(t);
+            this._tco = createHTMLElement(document.body, 'div', { id: 'u-templates' });
         }
         if (document.readyState === 'complete') {
             this.init2();
@@ -271,7 +272,7 @@ var GenericWidgetClass = (function (_super) {
     GenericWidgetClass.prototype.newData = function (_path, key, value) {
         if (key && value) {
             this.data[key] = value;
-            var ic = this.querySelector('img');
+            var ic = this.querySelector('img,h3');
             if (ic) {
                 setAttr(ic, 'title', JSON.stringify(this.data, null, 1)
                     .replace('{\n', '')
@@ -286,7 +287,7 @@ var GenericWidgetClass = (function (_super) {
                 elem.classList.toggle('active', b);
             });
         }, this);
-        ['h2', 'h4', 'span', 'button'].forEach(function (elType) {
+        ['h2', 'h3', 'h4', 'span', 'button'].forEach(function (elType) {
             this.querySelectorAll(elType + '[u-text=\'' + key + '\']').forEach(function (elem) {
                 if (elem.textContent !== value) {
                     elem.textContent = value;
@@ -441,16 +442,16 @@ var ButtonWidgetClass = (function (_super) {
         else {
             var scope_1 = this;
             if (this._timer) {
-                clearTimeout(this._timer);
+                window.clearTimeout(this._timer);
             }
-            this._timer = setTimeout(function () {
+            this._timer = window.setTimeout(function () {
                 scope_1.dispatchAction(scope_1._onclick, '1');
             }, 250);
         }
     };
     ButtonWidgetClass.prototype.on_dblclick = function () {
         if (this._timer) {
-            clearTimeout(this._timer);
+            window.clearTimeout(this._timer);
         }
         this.dispatchAction(this._ondoubleclick, '1');
     };
@@ -627,11 +628,7 @@ var DisplayTextWidgetClass = (function (_super) {
             if (this._dispElem.getAttribute('grid')) {
                 this._grid = Number(this._dispElem.getAttribute('grid'));
             }
-            var e = this._elem = document.createElement('span');
-            e.className = 'text';
-            e.style.top = '0px';
-            e.style.left = '0px';
-            this._dispElem.appendChild(e);
+            this._elem = createHTMLElement(this._dispElem, 'span', { class: 'text', style: 'top:0;left:0' });
         }
         hub.subscribe(this.microid + '?*', this.newValue.bind(this), true);
         if (!this.showSys()) {
@@ -1154,7 +1151,7 @@ function debounce(func, wait) {
         if (timer) {
             clearTimeout(timer);
         }
-        timer = setTimeout(function () {
+        timer = window.setTimeout(function () {
             timer = 0;
             func.apply(scope, args);
         }, wait);
@@ -1170,6 +1167,18 @@ function getHashParams(defaults) {
         params[pa[0]] = pa[1];
     });
     return params;
+}
+function createHTMLElement(parentNode, tag, attr) {
+    var o = document.createElement(tag);
+    if (attr) {
+        for (var a in attr) {
+            if (attr.hasOwnProperty(a)) {
+                o.setAttribute(a, attr[a]);
+            }
+        }
+    }
+    parentNode.appendChild(o);
+    return (o);
 }
 var TimerWidgetClass = (function (_super) {
     __extends(TimerWidgetClass, _super);
