@@ -114,3 +114,10 @@ This is a configuration file for this example:
   }
 }
 ```
+
+## See also
+
+* <https://github.com/formatc1702/Micro-Word-Clock>
+* <https://shop.led-studien.de/de/elektronik-bausatze/wordclock-mirco/wordclock-micro-bausatz-modul-weiss?action_ms=1>
+* <https://www.mikrocontroller.net/articles/Word_Clock>
+

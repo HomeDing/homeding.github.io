@@ -44,3 +44,8 @@ chip: HS1527
 
 rc-switch
 
+
+## See also
+
+* <https://www.mikrocontroller.net/articles/IRMP>
+* 

@@ -123,6 +123,14 @@ This pin has to be high while booting or resetting the chip when you like to sta
 After starting the program you can use it for input and output like the GPIO0 pin.
 
 
+## Reset
+
+The Reset(RST) line seems to be very sensitive regarding short spike impulses. There is an interesting investigation on this (in German) on the web site
+https://blog.thesen.eu/esp8266-reset-probleme-loesen-und-relais-stabil-schalten/.
+
+The outcome from this: pull RST high with a resistor and add a 100nF capacitor.
+
+
 ## Modification for deep sleep mode
 
 The ESP8266 supports a [deep sleep mode](/boards/deepsleep.md) that needs an external connection between the GPIO16 and the RESET.
