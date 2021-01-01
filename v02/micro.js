@@ -856,17 +856,22 @@ var modal = new ModalDialogClass();
 var NeoWidgetClass = (function (_super) {
     __extends(NeoWidgetClass, _super);
     function NeoWidgetClass() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.colObj = null;
+        return _this;
     }
-    NeoWidgetClass.prototype.x16 = function (d) {
-        var x = Number(d).toString(16);
-        if (x.length === 1) {
-            x = '0' + x;
+    NeoWidgetClass.prototype.connectedCallback = function () {
+        _super.prototype.connectedCallback.call(this);
+        this.colObj = this.querySelector('.color');
+    };
+    NeoWidgetClass.prototype.newData = function (_path, key, value) {
+        if ((key === 'value') && (this.colObj) && (value)) {
+            this.colObj.style.backgroundColor = value.replace('x', '#');
         }
-        return (x);
+        _super.prototype.newData.call(this, _path, key, value);
     };
     NeoWidgetClass.prototype.on_click = function (e) {
-        var src = e.srcElement;
+        var src = e.target;
         if (src.className === 'hueband') {
             var color = 'hsl(' + Math.round(e.offsetX) + ', 100%, 50%)';
             src.style.backgroundColor = color;
@@ -880,6 +885,13 @@ var NeoWidgetClass = (function (_super) {
         else {
             _super.prototype.on_click.call(this, e);
         }
+    };
+    NeoWidgetClass.prototype.x16 = function (d) {
+        var x = Number(d).toString(16);
+        if (x.length === 1) {
+            x = '0' + x;
+        }
+        return (x);
     };
     NeoWidgetClass = __decorate([
         MicroControl('neo')
@@ -1254,11 +1266,10 @@ var MicroHub = (function () {
         if (replay === void 0) { replay = false; }
         var h = this._registrationsId;
         var rn = matchPath.toLocaleLowerCase();
-        var re = '^' +
-            rn
-                .replace(/(\[|\]|\/|\?)/g, '\\$1')
-                .replace(/\*\*/g, '\\S{0,}')
-                .replace(/\*/g, '[^/?]*') +
+        var re = '^' + rn
+            .replace(/(\[|\]|\/|\?)/g, '\\$1')
+            .replace(/\*\*/g, '\\S{0,}')
+            .replace(/\*/g, '[^/?]*') +
             '$';
         var newEntry = {
             id: h,
