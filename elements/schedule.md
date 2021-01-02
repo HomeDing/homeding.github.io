@@ -4,11 +4,11 @@
 The ScheduleElement creates actions based on the time of day.
 :::
 
-![Schedule Properties and Actions](scheduleapi.png)
+![Schedule Properties and Actions](/elements/scheduleapi.png)
 
-When using this element a real time retrieving element must be configured as well like the [NTPTime](NTPTime) or [DCFTime](DCFTime).
+When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/NTPTime) or [DCFTime](/elements/DCFTime).
 
-One Schedule Element can be used to create a timespan during a day that creates 2 possible events. The first one when the ``on``-time has passed and a secone one when the ``off``-time has passed.
+One Schedule Element can be used to create a timespan during a day that creates 2 possible events. The first one when the `on`-time has passed and a second one when the `off`-time has passed.
 
 When starting the device the following events are emitted:
 
