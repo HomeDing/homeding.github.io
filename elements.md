@@ -124,6 +124,12 @@ Logic elements implement using on/off values expressed as 1/0 values.
   combines multiple logic input values to a single output value.</p>
 </div>
 
+<div class="short">
+  <a href="#page=elements/reference.md"><img src="/i/default.svg"></a>
+  <p><strong><a href="#page=elements/reference.md">Reference Element</a></strong><br/>
+  creates actions by comparing an incoming value with a reference value.</p>
+</div>
+
 <div style="clear:both"></div>
 
 
