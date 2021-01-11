@@ -25,6 +25,7 @@ By defining a reference value the reference action will only be dispatched when 
 
 On the ESP8266 chip the input value has a precision of 2^10 bits and the input value is represented as a value for 0 to 1024 measuring a voltage at the pin from 0 to 1 volts. The input measuing should not occur when the ESP8266 chip is transmitting data over the WLAN because the value will be inaccurate.
 
+
 ## Element Configuration
 
 The following properties are available for configuration of the element:
@@ -54,6 +55,7 @@ The value given in the actions is `1`.
 The value given in the actions is `0`.
 
 The ESP8266 chip has only one analog input pin so specifying a pin is not required.
+
 
 ### Example Configuration
 
