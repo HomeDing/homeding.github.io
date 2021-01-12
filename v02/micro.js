@@ -519,41 +519,33 @@ var DisplayDotWidgetClass = (function (_super) {
         _super.prototype.connectedCallback.call(this);
         this._dispElem = document.querySelector('#panel .display');
         hub.subscribe(this.microid + '?*', this.newValue.bind(this), true);
+        if (this._dispElem) {
+            this._elem = createHTMLElement(this._dispElem, 'span', { class: 'dot' });
+            this.updateElem();
+        }
         if (!this.showSys()) {
             this.style.display = 'none';
         }
     };
-    DisplayDotWidgetClass.prototype.updateDisp = function (create) {
-        if (this._dispElem) {
-            if (create && !this._elem) {
-                this._elem = document.createElement('span');
-                this._dispElem.appendChild(this._elem);
-            }
-            if (this._elem) {
-                this._elem.className = 'dot';
-                this._elem.style.top = this._y + 'px';
-                this._elem.style.left = this._x + 'px';
-                this._elem.classList.toggle('active', this._value);
-            }
-        }
-    };
     DisplayDotWidgetClass.prototype.newValue = function (_path, key, value) {
         if (key && value) {
-            if (key === 'active' && !this._elem) {
-                this.updateDisp(true);
-            }
-            else if (key === 'value') {
+            if (key === 'value') {
                 this._value = toBool(value);
-                this.updateDisp(false);
             }
             else if (key === 'x') {
                 this._x = Number(value);
-                this.updateDisp(false);
             }
             else if (key === 'y') {
                 this._y = Number(value);
-                this.updateDisp(false);
             }
+            this.updateElem();
+        }
+    };
+    DisplayDotWidgetClass.prototype.updateElem = function () {
+        if (this._elem) {
+            this._elem.style.top = this._y + 'px';
+            this._elem.style.left = this._x + 'px';
+            this._elem.classList.toggle('active', this._value);
         }
     };
     DisplayDotWidgetClass = __decorate([
@@ -577,23 +569,12 @@ var DisplayLineWidgetClass = (function (_super) {
         _super.prototype.connectedCallback.call(this);
         this._dispElem = document.querySelector('#panel .display');
         hub.subscribe(this.microid + '?*', this.newValue.bind(this), true);
+        if (this._dispElem) {
+            this._elem = createHTMLElement(this._dispElem, 'span', { class: 'line' });
+            this.updateElem();
+        }
         if (!this.showSys()) {
             this.style.display = 'none';
-        }
-    };
-    DisplayLineWidgetClass.prototype.updateDisp = function () {
-        if (this._dispElem) {
-            if (!this._elem) {
-                this._elem = document.createElement('span');
-                this._dispElem.appendChild(this._elem);
-            }
-            if (this._elem) {
-                this._elem.className = 'line';
-                this._elem.style.top = this._y0 + 'px';
-                this._elem.style.left = this._x0 + 'px';
-                this._elem.style.width = (this._x1 - this._x0) + 'px';
-                this._elem.style.height = (this._y1 - this._y0) + 'px';
-            }
         }
     };
     DisplayLineWidgetClass.prototype.newValue = function (_path, key, value) {
@@ -601,7 +582,15 @@ var DisplayLineWidgetClass = (function (_super) {
             if (this['_' + key] != null) {
                 this['_' + key] = value;
             }
-            this.updateDisp();
+            this.updateElem();
+        }
+    };
+    DisplayLineWidgetClass.prototype.updateElem = function () {
+        if (this._elem) {
+            this._elem.style.top = this._y0 + 'px';
+            this._elem.style.left = this._x0 + 'px';
+            this._elem.style.width = (this._x1 - this._x0) + 'px';
+            this._elem.style.height = (this._y1 - this._y0) + 'px';
         }
     };
     DisplayLineWidgetClass = __decorate([
@@ -784,7 +773,7 @@ var ModalDialogClass = (function () {
         var scope = this;
         window.addEventListener('load', function () {
             scope._mObj = document.getElementById('modal');
-            scope._cObj = document.getElementById('modalContainer');
+            scope._cObj = document.getElementById('container');
         });
     }
     ModalDialogClass.prototype.isOpen = function () {
@@ -811,7 +800,7 @@ var ModalDialogClass = (function () {
             p.style.height = r.height + 'px';
             obj.parentElement.insertBefore(p, obj);
             this._placeholderObj = p;
-            obj.classList.add('modalObject');
+            obj.classList.add('modal-object');
             obj.style.top = r.top + 'px';
             obj.style.left = r.left + 'px';
             obj.style.width = r.width + 'px';
@@ -843,7 +832,7 @@ var ModalDialogClass = (function () {
             this._mObj.classList.add('hidden');
             if (this._focusObj && this._placeholderObj && this._placeholderObj.parentElement) {
                 this._focusObj.setAttribute('style', this._focusStyle || '');
-                this._focusObj.classList.remove('modalObject');
+                this._focusObj.classList.remove('modal-object');
                 this._placeholderObj.parentElement.removeChild(this._placeholderObj);
             }
             this._cObj.innerHTML = '';
@@ -997,21 +986,19 @@ var SliderWidgetClass = (function (_super) {
         }
     };
     SliderWidgetClass.prototype.on_click = function (e) {
-        var src = e.srcElement;
-        while (src != null && src.classList.length === 0) {
+        var src = e.target;
+        while (src != null && src != this) {
+            if (src.tagName === 'LABEL' && src.classList.contains('up')) {
+                this.dispatchAction('up', '1');
+                break;
+            }
+            else if (src.tagName === 'LABEL' && src.classList.contains('down')) {
+                this.dispatchAction('down', '1');
+                break;
+            }
             src = src.parentElement;
         }
-        if (src != null) {
-            if (src.classList.contains('up')) {
-                this.dispatchAction('up', '1');
-            }
-            else if (src.classList.contains('down')) {
-                this.dispatchAction('down', '1');
-            }
-            else {
-                _super.prototype.on_click.call(this, e);
-            }
-        }
+        _super.prototype.on_click.call(this, e);
     };
     SliderWidgetClass.prototype.on_mousedown = function (evt) {
         if (evt.target === this._handle) {
