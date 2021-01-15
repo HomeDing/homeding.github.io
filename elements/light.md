@@ -22,6 +22,26 @@ These properties can be configured:
 **duration** - This parameter is used to specify the number you of milliseconds for a transition from one value to another. When not specified the value 0 is used to make the new value effective immediately.
 
 
+### Color Values
+
+Color values are specified using the 32-bit hex format with a leading 'x' or '#'.
+The format #RRGGBB is used like in the css web standard and some plain color names from the css web standard can be used as well.
+
+The '#' sign has to been avoided in URLs because it will not be passed from a URL to the server.
+
+Colors are transformed internally to a 32 value like `xWWRRGGBB`. 
+
+There are some simple colors available by name:
+
+| color value | name  |
+| ----------- | ----- |
+| #00000000   | black |
+| #00ff0000   | red   |
+| #0000ff00   | green |
+| #000000ff   | blue  |
+| #ffffffff   | white |
+
+
 ### Example configuration
 
 ```JSON

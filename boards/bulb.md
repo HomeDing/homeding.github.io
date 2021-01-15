@@ -78,8 +78,23 @@ The following configuration can be used to control the bulb above using the MY92
 {
   "device": {
     "0": {
-      
-      ```
+      "loglevel": 0,
+      "savemode": "false",
+      "name": "bulb02",
+      "description": "RGBW Bulb",
+      "homepage": "/ding.htm",
+      "led": "D4"
+    }
+  },
+  "ota": {
+    "0": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "Listen for 'over the air' OTA Updates"
+    }
+  }
+}
+```
 
 
       ```JSON

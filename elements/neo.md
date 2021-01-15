@@ -45,25 +45,7 @@ When assigning a single color value all the pixels will be set to this color.
 
 When passing a list of color values the pattern is repeated until all pixels have been assigned a new color.
 
-### Color Values
-
-Color values are specified using the 32-bit hex format with a leading 'x' or '#'.
-The format #RRGGBB is used like in the css web standard and some plain color names from the css web standard can be used as well.
-
-The '#' sign has to been avoided in URLs because it will not be passed from a URL to the server.
-
-Colors are transformed internally to a 32 value like 0x00RRGGBB.
-
-There are some simple colors available by name:
-
-| color value | name  |
-| ----------- | ----- |
-| #000000     | black |
-| #ff0000     | red   |
-| #00ff00     | green |
-| #0000ff     | blue  |
-| #ffffff     | white |
-
+For valid color values, see [LightElement](/elements/light.md).
 
 
 ## Wheel mode
