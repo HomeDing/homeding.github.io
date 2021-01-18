@@ -52,32 +52,6 @@
       user-select: none;
       -ms-user-select: none;
     }
-
-    .hueband,
-    .whiteband {
-      height: 1.4rem;
-      width: 100%;
-      border: 1px solid gray;
-      margin-bottom: 0.8rem;
-    }
-
-    .hueband {
-      background: linear-gradient(to right, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
-    }
-
-    .whiteband {
-      background: linear-gradient(to right, black 0%, white 100%);
-    }
-
-
-    .point {
-      position: relative;
-      width: 0;
-      height: 0;
-      border-color: transparent transparent gray transparent;
-      border-width: 0 8px 12px 8px;
-      border-style: solid;
-    }
   </style>
   <script src="/micro.js"></script>
 </head>
@@ -102,9 +76,7 @@
     <div id="u-templates" style="display:none">
       <div class="col card" u-control="generic" u-is="generic" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#no" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#no"/></svg>
           <h3 u-text="title">--</h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -117,9 +89,7 @@
 
       <div class="col card" u-control="schedule" id="${id}" u-is="generic" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#schedule" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#schedule"/></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -134,9 +104,7 @@
 
       <div class="col card" u-control="dstime" id="${id}" u-is="dstime" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#time" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#time"/></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -152,9 +120,7 @@
 
       <div class="col card" u-control="switch" id="${id}" u-is="switch" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#switch" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#switch"/></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -174,9 +140,7 @@
 
       <div class="col card" u-control="value" u-is="slider" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#value" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#value"/></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -185,24 +149,18 @@
         <div class="block">
           <div class="form-group"><label>value:</label><span u-text="value"></span></div>
           <div class="u-slider">
-            <label class="down"><svg class="icon">
-                <use xlink:href="./icons.svg#minus" />
-              </svg></label>
+            <label class="down"><svg class="icon"><use xlink:href="./icons.svg#minus"/></svg></label>
             <div class="box" style="width:240px">
               <div class="handle"></div>
             </div>
-            <label class="up"><svg class="icon">
-                <use xlink:href="./icons.svg#plus" />
-              </svg></label>
+            <label class="up"><svg class="icon"><use xlink:href="./icons.svg#plus"/></svg></label>
           </div>
         </div>
       </div>
 
       <div class="col card" u-control="and" id="${id}" u-is="generic" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#and" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#and"/></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -216,9 +174,7 @@
 
       <div class="col card" u-control="neo" id="${id}" u-is="neo" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#neo" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#neo"/></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -227,7 +183,8 @@
         <div class="block">
           <div class="form-group"><label>value:</label><span u-text="value"></span><span class="color"
               style="width:6rem;"></span></div>
-          <div class="hueband" style="height:1.4rem;width:100%;margin-bottom: 0.4rem;"></div>
+          <input type="range" max="359" class="band hue">
+    
           <button u-action="mode" value="flow">flow</button>
           <button u-action="mode" value="wheel">wheel</button>
           <button u-action="mode" value="pulse">pulse</button>
@@ -236,9 +193,7 @@
 
       <div class="col card" u-control="my9291" id="${id}" u-is="neo" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#neo" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#neo" /></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -247,20 +202,15 @@
         <div class="block">
           <div class="form-group"><label>value:</label><span u-text="value"></span><span class="color"
               style="width:6rem;"></span></div>
-          <div class="hueband">
-            <div class="point"></div>
-          </div>
-          <div class="whiteband">
-            <div class="point"></div>
-          </div>
+          <input type="range" max="359" class="band hue">
+          <input type="range" max="100" class="band bright">
+          <input type="range" max="255" class="band white">
         </div>
       </div>
 
       <div class="col card" u-control="bl0937" id="${id}" u-is="bl0937" microID="${id}">
         <div class="block header">
-          <svg class="icon">
-            <use xlink:href="./icons.svg#default" />
-          </svg>
+          <svg class="icon"><use xlink:href="./icons.svg#default"/></svg>
           <h3 u-text="title"></h3>
           <h4 u-text="description"></h4>
           <span class="activeState" u-active="active"></span>
@@ -362,7 +312,7 @@
     });
 
 
-    /** 
+    /**
     * @param {number} timeout time to next fetch in msecs.
     */
     function updateAsap(timeout) {
@@ -441,7 +391,7 @@
         if (configData) {
           // adjust title locally
           for (var t in configData) for (var i in configData[t]) {
-            if (!configData[t][i].title) configData[t][i].title = t + '/' + i;
+            if (! configData[t][i].title) configData[t][i].title = t + '/' + i;
           }
           hub.write('config', JSON.stringify(configData));
           hub.publishObj(configData);

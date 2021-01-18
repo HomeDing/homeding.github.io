@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Board</title>
 
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
@@ -18,8 +17,8 @@
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-
   <link Content-Type="text/css" href="/iotstyle.css" rel="stylesheet" />
+  <script src="/micro.js"></script>
 
   <style>
     img,
@@ -27,32 +26,7 @@
       user-select: none;
       -ms-user-select: none;
     }
-
-    .hueband,
-    .whiteband {
-      height: 1.4rem;
-      width: 100%;
-      border: 1px solid gray;
-      margin-bottom: 0.8rem;
-    }
-
-    .hueband {
-      background: linear-gradient(to right, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
-    }
-
-    .whiteband {
-      background: linear-gradient(to right, black 0%, white 100%);
-    }
-
-    .point {
-      position: relative;
-      width: 0;
-      height: 0;
-      border-color: transparent transparent gray transparent;
-      border-width: 0 8px 12px 8px;
-      border-style: solid;
-    }  </style>
-  <script src="/micro.js"></script>
+  </style>
 </head>
 
 <body>
@@ -198,7 +172,8 @@
           <h4>${id} - <span u-text="description"></span></h4>
           <div class="form-group"><label>value:</label><span u-text="value"></span><span class="color"
               style="width:6rem;"></span></div>
-          <div class="hueband"><div class="point"></div></div>
+          <input type="range" max="359" class="band hue">
+          <input type="range" max="100" class="band bright">
           <button u-action="mode" value="flow">flow</button>
           <button u-action="mode" value="wheel">wheel</button>
           <button u-action="mode" value="pulse">pulse</button>
@@ -209,9 +184,10 @@
         <div class="block">
           <h4>${id} - <span u-text="description"></span></h4>
           <div class="form-group"><label>value:</label><span u-text="value"></span><span class="color"
-              style="width:6rem;"></span></div>
-          <div class="hueband"><div class="point"></div></div>
-          <div class="whiteband"><div class="point"></div></div>
+            style="width:6rem;"></span></div>
+          <input type="range" max="359" class="band hue">
+          <input type="range" max="100" class="band bright">
+          <input type="range" max="255" class="band white">
         </div>
       </div>
 
@@ -255,7 +231,7 @@
 
           var e = micro.insertTemplate(panelObj, t, p);
           if (!e) {
-            t = alias[t] || 'generic';
+            t = alias[t]; // || 'generic';
             e = micro.insertTemplate(panelObj, t, p);
           }
         } // if
