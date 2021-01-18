@@ -1,7 +1,7 @@
 # The DHT Element
 
 ::: excerpt dht
-The DHTElement allows retrieving temperature and humidity values from the DHT family sensors and creates actions when new values are available.
+The DHTElement allows retrieving temperature and humidity values from the DHT family and AM2320 sensors and creates actions when new values are available.
 :::
 
 The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.
@@ -36,19 +36,30 @@ The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and
 The following sensor chips from the DHT family are supported by the DHTesp library:
 
 * DHT11
-* DHT22
-* AM2302
+* DHT22 (identical to AM2302)
+* AM2320
 * RHT03
 
 more details can be found at <https://github.com/beegee-tokyo/DHTesp>
 
-## Connecting a Sensor
+
+## Connecting a DHT Sensor
 
 The sample configuration coming with the DHT22 recipes is configured to use a DHT22 type of sensor with the data line attached to a GPIO like (D5).
 
 ![DHT Wiring](/elements/dhtwires.png)
 
 The configuration of the used pin can be changed easily by modifying the element properties in the config.json file.
+
+
+## Connecting a AM2320 Sensor
+
+The AM2320 sensor is a drop-in replacement for the DHT22 with almost the same wiring and smaller in size.
+
+In addition to the DHT22 wiring the not connected (nc) pin needs also to be connected to GND to use the compatible data protocol.
+
+The AM2320 sensor also offers to communicate using the [I2C protocol](/i2c.md). This is not supported by the HomeDing library as of now.
+
 
 ### About the pull-up resistor
 
