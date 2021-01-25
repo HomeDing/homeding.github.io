@@ -17,14 +17,17 @@ The Logger class implementation solves the major logging topics when implementin
 
 The Logger class supports 3 levels of logging and a unconditional logging is also supported:
 
-| Level | #   | Description                     |
-| ----- | --- | ------------------------------- |
-| Info  | 0   | Explicit information            |
-| Error | 1   | + Error conditions (default)    |
-| Trace | 2   | + Tracing details               |
-| Raw   |     | Direct logging to Serial output |
+**Error(0)** - Functionality are not working, or not working correctly.
 
-The default level of logging is `Error(1)`
+**Info(1)**	- Something informative has happened but can be ignored during normal operations.
+
+**Trace(2)**	- Output to see step how code is executed. This can be ignored during the standard operation, but may be useful during extended debugging sessions.
+
+**Raw**	- Something informative has happened but can be ignored during normal operations.
+
+The default level of logging is `Info(1)`
+
+Messages from Error(0) and Info(1) are captured into the Log files when enabled. Trace(2) and Raw messages are only reported on the Serial output when Serial debugging is enabled for the firmware.
 
 
 ## Logging for problem analysis
