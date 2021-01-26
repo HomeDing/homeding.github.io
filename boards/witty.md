@@ -73,6 +73,8 @@ There is a RGB LED on the board that is directly driven by the following GPIO pi
 | green | GPIO12(D6) |
 | blue  | GPIO13(D7) |
 
+There is also a blue LED on the ESP-12 module on GPIO2(D4).
+
 To reduce the power consumption the LEDs will not consuming the possible 20 mA per channel but the regulators reduce the current when maximum level is given by the GPIO pins. This allows using the RGB Led directly attached to the GPIO pins.
 
 This is a good solution for using the LED as an indicator but not as a source of light.
@@ -82,7 +84,7 @@ It can be driven by the LightElement using the following configuration:
 ```JSON
 "light": {
   "l": {
-    "pin": "D8,D6,D7",
+    "pin": "D8,D6,D7", // red,green,blue or white,red,green,blue 
     "value": "x203050"
   }
 }

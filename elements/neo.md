@@ -23,13 +23,16 @@ These properties are used to setup the attached WDs:
 
 **count** - Number of pixels that are attached. The default is 8 and must be specified in the config only.
 
-**brightness** - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..100. The default is 50.
+**brightness** - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..255. The default is 127.
 
 **value** - Is used for color mode to pass a list of colors like `red,blue,green,white` . See explanation for `Color mode` below, 
 
 **mode** - The effect to be used. See below
 
-**duration** in msecs - Cycle time for some effects.
+**duration** in msecs - This parameter is used to specify the number you of milliseconds for a transition in a color animation
+or fading from one value to another. When not specified the value 0 is used to make the new value effective immediately.
+
+
 
 
 ## Color mode

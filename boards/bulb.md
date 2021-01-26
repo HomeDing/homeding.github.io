@@ -9,14 +9,19 @@ Bulb devices build on base of the ESP8266 chip are supported by the minimal sket
 :::
 
 There are many different bulb devices that use RGB and white LED variants. The bulbs that use GPIOs with PWM or the chips
-MY9231, MY9291.
+like MY9231, MY9291.
+
+The biggest challenge with these bulbs is that there is usually no easy way to get to the serial port without destroying the housing.  
+
+Therefore bulbs are used here, that can also be flashed with a new software via the network. This is done by the program **tuya-convert** that runs on a Raspberry pi.
 
 
-## Tuya Bulb
+## Tuya Bulbs
 
-The Manufacturer Tuya has created several WiFi Bulbs that are available from different sources.
+The Manufacturer **Tuya** has created several WiFi Bulbs that are available from different sources.
+To check if a given bulb is using the ESP8266 processor the [template registry for the TASMOTA firmware](https://templates.blakadder.com/) can be searched.
+Here you also find some information on the purpose of the GPIO pins and the used chips inside.
 
-This sample is using a ESP8266 processor with a MY9291 driver chip for the LEDs that is used in some bulb formats.
 
 ## Flashing Tuya bulbs the first time using tuya-convert
 
@@ -25,7 +30,7 @@ tuya-convert is using a weakness in the official firmware so when tuya updates t
 
 There is a good documentation and walkthrough in <https://tasmota.github.io/docs/Tuya-Convert/>. The project is open-source available at <https://github.com/ct-Open-Source/tuya-convert>.
 
-Place a Minima.ino.bin file n the firmware folder to directly upload the minimal Homeding firmware.
+Place a Minimal.ino.bin file in the firmware folder on the respberry pi to directly upload the minimal Homeding firmware.
 
 
 ## Uploading a firmware using a USB-2-Serial converter
@@ -45,19 +50,7 @@ I cannot recommend his procedure because you probably will need to open the devi
 :::
 
 
-## Photos from disassembling and flashing bulb
-
-![bulb](/boards/bulb.jpg "w200")
-![bulb](/boards/bulbparts.jpg "w200")
-![bulb](/boards/bulb01.jpg "w200")
-![bulb](/boards/bulb02.jpg "w200")
-![bulb](/boards/bulb03.jpg "w200")
-![bulb](/boards/bulb04.jpg "w200")
-
-I used a programming setup for ESP-01 boards with some wires that can be soldered easily to the connectors of the module with the ESP8266. 
-
-On the bottom side the signals VCC(3.3V), GND, RX and TX are available. 
-The RESET and FLASH signals are available on 2 connectors on the bottom side.
+## ===
 
 Other bulbs use different board layout and some investigation is required to find out.
 A good source of helping information is the repository of device specific templates for the TASMOTA firmware at
@@ -67,12 +60,20 @@ A good source of helping information is the repository of device specific templa
 https://esphome.io/components/output/my9231.html
 
 
-## Configuration
+## System Configuration for bulbs
 
-The following configuration can be used to control the bulb above using the MY9291 Element. It can easily be adopted to use the RGB Light element when the bulb is using PWM directly.
+In the **env.json** file the device specific settings must be configured.
 
+In the settings on the [device element](/elements/device.md) the following properties are used:
 
-**env.json**
+**name** - the unique device name on the network.
+
+**homepage** - The small size board implementation is a good candidate to be used as the standard UI.
+
+**connectTime** - this value can be reduced to a shorter time as network configuration is not required for bulbs. 
+
+The [OTA element](/elements/ota.md) enables updating the device firmware using the Arduino environment. A password should be specified.
+
 
 ```JSON
 {
@@ -83,6 +84,7 @@ The following configuration can be used to control the bulb above using the MY92
       "name": "bulb02",
       "description": "RGBW Bulb",
       "homepage": "/ding.htm",
+      "connectTime": "2",
       "led": "D4"
     }
   },
@@ -97,10 +99,99 @@ The following configuration can be used to control the bulb above using the MY92
 ```
 
 
-      ```JSON
+## Configuration bulb with MY9291 LED driver
+
+There are bulb using a MY9291 chip to drive the LEDs using PWM output.
+The [MY9291 Element](/elements/_my9291.md) can create the 4-channel signal using a data and a clock signal from the ESP8266 to the driver chip.
+This Element behaves like a standard [Light Element](/elements/light.md) and supports WRGB color values, a general brightness and enable switch.  
+
+To configure such a element the data and clock pins need to be specified. A [switch element](/elements/switch.md) can be added to simplify switching on and off.
+
+```JSON
 {
+  "switch": {
+    "en": {
+      "loglevel": "2",
+      "description": "switch on/off",
+      "onvalue": "my9291/0?enable=$v"
+    }
+  },
+  "my9291": {
+    "0": {
+      "title": "Accent light",
+      "datapin": "4",
+      "clockpin": "5",
+      "brightness": "50",
+      "value": "x00000000"
+    }
+  }
+}
 ```
 
+These bulbs are internally of this type:
+
+* <https://templates.blakadder.com/moko_YX-L01C-E27.html>
+* <https://templates.blakadder.com/lyasi_pt-bw09.html>
+
+Here are some picture from a disassembly of a broken bulb:
+
+![bulb](/boards/bulb.jpg "w200")
+![bulb](/boards/bulbparts.jpg "w200")
+![bulb](/boards/bulb01.jpg "w200")
+![bulb](/boards/bulb02.jpg "w200")
+![bulb](/boards/bulb03.jpg "w200")
+![bulb](/boards/bulb04.jpg "w200")
+
+It is almost impossible to open this bulb and get access to the programming signals without breaking the housing.
+
+I used a programming setup for ESP-01 boards with some wires that can be soldered easily to the connectors of the module with the ESP8266. 
+
+On the bottom side the signals VCC(3.3V), GND, RX and TX are available. 
+The RESET and FLASH signals are available on 2 connectors on the bottom side.
+
+
+## Configuration bulb with PWM based LED driver
+
+Many bulbs are using the PWM signals from the ESP8266 chip with some power switching mosfets to drive the LEDs.
+These can be controlled using the [Light Element](/elements/light.md) that can create 4-channels of PWM signals from a color value.
+It supports RGB and WRGB color values, a general brightness and enable switch.  
+
+To configure such a element the data and clock pins need to be specified. A [switch element](/elements/switch.md) can be added to simplify switching on and off.
+
+```JSON
+{
+  "switch": {
+    "en": {
+      "loglevel": "2",
+      "description": "switch on/off",
+      "onvalue": "light/l?enable=$v"
+    }
+  },
+  "light": {
+    "l": {
+      "title": "Accent light",
+      "loglevel": 0,
+      "pin": "15,14,12,5",
+      "value": "x203050"
+    }
+  }
+}
+```
+
+These bulbs are internally of this type:
+
+<https://templates.blakadder.com/blitzwolf_BW-LT21.html>
+
+Here are some picture from a disassembly of a broken bulb:
+
+pictures ???
+
+It is possible to open this bulb by gently pulling off the transparent cap. There are 2 small boards visible.
+The one with the processor has some good soldering pads for RX, TX and GPIO0. The VCC and GND signals are available on the connectors.
+
+Soldering is a little bit tricky but can be managed.
+
+I used a programming setup for ESP-01 boards with some wires that can be soldered easily to the connectors of the module with the ESP8266. 
 
 
 ## See also
@@ -108,3 +199,6 @@ The following configuration can be used to control the bulb above using the MY92
 * <https://www.heise.de/newsticker/meldung/Smart-Home-Hack-Tuya-veroeffentlicht-Sicherheitsupdate-4292028.html>
 * <https://github.com/arendst/Sonoff-Tasmota/wiki/Tuya-OTA>
 * <https://templates.blakadder.com/bulb.html>.
+
+## Tags
+#element #light

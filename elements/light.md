@@ -13,13 +13,14 @@ The output is using PWM signals for controlling the overall brightness.
 
 These properties can be configured:
 
-**pin** - Specifies the output pin(s) that are used to connect to the light. This can be a list with up to 4 pins.
+**pin** - Specifies the output pin(s) that are used to connect to the light. This can be a list with up to 4 pins. 
+Define one pin for normal single color leds ("pin":"D6") or 3 pins for RGB ("pin": "D8,D6,D7") or 4 pins for WRGB ("pin":"15,14,12,5").
  
-**value** - This is the value used for the PWM output. This can be a single value for one pin or a RGB(W) value for up to 4 pins. The values is always using the 32-bit storage format for RGB values like `x00rrggbb` or 0..255.
+**value** - This is the value used for the PWM output. This can be a single value for one pin or a (W)RGB value for up to 4 pins. The values is always using the 32-bit storage format for RGB values like `x00rrggbb` or 0..255.
 
-**brightness** - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..100. The default is 50.
+**brightness** - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..255. The default is 128.
 
-**duration** - This parameter is used to specify the number you of milliseconds for a transition from one value to another. When not specified the value 0 is used to make the new value effective immediately.
+**enable** - This boolean 0/1 value controls the output. When 0 is given the value for output is given with 0 but the current value is kept. This allows easy switching on and off.
 
 
 ### Color Values
