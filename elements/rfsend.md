@@ -48,4 +48,14 @@ rc-switch
 ## See also
 
 * <https://www.mikrocontroller.net/articles/IRMP>
-* 
+
+
+<!-- ## Receiver
+
+* RxB8
+* RFstx882
+* RFsrx882
+* RxB12
+* RxB6
+* RF-5V, XY-MK-5V -->
+
