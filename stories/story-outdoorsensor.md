@@ -15,6 +15,7 @@
 - [Wiring](#wiring)
 - [Device Dashboard](#device-dashboard)
 - [Extending](#extending)
+- [See also](#see-also)
 
 ## Intro
 
@@ -22,24 +23,26 @@ Some weather parameters are interesting to be measured by using an outside senso
 
 * Temperature
 * Humidity
-* sun light
-* rain
+* Sun light
+* Rain
 
 This is how to build a device that simply captures the air temperature and humidity parameters
 from a DHT22 sensor by using the Homeding library.
 It is easy to use other common [sensor elements](/elements/sensors.md)
-that are supported by the library and you can easily add other sensors by implementing a specific element.
+that are supported by the library and you can easily add other sensors by configuration of the specific element.
 
 In contrast to the sensor that must be exposed to the outside air the microprocessor board should be placed
 into a water proof housing. Only the USB power line is going out.
 
 This sensor is placed in a location where direct rain and sunlight could not reach it so there was no need for special shielding. Also USB power is available and the device can be powered all the time.
 
+
+
 [pictures]... ???
 
 Another example of an outdoor sensor using a solar panel and LiPo batteries is available at [???]. The specific electronic and parameters are discussed in this story.
 
-[Outdoor sensor with Solar Panel](/stories/story-outdoorsendorsolar.md).
+[Outdoor Sensor with Solar Panel](/stories/story-outdoorsendorsolar.md).
 
 
 ## Supplies
@@ -254,4 +257,9 @@ The HomeDing library offers a lot of options that can be used to create more val
   <br />See the story [Build a In-house IoT Air Quality sensor](/stories/story-airquality.md)
 * You can configure some low energy options and run your sensor by solar power.
   <br />See the story [Build a In-house IoT Air Quality sensor](/stories/story-airquality.md)
+
+## See also
+
+* [Story - Outdoor Sensor with Solar Panel](/stories/story-outdoorsensorsolar.md)
+* [Story - Outdoor Sensor](/stories/story-outdoorsensor.md)
 
