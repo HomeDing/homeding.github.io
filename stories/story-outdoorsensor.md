@@ -7,15 +7,20 @@
 - [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
 - [Include required libraries](#include-required-libraries)
 - [Upload the standard example sketch](#upload-the-standard-example-sketch)
-- [Joining the WiFi Network](#joining-the-wifi-network)
+- [Joining the WiFi Network using the WiFi Manager](#joining-the-wifi-network-using-the-wifi-manager)
 - [Upload the web UI](#upload-the-web-ui)
 - [Configuration Files](#configuration-files)
   - [env.json](#envjson)
   - [config.json](#configjson)
-- [Wiring](#wiring)
+- [Wiring (simple)](#wiring-simple)
+- [Restart](#restart)
 - [Device Dashboard](#device-dashboard)
-- [Extending](#extending)
+- [Extending a humidity log](#extending-a-humidity-log)
+- [Extending a temperature log](#extending-a-temperature-log)
+- [more robust sensor wiring](#more-robust-sensor-wiring)
+- [Options](#options)
 - [See also](#see-also)
+- [Tags](#tags)
 
 ## Intro
 
@@ -27,39 +32,44 @@ Some weather parameters are interesting to be measured by using an outside senso
 * Rain
 
 This is how to build a device that simply captures the air temperature and humidity parameters
-from a DHT22 sensor by using the Homeding library.
-It is easy to use other common [sensor elements](/elements/sensors.md)
-that are supported by the library and you can easily add other sensors by configuration of the specific element.
+from a DHT22 sensor by using the low-code [Homeding library].
+There are many [sensor elements](/elements/sensors.md) supported by the library 
+so it is easy to used a different sensor or add other sensors as this is just done by configuration. 
+
+This project is a good starter project as well to explore the possibilities for building sensors gadgets yourself.
 
 In contrast to the sensor that must be exposed to the outside air the microprocessor board should be placed
-into a water proof housing. Only the USB power line is going out.
+into a water proof housing. Only the USB power line and the sensor wires are going out.
 
-This sensor is placed in a location where direct rain and sunlight could not reach it so there was no need for special shielding. Also USB power is available and the device can be powered all the time.
+This sensor is placed in a location where direct rain and sunlight could not reach it so there was no need for special shielding.
+Also USB power is available and the device can be powered all the time.
 
+![outdoor sensor](/stories/outdoorsensor01.png)
 
+To inspect the current values the devices has a built-in web server, also provided by the [Homeding library] that shows both values of the sensor
+on a tile:
 
-[pictures]... ???
+![outdoor sensor web ui](/stories/outdoorsensor02.png)
 
-Another example of an outdoor sensor using a solar panel and LiPo batteries is available at [???]. The specific electronic and parameters are discussed in this story.
-
-[Outdoor Sensor with Solar Panel](/stories/story-outdoorsendorsolar.md).
+This project shows the basic of building an outdoor sensor. There are possible extensions that can be added by configuration:
+* a [Log Element](/elements/log.md) that can capture the values and display as a line chart.
+* using a solar panel and LiPo batteries and run the sensor on low power mode.
 
 
 ## Supplies
 
-All you need to build this project is a ESP8266 based board like the nodemcu board
-and a DHT22 sensor to measure temperature and humidity.
+This is all you need to build this project
 
+* A ESP8266 based board like the nodemcu board
+* A DHT22 or compatible sensor to measure temperature and humidity.
 * A USB plug and a micro-usb cable for power supply.
-* 1 nodemcu board with the ESP8266 CPU.
-* 1 BME680 sensor breakout board.
 * A water proof housing
 * Wires, solder, ...
 
 
 ## Prepare Arduino Environment for ESP8266
 
-You must have a working environment for ESP8266:
+To build he software you need a working Arduino environment for ESP8266:
 
 1. Install latest version of Arduino IDE (currently version 1.8.13).
 
@@ -92,6 +102,9 @@ More details about the required libraries can be found on the documentation webs
 The [Standard Example](/examples/standard.md) already includes all that is needed so simply use this example.
 Some configuration will be required, see below.
 
+As you can see on the picture above also a ESP-01 board can be used that only has 1MByte of Flash memory.
+The the [Minimal Example](/examples/minimal.md) is a better project to start with.
+
 For simplicity on adding the new device to the network you may add the SSID and passphrase of your home WiFi in the `secrets.h`
 file next to the `standard.ino` sketch file.
 But you can also use the built-in WiFi Manager to add the device to the network without this hard-coded configuration.
@@ -103,41 +116,49 @@ Now everything regarding implementation of the sketch is done and the firmware c
 When the device boots with the new firmware for the first time you can use the Serial Monitor to inspect the 
 output during booting.
 
-Here you can see the information about the interim name of the device and IP address:
+Here you can see the information about the interim name of the device, the IP address and the network it connected to:
 
 ```txt
-???
+00:00:10 sys:i ESP-5D2122 192.168.2.175
+00:00:10 sys:i Connected to DEVNET unsafe
 ```
 
+Here the temporary devicename is **ESP-5D2122** and **DEVNET** is the network joined. 
 
-## Joining the WiFi Network
+
+## Joining the WiFi Network using the WiFi Manager
 
 When you have configured your local WiFi network in secrets.h the device will be available on your network.
 
-When you want to use the built-in WiFi Manager to join the network you can reach the configuration page
-by joining the temporary device hotspot named `homeding-xxxxxx` and opening [http://192.168](http://192.168.4.1/setup).
+When you do not want to hard-code your network passphrase use the built-in WiFi Manager to join the network you can reach the configuration page
+by joining the temporary device hotspot named `homeding-xxxxxx` and opening [http://192.168](http://192.168.4.1/$setup).
 
 A more detailed description on this process can be found on the page [Step by Step Bring your device to work](/stepsnewdevice.md).
 
 
 ## Upload the web UI
 
-This steps enables the Web UI of the device by uploading the required files into the filesystem.
+This steps enables the Web UI of the device by uploading the required files into the filesystem. This method is very useful when starting with a new board.
 
-The simplest way to do this is by using the Builtin Web based Upload Utility that can be reached at <http://homeding-xxxxxx/$boot.htm>.
+The simplest way to do this is by using the Builtin Web based Upload Utility that can be reached at <http://ESP-xxxxxx/$update.htm>.
 
 ![Builtin Upload Utility](/boot.png)
 
 By pressing the start button all required files from the homeding documentation website are transferred to the device.
-The list of files is available at: https://homeding.github.io/v01/list.txt.
 
-This method is very useful when starting with a new board.
+The files are also available at <https://github.com/HomeDing/homeding.github.io/tree/master/v02> it you like to know what will be uploaded.
 
-After the upload has finished a more beautiful homepage will be shown.
+After the upload has finished you can navigate to the next step to select an icon for the device. Take DHT and press "start" to place some icon files on the device.
+
+When navigating to the next step the embedded IDE will be started.
+
 
 ## Configuration Files
 
-2 configuration files must be used to configure the sensor.
+2 configuration files must be used to configure the sensor. To do this we can used the built-in micro IDE to create these 2 files.
+
+The embedded IDE can be opened from the homepage using the IDE menu item. 
+
 
 ### env.json
 
@@ -200,9 +221,84 @@ When requested enter `/config.txt` into the filename field.
       "description": "Temperature and Humidity sensor",
       "pin": "D5",
       "readtime": "30s",
-      "resendtime": "2m",
-      "ontemperature": "device/0?log=temp:$v,remote/display-t?value=$v",
-      "onhumidity": "log/hum?value=$v,device/0?log=hum:$v,remote/display-h?value=$v"
+      "resendtime": "2m"
+    }
+  }
+}
+```
+
+## Wiring (simple)
+
+The principle wiring of a DHT22 sensor can be seen in this picture:
+
+![DHTWiring](/elements/dhtwires.png)
+
+As you can see in the config.json file the data pin that was configured on the software side is the D5 GPIO pin so data from the sensor chip must be connected here. VCC must be connected to 5V or 3.3V and GND must be connected to GND.
+
+More details on the DHT22 connecting options can be found in the [DHT Element](/elements/dht.md) description.
+
+
+## Restart
+
+Now restart the device by using the reset button on the board, in the IDE or just detach and attach the USB cable and the device.
+
+Now the LED will blink several times while connecting to the network.
+
+
+## Device Dashboard
+
+The information the device is gathering can be found on the device dashboard.
+
+Open <http://outdoor/board.htm> to open the dashboard and see current sensor values.
+
+![outdoor sensor web ui](/stories/outdoorsensor03.png)
+
+
+## Extending a humidity log
+
+This configuration will add a log file with the humidity from the sensor saving a value every 30 seconds.
+
+The dht element gets the additional configuration to send the current value to the log element using an action:
+
+    "onhumidity": "log/hum?value=$v"
+
+Actions are the way the elements inside a device can communicate and the source element is sending actions
+most of the time to all consumers.
+Actions can also be sent across the network to other devices. 
+
+An accurate time is required for logging.
+Therefore we use the ntptime element to get the current time from a ntp server with adjustments to the timezone you are living in.
+
+    "ntptime": {
+      "0": {
+        "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+      }
+    },
+
+You may want to adjust the time zone to fit your location in the ntptime element. This element is often configured in the env.json file but also works in the config.json file.
+
+
+The [Log Element] is configured to collect data into a pair of files:
+
+    "log": {
+      "h": {
+        "description": "log humidity",
+        "filesize": "10000",
+        "filename": "/humlog.txt"
+      }
+    }
+
+Now the config.json file should contain:
+
+```json
+{
+  "dht": {
+    "on": {
+      "type": "DHT22",
+      "description": "Temperature and Humidity sensor",
+      "pin": "D5",
+      "readtime": "30s",
+      "onhumidity": "log/h?value=$v"
     }
   },
   "ntptime": {
@@ -215,41 +311,35 @@ When requested enter `/config.txt` into the filename field.
       "description": "log humidity",
       "filesize": "10000",
       "filename": "/humlog.txt"
-    },
-    "t": {
-      "description": "log temperature",
-      "filesize": "10000",
-      "filename": "/templog.txt"
     }
   }
 }
 ```
 
-YOu may want to adjust the time zone to fit your location in the ntptime element. An accurate time is required for logging.
+??? log file with timings
 
 
-## Wiring
+click "save" and reboot the device again so the elements will start working.
 
-The principle wiring of a DHT22 sensor can be seen in this picture:
+## Extending a temperature log
 
-![DHTWiring](/elements/dhtwires.png)
-
-As you can see in the config.json file the data pin that was configured on the software side is the D5 GPIO pin so data from the sensor chip must be connected here. VCC must be connected to 5V or 3.3V and GND must be connected to GND.
-
-More details on the DHT22 connecting options can be found in the [DHT Element](/elements/dht.md) description.
+very similar to the step before a temperature log can be added. The final config.json contains also the log/t configuration.
 
 
-## Device Dashboard
+## more robust sensor wiring
 
-The information the device is gathering can be found on the device dashboard.
+The DHT22 sensor sometimes stops working. This happens more often when 3.3V is used as a power supply.
 
-Open <http://outdoor/board.htm> to open the dashboard and see current sensor values and the log graphs:
+The [DHT Element](/elements/dht.png) offers the possibility to power down and up the sensor so it is restarted every time a sensor value is required.
+
+??? wiring
 
 
-## Extending
+
+
+## Options
 
 The HomeDing library offers a lot of options that can be used to create more value from your sensor device.
-
 
 * You can setup a new device with a display and then configure the sensor to send over the actual values using remote actions.
 * The same sensor type can be used in-house also to log temperature and humidity, just build another one.
@@ -258,8 +348,14 @@ The HomeDing library offers a lot of options that can be used to create more val
 * You can configure some low energy options and run your sensor by solar power.
   <br />See the story [Build a In-house IoT Air Quality sensor](/stories/story-airquality.md)
 
+
+
 ## See also
 
 * [Story - Outdoor Sensor with Solar Panel](/stories/story-outdoorsensorsolar.md)
 * [Story - Outdoor Sensor](/stories/story-outdoorsensor.md)
 
+## Tags
+
+[Homeding library]: https://github.com/HomeDing
+[Log Element]: /elements/log.md
