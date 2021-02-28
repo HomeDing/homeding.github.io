@@ -1,20 +1,44 @@
-# WiFi Manager
+# WiFi Manager Details
 
-The WiFi-Manager is a module of every device that helps to register a device in the local network. It is implemented in the board class.
+:::excerpt
+The WiFi-Manager is a module of every device that helps to register a device in the local network. It is implemented in every device in the board class.
 
-It is available on every device by using the URL: <http://{name}/$setup.htm>
+When the device has not been connected to the local home network the Wifi-Manager is active exposes a unprotected Wifi Network with a name like ??? using the 192.168.4.xxx ip range.
+
+Any other device can join this network for configuration.
+:::
+
+There is a walk-through description on how to use the WiFi Manager in [Step by Step Bring your device to work](/stepsnewdevice.md). 
+
+
+## Wifi Setup Dialog
+
+The dialog that enables selecting an available network and entering the corresponding network passphrase
+is available on every device by using the URL: <http://{name}/$setup.htm> or <http://192.168.4.1/$setup.htm>
 
 ![WiFiManager dialog](wifimanager.png)
 
+In this dialog is coded into the firmware to make it available even when the UI files have not been uploaded yet.
+
+It can also be used in case the device is connected to re-configure the device.
+
+## Start the Wifi-Manager
+
 The board starts into the WiFiManager mode
 * when no network configuration is available
-* when started manually by pressing the system button during startup while the system led is blinking
-* when rebooting ??? two times in a row in-between ??? seconds.
+* when started manually by pressing the system or flash button during startup.
+* when 8 attempts to connect have not been successful
+* when using the reset button ??? two times in a row in-between ??? seconds.
+
+When a LED is configured on the device element there are different pulse patterns:
+* 1 second pulse length having a short LED-ON phase when trying to connect the network in save mode 
+* 1 second pulse length having a longer LED-ON phase when trying to connect the network in non-save mode
+* 3 second pulse length with a short LED-ON phase when the Wifi-Manager is active. 
 
 
 After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had an outage and WiFiManager was started caused by the missing network.
 
-Under normal operting conditions when the device was added to the network the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.
+Under normal operating conditions when the device was added to the network the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.
 
 
 ## Using the WiFi Manager
@@ -120,4 +144,3 @@ bool ESPSerialWiFiManager::_connect_wps(){
 <https://github.com/esp8266/Arduino/issues/2735>
 
 <https://internetofhomethings.com/homethings/?p=631>
-
