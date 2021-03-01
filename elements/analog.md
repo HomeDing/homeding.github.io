@@ -75,7 +75,7 @@ The ESP8266 chip has only one analog input pin so specifying a pin is not requir
 
 A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.
 
-A analog measuring element for weight can produce many values around. When the weight changes significantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.
+A analog sensing element for weight can produce many values around. When the weight changes significantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.
 
 
 ## State

@@ -107,6 +107,14 @@ The default time is set to 3 seconds.
 
 \* This parameter must be specified.
 
+From the base element implementation the following properties are available for configuration:
+
+**title** - A unique short name for identifying the element.
+
+**description** - A line of text with a short description of the usage of this element.
+
+**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
+
 
 ### Configuration Example
 
@@ -134,7 +142,6 @@ The following properties are available with the current values at runtime
 **temperature** - The last read temperature value from the sensor.
 
 **humidity** - The last read humidity value from the sensor.
-
 
 
 ### Example State

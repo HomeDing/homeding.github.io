@@ -1,6 +1,9 @@
 # Standard Example
 
 :::excerpt
+The examples in the HomeDing library are used to compile a firmware that provides the base functionality
+combined with a set of elements that can be used in the configuration of the device.
+
 The **standard example** can be used with any board that has a 4MByte Flash memory and is a good jumpstart for any project you may have.
 This example e.G. runs on all the [nodemcu boards](/boards/nodemcu.md).
 :::
@@ -86,7 +89,8 @@ As a starting configuration the blink recipe can be used when your board is a
 
 This configuration can be used as a starting point to implement your own projects.
 
-See also:
+## See also
 
+* [examples](/examples.md)
 * [Boards overview](/boards.md)
 * [Recipes](/recipes.md)

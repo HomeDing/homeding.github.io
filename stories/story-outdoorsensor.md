@@ -1,29 +1,5 @@
 # Outdoor Sensor
 
-**Table of Contents**
-
-- [Intro](#intro)
-- [Supplies](#supplies)
-- [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
-- [Include required libraries](#include-required-libraries)
-- [Upload the standard example sketch](#upload-the-standard-example-sketch)
-- [Joining the WiFi Network using the WiFi Manager](#joining-the-wifi-network-using-the-wifi-manager)
-- [Upload the web UI](#upload-the-web-ui)
-- [Configuration Files](#configuration-files)
-  - [env.json](#envjson)
-  - [config.json](#configjson)
-- [Wiring (simple)](#wiring-simple)
-- [Restart](#restart)
-- [Device Dashboard](#device-dashboard)
-- [Extending a humidity log](#extending-a-humidity-log)
-- [Extending a temperature log](#extending-a-temperature-log)
-- [more robust sensor wiring](#more-robust-sensor-wiring)
-- [Options](#options)
-- [See also](#see-also)
-- [Tags](#tags)
-
-## Intro
-
 Some weather parameters are interesting to be measured by using an outside sensor like
 
 * Temperature
@@ -44,12 +20,15 @@ into a water proof housing. Only the USB power line and the sensor wires are goi
 This sensor is placed in a location where direct rain and sunlight could not reach it so there was no need for special shielding.
 Also USB power is available and the device can be powered all the time.
 
-![outdoor sensor](/stories/outdoorsensor01.png)
+![outdoor sensor](/stories/outdoorsensor01.png "w200")
+![outdoor sensor](/stories/outdoorsensor02.png "w200")
 
-To inspect the current values the devices has a built-in web server, also provided by the [Homeding library] that shows both values of the sensor
-on a tile:
+To inspect the current values the devices has a built-in web server,
+also provided by the [Homeding library] that shows both values of the sensor on a tile.
 
-![outdoor sensor web ui](/stories/outdoorsensor02.png)
+Just open the Board page to see the HTML UI of the element:
+
+![outdoor sensor web ui](/stories/outdoorsensor03.png "w400")
 
 This project shows the basic of building an outdoor sensor. There are possible extensions that can be added by configuration:
 * a [Log Element](/elements/log.md) that can capture the values and display as a line chart.
@@ -131,7 +110,8 @@ Here the temporary devicename is **ESP-5D2122** and **DEVNET** is the network jo
 When you have configured your local WiFi network in secrets.h the device will be available on your network.
 
 When you do not want to hard-code your network passphrase use the built-in WiFi Manager to join the network you can reach the configuration page
-by joining the temporary device hotspot named `homeding-xxxxxx` and opening [http://192.168](http://192.168.4.1/$setup).
+by joining the temporary device hotspot named `homeding-xxxxxx` and opening
+[http://192.168.4.1/$setup](http://192.168.4.1/$setup).
 
 A more detailed description on this process can be found on the page [Step by Step Bring your device to work](/stepsnewdevice.md).
 
@@ -231,27 +211,24 @@ When requested enter `/config.txt` into the filename field.
 
 The principle wiring of a DHT22 sensor can be seen in this picture:
 
-![DHTWiring](/elements/dhtwires.png)
+![DHTWiring](/elements/dhtwires.png "w400")
 
-As you can see in the config.json file the data pin that was configured on the software side is the D5 GPIO pin so data from the sensor chip must be connected here. VCC must be connected to 5V or 3.3V and GND must be connected to GND.
+As you can see in the config.json file the data pin that was configured on the software side is the D5 GPIO pin so data from the sensor chip must be connected here. 
 
-More details on the DHT22 connecting options can be found in the [DHT Element](/elements/dht.md) description.
+| ESP board | Sensor | Signal                             |
+| --------- | ------ | ---------------------------------- |
+| GND       | GND    | GND signal                         |
+| 3.3       | VCC    | 3.3 V Power                        |
+| D5        | Data   | Data line using the DHT22 protocol |
 
+More details on the DHT22 connecting options can be found in the [DHT Element](/elements/dht.md) description
+and in [More Robust Sensor wiring](#more-robust-sensor-wiring) below.
 
 ## Restart
 
 Now restart the device by using the reset button on the board, in the IDE or just detach and attach the USB cable and the device.
 
 Now the LED will blink several times while connecting to the network.
-
-
-## Device Dashboard
-
-The information the device is gathering can be found on the device dashboard.
-
-Open <http://outdoor/board.htm> to open the dashboard and see current sensor values.
-
-![outdoor sensor web ui](/stories/outdoorsensor03.png)
 
 
 ## Extending a humidity log
@@ -326,18 +303,42 @@ click "save" and reboot the device again so the elements will start working.
 very similar to the step before a temperature log can be added. The final config.json contains also the log/t configuration.
 
 
-## more robust sensor wiring
+## More Robust Sensor wiring
 
-The DHT22 sensor sometimes stops working. This happens more often when 3.3V is used as a power supply.
+The DHT22 sensor sometimes stops working. This happens more often when 3.3V is used as a power supply and occurs sometimes after many days of operation.
 
-The [DHT Element](/elements/dht.png) offers the possibility to power down and up the sensor so it is restarted every time a sensor value is required.
+As a corrective measure it is possible to use the sensor reset mechanism if the [DHT Element](/elements/dht.png)
+to enable power some seconds before a sensor reading is required and then cut off power after getting a value.
 
-??? wiring
+The DHT22 wiring has to be changed so that the GND pin is attached to a GPIO (D6 is used here).
+
+In the config.json file the 3 parameters have to be added:
+
+```JSON
+{
+  "dht": {
+    "on": {
+      ...
+      "restart": "true",
+      "powerpin": "D6",
+      "powerinverse": "true",
+      ...
+    }
+  }
+}
+```
 
 
+## Device Dashboard
+
+The information the device is gathering can be found on the device dashboard.
+
+Open <http://outdoor/board.htm> to open the dashboard and see current sensor values.
+
+![outdoor sensor web ui](/stories/outdoorsensor04.png "w600")
 
 
-## Options
+## Further Options
 
 The HomeDing library offers a lot of options that can be used to create more value from your sensor device.
 
@@ -349,13 +350,14 @@ The HomeDing library offers a lot of options that can be used to create more val
   <br />See the story [Build a In-house IoT Air Quality sensor](/stories/story-airquality.md)
 
 
-
 ## See also
 
 * [Story - Outdoor Sensor with Solar Panel](/stories/story-outdoorsensorsolar.md)
 * [Story - Outdoor Sensor](/stories/story-outdoorsensor.md)
 
-## Tags
+#### Tags
+
+#story #sensor #element #dht
 
 [Homeding library]: https://github.com/HomeDing
 [Log Element]: /elements/log.md

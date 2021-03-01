@@ -1,14 +1,16 @@
 # The minimal footprint example
 
-This is the example that runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage.
+:::excerpt
+The examples in the HomeDing library are used to compile a firmware that provides the base functionality
+combined with a set of elements that can be used in the configuration of the device.
 
-This example can be used as a firmware for some lights and socket switches like the [sonoff](/boards/sonoff.md) S20 device. 
+The **minimal example** 
+runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage
+like the [ESP-01](/boards/esp01.md) and devices like [sonoff S20 switch](/boards/sonoffbasic.md) and [bulbs](/boards/bulb.md).
+:::
 
-Another typical board for this is a [ESP8266-01 board](/boards/esp01) with 1MByte (not 512kByte) Flash Memory.
-
-You can also find retail IoT devices with this chip like those from [sonoff](/boards/sonoff.md) or the bulbs from tuya but they are not really usable during development.
-
-While developing for a device with the 1 MByte Flash Memory restriction
+You can find many retail IoT devices with the ESP8266 chip like those from [sonoff](/boards/sonoff.md) or the bulbs from tuya but they are not really usable during development.
+So while developing for a device with the 1 MByte Flash Memory restriction
 and often also a missing auto-reset before flashing new firmware
 it is recommended to use a board like a [NodeMCU](/boards/nodemcu.md) but keep an eye of memory consumption.
 
@@ -17,10 +19,10 @@ it is recommended to use a board like a [NodeMCU](/boards/nodemcu.md) but keep a
 
 Compared to the [Standard example](/examples/standard.md) some measures have been taken to reduce required program memory. 
 
-From the 1 MByte of memory only 128kByte of memory is used for the SPIFFS file system
+From the 1 MByte of memory only 128kByte of memory is used for the file system
 leaving about 445 kByte for program space while still enabling OTA / network based updates.
 
-When compiling the sketch to create a firmware only some elements are included (see below). The web files are also minimized and reduced in functionality to allow a minimal UI implementation and logging is disabled to save memory in the filesystem.
+When compiling the sketch to create a firmware only a small set of elements are included (see below). The web files are also minimized and reduced in functionality to allow a minimal UI implementation and logging is disabled to save memory in the filesystem.
 Compared to the Standard example about 52 kByte less program space is required.
 When disabling the debug port in the Board configuration another 1.5 kByte can be saved. 
 
@@ -29,25 +31,13 @@ When disabling the debug port in the Board configuration another 1.5 kByte can b
 
 The elements that are included in this example sketch are those that support sockets, switches and lights but no sensors and displays. The logical, time and remote elements are included as well to support integration.
 
-* [x] Value, 
-* [ ] Button
-* [X] Switch
-* [X] RFSend
-* [ ] AND
-* [ ] Analog
-* [x] Timer
-* [ ] NTPTime
-* [x] Schedule, 
-* [ ] Alarm
-* [ ] digitalin
-* [ ] digitalout
-* [ ] PWMOut
-* [ ] PMS
-* [ ] DHT
-* [ ] BME680
-* [ ] DS18B20
+As of this writing the elements included are:
 
-You can control what elements are included in the minimal.ino sketch file by enabling or disabling the #define statements for registering the elements. 
+ota, device, value, button, switch, and, reference, time, alarm, ntptime, timer, schedule, digitalin, digitalout, remote, dht, color, light, neo, bl0937, my9291, ssdp
+
+You can control what elements are included in the firmware file by enabling or disabling the #define statements for registering the elements in the sketch file.
+
+If you like to know what element are available in a device just ask for the URL http://\<devicename\>/$elements
 
 
 ## How to Configure and Upload

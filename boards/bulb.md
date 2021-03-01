@@ -1,7 +1,3 @@
-<style>
-img[title=w200] { width:200px;}
-img[title=w600] { width:600px;}
-</style>
 # Bulb Devices
 
 :::excerpt
