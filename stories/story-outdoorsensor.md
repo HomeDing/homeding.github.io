@@ -48,7 +48,7 @@ This is all you need to build this project
 
 ## Prepare Arduino Environment for ESP8266
 
-To build he software you need a working Arduino environment for ESP8266:
+To build the software you need a working Arduino environment for ESP8266:
 
 1. Install latest version of Arduino IDE (currently version 1.8.13).
 
@@ -147,7 +147,7 @@ The `env.json` contains only the system settings that do not change while config
 To create a `env.json` file on the device just open the IDE from the menu
 and copy the following configuration into the right text area and then click the save button.
 
-When requested enter `/json.txt` into the filename field.
+When requested enter `/env.json` into the filename field.
 
 When you reboot the device either by pressing the reset button on the board or in the UI the device will register itself
 on the network using the name specified in the env.json file (here: outdoor).
@@ -191,7 +191,7 @@ The `config.json` contains the sensor specific settings.
 To create a `config.json` file on the device just open the IDE from the menu
 and copy the following configuration into the right text area and then click the save button.
 
-When requested enter `/config.txt` into the filename field.
+When requested enter `/config.json` into the filename field.
 
 ```json
 {
