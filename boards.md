@@ -53,8 +53,8 @@ The **[Sonoff S20](/boards/sonoffs20.md)** is a off-the-shelf plug available for
 It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
 :::
 
-:::board sp111
-These **[Gosund or Blitzwolf Sockets](/boards/sp111.md)** can switch on/off and can meassure power consumption
+:::board sockets
+The **[Gosund or Blitzwolf Sockets](/boards/sockets.md)** can switch on/off and can meassure power consumption
 of the plugged-in load.
 
 It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md)

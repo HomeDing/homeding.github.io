@@ -7,6 +7,8 @@ Bulb devices build on base of the ESP8266 chip are supported by the minimal sket
 There are many different bulb devices that use RGB and white LED variants. The bulbs that use GPIOs with PWM or the chips
 like MY9231, MY9291.
 
+![WiFi Bulb](/boards/bulb.jpg "w200")
+
 The biggest challenge with these bulbs is that there is usually no easy way to get to the serial port without destroying the housing.  
 
 Therefore bulbs are used here, that can also be flashed with a new software via the network. This is done by the program **tuya-convert** that runs on a Raspberry pi.
@@ -94,31 +96,52 @@ The [OTA element](/elements/ota.md) enables updating the device firmware using t
 }
 ```
 
+To have all control over the bulb LEDS a [Switch Element](/elements/switch.md) and a [Color Element](/elements/color.md) can be used to control one of the Light Elements
+like [Light Element](/elements/light.md), [MY9291 Element](/elements/_my9291.md) or [Neo Element](/elements/neo.md).
+
 
 ## Configuration bulb with MY9291 LED driver
 
 There are bulb using a MY9291 chip to drive the LEDs using PWM output.
 The [MY9291 Element](/elements/_my9291.md) can create the 4-channel signal using a data and a clock signal from the ESP8266 to the driver chip.
-This Element behaves like a standard [Light Element](/elements/light.md) and supports WRGB color values, a general brightness and enable switch.  
 
-To configure such a element the data and clock pins need to be specified. A [switch element](/elements/switch.md) can be added to simplify switching on and off.
+This Element behaves like a standard [Light Element](/elements/light.md) and supports WRGB color values, a general brightness and enable switch.
+
+To configure such a element the data and clock pins need to be specified.
+
+**config.json**
 
 ```JSON
 {
   "switch": {
     "en": {
+      "title": "Mood-Light",
       "loglevel": "2",
       "description": "switch on/off",
-      "onvalue": "my9291/0?enable=$v"
+      "onvalue": "my9291/l?enable=$v",
+      "value": "0"
+    }
+  },
+  "color": {
+    "l": {
+      "title": "Mood-Light",
+      "loglevel": 2,
+      "config": "WRGB",
+      "mode": "fix",
+      "duration": "2",
+      "saturation": "255",
+      "lightness": "127",
+      "value": "x200000",
+      "onvalue": "my9291/l?value=$v"
     }
   },
   "my9291": {
-    "0": {
-      "title": "Accent light",
+    "l": {
+      "title": "Mood-Light",
       "datapin": "4",
       "clockpin": "5",
-      "brightness": "50",
-      "value": "x00000000"
+      "brightness": "255",
+      "value": "x0000000F"
     }
   }
 }
@@ -129,7 +152,7 @@ These bulbs are internally of this type:
 * <https://templates.blakadder.com/moko_YX-L01C-E27.html>
 * <https://templates.blakadder.com/lyasi_pt-bw09.html>
 
-Here are some picture from a disassembly of a broken bulb:
+Here are some picture from a disassembly of a bulb:
 
 ![bulb](/boards/bulb.jpg "w200")
 ![bulb](/boards/bulbparts.jpg "w200")
@@ -138,13 +161,12 @@ Here are some picture from a disassembly of a broken bulb:
 ![bulb](/boards/bulb03.jpg "w200")
 ![bulb](/boards/bulb04.jpg "w200")
 
-It is almost impossible to open this bulb and get access to the programming signals without breaking the housing.
+It is almost impossible to open this kind of a bulb and get access to the programming signals without breaking the housing.
 
 I used a programming setup for ESP-01 boards with some wires that can be soldered easily to the connectors of the module with the ESP8266. 
 
 On the bottom side the signals VCC(3.3V), GND, RX and TX are available. 
 The RESET and FLASH signals are available on 2 connectors on the bottom side.
-
 
 ## Configuration bulb with PWM based LED driver
 
@@ -152,7 +174,9 @@ Many bulbs are using the PWM signals from the ESP8266 chip with some power switc
 These can be controlled using the [Light Element](/elements/light.md) that can create 4-channels of PWM signals from a color value.
 It supports RGB and WRGB color values, a general brightness and enable switch.  
 
-To configure such a element the data and clock pins need to be specified. A [switch element](/elements/switch.md) can be added to simplify switching on and off.
+![bulb](/boards/bulbrgb.jpg "w200")
+
+**config.json**
 
 ```JSON
 {
@@ -160,15 +184,29 @@ To configure such a element the data and clock pins need to be specified. A [swi
     "en": {
       "loglevel": "2",
       "description": "switch on/off",
-      "onvalue": "light/l?enable=$v"
+      "onvalue": "light/l?enable=$v",
+      "value": "0"
+    }
+  },
+  "color": {
+    "l": {
+      "title": "color-bulb",
+      "loglevel": 2,
+      "config": "WRGB",
+      "mode": "fix",
+      "duration": "2",
+      "saturation": "255",
+      "lightness": "127",
+      "value": "x203050",
+      "onvalue": "light/l?value=$v"
     }
   },
   "light": {
     "l": {
-      "title": "Accent light",
+      "title": "color-bulb",
       "loglevel": 0,
       "pin": "15,14,12,5",
-      "value": "x203050"
+      "value": "x200000"
     }
   }
 }
@@ -180,7 +218,11 @@ These bulbs are internally of this type:
 
 Here are some picture from a disassembly of a broken bulb:
 
-pictures ???
+![bulb](/boards/bulbrgb01.jpg "w200")
+![bulb](/boards/bulbrgb02.jpg "w200")
+![bulb](/boards/bulbrgb03.jpg "w200")
+![bulb](/boards/bulbrgb04.jpg "w200")
+![bulb](/boards/bulbrgb05.jpg "w200")
 
 It is possible to open this bulb by gently pulling off the transparent cap. There are 2 small boards visible.
 The one with the processor has some good soldering pads for RX, TX and GPIO0. The VCC and GND signals are available on the connectors.
@@ -195,6 +237,7 @@ I used a programming setup for ESP-01 boards with some wires that can be soldere
 * <https://www.heise.de/newsticker/meldung/Smart-Home-Hack-Tuya-veroeffentlicht-Sicherheitsupdate-4292028.html>
 * <https://github.com/arendst/Sonoff-Tasmota/wiki/Tuya-OTA>
 * <https://templates.blakadder.com/bulb.html>.
+
 
 ## Tags
 #element #light
