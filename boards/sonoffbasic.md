@@ -4,9 +4,11 @@
 The Sonoff Basic is a smart relay off-the-shelf product using a ESP8266 with 1MByte Flash.
 :::
 
-![Sonoff Basic](/boards/sonoffbasic.jpg)
+![Sonoff Basic](/boards/sonoffbasic.jpg "w200")
 
 Sonoff ITEAD is a brand for several off-the-shelf Smart Home WLAN devices like switches that use the ESP8266 chip.
+They were one of the first companies selling these type of devices to the market that were usable for uploading custom firmware. 
+Today many brands use these chips and there is a huge community that supports re-flashing these devices with a new firmware.
 
 The [Minimal Example](/examples/minimal.md) can be flashed onto his device to support a remote switch
 with options for time based switching.
@@ -93,7 +95,19 @@ This configuration allows switching the relay using the button and showing the r
 
 ## How to flash
 
-![Sonoff Basic Flash](/boards/sonoffflash.jpg)
+![Sonoff Basic Flash](/boards/sonoffflash.jpg "w200")
+
+| Adapter | S20            |
+| ------- | -------------- |
+| GND     | Gnd            |
+| RX      | TX             |
+| TX      | RX             |
+| 3.3V    | 3.3V  < Marker |
+
+Installing ESPEasy Firmware on an Itead Sonoff S20 Smart Socket:  <https://www.youtube.com/watch?time_continue=429&v=GbaMF6zfQZU&feature=emb_logo>
+
+The on-board button is pulling GPIO0 down and can be used to start the programming mode when holding down while connecting the adapter.
+
 
 ## See also
 
