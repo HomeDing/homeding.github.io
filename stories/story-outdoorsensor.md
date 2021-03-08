@@ -14,8 +14,18 @@ so it is easy to used a different sensor or add other sensors as this is just do
 
 This project is a good starter project as well to explore the possibilities for building sensors gadgets yourself.
 
-In contrast to the sensor that must be exposed to the outside air the microprocessor board should be placed
-into a water proof housing. Only the USB power line and the sensor wires are going out.
+In the [Outdoor Sensor with Solar Panel project](/stories/story-outdoorsensorsolar.md) the additional
+components and configuration changes are explained to run a sensor with low-power consumption with a solar panel.
+
+In the [Weather forecast display](/stories/story-weatherdisplay.md) a device with a display is explained
+that can visualize sensor values and also forecast information from an internet based data source.
+
+
+## Build for the outside
+
+In contrast to the sensor that must be exposed to the outside air
+the microprocessor board should be placed into a water proof housing.
+Only the USB power line and the sensor wires are going out.
 
 This sensor is placed in a location where direct rain and sunlight could not reach it so there was no need for special shielding.
 Also USB power is available and the device can be powered all the time.
@@ -23,7 +33,7 @@ Also USB power is available and the device can be powered all the time.
 ![outdoor sensor](/stories/outdoorsensor01.png "w200")
 ![outdoor sensor](/stories/outdoorsensor02.png "w200")
 
-To inspect the current values the devices has a built-in web server,
+To inspect the current values the devices is connected to the local WiFi and has a built-in web server,
 also provided by the [Homeding library] that shows both values of the sensor on a tile.
 
 Just open the Board page to see the HTML UI of the element:

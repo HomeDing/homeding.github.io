@@ -6,6 +6,8 @@ The RotaryElement is used to capture increments and decrements for values using 
 
 It can be used in combination with a [Value Element](elements/value) to define a logical or numeric value that can be changed using the rotary encoder.
 
+![Rotary Encoder](/sensors/rotary.jpg "w200")
+
 This element uses the RotaryEncoder library available in the Arduino Library Manager.
 
 <!-- 
