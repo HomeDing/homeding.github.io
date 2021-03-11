@@ -3,7 +3,7 @@
 This is a draft story.
 
 
-This is an extension to the [Outdoor Sensor Story](/ststory-stories/story-outdoorsensor.md).
+This is an extension to the [Outdoor Sensor Story](/stories/story-outdoorsensor.md).
 
 ![Outdoor solar driven sensor](/stories/outdoorsolar01.jpg "w200")
 ![Outdoor solar driven sensor](/stories/outdoorsolar02.jpg "w200")

@@ -7,7 +7,7 @@
 
 
 ### [Stories](/stories.md)
-* [Outdoor Environment Sensor](/stories/story-story-outdoorsensor.md)
+* [Outdoor Environment Sensor](/stories/story-outdoorsensor.md)
 * [Air Quality Monitor](/stories/story-airquality.md)
 * [Weather forecast Display](/stories/story-weatherdisplay.md)
 

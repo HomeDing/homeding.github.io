@@ -247,7 +247,9 @@ This configuration will add a log file with the humidity from the sensor saving 
 
 The dht element gets the additional configuration to send the current value to the log element using an action:
 
-    "onhumidity": "log/hum?value=$v"
+```json
+"onhumidity": "log/hum?value=$v"
+```
 
 Actions are the way the elements inside a device can communicate and the source element is sending actions
 most of the time to all consumers.
@@ -256,24 +258,28 @@ Actions can also be sent across the network to other devices.
 An accurate time is required for logging.
 Therefore we use the ntptime element to get the current time from a ntp server with adjustments to the timezone you are living in.
 
-    "ntptime": {
-      "0": {
-        "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
-      }
-    },
+```json
+"ntptime": {
+  "0": {
+    "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+  }
+},
+```
 
 You may want to adjust the time zone to fit your location in the ntptime element. This element is often configured in the env.json file but also works in the config.json file.
 
 
 The [Log Element] is configured to collect data into a pair of files:
 
-    "log": {
-      "h": {
-        "description": "log humidity",
-        "filesize": "10000",
-        "filename": "/humlog.txt"
-      }
-    }
+```json
+"log": {
+  "h": {
+    "description": "log humidity",
+    "filesize": "10000",
+    "filename": "/humlog.txt"
+  }
+}
+```
 
 Now the config.json file should contain:
 
@@ -303,10 +309,8 @@ Now the config.json file should contain:
 }
 ```
 
-??? log file with timings
+Click "save" and reboot the device again so the elements will start working.
 
-
-click "save" and reboot the device again so the elements will start working.
 
 ## Extending a temperature log
 
@@ -362,6 +366,10 @@ The HomeDing library offers a lot of options that can be used to create more val
 
 ## See also
 
+* [DHT Element](elements/DHT.md)
+* [DS18B20 Element](elements/ds18b20.md) temperature
+* [BMP280 Element](/elements/bmp280.md) temperature and air pressure
+* [BME680 Element](/elements/bme680.md) temperature, humidity, air pressure and air resistance.
 * [Story - Outdoor Sensor with Solar Panel](/stories/story-outdoorsensorsolar.md)
 * [Story - Outdoor Sensor](/stories/story-outdoorsensor.md)
 

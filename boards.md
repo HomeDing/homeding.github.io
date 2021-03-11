@@ -61,6 +61,13 @@ It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal 
 and the [BL0937 chip](/elements/bl0937.md).
 :::
 
+:::board bulb
+**[Bulb devices](/boards/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
+
+They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using 
+the [Color Element](/elements/color.md) and [Switch Element](elements/switch.md) for control.
+:::
+
 <!-- ESP8266 Module Series
 ESP-07S	 Pin compatible with esp-12, IPEX connector to get greater signal
 ESP-01S	 General DIP PTH version, less pin lead out, easy to use

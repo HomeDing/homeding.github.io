@@ -55,7 +55,6 @@ Read sensor values from a PMS5003 sensor by plantdata to count micro particles i
 Read sensor values from a BMP280 sensor with temperature and absolute barometric pressure.
 :::
 
-
 <!-- BME280 -->
 <!-- MPU9250 -->
 

@@ -1,6 +1,6 @@
 # Bulb Devices
 
-:::excerpt
+:::excerpt bulb
 Bulb devices build on base of the ESP8266 chip are supported by the minimal sketch.
 :::
 
@@ -46,9 +46,6 @@ I cannot recommend his procedure because you probably will need to open the devi
 * When you are making these kind of projects you really need to know what you are doing.
 * I have warned you, do not blame on me.
 :::
-
-
-## ===
 
 Other bulbs use different board layout and some investigation is required to find out.
 A good source of helping information is the repository of device specific templates for the TASMOTA firmware at
@@ -97,13 +94,13 @@ The [OTA element](/elements/ota.md) enables updating the device firmware using t
 ```
 
 To have all control over the bulb LEDS a [Switch Element](/elements/switch.md) and a [Color Element](/elements/color.md) can be used to control one of the Light Elements
-like [Light Element](/elements/light.md), [MY9291 Element](/elements/_my9291.md) or [Neo Element](/elements/neo.md).
+like [Light Element](/elements/light.md), [MY9291 Element](/elements/my9291.md) or [Neo Element](/elements/neo.md).
 
 
 ## Configuration bulb with MY9291 LED driver
 
 There are bulb using a MY9291 chip to drive the LEDs using PWM output.
-The [MY9291 Element](/elements/_my9291.md) can create the 4-channel signal using a data and a clock signal from the ESP8266 to the driver chip.
+The [MY9291 Element](/elements/my9291.md) can create the 4-channel signal using a data and a clock signal from the ESP8266 to the driver chip.
 
 This Element behaves like a standard [Light Element](/elements/light.md) and supports WRGB color values, a general brightness and enable switch.
 
@@ -234,10 +231,16 @@ I used a programming setup for ESP-01 boards with some wires that can be soldere
 
 ## See also
 
+* [Color Element](/elements/color.md)
+* [Switch Element](elements/switch.md)
+* [Light Element](/elements/light.md)
+* [MY9291 Element](/elements/my9291.md)
+* [Neo Element](/elements/neo.md)
 * <https://www.heise.de/newsticker/meldung/Smart-Home-Hack-Tuya-veroeffentlicht-Sicherheitsupdate-4292028.html>
 * <https://github.com/arendst/Sonoff-Tasmota/wiki/Tuya-OTA>
 * <https://templates.blakadder.com/bulb.html>.
 
 
 ## Tags
+
 #element #light

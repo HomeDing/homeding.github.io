@@ -60,7 +60,7 @@ The following properties are available for configuration of the element:
 
 **readtime** - The time between capturing 2 probes from the sensor.
 
-**onValue** - These actions are send when the value from the sensor has changed.#
+**onValue** - These actions are send when the value from the sensor has changed.
 
 **loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
 
