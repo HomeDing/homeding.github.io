@@ -231,8 +231,10 @@ As you can see in the config.json file the data pin that was configured on the s
 | 3.3       | VCC    | 3.3 V Power                        |
 | D5        | Data   | Data line using the DHT22 protocol |
 
+The resistor in the diagram must not be present as hardware because there is a configuration on GPIOs to enable a integrated pull up resistor.
+
 More details on the DHT22 connecting options can be found in the [DHT Element](/elements/dht.md) description
-and in [More Robust Sensor wiring](#more-robust-sensor-wiring) below.
+and in **More Robust Sensor wiring** below.
 
 ## Restart
 
@@ -275,11 +277,15 @@ The [Log Element] is configured to collect data into a pair of files:
 "log": {
   "h": {
     "description": "log humidity",
+    "averagetime": "00:10:00",
     "filesize": "10000",
     "filename": "/humlog.txt"
   }
 }
 ```
+
+The same can be done for temperature.
+
 
 Now the config.json file should contain:
 
@@ -291,7 +297,8 @@ Now the config.json file should contain:
       "description": "Temperature and Humidity sensor",
       "pin": "D5",
       "readtime": "30s",
-      "onhumidity": "log/h?value=$v"
+      "onhumidity": "log/h?value=$v",
+      "ontemperature": "log/t?value=$v"
     }
   },
   "ntptime": {
@@ -300,8 +307,15 @@ Now the config.json file should contain:
     }
   },
   "log": {
+    "t": {
+      "description": "log temperature",
+      "averagetime": "00:10:00",
+      "filesize": "10000",
+      "filename": "/templog.txt"
+    },
     "h": {
       "description": "log humidity",
+      "averagetime": "00:10:00",
       "filesize": "10000",
       "filename": "/humlog.txt"
     }

@@ -26,9 +26,9 @@ Here you also find some information on the purpose of the GPIO pins and the used
 It is easy to flash the minimal sketch using **tuya-convert** that can be used to flash firmware on brand new devices with the ESP8266 SoC chip as long as the firmware allows it.
 tuya-convert is using a weakness in the official firmware so when tuya updates the firmware there is the risk that this procedure will not work any more. 
 
-There is a good documentation and walkthrough in <https://tasmota.github.io/docs/Tuya-Convert/>. The project is open-source available at <https://github.com/ct-Open-Source/tuya-convert>.
+There is a good documentation and step-by-step instructions in <https://tasmota.github.io/docs/Tuya-Convert/>. The project is open-source available at <https://github.com/ct-Open-Source/tuya-convert>.
 
-Place a Minimal.ino.bin file in the firmware folder on the respberry pi to directly upload the minimal Homeding firmware.
+Place a Minimal.ino.bin file in the firmware folder on the raspberry pi to directly upload the minimal Homeding firmware.
 
 
 ## Uploading a firmware using a USB-2-Serial converter
@@ -93,7 +93,7 @@ The [OTA element](/elements/ota.md) enables updating the device firmware using t
 }
 ```
 
-To have all control over the bulb LEDS a [Switch Element](/elements/switch.md) and a [Color Element](/elements/color.md) can be used to control one of the Light Elements
+To have all control over the bulb LEDs a [Switch Element](/elements/switch.md) and a [Color Element](/elements/color.md) can be used to control one of the Light Elements
 like [Light Element](/elements/light.md), [MY9291 Element](/elements/my9291.md) or [Neo Element](/elements/neo.md).
 
 
@@ -129,14 +129,14 @@ To configure such a element the data and clock pins need to be specified.
       "saturation": "255",
       "lightness": "127",
       "value": "x200000",
-      "onvalue": "my9291/l?value=$v"
+      "onValue": "my9291/l?value=$v"
     }
   },
   "my9291": {
     "l": {
       "title": "Mood-Light",
-      "datapin": "4",
-      "clockpin": "5",
+      "dataPin": "4",
+      "clockPin": "5",
       "brightness": "255",
       "value": "x0000000F"
     }

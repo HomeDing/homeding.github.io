@@ -17,26 +17,27 @@ The following properties are available for configuration of the element.
 **name** - The device name is specifying the hostname that is used to register the device on the network.
 The device can be accessed by any browser on the same network using the URL `http://<name>`.
 
-**rebootTime** - Specifies the duration after the device is rebooted to fully clean up the memory.
+**rebootTime** (time) - Specifies the duration after the device is rebooted to fully clean up the memory.
+
+**title** - A short phrase to identify the device. Used in portal and configurations.
 
 **description** - A line of text that gives a short description of the device used in the web UI.
 
 **room** - The location of the device.
 
-**logLevel** - By specifying a logLevel for the device **all** elements will use this loglevel to output debug messages over the serial interface and into the system log file.
+**logLevel** - By specifying a logLevel for the device **all** elements will use this loglevel
+to output debug messages over the Serial interface and into the system log file.
 See also [Device Logging](logger.md).
 
-**logFile** - set to 1/true to enable storing lines from the system log to files. default: 0
+**logFile** (boolean) - set to 1/true to enable storing lines from the system log to files. default: 0
 
-**onSysStart** - These actions are dispatched when the elements are activated. Element that require a valid local time are not started at this point.  
+**onSysStart** (actions) - These actions are dispatched when the elements are activated. Element that require a valid local time are not started at this point.  
 
-**onStart** - These actions are dispatched when all elements are active. 
-
-**cache** - This property can be used to replace the default http `cache-control` header for accessing the static files by a custom value.
-The default cache header is `"no-cache"` that is good while developing and configuring.
-But when have a stable configuration caching can be switched on using a value like `"max-age=120"` 
+**onStart** (actions) - These actions are dispatched when all elements are active. 
 
 **sd** - The mDNS based service discovery can be switched off by setting this property to `false`.
+
+**safemode** (boolean) - This value can be set to 0/false to not use the safemode. See [safemode description](/safemode.md).
 
 
 ### WiFi-Manager and Startup settings
@@ -47,7 +48,7 @@ But when have a stable configuration caching can be switched on using a value li
 
 **connectTime** - The available time after a reboot of the device to start network configuration. Default: "6s".
 
-Detailed description for `ConnectTime`, `button` and `led` see [WiFiManager](wifimanager).
+Detailed description for `ConnectTime`, `button` and `led` see [WiFiManager](/wifimanager.md).
 
 
 ### I2C bus
@@ -69,16 +70,19 @@ More hints on the I2C bus implementation see [I2C](/i2c.md)
 
 **homepage** - When the device starts in normal mode this page will be shown when opening the device web UI using the url without specifying the page. This defaults to `/index.htm`
 
-**title** - short title to be displayed in the web UI
+**cache** - This property can be used to replace the default http `cache-control` header for accessing the static files by a custom value.
+The default cache header is `"no-cache"` that is good while developing and configuring.
+But when have a stable configuration caching can be switched on using a value like `"max-age=120"` 
 
 
 ### Deep Sleep mode
 
-**sleep** -  To start a deep sleep a `sleep=true` action needs to be send to the device element.
+**sleep** - To start a deep sleep a `sleep` action needs to be send to the device element.
 A `sleep=false` action will disable any sleep mode until next restart. See also [deep sleep mode](/boards/deepsleep.md).
 
+**nosleep** -  To block any deep sleep on the device until the next reboot a `nosleep` action can be send to the device element.
 
-**sleeptime** -  The time a devices sleeps when a sleep action was sent to the device element.
+**sleeptime** (time) -  The duration the device sleeps when a sleep action was sent.
 
 
 

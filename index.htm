@@ -196,7 +196,7 @@ Markdown viewer SPA using
 
   </main>
 
-  <script>
+<script>
     var ffObj = document.querySelector('#foundFiles');
     var mfObj = document.querySelector('#missingFiles');
     var mbObj = document.querySelector('#menuButton');
@@ -405,6 +405,18 @@ Markdown viewer SPA using
             if (aObj.href.match(/=([\w\-\/]+.md)$/)) aObj.classList.add('verify');
           }.bind(this)
         );
+
+        // size Images
+        forAllNodeList(
+          this.querySelectorAll('img'),
+          function (aObj) {
+            aObj.addEventListener('click', function (evt) {
+              debugger;
+              window.open(evt.target.src, "img"); 
+            });
+          }.bind(this)
+        );
+
       },
 
       // init, when slide behavior is attached.
@@ -461,6 +473,7 @@ Markdown viewer SPA using
       window.addEventListener('hashchange', mdObj.onhashchange.bind(mdObj));
       mdObj.init();
     }
+    // modal.openFocus(this);
   </script>
 </body>
 

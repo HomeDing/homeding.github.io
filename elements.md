@@ -72,6 +72,12 @@ More detailed information on sensor implementation can be found in [sensor eleme
 </div>
 
 <div class="short">
+  <a href="#page=elements/pwmout.md"><img src="/i/pwmout.svg"></a>
+  <p><strong><a href="#page=elements/pwmout.md">PWMOut Element</a></strong><br/>
+  Output Element to output an pwm signals based on actions. e.g. LEDs.</p>
+</div>
+
+<div class="short">
   <a href="#page=elements/digitalout.md"><img src="/i/digitalout.svg"></a>
   <p><strong><a href="#page=elements/digitalout.md">DigitalOut Element</a></strong><br/>
   Output element to create digital output signals based on actions.</p>
@@ -87,8 +93,55 @@ More detailed information on sensor implementation can be found in [sensor eleme
 
 
 ## Light Elements
-* [Simple Light](/elements/light.md)
-* [Neopixels / WS2812](/elements/neo.md)
+
+To control a light with only one channel the [Switch Element](elements/switch.md) and [Value Element](/elements/value.md) can be used
+to control dimmable LEDs using [PWM Out Element](/elements/pwmout.md) or switching using [DigitalOut Element](/elements/digitalout.md).
+
+:::element switch switch
+The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
+It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI. 
+:::
+
+:::element value value
+The [Value Element](/elements/value.md) controls a value in a given range. It can be controlled using several methods
+like a [DigitalIn Element](/elements/digitalin.md) or a [Rotary Element](/elements/rotary.md) and the Web UI. 
+:::
+
+:::element pwmout pwmout
+The [PwmOut Element](/elements/pwmout.md) enables creating a PWM digital output signal usually to dimmable LEDs and servos.
+:::
+
+:::element digitalout digitalout
+The [DigitalOut Element](/elements/digitalout.md) enables creating a digital output on a GPIO pin.
+:::
+
+<div style="clear:both"></div>
+
+For lights like [bulbs](boards/bulb.md) or LED stripes that have multiple color channels
+the [Color Element](/elements/color.md) can be used to control the light color using a RGB or WRGB color value.
+
+There are special elements to control specific chips or using the PWM capabilities.
+
+:::element color color
+The [Color Element](/elements/color.md) controls a RGB or WRGB value that can be used to control light Elements with color support.
+:::
+
+:::element light light
+The [Light Element](/elements/light.md) can control up to 4 PWM output GPIOs for controlling RGB and WRGB LEDs by color values.
+:::
+
+:::element my9291 led
+The [MY9291 Element](/elements/my9291.md) implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.
+:::
+
+:::element neo neo
+The [Neo Element](/elements/neo.md) implements the protocol to control ws2812 based LEDs also called Neopixel.
+:::
+
+:::element p9813 led
+The [P9813 Element](/elements/p9813.md) implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.
+:::
+
 
 ## Service Elements
 
@@ -111,11 +164,10 @@ Logic elements implement using on/off values expressed as 1/0 values.
   Element that can differentiate clicks, double clicks and long press gestures to send out actions.</p>
 </div>
 
-<div class="short">
-  <a href="#page=elements/switch.md"><img src="/i/switch.svg"></a>
-  <p><strong><a href="#page=elements/switch.md">Switch Element</a></strong><br/>
-  Element to switch a value on and off using a digital input witgh a monetary button.</p>
-</div>
+:::element switch switch
+The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
+It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI. 
+:::
 
 <div class="short">
   <a href="#page=elements/and.md"><img src="/i/and.svg"></a>

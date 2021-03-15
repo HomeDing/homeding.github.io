@@ -85,3 +85,4 @@ https://i2cdevices.org/addresses
 * <https://www.sparkfun.com/qwiic#faqs>
 * <https://www.smart-prototyping.com/Qwiic.html>
 * <https://diyi0t.com/i2c-tutorial-for-arduino-and-esp8266/>
+* <https://github.com/technoblogy/i2c-detective>
