@@ -2,16 +2,21 @@
 
 ??? WIP
 
-You may have seen that some UI Elements are not plain HTML based but use the SVG technology to visualize data.
+Some visuals on the board and index implementation are not based on HTML but on SVG technology to visualize data.
 
 SVG is not a pure graphic format that can be used for icons, it also offers a DOM and APIs on the elements that can be used almost like HTML objects.
 
 The micro-charts in the HomeDing UI are a set for SVG and JavaScript files that can be embedded into a HTML page and offer a High Level API that is implemented in  javascript.
 
+![LineChart Screenshot](/microchart-line.png "w200")
+![PieChart Screenshot](/microchart-pie.png "w200")
+![GaugeChart Screenshot](/microchart-gauge.png "w200")
+
 
 ## Embed a Micro Chart
 
-To embed a micro-chart the `object` HTML element is used:
+To embed a micro-chart the `object` HTML element is used that not just displays
+the given initial SVG but also enables access to the implementation:
 
 ```HTML
 <object id="myChart" data="lineChart.svg" type="image/svg+xml" style="width:100%"></object>
@@ -19,13 +24,16 @@ To embed a micro-chart the `object` HTML element is used:
 
 Inside the `linechart.svg` file the required additional javascript files are references and loaded automatically.
 
-## Using a Micro Chart API
+* microsvg.js - This file contains some useful functions for working with SVG elements.
+* linechart.js - This file implements the API for the chart
 
-The functionality fo the chart is available when all files have been loaded.
-The code for getting access to the API of the micro chart therefore should be placed in the window onload handler.
-It is available on the inner svg document object:
 
-Instead of getting the API reference every time a method is called a global variable can be used as a cache.
+## Using a Micro Chart by API
+
+The functionality for the chart is available when all files have been loaded by the API property of the document of the svg element.
+
+As best practice the API should be extracted once and then stored in a variable that will be permanent available for direct access
+in a window onload handler.
 
 ```JavaScript
 var chartObj;
@@ -37,47 +45,57 @@ window.addEventListener('load', function () {
 });
 ```
 
-## Using the API for Pie-Chart
+All interactivity with the chart is then done using the API. The chart itself also implements autonomous functionality like handling clicking and hover events.
 
-The pie chart needs a list of values, one for each segment and the colors for the segment.
-The total is calculated by adding all segment values.
 
-**setRange** - The `setRange` method available on the API gets passed a list of the segments:
+## Using the API
 
-**clear** - The `clear` method removes the actual pie chart completely.
+All charts offer a similar pattern for usage in the API:
 
-```JavaScript
-chartAPI.setRange([
-  { 
-    part: 30,
-    color: "#008000",
-    title: "positive"
-  },
-  { 
-    part: 20,
-    color: '#808000',
-    title: "neutral"
-  },
-  { 
-    part: 10,
-    color: '#FF0000',
-    title: "negative"
-  },
-  { 0
-    part: 40,
-    color: '#EEEEEE',
-    title: "unknown"
-  }]);
+Before adding any data to the chart the chart needs to be configured by adding the parts like rulers, fix lines, legends or data bound elements.
+
+This is done by passing the overall configuration structure to the **setOptions** method like:
+
+```Javascript
+chartAPI.setOptions({
+  title: "Room Humidity",
+  units: "%",
+  minimum: 0,
+  maximum: 100,
+  segments: [
+    {
+      value: 40, color: '#ff4444'
+    }, {
+      value: 60, color: '#44ff44'
+    }, {
+      color: '#ff4444'
+    }
+  ]
+});
 ```
 
-document.api = {
-  clear: clear,
-  setRange: setRange
-};
+With some chart types additional elements can be added by using the **add** method:
+
+```Javascript
+chartAPI.add(...)
+```
+
+The Data is added by using the **draw** method: 
+
+```Javascript
+chartAPI.draw(...)
+```
+
+The **clear** method removes the actual data and deletes all elements representing data.
+
+## See also
+
+* [Line Chart](microchart-line.md)
+* [Pie Chart](microchart-pie.md)
+* [Gauge Chart](microchart-gauge.md)
 
 
-## Using the API for Line-Chart
+## Tags
 
+#microchart
 
-see [Line Chart](_linechart.md)
-see [Pie Chart](_piechart.md)
