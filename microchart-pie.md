@@ -1,51 +1,57 @@
 # Pie Microchart
 
+The Pie Microchart displays a pie with segments corresponding to the fraction of the given values.
+
 ![PieChart Screenshot](/microchart-pie.png)
 
-Draft ???
+## Options
 
-## Using the API for Pie-Chart
+The Pie Chart requires to set the options to create the scale of the chart
+including the colors of the arc in the background.
 
-The pie chart needs a list of values, one for each segment and the colors for the segment.
-The total is calculated by adding all segment values.
-
-**setRange** - The `setRange` method available on the API gets passed a list of the segments:
-
-**clear** - The `clear` method removes the actual pie chart completely.
-
-```JavaScript
-chartAPI.setRange([
-  { 
-    part: 30,
-    color: "#008000",
-    title: "positive"
-  },
-  { 
-    part: 20,
-    color: '#808000',
-    title: "neutral"
-  },
-  { 
-    part: 10,
-    color: '#FF0000',
-    title: "negative"
-  },
-  { 0
-    part: 40,
-    color: '#EEEEEE',
-    title: "unknown"
-  }]);
+```JSON
+chartAPI.setOptions({
+  showTitle: false,
+  showValue: false,
+  showPercentage: true,
+  colors: []
+});
 ```
 
-document.api = {
-  clear: clear,
-  setRange: setRange
-};
+* **showTitle** - The title of the data will be displayed on top of every segment. 
+* **showValue** - The value of the data will be displayed on top of every segment. 
+* **showPercentage** - The percentage of the data will be displayed on top of every segment. 
+* **colors** - Array of colors or comma separated string of colors. 
+
+Any color can be used in the colors properties that is understood by SVG. It can either be passed in the options or in the data.
+
+When there are more data items than colors, the colors will be used from the start again.
 
 
-## Using the API for Line-Chart
+### Add additional elements
+
+The Pie Chart has no additional elements to be added. The **add()** method is available but without any effect.
 
 
+### Draw the data
+
+The data passed to the **draw()** method is an array of objects with title, value and color. All but the value are optional.
+
+```Javascript
+chartAPI.draw(
+  { title: 'used', value: 800000, color: 'rgb(0,0,128)' },
+  { title: 'reserved', value: 200000, color: 'hsl(180,50%,50%)'},
+  { title: 'available', value: 1200000, color: 'silver' });
+```
+
+Based on the values the total and percentage of the segment will be calculated.
+
+When updating the value all values must be given at once.
+
+
+### Clear the data
+
+The **clear()** method will remove the pie completely.
 
 
 ## See also
