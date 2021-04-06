@@ -28,8 +28,6 @@ It can be used with any board that has a 4MByte Flash memory like the [nodemcu b
 * **[Radio](examples/radio.md)** This example is built as an extension of the standard example but shows how a special element that is only used for this sketch can be included.
 There is also a special WebUI page for the remote control of the radio.
 
-* [Blink](examples/blink.md) This is a sketch that ...
-
 * Dash ... This example shows how to implement a device that ...
 
 * Clock ...
@@ -64,10 +62,7 @@ The [DevDing Example](examples/devding.md) is used to implement some additional 
 
 
  <!-- ??? ---
-
-OLD
-
-
+ 
 These examples require a specific hardware setup like sensors or displays to solve the use case.
 
 * ... With oled display
@@ -78,32 +73,13 @@ These examples require a specific hardware setup like sensors or displays to sol
 
 These examples are for a minimal board like ESP-01 or Sonoff basic devices with 1 MByte Flash only
 
-Old:
-
-**[Blink](examples/blink.md)** This very simple example needs just a ESP8266 board and can be used to check the correct setup of the environment.
-
-**[Standard](examples/standard.md)**
-
-* [PWM](examples/pwm.md)
 * [Radio](examples/radio.md)
-* [minimal](examples/minimal.md)
-* [full](examples/full.md)
 
-
-- [The HomeDing - HomeBlink Example](examples/blink.md)
 
 - [The build-in WebServer](webserver.md)
 - [The build-in Web-Services](webservices.md)
 
-
-
-
 ## Recipes
-
-
-
-
-# NTPClock with display Example
 
 Example-NTPClock
 
@@ -117,21 +93,15 @@ In addition to the Base Example this configuration requires a display where the 
 
 [Example-PWMLED](Example-PWMLED.md)
 
-Example-DHT22
-
 Example-Display
 
 Example-RFSend
 
-Example-Sonoff
-
-Example-LOG
-
-Example-Dev -->
+ -->
 
 ## See also
 
-* [Stories](/stories.md)
-* [Boards](/boards.md)
-* [Recipes](/recipes.md)
+* [Stories](/stories.md) for Step by Step instructions
+* [Boards](/boards.md) for Board specific configurations
+* [Recipes](/recipes.md) for Element configurations
 

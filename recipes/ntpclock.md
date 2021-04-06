@@ -3,9 +3,7 @@
 This recipe uses the time from the internet and displays the current local time on a display.
 
 This recipe can run this on a board that has a display integrated like the
-[wifikit8](/boards/wifikit8.md) or [wroom2](/boards/wroom2.md).
-
-You may need to adjust the DisplayXXX configuration in `env.json`.
+[wifikit8](/boards/wifikit8.md) or [wroom2](/boards/wroom2.md) ure use a separate display.
 
 ![image](/recipes/ntpclock.png)
 
@@ -14,8 +12,20 @@ In `config.json` the display elements and actions are configured.
 
 ![image](/recipes/ntpclockpanel.png)
 
-The [ntptime element](/elements/ntptime.md) configures the ESP8266 system to use an ntp server on the internet to get the current time. This time always returns the greenwich time (GMT). 
-A configuration is required to calculate the local time that includes the name of the local timezone and the offset to GMT. It there is a "summertime" period, the start and end pf that period can be configured as well.
+
+## Setup the Display
+
+You may need to add a Display Element configuration in `env.json`.
+Here a [DisplaySSD1306 Element] is used but you can also use other
+displays like [DisplaySH1106 Element] or [DisplaySSD1309 Element].
+
+
+## Setup the Time
+
+The [NTPTime Element] configures the ESP8266 system to use a ntp server from the internet to get the current time.
+This time always returns the greenwich time (GMT).
+A configuration is required to calculate the local time that includes the name of the local timezone and the offset to GMT.
+If there is a "summertime" period, the start and end of that period can be configured as well.
 
 The POSIX format for this configuration is explained here: <https://developer.ibm.com/technologies/systems/articles/au-aix-posix/>.
 
@@ -23,14 +33,14 @@ Examples for timezones can be found in <https://sites.google.com/a/usapiens.com/
 
 See <https://sites.google.com/a/usapiens.com/opnode/time-zones> for examples.
 
-The [time element](/elements/time.md) can create actions based on the local time. This is used to update the display every second and every time the date changes.
 
-The `ondate` and `ontime` events send the current date / time information to the displaytext elements.
+## Time Actions and Output
 
-The [displaytext elements](/elements/displaytext.md)
- the ESP8266 system to use an ntp server on the internet to get the current time. This time always returns the greenwich time (GMT). 
-A configuration is required to calculate the local time that includes the name of the local timezone and the offset to GMT. It there is a "summertime" period, the start and end pf that period can be configured as well.
+The [Time Element] can create actions based on the local time. This is used to update the display every second and every time the date changes.
 
+The `ondate` and `ontime` events from the [Time Element] send the current date / time information to the displayText elements.
+
+The [DisplayText Element] defines the place on the display where the time will be shown.
 
 
 ## env.json configuration
@@ -41,14 +51,14 @@ A configuration is required to calculate the local time that includes the name o
 
   "ntptime": {
     "0": {
-      "ntpserver": "pool.ntp.org",
+      "NTPServer": "pool.ntp.org",
       "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
     },
     
   "DisplaySSD1306": {
     "0": {
-      "address": "60",
-      "resetpin": "D0",
+      "description": "local display",
+      "resetPin": "D0",
       "height": 32
     }
   }
@@ -87,13 +97,22 @@ In `config.json` the display items and the time related actions are configured:
 }
 ```
 
-The 2 display text elements are placed on the display and will show current time and date.
-
 ## See also
 
-???
+* [NTPTime Element]
+* [Time Element]
+* [DisplaySH1106 Element]
+* [DisplaySSD1306 Element]
+* [DisplaySSD1309 Element]
+* [DisplayText Element]
 
-* <ntptime>
-* <time>
-* <DisplaySSD1306>
-* <displaytext>
+
+## Tags
+#recipe #display
+
+[NTPTime Element]:/elements/ntptime.md
+[Time Element]:/elements/time.md
+[DisplaySH1106 Element]:/displays/sh1106.md
+[DisplaySSD1306 Element]:/displays/ssd1306.md
+[DisplaySSD1309 Element]:/displays/ssd1309.md
+[DisplayText Element]:/elements/displaytext.md

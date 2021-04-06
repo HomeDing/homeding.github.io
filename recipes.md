@@ -14,9 +14,11 @@ They show how multiple elements can be combined to create functionality beyond u
 * [Plant Watering](/recipes/water.md) - Use a timer and button to give water to plants.
 * [Soil Moisture Sensor](/recipes/capasoil.md) - Use a timer and button to give water to plants.
 
+## Using Sensors
+
+* [Logging Temperature Sensor](/recipes/templogger.md) - Use a DHT sensor and the log element to record values.
 
 <!-- * Display temperature from local sensor -->
-
 <!-- * [Display Time, temperature and humidity](/recipes/tempdisplay.md) -->
 
 <!-- * [Alarm with timer for duration](/recipes/alarm.md) -->
