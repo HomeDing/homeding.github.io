@@ -4,10 +4,24 @@ There are some options to upload / update the files in the filesystem of a devic
 
 To upload the firmware & sketch see [Step by Step Bring your device to work](stepsnewdevice.md)
 
-- [Drag & Drop uploading](#drag--drop-uploading)
-- [Drag & Drop uploading in the IDE](#drag--drop-uploading-in-the-ide)
-- [Update the Web UI files from the internet](#update-the-web-ui-files-from-the-internet)
-- [Uploading using the SPIFFS filesystem uploader](#uploading-using-the-spiffs-filesystem-uploader)
+
+## Update the Web UI files from the internet
+
+This method works even when the file system is empty.
+It can be used for an initial upload.
+
+Open <http://homeding/$boot.htm> <sup>*1</sup> to use this upload utility:
+
+![Automatic Web Update](stepsupdatewebboot.png)
+
+This is a builtin upload and update tool for the web files from the documentation web site.
+The files are contained in the directory <https://homeding.github.io/v01> and a list of the files can be found <https://homeding.github.io/v01/list.txt>
+
+From this file all files are fetched and uploaded to the device one-by-one when pressing the start button.
+
+There may be multiple versions at the same time.
+
+This method doesn't overwrite the config files on the device so it can be used on configured devices without wiping the configuration.
 
 
 ## Drag & Drop uploading 
@@ -46,25 +60,6 @@ This method works even when a IDE is already available in the filesystem
 so it cannot be used for an initial upload.
 
 In the right upper corner you can find a drop area similar to the one above. It can only be used to upload files into the root file system.
-
-
-## Update the Web UI files from the internet
-
-This method works even when the file system is empty.
-It can be used for an initial upload.
-
-Open <http://homeding/$boot.htm> <sup>*1</sup> to use this upload utility:
-
-![Automatic Web Update](stepsupdatewebboot.png)
-
-This is a builtin upload and update tool for the web files from the documentation web site.
-The files are contained in the directory <https://homeding.github.io/v01> and a list of the files can be found <https://homeding.github.io/v01/list.txt>
-
-From this file all files are fetched and uploaded to the device one-by-one when pressing the start button.
-
-There may be multiple versions at the same time.
-
-This method doesn't overwrite the config files on the device so it can be used on configured devices without wiping the configuration.
 
 
 ## Uploading using the SPIFFS filesystem uploader 

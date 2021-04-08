@@ -13,9 +13,10 @@
 
 
 ### Step-by-Step Guides
+* [Setup a Arduino environment](/examples/setup.md)
 * [Setup a new device](/stepsnewdevice.md)
 * [Update Web files](/stepsupdateweb.md)
-* [Setup a Arduino environment](/examples/setup.md)
+* [Create configuration files](/stepsconfigure.md)
 
 
 ### [Examples](/examples.md)
