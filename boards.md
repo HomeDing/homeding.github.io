@@ -176,6 +176,7 @@ The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board availa
 * <https://www.mikrocontroller.net/topic/425242>
 * <http://www.forward.com.au/pfod/ESP8266/GPIOpins/index.html>
 * <https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process>
+* <https://tasmota.github.io/docs/Pinouts>
 
 
 ## Tags
