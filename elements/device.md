@@ -19,7 +19,7 @@ The device can be accessed by any browser on the same network using the URL `htt
 
 **rebootTime** (time) - Specifies the duration after the device is rebooted to fully clean up the memory.
 
-**title** - A short phrase to identify the device. Used in portal and configurations.
+**title** - Caption text for the element. Used in the boards.
 
 **description** - A line of text that gives a short description of the device used in the web UI.
 

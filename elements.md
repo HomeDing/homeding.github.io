@@ -181,6 +181,10 @@ It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momen
   creates actions by comparing an incoming value with a reference value.</p>
 </div>
 
+:::element scene default
+The [Scene Element](/elements/scene.md) sends a series of action triggered by a single incoming action.
+:::
+
 <div style="clear:both"></div>
 
 

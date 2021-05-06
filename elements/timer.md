@@ -26,7 +26,6 @@ ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 <-- waitTime --> <-- pulseTime -->
 <------------- cycleTime ------------------------>|
-<-- state=0 --> <-- state=1 ----> <-- state=2 --> <-- state=3 (no LOOP) ...
 ```
 
 When started and the specified wait time has passed the output value is set to one for the specified time.
@@ -41,41 +40,27 @@ The timer elements implements the following properties and actions for configura
 
 ![Timer Properties and Actions](/elements/timerapi.png)
 
-**description** -
-Short description of the element.
+**title** - Caption text for the element. Used in the boards.
 
-**type** -
-Set to `loop` or `once`.
+**description** - A line of text that gives a short description of the device used in the web UI.
 
-**waitTime** -
-time before "on" action
+**mode** - The element supports 3 modes: **"on"** for always on, **"off"** for always off anf **"timer**" for switching the value using the timer settings.
 
-**pulseTime** -
-time between "on" and "off" action.
+**restart** - When set to "true" or "1" the timer restarts automatically when cycleTime is over.
 
-**cycleTime** -
-time of a complete timer cycle. When  not specified or too low the cycletime gets adjusted to waittime+pulsetime.
+**waitTime** - time before "on" action
 
-**onOn** -
-These actions are dispatched when the pulse time starts.
+**pulseTime** - time between "on" and "off" action.
 
-**onOff** -
-These actions are dispatched when the pulse time ends.
+**cycleTime** - time of a complete timer cycle. When  not specified or too low the cycletime gets adjusted to waittime+pulsetime.
 
-**onValue** -
-These actions are dispatched when the pulse time starts or ends
+**onOn** - These actions are dispatched when the pulse time starts.
 
-**onEnd** -
-These actions are dispatched when a timer ends by using the `stop` action or when a `once` timer has finished the cycle. |
+**onOff** - These actions are dispatched when the pulse time ends.
 
+**onValue** - These actions are dispatched when the pulse time starts or ends
 
-
-
-## Timer Types
-
-A timer with type=`loop` will automatically start when the system is started and will repeat the cycle automatically.
-
-A timer with type=`once` must be started with a `start` action and will end after the cycle.
+**onEnd** - These actions are dispatched when a timer ends by using the `stop` action or when a `once` timer has finished the cycle. |
 
 
 ## Control the Element
@@ -96,7 +81,8 @@ The timer element can run on it's own but can also be controlled by the followin
 {
   "timer": {
     "led": {
-      "type": "LOOP",
+      "mode": "timer",
+      "restart": "1",
       "waittime": "4s",
       "pulsetime": "8s",
       "cycletime": "20s",
@@ -113,11 +99,9 @@ The state of the timer element includes:
 
 **active** - Is set to true when the element is active.
 
-**state**  -
-Current state state of the element (0...3). See diagram above
+**mode** - Current mode of the element "on", "off" or "timer".
 
-**time**   -
-time passed since starting the cycle (in seconds).           
+**time** - time passed since starting the cycle (in seconds).           
 
 **value** - Current output value of the element.
 
@@ -128,8 +112,8 @@ time passed since starting the cycle (in seconds).
 {
   "timer/relay": {
     "active": "true",
-    "state": "0",
-    "time": "2",
+    "mode": "off",
+    "time": "0",
     "value": "0"
   }
 }

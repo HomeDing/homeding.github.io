@@ -109,9 +109,9 @@ The default time is set to 3 seconds.
 
 From the base element implementation the following properties are available for configuration:
 
-**title** - A unique short name for identifying the element.
+**title** - Caption text for the element. Used in the boards.
 
-**description** - A line of text with a short description of the usage of this element.
+**description** - A line of text that gives a short description of the device used in the web UI.
 
 **loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
 

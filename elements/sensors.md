@@ -1,4 +1,4 @@
-# Sensor Element Implementaation
+# Sensor Element Implementation
 
 Many sensor elements offer similar functionality and configuration
 and therefore are based on the abstract implementation of the "SensorElement" class.

@@ -23,13 +23,22 @@ The `onvalue` event is always emitted together with the `on` and `off` event sit
 
 The following properties are available for configuration of the element:
 
-| Property  | Description                                                          |
-| --------- | -------------------------------------------------------------------- |
-| `ontime`  | Specifies the start of the time span.                                |
-| `offtime` | Specifies the end of the time span.                                  |
-| `onon`    | Actions.<br/>These actions are emitted when the on time has passed.  |
-| `onoff`   | Actions.<br/>These actions are emitted when the off time has passed. |
-| `onvalue` | Actions.<br/>These actions are emitted when the value is changing.   |
+**title** - Caption text for the element. Used in the boards.
+
+**description** - A line of text that gives a short description of the device used in the web UI.
+
+**mode** - The element supports 3 modes: **"on"** for always on, **"off"** for always off anf **"timer**" for switching the value using the timer settings.
+
+**ontime** - Specifies the start of the time span.
+
+**offtime** - Specifies the end of the time span.
+
+**onon** - These actions are emitted when the on time has passed.
+
+**onoff** - These actions are emitted when the off time has passed.
+
+**onvalue** - These actions are emitted when the value is changing.
+
 
 ## Element State
 

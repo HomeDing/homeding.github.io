@@ -17,13 +17,13 @@ There is a dedicated card for this element available that will be used on the we
 The analog input signals like such from analog sensors often have the characteristic that they constantly change around an average value.
 In many cases these small changes are not relevant to start an action and can be ignored.
 
-To allow using the analog element in these situations a hysteresis can be defined. A new value is then only triggering an action when the current input value has more difference to the last reported value than specified. This eliminiates the actions caused by small changes.
+To allow using the analog element in these situations a hysteresis can be defined. A new value is then only triggering an action when the current input value has more difference to the last reported value than specified. This eliminates the actions caused by small changes.
 A hysteresis of 10 is the default value but you can specify any other value and especially 0 that eliminates this effect.
 
 In other situations it is only relevant that a analog value is below or above a reference value.
 By defining a reference value the reference action will only be dispatched when the input value goes above or below.
 
-On the ESP8266 chip the input value has a precision of 2^10 bits and the input value is represented as a value for 0 to 1024 measuring a voltage at the pin from 0 to 1 volts. The input measuing should not occur when the ESP8266 chip is transmitting data over the WLAN because the value will be inaccurate.
+On the ESP8266 chip the input value has a precision of 2^10 bits and the input value is represented as a value for 0 to 1024 measuring a voltage at the pin from 0 to 1 volts. The input measuring should not occur when the ESP8266 chip is transmitting data over the WiFi because the value will be inaccurate.
 
 
 ## Element Configuration
@@ -36,9 +36,9 @@ The following properties are available for configuration of the element:
 
 **reference** - The reference action is emitted when the value goes below / above the reference value.
 
-**mapInMin** - This is the lower bound of the rawvalue. This will be mapped to the value given by **mapOutMin**.
+**mapInMin** - This is the lower bound of the raw value. This will be mapped to the value given by **mapOutMin**.
 
-**mapInMax** - This is the upper bound of the rawvalue. This will be mapped to the value given by **mapOutMax**.
+**mapInMax** - This is the upper bound of the raw value. This will be mapped to the value given by **mapOutMax**.
 
 **mapOutMin** - This is the lower bound of the output value.
 
@@ -86,7 +86,7 @@ The following properties are available with the current values at runtime
 
 **rawvalue** - This is the original value from the ADC pin.
 
-**value** - When no mapping boundaries are given this is equal the rawvalue.
+**value** - When no mapping boundaries are given this is equal the raw value.
 When mapping boundaries are given this is the calculated value.
 
 **reference** - This is 1 when the value is above the reference value otherwise 0.
