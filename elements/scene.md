@@ -6,7 +6,7 @@ The SceneElement is used to send a series of action triggered by a single incomi
 
 In normal cases when only one or few actions should be triggered multiple actions can be listed inline.
 The scene element allows sending multiple actions beyond this limit or when different element
-need to send the same list of events.
+need to send the same list of events but different values.
 
 The scene element also can be used to configure presets of multiple element values
 at a single place by using multiple scene definitions.
@@ -80,4 +80,5 @@ From the base element implementation the following properties are available for 
 ```
 
 ## Tags
+
 #element

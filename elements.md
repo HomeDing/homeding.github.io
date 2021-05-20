@@ -56,6 +56,7 @@ Read sensor values from a BMP280 sensor with temperature and absolute barometric
 :::
 
 <!-- BME280 -->
+
 <!-- MPU9250 -->
 
 <div style="clear:both"></div>

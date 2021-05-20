@@ -71,9 +71,7 @@ There are no actions being sent by this element.
   "light/lx": {
     "active":"true",
     "value":"",
-    "brightness":"43.48",
-    "pressure":"99784",
-    "gas":"72724"
+    "brightness":"43.48"
   }
 }
 ```
