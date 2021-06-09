@@ -35,7 +35,7 @@ The [sensor elements](elements/sensors.md) implement the adoption to a very spec
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
 
 :::element dht dht
-Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
+Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.
 :::
 
 :::element ds18b20 ds18b20
@@ -44,11 +44,11 @@ Dallas Temperature sensors and creates actions.
 :::
 
 :::element bme680 bme680
-Read BME680 sensor data with temperature, humidity, pressure and gas resistance.</p>
+Read BME680 sensor data with temperature, humidity, pressure and gas resistance.
 :::
 
 :::element pms pms
-Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
+Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.
 :::
 
 :::element bmp280 bmp280
@@ -66,29 +66,19 @@ More detailed information on sensor implementation can be found in [sensor eleme
 
 ## Output and Actor Elements
 
-<div class="short">
-  <a href="#page=elements/pwmout.md"><img src="/i/pwmout.svg"></a>
-  <p><strong><a href="#page=elements/pwmout.md">PWMOut Element</a></strong><br/>
-  Output Element to output an pwm signals based on actions. e.g. LEDs.</p>
-</div>
+:::element pwmout pwmout
+The [PWMOut Element](/elements/pwmout.md) is used to output an pwm signals based on actions. e.g. LEDs.
+:::
 
-<div class="short">
-  <a href="#page=elements/pwmout.md"><img src="/i/pwmout.svg"></a>
-  <p><strong><a href="#page=elements/pwmout.md">PWMOut Element</a></strong><br/>
-  Output Element to output an pwm signals based on actions. e.g. LEDs.</p>
-</div>
+:::element digitalout digitalout
+The [DigitalOut Element](/elements/digitalout.md) is used to create digital output signals based on actions.
+:::
 
-<div class="short">
-  <a href="#page=elements/digitalout.md"><img src="/i/digitalout.svg"></a>
-  <p><strong><a href="#page=elements/digitalout.md">DigitalOut Element</a></strong><br/>
-  Output element to create digital output signals based on actions.</p>
-</div>
+:::element rfsend default
+The [RFSend Element](/elements/rfsend.md) is used for sending RF codes on the 433 MHz band to control remote sockets.
+:::
 
-<div class="short">
-  <a href="#page=elements/rfsend.md"><img src="/i/rfsend.svg"></a>
-  <p><strong><a href="#page=elements/rfsend.md">RFSend Element</a> *</strong><br/>
-  Send out RF codes on the 433 MHz band to control remote sockets.</p>
-</div>
+
 
 <div style="clear:both"></div>
 
@@ -148,39 +138,42 @@ The [P9813 Element](/elements/p9813.md) implements the protocol to control the P
 
 Service elements interact with services to get or publish data using actions. 
 
-<div class="short">
-  <a href="#page=elements/weatherfeed.md"><img src="/i/weatherfeed.svg"></a>
-  <p><strong><a href="#page=elements/weatherfeed.md">Weatherfeed Element</a></strong><br/>
-  Element that get the weather forecast from an internet service.</p>
-</div>
+:::element weatherfeed weatherfeed
+The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast information from an internet service.
+:::
 
 
 ## Logic Elements
 
 Logic elements implement using on/off values expressed as 1/0 values. 
 
-<div class="short">
-  <a href="#page=elements/button.md"><img src="/i/button.svg"></a>
-  <p><strong><a href="#page=elements/button.md">Button Element</a></strong><br/>
-  Element that can differentiate clicks, double clicks and long press gestures to send out actions.</p>
-</div>
+:::element button button
+The [Button Element](/elements/button.md) can differentiate clicks, double clicks and long press gestures to send out actions.
+:::
 
 :::element switch switch
 The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
 It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI. 
 :::
 
-<div class="short">
-  <a href="#page=elements/and.md"><img src="/i/and.svg"></a>
-  <p><strong><a href="#page=elements/and.md">AND Element</a></strong><br/>
-  combines multiple logic input values to a single output value.</p>
-</div>
+:::element and and
+The [AND Element](/elements/and.md) combines multiple logic input values to a single output value.
+The outgoing value is HIGH(1) when all of the given input values are not LOW(0).
+:::
 
-<div class="short">
-  <a href="#page=elements/reference.md"><img src="/i/default.svg"></a>
-  <p><strong><a href="#page=elements/reference.md">Reference Element</a></strong><br/>
-  creates actions by comparing an incoming value with a reference value.</p>
-</div>
+:::element or or
+The [OR Element](/elements/or.md) combines multiple logic input values to a single output value.
+The outgoing value is HIGH(1) when one of the given input values is not LOW(0).
+:::
+
+:::element map map
+The [Map Element](/elements/map.md) combines multiple logic input values to a single output value.
+The outgoing value is HIGH(1) when one of the given input values is not LOW(0).
+:::
+
+:::element reference default
+The [Reference Element](/elements/map.md) creates actions by comparing an incoming value with a reference value.
+:::
 
 :::element scene default
 The [Scene Element](/elements/scene.md) sends a series of action triggered by a single incoming action.
@@ -193,41 +186,37 @@ The [Scene Element](/elements/scene.md) sends a series of action triggered by a 
 
 The HomeDing library supports local attached displays but also works fine without a local display.
 
-<div class="short">
-  <a href="#page=displays/ssd1306.md"><img src="/i/displayssd1306.svg"></a>
-  <p><strong><a href="#page=displays/ssd1306.md">DisplaySSD1306</a> *</strong><br/>
-  Adapter for SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.</p>
-</div>
+:::element displayssd1306 displayssd1306
+The [DisplaySSD1306 Element](/displays/ssd1306.md) configures the display adapter for using SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.
+:::
 
-<div class="short">
-  <a href="#page=displays/sh1106.md"><img src="/i/displaysh1106.svg"></a>
-  <p><strong><a href="#page=displays/sh1106.md">DisplaySH1106</a> *</strong><br/>
-  Adapter for SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.</p>
-</div>
+:::element displaysh1106 displaysh1106
+The [DisplaySH1106 Element](/displays/sh1106.md) configures the display adapter for using SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.
+:::
 
-<div class="short">
-  <a href="#page=displays/lcd.md"><img src="/i/displaylcd.svg"></a>
-  <p><strong><a href="#page=displays/lcd.md">DisplayLCD</a> *</strong><br/>
-  Adapter for HD44780 compatible LCDs displays using I2C adapter.</p>
-</div>
+:::element displaylcd displaylcd
+The [DisplayLCD Element](/displays/lcd.md) configures the display adapter for using HD44780 compatible LCDs displays using I2C.
+:::
 
-<div class="short">
-  <a href="#page=elements/displaytext.md"><img src="/i/displaytext.svg"></a>
-  <p><strong><a href="#page=elements/displaytext.md">DisplayText Element</a></strong><br/>
-  Show values as text on the display.</p>
-</div>
+<div style="clear:both"></div>
 
-<div class="short">
-  <a href="#page=elements/displaydot.md"><img src="/i/displaydot.svg"></a>
-  <p><strong><a href="#page=elements/displaydot.md">DisplayDot Element</a></strong><br/>
-  Show binary values as dot on the display.</p>
-</div>
+On the displays several Elements can be used to display data, text and visuals:
 
-<div class="short">
-  <a href="#page=elements/displaybar.md"><img src="/i/displaybar.svg"></a>
-  <p><strong><a href="#page=elements/displaybar.md">DisplayBar Element</a></strong><br/>
-  Display a progress bar.</p>
-</div>
+:::element displaytext displaytext
+The [DisplayText Element](/elements/displaytext.md) show values as text on the display.
+:::
+
+:::element displaydot displaydot
+The [DisplayDot Element](/elements/displaydot.md) show values as a dot on the display.
+:::
+
+:::element displaybar displaybar
+The [DisplayBar Element](/elements/displaybar.md) show values as a progress or percentage bar on the display.
+:::
+
+:::element displayline displayline
+The [DisplayLine Element](/elements/displayline.md) shows a line on the display.
+:::
 
 <div style="clear:both"></div>
 
@@ -236,49 +225,35 @@ More detailed information on displays and related elements can be found in [disp
 
 ## Time related Elements
 
-<div class="short">
-  <a href="#page=elements/time.md"><img src="/i/time.svg"></a>
-  <p><strong><a href="#page=elements/time.md">Time Element</a></strong><br/>
-  Send actions with the actual local time.</p>
-</div>
+:::element time dstime
+The [Time Element](/elements/time.md) sends actions with the actual local time.
+:::
 
-<div class="short">
-  <a href="#page=elements/dstime.md"><img src="/i/dstime.svg"></a>
-  <p><strong><a href="#page=elements/dstime.md">DSTime Element</a></strong><br/>
-  Get the actual local time using the RTC DS3231 chip.</p>
-</div>
+:::element dstime dstime
+The [DSTime Element](/elements/dstime.md) can retrieve the local time using the RTC DS3231 chip.
+:::
 
-<div class="short">
-  <a href="#page=elements/ntptime.md"><img src="/i/ntptime.svg"></a>
-  <p><strong><a href="#page=elements/ntptime.md">NTPTime Element</a></strong><br/>
-  Get the actual local time using the NTP protocol from a NTP server.</p>
-</div>
+:::element ntptime ntptime
+The [NTPTime Element](/elements/ntptime.md) can retrieve the local time using the NTP protocol from a NTP server.
+:::
 
 <!--
-<div class="short">
-  <a href="#page=elements/dcftime.md"><img src="/i/dcftime.svg"></a>
-  <p><strong><a href="#page=elements/dcftime.md">DCFTime Element</a></strong><br/>
-  Get the actual local time from a DCF 77kHz signal over the air.</p>
-</div>
+:::element dcftime dcftime
+The [DCFTime Element](/elements/dcftime.md) can retrieve the local time from a DCF 77kHz signal over the air.
+:::
 -->
 
-<div class="short">
-  <a href="#page=elements/schedule.md"><img src="/i/schedule.svg"></a>
-  <p><strong><a href="#page=elements/schedule.md">Schedule Element</a></strong><br/>
-  Creating on and off actions based on the actual local time.</p>
-</div>
+:::element schedule schedule
+The [Schedule Element](/elements/schedule.md) creates on and off actions based on the actual local time.
+:::
 
-<div class="short">
-  <a href="#page=elements/alarm.md"><img src="/i/alarm.svg"></a>
-  <p><strong><a href="#page=elements/alarm.md">Alarm Element</a></strong><br/>
-  Element for creating a action based on the time of day.</p>
-</div>
+:::element alarm schedule
+The [Alarm Element](/elements/alarm.md) creates actions when reaching a defined time of day.
+:::
 
-<div class="short">
-  <a href="#page=elements/timer.md"><img src="/i/timer.svg"></a>
-  <p><strong><a href="#page=elements/timer.md">Timer Element</a></strong><br/>
-  Element for creating timer (duration) based actions.</p>
-</div>
+:::element timer timer
+The [Timer Element](/elements/timer.md) creates timer (duration) based actions.
+:::
 
 <div style="clear:both"></div>
 
@@ -287,48 +262,37 @@ More detailed information on time element and time related implementation can be
 
 ## System Elements
 
-<div class="short">
-  <a href="#page=elements/device.md"><img src="/i/device.svg"></a>
-  <p><strong><a href="#page=elements/device.md">Device Element</a></strong><br/>
-  configuration of the device and board.</p>
-</div>
+:::element device device
+The [Device Element](/elements/device.md) is used to configure the device level properties.
+:::
 
+:::element ota ota
+The [OTA Element](/elements/ota.md) is used to enable and configure Over The Air Updates.
+:::
 
-<div class="short">
-  <a href="#page=elements/ota.md"><img src="/i/ota.svg"></a>
-  <p><strong><a href="#page=elements/ota.md">OTA Element</a></strong><br/>
-  Enable and configure Over The Air Updates</p>
-</div>
+:::element ssdp ssdp
+The [SSDP Element](/elements/ssdp.md) is used to discovering devices on the network using SSDP protocol.
+:::
 
-<div class="short">
-  <a href="#page=elements/ssdp.md"><img src="/i/ssdp.svg"></a>
-  <p><strong><a href="#page=elements/ssdp.md">SSDP Element</a></strong><br/>
-  Enable and configure discovering devices on the network.</p>
-</div>
+:::element value value
+The [Value Element](/elements/value.md) is used to 
+receive and send actions to use and control an internal value.
+:::
 
-<div class="short">
-  <a href="#page=elements/value.md"><img src="/i/value.svg"></a>
-  <p><strong><a href="#page=elements/value.md">Value Element</a></strong><br/>
-  Receiving and sending actions to use and control an internal value.</p>
-</div>
+:::element value value
+The [Remote Element](/elements/remote.md) is used to 
+send actions to elements in other devices over the local network.
+:::
 
-<div class="short">
-  <a href="#page=elements/remote.md"><img src="/i/remote.svg"></a>
-  <p><strong><a href="#page=elements/remote.md">Remote Element</a></strong><br/>
-  sending actions to elements in other devices over the local network.</p>
-</div>
+:::element menu menu
+The [Menu Element](/elements/menu.md) is used for
+displaying and changing multiple values.
+:::
 
-<div class="short">
-  <a href="#page=elements/menu.md"><img src="/i/menu.svg"></a>
-  <p><strong><a href="#page=elements/menu.md">Menu Element</a></strong><br/>
-  Menu Element for displaying and changing multiple values.</p>
-</div>
-
-<div class="short">
-  <a href="#page=elements/log.md"><img src="/i/log.svg"></a>
-  <p><strong><a href="#page=elements/log.md">Log Element</a></strong><br/>
-  storing timestamp based sensor values.</p>
-</div>
+:::element log log
+The [Log Element](/elements/log.md) is used for
+storing timestamp based sensor values.
+:::
 
 
 ## Web UI Elements
@@ -355,10 +319,6 @@ and uses the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibra
 to configure various FM radio boards.
 :::
 
-:::element rfsend rfsend
-for sending rf 433 signals.
-:::
-
 
 ## Required external libraries
 
@@ -371,7 +331,6 @@ for sending rf 433 signals.
 | [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT.md)                                                    |
 | [OneWire]                                           | [DS18B20 Element](elements/ds18b20.md)                                            |
 
-<!-- | [TabRF] | [RFSend Element](elements/rfsend.md) -->
 <!-- + Wire + SoftwareSerial -->
 
 [Adafruit NeoPixel]: https://github.com/adafruit/Adafruit_NeoPixel

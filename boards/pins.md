@@ -20,25 +20,25 @@ The Pin notation **Dxx** was introduced by the NodeMCU and are written on some b
 
 Not mentioned here are the pin numbers on the real chip. If you need to used them directly, have a look into the [ESP8266 Technical Reference].
 
-| GPIO   | Pin | Special function                   | Limitations                                                                                    |
-| ------ | --- | ---------------------------------- | ---------------------------------------------------------------------------------------------- |
-| GPIO0  | D3  | Boot mode select, **flash** switch | Keep HIGH for operating and LOW for flashing while booting, output is possible with active=LOW |
-| GPIO1  | D10 | Serial0-TX                         | Limited usage for IO                                                                           |
-| GPIO2  | D4  | PWM, Serial1-TX, Boot, LED(module) | Keep HIGH while booting, sends debug info at boot time, output-active-LOW                      |
-| GPIO3  | D9  | Serial0-RX                         | Limited usage for IO                                                                           |
-| GPIO4  | D2  | I2C - SDA                          |                                                                                                |
-| GPIO5  | D1  | I2C - SCL                          |                                                                                                |
-| GPIO6  | --  | SDIO                               | cannot be used                                                                                 |
-| GPIO7  | --  | SDIO                               | cannot be used                                                                                 |
-| GPIO8  | --  | Serial1-RX, SDIO                   | cannot be used                                                                                 |
-| GPIO9  | D11 | SDIO                               | cannot be used                                                                                 |
-| GPIO10 | D12 | SDIO                               | cannot be used                                                                                 |
-| GPIO11 | --  | SDIO                               | cannot be used                                                                                 |
-| GPIO12 | D6  | PWM, MISO                          |                                                                                                |
-| GPIO13 | D7  | MOSI                               |                                                                                                |
-| GPIO14 | D5  | PWM, SCK                           |                                                                                                |
-| GPIO15 | D8  | PWM, SS, Boot                      | Keep LOW while booting, output-active-HIGH                                                     |
-| GPIO16 | D0  | deep sleep reset, LED(board)       | cannot be used when using deep sleep mode, must be connected to RST for deep-sleep mode.       |
+| GPIO   | Pin | Special function                   | Limitations                                                                              |
+| ------ | --- | ---------------------------------- | ---------------------------------------------------------------------------------------- |
+| GPIO0  | D3  | Boot mode select, **flash** switch | HIGH during normal boot, LOW for flashing, output is possible with active=LOW            |
+| GPIO1  | D10 | Serial0-TX                         | Limited usage for IO                                                                     |
+| GPIO2  | D4  | PWM, Serial1-TX, Boot, LED(module) | Keep HIGH while booting, sends debug info at boot time, output-active-LOW                |
+| GPIO3  | D9  | Serial0-RX                         | Limited usage for IO                                                                     |
+| GPIO4  | D2  | I2C - SDA                          |                                                                                          |
+| GPIO5  | D1  | I2C - SCL                          |                                                                                          |
+| GPIO6  | --  | SDIO                               | cannot be used                                                                           |
+| GPIO7  | --  | SDIO                               | cannot be used                                                                           |
+| GPIO8  | --  | Serial1-RX, SDIO                   | cannot be used                                                                           |
+| GPIO9  | D11 | SDIO                               | cannot be used                                                                           |
+| GPIO10 | D12 | SDIO                               | cannot be used                                                                           |
+| GPIO11 | --  | SDIO                               | cannot be used                                                                           |
+| GPIO12 | D6  | PWM, MISO                          |                                                                                          |
+| GPIO13 | D7  | MOSI                               |                                                                                          |
+| GPIO14 | D5  | PWM, SCK                           |                                                                                          |
+| GPIO15 | D8  | PWM, SS, Boot                      | Keep LOW while booting, output-active-HIGH                                               |
+| GPIO16 | D0  | deep sleep reset, LED(board)       | cannot be used when using deep sleep mode, must be connected to RST for deep-sleep mode. |
 
 
 ### Onboard LEDs

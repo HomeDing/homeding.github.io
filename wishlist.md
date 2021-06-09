@@ -8,7 +8,6 @@
 
 | Type           | Functionality                                                                                |
 | -------------- | -------------------------------------------------------------------------------------------- |
-| WeatherElement | call a service on the internet like OpenWeatherMap to get the forecast of the local weather. |
 | (t.b.d.)       | Meassure Distance using a sonar sensor                                                       |
 | (t.b.d.)       | send actions to a MQTT broker                                                                |
 | (t.b.d.)       | Detect movement                                                                              |

@@ -77,7 +77,6 @@ Markdown viewer SPA using
       position: relative;
       padding: 0.5rem 0.5rem 0 4rem;
       margin-right: 0.5rem;
-      min-height: 6rem;
       width: 32rem;
       max-width: 32rem;
       background-color: white;
@@ -87,24 +86,29 @@ Markdown viewer SPA using
 
     .short {
       float: left;
-      min-height: 7rem;
+      min-height: 7.2rem;
     }
 
     .board {
       padding: 0.5rem 0.5rem 0 11rem;
-      min-height: 7rem;
+      min-height: 7.2rem;
       width: 100%;
       max-width: 100%;
       background-color: #e8e8e8;
     }
 
-    .short img,
-    .excerpt img,
-    .board img {
+    .excerpt {
+      min-height: 6rem;
+    }
+
+    .short img, .short svg,
+    .excerpt svg {
       position: absolute;
       top: 0.5rem;
       left: 0.5rem;
       height: 3rem;
+      width: 3rem;
+      color: #0f388a;
     }
 
     .board img {
@@ -164,7 +168,7 @@ Markdown viewer SPA using
   </div>
   <div class="row u-navbar" style="margin-bottom: 0;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button"
-      style="xvertical-align: middle; height:1.4rem">
+      style="height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
     </svg>
 
@@ -227,7 +231,7 @@ Markdown viewer SPA using
       var div = '<div class="' + cn + '">';
       var img;
       if (icon) {
-        img = '<img src="/i/' + icon + '.svg">';
+        img = '<svg class="icon"><use href="/icons.svg#' + icon + '"></use></svg>';
       } else {
         img = '<img src="/' + linkFolder + '/' + link + '.jpg">';
       }
@@ -242,7 +246,7 @@ Markdown viewer SPA using
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*excerpt\s+(.*)$/);
           var img = (m ? m[1] : 'default');
-          return '<div class="excerpt"><img src="/i/' + img + '.svg">\n';
+          return '<div class="excerpt"><svg class="icon"><use href="/icons.svg#' + img + '"></use></svg>\n';
         } else {
           return '</div>\n';
         }
