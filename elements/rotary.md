@@ -25,6 +25,8 @@ See example in [value element](/elements/value).
 
 The following properties are available for configuration of the element:
 
+<object data="/element.svg?rotary" type="image/svg+xml"></object>
+
 | Property | Description                                                |
 | -------- | ---------------------------------------------------------- |
 | `pin1`*  | Specifies the hardware number of the first input pin.      |

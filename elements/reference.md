@@ -10,12 +10,9 @@ based on the actual temperature or light brightness.
 <!-- ## Web UI for the AND Element -->
 
 
-## Element Interface
-
-![Reference Properties and Actions](/elements/referenceapi.png)
-
-
 ## Element Configuration
+
+<object data="/element.svg?reference" type="image/svg+xml"></object>
 
 **value** - The input value for the comparisation typically coming from a sensor.
 

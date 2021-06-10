@@ -20,6 +20,8 @@ A scene element can also be triggered over the network by using a simple link li
 
 The following properties are available for configuration of the element:
 
+<object data="/element.svg?scene" type="image/svg+xml"></object>
+
 **onValue** - This is an array of actions are emitted when the value of the scene element is set to any value.
 
 **value** - This property can be set to any value to trigger all defined actions on this element.

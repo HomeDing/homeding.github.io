@@ -1,12 +1,9 @@
 # The Analog Element
 
-::: excerpt alarm
+::: excerpt analog
 The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.
 It also handles some of the often occurring problems around capturing analog values.
 :::
-
-
-<!-- ![Button Properties and Actions](ButtonAPI.png) -->
 
 <!--
 ## Web UI for the Analog Element
@@ -29,6 +26,8 @@ On the ESP8266 chip the input value has a precision of 2^10 bits and the input v
 ## Element Configuration
 
 The following properties are available for configuration of the element:
+
+<object data="/element.svg?analog" type="image/svg+xml"></object>
 
 **readtimems** - The time between capturing input values in milliseconds.
 

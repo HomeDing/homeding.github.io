@@ -4,13 +4,13 @@
 The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.
 :::
 
-![Device Properties and actions](/elements/deviceapi.png)
-
 By specifying the configuration for the `device/0` element the general settings for the device can be controlled.
 
 ## Element Configuration
 
 The following properties are available for configuration of the element.
+
+<object data="/element.svg?device" type="image/svg+xml"></object>
 
 ### Basic settings
 

@@ -12,17 +12,15 @@ Every time the value changes the onValue event is emitted.
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-![AND Web UI](/elements/andui.png)
+![AND Web UI](/elements/andui.png "w400")
 
 This card shows the current output computed from the last logical input values.
 It is updated every time the status of the device is polled by the page.
 
-## Element Interface
-
-![AND Properties and Actions](/elements/andapi.png)
-
 
 ## Element Configuration
+
+<object data="/element.svg?and" type="image/svg+xml"></object>
 
 The input values can be preset and the output can be inverted:
 

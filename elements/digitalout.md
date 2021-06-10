@@ -14,11 +14,12 @@ There is a dedicated card for this element available that will be used on the we
 
 The boolean value indicator is showing the actual output level using red(0) and green(1) color.
 
+
 ## Element Configuration
 
 This element implements the following properties and actions:
 
-![DigitalOutProperties and Actions](/elements/digitaloutapi.png)
+<object data="/element.svg?digitalout" type="image/svg+xml"></object>
 
 | Property  | Description                                             |
 | --------- | ------------------------------------------------------- |

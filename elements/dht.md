@@ -81,6 +81,8 @@ There is an option to switch the sensor on and off by using another GPIO pin. Se
 
 The following properties are available for configuration of the element:
 
+<object data="/element.svg?dht" type="image/svg+xml"></object>
+
 **pin**\* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
 
 **type** - The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"

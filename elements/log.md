@@ -8,9 +8,6 @@ This enables using sensor values to be displayed in graphs in the Web UI for thi
 
 The LogElement also supports calculating average values based on the values given for a time period.
 
-![Log Properties and Actions](logapi.png)
-
-
 For this element a visualization of the values in the log files is available that shows up as a line chart:
 
 ![Log linechart](logchart.png)
@@ -21,6 +18,8 @@ By reading the files directly they are available as sources for other purpose li
 ## Element Configuration
 
 The following properties are available for configuration and operating of the element:
+
+<object data="/element.svg?log" type="image/svg+xml"></object>
 
 **value** - To record numeric values the value action can be sent to this element e.g. with the current sensor value.
 

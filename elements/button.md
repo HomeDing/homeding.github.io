@@ -18,10 +18,6 @@ By clicking the button once the `onclick` action will be dispatched.
 The setup icon opens a dialog to change the configuration properties.
 
 
-## Button Properties and Actions
-
-![Button Properties and Actions](elements/buttonapi.png)
-
 The Button Element acts on a value input typically created by a push button and a [Digital Input Element](/elements/digitalin).
 
 It detects the gestures `click`, `doubleclick` and `press` and sends out the defined actions.
@@ -32,6 +28,8 @@ If you only need a button on the web ui but have no physically attached button t
 ## Element Configuration
 
 The following properties are available for configuration of the element:
+
+<object data="/element.svg?button" type="image/svg+xml"></object>
 
 **value** - This is the incoming logical value that is typically emitted by a digital input element.  
 

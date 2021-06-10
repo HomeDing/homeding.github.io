@@ -13,6 +13,8 @@ The output signal is generated with a given minimal duration and stays high as l
 
 ## Element Configuration
 
+<object data="/element.svg?digitalsignal" type="image/svg+xml"></object>
+
 
 **pin** - the GPIO pin used for input.
 

@@ -28,11 +28,9 @@ There is a dedicated card for this element available that will be used for the w
 
 This card shows the current output that can also be seen on the local attached display. It is updated every time the status of the device is polled by the page.
 
-## Element Interface
+## Element Configuration
 
-![LCD Properties and Actions](/displays/lcdapi.png)
-
-## Properties
+<object data="/element.svg?lcd" type="image/svg+xml"></object>
 
 The following properties are available for configuration of the element:
 

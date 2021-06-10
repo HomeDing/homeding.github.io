@@ -5,21 +5,23 @@ The DisplayBarElement allows sending a numeric value to the display and place it
 The value can be changed by using an action.
 :::
 
+<!-- not implemented check doku ???  -->
+
 Because there may be more values presented on a display at the same time the
-DisplayDotElement may exist multiple times in the configuration by using different positions.
+DisplayBarElement may exist multiple times in the configuration by using different positions.
 
 It is not required for all displays to support all these Elements and when a device only has a simple LCD
 attached maybe only using the DisplayTextElements is appropriate.
 
 You can even use the DisplayDotElement without having an actual Display attached that supports it.
 
-The DisplayDotElement is included in the collection of core elements.
-
-![DisplayDot Properties and Actions](/elements/displaydotapi.png)
+The DisplayBarElement is included in the collection of core elements.
 
 ## Element Configuration
 
 The following properties are available for configuration of the element:
+
+<object data="/element.svg?displaybar" type="image/svg+xml"></object>
 
 | Property | Description                             |
 | -------- | --------------------------------------- |

@@ -10,7 +10,7 @@ The AlarmElement creates a single action at a specific time that can be used e.g
 
 This element implements the following properties and actions:
 
-<!-- ![DigitalOutProperties and Actions](/elements/alarmapi.png) -->
+<object data="/element.svg?alarm" type="image/svg+xml"></object>
 
 **time**  the time of day when the a the actions will be emitted.
 
