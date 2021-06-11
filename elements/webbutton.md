@@ -8,7 +8,6 @@ The element is displayed as a single button by using the caption given by the de
 As this element is never created and active in the device
 there is no element state reported by the board.
 
-<!-- ![Button Properties and Actions](elements/buttonapi.png) -->
 
 ## Web UI for the Web Button Element
 

@@ -187,15 +187,15 @@ The [Scene Element](/elements/scene.md) sends a series of action triggered by a 
 The HomeDing library supports local attached displays but also works fine without a local display.
 
 :::element displayssd1306 displayssd1306
-The [DisplaySSD1306 Element](/displays/ssd1306.md) configures the display adapter for using SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.
+The [DisplaySSD1306 Element](/elements/ssd1306.md) configures the display adapter for using SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.
 :::
 
 :::element displaysh1106 displaysh1106
-The [DisplaySH1106 Element](/displays/sh1106.md) configures the display adapter for using SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.
+The [DisplaySH1106 Element](/elements/sh1106.md) configures the display adapter for using SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.
 :::
 
 :::element displaylcd displaylcd
-The [DisplayLCD Element](/displays/lcd.md) configures the display adapter for using HD44780 compatible LCDs displays using I2C.
+The [DisplayLCD Element](/elements/lcd.md) configures the display adapter for using HD44780 compatible LCDs displays using I2C.
 :::
 
 <div style="clear:both"></div>
@@ -325,8 +325,8 @@ to configure various FM radio boards.
 | Library used                                        | Elements effected                                                                 |
 | --------------------------------------------------- | --------------------------------------------------------------------------------- |
 | [Adafruit NeoPixel]                                 | [Neo](/elements/neo.md)                                                           |
-| [LiquidCrystal_PCF8574]                             | [LCD display](/displays/lcd.md)                                                   |
-| [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SDD1306 display](/displays/ssd1306.md) and [SH1106 display](/displays/sh1106.md) |
+| [LiquidCrystal_PCF8574]                             | [LCD display](/elements/lcd.md)                                                   |
+| [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SDD1306 display](/elements/ssd1306.md) and [SH1106 display](/elements/sh1106.md) |
 | [RotaryEncoder]                                     | [Rotary Element](elements/rotary.md)                                              |
 | [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT.md)                                                    |
 | [OneWire]                                           | [DS18B20 Element](elements/ds18b20.md)                                            |

@@ -10,7 +10,7 @@ This recipe implements a device with a locally attached LCD display to show time
 There is a configuration for the LCD display required. Here a HD44780 standard LCD display on the I2C bus is used.
 
 * In the [Device Element](/elements/device.md) configuration the i2c pins must be specified. Here only these 2 properties are shown. 
-* The [DisplayLCD Element](/displays/lcd.md) is defined with the i2c address and LCD size.
+* The [DisplayLCD Element](/elements/lcd.md) is defined with the i2c address and LCD size.
 * The [NTPTime Element](/elements/ntptime.md) is used to retrieve the actual time from the default ntp server.
 
 ```JSON
@@ -105,7 +105,7 @@ These are used to update the displaytext elements.
 
 * [Device Element](/elements/device.md)
 * [NTPTime Element](/elements/ntptime.md)
-* [DisplayLCD Element](/displays/lcd.md)
+* [DisplayLCD Element](/elements/lcd.md)
 * [DisplayText Element](/elements/displaytext.md)
 * [Time Element](/elements/time.md)
 * [BME680 Element](/elements/bme680.md)

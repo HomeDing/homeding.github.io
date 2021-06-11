@@ -15,11 +15,13 @@ https://www.bastelgarage.ch/esp-01-ws2812-sk6812-steuerplatine
 -->
 
 
-## Properties
+## Element Configuration
 
-These properties are used to setup the attached WDs:
+The following properties are available for configuration of the element.
 
-**pin** - The pin that is used for data transmission to the first ws2812 in the chain. Defaults to GPIO2(D4).
+<object data="/element.svg?neo" type="image/svg+xml"></object>
+
+**pin**\* - The pin that is used for data transmission to the first ws2812 in the chain. Defaults to GPIO2(D4).
 
 **count** - Number of pixels that are attached. The default is 8 and must be specified in the config only.
 

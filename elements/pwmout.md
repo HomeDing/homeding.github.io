@@ -14,9 +14,12 @@ There is a dedicated card for this element available that will be used for the w
 
 The Web UI for the PWMout element shows the actual output level in values and by showing a simple bar chart.
 
+
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?pwmout" type="image/svg+xml"></object>
 
 | Property  | Description |
 | ---       | --- |

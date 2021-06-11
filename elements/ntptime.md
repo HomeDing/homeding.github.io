@@ -8,8 +8,6 @@ The NTPTimeElement is one of the element implementations to get a local time fro
 and to adjust the `real local time`w on the board.
 This element gets the local time from an external server using the Network Time Protocol.
 
-![NTPTime Properties and Actions](ntptimeapi.png)
-
 In the SDK of some platforms like the ESP8266 the functionality to get a NTP based time sync is already available but it must be configured and activated.
 This is what the NTPTimeElement does for the ESP8266 (and ESP32 later).
 
@@ -28,7 +26,9 @@ If you have a device with these requirements a chip based real-time like the  [D
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?ntptime" type="image/svg+xml"></object>
 
 **ntpServer** - The hostname of the ntp server to be used like `"pool.ntp.org"`
 

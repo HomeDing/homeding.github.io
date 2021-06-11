@@ -24,7 +24,7 @@ The library used to drive these displays is "LiquidCrystal_PCF8574".
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-![LCD Web UI](/displays/lcdui.png)
+![LCD Web UI](/elements/lcdui.png)
 
 This card shows the current output that can also be seen on the local attached display. It is updated every time the status of the device is polled by the page.
 

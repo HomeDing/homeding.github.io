@@ -23,7 +23,9 @@ The following chips are supported:
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?dstime" type="image/svg+xml"></object>
 
 | Property   | Description                                           |
 | ---------- | ----------------------------------------------------- |

@@ -112,7 +112,7 @@ In `config.json` the display items and the time related actions are configured:
 
 [NTPTime Element]:/elements/ntptime.md
 [Time Element]:/elements/time.md
-[DisplaySH1106 Element]:/displays/sh1106.md
-[DisplaySSD1306 Element]:/displays/ssd1306.md
-[DisplaySSD1309 Element]:/displays/ssd1309.md
+[DisplaySH1106 Element]:/elements/sh1106.md
+[DisplaySSD1306 Element]:/elements/ssd1306.md
+[DisplaySSD1309 Element]:/elements/ssd1309.md
 [DisplayText Element]:/elements/displaytext.md

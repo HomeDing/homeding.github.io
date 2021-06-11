@@ -16,12 +16,12 @@ You can even use the DisplayDotElement without having an actual Display attached
 
 The DisplayDotElement is included in the collection of core elements.
 
-![DisplayDot Properties and Actions](/elements/displaydotapi.png)
-
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?displaydot" type="image/svg+xml"></object>
 
 **x** -- Specifies the x position of the dot/circle.                                                          
 

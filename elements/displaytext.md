@@ -5,20 +5,17 @@ The DisplayTextElement allows sending a value to the display and place it at a s
 The value can be changed by using an action.
 :::
 
-
 Because there may be more values presented on a display at the same time the
 DisplayTextElement may exist multiple times in the configuration by using different positions and fontsize.
 
 The DisplayTextElement is included in the collection of core elements.
 
-![DisplayText Properties and Actions](/elements/displaytextapi.png)
-
-Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
-
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?displaytext" type="image/svg+xml"></object>
 
 **x** -- Specifies the x position of the text.                                                          
 
@@ -32,6 +29,9 @@ The following properties are available for configuration of the element:
 
 **fontsize** -- This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize. 
 For the OLED drivers the font sizes 10, 16 and 24 are supported.
+
+Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
+
 
 ## Element Actions
 

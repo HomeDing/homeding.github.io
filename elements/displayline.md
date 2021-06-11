@@ -9,12 +9,12 @@ attached maybe only using the DisplayTextElements is appropriate.
 
 The DisplayLineElement is included in the collection of core elements.
 
-![DisplayLine Properties and Actions](/elements/displaylineapi.png)
-
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?displayline" type="image/svg+xml"></object>
 
 **x0** -- Specifies the starting x position of the line.                                                          
 

@@ -36,9 +36,9 @@ An action is emitted every time the output value changes and when the timer has 
 
 ## Element Configuration
 
-The timer elements implements the following properties and actions for configuration of the element:
+The following properties are available for configuration of the element.
 
-![Timer Properties and Actions](/elements/timerapi.png)
+<object data="/element.svg?timer" type="image/svg+xml"></object>
 
 **title** - Caption text for the element. Used in the boards.
 

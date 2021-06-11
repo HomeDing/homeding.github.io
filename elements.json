@@ -15,6 +15,12 @@
     "actions": ["onvalue", "onreference", "onhigh", "onlow"]
   },
 
+  "reference": {
+    "properties": ["reference", "inverse"],
+    "events": ["value"],
+    "actions": ["onreference", "onhigh", "onlow"]
+  },
+
   "and": {
     "sys": "false",
     "properties": ["invert"],
@@ -99,6 +105,12 @@
     "properties": ["type", "rules/min", "rules/max", "rules/value", "rules/onvalue"],
     "events": ["value"],
     "actions": ["onvalue"]
+  },
+
+  "scene": {
+    "properties": [],
+    "events": ["value"],
+    "actions": ["onvalue/*"]
   },
 
   "ota": {

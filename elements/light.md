@@ -9,9 +9,11 @@ The base implementation in the LightElement can be used for single channel light
 
 The output is using PWM signals for controlling the overall brightness.
 
-## Properties
+## Element Configuration
 
-These properties can be configured:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?light" type="image/svg+xml"></object>
 
 **pin** - Specifies the output pin(s) that are used to connect to the light. This can be a list with up to 4 pins. 
 Define one pin for normal single color leds ("pin":"D6") or 3 pins for RGB ("pin": "D8,D6,D7") or 4 pins for WRGB ("pin":"15,14,12,5").

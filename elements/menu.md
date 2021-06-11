@@ -55,7 +55,11 @@ Usually 2 buttons for up/down or a rotary encoder can be used to create these ac
 
 In the Radio example the menu element is used to control volume, the frequency and some switches like tjhe mono-switch using a rotary encoder and a button.
 
-## Element configuration
+## Element Configuration
+
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?menu" type="image/svg+xml"></object>
 
 **onDisplay** These actions will be dispatched whenever another value is selected or the value has changed.
 

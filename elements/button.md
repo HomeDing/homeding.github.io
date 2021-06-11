@@ -27,9 +27,9 @@ If you only need a button on the web ui but have no physically attached button t
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
-
 <object data="/element.svg?button" type="image/svg+xml"></object>
+
+The following properties are available for configuration of the element:
 
 **value** - This is the incoming logical value that is typically emitted by a digital input element.  
 

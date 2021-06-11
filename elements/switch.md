@@ -18,7 +18,9 @@ The Web UI for the Switch Element shows the actual state of the switch and the o
 
 ## Element Configuration
 
-![Switch Properties and Actions](switchapi.png)
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?switch" type="image/svg+xml"></object>
 
 In some cases it is required to use a momentary input to change the state of a boolean value from on to off and reverse.
 

@@ -8,10 +8,10 @@ There are many use cases that required a small display used together with a ESP8
 * present a menu
 * show information from a sensor on the device
 
-* [HD44780 LCDs](/displays/lcd.md)
-* [SH1106 based OLED](/displays/sh1106.md) <!-- BW -->
-* [SSD1306 based OLED](/displays/ssd1306.md) <!-- 128*64 or 128*32 BW -->
-* [SSD1309 based OLED](/displays/ssd1309.md) <!-- BW -->
+* [HD44780 LCDs](/elements/lcd.md)
+* [SH1106 based OLED](/elements/sh1106.md) <!-- BW -->
+* [SSD1306 based OLED](/elements/ssd1306.md) <!-- 128*64 or 128*32 BW -->
+* [SSD1309 based OLED](/elements/ssd1309.md) <!-- BW -->
 <!-- * ssd1322 OLED 480*128 -->
 <!-- * ssd1325 OLED 128*80 Gray Scale -->
 <!-- * ssd1327 OLED 128*128 Gray Scale -->
@@ -27,12 +27,12 @@ To enable a locally attached display a display element needs to be configured (p
 Supported display are: 
 
 * Monochrome OLED displays using the chips
-    * [SH1106](/displays/sh1106.md)
-    * [SSD1306](/displays/ssd1306.md)
-    * [SSD1309](/displays/ssd1309.md) supported through compatibility with SSD1306
+    * [SH1106](/elements/sh1106.md)
+    * [SSD1306](/elements/ssd1306.md)
+    * [SSD1309](/elements/ssd1309.md) supported through compatibility with SSD1306
 
 * Monochrome LCD displays
-    * [Liquid Chrystal](/displays/lcd.md) displays with a HD44780 chip attached in the I2C bus using a PCF8574 chip.
+    * [Liquid Chrystal](/elements/lcd.md) displays with a HD44780 chip attached in the I2C bus using a PCF8574 chip.
 
 * Color OLED Displays
     * SSD 1331 (in planning)

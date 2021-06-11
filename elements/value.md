@@ -18,8 +18,6 @@ The setup icon opens a dialog to change the configuration properties.
 
 ## Value Properties and actions
 
-![Value Properties and Actions](/elements/valueapi.png)
-
 The Value Element is used to implement a property or parameter as a single value independent from a specific Element. The Value Element can send actions to other Elements whenever the value changes.
 
 The values itself can be modified by other Elements using several modifying actions and by the corresponding web UI.
@@ -51,7 +49,9 @@ Here the ValueElement can help. It allows
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?value" type="image/svg+xml"></object>
 
 **min** Defines the minimum of the value.                                  
 

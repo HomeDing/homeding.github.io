@@ -17,7 +17,9 @@ There is a dedicated card for this element available that allows sending 2 codes
 
 ## Element Configuration
 
-![RFSend API](/elements/rfcodesapi.png)
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?rfcodes" type="image/svg+xml"></object>
 
 Switchable plugs and dimmers are typically controlled by a ON/OFF code that also can used for UP/DOWN of dim level or moving of shades.
 Therefore every element supports up to 2 codes that can be send over the RF transmitter.

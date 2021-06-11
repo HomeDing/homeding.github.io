@@ -25,9 +25,11 @@ This card has 3 to 4 sliders
 The color value and the effective color from the sliders 1-3 is shown above the hue slider
 while the white value from the sliders 4 is not shown.
 
-## Properties
+## Element Configuration
 
-These properties are used to setup the element:
+<object data="/element.svg?color" type="image/svg+xml"></object>
+
+The following properties are available for configuration of the element.
 
 **mode** - The effect to be used. possible values are fix, fade, wheel and pulse. default is "fix"
 

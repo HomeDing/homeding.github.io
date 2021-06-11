@@ -44,25 +44,14 @@ function create(def) {
     });
 };
 
-var qElem = null;
-
 document.api = {
   create: create
 };
 
-var s = document.location.search;
-if (s.length > 1) {
-  qElem = s.substr(1);
-}
-
 window.addEventListener("load", function () {
-  console.log("1", document.location.search);
-
   var s = document.location.search;
   if (s.length > 1) {
-    qElem = s.substr(1);
-    console.log("2", qElem);
-
+    var qElem = s.substr(1);
     fetch('elements.json')
       .then(function (result) { return result.json(); })
       .then(function (e) {

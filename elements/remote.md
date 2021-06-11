@@ -17,6 +17,16 @@ The outgoing network package  is sent immediately when an action is triggered. T
 
 The central networking feature of the board only allows one current remote action at a time but is implementing this asyncronously. When the network feature of the board is available again it can be used by the next Remote Element.
 
+
+## Element Configuration
+
+The following properties are available for configuration of the element.
+
+<object data="/element.svg?remote" type="image/svg+xml"></object>
+
+<!-- missing property descriptions ??? -->
+
+
 ## Example
 
 On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these.

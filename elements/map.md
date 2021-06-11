@@ -5,8 +5,6 @@ The MapElement uses incoming values to create a new value
 specified by a set of range rules.
 :::
 
-![Map Properties and Actions](elements/mapapi.png)
-
 The values given by Sensors o other Input elements are often not directly usable for feeding them into actions. Often the value itself needs to be at justed and sometimes different actions need to be sent.
 
 Examples are:
