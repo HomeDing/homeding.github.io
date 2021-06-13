@@ -164,6 +164,11 @@
     "actions": ["ontemperature", "onhumidity"]
   },
 
+  "ds18b20": {
+    "properties": ["pin", "readtime", "warmuptime", "resendtime", "restart"],
+    "actions": ["ontemperature"]
+  },
+
   "bme680": {
     "properties": ["address", "readtime", "warmuptime", "resendtime", "restart"],
     "actions": ["ontemperature", "onhumidity", "onpressure", "ongas"]

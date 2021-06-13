@@ -74,8 +74,9 @@ The [PWMOut Element](/elements/pwmout.md) is used to output an pwm signals based
 The [DigitalOut Element](/elements/digitalout.md) is used to create digital output signals based on actions.
 :::
 
-:::element rfsend default
-The [RFSend Element](/elements/rfsend.md) is used for sending RF codes on the 433 MHz band to control remote sockets.
+:::element rfcodes default
+The [RFCodes Element](/elements/rfcodes.md) is used for sending and receiving RF codes on the 433 MHz band
+e.g. to control remote sockets.
 :::
 
 
