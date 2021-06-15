@@ -1,0 +1,189 @@
+<!-- Dialogs for configuration -->
+<div u-control="newelementdlg" u-is="createElementDlg" class="card">
+  <div class="block header" style="height: 2em;">
+    <h2>Add a new Element</h2>
+    <div class="closedlg" u-action="close">&#x00D7;</div>
+  </div>
+  <div class="block" style="font-size: 1.4">
+    <div class="form-group">
+      <label>Type:</label>
+      <select class="typeSelect">
+        <option disabled selected="selected" value="0">Select Element...</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>ID:</label>
+      <input placeholder="choose a name..." aria-label="theID" class="newID">
+    </div>
+  </div>
+
+  <div class="block footer">
+    <button u-action="next" style="float:right">Next</button>
+  </div>
+</div>
+
+
+<div u-control="configelementdlg" u-is="configElementDlg" class="card">
+  <div class="block header" style="height: 2em;">
+    <h2>Config ${id}</h2>
+    <div class="closedlg" u-action="close">&#x00D7;</div>
+  </div>
+  <div class="block" style="font-size: 1.4">
+  </div>
+
+  <div class="block footer">
+    <button u-action="save" style="float:right">Save</button>
+  </div>
+</div>
+
+
+<div u-control="actiondlg" u-is="actionDlg" class="card" ev="${ev}" val="${val}">
+  <div class="block header" style="height: 2em;">
+    <h2>Config ${ev}</h2>
+    <div class="closedlg" u-action="close">&#x00D7;</div>
+  </div>
+  <div class="block" style="font-size: 1.4">
+    ${ev} --- ${val}
+  </div>
+
+  <div class="block footer">
+    <button u-action="save" style="float:right">Save</button>
+  </div>
+</div>
+
+
+<script>
+  // uElements.xxx from main page loading...
+
+  micro.define("createElementDlg", {
+    objType: null,
+    objID: null,
+
+    connectedCallback: function () {
+      this.objType = this.querySelector('.typeSelect');
+      this.objID = this.querySelector('.newID');
+
+      // populate the dropdown, unavailable elements disabled.
+      var sel = this.objType;
+      Object.keys(uElements.defs).forEach(function (e) {
+        var o = createHTMLElement(sel, 'option', { value: e });
+        o.textContent = e;
+        o.disabled = !uElements.impl.includes(e);
+      });
+    }, // connectedCallback()
+
+    onclick: function (/** @type PointerEvent */ evt) {
+      var /** @type HTMLElement */ src = evt.srcElement;
+      var ua = src.getAttribute('u-action');
+
+      if (ua === 'next') {
+        if (this.objType.value === "0") {
+          alert('Please select an implemented element type');
+        } else if (this.objID.value === "") {
+          alert('Please specify a name');
+        } else {
+          ModalDialog2Class.next('configelementdlg', {
+            id: '/' + this.objType.value + '/' + this.objID.value
+          });
+        }
+      }
+    } // onclick()
+
+  }); // CreateElementDlgBehavior
+
+  micro.define("configElementDlg", {
+    config: {},
+    params: {},
+    /** @type HTMLElement */
+    _blk: null,
+    _id: '',
+
+    _add: function (k, isEvent, isAction) {
+      var g = createHTMLElement(this._blk, 'div', { class: 'form-group' });
+      createHTMLElement(g, 'label').textContent = k + ':';
+      createHTMLElement(g, 'img', { src: (isEvent ? '/i/start.svg' : '/i/no.svg'), style: 'height:1em;width:1em' });
+      var i = createHTMLElement(g, 'input', { name: k });
+      if (this.params[k.toLowerCase()] !== undefined)
+        i.value = this.params[k.toLowerCase()];
+      createHTMLElement(g, 'img', { src: (isAction ? '/i/start.svg' : '/i/no.svg'), style: 'height:1em;width:1em' });
+    }, // add()
+
+    _addAction: function (k, isEvent, isAction) {
+      var g = createHTMLElement(this._blk, 'div', { class: 'form-group' });
+      createHTMLElement(g, 'label').textContent = k + ':';
+      var i = createHTMLElement(g, 'input', { name: k, style: 'border-color:red', "u-action": 'actions', ev: k });
+      if (this.params[k.toLowerCase()] !== undefined)
+        i.value = this.params[k.toLowerCase()];
+      createHTMLElement(g, 'img', { src: '/i/start.svg', style: 'height:1em;width:1em' });
+    }, // _addAction()
+
+    connectedCallback: function () {
+      this._blk = this.querySelector('.block:not(.header)');
+      this._type = this.params.id.split('/')[1];
+      this._id = this.params.id.split('/')[2];
+
+      // get implemented elements and populate the dropdown
+      var ps = [].concat([], uElements.defs["element"].properties, uElements.defs[this._type].properties);
+      for (n in ps) this._add(ps[n], false, false);
+
+      var d = uElements.defs[this._type];
+      if (d) {
+        for (n in d.events) this._add(d.events[n], true, false);
+        for (n in d.actions) this._addAction(d.actions[n], false, true);
+      }
+    }, // connectedCallback()
+
+
+    save: function (data) {
+      var fld = this.querySelector('input[name="' + data.ev + '"]');
+      if (fld) fld.value = data.val;
+    },
+
+
+    onclick: function (evt) {
+      var ua = evt.srcElement.getAttribute('u-action');
+
+      if (ua === 'save') {
+        // var b: HTMLElement;
+        var c = {};
+        var l = this._blk.querySelectorAll('input[name]');
+
+        l.forEach(function (e) {
+          c[e.name] = e.value;
+        });
+        changeConfig(this._type + '/' + this._id, c);
+        ModalDialog2Class.close();
+
+      } else if (ua === 'actions') {
+        var a = evt.srcElement.getAttribute('ev');
+        var v = evt.srcElement.value;
+        ModalDialog2Class.open('actiondlg', { ev: a, val: v });
+      }
+    }
+  }); // ConfigElementDlgBehavior
+
+  micro.define("actionDlg", {
+    config: {},
+    /** @type HTMLElement */
+    _blk: null,
+    _id: '',
+    params,
+
+    connectedCallback: function () {
+      this._blk = this.querySelector('.block:not(.header)');
+    }, // connectedCallback()
+
+    onclick: function (evt) {
+      var ua = evt.srcElement.getAttribute('u-action');
+      if (ua === 'save') {
+        debugger;
+
+        // simulate ???
+        this.params.val = 'switch/s?value=$v';
+
+        ModalDialog2Class.save(this.params);
+        ModalDialog2Class.close();
+      }
+    }
+  }); // actionDlgBehavior
+</script>
