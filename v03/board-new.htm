@@ -82,7 +82,7 @@
         } else if (this.objID.value === "") {
           alert('Please specify a name');
         } else {
-          ModalDialog2Class.next('configelementdlg', {
+          ModalDialogClass.next('configelementdlg', {
             id: '/' + this.objType.value + '/' + this.objID.value
           });
         }
@@ -152,12 +152,12 @@
           c[e.name] = e.value;
         });
         changeConfig(this._type + '/' + this._id, c);
-        ModalDialog2Class.close();
+        ModalDialogClass.close();
 
       } else if (ua === 'actions') {
         var a = evt.srcElement.getAttribute('ev');
         var v = evt.srcElement.value;
-        ModalDialog2Class.open('actiondlg', { ev: a, val: v });
+        ModalDialogClass.open('actiondlg', { ev: a, val: v });
       }
     }
   }); // ConfigElementDlgBehavior
@@ -181,8 +181,8 @@
         // simulate ???
         this.params.val = 'switch/s?value=$v';
 
-        ModalDialog2Class.save(this.params);
-        ModalDialog2Class.close();
+        ModalDialogClass.save(this.params);
+        ModalDialogClass.close();
       }
     }
   }); // actionDlgBehavior

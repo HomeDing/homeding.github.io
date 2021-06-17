@@ -46,6 +46,8 @@ div[u-control="modal"] .modalFrame::after { bottom: 0; left: 0; }
 
 div[u-control="modal"] .closedlg { position: absolute; top: 0.4rem; right: 0.4rem; height: 1.8rem; width: 1.8rem; font-size: 1.6rem; background-color: red; text-align: center; z-index: 3 !important; -ms-user-select: none; user-select: none; cursor: pointer; }
 
+.modal-object { position: fixed !important; z-index: 2 !important; margin: 0 !important; }
+
 .container { margin-right: 2rem; margin-left: 2rem; }
 
 @media (max-width: 720px) { .container { margin-right: 0.6rem; margin-left: 0.6rem; } }
