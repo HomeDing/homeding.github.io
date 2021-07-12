@@ -95,7 +95,7 @@ In addition to the Base Example this configuration requires a display where the 
 
 Example-Display
 
-Example-RFSend
+Example-RFCodes
 
  -->
 

@@ -1,11 +1,14 @@
 # RFCodes Element
 
 ::: excerpt RFCodes
-The RFCodesElement is used send RF signals to simple switching and dimming devices.
+The **RFCodes Element** is used send and receive RF signals to simple switching and dimming devices.
 :::
 
-This element is built upon the tabRF library that allows specifying rf codes and their timing.
-Multiple codes can be specified if you do have switchable plugs with different codes.
+This Element is part of the RFBridge Example and not available in the core library elements. To use this element you can use the RFBridge Example or have to copy it into your sketch folder. 
+
+This element is built upon the tabRF library that needs to be installed separately.
+This library allows specifying multiple rf codes and their timing and can transmit and receive/decode these codes
+by using RF433 transmitters and receivers.
 
 
 ## Web UI for the RFCodes Element

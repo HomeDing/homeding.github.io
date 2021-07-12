@@ -54,6 +54,8 @@ Using the element configuration it is possible to take a current probe value eve
 
 The following properties are available for configuration of the element:
 
+<object data="/element.svg?pms" type="image/svg+xml"></object>
+
 **pinrx** - The property specifies the pin of the board to receive data from the sensor. This property must be specified.
 
 **pintx** - The property specifies the pin of the board to send data to the sensor. This property must be specified.

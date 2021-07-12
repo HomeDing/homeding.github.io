@@ -84,7 +84,7 @@ Example:
 ```JSON
 [ "ssdp", "ota", "device", "time", "remote", "ntptime", "dstime", "serialcmd", "my", "value", "button", "analog",
   "timer", "schedule", "digitalout", "pwmout", "displaytext", "displaydot", "displayLCD" ,"displaySSD1306", "displaySH1106",
-  "dht", "rfsend", "rotary", "alarm"
+  "dht", "rfcodes", "rotary", "alarm"
 ]
 ```
 

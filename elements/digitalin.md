@@ -5,8 +5,6 @@ The DigitalInElement is used to capture digital input signal and create actions 
 This can e.g. be used to capture actively from buttons and switches but also some sensors offer a digital output.
 :::
 
-<object data="/element.svg?digitalin" type="image/svg+xml"></object>
-
 The physical input level can differ from the logical input level. E.g. momentary input buttons may pull an input down to ground while others pull them up. Also switches can be used with this Element.
 
 ## Element Configuration

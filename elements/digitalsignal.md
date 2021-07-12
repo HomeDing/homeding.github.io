@@ -15,7 +15,6 @@ The output signal is generated with a given minimal duration and stays high as l
 
 <object data="/element.svg?digitalsignal" type="image/svg+xml"></object>
 
-
 **pin** - the GPIO pin used for input.
 
 **pullup** - When defining with true the internal pullup resistor for the input pin will be activated.
@@ -27,11 +26,6 @@ The output signal is generated with a given minimal duration and stays high as l
 **onLow** - These actions are emitted when the logical level is switched to `0`.
 
 **onValue** - These actions are emitted when the logical level is switched.
-
-
-## Element Actions
-
-n/a
 
 
 ### Configuration Example

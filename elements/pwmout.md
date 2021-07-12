@@ -34,6 +34,8 @@ The following properties are available for configuration of the element.
 
 The following properties are available with the current values at runtime
 
+<object data="/element.svg?pwmout" type="image/svg+xml"></object>
+
 **active** - Is set to true when the element is active.
 
 **value** - Current output value of the element.
@@ -54,11 +56,9 @@ The following properties are available with the current values at runtime
 }
 ```
 
-@verbatim
-
-http://devdevice/$board/pwmout/led?value=0
+<!-- http://devdevice/$board/pwmout/led?value=0
 http://devdevice/$board/pwmout/led?value=100
-http://devdevice/$board/pwmout/led?value=255
+http://devdevice/$board/pwmout/led?value=255 -->
 
 
 ## Example State

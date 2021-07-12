@@ -6,17 +6,26 @@ When a IoT device is starting up it can use the values from the configuration if
 like the current value of a switch that controls the light or power.
 
 That is a situation that normally changes over time because e.g. a light may be switched or a
-schedule may be adjusted. When the device is switched off and on or is just restarted it is obvious that the latest
-state of these elements should be present because
-These values are more accurate than the values that are found in the configuration files.
+schedule may be adjusted.
+When the device is switched off and on or was just restarted it is obvious that the latest
+actual values of these elements should be present as these values are more accurate than the values
+that can be found in the configuration files.
 
 This set of information in application architecture is called the "state"
 and starting with version 1.0 of the HomeDing library there is a mechanism
-to implement the behavior described above in the State Elements.
+to implement the behavior described above.
 
-When a device is starting the state information is distributed as actions to the elements before they get started. 
 
 ## State Elements 
+
+There are multiple **State Elements** that implement the actual storage mechanism.
+When such an Element is configured it registers
+itself in the board class and offer their functionality to all other elements.
+
+All other Elements can then pass values to the registered State element to be saved by using the save() function. State Elements will collect these values in the format of actions and will update the current list of state actions in the storage.
+
+When a device is re-starting the state element will create actions to update the given values in the elements.
+This is done just after the initialization from the configuration files and before the elements get started. 
 
 As of now there are 2 State Elements available that can be enabled by configuring them in the `env.json` configuration.
 They actually do not participate in the actions but register a state storage mechanism for other elements.
