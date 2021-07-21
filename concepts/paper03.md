@@ -148,7 +148,7 @@ The standard board already includes a lot of Elements when being compiled. There
 
 Other Elements require a specific library. These Elements must be activated in the sketch and the sketch will only compile properly when you have installed the required library in the Arduino Environment.
 
-Examples are [DHT Element](elements/dht.md), [RFSend Element](elements/rfsend.md) or [DCFTime Element](elements/dcftime.md).
+Examples are [DHT Element](elements/dht.md), [RFCodes Element](elements/rfcodes.md) or [DCFTime Element](elements/dcftime.md).
 
 As the ESP8266 chips offer a lot of program memory this approach works fine when boards have a 4MByte Flash memory.
 The [FullDing](examples/fullding.md) includes all available elements of the library and can be used to flash many boards and hardware setups. 

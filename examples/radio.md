@@ -10,7 +10,7 @@ In addition some wiring for amplifier and speaker or headphone connectors are re
 
 If this is the first time you use an ESP8266 board, some instructions on how to setup your development environment can be found here:
 
-[Step by Step setting up a development environment](/stepssetup.md)
+[Step by Step setting up a development environment](/stepsarduino.md)
 
 There are some options in uploading the required software and registration on the network that s described here:
 

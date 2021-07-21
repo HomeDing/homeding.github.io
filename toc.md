@@ -13,8 +13,8 @@
 
 
 ### Step-by-Step Guides
-* [Setup a Arduino environment](/examples/setup.md)
-* [Setup a new device](/stepsnewdevice.md)
+* [Setup a Arduino environment](/stepsarduino.md)
+* [Setup a new HomeDing device](/stepsnewdevice.md)
 * [Update Web files](/stepsupdateweb.md)
 * [Create configuration files](/stepsconfigure.md)
 
