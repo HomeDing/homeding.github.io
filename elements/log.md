@@ -30,6 +30,18 @@ The following properties are available for configuration and operating of the el
 **averagetime** - This is the duration of an interval where all incoming values are used to calculate the average value.
 When not set every value is recorded individually.
 
+
+The UI Widget of the Log Element you find on the dashboard can be configured by using the following properties:
+
+**xFormat** - datatype used to the first log value on the linechart, typically a timestamp.
+The default is `datetime`.
+
+**yFormat** - datatype used to the second log value on the linechart, typically a meassured value.
+The default is `num`.
+
+See [Line Microchart](/microchart-line.md) for supported data types.
+
+
 From the base element implementation the following properties are available for configuration:
 
 **title** - Caption text for the element. Used in the boards.
@@ -49,7 +61,8 @@ From the base element implementation the following properties are available for 
       "description": "collecting temperature values on a 10 min. interval.",
       "averagetime": "00:10:00",
       "filesize": "10000",
-      "filename": "/templog.txt"
+      "filename": "/templog.txt",
+      "yFormat": "num:2"
     }
   }
 }
