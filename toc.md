@@ -66,7 +66,7 @@
 
 
 ### [Device Implementation doku](/implementation.md)
-* [Serial Logger](/elements/logger.md)
+* [Serial Logger](/logger.md)
 * [Element class](/elementclass.md)
 * [Element registry](/elementregistry.md)
 <!-- * [_microjson](/_microjson.md) -->

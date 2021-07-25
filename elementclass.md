@@ -44,7 +44,7 @@ while the properties coming from the configuration that will never change are no
 
 This is not a limitation because the configuration values are available anyhow by reading the config.json file.
 
-[The buildin WebServer](WebServer) offers a resfull endpoint to retrieve these values from the browser or from remote.
+[The buildin WebServer](/webserver.md) offers a restfull endpoint to retrieve these values from the browser or from remote.
 
 Samples can be found in the provided Element implementations.
 
@@ -76,10 +76,10 @@ The `init` function is called immediately after a Element is created and before 
 
 It is preferred to initialize component or class not in the creation function of the class because:
 
-* some initialization routines will start after the creattion of static classes
+* some initialization routines will start after the creation of static classes
 * some initialization of libraries require parameters that are likely to be available after the configuration is passed.
 
-In the HomeDing Library therefore the creation is primarialy done in the `init` function and not in the class creator functions. (e.g. see <https://stackoverflow.com/questions/18806141/move-object-creation-to-setup-function-of-arduino>).
+In the HomeDing Library therefore the creation is primarily done in the `init` function and not in the class creator functions. (e.g. see <https://stackoverflow.com/questions/18806141/move-object-creation-to-setup-function-of-arduino>).
 
 This function is implemented in the base Element class and stores the passed board class reference to the common `_board` member variable.
 

@@ -52,9 +52,9 @@ On the 	device named **logger** 2 display elements are defined but there is no l
 
 You can test these by using the following URLs to trigger the actions with your browser:
 
-<http://logger/$board/display/t?show=20.30>
+<http://homeding/$board/display/t?show=20.30>
 
-<http://logger/$board/display/h?show=45.00>
+<http://homeding/$board/display/h?show=45.00>
 
 On the device named **dht22-probe** the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:
 
@@ -72,11 +72,11 @@ On the device named **dht22-probe** the dht element is configured to create acti
 
   "remote": {
     "display-t": {
-      "host": "logger",
+      "host": "displaybox",
       "remoteid": "displaytext/t"
     },
     "display-h": {
-      "host": "logger",
+      "host": "displaybox",
       "remoteid": "displaytext/h"
     }
   }
