@@ -62,7 +62,7 @@ GET <http://homeding/$reset> <sup>*1</sup>
 
 This service wipes out the network configuration and then restarts the device.
 
-This service is disabled in [safemode](safemode.md).
+This service is disabled in [safemode](/safemode.md).
 
 
 ### /$resetall
@@ -71,7 +71,7 @@ GET <http://homeding/$resetall> <sup>*1</sup>
 
 This service wipes out the filesystem, the network configuration and then restarts the device.
 
-This service is disabled in [safemode](safemode.md).
+This service is disabled in [safemode](/safemode.md).
 
 
 ### /$elements
@@ -97,14 +97,14 @@ This GET request returns a minimal HTML page that can be used to upload files to
 
 This URL returns a minimal HTML page that can be used to upload files to the server using drag & drop.
 
-It is described in detail in [Web Sitemap](websitemap.md).Q
+It is described in detail in [Web Sitemap](/websitemap.md).Q
 
 
 ### /$boot
 
 GET <http://homeding/$boot> <sup>*1</sup>
 
-It is described in detail in [Web Sitemap](websitemap.md).Q
+It is described in detail in [Web Sitemap](/websitemap.md).Q
 
 
 ### /$scan
@@ -180,6 +180,6 @@ As of now there are no advances web services features like websockets implemente
 **1**: replace `homeding` with the network name of your device to use this link.
 
 **2**: this service is not available when the device runs in the save mode.
-See [Save Mode](safemode.md) for details.
+See [Save Mode](/safemode.md) for details.
 
 

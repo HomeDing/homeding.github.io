@@ -24,21 +24,21 @@ By using the following micro implementations a small component framework is avai
 More in: [Micro IDE](/microide.md)
 
 **The micro templates** are used to build HTML components that can be used at different places to visualize elements, data and other UI components like dialogs.
-More in: [Micro Templates](microtemplates.md)
+More in: [Micro Templates](/microtemplates.md)
 
 **The micro behaviors** are modules covering the functionality required to work with a component itself.
-More in: [Micro Behaviors](microbehaviors.md)
+More in: [Micro Behaviors](/microbehaviors.md)
 
 **The micro databinding** is the functionality to transfer data from the device or other JSON formatted data into the HTML components.
 
 **The micro stylesheet** contains a collection of CSS rules that are available in a central file. By using the SCSS technology the resulting CSS file can be compressed to save memory and bandwidth while offering a well structured input.
 
 **Icons** are available for all elements and general purpose. They are implemented in SVG format that results in minimal size while supporting a good  scalability.
-<br />More in: [Micro Icons](microicons.md)
+<br />More in: [Micro Icons](/microicons.md)
 
 **Charts** There are some charting elements available for the HTML UI that are implemented using SVG and JavaScript.
 They are implemented in SVG format that results in minimal size while supporting a good  scalability.
-<br />More in: [Micro Charts](microcharts.md)
+<br />More in: [Micro Charts](/microcharts.md)
 
 
 ## Web Site on board
@@ -73,7 +73,7 @@ This project is using a node.js / express server to mock some of the features of
 The Web UI implementation from the HomeDing library supports a minimal **Integrated Development Environment** (IDE)
 that allows modifying text based files using any browser.
 
-For Details see [Micro-IDE](microide.md).
+For Details see [Micro-IDE](/microide.md).
 
 ## micro JavaScript Library
 
@@ -88,7 +88,7 @@ The functionality offers
 * apply changes to the data model
 * send data back to the year device to update the configuration.
 
-For Details see [Micro-JavaScript](microjavascript)
+For Details see [Micro-JavaScript](/microjavascript)
 
 ## micro JSON Parser
 
@@ -98,7 +98,7 @@ To handle JSON based files in a C++ programming environment a parser for this fi
 
 The micro JSON Parser is implemented in the `MicroJsonParser` class.
 
-For Details see [Micro-JSON](microjson.md)
+For Details see [Micro-JSON](/microjson.md)
 
 ## micro Hub and Store
 

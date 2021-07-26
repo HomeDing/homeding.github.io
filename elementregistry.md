@@ -27,10 +27,10 @@ Some elements only exist to capture configuration properties. Most of them speci
 
 Examples are:
 
-* [Device](elements/device.md)
-* [Display Adapter](display.md)
-* [OTA](elements/ota.md)
-* [SSPD](elements/ssdp.md)
+* [Device](/elements/device.md)
+* [Display Adapter](/display.md)
+* [OTA](/elements/ota.md)
+* [SSPD](/elements/ssdp.md)
 
 Most of these elements don't use actions to communicate.
 
@@ -46,7 +46,7 @@ Some elements rely on a the functionality given by an external library. You may 
 
 E.g. it is sufficient to only include the display adapter and the according library that fits to the attached display.
 
-In the [Elements](elements.md) list you can find these Elements marked with the required library.
+In the [Elements](/elements.md) list you can find these Elements marked with the required library.
 
 ### System and Core Elements
 

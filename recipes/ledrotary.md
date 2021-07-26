@@ -10,7 +10,7 @@ The following elements and hardware is used by this recipe:
 
 This recipe uses a [Rotary Encoder](/elements/rotary) to change the brightness level of a LED.
 
-![Elements used in led recipe](ledrotaryflow.png)
+![Elements used in led recipe](/ledrotaryflow.png)
 
 The [Rotary Encoder Element](/elements/rotary) takes the input value from the encoder connected to `D5` and `D6`. The common pin of the rotary encoder must be connected to ground (GND).
 It generates actions with values of +10 or -10, sometimes a multiple of them and sends them to the value element.

@@ -22,7 +22,7 @@ The [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these
 :::sensor tiltsensor
 This is a **mercury tilt sensor** that creates connections between the 2 pins when the position of the switch is upwards.
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the input signal.
 :::
 
 :::sensor ball
@@ -44,14 +44,14 @@ The [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these
 :::sensor reed
 This is a **reed sensor** that creates connections between the 2 pins when a high value magnetic field is given.
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the input signal.
 :::
 
 
 :::sensor hall
 This is a **magnetic hall sensor** that creates an analog signal from the detector. The level is compared to a reference signal to also create a digital output signal.
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the digital input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the digital input signal.
 
 The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
 :::
@@ -76,7 +76,7 @@ This is an UV-index sensor.
 This is a **light reflection sensor** using a identify reflecting (white) or non-reflecting (black) surfaces. There is a IR transmitting diode and a IR receiving diode producing a digital output signal.
 The sensitivity can be adjusted.
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the digital input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the digital input signal.
 :::
 
 
@@ -84,14 +84,14 @@ The [DigitalInput Element](/elements/digitalIn.md) can create actions based in t
 This is a double **light sensitive sensor** using a light defined resistor (LDR) components.
 This board has a circuit that compares the analog signal to a adjustable threshold value. The output therefore are 2 digital signals.
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the input signals and the logic elements can create combinations of interest.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the input signals and the logic elements can create combinations of interest.
 :::
 
 
 :::sensor irtrans
 This is a **Light blocking sensor** built from a IR LED and a IR photo resistor. It can be used to detect that the light in the gap is blocked. It creates a digital output.
 
-For simple on/off situations the [DigitalInput Element](/elements/digitalIn.md) can create actions.
+For simple on/off situations the [DigitalInput Element](/elements/digitalin.md) can create actions.
 
 When used with high frequencies ans used tp detect rotating speed with a wheel the The [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these impulses per timeframe to create a clean action with rotation values.
 :::
@@ -143,7 +143,7 @@ The Analog output signal can be used to calculate the actual temperature.
 The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
 
 Some sensor boards also contain an adjustable reference the sensor value can be compared to to produce a digital output signal.
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based on this digital input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based on this digital input signal.
 :::
 
 See also environmental sensors below.
@@ -407,7 +407,7 @@ There is also a special [Neopixel board](/boards/neo.md) available especially fo
 ## Input Components
 
 :::sensor button
-A simple momentary button can be use directly with a [DigitalInput Element](/elements/digitalIn.md).
+A simple momentary button can be use directly with a [DigitalInput Element](/elements/digitalin.md).
 to create actions on the button signal.
 
 The [Switch Element](/elements/switch.md) implements the behavior for using a button to start/stop or on/of a signal.
@@ -415,7 +415,7 @@ The [Switch Element](/elements/switch.md) implements the behavior for using a bu
 
 
 :::sensor switch
-A switch that can give a binary signal and can be use directly with a [DigitalInput Element](/elements/digitalIn.md).
+A switch that can give a binary signal and can be use directly with a [DigitalInput Element](/elements/digitalin.md).
 :::
 
 :::sensor rotary
@@ -425,7 +425,7 @@ The [Rotary Element](/elements/rotary.md) enables decoding the 2 signals from a 
 
 ## Radio
 
-There is a very specific example that shows how to use the HomeDing and the [Radio library](https://github.com/mathertel/Radio) to build a full functional radio that can be controlled by some local input but also from remote.
+There is a very specific example that shows how to use the HomeDing and the [Radio library](/https://github.com/mathertel/Radio) to build a full functional radio that can be controlled by some local input but also from remote.
 
 :::sensor si4721
 The **si4721** is a FM Transiever that can receive and send FM Audio.

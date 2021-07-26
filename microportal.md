@@ -4,7 +4,7 @@ The Homeding based devices are made to run standalone, no dependency of cloud se
 This design makes all the devices running independent and when one fails the others can continue working.
 
 However it is useful to have a combining view on all of your devices in the local network
-and this exactly what can be found in the minimalist portal implementation that is available in the [Github WebFiles](https://github.com/HomeDing/WebFiles) repository. 
+and this exactly what can be found in the minimalist portal implementation that is available in the [Github WebFiles](/https://github.com/HomeDing/WebFiles) repository. 
 
 The Portal is built using a Single Page Application (SPA) architecture and relies on one service only that is used to detect all the Homeding devices. This is supported by the mdns service announcements.
 

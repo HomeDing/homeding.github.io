@@ -6,7 +6,7 @@ Implementing a web site that fits into the very limited space of the flash memor
 
 To make development of this web site less painful a nodejs based web site project is available that also simulates configured elements to a certain degree.
 
-The structure of the provided web site with details on the individual pages can be found in [websitemap](websitemap.md)
+The structure of the provided web site with details on the individual pages can be found in [websitemap](/websitemap.md)
 
 
 ## Technology selection

@@ -62,7 +62,7 @@ The FLASH button(D3) can be used to start the config mode manually.
 **config.json:**
 
 As a starting configuration the blink recipe can be used when your board is a
-[NodeMCU board](boards/nodemcu.md) with a ESP-12 module the led will blink slowly.
+[NodeMCU board](/boards/nodemcu.md) with a ESP-12 module the led will blink slowly.
 
 ```JSON
 {

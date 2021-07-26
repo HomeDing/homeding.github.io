@@ -78,7 +78,7 @@ Here is an example for a switch supporting 0 and 1 values. The default value is 
 ```
 
 <!-- 
-[](https://www.dweet.io/play/)
+[](/https://www.dweet.io/play/)
 
 
 https://www.balena.io/

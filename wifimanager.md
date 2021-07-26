@@ -16,7 +16,7 @@ There is a walk-through description on how to use the WiFi Manager in [Step by S
 The dialog that enables selecting an available network and entering the corresponding network passphrase
 is available on every device by using the URL: <http://{name}/$setup.htm> or <http://192.168.4.1/$setup.htm>
 
-![WiFiManager dialog](wifimanager.png)
+![WiFiManager dialog](/wifimanager.png)
 
 In this dialog is coded into the firmware to make it available even when the UI files have not been uploaded yet.
 
@@ -65,12 +65,12 @@ The WiFiManager presents a minimal UI that shows some minimal information about 
 
 The WiFi manager UI can also be accessed during normal operation using the link <http://devicename/$setup.htm>. The UI is part of the uploaded sketch to allow configuring new devices that have been flashed with the sketch but not yet uploaded the WebUI files to the SPIFFS file system.
 
-How to bring a device from an empty board into full operating can be found in [Setup a new device Step by Step](stepsnewdevice.md)
+How to bring a device from an empty board into full operating can be found in [Setup a new device Step by Step](/stepsnewdevice.md)
 
 
 ## WiFi Manager Configuration
 
-The WiFi Manager can be configured by some properties of the [Device Element](elements/device.md).
+The WiFi Manager can be configured by some properties of the [Device Element](/elements/device.md).
 
 **led** - The device uses this GPIO pin to drive a LED that is blinking while the Board waits for a network connection to be established after booting. During this time the WiFi Manager can be started using the button.
 Defaults is `no LED`.

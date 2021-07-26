@@ -27,7 +27,7 @@ The device can be accessed by any browser on the same network using the URL `htt
 
 **logLevel** - By specifying a logLevel for the device **all** elements will use this loglevel
 to output debug messages over the Serial interface and into the system log file.
-See also [Device Logging](logger.md).
+See also [Device Logging](/logger.md).
 
 **logFile** (boolean) - set to 1/true to enable storing lines from the system log to files. default: 0
 
@@ -120,7 +120,7 @@ The following action is implemented:
 ## See also
 
 * [WiFiManager](/wifimanager)
-* [Device Logging](logger.md)
+* [Device Logging](/logger.md)
 * [deep sleep mode](/boards/deepsleep.md)
 * Cache-control http header : <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>
 

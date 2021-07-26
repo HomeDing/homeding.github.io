@@ -81,7 +81,7 @@ There are no actions being sent by this element.
 
 # See also
 
-* [NeoElement](elements/neo.md)
+* [NeoElement](/elements/neo.md)
 * Gamma correction tricks <https://learn.adafruit.com/led-tricks-gamma-correction>
 
 

@@ -121,4 +121,4 @@ The state of the timer element includes:
 
 ## See also
 
-* [Time Elements](timeelements)
+* [Time Elements](/timeelements)

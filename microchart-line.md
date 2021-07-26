@@ -153,9 +153,9 @@ ranges analog vertical axis implementation.
 
 ## See also
 
-* [Micro Charts](microcharts.md)
-* [Pie Chart](microchart-pie.md)
-* [Gauge Chart](microchart-gauge.md)
+* [Micro Charts](/microcharts.md)
+* [Pie Chart](/microchart-pie.md)
+* [Gauge Chart](/microchart-gauge.md)
 
 
 ## Tags

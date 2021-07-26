@@ -7,7 +7,7 @@ This is supported by a base element implementation in the `Element` class that i
 
 ## Using the MyElement class as a template
 
-The [devding example](devding.md) has a class named `MyElement` that can be used as a starting point it contains all functions partly commented that might be implemented.
+The [devding example](/devding.md) has a class named `MyElement` that can be used as a starting point it contains all functions partly commented that might be implemented.
 
 You can copy the 2 files `MyElement.cpp` and `MyElement.h` over to your sketch folder and rename all occurrences if `MyElement` to your element name.
 
@@ -80,7 +80,7 @@ LogElement::LogElement()
 }
 ```
 
-See also [wifimanager](wifimanager.md)
+See also [wifimanager](/wifimanager.md)
 
 
 ### pushState(cbFunc)
@@ -110,5 +110,5 @@ The ElementRegistry holds references to all element classes to enable creating o
 
 This is done by initializing a static class member to enforce calling the registerElement method before anything else on every class.
 
-For more information on this see [Element Registry](elementregistry.md).
+For more information on this see [Element Registry](/elementregistry.md).
 

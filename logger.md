@@ -8,7 +8,7 @@ as well as a web UI that allows viewing some of the latest logging information f
 This is implemented by the Logger class.
 
 > There is also a value logging feature available that keeps e.g. values from sensors.
-> This is implemented by the [Log Element](elements/log).
+> This is implemented by the [Log Element](/elements/log).
 
 The Logger class implementation solves the major logging topics when implementing things:
 
@@ -163,7 +163,7 @@ LOGGER_INFO("device restart initiated.");
 
 ## Set loglevel for the device
 
-By using the configuration of the [Device Element](elements/device.md) the device wide log level can be specified.
+By using the configuration of the [Device Element](/elements/device.md) the device wide log level can be specified.
 
 ```JSON
 {
@@ -197,5 +197,5 @@ The default is to have an overall error level for logging and trace level loggin
 
 ## See also
 
-* [Log Element](elements/log.md)
-* [Device Element](elements/device.md)
+* [Log Element](/elements/log.md)
+* [Device Element](/elements/device.md)

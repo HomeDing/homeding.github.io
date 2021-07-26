@@ -57,7 +57,7 @@ The example includes the OTA upload feature to enable remote updates.
 It is intended to configure the device by changing the env.json and config.json file in the data folder before uploading.
 The icon in /favicon.ico and /i/default.svg can be replaced by one of the icons from the library of icons of the [full example](/examples/full)
 
-To upload either the Flash utility or the drag&drop upload tool can be used. The uploadfiles.bat also contains the command required to upload using the ESP Upload tool on the command line. The upload options are explained in detail in [file upload](examples/fileupload).
+To upload either the Flash utility or the drag&drop upload tool can be used. The uploadfiles.bat also contains the command required to upload using the ESP Upload tool on the command line. The upload options are explained in detail in [file upload](/examples/fileupload).
 
 
 

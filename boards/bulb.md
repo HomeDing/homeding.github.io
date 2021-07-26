@@ -17,7 +17,7 @@ Therefore bulbs are used here, that can also be flashed with a new software via 
 ## Tuya Bulbs
 
 The Manufacturer **Tuya** has created several WiFi Bulbs that are available from different sources.
-To check if a given bulb is using the ESP8266 processor the [template registry for the TASMOTA firmware](https://templates.blakadder.com/) can be searched.
+To check if a given bulb is using the ESP8266 processor the [template registry for the TASMOTA firmware](/https://templates.blakadder.com/) can be searched.
 Here you also find some information on the purpose of the GPIO pins and the used chips inside.
 
 
@@ -232,7 +232,7 @@ I used a programming setup for ESP-01 boards with some wires that can be soldere
 ## See also
 
 * [Color Element](/elements/color.md)
-* [Switch Element](elements/switch.md)
+* [Switch Element](/elements/switch.md)
 * [Light Element](/elements/light.md)
 * [MY9291 Element](/elements/my9291.md)
 * [Neo Element](/elements/neo.md)

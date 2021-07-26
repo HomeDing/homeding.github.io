@@ -5,7 +5,7 @@ that allows modifying text based files using any browser.
 
 Using this functionality no physical access is required.
 
-![Micro IDE screenshot](microide.png)
+![Micro IDE screenshot](/microide.png)
 
 After loading the page the micro IDE automatically loads the list of files that can be found in the SPIFFS file system of the device in the left panel.
 

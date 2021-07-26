@@ -30,7 +30,7 @@ You can reach the embedded web site by opening the URL: <http://homeding/> <sup>
 ## The embedded Web Site
 
 The following web pages are implemented in the standard board web site
-that can run on any node based board and is part of the [Standard example](examples/standard.md) ready to be uploaded into the SPIFFS filesystem.
+that can run on any node based board and is part of the [Standard example](/examples/standard.md) ready to be uploaded into the SPIFFS filesystem.
 
 The development source for this web site can be found on github in the repository <https://github.com/HomeDing/WebFiles>.
 
@@ -44,7 +44,7 @@ Included functionality:
 * A graphical overview of the defined actions between elements 
 
 See also
-[Embedded Web Site for HomeDing Devices](website.md).
+[Embedded Web Site for HomeDing Devices](/website.md).
 
 There is a reduced web site available for the boards and devices that have only 1MByte of Flash on board.
 

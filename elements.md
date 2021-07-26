@@ -31,7 +31,7 @@ Input Element for using a rotary encoder.
 
 ## Sensor Elements
 
-The [sensor elements](elements/sensors.md) implement the adoption to a very specific sensor or sensor family. They share
+The [sensor elements](/elements/sensors.md) implement the adoption to a very specific sensor or sensor family. They share
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
 
 :::element dht dht
@@ -86,7 +86,7 @@ e.g. to control remote sockets.
 
 ## Light Elements
 
-To control a light with only one channel the [Switch Element](elements/switch.md) and [Value Element](/elements/value.md) can be used
+To control a light with only one channel the [Switch Element](/elements/switch.md) and [Value Element](/elements/value.md) can be used
 to control dimmable LEDs using [PWM Out Element](/elements/pwmout.md) or switching using [DigitalOut Element](/elements/digitalout.md).
 
 :::element switch switch
@@ -109,7 +109,7 @@ The [DigitalOut Element](/elements/digitalout.md) enables creating a digital out
 
 <div style="clear:both"></div>
 
-For lights like [bulbs](boards/bulb.md) or LED stripes that have multiple color channels
+For lights like [bulbs](/boards/bulb.md) or LED stripes that have multiple color channels
 the [Color Element](/elements/color.md) can be used to control the light color using a RGB or WRGB color value.
 
 There are special elements to control specific chips or using the PWM capabilities.
@@ -316,7 +316,7 @@ INA219 sensor, voltage and current.
 
 :::element radio radio
 This element is part of the [Radio Example](/examples/radio.md)
-and uses the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+and uses the external [Radio Library](/http://www.mathertel.de/Arduino/RadioLibrary.aspx)
 to configure various FM radio boards.
 :::
 
@@ -328,9 +328,9 @@ to configure various FM radio boards.
 | [Adafruit NeoPixel]                                 | [Neo](/elements/neo.md)                                                           |
 | [LiquidCrystal_PCF8574]                             | [LCD display](/elements/lcd.md)                                                   |
 | [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SDD1306 display](/elements/ssd1306.md) and [SH1106 display](/elements/sh1106.md) |
-| [RotaryEncoder]                                     | [Rotary Element](elements/rotary.md)                                              |
-| [DHT sensor library for ESPx]                       | [DHT Element](elements/DHT.md)                                                    |
-| [OneWire]                                           | [DS18B20 Element](elements/ds18b20.md)                                            |
+| [RotaryEncoder]                                     | [Rotary Element](/elements/rotary.md)                                              |
+| [DHT sensor library for ESPx]                       | [DHT Element](/elements/DHT.md)                                                    |
+| [OneWire]                                           | [DS18B20 Element](/elements/ds18b20.md)                                            |
 
 <!-- + Wire + SoftwareSerial -->
 
@@ -346,4 +346,4 @@ to configure various FM radio boards.
 
 ## See also
 
-* [Element](elementclass.md)
+* [Element](/elementclass.md)

@@ -45,7 +45,7 @@ and every specific Element is derived from this class and adding the specific fu
 
 ![Members of Element implementations](/concepts/elementapi.png)
 
-A detailed description of the common Element Interface can be found in [ElementInterface](ElementInterface.md).
+A detailed description of the common Element Interface can be found in [ElementInterface](/elementinterface.md).
 
 ## Actions
 
@@ -101,7 +101,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 * Parse the env.json file.
 
-  Here the system elements like the [Device](/elements/device.md), the [displays](displays.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
+  Here the system elements like the [Device](/elements/device.md), the [displays](/displays.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
 
   These elements will be created.
 
@@ -148,13 +148,13 @@ The standard board already includes a lot of Elements when being compiled. There
 
 Other Elements require a specific library. These Elements must be activated in the sketch and the sketch will only compile properly when you have installed the required library in the Arduino Environment.
 
-Examples are [DHT Element](elements/dht.md), [RFCodes Element](elements/rfcodes.md) or [DCFTime Element](elements/dcftime.md).
+Examples are [DHT Element](/elements/dht.md), [RFCodes Element](/elements/rfcodes.md) or [DCFTime Element](/elements/dcftime.md).
 
 As the ESP8266 chips offer a lot of program memory this approach works fine when boards have a 4MByte Flash memory.
-The [FullDing](examples/fullding.md) includes all available elements of the library and can be used to flash many boards and hardware setups. 
+The [FullDing](/examples/fullding.md) includes all available elements of the library and can be used to flash many boards and hardware setups. 
 
 For compiling to different memory setups, like the ESP-01 board it is possible to compile with a reduced set of elements so to make the program fit into memory.
-See example [minimal footprint example](examples/minimal.md).
+See example [minimal footprint example](/examples/minimal.md).
 
 Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for the classes and variables.
 

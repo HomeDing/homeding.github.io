@@ -5,7 +5,7 @@ This folder contains an example for a wordclock implementations (Germany layout)
 using the HomeDing Library and selected standard Elements but to add a new functionality.
 :::
 
-![WordClock Image](wordclock.jpg)
+![WordClock Image](/wordclock.jpg)
 
 The challenge shown in this example is to implement the pattern generator for the wordclock on a 8*8 matrix.
 This is a very specific piece of source code exactly for this specific IoT Device. But instead of building everything
@@ -25,7 +25,7 @@ The Arduino typical setup() and loop() approach can also be used but is better c
 Beside the functionality in the base sketch a new Element is implemented in the WordClock.cpp file
 that includes the specific code for this device. This element class is then plugged into the ecosystem of actions.
 
-![Wordclock flow](wordclockflow.png)
+![Wordclock flow](/wordclockflow.png)
 
 * Instead of implementing functionality of the typical **setup()** function
   all the code should be placed into the **start()** function.

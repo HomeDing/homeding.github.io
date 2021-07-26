@@ -24,7 +24,7 @@ This includes:
 
 After flashing the software and the web files the web interface is fully functional but not yet configured.
 
-To ensure that all tools work as expected the [Standard example](exampkes/standard.md) should be used first.
+To ensure that all tools work as expected the [Standard example](/exampkes/standard.md) should be used first.
 
 
 ## Components for the Radio Example
@@ -36,7 +36,7 @@ There are other chips supported by the radio library and some of them also provi
 
 The used components and the principle wiring can be seen in this block diagram:
 
-![Radio Buidling Blocks](examples\radioblocks.png)
+![Radio Buidling Blocks](/examples\radioblocks.png)
 
 
 ## Wiring
@@ -61,11 +61,11 @@ The following table contains all signal lines including the pin numbers:
 ## Pictures
 
   * The board and other hardware required for this example. 
-    ![radio](examples/radio.jpg)
+    ![radio](/examples/radio.jpg)
   * The unconnected main board and amplifier board.
-    ![radio](examples/radio2.jpg)
+    ![radio](/examples/radio2.jpg)
   * Closer picture of the FM chip.
-    ![radio](examples/radio3.jpg)
+    ![radio](/examples/radio3.jpg)
 
 ## Board and Hardware to build the example
 
@@ -106,9 +106,9 @@ These elements also show how elements can be implemented together with the sketc
 Using a rotary encoder is a good option to combine a twist and push input using 3 digital inputs to achieve a good usability.
 
 
-![rotary encoder](examples/rotary.jpg)
-![rotary encoder side](examples/rotaryside.jpg)
-![rotary encoder back](examples/rotaryback.jpg)
+![rotary encoder](/examples/rotary.jpg)
+![rotary encoder side](/examples/rotaryside.jpg)
+![rotary encoder back](/examples/rotaryback.jpg)
 
 In the pictures you can see how the encoder is connected using a self-made PCB that provides a connector for later easy assembling. The connector has the push button and the 2 rotary signals all closing to a common ground signal.
 
@@ -135,8 +135,8 @@ The LCD is one of the standard display types that is used in many Arduino soluti
 
 The LCD uses 5V power but accepts 3.3 V signals in the I2C bus. 
 
-![LCD](examples/lcd.jpg)
-![LCD](examples/lcdback.jpg)
+![LCD](/examples/lcd.jpg)
+![LCD](/examples/lcdback.jpg)
 
 * GND => GND (black)
 * VCC => VIN (red) (the 5V directly connected to the USB adapter) 
@@ -151,8 +151,8 @@ The text in the second line is used by the menu element and for showing the stat
 
 I do not need many radios so I decided to use a prototype PCB as the base. Just large enough to hold all mechanically together.
 
-![board](examples/board.jpg)
-![board view 2](examples/board2.jpg)
+![board](/examples/board.jpg)
+![board view 2](/examples/board2.jpg)
 
 ## Radio board
 
@@ -161,9 +161,9 @@ The wires on top are still visible during assembly for robustness and are later 
 I added a 100nF capacitor next to the radio.
 
 
-![radio chip](examples/rda.jpg)
-![radio chip](examples/rda2.jpg)
-![100nF capacitor](examples/100nf.jpg)
+![radio chip](/examples/rda.jpg)
+![radio chip](/examples/rda2.jpg)
+![100nF capacitor](/examples/100nf.jpg)
 
 ```plaintext
 // http://lcddevice/$board/radio/r?volume=1

@@ -21,7 +21,7 @@ You can find many NTP servers on the internet. The web site <https://www.pool.nt
 
 Because it takes some time to get a package from the server and of course sometimes the server doesn't answer at all or network packages
 are lost you cannot rely on getting a correct time immediately after starting the board or coming back from a [deep sleep mode](/boards/deepsleep.md).
-If you have a device with these requirements a chip based real-time like the  [DSTime Element](elements/dstime.md) may be a better option.
+If you have a device with these requirements a chip based real-time like the  [DSTime Element](/elements/dstime.md) may be a better option.
 
 
 ## Element Configuration
@@ -77,7 +77,7 @@ The following properties are available with the current values at runtime
 
 ## See also
 
-* [Time Elements](timeelements.md)
+* [Time Elements](/timeelements.md)
 
 
 ## Tags

@@ -86,8 +86,8 @@
 * [micro templates](/microtemplates.md)
 * [website](/website.md)
 * [websitemap](/websitemap.md)
-* [monitor](monitor.md)
-* [Portal](microportal.md)
+* [monitor](/monitor.md)
+* [Portal](/microportal.md)
 <!-- * [_iconsforthings](/_iconsforthings.md) -->
 
 
@@ -103,7 +103,7 @@
 * [_exampledashbutton](/_exampledashbutton.md)
 * [Using the I2C bus](/i2c.md)
 * [_linechart](/_linechart.md)
-* [_manifest](/_manifest.md)
+* [_manifest](/manifest.md)
 * [_moisturesonsor](/_moisturesonsor.md)
  -->
 

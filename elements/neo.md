@@ -10,7 +10,7 @@ A very similar functionality applies to the [Light Element](/elements/light.md) 
 
 <!--
 If you require more complex light situations and light animations 
-Consider using the [DMX Element](dmx.md) to get light input actions using the DMX Artnet protocol that is supported by light mixers and consoles for stage and installation purpose.
+Consider using the [DMX Element](/dmx.md) to get light input actions using the DMX Artnet protocol that is supported by light mixers and consoles for stage and installation purpose.
 https://www.bastelgarage.ch/esp-01-ws2812-sk6812-steuerplatine
 -->
 

@@ -15,7 +15,7 @@ You can then start implementing the minimal things:
 * Starting operation mode in the `start()` method. This may include initializing GPIO signals, sensors or other external chips.  
 * Operate in the `loop()` method. Be sure that loop() execution must not consume much time to support the cooperative multitasking. 
 
-More details about the Element Class implementation and the other available methods can be found in [Element Class](elementclass.md) description.
+More details about the Element Class implementation and the other available methods can be found in [Element Class](/elementclass.md) description.
 
 
 ## Element registration
@@ -26,7 +26,7 @@ Under normal conditions yu have to specify a short element name when calling `re
     bool TemplateElement::registered =
     ElementRegistry::registerElement("template", TemplateElement::create);
 
-Details on the Registry can be found in the [Element Registry](ElementRegistry.md) documentation.
+Details on the Registry can be found in the [Element Registry](/elementregistry.md) documentation.
 
 
 ## Element Card
@@ -53,4 +53,4 @@ This file is the basis for the `Add a new element` dialog in the board implement
 
 ## See also
 
-- [Device Logging](logger.md)
+- [Device Logging](/logger.md)

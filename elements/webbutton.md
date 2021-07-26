@@ -13,7 +13,7 @@ there is no element state reported by the board.
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-![WebButton UI](elements/webbuttonui.png)
+![WebButton UI](/elements/webbuttonui.png)
 
 In the HTML element the gestures `click`, `doubleclick` and `press` are detected and send to the element.
 These will trigger the events defined in the configuration.

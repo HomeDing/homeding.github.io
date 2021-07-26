@@ -73,6 +73,6 @@ This is the list of the icons available for the HomeDing Library to be used for 
 
 ## See also
 
-* [manifest](_manifest.md)
+* [manifest](/manifest.md)
 
 

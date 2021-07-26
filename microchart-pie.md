@@ -56,9 +56,9 @@ The **clear()** method will remove the pie completely.
 
 ## See also
 
-* [Micro Charts](microcharts.md)
-* [Line Chart](microchart-line.md)
-* [Gauge Chart](microchart-gauge.md)
+* [Micro Charts](/microcharts.md)
+* [Line Chart](/microchart-line.md)
+* [Gauge Chart](/microchart-gauge.md)
 
 
 ## Tags

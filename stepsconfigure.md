@@ -10,7 +10,7 @@ For JSON files there is a special support for syntax validating.
 
 The IDE can be found on all the HOMEDING based devices using the url <http://homeding/ide.htm> <sup>*1</sup>.
 
-![Micro IDE screenshot](microide.png "w200")
+![Micro IDE screenshot](/microide.png "w200")
 
 On the left side all existing files can be seen.
 
@@ -54,7 +54,7 @@ A good starting for a config.json can be found in the [stories](/stories.md) or 
 
 ## See also
 
-You can find more details about the microide features in the [Micro IDE documentation](ide.microide).
+You can find more details about the microide features in the [Micro IDE documentation](/microide.md).
 
 * [Stories](/stories.md)
 * [Recipes](/recipes.md)

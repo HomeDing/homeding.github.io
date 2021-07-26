@@ -90,9 +90,9 @@ The **clear** method removes the actual data and deletes all elements representi
 
 ## See also
 
-* [Line Chart](microchart-line.md)
-* [Pie Chart](microchart-pie.md)
-* [Gauge Chart](microchart-gauge.md)
+* [Line Chart](/microchart-line.md)
+* [Pie Chart](/microchart-pie.md)
+* [Gauge Chart](/microchart-gauge.md)
 
 
 ## Tags

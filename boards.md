@@ -11,7 +11,7 @@ Another good source of board descriptions and hints as well as references can be
 
 The following boards with 4 MBytes flash memory have been used for development and their specialties can be found in the board reviews.
 
-* The [standard example](examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements.md) and [display adapters](/displays.md).
+* The [standard example](/examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements.md) and [display adapters](/displays.md).
 * The web interface is working out of the box by using 1MByte of the flash memory and includes the Web UI, IDE features and logging capabilities.
 * These devices are used for `always-on` scenarios to provide the webserver functionality. Using a battery based power source will only result in a short lifetime maybe a few hours or days.
 * These devices have enough flash capacity to be updated over the network by using the OTA method.
@@ -65,7 +65,7 @@ and the [BL0937 chip](/elements/bl0937.md).
 **[Bulb devices](/boards/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
 
 They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using 
-the [Color Element](/elements/color.md) and [Switch Element](elements/switch.md) for control.
+the [Color Element](/elements/color.md) and [Switch Element](/elements/switch.md) for control.
 :::
 
 <!-- ESP8266 Module Series
@@ -98,7 +98,7 @@ Another adapter for the ESP-12 type boards including space for soldering compone
 
 ## ESP-12 module types
 
-ON the ESP-12 with 4 GByte Flash the [standard example](examples/standard.md) can be uploaded by providing most of the [elements](/elements.md) and [display adapters](/displays.md) out of the box.
+ON the ESP-12 with 4 GByte Flash the [standard example](/examples/standard.md) can be uploaded by providing most of the [elements](/elements.md) and [display adapters](/displays.md) out of the box.
 
 The ESP-12 format is a common format but there are different sub-versions available. The all use the ESP8266 SoC but flash size and available pins differ:
 
@@ -180,7 +180,7 @@ The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board availa
 
 ## See also
 
-* [ESP8266 pins](boards/pins.md)
+* [ESP8266 pins](/boards/pins.md)
 * <https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/>
 * <https://blog.squix.org/2015/03/esp8266-module-comparison-esp-01-esp-05.html>
 * <https://www.mikrocontroller.net/topic/425242>

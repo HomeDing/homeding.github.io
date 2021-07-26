@@ -64,9 +64,9 @@ The **clear()** method will set the needle below minimum and clears the displaye
 
 ## See also
 
-* [Micro Charts](microcharts.md)
-* [Line Chart](microchart-line.md)
-* [Pie Chart](microchart-pie.md)
+* [Micro Charts](/microcharts.md)
+* [Line Chart](/microchart-line.md)
+* [Pie Chart](/microchart-pie.md)
 
 
 ## Tags

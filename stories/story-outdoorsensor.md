@@ -121,7 +121,7 @@ When you have configured your local WiFi network in secrets.h the device will be
 
 When you do not want to hard-code your network passphrase use the built-in WiFi Manager to join the network you can reach the configuration page
 by joining the temporary device hotspot named `homeding-xxxxxx` and opening
-[http://192.168.4.1/$setup](http://192.168.4.1/$setup).
+[http://192.168.4.1/$setup](/http://192.168.4.1/$setup).
 
 A more detailed description on this process can be found on the page [Step by Step Bring your device to work](/stepsnewdevice.md).
 

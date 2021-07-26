@@ -26,7 +26,7 @@ and therefore can just be plugged into an USB board.
 
 The following steps assume a board of this kind but different boards will not work very different.
 
-See also [Boards supported by the HomeDing library](boards.md)
+See also [Boards supported by the HomeDing library](/boards.md)
 
 
 ## Upload the appropriate sketch
@@ -62,7 +62,7 @@ Connect to the unsecured network called "HomeDing" by using any mobile device or
 Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
 automatically open the network configuration page.
 
-![WiFi Manager UI](wifimanager.png)
+![WiFi Manager UI](/wifimanager.png)
 
 If the WiFi Manager UI is not starting after joining the network please open http://192.168.4.1/ or http://192.168.4.1/$setup manually.
 
@@ -180,5 +180,5 @@ Every device can have a special icon that you will recognize in the shortcut or 
 ## See also
 
 * [Standard Example](/examples/standard.md)
-* [Recipes](recipes.md)
-* [Elements](elements.md)
+* [Recipes](/recipes.md)
+* [Elements](/elements.md)

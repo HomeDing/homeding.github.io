@@ -2,6 +2,8 @@
   "ignorePatterns": [
     { "pattern": "^http://homeding/" },
     { "pattern": "^http://airding/" },
+    { "pattern": "^http://outdoor/" },
+    { "pattern": "/_.*.md$" },
     { "pattern": "^http://ESP-xxxxxx/" },
     { "pattern": "^http://192.168.4.1/" }
   ],

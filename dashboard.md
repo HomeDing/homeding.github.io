@@ -13,7 +13,7 @@ The dashboard can be started using the menu or the direct link:
 
 GET <http://homeding/board.htm>
 
-It can also be used as the default Homepage by using the `homepage` configuration in the [device element](elements/device.md).
+It can also be used as the default Homepage by using the `homepage` configuration in the [device element](/elements/device.md).
 
 On this page every configured element is shown on a card and shows the actual runtime parameters like sensor values.
 
