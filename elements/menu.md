@@ -43,7 +43,7 @@ Every incoming `select` action will advance the menu in the list of values by on
 
 Usually this event can be directly bound to a digitalinput element as shown in the configuration example to scroll through the menu items.
 
-The select action can also be send using the <http://nodeding/$board/menu/0?select=1>
+The select action can also be send using the <http://homeding/$board/menu/0?select=1>
 
 ### Value actions
 

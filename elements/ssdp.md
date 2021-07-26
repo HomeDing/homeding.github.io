@@ -94,7 +94,7 @@ If you like your device to show up with some hints about the configured function
 
 ## See also
 
-* [UPNP DeviceArchitecture Specification](/http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0-20080424.pdf)
+* [UPNP DeviceArchitecture Specification](http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0-20080424.pdf)
 
 ---
 

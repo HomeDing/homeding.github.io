@@ -70,7 +70,7 @@ Some stations use this to give additional info so there might be also other text
 ## See also
 
 * [Radio example](/examples/radio.md)
-* [radio library](/http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+* [radio library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
 * https://www.hackster.io/CesarSound/am-fm-sw-radio-receiver-si4730-si4735-79438f
 * SI4730 board https://www.aliexpress.com/i/32288294783.html
 

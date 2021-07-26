@@ -316,7 +316,7 @@ INA219 sensor, voltage and current.
 
 :::element radio radio
 This element is part of the [Radio Example](/examples/radio.md)
-and uses the external [Radio Library](/http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+and uses the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
 to configure various FM radio boards.
 :::
 

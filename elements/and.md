@@ -65,8 +65,8 @@ This avoids fickering values on the output for a certain degree.
 
 You can set values using a browser by sending actions to the element by requesting for the URLs like:
 
-* <http://nodeding/$board/and/a?value02=1> to set the vaue02 input to true
-* <http://nodeding/$board/and/a?value02=0> to set the vaue02 input to false
+* <http://homeding/$board/and/a?value02=1> to set the vaue02 input to true
+* <http://homeding/$board/and/a?value02=0> to set the vaue02 input to false
 
 
 

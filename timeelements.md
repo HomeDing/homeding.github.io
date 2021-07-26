@@ -52,14 +52,14 @@ Using the getSeconds function is preferred over using (millis() / 1000).
 
 When a real time is available this method return the seconds since starting the day. It returns 0 when the real time is not available.
 
-To use this functionality a [NTPTime Element](/elements/ntptime) or [DSTime Element](/elements/dstime) needs to be configured.
+To use this functionality a [NTPTime Element](/elements/ntptime.md) or [DSTime Element](/elements/dstime.md) needs to be configured.
 
 
 **Board->getTime()**
 
 When a real time is available this method returns the milliseconds since 1.1.1970 a usual binary format for times in C++.
 
-To use this functionality a [NTPTime Element](/elements/ntptime) or [DSTime Element](/elements/dstime) needs to be configured.
+To use this functionality a [NTPTime Element](/elements/ntptime.md) or [DSTime Element](/elements/dstime.md) needs to be configured.
 
 
 <!-- To set the real time to an actual value this function must be called and the milliseconds since 1970 must be passed. The offset to the current millis is recorded order adjusted.

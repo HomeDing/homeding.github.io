@@ -4,7 +4,7 @@
 The ScheduleElement creates actions based on the time of day.
 :::
 
-When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/NTPTime) or [DCFTime](/elements/DCFTime).
+When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime.md) or [DCFTime](/elements/dcftime.md).
 
 One Schedule Element can be used to create a timespan during a day that creates 2 possible events. The first one when the `on`-time has passed and a second one when the `off`-time has passed.
 

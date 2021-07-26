@@ -88,7 +88,7 @@ The functionality offers
 * apply changes to the data model
 * send data back to the year device to update the configuration.
 
-For Details see [Micro-JavaScript](/microjavascript)
+For Details see [Micro-JavaScript](/microjavascript.md)
 
 ## micro JSON Parser
 

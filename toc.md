@@ -54,7 +54,7 @@
 * [neo](/boards/neo.md)
 * [ESP-12 Adapter](/boards/whiteadapter.md)
 * [ESP-12 dev boards](/boards/esp12dev.md)
-* [sonoff devices](/boards/sonoff.md)
+* [sonoff devices](/boards/sonoffbasic.md)
 * [pins](/boards/pins.md)
 * [deepsleep](/boards/deepsleep.md)
 <!--

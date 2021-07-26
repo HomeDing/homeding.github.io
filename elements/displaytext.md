@@ -61,9 +61,9 @@ The following actions can be sent to the element:
 }
 ```
 
-The `value` property can be used to make the displaytext to be visible. Using the browser you can set the value using <http://nodeding/$board/displaytext/val?value=hello>
+The `value` property can be used to make the displaytext to be visible. Using the browser you can set the value using <http://homeding/$board/displaytext/val?value=hello>
 
-The `clear ` property can be used to remove the text. <http://nodeding/$board/displaytext/val?clear=1>
+The `clear ` property can be used to remove the text. <http://homeding/$board/displaytext/val?clear=1>
 
 
 ## Element State

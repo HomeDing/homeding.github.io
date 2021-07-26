@@ -4,7 +4,7 @@
 The time element creates actions with the current local time as value.
 :::
 
-When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime) , [DSTime](/elements/dstime) or [DCFTime](/elements/dcftime).
+When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime.md) , [DSTime](/elements/dstime.md) or [DCFTime](/elements/dcftime.md).
 
 There are four different kind of actions supported that have different values and occur on different situations.
 

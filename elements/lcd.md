@@ -16,7 +16,7 @@ Connecting this display type to Arduino was often made using many IO lines by dr
 
 For ESP8266 and the limited number of GPIO ports a I2C adapter solution is more adequate. The most frequent found of such an solution ist the PCF8574 remote 8-bit IO adapter chip that converts between the I2C bus and up to 8 digital IO lines.
 
-See [http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx](/http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx)
+See [http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx](http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx)
 
 The library used to drive these displays is "LiquidCrystal_PCF8574".
 

@@ -9,7 +9,7 @@ runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByt
 like the [ESP-01](/boards/esp01.md) and devices like [sonoff S20 switch](/boards/sonoffbasic.md) and [bulbs](/boards/bulb.md).
 :::
 
-You can find many retail IoT devices with the ESP8266 chip like those from [sonoff](/boards/sonoff.md) or the bulbs from tuya but they are not really usable during development.
+You can find many retail IoT devices with the ESP8266 chip like those from [sonoff](/boards/sonoffbasic.md) or the bulbs from tuya but they are not really usable during development.
 So while developing for a device with the 1 MByte Flash Memory restriction
 and often also a missing auto-reset before flashing new firmware
 it is recommended to use a board like a [NodeMCU](/boards/nodemcu.md) but keep an eye of memory consumption.
@@ -54,8 +54,10 @@ The example includes the OTA upload feature to enable remote updates.
 
 ### 2. Upload the file system
 
+???
+
 It is intended to configure the device by changing the env.json and config.json file in the data folder before uploading.
-The icon in /favicon.ico and /i/default.svg can be replaced by one of the icons from the library of icons of the [full example](/examples/full)
+The icon in /favicon.ico and /i/default.svg can be replaced by one of the icons from the library of icons of the [standard example](/examples/standard.md)
 
 To upload either the Flash utility or the drag&drop upload tool can be used. The uploadfiles.bat also contains the command required to upload using the ESP Upload tool on the command line. The upload options are explained in detail in [file upload](/examples/fileupload).
 
