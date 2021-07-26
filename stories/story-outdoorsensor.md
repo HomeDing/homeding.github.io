@@ -335,7 +335,7 @@ very similar to the step before a temperature log can be added. The final config
 
 The DHT22 sensor sometimes stops working. This happens more often when 3.3V is used as a power supply and occurs sometimes after many days of operation.
 
-As a corrective measure it is possible to use the sensor reset mechanism if the [DHT Element](/elements/dht.png)
+As a corrective measure it is possible to use the sensor reset mechanism if the [DHT Element](/elements/dht.md)
 to enable power some seconds before a sensor reading is required and then cut off power after getting a value.
 
 The DHT22 wiring has to be changed so that the GND pin is attached to a GPIO (D6 is used here).
@@ -380,8 +380,8 @@ The HomeDing library offers a lot of options that can be used to create more val
 
 ## See also
 
-* [DHT Element](elements/DHT.md)
-* [DS18B20 Element](elements/ds18b20.md) temperature
+* [DHT Element](/elements/dht.md)
+* [DS18B20 Element](/elements/ds18b20.md) temperature
 * [BMP280 Element](/elements/bmp280.md) temperature and air pressure
 * [BME680 Element](/elements/bme680.md) temperature, humidity, air pressure and air resistance.
 * [Story - Outdoor Sensor with Solar Panel](/stories/story-outdoorsensorsolar.md)

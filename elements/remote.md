@@ -15,7 +15,7 @@ The Remote Element can only send one message at a time but you can of course hav
 
 The outgoing network package  is sent immediately when an action is triggered. The answer is then received and analyzed in the next loop event and is not blocking the internal execution of actions.
 
-The central networking feature of the board only allows one current remote action at a time but is implementing this asyncronously. When the network feature of the board is available again it can be used by the next Remote Element.
+The central networking feature of the board only allows one current remote action at a time but is implementing this asynchronously. When the network feature of the board is available again it can be used by the next Remote Element.
 
 
 ## Element Configuration

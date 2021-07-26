@@ -338,8 +338,8 @@ to configure various FM radio boards.
 [LiquidCrystal_PCF8574]: https://github.com/mathertel/LiquidCrystal_PCF8574
 [ESP8266 and ESP32 Oled Driver for SSD1306 display]: https://github.com/ThingPulse/esp8266-oled-ssd1306
 [RotaryEncoder]: https://github.com/mathertel/RotaryEncoder
-[DHT sensor library for ESPx]: 
-[OneWire]:
+[DHT sensor library for ESPx]: https://github.com/beegee-tokyo/DHTesp
+[OneWire]: https://www.arduino.cc/reference/en/libraries/onewire/
 
 <!-- [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library" -->
 

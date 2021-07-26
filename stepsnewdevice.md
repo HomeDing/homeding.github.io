@@ -143,7 +143,7 @@ To upload icon files for the elements in the `/i` folder you can click the `I-Up
 The firmware offers an update interface as part of the embedded web server.
 This is available at <http://homeding/$boot.htm>.
 By pressing the start button all files from the homeding documentation website are transferred to the device.
-The list of files is available at: https://homeding.github.io/v01/list.txt.
+The list of files and files for download are available at: https://homeding.github.io/v02/list.txt.
 
 This method is useful when updating a standard firmware by a new version and the UI files need to be updated.
 

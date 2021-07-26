@@ -123,13 +123,23 @@ The **ESP-WROOM-02** is not strictly the same form factor this module is directl
 ::: 
 
 
-## Bare Esp8266 boards with 1 MByte flash memory
+## Esp8266 boards with 1 MByte flash memory
 
-The following are boards and solutions with 1 MBytes flash memory chips.
+There are some boards around that only provide 1 MByte flash memory.
+This is often sufficient for simple devices that offer small amounts of functionality.
+The SOC and processor itself offer the full features but connectivity on the pins is also reduced.
+
+
+### Applicable Examples
 
 The [minimal example](/examples/minimal.md) can be flashed onto these boards by providing the typical switch elements and most core elements but no sensor and display adapters. The functionality will be activated through the configuration.
 
-The [sensor example](/examples/sensor.md) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration.
+<!-- The [sensor example](/elements/sensors.md) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration. -->
+
+
+### Boards
+
+The following are boards and solutions with 1 MBytes flash memory chips.
 
 :::board esp01
 The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.

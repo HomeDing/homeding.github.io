@@ -15,7 +15,7 @@ Many sensors offer direct usable digital signals that can be detected and used a
 :::sensor knocksensor
 This is a sensor known as **knock sensor** that creates short-time connections between the 2 pins when shaken or getting massive vibrations.
 
-The [DigitalInterrupt Element](/elements/_digitalInterrupt.md) can capture these spike impulses and creates a clean actions.
+The [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these spike impulses and creates a clean actions.
 :::
 
 
@@ -28,14 +28,14 @@ The [DigitalInput Element](/elements/digitalIn.md) can create actions based in t
 :::sensor ball
 This is a **ball on contacts sensor** that creates / breaks connections between the 2 pins when the position of the sensor changes or bumps.
 
-The [DigitalInterrupt Element](/elements/_digitalInterrupt.md) can capture these signals and spike impulses and creates a clean actions.
+The [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these signals and spike impulses and creates a clean actions.
 :::
 
 
 :::sensor shock
 This is a **shock sensor** that creates connections between the 2 pins when a massive force is against the sensor.
 
-The [DigitalInterrupt Element](/elements/_digitalInterrupt.md) can capture these spike impulses and create a clean action on it.
+The [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these spike impulses and create a clean action on it.
 :::
 
 
@@ -93,7 +93,7 @@ This is a **Light blocking sensor** built from a IR LED and a IR photo resistor.
 
 For simple on/off situations the [DigitalInput Element](/elements/digitalIn.md) can create actions.
 
-When used with high frequencies ans used tp detect rotating speed with a wheel the The [DigitalInterrupt Element](/elements/_digitalInterrupt.md) can capture these impulses per timeframe to create a clean action with rotation values.
+When used with high frequencies ans used tp detect rotating speed with a wheel the The [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these impulses per timeframe to create a clean action with rotation values.
 :::
 
 
@@ -101,21 +101,21 @@ When used with high frequencies ans used tp detect rotating speed with a wheel t
 This is a **Mini PIR Sensor** that creates a digital signal when detecting movements initiated by "warm" objects.
 It produces a about 10 seconds HIGH level signal. 
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the input signal.
 :::
 
 
 :::sensor no hcsr501
 hcsr501 - This is a **PIR Sensor** that creates a digital signal when detecting movements initiated by detecting "warm" objects. It produces a HIGH level signal. Signal length and sensitivity can be adjusted. 
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the input signal.
 :::
 
 
 :::sensor flame
 This is a **flame Sensor** or **IR level Sensor** that creates a digital and analog output signal detecting the amount of IR light. 
 
-The [DigitalInput Element](/elements/digitalIn.md) can create actions based in the digital input signal.
+The [DigitalInput Element](/elements/digitalin.md) can create actions based in the digital input signal.
 
 The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
 :::
@@ -124,7 +124,7 @@ The [Analog Element](/elements/analog.md) can create actions based in the analog
 :::sensor irobstacle
 This is a **Infrared Obstacle sensor** that emits and detects IR light and creates a digital output when there is a reflecting obstacle nearby.
 
-As the signals can be very short the [DigitalInterrupt Element](/elements/_digitalInterrupt.md) can capture these short impulses and create a clean action on it.
+As the signals can be very short the [DigitalInterrupt Element](/elements/_digitalinterrupt.md) can capture these short impulses and create a clean action on it.
 :::
 
 
@@ -156,7 +156,7 @@ This is a **Analog microphone** combined with a circuit to compare the amplitude
 
 The Analog output signal can be used for a recording input and the digital output produces LOW signals when the amplitude gets high enough. 
 
-On loud sounds many short signal spikes occur that can be catched by the [DigitalInterrupt Element](/elements/_digitalInterrupt.md) to create a clean actions on it.
+On loud sounds many short signal spikes occur that can be catched by the [DigitalInterrupt Element](/elements/_digitalinterrupt.md) to create a clean actions on it.
 :::
 
 
@@ -351,13 +351,13 @@ The **ADS1115** is a 4 channel 16 bit analog to digital converter (ADC) using th
 **MAX7219** is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
 Multiple displays can be chained to form a bigger matrix.
 
-The special [MAX7219 Element](/elements/_max7219.md) supports this chip.
+The special [MAX7219 Element](/elements/max7219.md) supports this chip.
 :::
 
 ::: sensor max7219n
 **MAX7219** is a LED driver for the I2C bus that can be used to control a 8x 7-segment LEDs.
 
-The special [MAX7219 Element](/elements/_max7219.md) supports this chip.
+The special [MAX7219 Element](/elements/max7219.md) supports this chip.
 :::
 
 <!-- 

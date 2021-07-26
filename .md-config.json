@@ -1,8 +1,9 @@
 {
   "ignorePatterns": [
-    {
-      "pattern": "^http://example.net"
-    }
+    { "pattern": "^http://homeding/" },
+    { "pattern": "^http://airding/" },
+    { "pattern": "^http://ESP-xxxxxx/" },
+    { "pattern": "^http://192.168.4.1/" }
   ],
   "replacementPatterns": [
     {
