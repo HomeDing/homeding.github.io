@@ -2,7 +2,7 @@
 
 The following elements and hardware is used by this recipe:
 
-* [Digital Input element](/elements/digitalin)
+* [Digital Input element](/elements/digitalin.md)
 * [Rotary Encoder Element](/elements/rotary)
 * [Value Element](/elements/value)
 * [PWM Output Element](/elements/pwmout) 

@@ -425,7 +425,7 @@ The [Rotary Element](/elements/rotary.md) enables decoding the 2 signals from a 
 
 ## Radio
 
-There is a very specific example that shows how to use the HomeDing and the [Radio library](/https://github.com/mathertel/Radio) to build a full functional radio that can be controlled by some local input but also from remote.
+There is a very specific example that shows how to use the HomeDing and the [Radio library](https://github.com/mathertel/Radio) to build a full functional radio that can be controlled by some local input but also from remote.
 
 :::sensor si4721
 The **si4721** is a FM Transiever that can receive and send FM Audio.

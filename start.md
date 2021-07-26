@@ -147,10 +147,10 @@ There are many good resources available to get more information about the ESP826
 
 ### From Espressif
 
-* [ESP8266 documents at espressif](/https://www.espressif.com/en/support/download/documents?keys=ESP8266)
-* [The ESP8266 Technical Reference](/https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
-* [ESP8266EX Datasheet](/https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
+* [ESP8266 documents at espressif](https://www.espressif.com/en/support/download/documents?keys=ESP8266)
+* [The ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
+* [ESP8266EX Datasheet](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
 
 ### General Guides
 
-* [A Beginner's Guide to the ESP8266](/https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)
+* [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)

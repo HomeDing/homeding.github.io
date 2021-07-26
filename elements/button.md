@@ -18,7 +18,7 @@ By clicking the button once the `onclick` action will be dispatched.
 The setup icon opens a dialog to change the configuration properties.
 
 
-The Button Element acts on a value input typically created by a push button and a [Digital Input Element](/elements/digitalin).
+The Button Element acts on a value input typically created by a push button and a [Digital Input Element](/elements/digitalin.md).
 
 It detects the gestures `click`, `doubleclick` and `press` and sends out the defined actions.
 
@@ -53,7 +53,7 @@ The given value is `click`, `doubleclick` or `press`. This allows button actions
 
 ## Control the Element
 
-It is typical to use the Button Element together with a [Digital Input Element](/elements/digitalin)
+It is typical to use the Button Element together with a [Digital Input Element](/elements/digitalin.md)
 that provides the input value to the Button Element.
 
 ### Example Configuration

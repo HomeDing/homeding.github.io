@@ -17,7 +17,7 @@ Therefore bulbs are used here, that can also be flashed with a new software via 
 ## Tuya Bulbs
 
 The Manufacturer **Tuya** has created several WiFi Bulbs that are available from different sources.
-To check if a given bulb is using the ESP8266 processor the [template registry for the TASMOTA firmware](/https://templates.blakadder.com/) can be searched.
+To check if a given bulb is using the ESP8266 processor the [template registry for the TASMOTA firmware](https://templates.blakadder.com/) can be searched.
 Here you also find some information on the purpose of the GPIO pins and the used chips inside.
 
 

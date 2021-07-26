@@ -11,13 +11,13 @@ Here the FLASH button (D3) is used to switch on and off one of the LEDs (D4).
 
 This is can be achieved by using 3 elements:
 
-* The [digital input element](/elements/digitalin) captures the signal from the momentary button
+* The [digital input element](/elements/digitalin.md) captures the signal from the momentary button
 * The [switch element](/elements/switch.md) handles the on/off logic
 * The [digital output element](/elements/digitalout.md) controls the voltage level of the output pin with the LED.
 
 ![Elements used in led recipe](/recipes/ledflow.png)
 
-The [digital input elements](/elements/digitalin) transfers the physical signal (LOW when the button in pressed) to a logical level (1 when the button is pressed) using the "inverse" property with 1.
+The [digital input elements](/elements/digitalin.md) transfers the physical signal (LOW when the button in pressed) to a logical level (1 when the button is pressed) using the "inverse" property with 1.
 The internal pullup is enabled to keep the input on HIGH when no button is pressed. On nodemcu boards there is also an external resistor doing this but on other pins this is required.
 
 When the input signal goes low an action is sent to the switch for toggling.

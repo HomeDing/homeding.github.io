@@ -56,16 +56,16 @@ The Homeding library provides a web version when opening the http://<devicename>
 
 The hardware parts you need to build this project and used in this story are:
 
-* A [nodemcu](/https://homeding.github.io/#page=/boards/nodemcu.md) or compatible board with the ESP8266 processor and USB interface.
+* A [nodemcu](https://homeding.github.io/#page=/boards/nodemcu.md) or compatible board with the ESP8266 processor and USB interface.
 * A OLED display based on a SH1106, SSD1306 or SSD1309 controller chip.
 * 1 USB plug and a micro-usb cable for power supply.
 
 ![Weather display](/stories/weatherdisp2.jpg)
 
 There are boards available that already have both combined like
-* **[Wifi Kit 8 Module ESP8266 with OLED](/https://homeding.github.io/#page=/boards/wifikit8.md)
-* **[ESP8266 with OLED and 18650](/https://homeding.github.io/#page=/boards/wroom2.md)
-* **[ESP8266 with OLED](/https://homeding.github.io/#page=/boards/wemosoled.md)
+* **[Wifi Kit 8 Module ESP8266 with OLED](https://homeding.github.io/#page=/boards/wifikit8.md)
+* **[ESP8266 with OLED and 18650](https://homeding.github.io/#page=/boards/wroom2.md)
+* **[ESP8266 with OLED](https://homeding.github.io/#page=/boards/wemosoled.md)
 
 The system configuration for these boards can be found on these pages. Here a nodemcu and a discrete display is used.
 
@@ -130,7 +130,7 @@ For simplicity on adding the new device to your home wifi network you may add th
 
 ![Network Secrets in Code](/stories/sketch-secrets.png)
 
-If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description at [Step by Step Bring your device to work](/https://homeding.github.io/#page=/stepsnewdevice.md) <https://homeding.github.io/#page=/stepsnewdevice.md>.
+If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description at [Step by Step Bring your device to work](https://homeding.github.io/#page=/stepsnewdevice.md) <https://homeding.github.io/#page=/stepsnewdevice.md>.
 
 ![WiFi Manager UI](/wifimanager.png)
 
