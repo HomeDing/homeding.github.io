@@ -27,7 +27,10 @@ Github documentation site at <https://homeding.github.io> where only static file
 
 This project takes advantage on a client side Markdown to HTML conversion instead of using the builtin *.md to *.html conversion by Github.
 
-So do not use links like ~~<https://homeding.github.io/elements.html>~~ but use <https://homeding.github.io/#page=elements.md>.
+The file **/index.htm** provides the "shell" for the markdown files by loading and transforming them before beeing displayed. The 
+**/toc.md** is used for the navigation on the left side that can be opened by the menu icon in the menubar.
+
+Use links like <https://homeding.github.io/index.htm#page=/elements.md>.
 
 
 ## Local Server
