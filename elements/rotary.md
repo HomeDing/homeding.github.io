@@ -4,7 +4,7 @@
 The RotaryElement is used to capture increments and decrements for values using a rotary encoder.
 :::
 
-It can be used in combination with a [Value Element](/elements/value) to define a logical or numeric value that can be changed using the rotary encoder.
+It can be used in combination with a [Value Element](/elements/value.md) to define a logical or numeric value that can be changed using the rotary encoder.
 
 ![Rotary Encoder](/sensors/rotary.jpg "w200")
 
@@ -17,7 +17,7 @@ There is a dedicated card for this element available that will be used on the we
 
 ![Rotary Web UI](/elements/rotaryui.png)
 
-See example in [value element](/elements/value).
+See example in [value element](/elements/value.md).
 -->
 
 

@@ -329,7 +329,7 @@ to configure various FM radio boards.
 | [LiquidCrystal_PCF8574]                             | [LCD display](/elements/lcd.md)                                                   |
 | [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SDD1306 display](/elements/ssd1306.md) and [SH1106 display](/elements/sh1106.md) |
 | [RotaryEncoder]                                     | [Rotary Element](/elements/rotary.md)                                              |
-| [DHT sensor library for ESPx]                       | [DHT Element](/elements/DHT.md)                                                    |
+| [DHT sensor library for ESPx]                       | [DHT Element](/elements/dht.md)                                                    |
 | [OneWire]                                           | [DS18B20 Element](/elements/ds18b20.md)                                            |
 
 <!-- + Wire + SoftwareSerial -->

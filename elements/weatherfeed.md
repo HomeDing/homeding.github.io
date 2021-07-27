@@ -33,8 +33,7 @@ To build the request URL you need several parameters:
 * The **exclude** parameter can be used to shorten the result to the elements you are interested.
 
 Using these parameters the URL will look like this (with a fake API key):
-
-https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=50.23&lon=8.65&exclude=current,hourly&appid=12345678901234567890123456789012
+<https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=50.23&lon=8.65&exclude=current,hourly&appid=12345678901234567890123456789012>
 
 ### Weatherfeed element parameters
 

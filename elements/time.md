@@ -54,5 +54,5 @@ The following properties are available with the current values at runtime
 
 ## See also
 
-* [Time Elements](/timeelements)
+* [Time Elements](/timeelements.md)
 

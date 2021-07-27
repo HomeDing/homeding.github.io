@@ -1,17 +1,17 @@
-# Logical AND Element
+# Logical OR Element
 
-::: excerpt and
-The AND Element combines multiple logic input values to a single output value.
+::: excerpt or
+The OR Element combines multiple logic input values to a single output value.
 :::
 
 Actions can be send to this element using the properties value[n].
 Every time the value changes the onValue event is emitted.
 
-## Web UI for the AND Element
+## Web UI for the OR Element
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-![AND Web UI](/elements/andui.png "w400")
+![OR Web UI](/elements/orui.png "w400")
 
 This card shows the current output computed from the last logical input values.
 It is updated every time the status of the device is polled by the page.
@@ -19,7 +19,7 @@ It is updated every time the status of the device is polled by the page.
 
 ## Element Configuration
 
-<object data="/element.svg?and" type="image/svg+xml"></object>
+<object data="/element.svg?or" type="image/svg+xml"></object>
 
 The up to 8 input values can be preset and the output can be inverted.
 
@@ -39,11 +39,11 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 
 ```JSON
 {
-  "and": {
-    "a": {
+  "or": {
+    "o": {
       "value": [ "true", "false"],
       "invert": "false",
-      "onValue": "device/0?log=and-output: $v"
+      "onValue": "device/0?log=or-output: $v"
     }
   }
 }
@@ -65,16 +65,16 @@ This avoids flickering values on the output for a certain degree.
 
 You can set values using a browser by sending actions to the element by requesting for the URLs like:
 
-* <http://homeding/$board/and/a?value[0]=1> to set the first input value to true
-* <http://homeding/$board/and/a?value[1]=1> to set the second input value to true
-* <http://homeding/$board/and/a?value[1]=0> to set the second input value to false
+* <http://homeding/$board/or/a?value[0]=1> to set the first input value to true
+* <http://homeding/$board/or/a?value[1]=1> to set the second input value to true
+* <http://homeding/$board/or/a?value[1]=0> to set the second input value to false
 
 
 
 ## See also
 
 * [Elements](/elements.md)
-* [OR Element](/elements/orelement.md)
+* [AND Element](/elements/and.md)
 
 ## Tags
 #element #logic-element
