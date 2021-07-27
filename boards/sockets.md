@@ -21,11 +21,7 @@ The documentation on the devices to flash the TASMOTA firmware also has some hin
 
 There is a input button, 2 LEDs in red and blue, a relay and a power measurement chip included in this device. The input button, LEDs and the relay can directly be used by digital in and out to create a remote switch. 
 
-The power measurement chip is from type [BL0937](/elements/BL0937.md) that can be found in many plug devices.
-
-
- can be searched  
-https://templates.blakadder.com/gosund_SP111_v2.html
+The power measurement chip is from type [BL0937](/elements/bl0937.md) that can be found in many plug devices.
 
 * <http://wiki.gorjup.de/doku.php?id=public:fhem_blitzwolf_flasher>
 * <https://www.malachisoord.com/2019/11/24/flashing-custom-firmware-on-a-gosund-sp111/>
@@ -94,7 +90,7 @@ https://templates.blakadder.com/gosund_SP111_v2.html
 
 ## See also
 
-* Power measurement chip [BL0937](/elements/BL0937.md)
+* Power measurement chip [BL0937](/elements/bl0937.md)
 
 <!-- 
 ##  Relay

@@ -26,17 +26,18 @@ Here are the signals on the connectors:
 
 ## Witty vs. Adapter
 
-The pins of the ESP-12 module are directly connected to the outer connectors (with exception VCC) in the same order very similar to the [Adapter board](/boards/adapter.md).
+The pins of the ESP-12 module are directly connected to the outer connectors (with exception VCC)
+in the same order very similar to the [White Adapter board](/boards/whiteadapter.md).
 
 > The USB adapter board (lower board) of the witty can be used for the Adapter boards
-> **but the need to have a regulator added**. See [Adapter board](/boards/adapter.md)
+> **but the need to have a regulator added**. See [White Adapter board](/boards/whiteadapter.md).
 
 ![witty-adapter](/boards/witty-adapter.jpg)
 ![witty-adapter-back](/boards/witty-adapter-back.jpg)
 
 The obvious difference are the added components and the existing voltage regulator so the board can be driven by 5 V from the lower board. 
 
-There is the option to add a voltage adapter to the [adapter board](/boards/adapter.md) as well.
+There is the option to add a voltage adapter to the [White Adapter board](/boards/whiteadapter.md) as well.
 
 
 ## System configuration

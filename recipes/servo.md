@@ -48,9 +48,9 @@ As this is passed to the PWMOut element the position of the servo is controlled.
 ## See also
 
 * [Digital Input Element](/elements/digitalin.md)
-* [Switch Element](/elements/switch)
-* [Value Element](/elements/value)
-* [PWMOut Element](/elements/pwmout)
+* [Switch Element](/elements/switch.md)
+* [Value Element](/elements/value.md)
+* [PWMOut Element](/elements/pwmout.md)
 
 
 

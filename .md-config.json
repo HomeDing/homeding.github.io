@@ -2,10 +2,12 @@
   "ignorePatterns": [
     { "pattern": "^http://homeding/" },
     { "pattern": "^http://airding/" },
+    { "pattern": "^http://plug" },
     { "pattern": "^http://outdoor/" },
-    { "pattern": "/_.*.md$" },
     { "pattern": "^http://ESP-xxxxxx/" },
-    { "pattern": "^http://192.168.4.1/" }
+    { "pattern": "^http://192.168.4.1/" },
+    { "pattern": "^https://" },
+    { "pattern": "/_.*.md$" }
   ],
   "replacementPatterns": [
     {

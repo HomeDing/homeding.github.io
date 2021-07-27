@@ -19,7 +19,7 @@ In general all these boards are exchangeable and can be used as replacements.
 
 There are many derivate versions on the market but usually they follow the published design:
 
-- The pin names Dnn are unified and correspond to GPIO pins with different numbers. Some older boards had different mappings. See also [ESP8266 pins](/boards/pins).
+- The pin names Dnn are unified and correspond to GPIO pins with different numbers. Some older boards had different mappings. See also [ESP8266 pins](/boards/pins.md).
 - There is a USB to Serial chip but version varies between CP2102 and CH340.
 If you upload sketches using more than 115200 baud or have problems finding USB adapter firmware this may be of interest.
 - There is an onboard 3.3 V power regulator.

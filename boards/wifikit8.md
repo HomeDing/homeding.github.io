@@ -42,7 +42,7 @@ There are 2 pin diagrams on this site. Be sure to get the right one. (see Links)
 ## OLED Display
 
 The OLED display is the only embedded component on this board. It uses the same SSD1306 driver chip like the on in the
-[wroom2 board](/wroom2.md) board but only provides 32px in height.
+[wroom2 board](/boards/wroom2.md) board but only provides 32px in height.
 
 The I2C bus for the display is using GPIO4 and GPIO5 and the I2C address is 0x3c.
 
@@ -148,8 +148,7 @@ The onboard button labeled "PRG" pulls D3 down and can be used with a digital in
 
 * [Using the I2C bus](/i2c.md)
 * Product page at heltec.cn: <http://www.heltec.cn/project/wifi-kit-8/?lang=en>
-* Diagram <http://www.heltec.cn/download/WIFI_Kit_8_Diagram(new).pdf> Be aware that there is another diagram picture there that is wrong for my board.
-* <http://www.heltec.cn/download/WIFI_Kit_Series&Instructions.pdf>
+* Diagram <http://www.heltec.cn/download/WIFI_Kit_8_Diagram.pdf> Be aware that there is another diagram picture there that is wrong for my board.
 * The Wifi-Kit 8 SDK is a copy of the ESPRESSIV project and a selected list of libraries. It is a good source for ideas, however, I prefer using the golden sources of the SDK and libraries:
 <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series>
 * A summary to use this board <https://robotzero.one/heltec-wifi-kit-8/>

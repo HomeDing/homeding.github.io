@@ -74,7 +74,7 @@ You can set values using a browser by sending actions to the element by requesti
 ## See also
 
 * [Elements](/elements.md)
-* [OR Element](/elements/orelement.md)
+* [OR Element](/elements/or.md)
 
 ## Tags
 #element #logic-element
