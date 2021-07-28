@@ -10,7 +10,7 @@ The LogElement also supports calculating average values based on the values give
 
 For this element a visualization of the values in the log files is available that shows up as a line chart:
 
-![Log linechart](/logchart.png)
+![Log linechart](/microchart-line.png)
 
 By reading the files directly they are available as sources for other purpose like analysis in excel as well.
 

@@ -147,9 +147,10 @@ The onboard button labeled "PRG" pulls D3 down and can be used with a digital in
 ## See also
 
 * [Using the I2C bus](/i2c.md)
-* Product page at heltec.cn: <http://www.heltec.cn/project/wifi-kit-8/?lang=en>
-* Diagram <http://www.heltec.cn/download/WIFI_Kit_8_Diagram.pdf> Be aware that there is another diagram picture there that is wrong for my board.
-* The Wifi-Kit 8 SDK is a copy of the ESPRESSIV project and a selected list of libraries. It is a good source for ideas, however, I prefer using the golden sources of the SDK and libraries:
-<https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series>
+* Product page at heltec.cn: <https://www.heltec.cn/project/wifi-kit-8/?lang=en>
+* Diagram <https://www.heltec.cn/download/WIFI_Kit_8_Diagram.pdf> Be aware that there is another diagram picture there that is wrong for my board.
+* The Wifi-Kit 8 SDK is a copy of the ESPRESSIV project and a selected list of libraries.
+  It is a good source for ideas, however, I prefer using the golden sources of the SDK and libraries:
+  <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series>
 * A summary to use this board <https://robotzero.one/heltec-wifi-kit-8/>
 

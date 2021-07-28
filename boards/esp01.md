@@ -109,7 +109,7 @@ When attaching a transistor to the IO pin you also have to face not pulling the 
 
 Here is a sample off driving a 5V relay:
 
-![GPIO driving a relay](/gpio-relay.png)
+![GPIO driving a relay](/boards/gpio-relay.png)
 
 
 ## GPIO 1 / Serial TX
