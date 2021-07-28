@@ -180,5 +180,5 @@ Every device can have a special icon that you will recognize in the shortcut or 
 ## See also
 
 * [Standard Example](/examples/standard.md)
-* [Recipes](/recipes.md)
+* [Recipes](/recipes/index.md)
 * [Elements](/elements.md)

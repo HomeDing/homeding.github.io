@@ -62,4 +62,4 @@ This feature comes at it's cost:
 
 * [examples](/examples.md)
 * [Boards overview](/boards.md)
-* [Recipes](/recipes.md)
+* [Recipes](/recipes/index.md)

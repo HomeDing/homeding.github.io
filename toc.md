@@ -30,7 +30,7 @@
 ### [Sensor Support](/sensors/sensors.md)
 ### [Display Support](/displays.md)
 
-### [Recipes](/recipes.md)
+### [Recipes](/recipes/index.md)
 * [Create Alarm actions](/recipes/alarm.md)
 * [Attach a LED](/recipes/led.md)
 * [Use a Rotary encocer](/recipes/ledrotary.md)

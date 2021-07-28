@@ -49,7 +49,7 @@ The config.json file is created the same way as the env.json file. The minimal c
 }
 ```
 
-A good starting for a config.json can be found in the [stories](/stories.md) or the [recipes](/recipes.md). 
+A good starting for a config.json can be found in the [stories](/stories.md) or the [recipes](/recipes/index.md). 
 
 
 ## See also
@@ -57,7 +57,7 @@ A good starting for a config.json can be found in the [stories](/stories.md) or 
 You can find more details about the microide features in the [Micro IDE documentation](/microide.md).
 
 * [Stories](/stories.md)
-* [Recipes](/recipes.md)
+* [Recipes](/recipes/index.md)
 * [Elements](/elements.md)
 
 ---

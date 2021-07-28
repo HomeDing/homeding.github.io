@@ -1,4 +1,4 @@
-# Recipes
+# Recipes Overview
 
 The recipes is a collection of configurations that can be used with the standard set of elements included in the [standard example](/examples/standard).
 
@@ -13,6 +13,7 @@ They show how multiple elements can be combined to create functionality beyond u
 * [LDR switch](/recipes/ldrswitch.md) - use a LDR to create a touchless on/off switch.
 * [Plant Watering](/recipes/water.md) - Use a timer and button to give water to plants.
 * [Soil Moisture Sensor](/recipes/capasoil.md) - Use a timer and button to give water to plants.
+* [Logic Elements](/recipes/logic.md) - Combine values with logical operators.
 
 ## Using Sensors
 

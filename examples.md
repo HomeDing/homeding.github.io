@@ -101,5 +101,5 @@ Example-RFCodes
 
 * [Stories](/stories.md) for Step by Step instructions
 * [Boards](/boards.md) for Board specific configurations
-* [Recipes](/recipes.md) for Element configurations
+* [Recipes](/recipes/index.md) for Element configurations
 

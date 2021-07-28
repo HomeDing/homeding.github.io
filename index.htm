@@ -20,14 +20,11 @@ Markdown viewer SPA using
     .s-md {
       min-height: 4em;
       padding: 0.4em;
+      max-width: 800px;
     }
 
-    a.verify {
-      /* background-color: #FFFFcc; */
-    }
-
-    a.bad {
-      background-color: #ffcccc;
+    main a {
+      text-decoration: underline;
     }
 
     table {
@@ -101,7 +98,8 @@ Markdown viewer SPA using
       min-height: 6rem;
     }
 
-    .short img, .short svg,
+    .short img,
+    .short svg,
     .excerpt svg {
       position: absolute;
       top: 0.5rem;
@@ -167,8 +165,7 @@ Markdown viewer SPA using
     </div>
   </div>
   <div class="row u-navbar" style="margin-bottom: 0;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button"
-      style="height:1.4rem">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
     </svg>
 
@@ -181,28 +178,10 @@ Markdown viewer SPA using
   </div>
   <nav class="inpage"></nav>
   <main class="container-fluid">
-    <div class="row" style="display:none">
-      <div class="col">
-        <h4>Found Pages:</h4>
-        <div id="foundFiles" style="background-color: #ccffff;border: solid 1px lightgrey;padding: 2px;min-height:2em">
-        </div>
-      </div>
-    </div>
-    <div class="row" style="display:none">
-      <div class="col">
-        <h4>Missing Pages:</h4>
-        <div id="missingFiles" style="background-color: pink;border: solid 1px red;padding: 2px;min-height:2em"></div>
-      </div>
-    </div>
-    <div class="row"></div>
-
     <div class="s-md"></div>
-
   </main>
 
-<script>
-    var ffObj = document.querySelector('#foundFiles');
-    var mfObj = document.querySelector('#missingFiles');
+  <script>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
@@ -342,55 +321,7 @@ Markdown viewer SPA using
     // === Markdown Loader ===
 
     var mdClass = {
-      _found: [], // list of verified existing files
-      _missing: [], // list of verified existing files
       _checking: false,
-      checkLinkTimer: 0,
-
-      pushFound: function (pName) {
-        if (this._found.indexOf(pName) < 0) this._found.push(pName);
-        ffObj.textContent = this._found;
-      },
-
-      pushMissing: function (pName) {
-        if (this._missing.indexOf(pName) < 0) this._missing.push(pName);
-        mfObj.textContent = this._missing;
-      },
-
-      checkLink: function () {
-        if (!this._checking) {
-          var aObj = document.querySelector('a.verify');
-          if (!aObj) {
-            // finished checking.
-            window.clearInterval(this.checkLinkTimer);
-          } else {
-            var m = aObj.href.match(/=(\w*.md)$/);
-            if (m) {
-              var fName = m[1].toLowerCase();
-              if (this._found.indexOf(fName) >= 0) {
-                aObj.classList.remove('verify'); // good link
-              } else if (this._missing.indexOf(fName) >= 0) {
-                aObj.classList.remove('verify');
-                aObj.classList.add('bad'); // bad link
-              } else {
-                this._checking = true;
-                loadFile(
-                  /* "md/" + */ fName,
-                  function (txt) {
-                    // found
-                    this.pushFound(fName);
-                    this._checking = false;
-                  }.bind(this),
-                  function (x) {
-                    this.pushMissing(fName);
-                    this._checking = false;
-                  }.bind(this)
-                );
-              }
-            }
-          } // if
-        } // if
-      }, // checkLink()
 
       // show given text as html.
       setText: function (fName, txt) {
@@ -416,7 +347,7 @@ Markdown viewer SPA using
           function (aObj) {
             aObj.addEventListener('click', function (evt) {
               debugger;
-              window.open(evt.target.src, "img"); 
+              window.open(evt.target.src, "img");
             });
           }.bind(this)
         );
@@ -438,9 +369,8 @@ Markdown viewer SPA using
           function (txt) {
             this.setText(pName, txt);
             window.scrollTo(0, 0);
-            this.pushFound(pName);
-            this.checkLinkTimer = window.setInterval(this.checkLink.bind(this), 100);
           }.bind(this),
+
           function (x) {
             this.setText(pName, '>> File with name ' + pName + ' not found.');
           }.bind(this)
@@ -466,12 +396,7 @@ Markdown viewer SPA using
     // manually attach md container
     var mdObj = document.querySelector('.s-md');
     if (mdObj) {
-      mdObj._found = mdClass._found;
-      mdObj._missing = mdClass._missing;
       mdObj.init = mdClass.init;
-      mdObj.checkLink = mdClass.checkLink;
-      mdObj.pushFound = mdClass.pushFound;
-      mdObj.pushMissing = mdClass.pushMissing;
       mdObj.setText = mdClass.setText;
       mdObj.onhashchange = mdClass.onhashchange;
       window.addEventListener('hashchange', mdObj.onhashchange.bind(mdObj));

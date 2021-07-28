@@ -93,4 +93,4 @@ This configuration can be used as a starting point to implement your own project
 
 * [examples](/examples.md)
 * [Boards overview](/boards.md)
-* [Recipes](/recipes.md)
+* [Recipes](/recipes/index.md)

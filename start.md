@@ -45,7 +45,7 @@ The approach is very different to many other IoT solutions regarding these reaso
 
 > One of the powerful features of the HomeDing library is the availability of specialized elements that can be configured to work together and build solutions.
 > 
-> Start by building your first IoT device by using some of the configuration examples from the [recipes](/recipes.md). 
+> Start by building your first IoT device by using some of the configuration examples from the [recipes](/recipes/index.md). 
 
 
 **Web enabled** 
@@ -103,7 +103,7 @@ Elements are the functional blocks for building and configuring a device and the
 
 Each element supports a unique feature, e.g. reads a sensor, drives a display, connects some peripheries or implements some internal logic.
 
-The list of the [elements](/elements.md) already provided within this library, the [examples](/examples.md) and the [recipes](/recipes.md) show you the available features that can be configured.
+The list of the [elements](/elements.md) already provided within this library, the [examples](/examples.md) and the [recipes](/recipes/index.md) show you the available features that can be configured.
 
 It is intentionally easy to implement your own specific elements as you can see in some of the [examples](/examples.md).
 
