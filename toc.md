@@ -22,7 +22,7 @@
 ### [Examples](/examples.md)
 * [Standard](/examples/standard.md)
 * [Minimal](/examples/minimal.md)
-* [Development](/examples/develop.md)
+* [DevDing](/examples/devding.md)
 <!-- * [examples/radio](/examples/radio.md) -->
 
 

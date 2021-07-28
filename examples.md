@@ -20,7 +20,7 @@ This example has a sketch and the web site for a NodeMCU or similar board. Most 
 * **[Minimal](/examples/minimal.md)** 
 This example shows how to reduce the number of available elements and use only a bare minimum part of the embedded web site so the whole solution fits into a ESP8266 board with only 1 MByte Flash memory like the ESP-01.
 
-* **[Develop](/examples/develop.md)**
+* **[Develop](/examples/devding.md)**
 This example is very like the [standard example](/examples/standard.md) but has some add-ons that help during development.
 It can be used with any board that has a 4MByte Flash memory like the [nodemcu boards](/boards/nodemcu.md).
 

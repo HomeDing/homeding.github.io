@@ -121,8 +121,6 @@ The HomeDing library can be used with almost any board that is using a ESP8266 p
 
 For some [boards](/boards.md) you can find reviews and summaries with a suitable the configuration of the system.
 
-The general procedures to setup the development environment can be found in the [setup instructions](/examples/setup.md).
-
 
 ## Web interface
 
