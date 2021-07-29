@@ -7,7 +7,7 @@ For the ESP8266 or ESP32 processors some additional tools need to be installed a
   
 ## Download the Arduino Environment
 
-On the web site <www.arduino.cc> you can find the software for programming microprocessors.
+On the web site <https://www.arduino.cc> you can find the software for programming microprocessors.
 
 Open the **Software** menu the downloads are available in the Download Options area
 like **Windows 7 and later** or **MAC OS X 10.10 or newer**.
@@ -15,7 +15,7 @@ like **Windows 7 and later** or **MAC OS X 10.10 or newer**.
 The Windows App is some kind of restricted and I cannot recommend to install this option from the Windows Store.
 
 After clicking on the download option you will be asked to spend some money to the Arduino AG
-but you don't need tp pay and can step forward to the download using the "**JUST DONWLOAD**".
+but you don't need tp pay and can step forward to the download using the "**JUST DOWNLOAD**".
 
 Install the software with all options set. This will also install some drivers for the common USB to Serial chips
 that are on the diverse processor boards. This is required for uploading the program to the board
