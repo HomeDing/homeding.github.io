@@ -1,6 +1,7 @@
 # Recipes Overview
 
-The recipes is a collection of configurations that can be used with the standard set of elements included in the [standard example](/examples/standard).
+The recipes is a collection of configurations that can be used
+with the standard set of elements included in the [Standard Example](/examples/standard.md).
 
 They show how multiple elements can be combined to create functionality beyond using a single element.
 
@@ -31,7 +32,7 @@ They show how multiple elements can be combined to create functionality beyond u
 * Switch a remote LED on and off
 
 
-[home](/index.md)
+[home](/start.md)
 
 ## Tags
 

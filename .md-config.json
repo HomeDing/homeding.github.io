@@ -5,7 +5,9 @@
     { "pattern": "^http://plug" },
     { "pattern": "^http://outdoor/" },
     { "pattern": "^http://ESP-xxxxxx/" },
-    { "pattern": "^http://192.168.4.1/" },
+    { "pattern": "^http://ESP-123456/" },
+    { "pattern": "^http://\\d*\\." },
+    { "pattern": "^http://localhost" },
     { "pattern": "^https://" },
     { "pattern": "/_.*.md$" }
   ],

@@ -151,7 +151,7 @@ Other Elements require a specific library. These Elements must be activated in t
 Examples are [DHT Element](/elements/dht.md), [RFCodes Element](/elements/rfcodes.md) or [DCFTime Element](/elements/dcftime.md).
 
 As the ESP8266 chips offer a lot of program memory this approach works fine when boards have a 4MByte Flash memory.
-The [FullDing](/examples/fullding.md) includes all available elements of the library and can be used to flash many boards and hardware setups. 
+The [Standard Example](/examples/standard.md) includes the most common elements of the library and can be used to flash many boards and hardware setups. 
 
 For compiling to different memory setups, like the ESP-01 board it is possible to compile with a reduced set of elements so to make the program fit into memory.
 See example [minimal footprint example](/examples/minimal.md).

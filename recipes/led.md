@@ -2,7 +2,7 @@
 
 This recipe uses a single button as an input to switch a LED on and off.
 
-This recipe can run this on a board like the [NodeMCU development boards](/boards/nodemcu)
+This recipe can run this on a board like the [NodeMCU development boards](/boards/nodemcu.md)
 with a button and a LED.
 
 ![NodeMCU with LED and Button](/recipes/led.jpg)

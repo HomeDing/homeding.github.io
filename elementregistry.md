@@ -28,7 +28,7 @@ Some elements only exist to capture configuration properties. Most of them speci
 Examples are:
 
 * [Device](/elements/device.md)
-* [Display Adapter](/display.md)
+* [Displays](/displays.md)
 * [OTA](/elements/ota.md)
 * [SSPD](/elements/ssdp.md)
 

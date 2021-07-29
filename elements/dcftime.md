@@ -10,7 +10,7 @@ When a valid time had been decoded the board time will be adjusted.
 
 This element is not sending out actions.
 
-When time based actions are required the [time element](elements/time) can be used.
+When time based actions are required the [time element](/elements/time.md) can be used.
 
 # Element Configuration
 

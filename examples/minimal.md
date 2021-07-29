@@ -52,15 +52,14 @@ There are some options documented in the source code e.g. to enable WS2812 LED s
 You can upload using a USB / Serial cable when flashing the first time or use the OTA feature after flashing any OTA enabled firmware.
 The example includes the OTA upload feature to enable remote updates.
 
-### 2. Upload the file system
+### 2. Upload the web ui files
 
-???
+See [Step by Step uploading the files for the web UI](/stepsupdateweb.md).
 
-It is intended to configure the device by changing the env.json and config.json file in the data folder before uploading.
-The icon in /favicon.ico and /i/default.svg can be replaced by one of the icons from the library of icons of the [standard example](/examples/standard.md)
-
-To upload either the Flash utility or the drag&drop upload tool can be used. The uploadfiles.bat also contains the command required to upload using the ESP Upload tool on the command line. The upload options are explained in detail in [file upload](/examples/fileupload).
-
+The files for such minimal devices are reduced and available in the `v03m` folder (not `v03`).
+Please be sure to adjust the URL by appending #v03m like <http://outdoor/$update.htm#v03m>.
+You may need to refresh the page until you see the text
+**loading from: https://homeding.github.io/v03m/**.
 
 
 ## Web UI
@@ -69,6 +68,7 @@ The Web UI that comes with this example fits into 128 kByte and provides showing
 
 * network configuration : /$setup
 * UI to upload: /$upload
+* minimal dashboard: /ding.htm
 * min editor: /microide.htm
 * no full icon set - only one device icon. /i/default.svg
 * favicons.
@@ -85,19 +85,15 @@ When you implement your own elements you can just add them to the sketch folder.
 
 
 
+<!-- 
 ## OTA Update
 
-
-https://github.com/arendst/Sonoff-Tasmota
-
-https://goblinsleg.wordpress.com/category/sonoff-tasmota/
-
-https://github.com/ct-Open-Source/tuya-convert/wiki/Compatible-devices
-
-https://www.heise.de/ct/artikel/Tuya-Convert-Escaping-the-IoT-Cloud-no-solder-need-4284830.html
-
-https://goblinsleg.wordpress.com/category/sonoff-tasmota/
-https://goblinsleg.wordpress.com/2017/12/28/diy-home-automation-with-openhab-2-part-3/
-
+* <https://github.com/arendst/Sonoff-Tasmota>
+* <https://goblinsleg.wordpress.com/category/sonoff-tasmota/>
+* <https://github.com/ct-Open-Source/tuya-convert/wiki/Compatible-devices>
+* <https://www.heise.de/ct/artikel/Tuya-Convert-Escaping-the-IoT-Cloud-no-solder-need-4284830.html>
+* <https://goblinsleg.wordpress.com/category/sonoff-tasmota/>
+* <https://goblinsleg.wordpress.com/2017/12/28/diy-home-automation-with-openhab-2-part-3/>
+ -->
 
 

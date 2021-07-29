@@ -49,8 +49,7 @@ This works without invoking any JavaScript analog to the `is` attribute from the
 * <https://html.spec.whatwg.org/multipage/custom-elements.htmlx>
 * <https://developers.google.com/web/fundamentals/web-components/>
 * <https://www.mathertel.de/AJAXEngine>
-* <http://www.mathertel.de/AJAXEngine/S03_AJAXControls>
-* <http://www.w3.org/TR/custom-elements/>
+* <https://www.mathertel.de/AJAXEngine/S03_AJAXControls>
+* <https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements>
 * <https://github.com/w3c/webcomponents/>
 * <https://www.ccs.neu.edu/home/dherman/javascript/behavior/>
-* <http://webreference.com/js/column64/2.html>

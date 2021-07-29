@@ -14,13 +14,20 @@ There is a walk-through description on how to use the WiFi Manager in [Step by S
 ## Wifi Setup Dialog
 
 The dialog that enables selecting an available network and entering the corresponding network passphrase
-is available on every device by using the URL: <http://{name}/$setup.htm> or <http://192.168.4.1/$setup.htm>
+is available on every device by using the **/\$setup.htm** URL.
+
+* When the device has no local network credentials the device opens a new open WiFi network.
+  On this WiFi the device ia reachable on the fixed IP address 192.168.4.1 and the dialog is available
+  using the <http://192.168.4.1/$setup.htm> URL.
+* The setup dialog is also available when the device has a network registration
+  and is available on the local network using <http://homeding/$setup.htm>
 
 ![WiFiManager dialog](/wifimanager.png)
 
 In this dialog is coded into the firmware to make it available even when the UI files have not been uploaded yet.
 
 It can also be used in case the device is connected to re-configure the device.
+
 
 ## Start the Wifi-Manager
 
@@ -54,6 +61,7 @@ After connecting your mobile phone or computer to this network the WiFiManager U
 
 When the WiFiManager is active only the system elements are started.
 
+
 ## WiFiManager UI
 
 The WiFiManager presents a minimal UI that shows some minimal information about the device and a form to configure the secured network access.
@@ -63,7 +71,7 @@ The WiFiManager presents a minimal UI that shows some minimal information about 
 * Using the `re-scan` the available networks are scanned again.
 * Using the `Connect` button the device tries to connect the selected network and then reboots into the normal operation mode.
 
-The WiFi manager UI can also be accessed during normal operation using the link <http://devicename/$setup.htm>. The UI is part of the uploaded sketch to allow configuring new devices that have been flashed with the sketch but not yet uploaded the WebUI files to the SPIFFS file system.
+The WiFi manager UI can also be accessed during normal operation using the link <http://homeding/$setup.htm>. The UI is part of the uploaded sketch to allow configuring new devices that have been flashed with the sketch but not yet uploaded the WebUI files to the SPIFFS file system.
 
 How to bring a device from an empty board into full operating can be found in [Setup a new device Step by Step](/stepsnewdevice.md)
 
@@ -85,7 +93,7 @@ Defaults is `GPIO0(D3)`
 
 The network configuration includes the network name and the network password. This is not configured in a configuration file but stored in a special non volatile memory together with some network parameters that allows fast rejoining the existing network that was connected successfully before.
 
-The device can be reset and forgets the network configuration when calling the url <http://{name}/$reset>.
+The device can be reset and forgets the network configuration when calling the url <http://homeding/$reset>.
 
 
 <!-- ## WPS

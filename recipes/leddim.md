@@ -2,7 +2,7 @@
 
 This recipe uses 2 digital input signals to change the brightness level of a LED.
 
-This is can be achieved by using 2 [digital inputs](/elements/digitalin.md), a [value](/elements/value.md) and a [pwm](/elements/pwm.md) element connected by some actions.
+This is can be achieved by using 2 [digital inputs](/elements/digitalin.md), a [value](/elements/value.md) and a [pwm](/elements/pwmout.md) element connected by some actions.
 
 ![Elements used in led recipe](/recipes/leddimflow.png)
 
@@ -22,7 +22,7 @@ When the maximum level is reached no further increment will be done.
 
 Every time the value of the value element is changed an action with the new value is passed to the pwm element driving the LED.
 
-The [pwm element](/elements/pwm.md) is configured to allow values within the same range as passed from the value element corresponding to 0 up to the maximum of the pwm output level at the `D4` GPIO.
+The [pwm element](/elements/pwmout.md) is configured to allow values within the same range as passed from the value element corresponding to 0 up to the maximum of the pwm output level at the `D4` GPIO.
 
 
 ## env.json Configuration

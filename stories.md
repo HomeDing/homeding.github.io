@@ -8,7 +8,7 @@ can be found  in the [recipes collection](/recipes/index.md) and in the [element
 
 ## Building a Simple Sensor device
 
-The [Outdoor Sensor Story](/stories/story-story-outdoorsensor.md) is about
+The [Outdoor Sensor Story](/stories/story-outdoorsensor.md) is about
 how to build a device that simply captures the air temperature and humidity parameters
 from a DHT22 sensor by using the low-code [Homeding library] and provide a graph with latest values.
 

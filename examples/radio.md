@@ -24,7 +24,7 @@ This includes:
 
 After flashing the software and the web files the web interface is fully functional but not yet configured.
 
-To ensure that all tools work as expected the [Standard example](/exampkes/standard.md) should be used first.
+To ensure that all tools work as expected the [Standard example](/examples/standard.md) should be used first.
 
 
 ## Components for the Radio Example

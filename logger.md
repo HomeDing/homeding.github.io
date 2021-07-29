@@ -8,7 +8,7 @@ as well as a web UI that allows viewing some of the latest logging information f
 This is implemented by the Logger class.
 
 > There is also a value logging feature available that keeps e.g. values from sensors.
-> This is implemented by the [Log Element](/elements/log).
+> This is implemented by the [Log Element](/elements/log.md).
 
 The Logger class implementation solves the major logging topics when implementing things:
 

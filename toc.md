@@ -57,11 +57,12 @@
 * [sonoff devices](/boards/sonoffbasic.md)
 * [pins](/boards/pins.md)
 * [deepsleep](/boards/deepsleep.md)
+
 <!--
-* [esp32/esp32azureiotkit](/boards/esp32/esp32azureiotkit.md)
-* [esp32/readme](/boards/esp32/readme.md)
-* [esp32/_g](/boards/esp32/_g.md)
-* [esp32/_ttgogallery](/boards/esp32/_ttgogallery.md)
+* [esp32/esp32azureiotkit](/boards/_esp32/esp32azureiotkit.md)
+* [esp32/readme](/boards/_esp32/readme.md)
+* [esp32/_g](/boards/_esp32/_g.md)
+* [esp32/_ttgogallery](/boards/_esp32/_ttgogallery.md)
 *  -->
 
 
@@ -86,7 +87,7 @@
 * [micro templates](/microtemplates.md)
 * [website](/website.md)
 * [websitemap](/websitemap.md)
-* [monitor](/monitor.md)
+<!-- * [monitor](/elements/_monitor.md) -->
 * [Portal](/microportal.md)
 <!-- * [_iconsforthings](/_iconsforthings.md) -->
 
@@ -117,7 +118,6 @@
 
 <!-- ### Rework: -->
 <!-- * [examples/pwm](/examples/pwm.md) -->
-<!-- * [wishlist](/wishlist.md) -->
 <!-- * [_private](/_private.md) -->
 <!-- * [_reset](/_reset.md) -->
 <!-- * [__memo](/__memo.md) -->
