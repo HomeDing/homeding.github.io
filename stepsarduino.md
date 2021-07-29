@@ -2,10 +2,9 @@
 
 These are the steps to follow to setup a basic arduino development environment that allows programming new software to the original Arduino boards.
 
-For the ESP8266 or ESP32 processors some additional tools need to be installed as described in
-[Step by Step setting up the processor tools](/stepstools.md). 
+For the ESP8266 or ESP32 processors some additional tools need to be installed as described below.
 
-
+  
 ## Download the Arduino Environment
 
 On the web site <www.arduino.cc> you can find the software for programming microprocessors.

@@ -35,12 +35,12 @@ Open <http://homeding/$upload.htm> <sup>*1</sup> to use the drag & drop upload u
 
 The HomeDing device has an embedded web server that offers this simple upload functionality that is built-in the firmware from the sketch.
 
-You can reach it on a un-configured device using the url http://ESP_xxxxxx/$upload.htm.
+You can reach it on a un-configured device using the url http://ESP-xxxxxx/$upload.htm.
 The real server name or the ip-address of an un-configured device can be found in the serial output.
 
 **Examples:**
 
-* <http://ESP_123456/$upload.htm> - the generic name is used as long as there is no configuration of the [Device Element](/elements/device.md). 
+* <http://ESP-123456/$upload.htm> - the generic name is used as long as there is no configuration of the [Device Element](/elements/device.md). 
 * <http://192.168.2.170/$upload.htm> - The IP address can always be used. It is shown in the serial output.
 
 The files that need to be uploaded to implement the Web UI can be found
