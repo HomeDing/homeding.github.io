@@ -1,6 +1,6 @@
-# NTP based clock
+# NTP based clock with OLED
 
-This recipe uses the time from the internet and displays the current local time on a display.
+This recipe uses the time from the internet and displays the current local time on a OLED display.
 
 This recipe can run this on a board that has a display integrated like the
 [wifikit8](/boards/wifikit8.md) or [wroom2](/boards/wroom2.md) ure use a separate display.
