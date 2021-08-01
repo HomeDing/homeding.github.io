@@ -64,7 +64,7 @@ The following properties are available with the current values at runtime
 **value** - Current output value of the element.
 
 
-## Example State
+### Example State
 
 The internal value can be seen in the rotary state but should not directly be used as a value.
 

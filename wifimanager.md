@@ -16,9 +16,12 @@ There is a walk-through description on how to use the WiFi Manager in [Step by S
 The dialog that enables selecting an available network and entering the corresponding network passphrase
 is available on every device by using the **/\$setup.htm** URL.
 
-* When the device has no local network credentials the device opens a new open WiFi network.
-  On this WiFi the device ia reachable on the fixed IP address 192.168.4.1 and the dialog is available
+* When the device has no local network credentials the device opens a new open WiFi network
+  named `HomeDingNNNNNN` where NNNNNN is a hex value derived from the mac address so somehow unique.
+  
+  On this WiFi the device is reachable on the fixed IP address 192.168.4.1 and the dialog is available
   using the <http://192.168.4.1/$setup.htm> URL.
+
 * The setup dialog is also available when the device has a network registration
   and is available on the local network using <http://homeding/$setup.htm>
 
@@ -50,7 +53,7 @@ Under normal operating conditions when the device was added to the network the s
 
 ## Using the WiFi Manager
 
-After flashing a brand new device or whan pressing the system button while shortly AFTER the device was rebooted
+After flashing a brand new device or when pressing the system button while shortly AFTER the device was rebooted
 the WiFi Manager mode will be started.
 
 To allow accessing the WiFiManager a local and unsecured network is created by the device with the name `HomeDing`.
@@ -94,6 +97,33 @@ Defaults is `GPIO0(D3)`
 The network configuration includes the network name and the network password. This is not configured in a configuration file but stored in a special non volatile memory together with some network parameters that allows fast rejoining the existing network that was connected successfully before.
 
 The device can be reset and forgets the network configuration when calling the url <http://homeding/$reset>.
+
+
+## Information in the Serial Monitor
+
+A device starting without a nework configuration will go into WiFi Manager mode.
+
+The information you can find in the Log on the Serial Monitor includes:
+
+    00:00:03 sys:i Device starting...
+    00:00:03 >HomeDing                    // Startup Welcome Message
+    00:00:03 >config.. HomeDing5D26A5     // Config mode and Name of Setup-Network
+    00:00:03 sys:i  AP-IP: 192.168.4.1    // IP Address of the device
+
+After choosing the network and entering the passPhrase in the setup dialog using <http://192.168.4.1/$setup>:
+
+    00:01:07 >setup network DEVNET        // chosen Network name
+    00:01:15 >ok.                         // access could be established
+    00:01:15 sys:i reboot...              // reboot for new configuration
+
+A regular startup will follow:
+
+    00:00:03 sys:i Device starting...
+    00:00:03 >HomeDing                    // Startup Welcome Message
+    00:00:13 >ESP-5D26A5 192.168.2.229    // Device name and IP address on the new network
+    00:00:13 sys:i ESP-5D26A5 (192.168.2.229) connected to DEVNET (unsafe mode)
+
+The device is now reachable using <http://ESP-5D26A5> or <http://192.168.2.229>
 
 
 <!-- ## WPS
