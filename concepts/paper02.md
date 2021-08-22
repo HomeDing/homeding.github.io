@@ -4,6 +4,7 @@
 2. **Software Architecture**
 3. [Elements and Actions](/concepts/paper03.md)
 4. [Builtin Web server](/concepts/paper04.md)
+5. [Device Discovery](/concepts/paper05.md)
 
 These are the functional blocks of a device based on the HomeDing library:
 
@@ -11,7 +12,7 @@ These are the functional blocks of a device based on the HomeDing library:
 
 The heart if the HomeDing library implementation is the board class that covers the creation and configuration of the elements and enables exchanging actions among the elements and the web server.
 
-The web server is the `door` to the network that enables to use the UI from the files on the filesystem and by providing REST based services to interact with the device.  
+The web server is the **door** to the network that enables to use the UI from the files on the filesystem and by providing REST based services to interact with the device.  
 
 A micro implementation of a JSON parser and some utilities are provided for this central role.
 

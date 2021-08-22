@@ -4,13 +4,15 @@
 2. [Software Architecture](/concepts/paper02.md)
 3. **Elements and Actions**
 4. [Builtin Web server](/concepts/paper04.md)
+5. [Device Discovery](/concepts/paper05.md)
 
-The power, flexibility and the extensibility of the HomeDing library comes from 2 main designs
+The power, flexibility and the extensibility of the HomeDing library comes from 2 main design decisions:
 
-* the unified implementation of I/O and logic in the Elements and 
-* the way Elements can interact locally or over the network by using messages.
+* the unified and standardized implementation of the Elements and 
+* the way Elements can interact locally and over the network by using messages.
 
-These were influenced by the well-known Actor Model concept and the REST full adressing.
+These were influenced by the [W3C Web of Things] standardization, the well-known Actor Interaction Model concepts and the REST full addressing.
+
 
 ## Actor Model
 
@@ -29,45 +31,71 @@ Like in the Actor Model the functionality is encapsulated inside the components 
 to the outer world but differ in the inner implementation.
 This is the concept of the Elements you find in the HomeDing library.
 
+See [Elements](/elements.md) for the list of available element implementations
+and [Sensors](/sensors/sensors.md) for the list of supported sensors.
+
 The common interface is about supporting the life cycle:
 
 * creating new elements - static `create()` method, constructor and `init()`
-* configure elements - `set()` method
-* start and running elements - `start()` method
+* configure elements by setting properties - `set()` method
+* startup elements - `start()` method
 * receiving actions - `set()` method
+* executing some Element specific functionality - `loop()` method
 * terminating / stopping elements - `term()` method
 
-The both functionalities of configuring elements and receiving actions
-are sharing the same implementation in the `set()` method.
+The functionality of configuring elements by setting properties and receiving actions share the same implementation in the `set()` method.
 
-The standard interface of every Element is defined by the base Element class
-and every specific Element is derived from this class and adding the specific functionality.
+The standard interface of every Element is defined by the base `Element` class. Every other Element is derived from this class and adding the specific functionality.
 
 ![Members of Element implementations](/concepts/elementapi.png)
 
 A detailed description of the common Element Interface can be found in [ElementInterface](/elementinterface.md).
 
-## Actions
+## Actions and Events
 
-Actions or you may call it events is the functionally that allows Elements to communicate.
+Actions are short messages that enable Elements to communicate.
 
-Actions are always send by the origin when required.
+Actions are always send by the origin Element when a specific **Event** occurs like new data has been retrieved from a sensor. It is required by design that the origin Element sends Actions with the new value to the configured Elements that need to know about the new value.
 
-By using multiple elements that interact this way more complex things can be created.
+By using multiple elements that interact this way more complex things and full solutions can be created.
 
-When an Element is active the `loop()` function is called periodically so the Element can so something meaningful. Here some elements will get sensor values or check the state of some GPIO pins and will then create a named action like `displaytext/info?value=Hello` and hand it over to the action dispatcher in the board class.
+The Action model fits good into the resource restricted microprocessor implementation as communication only happens when data has changed. A polling model in contrast would add much overhead in constant asking.
 
-This example action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `Hello`. The notation of actions is using the URL syntax by intention so the same action can also be triggered from outside using the web server interface:
 
-* open the url: http://(devicename)/$board/displaytext/info?value=Hello
-* use a command line tool like: curl http://(devicename)/$board/displaytext/info?value=Hello
-* use the remote element in another HomeDing based device.
+## Actions are URLs
 
-Inside the board class the action dispatcher is available. Actions are collected in a queue and will be dispatched to the target element shortly after they have been handed over.
+The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.
+
+When an Element is active the `loop()` function is called periodically so the Element can so something meaningful.
+Here some elements will retrieve sensor values, check the state of GPIO pins or will calculate something and then will create actions like `displaytext/info?value=22.50` and hand it over to the action dispatcher in the board class.
+
+This example action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `22.50`. The action can also be triggered from outside using the web server interface:
+
+* open the url: http://(devicename)/$board/displaytext/info?value=22.50
+* use a command line tool like: curl http://(devicename)/$board/displaytext/info?value=22.50
+* use the [Remote Element](/elements/remote.md) in another HomeDing based device.
+
+Inside the board class the action dispatcher is available.
+Actions are collected in a queue and will be dispatched to the target element shortly after they have been handed over.
 
 Calling the loop() function / executing the element code is prioritized over sending a message.
 This is why the board implements a store and forward mechanism with a queue.
 The order of the messages is guaranteed to be stable as long as they are not send via network.
+
+
+## Properties
+
+A Property of an Element is some data also sometimes called the state an Element.
+
+In some cases the change of a property value is an event that can be used to send an action.
+
+Some properties can also be changed by using an Action.
+
+Examples of Properties are configuration settings (write only), sensor values (read-only), level of an output signal (read+write) or computation results (read-only).
+
+They all can be observed by combining the information from the configuration files and the dynamic values by calling the $board service.
+
+<!-- See also [Value Properties](???). -->
 
 
 ## Sensor Elements

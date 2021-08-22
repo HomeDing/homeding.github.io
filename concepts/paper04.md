@@ -4,6 +4,8 @@
 2. [Software Architecture](/concepts/paper02.md)
 3. [Elements and Actions](/concepts/paper03.md)
 4. **WebServer and Web UI**
+5. [Device Discovery](/concepts/paper05.md)
+
 
 ## Overview 
 
@@ -11,10 +13,10 @@ Building things without the need to use a cloud solution is possible because eve
 A small web server in every devices enables
 
 * pages that allow directly changing the actual state of elements
-* pages that visualise the current values
+* pages that visualize the current values
 * pages that allow changing the configuration and upload new files
 * intersacting with the elements using http+REST based services
-* connecting independant devices over the network.
+* connecting independent devices over the network.
 
 
 ## WebServer for static files

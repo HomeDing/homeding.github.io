@@ -69,3 +69,7 @@ Be aware that when using the deep sleep mode that the millis can … -->
 <!-- Using actions dispatched over the network to exchange a current time has a latency that may be too much to be accurate for a specific use case. Local actions are better to be used for this so you may consider using a local Time Element on the devices that have real-time requirements.
 
 Some interesting use cases are using the real time like clock displays and Things that need to know it is day or night or just log sensor data that must be analyzed later. -->
+
+## See also
+
+* <https://makezine.com/2019/01/18/getting-started-with-real-time-clocks/>

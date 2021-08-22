@@ -70,7 +70,8 @@ readTime = function (self)
 
 * <https://github.com/elpaso/Rtc_Pcf8563>
 * <https://github.com/junhuanchen/esp32-PCF8563>
-* 
 
 
- http://www.esp8266learning.com/wemos-pcf8563-rtc-example.php
+* <http://www.esp8266learning.com/wemos-pcf8563-rtc-example.php>
+
+* <https://makezine.com/2019/01/18/getting-started-with-real-time-clocks/>
