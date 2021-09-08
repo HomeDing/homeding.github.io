@@ -13,4 +13,5 @@ jobs:
 
     - name: Check Spelling (JS, Vue, HTML, Markdown, Text)
       uses: rojopolis/spellcheck-github-actions@0.16.0
+      # continue-on-error: true
       # uses: UnicornGlobal/spellcheck-github-actions@0.4.0
