@@ -57,6 +57,7 @@
 -i/power.svg
 -i/pwmout.svg
 -i/radio.svg
+-i/reload.svg
 -i/remote.svg
 -i/rfsend.svg
 -i/rotary.svg
@@ -85,9 +86,8 @@ chartline.svg
 chartpie.js
 chartpie.svg
 ding.htm
-element.svg
 elements.json
-elementsvg.js
+favicon.svg
 i/config.svg
 i/default.svg
 i/device.svg
@@ -95,7 +95,6 @@ i/ide.svg
 i/minus.svg
 i/no.svg
 i/plus.svg
-i/reload.svg
 i/start.svg
 i/stop.svg
 icons.svg

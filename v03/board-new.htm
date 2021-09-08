@@ -1,59 +1,4 @@
-<!-- Dialogs for configuration -->
-<div u-control="newelementdlg" u-is="createElementDlg" class="card">
-  <div class="block header" style="height: 2em;">
-    <h2>Add a new Element</h2>
-    <div class="closedlg" u-action="close">&#x00D7;</div>
-  </div>
-  <div class="block" style="font-size: 1.4">
-    <div class="form-group">
-      <label>Type:</label>
-      <select class="typeSelect">
-        <option disabled selected="selected" value="0">Select Element...</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>ID:</label>
-      <input placeholder="choose a name..." aria-label="theID" class="newID">
-    </div>
-  </div>
-
-  <div class="block footer">
-    <button u-action="next" style="float:right">Next</button>
-  </div>
-</div>
-
-
-<div u-control="configelementdlg" u-is="configElementDlg" class="card">
-  <div class="block header" style="height: 2em;">
-    <h2>Config ${id}</h2>
-    <div class="closedlg" u-action="close">&#x00D7;</div>
-  </div>
-  <div class="block" style="font-size: 1.4">
-  </div>
-
-  <div class="block footer">
-    <button u-action="save" style="float:right">Save</button>
-  </div>
-</div>
-
-
-<div u-control="actiondlg" u-is="actionDlg" class="card" ev="${ev}" val="${val}">
-  <div class="block header" style="height: 2em;">
-    <h2>Config ${ev}</h2>
-    <div class="closedlg" u-action="close">&#x00D7;</div>
-  </div>
-  <div class="block" style="font-size: 1.4">
-    ${ev} --- ${val}
-  </div>
-
-  <div class="block footer">
-    <button u-action="save" style="float:right">Save</button>
-  </div>
-</div>
-
-
-<script>
-  // uElements.xxx from main page loading...
+<div u-control='newelementdlg'u-is='createElementDlg'class='card'><div class='block header'style='height:2em'><h2>Add a new Element</h2><div class='closedlg'u-action='close'>&#x00D7;</div></div><div class='block'style='font-size:1.4'><div class='form-group'><label>Type:</label> <select class='typeSelect'><option disabled='disabled'selected='selected'value='0'>Select Element...</option></select></div><div class='form-group'><label>ID:</label> <input placeholder='choose a name...'aria-label='theID'class='newID'></div></div><div class='block footer'><button u-action='next'style='float:right'>Next</button></div></div><div u-control='configelementdlg'u-is='configElementDlg'class='card'><div class='block header'style='height:2em'><h2>Config ${id}</h2><div class='closedlg'u-action='close'>&#x00D7;</div></div><div class='block'style='font-size:1.4'></div><div class='block footer'><button u-action='save'style='float:right'>Save</button></div></div><div u-control='actiondlg'u-is='actionDlg'class='card'ev='${ev}'val='${val}'><div class='block header'style='height:2em'><h2>Config ${ev}</h2><div class='closedlg'u-action='close'>&#x00D7;</div></div><div class='block'style='font-size:1.4'>${ev} --- ${val}</div><div class='block footer'><button u-action='save'style='float:right'>Save</button></div></div><script>// uElements.xxx from main page loading...
 
   micro.define("createElementDlg", {
     objType: null,
@@ -185,5 +130,4 @@
         ModalDialogClass.close();
       }
     }
-  }); // actionDlgBehavior
-</script>
+  }); // actionDlgBehavior</script>
