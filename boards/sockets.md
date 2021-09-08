@@ -10,7 +10,7 @@ The [Minimal Sketch](/examples/minimal.md) supports these use cases.
 The TASMOTA firmware implementation is one with constant support to even new devices from other brands and when TASMOTA supports the device it likely has a ESP8266 inside.
 
 
-## Gosund SP111 also from Blitzwolff
+## Gosund SP111 also from Blitzwolf
 
 ![sp111 socket](/boards/sockets.jpg "w200")
 ![sp111 socket](/boards/socket-sp111-01.jpg "w200")

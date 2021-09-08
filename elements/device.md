@@ -103,7 +103,7 @@ The following action is implemented:
       "name": "wmleaks",
       "title": "Water Leakage",
       "description": "Monitor water leaks at the washing machine",
-      "room": "Celler",
+      "room": "Cellar",
       "reboottime": "24h",
       "sleeptime": 600,
       "led": "D0",

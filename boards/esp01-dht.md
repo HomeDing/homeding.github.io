@@ -20,7 +20,7 @@ A version prepared and configured for minimal power given by a solar panel can b
 
 ## System configuration
 
-This configuration enables the system and the dht element to get a sensor that cah be watched using the browser UI.
+This configuration enables the system and the dht element to get a sensor that can be watched using the browser UI.
 
 The env.json file should only contain the system configuration:
 

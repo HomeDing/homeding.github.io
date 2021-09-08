@@ -34,7 +34,7 @@ The 4 digit displays are supported by the [TM1637 Element](/elements/tm1637.md).
 ## Flexible displays
 
 ::: sensor oled
-There are many OLED displays available using similar chips and drivers. They are contolled using the I2C or SPI bus.
+There are many OLED displays available using similar chips and drivers. They are controlled using the I2C or SPI bus.
 :::
 
 A small display used together with a ESP8266 board covers a lot of use-cases.

@@ -48,7 +48,7 @@ For simple solutions this also adds too much overhead and complexity to have a s
 
 The Elements are the implementation blocks for the adaption of specific sensors, actors, other IO attached modules and for more time and logic modules. They are created and initialized on demand by the board when reading the configuration files.
 
-When creating the upload program for a device many elements can be included. As they are configured they will be activated by using the parameters from the configurarion files.
+When creating the upload program for a device many elements can be included. As they are configured they will be activated by using the parameters from the configuration files.
 
 For many devices the standard example contains already all the element implementations that are used by the recipes available in the documentation. These can be adopted by just modifying the configuration.
 

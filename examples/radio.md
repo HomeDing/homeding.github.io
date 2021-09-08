@@ -98,7 +98,7 @@ The elements that come with the example code are
 * radio element
 * TPA2016 element
 
-These elements also show how elements can be implemented together with the sketch and are extending the capablilites of the device without the need to include them into the library. 
+These elements also show how elements can be implemented together with the sketch and are extending the capabilites of the device without the need to include them into the library. 
 
 
 ## Using a Rotary encoder
@@ -156,10 +156,10 @@ I do not need many radios so I decided to use a prototype PCB as the base. Just 
 
 ## Radio board
 
-The RDA radio board is not following the typical 2.54 grid but has 2mm spacing connectors. By soldering some wires the way you can see on the pictures the bopard can be soldered to the base PCB.
+The RDA radio board is not following the typical 2.54 grid but has 2mm spacing connectors.
+By using the wires the way you can see on the pictures the board can be soldered to the base PCB.
 The wires on top are still visible during assembly for robustness and are later cut away (before applying power).
 I added a 100nF capacitor next to the radio.
-
 
 ![radio chip](/examples/rda.jpg)
 ![radio chip](/examples/rda2.jpg)

@@ -144,7 +144,7 @@ More details and hints on using the deep sleep mode can be found in [deepsleep](
 
 ## Modification for supporting PUYA Flash chips
 
-Some of the ESP8266 ESP-01 boards use a (cheper) flash chip from the vendor PUYA. This chip has a slightly different behavior when writing data to the flash memory than the original flash chips that have been used. Therefore a modification in the code needs to be activated.
+Some of the ESP8266 ESP-01 boards use a (cheaper) flash chip from the vendor PUYA. This chip has a slightly different behavior when writing data to the flash memory than the original flash chips that have been used. Therefore a modification in the code needs to be activated.
 
 For version 2.5.2 of the ESP8266 board package this can be enabled by adding the following code to the Esp.h file in `packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\Esp.h`.
 
