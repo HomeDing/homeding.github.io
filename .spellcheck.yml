@@ -6,10 +6,8 @@ matrix:
     encoding: utf-8
   pipeline:
   - pyspelling.filters.markdown:
-    comments: false
-    ignores:
-    - code
-    - pre
+      markdown_extensions:
+      - markdown.extensions.extra:
   sources:
   - '**/*.md'
   default_encoding: utf-8
