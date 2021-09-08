@@ -1,0 +1,14 @@
+name: Check for spelling errors (manual)
+## using - uses: rojopolis/spellcheck-github-actions@0.14.0
+
+## on: push
+
+jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: check-out
+
+    - name: Check Spelling (JS, Vue, HTML, Markdown, Text)
+      uses: UnicornGlobal/spellcheck-github-actions@0.4.0
