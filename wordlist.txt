@@ -1,0 +1,4 @@
+﻿### This file contains the list of words to be ignored by spell check
+HomeDing
+Element
+AnalogElement
