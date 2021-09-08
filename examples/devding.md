@@ -60,6 +60,6 @@ This feature comes at it's cost:
 
 ## See also
 
-* [examples](/examples.md)
+* [examples](/examples/index.md)
 * [Boards overview](/boards.md)
 * [Recipes](/recipes/index.md)

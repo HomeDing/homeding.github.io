@@ -38,7 +38,7 @@ The approach is very different to many other IoT solutions regarding these reaso
 
 > Many of the standard problems that need to be solved for building IoT devices have been implemented in the library.
 >
-> Just use one of the [examples](/examples.md) as a starting code and upload it to the device.
+> Just use one of the [examples](/examples/index.md) as a starting code and upload it to the device.
 
 
 **No programming skills required**
@@ -103,9 +103,9 @@ Elements are the functional blocks for building and configuring a device and the
 
 Each element supports a unique feature, e.g. reads a sensor, drives a display, connects some peripheries or implements some internal logic.
 
-The list of the [elements](/elements.md) already provided within this library, the [examples](/examples.md) and the [recipes](/recipes/index.md) show you the available features that can be configured.
+The list of the [elements](/elements.md) already provided within this library, the [examples](/examples/index.md) and the [recipes](/recipes/index.md) show you the available features that can be configured.
 
-It is intentionally easy to implement your own specific elements as you can see in some of the [examples](/examples.md).
+It is intentionally easy to implement your own specific elements as you can see in some of the [examples](/examples/index.md).
 
 
 ## Configuration

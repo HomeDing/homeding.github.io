@@ -19,10 +19,11 @@
 * [Create configuration files](/stepsconfigure.md)
 
 
-### [Examples](/examples.md)
+### [Examples](/examples/index.md)
 * [Standard](/examples/standard.md)
 * [Minimal](/examples/minimal.md)
 * [DevDing](/examples/devding.md)
+* [Probe](/examples/probe.md)
 <!-- * [examples/radio](/examples/radio.md) -->
 
 

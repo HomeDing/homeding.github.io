@@ -91,6 +91,6 @@ This configuration can be used as a starting point to implement your own project
 
 ## See also
 
-* [examples](/examples.md)
+* [examples](/examples/index.md)
 * [Boards overview](/boards.md)
 * [Recipes](/recipes/index.md)

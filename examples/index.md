@@ -24,6 +24,11 @@ This example shows how to reduce the number of available elements and use only a
 This example is very like the [standard example](/examples/standard.md) but has some add-ons that help during development.
 It can be used with any board that has a 4MByte Flash memory like the [nodemcu boards](/boards/nodemcu.md).
 
+* **[Probe](/examples/probe.md)**
+shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
+It can be used with any board that has a 4MByte Flash memory like the [nodemcu boards](/boards/nodemcu.md).
+
+
 <!--
 * **[Radio](/examples/radio.md)** This example is built as an extension of the standard example but shows how a special element that is only used for this sketch can be included.
 There is also a special WebUI page for the remote control of the radio.
@@ -34,12 +39,13 @@ There is also a special WebUI page for the remote control of the radio.
 -->
 
 
-## Customizing the sketch.
+## Customizing the Standard Example
 
 Under normal conditions the [Standard Example](/examples/standard.md) offers a solution where all required elements are compiled and ready to be configured.
 
 In some cases there will not be enough memory to upload or there is the need
 to add some specific elements for a specific solution. This can be done using the following mechanisms.
+
 
 ### HOMEDING_INCLUDE_xxx Definitions.
 
@@ -56,7 +62,7 @@ Some elements that require a specific external library that are disables in the 
 
 In the folder of the script you can add  some elements that are not part of the library but will also be compiled together with the sketch and therefore are also available for configuration.
 
-The [Radio Example](/examples/radio.md) shows how to include a very specific element for using FM radio chips.
+The [Probe Example](/examples/probe.md) and the [Radio Example](/examples/radio.md) show how to include a very specific elements into the sketch folder.
 
 The [DevDing Example](/examples/devding.md) is used to implement some additional elements for problem analysis. It is instrumented for using the (limited, software based) remote debugger. New elements can be implemented by using the provided empty MyElement implementation as a boilerplate. 
 
@@ -71,31 +77,7 @@ These examples require a specific hardware setup like sensors or displays to sol
 * with DSTimeElement
 * Dash button wake-up
 
-These examples are for a minimal board like ESP-01 or Sonoff basic devices with 1 MByte Flash only
-
-* [Radio](/examples/radio.md)
-
-
-- [The build-in WebServer](/webserver.md)
-- [The build-in Web-Services](/webservices.md)
-
-## Recipes
-
-Example-NTPClock
-
-In addition to the Base Example this configuration requires a display where the current time is shown.
-
-+ Display Elements
-+ Display Adapter
-
-
-[Example-pwm](/examples/pwm.md)
-
-Example-Display
-
-Example-RFCodes
-
- -->
+-->
 
 ## See also
 
