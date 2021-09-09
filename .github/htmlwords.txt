@@ -6,20 +6,11 @@ href
 htm
 http
 https
-img
-jpg
 png
 svg
 src
-tbody
-td
-th
-thead
-ul
-li
 img
 jpg
-href
 http
 https
 
@@ -32,11 +23,22 @@ td
 th
 thead
 ul
+li
 
+CSS
+txt
 png
 pre
 
+height
+width
+
+SCSS
+StyleSheet
 
 manifest
-appmanifest
-webmanifest
+appManifest
+webManifest
+
+webcomponents
+webcomponentsjs

@@ -21,7 +21,7 @@ The UI controls used to build the ui for elements are using `u-<type>` class nam
 Defining the CSS on a global level in a shared css file allows implementing small CSS rulesets.
 
 > Remark
-Using the BEM naming convention is very popular to style implementations but here another approach and notation was used to reduce text size. A concept to a similar approach can be found at <https://www.sitepoint.com/title-css-simple-approach-css-class-naming/>. While this implementation is more complete the micro css implementation for the HomeDing devices ony supports some of the constructs.
+Using the BEM naming convention is very popular to style implementations but here another approach and notation was used to reduce text size. A concept to a similar approach can be found at <https://www.sitepoint.com/title-css-simple-approach-css-class-naming/>. While this implementation is more complete the micro css implementation for the HomeDing devices only supports some of the constructs.
 
 ## Cards
 
