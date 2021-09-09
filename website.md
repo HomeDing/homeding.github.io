@@ -20,17 +20,15 @@ See
 
 **Scripts** are implemented in JavaScript using the ES5 version or by using Typescript that is compiled and minified to ES5 version.
 
-See
-<https://caniuse.com/#feat=es5>
+See <https://caniuse.com/#feat=es5>
 
-**CSS Style sheets** are implemented by using SCSS files beeing compiled to stndard CSS. This allows structuring and commending the source code as well as  minimizing the output.
+**CSS Style sheets** are implemented by using SCSS files beeing compiled to standard CSS. This allows structuring and commending the source code as well as  minimizing the output.
 
 **Promises** are really helpful when building SPA web applications using REST services. They are supported by most browsers and can be emulated for IE11 with a reasonable space.
 
 A polyfill for IE11 is provided.
  
-See
-<https://caniuse.com/#feat=promises>
+See <https://caniuse.com/#feat=promises>
 
 
 ## Implementation Details
@@ -40,10 +38,10 @@ In the examples you can find the `data` folders that include the files as they n
 
 There is a compilation from typescript into javascript and some packing of files required.
 
-A standard nodejs based project helps creating these files and also give you a useful nodejs-express baserd server to make development easier.
+A standard nodejs based project helps creating these files and also give you a useful nodejs-express based server to make development easier.
 
 The embedded web site itself 
-is implemented using the modern Single Page Applications (SPA) approach for web applications. To make this fit into the limited space a `mirco` implementation is used that provides minimal HTML, JavaScript and CSS. They run smoothly even on mobile devices because they also need not much network bandwidth.
+is implemented using the modern Single Page Applications (SPA) approach for web applications. To make this fit into the limited space a `micro` implementation is used that provides minimal HTML, JavaScript and CSS. They run smoothly even on mobile devices because they also need not much network bandwidth.
 
 * `/index.htm` => A static page with some internal links and showing some system information.
 * `/ding-info.htm` => Configuration overview, Visualize all elements

@@ -22,7 +22,7 @@ A small web server in every devices enables
 ## WebServer for static files
 
 The HomeDing library includes a web server implementation that delivers the files stored in the file system of the device.
-This is the key machanism that allows the pages the images and other ressources that build this embedded web site to be loaded into the browser.
+This is the key machanism that allows the pages the images and other resources that build this embedded web site to be loaded into the browser.
 
 Beside delivering files the web server also supports listing the existing files as well as update and delete operations.
 

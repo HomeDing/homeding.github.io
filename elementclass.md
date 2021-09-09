@@ -89,7 +89,7 @@ This function is implemented in the base Element class and stores the passed boa
 
 The `term` function is the logical counterpart to the `init` function and terminates all functionality from the Element.
 
-The allocated ressources should be freed (e.g. disabling attached modules or releasing used I/O lines).
+The allocated resources should be freed (e.g. disabling attached modules or releasing used I/O lines).
 
 ## Common Element member variables and helper functions
 

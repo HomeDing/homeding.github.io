@@ -4,7 +4,8 @@ To interact with the elements and some device features the integrated web server
 
 All services use a URL that starts using a `$` character.
 
-With some exceptions, these services are using the http GET schema so they can also be called using the address bar of the browser. Thi is handsome for test purpose.
+With some exceptions, these services are using the http GET schema so they can also be called using the address bar of the browser.
+This is handsome for test purpose.
 
 ### /$sysinfo
 
@@ -169,9 +170,10 @@ This is how the remote element will send actions across the network to other dev
 ### Implementation
 
 As an implementation principle the UI presented in the browser only acts as a visual interface but doesn't execute any functionality related to actions.
-The actions will only be processed inside the device using the implemented elements completely independant from a possible open browser.
+The actions will only be processed inside the device using the implemented elements completely independent from a possible open browser.
 
-Restfull services using the URL for adressing and JSON for data and results have been choosen to have an acceptable size of JSON parser andcompising functions in the device while making implementation in the browser relatively easy.
+Restfull services using the URL for addressing and JSON for data and results have been chosen to have an acceptable size of JSON parser
+and compising functions in the device while making implementation in the browser relatively easy.
 
 As of now there are no advances web services features like websockets implemented.
 

@@ -13,6 +13,8 @@ img
 jpg
 http
 https
+RGB
+RGBW
 
 JSON
 FALSE
@@ -32,6 +34,16 @@ pre
 
 height
 width
+Vue
+Angular
+
+DNS
+UPNP
+mDNS
+nodejs
+tcp
+udp
+upnp
 
 SCSS
 StyleSheet
@@ -42,3 +54,6 @@ webManifest
 
 webcomponents
 webcomponentsjs
+
+HTMLElement
+insertTemplate

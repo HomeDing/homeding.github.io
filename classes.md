@@ -26,7 +26,7 @@ See [Element Class Definition](/elementclass.md)
 
 ### FileServer.h
 
-Implementation of the web server request handler to handle access and upload of the files on the SPIFFS file sysem.
+Implementation of the web server request handler to handle access and upload of the files on the SPIFFS file system.
 
 
 ### HomeDing.h
@@ -42,7 +42,7 @@ This is described in detail in the [Element Class Registration](/elementregistry
 
 ### Logger
 
-The Information, Errors and Traces that are produced during runtime are routed through this class inElement Registry knows all the Element classes that can be configured.
+The Information, Errors and Traces that are produced during runtime are routed through this class.
 In case the logging feature of the device is switched on the errors are also stored to the log files.
 
 See: [Device Logging](/logger.md)

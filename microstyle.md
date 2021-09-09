@@ -2,7 +2,7 @@
 
 The micro-css is a minimal collection of CSS rules for styling UI pages of the HomeDing devices. The CSS technology is required to give the different UI implementations of the HomeDing devices a unified look & feel and to share download files among these implementations.
 
-The CSS rules can be found in the iostyle.css file that is created using the scss technology from the iostyle.scss. The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.
+The CSS rules can be found in the iotstyle.css file that is created using the scss technology from the iotstyle.scss. The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.
 
 The micro styleSheet file contains some of the basics required to build responsive UI:
 

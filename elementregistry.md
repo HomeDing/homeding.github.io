@@ -15,7 +15,7 @@ It is possible to activate new Elements just by specifying them in the env.json 
 Therefore the Element classes are *known* and every Element class has a static function that can be called to create a new Element
 so to make it life and working.
 
-Element implementations should not automatically register themselfes in some cases.
+Element implementations should not automatically register themselves in some cases.
 
 * System level elements will register themselves any time (like device and ota).
 * Core elements can be included all together or individually.
@@ -103,7 +103,7 @@ bool MyElement::registered =
 #endif
 ```
 
-You can see the whole list of elements and how they are bundled to some groups in the `HomeDing.h`inckude file.
+You can see the whole list of elements and how they are bundled to some groups in the `HomeDing.h` include file.
 
 The mechanism to do this relies on a little "trick" by using the assignment of a static variables.
 
