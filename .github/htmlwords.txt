@@ -2,8 +2,8 @@
 
 body
 aspx
-JSON
 href
+htm
 http
 https
 img
@@ -16,3 +16,27 @@ td
 th
 thead
 ul
+li
+img
+jpg
+href
+http
+https
+
+JSON
+FALSE
+TRUE
+
+tbody
+td
+th
+thead
+ul
+
+png
+pre
+
+
+manifest
+appmanifest
+webmanifest

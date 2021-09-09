@@ -36,7 +36,7 @@ There are other chips supported by the radio library and some of them also provi
 
 The used components and the principle wiring can be seen in this block diagram:
 
-![Radio Buidling Blocks](/examples\radioblocks.png)
+![Radio Building Blocks](/examples\radioblocks.png)
 
 
 ## Wiring
@@ -98,7 +98,7 @@ The elements that come with the example code are
 * radio element
 * TPA2016 element
 
-These elements also show how elements can be implemented together with the sketch and are extending the capabilites of the device without the need to include them into the library. 
+These elements also show how elements can be implemented together with the sketch and are extending the capabilities of the device without the need to include them into the library. 
 
 
 ## Using a Rotary encoder

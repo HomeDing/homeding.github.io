@@ -89,7 +89,7 @@ To implement functions that only work when save mode is not set use
 
 ```cpp
 if (! _board->safemode) {
-  // execute unsave stuff
+  // execute unsafe stuff
    ...
 }
 ```
