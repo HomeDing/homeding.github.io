@@ -1,0 +1,18 @@
+﻿### This file contains a list of words used in html
+
+body
+aspx
+JSON
+href
+http
+https
+img
+jpg
+png
+svg
+src
+tbody
+td
+th
+thead
+ul

@@ -11,7 +11,9 @@ jobs:
     - uses: actions/checkout@master
       name: check-out
 
-    - name: Check Spelling (JS, Vue, HTML, Markdown, Text)
-      uses: rojopolis/spellcheck-github-actions@0.16.0
-      # continue-on-error: true
+    - uses: rojopolis/spellcheck-github-actions@0.16.0
+      name: check spelling
+      continue-on-error: true
+      with:
+        config_path: .github/spellcheck-config.yml 
       # uses: UnicornGlobal/spellcheck-github-actions@0.4.0
