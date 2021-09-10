@@ -27,10 +27,10 @@ This is one of the required conditions so the module can start.
 ### Missing signals
 
 The REST signal should be pulled up to HIGH by default but many boards also run without.
-If you like to have a RES button aside a 10 kOhn pull up Resistor should be added.
+If you like to have a RES button aside a 10 kOhm pull up Resistor should be added.
 
 The GPIO0(D3) signal should be pulled up to HIGH for normal operation and to LOW for uploading a sketch using the Serial interface.
-I recommend to have a FLASH button and a 10 kOhn pull up resistor on this pin.
+I recommend to have a FLASH button and a 10 kOhm pull up resistor on this pin.
 
 The GPIO0 signal should be pulled up to HIGH to start the board. 
 Some boards (at least some ESP-12E) already have an internal resistor for the same reason but to add another one is not harmful.

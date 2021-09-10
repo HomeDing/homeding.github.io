@@ -6,12 +6,23 @@ that can retrieve sensor data from INA219 and INA266 current and voltage sensors
 to build a low-voltage power consumption logging device.
 :::
 
+This device is made to probe voltage and current on the power supply of another device for a long time (like days) and log the probe values into a log element to be inspected.
+
+The two sensors supported in this example behave very similar but are different in the register layout and capabilities. Each of them is supported using a specific element and a specific Arduino library. Document on the elements can be found here:
+
+* [INA219 Element](/elements/ina219.md)
+* [INA226 Element](/elements/ina226.md)
+
+They are doumented 
+
+The display is there to see the actual values.
+
 
 ## Web User interface
 
 The probe device can be accessed using a standard browser and displays the current values as well as the log from the current measures:
 
-![INA219 Sensor](/examples/probe-ui.png "w400")
+![INA219 Sensor](/examples/probe-ui.png "w600")
 
 
 ## INA219 Sensor
@@ -37,7 +48,7 @@ In the configuration some options can be modified. They are related to the featu
       "gain": "320",
       "warmuptime": "2s",
       "readtime": "10s",
-      "onVoltage": "displaytext/v?value=$v",
+      "onVoltage": "displaytext/v?value=$v,log/v?value=$v",
       "onCurrent": "displaytext/a?value=$v,log/a?value=$v",
       "onPower": "displaytext/p?value=$v"
     }
@@ -135,14 +146,30 @@ A [Log Element](/elements/log.md) is used to capture the current value from the 
     "a": {
       "title": "mA",
       "description": "log current",
-      "x-averagetime": "00:02:00",
+      "averagetime": "00:05:00",
       "filesize": "10000",
-      "filename": "/a-log.txt",
+      "filename": "/log-a.txt",
+      "yformat": "num:2"
+    },
+    "v": {
+      "title": "V",
+      "description": "log voltage",
+      "averagetime": "00:05:00",
+      "filesize": "10000",
+      "filename": "/log-v.txt",
       "yformat": "num:2"
     }
   }
 }
 ```
+
+The log file can hold about 640 values per 10 kByte. Recording a 5 min average probe values that are taken every 10s:
+
+* ina219/0?readtime=10s
+* log/v?averagetime=00:05:00
+
+This allows storing about 2-4 days of logging information.
+
 
 ## See also
 

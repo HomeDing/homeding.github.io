@@ -309,8 +309,15 @@ not yet supported.
 :::sensor ina219
 The **ina219** chip can measure voltage and current for power consumer in the low voltage and low power range.
 
-This chip is not yet fully supported by the HomeDing library.
-An experimental state implementation in the [INA219 Element](/elements/ina219.md) in the DevDing example is available.
+This chip is supported by the [Probe example](/examples/probe.md) in the HomeDing library
+where you can find the [INA219 Element](/elements/ina219.md).
+:::
+
+:::sensor no ina226
+The **ina226** chip can measure voltage and current for power consumer in the low voltage and low power range.
+
+This chip is supported by the [Probe example](/examples/probe.md) in the HomeDing library
+where you can find the [INA226 Element](/elements/ina226.md).
 :::
 
 :::sensor soil

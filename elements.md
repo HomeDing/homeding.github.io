@@ -312,12 +312,21 @@ These implementations are still experimental cases but are published already may
 
 :::element ina219 default
 INA219 sensor, voltage and current.
+
+This sensor is features by the [Probe example](/examples/probe.md)
+:::
+
+:::element ina226 default
+INA226 sensor, voltage and current.
+
+This sensor is features by the [Probe example](/examples/probe.md)
 :::
 
 :::element radio radio
-This element is part of the [Radio Example](/examples/radio.md)
-and uses the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
-to configure various FM radio boards.
+This element features the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+to configure and use various FM radio boards.
+
+This element is part of the [Radio Example](/examples/radio.md).
 :::
 
 
