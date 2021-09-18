@@ -20,7 +20,10 @@ ThingPulse
 Sparkfun
 randomnerdtutorials
 heise
+IKEA
+TRÅDFRI
 Tuya
+TYWE2S
 Sonoff
 gosund
 ITEAD
@@ -38,6 +41,9 @@ tttapa
 
 
 homeding
+EERR
+EINFO
+ETRACE
 IoT
 ESP8266
 ESP32
@@ -50,6 +56,7 @@ webserver
 boardserver
 fileserver
 MQTT
+WLAN
 
 imageresource
 filesystem
@@ -199,6 +206,8 @@ rssi
 softmute
 stepsarduino
 stepsnewdevice
+yFormat
+xFormat
 
 actions
 addpage
@@ -243,9 +252,12 @@ displayDot
 displayLcd
 displayLine
 displaySH1106
+displaySSD1306
 displayText
 DisplayAdapter
 
+soil
+capaSoil
 down
 ds18b20
 ds18b20Element
@@ -260,6 +272,9 @@ filesize
 fontsize
 gain
 get
+hcsr
+hcsr501
+hcsr505
 height
 host
 hysteresis
@@ -269,7 +284,13 @@ icon
 ina219
 inverse
 invert
+ir
+irObstacle
+irRecv
+irTrans
 key
+LDR
+dualLDR
 led
 light
 lightElement
@@ -286,6 +307,7 @@ mapinmax
 mapinmin
 mapoutmax
 mapoutmin
+onmap
 max
 max7219
 max7219Element
@@ -293,6 +315,7 @@ min
 mode
 modelnumber
 modelurl
+MOSFET
 my9291
 name
 neo
@@ -396,6 +419,7 @@ step
 stop
 switch
 switchElement
+switchUI
 sys
 templateElement
 time
@@ -406,6 +430,7 @@ timerElements
 title
 tm1637
 toggle
+TSOP4838
 type
 up
 url

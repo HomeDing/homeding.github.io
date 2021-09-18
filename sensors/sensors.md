@@ -2,7 +2,7 @@
 
 This is a list of sensors, simple input and output components up to interface chips for various purposes that show the wide range of possibilities supported by the HomeDing library.
 
-Many of the sensors offer simple digital or analog signals to be used by the generalized input and ouput [elements](/elements.md).
+Many of the sensors offer simple digital or analog signals to be used by the generalized input and output [elements](/elements.md).
 
 Others others are using data transported over a bus like [I2C bus](/i2c.md) or even specific protocols and need special elements.
 
@@ -88,7 +88,7 @@ The [DigitalInput Element](/elements/digitalin.md) can create actions based in t
 :::
 
 
-:::sensor irtrans
+:::sensor irTrans
 This is a **Light blocking sensor** built from a IR LED and a IR photo resistor. It can be used to detect that the light in the gap is blocked. It creates a digital output.
 
 For simple on/off situations the [DigitalInput Element](/elements/digitalin.md) can create actions.
@@ -435,7 +435,7 @@ The [Rotary Element](/elements/rotary.md) enables decoding the 2 signals from a 
 There is a very specific example that shows how to use the HomeDing and the [Radio library](https://github.com/mathertel/Radio) to build a full functional radio that can be controlled by some local input but also from remote.
 
 :::sensor si4721
-The **si4721** is a FM Transiever that can receive and send FM Audio.
+The **si4721** is a FM Transceiver that can receive and send FM Audio.
 
 The [Radio Element](/elements/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library supporting only receiving mode.
 :::

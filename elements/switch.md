@@ -14,7 +14,7 @@ There is a dedicated card for this element available that will be used for the w
 
 ![Switch Web UI](/elements/switchui.png)
 
-The Web UI for the Switch Element shows the actual state of the switch and the ouput value as a green/red signal.
+The Web UI for the Switch Element shows the actual state of the switch and the output value as a green/red signal.
 
 ## Element Configuration
 
@@ -67,7 +67,7 @@ The Digital In Element gets the level of an GPIO pin and when released sends an 
 
 The switch has the current value modified and send a action to the digital output element driving the onboard LED at D4
 
-![Input Switch Output](/reciepe-in-switch-out.png)
+![Input Switch Output](/in-recipes/in-switch-out.png)
 
 ```JSON
 {
