@@ -1,3 +1,5 @@
+# see https://facelessuser.github.io/pyspelling/filters/html/
+
 matrix:
 - name: Markdown
   aspell:
@@ -17,6 +19,7 @@ matrix:
       ignores:
       - code
       - pre
+      - a
   sources:
   - '**/*.md'
   default_encoding: utf-8

@@ -1,4 +1,4 @@
-name: Check for spelling errors (manual)
+name: Check Spelling (manual)
 ## using - uses: https://github.com/rojopolis/spellcheck-github-actions
 
 on:

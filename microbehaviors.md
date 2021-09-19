@@ -29,7 +29,7 @@ In short:
 * The `connectedCallback` function will be called once after a new element is created from a template.
 * The functions using the `onXxx` naming convention are registered to events by using addEventListener()
 * All other functions and class members are bound to the HTML element.
-* By using attributes on the HTML temlate element class-members can be initialized.   
+* By using attributes on the HTML template element class-members can be initialized.   
 
 The implementations can be found in the `src` folder of the web site implementation and are compiled to JavaScript into the `micro.js` file.
 

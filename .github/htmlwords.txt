@@ -16,6 +16,8 @@ https
 RGB
 RGBW
 
+boolean
+
 JSON
 FALSE
 TRUE
