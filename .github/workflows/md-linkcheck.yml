@@ -1,5 +1,6 @@
+# md-linkcheck.yml
+
 name: Check Markdown links
-## uing - uses: rojopolis/spellcheck-github-actions@0.14.0
 
 on: push
 
@@ -12,4 +13,6 @@ jobs:
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       name: "check md links"
       with:
-        config-file: '.md-config.json'
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'no'
+        config-file: '.github/.md-config.json'

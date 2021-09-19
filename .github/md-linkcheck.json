@@ -1,0 +1,24 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^http://homeding/" },
+    { "pattern": "^http://airding/" },
+    { "pattern": "^http://plug" },
+    { "pattern": "^http://outdoor/" },
+    { "pattern": "^http://ESP-" },
+    { "pattern": "^http://\\d*\\." },
+    { "pattern": "^http://localhost" },
+    { "pattern": "^https://" },
+    { "pattern": "/_.*.md$" }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "{{BASEURL}}/"
+    }
+  ],
+  "timeout": "4s",
+  "retryOn429": true,
+  "retryCount": 2,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206]
+}

@@ -67,7 +67,7 @@ The Digital In Element gets the level of an GPIO pin and when released sends an 
 
 The switch has the current value modified and send a action to the digital output element driving the onboard LED at D4
 
-![Input Switch Output](/in-recipes/in-switch-out.png)
+![Input Switch Output](/recipes/in-switch-out.png)
 
 ```JSON
 {
