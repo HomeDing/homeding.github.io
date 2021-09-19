@@ -151,7 +151,7 @@ This example configuration enables using a numeric value (e.g. from a switch) in
 - value coming in via action
 - find relevant mapping entry from the maps list
 - setting new value (optional).
-- sending out the action specified in the ma pping entry
+- sending out the action specified in the mapping entry
 
 
 ```JSON

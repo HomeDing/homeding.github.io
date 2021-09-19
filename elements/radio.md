@@ -45,7 +45,7 @@ The properties correspond to the api given by the radio library. However not all
 
 **mute** - The property set to 1 will mute the output signal. The element will automatically mute the chip when the volume is set to 0.
 
-**softmute** - The property set to 1 enables the softmute procedure that lowers the volume when no there is no current signal availabe.
+**softmute** - The property set to 1 enables the softmute procedure that lowers the volume when no there is no current signal available.
 
 **bassboost** - The property set to 1 enables the bassboost functionality of the radio chip.
 

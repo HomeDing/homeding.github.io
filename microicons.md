@@ -1,4 +1,4 @@
-# Availabe Icons for Elements
+# Available Icons for Elements
 
 This is the list of the icons available for the HomeDing Library to be used for visualizing elements: 
 

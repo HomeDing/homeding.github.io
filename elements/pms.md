@@ -17,7 +17,7 @@ in the element register section of the sketch.
 
 The particles with the size of 2.5 µm are too small to be visible individually but when present in high concentration can be seen as dust or smog.
 
-This fine dust particulates have the ability to penetrate deep into the lungs causing some bad disease. Some of them come from automotive pollutions.  
+This fine dust particulates have the ability to penetrate deep into the lungs causing some bad disease. Some of them come from automotive pollution.  
 
 This sensor has its own onboard processor driving a laser based particle detection in a constant flow of air. 
 It communicates the results of measurement every second using a 9600 baud serial interface.

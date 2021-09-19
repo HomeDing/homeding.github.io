@@ -44,7 +44,7 @@ The following properties are available for configuration of the element.
 
 **description** - A line of text that gives a short description of the device used in the web UI.
 
-**mode** - The element supports 3 modes: **"on"** for always on, **"off"** for always off anf **"timer**" for switching the value using the timer settings.
+**mode** - The element supports 3 modes: **"on"** for always on, **"off"** for always off and **"timer**" for switching the value using the timer settings.
 
 **restart** - When set to "true" or "1" the timer restarts automatically when cycleTime is over.
 

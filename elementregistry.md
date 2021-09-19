@@ -23,7 +23,7 @@ Element implementations should not automatically register themselves in some cas
 
 ## Using Elements for configuration
 
-Some elements only exist to capture configuration properties. Most of them specific system related features like the devicename or the availabe hardware.
+Some elements only exist to capture configuration properties. Most of them specific system related features like the devicename or the available hardware.
 
 Examples are:
 

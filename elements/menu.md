@@ -49,11 +49,11 @@ The select action can also be send using the <http://homeding/$board/menu/0?sele
 
 The value actions are used to change the selected value.
  
-Every incoming value action will be forwarded to the selected value using a `up` action with the given value from the incomming event. This is typically an increment or decrement by 1 but the value element can be configured for other steps. 
+Every incoming value action will be forwarded to the selected value using a `up` action with the given value from the incoming event. This is typically an increment or decrement by 1 but the value element can be configured for other steps. 
 
 Usually 2 buttons for up/down or a rotary encoder can be used to create these actions as shown in the configuration example.
 
-In the Radio example the menu element is used to control volume, the frequency and some switches like tjhe mono-switch using a rotary encoder and a button.
+In the Radio example the menu element is used to control volume, the frequency and some switches like the mono-switch using a rotary encoder and a button.
 
 ## Element Configuration
 
