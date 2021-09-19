@@ -15,4 +15,4 @@ jobs:
       with:
         use-quiet-mode: 'yes'
         use-verbose-mode: 'no'
-        config-file: '.github/.md-config.json'
+        config-file: '.github/md-linkcheck.json'
