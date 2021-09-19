@@ -10,6 +10,15 @@ LiquidCrystal
 DHTesp
 digitalWrite
 xxxxxx
+millis
+
+# My Terms
+
+AJAXControls
+AJAXEngine
+mathertel
+Matthias
+Hertel
 
 ### Brands, products
 
@@ -32,13 +41,35 @@ fhem
 Qwiic
 IFTTT
 esphome
-mathertel
-Matthias
-Hertel
 tasmota
 whatwg
 tttapa
 
+# general IT terms
+
+backEnd
+env
+filetype
+formatter
+frontEnd
+hostname
+hostnames
+mDNSBrowser
+minified
+minifier
+natively
+polyfill
+readme
+runtime
+scalability
+uptime
+ux
+webservice
+webservices
+GenericWidgetClass
+SwitchWidgetClass
+
+# HomeDing
 
 homeding
 EERR
@@ -57,7 +88,16 @@ boardserver
 fileserver
 MQTT
 WLAN
-
+MicroControl
+MicroControlClass
+microID
+microIDE
+microIcons
+microCharts
+microBehaviors
+microJavascript
+microJSON
+microTemplates
 imageresource
 filesystem
 safemode

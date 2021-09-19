@@ -1,5 +1,5 @@
 name: Check for spelling errors (manual)
-## using - uses: rojopolis/spellcheck-github-actions@0.14.0
+## using - uses: https://github.com/rojopolis/spellcheck-github-actions
 
 on:
   workflow_dispatch:

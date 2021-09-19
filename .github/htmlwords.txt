@@ -57,3 +57,6 @@ webcomponentsjs
 
 HTMLElement
 insertTemplate
+
+MouseEvent
+MutationObserver
