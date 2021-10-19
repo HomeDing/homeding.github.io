@@ -43,7 +43,7 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
   "device": {
     "0": {
       "loglevel": 0,
-      "savemode": "false",
+      "safemode": "false",
       "name": "plug01",
       "description": "Gosund SP111 with minimal sketch",
       "homepage": "/ding.htm",

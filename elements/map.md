@@ -72,7 +72,7 @@ Same with actions on the rules level. In the status the original inbound value w
       "rules": [
         {
           "max": "16",
-          "onValue": "light/t?value=blau"
+          "onValue": "light/t?value=blue"
         },
         {
           "max": "22",
@@ -100,17 +100,19 @@ The following properties are available for configuration of the element:
 
 **type** -  "string" or "numeric" value comparison. numeric is default.
 
-**onvalue** - These actions will be emitted when ever a new resulting value is found.
+**onValue** - These actions will be emitted when ever a new resulting value is found.
 
-**maps** - This property configures the list of mapping rules. It must be in the order from lowest to highest.
+**rules** - This property configures the list of mapping rules. It must be in the order from lowest to highest.
 
-**maps[].min** - the lower bound of the range.
+**rules[n].min** - set the lower bound of the range.
 
-**maps[].max** - the upper bound of the range.
+**rules[n].max** - set the upper bound of the range.
 
-**maps[].value** - the new value applied
+**rules[n].equal** - set the lower and upper bound of the range.
 
-**maps[].onValue** - These actions will be emitted when the rule was selected.
+**rules[n].value** - the new value applied when rule fits the inbound value.
+
+**rules[n].onValue** - These actions will be emitted when the rule was selected.
 
 
 ### Example using mapped values
@@ -123,13 +125,13 @@ This example configuration enables using a numeric value (e.g. from a switch) in
     "colors": {
       "description": "select a color based on a numeric value",
       "onValue": "light/l?value=$v",
-      "maps": [
+      "rules": [
         {
-          "max": "0",
+          "equal": "0",
           "value": "red"
         },
         {
-          "max": "1",
+          "equal": "1",
           "value": "green"
         }
       ]
@@ -149,7 +151,7 @@ This example configuration enables using a numeric value (e.g. from a switch) in
 ### Example by mapping actions
 
 - value coming in via action
-- find relevant mapping entry from the maps list
+- find relevant mapping entry from the rules list
 - setting new value (optional).
 - sending out the action specified in the mapping entry
 
@@ -160,18 +162,18 @@ This example configuration enables using a numeric value (e.g. from a switch) in
     "m": {
       "title": "map-action",
       "description": "send actions based on a value-action",
-      "maps": [
+      "rules": [
         {
           "max": "0",
-          "onmap": "digitalout/up?value=0,digitalout/down?value=0,switch/down?value=0,switch/up?value=0,timer/rst?stop"
+          "onValue": "digitalout/up?value=0,digitalout/down?value=0,switch/down?value=0,switch/up?value=0,timer/rst?stop"
         },
         {
           "max": "1",
-          "onmap": "digitalout/down?value=1,digitalout/up?value=0,switch/down?value=1,switch/up?value=0,timer/rst?start"
+          "onValue": "digitalout/down?value=1,digitalout/up?value=0,switch/down?value=1,switch/up?value=0,timer/rst?start"
         },
         {
           "max": "2",
-          "onmap": "digitalout/down?value=0,digitalout/up?value=1,switch/down?value=0,switch/up?value=1,timer/rst?start"
+          "onValue": "digitalout/down?value=0,digitalout/up?value=1,switch/down?value=0,switch/up?value=1,timer/rst?start"
         }
       ]
     }

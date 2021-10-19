@@ -7,29 +7,26 @@ The AND Element combines multiple logic input values to a single output value.
 Actions can be send to this element using the properties value[n].
 Every time the value changes the onValue event is emitted.
 
+
 ## Web UI for the AND Element
 
-There is a dedicated card for this element available that will be used for the web server config and landing pages:
-
-![AND Web UI](/elements/andui.png "w400")
-
-This card shows the current output computed from the last logical input values.
-It is updated every time the status of the device is polled by the page.
+The standard card for this element is used showing the current calculated output value.
 
 
 ## Element Configuration
 
 <object data="/element.svg?and" type="image/svg+xml"></object>
 
-The up to 8 input values can be preset and the output can be inverted.
+The up to 8 input values can be used for calculation.
 
-When no input value is given the output value is 0.
+When no input value is given the output value is 0 (false).
 
-**value[0]** - The first input value of the element. Default is 0.
+**value[0]** - The first input value of the element. Default is 0 (false).
 
-**value[1]** - The second input value of the element. Default is 0.
+**value[1]** - The second input value of the element. Default is 0 (false).
 
-**invert** - The output value can be logically inverted by setting this property to true. Default is false.
+
+**invert** - The output value can be logically inverted by setting this property to 1 (true). Default is false.
 
 The non-inverted output value is on HIGH level when all input values are on HIGH level.
 
