@@ -44,7 +44,7 @@ In the **env.json** file the device specific settings must be configured.
 * The `led` configuration in the device should not be used to avoid switching the relay while booting.
 * A `button` is not available.
 * To enable timers a ntp time source is used here as well. This can be let out when no real-time is required for a specific use case.
-* enable savemode after full configuration.
+* enable safemode after full configuration.
  
 ```JSON
 {
@@ -54,7 +54,7 @@ In the **env.json** file the device specific settings must be configured.
       "title": "Fan control",
       "description": "board with 2 relay that can be switched independently.",
       "loglevel": 0,
-      "savemode": "false",
+      "safemode": "false",
       "homepage": "/ding.htm"
     }
   },

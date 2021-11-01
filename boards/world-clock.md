@@ -1,3 +1,17 @@
+#  
+
+<https://www.ebay.de/itm/274588288050>
+<http://www.chinalctech.com/cpzx/Clock_module/477.html>
+<https://de.aliexpress.com/item/1005001616885165.html>
+
+SCL 4
+SDA 5
+SSD1306 0x3C
+
+SCL 14
+SDA 12
+PCF8563T 0x51 
+
 ESP8266 ESP-12F 0,96 inch OLED Display WiFi Uhr Modul Wetter Prognose IIC I2C Interface Micro USB 5V Für Arduino DIY
  
 Interface Beschreibung:
@@ -21,7 +35,6 @@ CR1220 taste batterie; versorgung power zu uhr schaltung nach dem ausschalten
 UART programm download-schnittstelle: IO0 und GND sind kurzgeschlossen wenn das herunterladen, 3V3, TXD, RXD, GND sind jeweils Verbinden zu 3V3, RXD, TXD, GND von externe TTL serial port modul (wie FT232 modul), download
  
 
-https://de.aliexpress.com/item/1005001616885165.html?spm=a2g0s.9042311.0.0.8fbc4c4drLGmmk
 
 https://ae01.alicdn.com/kf/H4dc0fe4f6201499ab7794701e6d76630T.png
 

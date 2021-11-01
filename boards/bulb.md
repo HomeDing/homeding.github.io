@@ -75,7 +75,7 @@ The [OTA element](/elements/ota.md) enables updating the device firmware using t
   "device": {
     "0": {
       "loglevel": 0,
-      "savemode": "false",
+      "safemode": "false",
       "name": "bulb02",
       "description": "RGBW Bulb",
       "homepage": "/ding.htm",

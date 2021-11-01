@@ -363,7 +363,6 @@ onGas
 onHigh
 onHumidity
 onLow
-onmap
 onMinute
 onOff
 onOn

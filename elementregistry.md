@@ -74,7 +74,7 @@ This configuration will include all the core Elements and the individual Element
 
 ## Build a new Element for your local usage
 
-It is easy to build a new Element that is required for a specific thing to work. You can just copy one of the existings and modify the class Name
+It is easy to build a new Element that is required for a specific thing to work. You can just copy one of the existing and modify the class Name
 or use the "MyTemplate" example as a starting point.
 
 The intension is that it is easy to add any Element to the Library later so anyone can add new functionality to the HomeDing Library.
