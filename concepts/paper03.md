@@ -51,25 +51,30 @@ The standard interface of every Element is defined by the base `Element` class. 
 
 A detailed description of the common Element Interface can be found in [ElementInterface](/elementinterface.md).
 
-## Actions and Events
 
-Actions are short messages that enable Elements to communicate.
+## Configure and Interact with Elements 
 
-Actions are always send by the origin Element when a specific **Event** occurs like new data has been retrieved from a sensor. It is required by design that the origin Element sends Actions with the new value to the configured Elements that need to know about the new value.
+Every element can be described by its properties, actions and events. They define the API for the specific Element.
 
-By using multiple elements that interact this way more complex things and full solutions can be created.
+This is the API picture for the timer element:
 
-The Action model fits good into the resource restricted microprocessor implementation as communication only happens when data has changed. A polling model in contrast would add much overhead in constant asking.
+<object data="/element.svg?timer" type="image/svg+xml"></object>
+
+* **Properties** are there to configure the Element to behave in a specific way.
+* **Actions** (inbound actions) can be sent to an Element at runtime to control the Element and change the internal state.
+* **Events** are created by the element to send (outbound) Actions to other elements.
 
 
-## Actions are URLs
+## sending Actions by using URLs
 
 The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.
 
 When an Element is active the `loop()` function is called periodically so the Element can so something meaningful.
 Here some elements will retrieve sensor values, check the state of GPIO pins or will calculate something and then will create actions like `displaytext/info?value=22.50` and hand it over to the action dispatcher in the board class.
 
-This example action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `22.50`. The action can also be triggered from outside using the web server interface:
+This action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `22.50`.
+
+To send an Action to an element a http GET requests can be used. This allows sending Action over the network to elements in a device.
 
 * open the url: http://(devicename)/$board/displaytext/info?value=22.50
 * use a command line tool like: curl http://(devicename)/$board/displaytext/info?value=22.50
@@ -83,28 +88,17 @@ This is why the board implements a store and forward mechanism with a queue.
 The order of the messages is guaranteed to be stable as long as they are not send via network.
 
 
-## Properties
+## Chip specific Elements
 
-A Property of an Element is some data also sometimes called the state an Element.
+A device may include special chips that can retrieve some environment parameters like temperature, humidity but also power consumption and voltage level.
 
-In some cases the change of a property value is an event that can be used to send an action.
+These elements are usually asking for new values by implementing the chip specific hardware protocol or read registers using the standard protocols I2C or SPI.
 
-Some properties can also be changed by using an Action.
+I2C is very common for many sensor chips and is well supported by the Homeding library.
+Other hardware based protocols are supported by directly or by including specific libraries from the Arduino library collection.
 
-Examples of Properties are configuration settings (write only), sensor values (read-only), level of an output signal (read+write) or computation results (read-only).
-
-They all can be observed by combining the information from the configuration files and the dynamic values by calling the $board service.
-
-<!-- See also [Value Properties](???). -->
-
-
-## Sensor Elements
-
-Many IoT devices include special chips that can retrieve some environment parameters like temperature, humidity but also power consumption and voltage level.
-
-These elements are usually asking for new values by implementing the chip specific hardware protocol or read registers using the standard protocols I2C or SPI. I2C is very common for many sensor chips and is well supported by the Homeding library. Other hardware based protocols are supported by directly or by including specific libraries from the Arduino library collection.
-
-When new sensor values are found the Element will send out a configurable action to inform other elements about it. Displays, Logging and even elements on remote devices are connected this way.  
+When new sensor values are found the Element will send out a configurable action to inform other elements about it.
+Displays, Logging and also elements on remote devices are connected this way.
 
 
 ## Consuming internet based services 
@@ -188,10 +182,10 @@ Be aware that the number of configured elements is also a limiting factor becaus
 
 ## Addressing Elements, properties and actions
 
-When technically addressing an active element, an element property or sending an actionto an element
+When technically addressing an active element, an element property or sending an action to an element
 the same 2-level syntax and parameters of addressing is used as it is known from the URL syntax.
 
-The usual notation is using lowercase characters only. The comparisation is internally case-insensitive by comparing always the lowercase variants.
+The usual notation is using lowercase characters only. The comparison is internally case-insensitive by comparing always the lowercase variants.
 
 Examples are:
 
@@ -201,7 +195,7 @@ Examples are:
 The first level is the type of the element.
 The first level is the local id of the element (you can have a button and a output element with the same name)
 
-The parameter is appeded by using `?` as a separator and a parameter value can be specified using `=` when required.
+The parameter is appended by using `?` as a separator and a parameter value can be specified using `=` when required.
 
 This schema can be found in many places:
 

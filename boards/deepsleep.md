@@ -88,6 +88,7 @@ This allows configuring a device with the web ui when using the following sequen
 * <https://diyprojects.io/esp8266-deep-sleep-mode-test-wake-pir-motion-detector/#.XkmIu0eSkuU>
 * Some chips cannot use the deep sleep more, see <https://github.com/esp8266/Arduino/issues/6007>
 * [Watchdog timers](/boards/watchdog.md)
+* <https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/>
 
 
 ## Tags
