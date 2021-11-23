@@ -1,3 +1,6 @@
+---
+title: Recipes Overview
+---
 # Recipes Overview
 
 The recipes is a collection of configurations that can be used
@@ -35,7 +38,7 @@ They show how multiple elements can be combined to create functionality beyond u
 * Switch a remote LED on and off
 
 
-[home](/start.md)
+[home](/index.md)
 
 ## Tags
 

@@ -1,3 +1,6 @@
+---
+title: The Web of Things (WoT)
+---
 # The Web of Things (WoT)
 
 Today there are many proprietary approaches how "Things" are built. Many of them cannot be integrated or connected and standardization is required to create flexibility in combining devices to create solutions.

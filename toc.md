@@ -1,4 +1,4 @@
-### [HomeDing Library Documentation](/start.md)
+### [HomeDing Library Documentation](/index.md)
 
 * [Making IoT easy](/concepts/paper01.md)
 * [Software Architecture](/concepts/paper02.md)

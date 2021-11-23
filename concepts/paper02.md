@@ -1,4 +1,7 @@
-# Software Architecture
+---
+title: Software and Library Architecture
+---
+# Software and Library Architecture
 
 1. [Building your own connected Things made easy](/concepts/paper01.md)
 2. **Software Architecture**

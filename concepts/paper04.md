@@ -1,3 +1,6 @@
+---
+title: WebServer and Web UI
+---
 # WebServer and Web UI
 
 1. [Building your own connected Things made easy](/concepts/paper01.md)

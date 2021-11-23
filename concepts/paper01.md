@@ -1,3 +1,6 @@
+---
+title: Building your own connected Things made easy
+---
 # Building your own connected Things made easy
 
 1. **Building your own connected Things made easy**

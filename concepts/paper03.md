@@ -1,3 +1,6 @@
+---
+title: Elements and Actions
+---
 # Elements and Actions
 
 1. [Building your own connected Things made easy](/concepts/paper01.md)

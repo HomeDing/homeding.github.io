@@ -11,11 +11,13 @@ Markdown viewer SPA using
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library.'>
   <title>HomeDing Documentation</title>
   <link Content-Type="text/css" href="iotstyle.css" rel="stylesheet" />
   <link rel="stylesheet" href="md/default.min.css" />
   <script src="md/markdown-it.min.js"></script>
   <script src="md/markdown-it-container.min.js"></script>
+  <script src="md/markdown-it-frontmatter.js"></script>
   <script src="md/highlight.pack.js"></script>
 
   <style>
@@ -176,7 +178,7 @@ Markdown viewer SPA using
     <a href="#page=concepts/paper01.md" class="button">Concepts</a>
     <a href="#page=elements.md" class="button">Elements</a>
     <a href="#page=boards.md" class="button">Boards</a>
-    <a href="#page=recipes.md" class="button">Recipes</a>
+    <a href="#page=recipes/index.md" class="button">Recipes</a>
   </div>
   <nav class="inpage"></nav>
   <main class="container-fluid">
@@ -283,6 +285,23 @@ Markdown viewer SPA using
       }
     });
 
+    new front_matter_plugin(md, {
+      callback: function (fm) {
+        if (fm) {
+          fm.split('\n').forEach(l => {
+            var kv = l.split(':');
+            var k = kv[0].trim();
+            var v = kv[1].trim();
+
+            if (k === 'title') {
+              document.title = v;
+            }
+          });
+        }
+        // console.log(lines);
+      }
+    });
+
     function getHashParam(param, defValue) {
       var h = window.location.hash;
       if (h) {
@@ -329,26 +348,17 @@ Markdown viewer SPA using
       setText: function (fName, txt) {
         var hText = md.render(txt);
 
-        // modify links to work:
+        // modify markdown links to work:
 
         hText = hText.replace(/href="([\w\-\/]+).md"/g, 'href="#page=$1.md"');
         hText = hText.replace(/href="([\w\-\/]+)"/g, 'href="#page=$1.md"');
         this.innerHTML = hText;
-
-        // verify all local .md links
-        forAllNodeList(
-          this.querySelectorAll('a[href]'),
-          function (aObj) {
-            if (aObj.href.match(/=([\w\-\/]+.md)$/)) aObj.classList.add('verify');
-          }.bind(this)
-        );
 
         // size Images
         forAllNodeList(
           this.querySelectorAll('img'),
           function (aObj) {
             aObj.addEventListener('click', function (evt) {
-              debugger;
               window.open(evt.target.src, "img");
             });
           }.bind(this)
@@ -364,7 +374,7 @@ Markdown viewer SPA using
 
       // check for #page=xxx.md
       onhashchange: function (/* evt */) {
-        var pName = getHashParam('page', 'start.md').toLowerCase();
+        var pName = getHashParam('page', 'index.md').toLowerCase();
 
         loadFile(
           pName,

@@ -1,3 +1,6 @@
+---
+title: Miro IDE
+---
 # Miro IDE
 
 The Web UI implementation from the HomeDing library supports a minimal **Integrated Development Environment** (IDE)

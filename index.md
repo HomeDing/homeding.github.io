@@ -1,3 +1,6 @@
+---
+title: The HomeDing Library
+---
 # The HomeDing Library
 
 :::excerpt default

@@ -1,4 +1,7 @@
-# Elements
+---
+title: Elements Overview
+---
+# Elements Overview
 
 Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like [sensors](/sensors/sensors.md). 
 
