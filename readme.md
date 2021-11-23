@@ -1,6 +1,6 @@
 # HomeDing Library Documentation
 
-[![Check Markdown links](https://github.com/HomeDing/homeding.github.io/actions/workflows/linkcheck.yml/badge.svg)](https://github.com/HomeDing/homeding.github.io/actions/workflows/linkcheck.yml)
+[![Check Markdown links](https://github.com/HomeDing/homeding.github.io/actions/workflows/md-linkcheck.yml/badge.svg)](https://github.com/HomeDing/homeding.github.io/actions/workflows/md-linkcheck.yml)
 
 The HomeDing library is a low code approach to build small IoT devices
 without the need for cloud services to be used.
