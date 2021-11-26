@@ -1,7 +1,11 @@
+---
+title: Bulb Devices
+description: Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.
+---
 # Bulb Devices
 
 :::excerpt bulb
-Bulb devices build on base of the ESP8266 chip are supported by the minimal sketch.
+Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.
 :::
 
 There are many different bulb devices that use RGB and white LED variants. The bulbs that use GPIOs with PWM or the chips
@@ -12,6 +16,8 @@ like MY9231, MY9291.
 The biggest challenge with these bulbs is that there is usually no easy way to get to the serial port without destroying the housing.  
 
 Therefore bulbs are used here, that can also be flashed with a new software via the network. This is done by the program **tuya-convert** that runs on a Raspberry pi.
+
+The [Minimal Example](/examples/minimal.md) can be used in bulbs and other light devices.
 
 
 ## Tuya Bulbs

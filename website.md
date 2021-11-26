@@ -1,6 +1,14 @@
+---
+title: Web Site for IoT Devices.
+description: Dashboard and Configuration Editor for IoT devices.
+---
 # Embedded Web Site for HomeDing Devices
 
-Every device can be directly reached by  using a standard browser thanks to the embedded web site and the built-in web server.
+:::excerpt
+Every device using the HomeDing library has an embedded web site and a built-in web server.
+so it can be directly reached by using a standard browser.
+The required files fit into 128k filespace to support even devices with small flash sizes.
+:::
 
 Implementing a web site that fits into the very limited space of the flash memory is a challenge on its own but can be solved by using the power of the current browsers.
 

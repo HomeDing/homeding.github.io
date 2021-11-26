@@ -295,6 +295,9 @@ Markdown viewer SPA using
 
             if (k === 'title') {
               document.title = v;
+            } else if (k === 'description') {
+              var md = document.head.querySelector('meta[name=description]');
+              if (md) { md.content = v; }
             }
           });
         }
