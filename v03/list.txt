@@ -8,6 +8,7 @@
 -favicon32.png
 -favicon558.png
 -polyfill.js
+-spinner.gif
 -es6-promise.auto.js
 -list.txt
 -manifest.json
@@ -108,5 +109,4 @@ microsvg.js
 panel.htm
 panel.js
 site.webmanifest
-spinner.gif
 updateicons.htm

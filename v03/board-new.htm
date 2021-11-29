@@ -1,4 +1,4 @@
-<div u-control='newelementdlg'u-is='createElementDlg'class='card active'><div class='block header'style='height:2em'><h3>Add a new Element</h3><div class='closedlg'u-action='close'>&#x00D7;</div></div><div class='block'style='font-size:1.4'><div class='form-group'><label>Type:</label> <select class='typeSelect'><option disabled='disabled'selected='selected'value='0'>Select Element...</option></select></div><div class='form-group'><label>ID:</label> <input placeholder='choose a name...'aria-label='theID'class='newID'></div></div><div class='block footer'><button u-action='next'style='float:right'>Next</button></div></div><div u-control='configelementdlg'u-is='configElementDlg'class='card'><div class='block header'style='height:2em'><h3>Config ${id}</h3><div class='closedlg'u-action='close'>&#x00D7;</div></div><div class='block'style='font-size:1.4'></div><div class='block footer'><button u-action='save'style='float:right'>Save</button></div></div><div u-control='actiondlg'u-is='actionDlg'class='card'ev='${ev}'val='${val}'><div class='block header'style='height:2em'><h3>Config ${ev}</h3><div class='closedlg'u-action='close'>&#x00D7;</div></div><div class='block'><p>${ev} --- ${val}</p></div><div class='block'><div class='form-group'><label>Target:</label> <select id='adTarget'><option disabled='disabled'selected='selected'>Select target...</option></select></div><div class='form-group'><label>Event:</label> <select id='adEvent'disabled='disabled'></select></div><div class='form-group'><label>Value:</label> <input id='adValue'value='$v'></div></div><div class='block footer'><button u-action='save'style='float:right'>Save</button></div></div><script>// uElements.xxx from main page loading...
+<div u-control='newelementdlg'u-is='createElementDlg'class='card active'><div class='block header'style='height:2em'><h3>Add a new Element</h3><div class='closedlg'u-action='close'></div></div><div class='block'style='font-size:1.4'><div class='form-group'><label>Type:</label> <select class='typeSelect'><option disabled='disabled'selected='selected'value='0'>Select Element...</option></select></div><div class='form-group'><label>ID:</label> <input placeholder='choose a name...'aria-label='theID'class='newID'></div></div><div class='block footer'><button u-action='next'style='float:right'>Next</button></div></div><div u-control='configelementdlg'u-is='configElementDlg'class='card'><div class='block header'style='height:2em'><h3>Config ${id}</h3><div class='closedlg'u-action='close'></div></div><div class='block'style='font-size:1.4'></div><div class='block footer'><button u-action='save'style='float:right'>Save</button></div></div><div u-control='actiondlg'u-is='actionDlg'class='card'ev='${ev}'val='${val}'><div class='block header'style='height:2em'><h3>Config ${ev}</h3><div class='closedlg'u-action='close'>&#x00D7;</div></div><div class='block'><p>${ev} --- ${val}</p></div><div class='block'><div class='form-group'><label>Target:</label> <select id='adTarget'><option disabled='disabled'selected='selected'>Select target...</option></select></div><div class='form-group'><label>Event:</label> <select id='adEvent'disabled='disabled'></select></div><div class='form-group'><label>Value:</label> <input id='adValue'value='$v'></div></div><div class='block footer'><button u-action='save'style='float:right'>Save</button></div></div><script>// uElements.xxx from main page loading...
 
   micro.define("createElementDlg", {
     objType: null,
@@ -35,7 +35,7 @@
     } // on_click()
   }); // CreateElementDlgBehavior
 
-  
+
   micro.define("configElementDlg", {
     config: {},
     params: {},
@@ -51,9 +51,9 @@
       // create properties, events and actions inputs
       var d = uElements.defs[this._type];
       uElements.defs["element"].properties.forEach(p => this._add(p, false, false));
-      d.properties.forEach(p => this._add(p, false, false));
-      d.events.forEach(p => this._add(p, true, false));
-      d.actions.forEach(p => this._add(p, false, true));
+      if (d.properties) { d.properties.forEach(p => this._add(p, false, false)) };
+      if (d.events) { d.events.forEach(p => this._add(p, true, false)) };
+      if (d.actions) { d.actions.forEach(p => this._add(p, false, true)) };
     }, // connectedCallback()
 
 
