@@ -2,7 +2,7 @@
 
 ![dashboard ui](/dashboard.png)
 
-This is an example of a dashboard for a indor air quality sensor device like the one described in the [Airquality story](/stories/story-airquality.md). 
+This is an example of a dashboard for a indoor air quality sensor device like the one described in the [Airquality story](/stories/story-airquality.md). 
 
 ## Dashboard features
 

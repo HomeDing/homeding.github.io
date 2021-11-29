@@ -1,18 +1,32 @@
-# The minimal footprint example
+---
+title: Minimal Sized Example
+description: Example for devices with only 1MByte flash memory.
+---
+# The Minimal Sized Example
 
 :::excerpt
+The **minimal example** 
+runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage
+like the [ESP-01 board](/boards/esp01.md) and devices like [sonoff S20 switch](/boards/sonoffbasic.md) and [bulbs](/boards/bulb.md).
+:::
+
 The examples in the HomeDing library are used to compile a firmware that provides the base functionality
 combined with a set of elements that can be used in the configuration of the device.
 
-The **minimal example** 
-runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage
-like the [ESP-01](/boards/esp01.md) and devices like [sonoff S20 switch](/boards/sonoffbasic.md) and [bulbs](/boards/bulb.md).
-:::
 
-You can find many retail IoT devices with the ESP8266 chip like those from [sonoff](/boards/sonoffbasic.md) or the bulbs from tuya but they are not really usable during development.
-So while developing for a device with the 1 MByte Flash Memory restriction
-and often also a missing auto-reset before flashing new firmware
-it is recommended to use a board like a [NodeMCU](/boards/nodemcu.md) but keep an eye of memory consumption.
+## Approach for development 
+
+These devices are not really usable during development.
+* Diagnostic Elements cannot be compiled into the sketch to reduce program size.
+* Log files cannot be stored on the device
+* The filesystem on the device is very limited.
+* The Serial communication often is unavailable in sealed devices.
+* A auto-reset feature is missing for flashing new firmware over USB.
+
+Thereforefore it is recommended:
+* Use a board like a [NodeMCU](/boards/nodemcu.md) but keep an eye of memory consumption.
+* Use a [ESP-01 board](/boards/esp01.md) to verify the solution is working with the target sizing.
+* Uploading a new firware to the target device.
 
 
 ## Reduced memory footprint 
@@ -44,6 +58,7 @@ If you like to know what element are available in a device just ask for the URL 
 
 There are 2 transfer jobs to upload the firmware and the files of the filesystem.
 
+
 ### 1. Compile and upload the sketch
 
 The sketch from this example can be compiled without any dependencies to external libraries.
@@ -51,6 +66,7 @@ There are some options documented in the source code e.g. to enable WS2812 LED s
 
 You can upload using a USB / Serial cable when flashing the first time or use the OTA feature after flashing any OTA enabled firmware.
 The example includes the OTA upload feature to enable remote updates.
+
 
 ### 2. Upload the web ui files
 
