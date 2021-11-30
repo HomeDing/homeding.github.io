@@ -1,5 +1,7 @@
+@charset "UTF-8";
 html,
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   color: #111111;
@@ -15,8 +17,11 @@ body {
   }
 }
 
-* {
-  box-sizing: border-box;
+/* apply a natural box layout model to all elements, but allowing components to change */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 p,
@@ -175,12 +180,20 @@ div[u-control=modal] .closedlg {
   right: 0.4rem;
   height: 1.8rem;
   width: 1.8rem;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   background-color: red;
-  text-align: center;
   z-index: 3 !important;
   user-select: none;
   cursor: pointer;
+}
+div[u-control=modal] .closedlg::after {
+  position: absolute;
+  content: "❌";
+  left: 0;
+  width: 1.8rem;
+  text-align: center;
+  color: white;
+  font-weight: 800;
 }
 
 .modal-object {
@@ -216,7 +229,7 @@ div[u-control=modal] .closedlg {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-start;
-  margin: 0 0.1rem -0.5rem;
+  margin: 0 0 -0.5rem;
   clear: both;
   padding: 0 0 0.5rem 0;
 }
@@ -481,15 +494,6 @@ main {
   padding: 0;
 }
 
-select,
-option {
-  padding: 0;
-}
-
-option[disabled] {
-  color: gray;
-}
-
 button,
 .button {
   display: inline-block;
@@ -531,6 +535,77 @@ button + .button,
   margin-left: 0.5rem;
 }
 
+label,
+input,
+select {
+  display: inline-block;
+  vertical-align: top;
+  height: 1.4rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  border: 1px solid #555555;
+}
+
+input[type=text],
+input:not([type]) {
+  padding-left: 0.3em;
+}
+
+input,
+select {
+  width: 12rem;
+  padding: 0 0.1em;
+  background-color: white;
+}
+
+label {
+  cursor: pointer;
+  border-color: transparent;
+}
+label > img,
+label > .icon {
+  vertical-align: middle;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  margin: 0 !important;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  width: 1.4rem;
+  margin: 0 0.5rem 0 0;
+}
+
+option {
+  padding: 0;
+}
+
+option[disabled] {
+  color: gray;
+}
+
+input[type=range] {
+  appearance: none;
+  width: 18rem;
+  transition: 0.4s all ease-out;
+  border-radius: 0.7rem;
+}
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #203050;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+input.switch[type=range] {
+  pointer-events: none;
+  width: 2.2rem !important;
+}
+
 *:focus {
   outline: 0;
   border-color: #4466ee;
@@ -566,33 +641,22 @@ button + .button,
 .form-group {
   display: flex;
 }
-.form-group > label {
-  display: inline-block;
-  margin-right: 0.5rem;
-  border: 1px solid transparent;
-  text-align: right;
-  width: 8em;
-}
-.form-group > input,
-.form-group > span,
-.form-group > select {
-  display: inline-block;
-  width: 12em;
-  font-size: 1em;
-}
-.form-group > input,
-.form-group > select {
-  border: 1px solid #555555;
-}
-.form-group > input {
-  padding: 0 0.1em;
-}
-.form-group > span {
-  border: 1px solid transparent;
-}
-
 .form-group:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+.form-group > label:first-child {
+  margin-right: 0.5rem;
+  text-align: right;
+  width: 7em;
+}
+.form-group > :not(:first-child) {
+  margin: 0;
+}
+.form-group > :not(:first-child) .icon {
+  margin: 0 !important;
+}
+.form-group input[type=range] {
+  width: 9.2rem;
 }
 
 .invalid {
@@ -699,52 +763,6 @@ button + .button,
   background-color: red;
 }
 
-/* === SWITCH === */
-.u-slider {
-  display: inline-block;
-  width: 100%;
-}
-.u-slider > label {
-  display: inline-block;
-  padding: 0 0.2em;
-  margin-bottom: 0.5rem;
-  vertical-align: top;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-.u-slider > label > img,
-.u-slider > label > .icon {
-  width: 1.2em !important;
-  height: 1.2em !important;
-  margin: 0;
-}
-.u-slider > .box {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  width: 3rem;
-  height: 1.7rem;
-  border: 0.125rem solid #555555;
-  border-radius: 1.25rem;
-  background-color: #f0f0f0;
-  padding: 0.125rem;
-}
-.u-slider > .box > .handle {
-  position: relative;
-  display: inline-block;
-  left: 0;
-  height: 1.2rem;
-  width: 1.2rem;
-  border-radius: 1.2rem;
-  background-color: #203050;
-}
-.u-slider.u-switch > .box > .handle {
-  transition: left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.u-slider.u-switch.active > .box > .handle {
-  left: 1.3rem;
-}
-
 .text-right {
   text-align: right;
 }
@@ -840,3 +858,5 @@ button + .button,
     display: initial;
   }
 }
+
+/*# sourceMappingURL=iotstyle.css.map */
