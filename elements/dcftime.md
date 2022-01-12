@@ -1,6 +1,18 @@
-# DCFTime Element
+---
+title: The DCFTime Element
+id: dcftime
+tags: ["Element"]
+description: Support DCF77 signals to get current time over the air. 
+excerpt: >
+  The DCFtimeElement allows receiving the DCF77 signal that is available in central Europe
+  broadcasting the official central European time.
+---
 
-The DCFtimeElement allows receiving the DCF77 signal that is available in central Europe broadcasting the official central European time as a signal.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
+:::
 
 The frequency is 77.5 kHz and it takes a full minute to receive the full information.
 

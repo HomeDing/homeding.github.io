@@ -1,7 +1,19 @@
-# DigitalSignal Element
+---
+title: The Digital Signal Element
+id: digitalsignal
+tags: ["Element"]
+description: Support digital input signals to create actions. 
+excerpt: >
+  The DigitalSignalElement is used to handle digital input with short time level changes
+  that might be missed when using the [DigitalInput Element](/elements/digitalin.md).
+  On a changing input a pulse value is created with a defined duration.
+---
 
-The `DigitalSignalElement` is used to handle digital input with short time level changes
-that might be missed when using the [DigitalInput Element](/elements/digitalin.md). On a changing input a pulse value is created with a defined duration.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
+:::
 
 When a digital input signals like spikes are created on a GPIO input they may not last long enough to be detected by reading the actual level in the loop function.
 
@@ -30,7 +42,7 @@ The output signal is generated with a given minimal duration and stays high as l
 
 ### Configuration Example
 
-```JSON
+```json
 {
   "digitalsignal": {
     "d5": {
@@ -53,7 +65,7 @@ The state of the DigitalSignal element available at runtime includes the current
 
 ### Example State
 
-```JSON
+```json
 {
   "digitalsignal/d5": {
     "active":"true",

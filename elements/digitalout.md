@@ -1,8 +1,17 @@
-# The DigitalOut Element
+---
+title: The Digital Output Element
+id: digitalout
+tags: ["Element"]
+description: Support digital output signals based on actions.
+excerpt: >
+  The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element.
+  This can e.g. be used to drive a LED or a relay.
+---
 
-::: excerpt digitalout
-The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element.
-This can e.g. be used to drive a LED or a relay.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 
@@ -53,7 +62,7 @@ The physical output depends on `inverse`.
 
 ### Configuration Example
 
-```JSON
+```json
 {
   "digitalout": {
     "led": {
@@ -77,7 +86,7 @@ The state of the digitalout element includes:
 
 ### Example State
 
-```JSON
+```json
 {
   "digitalout/led": {
     "active":"false",

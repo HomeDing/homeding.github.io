@@ -1,6 +1,18 @@
-# CALC Element
+---
+title: The CALC Element
+id: calc
+tags: ["Element"]
+description: Base Element implementation for calculation supporting elements.
+excerpt: >
+  The CalcElement is implementing the common functionality for the Elements that create one output value from multiple input values.
+  This Element is not intended to be used directly. Use the AND, OR and ADD Elements.
+---
 
-The CalcElement is implementing the common functionality for the Elements that create one output value from multiple input values.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
+:::
 
 ## Web UI for the Elements
 
@@ -41,7 +53,7 @@ The current output value is reported in the state.
 
 ### Example State
 
-```JSON
+```json
 {
   "add/duration": {
     "active":"true",

@@ -1,10 +1,20 @@
-# The Device Element
+---
+title: The Device Element
+id: device
+tags: ["Element"]
+description: Support global device settings. 
+excerpt: >
+  The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.
+---
 
-::: excerpt device
-The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
-By specifying the configuration for the `device/0` element the general settings for the device can be controlled.
+By specifying the configuration for the `device` element the general settings for the device can be controlled.
+
 
 ## Element Configuration
 
@@ -95,7 +105,7 @@ The following action is implemented:
 
 ## Configuration Example
 
-```JSON
+```json
 {
   "device": {
     "0": {

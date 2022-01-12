@@ -1,7 +1,17 @@
-# The DHT Element
+---
+title: The DHT Element
+id: dht
+tags: ["Element"]
+description: Support of the DHT air temperature and humidity sensor chips.
+excerpt: >
+  The DHTElement allows retrieving temperature and humidity values from the DHT family
+  and AM2320 sensors and creates actions when new values are available.
+---
 
-::: excerpt dht
-The DHTElement allows retrieving temperature and humidity values from the DHT family and AM2320 sensors and creates actions when new values are available.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.
@@ -25,7 +35,7 @@ Install the `DHT sensor library for ESPx` library by beegee-tokyo before includi
 
 The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and register the element.
 
-```CPP
+```cpp
 // Use some more Elements that need additional libraries
 #define HOMEDING_INCLUDE_DHT
 #include <HomeDing.h>
@@ -120,7 +130,7 @@ From the base element implementation the following properties are available for 
 
 ### Configuration Example
 
-```JSON
+```json
 {
   "dht": {
     "on": {
@@ -148,7 +158,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```JSON
+```json
 {
   "dht/on": {
     "active":"true",

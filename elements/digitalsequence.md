@@ -1,8 +1,17 @@
-# Digital Sequence Element
+---
+title: The Digital Sequence Element
+id: digitalsequence
+tags: ["Element"]
+description: Support digital input signals to create actions. 
+excerpt: >
+  The digital sequence Element is used internally for several elements
+  that need to analyze timing sequences and digital signals.
+---
 
-:::element DigitalSequence default
-The digital sequence Element is used internally for several elements
-that need to analyze timing sequences and digital signals.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 see also [DCF Time Element](/elements/dcftime.md)
