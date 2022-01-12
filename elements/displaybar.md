@@ -1,8 +1,18 @@
-# The DisplayBar Element
+---
+title: The DisplayBar Element
+id: displaybar
+tags: ["Element"]
+description: Displaying progress values. 
+excerpt: >
+  The DisplayBarElement allows sending a progress indicating value to the display
+  to display it at a specified position as a bar or percentage number.
+  The value can be changed by using an action.
+---
 
-::: excerpt displaybar
-The DisplayBarElement allows sending a numeric value to the display and place it at a specified position as a shallow or filled dot.
-The value can be changed by using an action.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 <!-- not implemented check doku ???  -->
@@ -41,7 +51,7 @@ The following properties are available with the current values at runtime
 ## Configuration Example
 
 
-```JSON
+```json
 {
   "displayBar": {
     ???
@@ -51,7 +61,7 @@ The following properties are available with the current values at runtime
 
 ## Example State
 
-```JSON
+```json
 {
   "displayBar/on": {
     "value":"true",

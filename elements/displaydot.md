@@ -1,10 +1,19 @@
-# The DisplayDot Element
+---
+title: The DisplayDot Element
+id: displaydot
+tags: ["Element"]
+description: Displaying boolean values.
+excerpt: >
+  The DisplayDot Element allows sending a boolean value to the display
+  and show it at a specified position as a shallow or filled dot/circle.
+  The value can be changed by using an action.
+---
 
-::: excerpt displaydot
-The DisplayDotElement allows sending a boolean value to the display and place it at a specified position as a shallow or filled dot/circle.
-The value can be changed by using an action.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
-
 
 Because there may be more values presented on a display at the same time the
 DisplayDotElement may exist multiple times in the configuration by using different positions.
@@ -41,7 +50,7 @@ The following actions can be sent to the element:
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "displaydot": {
     "b": {
@@ -64,7 +73,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```JSON
+```json
 {
   "displaydot/b": {
     "active": "true",

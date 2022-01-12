@@ -1,8 +1,18 @@
-# The DisplayText Element
+---
+title: The DisplayText Element
+id: displaytext
+tags: ["Element"]
+description: Displaying text values.
+excerpt: >
+  The DisplayTextElement allows sending a value to the display
+  and show it at a specified position as text including a prefix and postfix.
+  The value can be changed by using an action.
+---
 
-::: excerpt displaytext
-The DisplayTextElement allows sending a value to the display and place it at a specified position as text including a prefix and postfix.
-The value can be changed by using an action.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 Because there may be more values presented on a display at the same time the
@@ -47,7 +57,7 @@ The following actions can be sent to the element:
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "displaytext": {
     "val": {
@@ -77,7 +87,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```JSON
+```json
 {
   "displaytext/val": {
     "active":"true",
