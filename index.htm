@@ -18,7 +18,6 @@ Markdown viewer SPA using
   <link rel="stylesheet" href="md/default.min.css" />
   <script src="md/markdown-it.min.js"></script>
   <script src="md/markdown-it-container.min.js"></script>
-  <script src="md/markdown-it-frontmatter.js"></script>
   <script src="md/highlight.pack.js"></script>
 
   <style>
@@ -28,14 +27,14 @@ Markdown viewer SPA using
       max-width: 800px;
     }
 
-    main a {
-      text-decoration: underline;
+    nav a,
+    nav a:hover {
+      text-decoration: none;
     }
 
     table {
       empty-cells: show;
       border-collapse: collapse;
-      background-color: white;
       border-left: solid 1px #203050;
       border-right: solid 1px #203050;
       margin-top: 0.4em;
@@ -79,9 +78,7 @@ Markdown viewer SPA using
       position: relative;
       padding: 0.5rem 0.5rem 0 4rem;
       margin-right: 0.5rem;
-      /* width: 32rem;
-      max-width: 32rem; */
-      background-color: white;
+      background-color: var(--card-back);
       margin-bottom: 1rem;
       page-break-inside: avoid;
     }
@@ -96,7 +93,6 @@ Markdown viewer SPA using
       min-height: 7.2rem;
       width: 100%;
       max-width: 100%;
-      background-color: #e8e8e8;
     }
 
     .excerpt {
@@ -111,7 +107,6 @@ Markdown viewer SPA using
       left: 0.5rem;
       height: 3rem;
       width: 3rem;
-      color: #0f388a;
     }
 
     .board img {
@@ -125,14 +120,11 @@ Markdown viewer SPA using
     }
 
     .warning {
-      border: 0.2rem solid #ebccd1;
+      border: 0.2rem solid #a94442;
+      padding: 0.2rem;
       color: #a94442;
       background-color: #f2dede;
       border-radius: 0.4rem;
-    }
-
-    .warning>h3 {
-      color: #a94442;
     }
 
     @media print {
@@ -193,13 +185,13 @@ Markdown viewer SPA using
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    // alert(window.innerWidth);
     if (window.innerWidth > 880)
       navObj.classList.add('open');
 
+    // setup Markdown-IT default with options 
     var md = new markdownit('default', {
       html: true,
-      // breaks: false,
+      breaks: false,
       linkify: true,
       langPrefix: 'hljs language-',
       highlight: function (str, lang) {
@@ -209,6 +201,7 @@ Markdown viewer SPA using
         return (t.value);
       }
     });
+
 
     function renderContainer(cn, linkFolder, link, icon) {
       // if no icon is given assume img and content in the link folder
@@ -274,6 +267,18 @@ Markdown viewer SPA using
       }
     });
 
+    new markdownitContainer(md, 'tags', {
+      render: function (tokens, idx) {
+        var t = tokens[idx];
+        if (t.nesting === 1) {
+          var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
+          return '<div class="board"><img src="/sensors/' + m[1] + '.jpg">\n';
+        } else {
+          return '</div>\n';
+        }
+      }
+    });
+
     new markdownitContainer(md, 'warning', {
       render: function (tokens, idx) {
         var t = tokens[idx];
@@ -286,25 +291,34 @@ Markdown viewer SPA using
       }
     });
 
-    new front_matter_plugin(md, {
-      callback: function (fm) {
-        if (fm) {
-          fm.split('\n').forEach(l => {
-            var kv = l.split(':');
-            var k = kv[0].trim();
-            var v = kv[1].trim();
+    // simplified YAML parser supporting only a key:value object. 
+    function extractFrontData(txt) {
+      var fd = {};
+      var fMatch = txt
+        .match(/^-{3,}\s*[\r\n]+([^\0]*)[\r\n]+-{3,}[\r\n]*/);
 
-            if (k === 'title') {
-              document.title = v;
-            } else if (k === 'description') {
-              var md = document.head.querySelector('meta[name=description]');
-              if (md) { md.content = v; }
-            }
-          });
+      if (fMatch) {
+        var fText = fMatch[1].replace(/[\r\n]+/g, "\n");
+
+        // reformat multiline values
+        fText = fText.replaceAll(/>\s*(\n  [^\n]+)+(?=\n*$|\n\S)/g, m => {
+          return (m.substring(1).replace(/\n\s*/g, ' '));
+        });
+
+        var matches = fText.matchAll(/^(?<key>\S+)\s*:\s*(.*)$/gm);
+        for (const match of matches) {
+          fd[match[1]] = match[2];
         }
-        // console.log(lines);
+        return ({
+          length: fMatch[0].length,
+          data: fd
+        });
+
+      } else {
+        return ({ length: 0, data: {} });
       }
-    });
+    } // extractFrontData
+
 
     function getHashParam(param, defValue) {
       var h = window.location.hash;
@@ -350,10 +364,32 @@ Markdown viewer SPA using
 
       // show given text as html.
       setText: function (fName, txt) {
+
+        // extract front data
+        var fData = extractFrontData(txt);
+
+        if (fData.length > 0) {
+          txt = txt.substring(fData.length);
+          // replace using njk syntax 
+          txt = txt.replaceAll(/\{\{\s*data.(\S+)\s*\}\}/g, (m, key) => fData.data[key]);
+
+          // replace meta tags in header
+          if (fData.data.title) document.title = fData.data.title;
+
+          if (fData.data.tags) {
+            var e = document.head.querySelector('meta[name=keywords]');
+            if (e) { e.content = fData.data.tags; }
+          }
+
+          if (fData.data.description) {
+            var e = document.head.querySelector('meta[name=description]');
+            if (e) { e.content = fData.data.description; }
+          }
+        }
+
         var hText = md.render(txt);
 
         // modify markdown links to work:
-
         hText = hText.replace(/href="([\w\-\/]+).md"/g, 'href="#page=$1.md"');
         hText = hText.replace(/href="([\w\-\/]+)"/g, 'href="#page=$1.md"');
         this.innerHTML = hText;

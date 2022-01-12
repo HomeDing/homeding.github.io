@@ -1,7 +1,15 @@
-# Alarm Element
+---
+title: The Alarm Element
+id: alarm
+tags: ["Element"]
+description: Create Alarm events.
+excerpt: The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.
+---
 
-::: excerpt alarm
-The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 <!-- ## Web UI for the Timer Element -->
@@ -19,7 +27,7 @@ This element implements the following properties and actions:
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "alarm": {
     "wakeup": {

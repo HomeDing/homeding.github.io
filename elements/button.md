@@ -1,8 +1,17 @@
-# The Button Element
+---
+title: The Button Element
+id: button
+tags: ["Element"]
+description: Create actions based on digital input gestures.
+excerpt: The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.
+---
 
-::: excerpt button
-The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
+
 
 ## Web UI
 
@@ -58,7 +67,7 @@ that provides the input value to the Button Element.
 
 ### Example Configuration
 
-```JSON
+```json
 {
   "digitalin": {
     "up": {
@@ -90,7 +99,7 @@ that provides the input value to the Button Element.
 
 ### Example State
 
-```JSON
+```json
 {
   "button/start": {
     "active": "true",

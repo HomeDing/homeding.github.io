@@ -1,7 +1,17 @@
-# Logical AND Element
+---
+title: The Logical AND Element
+id: and
+tags: ["Element"]
+description: Calculate when all input values are true
+excerpt: >
+  The AND Element combines multiple logic input values to a single output value.
+  The output value will be true only when all input values are true.
+---
 
-::: excerpt and
-The AND Element combines multiple logic input values to a single output value.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 Actions can be send to this element using the properties value[n].
@@ -34,7 +44,7 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "and": {
     "a": {
