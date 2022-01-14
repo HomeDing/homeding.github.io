@@ -1,12 +1,24 @@
-# PMS Element
+---
+title: The PMS Element
+id: pms
+tags: ["Element"]
+description: Support of the PMS5003 air quality sensors.
+excerpt: >
+  The PMSElement allows using the laser based air particle and pollution sensor
+  PMS5003 from plantower to report the number of micro particles in the air.
+---
 
-The PMSElement allows using the laser based air particle and pollution sensor PMS5003 from plantower to report the number of micro particles in the air.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
+:::
 
 ![PMS5003 sensor](/elements/pms5003.jpg)
 
 This Element is not included into the standard firmware but can be included by defining:
 
-```CPP
+```cpp
 #define HOMEDING_INCLUDE_PMS
 ```
 
@@ -69,7 +81,7 @@ The following properties are available for configuration of the element:
 
 ## Example configuration
 
-```JSON
+```json
 "pms": {
   "pm25": {
     "pinrx": "D6",

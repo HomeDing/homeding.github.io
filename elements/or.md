@@ -1,11 +1,22 @@
-# Logical OR Element
+---
+title: The Logical OR Element
+id: or
+tags: ["Element"]
+description: Calculate when at least one of the input values is true.
+excerpt: >
+  The OR Element combines multiple logic input values to a single output value.
+  The output value will be true only when at least one of the input values is true.
+---
 
-::: excerpt or
-The OR Element combines multiple logic input values to a single output value.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 Actions can be send to this element using the properties value[n].
 Every time the value changes the onValue event is emitted.
+
 
 ## Web UI for the OR Element
 
@@ -37,7 +48,7 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "or": {
     "o": {

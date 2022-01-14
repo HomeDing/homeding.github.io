@@ -1,8 +1,16 @@
-# The PWMOut Element
+---
+title: The PWMOut Element
+id: pwmout
+tags: ["Element"]
+description: Support GPIO output pins for PWM signals.
+excerpt: >
+  The PWMOutElement is used to create a variable PWM signal at the specified output pin. This can be used to drive a LED or a servo motor.
+---
 
-::: excerpt pwmout
-The PWMOutElement is used to create a variable PWM signal at the specified output pin.
-This can e.g. be used to drive a LED or a servo motor.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 
@@ -42,7 +50,7 @@ The following properties are available with the current values at runtime
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "pwmout": {
     "led": {
@@ -63,7 +71,7 @@ http://devdevice/$board/pwmout/led?value=255 -->
 
 ## Example State
 
-```JSON
+```json
 ```
 
 ## Tags

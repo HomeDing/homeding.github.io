@@ -1,7 +1,17 @@
-# The DisplayLine Element
+---
+title: The DisplayLine Element
+id: displayline
+tags: ["Element"]
+description: Displaying a static line.
+excerpt: >
+  The DisplayLineElement allows drawing a simple fixed line on the display
+  when the display supports pixel drawing.
+---
 
-::: excerpt displayline
-The DisplayLineElement allows drawing a simple line on the display when the display supports lines.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 It is not required for all displays to support all these Elements and when a device only has a simple LCD
@@ -34,7 +44,7 @@ The following actions can be sent to the element:
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "displayline": {
     "l": {
@@ -57,7 +67,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```JSON
+```json
 {
   "displayline/l": {
     "active": "true"

@@ -1,21 +1,32 @@
-# NTPTime Element
+---
+title: The NTPTime Element
+id: ntptime
+tags: ["Element", "Time"]
+description: Support getting local time from the internet using NTP protocol.
+excerpt: >
+  The NTPTimeElement can retrieve the local time from an external ntp server on the internet.
+---
 
-::: excerpt ntptime
-The NTPTimeElement can retrieve the local time from an external ntp server.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
-The NTPTimeElement is one of the element implementations to get a local time from an external source
+The NTPTimeElement is one of the time elements that are used to get a local time from a external source
 and to adjust the `real local time`w on the board.
-This element gets the local time from an external server using the Network Time Protocol.
+
+This element gets the local time from an external server using the Network Time Protocol (NTP).
 
 In the SDK of some platforms like the ESP8266 the functionality to get a NTP based time sync is already available but it must be configured and activated.
 This is what the NTPTimeElement does for the ESP8266 (and ESP32 later).
 
 Because retrieving the right local time can be done using different methods the NTPTime Element is an extension to the building clock functionality of the board that keeps the current time available as accurate as the internal quartz oscillator can do.
 
-## Network Time Protocol
 
-The Network Time Protocol (NTP) is supported by many operating systems and is the common protocol to sync the board clocks of computers and server.
+## Network Time Protocol (NTP)
+
+The NTP protocol is supported by many operating systems and is the common protocol to sync the board clocks of computers and server.
 
 You can find many NTP servers on the internet. The web site <https://www.pool.ntp.org/en/> has a repository of available servers. Inside companies usually a local server is available.
 
@@ -45,7 +56,7 @@ See <https://raw.githubusercontent.com/nayarsystems/posix_tz_db/master/zones.csv
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "ntptime": {
     "0": {
@@ -66,7 +77,7 @@ The following properties are available with the current values at runtime
 
 ## Element State Example
 
-```JSON
+```json
 {
   "ntptime/0": {
     "active": "true",

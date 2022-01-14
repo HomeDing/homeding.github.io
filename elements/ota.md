@@ -36,7 +36,7 @@ To use this tool you need to install Python 3 on your computer as well.
 
 This script will push an OTA update to the ESP
 
-```CMD
+```
 python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.7.1\tools\espota.py -i %devicename% -p 8266 --auth=123 -f ..\temp\DevDing.ino.bin 
 ```
 (the version number and path to the ers8266 tools may vary)
@@ -53,7 +53,7 @@ or to upload a SPIFFS image:
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "ota": {
     "0": {

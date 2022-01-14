@@ -1,12 +1,22 @@
-# DSTime Element ???
+---
+title: The DSTime Element
+id: dstime
+tags: ["Element", "Time"]
+description: Support getting local time from a DS3231 chip.
+excerpt: >
+  The DSTime Element gets the local time from a DS3231 chip that contains a high accurate
+  clock running independently from the main board and processor.
+---
 
-::: excerpt dstime
-The DSTime Element gets the local time from a chip that contains a high accurate clock running independently from the main board and processor.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 A small battery is required to keep the clock running when power is failing and a crystal oscillator for exact timing is used.
 
-The DSTimeElement is one of the element implementations to get a local time from an external source and to adjust the real local timew on the board.
+The DSTimeElement is one of the element implementations to get a local time from an external source and to adjust the real local time on the board.
 
 The advantage of this approach is that a device can have the real time available from the start. Other time receiving elements depend on the availability of a network time server or a broadcasting signal.
 
@@ -17,9 +27,17 @@ The DSTime Element is an extension to the build-in clock functionality of the bo
 The following chips are supported:
 
 * DS3231
-* ???
+<!-- * ??? -->
 
-??? only the time function, no alarms and memory
+<!-- ??? only the time function, no alarms and memory -->
+
+
+## Web UI for the DSTime Element
+
+When a DSTime Element is configured the element is visible on the board showing the current time on the HomeDing device.
+
+A button is available to set this time to the current local time available in the browser.
+
 
 ## Element Configuration
 
@@ -35,7 +53,7 @@ The following properties are available for configuration of the element.
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "dstime": {
     "0": {
@@ -46,10 +64,10 @@ The following properties are available for configuration of the element.
 }
 ```
 
+
 ## Element State
 
-
-```JSON
+```json
 {
   "dstime/0": {
     "active":"true",
@@ -67,4 +85,5 @@ The following properties are available for configuration of the element.
 
 
 ## Tags
+
 #element #time

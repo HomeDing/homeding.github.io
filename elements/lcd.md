@@ -1,8 +1,18 @@
-# The DisplayLCD Element
+---
+title: The Display LCD Element
+id: displaylcd
+tags: ["Element"]
+description: Using LCD displays with a HD44780 controller chip.
+excerpt: >
+  The Display Configuration for Monochrome LCDs based on HD44780 chips.
+---
 
-::: excerpt displaylcd
-The Display Configuration for Monochrome LCDs based on HD44780 chips.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
+
 
 In the Arduino Environment the LiquidCrystal library exits for a long time and supports HD44780 compatible LCDs with up to 4 lines of 20 characters. Displays ae available with
 
@@ -50,7 +60,7 @@ The DisplayLCD Element can be used to configure the LCDDisplayAdapter.
 
 This should be done in the `env.json` file:
 
-```JSON
+```json
 {
   "device": {
     "0": {

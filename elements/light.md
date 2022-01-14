@@ -1,8 +1,17 @@
-# Light Element
+---
+title: The Light Element
+id: light
+tags: ["Element"]
+description: Support GPIO output pins for controlling lights with multiple color channels.
+excerpt: >
+  The LightElement is used to send a light value to GPIO output pins.
+  It can also be used as a base class for other light elements using a specific chip or protocol.
+---
 
-::: excerpt light
-The LightElement is used to send a light value to GPIO pins.
-It can be used as a base class for other light elements using a specific chip or protocol.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 The base implementation in the LightElement can be used for single channel light values like a single LED or a single RGB Led attached directly to GPIO pins.
@@ -47,7 +56,7 @@ There are some simple colors available by name:
 
 ### Example configuration
 
-```JSON
+```json
 {
   "light": {
     "lx": {
@@ -68,7 +77,7 @@ There are no actions being sent by this element.
 
 ## State
 
-```JSON
+```json
 {
   "light/lx": {
     "active":"true",
