@@ -1,4 +1,8 @@
-# The WordClock Example
+---
+title: The WordClock Example
+---
+
+# {{data.title}}
 
 :::excerpt default
 This folder contains an example for a wordclock implementations (Germany layout). It also illustrates how to implement something special
@@ -61,7 +65,7 @@ the GPIO0(D3) can be exchanged. It is configured in the config.json file.
 
 This is a system configuration file for this example:
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -92,7 +96,7 @@ This configures for German timezone and unsafe mode. Please see documentation on
 
 This is a configuration file for this example:
 
-```JSON
+```json
 {
   "time": {
     "clock": {

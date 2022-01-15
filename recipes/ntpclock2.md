@@ -1,4 +1,8 @@
-# NTP based clock with TM1627 display
+---
+title: NTP based clock with TM1627 display
+---
+
+# {{data.title}}
 
 This recipe uses the time from the internet and displays the current local time on a 4 digit display based on the TM1627 chip.
 
@@ -43,7 +47,7 @@ The **ontime** event from the [Time Element] send the current time information t
 
 ## env.json configuration
 
-```JSON
+```json
 {
   ...
   "ntptime": {
@@ -60,7 +64,7 @@ The **ontime** event from the [Time Element] send the current time information t
 
 In **config.json** the display items and the time related actions are configured:
 
-```JSON
+```json
 {
   "tm1637": {
     "0": {

@@ -1,4 +1,8 @@
-# wishlist
+---
+title: wishlist
+---
+
+# {{data.title}}
 
 > Draft ???
 

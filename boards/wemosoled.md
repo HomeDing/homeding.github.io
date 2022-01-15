@@ -1,4 +1,8 @@
-# Board Review ESP8266 with OLED
+---
+title: Board Review ESP8266 with OLED
+---
+
+# {{data.title}}
 
 ![wemosoled.png](/boards/wemosoled.jpg)
 
@@ -58,11 +62,11 @@ The board uses
 * `SCL` = `GPIO4` (`D2`) (yellow) and
 * `SDA` = `GPIO5` (`D1`) (blue)
 
-# Board configuration
+## Board configuration
 
 The display configuration is the only specific entry in env.json:
 
-```JSON
+```json
 {
   "device": {
     "0": {

@@ -1,4 +1,8 @@
-# ESP-01board with DHT22
+---
+title: ESP-01board with DHT22
+---
+
+# {{data.title}}
 
 :::excerpt
 This little board has a DHT22 sensor and power regulator for a ESP-01 module.
@@ -24,7 +28,7 @@ This configuration enables the system and the dht element to get a sensor that c
 
 The env.json file should only contain the system configuration:
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -49,7 +53,7 @@ The env.json file should only contain the system configuration:
 
 The config.json file should contain the following configuration. More options are documented in the [DHT Element](/elements/dht.md) description.
 
-```JSON
+```json
 {
   "dht": {
     "0": {

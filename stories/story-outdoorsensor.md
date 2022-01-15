@@ -1,4 +1,8 @@
-# Outdoor Sensor
+---
+title: Outdoor Sensor
+---
+
+# {{data.title}}
 
 Some weather parameters are interesting to be measured by using an outside sensor like
 
@@ -342,7 +346,7 @@ The DHT22 wiring has to be changed so that the GND pin is attached to a GPIO (D6
 
 In the config.json file the 3 parameters have to be added:
 
-```JSON
+```json
 {
   "dht": {
     "on": {

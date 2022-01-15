@@ -1,4 +1,8 @@
-# Reference Element
+---
+title: Reference Element
+---
+
+# {{data.title}}
 
 ::: excerpt default
 The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
@@ -35,7 +39,7 @@ The value given in the actions is `0`.
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "reference": {
 ...

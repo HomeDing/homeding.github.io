@@ -1,4 +1,8 @@
-# Radio Element
+---
+title: Radio Element
+---
+
+# {{data.title}}
 
 ::: excerpt radio
 The Radio Element allows to control FM radio chips that is connected to the board.

@@ -1,4 +1,8 @@
-# Map Element
+---
+title: Map Element
+---
+
+# {{data.title}}
 
 :::excerpt default
 The MapElement uses incoming values to create a new value 
@@ -37,7 +41,7 @@ Then the `onValue` actions on the map Element are sent.
 
 This example works on an incoming temperature and creates a green color for good values:
 
-```JSON
+```json
 {
   "map": {
     "t": {
@@ -64,7 +68,7 @@ This example works on an incoming temperature and creates a green color for good
 
 Same with actions on the rules level. In the status the original inbound value will be reported
 
-```JSON
+```json
 {
   "map": {
     "t": {
@@ -156,7 +160,7 @@ This example configuration enables using a numeric value (e.g. from a switch) in
 - sending out the action specified in the mapping entry
 
 
-```JSON
+```json
 {
   "map": {
     "m": {
@@ -193,7 +197,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```JSON
+```json
 {
   "map/colors": {
     "active": "true",

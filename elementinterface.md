@@ -1,4 +1,8 @@
-# Elements API
+---
+title: Elements API
+---
+
+# {{data.title}}
 
 To implement an element a new class has to be created to implement the functions required for the specific element.
 
@@ -73,7 +77,7 @@ There are several mechanisms like state machines to split a more complex task in
 Some elements need a valid local time to operate. The event when the element normal operation is started can be configured in
 the class initializer like you can find in the LogElement:
 
-```CPP
+```cpp
 LogElement::LogElement()
 {
   startupMode = Element_StartupMode::Time;

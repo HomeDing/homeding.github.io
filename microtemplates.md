@@ -1,4 +1,8 @@
-# Micro Templates
+---
+title: Micro Templates
+---
+
+# {{data.title}}
 
 The micro framework has a built-in template mechanism that allows creating multiple visible components from a single template object.
 

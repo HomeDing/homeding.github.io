@@ -1,4 +1,8 @@
-# Actual Versions of the WebUI available to download.
+---
+title: Actual Versions of the WebUI available to download.
+---
+
+# {{data.title}}
 
 > Draft???
 

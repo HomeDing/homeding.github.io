@@ -1,4 +1,8 @@
-# Web Services
+---
+title: Web Services
+---
+
+# {{data.title}}
 
 To interact with the elements and some device features the integrated web server exposes some services.
 
@@ -17,7 +21,7 @@ A link to this URL is also present on the default page index.htm.
 
 Example with comments
 
-```JSON
+```json
 {
   "devicename": "displayding",  // network name of the device
   "build": "Jan  2 2019",       // build-date of the uploaded sketch
@@ -35,7 +39,7 @@ This information is read only.
 
 ### Example
 
-```JSON
+```json
 {
   "build": "Oct 10 2018"
   "free heap": 32456,
@@ -82,7 +86,7 @@ GET <http://homeding/$elements> <sup>*1</sup>
 This REST service returns an array with all elements that are implemented in the firmware of the device.
 
 Example:
-```JSON
+```json
 [ "ssdp", "ota", "device", "time", "remote", "ntptime", "dstime", "serialcmd", "my", "value", "button", "analog",
   "timer", "schedule", "digitalout", "pwmout", "displaytext", "displaydot", "displayLCD" ,"displaySSD1306", "displaySH1106",
   "dht", "rfcodes", "rotary", "alarm"
@@ -114,7 +118,7 @@ This service is required for the network configuration page (/setup.htm) and ret
 
 This service has to be called multiple times. The first time starts scanning and results will be available some seconds later.
 
-```JSON
+```json
 [
   {"id":"VVBLHH0909 2", "rssi":"-83", "open":"0"},
   {"id":"devnet", "rssi":"-67", "open":"0"},
@@ -137,7 +141,7 @@ This service returns the state of all existing elements running in the device.
 
 Example:
 
-```JSON
+```json
 {
   "device/0":  {"active":"true", "name":"DHTdevice", "description":"IoT Dev-Device with a DHT Sensor", "nextboot":"90"},
   "ota/0": {"active":"true"},
@@ -151,7 +155,7 @@ Example:
 
 This service returns the state of the element addressed by the more specific url. It is an excerpt of the full state above.
 
-```JSON
+```json
 {
   "dht/on": {
     "active":"true",

@@ -1,4 +1,8 @@
-# Build a Inhouse IoT Air Quality sensor no cloud required
+---
+title: Build a Inhouse IoT Air Quality sensor no cloud required
+---
+
+# {{data.title}}
 
 **Table of Contents**
 
@@ -136,7 +140,7 @@ The BME680 Sensor is communicating with the board using the I2C bus.
 
 As this is possibly shared with other extensions like other sensors or displays is is configured on the device level in env.json together with the network name of the device. Here is a extracted sample of device and I2C settings:
 
-```JSON
+```json
 "device": {
   "0": {
     "name": "airding",
@@ -156,7 +160,7 @@ On the breadboard you can see the connection cables to the sensor:
 
 The configuration for BME680 can be used in config.json:
 
-```JSON
+```json
 "bme680": {
   "bd": {
     "address": "0x77",
@@ -179,7 +183,7 @@ The power for this sensor must be taken from the Vin that is normally powered by
 
 The data from the sensor is transferred in a standard 9600 baud serial format so the rx and tx pins and reading time needs to be configured:
 
-```JSON
+```json
 "pms": {
   "pm25": {
     "description": "pm25 particle sensor",
@@ -248,7 +252,7 @@ For this story the [Log element] and the [NPTTime Element] are used to record th
 The following configuration creates the 2 log elements for gas and particles:
 
 
-```JSON
+```json
 {
   "log": {
     "pm": {
@@ -274,7 +278,7 @@ Actions are configured at the element that emits actions 2 entries are required:
 * The pms/p25 `onValue` event sends the actual value to the log/pm element using a value action.
 * The bme680/bd `onGas` event sends the actual value to the log/pm element using a value action.
 
-```JSON
+```json
 {
   "pms": {
     "pm25": {

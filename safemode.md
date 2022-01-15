@@ -1,4 +1,8 @@
-# Safemode
+---
+title: Safemode
+---
+
+# {{data.title}}
 
 The safemode should be enabled on all HomeDing based devices in regular operating conditions. It is reasonable measurement against external attempts to change and misuse the device over the network.
 
@@ -30,7 +34,7 @@ It is possible disable safemode by using the physical RESET button (see below).
 
 The save mode is enabled permanently by adding the `safemode` property with `true` to the device configuration.
 
-```JSON
+```json
 {
   "device": {
     "0": {

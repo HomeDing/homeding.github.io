@@ -1,4 +1,8 @@
-# LED On/OFF Recipe
+---
+title: LED On/OFF Recipe
+---
+
+# {{data.title}}
 
 This recipe uses a single button as an input to switch a LED on and off.
 
@@ -32,7 +36,7 @@ The [digital output element](/elements/digitalout.md) is configured to create a 
 
 The `env.json` can be taken from the board description because it has no special logic for this recipe:
 
-```JSON
+```json
 {
   "device": {
     "main": {
@@ -65,7 +69,7 @@ The `env.json` can be taken from the board description because it has no special
 
 ## config.json Configuration
 
-```JSON
+```json
 {
   "digitalin": {
     "in": {

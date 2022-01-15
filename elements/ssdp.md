@@ -1,4 +1,8 @@
-# Simple Service Discovery Protocol (SSDP) Element
+---
+title: Simple Service Discovery Protocol (SSDP) Element
+---
+
+# {{data.title}}
 
 ::: excerpt ssdp
 The SSDPElement allows specifying the properties to send SSDP messages to the local network so the device can be discovered by Plug & Play Services.
@@ -78,7 +82,7 @@ If you like your device to show up with some hints about the configured function
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "ssdp": {
     "0": {

@@ -1,4 +1,8 @@
-# Web Manifest for HomeDing based devices
+---
+title: Web Manifest for HomeDing based devices
+---
+
+# {{data.title}}
 
 The Web files for the homeding devices has a manifest file **site.webmanifest**.
 It supports using the UI of a HomeDing device as a Progressive Web Application

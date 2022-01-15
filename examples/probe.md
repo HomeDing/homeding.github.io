@@ -1,4 +1,8 @@
-# Probe example
+---
+title: Probe example
+---
+
+# {{data.title}}
 
 :::excerpt
 This example shows how to implement special, local elements
@@ -37,7 +41,7 @@ In the configuration some options can be modified. They are related to the featu
 
 **Example:**
 
-```JSON
+```json
 {
   "ina219": {
     "0": {
@@ -69,7 +73,7 @@ In the configuration some options can be modified. They are related to the featu
 
 **Example:**
 
-```JSON
+```json
 {
   "ina226": {
     "0": {
@@ -94,7 +98,7 @@ In the example the display is used to show the current values from the sensor.
 
 It is configured in **env.json**. Other supported display can also be used.
 
-```JSON
+```json
 {
   "displaysh1106": {
     "0": {
@@ -108,7 +112,7 @@ It is configured in **env.json**. Other supported display can also be used.
 
 In the **config.json** 3 output text placements are defined to show voltage, current and power measurements:
 
-```JSON
+```json
 {
   "displaytext": {
     "v": {
@@ -140,7 +144,7 @@ You can see in the sensor configuration the actions that are sent to the display
 
 A [Log Element](/elements/log.md) is used to capture the current value from the sensor.
 
-```JSON
+```json
 {
   "log": {
     "a": {

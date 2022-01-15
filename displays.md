@@ -1,4 +1,8 @@
-# Displays
+---
+title: Displays
+---
+
+# {{data.title}}
 
 The HomeDing library supports local attached displays but also works fine without a local display.
 

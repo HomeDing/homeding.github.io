@@ -1,4 +1,8 @@
-# Radio Example
+---
+title: Radio Example
+---
+
+# {{data.title}}
 
 :::excerpt
 The **radio example** can be used with any board that has a 4MByte Flash memory, a FM radio receiving board, a display and a rotary encoder with button. 
@@ -91,7 +95,7 @@ I strongly propose to add a separate power source for the amplifier and the radi
 
 You also risk to burn the Regulator on the ESP board.
 
-# Elements in use
+## Elements in use
 
 The elements that come with the example code are
 
@@ -180,7 +184,7 @@ I added a 100nF capacitor next to the radio.
 
 ## Example configuration
 
-```JSON
+```json
 {
   "rotary": {
     "0": {

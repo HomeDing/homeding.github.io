@@ -1,4 +1,8 @@
-# Stories
+---
+title: Stories
+---
+
+# {{data.title}}
 
 The stories provide a full documentation required to build a specific device for a specific need
 with pictures and extensive step-by-step documentation.

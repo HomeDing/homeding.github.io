@@ -76,7 +76,7 @@ The following properties are available with the current values at runtime
 }
 ```
 
-# See also
+## See also
 
 * [DigitalSignal Element](/elements/digitalsignal.md)
 * [Switch Element](/elements/switch.md)

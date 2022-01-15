@@ -1,4 +1,8 @@
-# Build a Weather forecast display
+---
+title: Build a Weather forecast display
+---
+
+# {{data.title}}
 
 **This is Work in progress** <!-- ??? -->
 
@@ -114,7 +118,7 @@ The [Standard Example] already includes the most common elements for sensors, se
 
 This implementation also required the special [WeatherFeed Element] for accessing the WeatherFeed service. Therefore the standard example needs to be extended to include this element in the firmware by defining the following constant in the standard.ino sketch file just above the `#include <Arduino.h>`:
 
-```CPP
+```cpp
 ...
 #define HOMEDING_INCLUDE_WEATHERFEED
 
@@ -152,7 +156,7 @@ This method is useful when starting with a new board or to update to a new versi
 
 The device hardware specific configuration of the board and the display should be placed into the `/env.json` file. The I2C bus configuration must also be done in this file in the device configuration. Here is a full configuration version for a standard nodemcu board with a SSD1306 / SSD1309 based display:
 
-```JSON
+```json
 {
   "device": {
     "main": {
@@ -196,7 +200,7 @@ The display is used to show some values from the forecast so we need to configur
 
 The following configuration can be used:
 
-```JSON
+```json
 {
   "weatherfeed": {
     "home": {

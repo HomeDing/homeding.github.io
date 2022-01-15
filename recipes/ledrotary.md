@@ -1,4 +1,8 @@
-# Dimming a LED using a Rotary Encoder
+---
+title: Dimming a LED using a Rotary Encoder
+---
+
+# {{data.title}}
 
 The following elements and hardware is used by this recipe:
 
@@ -25,7 +29,7 @@ On many boards there is a built-in LED attached to the GPIO2(D4).
 
 ## Configuration
 
-```JSON
+```json
 {
   "rotary": {
     "0": {

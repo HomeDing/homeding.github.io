@@ -1,7 +1,11 @@
-# Alarm with timer for duration
+---
+title: Alarm with timer for duration
+---
+
+# {{data.title}}
 
 
-```JSON
+```json
 {
   "alarm": {
     "morning": {

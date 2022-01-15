@@ -1,10 +1,14 @@
-# The HomeDing - PWMLED Example ???
+---
+title: The HomeDing - PWMLED Example ???
+---
+
+# {{data.title}}
 
 > #Draft
 
 Example dimming a LED using PWM Analog output and buttons.
 
-```JSON
+```json
 {
   "button": {
     "up": {

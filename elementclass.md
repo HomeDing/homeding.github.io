@@ -1,4 +1,8 @@
-# The Element implementation
+---
+title: The Element implementation
+---
+
+# {{data.title}}
 
 Implementing Elements is very easy because only some functions are required to be implemented.
 The basic Element class also helps for some of the required features.

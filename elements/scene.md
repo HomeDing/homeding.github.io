@@ -1,4 +1,8 @@
-# Scene Element
+---
+title: Scene Element
+---
+
+# {{data.title}}
 
 ::: excerpt rotary
 The SceneElement is used to send a series of action triggered by a single incoming action.
@@ -40,7 +44,7 @@ From the base element implementation the following properties are available for 
 
 ### Example Configuration
 
-```JSON
+```json
 {
   "scene": {
     "day": {
@@ -72,7 +76,7 @@ From the base element implementation the following properties are available for 
 
 ## State
 
-```JSON
+```json
 {
   "scene/night": {
     "active":"true",

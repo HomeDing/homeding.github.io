@@ -1,4 +1,8 @@
-# WiFi Manager Details
+---
+title: WiFi Manager Details
+---
+
+# {{data.title}}
 
 :::excerpt
 The WiFi-Manager is a module in the HomeDing library to register a device in the local network.
@@ -118,7 +122,7 @@ The device is now reachable using <http://ESP-5D26A5> or <http://192.168.2.229>
 <!-- ## WPS
 NOT IMPLEMENTED YET
 
-```CPP
+```cpp
 bool ESPSerialWiFiManager::_connect_wps(){
   _disconnect();
   OFL("Push the WPS button on your access point now.");

@@ -1,4 +1,8 @@
-# The Rotary Element
+---
+title: The Rotary Element
+---
+
+# {{data.title}}
 
 ::: excerpt rotary
 The RotaryElement is used to capture increments and decrements for values using a rotary encoder.
@@ -40,7 +44,7 @@ value Internal starting value. (deprecated)
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "rotary": {
     "in": {
@@ -68,7 +72,7 @@ The following properties are available with the current values at runtime
 
 The internal value can be seen in the rotary state but should not directly be used as a value.
 
-```JSON
+```json
 {
   "rotary/in": {
     "active": "true",

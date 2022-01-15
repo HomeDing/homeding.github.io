@@ -1,4 +1,8 @@
-# Time Element
+---
+title: Time Element
+---
+
+# {{data.title}}
 
 ::: excerpt time
 The time element creates actions with the current local time as value.
@@ -32,7 +36,7 @@ The following properties are available with the current values at runtime
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "time": {
     "clock": {
@@ -44,7 +48,7 @@ The following properties are available with the current values at runtime
 
 ## Example State
 
-```JSON
+```json
 {
   "time/0": {
     "active":"true"

@@ -1,4 +1,8 @@
-# Blink Recipe
+---
+title: Blink Recipe
+---
+
+# {{data.title}}
 
 This recipe uses 1 digital output to blink a LED and a timer to create actions.
 
@@ -13,7 +17,7 @@ Therefore the `inverse` mode is enabled and the initial (logical input) value is
 
 ## Configuration
 
-```JSON
+```json
 {
   "timer": {
     "blink": {

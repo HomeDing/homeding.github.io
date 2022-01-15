@@ -1,8 +1,8 @@
 ---
-title: Web Site for IoT Devices.
+title: Embedded Web Site for IoT Devices.
 description: Dashboard and Configuration Editor for IoT devices.
 ---
-# Embedded Web Site for HomeDing Devices
+# {{data.title}}
 
 :::excerpt
 Every device using the HomeDing library has an embedded web site and a built-in web server.

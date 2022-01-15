@@ -1,4 +1,8 @@
-# Store State
+---
+title: Store State
+---
+
+# {{data.title}}
 
 The state is a collection of information and values of a device that cannot be found in configuration.
 
@@ -46,7 +50,7 @@ There is not much space in the RTC Memory and only 200 characters can be used to
 
 The state is formatted as a series of actions like:
 
-```JSON
+```json
 "switch/power?value=1,value/speed?value=12"
 ```
 

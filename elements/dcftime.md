@@ -24,7 +24,7 @@ This element is not sending out actions.
 
 When time based actions are required the [time element](/elements/time.md) can be used.
 
-# Element Configuration
+## Element Configuration
 
 **pin** - GPIO pin with the decoded DCF77 signal from the receiver
 

@@ -1,4 +1,8 @@
-# Remote button
+---
+title: Remote button
+---
+
+# {{data.title}}
 
 > Draft ???
 

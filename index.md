@@ -1,7 +1,8 @@
 ---
 title: The HomeDing Library
 ---
-# The HomeDing Library
+
+# {{data.title}}
 
 :::excerpt default
 The HomeDing library is a low code to build small IoT devices

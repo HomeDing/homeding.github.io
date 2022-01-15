@@ -1,4 +1,8 @@
-# Remote element
+---
+title: Remote element
+---
+
+# {{data.title}}
 
 ::: excerpt remote
 The RemoteElement allows sending actions to other elements in HomeDing devices on the network.
@@ -31,7 +35,7 @@ The following properties are available for configuration of the element.
 
 On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these.
 
-```JSON
+```json
 {
   "displaytext": {
     "t": {
@@ -58,7 +62,7 @@ You can test these by using the following URLs to trigger the actions with your 
 
 On the device named **dht22-probe** the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:
 
-```JSON
+```json
 {
   "dht": {
     "on": {

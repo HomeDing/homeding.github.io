@@ -54,7 +54,7 @@ The default time is set to 3 seconds.
 
 ### Configuration Example
 
-```JSON
+```json
 {
   "sht20": {
     "0": {
@@ -81,7 +81,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```JSON
+```json
 {
   "sht20/0": {
     "active":"true",

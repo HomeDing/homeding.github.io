@@ -1,4 +1,8 @@
-# Plug and Socket Devices
+---
+title: Plug and Socket Devices
+---
+
+# {{data.title}}
 
 :::excerpt
 There are many devices on the market that use the ESP8266 chip to control main power by internal relays.

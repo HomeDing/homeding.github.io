@@ -1,4 +1,8 @@
-# RFCodes Element
+---
+title: RFCodes Element
+---
+
+# {{data.title}}
 
 ::: excerpt RFCodes
 The **RFCodes Element** is used send and receive RF signals to simple switching and dimming devices.

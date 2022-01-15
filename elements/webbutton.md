@@ -1,4 +1,8 @@
-# The WebButton Element
+---
+title: The WebButton Element
+---
+
+# {{data.title}}
 
 ::: excerpt button
 The WebButton Element allows sending actions directly from the web UI without a corresponding active element in the device.
@@ -30,7 +34,7 @@ The following properties are available for configuration of the element:
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "webbutton": {
     "start": {

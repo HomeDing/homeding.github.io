@@ -1,4 +1,8 @@
-# Witty-Board
+---
+title: Witty-Board
+---
+
+# {{data.title}}
 
 The Witty board is a cheap ESP8266 board that has a RGB LED, a LDR sensor and an input button. It can eb used on a breadboard.
 
@@ -49,7 +53,7 @@ This button is located on the lower board. To use the button on the upper board 
 
 As the startup mode indicator the D7 is configured in this example using the blue of the RGB LED.
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -82,7 +86,7 @@ This is a good solution for using the LED as an indicator but not as a source of
 
 It can be driven by the LightElement using the following configuration:
 
-```JSON
+```json
 "light": {
   "l": {
     "pin": "D8,D6,D7", // red,green,blue or white,red,green,blue 
@@ -100,7 +104,7 @@ The willy board also has a Light Dependant Resistor (LDR) attached to the analog
 By using an reference of about 300 it is possible to use it similar to a button. 
 When covering the LDR sensor with a finger the values drops below.
 
-```JSON
+```json
 "analog": {
   "0": {
     "reference" : 300,
@@ -118,7 +122,7 @@ uses a LDR to create a touchless on/off switch.
 
 There is a button on the upper (main) board attached to the GPIO4(D2) pin that can be used for any purpose.
 
-```JSON
+```json
 ... ???
 Taster: GPIO4(D2)
 ```
@@ -127,7 +131,7 @@ Taster: GPIO4(D2)
 ## Example config.json
 
 
-```JSON
+```json
 {
   "light": {
     "l": {

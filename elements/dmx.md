@@ -1,4 +1,8 @@
-# DMX Element
+---
+title: DMX Element
+---
+
+# {{data.title}}
 
 The DMX 
 

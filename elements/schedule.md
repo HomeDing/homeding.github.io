@@ -1,4 +1,8 @@
-# The ScheduleElement
+---
+title: The ScheduleElement
+---
+
+# {{data.title}}
 
 ::: excerpt schedule
 The ScheduleElement creates actions based on the time of day.
@@ -50,7 +54,7 @@ The following properties are available with the current values at runtime
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "schedule": {
     "lights": {
@@ -65,7 +69,7 @@ The following properties are available with the current values at runtime
 
 ## Example State
 
-```JSON
+```json
 {
   "button/start": {
     "active": "true",

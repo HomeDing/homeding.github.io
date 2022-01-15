@@ -1,4 +1,8 @@
-# NTP based clock with OLED
+---
+title: NTP based clock with OLED
+---
+
+# {{data.title}}
 
 This recipe uses the time from the internet and displays the current local time on a OLED display.
 
@@ -45,7 +49,7 @@ The [DisplayText Element] defines the place on the display where the time will b
 
 ## env.json configuration
 
-```JSON
+```json
 {
   ...
 
@@ -70,7 +74,7 @@ The [DisplayText Element] defines the place on the display where the time will b
 
 In `config.json` the display items and the time related actions are configured:
 
-```JSON
+```json
 {
   "displaytext": {
     "date": {

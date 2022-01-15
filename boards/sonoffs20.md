@@ -1,4 +1,8 @@
-# Sonoff S20
+---
+title: Sonoff S20
+---
+
+# {{data.title}}
 
 :::excerpt
 The Sonoff S20 is a smart socket off-the-shelf product using a ESP8266 with 1MByte Flash.
@@ -37,7 +41,7 @@ with options for time based switching.
 
 This configuration registers the device with the name "sonoff01" on the networks and enables using the button during boot for starting into the configuration mode.
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -62,7 +66,7 @@ This configuration registers the device with the name "sonoff01" on the networks
 
 This configuration allows switching the relay using the button and showing the relay state using the LED.
 
-```JSON
+```json
 {
   "digitalin": {
     "button": {

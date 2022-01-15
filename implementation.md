@@ -1,4 +1,8 @@
-# Implementation topics
+---
+title: Implementation topics
+---
+
+# {{data.title}}
 
 Here is some information on extending the HomeDing library by implementing new elements.
 

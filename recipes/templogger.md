@@ -1,4 +1,8 @@
-# Logging Temperature Sensor
+---
+title: Logging Temperature Sensor
+---
+
+# {{data.title}}
 
 This recipe uses
 * A [NTPTime Element] is used to have a valid current time for logging.
@@ -20,7 +24,7 @@ Examples for timezones can be found in <https://sites.google.com/a/usapiens.com/
 
 See <https://sites.google.com/a/usapiens.com/opnode/time-zones> for examples.
 
-```JSON
+```json
 {
   "ntptime": {
     "0": {
@@ -51,7 +55,7 @@ Using the `averagetime` the [Logging Element] collects samples during the 10
 min. period and writes out the average of the collected values.
 
 
-```JSON
+```json
 {
   "dht": {
     "on": {

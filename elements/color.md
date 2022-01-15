@@ -105,7 +105,7 @@ color/0?mode=pulse
 see [Bulb board](/boards/bulb.md)
 
 
-# See also
+## See also
 
 * Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
 * [Light Element](/elements/light.md)

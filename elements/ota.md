@@ -1,4 +1,8 @@
-# OTA Element
+---
+title: OTA Element
+---
+
+# {{data.title}}
 
 ::: excerpt ota
   The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA). **The update doesn't work in safemode** see [safemode](../safemode.md);

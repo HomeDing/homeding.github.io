@@ -1,4 +1,8 @@
-# Examples for the HomeDing library
+---
+title: Examples for the HomeDing library
+---
+
+# {{data.title}}
 
 There are some example projects coming with the Homeding library that can be loaded into the IDE by using the Arduino examples menu.
 

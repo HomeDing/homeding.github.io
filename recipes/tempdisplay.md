@@ -1,4 +1,8 @@
-# Temperature display
+---
+title: Temperature display
+---
+
+# {{data.title}}
 
 This recipe implements a device with a locally attached LCD display to show time temperature and humidity from a BME680 sensor.
 
@@ -13,7 +17,7 @@ There is a configuration for the LCD display required. Here a HD44780 standard L
 * The [DisplayLCD Element](/elements/lcd.md) is defined with the i2c address and LCD size.
 * The [NTPTime Element](/elements/ntptime.md) is used to retrieve the actual time from the default ntp server.
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -62,7 +66,7 @@ The BME680 sensor measures the temperature and humidity every 10 seconds and sen
 These are used to update the displaytext elements. 
 
 
-```JSON
+```json
 {
   "displaytext": {
     "time": {

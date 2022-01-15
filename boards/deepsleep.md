@@ -1,4 +1,8 @@
-# Using the deep sleep mode
+---
+title: Using the deep sleep mode
+---
+
+# {{data.title}}
 
 In some use case there is not enough power available to run a device with a full web server functionality enabled all the day.
 
@@ -75,7 +79,7 @@ This allows configuring a device with the web ui when using the following sequen
 1. reset the device using the RST button or by a power off on cycle. This will cause that the sleep mode will wait at least 60 seconds before getting started.  
 
 2. Open a browser to trigger the action to disable the sleep mode using the url
-    * <http://homeding/$board/device/0?sleep=0>
+    * <http://homeding/$board/device/0?nosleep>
 
 3. Start the board or ide url of the device for working.
     * <http://homeding/board.htm>

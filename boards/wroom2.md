@@ -1,4 +1,8 @@
-# Board Review ESP8266 -12 with OLED and 18650
+---
+title: Board Review ESP8266 -12 with OLED and 18650
+---
+
+# {{data.title}}
 
 ![wroom2.jpg](/boards/wroom2.jpg)
 
@@ -90,12 +94,12 @@ The board uses
 * `SDA` = `GPIO5` (`D1`) (blue)
 
 
-# Board configuration
+## Board configuration
 
 The display configuration is defined in env.json together with the system button and led for configuration.
 When pressing the joystick while the LED is blinking the device switches to config mode.
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -135,7 +139,7 @@ When pressing the joystick while the LED is blinking the device switches to conf
 
 These are the basic element configurations for the joystick button and the 2 onboard LEDs.
 
-```JSON
+```json
 {
   "digitalin": {
     "up": {

@@ -1,4 +1,8 @@
-# Multicast DNS Service
+---
+title: Multicast DNS Service
+---
+
+# {{data.title}}
 
 ```excerpt
 The mDNS service is used as the standard device discovery mechanism for HomeDing devices.
@@ -37,7 +41,7 @@ http:///<portal-server>/api/discovery
 
 
 
-```JSON
+```json
 {
   "airding":{
     "host":"airding.local",

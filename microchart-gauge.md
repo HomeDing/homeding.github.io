@@ -1,4 +1,8 @@
-# Gauge Microchart
+---
+title: Gauge Microchart
+---
+
+# {{data.title}}
 
 The Gauge Microchart displays a single value with a needle on a background scale like with analog meters.
 
@@ -10,7 +14,7 @@ The Gauge Microchart displays a single value with a needle on a background scale
 The Gauge Chart requires to set the options to create the scale of the chart
 including the colors of the arc in the background.
 
-```JSON
+```json
 {
   title: "Room Temperature",
   units: "°C",

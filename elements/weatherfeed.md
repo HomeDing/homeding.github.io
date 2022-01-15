@@ -1,4 +1,8 @@
-# WeatherFeed Element
+---
+title: WeatherFeed Element
+---
+
+# {{data.title}}
 
 The WeatherFeedElement pulls information on the weather forecasts for a specific location from the internet
 and dispatches actions with specific data items.
@@ -61,7 +65,7 @@ The location of the weather forecast
 
 /data/2.5/onecall?units=metric&${loc}&exclude=current,hourly&appid=${key}
 
-```JSON
+```json
 {
   "weatherfeed": {
     "home": {
@@ -96,7 +100,7 @@ To capture the raw result you ma just use your browser. The raw data is also add
 
 Here is a shortened example with comments from the response:
 
-```JSON
+```json
 {
   // effective input values
   "lat": 50.23,

@@ -1,4 +1,8 @@
-# md-linkcheck.yml
+---
+title: md-linkcheck.yml
+---
+
+# {{data.title}}
 
 name: Check Markdown links
 

@@ -1,7 +1,8 @@
 ---
 title: Micro Implementations
 ---
-# Micro Implementations
+
+# {{data.title}}
 
 There are many frameworks for building a Web UI but when implementing on a memory restricted device the size of basis functionality and components becomes the most limiting factor and therefore the HomeDing UI implementation has to be as small as possible and provides only the required functionality to visualize the internal available elements, the actions and their state.
 

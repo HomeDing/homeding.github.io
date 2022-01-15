@@ -1,4 +1,8 @@
-# Switch Element
+---
+title: Switch Element
+---
+
+# {{data.title}}
 
 ::: excerpt switch
 The SwitchElement is used to toggle the state of a boolean value to on or off by a single Action.
@@ -69,7 +73,7 @@ The switch has the current value modified and send a action to the digital outpu
 
 ![Input Switch Output](/recipes/in-switch-out.png)
 
-```JSON
+```json
 {
   "digitalin": {
     "in": {
@@ -101,7 +105,7 @@ The switch has the current value modified and send a action to the digital outpu
 
 To use a momentary button at another device the digital input there can use a remote device to send actions to the same switch element.
 
-```JSON
+```json
 {
   "digitalin": {
     "in": {

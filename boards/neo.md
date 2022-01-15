@@ -20,7 +20,7 @@ Because this is only an adapter for an ESP01 board all the information on the [E
 
 An env.json file for the system configuration:
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -50,7 +50,7 @@ An env.json file for the system configuration:
 
 A config.json file for enabling the neopixels:
 
-```JSON
+```json
 {
   "neo": {
     "0": {

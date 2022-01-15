@@ -1,4 +1,8 @@
-# Logging
+---
+title: Logging
+---
+
+# {{data.title}}
 
 The Arduino programming environment today is not offering a debugger. Therefore logging information from the executed code to the Serial interface is often the approach to find out what is actually going on inside the device.
 
@@ -76,7 +80,7 @@ The formatting from printf is used and lines will have a `>` prefix.
 
 **Example:**
 
-```CPP
+```cpp
 LOGGER_RAW("init: path=%s cache_header=%s", path, cache_header);
 ```
 
@@ -103,7 +107,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:t
 
 **Example:**
 
-```CPP
+```cpp
 LOGGER_ETRACE("set(%s:%s)", name, value);
 ```
 
@@ -128,7 +132,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:e
 
 **Example:**
 
-```CPP
+```cpp
 LOGGER_ETRACE("set(%s:%s)", name, value);
 ```
 
@@ -152,7 +156,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS sys:i:` or `H
 
 **Example:**
 
-```CPP
+```cpp
 LOGGER_INFO("device restart initiated.");
 ```
 
@@ -165,7 +169,7 @@ LOGGER_INFO("device restart initiated.");
 
 By using the configuration of the [Device Element](/elements/device.md) the device wide log level can be specified.
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -184,7 +188,7 @@ The default is to have an overall error level for logging and trace level loggin
 
 **Example:**
 
-```JSON
+```json
 {
   "button": {
     "in": {

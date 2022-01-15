@@ -1,4 +1,8 @@
-# Available Icons for Elements
+---
+title: Available Icons for Elements
+---
+
+# {{data.title}}
 
 This is the list of the icons available for the HomeDing Library to be used for visualizing elements: 
 

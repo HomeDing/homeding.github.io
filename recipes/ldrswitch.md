@@ -1,4 +1,8 @@
-# Blink Recipe
+---
+title: Blink Recipe
+---
+
+# {{data.title}}
 
 This recipe uses 1 LDR sensor to implement a touchless on/off switch.
 
@@ -14,7 +18,7 @@ The digital signal from the switch is given to an [Digital Output](/elements/dig
 
 ## Configuration
 
-```JSON
+```json
 {
   "analog": {
     "0": {

@@ -1,4 +1,8 @@
-# Standard Example
+---
+title: Standard Example
+---
+
+# {{data.title}}
 
 :::excerpt
 The examples in the HomeDing library are used to compile a firmware that provides the base functionality
@@ -45,7 +49,7 @@ The boot process can show it's state on a LED. Here the LED(D4) from the ESP-12 
 
 The FLASH button(D3) can be used to start the config mode manually.
 
-```JSON
+```json
 {
   "device": {
     "0": {
@@ -64,7 +68,7 @@ The FLASH button(D3) can be used to start the config mode manually.
 As a starting configuration the blink recipe can be used when your board is a
 [NodeMCU board](/boards/nodemcu.md) with a ESP-12 module the led will blink slowly.
 
-```JSON
+```json
 {
   "timer": {
     "blink": {

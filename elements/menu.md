@@ -1,4 +1,8 @@
-# Menu Element
+---
+title: Menu Element
+---
+
+# {{data.title}}
 
 ::: excerpt default
 The MenuElement allows controlling multiple values or switches by using a single rotary encoder.

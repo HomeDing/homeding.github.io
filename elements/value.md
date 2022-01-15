@@ -1,4 +1,8 @@
-# The Value Element
+---
+title: The Value Element
+---
+
+# {{data.title}}
 
 ::: excerpt value
 The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
@@ -83,7 +87,7 @@ The value element accepts actions like
 
 The current value is reported as the state of a value element.
 
-```JSON
+```json
 {
   "value/volume": {
     "active": "true",
@@ -94,7 +98,7 @@ The current value is reported as the state of a value element.
 
 ## Example Configuration
 
-```JSON
+```json
 {
   "value": {
     "volume": {

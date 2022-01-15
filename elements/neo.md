@@ -1,4 +1,8 @@
-# Neo Element
+---
+title: Neo Element
+---
+
+# {{data.title}}
 
 Neopixels is a brand name for LED stripes with the ws2812 chip.
 
@@ -93,7 +97,7 @@ Example:
 * `neo/stripe?mode=pulse`
 
 
-# See also
+## See also
 
 * Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
 * [Light Element](/elements/light.md)

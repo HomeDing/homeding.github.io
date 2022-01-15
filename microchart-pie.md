@@ -1,4 +1,8 @@
-# Pie Microchart
+---
+title: Pie Microchart
+---
+
+# {{data.title}}
 
 The Pie Microchart displays a pie with segments corresponding to the fraction of the given values.
 
@@ -9,7 +13,7 @@ The Pie Microchart displays a pie with segments corresponding to the fraction of
 The Pie Chart requires to set the options to create the scale of the chart
 including the colors of the arc in the background.
 
-```JSON
+```json
 chartAPI.setOptions({
   showTitle: false,
   showValue: false,

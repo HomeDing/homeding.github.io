@@ -1,4 +1,8 @@
-# Outdoor Sensor with Solar Panel
+---
+title: Outdoor Sensor with Solar Panel
+---
+
+# {{data.title}}
 
 This is a draft story.
 

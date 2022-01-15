@@ -1,4 +1,8 @@
-# Control the brightness of a display
+---
+title: Control the brightness of a display
+---
+
+# {{data.title}}
 
 Here an additional [value](/elements/value.md) element is used to control the brightness of a display.
 
@@ -7,7 +11,7 @@ Here an additional [value](/elements/value.md) element is used to control the br
 A [State Element](/elements/state.md), here the RTCState Element, is added to store the current brightness value in
 a non volatile memory that keeps the last brightness as long as power is supplied.
 
-```JSON
+```json
 {
   ...
   "rtcstate": {
@@ -24,7 +28,7 @@ In **config.json** the value element is configured to set a valid brightness in 
 
 By using the useState property this element persists its value in the state memory.
 
-```JSON
+```json
 {
   ...
   "value": {

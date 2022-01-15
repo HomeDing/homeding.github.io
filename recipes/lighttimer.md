@@ -1,4 +1,8 @@
-# Light Toggle with timer
+---
+title: Light Toggle with timer
+---
+
+# {{data.title}}
 
 This recipe implements a light switch that keeps light on for a specific time before switching off automatically.
 
@@ -14,7 +18,7 @@ The configuration combines an digitalin, a timer, a switch and a digitalout elem
 
 * The switch value is sent to the digital output driving a LED or a relays.
 
-```JSON
+```json
 {
   "digitalin": {
     "up": {

@@ -1,4 +1,8 @@
-# Micro Charts
+---
+title: Micro Charts
+---
+
+# {{data.title}}
 
 ??? WIP
 

@@ -1,4 +1,8 @@
-# Dimming LED Recipe
+---
+title: Dimming LED Recipe
+---
+
+# {{data.title}}
 
 This recipe uses 2 digital input signals to change the brightness level of a LED.
 
@@ -29,7 +33,7 @@ The [pwm element](/elements/pwmout.md) is configured to allow values within the 
 
 The `env.json` can be taken from the board description because it has no special logic for this recipe:
 
-```JSON
+```json
 {
   "device": {
     "main": {
@@ -62,7 +66,7 @@ The `env.json` can be taken from the board description because it has no special
 
 ## config.json Configuration
 
-```JSON
+```json
 {
   "digitalin": {
     "up": {

@@ -1,8 +1,17 @@
-# Dashboard
+---
+title: Dashboard
+description: Dashboards
+excerpt: >
+  This is an example of a dashboard for a indoor air quality sensor device
+  like the one described in the [Airquality story](/stories/story-airquality.md). 
+---
+
+# {{data.title}}
+
+{{data.excerpt}}
 
 ![dashboard ui](/dashboard.png)
 
-This is an example of a dashboard for a indoor air quality sensor device like the one described in the [Airquality story](/stories/story-airquality.md). 
 
 ## Dashboard features
 
@@ -34,3 +43,4 @@ there is an implementation that visualizes the actual situation on the display.
 The WebButton is a element that only exists for displaying a button in the dashboard that can trigger actions. 
 
 ![webbuttoncard](/elements/webbuttoncard.png)
+

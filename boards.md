@@ -1,7 +1,9 @@
 ---
 title: Boards Overview
+description: Some Boards supported by the HomeDing library
 ---
-# Boards supported by the HomeDing library
+
+# {{data.title}}
 
 The HomeDing library supports a range of boards that use a ESP8266 or ESP32 system-on-chip processor.
 

@@ -1,4 +1,8 @@
-# HTML Templates for Elements
+---
+title: HTML Templates for Elements
+---
+
+# {{data.title}}
 
   For displaying elements of a HomeDing device on the config and landing pages of the [Builtin Web server](/concepts/paper04.md) there are is collection of templates using a card design available.
 

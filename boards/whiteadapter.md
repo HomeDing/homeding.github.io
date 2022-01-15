@@ -1,4 +1,8 @@
-# White Adapter board for ESP8266
+---
+title: White Adapter board for ESP8266
+---
+
+# {{data.title}}
 
 ![White Adapter Board](/boards/whiteadapter.jpg)
 

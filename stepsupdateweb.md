@@ -1,4 +1,8 @@
-# Step by Step uploading the files for the web UI
+---
+title: Step by Step uploading the files for the web UI
+---
+
+# {{data.title}}
 
 There are some options to upload / update the files in the filesystem of a device using the HomeDing library. These are outlined here so you can find the procedure that fits best to your setup an situation. 
 

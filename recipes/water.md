@@ -1,4 +1,8 @@
-# Plant Watering
+---
+title: Plant Watering
+---
+
+# {{data.title}}
 
 This recipe combines a momentary button and a timer to control a relay that is switched on for 5 min. 3 times a day. This can be used to control a valve for watering plants.
 
@@ -8,7 +12,7 @@ The central element is a switch that controls a relay on a digital output. There
 2. The momentary button on the digital input can also be used to toggle the switch.
 3. The timer switches the switch on for 5 min every 8 hours.
 
-```JSON
+```json
 {
   "digitalin": {
     "button": {
