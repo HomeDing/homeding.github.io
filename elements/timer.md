@@ -1,7 +1,15 @@
-# Timer Element
+---
+title: The Timer Element
+id: timer
+tags: ["Element"]
+description: Create repeating events.
+excerpt: The TimerElement creates events based on a one-time or cyclic timing pattern.
+---
 
-::: excerpt timer
-The TimerElement creates events based on a one-time or cyclic timing pattern.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 During the specified time period the output value will be switched on and off once. The timer can be restarted automatically.
@@ -77,7 +85,7 @@ The timer element can run on it's own but can also be controlled by the followin
 ### Configuration Example
 
 
-```JSON
+```json
 {
   "timer": {
     "led": {
@@ -108,7 +116,7 @@ The state of the timer element includes:
 
 ### Example for State
 
-```JSON
+```json
 {
   "timer/relay": {
     "active": "true",

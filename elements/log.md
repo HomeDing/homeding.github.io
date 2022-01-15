@@ -1,7 +1,17 @@
-# Logging Element
+---
+title: The Log Element
+id: log
+tags: ["Element"]
+description: Support logging of values into a file in the filesystem.
+excerpt: >
+  The LogElement enables storing timestamp based values e.g. from a sensor
+  into a local file to be analyzed or displayed later by the Web UI.
+---
 
-:::excerpt
-The LogElement enables storing timestamp based values e.g. from a sensor into a local file to be analyzed or displayed later by the Web UI.
+# {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 This enables using sensor values to be displayed in graphs in the Web UI for this element.
@@ -53,7 +63,7 @@ From the base element implementation the following properties are available for 
 
 ### Configuration Example
 
-```JSON
+```json
 {
   "log": {
     "temp": {
@@ -79,7 +89,7 @@ The following properties are available with the current values at runtime:
 
 ### Example State
 
-```JSON
+```json
 {
   "log/t": {
     "active":"true",
@@ -98,7 +108,7 @@ The files format is a list of CSV values where the current javascript time (seco
 
 Example: 
 
-```JSON
+```json
 1558409166,15
 1558409466,16
 1558409766,18
