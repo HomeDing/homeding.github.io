@@ -1,5 +1,7 @@
 ---
 title: Multicast DNS Service
+id: mdns
+tags: ["Element", "System"]
 ---
 
 # {{data.title}}

@@ -1,7 +1,7 @@
 ---
 title: The Device Element
 id: device
-tags: ["Element"]
+tags: ["Element", "System"]
 description: Support global device settings. 
 excerpt: >
   The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.

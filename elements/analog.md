@@ -1,7 +1,7 @@
 ---
 title: The Analog Element
 id: analog
-tags: ['Element']
+tags: ["Element", "Input", "Sensor"]
 description: Trigger events based on input voltage
 excerpt: >
   The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.
@@ -19,16 +19,22 @@ excerpt: >
 There is a dedicated card for this element available that will be used on the web server config and landing pages:
 -->
 
-The analog input signals like such from analog sensors often have the characteristic that they constantly change around an average value.
-In many cases these small changes are not relevant to start an action and can be ignored.
+Analog input signals can be used for a wide range of use cases like capturing values from sensors with an analog output signal.
 
-To allow using the analog element in these situations a hysteresis can be defined. A new value is then only triggering an action when the current input value has more difference to the last reported value than specified. This eliminates the actions caused by small changes.
+
+## Handling Analog signals
+
+There are some features implemented in the Analog Element that are useful when capturing analog signals.
+
+1. The analog input signals like such from analog sensors often have the characteristic that they constantly change around an average value. In many cases these small changes are not relevant to start an action and can be ignored.
+
+2. To allow using the analog element in these situations a hysteresis can be defined. A new value is then only triggering an action when the current input value has more difference to the last reported value than specified. This eliminates the actions caused by small changes.
 A hysteresis of 10 is the default value but you can specify any other value and especially 0 that eliminates this effect.
 
-In other situations it is only relevant that a analog value is below or above a reference value.
+3. In other situations it is only relevant that a analog value is below or above a reference value.
 By defining a reference value the reference action will only be dispatched when the input value goes above or below.
 
-On the ESP8266 chip the input value has a precision of 2^10 bits and the input value is represented as a value for 0 to 1024 measuring a voltage at the pin from 0 to 1 volts. The input measuring should not occur when the ESP8266 chip is transmitting data over the WiFi because the value will be inaccurate.
+On the ESP8266 chip the input value has a precision of 2^10 bits and the input value is represented as a value for 0 to 1024 measuring a voltage at the pin from 0 to 1 volts. The input measuring should not occur while the there is data transmitted over the WiFi because the value will be inaccurate.
 
 
 ## Element Configuration
@@ -118,4 +124,5 @@ When mapping boundaries are given this is the calculated value.
 * <https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations>
 
 ## Tags
+
 #element #input

@@ -1,7 +1,7 @@
 ---
 title: The Logical AND Element
 id: and
-tags: ["Element"]
+tags: ["Element", "Logic"]
 description: Calculate when all input values are true
 excerpt: >
   The AND Element combines multiple logic input values to a single output value.

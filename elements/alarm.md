@@ -1,7 +1,7 @@
 ---
 title: The Alarm Element
 id: alarm
-tags: ["Element"]
+tags: ["Element", "Time"]
 description: Create Alarm events.
 excerpt: The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.
 ---
