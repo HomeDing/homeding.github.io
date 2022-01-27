@@ -1,5 +1,7 @@
 ---
 title: The Value Element
+id: value
+tags: ["Element"]
 ---
 
 # {{data.title}}

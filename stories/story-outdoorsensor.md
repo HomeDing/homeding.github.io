@@ -87,7 +87,7 @@ as the HomeDing library relies on some common extra libraries for sensors and di
 Sometimes (with unknown reasons) the installation of the libraries fails so all the required libraries need to be installed manually.
 
 More details about the required libraries can be found on the documentation website at 
-<https://homeding.github.io/#page=/elements.md>.
+<https://homeding.github.io/#page=/elements/overview.md>.
 
 
 ## Upload the standard example sketch

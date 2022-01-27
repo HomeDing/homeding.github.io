@@ -1,5 +1,7 @@
 ---
 title: Remote element
+id: nn
+tags: ["Element"]
 ---
 
 # {{data.title}}

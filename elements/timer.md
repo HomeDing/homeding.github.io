@@ -1,7 +1,7 @@
 ---
 title: The Timer Element
 id: timer
-tags: ["Element"]
+tags: ["Element", "Time"]
 description: Create repeating events.
 excerpt: The TimerElement creates events based on a one-time or cyclic timing pattern.
 ---

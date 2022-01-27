@@ -8,7 +8,7 @@ The stories provide a full documentation required to build a specific device for
 with pictures and extensive step-by-step documentation.
 
 These examples can be extended or modified by configuration. Examples on how to configure elements
-can be found  in the [recipes collection](/recipes/index.md) and in the [elements documentation](/elements.md).
+can be found  in the [recipes collection](/recipes/index.md) and in the [elements documentation](/elements/overview.md).
 
 ## Building a Simple Sensor device
 

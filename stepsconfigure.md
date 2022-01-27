@@ -1,9 +1,8 @@
-
 ---
 title: Step by Step configuring a device using the builtin IDE
 ---
 
-# {{data.title}}
+ # {{data.title}}
 
 The configuration of HomeDing based devices is based on files located in the filesystem.
 They can be changed by using the built-in micro IDE that assists in modifying the 
@@ -62,7 +61,7 @@ You can find more details about the microide features in the [Micro IDE document
 
 * [Stories](/stories.md)
 * [Recipes](/recipes/index.md)
-* [Elements](/elements.md)
+* [Elements](/elements/overview.md)
 
 ---
 

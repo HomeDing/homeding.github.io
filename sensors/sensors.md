@@ -6,7 +6,7 @@ title: Sensors and Actors
 
 This is a list of sensors, simple input and output components up to interface chips for various purposes that show the wide range of possibilities supported by the HomeDing library.
 
-Many of the sensors offer simple digital or analog signals to be used by the generalized input and output [elements](/elements.md).
+Many of the sensors offer simple digital or analog signals to be used by the generalized input and output [elements](/elements/overview.md).
 
 Others others are using data transported over a bus like [I2C bus](/i2c.md) or even specific protocols and need special elements.
 
@@ -450,9 +450,6 @@ The **si4730** is a AM/FM Radio Receiver chip and module.
 
 The [Radio Element](/elements/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library.
 :::
-
-
----
 
 ## See also
 

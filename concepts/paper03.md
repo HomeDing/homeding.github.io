@@ -35,7 +35,7 @@ Like in the Actor Model the functionality is encapsulated inside the components 
 to the outer world but differ in the inner implementation.
 This is the concept of the Elements you find in the HomeDing library.
 
-See [Elements](/elements.md) for the list of available element implementations
+See [Elements](/elements/overview.md) for the list of available element implementations
 and [Sensors](/sensors/sensors.md) for the list of supported sensors.
 
 The common interface is about supporting the life cycle:

@@ -1,11 +1,16 @@
 ---
 title: Scene Element
+id: scene
+tags: ["Element"]
+excerpt: >
+  The SceneElement is used to send a series of actions triggered by a single incoming action.
+  They can be send out step by step using a defined delay.
 ---
 
 # {{data.title}}
 
-::: excerpt rotary
-The SceneElement is used to send a series of action triggered by a single incoming action.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 In normal cases when only one or few actions should be triggered multiple actions can be listed inline.
@@ -17,7 +22,8 @@ at a single place by using multiple scene definitions.
 
 A scene element can also be triggered over the network by using a simple link like:
 
-    http://homeding/$board/scene/day?value=30
+    http://homeding/$board/scene/day?start
+    http://homeding/$board/scene/night?start
 
 
 ## Element Configuration
@@ -26,10 +32,9 @@ The following properties are available for configuration of the element:
 
 <object data="/element.svg?scene" type="image/svg+xml"></object>
 
-**onValue** - This is an array of actions are emitted when the value of the scene element is set to any value.
+**steps[]** - This is an array of actions are emitted when the value of the scene element is set to any value.
 
-**value** - This property can be set to any value to trigger all defined actions on this element.
-It can be initialized to 
+**delay** - This property can be set to delay each step from each other. This property can be specified in milli-seconds or seconds.
 
 From the base element implementation the following properties are available for configuration:
 
@@ -39,7 +44,7 @@ From the base element implementation the following properties are available for 
 
 **room** - The location of the device.
 
-**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
+**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.
 
 
 ### Example Configuration
@@ -48,19 +53,21 @@ From the base element implementation the following properties are available for 
 {
   "scene": {
     "day": {
-      "onvalue": [
+      "steps": [
         "light/ceiling?brightness=$v",
         "light/wall?brightness=$v",
         "switch/steps?value=0"
       ],
-      "value":1
+      "delay": 1
     },
+
     "night": {
-      "onvalue": [
+      "steps": [
         "light/ceiling?brightness=0",
         "light/wall?brightness=0",
         "switch/steps?value=1"
-      ]
+      ],
+      "delay": 0
     },
     "off": {
       "onvalue": [
@@ -73,14 +80,13 @@ From the base element implementation the following properties are available for 
 }
 ```
 
-
 ## State
 
 ```json
 {
   "scene/night": {
-    "active":"true",
-    "value":"9"
+    "active": "true",
+    "value": "9"
   }
 }
 ```

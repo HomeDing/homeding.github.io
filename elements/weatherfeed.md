@@ -1,5 +1,7 @@
 ---
 title: WeatherFeed Element
+id: nn
+tags: ["Element"]
 ---
 
 # {{data.title}}

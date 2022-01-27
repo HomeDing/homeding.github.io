@@ -1,5 +1,7 @@
 ---
 title: Map Element
+id: nn
+tags: ["Element"]
 ---
 
 # {{data.title}}

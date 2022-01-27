@@ -1,5 +1,7 @@
 ---
 title: Neo Element
+id: neo
+tags: ["Element", "Light"]
 ---
 
 # {{data.title}}

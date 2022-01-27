@@ -1,5 +1,7 @@
 ---
 title: Store State
+id: nn
+tags: ["Element"]
 ---
 
 # {{data.title}}

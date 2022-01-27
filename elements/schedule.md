@@ -1,16 +1,21 @@
 ---
-title: The ScheduleElement
+title: The Schedule Element
+id: schedule
+tags: ["Element", "Time"]
+description: Create events started on time.
+excerpt: The ScheduleElement creates events based on the current time.
 ---
 
 # {{data.title}}
 
-::: excerpt schedule
-The ScheduleElement creates actions based on the time of day.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime.md) or [DCFTime](/elements/dcftime.md).
 
-One Schedule Element can be used to create a timespan during a day that creates 2 possible events. The first one when the `on`-time has passed and a second one when the `off`-time has passed.
+One Schedule Element can be used to create a timespan during a day that creates 2 possible events.
+The first one when the `on`-time has passed and a second one when the `off`-time has passed.
 
 When starting the device the following events are emitted:
 

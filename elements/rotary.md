@@ -1,5 +1,7 @@
 ---
 title: The Rotary Element
+id: nn
+tags: ["Element"]
 ---
 
 # {{data.title}}

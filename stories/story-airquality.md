@@ -91,7 +91,7 @@ When you install the HomeDing library you will see a popup with these required l
 Sometimes (with unknown reasons) the installation of the libraries fails so all the required libraries need to be installed manually.
 
 More details about the required libraries can be found on the documentation website at 
-<https://homeding.github.io/#page=/elements.md>.
+<https://homeding.github.io/#page=/elements/overview.md>.
 
 This is the list of current required libraries:
 

@@ -1,5 +1,7 @@
 ---
 title: Menu Element
+id: nn
+tags: ["Element"]
 ---
 
 # {{data.title}}
@@ -124,5 +126,5 @@ Rotary, digitalin ---> menu
 
 ## See also
 
-* [Elements](/elements.md)
+* [Elements](/elements/overview.md)
 * [Radio Example](/examples/radio.md)

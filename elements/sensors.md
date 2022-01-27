@@ -1,5 +1,7 @@
 ---
 title: Sensor Element Implementation
+id: sensor
+tags: ["Element"]
 ---
 
 # {{data.title}}

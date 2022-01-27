@@ -1,5 +1,7 @@
 ---
 title: Simple Service Discovery Protocol (SSDP) Element
+id: nn
+tags: ["Element", "System"]
 ---
 
 # {{data.title}}

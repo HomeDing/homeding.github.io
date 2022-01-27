@@ -1,11 +1,15 @@
 ---
 title: Radio Element
+id: radio
+tags: ["WIP"]
+excerpt: >
+  The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.
 ---
 
 # {{data.title}}
 
-::: excerpt radio
-The Radio Element allows to control FM radio chips that is connected to the board.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 

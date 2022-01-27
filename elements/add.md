@@ -64,7 +64,7 @@ You can set values using a browser by sending actions to the element by requesti
 
 ## See also
 
-- [Elements](/elements.md)
+- [Elements](/elements/overview.md)
 
 ## Tags
 
