@@ -7,6 +7,7 @@
     { "pattern": "^http://ESP-" },
     { "pattern": "^http://\\d*\\." },
     { "pattern": "^http://localhost" },
+    { "pattern": "^http://upnp.org" },
     { "pattern": "^https://" },
     { "pattern": "/_.*.md$" }
   ],
