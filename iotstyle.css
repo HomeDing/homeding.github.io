@@ -170,7 +170,7 @@ button {
 
 select:invalid,
 input:invalid {
-  border-color: #FF5555;
+  border-color: #ff5555;
 }
 
 input[type=checkbox],

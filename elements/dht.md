@@ -47,7 +47,8 @@ The following sensor chips from the DHT family are supported by the DHTesp libra
 
 * DHT11
 * DHT22 (identical to AM2302)
-* AM2320
+* AM2302
+* AM2320 (in one-wire mode)
 * RHT03
 
 more details can be found at <https://github.com/beegee-tokyo/DHTesp>

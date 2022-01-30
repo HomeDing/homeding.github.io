@@ -70,11 +70,12 @@ From the base element implementation the following properties are available for 
       "delay": 0
     },
     "off": {
-      "onvalue": [
+      "steps": [
         "light/ceiling?brightness=0",
         "light/wall?brightness=0",
         "switch/steps?value=0"
-      ]
+      ],
+      "delay": 0
     }
   }
 }
@@ -85,8 +86,7 @@ From the base element implementation the following properties are available for 
 ```json
 {
   "scene/night": {
-    "active": "true",
-    "value": "9"
+    "active": "true"
   }
 }
 ```
