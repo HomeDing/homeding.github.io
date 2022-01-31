@@ -2,9 +2,15 @@
 title: Store State
 id: nn
 tags: ["Element"]
+excerpt: >
+  This element implements storing the current state in some other places as volatile variables.
 ---
 
 # {{data.title}}
+
+::: excerpt {{data.id}}
+{{data.excerpt}}
+:::
 
 The state is a collection of information and values of a device that cannot be found in configuration.
 

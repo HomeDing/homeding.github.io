@@ -2,14 +2,17 @@
 title: The Value Element
 id: value
 tags: ["Element"]
+excerpt: >
+  The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
+  This can e.g. be used to drive a LED or a relay.
 ---
 
 # {{data.title}}
 
-::: excerpt value
-The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
-This can e.g. be used to drive a LED or a relay.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
+
 
 ## Web UI
 

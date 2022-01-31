@@ -1,7 +1,7 @@
 ---
 title: The DisplayBar Element
 id: displaybar
-tags: ["Element"]
+tags: ["Element", "WIP"]
 description: Displaying progress values. 
 excerpt: >
   The DisplayBarElement allows sending a progress indicating value to the display

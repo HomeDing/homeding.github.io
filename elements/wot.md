@@ -1,7 +1,7 @@
 ---
 title: The WoT Element
 id: wot
-tags: ["WIP"]
+tags: ["Element", "WIP"]
 description: ...
 excerpt: >
   The Element enables ...

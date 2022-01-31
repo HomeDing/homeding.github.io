@@ -1,15 +1,16 @@
 ---
-title: Switch Element
-id: nn
+title: The Switch Element
+id: switch
 tags: ["Element"]
+excerpt: >
+  The SwitchElement is used to toggle the state of a boolean value to on or off by a single action.
 ---
 
 # {{data.title}}
 
-::: excerpt switch
-The SwitchElement is used to toggle the state of a boolean value to on or off by a single Action.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
-
 
 It is implemented as a special value element using the range 0 to 1 and can be used with the menu element.
 

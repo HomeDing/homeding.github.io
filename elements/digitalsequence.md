@@ -1,7 +1,7 @@
 ---
 title: The Digital Sequence Element
 id: digitalsequence
-tags: ["Element"]
+tags: ["Element", "WIP"]
 description: Support digital input signals to create actions. 
 excerpt: >
   The digital sequence Element is used internally for several elements
