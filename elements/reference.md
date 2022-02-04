@@ -1,13 +1,15 @@
 ---
 title: Reference Element
-id: nn
+id: reference
 tags: ["Element"]
+excerpt: >
+  The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
 ---
 
 # {{data.title}}
 
-::: excerpt default
-The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 The output of comparing the 2 values can be used to switch a device on or off. This can be used e.g. to control heating or light
@@ -20,9 +22,9 @@ based on the actual temperature or light brightness.
 
 <object data="/element.svg?reference" type="image/svg+xml"></object>
 
-**value** - The input value for the comparisation typically coming from a sensor.
+**value** - The input value for the comparison typically coming from a sensor.
 
-**reference** - The reference input value for the comparisation typically coming from a value element.
+**reference** - The reference input value for the comparison typically coming from a value element.
 
 **invert** - The output value can be logically inverted by setting this property to true. Default is false.
 
@@ -40,10 +42,15 @@ The value given in the actions is `0`.
 
 ### Configuration Example
 
-
 ```json
 {
   "reference": {
+    "temp": {
+      "title": "Heater Control",
+      "onreference": "digitalout/heater?value=$v",
+      "inverse": "true",
+      "value": "1"
+    }
 ...
   }
 }
@@ -57,6 +64,15 @@ The following properties are available with the current values at runtime
 
 **value** - Current output value of the element.
 
+```json
+{
+  "reference/temp":{
+    "active":"true",
+    "value":"0",
+    "reference":"22.00"
+  }
+}
+```
 
 <!-- ## Implementation Details -->
 

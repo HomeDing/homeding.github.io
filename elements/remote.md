@@ -1,15 +1,16 @@
 ---
 title: Remote element
-id: nn
+id: remote
 tags: ["Element"]
+excerpt: >
+  The RemoteElement allows sending actions to other elements in HomeDing devices on the network.
 ---
 
 # {{data.title}}
 
-::: excerpt remote
-The RemoteElement allows sending actions to other elements in HomeDing devices on the network.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
-
 
 Every local defined remote element is a shadow of another element on a remote board and acts as a proxy for addressing the remote element as if it was part of the local configuration.
 

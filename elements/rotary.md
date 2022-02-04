@@ -2,12 +2,14 @@
 title: The Rotary Element
 id: nn
 tags: ["Element"]
+excerpt: >
+  The RotaryElement is used to capture increments and decrements for values using a rotary encoder.
 ---
 
 # {{data.title}}
 
-::: excerpt rotary
-The RotaryElement is used to capture increments and decrements for values using a rotary encoder.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 It can be used in combination with a [Value Element](/elements/value.md) to define a logical or numeric value that can be changed using the rotary encoder.

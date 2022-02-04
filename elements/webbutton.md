@@ -1,13 +1,15 @@
 ---
 title: The WebButton Element
-id: nn
+id: button
 tags: ["Element"]
+excerpt: >
+  The WebButton Element allows sending actions directly from the web UI without a corresponding active element in the device.
 ---
 
 # {{data.title}}
 
-::: excerpt button
-The WebButton Element allows sending actions directly from the web UI without a corresponding active element in the device.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 The element is displayed as a single button by using the caption given by the description property.

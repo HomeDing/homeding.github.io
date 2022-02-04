@@ -1,13 +1,15 @@
 ---
 title: Menu Element
-id: nn
+id: menu
 tags: ["Element"]
+excerpt: >
+  The MenuElement allows controlling multiple values or switches by using a single rotary encoder.
 ---
 
 # {{data.title}}
 
-::: excerpt default
-The MenuElement allows controlling multiple values or switches by using a single rotary encoder.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 In the configuration a list of elements is defined that can be controlled.
@@ -35,7 +37,7 @@ For simple displays that can only display a limited number of characters the `on
 
 When using a display with some higher resolution the id and value can be shown at different textElements using the `onMenu` and `onValue` actions.
 
-Display photo ???
+<!-- Display photo ??? -->
 
 This is a picture of the menu on a LCD display from the radio example.
 The fist line is used for permanently showing the frequency and signal strength while the 2. line is used to display the menu and the station name from the RDS signal.

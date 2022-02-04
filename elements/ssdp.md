@@ -1,13 +1,15 @@
 ---
 title: Simple Service Discovery Protocol (SSDP) Element
-id: nn
+id: ssdp
 tags: ["Element", "System"]
+excerpt: >
+  The SSDPElement allows specifying the properties to send SSDP messages to the local network so the device can be discovered by Plug & Play Services.
 ---
 
 # {{data.title}}
 
-::: excerpt ssdp
-The SSDPElement allows specifying the properties to send SSDP messages to the local network so the device can be discovered by Plug & Play Services.
+::: excerpt {{data.id}}
+{{data.excerpt}}
 :::
 
 The SSDP element is a system element to configure this functionality and cannot send or receive actions. 
