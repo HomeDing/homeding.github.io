@@ -78,6 +78,4 @@ To verify that the uploaded file are present you can request the list of existin
 
 See: <https://github.com/esp8266/arduino-esp8266fs-plugin>
 
----
-
 **<sup>*1</sup>**: replace `homeding` with the network name of your device to use this link.

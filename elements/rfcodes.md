@@ -156,17 +156,17 @@ https://arduino-projekte.webnode.at/meine-projekte/parametrieren-des-hc-12/
 "i3": {
   "onClick": "it2 s_#_###__#_#__#_##_#_###_#__#__#_x",
   "codeOff": "it2 s_#_###__#_#__#_##_#_###_#_____#_x",
-  "description": "Switch light 2"
+  "description": "Light Balcony"
 },
 "a1": {
   "onClick": "it2 s_##__##__#__####____##__#__#____x",
   "codeOff": "it2 s_##__##__#__####____##__#_______x",
-  "description": "Licht aussen"
+  "description": "Light balcony 2"
 },
 "a2": {
   "onClick": "it2 s_##__##__#__####____##__#__#___#x",
   "codeOff": "it2 s_##__##__#__####____##__#______#x",
-  "description": "Springbrunnen"
+  "description": "fountaine"
 },
 "a3": {
   "onClick": "it2 s_##__##__#__####____##__#__#__#_x",
@@ -181,6 +181,6 @@ https://arduino-projekte.webnode.at/meine-projekte/parametrieren-des-hc-12/
 "d1": {
   "onClick": "it1 B111101111000",
   "codeOff": "it1 B111101111001",
-  "description": "Dampfabzugshaube"
+  "description": "spot"
 }
 ```

@@ -112,6 +112,4 @@ In standard mode the files will be stored in the root folder. To upload icon fil
 This page is available even when no files exist in the filesystem.
 
 
---- 
-
 **1**: replace `homeding` with the network name of your device to use this link.

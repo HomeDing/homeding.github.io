@@ -1,5 +1,6 @@
 ---
 title: Blink Recipe
+tags: ["Recipe"]
 ---
 
 # {{data.title}}

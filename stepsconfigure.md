@@ -63,6 +63,4 @@ You can find more details about the microide features in the [Micro IDE document
 * [Recipes](/recipes/index.md)
 * [Elements](/elements/overview.md)
 
----
-
 **<sup>*1</sup>**: replace `homeding` with the network name of your device to use this link.
