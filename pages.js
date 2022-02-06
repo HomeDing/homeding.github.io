@@ -9,6 +9,7 @@ function lazyLoadHTM(q, url) {
     });
 }
 
+// lazy load any markdown content
 function lazyLoadMD(q, url) {
   fetch(url, { overrideMimeType: 'application/text' })
     .then(res => res.text())
