@@ -37,7 +37,7 @@ This allows to download a XML based device specification from the URL
 
 The [UPNP DeviceArchitecture Specification] contains all the details.
 
-```XML
+```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <root xmlns="urn:schemas-upnp-org:device-1-0">
   <specVersion>

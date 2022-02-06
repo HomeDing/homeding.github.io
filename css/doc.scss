@@ -11,8 +11,7 @@
   * + .button {
     margin-left: $gutter;
   }
-} 
-
+}
 
 nav {
   position: fixed;
@@ -101,12 +100,14 @@ table td {
   padding: 0.5rem 0.5rem 0 4rem;
   margin-right: 0.5rem;
   min-height: 6rem;
+  width: 100%;
+  max-width: 100%;
   background-color: var(--card-back);
   margin-bottom: 1rem;
   page-break-inside: avoid;
 
-  > svg,
-  > img {
+  svg,
+  img {
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
@@ -115,21 +116,11 @@ table td {
   }
 }
 
-.short {
-  float: left;
-  min-height: 7.2rem;
-}
-
 .board {
   padding: 0.5rem 0.5rem 0 11rem;
   min-height: 7.2rem;
-  width: 100%;
-  max-width: 100%;
 
   img {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
     height: auto;
     width: auto;
     max-height: 6rem;

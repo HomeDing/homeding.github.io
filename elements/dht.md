@@ -1,7 +1,7 @@
 ---
 title: The DHT Element
 id: dht
-tags: ["Element"]
+tags: ["Element", "Sensor"]
 description: Support of the DHT air temperature and humidity sensor chips.
 excerpt: >
   The DHTElement allows retrieving temperature and humidity values from the DHT family

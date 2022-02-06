@@ -489,16 +489,18 @@ table td {
   padding: 0.5rem 0.5rem 0 4rem;
   margin-right: 0.5rem;
   min-height: 6rem;
+  width: 100%;
+  max-width: 100%;
   background-color: var(--card-back);
   margin-bottom: 1rem;
   page-break-inside: avoid;
 }
-.short > svg,
-.short > img,
-.board > svg,
-.board > img,
-.excerpt > svg,
-.excerpt > img {
+.short svg,
+.short img,
+.board svg,
+.board img,
+.excerpt svg,
+.excerpt img {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
@@ -506,16 +508,9 @@ table td {
   width: 3rem;
 }
 
-.short {
-  float: left;
-  min-height: 7.2rem;
-}
-
 .board {
   padding: 0.5rem 0.5rem 0 11rem;
   min-height: 7.2rem;
-  width: 100%;
-  max-width: 100%;
 }
 .board img {
   position: absolute;
