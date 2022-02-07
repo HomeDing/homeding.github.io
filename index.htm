@@ -70,27 +70,48 @@ Markdown viewer SPA using
     });
 
 
-    function renderContainer(cn, linkFolder, link, icon) {
-      // if no icon is given assume img and content in the link folder
-      var div = '<div class="' + cn + '">';
-      var img;
-      if (icon) {
-        img = '<svg class="icon"><use href="/icons.svg#' + icon + '"></use></svg>';
-      } else {
-        img = '<img src="/' + linkFolder + '/' + link + '.jpg">';
-      }
-      var l = '<a href="#page=/' + linkFolder + '/' + link + '.md">';
-
-      return (div + l + img + '<h3>' + link + '</h3>' + '</a>');
+    function renderPlainCard() {
+      return '<div class="plaincard">';
     }
 
+    function renderIconCard(icon, title, linkFolder, link) {
+      var div = '<div class="iconcard">';
+      var img = '<svg class="icon"><use href="/icons.svg#' + icon + '"></use></svg>';
+
+      if ((title) && (linkFolder) && (link)) {
+        return (div
+          + `<a href="#page=/${linkFolder}/${link}.md">`
+          + img + '<h3>' + title + '</h3>' + '</a>');
+      } else {
+        return (div + img);
+      }
+    }
+
+    function renderImageCard(image, title, linkFolder, link) {
+      var div = '<div class="imgcard">';
+      var img = `<img src="/${linkFolder}/${image}.jpg">`;
+
+      if ((title) && (linkFolder) && (link)) {
+        return (div
+          + `<a href="#page=/${linkFolder}/${link}.md">`
+          + img + '<h3>' + title + '</h3>' + '</a>');
+      } else {
+        return (div + img);
+      }
+    }
+
+    // excerpts on any page
+    // ::: excerpt [icon]
     var mdc = new markdownitContainer(md, 'excerpt', {
       render: function (tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*excerpt\s+(.*)$/);
-          var img = (m ? m[1] : 'default');
-          return '<div class="excerpt"><svg class="icon"><use href="/icons.svg#' + img + '"></use></svg>\n';
+          if (m) {
+            return renderIconCard(m[1]);
+          } else {
+            return renderPlainCard();
+          }
         } else {
           return '</div>\n';
         }
@@ -98,48 +119,49 @@ Markdown viewer SPA using
     });
 
 
+    // card for boards in boards folder
+    // ::: board image
     new markdownitContainer(md, 'board', {
       render: function (tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*board\s+(.*)$/);
-          return '<div class="board"><a href="#page=/boards/' + m[1] + '.md"> <img src="/boards/' + m[1] + '.jpg"></a>\n';
+          return renderImageCard(m[1], undefined, 'boards', m[1]);
         } else {
           return '</div>\n';
         }
       }
     });
 
+
+    // card for elements in elements folder
+    // ::: element title [icon]
     new markdownitContainer(md, 'element', {
       render: function (tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*element\s+(\S+)\s*(\S*)/);
-          return renderContainer('short', 'elements', m[1], m[2]);
+          if (m[2]) {
+            return renderIconCard(m[2], m[1], 'elements', m[1]);
+          } else {
+            return renderIconCard('no', m[1], 'elements', m[1]);
+          }
+
         } else {
           return '</div>\n';
         }
       }
     });
 
+
+    // card for sensors in sensors folder
+    // ::: sensor image
     new markdownitContainer(md, 'sensor', {
       render: function (tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
-          return '<div class="board"><img src="/sensors/' + m[1] + '.jpg">\n';
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-    new markdownitContainer(md, 'tags', {
-      render: function (tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
-          return '<div class="board"><img src="/sensors/' + m[1] + '.jpg">\n';
+          return renderImageCard(m[1], undefined, 'sensors', m[1]);
         } else {
           return '</div>\n';
         }

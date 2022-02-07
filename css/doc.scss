@@ -7,12 +7,6 @@
 // `inpage` class: nav is beside main content, not overlap
 // open class: nav is visible, maybe main needs to shift
 
-.u-navbar {
-  * + .button {
-    margin-left: $gutter;
-  }
-}
-
 nav {
   position: fixed;
   min-height: 100%;
@@ -72,59 +66,69 @@ table {
   border-right: solid 1px #203050;
   margin-top: 0.4em;
   margin-bottom: 0.4em;
-}
 
-table thead tr {
-  background-color: #203050;
-}
+  thead tr {
+    background-color: #203050;
 
-table thead tr th {
-  vertical-align: top;
-  padding: 0.2em 0.6em;
-  color: white;
-  font-weight: bold;
-}
+    th {
+      vertical-align: top;
+      padding: 0.2em 0.6em;
+      color: white;
+      font-weight: bold;
+    }
+  }
 
-table td {
-  vertical-align: top;
-  padding: 0.2em 0.6em;
-  border-bottom: 1px solid #203050;
-}
-
-// boxes: .short, .board, .excerpt
-
-.short,
-.board,
-.excerpt {
-  position: relative;
-  padding: 0.5rem 0.5rem 0 4rem;
-  margin-right: 0.5rem;
-  min-height: 6rem;
-  width: 100%;
-  max-width: 100%;
-  background-color: var(--card-back);
-  margin-bottom: 1rem;
-  page-break-inside: avoid;
-
-  svg,
-  img {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    height: 3rem;
-    width: 3rem;
+  td {
+    vertical-align: top;
+    padding: 0.2em 0.6em;
+    border-bottom: 1px solid #203050;
   }
 }
 
-.board {
-  padding: 0.5rem 0.5rem 0 11rem;
+// simple content cards with image + text
+.plaincard,
+.imgcard,
+.iconcard {
+  position: relative;
+  margin: 0 $gutter $gutter 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--card-back);
+  page-break-inside: avoid;
+}
+
+// card with text only
+.plaincard {
+  padding: $gutter2;
+  min-height: 6rem;
+}
+
+// cards with icon
+.iconcard {
+  padding: $gutter2 $gutter2 $gutter2 calc(4rem + 2 * $gutter2);
+  min-height: 5.4rem;
+
+  svg {
+    position: absolute;
+    top: $gutter2;
+    left: $gutter2;
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+// picture with 4:3 ratio + text
+.imgcard {
+  padding: $gutter2 $gutter2 0 calc(9.6rem + $gutter2);
   min-height: 7.2rem;
 
   img {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: auto;
-    width: auto;
-    max-height: 6rem;
-    max-width: 10rem;
+    width: 9.6rem;
+    max-height: 7.2rem;
   }
 }
 
@@ -138,23 +142,20 @@ p > img {
   height: auto;
 }
 
-img[title="w200"] {
+img[title='w200'] {
   width: 200px;
 }
 
-img[title="w400"] {
+img[title='w400'] {
   width: 400px;
 }
 
-img[title="w600"] {
+img[title='w600'] {
   width: 600px;
 }
 
 .warning {
-  border: 0.2rem solid #a94442;
   padding: 0.2rem;
-  color: #a94442;
-  background-color: #f2dede;
   border-radius: 0.4rem;
 }
 

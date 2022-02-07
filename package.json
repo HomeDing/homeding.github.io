@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Homeding documentation web site",
   "main": "app.js",
+  "author": "Matthias Hertel",
+  "license": "BSD-3-Clause",
+
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "stylelint *.scss css/*.scss",
     "build:css": "sass docstyle.scss docstyle.css",
     "build:css-watch": "npm run build:css -- -w",
     "build:server": "tsc",
@@ -23,8 +26,6 @@
     "Homeding",
     "doku"
   ],
-  "author": "Matthias Hertel",
-  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/HomeDing/homeding.github.io/issues"
   },
@@ -35,11 +36,11 @@
     "@types/node": "^14.17.3",
     "debug": "^4.3.2",
     "express": "^4.17.1",
-    "sass": "^1.49.7",
     "typescript": "^4.3.2"
   },
   "devDependencies": {
     "shelljs": "^0.8.5",
-    "yargs": "^17.2.1"
+    "yargs": "^17.2.1",
+    "sass": "^1.49.7"
   }
 }

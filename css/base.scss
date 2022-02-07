@@ -12,6 +12,7 @@ $u-text: #111111; // any text
 $u-text-darkmode: #eeeeee; // any text
 
 $u-primary: hsl(220, 80%, 30%); // active objects
+$u-primary-text: white;
 
 $u-border-color: #555555;
 $u-border-color-active: hsl(220, 100%, 30%);
@@ -170,7 +171,7 @@ pre > code {
 
 label,
 input,
-input+span,
+input + span,
 input::placeholder,
 select,
 button {
@@ -211,7 +212,6 @@ input:invalid {
   border-color: #ff5555;
 }
 
-
 input[type='checkbox'],
 input[type='radio'] {
   width: 2ch;
@@ -227,7 +227,6 @@ select {
 select {
   padding-left: 0;
 }
-
 
 // ===== Native dialogs and focus Object
 
@@ -270,8 +269,6 @@ dialog {
     right: 0;
   }
 }
-
-
 
 // ===== Grid Design with grid of 6 =====
 
@@ -367,6 +364,8 @@ dialog {
 }
 
 svg {
+  color: currentColor;
+
   &.button {
     width: 2em;
     height: 2em;
@@ -384,7 +383,6 @@ svg {
 
   &.icon {
     user-select: none;
-    color: currentColor;
   }
 }
 
@@ -415,19 +413,18 @@ svg {
 .u-navbar {
   margin-bottom: 0;
   padding: $gutter $white-space;
-  height: 2.8rem;
   background-color: $u-navbar;
+  color: $u-navbar-text;
 
   > .gap {
     flex-grow: 2;
   }
 
-  > button,
-  > .button {
+  > a {
     text-decoration: none;
     font-size: 1.25em;
     min-width: 2em;
-    color: $u-navbar-text;
+    padding: 0 $gutter2;
 
     &:hover {
       border-color: var(--focus);
@@ -435,12 +432,16 @@ svg {
     }
   }
 
-  > img.button,
-  > svg.button {
+  > img,
+  > svg {
     padding: 0;
     min-width: 1.4em !important;
     width: 1.4em !important;
     height: 1.4em !important;
+  }
+
+  > *:not(:first-child) {
+    margin-left: $gutter2;
   }
 
   @media print {
@@ -448,8 +449,8 @@ svg {
   }
 }
 
-
-
+.error,
+.warning,
 .invalid {
   border: 2px solid #ff1111 !important;
   background-color: #ffcccc !important;
@@ -461,5 +462,3 @@ svg {
   background-color: #ccffcc !important;
   color: $u-text;
 }
-
-

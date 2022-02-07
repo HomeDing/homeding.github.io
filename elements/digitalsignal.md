@@ -1,6 +1,7 @@
 ---
 title: The Digital Signal Element
 id: digitalsignal
+icon: digitalin
 tags: ["Element"]
 description: Support digital input signals to create actions. 
 excerpt: >
@@ -11,7 +12,7 @@ excerpt: >
 
 # {{data.title}}
 
-::: excerpt {{data.id}}
+::: excerpt {{data.icon}}
 {{data.excerpt}}
 :::
 
