@@ -96,5 +96,9 @@ The state of the digitalout element includes:
 ```
 
 
+## See also
+
+* <https://electronics.stackexchange.com/questions/296330/how-to-drive-a-relay-from-esp8266-gpio>
+
 ## Tags
 #element #output
