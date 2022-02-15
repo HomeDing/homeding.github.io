@@ -4,8 +4,9 @@ id: color
 tags: ["Element"]
 description: Support Color values for light controlling elements. 
 excerpt: >
-  The Color Element allows defining a value for a light emitting element using the
-  xRRGGBB or xWWRRGGBB format by providing a special UI.
+  The Color Element allows controlling a value for a light emitting element using the
+  color values in the xrrggbb or xwwrrggbb format and brightness 0..100.
+  A special Web UI is available.
 ---
 
 # {{data.title}}
@@ -26,11 +27,14 @@ There is a dedicated card for this element that allows controlling the value usi
 
 ![Color Element Web UI](/elements/colorui.png)
 
-This card has 3 to 4 sliders
-* select the hue of the color
-* select the saturation of the color
-* select the lightness of the color
-* select white value of the color in WRGB mode.
+The Web UI of the color element includes:
+* Output of the current value in string notation and as a color element.
+* The color element can be clicked to select a new color using a standart input[type=color] element.
+* A slider to control the white part of the color value separately.
+* A slider to control the overall brightness.
+* Buttons to control the mode. 
+
+The slider for the white part of the value is only shown in `WRGB` mode.
 
 The color value and the effective color from the sliders 1-3 is shown above the hue slider
 while the white value from the sliders 4 is not shown.
@@ -41,22 +45,41 @@ while the white value from the sliders 4 is not shown.
 
 The following properties are available for configuration of the element.
 
-**mode** - The effect to be used. possible values are fix, fade, wheel and pulse. default is "fix"
+**config** - The color can be set to `RGB` or `WRGB` to include the white part in the value. Default is `RGB`.
 
-**value** - Is used to set the actual color. not applicable in mode = "wheel". Color values can also be passed using some names like `red,blue,green,white` . See explanation for `Color mode` below. 
+**mode** - The effect to be used. possible values are `fix`, `fade`, `wheel` and `pulse`.
+The default setting is is `fix`.
+See explanation for `Color mode` below. 
 
-**duration** - This parameter is used to specify the time for a transition in mode "fade", "wheel" and "pulse".
+**value** - Is used to set the new color value in mode `fix` or `fade`.
 
-**saturation** - This parameter is used to specify the saturation of the actual color and the colors in effects.
+**duration** - This parameter is used to specify the time for a transition in mode `fade`, `wheel` and `pulse`.
 
-**lightness** - This parameter is used to specify the lightness of the actual color and the colors in effects.
+**brightness** - This parameter is used to specify the overall brightness of a light as a factor to the given color value
+and effects.
 
 **onValue** - These actions are send when the value has changed.
+
+**onBrightness** - These actions are send when the brightness has changed.
+
+
+From the base element implementation the following properties are available for configuration:
+
+**title** - Caption text for the element. Used in the boards.
+
+**description** - A line of text that gives a short description of the device used in the web UI.
+
+**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
+
+<!-- 
+TODO:
+**useState** - This configuration can be set to true to persist the current color and brightness values in the state memory.
+-->
 
 
 ## Colors
 
-Colors can be specified by the notation xWWRRGGBB or xRRGGBB sililar to the web color values.
+Colors can be specified by the notation xWWRRGGBB or xRRGGBB similar to the web color values.
 
 Some fix names are supported:
 
@@ -72,8 +95,6 @@ Some fix names are supported:
 This mode is activated by setting the `mode` property to `wheel`.
 
 In this mode the color is changing slowly through all colors of the RGB by changing the **hue** value.
-
-The **saturation** and **lightness** is used to convert from hsl to rgb.
 
 The **duration** parameter is used to specify the number you of milliseconds for a complete cycle.
 
