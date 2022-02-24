@@ -95,13 +95,8 @@ chartpie.svg
 ding.htm
 elements.json
 favicon.svg
-i/config.svg
 i/default.svg
-i/device.svg
-i/ide.svg
-i/minus.svg
 i/no.svg
-i/plus.svg
 i/start.svg
 i/stop.svg
 icons.svg
