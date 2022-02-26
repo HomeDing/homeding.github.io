@@ -2,7 +2,7 @@
 title: The WordClock Example
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt default
 This folder contains an example for a wordclock implementations (Germany layout). It also illustrates how to implement something special

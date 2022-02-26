@@ -8,10 +8,10 @@ excerpt: >
   clock running independently from the main board and processor.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 A small battery is required to keep the clock running when power is failing and a crystal oscillator for exact timing is used.

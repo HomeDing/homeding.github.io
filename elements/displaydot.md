@@ -9,10 +9,10 @@ excerpt: >
   The value can be changed by using an action.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 Because there may be more values presented on a display at the same time the

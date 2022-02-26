@@ -2,7 +2,7 @@
 title: Step by Step Bring your device to work
 ---
 
-# {{data.title}}
+# {{title}}
 
 This is a step by step instruction to bring a device based on the HomeDing library to work.
 

@@ -7,10 +7,10 @@ excerpt: >
   They can be send out step by step using a defined delay.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 In normal cases when only one or few actions should be triggered multiple actions can be listed inline.

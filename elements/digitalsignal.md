@@ -10,10 +10,10 @@ excerpt: >
   On a changing input a pulse value is created with a defined duration.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.icon}}
-{{data.excerpt}}
+::: excerpt {{icon}}
+{{excerpt}}
 :::
 
 When a digital input signals like spikes are created on a GPIO input they may not last long enough to be detected by reading the actual level in the loop function.

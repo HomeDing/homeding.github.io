@@ -6,10 +6,10 @@ excerpt: >
   The SwitchElement is used to toggle the state of a boolean value to on or off by a single action.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 It is implemented as a special value element using the range 0 to 1 and can be used with the menu element.

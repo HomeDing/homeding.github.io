@@ -7,10 +7,10 @@ excerpt: >
   **The update doesn't work in safemode** see [safemode](../safemode.md);
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The OTAElement enables the upload of new sketch versions to the device over the network using the standard Arduino network based upload procedure. When this element is configured the device shows up in the list of ports in the Arduino programming environment.

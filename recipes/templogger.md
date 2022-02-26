@@ -2,7 +2,7 @@
 title: Logging Temperature Sensor
 ---
 
-# {{data.title}}
+# {{title}}
 
 This recipe uses
 * A [NTPTime Element] is used to have a valid current time for logging.

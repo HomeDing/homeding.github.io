@@ -2,7 +2,7 @@
 title: NTP based clock with OLED
 ---
 
-# {{data.title}}
+# {{title}}
 
 This recipe uses the time from the internet and displays the current local time on a OLED display.
 

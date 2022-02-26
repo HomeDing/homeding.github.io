@@ -2,7 +2,7 @@
 title: Time Elements
 ---
 
-# {{data.title}}
+# {{title}}
 
 Several elements are related to the current local time. These are bundled together as the time related elements.
 

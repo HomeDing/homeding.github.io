@@ -2,7 +2,7 @@
 title: HomeDing Library Documentation
 ---
 
-# {{data.title}}
+# {{title}}
 
 [![Check Markdown links](https://github.com/HomeDing/homeding.github.io/actions/workflows/md-linkcheck.yml/badge.svg)](https://github.com/HomeDing/homeding.github.io/actions/workflows/md-linkcheck.yml)
 

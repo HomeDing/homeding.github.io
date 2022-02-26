@@ -4,7 +4,7 @@ id: nn
 tags: ["Element", "WIP"]
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt default
 The MapElement uses incoming values to create a new value 

@@ -6,9 +6,9 @@ excerpt: >
   by using a central web application.
 ---
 
-# {{data.title}}
+# {{title}}
 
-{{data.excerpt}}
+{{excerpt}}
 
 The Homeding based devices are made to run standalone, no dependency of cloud services or other local central servers. 
 This approach ensures that all the devices running independent from each other and when one fails the others can continue working.

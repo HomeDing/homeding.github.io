@@ -2,7 +2,7 @@
 title: NTP based clock with TM1627 display
 ---
 
-# {{data.title}}
+# {{title}}
 
 This recipe uses the time from the internet and displays the current local time on a 4 digit display based on the TM1627 chip.
 

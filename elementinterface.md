@@ -2,7 +2,7 @@
 title: Elements API
 ---
 
-# {{data.title}}
+# {{title}}
 
 To implement an element a new class has to be created to implement the functions required for the specific element.
 

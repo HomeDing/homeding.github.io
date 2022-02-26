@@ -261,6 +261,7 @@ Markdown viewer SPA using
           txt = txt.substring(fData.length);
           // replace using njk syntax 
           txt = txt.replaceAll(/\{\{\s*data.(\S+)\s*\}\}/g, (m, key) => fData.data[key]);
+          txt = txt.replaceAll(/\{\{\s*(\S+)\s*\}\}/g, (m, key) => fData.data[key]);
 
           // replace meta tags in header
           if (fData.data.title) document.title = fData.data.title;

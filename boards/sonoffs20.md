@@ -2,7 +2,7 @@
 title: Sonoff S20
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 The Sonoff S20 is a smart socket off-the-shelf product using a ESP8266 with 1MByte Flash.

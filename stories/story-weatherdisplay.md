@@ -2,7 +2,7 @@
 title: Build a Weather forecast display
 ---
 
-# {{data.title}}
+# {{title}}
 
 **This is Work in progress** <!-- ??? -->
 

@@ -2,7 +2,7 @@
 title: Step by Step configuring a device using the builtin IDE
 ---
 
- # {{data.title}}
+ # {{title}}
 
 The configuration of HomeDing based devices is based on files located in the filesystem.
 They can be changed by using the built-in micro IDE that assists in modifying the 

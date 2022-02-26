@@ -2,7 +2,7 @@
 title: wishlist
 ---
 
-# {{data.title}}
+# {{title}}
 
 > Draft ???
 

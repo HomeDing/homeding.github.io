@@ -9,10 +9,10 @@ excerpt: >
   The value can be changed by using an action.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 <!-- not implemented check doku ???  -->

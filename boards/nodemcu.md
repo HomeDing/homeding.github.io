@@ -2,7 +2,7 @@
 title: The NodeMCU development boards
 ---
 
-# {{data.title}}
+# {{title}}
 
 These boards offer an easy start into the ESP8266 development. The have all you need for programming, offer much memory and a LED for `first step` projects is on board.
 

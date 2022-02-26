@@ -6,10 +6,10 @@ excerpt: >
   The SSDPElement allows specifying the properties to send SSDP messages to the local network so the device can be discovered by Plug & Play Services.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The SSDP element is a system element to configure this functionality and cannot send or receive actions. 

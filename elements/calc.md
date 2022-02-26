@@ -8,10 +8,10 @@ excerpt: >
   This Element is not intended to be used directly. Use the AND, OR and ADD Elements.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 ## Web UI for the Elements

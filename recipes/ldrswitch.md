@@ -2,7 +2,7 @@
 title: Blink Recipe
 ---
 
-# {{data.title}}
+# {{title}}
 
 This recipe uses 1 LDR sensor to implement a touchless on/off switch.
 

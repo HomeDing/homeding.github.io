@@ -8,10 +8,10 @@ excerpt: >
   The output value will be true only when at least one of the input values is true.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 Actions can be send to this element using the properties value[n].

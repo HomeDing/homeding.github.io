@@ -6,10 +6,10 @@ description: Create Alarm events.
 excerpt: The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 <!-- ## Web UI for the Timer Element -->

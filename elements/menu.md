@@ -6,10 +6,10 @@ excerpt: >
   The MenuElement allows controlling multiple values or switches by using a single rotary encoder.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 In the configuration a list of elements is defined that can be controlled.

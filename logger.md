@@ -2,7 +2,7 @@
 title: Logging
 ---
 
-# {{data.title}}
+# {{title}}
 
 The Arduino programming environment today is not offering a debugger. Therefore logging information from the executed code to the Serial interface is often the approach to find out what is actually going on inside the device.
 

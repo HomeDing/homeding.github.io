@@ -2,7 +2,7 @@
 title: Miro IDE
 ---
 
-# {{data.title}}
+# {{title}}
 
 The Web UI implementation from the HomeDing library supports a minimal **Integrated Development Environment** (IDE)
 that allows modifying text based files using any browser.

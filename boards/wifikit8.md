@@ -2,7 +2,7 @@
 title: Board Review of Wifi Kit 8 Module ESP8266 with OLED
 ---
 
-# {{data.title}}
+# {{title}}
 
 ![wifikit8 board](/boards/wifikit8.jpg)
 

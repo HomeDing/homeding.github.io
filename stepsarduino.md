@@ -2,7 +2,7 @@
 title: Step by Step setting up the Arduino environment
 ---
 
-# {{data.title}}
+# {{title}}
 
 These are the steps to follow to setup a basic arduino development environment that allows programming new software to the original Arduino boards.
 

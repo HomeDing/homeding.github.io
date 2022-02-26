@@ -8,10 +8,10 @@ excerpt: >
   that need to analyze timing sequences and digital signals.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 see also [DCF Time Element](/elements/dcftime.md)

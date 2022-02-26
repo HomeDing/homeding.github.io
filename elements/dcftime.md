@@ -8,10 +8,10 @@ excerpt: >
   broadcasting the official central European time.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The frequency is 77.5 kHz and it takes a full minute to receive the full information.

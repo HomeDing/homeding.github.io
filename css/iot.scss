@@ -84,10 +84,6 @@
     &.footer {
       padding: $gutter $white-space;
       border-top: 1px solid rgba(0, 0, 0, 0.125);
-
-      > *:not(:first-child) {
-        margin-left: $gutter;
-      }
     }
   }
 
@@ -97,6 +93,44 @@
     height: 1px;
     margin: 0;
     padding: 0;
+  }
+}
+
+// ===== Dashboard of cards =====
+
+.panel {
+  display: grid;
+  gap: $gutter;
+  grid-template-columns: repeat(auto-fill, $u-card-small-width);
+  grid-auto-flow: row;
+  margin-top: 0.5rem;
+
+  > .card {
+    grid-column: span 2;
+    align-self: start;
+  }
+
+  > .card.small {
+    grid-column: span 1;
+  }
+
+  @media (min-width: 0) {
+    /* 1 col */
+    max-width: $u-card-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 48.5rem) {
+    /* 2 col: 1+1+23+0.5+23 = 48.5rem) */
+    max-width: 1 + $u-card-width + $gutter + $u-card-width + 1;
+    margin-left: 0;
+  }
+
+  @media (min-width: 72rem) {
+    /* 3 col: 1+1+23+0.5+23+0.5+23 = 72rem) */
+    max-width: 1 + $u-card-width + $gutter + $u-card-width + $gutter +
+      $u-card-width + 1;
   }
 }
 
@@ -135,10 +169,10 @@ button,
     border-color: #777777;
   }
 
-  + button,
-  + .button {
-    margin-left: $gutter;
-  }
+  // + button,
+  // + .button {
+  //   margin-left: $gutter;
+  // }
 }
 
 // standard input elements
@@ -234,6 +268,14 @@ input.switch[type='range'] {
   > * {
     vertical-align: top;
   }
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: $gutter2;
+  row-gap: $gutter2;
 }
 
 

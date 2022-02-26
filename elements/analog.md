@@ -7,10 +7,10 @@ excerpt: >
   The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.
   It also handles some of the often occurring problems around capturing analog values.
 ---
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 <!--

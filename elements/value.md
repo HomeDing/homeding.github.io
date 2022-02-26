@@ -7,10 +7,10 @@ excerpt: >
   This can e.g. be used to drive a LED or a relay.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 

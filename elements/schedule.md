@@ -6,10 +6,10 @@ description: Create events started on time.
 excerpt: The ScheduleElement creates events based on the current time.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime.md) or [DCFTime](/elements/dcftime.md).

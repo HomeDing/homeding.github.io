@@ -2,7 +2,7 @@
 title: Control the brightness of a display
 ---
 
-# {{data.title}}
+# {{title}}
 
 Here an additional [value](/elements/value.md) element is used to control the brightness of a display.
 

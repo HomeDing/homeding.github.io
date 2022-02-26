@@ -2,7 +2,7 @@
 title: Micro StyleSheet
 ---
 
-# {{data.title}}
+# {{title}}
 
 The micro-css is a minimal collection of CSS rules for styling UI pages of the HomeDing devices. The CSS technology is required to give the different UI implementations of the HomeDing devices a unified look & feel and to share download files among these implementations.
 

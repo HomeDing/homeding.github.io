@@ -2,7 +2,7 @@
 title: Using IO pins of the ESP8266 based boards
 ---
 
-# {{data.title}}
+# {{title}}
 
 The ESP8266 17 General Purpose Input/Output (GPIO) pins that can be used for a variety of uses.
 

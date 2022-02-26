@@ -3,7 +3,7 @@ title: Minimal Sized Example
 description: Example for devices with only 1MByte flash memory.
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 The **minimal example** 

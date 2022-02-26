@@ -2,7 +2,7 @@
 title: Board Review ESP8266 -12 with OLED and 18650
 ---
 
-# {{data.title}}
+# {{title}}
 
 ![wroom2.jpg](/boards/wroom2.jpg)
 

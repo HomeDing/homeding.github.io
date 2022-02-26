@@ -2,7 +2,7 @@
 title: Temperature display
 ---
 
-# {{data.title}}
+# {{title}}
 
 This recipe implements a device with a locally attached LCD display to show time temperature and humidity from a BME680 sensor.
 

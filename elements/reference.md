@@ -6,10 +6,10 @@ excerpt: >
   The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The output of comparing the 2 values can be used to switch a device on or off. This can be used e.g. to control heating or light

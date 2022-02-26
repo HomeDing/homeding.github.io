@@ -2,7 +2,7 @@
 title: Bulb Devices
 description: Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.
 ---
-# {{data.title}}
+# {{title}}
 
 :::excerpt bulb
 Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.

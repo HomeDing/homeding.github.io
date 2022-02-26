@@ -2,7 +2,7 @@
 title: Outdoor Sensor
 ---
 
-# {{data.title}}
+# {{title}}
 
 Some weather parameters are interesting to be measured by using an outside sensor like
 

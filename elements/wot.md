@@ -7,7 +7,7 @@ excerpt: >
   The Element enables ...
 ---
 
-# {{data.title}}
+# {{title}}
 
 The HomeDing library includes the wot element that generates interfaces and JSON based descriptions that are compliant with the WoT standard by the W3C Consortium.
 

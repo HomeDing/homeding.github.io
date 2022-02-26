@@ -2,7 +2,7 @@
 title: Class implementation documentation
 ---
 
-# {{data.title}}
+# {{title}}
 
 Beside the Element implementations in the \<type\>Element classes there are some classes that implement common functionality or utilities:
 

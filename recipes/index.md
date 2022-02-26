@@ -2,7 +2,7 @@
 title: Recipes Overview
 ---
 
-# {{data.title}}
+# {{title}}
 
 The recipes is a collection of configurations that can be used
 with the standard set of elements included in the [Standard Example](/examples/standard.md).

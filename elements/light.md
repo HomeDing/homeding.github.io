@@ -8,10 +8,10 @@ excerpt: >
   It can also be used as a base class for other light elements using a specific chip or protocol.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The base implementation in the LightElement can be used for single channel light values like a single LED or a single RGB Led attached directly to GPIO pins.

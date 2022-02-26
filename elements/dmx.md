@@ -4,7 +4,7 @@ id: nn
 tags: ["WIP"]
 ---
 
-# {{data.title}}
+# {{title}}
 
 The DMX 
 

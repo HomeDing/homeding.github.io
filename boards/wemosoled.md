@@ -2,7 +2,7 @@
 title: Board Review ESP8266 with OLED
 ---
 
-# {{data.title}}
+# {{title}}
 
 ![wemosoled.png](/boards/wemosoled.jpg)
 

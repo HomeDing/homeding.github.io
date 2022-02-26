@@ -6,9 +6,9 @@ excerpt: >
   like the one described in the [Airquality story](/stories/story-airquality.md). 
 ---
 
-# {{data.title}}
+# {{title}}
 
-{{data.excerpt}}
+{{excerpt}}
 
 ![dashboard ui](/dashboard.png)
 

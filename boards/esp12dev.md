@@ -2,7 +2,7 @@
 title: Esp-12 development board
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 This is an adapter board that can be used to flash ESP-12 modules before adding them to a device.

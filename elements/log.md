@@ -8,10 +8,10 @@ excerpt: >
   into a local file to be analyzed or displayed later by the Web UI.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 This enables using sensor values to be displayed in graphs in the Web UI for this element.

@@ -2,7 +2,7 @@
 title: Word Clock Example 
 ---
 
-# {{data.title}}
+# {{title}}
 
 <https://www.ebay.de/itm/274588288050>
 <http://www.chinalctech.com/cpzx/Clock_module/477.html>

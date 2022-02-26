@@ -2,7 +2,7 @@
 title: Sensors and Actors
 ---
 
-# {{data.title}}
+# {{title}}
 
 This is a list of sensors, simple input and output components up to interface chips for various purposes that show the wide range of possibilities supported by the HomeDing library.
 

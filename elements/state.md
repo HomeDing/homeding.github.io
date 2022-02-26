@@ -6,10 +6,10 @@ excerpt: >
   This element implements storing the current state in some other places as volatile variables.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The state is a collection of information and values of a device that cannot be found in configuration.

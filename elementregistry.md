@@ -2,7 +2,7 @@
 title: Element Registry
 ---
 
-# {{data.title}}
+# {{title}}
 
 ## Why we need a registry
 

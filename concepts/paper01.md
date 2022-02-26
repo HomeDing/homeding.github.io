@@ -2,7 +2,7 @@
 title: Building your own connected Things made easy
 ---
 
-# {{data.title}}
+# {{title}}
 
 1. **Building your own connected Things made easy**
 2. [Software Architecture](/concepts/paper02.md)

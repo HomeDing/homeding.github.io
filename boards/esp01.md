@@ -2,7 +2,7 @@
 title: Board ESP8266 ESP-01
 ---
 
-# {{data.title}}
+# {{title}}
 
 The ESP-­01 and ESP-­01S modules contain a ESP8266 MCU and a up to 1 MByte flash memory chip.
 

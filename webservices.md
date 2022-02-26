@@ -2,7 +2,7 @@
 title: Web Services
 ---
 
-# {{data.title}}
+# {{title}}
 
 To interact with the elements and some device features the integrated web server exposes some services.
 

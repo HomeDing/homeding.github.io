@@ -2,7 +2,7 @@
 title: The startup sequence
 ---
 
-# {{data.title}}
+# {{title}}
 
 After a reboot or when powering up a board the network connection needs to be established or configured. Therefore the startup sequence is focusing on  re-establishing a prior network configuration and also give the user the chance to enter the setup mode.
 

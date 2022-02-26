@@ -2,7 +2,7 @@
 title: Web Server
 ---
 
-# {{data.title}}
+# {{title}}
 
 The HomeDing devices can be inspected and are controllable using a built-in web server.
 

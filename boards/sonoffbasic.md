@@ -2,7 +2,7 @@
 title: Sonoff Basic (R1)
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 The Sonoff Basic is a smart relay off-the-shelf product using a ESP8266 with 1MByte Flash.

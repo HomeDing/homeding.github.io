@@ -2,7 +2,7 @@
 title: Device Discovery
 ---
 
-# {{data.title}}
+# {{title}}
 
 1. [Building your own connected Things made easy](/concepts/paper01.md)
 2. [Software Architecture](/concepts/paper02.md)

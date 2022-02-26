@@ -2,7 +2,7 @@
 title: Outdoor Sensor with Solar Panel
 ---
 
-# {{data.title}}
+# {{title}}
 
 This is a draft story.
 

@@ -7,10 +7,10 @@ excerpt: >
   The Display Configuration for Monochrome LCDs based on HD44780 chips.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 

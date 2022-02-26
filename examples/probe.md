@@ -2,7 +2,7 @@
 title: Probe example
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 This example shows how to implement special, local elements

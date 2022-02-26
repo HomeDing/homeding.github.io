@@ -2,7 +2,7 @@
 title: Pie Microchart
 ---
 
-# {{data.title}}
+# {{title}}
 
 The Pie Microchart displays a pie with segments corresponding to the fraction of the given values.
 

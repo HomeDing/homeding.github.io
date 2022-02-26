@@ -2,7 +2,7 @@
 title: Micro Charts
 ---
 
-# {{data.title}}
+# {{title}}
 
 ??? WIP
 

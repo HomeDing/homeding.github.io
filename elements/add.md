@@ -6,10 +6,10 @@ description: Calculate sum of values
 excerpt: The ADD Element sums up multiple input values to create a single output value.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 Actions can be send to this element using the properties value[n].

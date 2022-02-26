@@ -6,10 +6,10 @@ description: Create repeating events.
 excerpt: The TimerElement creates events based on a one-time or cyclic timing pattern.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 During the specified time period the output value will be switched on and off once. The timer can be restarted automatically.

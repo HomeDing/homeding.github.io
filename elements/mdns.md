@@ -7,10 +7,10 @@ excerpt: >
   This allows finding all devices in the home network.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 

@@ -2,7 +2,7 @@
 title: Elements Overview
 ---
 
-# {{data.title}}
+# {{title}}
 
 Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like [sensors](/sensors/sensors.md). 
 

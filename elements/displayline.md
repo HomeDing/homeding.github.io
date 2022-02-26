@@ -8,10 +8,10 @@ excerpt: >
   when the display supports pixel drawing.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 It is not required for all displays to support all these Elements and when a device only has a simple LCD

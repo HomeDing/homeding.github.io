@@ -2,7 +2,7 @@
 title: 2 channel relay
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 This board can switch 2 relay outputs using a ESP-01 board.

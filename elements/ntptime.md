@@ -7,10 +7,10 @@ excerpt: >
   The NTPTimeElement can retrieve the local time from an external ntp server on the internet.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The NTPTimeElement is one of the time elements that are used to get a local time from a external source

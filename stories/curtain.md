@@ -2,7 +2,7 @@
 title: Smart control for shades, blinds and curtains
 ---
 
-# {{data.title}}
+# {{title}}
 
 The aim was to automate the existing shades in my household to bring them in on several conditions like
 

@@ -7,10 +7,10 @@ excerpt: >
   The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 By specifying the configuration for the `device` element the general settings for the device can be controlled.

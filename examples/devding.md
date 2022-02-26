@@ -2,7 +2,7 @@
 title: DevDing Example 
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 The examples in the HomeDing library are used to compile a firmware that provides the base functionality

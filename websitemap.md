@@ -2,7 +2,7 @@
 title: Map of the embedded Web Site Pages
 ---
 
-# {{data.title}}
+# {{title}}
 
 The web site allows accessing and configuring the device directly with a standard web browser.
 

@@ -2,7 +2,7 @@
 title: Using the I2C bus
 ---
 
-# {{data.title}}
+# {{title}}
 
 The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data.
 

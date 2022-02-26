@@ -2,7 +2,7 @@
 title: Remote button
 ---
 
-# {{data.title}}
+# {{title}}
 
 > Draft ???
 

@@ -2,7 +2,7 @@
 title: Gauge Microchart
 ---
 
-# {{data.title}}
+# {{title}}
 
 The Gauge Microchart displays a single value with a needle on a background scale like with analog meters.
 

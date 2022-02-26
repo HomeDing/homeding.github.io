@@ -6,10 +6,10 @@ excerpt: >
   The time element creates actions with the current local time as value.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime.md) , [DSTime](/elements/dstime.md) or [DCFTime](/elements/dcftime.md).

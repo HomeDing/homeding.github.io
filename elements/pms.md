@@ -8,10 +8,10 @@ excerpt: >
   PMS5003 from plantower to report the number of micro particles in the air.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 ![PMS5003 sensor](/elements/pms5003.jpg)

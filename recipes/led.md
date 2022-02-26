@@ -2,7 +2,7 @@
 title: LED On/OFF Recipe
 ---
 
-# {{data.title}}
+# {{title}}
 
 This recipe uses a single button as an input to switch a LED on and off.
 

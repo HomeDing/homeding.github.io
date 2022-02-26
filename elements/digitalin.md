@@ -8,10 +8,10 @@ excerpt: >
   This can e.g. be used to capture actively from buttons and switches but also some sensors offer a digital output.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 The physical input level can differ from the logical input level. E.g. momentary input buttons may pull an input down to ground while others pull them up. Also switches can be used with this Element.

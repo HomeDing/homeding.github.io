@@ -2,7 +2,7 @@
 title: Radio Example
 ---
 
-# {{data.title}}
+# {{title}}
 
 :::excerpt
 The **radio example** can be used with any board that has a 4MByte Flash memory, a FM radio receiving board, a display and a rotary encoder with button. 

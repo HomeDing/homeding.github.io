@@ -2,7 +2,7 @@
 title: The HomeDing - PWMLED Example ???
 ---
 
-# {{data.title}}
+# {{title}}
 
 > #Draft
 

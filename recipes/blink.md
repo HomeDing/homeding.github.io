@@ -3,7 +3,7 @@ title: Blink Recipe
 tags: ["Recipe"]
 ---
 
-# {{data.title}}
+# {{title}}
 
 This recipe uses 1 digital output to blink a LED and a timer to create actions.
 

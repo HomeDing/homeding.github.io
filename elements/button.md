@@ -6,10 +6,10 @@ description: Create actions based on digital input gestures.
 excerpt: The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.
 ---
 
-# {{data.title}}
+# {{title}}
 
-::: excerpt {{data.id}}
-{{data.excerpt}}
+::: excerpt {{id}}
+{{excerpt}}
 :::
 
 
