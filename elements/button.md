@@ -67,7 +67,7 @@ that provides the input value to the Button Element.
 
 ### Example Configuration
 
-```json
+``` json
 {
   "digitalin": {
     "up": {
@@ -99,7 +99,7 @@ that provides the input value to the Button Element.
 
 ### Example State
 
-```json
+``` json
 {
   "button/start": {
     "active": "true",

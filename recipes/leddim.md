@@ -33,7 +33,7 @@ The [pwm element](/elements/pwmout.md) is configured to allow values within the 
 
 The `env.json` can be taken from the board description because it has no special logic for this recipe:
 
-```json
+``` json
 {
   "device": {
     "main": {
@@ -66,7 +66,7 @@ The `env.json` can be taken from the board description because it has no special
 
 ## config.json Configuration
 
-```json
+``` json
 {
   "digitalin": {
     "up": {

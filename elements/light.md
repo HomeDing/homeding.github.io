@@ -56,7 +56,7 @@ There are some simple colors available by name:
 
 ### Example configuration
 
-```json
+``` json
 {
   "light": {
     "lx": {
@@ -77,7 +77,7 @@ There are no actions being sent by this element.
 
 ## State
 
-```json
+``` json
 {
   "light/lx": {
     "active":"true",

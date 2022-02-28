@@ -40,7 +40,7 @@ The following properties are available with the current values at runtime
 
 ## Example Configuration
 
-```json
+``` json
 {
   "time": {
     "clock": {
@@ -52,7 +52,7 @@ The following properties are available with the current values at runtime
 
 ## Example State
 
-```json
+``` json
 {
   "time/0": {
     "active":"true"

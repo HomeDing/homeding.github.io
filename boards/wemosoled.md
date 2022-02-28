@@ -66,7 +66,7 @@ The board uses
 
 The display configuration is the only specific entry in env.json:
 
-```json
+``` json
 {
   "device": {
     "0": {

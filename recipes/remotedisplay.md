@@ -21,7 +21,7 @@ There is a configuration required that corresponds to the chip inside the displa
 
 ** Example:**
 
-```json
+``` json
 {
   "DisplaySSD1306": {
     "0": {
@@ -46,7 +46,7 @@ Having done this configuration the display will be used on system startup showin
 The following configuration used 2 display elements for text to define 
 the position and size of the information that will be shown:
 
-```json
+``` json
 {
   "displaytext": {
     "temp": {
@@ -81,7 +81,7 @@ Here a DHT22 sensor is configured on pin D4.
 
 For sending out to 2 remote elements the 2 remote configurations are used.
 
-```json
+``` json
 {
   "dht": {
     "on": {

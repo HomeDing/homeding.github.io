@@ -18,7 +18,7 @@ The digital signal from the switch is given to an [Digital Output](/elements/dig
 
 ## Configuration
 
-```json
+``` json
 {
   "analog": {
     "0": {

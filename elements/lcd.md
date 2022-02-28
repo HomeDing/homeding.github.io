@@ -60,7 +60,7 @@ The DisplayLCD Element can be used to configure the LCDDisplayAdapter.
 
 This should be done in the `env.json` file:
 
-```json
+``` json
 {
   "device": {
     "0": {

@@ -18,7 +18,7 @@ excerpt: >
 
 This Element is not included into the standard firmware but can be included by defining:
 
-```cpp
+``` cpp
 #define HOMEDING_INCLUDE_PMS
 ```
 
@@ -81,7 +81,7 @@ The following properties are available for configuration of the element:
 
 ## Example configuration
 
-```json
+``` json
 "pms": {
   "pm25": {
     "pinrx": "D6",

@@ -33,7 +33,7 @@ When no input value is given the output value is 0.
 
 ### Configuration Example
 
-```json
+``` json
 {
   "add": {
     "a": {

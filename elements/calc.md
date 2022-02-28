@@ -53,7 +53,7 @@ The current output value is reported in the state.
 
 ### Example State
 
-```json
+``` json
 {
   "add/duration": {
     "active":"true",

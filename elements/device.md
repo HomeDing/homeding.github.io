@@ -105,7 +105,7 @@ The following action is implemented:
 
 ## Configuration Example
 
-```json
+``` json
 {
   "device": {
     "0": {

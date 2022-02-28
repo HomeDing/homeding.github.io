@@ -111,7 +111,7 @@ output during booting.
 
 Here you can see the information about the interim name of the device, the IP address and the network it connected to:
 
-```txt
+``` txt
 00:00:10 sys:i ESP-5D2122 192.168.2.175
 00:00:10 sys:i Connected to DEVNET unsafe
 ```
@@ -168,7 +168,7 @@ on the network using the name specified in the env.json file (here: outdoor).
 Opening the url `http://outdoor` will redirect directly to the built-in dashboard. 
 
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -207,7 +207,7 @@ and copy the following configuration into the right text area and then click the
 
 When requested enter `/config.json` into the filename field.
 
-```json
+``` json
 {
   "dht": {
     "on": {
@@ -253,7 +253,7 @@ This configuration will add a log file with the humidity from the sensor saving 
 
 The dht element gets the additional configuration to send the current value to the log element using an action:
 
-```json
+``` json
 "onhumidity": "log/hum?value=$v"
 ```
 
@@ -264,7 +264,7 @@ Actions can also be sent across the network to other devices.
 An accurate time is required for logging.
 Therefore we use the ntptime element to get the current time from a ntp server with adjustments to the timezone you are living in.
 
-```json
+``` json
 "ntptime": {
   "0": {
     "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
@@ -277,7 +277,7 @@ You may want to adjust the time zone to fit your location in the ntptime element
 
 The [Log Element] is configured to collect data into a pair of files:
 
-```json
+``` json
 "log": {
   "h": {
     "description": "log humidity",
@@ -293,7 +293,7 @@ The same can be done for temperature.
 
 Now the config.json file should contain:
 
-```json
+``` json
 {
   "dht": {
     "on": {
@@ -346,7 +346,7 @@ The DHT22 wiring has to be changed so that the GND pin is attached to a GPIO (D6
 
 In the config.json file the 3 parameters have to be added:
 
-```json
+``` json
 {
   "dht": {
     "on": {

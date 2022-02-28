@@ -29,7 +29,7 @@ For the HomeDing device website the `id` like `button/left` and the `type` like 
 
 ### Example
 
-```HTML
+``` html
 <div class="col card" u-control="pwmout" u-is="pwmout" microID="${id}">
   <div class="block header">
     <img src="/i/pwmout.svg" class="icon" />

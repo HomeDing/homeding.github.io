@@ -57,7 +57,7 @@ The following actions can be sent to the element:
 ### Configuration Example
 
 
-```json
+``` json
 {
   "displaytext": {
     "val": {
@@ -87,7 +87,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```json
+``` json
 {
   "displaytext/val": {
     "active":"true",

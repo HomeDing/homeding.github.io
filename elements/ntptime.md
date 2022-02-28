@@ -56,7 +56,7 @@ See <https://raw.githubusercontent.com/nayarsystems/posix_tz_db/master/zones.csv
 ### Configuration Example
 
 
-```json
+``` json
 {
   "ntptime": {
     "0": {
@@ -77,7 +77,7 @@ The following properties are available with the current values at runtime
 
 ## Element State Example
 
-```json
+``` json
 {
   "ntptime/0": {
     "active": "true",

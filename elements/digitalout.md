@@ -62,7 +62,7 @@ The physical output depends on `inverse`.
 
 ### Configuration Example
 
-```json
+``` json
 {
   "digitalout": {
     "led": {
@@ -86,7 +86,7 @@ The state of the digitalout element includes:
 
 ### Example State
 
-```json
+``` json
 {
   "digitalout/led": {
     "active":"false",

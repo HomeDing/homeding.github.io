@@ -13,7 +13,7 @@ The switch only provides a 0 / 1 boolean value but also onHgh and onLow actions 
 These actions are used to set the value element to the required low and high value.
 As this is passed to the PWMOut element the position of the servo is controlled.
 
-```json
+``` json
 {
   "digitalinput": {
     "in": {

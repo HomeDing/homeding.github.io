@@ -48,7 +48,7 @@ value Internal starting value. (deprecated)
 
 ## Example Configuration
 
-```json
+``` json
 {
   "rotary": {
     "in": {
@@ -76,7 +76,7 @@ The following properties are available with the current values at runtime
 
 The internal value can be seen in the rotary state but should not directly be used as a value.
 
-```json
+``` json
 {
   "rotary/in": {
     "active": "true",

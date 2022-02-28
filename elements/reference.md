@@ -42,7 +42,7 @@ The value given in the actions is `0`.
 
 ### Configuration Example
 
-```json
+``` json
 {
   "reference": {
     "temp": {
@@ -64,7 +64,7 @@ The following properties are available with the current values at runtime
 
 **value** - Current output value of the element.
 
-```json
+``` json
 {
   "reference/temp":{
     "active":"true",

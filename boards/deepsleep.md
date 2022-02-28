@@ -42,7 +42,7 @@ The deep sleep mode is the answer of the ESP8266 SoC to get a minimum power cons
 
 To activate the deep sleep the deep sleep duration must be set in the [device element](/elements/device.md) using the `sleeptime` configuration.
 
-```json
+``` json
 {
   "device": {
     "0": {

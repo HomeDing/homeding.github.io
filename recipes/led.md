@@ -36,7 +36,7 @@ The [digital output element](/elements/digitalout.md) is configured to create a 
 
 The `env.json` can be taken from the board description because it has no special logic for this recipe:
 
-```json
+``` json
 {
   "device": {
     "main": {
@@ -69,7 +69,7 @@ The `env.json` can be taken from the board description because it has no special
 
 ## config.json Configuration
 
-```json
+``` json
 {
   "digitalin": {
     "in": {

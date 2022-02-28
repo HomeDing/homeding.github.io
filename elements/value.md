@@ -92,7 +92,7 @@ The value element accepts actions like
 
 The current value is reported as the state of a value element.
 
-```json
+``` json
 {
   "value/volume": {
     "active": "true",
@@ -103,7 +103,7 @@ The current value is reported as the state of a value element.
 
 ## Example Configuration
 
-```json
+``` json
 {
   "value": {
     "volume": {

@@ -41,7 +41,7 @@ with options for time based switching.
 
 This configuration registers the device with the name "sonoff01" on the networks and enables using the button during boot for starting into the configuration mode.
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -66,7 +66,7 @@ This configuration registers the device with the name "sonoff01" on the networks
 
 This configuration allows switching the relay using the button and showing the relay state using the LED.
 
-```json
+``` json
 {
   "digitalin": {
     "button": {

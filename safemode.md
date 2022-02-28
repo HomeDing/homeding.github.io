@@ -34,7 +34,7 @@ It is possible disable safemode by using the physical RESET button (see below).
 
 The save mode is enabled permanently by adding the `safemode` property with `true` to the device configuration.
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -91,7 +91,7 @@ This variable is set to the configured value while reading the configuration and
 
 To implement functions that only work when save mode is not set use
 
-```cpp
+``` cpp
 if (! _board->safemode) {
   // execute unsafe stuff
    ...

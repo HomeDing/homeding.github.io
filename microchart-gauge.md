@@ -14,7 +14,7 @@ The Gauge Microchart displays a single value with a needle on a background scale
 The Gauge Chart requires to set the options to create the scale of the chart
 including the colors of the arc in the background.
 
-```json
+``` json
 {
   title: "Room Temperature",
   units: "°C",
@@ -51,7 +51,7 @@ The Gauge Chart has no additional elements to be added. The **add()** method is 
 
 The data passed to the **draw()** method is a single value only:
 
-```Javascript
+``` javascript
 chartAPI.draw(12.8);
 ```
 

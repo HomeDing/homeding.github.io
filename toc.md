@@ -1,3 +1,6 @@
+---
+layout: toc.njk
+---
 ### [HomeDing Library Documentation](/index.md)
 
 * [Making IoT easy](/concepts/paper01.md)

@@ -35,7 +35,7 @@ Install the `DHT sensor library for ESPx` library by beegee-tokyo before includi
 
 The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and register the element.
 
-```cpp
+``` cpp
 // Use some more Elements that need additional libraries
 #define HOMEDING_INCLUDE_DHT
 #include <HomeDing.h>
@@ -131,7 +131,7 @@ From the base element implementation the following properties are available for 
 
 ### Configuration Example
 
-```json
+``` json
 {
   "dht": {
     "on": {
@@ -159,7 +159,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```json
+``` json
 {
   "dht/on": {
     "active":"true",

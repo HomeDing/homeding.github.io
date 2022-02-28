@@ -20,7 +20,7 @@ By using 2 [Switch Elements](/elements/switch.md) to control 2 boolean input val
 These values are sent to 2 logical elements the [AND Element](/elements/and.md) and the [OR Element](/elements/or.md)
 where the calculated outputs are displayed.
 
-```json
+``` json
 {
   "switch": {
     "in1": {

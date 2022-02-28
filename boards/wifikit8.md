@@ -56,7 +56,7 @@ This board also connects the RESET pin of the display. Here the GPIO16(D0) was c
 
 This pin needs also requires some coding because a short LOW impulse is required to start the display properly and then the pin must be set to HIGH again during operation.
 
-```cpp
+``` cpp
 pinMode(D0, OUTPUT);
 digitalWrite(D0, LOW);  // pull low to reset OLED
 delay(50);
@@ -89,7 +89,7 @@ The following env.json file can be used on these boards:
 
 **env.json**
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -133,7 +133,7 @@ The following env.json file can be used on these boards:
 
 The onboard button labeled "PRG" pulls D3 down and can be used with a digital input and the display can be used to show some information.
 
-```json
+``` json
 {
   "digitalin": {
     "D3": {

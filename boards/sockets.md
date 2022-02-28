@@ -42,7 +42,7 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
 | GPIO15(D8) | Relay1    | Relay (active LOW)        |
 
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -66,7 +66,7 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
 ```
 
 
-```json
+``` json
 {
   "digitalin": {
     "button": {

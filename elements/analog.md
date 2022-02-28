@@ -72,7 +72,7 @@ The ESP8266 chip has only one analog input pin so specifying a pin is not requir
 
 ### Example Configuration
 
-```json
+``` json
 {
   "analog": {
     "0": {
@@ -107,7 +107,7 @@ When mapping boundaries are given this is the calculated value.
 
 ### Example State
 
-```json
+``` json
 {
   "analog/0": {
     "active":"true",

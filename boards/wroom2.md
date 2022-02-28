@@ -99,7 +99,7 @@ The board uses
 The display configuration is defined in env.json together with the system button and led for configuration.
 When pressing the joystick while the LED is blinking the device switches to config mode.
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -139,7 +139,7 @@ When pressing the joystick while the LED is blinking the device switches to conf
 
 These are the basic element configurations for the joystick button and the 2 onboard LEDs.
 
-```json
+``` json
 {
   "digitalin": {
     "up": {

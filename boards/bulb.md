@@ -76,7 +76,7 @@ In the settings on the [device element](/elements/device.md) the following prope
 The [OTA element](/elements/ota.md) enables updating the device firmware using the Arduino environment. A password should be specified.
 
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -114,7 +114,7 @@ To configure such a element the data and clock pins need to be specified.
 
 **config.json**
 
-```json
+``` json
 {
   "switch": {
     "en": {
@@ -181,7 +181,7 @@ It supports RGB and WRGB color values, a general brightness and enable switch.
 
 **config.json**
 
-```json
+``` json
 {
   "switch": {
     "en": {

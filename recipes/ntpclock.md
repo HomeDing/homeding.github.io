@@ -49,7 +49,7 @@ The [DisplayText Element] defines the place on the display where the time will b
 
 ## env.json configuration
 
-```json
+``` json
 {
   ...
 
@@ -74,7 +74,7 @@ The [DisplayText Element] defines the place on the display where the time will b
 
 In `config.json` the display items and the time related actions are configured:
 
-```json
+``` json
 {
   "displaytext": {
     "date": {

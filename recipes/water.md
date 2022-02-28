@@ -12,7 +12,7 @@ The central element is a switch that controls a relay on a digital output. There
 2. The momentary button on the digital input can also be used to toggle the switch.
 3. The timer switches the switch on for 5 min every 8 hours.
 
-```json
+``` json
 {
   "digitalin": {
     "button": {

@@ -80,7 +80,7 @@ The formatting from printf is used and lines will have a `>` prefix.
 
 **Example:**
 
-```cpp
+``` cpp
 LOGGER_RAW("init: path=%s cache_header=%s", path, cache_header);
 ```
 
@@ -107,7 +107,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:t
 
 **Example:**
 
-```cpp
+``` cpp
 LOGGER_ETRACE("set(%s:%s)", name, value);
 ```
 
@@ -132,7 +132,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS [type]/[id]:e
 
 **Example:**
 
-```cpp
+``` cpp
 LOGGER_ETRACE("set(%s:%s)", name, value);
 ```
 
@@ -156,7 +156,7 @@ The formatting from printf is used and lines will have a `HH:MM:SS sys:i:` or `H
 
 **Example:**
 
-```cpp
+``` cpp
 LOGGER_INFO("device restart initiated.");
 ```
 
@@ -169,7 +169,7 @@ LOGGER_INFO("device restart initiated.");
 
 By using the configuration of the [Device Element](/elements/device.md) the device wide log level can be specified.
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -188,7 +188,7 @@ The default is to have an overall error level for logging and trace level loggin
 
 **Example:**
 
-```json
+``` json
 {
   "button": {
     "in": {

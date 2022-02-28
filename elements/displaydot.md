@@ -50,7 +50,7 @@ The following actions can be sent to the element:
 ### Configuration Example
 
 
-```json
+``` json
 {
   "displaydot": {
     "b": {
@@ -73,7 +73,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```json
+``` json
 {
   "displaydot/b": {
     "active": "true",

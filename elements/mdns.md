@@ -46,7 +46,7 @@ http:///<portal-server>/api/discovery
 
 
 
-```json
+``` json
 {
   "airding":{
     "host":"airding.local",

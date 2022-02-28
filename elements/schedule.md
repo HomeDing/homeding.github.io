@@ -59,7 +59,7 @@ The following properties are available with the current values at runtime
 
 ## Example Configuration
 
-```json
+``` json
 {
   "schedule": {
     "lights": {
@@ -74,7 +74,7 @@ The following properties are available with the current values at runtime
 
 ## Example State
 
-```json
+``` json
 {
   "button/start": {
     "active": "true",

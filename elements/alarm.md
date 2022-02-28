@@ -27,7 +27,7 @@ This element implements the following properties and actions:
 ### Configuration Example
 
 
-```json
+``` json
 {
   "alarm": {
     "wakeup": {

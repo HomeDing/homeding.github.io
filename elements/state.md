@@ -48,7 +48,7 @@ The RTCStateElement registers itself for saving the state information in the RTC
 
 The following configuration enables this state mechanism:
 
-```json
+``` json
 {
   "rtcstate": {"0":{}}
 }
@@ -58,7 +58,7 @@ There is not much space in the RTC Memory and only 200 characters can be used to
 
 The state is formatted as a series of actions like:
 
-```json
+``` json
 "switch/power?value=1,value/speed?value=12"
 ```
 
@@ -78,7 +78,7 @@ To enabled saving and loading the state of an Element the `useState` property mu
 
 Here is an example for a switch supporting 0 and 1 values. The default value is `0` == Off while the value after a reboot is taken from the state memory.
 
-```json
+``` json
 {
   "switch": {
     "power": {

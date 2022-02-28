@@ -67,7 +67,7 @@ The location of the weather forecast
 
 /data/2.5/onecall?units=metric&${loc}&exclude=current,hourly&appid=${key}
 
-```json
+``` json
 {
   "weatherfeed": {
     "home": {
@@ -102,7 +102,7 @@ To capture the raw result you ma just use your browser. The raw data is also add
 
 Here is a shortened example with comments from the response:
 
-```json
+``` json
 {
   // effective input values
   "lat": 50.23,

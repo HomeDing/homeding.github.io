@@ -100,7 +100,7 @@ The **duration** parameter is used to specify the number you of milliseconds for
 
 Example:
 
-```txt
+``` txt
 color/0?mode=wheel
 ```
 
@@ -116,7 +116,7 @@ The **duration** parameter is used to specify the number you of milliseconds for
 
 Example:
 
-```txt
+``` txt
 color/0?value=green
 color/0?mode=pulse
 ```

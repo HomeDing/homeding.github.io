@@ -24,7 +24,7 @@ so they need to be wrapped into a class.
 There is a "MiniElement.h" file in the DevDing example to show
 how an Element can be implemented just like a "normal" Arduino Sketch:
 
-```cpp
+``` cpp
 class MiniElement : public Element {
 
   unsigned long lastTime;
@@ -53,7 +53,7 @@ class MiniElement : public Element {
 
 in the global setup() method a instance of this class can be added to the homeding setup:
 
-```cpp
+``` cpp
 ElementRegistry::_addElement("mini/1", new MiniElement());
 ```
 
@@ -178,7 +178,7 @@ Inside the setup() method it is possible to register a webserver endpoint that e
 
 An example can be found in the diag element in the DevDing example  
 
-```cpp
+``` cpp
   _board->server->on("/diag", HTTP_GET, [this]() {
     _board->server->send(200, "text/plain", _scanI2C());
   });

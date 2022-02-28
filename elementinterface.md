@@ -77,7 +77,7 @@ There are several mechanisms like state machines to split a more complex task in
 Some elements need a valid local time to operate. The event when the element normal operation is started can be configured in
 the class initializer like you can find in the LogElement:
 
-```cpp
+``` cpp
 LogElement::LogElement()
 {
   startupMode = Element_StartupMode::Time;

@@ -38,7 +38,7 @@ The following properties are available for configuration of the element.
 
 On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these.
 
-```json
+``` json
 {
   "displaytext": {
     "t": {
@@ -65,7 +65,7 @@ You can test these by using the following URLs to trigger the actions with your 
 
 On the device named **dht22-probe** the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:
 
-```json
+``` json
 {
   "dht": {
     "on": {

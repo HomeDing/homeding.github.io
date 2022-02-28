@@ -57,7 +57,7 @@ or to upload a SPIFFS image:
 
 ## Example Configuration
 
-```json
+``` json
 {
   "ota": {
     "0": {

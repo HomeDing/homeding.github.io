@@ -87,7 +87,7 @@ https://templates.blakadder.com/loratap_SC500W.html
 
 ## Configuration
 
-```json
+``` json
 {
   "digitalin": {
     "GPIO4": {

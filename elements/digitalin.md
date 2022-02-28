@@ -49,7 +49,7 @@ The following properties are available with the current values at runtime
 
 ## Example Configuration
 
-```json
+``` json
 {
   "digitalin": {
     "start": {
@@ -67,7 +67,7 @@ The following properties are available with the current values at runtime
 
 ## Example State
 
-```json
+``` json
 {
   "digitalin/start": {
     "active": "true",

@@ -184,7 +184,7 @@ I added a 100nF capacitor next to the radio.
 
 ## Example configuration
 
-```json
+``` json
 {
   "rotary": {
     "0": {

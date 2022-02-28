@@ -17,7 +17,7 @@ There is a configuration for the LCD display required. Here a HD44780 standard L
 * The [DisplayLCD Element](/elements/lcd.md) is defined with the i2c address and LCD size.
 * The [NTPTime Element](/elements/ntptime.md) is used to retrieve the actual time from the default ntp server.
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -66,7 +66,7 @@ The BME680 sensor measures the temperature and humidity every 10 seconds and sen
 These are used to update the displaytext elements. 
 
 
-```json
+``` json
 {
   "displaytext": {
     "time": {

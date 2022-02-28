@@ -29,7 +29,7 @@ header
 body
 config
 
-```HTML
+``` html
 <div class="col card" u-control="log" u-is="log" microID="${id}">
   <div class="block header">
     <img src="/i/log.svg" class="icon" />
@@ -49,7 +49,7 @@ config
 
 ## Min version
 
-```HTML
+``` html
 <div class="col card" u-control="schedule" u-is="generic" microID="/schedule/0">
   <div class="block">
     <h4 u-text="description"></h4>
@@ -70,7 +70,7 @@ config
 
 ## Full version
 
-```HTML
+``` html
 <div class="col card" u-control="schedule" id="${id}" u-is="generic" microID="${id}">
   <div class="block header">
     <img src="/i/${type}.svg" class="icon" />

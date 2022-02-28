@@ -43,7 +43,7 @@ The output signal is generated with a given minimal duration and stays high as l
 
 ### Configuration Example
 
-```json
+``` json
 {
   "digitalsignal": {
     "d5": {
@@ -66,7 +66,7 @@ The state of the DigitalSignal element available at runtime includes the current
 
 ### Example State
 
-```json
+``` json
 {
   "digitalsignal/d5": {
     "active":"true",

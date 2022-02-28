@@ -109,7 +109,7 @@ The following env.json file can be used on these boards:
 
 **env.json**
 
-```json
+``` json
 {
   "device": {
     "main": {

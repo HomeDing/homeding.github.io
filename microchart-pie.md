@@ -13,7 +13,7 @@ The Pie Microchart displays a pie with segments corresponding to the fraction of
 The Pie Chart requires to set the options to create the scale of the chart
 including the colors of the arc in the background.
 
-```json
+``` json
 chartAPI.setOptions({
   showTitle: false,
   showValue: false,
@@ -41,7 +41,7 @@ The Pie Chart has no additional elements to be added. The **add()** method is av
 
 The data passed to the **draw()** method is an array of objects with title, value and color. All but the value are optional.
 
-```Javascript
+``` javascript
 chartAPI.draw(
   { title: 'used', value: 800000, color: 'rgb(0,0,128)' },
   { title: 'reserved', value: 200000, color: 'hsl(180,50%,50%)'},

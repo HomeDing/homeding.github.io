@@ -47,7 +47,7 @@ The **ontime** event from the [Time Element] send the current time information t
 
 ## env.json configuration
 
-```json
+``` json
 {
   ...
   "ntptime": {
@@ -64,7 +64,7 @@ The **ontime** event from the [Time Element] send the current time information t
 
 In **config.json** the display items and the time related actions are configured:
 
-```json
+``` json
 {
   "tm1637": {
     "0": {

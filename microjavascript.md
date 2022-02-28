@@ -15,7 +15,7 @@ A template object is identified by the `u-control` property that must have a uni
 
 When using the template to create a new control a clone of the complete template object is copied into the right place in the document:
 
-```javascript
+``` javascript
 var newControl = insertTemplate(container, controlName, initialProperties)
 ```
 
@@ -25,7 +25,7 @@ For adding functionality to the new object the value of the `u-behavior` propert
 
 Here is an example of a simple control that displays a card with some specific information for a button control.
 
-```HTML
+``` html
 <div class='card' microID="${id}" u-control='button' u-behavior='button'>
   <div class="block header">
     <h2>${id}</h2>

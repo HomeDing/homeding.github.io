@@ -48,7 +48,7 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 ### Configuration Example
 
 
-```json
+``` json
 {
   "or": {
     "o": {

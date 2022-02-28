@@ -85,7 +85,7 @@ The timer element can run on it's own but can also be controlled by the followin
 ### Configuration Example
 
 
-```json
+``` json
 {
   "timer": {
     "led": {
@@ -116,7 +116,7 @@ The state of the timer element includes:
 
 ### Example for State
 
-```json
+``` json
 {
   "timer/relay": {
     "active": "true",

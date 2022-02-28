@@ -38,7 +38,7 @@ The following properties are available for configuration of the element:
 
 ## Example Configuration
 
-```json
+``` json
 {
   "webbutton": {
     "start": {

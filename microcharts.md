@@ -22,7 +22,7 @@ The micro-charts in the HomeDing UI are a set for SVG and JavaScript files that 
 To embed a micro-chart the `object` HTML element is used that not just displays
 the given initial SVG but also enables access to the implementation:
 
-```HTML
+``` html
 <object id="myChart" data="lineChart.svg" type="image/svg+xml" style="width:100%"></object>
 ```
 
@@ -39,7 +39,7 @@ The functionality for the chart is available when all files have been loaded by 
 As best practice the API should be extracted once and then stored in a variable that will be permanent available for direct access
 in a window onload handler.
 
-```JavaScript
+``` javascript
 var chartObj;
 var chartAPI;
 
@@ -60,7 +60,7 @@ Before adding any data to the chart the chart needs to be configured by adding t
 
 This is done by passing the overall configuration structure to the **setOptions** method like:
 
-```Javascript
+``` javascript
 chartAPI.setOptions({
   title: "Room Humidity",
   units: "%",
@@ -80,13 +80,13 @@ chartAPI.setOptions({
 
 With some chart types additional elements can be added by using the **add** method:
 
-```Javascript
+``` javascript
 chartAPI.add(...)
 ```
 
 The Data is added by using the **draw** method: 
 
-```Javascript
+``` javascript
 chartAPI.draw(...)
 ```
 

@@ -29,7 +29,7 @@ The Line Chart needs to be created by adding the individual elements:
 
 The data of the line chart must be an array of points with a x and y value;
 
-```JavaScript
+``` javascript
   var data = [
     { x: 0, y: 2 },
     { x: 1, y: 3 },
@@ -40,7 +40,7 @@ The data of the line chart must be an array of points with a x and y value;
 
 By adding a **line** element the id of the line is returned this id can be used to draw data using the line element.
 
-```JavaScript
+``` javascript
   var lineID = chartAPI.add('line', { linetype: 'line', color:'green' });
    chartAPI.draw(lineID, data);
 ```
@@ -53,7 +53,7 @@ When adding the **line** element the following options may be used:
 
 ## Add X-Axis
 
-```JavaScript
+``` javascript
 chartAPI.add('HAxis', options);
 ```
 
@@ -66,7 +66,7 @@ The following options may be used:
 
 ## Add Y-Axis
 
-```JavaScript
+``` javascript
 chartAPI.add('VAxis', options);
 ```
 
@@ -75,7 +75,7 @@ chartAPI.add('VAxis', options);
 
 By adding a horizontal line the y-range will probably be extended to include the line value. 
 
-```JavaScript
+``` javascript
 chartAPI.add('hline', options);
 ```
 
@@ -87,7 +87,7 @@ chartAPI.add('hline', options);
 
 ## Add Indicator
 
-```JavaScript
+``` javascript
 chartAPI.add('indicator', options);
 ```
 * **xFormat** - format of the x value. See *Data Formats* below.

@@ -152,7 +152,7 @@ Some of the ESP8266 ESP-01 boards use a (cheaper) flash chip from the vendor PUY
 
 For version 2.5.2 of the ESP8266 board package this can be enabled by adding the following code to the Esp.h file in `packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\Esp.h`.
 
-```cpp
+``` cpp
 #ifndef PUYA_SUPPORT
   #define PUYA_SUPPORT 1
 #endif

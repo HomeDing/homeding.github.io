@@ -31,7 +31,7 @@ Using the BEM naming convention is very popular to style implementations but her
 
 The cards layout element is used to wrap one context in a visual area. In the HomeDing UIs it is used to wrap one element or a summary of the complete device.
 
-```html
+``` html
 <div class="col">
   <div class="card">
     <div class="block">
@@ -84,6 +84,6 @@ The default visualization of elements with an `active`class + u-valueIndicator i
 
 Example:
 
-```html
+``` html
 <img >
 ```

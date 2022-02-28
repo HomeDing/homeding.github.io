@@ -53,7 +53,7 @@ The following properties are available for configuration of the element.
 
 ## Example Configuration
 
-```json
+``` json
 {
   "dstime": {
     "0": {
@@ -67,7 +67,7 @@ The following properties are available for configuration of the element.
 
 ## Element State
 
-```json
+``` json
 {
   "dstime/0": {
     "active":"true",

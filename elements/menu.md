@@ -81,7 +81,7 @@ This example shows how to control 2 values using a digitalin and a rotary elemen
 
 Rotary, digitalin ---> menu
 
-```json
+``` json
 {
   "rotary": {
     "0": {

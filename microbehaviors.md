@@ -17,7 +17,7 @@ Naming conventions are adapted to the Web Component Standard and is using a `u-`
 Behaviors provide a specific functionality for a web component specified in HTML. They are implemented by using a typescript class
 that extends the `MicroControlClass` or the `GenericWidgetClass`. When extending `GenericWidgetClass` some functionalities for representing a HomeDing element are already available.
 
-```Typescript
+``` typescript
 @MicroControl("switch")
 class SwitchWidgetClass extends GenericWidgetClass {
   onclick(e: MouseEvent) {

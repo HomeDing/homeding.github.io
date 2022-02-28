@@ -10,7 +10,7 @@ at a output pin.
 
 This shows how a timer can be used to "forward" the action from a alarm element to the digital output and give the signal a defined duration.
 
-```json
+``` json
 {
   "alarm": {
     "morning": {

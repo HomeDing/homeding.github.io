@@ -63,7 +63,7 @@ Other Elements are lightweight and also need no special libraries. As long as th
 Therefore the HomeDing library has a specific mechanism implemented to allow specifying what Elements are compiled and registered.
 This can be seen in all Example Sketches just before the `#include <HomeDing.h>` statement:
 
-```cpp
+``` cpp
 // Use all Core Elements of the HomeDing Library
 #define HOMEDING_INCLUDE_CORE
 
@@ -89,7 +89,7 @@ the MyElement needs to be registered into the ElementRegistry too (and only once
 As long as the Element is inside the project folder beside the sketch file the registration is placed in the
 MyElement.cpp file at the end and looks like this:
 
-```cpp
+``` cpp
 // Register MyElement in the ElementRegistry.
 bool MyElement::registered =
     ElementRegistry::registerElement("my", MyElement::create);
@@ -99,7 +99,7 @@ bool MyElement::registered =
 
 When transferred to the HomeDing library a `#define HOMEDING_INCLUDE_My` should be used to allow the sketch to select the available Elements.
 
-```cpp
+``` cpp
 #ifdef HOMEDING_REGISTER
 // Register MyElement in the ElementRegistry.
 bool MyElement::registered =

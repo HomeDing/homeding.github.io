@@ -28,7 +28,7 @@ This configuration enables the system and the dht element to get a sensor that c
 
 The env.json file should only contain the system configuration:
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -53,7 +53,7 @@ The env.json file should only contain the system configuration:
 
 The config.json file should contain the following configuration. More options are documented in the [DHT Element](/elements/dht.md) description.
 
-```json
+``` json
 {
   "dht": {
     "0": {

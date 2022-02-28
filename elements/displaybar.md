@@ -51,7 +51,7 @@ The following properties are available with the current values at runtime
 ## Configuration Example
 
 
-```json
+``` json
 {
   "displayBar": {
     ???
@@ -61,7 +61,7 @@ The following properties are available with the current values at runtime
 
 ## Example State
 
-```json
+``` json
 {
   "displayBar/on": {
     "value":"true",

@@ -43,7 +43,7 @@ Then the `onValue` actions on the map Element are sent.
 
 This example works on an incoming temperature and creates a green color for good values:
 
-```json
+``` json
 {
   "map": {
     "t": {
@@ -70,7 +70,7 @@ This example works on an incoming temperature and creates a green color for good
 
 Same with actions on the rules level. In the status the original inbound value will be reported
 
-```json
+``` json
 {
   "map": {
     "t": {
@@ -125,7 +125,7 @@ The following properties are available for configuration of the element:
 
 This example configuration enables using a numeric value (e.g. from a switch) into 2 color values used for a RGB LED.
 
-```json
+``` json
 {
   "map": {
     "colors": {
@@ -162,7 +162,7 @@ This example configuration enables using a numeric value (e.g. from a switch) in
 - sending out the action specified in the mapping entry
 
 
-```json
+``` json
 {
   "map": {
     "m": {
@@ -199,7 +199,7 @@ The following properties are available with the current values at runtime
 
 ### Example State
 
-```json
+``` json
 {
   "map/colors": {
     "active": "true",

@@ -18,7 +18,7 @@ Therefore the `inverse` mode is enabled and the initial (logical input) value is
 
 ## Configuration
 
-```json
+``` json
 {
   "timer": {
     "blink": {

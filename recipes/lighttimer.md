@@ -18,7 +18,7 @@ The configuration combines an digitalin, a timer, a switch and a digitalout elem
 
 * The switch value is sent to the digital output driving a LED or a relays.
 
-```json
+``` json
 {
   "digitalin": {
     "up": {

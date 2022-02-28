@@ -31,7 +31,7 @@ The Radio library is available in the Arduino library manager and must be instal
 
 To make the Radio Element available for configuration it needs to be included into the sketch compilation by activating it using the macro
 
-```cpp
+``` cpp
 #define HOMEDING_INCLUDE_RADIO 
 ```
 The RadioDing example uses this element to create a remote controllable radio that uses the 

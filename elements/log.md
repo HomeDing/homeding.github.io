@@ -63,7 +63,7 @@ From the base element implementation the following properties are available for 
 
 ### Configuration Example
 
-```json
+``` json
 {
   "log": {
     "temp": {
@@ -89,7 +89,7 @@ The following properties are available with the current values at runtime:
 
 ### Example State
 
-```json
+``` json
 {
   "log/t": {
     "active":"true",
@@ -108,7 +108,7 @@ The files format is a list of CSV values where the current javascript time (seco
 
 Example: 
 
-```json
+``` json
 1558409166,15
 1558409466,16
 1558409766,18

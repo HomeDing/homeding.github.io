@@ -22,7 +22,7 @@ meaning percentage of existing water.
 When the percentage drops below the given reference value in the configuration
 an onReference action with a value of 0 is triggered that will switch the LED on GPIO D0.
 
-```json
+``` json
 {
   "analog": {
     "0": {

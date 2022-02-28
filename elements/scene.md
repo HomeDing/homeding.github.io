@@ -49,7 +49,7 @@ From the base element implementation the following properties are available for 
 
 ### Example Configuration
 
-```json
+``` json
 {
   "scene": {
     "day": {
@@ -83,7 +83,7 @@ From the base element implementation the following properties are available for 
 
 ## State
 
-```json
+``` json
 {
   "scene/night": {
     "active": "true"

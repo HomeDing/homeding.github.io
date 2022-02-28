@@ -50,7 +50,7 @@ The following properties are available with the current values at runtime
 
 ## Example Configuration
 
-```json
+``` json
 {
   "pwmout": {
     "led": {
@@ -71,7 +71,7 @@ http://devdevice/$board/pwmout/led?value=255 -->
 
 ## Example State
 
-```json
+``` json
 ```
 
 ## Tags

@@ -29,7 +29,7 @@ On many boards there is a built-in LED attached to the GPIO2(D4).
 
 ## Configuration
 
-```json
+``` json
 {
   "rotary": {
     "0": {

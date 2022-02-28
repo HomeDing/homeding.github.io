@@ -65,7 +65,7 @@ the GPIO0(D3) can be exchanged. It is configured in the config.json file.
 
 This is a system configuration file for this example:
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -96,7 +96,7 @@ This configures for German timezone and unsafe mode. Please see documentation on
 
 This is a configuration file for this example:
 
-```json
+``` json
 {
   "time": {
     "clock": {

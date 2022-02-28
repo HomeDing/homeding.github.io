@@ -50,7 +50,7 @@ In the **env.json** file the device specific settings must be configured.
 * To enable timers a ntp time source is used here as well. This can be let out when no real-time is required for a specific use case.
 * enable safemode after full configuration.
  
-```json
+``` json
 {
   "device": {
     "0": {
@@ -80,7 +80,7 @@ In the **env.json** file the device specific settings must be configured.
 
 This is a very simple configuration for **config.json** that enables switching each relay on its own with HIGH as the default level.
 
-```json
+``` json
 {
   "switch": {
     "gpio0": {
