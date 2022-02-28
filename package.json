@@ -1,46 +1,26 @@
 {
-  "name": "homeding",
+  "name": "site",
   "version": "1.0.0",
-  "description": "Homeding documentation web site",
-  "main": "app.js",
-  "author": "Matthias Hertel",
-  "license": "BSD-3-Clause",
-
-  "directories": {
-    "example": "examples"
-  },
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "stylelint *.scss css/*.scss",
-    "build:css": "sass docstyle.scss docstyle.css",
-    "build:css-watch": "npm run build:css -- -w",
-    "build:server": "tsc",
-    "build": "npm run build:css && npm run build:server",
-    "prestart": "npm run build",
-    "start": "node app.js"
+    "clean": "rmdir _site /Q /S",
+    "start": "npx @11ty/eleventy --incremental --serve",
+    "start:clean": "npm run clean && npm run start",
+    "build": "npx @11ty/eleventy",
+    "build:clean": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HomeDing/homeding.github.io.git"
-  },
-  "keywords": [
-    "Homeding",
-    "doku"
-  ],
-  "bugs": {
-    "url": "https://github.com/HomeDing/homeding.github.io/issues"
-  },
-  "homepage": "https://github.com/HomeDing/homeding.github.io#readme",
-  "dependencies": {
-    "@types/debug": "^4.1.5",
-    "@types/express": "^4.17.12",
-    "@types/node": "^14.17.3",
-    "debug": "^4.3.2",
-    "express": "^4.17.1",
-    "typescript": "^4.3.2"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "shelljs": "^0.8.5",
-    "yargs": "^17.2.1",
-    "sass": "^1.49.7"
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0"
+  },
+  "dependencies": {
+    "debug": "^4.3.1",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-replace-link": "^1.1.0"
   }
 }
