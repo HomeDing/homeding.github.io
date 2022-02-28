@@ -129,7 +129,7 @@ The following action is implemented:
 
 ## See also
 
-* [WiFiManager](/wifimanager.md)
+* [WiFiManager](/dev/wifimanager.md)
 * [Device Logging](/dev/logger.md)
 * [deep sleep mode](/boards/deepsleep.md)
 * Cache-control http header : <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>

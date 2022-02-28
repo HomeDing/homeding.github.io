@@ -84,7 +84,7 @@ LogElement::LogElement()
 }
 ```
 
-See also [wifimanager](/wifimanager.md)
+See also [wifimanager](/dev/wifimanager.md)
 
 
 ### pushState(cbFunc)

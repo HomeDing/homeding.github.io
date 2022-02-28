@@ -4,7 +4,7 @@ id: ota
 tags: ["Element"]
 excerpt: >
   The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA).
-  **The update doesn't work in safemode** see [safemode](../safemode.md);
+  **The update doesn't work in safemode** see [safemode](/dev/safemode.md);
 ---
 
 # {{title}}
@@ -71,7 +71,7 @@ or to upload a SPIFFS image:
 
 ## See also
 
-- [safemode](../safemode.md)
+- [safemode](/dev/safemode.md)
 - Hardening the IoT device: https://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html
 
 ## Tags
