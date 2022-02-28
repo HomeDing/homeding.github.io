@@ -50,7 +50,7 @@ Included functionality:
 * A graphical overview of the defined actions between elements 
 
 See also
-[Embedded Web Site for HomeDing Devices](/website.md).
+[Embedded Web Site for HomeDing Devices](/dev/website.md).
 
 There is a reduced web site available for the boards and devices that have only 1MByte of Flash on board.
 
@@ -65,7 +65,7 @@ These are not static responses but computed results. The URLs used for the servi
 
 E.g. the current state of the elements can be requested from the device by asking for using the URL: <http://homeding/$board> \*
 
-More detailled information on the implemented services can be found in [Web Services](/webservices.md).
+More detailled information on the implemented services can be found in [Web Services](/dev/webservices.md).
 
 
 ## See also

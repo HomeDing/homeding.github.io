@@ -53,7 +53,7 @@ to add some specific elements for a specific solution. This can be done using th
 
 ### HOMEDING_INCLUDE_xxx Definitions.
 
-The HOMEDING_INCLUDE_xxx definitions control what elements will be registered in the [Element Registry](/elementregistry.md).
+The HOMEDING_INCLUDE_xxx definitions control what elements will be registered in the [Element Registry](/dev/elementregistry.md).
 
 In the *.ino file of every example you can find a list of HOMEDING_INCLUDE_xxx definitions that can be commented out or activated to specify what elements are later available for configuration. By disabling the definitions you can remove individual elements when they are not required to save program space.
 

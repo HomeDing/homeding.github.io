@@ -44,7 +44,7 @@ layout: toc.njk
 * [classes](/classes.md)
 * [elementcards](/dev/elementcards.md)
 * [elementinterface](/dev/elementinterface.md)
-* [webservices](/webservices.md)
+* [webservices](/dev/webservices.md)
 * [webversions](/webversions.md)
 * [_backend](/_backend.md)
 * [_exampledashbutton](/_exampledashbutton.md)

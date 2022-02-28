@@ -59,7 +59,7 @@ Under normal operating conditions when the device was added to the network the s
 
 The WiFiManager presents a minimal UI that shows some minimal information about the device and a form to configure the secured network access.
 
-![WiFiManager dialog](/wifimanager.png)
+![WiFiManager dialog](/dev/wifimanager.png)
 
 * The current devicename is displayed.
 * In the Network drop-down the local available WiFi networks are listed and the right network can be selected.

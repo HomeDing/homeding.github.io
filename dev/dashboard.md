@@ -10,7 +10,7 @@ excerpt: >
 
 {{excerpt}}
 
-![dashboard ui](/dashboard.png)
+![dashboard ui](/dev/dashboard.png)
 
 
 ## Dashboard features

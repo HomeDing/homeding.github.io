@@ -136,7 +136,7 @@ For simplicity on adding the new device to your home wifi network you may add th
 
 If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description at [Step by Step Bring your device to work](https://homeding.github.io/#page=/stepsnewdevice.md) <https://homeding.github.io/#page=/stepsnewdevice.md>.
 
-![WiFi Manager UI](/wifimanager.png)
+![WiFi Manager UI](/dev/wifimanager.png)
 
 Now everything regarding implementation of the sketch is done and the firmware can be compiled and uploaded.
 

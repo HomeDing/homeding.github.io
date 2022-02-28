@@ -114,5 +114,5 @@ The ElementRegistry holds references to all element classes to enable creating o
 
 This is done by initializing a static class member to enforce calling the registerElement method before anything else on every class.
 
-For more information on this see [Element Registry](/elementregistry.md).
+For more information on this see [Element Registry](/dev/elementregistry.md).
 

@@ -1,5 +1,6 @@
 ---
 title: Recipes Overview
+tags: "Recipe"
 ---
 
 # {{title}}
@@ -38,15 +39,8 @@ They show how multiple elements can be combined to create functionality beyond u
 <!-- * Display temperature from local sensor -->
 <!-- * [Display Time, temperature and humidity](/recipes/tempdisplay.md) -->
 
-
-## Combining Devices
+<!-- ## Combining Devices
 
 * Display temperature on remote display 
-* Switch a remote LED on and off
+* Switch a remote LED on and off -->
 
-
-[home](/index.md)
-
-## Tags
-
-#recipe

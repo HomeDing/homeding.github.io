@@ -37,7 +37,7 @@ The device can be accessed by any browser on the same network using the URL `htt
 
 **logLevel** - By specifying a logLevel for the device **all** elements will use this loglevel
 to output debug messages over the Serial interface and into the system log file.
-See also [Device Logging](/logger.md).
+See also [Device Logging](/dev/logger.md).
 
 **logFile** (boolean) - set to 1/true to enable storing lines from the system log to files. default: 0
 
@@ -47,7 +47,7 @@ See also [Device Logging](/logger.md).
 
 **sd** - The mDNS based service discovery can be switched off by setting this property to `false`.
 
-**safemode** (boolean) - This value can be set to 0/false to not use the safemode. See [safemode description](/safemode.md).
+**safemode** (boolean) - This value can be set to 0/false to not use the safemode. See [safemode description](/dev/safemode.md).
 
 
 ### WiFi-Manager and Startup settings
@@ -58,7 +58,7 @@ See also [Device Logging](/logger.md).
 
 **connectTime** - The available time after a reboot of the device to start network configuration. Default: "6s".
 
-Detailed description for `ConnectTime`, `button` and `led` see [WiFiManager](/wifimanager.md).
+Detailed description for `ConnectTime`, `button` and `led` see [WiFiManager](/dev/wifimanager.md).
 
 
 ### I2C bus
@@ -130,7 +130,7 @@ The following action is implemented:
 ## See also
 
 * [WiFiManager](/wifimanager.md)
-* [Device Logging](/logger.md)
+* [Device Logging](/dev/logger.md)
 * [deep sleep mode](/boards/deepsleep.md)
 * Cache-control http header : <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>
 

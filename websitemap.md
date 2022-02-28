@@ -87,7 +87,7 @@ GET <http://homeding/log.htm> <sup>*1</sup>
 
 This pages shows the latest logging messages of the device. Problems and Information that occurs while the device is operating can be found here.
 
-See also [Device Logging](/logger.md).
+See also [Device Logging](/dev/logger.md).
 
 
 ## Panel
@@ -101,7 +101,7 @@ The panel offers a different view to the configured elements in the device by li
 
 GET <http://homeding/$upload.htm> <sup>*1</sup>
 
-![Minimal Upload Form](/upload.png)
+![Minimal Upload Form](/steps/upload.png)
 
 This very bare implemented file upload utility supports uploading using drag & drop of files from a local folder onto the device.
 

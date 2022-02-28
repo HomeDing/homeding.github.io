@@ -85,7 +85,7 @@ LOGGER_RAW("init: path=%s cache_header=%s", path, cache_header);
 ```
 
 **Output:**
-```plaintext
+``` text
   >init: path=/ cache_header=NO-CACHE
 ```
 

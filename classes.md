@@ -25,7 +25,7 @@ The display implementations derive from this class.
 
 This is the base class for all Elements. It also implements some generic and utility functionality.
 
-See [Element Class Definition](/elementclass.md)
+See [Element Class Definition](/dev/elementclass.md)
 
 
 ### FileServer.h
@@ -35,13 +35,13 @@ Implementation of the web server request handler to handle access and upload of 
 
 ### HomeDing.h
 
-This file organizes including the elements into the sketch. This is described in detail in the [Element Class Registration](/elementregistry.md).
+This file organizes including the elements into the sketch. This is described in detail in the [Element Class Registration](/dev/elementregistry.md).
 
 
 ### ElementRegistry.cpp
 
 The Element Registry knows all the Element classes that can be configured.
-This is described in detail in the [Element Class Registration](/elementregistry.md).
+This is described in detail in the [Element Class Registration](/dev/elementregistry.md).
 
 
 ### Logger
@@ -49,7 +49,7 @@ This is described in detail in the [Element Class Registration](/elementregistry
 The Information, Errors and Traces that are produced during runtime are routed through this class.
 In case the logging feature of the device is switched on the errors are also stored to the log files.
 
-See: [Device Logging](/logger.md)
+See: [Device Logging](/dev/logger.md)
 
 
 ### MicroJsonComposer.cpp

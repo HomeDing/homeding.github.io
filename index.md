@@ -131,12 +131,13 @@ For some [boards](/boards/index.md) you can find reviews and summaries with a su
 Every device based on the Homeding library is connected to the local WiFi network and has a [Web Server](/concepts/paper04.md)
 With a small Web Site built-in to visualize the current functionality or to configure some new functionality using a standard web browser. 
 
-The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](/webservices.md).
+The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](/dev/webservices.md).
 
 
 ## Extend and Implement for your needs
 
-See: [Implementation References and Concepts](/implementation.md)
+See: [Implementation Concepts](/concepts/index.md)
+See: [Implementation References](/dev/index.md)
 
 
 ## Read more

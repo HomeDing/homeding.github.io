@@ -14,7 +14,7 @@ In addition some wiring for amplifier and speaker or headphone connectors are re
 
 If this is the first time you use an ESP8266 board, some instructions on how to setup your development environment can be found here:
 
-[Step by Step setting up a development environment](/stepsarduino.md)
+[Step by Step setting up a development environment](/steps/stepsarduino.md)
 
 There are some options in uploading the required software and registration on the network that s described here:
 
@@ -169,7 +169,7 @@ I added a 100nF capacitor next to the radio.
 ![radio chip](/examples/rda2.jpg)
 ![100nF capacitor](/examples/100nf.jpg)
 
-```plaintext
+``` text
 // http://lcddevice/$board/radio/r?volume=1
 // http://lcddevice/$board/radio/r?volume=12
 // http://lcddevice/$board/board/0?loglevel=1
