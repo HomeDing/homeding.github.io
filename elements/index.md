@@ -225,7 +225,7 @@ The [DisplayLine Element](/elements/displayline.md) shows a line on the display.
 
 <div style="clear:both"></div>
 
-More detailed information on displays and related elements can be found in [displays](/displays.md)
+More detailed information on displays and related elements can be found in [displays](/elements/displays.md)
 
 
 ## Time related Elements
@@ -262,7 +262,7 @@ The [Timer Element](/elements/timer.md) creates timer (duration) based actions.
 
 <div style="clear:both"></div>
 
-More detailed information on time element and time related implementation can be found in [time elements implementation](/timeelements.md).
+More detailed information on time element and time related implementation can be found in [time elements implementation](/elements/timeelements.md).
 
 
 ## System Elements

@@ -178,6 +178,6 @@ This allows storing about 2-4 days of logging information.
 ## See also
 
 * [examples](/examples/index.md)
-* [Boards overview](/boards.md)
+* [Boards overview](/boards/index.md)
 * [Recipes](/recipes/index.md)
 

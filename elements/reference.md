@@ -79,7 +79,7 @@ The following properties are available with the current values at runtime
 
 ## See also
 
-* [Elements](/elements/overview.md)
+* [Elements](/elements/index.md)
 * [Analog Element](/elements/analog.md)
 <!-- * [Thermostat Recipe](/recipes/thermostat.md) -->
   

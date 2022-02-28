@@ -6,7 +6,7 @@ title: Line Microchart
 
 The Line Microchart displays a series of values using a line on a x/y area with optional axis and reference lines.
 
-![LineChart Screenshot](/microchart-line.png)
+![LineChart Screenshot](/dev/microchart-line.png)
 
 
 ## Global Options
@@ -157,9 +157,9 @@ ranges analog vertical axis implementation.
 
 ## See also
 
-* [Micro Charts](/microcharts.md)
-* [Pie Chart](/microchart-pie.md)
-* [Gauge Chart](/microchart-gauge.md)
+* [Micro Charts](/dev/microcharts.md)
+* [Pie Chart](/dev/microchart-pie.md)
+* [Gauge Chart](/dev/microchart-gauge.md)
 
 
 ## Tags

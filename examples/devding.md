@@ -65,5 +65,5 @@ This feature comes at it's cost:
 ## See also
 
 * [examples](/examples/index.md)
-* [Boards overview](/boards.md)
+* [Boards overview](/boards/index.md)
 * [Recipes](/recipes/index.md)

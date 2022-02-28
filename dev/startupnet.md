@@ -8,7 +8,7 @@ After a reboot or when powering up a board the network connection needs to be es
 
 The following flow is implemented:
 
-![startupnetflow.png](/startupnetflow.png)
+![startupnetflow.png](/dev/startupnetflow.png)
 
 The full start of the board is delayed for 6 seconds to give the user the chance to start the setup mode. See [WiFi Manager](/wifimanager.md).
 

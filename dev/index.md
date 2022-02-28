@@ -7,6 +7,31 @@ title: Implementation topics
 Here is some information on extending the HomeDing library by implementing new elements.
 
 
+* [Serial Logger](/dev/logger.md)
+* [Element class](/dev/elementclass.md)
+* [Element registry](/dev/elementregistry.md)
+<!-- * [_microjson](/_microjson.md) -->
+<!-- * [_customelement](/_customelement.md) -->
+* [WiFi manager](/dev/wifimanager.md)
+* [The safemode](/dev/safemode.md)
+* [startup networking](/dev/startupnet.md)
+
+### Web-UI Implementation doku
+
+* [Introduction](/dev/micro.md)
+* [micro behaviors](/dev/microbehaviors.md)
+* [micro charts](/dev/microcharts.md)
+* [micro icons](/dev/microicons.md)
+* [micro javascript utils](/dev/microjavascript.md)
+* [micro style](/dev/microstyle.md)
+* [micro templates](/dev/microtemplates.md)
+* [website](/website.md)
+* [websitemap](/websitemap.md)
+<!-- * [monitor](/elements/_monitor.md) -->
+* [Portal](/dev/microportal.md)
+<!-- * [_iconsforthings](/_iconsforthings.md) -->
+
+
 ## Create a new Element implementation
 
 In the development example you can find a Element called "TemplateElement" that contains all function declarations, empty function implementation for an element that does nothing and some additional information as comments that help implementing new Elements.

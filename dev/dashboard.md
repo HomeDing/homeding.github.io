@@ -35,7 +35,7 @@ For existing elements the config parameters can be modified.
 
 ## Special Cards
 
-For [displays](/displays.md) and the display related elements like textElement, dotElement and lineElement
+For [displays](/elements/displays.md) and the display related elements like textElement, dotElement and lineElement
 there is an implementation that visualizes the actual situation on the display. 
 
 ![displaycard](/elements/displaycard.png)

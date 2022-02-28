@@ -30,7 +30,7 @@ and therefore can just be plugged into an USB board.
 
 The following steps assume a board of this kind but different boards will not work very different.
 
-See also [Boards supported by the HomeDing library](/boards.md)
+See also [Boards supported by the HomeDing library](/boards/index.md)
 
 
 ## Upload the appropriate sketch
@@ -128,7 +128,7 @@ This method is useful when starting with a new board.
 
 ### File Upload Utility
 
-![Builtin Upload Utility](/upload.png)
+![Builtin Upload Utility](/steps/upload.png)
 
 The firmware offers an upload interface as part of the embedded web server. This upload service can be used by the builtin minimal UI available at 
 <http://homeding/$upload.htm>. This UI is implemented with minimal size (looks plain ugly) but is part of the firmware.
@@ -142,7 +142,7 @@ To upload icon files for the elements in the `/i` folder you can click the `I-Up
 
 ### Web based Update
 
-![Builtin Upload Utility](/boot.png)
+![Builtin Upload Utility](/steps/boot.png)
 
 The firmware offers an update interface as part of the embedded web server.
 This is available at <http://homeding/$boot.htm>.
@@ -156,7 +156,7 @@ This method is also useful when starting with a new board.
 
 ### File Upload in IDE
 
-After an initial upload of files the built in [Micro IDE](/microide.md) can be used. 
+After an initial upload of files the built in [Micro IDE](/dev/microide.md) can be used. 
 It has a upload area that can be used to upload files into the filesystem like in File Upload Utility.
 
 Only files in the root folder (not /i/*.svg) can be uploaded.
@@ -164,7 +164,7 @@ Only files in the root folder (not /i/*.svg) can be uploaded.
 
 ### File Save in IDE
 
-The [Micro IDE](/microide.md) can create new files and can update existing files by entering text and saving it to a (new) filename.
+The [Micro IDE](/dev/microide.md) can create new files and can update existing files by entering text and saving it to a (new) filename.
 
 
 ### Using Upload tools like cUrl
@@ -185,4 +185,4 @@ Every device can have a special icon that you will recognize in the shortcut or 
 
 * [Standard Example](/examples/standard.md)
 * [Recipes](/recipes/index.md)
-* [Elements](/elements/overview.md)
+* [Elements](/elements/index.md)

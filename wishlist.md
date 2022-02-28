@@ -39,9 +39,9 @@ title: wishlist
 * [/boards/esp32/_g.md](/boards/esp32/_g.md) -
 * [/boards/esp32/_ttgo-lcd.md](/boards/esp32/_ttgo-lcd.md) -
 * [/boards/esp32/_ttgogallery.md](/boards/esp32/_ttgogallery.md) -
-* [/displays/_ili9341.md](/displays/_ili9341.md) -
-* [/displays/_ssd1331.md](/displays/_ssd1331.md) -
-* [/displays/_st7789.md](/displays/_st7789.md) -
+* [/displays/_ili9341.md](/elements/displays/_ili9341.md) -
+* [/displays/_ssd1331.md](/elements/displays/_ssd1331.md) -
+* [/displays/_st7789.md](/elements/displays/_st7789.md) -
 * [/elements/_ad5258.md](/elements/_ad5258.md) -
 * [/elements/_ads1115.md](/elements/_ads1115.md) -
 * [/elements/_bme280.md](/elements/_bme280.md) - Sensor for temperature, humidity and absolute barometric pressure.

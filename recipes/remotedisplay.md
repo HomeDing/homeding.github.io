@@ -36,7 +36,7 @@ This is specified typically in the `env.json` file that holds all the configurat
 and the directly connected actors, sensors and displays.
 Samples for this configuration can be found in the description of the display elements and some board descriptions.
 
-See also [displays](/displays.md) for a list of the supported displays.
+See also [displays](/elements/displays.md) for a list of the supported displays.
 
 Having done this configuration the display will be used on system startup showing the devicename and the assigned ip-address. 
 

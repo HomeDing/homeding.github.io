@@ -12,23 +12,28 @@ title: Software and Library Architecture
 
 These are the functional blocks of a device based on the HomeDing library:
 
-<img src="concepts/architectureblocks.png" alt="drawing" style="width:600px;height:420px"/>
+![Internal software architecture blocks](/concepts/architectureblocks.png "w600")
 
-The heart if the HomeDing library implementation is the board class that covers the creation and configuration of the elements and enables exchanging actions among the elements and the web server.
+The library provides a web server 
+as the **door** to the network that enables to use the UI from the files on the filesystem and by providing REST based services to interact with the device.
 
-The web server is the **door** to the network that enables to use the UI from the files on the filesystem and by providing REST based services to interact with the device.  
+The firmware contains a collection of elements that deliver a specific functionality like probing a sensor or controlling a digital output pin. They can be
+activated and configured by the configuration files. This allows flexible configurations and enhancements without re-programming the firmware to the device.
+
+The build-in Web UI that comes with the examples can be used out of the box as it configures itself to show the active used elements and their data on a dashboard.
 
 A micro implementation of a JSON parser and some utilities are provided for this central role.
 
 
 ## Building self-contained and autonomous Things
 
-In the market many Home Automation systems and gadgets are available that require to buy, build or use a central system that controls the Things.
+In the market many Home Automation systems and gadgets are available
+that require to buy, build or use a central system that controls the devices.
 
 
 ### No Cloud please – but as an option
 
-Amazon, Google and others are proving such a central system on the internet "in the cloud" that are used by companies to build central portals to control the IoT devices e.g. by voice.
+Amazon, Google and others are proving the central computing power on the internet "in the cloud" that are used by companies to build central portals to control the IoT devices e.g. by voice.
 Power sockets or bulbs e.g. need to be connected to the internet all time and some of your personal data needs to be shared with the cloud providers.
 
 Some of these systems offer real powerful features and cannot be easily replaced by a private system inside your household.

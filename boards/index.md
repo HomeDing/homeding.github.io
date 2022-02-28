@@ -5,18 +5,24 @@ description: Some Boards supported by the HomeDing library
 
 # {{title}}
 
-The HomeDing library supports a range of boards that use a ESP8266 or ESP32 system-on-chip processor.
+The HomeDing library can be used with many boards and manufacored devices
+that use a ESP8266 or ESP32 system-on-chip processor.
 
-On the market you find a lot of solutions like bare chip adapters, development boards, IoT devices off-the-shelf and even complete kits that use these chips. Here you find some common species that you may consider to use but also hints to use the processor directly.
+On the market you find a lot of solutions like bare chip adapters, development boards,
+IoT devices off-the-shelf and even complete kits that use these chips.
+Here you find some common species and bare processors described in detail that you may consider to use
+including hints for configuration and programming.
 
-Another good source of board descriptions and hints as well as references can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
+A good source of development board descriptions, hints as well as references can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
+
+In the Repository of Tasmota Supported Devices at <https://templates.blakadder.com/> many off-the-shell devices can be identified using a espressif processor.
 
 
 ## Full feature boards with 4 MByte flash memory
 
 The following boards with 4 MBytes flash memory have been used for development and their specialties can be found in the board reviews.
 
-* The [standard example](/examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements/overview.md) and [display adapters](/displays.md).
+* The [standard example](/examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements/index.md) and [display adapters](/elements/displays.md).
 * The web interface is working out of the box by using 1MByte of the flash memory and includes the Web UI, IDE features and logging capabilities.
 * These devices are used for `always-on` scenarios to provide the webserver functionality. Using a battery based power source will only result in a short lifetime maybe a few hours or days.
 * These devices have enough flash capacity to be updated over the network by using the OTA method.
@@ -103,7 +109,7 @@ Another adapter for the ESP-12 type boards including space for soldering compone
 
 ## ESP-12 module types
 
-ON the ESP-12 with 4 GByte Flash the [standard example](/examples/standard.md) can be uploaded by providing most of the [elements](/elements/overview.md) and [display adapters](/displays.md) out of the box.
+ON the ESP-12 with 4 GByte Flash the [standard example](/examples/standard.md) can be uploaded by providing most of the [elements](/elements/index.md) and [display adapters](/elements/displays.md) out of the box.
 
 The ESP-12 format is a common format but there are different sub-versions available. The all use the ESP8266 SoC but flash size and available pins differ:
 

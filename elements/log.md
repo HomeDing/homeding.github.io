@@ -20,7 +20,7 @@ The LogElement also supports calculating average values based on the values give
 
 For this element a visualization of the values in the log files is available that shows up as a line chart:
 
-![Log linechart](/microchart-line.png)
+![Log linechart](/dev/microchart-line.png)
 
 By reading the files directly they are available as sources for other purpose like analysis in excel as well.
 
@@ -49,7 +49,7 @@ The default is `datetime`.
 **yFormat** - datatype used to the second log value on the linechart, typically a meassured value.
 The default is `num`.
 
-See [Line Microchart](/microchart-line.md) for supported data types.
+See [Line Microchart](/dev/microchart-line.md) for supported data types.
 
 
 From the base element implementation the following properties are available for configuration:

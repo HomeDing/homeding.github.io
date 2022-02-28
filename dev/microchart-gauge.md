@@ -6,7 +6,7 @@ title: Gauge Microchart
 
 The Gauge Microchart displays a single value with a needle on a background scale like with analog meters.
 
-![GaugeChart Screenshot](/microchart-gauge.png)
+![GaugeChart Screenshot](/dev/microchart-gauge.png)
 
 
 ## Options
@@ -68,9 +68,9 @@ The **clear()** method will set the needle below minimum and clears the displaye
 
 ## See also
 
-* [Micro Charts](/microcharts.md)
-* [Line Chart](/microchart-line.md)
-* [Pie Chart](/microchart-pie.md)
+* [Micro Charts](/dev/microcharts.md)
+* [Line Chart](/dev/microchart-line.md)
+* [Pie Chart](/dev/microchart-pie.md)
 
 
 ## Tags

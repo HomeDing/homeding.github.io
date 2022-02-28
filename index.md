@@ -83,7 +83,7 @@ Special widgets are e.g. available for:
 - Chart -->
 
 The library is currently made especially for the ESP8266 based boards like the NodeMCU or similar ones.
-Many sensors, displays, input and output functionality is available as [elements](/elements/overview.md).
+Many sensors, displays, input and output functionality is available as [elements](/elements/index.md).
 
 The project is Open Source available on GitHub and all files are licensed under a BSD style license.
 See http://www.mathertel.de/License.aspx
@@ -107,7 +107,7 @@ Elements are the functional blocks for building and configuring a device and the
 
 Each element supports a unique feature, e.g. reads a sensor, drives a display, connects some peripheries or implements some internal logic.
 
-The list of the [elements](/elements/overview.md) already provided within this library, the [examples](/examples/index.md) and the [recipes](/recipes/index.md) show you the available features that can be configured.
+The list of the [elements](/elements/index.md) already provided within this library, the [examples](/examples/index.md) and the [recipes](/recipes/index.md) show you the available features that can be configured.
 
 It is intentionally easy to implement your own specific elements as you can see in some of the [examples](/examples/index.md).
 
@@ -123,7 +123,7 @@ The configuration of the device implemented as a JSON file activates and configu
 
 The HomeDing library can be used with almost any board that is using a ESP8266 processor.
 
-For some [boards](/boards.md) you can find reviews and summaries with a suitable the configuration of the system.
+For some [boards](/boards/index.md) you can find reviews and summaries with a suitable the configuration of the system.
 
 
 ## Web interface

@@ -40,7 +40,7 @@ Here is an example of a simple control that displays a card with some specific i
 ```
 
 How templates for elements are implemented and how to use the functionalities of the landing page and config page
-is explained in [Builtin Web server](/concepts/paper04.md)   and [Templates for Elements](/elementcards.md).
+is explained in [Builtin Web server](/concepts/paper04.md)   and [Templates for Elements](/dev/elementcards.md).
 
 
 In this example the outer element and the block structure of this control is given by the design of cards similar to the one you can find in the bootstrap framework.

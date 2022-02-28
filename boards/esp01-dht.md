@@ -67,7 +67,7 @@ The config.json file should contain the following configuration. More options ar
 
 ## See also
 
-* [Boards overview](/boards.md)
+* [Boards overview](/boards/index.md)
 * [DHT Element](/elements/dht.md)
 * [ESP-01 board](/boards/esp01.md)
 * [Outdoor sensor with solar](/stories/story-outdoorsensorsolar.md)

@@ -6,7 +6,7 @@ title: Pie Microchart
 
 The Pie Microchart displays a pie with segments corresponding to the fraction of the given values.
 
-![PieChart Screenshot](/microchart-pie.png)
+![PieChart Screenshot](/dev/microchart-pie.png)
 
 ## Options
 
@@ -60,9 +60,9 @@ The **clear()** method will remove the pie completely.
 
 ## See also
 
-* [Micro Charts](/microcharts.md)
-* [Line Chart](/microchart-line.md)
-* [Gauge Chart](/microchart-gauge.md)
+* [Micro Charts](/dev/microcharts.md)
+* [Line Chart](/dev/microchart-line.md)
+* [Gauge Chart](/dev/microchart-gauge.md)
 
 
 ## Tags

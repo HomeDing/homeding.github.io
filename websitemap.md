@@ -11,7 +11,7 @@ The following files are part of the web UI implementation:
 | File          | description                                         |
 | ------------- | --------------------------------------------------- |
 | /index.htm    | Home Page                                           |
-| /board.htm    | [Dashboard](/dashboard.md) with configured elements |
+| /board.htm    | [Dashboard](/dev/dashboard.md) with configured elements |
 | /microide.htm | IDE for modifying configuration                     |
 | /log.htm      | system log viewer                                   |
 | /ding.htm     | reduced Dashboard                                   |
@@ -78,7 +78,7 @@ GET <http://homeding/microide.htm> <sup>*1</sup>
 
 A minimal UI for changing text based files like HTML, CSS and JavaScript and the config.json file.
 
-See also [Micro IDE](/microide.md)
+See also [Micro IDE](/dev/microide.md)
 
 
 ## Logging Output

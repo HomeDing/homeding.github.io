@@ -11,7 +11,7 @@ you can find a lot of examples for configuration and recipes combining multiple 
 
 The standard example can be used as a good starting point.
 
-**Important Notice:** Examples will not only require to upload the sketch. It is as also required to upload the files from the `data` folder to the filesystem. If you like to see a full start-to-end building a device look into one of the [stories](/stories.md).
+**Important Notice:** Examples will not only require to upload the sketch. It is as also required to upload the files from the `data` folder to the filesystem. If you like to see a full start-to-end building a device look into one of the [stories](/stories/index.md).
 
 
 ## Examples
@@ -85,7 +85,7 @@ These examples require a specific hardware setup like sensors or displays to sol
 
 ## See also
 
-* [Stories](/stories.md) for Step by Step instructions
-* [Boards](/boards.md) for Board specific configurations
+* [Stories](/stories/index.md) for Step by Step instructions
+* [Boards](/boards/index.md) for Board specific configurations
 * [Recipes](/recipes/index.md) for Element configurations
 

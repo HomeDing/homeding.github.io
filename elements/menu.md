@@ -128,5 +128,5 @@ Rotary, digitalin ---> menu
 
 ## See also
 
-* [Elements](/elements/overview.md)
+* [Elements](/elements/index.md)
 * [Radio Example](/examples/radio.md)

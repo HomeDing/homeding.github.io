@@ -70,7 +70,7 @@ Links can be used trigger a navigation.
 
 ## Icons
 
-see [microicons](/microicons.md)
+see [microicons](/dev/microicons.md)
 
 
 ### u-valueindicator

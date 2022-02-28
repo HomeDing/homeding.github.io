@@ -71,7 +71,7 @@ The example includes the OTA upload feature to enable remote updates.
 
 ### 2. Upload the web ui files
 
-See [Step by Step uploading the files for the web UI](/stepsupdateweb.md).
+See [Step by Step uploading the files for the web UI](/steps/stepsupdateweb.md).
 
 The files for such minimal devices are reduced and available in the `v03m` folder (not `v03`).
 Please be sure to adjust the URL by appending #v03m like <http://outdoor/$update.htm#v03m>.

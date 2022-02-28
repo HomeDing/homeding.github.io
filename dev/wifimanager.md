@@ -15,7 +15,7 @@ Wifi Network named HomeDingNNNNNN using the 192.168.4.xxx ip range. The device i
 Any device like mobile phone or laptop with WLAN can join this network for configuration.
 :::
 
-There is a walk-through description on how to use the WiFi Manager in [Step by Step Bring your device to work](/stepsnewdevice.md). 
+There is a walk-through description on how to use the WiFi Manager in [Step by Step Bring your device to work](/steps/stepsnewdevice.md). 
 
 
 ## Wifi Setup Dialog
@@ -69,7 +69,7 @@ The WiFiManager presents a minimal UI that shows some minimal information about 
 
 The WiFi manager UI can also be accessed during normal operation using the link <http://homeding/$setup.htm>.
 
-How to bring a device from an empty board into full operating can be found in [Setup a new device Step by Step](/stepsnewdevice.md)
+How to bring a device from an empty board into full operating can be found in [Setup a new device Step by Step](/steps/stepsnewdevice.md)
 
 
 ## WiFi Manager Configuration

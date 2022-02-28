@@ -11,6 +11,8 @@ They show how multiple elements can be combined to create functionality beyond u
 
 ## Combining Elements
 
+* [Simple LED blink](/recipes/blink.md) - Using a timer and a digital output
+* [Create Alarm actions](/recipes/alarm.md)
 * [LED recipe](/recipes/led.md) - Using a button switch a digital output with a LED on and off.
 * [LED Dimming recipe](/recipes/led.md) - Dimming a LED using 2 momentary buttons.
 * [LED Rotary recipe](/recipes/ledrotary.md) - Dimming LED using a rotary encoder.
@@ -19,18 +21,22 @@ They show how multiple elements can be combined to create functionality beyond u
 * [Control Brightness](/recipes/brightness.md) - Use an additional [value](/elements/value.md)
     and [State Element](/elements/state.md) to control the brightness of a display.
 * [LDR switch](/recipes/ldrswitch.md) - use a LDR to create a touchless on/off switch.
-* [Plant Watering](/recipes/water.md) - Use a timer and button to give water to plants.
-* [Soil Moisture Sensor](/recipes/capasoil.md) - Use a timer and button to give water to plants.
+* [Create plant watering](/recipes/water.md) - Use a timer and button to give water to plants.
 * [Logic Elements](/recipes/logic.md) - Combine values with logical operators.
+* [Use a timer for lights](/recipes/lighttimer.md)
+* [Use a remote button](/recipes/remotebutton.md)
+* [Use a remote display](/recipes/remotedisplay.md)
+* [Use a servo](/recipes/servo.md)
+* [Display temperature](/recipes/tempdisplay.md)
+
 
 ## Using Sensors
 
 * [Logging Temperature Sensor](/recipes/templogger.md) - Use a DHT sensor and the log element to record values.
+* [Soil Moisture Sensor](/recipes/capasoil.md) - Use a timer and button to give water to plants.
 
 <!-- * Display temperature from local sensor -->
 <!-- * [Display Time, temperature and humidity](/recipes/tempdisplay.md) -->
-
-<!-- * [Alarm with timer for duration](/recipes/alarm.md) -->
 
 
 ## Combining Devices

@@ -35,7 +35,7 @@ Like in the Actor Model the functionality is encapsulated inside the components 
 to the outer world but differ in the inner implementation.
 This is the concept of the Elements you find in the HomeDing library.
 
-See [Elements](/elements/overview.md) for the list of available element implementations
+See [Elements](/elements/index.md) for the list of available element implementations
 and [Sensors](/sensors/sensors.md) for the list of supported sensors.
 
 The common interface is about supporting the life cycle:
@@ -53,7 +53,7 @@ The standard interface of every Element is defined by the base `Element` class. 
 
 ![Members of Element implementations](/concepts/elementapi.png)
 
-A detailed description of the common Element Interface can be found in [ElementInterface](/elementinterface.md).
+A detailed description of the common Element Interface can be found in [ElementInterface](/dev/elementinterface.md).
 
 
 ## Configure and Interact with Elements 
@@ -127,7 +127,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 * Parse the env.json file.
 
-  Here the system elements like the [Device](/elements/device.md), the [displays](/displays.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
+  Here the system elements like the [Device](/elements/device.md), the [displays](/elements/displays.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
 
   These elements will be created.
 

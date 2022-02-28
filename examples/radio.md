@@ -18,7 +18,7 @@ If this is the first time you use an ESP8266 board, some instructions on how to 
 
 There are some options in uploading the required software and registration on the network that s described here:
 
-[Step by Step Bring your device to work](/stepsnewdevice.md)
+[Step by Step Bring your device to work](/steps/stepsnewdevice.md)
 
 This includes: 
 

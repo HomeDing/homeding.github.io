@@ -45,7 +45,7 @@ For the HomeDing device website the `id` like `button/left` and the `type` like 
 
 ## Templates for Elements
 
-The main purpose templates are used for are the individual cards for every configured element on the [dashboard](/dashboard.md).
+The main purpose templates are used for are the individual cards for every configured element on the [dashboard](/dev/dashboard.md).
 
 Every time a new element is found in the configuration the corresponding template is cloned. If no specific template for the element can be found the general usable template `generic` is used instead. 
 
@@ -67,8 +67,8 @@ micro.insertTemplate(root: HTMLElement, controlName: string, props: Object): HTM
 
 ## See also
 
-* [Micro Implementations](/micro.md)
-* [microbehaviors](/microbehaviors.md)
+* [Micro Implementations](/dev/micro.md)
+* [microbehaviors](/dev/microbehaviors.md)
 * https://www.webcomponents.org/
 * https://html.spec.whatwg.org/multipage/scripting.html#the-template-element
 * https://johnresig.com/blog/javascript-micro-templating/

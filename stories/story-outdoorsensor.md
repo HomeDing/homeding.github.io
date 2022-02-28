@@ -87,7 +87,7 @@ as the HomeDing library relies on some common extra libraries for sensors and di
 Sometimes (with unknown reasons) the installation of the libraries fails so all the required libraries need to be installed manually.
 
 More details about the required libraries can be found on the documentation website at 
-<https://homeding.github.io/#page=/elements/overview.md>.
+<https://homeding.github.io/#page=/elements/index.md>.
 
 
 ## Upload the standard example sketch
@@ -127,7 +127,7 @@ When you do not want to hard-code your network passphrase use the built-in WiFi 
 by joining the temporary device hotspot named `homeding-xxxxxx` and opening
 [http://192.168.4.1/$setup](http://192.168.4.1/$setup).
 
-A more detailed description on this process can be found on the page [Step by Step Bring your device to work](/stepsnewdevice.md).
+A more detailed description on this process can be found on the page [Step by Step Bring your device to work](/steps/stepsnewdevice.md).
 
 
 ## Upload the web UI
@@ -136,7 +136,7 @@ This steps enables the Web UI of the device by uploading the required files into
 
 The simplest way to do this is by using the Builtin Web based Upload Utility that can be reached at <http://ESP-xxxxxx/$update.htm>.
 
-![Builtin Upload Utility](/boot.png)
+![Builtin Upload Utility](/steps/boot.png)
 
 By pressing the start button all required files from the homeding documentation website are transferred to the device.
 
