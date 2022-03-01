@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Support of the INA226 current and voltage sensor chips.'>
+  <title>The INA226 Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>The INA226 Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#ina226"></use></svg><p>The INA226 is a current and voltage sensor that uses the I2C bus for communication that can measure voltages up to 26V on high-side or low-side and current in various ranges .</p>
+</div>
+<p>The modules often com with 4 connectors and breaks out the 4 signal sensing pins from the chip:
+VBUS, VIN+, VIN- and GND. This allows to use the module for current measurement using the built-in shunt in the high-side or low-side.</p>
+<p>The implementation derives from the &quot;SensorElement&quot; class, see <a href="./sensors.md">Sensor Element Implementation</a>.</p>
+<h2>High-Side Shunt</h2>
+<p>This version of connecting power supply and the consumer is according to the Figure 21 in the datasheet where the GND level is shared with Load, Power supply and the I2C bus.</p>
+<p>This is my preferred version of using the INA226.</p>
+<table>
+<thead>
+<tr>
+<th>Board Connector</th>
+<th>INA266 Manual</th>
+<th>Power connection</th>
+<th>Load Connection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V+</td>
+<td>&quot;VBUS&quot;</td>
+<td>Power VCC (0 to 36V)</td>
+<td></td>
+</tr>
+<tr>
+<td>Current+</td>
+<td>&quot;VIN+&quot;</td>
+<td>Power VCC (0 to 36V)</td>
+<td></td>
+</tr>
+<tr>
+<td>Current-</td>
+<td>&quot;VIN-&quot;</td>
+<td></td>
+<td>Load VCC</td>
+</tr>
+<tr>
+<td>V-</td>
+<td>&quot;GND&quot;</td>
+<td>Power GND</td>
+<td>Load GND</td>
+</tr>
+</tbody>
+</table>
+<p>Internally V-, GND and I2C-GND is connected.</p>
+<h2>Low-Side Shunt</h2>
+<p>Just to document:</p>
+<table>
+<thead>
+<tr>
+<th>Board Connector</th>
+<th>INA266 Manual</th>
+<th>Power connection</th>
+<th>Load Connection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V+</td>
+<td>&quot;VBUS&quot;</td>
+<td>Power VCC (0 to 36V)</td>
+<td>Load VCC</td>
+</tr>
+<tr>
+<td>Current+</td>
+<td>&quot;VIN+&quot;</td>
+<td></td>
+<td>Load GND</td>
+</tr>
+<tr>
+<td>Current-</td>
+<td>&quot;VIN-&quot;</td>
+<td>Power GND</td>
+<td></td>
+</tr>
+<tr>
+<td>V-</td>
+<td>&quot;GND&quot;</td>
+<td>Power GND</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Internally V-, GND and I2C-GND is connected.</p>
+<h2>I2C bus connectivity</h2>
+<p>The I2C Connection is as usual. The VCC must be provided from the ESP8266 board using 3.3V.</p>
+<p>In the <a href="/elements/device.htm">Device Element</a> the SCL and SDA pins for the I2C bus need to be specified.
+These also must be connected to the INA226 board.</p>
+<p>The board needs +3.3V VCC power and requires some mA only so regulator on the ESP board can provide this.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">ESP board</th>
+<th style="text-align:center">INA226 board</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">GND</td>
+</tr>
+<tr>
+<td style="text-align:center">3V3</td>
+<td style="text-align:center">VCC</td>
+</tr>
+<tr>
+<td style="text-align:center">D2</td>
+<td style="text-align:center">SCL</td>
+</tr>
+<tr>
+<td style="text-align:center">D1</td>
+<td style="text-align:center">SDA</td>
+</tr>
+</tbody>
+</table>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

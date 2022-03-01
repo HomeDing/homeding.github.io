@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Sonoff Basic (R1)</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Sonoff Basic (R1)</h1>
+<div class="plaincard"><p>The Sonoff Basic is a smart relay off-the-shelf product using a ESP8266 with 1MByte Flash.</p>
+</div>
+<p><img src="/boards/sonoffbasic.jpg" alt="Sonoff Basic" title="w200"></p>
+<p>Sonoff ITEAD is a brand for several off-the-shelf Smart Home WLAN devices like switches that use the ESP8266 chip.
+They were one of the first companies selling these type of devices to the market that were usable for uploading custom firmware.
+Today many brands use these chips and there is a huge community that supports re-flashing these devices with a new firmware.</p>
+<p>The <a href="/examples/minimal.htm">Minimal Example</a> can be flashed onto his device to support a remote switch
+with options for time based switching.</p>
+<h2>GPIO usage</h2>
+<table>
+<thead>
+<tr>
+<th>GPIO#</th>
+<th>Component</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO13 (D7)</td>
+<td>led</td>
+<td>LED (green), (0 to switch on).</td>
+</tr>
+<tr>
+<td>GPIO0 (D3)</td>
+<td>button</td>
+<td>button, can also be used for start flashing</td>
+</tr>
+<tr>
+<td>GPIO12 (D6)</td>
+<td>relay</td>
+<td>relay, (1 to switch on).</td>
+</tr>
+<tr>
+<td>GPIO14 (D5)</td>
+<td>--</td>
+<td>available on connector</td>
+</tr>
+</tbody>
+</table>
+<div class="warning"><h3>Warning</h3>
+<ul>
+<li>This warning is serious.</li>
+<li>Never handle projects that are connected to the mains voltage.</li>
+<li>Stay away from devices with contact to mains voltage.</li>
+<li>Uploading firmware to devices that have contact to mains voltage is dangerous.</li>
+<li>DO NOT connect the any device to the mains during flashing or while using the serial interface.</li>
+<li>You may kill your computer and yourself.</li>
+<li>The USB-Serial adapters offer enough power to flash the device.</li>
+<li>When you are making these kind of projects you really need to know what you are doing.</li>
+<li>I have warned you, do not blame on me.</li>
+</ul>
+</div>
+<h2>Example env.json configuration</h2>
+<p>This configuration registers the device with the name &quot;sonoff01&quot; on the networks and enables using the button during boot for starting into the configuration mode.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"sonoff01"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Sonoff Basic R1"</span><span class="token punctuation">,</span><br>      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/ding.htm"</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">8266</span><span class="token punctuation">,</span><br>      <span class="token property">"passwd"</span><span class="token operator">:</span> <span class="token string">"123"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Listen for 'over the air' OTA Updates"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Example config.json configuration</h2>
+<p>This configuration allows switching the relay using the button and showing the relay state using the LED.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"button"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"switch/relay?toggle=1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"relay"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?value=$v,digitalout/relay?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"relay"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"false"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>How to flash</h2>
+<p><img src="/boards/sonoffflash.jpg" alt="Sonoff Basic Flash" title="w200"></p>
+<table>
+<thead>
+<tr>
+<th>Adapter</th>
+<th>S20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GND</td>
+<td>Gnd</td>
+</tr>
+<tr>
+<td>RX</td>
+<td>TX</td>
+</tr>
+<tr>
+<td>TX</td>
+<td>RX</td>
+</tr>
+<tr>
+<td>3.3V</td>
+<td>3.3V &lt; Marker</td>
+</tr>
+</tbody>
+</table>
+<p>Installing ESPEasy Firmware on an Itead Sonoff S20 Smart Socket: <a href="https://www.youtube.com/watch?time_continue=429&amp;v=GbaMF6zfQZU&amp;feature=emb_logo">https://www.youtube.com/watch?time_continue=429&amp;v=GbaMF6zfQZU&amp;feature=emb_logo</a></p>
+<p>The on-board button is pulling GPIO0 down and can be used to start the programming mode when holding down while connecting the adapter.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/digitalin.htm">DigitalIn Element</a></li>
+<li><a href="/elements/switch.htm">Switch Element</a></li>
+<li><a href="/elements/digitalout.htm">DigitalOut Element</a></li>
+<li><a href="http://www.andremiller.net/content/programming-an-itead-sonoff-wireless-smart-switch-esp8266">http://www.andremiller.net/content/programming-an-itead-sonoff-wireless-smart-switch-esp8266</a></li>
+<li><a href="https://www.jackenhack.com/sonoff-switch-i2c/">https://www.jackenhack.com/sonoff-switch-i2c/</a></li>
+</ul>
+<h2>Tags</h2>
+<p>#board</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

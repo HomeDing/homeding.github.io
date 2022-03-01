@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>The Switch Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>The Switch Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#switch"></use></svg><p>The SwitchElement is used to toggle the state of a boolean value to on or off by a single action.</p>
+</div>
+<p>It is implemented as a special value element using the range 0 to 1 and can be used with the menu element.</p>
+<h2>Web UI for the Switch Element</h2>
+<p>There is a dedicated card for this element available that will be used for the web server config and landing pages:</p>
+<p><img src="/elements/switchui.png" alt="Switch Web UI"></p>
+<p>The Web UI for the Switch Element shows the actual state of the switch and the output value as a green/red signal.</p>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element.</p>
+<p><object data="/element.svg?switch" type="image/svg+xml"></object></p>
+<p>In some cases it is required to use a momentary input to change the state of a boolean value from on to off and reverse.</p>
+<p>It is also possible to use multiple momentary input elements even from external devices located at different places for the same switch.</p>
+<h2>Inbound Actions</h2>
+<p>The actions received by the switch element can set the value to a specific logical level or toggle the existing level.</p>
+<p><strong>switch/{id}/toggle=1</strong> this inbound action will toggle the logical level of the switch from High to Low and reverse.</p>
+<p><strong>switch/{id}/value={n}</strong> this inbound action will set the logical level of the switch to the given value.
+The passed value of <code>0</code> will set the value of the switch to <code>0</code>.
+All other passed values will set the value of the switch to <code>1</code>.</p>
+<h2>Outbound Actions</h2>
+<p>The actions emitted by the switch element are following the common naming conventions also found in other elements.</p>
+<p><strong>onHigh</strong> - these actions are send when a logical level from a digital input a timer or a switch is changing to a HIGH value.
+The value given in the actions is <code>1</code>.</p>
+<p><strong>onLow</strong> - these actions are send when a logical level from a digital input a timer or a switch is changing to a LOW value.
+The value given in the actions is <code>0</code>.</p>
+<p><strong>onValue</strong> - these actions are send when a logical level from a digital input a timer or a switch is changing its value.
+The value given in the actions is <code>0</code> or <code>1</code>.</p>
+<h2>State</h2>
+<p>The following properties are available with the current values at runtime</p>
+<p><strong>active</strong> - Is set to true when the element is active.</p>
+<p><strong>value</strong> - Current output value of the element.</p>
+<h2>Examples</h2>
+<p>The Digital In Element gets the level of an GPIO pin and when released sends an action to the switch element to toggle the value.</p>
+<p>The switch has the current value modified and send a action to the digital output element driving the onboard LED at D4</p>
+<p><img src="/recipes/in-switch-out.png" alt="Input Switch Output"></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Input momentary button"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"switch/light?toggle=1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Control light level"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>To use a momentary button at another device the digital input there can use a remote device to send actions to the same switch element.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Input momentary button"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"remote/light?toggle=1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"remote"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Light at kitchen device"</span><span class="token punctuation">,</span><br>      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"kitchending"</span><span class="token punctuation">,</span><br>      <span class="token property">"remoteid"</span><span class="token operator">:</span> <span class="token string">"switch/light"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

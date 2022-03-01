@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Board Review ESP8266 with OLED</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Board Review ESP8266 with OLED</h1>
+<p><img src="/boards/wemosoled.jpg" alt="wemosoled.png"></p>
+<p>This board is offered on eBay by some local and Chinese vendors and combines a ESP8266 with an OLED display.</p>
+<h2>Overview table</h2>
+<table>
+<thead>
+<tr>
+<th>GPIO</th>
+<th>Pin</th>
+<th>Functionality</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>AD</td>
+<td>Analog input</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO16</td>
+<td>D0</td>
+<td>connector</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO5</td>
+<td>D1</td>
+<td>connector</td>
+<td>I2C-SDA for display</td>
+</tr>
+<tr>
+<td>GPIO4</td>
+<td>D2</td>
+<td>connector</td>
+<td>I2C-SCL for display</td>
+</tr>
+<tr>
+<td>GPIO0</td>
+<td>D3</td>
+<td>Button FLASH</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO2</td>
+<td>D4</td>
+<td>connector, LED</td>
+<td>LED on ESP-12</td>
+</tr>
+<tr>
+<td>GPIO14</td>
+<td>D5</td>
+<td>connector</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO12</td>
+<td>D6</td>
+<td>connector</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO13</td>
+<td>D7</td>
+<td>connector</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO15</td>
+<td>D8</td>
+<td>connector</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO3</td>
+<td>D9</td>
+<td>connector</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO1</td>
+<td>D10</td>
+<td>connector</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>---</td>
+<td>I2C address for display</td>
+<td>60 (=0x3c)</td>
+</tr>
+<tr>
+<td></td>
+<td>---</td>
+<td>Display size</td>
+<td>128 * 64</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td></td>
+<td>Button RST</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Features</h2>
+<p>It is a board that combines the nodeMCU setup with a OLED.</p>
+<p>The display is using the OLED technology and the SSD1306 chip is attached using the I2C bus. A library for driving this chip is available &quot;ESP8266 and ESP32 Oled Driver for SSD1306 display&quot;.
+It supports the 128x64 pixel of the display.</p>
+<p>The blue LED on the ESP-12 can be used GPIO2(D4).</p>
+<p>The FLASH and RESET buttons are available like on the nodeMCU boards.</p>
+<h2>Critics</h2>
+<h2>Onboard LED</h2>
+<h3>No real Low Power</h3>
+<p>The OLED display is good quality, but it is taking some power even when not used.
+That makes this combination almost useless for pure battery appliances when a long lifetime is required.</p>
+<h3>I2C / WIRE Bus</h3>
+<p>The internally used I2C Bus for the connection with the OLED is also available on the connectors.
+Therefore it is possible to add more I2C bus devices on the same bus.</p>
+<p>Also the board doesn't use the common and default pins that are defined by
+SCL=GPIO5(D1) and SDA=GPIO4(D2).</p>
+<p>The board uses</p>
+<ul>
+<li><code>SCL</code> = <code>GPIO4</code> (<code>D2</code>) (yellow) and</li>
+<li><code>SDA</code> = <code>GPIO5</code> (<code>D1</code>) (blue)</li>
+</ul>
+<h2>Board configuration</h2>
+<p>The display configuration is the only specific entry in env.json:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"wemosding"</span><span class="token punctuation">,</span><br>      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"IoT Ding with display"</span><span class="token punctuation">,</span><br>      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"I2C-SDA"</span><span class="token operator">:</span> <span class="token string">"D1"</span><span class="token punctuation">,</span><br>      <span class="token property">"I2C-SCL"</span><span class="token operator">:</span> <span class="token string">"D2"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"passwd"</span><span class="token operator">:</span> <span class="token string">"123"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ssdp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"ModelUrl"</span><span class="token operator">:</span> <span class="token string">"https://www.mathertel.de/Arduino"</span><span class="token punctuation">,</span><br>      <span class="token property">"Manufacturer"</span><span class="token operator">:</span> <span class="token string">"Matthias Hertel"</span><span class="token punctuation">,</span><br>      <span class="token property">"ManufacturerURL"</span><span class="token operator">:</span> <span class="token string">"https://www.mathertel.de"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"displaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"local display"</span><span class="token punctuation">,</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x3C"</span><span class="token punctuation">,</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/i2c.htm">Using the I2C bus</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Using IO pins of the ESP8266 based boards</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Using IO pins of the ESP8266 based boards</h1>
+<p>The ESP8266 17 General Purpose Input/Output (GPIO) pins that can be used for a variety of uses.</p>
+<p>However,</p>
+<ul>
+<li>Some IO Pins do have a special purpose when booting up the chips</li>
+<li>Some functionalities are not available to all the ports</li>
+<li>Some Boards do not expose all available ports to the connectors</li>
+<li>Some Boards use the ports for some extra features they provide.</li>
+</ul>
+<p>The following overview of the ESP8266 chip and boards was helpful for me to collect all the restrictions.</p>
+<h2>Table of pins</h2>
+<p>The following table is using the <strong>GPIO</strong> pin numbers. They are equivalent to the IOxx numbers in the <a href="https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf">ESP8266 Technical Reference</a> document.</p>
+<p>The Pin notation <strong>Dxx</strong> was introduced by the NodeMCU and are written on some boards near to the connector pins. In the NodeMCU documentation they are also called &quot;IO index&quot;. The numbers differ from the GPIO numbers.</p>
+<p>Not mentioned here are the pin numbers on the real chip. If you need to used them directly, have a look into the <a href="https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf">ESP8266 Technical Reference</a>.</p>
+<table>
+<thead>
+<tr>
+<th>GPIO</th>
+<th>Pin</th>
+<th>Special function</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO0</td>
+<td>D3</td>
+<td>Boot mode select, <strong>flash</strong> switch</td>
+<td>HIGH during normal boot, LOW for flashing, output is possible with active=LOW</td>
+</tr>
+<tr>
+<td>GPIO1</td>
+<td>D10</td>
+<td>Serial0-TX</td>
+<td>Limited usage for IO</td>
+</tr>
+<tr>
+<td>GPIO2</td>
+<td>D4</td>
+<td>PWM, Serial1-TX, Boot, LED(module)</td>
+<td>Keep HIGH while booting, sends debug info at boot time, output-active-LOW</td>
+</tr>
+<tr>
+<td>GPIO3</td>
+<td>D9</td>
+<td>Serial0-RX</td>
+<td>Limited usage for IO</td>
+</tr>
+<tr>
+<td>GPIO4</td>
+<td>D2</td>
+<td>I2C - SDA</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO5</td>
+<td>D1</td>
+<td>I2C - SCL</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO6</td>
+<td>--</td>
+<td>SDIO</td>
+<td>cannot be used</td>
+</tr>
+<tr>
+<td>GPIO7</td>
+<td>--</td>
+<td>SDIO</td>
+<td>cannot be used</td>
+</tr>
+<tr>
+<td>GPIO8</td>
+<td>--</td>
+<td>Serial1-RX, SDIO</td>
+<td>cannot be used</td>
+</tr>
+<tr>
+<td>GPIO9</td>
+<td>D11</td>
+<td>SDIO</td>
+<td>cannot be used</td>
+</tr>
+<tr>
+<td>GPIO10</td>
+<td>D12</td>
+<td>SDIO</td>
+<td>cannot be used</td>
+</tr>
+<tr>
+<td>GPIO11</td>
+<td>--</td>
+<td>SDIO</td>
+<td>cannot be used</td>
+</tr>
+<tr>
+<td>GPIO12</td>
+<td>D6</td>
+<td>PWM, MISO</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO13</td>
+<td>D7</td>
+<td>MOSI</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO14</td>
+<td>D5</td>
+<td>PWM, SCK</td>
+<td></td>
+</tr>
+<tr>
+<td>GPIO15</td>
+<td>D8</td>
+<td>PWM, SS, Boot</td>
+<td>Keep LOW while booting, output-active-HIGH</td>
+</tr>
+<tr>
+<td>GPIO16</td>
+<td>D0</td>
+<td>deep sleep reset, LED(board)</td>
+<td>cannot be used when using deep sleep mode, must be connected to RST for deep-sleep mode.</td>
+</tr>
+</tbody>
+</table>
+<h3>Onboard LEDs</h3>
+<p>On boards using a ESP-12 module the Blue LED on ESP-12 can be switched on by pulling the GPIO2(D4) output to LOW.</p>
+<p>The NodeMCU boards also have a LED attached to the port GPIO16(D0) that also can be switched on pulling the GPIO2(D4) output to LOW.
+This is a conflict with the deep sleep mode that requires to connect GPIO16 to the RESET. Using the LED will cause a reset in this case.</p>
+<h3>Serial communication</h3>
+<p>By default the boards use the Serial port #0 to receive and send logging information and to upload new sketches.
+On many boards these 2 pins GPIO1(D10), GPIO3(D9) are connected to the USB chip to make these available to you computer.</p>
+<p>As long as you need to upload new sketches and see your debug output these pins should not be used.</p>
+<h3>Booting</h3>
+<p>The pins GPIO0(D3), GPIO2(D4) and GPIO15 do have a special meaning when the chip is started after a reset. They control to</p>
+<ul>
+<li>load a sketch from the onboard flash file system</li>
+<li>start uploading a new sketch into the flash</li>
+<li>load a sketch from a SD card (not used by current boards)</li>
+</ul>
+<p>For a normal program execution the GPIO0(D3) and GPIO2(D4) pins must have a HIGH signal.</p>
+<p>For a starting an upload the GPIO0(D3) pin must have a LOW signal.
+This is why many boards have a momentary button to pull the GPIO0(D3) pin down labeled with <strong>flash</strong>.</p>
+<p>The GPIO15 needs a LOW signal after reset as long as you do not use booting from a SD card.</p>
+<h3>Flash memory</h3>
+<p>All the SDIO pins are used to connect the SPI flash that contains the program and other data to the ESP8266 chip.
+These pins cannot be used for other IO.</p>
+<p>In general it is not possible to use them as simple digital input or output.</p>
+<h3>I2C / Wire Bus</h3>
+<p>When connecting chips for displays or other more complex solutions the I2C (also WIRE) bus is a good option.
+Only 2 lines are required to communicate with many participants on this bus.</p>
+<p>ESP8266 supports this bus by using a software approach. Therefore almost any combination of GPIO lines can be used.</p>
+<p>Configuring a NodeMCU1.0 (ESP-12E) includes the definitions for <code>SCL</code> and <code>SDA</code> as constants that default to</p>
+<ul>
+<li>SCL=GPIO5(D1) (yellow) and</li>
+<li>SDA=GPIO4(D2) (blue).</li>
+</ul>
+<p>When using a plain NodeMCU or ESP-12 board I stick to these ports but other boards don't follow this standard.</p>
+<p>There are boards that already have a display and use other lines. Be sure to read the manual.</p>
+<p>The configuration of the I2C bus is required for many elements and is handled centrally by setting the
+<code>I2C-SDA</code> and <code>I2C-SCL</code> properties in the device element.</p>
+<p>See also</p>
+<ul>
+<li><a href="../elements/device.md">Device Element</a>.</li>
+<li><a href="/i2c.htm">Using the I2C bus</a></li>
+</ul>
+<h2>minimal wiring for bare boards like ESP-01, ESP-12E</h2>
+<ul>
+<li><strong>VCC</strong> -- 3.3 V</li>
+<li><strong>CH_PD</strong> -- 10kOhm to VCC(*1)</li>
+<li><strong>GPIO00</strong> -- 10kOhm to VCC(*1) and <strong>FLASH</strong> button to GND</li>
+<li><strong>GPIO02</strong> -- 10kOhm to VCC</li>
+<li><strong>GPIO15</strong> -- 10kOhm to GND</li>
+<li><strong>RST</strong> -- 10kOhm to VCC(*1) and <strong>RST</strong> button to GND</li>
+<li><strong>GND</strong> -- Ground</li>
+</ul>
+<p>*1 some versions do have this resistor on board</p>
+<p>See also: <a href="https://www.esp8266.com/viewtopic.php?t=4890">https://www.esp8266.com/viewtopic.php?t=4890</a></p>
+<h2>Summary</h2>
+<ul>
+<li>Many pins but already occupied by some functionality.</li>
+<li>Using the I2C bus is a good idea. It is possible to use extension chips.</li>
+<li>Preferring the IO lines GPIO4(D2), GPIO5(D1), GPIO12(D6), GPIO13(D7) and     |
+GPIO14(D5) for digital input and output signals is a good ideas as long as they are available on the board.</li>
+<li>Using GPIO0(D3) and GPIO2(D4) as output with inverted logic (LOW as ACTIVE) is without problems  and a need for using ESP-1 based devices.</li>
+<li>GPIO0(D3) will already have momentary switch on many boards and can be used after booting for any purpose.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="/boards/deepsleep.htm">deep sleep mode</a></li>
+<li><a href="https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf">ESP8266 Technical Reference</a></li>
+<li><a href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf">ESP8266EX datasheet</a></li>
+<li><a href="https://nodemcu.readthedocs.io/en/master/">NodeMCU Documentation</a></li>
+<li><a href="https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/">https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

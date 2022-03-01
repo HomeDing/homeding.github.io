@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Temperature display</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Temperature display</h1>
+<p>This recipe implements a device with a locally attached LCD display to show time temperature and humidity from a BME680 sensor.</p>
+<p><img src="/recipes/tempdisplayflow.png" alt="Elements used in led recipe"></p>
+<h2>System Configuration</h2>
+<p>There is a configuration for the LCD display required. Here a HD44780 standard LCD display on the I2C bus is used.</p>
+<ul>
+<li>In the <a href="/elements/device.htm">Device Element</a> configuration the i2c pins must be specified. Here only these 2 properties are shown.</li>
+<li>The <a href="/elements/lcd.htm">DisplayLCD Element</a> is defined with the i2c address and LCD size.</li>
+<li>The <a href="/elements/ntptime.htm">NTPTime Element</a> is used to retrieve the actual time from the default ntp server.</li>
+</ul>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"D1"</span><span class="token punctuation">,</span><br>      <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"D2"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"displaylcd"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"HD44780 LCD Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x27"</span><span class="token punctuation">,</span><br>      <span class="token property">"lines"</span> <span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"columns"</span> <span class="token operator">:</span> <span class="token number">16</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"04:00:00"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>This is specified typically in the env.json file that holds all the configurations for the board and the directly connected actors, sensors and displays.
+Samples for this configuration can be found in the description of the display elements and some board descriptions.</p>
+<p>See also <a href="/elements/displays.htm">displays</a> for a list of the supported displays.</p>
+<p>Having done this configuration the display will also be used on system startup showing the device-name and the assigned ip-address.</p>
+<h2>Display elements</h2>
+<p>The configuration used 3 display elements for text to define the position and size of the information that will be shown:</p>
+<h2>Time events</h2>
+<p>Based on the time given from the <a href="/elements/ntptime.htm">NTPTime Element</a> the <a href="/elements/time.htm">Time Element</a> creates an action every second to update the time displayed on the LCD.</p>
+<h2>BME680 sensor</h2>
+<p>The BME680 sensor measures the temperature and humidity every 10 seconds and sends actions whenever the values have changed.
+These are used to update the displaytext elements.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token string">"0"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"temp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--.--"</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"\u00dfC"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"hum"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token string">"8"</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--.--"</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"%"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"send actual time to displaytext"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontime"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"bme680"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"bd"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x77"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"displaytext/temp?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"displaytext/hum?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/device.htm">Device Element</a></li>
+<li><a href="/elements/ntptime.htm">NTPTime Element</a></li>
+<li><a href="/elements/lcd.htm">DisplayLCD Element</a></li>
+<li><a href="/elements/displaytext.htm">DisplayText Element</a></li>
+<li><a href="/elements/time.htm">Time Element</a></li>
+<li><a href="/elements/bme680.htm">BME680 Element</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

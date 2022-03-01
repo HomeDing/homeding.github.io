@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Witty-Board</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Witty-Board</h1>
+<p>The Witty board is a cheap ESP8266 board that has a RGB LED, a LDR sensor and an input button. It can eb used on a breadboard.</p>
+<p><img src="/boards/witty.jpg" alt="witty board 2">
+<img src="/boards/witty1.jpg" alt="witty board 1"></p>
+<h2>2 Boards</h2>
+<p>The witty board uses 2 separate boards that are connected through some connectors. This allows using the board
+with or without the lower programming board.</p>
+<p>For programming mode both boards need to be connected (the right way) and the USB cable must be connected to the lower board.
+After programming it is possible to used the upper board only by using the USB connector for power supply only.</p>
+<p>The upper board hosts a momentary switch at GPIO4(D2), the LED and a LDR sensor. The
+ESP8266-12F used offers 4 MB of flash memory.</p>
+<p>The lower board hosts the CH340 USB to Serial bridge chip, the RST momentary switch and the GPIO0(D3) FLASH momentary switch.</p>
+<p>Here are the signals on the connectors:</p>
+<p><img src="/boards/wittypins.png" alt="witty pins"></p>
+<h2>Witty vs. Adapter</h2>
+<p>The pins of the ESP-12 module are directly connected to the outer connectors (with exception VCC)
+in the same order very similar to the <a href="/boards/whiteadapter.htm">White Adapter board</a>.</p>
+<blockquote>
+<p>The USB adapter board (lower board) of the witty can be used for the Adapter boards
+<strong>but the need to have a regulator added</strong>. See <a href="/boards/whiteadapter.htm">White Adapter board</a>.</p>
+</blockquote>
+<p><img src="/boards/witty-adapter.jpg" alt="witty-adapter">
+<img src="/boards/witty-adapter-back.jpg" alt="witty-adapter-back"></p>
+<p>The obvious difference are the added components and the existing voltage regulator so the board can be driven by 5 V from the lower board.</p>
+<p>There is the option to add a voltage adapter to the <a href="/boards/whiteadapter.htm">White Adapter board</a> as well.</p>
+<h2>System configuration</h2>
+<p>The device settings in env.json may look like this:</p>
+<p>To enter the config mode the flash button GPIO0(D3) is configured here as usual.
+This button is located on the lower board. To use the button on the upper board GPIO4(D2) can be used also.</p>
+<p>As the startup mode indicator the D7 is configured in this example using the blue of the RGB LED.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"witty"</span><span class="token punctuation">,</span><br>      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Witty board with RGB LED and LCD"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>RGB LED</h2>
+<p>There is a RGB LED on the board that is directly driven by the following GPIO pins:</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red</td>
+<td>GPIO15(D8)</td>
+</tr>
+<tr>
+<td>green</td>
+<td>GPIO12(D6)</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>GPIO13(D7)</td>
+</tr>
+</tbody>
+</table>
+<p>There is also a blue LED on the ESP-12 module on GPIO2(D4).</p>
+<p>To reduce the power consumption the LEDs will not consuming the possible 20 mA per channel but the regulators reduce the current when maximum level is given by the GPIO pins. This allows using the RGB Led directly attached to the GPIO pins.</p>
+<p>This is a good solution for using the LED as an indicator but not as a source of light.</p>
+<p>It can be driven by the LightElement using the following configuration:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D8,D6,D7"</span><span class="token punctuation">,</span> <span class="token comment">// red,green,blue or white,red,green,blue </span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>LDR</h2>
+<p>The willy board also has a Light Dependant Resistor (LDR) attached to the analog input The actual value can be read by using the
+<a href="/elements/analog.htm">AnalogInput Element</a>.</p>
+<p>By using an reference of about 300 it is possible to use it similar to a button.
+When covering the LDR sensor with a finger the values drops below.</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span><br>    <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span><br>    <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>The recipe <a href="/recipes/ldrswitch.htm">LDR switch</a> you can find a configuration that
+uses a LDR to create a touchless on/off switch.</p>
+<h2>Buttons</h2>
+<p>There is a button on the upper (main) board attached to the GPIO4(D2) pin that can be used for any purpose.</p>
+<pre class="language-json"><code class="language-json">... ???<br>Taster<span class="token operator">:</span> GPIO4(D2)</code></pre>
+<h2>Example config.json</h2>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D8,D6,D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="https://blog.moneybag.de/fhem-witty-board-einfache-iot-funktionen-schnell-gebaut/">https://blog.moneybag.de/fhem-witty-board-einfache-iot-funktionen-schnell-gebaut/</a></li>
+<li><a href="https://www.faranux.com/product/witty-cloud-board/">https://www.faranux.com/product/witty-cloud-board/</a></li>
+<li><a href="https://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/">https://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/</a></li>
+</ul>
+<h2>Tags</h2>
+<p>#board</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

@@ -1,7 +1,0 @@
-.vscode/**
-*.code-workspace
-node_modules
-build
-_*
-boards/esp32/**
-*.ppt*

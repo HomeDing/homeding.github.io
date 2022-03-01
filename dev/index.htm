@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Implementation topics</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Implementation topics</h1>
+<p>Here is some information on extending the HomeDing library by implementing new elements.</p>
+<ul>
+<li><a href="/dev/logger.htm">Serial Logger</a></li>
+<li><a href="/dev/elementclass.htm">Element class</a></li>
+<li><a href="/dev/elementregistry.htm">Element registry</a></li>
+</ul>
+<!-- * [_microjson](/_microjson.md) -->
+<!-- * [_customelement](/_customelement.md) -->
+<ul>
+<li><a href="/dev/wifimanager.htm">WiFi manager</a></li>
+<li><a href="/dev/safemode.htm">The safemode</a></li>
+<li><a href="/dev/startupnet.htm">startup networking</a></li>
+</ul>
+<h3>Web-UI Implementation doku</h3>
+<ul>
+<li><a href="/dev/micro.htm">Introduction</a></li>
+<li><a href="/dev/microbehaviors.htm">micro behaviors</a></li>
+<li><a href="/dev/microcharts.htm">micro charts</a></li>
+<li><a href="/dev/microicons.htm">micro icons</a></li>
+<li><a href="/dev/microjavascript.htm">micro javascript utils</a></li>
+<li><a href="/dev/microstyle.htm">micro style</a></li>
+<li><a href="/dev/microtemplates.htm">micro templates</a></li>
+<li><a href="/dev/website.htm">website</a></li>
+<li><a href="/websitemap.htm">websitemap</a></li>
+</ul>
+<!-- * [monitor](/elements/_monitor.md) -->
+<ul>
+<li><a href="/dev/microportal.htm">Portal</a></li>
+</ul>
+<!-- * [_iconsforthings](/_iconsforthings.md) -->
+<h2>Create a new Element implementation</h2>
+<p>In the development example you can find a Element called &quot;TemplateElement&quot; that contains all function declarations, empty function implementation for an element that does nothing and some additional information as comments that help implementing new Elements.</p>
+<p>The 2 files (TemplateElement.*) can be copied and renamed and the class name should be adjusted as well to create a new element not doing anything yet.</p>
+<p>You can then start implementing the minimal things:</p>
+<ul>
+<li>Initializing the element properties for taking configuration values into private variables in the <code>set(name, value)</code> method.</li>
+<li>Starting operation mode in the <code>start()</code> method. This may include initializing GPIO signals, sensors or other external chips.</li>
+<li>Operate in the <code>loop()</code> method. Be sure that loop() execution must not consume much time to support the cooperative multitasking.</li>
+</ul>
+<p>More details about the Element Class implementation and the other available methods can be found in <a href="/dev/elementclass.htm">Element Class</a> description.</p>
+<h2>Element registration</h2>
+<p>The Element Registry knows all element classes that are available in the firmware to be activated by using the configuration.
+Under normal conditions yu have to specify a short element name when calling <code>registerElement</code> in:</p>
+<pre><code>bool TemplateElement::registered =
+ElementRegistry::registerElement(&quot;template&quot;, TemplateElement::create);
+</code></pre>
+<p>Details on the Registry can be found in the <a href="/dev/elementregistry.htm">Element Registry</a> documentation.</p>
+<h2>Element Card</h2>
+<p>Every time a element is displayed on the board a <code>card</code> template is used to display the element in a proper way.</p>
+<p>There is a generic implementation that displays the <code>value</code> only.</p>
+<p>For some elements very specific <code>cards</code> are implemented in the files <code>board.htm</code> and <code>board-templates.htm</code>.</p>
+<p>Here you can add new templates for specific elements instead of using the <code>generic</code> template.</p>
+<h2>Element Meta data</h2>
+<p>For new elements the list of properties, actions and events should be specified in the <code>elements.json</code> file that is saved on the device.</p>
+<p>This file is the basis for the <code>Add a new element</code> dialog in the board implementation.</p>
+<ul>
+<li><strong>Properties</strong> are implemented in the <code>set(name, value)</code> method to get the configuration values.</li>
+<li><strong>Actions</strong> are also implemented in the <code>set(name, value)</code> method but are expected to be used at runtime by incoming actions.</li>
+<li><strong>Events</strong> are outgoing actions to other elements.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="/dev/logger.htm">Device Logging</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

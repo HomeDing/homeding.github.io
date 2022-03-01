@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Sensors and Actors</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Sensors and Actors</h1>
+<p>This is a list of sensors, simple input and output components up to interface chips for various purposes that show the wide range of possibilities supported by the HomeDing library.</p>
+<p>Many of the sensors offer simple digital or analog signals to be used by the generalized input and output <a href="/elements/index.htm">elements</a>.</p>
+<p>Others others are using data transported over a bus like <a href="/i2c.htm">I2C bus</a> or even specific protocols and need special elements.</p>
+<h2>Sensors giving digital signals</h2>
+<p>Many sensors offer direct usable digital signals that can be detected and used as an input to create actions.</p>
+<h3>Mechanical sensors</h3>
+<div class="imgcard"><img src="/sensors/knocksensor.jpg"><p>This is a sensor known as <strong>knock sensor</strong> that creates short-time connections between the 2 pins when shaken or getting massive vibrations.</p>
+<p>The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these spike impulses and creates a clean actions.</p>
+</div>
+<div class="imgcard"><img src="/sensors/tiltsensor.jpg"><p>This is a <strong>mercury tilt sensor</strong> that creates connections between the 2 pins when the position of the switch is upwards.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signal.</p>
+</div>
+<div class="imgcard"><img src="/sensors/ball.jpg"><p>This is a <strong>ball on contacts sensor</strong> that creates / breaks connections between the 2 pins when the position of the sensor changes or bumps.</p>
+<p>The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these signals and spike impulses and creates a clean actions.</p>
+</div>
+<div class="imgcard"><img src="/sensors/shock.jpg"><p>This is a <strong>shock sensor</strong> that creates connections between the 2 pins when a massive force is against the sensor.</p>
+<p>The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these spike impulses and create a clean action on it.</p>
+</div>
+<h3>Magnetic sensors</h3>
+<div class="imgcard"><img src="/sensors/reed.jpg"><p>This is a <strong>reed sensor</strong> that creates connections between the 2 pins when a high value magnetic field is given.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signal.</p>
+</div>
+<div class="imgcard"><img src="/sensors/hall.jpg"><p>This is a <strong>magnetic hall sensor</strong> that creates an analog signal from the detector. The level is compared to a reference signal to also create a digital output signal.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the digital input signal.</p>
+<p>The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the analog input signal.</p>
+</div>
+<h3>Light sensors</h3>
+<div class="imgcard"><img src="/sensors/ldr.jpg"><p>This is a <strong>light sensitive sensor</strong> using a light defined resistor (LDR) component. This board already has a 10K resistor that creates a variable analog input signal.</p>
+<p>The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the input signal.</p>
+</div>
+<!-- 
+:::sensor SI1145
+This is an UV-index sensor.
+:::
+ -->
+<div class="imgcard"><img src="/sensors/linetrack.jpg"><p>This is a <strong>light reflection sensor</strong> using a identify reflecting (white) or non-reflecting (black) surfaces. There is a IR transmitting diode and a IR receiving diode producing a digital output signal.
+The sensitivity can be adjusted.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the digital input signal.</p>
+</div>
+<div class="imgcard"><img src="/sensors/dualldr.jpg"><p>This is a double <strong>light sensitive sensor</strong> using a light defined resistor (LDR) components.
+This board has a circuit that compares the analog signal to a adjustable threshold value. The output therefore are 2 digital signals.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signals and the logic elements can create combinations of interest.</p>
+</div>
+<div class="imgcard"><img src="/sensors/irTrans.jpg"><p>This is a <strong>Light blocking sensor</strong> built from a IR LED and a IR photo resistor. It can be used to detect that the light in the gap is blocked. It creates a digital output.</p>
+<p>For simple on/off situations the <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions.</p>
+<p>When used with high frequencies ans used tp detect rotating speed with a wheel the The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these impulses per timeframe to create a clean action with rotation values.</p>
+</div>
+<div class="imgcard"><img src="/sensors/hcsr505.jpg"><p>This is a <strong>Mini PIR Sensor</strong> that creates a digital signal when detecting movements initiated by &quot;warm&quot; objects.
+It produces a about 10 seconds HIGH level signal.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signal.</p>
+</div>
+<div class="imgcard"><img src="/sensors/no.jpg"><p>hcsr501 - This is a <strong>PIR Sensor</strong> that creates a digital signal when detecting movements initiated by detecting &quot;warm&quot; objects. It produces a HIGH level signal. Signal length and sensitivity can be adjusted.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signal.</p>
+</div>
+<div class="imgcard"><img src="/sensors/flame.jpg"><p>This is a <strong>flame Sensor</strong> or <strong>IR level Sensor</strong> that creates a digital and analog output signal detecting the amount of IR light.</p>
+<p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the digital input signal.</p>
+<p>The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the analog input signal.</p>
+</div>
+<div class="imgcard"><img src="/sensors/irobstacle.jpg"><p>This is a <strong>Infrared Obstacle sensor</strong> that emits and detects IR light and creates a digital output when there is a reflecting obstacle nearby.</p>
+<p>As the signals can be very short the <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these short impulses and create a clean action on it.</p>
+</div>
+<!-- 
+:::sensor BH1750
+t.b.d. i2c bus enables sensor for light.
+:::
+ -->
+<h3>Analog Temperature Sensors</h3>
+<div class="imgcard"><img src="/sensors/ntc.jpg"><p>This is a <strong>temperature sensor</strong> that uses a <strong>temperature variable resistor</strong> ntc to create a analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.</p>
+<p>The Analog output signal can be used to calculate the actual temperature.
+The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the analog input signal.</p>
+<p>Some sensor boards also contain an adjustable reference the sensor value can be compared to to produce a digital output signal.
+The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based on this digital input signal.</p>
+</div>
+<p>See also environmental sensors below.</p>
+<h3>Sound sensors</h3>
+<div class="imgcard"><img src="/sensors/microphone.jpg"><p>This is a <strong>Analog microphone</strong> combined with a circuit to compare the amplitude to an adjustable threshold.</p>
+<p>The Analog output signal can be used for a recording input and the digital output produces LOW signals when the amplitude gets high enough.</p>
+<p>On loud sounds many short signal spikes occur that can be catched by the <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> to create a clean actions on it.</p>
+</div>
+<div class="imgcard"><img src="/sensors/hcsr04.jpg"><p>The <strong>Ultrasonic range</strong> sensor using the hcsr04 board is using Ultrasonic sound impulses that will be reflected by objects and can be used to measure the distance.</p>
+<!-- The [HCSR04 Element](/elements/hcsr04.md) can be used to trigger this sensor and calculate the distance. -->
+<p>This sensor is not yet supported directly by the HomeDing library.</p>
+</div>
+<h2>Digital output</h2>
+<div class="imgcard"><img src="/sensors/relay.jpg"><p>The <strong>relay</strong> can be switched using the <a href="/elements/digitalout.htm">Digital Output Element</a> when the board includes a transistor or mosfet to handle the high load demand of a relay.</p>
+<p>A relay cannot be used directly with a GPIO pin. There is a example how to control a relay in <a href="/boards/esp01.htm">ESP-01 Board page</a>.</p>
+</div>
+<h2>Sensor Elements with impulse/frequency transfers</h2>
+<p>Instead of providing a analog level some sensors provide impulses with a timing or a impulse patterns.</p>
+<p>To communicate with these sensors and actors special libraries and elements are used that implement the specific interface and interpretation of the given data.</p>
+<div class="imgcard"><img src="/sensors/irrecv.jpg"><p>These IR sensors (VS1838 / TSOP4838)
+are equipped with an embedded chip that can detect signals using a 38kHz carrier frequency.
+When a signal is detected the output is High otherwise low.</p>
+<p>IR code detection now has to be implemented by analyzing the input level over time and derive the data from this. There are special libraries
+available for this. (e.g. <a href="https://github.com/crankyoldgit/IRremoteESP8266">https://github.com/crankyoldgit/IRremoteESP8266</a>).</p>
+<p>Not yet supported directly by the HomeDing library. Experimental implementation in the DevDing example for RF is available. IR behaves very similar.</p>
+<!-- https://github.com/z3t0/Arduino-IRremote -->
+</div>
+<div class="imgcard"><img src="/sensors/rf433recv.jpg"><p>Receiving <strong>433 MHz radio signals</strong> to create a digital signal.
+Not yet fully supported by the HomeDing library. Experimental implementation in the DevDing example for RF 433 is available.</p>
+<!-- https://github.com/z3t0/Arduino-IRremote -->
+</div>
+<div class="imgcard"><img src="/sensors/rf433send.jpg"><p>Sending a <strong>433 MHz radio signals</strong> from a digital signal.
+Not yet fully supported by the HomeDing library. Experimental implementation in the DevDing example for RF 433 is available.</p>
+</div>
+<div class="imgcard"><img src="/sensors/no.jpg"><p>Power monitoring chips : <strong>HLW8012 BL0937</strong></p>
+<p><a href="/elements/bl0937.htm">BL0937 Element</a></p>
+</div>
+<h2>Sensor Elements with data exchange</h2>
+<p>These sensor deliver data sets instead of digital or analog values.</p>
+<p>They communicate by their specific protocol and actions can be created based on the
+retrieved values.
+. Often these sensors provide multiple values or implement more complex I/O needs.</p>
+<h3>Environment sensing</h3>
+<div class="imgcard"><img src="/sensors/dht22.jpg"><p>The <strong>DHT22</strong> is a <strong>air temperature and humidity</strong> sensor also known as chip <strong>AM2302</strong> that supports a range of -40 to 80°C for temperature with a accuracy of ±0.5% and a full range (0..100%) for humidity.</p>
+<p>A very special data transport protocol is used.</p>
+<p>The <a href="/elements/dht.htm">DHT Element</a> creates actions based on the values polled from the chip.</p>
+</div>
+<div class="imgcard"><img src="/sensors/dht11.jpg"><p>The <strong>DHT11</strong> is a <strong>air temperature and humidity</strong> sensor that supports a range of -20 to 60°C for temperature with a accuracy of ±2% and a limited range (5..95%) for humidity.</p>
+<p>A very special data transport protocol is used.</p>
+<p>The <a href="/elements/dht.htm">DHT Element</a> creates actions based on the values polled from the chip.</p>
+</div>
+<div class="imgcard"><img src="/sensors/sht20.jpg"><p>The <strong>SHT20</strong> is a <strong>air temperature and humidity</strong> sensor with high precision for temperature humidity.</p>
+<p>The sensor communicate using the i2c bus.</p>
+<p>The <a href="/elements/sht20.htm">SHT20 Element</a> creates actions based on the values polled from the chip.</p>
+</div>
+<div class="imgcard"><img src="/sensors/bme680.jpg"><p>The <strong>BME680</strong> is a sensor providing <strong>air temperature, humidity, pressure and gas resistance</strong>.</p>
+<p>The special <a href="/elements/bme680.htm">BME680 Element</a> supports this sensor using the I2C protocol.</p>
+</div>
+<div class="imgcard"><img src="/sensors/PMS5003.jpg"><p>The <strong>PMS5003</strong> is a laser based <strong>air particle</strong> sensor measuring air pollution.</p>
+<p>The special <a href="/elements/pms.htm">PMS Element</a> supports this sensor using a serial port.</p>
+</div>
+<div class="imgcard"><img src="/sensors/ds18b20.jpg"><p>This <strong>DS18B20</strong> sensor also known as <strong>Dallas Temperature sensors</strong> measures the surrounding air temperature. There are also sensors with the same chip for measuring liquid temperatures.</p>
+<p>A very special wire protocol is used for data transmission and multiple sensors can share the same signal bus.</p>
+<p>The special <a href="/elements/ds18b20.htm">DS18B20 Element</a> supports this sensor.</p>
+</div>
+<!--
+:::sensor MCP9808
+High precision Temperature Sensor
+:::
+-->
+<!-- 
+:::sensor bme280
+The BME280 is a combination of a temperature, humidity and absolute barometric pressure sensor.
+:::
+
+:::sensor bmp280
+The BMP280 is a combination of a temperature and absolute barometric pressure sensor.
+:::
+-->
+<!-- :::sensor ccs811
+**CJMCU-811** or **CCS811**
+
+not yet supported.
+::: -->
+<h3>Motion</h3>
+<div class="imgcard"><img src="/sensors/no.jpg"><p><strong>MPU-9250</strong> Nine-Axis (Gyro + Accelerometer + Compass) MEMS <strong>MotionTracking</strong>™ Device</p>
+</div>
+<h3>Measurements</h3>
+<div class="imgcard"><img src="/sensors/ina219.jpg"><p>The <strong>ina219</strong> chip can measure voltage and current for power consumer in the low voltage and low power range.</p>
+<p>This chip is supported by the <a href="/examples/probe.htm">Probe example</a> in the HomeDing library
+where you can find the <a href="/elements/ina219.htm">INA219 Element</a>.</p>
+</div>
+<div class="imgcard"><img src="/sensors/no.jpg"><p>The <strong>ina226</strong> chip can measure voltage and current for power consumer in the low voltage and low power range.</p>
+<p>This chip is supported by the <a href="/examples/probe.htm">Probe example</a> in the HomeDing library
+where you can find the <a href="/elements/ina226.htm">INA226 Element</a>.</p>
+</div>
+<div class="imgcard"><img src="/sensors/soil.jpg"><p>The <strong>Soil Moisture Sensor</strong> is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.</p>
+</div>
+<div class="imgcard"><img src="/sensors/capasoil.jpg"><p>The <strong>Capacitive Soil Moisture Sensor</strong> is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.</p>
+<p>The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the analog input signal.</p>
+<p>The <a href="/recipes/capasoil.htm">Capacitive Soil Moisture Sensor Recipe</a> shows more details on using such a sensor.</p>
+</div>
+<h3>Chips for Digital and Analog I/O</h3>
+<p>More Digital and Analog I/O can be handled when using special elements for specific chips.</p>
+<div class="imgcard"><img src="/sensors/pcf8574.jpg"><p>The <strong>PCF8574</strong> is a 8-Bit I/O Expander for I2C Bus to control 8 digital input or output signals.</p>
+<p>Supported for using LCD displays on the I2C bus.</p>
+<!-- The special [PCF8574 Element](/elements/_pcf8574.md) supports this chip. -->
+</div>
+<div class="imgcard"><img src="/sensors/pcf8591.jpg"><p>The <strong>PCF8591</strong> is a 4 channel 8 bit ADC + 1 channel 8 bit DAC for the I2C bus.</p>
+<!-- The special [PCF8591 Element](/elements/_pcf8591.md) supports this chip. -->
+</div>
+<div class="imgcard"><img src="/sensors/ads1115.jpg"><p>The <strong>ADS1115</strong> is a 4 channel 16 bit analog to digital converter (ADC) using the I2C bus.</p>
+<!-- The special [ADS1115 Element](/elements/_ads1115.md) supports this chip. -->
+</div>
+<div class="imgcard"><img src="/sensors/max7219.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
+Multiple displays can be chained to form a bigger matrix.</p>
+<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.</p>
+</div>
+<div class="imgcard"><img src="/sensors/max7219n.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x 7-segment LEDs.</p>
+<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.</p>
+</div>
+<!-- 
+I2C PWM output
+ -->
+<!--
+:::sensor 
+ADC in i2c
+:::
+-->
+<!-- 
+:::sensor no X9C104S
+100 step potentiometer 100k
+:::
+-->
+<p>PWM</p>
+<h2>Light control</h2>
+<div class="imgcard"><img src="/sensors/no.jpg"><p><strong>LEDs</strong> that are directly attached to a GPIO port can be driven by the
+<a href="/elements/digitalout.htm">Digital Output Element</a> that supports switching the LED on or off.</p>
+<p>The <a href="/elements/pwmout.htm">PWM Output Element</a> can dim a LED using PWM signals.</p>
+</div>
+<div class="imgcard"><img src="/sensors/p9813.jpg"><p>The chip <strong>p9813</strong> als known as <strong>Groove LED driver</strong> is used to control 12V RGB stripes using a special protocol that can control many driver chips n a row.</p>
+</div>
+<div class="imgcard"><img src="/sensors/neo.jpg"><p><strong>Neopixel</strong> or <strong>WS2811</strong> are chips with a RGB led and an embedded driver chip that can directly be controlled by a GPIO pin. Multiple LEDs of this type can be chained on stripes or can build a LED grid.</p>
+<p>The <a href="/elements/neo.htm">Neo Element</a> supports these LED chains for colors and patterns.
+There is also a special <a href="/boards/neo.htm">Neopixel board</a> available especially for controlling these LEDs.</p>
+</div>
+<p><a href="/elements/light.htm">Light Element</a> : PWM values for single color or RGB Leds attached directly on GPIO pins.</p>
+<h2>Input Components</h2>
+<div class="imgcard"><img src="/sensors/button.jpg"><p>A simple momentary button can be use directly with a <a href="/elements/digitalin.htm">DigitalInput Element</a>.
+to create actions on the button signal.</p>
+<p>The <a href="/elements/switch.htm">Switch Element</a> implements the behavior for using a button to start/stop or on/of a signal.</p>
+</div>
+<div class="imgcard"><img src="/sensors/switch.jpg"><p>A switch that can give a binary signal and can be use directly with a <a href="/elements/digitalin.htm">DigitalInput Element</a>.</p>
+</div>
+<div class="imgcard"><img src="/sensors/rotary.jpg"><p>The <a href="/elements/rotary.htm">Rotary Element</a> enables decoding the 2 signals from a rotary encoder.</p>
+</div>
+<h2>Radio</h2>
+<p>There is a very specific example that shows how to use the HomeDing and the <a href="https://github.com/mathertel/Radio">Radio library</a> to build a full functional radio that can be controlled by some local input but also from remote.</p>
+<div class="imgcard"><img src="/sensors/si4721.jpg"><p>The <strong>si4721</strong> is a FM Transceiver that can receive and send FM Audio.</p>
+<p>The <a href="/elements/radio.htm">Radio Element</a> is available as an experimental implementation in the DevDing example using the Arduino Radio library supporting only receiving mode.</p>
+</div>
+<div class="imgcard"><img src="/sensors/si4730.jpg"><p>The <strong>si4730</strong> is a AM/FM Radio Receiver chip and module.</p>
+<p>The <a href="/elements/radio.htm">Radio Element</a> is available as an experimental implementation in the DevDing example using the Arduino Radio library.</p>
+</div>
+<h2>See also</h2>
+<ul>
+<li><a href="https://arduinomodules.info/">https://arduinomodules.info/</a> for a list of common sensor modules</li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>WiFi Manager Details</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>WiFi Manager Details</h1>
+<div class="plaincard"><p>The WiFi-Manager is a module in the HomeDing library to register a device in the local network.
+It is implemented in every device in the board class.</p>
+<p>When the device has not been connected to the local home network the Wifi-Manager exposes a temporary, unprotected
+Wifi Network named HomeDingNNNNNN using the <a href="http://192.168.4.xxx">192.168.4.xxx</a> ip range. The device is always available on the URL
+<a href="http://192.168.4.1/">http://192.168.4.1/</a>.</p>
+<p>Any device like mobile phone or laptop with WLAN can join this network for configuration.</p>
+</div>
+<p>There is a walk-through description on how to use the WiFi Manager in <a href="/steps/stepsnewdevice.htm">Step by Step Bring your device to work</a>.</p>
+<h2>Wifi Setup Dialog</h2>
+<p>The dialog that enables selecting an available network and entering the corresponding network passphrase
+is available on every device by using the <strong>/$setup.htm</strong> URL.</p>
+<ul>
+<li>
+<p>When the device has no local network credentials the device opens a new open WiFi network
+named <code>HomeDingNNNNNN</code> where NNNNNN is a hex value derived from the mac address so somehow unique.</p>
+<p>On this WiFi the device is reachable on the fixed IP address 192.168.4.1 and the dialog is available
+using the <a href="http://192.168.4.1/$setup.htm">http://192.168.4.1/$setup.htm</a> URL.</p>
+</li>
+<li>
+<p>The setup dialog is also available when the device has a network registration
+and is available on the local network using <a href="http://homeding/$setup.htm">http://homeding/$setup.htm</a></p>
+</li>
+</ul>
+<p>In this dialog is coded into the firmware to make it available even when the UI Web files have not been uploaded yet.</p>
+<p>It can also be used in case the device is connected to re-configure the device to join another network.</p>
+<h2>Starting the Wifi-Manager</h2>
+<p>The board starts into the WiFiManager mode</p>
+<ul>
+<li>when no network configuration is available</li>
+<li>when started manually by pressing the system or flash button AFTER the reset button or connecting to USB.</li>
+<li>when 8 attempts to connect have not been successful</li>
+<li>when using the reset button two times in a row in-between 6 seconds (value from the <strong>connectTime</strong> device parameter).</li>
+</ul>
+<p>When a LED is configured on the device element there are different pulse patterns:</p>
+<ul>
+<li>1 second pulse length having a short LED-ON phase when trying to connect the network in save mode</li>
+<li>1 second pulse length having a longer LED-ON phase when trying to connect the network in non-save mode</li>
+<li>3 second pulse length with a short LED-ON phase when the Wifi-Manager is active.</li>
+</ul>
+<p>After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had an outage and WiFiManager was started caused by the missing network.</p>
+<p>Under normal operating conditions when the device was added to the network the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.</p>
+<h2>WiFiManager UI</h2>
+<p>The WiFiManager presents a minimal UI that shows some minimal information about the device and a form to configure the secured network access.</p>
+<p><img src="/dev/wifimanager.png" alt="WiFiManager dialog"></p>
+<ul>
+<li>The current devicename is displayed.</li>
+<li>In the Network drop-down the local available WiFi networks are listed and the right network can be selected.</li>
+<li>The passphrase for this network needs to be entered.</li>
+</ul>
+<!-- * Using the `re-scan` the available networks are scanned again. -->
+<ul>
+<li>Using the <code>Connect</code> button the device tries to connect the selected network and then reboots into the normal operation mode.</li>
+</ul>
+<p>The WiFi manager UI can also be accessed during normal operation using the link <a href="http://homeding/$setup.htm">http://homeding/$setup.htm</a>.</p>
+<p>How to bring a device from an empty board into full operating can be found in <a href="/steps/stepsnewdevice.htm">Setup a new device Step by Step</a></p>
+<h2>WiFi Manager Configuration</h2>
+<p>The WiFi Manager can be configured by some properties of the <a href="/elements/device.htm">Device Element</a>.</p>
+<p><strong>led</strong> - The device uses this GPIO pin to drive a LED that is blinking while the Board waits for a network connection to be established after booting. During this time the WiFi Manager can be started using the button.
+Defaults is <code>no LED</code>.</p>
+<p><strong>button</strong> - The board uses this GPIO pin to start WiFi Manager after booting when the level is pulled down while the LED is blinking.
+Defaults is <code>GPIO0(D3)</code></p>
+<p><strong>connectTime</strong> - The available time after a reboot of the device to start network configuration. Default: &quot;6s&quot;.</p>
+<h2>Reset the network configuration</h2>
+<p>The network configuration includes the network name and the network password. This is not configured in a configuration file but stored in a special non volatile memory together with some network parameters that allows fast rejoining the existing network that was connected successfully before.</p>
+<p>The device can be reset and forgets the network configuration when calling the url <a href="http://homeding/$reset">http://homeding/$reset</a>.</p>
+<h2>Information in the Serial Monitor</h2>
+<p>A device starting without a network configuration will go into WiFi Manager mode.</p>
+<p>The information you can find in the Log on the Serial Monitor includes:</p>
+<pre><code>00:00:03 sys:i Device starting...
+00:00:03 &gt;HomeDing                    // Startup Welcome Message
+00:00:03 &gt;config.. HomeDing5D26A5     // Config mode and Name of Setup-Network
+00:00:03 sys:i  AP-IP: 192.168.4.1    // IP Address of the device
+</code></pre>
+<p>After choosing the network and entering the passPhrase in the setup dialog using <a href="http://192.168.4.1/$setup">http://192.168.4.1/$setup</a>:</p>
+<pre><code>00:01:07 &gt;setup network DEVNET        // chosen Network name
+00:01:15 &gt;ok.                         // access could be established
+00:01:15 sys:i reboot...              // reboot for new configuration
+</code></pre>
+<p>A regular startup will follow:</p>
+<pre><code>00:00:03 sys:i Device starting...
+00:00:03 &gt;HomeDing                    // Startup Welcome Message
+00:00:13 &gt;ESP-5D26A5 192.168.2.229    // Device name and IP address on the new network
+00:00:13 sys:i ESP-5D26A5 (192.168.2.229) connected to DEVNET (unsafe mode)
+</code></pre>
+<p>The device is now reachable using <a href="http://ESP-5D26A5">http://ESP-5D26A5</a> or <a href="http://192.168.2.229">http://192.168.2.229</a></p>
+<!-- ## WPS
+NOT IMPLEMENTED YET
+
+``` cpp
+bool ESPSerialWiFiManager::_connect_wps(){
+  _disconnect();
+  OFL("Push the WPS button on your access point now.");
+  String opt = _prompt("Press Enter when complete (q to abort)");
+  if(CHAROPT(opt[0], 'q')) return false;
+  OFL("Attempting WPS connection. May take some time...");
+  if (WiFi.beginWPSConfig()){
+    String ssid = WiFi.SSID();
+    if(ssid.length() > 0){
+        OL("\nSuccess! Connected to network " + ssid);
+        NL();
+        _disp_network_details();
+        NL();
+        _save_config(ssid, WiFi.psk(), true);
+        return true;
+    }
+    else{
+        return false;
+    }
+  }
+}
+```
+-->
+<h2>More</h2>
+<!--
+* <https://esp-forum.de/index.php/forum/codebesprechung/35-wifi-mode-fuer-ap-und-sta-richtig-anwenden>
+* <https://www.hackster.io/kosme/esp8266-sniffer-9e4770?utm_campaign=new_projects&utm_content=0&utm_medium=email&utm_source=hackster&utm_term=project_name>
+-->
+<ul>
+<li>WPS Option: <a href="https://bbs.espressif.com/viewtopic.php?t=1096">https://bbs.espressif.com/viewtopic.php?t=1096</a></li>
+<li><a href="https://github.com/rudi48/WiFiTelnetToSerialWPS/blob/master/WiFiTelnetToSerialWPS.ino">https://github.com/rudi48/WiFiTelnetToSerialWPS/blob/master/WiFiTelnetToSerialWPS.ino</a></li>
+<li>tips: <a href="http://bienonline.magix.net/public/arduino-wifi.html">http://bienonline.magix.net/public/arduino-wifi.html</a></li>
+<li><a href="https://maniacallabs.com/2016/08/09/new-library-esp-serial-wifi-manager/">https://maniacallabs.com/2016/08/09/new-library-esp-serial-wifi-manager/</a></li>
+<li><a href="https://github.com/r-downing/PersWiFiManager">https://github.com/r-downing/PersWiFiManager</a></li>
+</ul>
+<!--
+* <https://github.com/esp8266/Arduino/issues/2735>
+* <https://internetofhomethings.com/homethings/?p=631>
+-->
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

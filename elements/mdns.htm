@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Multicast DNS Service</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Multicast DNS Service</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#mdns"></use></svg><p>The mDNS service is used as the standard device discovery mechanism for HomeDing devices. This allows finding all devices in the home network.</p>
+</div>
+<p>Multicast DNS (mDNS) is a protocol that sends one to many network packages containing DNS information records. This is also known as <code>zeroconf</code> or <code>bonjour</code> protocol and allows finding network devices
+without the need for a dedicated central DNS server.</p>
+<p>The advantage of mDNS in in announcing not just IP addresses but also the kind of service offered by a device.</p>
+<p>There is a bunch of services in the IoT space that already uses this protocol and it can be seen as a quasi standard:</p>
+<table>
+<thead>
+<tr>
+<th>Service signature</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_arduino._tcp.local</td>
+<td>Device can be updated using Arduino network firmware update.</td>
+</tr>
+<tr>
+<td>_homeding._tcp.local</td>
+<td>Device offers HomeDing services</td>
+</tr>
+<tr>
+<td>_http._tcp.local</td>
+<td>Device has a http web server</td>
+</tr>
+</tbody>
+</table>
+<p>can be disabled by setting the <strong>sd</strong> (Service Discovery) property in the configuration of the <a href="/elements/device.htm">Device Element</a> to false.</p>
+<h2>CLI tool to discover HomeDing devices</h2>
+<p>The WebFiles project <a href="https://github.com/HomeDing/WebFiles">https://github.com/HomeDing/WebFiles</a> that implements a central portal to show all devices offers a command line tool to list existing devices by using the command: <code>node discoverDevices.js</code>.</p>
+<h2>mDNS implementation</h2>
+<p>In the devices the mDNS implementation is covered by the ESP8266mDNS/ESPmDNS library provided by the Arduino board base  firmware.</p>
+<p>In the portal and the CLI tool the mDNS implementation is covered by the <code>multicast-dns</code> javascript library.</p>
+<p>http:///<portal-server>/api/discovery</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"airding"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>    <span class="token property">"host"</span><span class="token operator">:</span><span class="token string">"airding.local"</span><span class="token punctuation">,</span><br>    <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token property">"path"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span><br>    <span class="token property">"ts"</span><span class="token operator">:</span><span class="token string">"2021-05-09T11:28:56.486Z"</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"rfbridge"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>    <span class="token property">"host"</span><span class="token operator">:</span><span class="token string">"rfbridge.local"</span><span class="token punctuation">,</span><br>    <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"Funk Schaltsteckdosen"</span><span class="token punctuation">,</span><br>    <span class="token property">"path"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span><br>    <span class="token property">"ts"</span><span class="token operator">:</span><span class="token string">"2021-05-09T11:28:56.485Z"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>Used in the Home Portal solution.
+multicast DNSservice</p>
+<h2>See also</h2>
+<ul>
+<li>DNS-Based Service Discovery <a href="https://datatracker.ietf.org/doc/html/rfc6763">https://datatracker.ietf.org/doc/html/rfc6763</a></li>
+<li><a href="/elements/ssdp.htm">Simple Service Discovery Protocol (SSDP) Element</a></li>
+<li><a href="/elements/device.htm">Device Element</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

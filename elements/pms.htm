@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Support of the PMS5003 air quality sensors.'>
+  <title>The PMS Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>The PMS Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#pms"></use></svg><p>The PMSElement allows using the laser based air particle and pollution sensor PMS5003 from plantower to report the number of micro particles in the air.</p>
+</div>
+<p><img src="/elements/pms5003.jpg" alt="PMS5003 sensor"></p>
+<p>This Element is not included into the standard firmware but can be included by defining:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_PMS</span></span></code></pre>
+<p>in the element register section of the sketch.</p>
+<h2>About the sensor</h2>
+<p>The particles with the size of 2.5 µm are too small to be visible individually but when present in high concentration can be seen as dust or smog.</p>
+<p>This fine dust particulates have the ability to penetrate deep into the lungs causing some bad disease. Some of them come from automotive pollution.</p>
+<p>This sensor has its own onboard processor driving a laser based particle detection in a constant flow of air.
+It communicates the results of measurement every second using a 9600 baud serial interface.</p>
+<p>The PMS5003 device should be attached using the following connections:</p>
+<pre><code>ESP8266         PMS5003
++5V             pin1, VCC   (black)
+GND             pin2, GND   (red)
++3.3V -- 10k -- pin3 SET
+D5 (TX)         pin4 RXD    (red)
+D6 (RX)         pin5 TXD    (black)
++3.3V -- 10k -- pin6 RESET
+</code></pre>
+<p>(as suggested by the plantower-pms5003-manual_v2-3.pdf)</p>
+<p>The 10k resistors are not strictly required as the pins seem to be internally pulled to VCC as well.</p>
+<h2>Sensor Interface</h2>
+<p>Data from the sensor is passed using a serial protocol with 9600 baud.</p>
+<p>Inside the ESP8266 chip only 1 UART / Serial port is available that can receive and send data using builtin hardware and is usually connected to the USB bridge. The second UART implementation can only transmit data.</p>
+<p>Therefore the SoftwareSerial library that is part of the ESP8266 board implementation for Arduino is used to communicate with another serial counterpart in the sensor.</p>
+<p>The sensor sends data probe results quiet frequently and can be started and stopped by a command sent to the sensor.</p>
+<p>Using the element configuration it is possible to take a current probe value every n seconds using the <code>readtime</code> configuration and combine multiple values by taking the average using the <code>combine</code> configuration.</p>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element:</p>
+<p><object data="/element.svg?pms" type="image/svg+xml"></object></p>
+<p><strong>pinrx</strong> - The property specifies the pin of the board to receive data from the sensor. This property must be specified.</p>
+<p><strong>pintx</strong> - The property specifies the pin of the board to send data to the sensor. This property must be specified.</p>
+<p><strong>readtime</strong> - The time between capturing 2 probes from the sensor.</p>
+<p><strong>onValue</strong> - These actions are send when the value from the sensor has changed.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<h2>Example configuration</h2>
+<pre class="language-json"><code class="language-json"><span class="token property">"pms"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"pm25"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pinrx"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>    <span class="token property">"pintx"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>    <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"read out pm25 sensor"</span><span class="token punctuation">,</span><br>    <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"log/pm?value=$v"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Diagnostic example</h2>
+<p>The checkPMS example sketch on git ... can be used to verify an existing connected sensor for working correctly.
+It requires no special library and logs the raw data and some calculated values to the serial line for analysis.</p>
+<p>You can use this sketch to verify that the sensor is communicating correctly in the standard mode.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="https://www.epa.gov/pm-pollution/particulate-matter-pm-basics">https://www.epa.gov/pm-pollution/particulate-matter-pm-basics</a></li>
+<li>Some insights to accuracy of the sensors and pictures from a tear-down: <a href="https://aqicn.org/sensor/pms5003-7003/de/">https://aqicn.org/sensor/pms5003-7003/de/</a></li>
+<li><a href="http://raphuscucullatus.blogspot.com/2017/08/pms5003-will-schlafen.html?m=1">http://raphuscucullatus.blogspot.com/2017/08/pms5003-will-schlafen.html?m=1</a></li>
+<li><a href="https://ourairquality.org/index.php/build-an-air-quality-monitor/">https://ourairquality.org/index.php/build-an-air-quality-monitor/</a></li>
+<li><a href="https://github.com/ourairquality">https://github.com/ourairquality</a></li>
+<li><a href="http://www.aqmd.gov/docs/default-source/aq-spec/resources-page/plantower-pms5003-manual_v2-3.pdf">http://www.aqmd.gov/docs/default-source/aq-spec/resources-page/plantower-pms5003-manual_v2-3.pdf</a></li>
+<li><a href="http://luftdaten.info/">http://luftdaten.info/</a></li>
+<li><a href="https://github.com/avaldebe/PMserial/blob/master/README.md">https://github.com/avaldebe/PMserial/blob/master/README.md</a></li>
+</ul>
+<h2>Tags</h2>
+<p>#element #sensor</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

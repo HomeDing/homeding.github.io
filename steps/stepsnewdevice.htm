@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Step by Step Bring your device to work</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Step by Step Bring your device to work</h1>
+<p>This is a step by step instruction to bring a device based on the HomeDing library to work.</p>
+<ul>
+<li><a href="#get-a-brand-new-eps8266-board">Get a (brand new) EPS8266 board.</a></li>
+<li><a href="#upload-the-appropriate-sketch">Upload the appropriate sketch</a></li>
+<li><a href="#register-the-device-on-the-local-wifi-network">Register the device on the local WiFi network</a></li>
+<li><a href="#find-the-new-device-on-the-network">Find the new device on the network</a></li>
+<li><a href="#upload-the-web-ui-files-to-the-onboard-file-system">Upload the Web UI files to the onboard file system</a>
+<ul>
+<li><a href="#spiffs-upload-utility">SPIFFS Upload Utility</a></li>
+<li><a href="#file-upload-utility">File Upload Utility</a></li>
+<li><a href="#web-based-update">Web based Update</a></li>
+<li><a href="#file-upload-in-ide">File Upload in IDE</a></li>
+<li><a href="#file-save-in-ide">File Save in IDE</a></li>
+<li><a href="#using-upload-tools-like-curl">Using Upload tools like cUrl</a></li>
+</ul>
+</li>
+<li><a href="#choose-an-icon">Choose an icon</a></li>
+<li><a href="#see-also">See also</a></li>
+</ul>
+<h2>Get a (brand new) EPS8266 board.</h2>
+<p>The easiest board to start is any board that sticks to the nodemcu layout and features
+and therefore can just be plugged into an USB board.</p>
+<p>The following steps assume a board of this kind but different boards will not work very different.</p>
+<p>See also <a href="/boards/index.htm">Boards supported by the HomeDing library</a></p>
+<h2>Upload the appropriate sketch</h2>
+<p>For a nodemcu board having a ESP8266 chip and 4 MByte of Flash ROM the best sketch to start is the
+<a href="/examples/standard.htm">standard example</a> that includes a lot of element types and board features.</p>
+<p>You need to select the &quot;NodeMCU 1.0 (ESP12-E Module)&quot; board in the Arduino Board Manager
+and use a memory layout that leaves 1 MByte for the SPIFFS file system by selecting
+&quot;4M (1M SPIFFS)&quot; in the &quot;Flash Size&quot; option.</p>
+<p>You probably will have some benefits from the debug output on the Serial port at this point
+and therefore should activate &quot;Serial&quot; in the &quot;Debug Port&quot; option
+and &quot;None&quot; in the &quot;Debug Level&quot; option.</p>
+<p>Select the right COM port and upload the sketch. It should only take about a minute
+and the reboot the board.</p>
+<h2>Register the device on the local WiFi network</h2>
+<video width="650" height="380" controls autostart>
+  <source src="setup-steps.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>There is a &quot;hard way&quot; to configure your local WiFi network name and passphrase into the source code in the file &quot;secrets.h&quot;. If you like to follow this approach you can change the file and upload again.</p>
+<p>Using the built-in WiFi Manager is the preferred method for connecting to a network and avoids hard-coding network credentials and re-programming your devices when your network changes .</p>
+<p>Connect to the unsecured network called &quot;HomeDing&quot; by using any mobile device or computer with WiFi adapter.
+Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
+automatically open the network configuration page.</p>
+<p><img src="/dev/wifimanager.png" alt="WiFi Manager UI"></p>
+<p>If the WiFi Manager UI is not starting after joining the network please open <a href="http://192.168.4.1/">http://192.168.4.1/</a> or <a href="http://192.168.4.1/$setup">http://192.168.4.1/$setup</a> manually.</p>
+<p>The current device name is shown in this dialog and you will find the device later on the registered network using http://&lt;devicename&gt;.</p>
+<ul>
+<li>Select your private WiFi Network and enter the passphrase.</li>
+<li>Press &quot;Connect&quot; to connect.</li>
+</ul>
+<p>It may take some time and if everything is fine you will see the HomeDing network disappear and you can re-join your local network.</p>
+<p>You may also look into the Serial output using the <code>Serial Monitor</code> of the Arduino Environment to see some messages about what is happening inside the device.</p>
+<pre class="language-txt"><code class="language-txt">SDK:2.2.2-dev(38a443e)/Core:2.6.3=20603000/lwIP:STABLE-2_1_2_RELEASE/glue:1.2-16-ge23a07e/BearSSL:89454af<br>00:00:02 sys:i Device starting...<br>...<br>00:00:04 sys:t connected.<br>00:00:04 sys:i airding 192.168.2.118<br>00:00:04 sys:t Connected to: DEVNET<br>...</code></pre>
+<h2>Find the new device on the network</h2>
+<p>As long as there is no configuration mode requested the device will register itself on the local network
+using a temporary device name and then start into normal operating mode.</p>
+<p>Without any configuration the devicename is constructed by &quot;ESP-&quot; and a device specific hex number given by the digits of the uniques network adapter MAC address.</p>
+<p>try:</p>
+<ul>
+<li>http://&lt;devicename from the WIFI Manager dialog&gt;</li>
+<li>http://&lt;devicename from the Serial Monitor&gt; (should be identical)</li>
+<li>http://&lt;ip-address from the Serial Monitor&gt;</li>
+</ul>
+<h2>Upload the Web UI files to the onboard file system</h2>
+<p>There are 3 sources where you can find the files to upload for the web UI.</p>
+<ul>
+<li>The <code>data</code> folder in the standard example has a copy of the WebUI files that fits to the set of elements of the standard example and some more.</li>
+<li>On <a href="http://homeding.github.io">homeding.github.io</a> these files are available as well and can be downloaded.</li>
+<li>The <code>WebFiles</code> project on <a href="https://www.github.com/HomeDing/WebFiles">https://www.github.com/HomeDing/WebFiles</a> is used to create files for the WebUI.</li>
+</ul>
+<p>To transfer the files to the device multiple methods are available:</p>
+<h3>SPIFFS Upload Utility</h3>
+<p>Using the ESP8266 filesystem Upload utility can be used to upload all files from a <code>data</code> folder at once.</p>
+<p>This method has the bad effect that all existing files will be deleted because a complete filesystem image is created and transferred.</p>
+<p>This method is useful when starting with a new board.</p>
+<h3>File Upload Utility</h3>
+<p><img src="/steps/upload.png" alt="Builtin Upload Utility"></p>
+<p>The firmware offers an upload interface as part of the embedded web server. This upload service can be used by the builtin minimal UI available at
+<a href="http://homeding/$upload.htm">http://homeding/$upload.htm</a>. This UI is implemented with minimal size (looks plain ugly) but is part of the firmware.</p>
+<p>This method is useful when uploading new files or update individual files. Cannot delete files and keeps other files.</p>
+<p>Upload works by using drag&amp;drop. select the files (not folders) and drop them over the &quot;drop here&quot; region. All files will be uploaded.</p>
+<p>To upload icon files for the elements in the <code>/i</code> folder you can click the <code>I-Upload</code> link before dropping these files.</p>
+<h3>Web based Update</h3>
+<p><img src="/steps/boot.png" alt="Builtin Upload Utility"></p>
+<p>The firmware offers an update interface as part of the embedded web server.
+This is available at <a href="http://homeding/$boot.htm">http://homeding/$boot.htm</a>.
+By pressing the start button all files from the homeding documentation website are transferred to the device.
+The list of files and files for download are available at: <a href="https://homeding.github.io/v02/list.txt">https://homeding.github.io/v02/list.txt</a>.</p>
+<p>This method is useful when updating a standard firmware by a new version and the UI files need to be updated.</p>
+<p>This method is also useful when starting with a new board.</p>
+<h3>File Upload in IDE</h3>
+<p>After an initial upload of files the built in <a href="/dev/microide.htm">Micro IDE</a> can be used.
+It has a upload area that can be used to upload files into the filesystem like in File Upload Utility.</p>
+<p>Only files in the root folder (not /i/*.svg) can be uploaded.</p>
+<h3>File Save in IDE</h3>
+<p>The <a href="/dev/microide.htm">Micro IDE</a> can create new files and can update existing files by entering text and saving it to a (new) filename.</p>
+<h3>Using Upload tools like cUrl</h3>
+<ul>
+<li>
+<p>When working with commandline tools the following cURL statement can be used to upload individual files.</p>
+<p>curl --form &quot;fileupload=test.txt;filename=/test.txt&quot; <a href="http://homeding/">http://homeding/</a></p>
+</li>
+</ul>
+<h2>Choose an icon</h2>
+<p><img src="/steps/stepupdateicon.png" alt="Select Icon"></p>
+<p>Every device can have a special icon that you will recognize in the shortcut or link.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="/examples/standard.htm">Standard Example</a></li>
+<li><a href="/recipes/index.htm">Recipes</a></li>
+<li><a href="/elements/index.htm">Elements</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

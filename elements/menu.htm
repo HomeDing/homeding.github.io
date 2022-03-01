@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Menu Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Menu Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#menu"></use></svg><p>The MenuElement allows controlling multiple values or switches by using a single rotary encoder.</p>
+</div>
+<p>In the configuration a list of elements is defined that can be controlled.</p>
+<p>To select the actual element from the list the <strong>select</strong> action is used typically a <strong>DigitalInputElement</strong> with a momentary button can be used.
+The select input is used to circle through the list of values.</p>
+<p>To change the selected value a <strong>RotaryElement</strong> or up/down buttons can be used.</p>
+<p>Some rotary encoders already have a built-in momentary button when pressing the knob down. The menu element is especially made for using these as input but an extra button works well also.</p>
+<p>For visualization of the actual selected value actions are created by the menu element that can be sent to display elements.</p>
+<p>The Elements that can be controlled by the MenuElement are the <strong>ValueElement</strong> with numbers and the <strong>SwitchElement</strong> with the values 0 and 1. There is actually a direct dependency between the MenuElement and these value elements because the menu implementation directly knows and uses the public members of the ValueElement and SwitchElement implementation class.</p>
+<h2>Web UI for the menu element</h2>
+<p>There is no special card made for this element because the values can be controlled directly.</p>
+<h2>Using a display</h2>
+<p>For simple displays that can only display a limited number of characters the <code>onDisplay</code> action can be used to show the id and current value of the selected element.</p>
+<p>When using a display with some higher resolution the id and value can be shown at different textElements using the <code>onMenu</code> and <code>onValue</code> actions.</p>
+<!-- Display photo ??? -->
+<p>This is a picture of the menu on a LCD display from the radio example.
+The fist line is used for permanently showing the frequency and signal strength while the 2. line is used to display the menu and the station name from the RDS signal.</p>
+<h2>Actions and input</h2>
+<h3>Select actions</h3>
+<p>The select input allows selecting one of the values that is part of the menu.
+Every incoming <code>select</code> action will advance the menu in the list of values by one. When the last value is reached the first value will be selected.</p>
+<p>Usually this event can be directly bound to a digitalinput element as shown in the configuration example to scroll through the menu items.</p>
+<p>The select action can also be send using the <a href="http://homeding/$board/menu/0?select=1">http://homeding/$board/menu/0?select=1</a></p>
+<h3>Value actions</h3>
+<p>The value actions are used to change the selected value.</p>
+<p>Every incoming value action will be forwarded to the selected value using a <code>up</code> action with the given value from the incoming event. This is typically an increment or decrement by 1 but the value element can be configured for other steps.</p>
+<p>Usually 2 buttons for up/down or a rotary encoder can be used to create these actions as shown in the configuration example.</p>
+<p>In the Radio example the menu element is used to control volume, the frequency and some switches like the mono-switch using a rotary encoder and a button.</p>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element.</p>
+<p><object data="/element.svg?menu" type="image/svg+xml"></object></p>
+<p><strong>onDisplay</strong> These actions will be dispatched whenever another value is selected or the value has changed.</p>
+<p><strong>onValue</strong> These actions will be dispatched whenever the value has changed.</p>
+<p><strong>onMenu</strong> These actions will be dispatched whenever another value is selected.</p>
+<h3>Configuration Example</h3>
+<p>This example shows how to control 2 values using a digitalin and a rotary element:</p>
+<p>Rotary, digitalin ---&gt; menu</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"rotary"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Rotary Input"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin1"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin2"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"step"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"onchange"</span><span class="token operator">:</span> <span class="token string">"menu/0?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"select"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"onlow"</span><span class="token operator">:</span> <span class="token string">"menu/0?select=1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"volume"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span><br>      <span class="token property">"onchange"</span><span class="token operator">:</span> <span class="token string">"radio/r?volume=$v"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"frequency"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">8700</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">10800</span><span class="token punctuation">,</span><br>      <span class="token property">"step"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">8930</span><span class="token punctuation">,</span><br>      <span class="token property">"onchange"</span><span class="token operator">:</span> <span class="token string">"radio/r?frequency=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"menu"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"onDisplay"</span><span class="token operator">:</span> <span class="token string">"device/0?log=menu-v:$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/index.htm">Elements</a></li>
+<li><a href="/examples/radio.htm">Radio Example</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

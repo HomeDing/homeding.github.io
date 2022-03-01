@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Probe example</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Probe example</h1>
+<div class="plaincard"><p>This example shows how to implement special, local elements
+that can retrieve sensor data from INA219 and INA266 current and voltage sensors
+to build a low-voltage power consumption logging device.</p>
+</div>
+<p>This device is made to probe voltage and current on the power supply of another device for a long time (like days) and log the probe values into a log element to be inspected.</p>
+<p>The two sensors supported in this example behave very similar but are different in the register layout and capabilities. Each of them is supported using a specific element and a specific Arduino library. Document on the elements can be found here:</p>
+<ul>
+<li><a href="/elements/ina219.htm">INA219 Element</a></li>
+<li><a href="/elements/ina226.htm">INA226 Element</a></li>
+</ul>
+<p>They are doumented</p>
+<p>The display is there to see the actual values.</p>
+<h2>Web User interface</h2>
+<p>The probe device can be accessed using a standard browser and displays the current values as well as the log from the current measures:</p>
+<p><img src="/examples/probe-ui.png" alt="INA219 Sensor" title="w600"></p>
+<h2>INA219 Sensor</h2>
+<p><img src="/examples/probe-ina219.jpg" alt="INA219 Sensor" title="w600"></p>
+<p>This example adds a INA219 element that retrieves data from the INA219 sensor using the INA219_WE library.</p>
+<p>The shown sensor board has a 0.1 Ohm shunt resistor and can meassure event low current values.</p>
+<p>In the configuration some options can be modified. They are related to the features of the underlying library.</p>
+<p><strong>Example:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ina219"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Voltage and Current Sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token string">"32"</span><span class="token punctuation">,</span><br>      <span class="token property">"samples"</span><span class="token operator">:</span> <span class="token string">"12bit"</span><span class="token punctuation">,</span><br>      <span class="token property">"gain"</span><span class="token operator">:</span> <span class="token string">"320"</span><span class="token punctuation">,</span><br>      <span class="token property">"warmuptime"</span><span class="token operator">:</span> <span class="token string">"2s"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onVoltage"</span><span class="token operator">:</span> <span class="token string">"displaytext/v?value=$v,log/v?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onCurrent"</span><span class="token operator">:</span> <span class="token string">"displaytext/a?value=$v,log/a?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onPower"</span><span class="token operator">:</span> <span class="token string">"displaytext/p?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>INA226 Sensor</h2>
+<p><img src="/examples/probe-ina226.jpg" alt="INA226 Sensor" title="w600"></p>
+<p>This example adds a INA226 element that retrieves data from the INA226 sensor using the INA226_WE library.</p>
+<p>The shown sensor board has a 0.002 Ohm shunt resistor and can measure up to 20 A. When using it for low-current values the resolution doesn't fit. There are other boards with a different shunt resistor that fits better for low-current measurements.</p>
+<p>In the configuration some options can be modified. They are related to the features of the underlying library.</p>
+<p><strong>Example:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ina226"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Voltage and Current Sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"shunt"</span><span class="token operator">:</span> <span class="token string">"0.002"</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"average"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"warmuptime"</span><span class="token operator">:</span> <span class="token string">"2s"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onVoltage"</span><span class="token operator">:</span> <span class="token string">"displaytext/v?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onCurrent"</span><span class="token operator">:</span> <span class="token string">"displaytext/a?value=$v,log/a?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onPower"</span><span class="token operator">:</span> <span class="token string">"displaytext/p?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Display</h2>
+<p>In the example the display is used to show the current values from the sensor.</p>
+<p>It is configured in <strong>env.json</strong>. Other supported display can also be used.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaysh1106"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"local display"</span><span class="token punctuation">,</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x3C"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>In the <strong>config.json</strong> 3 output text placements are defined to show voltage, current and power measurements:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"v"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">" V"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"voltage"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">" mA"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Ampere"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"p"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">" mW"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Power"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>You can see in the sensor configuration the actions that are sent to the displaytext elements.</p>
+<h2>Logging</h2>
+<p>A <a href="/elements/log.htm">Log Element</a> is used to capture the current value from the sensor.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"mA"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log current"</span><span class="token punctuation">,</span><br>      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:05:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/log-a.txt"</span><span class="token punctuation">,</span><br>      <span class="token property">"yformat"</span><span class="token operator">:</span> <span class="token string">"num:2"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"v"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"V"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log voltage"</span><span class="token punctuation">,</span><br>      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:05:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/log-v.txt"</span><span class="token punctuation">,</span><br>      <span class="token property">"yformat"</span><span class="token operator">:</span> <span class="token string">"num:2"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>The log file can hold about 640 values per 10 kByte. Recording a 5 min average probe values that are taken every 10s:</p>
+<ul>
+<li>ina219/0?readtime=10s</li>
+<li>log/v?averagetime=00:05:00</li>
+</ul>
+<p>This allows storing about 2-4 days of logging information.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="/examples/index.htm">examples</a></li>
+<li><a href="/boards/index.htm">Boards overview</a></li>
+<li><a href="/recipes/index.htm">Recipes</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

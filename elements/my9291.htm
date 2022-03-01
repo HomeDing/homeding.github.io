@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>MY9291 Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>MY9291 Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#no"></use></svg><p>The MY9291Element implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.</p>
+</div>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element.</p>
+<p><object data="/element.svg?my9291" type="image/svg+xml"></object></p>
+<p><strong>value</strong> - Is used for color mode to pass a list of colors like <code>red,blue,green,white</code>. See <a href="/elements/light.htm">LightElement</a>.</p>
+<p><strong>brightness</strong> - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..100. The default is 50.</p>
+<p><strong>datapin</strong> - Specifies the output pin that is used for the data signal to the chip.</p>
+<p><strong>clockpin</strong> - Specifies the output pin that is used for the clock signal to the chip.</p>
+<p><strong>enabled</strong> - to enable / disable the light without loosing the current value and brightness.</p>
+<h3>Configuration Example</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"my9291"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Couch-Lampe"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"50"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x00008000"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Element State</h2>
+<p>The following properties are available with the current values at runtime</p>
+<p><strong>active</strong> - Is set to true when the element is active.</p>
+<p><strong>value</strong> - Current output value of the element.</p>
+<h3>Example State</h3>
+<p>The internal value can be seen in the rotary state but should not directly be used as a value.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"my9291/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x0011ff33"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/light.htm">LightElement</a></li>
+</ul>
+<h2>Tags</h2>
+<p>#element #output #light</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

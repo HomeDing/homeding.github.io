@@ -1,48 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!--
-Markdown viewer SPA using
-* http://marked.js.org/
-* https://highlightjs.org/download/
--->
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library.'>
-  <title>HomeDing Documentation</title>
-  <link Content-Type="text/css" href="docstyle.css" rel="stylesheet" />
-  <script src="md/markdown-it.min.js"></script>
-  <script src="md/markdown-it-container.min.js"></script>
-  <script src="md/highlight.pack.js"></script>
-  <script src="pages.js"></script>
+  <meta name='description' content=''>
+  <title>The HomeDing Library</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
 </head>
 
 <body scroll="0" style="padding:0;">
-  <div class="container-fluid">
-    <div class="row u-header">
-      <a href="/" title="Startpage"><img class="icon" src="i/default.svg" /></a>
-      <h1>HomeDing</h1>
-    </div>
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
   </div>
-  <div class="row u-navbar" style="margin-bottom: 0;">
+
+  <div class="u-navbar" style="margin-bottom: 0;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
     </svg>
 
-    <!-- <a href="#" class="button"><img src="menu.svg"></a> -->
-    <a href="#" class="button">Home</a>
-    <a href="#page=/concepts/index.md" class="button">Concepts</a>
-    <a href="#page=/elements/index.md" class="button">Elements</a>
-    <a href="#page=/boards/index.md" class="button">Boards</a>
-    <a href="#page=recipes/index.md" class="button">Recipes</a>
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage"></nav>
-  <main class="container-fluid">
-    <div class="s-md"></div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>The HomeDing Library</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#default"></use></svg><p>The HomeDing library is a low code to build small IoT devices
+without the need for cloud services
+connected to the local WiFi by using the Arduino development environment.</p>
+</div>
+<p>Making IoT easy - that is the goal that is the driving reason for implementing the HomeDing library.</p>
+<p>The HomeDing library can be used to build small IoT devices connected to the local WiFi by using the Arduino development environment.</p>
+<p>The approach is very different to many other IoT solutions regarding these reasons:</p>
+<p><strong>IoT devices can be used standalone</strong></p>
+<blockquote>
+<p>Everything for a useful device fits into the memory available on a standard board.</p>
+<p>The board has everything to run independent on their own and can be controlled using a standard web browser.
+There is no need for a central hub or bridge device - ideal for starting with implementing IoT devices.</p>
+</blockquote>
+<p><strong>No Cloud connection</strong></p>
+<blockquote>
+<p>In contrast to many IoT solutions that rely on some functionality given by a central implementation in the cloud the HomeDing based devices
+are designed to be used without any cloud support and can run without being connected to the internet.</p>
+</blockquote>
+<p><strong>Using the Arduino Environment</strong></p>
+<blockquote>
+<p>To enable everyone to create IoT devices easily, the HomeDing library is available in the format of an Arduino library.</p>
+<p>All you get is OpenSource and a lot of documentation to learn implementing your features.</p>
+</blockquote>
+<p><strong>Easy to be used</strong></p>
+<blockquote>
+<p>Many of the standard problems that need to be solved for building IoT devices have been implemented in the library.</p>
+<p>Just use one of the <a href="/examples/index.htm">examples</a> as a starting code and upload it to the device.</p>
+</blockquote>
+<p><strong>No programming skills required</strong></p>
+<blockquote>
+<p>One of the powerful features of the HomeDing library is the availability of specialized elements that can be configured to work together and build solutions.</p>
+<p>Start by building your first IoT device by using some of the configuration examples from the <a href="/recipes/index.htm">recipes</a>.</p>
+</blockquote>
+<p><strong>Web enabled</strong></p>
+<blockquote>
+<p>The IoT devices all offer a full functional web frontend User Interface (UI) based on the web technologies HTML+CSS+JavaScript.</p>
+<p>Again, just using the given implementation is an option to start quickly as there are widgets for many of the elements
+that allow inspecting, controlling and configuration using a standard browser.</p>
+<p>If you are not familiar with these technologies you can find some documentation here to learn
+how to build a full functional Web UI in less than 200k code size.</p>
+</blockquote>
+<p>Special widgets are e.g. available for:</p>
+<ul>
+<li><a href="/elements/switch.htm">Switch</a></li>
+<li><a href="/elements/button.htm">Button</a></li>
+<li><a href="/elements/value.htm">Value</a></li>
+</ul>
+<!-- Featuring a broad set of versatile and simple widgets, including:
+- Stepper
+- Messenger
+- Color
+- Dimmed light
+- Colored light
+- Value
+- Status
+- Gauge
+- Percentage
+- LED
+- Map
+- Chart -->
+<p>The library is currently made especially for the ESP8266 based boards like the NodeMCU or similar ones.
+Many sensors, displays, input and output functionality is available as <a href="/elements/index.htm">elements</a>.</p>
+<p>The project is Open Source available on GitHub and all files are licensed under a BSD style license.
+See <a href="http://www.mathertel.de/License.aspx">http://www.mathertel.de/License.aspx</a></p>
+<p>The full documentation is available at: <a href="https://homeding.github.io/">https://homeding.github.io/</a></p>
+<h2>HomeDing Concept Papers</h2>
+<p>Some text on the concepts and architecture of this library.</p>
+<ul>
+<li><a href="/concepts/paper01.htm">Build your own things easily</a></li>
+<li><a href="/concepts/paper02.htm">Software Architecture</a></li>
+<li><a href="/concepts/paper03.htm">Elements and Actions</a></li>
+<li><a href="/concepts/paper04.htm">Web Server</a></li>
+</ul>
+<h2>Elements</h2>
+<p>Elements are the functional blocks for building and configuring a device and they interact using actions.</p>
+<p>Each element supports a unique feature, e.g. reads a sensor, drives a display, connects some peripheries or implements some internal logic.</p>
+<p>The list of the <a href="/elements/index.htm">elements</a> already provided within this library, the <a href="/examples/index.htm">examples</a> and the <a href="/recipes/index.htm">recipes</a> show you the available features that can be configured.</p>
+<p>It is intentionally easy to implement your own specific elements as you can see in some of the <a href="/examples/index.htm">examples</a>.</p>
+<h2>Configuration</h2>
+<p>Instead of compiling and uploading a new firmware to the device every time a change is required the library provides configuration possibilities at runtime.</p>
+<p>The configuration of the device implemented as a JSON file activates and configures the required elements as well as defining how the interact with each other and to the outer world over network.</p>
+<h2>Boards</h2>
+<p>The HomeDing library can be used with almost any board that is using a ESP8266 processor.</p>
+<p>For some <a href="/boards/index.htm">boards</a> you can find reviews and summaries with a suitable the configuration of the system.</p>
+<h2>Web interface</h2>
+<p>Every device based on the Homeding library is connected to the local WiFi network and has a <a href="/concepts/paper04.htm">Web Server</a>
+With a small Web Site built-in to visualize the current functionality or to configure some new functionality using a standard web browser.</p>
+<p>The build-in Web Server also offers a programmable interface by using REST+JSON based <a href="/dev/webservices.htm">Web-Services</a>.</p>
+<h2>Extend and Implement for your needs</h2>
+<p>See: <a href="/concepts/index.htm">Implementation Concepts</a>
+See: <a href="/dev/index.htm">Implementation References</a></p>
+<h2>Read more</h2>
+<p>Source code can be installed using the Arduino Library Manager or downloaded from <a href="https://www.github.com/Homeding">https://www.github.com/Homeding</a>.</p>
+<p>In the documentation you find related links to material that is available on the internet and worth reading.</p>
+<p>There are many good resources available to get more information about the ESP8266 boards. Here my recommendations:</p>
+<h3>From Espressif</h3>
+<ul>
+<li><a href="https://www.espressif.com/en/support/download/documents?keys=ESP8266">ESP8266 documents at espressif</a></li>
+<li><a href="https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf">The ESP8266 Technical Reference</a></li>
+<li><a href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf">ESP8266EX Datasheet</a></li>
+</ul>
+<h3>General Guides</h3>
+<ul>
+<li><a href="https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html">A Beginner's Guide to the ESP8266</a></li>
+</ul>
+
   </main>
 
   <script>
@@ -55,296 +153,9 @@ Markdown viewer SPA using
     if (window.innerWidth > 880)
       navObj.classList.add('open');
 
-    // setup Markdown-IT default with options 
-    var md = new markdownit('default', {
-      html: true,
-      breaks: false,
-      linkify: true,
-      langPrefix: 'hljs language-',
-      highlight: function (str, lang) {
-        if (!hljs.getLanguage(lang))
-          lang = "plaintext";
-        var t = hljs.highlight(lang, str);
-        return (t.value);
-      }
-    });
-
-
-    function renderPlainCard() {
-      return '<div class="plaincard">';
-    }
-
-    function renderIconCard(icon, title, linkFolder, link) {
-      var div = '<div class="iconcard">';
-      var img = '<svg class="icon"><use href="/icons.svg#' + icon + '"></use></svg>';
-
-      if ((title) && (linkFolder) && (link)) {
-        return (div
-          + `<a href="#page=/${linkFolder}/${link}.md">`
-          + img + '<h3>' + title + '</h3>' + '</a>');
-      } else {
-        return (div + img);
-      }
-    }
-
-    function renderImageCard(image, title, linkFolder, link) {
-      var div = '<div class="imgcard">';
-      var img = `<img src="/${linkFolder}/${image}.jpg">`;
-
-      if ((title) && (linkFolder) && (link)) {
-        return (div
-          + `<a href="#page=/${linkFolder}/${link}.md">`
-          + img + '<h3>' + title + '</h3>' + '</a>');
-      } else {
-        return (div + img);
-      }
-    }
-
-    // excerpts on any page
-    // ::: excerpt [icon]
-    var mdc = new markdownitContainer(md, 'excerpt', {
-      render: function (tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*excerpt\s+(.*)$/);
-          if (m) {
-            return renderIconCard(m[1]);
-          } else {
-            return renderPlainCard();
-          }
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-
-    // card for boards in boards folder
-    // ::: board image
-    new markdownitContainer(md, 'board', {
-      render: function (tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*board\s+(.*)$/);
-          return renderImageCard(m[1], undefined, 'boards', m[1]);
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-
-    // card for elements in elements folder
-    // ::: element title [icon]
-    new markdownitContainer(md, 'element', {
-      render: function (tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*element\s+(\S+)\s*(\S*)/);
-          if (m[2]) {
-            return renderIconCard(m[2], m[1], 'elements', m[1]);
-          } else {
-            return renderIconCard('no', m[1], 'elements', m[1]);
-          }
-
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-
-    // card for sensors in sensors folder
-    // ::: sensor image
-    new markdownitContainer(md, 'sensor', {
-      render: function (tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
-          return renderImageCard(m[1], undefined, 'sensors', m[1]);
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-    new markdownitContainer(md, 'warning', {
-      render: function (tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*warning\s+(.*)$/);
-          return '<div class="warning"><h3>Warning</h3>\n';
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-    // simplified YAML parser supporting only a key:value object. 
-    function extractFrontDatax(txt) {
-      var fd = {};
-      var fMatch = txt
-        .match(/^-{3,}\s*[\r\n]+([^\0]*)[\r\n]+-{3,}[\r\n]*/);
-
-      if (fMatch) {
-        var fText = fMatch[1].replace(/[\r\n]+/g, "\n");
-
-        // reformat multiline values
-        fText = fText.replaceAll(/>\s*(\n  [^\n]+)+(?=\n*$|\n\S)/g, m => {
-          return (m.substring(1).replace(/\n\s*/g, ' '));
-        });
-
-        var matches = fText.matchAll(/^(?<key>\S+)\s*:\s*(.*)$/gm);
-        for (const match of matches) {
-          fd[match[1]] = match[2];
-        }
-        return ({
-          length: fMatch[0].length,
-          data: fd
-        });
-
-      } else {
-        return ({ length: 0, data: {} });
-      }
-    } // extractFrontData
-
-
-    function getHashParam(param, defValue) {
-      var h = window.location.hash;
-      if (h) {
-        var params = h.substr(1).split('&');
-        for (i = 0; i < params.length; i++) {
-          var p = params[i].split('=');
-          if (p[0] == param) return p[1];
-        } // for
-      }
-      return defValue;
-    } // getHashParam
-
-    /** load a JSON using a URL / rest service or static file */
-    function loadFile(url, loadCallback, errorCallback) {
-      var req = new XMLHttpRequest();
-      req.overrideMimeType('application/text');
-      req.open('GET', url);
-      // req.onload  = func;
-      req.onload = function (x) {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            loadCallback(this.responseText);
-          } else {
-            errorCallback(this);
-          }
-        }
-      };
-      req.onerror = errorCallback;
-      req.send(null);
-    } // loadFile
-
-    function forAllNodeList(nodeList, callbackFn) {
-      for (var n = 0; n < nodeList.length; n++) {
-        callbackFn(nodeList[n]);
-      }
-    } // forAllNodeList()
-
-    // === Markdown Loader ===
-
-    var mdClass = {
-      _checking: false,
-
-      // show given text as html.
-      setText: function (fName, txt) {
-
-        // extract front data
-        var fData = extractFrontData(txt);
-
-        if (fData.length > 0) {
-          txt = txt.substring(fData.length);
-          // replace using njk syntax 
-          txt = txt.replaceAll(/\{\{\s*data.(\S+)\s*\}\}/g, (m, key) => fData.data[key]);
-          txt = txt.replaceAll(/\{\{\s*(\S+)\s*\}\}/g, (m, key) => fData.data[key]);
-
-          // replace meta tags in header
-          if (fData.data.title) document.title = fData.data.title;
-
-          if (fData.data.tags) {
-            var e = document.head.querySelector('meta[name=keywords]');
-            if (e) { e.content = fData.data.tags; }
-          }
-
-          if (fData.data.description) {
-            var e = document.head.querySelector('meta[name=description]');
-            if (e) { e.content = fData.data.description; }
-          }
-        }
-
-        var hText = md.render(txt);
-
-        // modify markdown links to work:
-        hText = hText.replace(/href="([\w\-\/]+).md"/g, 'href="#page=$1.md"');
-        hText = hText.replace(/href="([\w\-\/]+)"/g, 'href="#page=$1.md"');
-        this.innerHTML = hText;
-
-        // size Images
-        forAllNodeList(
-          this.querySelectorAll('img'),
-          function (aObj) {
-            aObj.addEventListener('click', function (evt) {
-              window.open(evt.target.src, "img");
-            });
-          }.bind(this)
-        );
-
-      },
-
-      // init, when slide behavior is attached.
-      init: function () {
-        this.onhashchange(); // initial navigation
-        this._checking = false;
-      },
-
-      // check for #page=xxx.md
-      onhashchange: function (/* evt */) {
-        var pName = getHashParam('page', 'index.md').toLowerCase();
-
-        loadFile(
-          pName,
-          function (txt) {
-            this.setText(pName, txt);
-            window.scrollTo(0, 0);
-          }.bind(this),
-
-          function (x) {
-            this.setText(pName, '>> File with name ' + pName + ' not found.');
-          }.bind(this)
-        );
-      }
-    };
-
-    lazyLoadMD('nav', 'toc.md');
-
-    // manually attach md container
-    var mdObj = document.querySelector('.s-md');
-    if (mdObj) {
-      mdObj.init = mdClass.init;
-      mdObj.setText = mdClass.setText;
-      mdObj.onhashchange = mdClass.onhashchange;
-      window.addEventListener('hashchange', mdObj.onhashchange.bind(mdObj));
-      mdObj.init();
-    }
-
-    // function iLink(evt) {
-    //   const aObj = evt.target;
-    //   console.log(aObj.href);
-    //   evt.preventDefault();
-    // }
-
-    // document.querySelectorAll('nav').forEach(el => {
-    //   el.addEventListener('click', iLink);
-    // })
-
-
-
+    lazyLoadHTM('nav', '/toc.htm');
   </script>
-</body>
+  
+  </body>
 
 </html>

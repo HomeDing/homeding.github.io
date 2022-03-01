@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Servo</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Servo</h1>
+<p>This recipe uses a switch element and a value element to set a servo to 2 defined positions.</p>
+<p>A servo can be controlled using a ignal coming from a PWMOut element.</p>
+<p>To control the switch a digital inout element is used to toggle the switch.
+The switch only provides a 0 / 1 boolean value but also onHgh and onLow actions can be send.
+These actions are used to set the value element to the required low and high value.
+As this is passed to the PWMOut element the position of the servo is controlled.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalinput"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"switch/pos?switch=1"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pos"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"onHigh"</span><span class="token operator">:</span> <span class="token string">"value/pos?value=42"</span><span class="token punctuation">,</span>   <br>    <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"value/pos?value=210"</span>   <br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br><span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pos"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"pwmout/servo?value=$v"</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span><br><br><span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"servo"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>    <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"output signal for the servo"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/digitalin.htm">Digital Input Element</a></li>
+<li><a href="/elements/switch.htm">Switch Element</a></li>
+<li><a href="/elements/value.htm">Value Element</a></li>
+<li><a href="/elements/pwmout.htm">PWMOut Element</a></li>
+</ul>
+<h2>SLOPE</h2>
+<p>to smoothly control a value like the brightness of a LED the slope property of the value element can be used.</p>
+<p>It specifies the delta the value is changed per second.</p>
+<p>Example to fade a led from off to the full 255 brightness in 8 seconds
+the slope can be set to 32 (= 256/8)</p>
+<p>When not spdifying this property the value will be set to the target value immediately.</p>
+<h3>menu element excerpt:</h3>
+<p>WS</p>
+<p>The MenuElement allows controlling multiple value elements by sharing the input elements.</p>
+<h2>Stuff</h2>
+<p>switch element to</p>
+<p>timer: pulse every 2 seonds</p>
+<p>switch: control up/down</p>
+<p>timer-value -&gt; and
+switch-value -&gt; and</p>
+<p>and-value -&gt; value.up</p>
+<p>value controls min and max of servo position</p>
+<p>PWMOUT Element to drive the servo</p>
+<p>value increment
+value decrement</p>
+<p><a href="https://www.hackster.io/mitov/esp8266-wi-fi-remote-control-servo-with-rotary-encoder-1a35fa">https://www.hackster.io/mitov/esp8266-wi-fi-remote-control-servo-with-rotary-encoder-1a35fa</a></p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

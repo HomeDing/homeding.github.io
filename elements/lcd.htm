@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Using LCD displays with a HD44780 controller chip.'>
+  <title>The Display LCD Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>The Display LCD Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><p>The Display Configuration for Monochrome LCDs based on HD44780 chips.</p>
+</div>
+<p>In the Arduino Environment the LiquidCrystal library exits for a long time and supports HD44780 compatible LCDs with up to 4 lines of 20 characters. Displays ae available with</p>
+<ul>
+<li>2 lines of 8 characters</li>
+<li>2 lines of 16 characters (most common and default)</li>
+<li>4 lines of 20 characters</li>
+</ul>
+<h2>Connecting</h2>
+<p>Connecting this display type to Arduino was often made using many IO lines by driving the 4-bit interface mode directly.</p>
+<p>For ESP8266 and the limited number of GPIO ports a I2C adapter solution is more adequate. The most frequent found of such an solution ist the PCF8574 remote 8-bit IO adapter chip that converts between the I2C bus and up to 8 digital IO lines.</p>
+<p>See <a href="http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx">http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx</a></p>
+<p>The library used to drive these displays is &quot;LiquidCrystal_PCF8574&quot;.</p>
+<h2>Web UI for the DisplaySH1106 Element</h2>
+<p>There is a dedicated card for this element available that will be used for the web server config and landing pages:</p>
+<p><img src="/elements/lcdui.png" alt="LCD Web UI"></p>
+<p>This card shows the current output that can also be seen on the local attached display. It is updated every time the status of the device is polled by the page.</p>
+<h2>Element Configuration</h2>
+<p><object data="/element.svg?lcd" type="image/svg+xml"></object></p>
+<p>The following properties are available for configuration of the element:</p>
+<p><strong>address</strong> the address of the display on the I2C bus. Defaults to 0x3C.</p>
+<p><strong>height</strong> the number of lines the display supports.</p>
+<p>The initialization of the I2C bus uses the SDA and SCL pins defined in the device configuration.</p>
+<p>To show some output on the display use the <a href="/elements/displaytext.htm">DisplayText Element</a>
+and the <a href="/elements/displaydot.htm">DisplayDot Element</a></p>
+<h2>Configuration</h2>
+<p>The DisplayLCD Element can be used to configure the LCDDisplayAdapter.</p>
+<p>This should be done in the <code>env.json</code> file:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"lcddevice"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"IoT Dev-Device with LCD"</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span><br>      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span><br>      <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"D1"</span><span class="token punctuation">,</span><br>      <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"D2"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"displaylcd"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"LCD"</span><span class="token punctuation">,</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x27"</span><span class="token punctuation">,</span><br>      <span class="token property">"lines"</span> <span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"columns"</span> <span class="token operator">:</span> <span class="token number">16</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Special characters</h2>
+<p>The HD44780 displays do have a special character set that is explained in the datasheet. These characters e.g. can be used in the
+postfix text using the 16-bit UTC notation like <code>&quot;postfix&quot;: &quot;\u00dfC&quot;</code>.</p>
+<p>However the WebUI will use the standard unicode codes as expected in the browser so the special character may look different in the Web UI.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="/i2c.htm">Using the I2C bus</a></li>
+<li><a href="/elements/displaytext.htm">DisplayText Element</a></li>
+<li><a href="/elements/displaydot.htm">Display Dot</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

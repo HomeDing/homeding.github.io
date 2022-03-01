@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Elements API</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Elements API</h1>
+<p>To implement an element a new class has to be created to implement the functions required for the specific element.</p>
+<p>This is supported by a base element implementation in the <code>Element</code> class that is used as the parent class of every element.</p>
+<h2>Using the MyElement class as a template</h2>
+<p>The <a href="/examples/devding.htm">devding example</a> has a class named <code>MyElement</code> that can be used as a starting point it contains all functions partly commented that might be implemented.</p>
+<p>You can copy the 2 files <code>MyElement.cpp</code> and <code>MyElement.h</code> over to your sketch folder and rename all occurrences if <code>MyElement</code> to your element name.</p>
+<p>Be aware that there is a name for the element <code>my</code> defined in the registration function that needs to be changed to something unique.</p>
+<h2>main functions</h2>
+<p>As with normal Arduino sketches there are 2 functions init() and loop() that are used to initialize and run the element.</p>
+<p>Because every element also participates in exchanging actions there is a third function named set that gets called for receiving actions.</p>
+<h3>init(base)</h3>
+<p>This function is called just after a new element object is created from the class and before any property is set from the configuration. You can create default settings in here.</p>
+<p>A reference to the board object is passed to allow access to the common features supported by the board class.</p>
+<p>The Elements that deriving from the Element class must call the init() method of the Element class (e.g. <code>Element::init(board);</code>).</p>
+<p>If there is no need for initialization of your element you can leave this method unimplemented in the AlarmElement.cpp file and can remove the function definition from the class definition in AlarmElement.h.</p>
+<h3>set(name, value)</h3>
+<p>This method that gets called whenever a parameter gets initialized or an action is sent by another element to this element.</p>
+<p>The action name and the parameters are already given as 2 parameters the action <code>name</code> and action <code>value</code> to make implementation easy.</p>
+<p>You need to implement some code for all incoming actions that are element specific.</p>
+<p>The easiest case is to initialize a member of the class with a new value. There are some methods available to convert the parameter given as a string<br>
+to the appropriate type like</p>
+<ul>
+<li><code>_atotime</code> for time and duration values</li>
+<li><code>_atopin</code> for pin definitions</li>
+<li><code>_atoColor</code> for single color values</li>
+<li><code>_atob</code> for boolean values</li>
+<li><code>atoi</code> for numeric values is given from the esp8266 library.</li>
+</ul>
+<p>Within this method the set() of the Element class (e.g. <code>ret = Element::set(name, value);</code>) needs to be called whenever the action is not handled in a meaningful way or when the name is unknown.</p>
+<h3>start()</h3>
+<p>In some cases the element need to implement a further initialization after all configuration properties are known but before the loop starts. This can be implemented in the start method.</p>
+<p>If there is no need for initialization of your element you can leave this method unimplemented in the SwitchElement.cpp file and can remove the function definition from the class definition in SwitchElement.h.</p>
+<p>As a default elements are started after a network was connected only so they will not be activated in case of the network is not available or not configured yet.</p>
+<h3>loop()</h3>
+<p>This function is called constantly like usual in the Arduino framework. It should return as fast as possible to give time to all the other activated elements.</p>
+<p>There are several mechanisms like state machines to split a more complex task into smaller pieces. This approach should be followed in implementing the loop() function for longer running processes.</p>
+<h3>Class initialize</h3>
+<p>Some elements need a valid local time to operate. The event when the element normal operation is started can be configured in
+the class initializer like you can find in the LogElement:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token class-name">LogElement</span><span class="token double-colon punctuation">::</span><span class="token function">LogElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br><span class="token punctuation">{</span><br>  startupMode <span class="token operator">=</span> Element_StartupMode<span class="token double-colon punctuation">::</span>Time<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>See also <a href="/dev/wifimanager.htm">wifimanager</a></p>
+<h3>pushState(cbFunc)</h3>
+<p>ELements report some internal state when the pushState method is called.
+This is in addition to sending events when the state changes and allows other elements and the Web UI to question for the actual state.</p>
+<p>This is done by calling the callback function for every property that might change during operation.</p>
+<h2>Members derived from the general Element class</h2>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p>This can be changed in the configuration of the element by the <code>loglevel</code> attribute.</p>
+<p><strong>active</strong> - This variable is set to true after the element has started
+without problems in the <code>start()</code> function.</p>
+<p><strong>startupMode</strong> - This variable specifies when the element can be started. It is a common topic to many elements that the network must work or a local time is available.
+The default value is Element_StartupMode::Network.</p>
+<h2>Registering an element</h2>
+<p>The ElementRegistry holds references to all element classes to enable creating of new Elements by name at runtime.</p>
+<p>This is done by initializing a static class member to enforce calling the registerElement method before anything else on every class.</p>
+<p>For more information on this see <a href="/dev/elementregistry.htm">Element Registry</a>.</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

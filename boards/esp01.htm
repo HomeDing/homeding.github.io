@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Board ESP8266 ESP-01</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Board ESP8266 ESP-01</h1>
+<p>The ESP-­01 and ESP-­01S modules contain a ESP8266 MCU and a up to 1 MByte flash memory chip.</p>
+<p>It is the cheapest available board with the ESP8266 and comes with a standard male adaptor.</p>
+<h2>Overview table</h2>
+<p><img src="/boards/esp01-pins.png" alt="board-esp01-pins"></p>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TX</td>
+<td>Serial output, programming</td>
+</tr>
+<tr>
+<td>CH_PD</td>
+<td>Chip Enable. 10k to VCC</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>Reset</td>
+</tr>
+<tr>
+<td>3.3V</td>
+<td>Power supply, needs &gt;= 250mA.</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>reset</td>
+</tr>
+<tr>
+<td>GPIO2(D4)</td>
+<td>OUTPUT, see below</td>
+</tr>
+<tr>
+<td>GPIO0(D3)</td>
+<td>OUTPUT, see below (flash)</td>
+</tr>
+<tr>
+<td>RX</td>
+<td>Serial input, programming</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>reset</td>
+</tr>
+</tbody>
+</table>
+<p>The 8 pin connector is not usable to place the chip on a solderless breadboard directly but there are adapters available.</p>
+<p>There are multiple versions of the ESP-01 board available. In the early days also 512kByte flash memory versions have been available now most of them come with 1 MByte of flash memory. The ESP-01S has a slightly different wiring regarding the LED and a different layout of the PCB antenna ans also comes with 1MByte of flash memory.</p>
+<h2>ESP-01 LEDs</h2>
+<p>The original version of the ESP-01 board has 2 LEDs:</p>
+<p><img src="/boards/esp01-leds.jpg" alt="board-esp01-leds"></p>
+<ul>
+<li>The red LED is connected to the 3.3V Power supply and lights up constantly.</li>
+<li>The blue LED is connected to the Serial output pin and lights up when data is sent. When not using the TX Serial output the pin and LED can be used as a digital output too.</li>
+</ul>
+<p>There have been critics about these 2 LEDs and some recommend to unsolder them e.g. to save power for battery driven solutions.</p>
+<h2>ESP-01S LEDs</h2>
+<p>This board is a newer version that</p>
+<ul>
+<li>1Mbyte of flash memory.</li>
+<li>No power LED</li>
+<li>Blue LED on GPIO2(D4)</li>
+</ul>
+<h2>Self-Made Adaptors</h2>
+<p>With some soldering and a USB-to-Serial adapter you can build your own adapter board:</p>
+<p><img src="/boards/esp01adapt1.jpg" alt="selfmade adapter1">
+<img src="/boards/esp01adapt2.jpg" alt="selfmade adapter2"></p>
+<p>Some of the USB Adapters like the on I use also have a 3.3 V regulator available, but they usually so not offer much current.</p>
+<p>Be sure to add a reset (RST) and flash GPIO0(D3) button with 10k resistor to VCC and button to GND.</p>
+<p>The 3 LEDs show the actual level of GPIO0(D3) and GPIO2(D4).</p>
+<p>Another idea is to use a ESP01 USB adapter and add the reset (RST) and flash GPIO0(D3) buttons as you can see here.</p>
+<p><img src="/boards/esp01prog1.jpg" alt="customized adapter1">
+<img src="/boards/esp01prog2.jpg" alt="customized adapter2"></p>
+<h2>Minimum adapter</h2>
+<p>The minimum wiring to use (run) this board is to have the following external wiring:</p>
+<ul>
+<li>pull up CH_PD with 10k to VCC</li>
+<li>pull up RST with 10k to VCC</li>
+<li>connect 3.3V and GND to power supply</li>
+</ul>
+<h2>GPIO 0</h2>
+<p>This pin has to be high while booting or resetting the chip when you like to start the regular uploaded program.
+After starting the program you can use it for input and output.</p>
+<p>For example attaching a led with resistor to ground will prohibit starting because the level of the pin is pulled to low. It is better to design all the io functionality using a high level for the inactive state and have a resistor in place to pull the default level to high.</p>
+<h2>GPIO0 as Momentary input</h2>
+<p>A momentary button that pulls the GPIO0 down to ground when pressed.</p>
+<p>This is one of the often-found wiring for the GPIO0 pin because it is possible to start uploading a new program after resetting the chip while pushing this button. Therefore it often is labeled with &quot;FLASH&quot;.</p>
+<p>After a regular boot you can define the GPIO0 pin as an input and check the given level by using digital read function. When you detect a LOW level the switch was pushed.</p>
+<p>It is a not so good idea to replace the push button by a switch because you may start or reset the chip while the switch is closed and then don’t start the program.</p>
+<h2>GPIO0 with LED output</h2>
+<p>A LED and a resistor in series to VCC.</p>
+<p>The LED and the Resistor will pull the IO level to high. There is no further need for an additional resistor in this cases. To switch the LED on you have to pull the digital output level to LOW.</p>
+<p>The maximum current that the ESP8266 can drive directly is about 10 to 20 mA. For a LED used as an indicator 5 mA may be enough.</p>
+<p>It is a not so good idea to activate the LED by using a HIGH signal. For this you have to wire LED and resistor to GND.
+and this will cause to start the cip in upload FLASH mode every time the device boots and don’t start the program.</p>
+<h2>GPIO0 with relay</h2>
+<p>Relays need more current then a pin of the ESP8266 can deliver. Therefore, a transistor is often used for amplifying the signal.</p>
+<p>When attaching a transistor to the IO pin you also have to face not pulling the level to low. Therefore a PNP transistor to high is a good solution. When the output current you need is higher than the amount the chip can deliver directly. If you don't have a relays that is driven by 3.3 volts  (very likely) you can use a second transistor to drive the relay using another voltage.</p>
+<p>Here is a sample off driving a 5V relay:</p>
+<p><img src="/boards/gpio-relay.png" alt="GPIO driving a relay"></p>
+<h2>GPIO 1 / Serial TX</h2>
+<p>You can control the blue LED if you do not need the TX function. TX is actually GPIO1 so by setting GPIO1 to HIGH will light up the LED of a ESP-01 board. Of course sending output to serial will spoil things.</p>
+<h2>GPIO2</h2>
+<p>This pin has to be high while booting or resetting the chip when you like to start the regular uploaded program.
+After starting the program you can use it for input and output like the GPIO0 pin.</p>
+<h2>Reset</h2>
+<p>The Reset(RST) line seems to be very sensitive regarding short spike impulses. There is an interesting investigation on this (in German) on the web site
+<a href="https://blog.thesen.eu/esp8266-reset-probleme-loesen-und-relais-stabil-schalten/">https://blog.thesen.eu/esp8266-reset-probleme-loesen-und-relais-stabil-schalten/</a>.</p>
+<p>The outcome from this: pull RST high with a resistor and add a 100nF capacitor.</p>
+<h2>Modification for deep sleep mode</h2>
+<p>The ESP8266 supports a <a href="/boards/deepsleep.htm">deep sleep mode</a> that needs an external connection between the GPIO16 and the RESET.</p>
+<p>Here is a picture on how to create such a connection on an ESP-01:</p>
+<p><img src="/boards/esp01-wire.jpg" alt="board-esp01-with-deep-sleep"></p>
+<p>More details and hints on using the deep sleep mode can be found in <a href="/boards/deepsleep.htm">deepsleep</a></p>
+<h2>Modification for supporting PUYA Flash chips</h2>
+<p>Some of the ESP8266 ESP-01 boards use a (cheaper) flash chip from the vendor PUYA. This chip has a slightly different behavior when writing data to the flash memory than the original flash chips that have been used. Therefore a modification in the code needs to be activated.</p>
+<p>For version 2.5.2 of the ESP8266 board package this can be enabled by adding the following code to the Esp.h file in <code>packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\Esp.h</code>.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">PUYA_SUPPORT</span></span><br>  <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">PUYA_SUPPORT</span> <span class="token expression"><span class="token number">1</span></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span></code></pre>
+<p>For the next version this option may be activated by default. See<br>
+<a href="https://github.com/esp8266/Arduino/pull/6362">https://github.com/esp8266/Arduino/pull/6362</a></p>
+<p>Background information can be found in: <a href="https://github.com/esp8266/Arduino/issues/6221">https://github.com/esp8266/Arduino/issues/6221</a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/">https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/</a></li>
+<li><a href="https://www.esp8266.com/viewtopic.php?t=11657">https://www.esp8266.com/viewtopic.php?t=11657</a></li>
+<li><a href="https://www.instructables.com/id/USB-to-ESP-01-Board-Adapter-Modification/">https://www.instructables.com/id/USB-to-ESP-01-Board-Adapter-Modification/</a></li>
+</ul>
+<h2>Tags</h2>
+<p>#board</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Map Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Map Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#default"></use></svg><p>The MapElement uses incoming values to create a new value
+specified by a set of range rules.</p>
+</div>
+<p>The values given by Sensors o other Input elements are often not directly usable for feeding them into actions. Often the value itself needs to be at justed and sometimes different actions need to be sent.</p>
+<p>Examples are:</p>
+<ul>
+<li>Classifying sensor values into <code>low</code>, <code>regular</code> and <code>high</code></li>
+<li>Creating different actions based on the incoming value</li>
+</ul>
+<p>The map Element provides the list of rules that apply when the inbound value is in the specified range of the map rule.</p>
+<h2>Finding the matching rule</h2>
+<p>Every map rule consists of a min and max range configuration that is compared against the incoming value. The list of rules is processed from the beginning to the end and when a range is found that contains the incoming value the rule is selected for processing.</p>
+<p>Because the min attribute defaults to 0 it is possible to configure the max attribute only when the rules are given in ascending order.
+See Example 1.</p>
+<p>The input value can be either compared by a numeric or a string data type.</p>
+<h2>Executing</h2>
+<p>The attributes on the matching are used to create actions. When a <code>value</code> is specified the value is taken into the actual value. When no value is given the incoming value is used.</p>
+<p>Then the <code>onValue</code> actions on the rule are sent.</p>
+<p>Then the <code>onValue</code> actions on the map Element are sent.</p>
+<h3>Example 1</h3>
+<p>This example works on an incoming temperature and creates a green color for good values:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"light color based on temperature."</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"blue"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"22"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"green"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br></code></pre>
+<p>Same with actions on the rules level. In the status the original inbound value will be reported</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"light color based on temperature."</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=blue"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"22"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=green"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=red"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>This example also shows how to simplify the <code>min</code> and <code>max</code> attributes.
+When not specified they default to the infinity min and max.
+The ranges all overlap but the intended rule-set works because always the first matching rule will be selected.</p>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element:</p>
+<p><object data="/element.svg?map" type="image/svg+xml"></object></p>
+<p><strong>type</strong> -  &quot;string&quot; or &quot;numeric&quot; value comparison. numeric is default.</p>
+<p><strong>onValue</strong> - These actions will be emitted when ever a new resulting value is found.</p>
+<p><strong>rules</strong> - This property configures the list of mapping rules. It must be in the order from lowest to highest.</p>
+<p><strong>rules[n].min</strong> - set the lower bound of the range.</p>
+<p><strong>rules[n].max</strong> - set the upper bound of the range.</p>
+<p><strong>rules[n].equal</strong> - set the lower and upper bound of the range.</p>
+<p><strong>rules[n].value</strong> - the new value applied when rule fits the inbound value.</p>
+<p><strong>rules[n].onValue</strong> - These actions will be emitted when the rule was selected.</p>
+<h3>Example using mapped values</h3>
+<p>This example configuration enables using a numeric value (e.g. from a switch) into 2 color values used for a RGB LED.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"select a color based on a numeric value"</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/l?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"green"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D8,D6,D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h3>Example by mapping actions</h3>
+<ul>
+<li>value coming in via action</li>
+<li>find relevant mapping entry from the rules list</li>
+<li>setting new value (optional).</li>
+<li>sending out the action specified in the mapping entry</li>
+</ul>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"m"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"map-action"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"send actions based on a value-action"</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/up?value=0,digitalout/down?value=0,switch/down?value=0,switch/up?value=0,timer/rst?stop"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/down?value=1,digitalout/up?value=0,switch/down?value=1,switch/up?value=0,timer/rst?start"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/down?value=0,digitalout/up?value=1,switch/down?value=0,switch/up?value=1,timer/rst?start"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Element State</h2>
+<p>The following properties are available with the current values at runtime</p>
+<p><strong>active</strong> - Is set to true when the element is active.</p>
+<p><strong>value</strong> - Current output value of the element.</p>
+<h3>Example State</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map/colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Tags</h2>
+<p>#element</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

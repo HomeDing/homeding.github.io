@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>2 channel relay</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>2 channel relay</h1>
+<div class="plaincard"><p>This board can switch 2 relay outputs using a ESP-01 board.</p>
+</div>
+<p><img src="/boards/2-channel-relay.jpg" alt="2 channel relay board"></p>
+<p>2-channel relay is required for some use cases where devices like fans offer multiple speed modes or curtain / shade control.</p>
+<p>This board itself offers some options that may be found at other boards too:</p>
+<ul>
+<li>
+<p>The DC input can be 5V or 12V. The option must be selected using a jumper.</p>
+<p>When using 12V an additional regulator is reducing to 5 V as each relay is driven by 5V.</p>
+</li>
+<li>
+<p>The first relay is controlled by the GPIO0.</p>
+</li>
+<li>
+<p>The second relay is controlled by the GPIO2.</p>
+</li>
+<li>
+<p>The GND and +5V is available on pins.</p>
+</li>
+<li>
+<p>There are pins that give access to more of the ESP-01 pins.</p>
+<p>In this case the TX and RX signals are available via an 1k resistor.</p>
+</li>
+</ul>
+<p>As there are many boards like these even with 4 relay output this may vary from board to board.</p>
+<h2>Flashing</h2>
+<p>Enable the ESP-01 component to be used with the HomeDing environment by flashing the minimal sketch.</p>
+<p>Details on this can be found in the <a href="/boards/esp01.htm">ESP-01 board</a> description.</p>
+<p>As the minimal sketch includes many elements for implementing switches this can be used for relay very well.</p>
+<h2>System Configuration</h2>
+<p>In the <strong>env.json</strong> file the device specific settings must be configured.</p>
+<ul>
+<li>The <code>led</code> configuration in the device should not be used to avoid switching the relay while booting.</li>
+<li>A <code>button</code> is not available.</li>
+<li>To enable timers a ntp time source is used here as well. This can be let out when no real-time is required for a specific use case.</li>
+<li>enable safemode after full configuration.</li>
+</ul>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"relay02"</span><span class="token punctuation">,</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Fan control"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"board with 2 relay that can be switched independently."</span><span class="token punctuation">,</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span><br>      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/ding.htm"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">8266</span><span class="token punctuation">,</span><br>      <span class="token property">"passwd"</span><span class="token operator">:</span> <span class="token string">"123"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Listen for 'over the air' OTA Updates"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Relay Configuration</h2>
+<p>This is a very simple configuration for <strong>config.json</strong> that enables switching each relay on its own with HIGH as the default level.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"gpio0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Switch to control GPIO0"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/gpio0?value=$v"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"gpio2"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Switch to control GPIO2"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/gpio2?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"gpio0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"false"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"gpio2"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"false"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Shade or Blinds Control</h2>
+<p>Many shades or blinds can be controlled with a motor.
+To control the direction there is usually a motor that has 2 power connections, one for each direction of rotation.
+It must be ensured, that only one of them is actually connected.</p>
+<p>This  board with 2 relays can be used with the following wiring where the first relay controls the first power line and the second relay only can forward power to the second power line when the first relay is in off state.</p>
+<p>Picture ???</p>
+<!-- https://www.clauss-markisen.de/uploads/media/2014-01-CM-Anschlusshinweise.pdf -->
+<!-- There is a special Element that controls 2 relays for this purpose that also controls and tracks the time the motor requires to open or close completely or partly. -->
+<!-- ShadeControlElement ??? -->
+<p>The shade control element allows controlling 2 outputs for motors to open or close a shade, curtain, window or shutter. For this purpose the element
+knows roughly how many seconds are required to fully open or close and can automatically find the direction and time needed to open to a specific percentage. This is not exact control but allows e.g. to close a shutter for half the way.</p>
+<p>For manual control the Shade Control Element implements some actions that support different number or kind of buttons.</p>
+<p>&quot;duration&quot; : &quot;8&quot;</p>
+<p>One Button</p>
+<p>down-&gt;stop-&gt;up-&gt;stop-&gt;</p>
+<p>A click on the button can create a &quot;next&quot; action to advance. When the max-duration or 0 is reached in up or down direction the shade control element automatically advances to the next stop state.</p>
+<h2>Fan Control</h2>
+<p>A cooling fan that has 4 levels of speed (0,1,2,3)  air fans</p>
+<h2>See also</h2>
+<ul>
+<li><a href="/boards/esp01.htm">ESP-01 board</a></li>
+<li><a href="/elements/digitalout.htm">DigitalOut Element</a></li>
+</ul>
+<!-- * <https://www.youtube.com/watch?v=qahdTG4TE-A> -->
+<ul>
+<li></li>
+</ul>
+<h2>Tags</h2>
+<p>#board</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

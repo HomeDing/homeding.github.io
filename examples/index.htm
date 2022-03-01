@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Examples for the HomeDing library</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Examples for the HomeDing library</h1>
+<p>There are some example projects coming with the Homeding library that can be loaded into the IDE by using the Arduino examples menu.</p>
+<p>Because the functionality of the target device is mostly defined by the configuration and not by the sketch itself
+you can find a lot of examples for configuration and recipes combining multiple elements to fulfill a specific need.</p>
+<p>The standard example can be used as a good starting point.</p>
+<p><strong>Important Notice:</strong> Examples will not only require to upload the sketch. It is as also required to upload the files from the <code>data</code> folder to the filesystem. If you like to see a full start-to-end building a device look into one of the <a href="/stories/index.htm">stories</a>.</p>
+<h2>Examples</h2>
+<p>These examples that come with the library need the nodeMCU board and no specific external hardware:</p>
+<ul>
+<li>
+<p><strong><a href="/examples/standard.htm">Standard</a></strong>
+This example has a sketch and the web site for a NodeMCU or similar board. Most of the recipes work with this sketch.</p>
+</li>
+<li>
+<p><strong><a href="/examples/minimal.htm">Minimal</a></strong>
+This example shows how to reduce the number of available elements and use only a bare minimum part of the embedded web site so the whole solution fits into a ESP8266 board with only 1 MByte Flash memory like the ESP-01.</p>
+</li>
+<li>
+<p><strong><a href="/examples/devding.htm">Develop</a></strong>
+This example is very like the <a href="/examples/standard.htm">standard example</a> but has some add-ons that help during development.
+It can be used with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">nodemcu boards</a>.</p>
+</li>
+<li>
+<p><strong><a href="/examples/probe.htm">Probe</a></strong>
+shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
+It can be used with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">nodemcu boards</a>.</p>
+</li>
+</ul>
+<!--
+* **[Radio](/examples/radio.md)** This example is built as an extension of the standard example but shows how a special element that is only used for this sketch can be included.
+There is also a special WebUI page for the remote control of the radio.
+
+* Dash ... This example shows how to implement a device that ...
+
+* Clock ...
+-->
+<h2>Customizing the Standard Example</h2>
+<p>Under normal conditions the <a href="/examples/standard.htm">Standard Example</a> offers a solution where all required elements are compiled and ready to be configured.</p>
+<p>In some cases there will not be enough memory to upload or there is the need
+to add some specific elements for a specific solution. This can be done using the following mechanisms.</p>
+<h3>HOMEDING_INCLUDE_xxx Definitions.</h3>
+<p>The HOMEDING_INCLUDE_xxx definitions control what elements will be registered in the <a href="/dev/elementregistry.htm">Element Registry</a>.</p>
+<p>In the *.ino file of every example you can find a list of HOMEDING_INCLUDE_xxx definitions that can be commented out or activated to specify what elements are later available for configuration. By disabling the definitions you can remove individual elements when they are not required to save program space.</p>
+<p>The <a href="/examples/minimal.htm">Minimal Example</a> is derived from the standard example by just disabling elements this way.</p>
+<p>Some elements that require a specific external library that are disables in the <a href="/examples/standard.htm">Standard Example</a> can be included this way.</p>
+<h3>Implement local elements.</h3>
+<p>In the folder of the script you can add  some elements that are not part of the library but will also be compiled together with the sketch and therefore are also available for configuration.</p>
+<p>The <a href="/examples/probe.htm">Probe Example</a> and the <a href="/examples/radio.htm">Radio Example</a> show how to include a very specific elements into the sketch folder.</p>
+<p>The <a href="/examples/devding.htm">DevDing Example</a> is used to implement some additional elements for problem analysis. It is instrumented for using the (limited, software based) remote debugger. New elements can be implemented by using the provided empty MyElement implementation as a boilerplate.</p>
+ <!-- ??? ---
+ 
+These examples require a specific hardware setup like sensors or displays to solve the use case.
+
+* ... With oled display
+* ntpclock
+* ... With dht
+* with DSTimeElement
+* Dash button wake-up
+
+-->
+<h2>See also</h2>
+<ul>
+<li><a href="/stories/index.htm">Stories</a> for Step by Step instructions</li>
+<li><a href="/boards/index.htm">Boards</a> for Board specific configurations</li>
+<li><a href="/recipes/index.htm">Recipes</a> for Element configurations</li>
+</ul>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

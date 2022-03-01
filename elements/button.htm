@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Create actions based on digital input gestures.'>
+  <title>The Button Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>The Button Element</h1>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#button"></use></svg><p>The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.</p>
+</div>
+<h2>Web UI</h2>
+<p>On the board page this element is presented by using a specialized widget that visualizes and enables dispatching the defined actions:</p>
+<p><img src="/elements/buttonui.png" alt="Button Widget"></p>
+<p>By clicking the button once the <code>onclick</code> action will be dispatched.</p>
+<ul>
+<li><code>ondoubleclick</code> ???</li>
+<li><code>onpress</code> ???</li>
+</ul>
+<p>The setup icon opens a dialog to change the configuration properties.</p>
+<p>The Button Element acts on a value input typically created by a push button and a <a href="/elements/digitalin.htm">Digital Input Element</a>.</p>
+<p>It detects the gestures <code>click</code>, <code>doubleclick</code> and <code>press</code> and sends out the defined actions.</p>
+<p>If you only need a button on the web ui but have no physically attached button the <a href="/elements/webbutton.htm">WebButton Element</a> can be used as well.</p>
+<h2>Element Configuration</h2>
+<p><object data="/element.svg?button" type="image/svg+xml"></object></p>
+<p>The following properties are available for configuration of the element:</p>
+<p><strong>value</strong> - This is the incoming logical value that is typically emitted by a digital input element.</p>
+<p><strong>onClick</strong> - These actions are emitted when a single press gesture was detected.</p>
+<p><strong>onDoubleClick</strong> - These actions are emitted when a double click gesture was detected.</p>
+<p><strong>onPress</strong> - These actions are emitted when a long press gesture was detected.</p>
+<p><strong>action</strong> - when receiving this event the specified action are dispatched. valid values are <code>click</code>, <code>doubleclick</code> and <code>press</code>.</p>
+<p><strong>onAction</strong> - These actions are emitted any time a click double-click or press gesture was detected.
+The given value is <code>click</code>, <code>doubleclick</code> or <code>press</code>. This allows button actions to be send to other buttons even remote buttons.</p>
+<p><strong>clickTicks</strong> - the milliseconds to wait for another click before sending out the onclick action. Default is 250.</p>
+<p><strong>pressTicks</strong> - time to wait before sending out the <code>onPress</code> action when a long press is detected. Defaults is 800.</p>
+<h2>Control the Element</h2>
+<p>It is typical to use the Button Element together with a <a href="/elements/digitalin.htm">Digital Input Element</a>
+that provides the input value to the Button Element.</p>
+<h3>Example Configuration</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"up button signal"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"button/up?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"button"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onClick"</span><span class="token operator">:</span> <span class="token string">"device/main?log=click."</span><span class="token punctuation">,</span><br>      <span class="token property">"onDoubleClick"</span><span class="token operator">:</span> <span class="token string">" device/main?log=doubleclick."</span><span class="token punctuation">,</span><br>      <span class="token property">"onPress"</span><span class="token operator">:</span> <span class="token string">" device/main?log=press."</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Element State</h2>
+<p><strong>active</strong> - Is set to true when the element is active.</p>
+<p><strong>value</strong> - Current output value of the element.</p>
+<h3>Example State</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"button/start"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"1"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/recipes/lighttimer.htm">Light timer recipe</a></li>
+<li><a href="/recipes/remotebutton.htm">Remote Button recipe</a></li>
+</ul>
+<h2>Tags</h2>
+<p>#element #input</p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

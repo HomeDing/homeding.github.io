@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Dashboards'>
+  <title>Dashboard</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage open"></nav>
+
+  <main style="background-color:#eeeeee;padding:1rem">
+    <h1>Dashboard</h1>
+<p>This is an example of a dashboard for a indoor air quality sensor device like the one described in the <a href="/stories/story-airquality.htm">Airquality story</a>.</p>
+<p><img src="/dev/dashboard.png" alt="dashboard ui"></p>
+<h2>Dashboard features</h2>
+<p>The dashboard implementation is a generic approach to visualize the configured elements with their current
+values and in some cases to interact with them.</p>
+<p>The dashboard can be started using the menu or the direct link:</p>
+<p>GET <a href="http://homeding/board.htm">http://homeding/board.htm</a></p>
+<p>It can also be used as the default Homepage by using the <code>homepage</code> configuration in the <a href="/elements/device.htm">device element</a>.</p>
+<p>On this page every configured element is shown on a card and shows the actual runtime parameters like sensor values.</p>
+<p>In the standard view some elements are not visualized. By using the [sys] button they can be shown as well.</p>
+<p>On this page by using the [+] button it is possible to create new elements based on the information in the file elements.json.</p>
+<p>For existing elements the config parameters can be modified.</p>
+<h2>Special Cards</h2>
+<p>For <a href="/elements/displays.htm">displays</a> and the display related elements like textElement, dotElement and lineElement
+there is an implementation that visualizes the actual situation on the display.</p>
+<p><img src="/elements/displaycard.png" alt="displaycard"></p>
+<p>The WebButton is a element that only exists for displaying a button in the dashboard that can trigger actions.</p>
+<p><img src="/elements/webbuttoncard.png" alt="webbuttoncard"></p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    if (window.innerWidth > 880)
+      navObj.classList.add('open');
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
