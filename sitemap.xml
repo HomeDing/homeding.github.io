@@ -1,0 +1,1340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+       
+        <url>
+            <loc>/boards/2-channel-relay.htm</loc>
+            <lastmod>2022-03-01T21:05:04.440Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/bulb.htm</loc>
+            <lastmod>2022-03-01T21:05:04.440Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/deepsleep.htm</loc>
+            <lastmod>2022-03-01T21:05:04.452Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/esp01-dht.htm</loc>
+            <lastmod>2022-03-01T21:05:04.452Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/esp01.htm</loc>
+            <lastmod>2022-03-01T21:05:04.452Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/esp12dev.htm</loc>
+            <lastmod>2022-03-01T21:05:04.456Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.456Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/neo.htm</loc>
+            <lastmod>2022-03-01T21:05:04.456Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/nodemcu.htm</loc>
+            <lastmod>2022-03-01T21:05:04.468Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/pins.htm</loc>
+            <lastmod>2022-03-01T21:05:04.468Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/sinilink-fet.htm</loc>
+            <lastmod>2022-03-01T21:05:04.468Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/sockets.htm</loc>
+            <lastmod>2022-03-01T21:05:04.472Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/sonoffbasic.htm</loc>
+            <lastmod>2022-03-01T21:05:04.472Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/sonoffs20.htm</loc>
+            <lastmod>2022-03-01T21:05:04.476Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/watchdog.htm</loc>
+            <lastmod>2022-03-01T21:05:04.476Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/wemosoled.htm</loc>
+            <lastmod>2022-03-01T21:05:04.476Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/whiteadapter.htm</loc>
+            <lastmod>2022-03-01T21:05:04.476Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/wifikit8.htm</loc>
+            <lastmod>2022-03-01T21:05:04.480Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/witty.htm</loc>
+            <lastmod>2022-03-01T21:05:04.480Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/world-clock.htm</loc>
+            <lastmod>2022-03-01T21:05:04.480Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/boards/wroom2.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/concepts/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/concepts/paper01.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/concepts/paper02.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/concepts/paper03.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/concepts/paper04.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/concepts/paper05.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/concepts/paper06.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/classes.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/dashboard.htm</loc>
+            <lastmod>2022-03-01T21:05:04.484Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/elementcards.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/elementclass.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/elementinterface.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/elementregistry.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/i2c.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/logger.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/manifest.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/micro.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microbehaviors.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microchart-gauge.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microchart-line.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microchart-pie.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microcharts.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microicons.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microide.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microjavascript.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microjson.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microportal.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microstyle.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/microtemplates.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/safemode.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/startupnet.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/webserver.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/webservices.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/website.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/websitemap.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/webversions.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/dev/wifimanager.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/add.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/alarm.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/analog.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/and.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/bl0937.htm</loc>
+            <lastmod>2022-03-01T21:05:04.488Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/bme680.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/bmp280.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/button.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/calc.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/color.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/dcftime.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/device.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/dht.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/digitalin.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/digitalout.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/digitalsequence.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/digitalsignal.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/displaybar.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/displaydot.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/displayline.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/displays.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/displaytext.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/dmx.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ds18b20.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/dstime.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ina219.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ina226.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/lcd.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/light.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/log.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/map.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/max7219.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/mdns.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/menu.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/my9291.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/neo.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ntptime.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/or.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ota.htm</loc>
+            <lastmod>2022-03-01T21:05:04.492Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/p9813.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/pms.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/pwmout.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/radio.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/reference.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/remote.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/rfcodes.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/rotary.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/scene.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/schedule.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/sensors.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/sh1106.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/sht20.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ssd1306.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ssd1309.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/ssdp.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/state.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/switch.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/time.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/timeelements.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/timer.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/tm1637.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/value.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/weatherfeed.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/webbutton.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/elements/wot.htm</loc>
+            <lastmod>2022-03-01T21:05:04.496Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/devding.htm</loc>
+            <lastmod>2022-03-01T21:05:04.500Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.500Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/minimal.htm</loc>
+            <lastmod>2022-03-01T21:05:04.500Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/probe.htm</loc>
+            <lastmod>2022-03-01T21:05:04.500Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/pwm.htm</loc>
+            <lastmod>2022-03-01T21:05:04.500Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/radio.htm</loc>
+            <lastmod>2022-03-01T21:05:04.500Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/standard.htm</loc>
+            <lastmod>2022-03-01T21:05:04.504Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/examples/wordclock.htm</loc>
+            <lastmod>2022-03-01T21:05:04.504Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.504Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/readme.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/alarm.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/blink.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/brightness.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/capasoil.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/ldrswitch.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/led.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/leddim.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/ledrotary.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/lighttimer.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/logic.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/ntpclock.htm</loc>
+            <lastmod>2022-03-01T21:05:04.508Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/ntpclock2.htm</loc>
+            <lastmod>2022-03-01T21:05:04.512Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/remotebutton.htm</loc>
+            <lastmod>2022-03-01T21:05:04.512Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/remotedisplay.htm</loc>
+            <lastmod>2022-03-01T21:05:04.512Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/servo.htm</loc>
+            <lastmod>2022-03-01T21:05:04.512Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/tempdisplay.htm</loc>
+            <lastmod>2022-03-01T21:05:04.512Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/templogger.htm</loc>
+            <lastmod>2022-03-01T21:05:04.512Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/recipes/water.htm</loc>
+            <lastmod>2022-03-01T21:05:04.512Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/sensors/sensors.htm</loc>
+            <lastmod>2022-03-01T21:05:04.520Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/steps/stepsarduino.htm</loc>
+            <lastmod>2022-03-01T21:05:04.528Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/steps/stepsconfigure.htm</loc>
+            <lastmod>2022-03-01T21:05:04.528Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/steps/stepsnewdevice.htm</loc>
+            <lastmod>2022-03-01T21:05:04.528Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/steps/stepsupdateweb.htm</loc>
+            <lastmod>2022-03-01T21:05:04.528Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/stories/curtain.htm</loc>
+            <lastmod>2022-03-01T21:05:04.532Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/stories/index.htm</loc>
+            <lastmod>2022-03-01T21:05:04.584Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/stories/story-airquality.htm</loc>
+            <lastmod>2022-03-01T21:05:04.592Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/stories/story-outdoorsensor.htm</loc>
+            <lastmod>2022-03-01T21:05:04.592Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/stories/story-outdoorsensorsolar.htm</loc>
+            <lastmod>2022-03-01T21:05:04.592Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/stories/story-weatherdisplay.htm</loc>
+            <lastmod>2022-03-01T21:05:04.592Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/toc.htm</loc>
+            <lastmod>2022-03-01T21:05:04.592Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+       
+        <url>
+            <loc>/wishlist.htm</loc>
+            <lastmod>2022-03-01T21:05:04.596Z</lastmod>
+            <changefreq>monthly</changefreq>
+        </url>
+        
+    
+</urlset>
