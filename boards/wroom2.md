@@ -193,4 +193,4 @@ These are the basic element configurations for the joystick button and the 2 onb
 
 ## See also
 
-* [Using the I2C bus](/i2c.md)
+* [Using the I2C bus](/dev/i2c.md)

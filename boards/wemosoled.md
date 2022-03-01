@@ -106,4 +106,4 @@ The display configuration is the only specific entry in env.json:
 
 ## See also
 
-* [Using the I2C bus](/i2c.md)
+* [Using the I2C bus](/dev/i2c.md)

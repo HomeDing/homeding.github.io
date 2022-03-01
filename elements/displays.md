@@ -110,4 +110,4 @@ On startup, when a flexible display is configured some system information is dis
 
 ## See also
 
-* [Using the I2C bus](/i2c.md)
+* [Using the I2C bus](/dev/i2c.md)

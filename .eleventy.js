@@ -9,13 +9,24 @@ module.exports = function (eleventyConfig) {
 
   // Copy any images and css to `_site`, via Glob pattern (in 0.9.0+)
   // Keeps the same directory structure.
-  eleventyConfig.addPassthroughCopy("*.css");
-  eleventyConfig.addPassthroughCopy("**/*.svg");
-  eleventyConfig.addPassthroughCopy("**/*.jpg");
-  eleventyConfig.addPassthroughCopy("**/*.png");
 
+  const contentFolders = ["boards", "concepts", "dev", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
+  const assetFolders = ["i", "v02", "v02m", "v03", "v03m"];
+
+  contentFolders.forEach(f => {
+    eleventyConfig.addPassthroughCopy(f + "/*.svg");
+    eleventyConfig.addPassthroughCopy(f + "/*.jpg");
+    eleventyConfig.addPassthroughCopy(f + "/*.png");
+  })
+
+  assetFolders.forEach(f => {
+    eleventyConfig.addPassthroughCopy(f);
+  })
+
+  eleventyConfig.addPassthroughCopy("./favicon*.*");
+  eleventyConfig.addPassthroughCopy("./*.css");
   eleventyConfig.addPassthroughCopy("./pages.js");
-  eleventyConfig.addPassthroughCopy("element*.json");
+  eleventyConfig.addPassthroughCopy("./element*.json");
 
   // https://www.11ty.dev/docs/data-global-custom/
   eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.htm");
@@ -26,6 +37,14 @@ module.exports = function (eleventyConfig) {
   //   "md",
   //   "css" // css is not yet a recognized template extension in Eleventy
   // ]);
+
+  eleventyConfig.addTransform("insp", function(content) {
+    // console.log( this.inputPath, this.outputPath );
+    // note that this.outputPath is `false` for serverless templates
+    // simply remove whitespace at the beginning of all textlines starting with a tag
+    // content = content.replace(/$\s+</mg, "<");
+    return(content);
+  });
 
   eleventyConfig.addFilter("stringify", function (value) {
     return JSON.stringify(value);
@@ -87,6 +106,8 @@ module.exports = function (eleventyConfig) {
   // ===== Markdown configuration =====
 
   eleventyConfig.addPlugin(myMarkdown);
+
+  // console.log(eleventyConfig.ignores);
 
   return {
     markdownTemplateEngine: "njk",

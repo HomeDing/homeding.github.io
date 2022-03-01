@@ -77,6 +77,6 @@ This is the list of the icons available for the HomeDing Library to be used for 
 
 ## See also
 
-* [manifest](/manifest.md)
+* [manifest](/dev/manifest.md)
 
 

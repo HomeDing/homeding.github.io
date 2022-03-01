@@ -96,6 +96,6 @@ However the WebUI will use the standard unicode codes as expected in the browser
 
 ## See also
 
-* [Using the I2C bus](/i2c.md)
+* [Using the I2C bus](/dev/i2c.md)
 * [DisplayText Element](/elements/displaytext.md)
 * [Display Dot](/elements/displaydot.md)

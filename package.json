@@ -9,18 +9,20 @@
     "start:clean": "npm run clean && npm run start",
     "build": "npx @11ty/eleventy",
     "build:clean": "npm run clean && npm run build",
+    "build:css": "sass docstyle.scss docstyle.css --style=compressed --no-source-map",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "BSD-3",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0"
-  },
-  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "debug": "^4.3.1",
     "markdown-it-container": "^3.0.0",
-    "markdown-it-replace-link": "^1.1.0"
+    "markdown-it-replace-link": "^1.1.0",
+    "sass": "^1.49.9"
+  },
+  "dependencies": {
   }
 }

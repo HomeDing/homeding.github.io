@@ -41,14 +41,14 @@ layout: toc.njk
 <!--
 ### More
 
-* [classes](/classes.md)
+* [classes](/dev/classes.md)
 * [elementcards](/dev/elementcards.md)
 * [elementinterface](/dev/elementinterface.md)
 * [webservices](/dev/webservices.md)
 * [webversions](/webversions.md)
 * [_backend](/_backend.md)
 * [_exampledashbutton](/_exampledashbutton.md)
-* [Using the I2C bus](/i2c.md)
+* [Using the I2C bus](/dev/i2c.md)
 * [_linechart](/_linechart.md)
 * [_manifest](/manifest.md)
 * [_moisturesonsor](/_moisturesonsor.md)

@@ -143,7 +143,7 @@ The following env.json file can be used on these boards:
 
 - [Boards overview](/boards/index.md)
 - [NodeMCU Documentation](https://nodemcu.readthedocs.io/en/master/)
-- [Using the I2C bus](/i2c.md)
+- [Using the I2C bus](/dev/i2c.md)
 - <https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/>
 - <https://www.nodemcu.com/index_en.html>
 - <https://github.com/nodemcu/nodemcu-devkit-v1.0/blob/master/README.md>

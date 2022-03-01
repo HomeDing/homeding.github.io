@@ -8,7 +8,7 @@ This is a list of sensors, simple input and output components up to interface ch
 
 Many of the sensors offer simple digital or analog signals to be used by the generalized input and output [elements](/elements/index.md).
 
-Others others are using data transported over a bus like [I2C bus](/i2c.md) or even specific protocols and need special elements.
+Others others are using data transported over a bus like [I2C bus](/dev/i2c.md) or even specific protocols and need special elements.
 
 ## Sensors giving digital signals
 

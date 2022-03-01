@@ -73,7 +73,7 @@ Because there is only 1 bus available in the Arduino boards the configuration is
 
 The device Element is only defining what pins are used for the I2C bus but does no further initialization.
 
-More hints on the I2C bus implementation see [I2C](/i2c.md)
+More hints on the I2C bus implementation see [I2C](/dev/i2c.md)
 
 
 ### Web UI

@@ -101,7 +101,7 @@ The configuration of the I2C bus is required for many elements and is handled ce
 
 See also
 * [Device Element](../elements/device.md).
-* [Using the I2C bus](/i2c.md)
+* [Using the I2C bus](/dev/i2c.md)
 
 
 ## minimal wiring for bare boards like ESP-01, ESP-12E

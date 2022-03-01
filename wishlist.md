@@ -24,7 +24,7 @@ title: wishlist
 * [/_exampledashbutton.md](/_exampledashbutton.md) -
 * [/_googlehome.md](/_googlehome.md) -
 * [/_iconsforthings.md](/_iconsforthings.md) -
-* [/manifest.md](/manifest.md) -
+* [/manifest.md](/dev/manifest.md) -
 * [/_microjson.md](/_microjson.md) -
 * [/_moisturesonsor.md](/_moisturesonsor.md) -
 * [/_private.md](/_private.md) -

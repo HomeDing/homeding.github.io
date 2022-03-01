@@ -1,8 +1,8 @@
-name: Build and Deploy to Github Pages
+name: Create Github Pages
 on: [push, workflow_dispatch]
 
 jobs:
-  build-and-deploy:
+  build-and-commit:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:

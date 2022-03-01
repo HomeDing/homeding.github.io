@@ -69,7 +69,7 @@ The AM2320 sensor is a drop-in replacement for the DHT22 with almost the same wi
 
 In addition to the DHT22 wiring the not connected (nc) pin needs also to be connected to GND to use the compatible data protocol.
 
-The AM2320 sensor also offers to communicate using the [I2C protocol](/i2c.md). This is not supported by the HomeDing library as of now.
+The AM2320 sensor also offers to communicate using the [I2C protocol](/dev/i2c.md). This is not supported by the HomeDing library as of now.
 
 
 ### About the pull-up resistor

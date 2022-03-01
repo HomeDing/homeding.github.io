@@ -261,4 +261,4 @@ I added a 100nF capacitor next to the radio.
 
 ## See also
 
-* [Using the I2C bus](/i2c.md)
+* [Using the I2C bus](/dev/i2c.md)
