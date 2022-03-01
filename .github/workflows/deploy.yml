@@ -1,5 +1,5 @@
 name: Build and Deploy to Github Pages
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build-and-deploy:
