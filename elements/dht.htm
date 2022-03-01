@@ -10,7 +10,6 @@
   <meta name='description' content='Support of the DHT air temperature and humidity sensor chips.'>
   <title>The DHT Element</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
-  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   <script src="/pages.js"></script>
 </head>
 
@@ -65,7 +64,7 @@
 <h2>Connecting a AM2320 Sensor</h2>
 <p>The AM2320 sensor is a drop-in replacement for the DHT22 with almost the same wiring and smaller in size.</p>
 <p>In addition to the DHT22 wiring the not connected (nc) pin needs also to be connected to GND to use the compatible data protocol.</p>
-<p>The AM2320 sensor also offers to communicate using the <a href="/i2c.htm">I2C protocol</a>. This is not supported by the HomeDing library as of now.</p>
+<p>The AM2320 sensor also offers to communicate using the <a href="/dev/i2c.htm">I2C protocol</a>. This is not supported by the HomeDing library as of now.</p>
 <h3>About the pull-up resistor</h3>
 <p>There is a 10k resistor required between pin 1 and 2 to pull the signal up. Both sides, the sensor and teh processor only hav to pull the signal to LOW
 when the protocol requires it; the resistors sets the bus level to HIGH in the case none of participants pulls the level to LOW.</p>
