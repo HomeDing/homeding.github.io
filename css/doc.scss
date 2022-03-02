@@ -13,7 +13,7 @@ nav {
   width: 280px;
   z-index: 1;
   left: -280px;
-  transition: all 0.2s;
+  // transition: all 0.2s;
   padding: 1rem 0.2rem 0.2rem;
   background-color: var(--card-back);
 
@@ -43,9 +43,9 @@ nav {
   }
 }
 
-main {
-  transition: margin-left 0.2s;
-}
+// main {
+//   transition: margin-left 0.2s;
+// }
 
 h2 {
   clear: both;

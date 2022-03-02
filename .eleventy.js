@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./*.css");
   eleventyConfig.addPassthroughCopy("./pages.js");
   eleventyConfig.addPassthroughCopy("./element*.json");
+  eleventyConfig.addPassthroughCopy("./*.svg");
 
   // https://www.11ty.dev/docs/data-global-custom/
   eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.htm");
