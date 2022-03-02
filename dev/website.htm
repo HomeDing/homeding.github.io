@@ -8,7 +8,7 @@
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Dashboard and Configuration Editor for IoT devices.'>
-  <title>Embedded Web Site for IoT Devices.</title>
+  <title>Embedded Web Site for IoT Devices</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
 </head>
@@ -33,58 +33,176 @@
   <nav class="inpage x  open"></nav>
 
   <main style="padding:1rem">
-    <h1>Embedded Web Site for IoT Devices.</h1>
-<div class="plaincard"><p>Every device using the HomeDing library has an embedded web site and a built-in web server.
-so it can be directly reached by using a standard browser.
-The required files fit into 128k filespace to support even devices with small flash sizes.</p>
+    <h1>Embedded Web Site for IoT Devices</h1>
+<div class="plaincard"><p>Every device using the HomeDing library has an embedded web site and a built-in web server
+so it can be directly reached by using a standard browser.</p>
+<p>The files available through the web server are available for devices with 4MByte flash
+providing the full functionality.</p>
+<p>A subset of the files fit into 128k file space to support even devices with small flash sizes.</p>
 </div>
 <p>Implementing a web site that fits into the very limited space of the flash memory is a challenge on its own but can be solved by using the power of the current browsers.</p>
-<p>To make development of this web site less painful a nodejs based web site project is available that also simulates configured elements to a certain degree.</p>
-<p>The structure of the provided web site with details on the individual pages can be found in <a href="/websitemap.htm">websitemap</a></p>
+<p>To make development of this web site less painful a nodejs based web site project is available
+at <a href="https://github.com/HomeDing/WebFiles">https://github.com/HomeDing/WebFiles</a> to build the target files and also simulating configured elements to a certain degree.</p>
 <h2>Technology selection</h2>
-<p>Some reasonable decisions have to be made today (2019) so that all current browsers can be used to run the embedded web site.</p>
-<p><strong>Images</strong> are implemented using SVG format wherever possible. It is nicely supported by all browsers today so no fallback needs to be implemented. As a welcome effect the SVG files for icons are smaller than bitmap based images.</p>
-<p>See
-<a href="https://caniuse.com/#feat=svg">https://caniuse.com/#feat=svg</a></p>
+<p>Some reasonable decisions were made so that all current browsers can be used to run the embedded web site.</p>
+<p>In general the standard features available in modern browsers are used in favour of using a standard framework.</p>
+<p><strong>Images</strong> are implemented using SVG format wherever possible. It is nicely supported by all browsers today so no fallback needs to be implemented. They are combined into a icon template file (icons.svg)
+As a welcome effect the SVG files for icons are smaller than bitmap based images.</p>
 <p><strong>Scripts</strong> are implemented in JavaScript using the ES5 version or by using Typescript that is compiled and minified to ES5 version.</p>
-<p>See <a href="https://caniuse.com/#feat=es5">https://caniuse.com/#feat=es5</a></p>
-<p><strong>CSS Style sheets</strong> are implemented by using SCSS files beeing compiled to standard CSS. This allows structuring and commending the source code as well as  minimizing the output.</p>
-<p><strong>Promises</strong> are really helpful when building SPA web applications using REST services. They are supported by most browsers and can be emulated for IE11 with a reasonable space.</p>
-<p>A polyfill for IE11 is provided.</p>
-<p>See <a href="https://caniuse.com/#feat=promises">https://caniuse.com/#feat=promises</a></p>
-<h2>Implementation Details</h2>
-<p>The development source for this web site can be found on github in the repository <a href="https://github.com/HomeDing/WebFiles">https://github.com/HomeDing/WebFiles</a>.
-In the examples you can find the <code>data</code> folders that include the files as they need to be stored on the device.</p>
-<p>There is a compilation from typescript into javascript and some packing of files required.</p>
-<p>A standard nodejs based project helps creating these files and also give you a useful nodejs-express based server to make development easier.</p>
-<p>The embedded web site itself
-is implemented using the modern Single Page Applications (SPA) approach for web applications. To make this fit into the limited space a <code>micro</code> implementation is used that provides minimal HTML, JavaScript and CSS. They run smoothly even on mobile devices because they also need not much network bandwidth.</p>
+<p><strong>CSS Style sheets</strong> are implemented by using SCSS files beeing compiled to standard CSS. This allows structuring and commending the source code as well as minimizing the output.</p>
+<p>The development source for this web site can be found on github in the repository <a href="https://github.com/HomeDing/WebFiles">https://github.com/HomeDing/WebFiles</a>.</p>
+<p>In the examples you can find the <code>data</code> folders that come with the library that include the files as they need to be stored on the device.
+It is a standard nodejs based project helps creating these files and also give you a useful nodejs-express based server to make development easier.</p>
+<p>The files are also available on github to be transferred directly to devices using the /$update utility.</p>
+<p>The embedded web site itself is implemented using the modern Single Page Applications (SPA) approach for web applications:</p>
 <ul>
-<li>
-<p><code>/index.htm</code> =&gt; A static page with some internal links and showing some system information.</p>
-</li>
-<li>
-<p><code>/ding-info.htm</code> =&gt; Configuration overview, Visualize all elements</p>
-</li>
-<li>
-<p><code>/ding-ide.htm</code> =&gt; web based IDE to list and edit files.</p>
-</li>
-<li>
-<p><code>/ding-log.htm</code> =&gt; show current system log information</p>
-</li>
-<li>
-<p><code>/setup.htm</code> =&gt; Network setup dialog</p>
-</li>
-<li>
-<p><code>/panel.htm</code> =&gt; A graphical overview of the defined actions between elements</p>
-</li>
-<li>
-<p><code>/i/*.svg</code> icons for elements.</p>
-</li>
-<li>
-<p><code>/src/*.ts</code> Typescript sources for micro ???.</p>
-</li>
+<li>static files provided through the built-in file server</li>
+<li>REST services to exchange data from the device</li>
 </ul>
+<p>To make this fit into the limited space a <code>micro</code> implementation approach is used that provides minimal HTML, JavaScript and CSS. They run smoothly even on mobile devices because they also need not much network bandwidth.</p>
+<h2>Implemented features</h2>
+<p>This is an overview of the WebUI implementation that is uploaded and stored on the HomeDing device.</p>
+<p>This main features of the web site implementation supports</p>
+<ul>
+<li>a device specific dashboard to interact with the device and a</li>
+<li>text-editor to configure the device directly using a standard web browser.</li>
+</ul>
+<p>The reduced implementation is available to support <a href="/examples/minimal.htm">minimal devices</a> with a minimal flash memory.</p>
+<p>The following files are part of the web UI implementation on devices:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/index.htm</td>
+<td>Static startup page<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
+</tr>
+<tr>
+<td>/board.htm</td>
+<td><a href="/dev/dashboard.htm">Dashboard</a> with configured elements<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup></td>
+</tr>
+<tr>
+<td>/microide.htm</td>
+<td>IDE for modifying configuration</td>
+</tr>
+<tr>
+<td>/log.htm</td>
+<td>system log viewer<sup class="footnote-ref"><a href="#fn1" id="fnref1:2">[1:2]</a></sup></td>
+</tr>
+<tr>
+<td>/ding.htm</td>
+<td>reduced Dashboard implementation for <a href="/examples/minimal.htm">minimal devices</a></td>
+</tr>
+<tr>
+<td>/panel.htm</td>
+<td>elements and actions as graph<sup class="footnote-ref"><a href="#fn1" id="fnref1:3">[1:3]</a></sup></td>
+</tr>
+<tr>
+<td>/favicon*.*</td>
+<td>icons for the device support</td>
+</tr>
+<tr>
+<td>/updateicons.htm</td>
+<td>Dialog to configure and load a device icon</td>
+</tr>
+<tr>
+<td>/*.js</td>
+<td>supporting javascript implementation files</td>
+</tr>
+<tr>
+<td>/*.css</td>
+<td>supporting style implementation files</td>
+</tr>
+<tr>
+<td>/*.svg</td>
+<td>icons</td>
+</tr>
+<tr>
+<td>/$setup</td>
+<td>setup a network connection</td>
+</tr>
+<tr>
+<td>/$update</td>
+<td>load a published set of WebUI files from github</td>
+</tr>
+<tr>
+<td>/$upload</td>
+<td>upload files to the root of the filesystem</td>
+</tr>
+</tbody>
+</table>
+<p>These UI pages are hosted on the device itself. They are implemented respecting the small
+available memory but provide some powerful functions to even configure and customize the device.</p>
+<h3>HomePage configuration</h3>
+<p>By default the integrated web server redirects to the <code>/index.htm</code> page.
+By specifying a different homepage in the configuration of the <a href="/elements/device.htm">Device element</a>
+using the <strong>homeding</strong> configuration another page e.g. the dashboard <code>/board.htm</code> can be configured
+to be opened by default.</p>
+<h3>Static startup page</h3>
+<p>This static homepage of a device is just showing the capabilities of the full size web UI
+including a brief information about the runtime statistics.
+It can be reached by using the direct link <code>/index.htm</code> on standard devices.</p>
+<p>can vary because the web server will redirect the request without specifying the page name to the page specified in the configuration of the <a href="/elements/device.htm">Device element</a>.</p>
+<p>GET <a href="http://homeding/">http://homeding/</a><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<p>With no configuration the System-Info page will be opened.</p>
+<h3>System-Info</h3>
+<p>GET <a href="http://homeding/index.htm">http://homeding/index.htm</a><sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup></p>
+<p>This is a technical landing page with useful links to some information about the system.
+It contains links to the available pages and offers insights to some technical runtime parameters.</p>
+<p>This page is not very useful when a device is finally operating the implemented configuration and left the development phase.</p>
+<h3>Board</h3>
+<p>GET <a href="http://homeding/board.htm">http://homeding/board.htm</a><sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2:2]</a></sup></p>
+<p>On this page every configured element is shown on a card and shows the actual runtime parameters like sensor values.</p>
+<p>In the standard view the system related elements are not visualized. By using the [sys] button they can be shown as well.</p>
+<p>On this page it is possible to create new elements based on the available elements in the collection that has been compiled.</p>
+<p>For existing elements the config parameters can be modified.</p>
+<ul>
+<li>virtual display</li>
+<li>buttons for triggering actions</li>
+<li>Current Values</li>
+<li>modify values</li>
+</ul>
+<h3>Device specific UI</h3>
+<p>GET <a href="http://homeding/ding.htm">http://homeding/ding.htm</a><sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2:3]</a></sup></p>
+<p>For some typical use cases very special UI pages can be created or downloaded from the repository. This is especially useful when a device with a 1MByte flash memory chip is used to save the place from unused element templates.</p>
+<p>Today only one of these pages exists, implementing the UI for a remote switch with some automation elements.</p>
+<p>On the backlog <a href="https://github.com/HomeDing/WebFiles/issues">https://github.com/HomeDing/WebFiles/issues</a> you can find more device specific requests.</p>
+<h3>Integrated Development Environment (IDE)</h3>
+<p>GET <a href="http://homeding/microide.htm">http://homeding/microide.htm</a><sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2:4]</a></sup></p>
+<p>A minimal UI for changing text based files like HTML, CSS and JavaScript and the config.json file.</p>
+<p>See also <a href="/dev/microide.htm">Micro IDE</a></p>
+<h3>Logging Output</h3>
+<p>GET <a href="http://homeding/log.htm">http://homeding/log.htm</a><sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2:5]</a></sup></p>
+<p>This pages shows the latest logging messages of the device. Problems and Information that occurs while the device is operating can be found here.</p>
+<p>See also <a href="/dev/logger.htm">Device Logging</a>.</p>
+<h3>Panel</h3>
+<p>GET <a href="http://homeding/panel.htm">http://homeding/panel.htm</a><sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2:6]</a></sup></p>
+<p>The panel offers a different view to the configured elements in the device by linking them using the configured actions.</p>
+<h3>File Upload utility.</h3>
+<p>GET <a href="http://homeding/$upload.htm">http://homeding/$upload.htm</a><sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2:7]</a></sup></p>
+<p><img src="/steps/upload.png" alt="Minimal Upload Form"></p>
+<p>This very bare implemented file upload utility supports uploading using drag &amp; drop of files from a local folder onto the device.</p>
+<p>Dropping multiple files at the same time is supported.</p>
+<p>In standard mode the files will be stored in the root folder. To upload icon files into the folders 2 links are provided to switch the current folder. This adds a parameter to the URL.</p>
+<p>This page is available even when no files exist in the filesystem.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="/dev/micro.htm">Micro Implementations Details</a></li>
+<li><a href="/dev/webservices.htm">Web Services for IoT Devices</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>This is not available on <a href="/examples/minimal.htm">minimal devices</a>. <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a> <a href="#fnref1:2" class="footnote-backref">↩︎</a> <a href="#fnref1:3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>replace <code>homeding</code> with the network name of your device to use this link. <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a> <a href="#fnref2:2" class="footnote-backref">↩︎</a> <a href="#fnref2:3" class="footnote-backref">↩︎</a> <a href="#fnref2:4" class="footnote-backref">↩︎</a> <a href="#fnref2:5" class="footnote-backref">↩︎</a> <a href="#fnref2:6" class="footnote-backref">↩︎</a> <a href="#fnref2:7" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
   </main>
 
