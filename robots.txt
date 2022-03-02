@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /v02/
+Disallow: /v02m/
+Disallow: /v03/
+Disallow: /v03m/
+Sitemap: https://homeding.github.io/sitemap.xml
