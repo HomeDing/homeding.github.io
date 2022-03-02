@@ -5,11 +5,13 @@
 
 // https://v0-5-1.11ty.dev/docs/languages/markdown/
 // https://www.11ty.dev/docs/languages/markdown/
-// https://www.npmjs.com/package/markdown-it-replace-link
+// https://www.npmjs.com/package/markdown-it-replace-link5
+// https://github.com/markdown-it/markdown-it-footnote
 
 const markdownIt = require("markdown-it");
 const mdContainer = require('markdown-it-container');
 const mdReplaceLink = require('markdown-it-replace-link');
+const mdFootnotes = require('markdown-it-footnote');
 
 module.exports = {
 
@@ -29,6 +31,7 @@ module.exports = {
     });
 
     markdownLib.use(mdReplaceLink);
+    markdownLib.use(mdFootnotes, { backref: false });
 
     function renderIconCard(icon, title, linkFolder, link) {
       var div = '<div class="iconcard">';

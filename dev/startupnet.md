@@ -1,5 +1,5 @@
 ---
-title: The startup sequence
+title: The Network Startup Sequence
 ---
 
 # {{title}}

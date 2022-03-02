@@ -1,5 +1,5 @@
 ---
-title: Micro Implementations
+title: Micro Implementations Details
 ---
 
 # {{title}}

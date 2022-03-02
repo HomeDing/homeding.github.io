@@ -6,6 +6,7 @@ title: Implementation topics
 
 Here is some information on extending the HomeDing library by implementing new elements.
 
+### Firmware implementation
 
 * [Serial Logger](/dev/logger.md)
 * [Element class](/dev/elementclass.md)
@@ -14,19 +15,18 @@ Here is some information on extending the HomeDing library by implementing new e
 <!-- * [_customelement](/_customelement.md) -->
 * [WiFi manager](/dev/wifimanager.md)
 * [The safemode](/dev/safemode.md)
-* [startup networking](/dev/startupnet.md)
+* [Network Startup](/dev/startupnet.md)
 
 ### Web-UI Implementation doku
 
 * [Introduction](/dev/micro.md)
+* [Embedded Web Site for IoT Devices](/dev/website.md)
 * [micro behaviors](/dev/microbehaviors.md)
 * [micro charts](/dev/microcharts.md)
 * [micro icons](/dev/microicons.md)
 * [micro javascript utils](/dev/microjavascript.md)
 * [micro style](/dev/microstyle.md)
 * [micro templates](/dev/microtemplates.md)
-* [website](/dev/website.md)
-* [websitemap](/websitemap.md)
 <!-- * [monitor](/elements/_monitor.md) -->
 * [Portal](/dev/microportal.md)
 <!-- * [_iconsforthings](/_iconsforthings.md) -->
