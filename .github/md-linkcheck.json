@@ -9,6 +9,7 @@
     { "pattern": "^http://localhost" },
     { "pattern": "^http://upnp.org" },
     { "pattern": "^https://" },
+    { "pattern": "/index.htm" },
     { "pattern": "/_.*.md$" }
   ],
   "replacementPatterns": [

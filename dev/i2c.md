@@ -66,7 +66,7 @@ Often I2C adaptions are using a (logical) register based access pattern.
 Here a data centric access is implemented that separates reading / writing data to a buffer from interpretation of the data in the buffer.
 That fits well to those processor implementations that support I2C data exchange through dma implementations.
 
-See: [Using the I2C bus](/i2c.md)
+See: [Using the I2C bus](/dev/i2c.md)
 
 
 ## I2C addresses and chips using them
