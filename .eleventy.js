@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(f);
   })
 
+  eleventyConfig.addPassthroughCopy("./robots.txt");
   eleventyConfig.addPassthroughCopy("./favicon*.*");
   eleventyConfig.addPassthroughCopy("./*.css");
   eleventyConfig.addPassthroughCopy("./pages.js");
