@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Board Review of Wifi Kit 8 Module ESP8266 with OLED</h1>
 <p><img src="/boards/wifikit8.jpg" alt="wifikit8 board"></p>
 <p>I bought a Wifi-Kit 8 from eBay because I was searching for small size ESP8266 boards with onboard display.</p>
@@ -163,11 +163,11 @@ It is a good source for ideas, however, I prefer using the golden sources of the
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

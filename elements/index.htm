@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Elements Overview</h1>
 <p>Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like <a href="/sensors/sensors.htm">sensors</a>.</p>
 <p>The following element implementations are available in the current version of the HomeDing library.</p>
@@ -252,11 +252,11 @@ to configure and use various FM radio boards.</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

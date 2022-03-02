@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>WiFi Manager Details</h1>
 <div class="plaincard"><p>The WiFi-Manager is a module in the HomeDing library to register a device in the local network.
 It is implemented in every device in the board class.</p>
@@ -169,11 +169,11 @@ bool ESPSerialWiFiManager::_connect_wps(){
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

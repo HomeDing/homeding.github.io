@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Plant Watering</h1>
 <p>This recipe combines a momentary button and a timer to control a relay that is switched on for 5 min. 3 times a day. This can be used to control a valve for watering plants.</p>
 <p>The central element is a switch that controls a relay on a digital output. There are 3 sources that can control the switch</p>
@@ -51,11 +51,11 @@
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

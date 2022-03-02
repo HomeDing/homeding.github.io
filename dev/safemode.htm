@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Safemode</h1>
 <p>The safemode should be enabled on all HomeDing based devices in regular operating conditions. It is reasonable measurement against external attempts to change and misuse the device over the network.</p>
 <p>The reason to enable the <code>safemode</code> is about making the implementation of the device immutable against configuration and firmware changes after bringing the device into a stable operating mode.</p>
@@ -94,11 +94,11 @@ This variable is set to the configured value while reading the configuration and
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

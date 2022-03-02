@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The PWMOut Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#pwmout"></use></svg><p>The PWMOutElement is used to create a variable PWM signal at the specified output pin. This can be used to drive a LED or a servo motor.</p>
 </div>
@@ -91,11 +91,11 @@ http://devdevice/$board/pwmout/led?value=255 -->
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

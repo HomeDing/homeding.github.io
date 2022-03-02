@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The DisplayDot Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaydot"></use></svg><p>The DisplayDot Element allows sending a boolean value to the display and show it at a specified position as a shallow or filled dot/circle. The value can be changed by using an action.</p>
 </div>
@@ -69,11 +69,11 @@ attached maybe only using the DisplayTextElements is appropriate.</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

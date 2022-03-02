@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The WordClock Example</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#default"></use></svg><p>This folder contains an example for a wordclock implementations (Germany layout). It also illustrates how to implement something special
 using the HomeDing Library and selected standard Elements but to add a new functionality.</p>
@@ -127,11 +127,11 @@ the GPIO0(D3) can be exchanged. It is configured in the config.json file.</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The Light Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#light"></use></svg><p>The LightElement is used to send a light value to GPIO output pins. It can also be used as a base class for other light elements using a specific chip or protocol.</p>
 </div>
@@ -102,11 +102,11 @@ The format #RRGGBB is used like in the css web standard and some plain color nam
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Board Review ESP8266 with OLED</h1>
 <p><img src="/boards/wemosoled.jpg" alt="wemosoled.png"></p>
 <p>This board is offered on eBay by some local and Chinese vendors and combines a ESP8266 with an OLED display.</p>
@@ -174,11 +174,11 @@ SCL=GPIO5(D1) and SDA=GPIO4(D2).</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

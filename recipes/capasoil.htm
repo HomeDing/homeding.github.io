@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Capacitive Soil Moisture Sensor Recipe</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#water"></use></svg><p>This recipe shows how to combine a Capacitive Soil Moisture Sensor with the <a href="/elements/analog.htm">Analog Input Element</a> and a LED.</p>
 </div>
@@ -57,11 +57,11 @@ an onReference action with a value of 0 is triggered that will switch the LED on
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

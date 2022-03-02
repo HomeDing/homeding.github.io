@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The BL0937 Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#bl0937"></use></svg><p>The BL0937Element has been implemented to support single phase energy monitoring using BL0937, HLW8012 or HJL-01 chips that are used in some retail plugs and switches.</p>
 </div>
@@ -229,11 +229,11 @@ The maximal frequency is about 6,78 KHz when the limit of the sensor is reached.
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

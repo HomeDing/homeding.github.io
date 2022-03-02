@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The Digital Signal Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#digitalin"></use></svg><p>The DigitalSignalElement is used to handle digital input with short time level changes that might be missed when using the <a href="/elements/digitalin.htm">DigitalInput Element</a>. On a changing input a pulse value is created with a defined duration.</p>
 </div>
@@ -69,11 +69,11 @@ no action can be created so every detected digital signal change will incrementi
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

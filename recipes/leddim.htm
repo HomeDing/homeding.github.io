@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Dimming LED Recipe</h1>
 <p>This recipe uses 2 digital input signals to change the brightness level of a LED.</p>
 <p>This is can be achieved by using 2 <a href="/elements/digitalin.htm">digital inputs</a>, a <a href="/elements/value.htm">value</a> and a <a href="/elements/pwmout.htm">pwm</a> element connected by some actions.</p>
@@ -68,11 +68,11 @@ When the maximum level is reached no further increment will be done.</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

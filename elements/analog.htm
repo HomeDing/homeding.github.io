@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The Analog Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#analog"></use></svg><p>The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events. It also handles some of the often occurring problems around capturing analog values.</p>
 </div>
@@ -102,11 +102,11 @@ When mapping boundaries are given this is the calculated value.</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The Display LCD Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><p>The Display Configuration for Monochrome LCDs based on HD44780 chips.</p>
 </div>
@@ -80,11 +80,11 @@ postfix text using the 16-bit UTC notation like <code>&quot;postfix&quot;: &quot
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

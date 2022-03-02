@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The DHT Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#dht"></use></svg><p>The DHTElement allows retrieving temperature and humidity values from the DHT family and AM2320 sensors and creates actions when new values are available.</p>
 </div>
@@ -144,11 +144,11 @@ it doesn't make sense to read the values from the sensor more frequently.</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

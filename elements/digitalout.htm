@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The Digital Output Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#digitalout"></use></svg><p>The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element. This can e.g. be used to drive a LED or a relay.</p>
 </div>
@@ -117,11 +117,11 @@ In <code>inverse</code> mode (<code>inverse</code>: &quot;true&quot;) a LOW outp
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

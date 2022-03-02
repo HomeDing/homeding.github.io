@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The Log Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#log"></use></svg><p>The LogElement enables storing timestamp based values e.g. from a sensor into a local file to be analyzed or displayed later by the Web UI.</p>
 </div>
@@ -106,11 +106,11 @@ The notation `value[0]=` is equal to using `value=` with a single value.
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

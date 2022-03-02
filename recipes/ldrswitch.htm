@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Blink Recipe</h1>
 <p>This recipe uses 1 LDR sensor to implement a touchless on/off switch.</p>
 <p>The LDR is used to create a analog signal that can be captured using the <a href="/elements/analog.htm">Analog Input</a> element.</p>
@@ -57,11 +57,11 @@ a <a href="/elements/switch.htm">Switch Element</a> is triggered to create a dig
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

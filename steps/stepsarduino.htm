@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Step by Step setting up the Arduino environment</h1>
 <p>These are the steps to follow to setup a basic arduino development environment that allows programming new software to the original Arduino boards.</p>
 <p>For the ESP8266 or ESP32 processors some additional tools need to be installed as described below.</p>
@@ -100,11 +100,11 @@ the Sub-Menü &quot;Tools&quot; -&gt; &quot;Port:&quot; that you need to select.
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

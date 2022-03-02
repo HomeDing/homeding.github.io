@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The INA226 Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#ina226"></use></svg><p>The INA226 is a current and voltage sensor that uses the I2C bus for communication that can measure voltages up to 26V on high-side or low-side and current in various ranges .</p>
 </div>
@@ -156,11 +156,11 @@ These also must be connected to the INA226 board.</p>
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

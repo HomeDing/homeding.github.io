@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The DS18B20 Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#ds18b20"></use></svg><p>The DS18B20Element allows retrieving temperature values from DS18B20 aka. Dallas Temperature sensors and creates actions when new values are available.</p>
 </div>
@@ -123,11 +123,11 @@ GPIO2(D4) ------- (2) Data
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>The PMS Element</h1>
 <div class="iconcard"><svg class="icon"><use href="/icons.svg#pms"></use></svg><p>The PMSElement allows using the laser based air particle and pollution sensor PMS5003 from plantower to report the number of micro particles in the air.</p>
 </div>
@@ -96,11 +96,11 @@ It requires no special library and logs the raw data and some calculated values 
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

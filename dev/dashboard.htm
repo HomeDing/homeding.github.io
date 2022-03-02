@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Dashboard</h1>
 <p>This is an example of a dashboard for a indoor air quality sensor device like the one described in the <a href="/stories/story-airquality.htm">Airquality story</a>.</p>
 <p><img src="/dev/dashboard.png" alt="dashboard ui"></p>
@@ -59,11 +59,11 @@ there is an implementation that visualizes the actual situation on the display.<
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>

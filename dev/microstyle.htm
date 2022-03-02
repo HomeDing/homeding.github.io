@@ -30,9 +30,9 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage open"></nav>
+  <nav class="inpage x  open"></nav>
 
-  <main style="background-color:#eeeeee;padding:1rem">
+  <main style="padding:1rem">
     <h1>Micro StyleSheet</h1>
 <p>The micro-css is a minimal collection of CSS rules for styling UI pages of the HomeDing devices. The CSS technology is required to give the different UI implementations of the HomeDing devices a unified look &amp; feel and to share download files among these implementations.</p>
 <p>The CSS rules can be found in the iotstyle.css file that is created using the scss technology from the base.scss and iotstyle.scss in the css folder.
@@ -80,11 +80,11 @@ When the value of this property is actually high, true or non-zero the class <co
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-    if (window.innerWidth > 880)
-      navObj.classList.add('open');
 
     lazyLoadHTM('nav', '/toc.htm');
   </script>
