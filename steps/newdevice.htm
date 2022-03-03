@@ -42,7 +42,6 @@
 <li><a href="#find-the-new-device-on-the-network">Find the new device on the network</a></li>
 <li><a href="#upload-the-web-ui-files-to-the-onboard-file-system">Upload the Web UI files to the onboard file system</a>
 <ul>
-<li><a href="#spiffs-upload-utility">SPIFFS Upload Utility</a></li>
 <li><a href="#file-upload-utility">File Upload Utility</a></li>
 <li><a href="#web-based-update">Web based Update</a></li>
 <li><a href="#file-upload-in-ide">File Upload in IDE</a></li>
@@ -54,37 +53,55 @@
 <li><a href="#see-also">See also</a></li>
 </ul>
 <h2>Get a (brand new) EPS8266 board.</h2>
-<p>The easiest board to start is any board that sticks to the nodemcu layout and features
-and therefore can just be plugged into an USB board.</p>
 <p>The following steps assume a board of this kind but different boards will not work very different.</p>
+<p>The easiest board to start is by using a NodeMCU board with a ESP8266 processor and USB interface.
+It can just be plugged into an USB port.</p>
 <p>See also <a href="/boards/index.htm">Boards supported by the HomeDing library</a></p>
 <h2>Upload the appropriate sketch</h2>
-<p>For a nodemcu board having a ESP8266 chip and 4 MByte of Flash ROM the best sketch to start is the
-<a href="/examples/standard.htm">standard example</a> that includes a lot of element types and board features.</p>
-<p>You need to select the &quot;NodeMCU 1.0 (ESP12-E Module)&quot; board in the Arduino Board Manager
-and use a memory layout that leaves 1 MByte for the SPIFFS file system by selecting
-&quot;4M (1M SPIFFS)&quot; in the &quot;Flash Size&quot; option.</p>
+<p>For a NodeMCU board having a ESP8266 chip and 4 MByte of Flash ROM the best sketch to start is the
+<a href="/examples/standard.htm">Standard Example</a> that includes a lot of element types and board features.</p>
+<ul>
+<li>
+<p>Select the &quot;NodeMCU 1.0 (ESP12-E Module)&quot; board in the Arduino Board Manager
+and use a memory layout that leaves 2 MByte for the file system by selecting
+&quot;4M (FS:2M OTA:~1019kB)&quot; in the &quot;Flash Size&quot; option.</p>
+</li>
+<li>
 <p>You probably will have some benefits from the debug output on the Serial port at this point
 and therefore should activate &quot;Serial&quot; in the &quot;Debug Port&quot; option
 and &quot;None&quot; in the &quot;Debug Level&quot; option.</p>
+</li>
+<li>
 <p>Select the right COM port and upload the sketch. It should only take about a minute
-and the reboot the board.</p>
+and then reboot the board.</p>
+</li>
+</ul>
 <h2>Register the device on the local WiFi network</h2>
-<video width="650" height="380" controls autostart>
-  <source src="setup-steps.mp4" type="video/mp4">
+<!-- <video width="650" height="380" controls autostart>
+  <source src="/dev/setup-steps.mp4" type="video/mp4">
   Your browser does not support the video tag.
-</video>
+</video> -->
 <p>There is a &quot;hard way&quot; to configure your local WiFi network name and passphrase into the source code in the file &quot;secrets.h&quot;. If you like to follow this approach you can change the file and upload again.</p>
 <p>Using the built-in WiFi Manager is the preferred method for connecting to a network and avoids hard-coding network credentials and re-programming your devices when your network changes .</p>
-<p>Connect to the unsecured network called &quot;HomeDing&quot; by using any mobile device or computer with WiFi adapter.
-Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
-automatically open the network configuration page.</p>
-<p><img src="/dev/wifimanager.png" alt="WiFi Manager UI"></p>
-<p>If the WiFi Manager UI is not starting after joining the network please open <a href="http://192.168.4.1/">http://192.168.4.1/</a> or <a href="http://192.168.4.1/$setup">http://192.168.4.1/$setup</a> manually.</p>
-<p>The current device name is shown in this dialog and you will find the device later on the registered network using http://&lt;devicename&gt;.</p>
 <ul>
-<li>Select your private WiFi Network and enter the passphrase.</li>
-<li>Press &quot;Connect&quot; to connect.</li>
+<li>
+<p>Connect any laptop or mobile phone to the unsecured WiFi network called &quot;HomeDingXXXX&quot;.</p>
+<p>Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
+automatically open the network configuration page.</p>
+<p><img src="/dev/wifimanager.png" alt="WiFi Manager UI" title="w400"></p>
+</li>
+<li>
+<p>If the WiFi Manager UI is not starting after joining the network please open <a href="http://192.168.4.1/">http://192.168.4.1/</a> or <a href="http://192.168.4.1/$setup">http://192.168.4.1/$setup</a> manually.</p>
+</li>
+<li>
+<p>The current device name is shown in this dialog and you will find the device later on the registered network using <a href="http://%7Bdevicename%7D">http://{devicename}</a>.</p>
+</li>
+<li>
+<p>Select your private WiFi Network and enter the passphrase.</p>
+</li>
+<li>
+<p>Press &quot;Connect&quot; to connect.</p>
+</li>
 </ul>
 <p>It may take some time and if everything is fine you will see the HomeDing network disappear and you can re-join your local network.</p>
 <p>You may also look into the Serial output using the <code>Serial Monitor</code> of the Arduino Environment to see some messages about what is happening inside the device.</p>
@@ -95,9 +112,9 @@ using a temporary device name and then start into normal operating mode.</p>
 <p>Without any configuration the devicename is constructed by &quot;ESP-&quot; and a device specific hex number given by the digits of the uniques network adapter MAC address.</p>
 <p>try:</p>
 <ul>
-<li>http://&lt;devicename from the WIFI Manager dialog&gt;</li>
-<li>http://&lt;devicename from the Serial Monitor&gt; (should be identical)</li>
-<li>http://&lt;ip-address from the Serial Monitor&gt;</li>
+<li>http://{devicename from the WIFI Manager dialog}</li>
+<li>http://{devicename from the Serial Monitor} (should be identical)</li>
+<li>http://{ip-address from the Serial Monitor}</li>
 </ul>
 <h2>Upload the Web UI files to the onboard file system</h2>
 <p>There are 3 sources where you can find the files to upload for the web UI.</p>
@@ -107,25 +124,25 @@ using a temporary device name and then start into normal operating mode.</p>
 <li>The <code>WebFiles</code> project on <a href="https://www.github.com/HomeDing/WebFiles">https://www.github.com/HomeDing/WebFiles</a> is used to create files for the WebUI.</li>
 </ul>
 <p>To transfer the files to the device multiple methods are available:</p>
-<h3>SPIFFS Upload Utility</h3>
-<p>Using the ESP8266 filesystem Upload utility can be used to upload all files from a <code>data</code> folder at once.</p>
-<p>This method has the bad effect that all existing files will be deleted because a complete filesystem image is created and transferred.</p>
-<p>This method is useful when starting with a new board.</p>
 <h3>File Upload Utility</h3>
 <p><img src="/steps/upload.png" alt="Builtin Upload Utility"></p>
-<p>The firmware offers an upload interface as part of the embedded web server. This upload service can be used by the builtin minimal UI available at
-<a href="http://homeding/$upload.htm">http://homeding/$upload.htm</a>. This UI is implemented with minimal size (looks plain ugly) but is part of the firmware.</p>
-<p>This method is useful when uploading new files or update individual files. Cannot delete files and keeps other files.</p>
-<p>Upload works by using drag&amp;drop. select the files (not folders) and drop them over the &quot;drop here&quot; region. All files will be uploaded.</p>
-<p>To upload icon files for the elements in the <code>/i</code> folder you can click the <code>I-Upload</code> link before dropping these files.</p>
+<p>The firmware offers an upload interface as part of the embedded web server.
+This upload service can be used by the builtin minimal UI available at <a href="http://homeding/$upload">http://homeding/$upload</a>.
+This UI is implemented with minimal size (looks plain ugly) but is part of the firmware.</p>
+<p>This method is useful when uploading new files or update individual files. Cannot delete files and keeps other files in place.</p>
+<p>Upload works by using drag&amp;drop:</p>
+<ul>
+<li>select the files (not folders) in the explorer and drop them over the &quot;drop here&quot; region.</li>
+<li>All files will be uploaded at once.</li>
+</ul>
 <h3>Web based Update</h3>
-<p><img src="/steps/boot.png" alt="Builtin Upload Utility"></p>
 <p>The firmware offers an update interface as part of the embedded web server.
-This is available at <a href="http://homeding/$boot.htm">http://homeding/$boot.htm</a>.
-By pressing the start button all files from the homeding documentation website are transferred to the device.
-The list of files and files for download are available at: <a href="https://homeding.github.io/v02/list.txt">https://homeding.github.io/v02/list.txt</a>.</p>
-<p>This method is useful when updating a standard firmware by a new version and the UI files need to be updated.</p>
-<p>This method is also useful when starting with a new board.</p>
+This is available at <a href="http://homeding/$update">http://homeding/$update</a>.</p>
+<p><img src="/steps/boot.png" alt="Builtin Upload Utility" title="w400"></p>
+<p>By pressing the start button all files from the homeding documentation website are transferred to the device.</p>
+<p>The list of files and files for download are available at: <a href="https://homeding.github.io/v03/list.txt">https://homeding.github.io/v03/list.txt</a>.</p>
+<p>This method is useful when updating a standard firmware by a new version and the UI files need to be updated
+or when starting with a new board.</p>
 <h3>File Upload in IDE</h3>
 <p>After an initial upload of files the built in <a href="/dev/microide.htm">Micro IDE</a> can be used.
 It has a upload area that can be used to upload files into the filesystem like in File Upload Utility.</p>
@@ -140,7 +157,7 @@ It has a upload area that can be used to upload files into the filesystem like i
 </li>
 </ul>
 <h2>Choose an icon</h2>
-<p><img src="/steps/stepupdateicon.png" alt="Select Icon"></p>
+<p><img src="/steps/stepupdateicon.png" alt="Select Icon" title="w400"></p>
 <p>Every device can have a special icon that you will recognize in the shortcut or link.</p>
 <h2>See also</h2>
 <ul>

@@ -34,26 +34,30 @@
 
   <main style="padding:1rem">
     <h1>Step by Step configuring a device using the builtin IDE</h1>
-<p>The configuration of HomeDing based devices is based on files located in the filesystem.
-They can be changed by using the built-in micro IDE that assists in modifying the
-<code>env.json</code>, <code>config.json</code> and other text based files.
-For JSON files there is a special support for syntax validating.</p>
+<div class="plaincard"><p>The configuration of HomeDing based devices is based on 2 files located in the filesystem:  env.json, config.json. They can be changed by using the built-in editor.</p>
+</div>
+<p>The built-in micro IDE that assists in modifying the &quot;env.json&quot;, &quot;config.json&quot; and other text based files.</p>
+<p>For JSON files there is a special support for syntax validating.</p>
 <h2>Starting the IDE</h2>
-<p>The IDE can be found on all the HOMEDING based devices using the url <a href="http://homeding/ide.htm">http://homeding/ide.htm</a> <sup>*1</sup>.</p>
-<p><img src="/dev/microide.png" alt="Micro IDE screenshot" title="w200"></p>
+<p>The IDE can be found on all the HomeDing based devices using the url <a href="http://homeding/microide.htm">http://homeding/microide.htm</a> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<p><img src="/dev/microide.png" alt="Micro IDE screenshot" title="w400"></p>
 <p>On the left side all existing files can be seen.</p>
 <p>On new devices the <code>env.json</code> and <code>config.json</code> files will not exist as they are not loaded and updated when using the Web based update.</p>
 <h2>Create the <strong>env.json</strong> file</h2>
 <p>The minimal file of env.json should contain a device element configuration to define the name of the device on the network.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"newdevice"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<p>To create this file copy the given JSON definition and paste it into the right field. The click the <strong>save</strong> button.
-In the following confirmation box enter the name of the file with a starting slash: <code>/env.json</code>.</p>
+<p>To create this file</p>
+<ul>
+<li>copy the given JSON definition and paste it into the right field.</li>
+<li>The click the <strong>[save]</strong> button.</li>
+<li>In the following confirmation box enter the name of the file like: &quot;/env.json&quot;.</li>
+</ul>
 <p>You can find specific env.json files for the <a href="/boards/index.htm">boards</a> that have been tested.</p>
 <p>Elements that are defined in the env.json files are those that are specific for the hardware and do not specify the behavior, like:</p>
 <p>device, ota, ssdp, ntptime, displays.</p>
 <h2>Create the <strong>config.json</strong> file</h2>
 <p>The config.json file is created the same way as the env.json file. The minimal content of this file can be empty or a JSON without element definitions.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
 <p>A good starting for a config.json can be found in the <a href="/stories/index.htm">stories</a> or the <a href="/recipes/index.htm">recipes</a>.</p>
 <h2>See also</h2>
 <p>You can find more details about the microide features in the <a href="/dev/microide.htm">Micro IDE documentation</a>.</p>
@@ -62,7 +66,13 @@ In the following confirmation box enter the name of the file with a starting sla
 <li><a href="/recipes/index.htm">Recipes</a></li>
 <li><a href="/elements/index.htm">Elements</a></li>
 </ul>
-<p><strong><sup>*1</sup></strong>: replace <code>homeding</code> with the network name of your device to use this link.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>replace <code>homeding</code> with the network name of your device to use this link. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
   </main>
 

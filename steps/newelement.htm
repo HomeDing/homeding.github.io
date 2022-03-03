@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content=''>
+  <title>Create and extend a new Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-header">
+    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
+    <h1>HomeDing</h1>
+  </div>
+
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  <nav class="inpage x  open"></nav>
+
+  <main style="padding:1rem">
+    <h1>Create and extend a new Element</h1>
+<p>The HomeDing library is not a closed eco system but rather allows adding new functionality by adding new Elements to support a specific functionality, sensor, chip, network service and more.</p>
+<p>The entrance effort to do so is not more complex than writing a Arduino sketch with a setup and loop function.</p>
+<p>The only hard requirement is that there is a cooperative multitasking implemented that relies on a fast returning
+loop() function. Not using delay() or other blocking implementations however is a best practice and required for all
+network attached implementations using the webserver.</p>
+<p>Here you see step by step</p>
+<ul>
+<li>how to create a new element from a very simple example similar to an Arduino sketch</li>
+<li>adding stop &amp; resume</li>
+<li>adding Configuration</li>
+<li>adding to the <a href="/dev/elementregistry.htm">Element Registry</a></li>
+<li>adding an element specific Web UI for the dashboard</li>
+</ul>
+<p>These implementations assume there is a NodeMCU (or compatible) board in use.</p>
+<h2>simplest Implementation - MyElement-01.h</h2>
+<p>This is an implementation of the original non-blocking BlinkWithoutDelay sketch wrapped inside a class definition.</p>
+<p>The source code can be found in the &quot;MyElement-01.h&quot; file in the <a href="/examples/devding.htm">DevDing example</a> folder.</p>
+<p>To include this Element-wrapped code the header and initialization must be present to your sketch. The lines are part of the example so you just need to uncomment the corresponding lines.</p>
+<p>In the headers include section the MyElement-01.h file is included and will be compiled within the sketch file:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"MyElement-01.h"</span></span></code></pre>
+<p>In the setup function:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// enable initialization line to see MyElement working</span><br>homeding<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"my/1"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">MyElement01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>After uploading the compiled sketch the blue led on the esp-12 board will blink in a 2 seconds cycle.</p>
+<p>By wrapping the code into a cpp class it is possible to have multiple &quot;instances&quot; running at the same time while
+the implementation code will exist once in the firmware.</p>
+<p>Under the hood the <code>homeding.add(...)</code> function is creating such a instance and will call the <code>setup()</code> and <code>loop()</code>
+functions as usual.</p>
+<h2>rework into a standard cpp class - MyElement-02.h</h2>
+<p>This step separates the class definition and the class implementation into 2 files.
+This will result in a separate compile step for the cpp class that is initiated by the Arduino environment automatically.
+Now the header file (*.h) can be included into many code files (*.cpp) without recompiling the code.
+It will help us adding the element to the library at a later step.</p>
+<p>The implementation has not changed compared to &quot;MyElement-01.h&quot;.</p>
+<p>See &quot;MyElement-02.*&quot; files</p>
+<p>This is not strictly required at this time but Best Practice in CPP projects.</p>
+<h2>Element base functionality</h2>
+<p>The now implemented class also &quot;derives&quot; from the <a href="/dev/elementclass.htm">Element class</a> that provides some
+useful basic functionality.</p>
+<ul>
+<li>
+<p>The instance is already in he list of active elements. When you request <a href="http://homeding/api/state">http://homeding/api/state</a> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>
+you can see the is marked as active: <code>&quot;my/2&quot;:{&quot;active&quot;:&quot;true&quot;}</code>.</p>
+</li>
+<li>
+<p>The blinking can be stopped by requesting <a href="http://homeding/api/state/my/2?stop">http://homeding/api/state/my/2?stop</a> <sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup>. The loop function will not be called.</p>
+</li>
+<li>
+<p>The blinking can be re-started by requesting <a href="http://homeding/api/state/my/2?start">http://homeding/api/state/my/2?start</a> <sup class="footnote-ref"><a href="#fn1" id="fnref1:2">[1:2]</a></sup>. The loop function will be called again.</p>
+</li>
+</ul>
+<p>However stopping the blinking can happen while the LED is on or off. When the led must be off on a stopped element we can use 2 functions
+to implement the start and term.</p>
+<p>In the header file the 2 functions must be declared:</p>
+<pre class="language-cpp"><code class="language-cpp">  <span class="token comment">/** start / activate the functionality. */</span><br>  <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">override</span><span class="token punctuation">;</span><br><br>  <span class="token comment">/** stop / de-activate the functionality. */</span><br>  <span class="token keyword">void</span> <span class="token function">term</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">override</span><span class="token punctuation">;</span></code></pre>
+<p>In the implementation file the 2 functions must be implemented:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// start/activate the element</span><br><span class="token keyword">void</span> <span class="token class-name">MyElement03</span><span class="token double-colon punctuation">::</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// call the default start() on the base class</span><br>  Element<span class="token operator">:</span><span class="token base-clause"><span class="token operator">:</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span><br><br>  <span class="token comment">// turn LED ON and start new cycle.</span><br>  ledState <span class="token operator">=</span> LOW<span class="token punctuation">;</span><br>  <span class="token function">digitalWrite</span><span class="token punctuation">(</span>ledPin<span class="token punctuation">,</span> ledState<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  previousMillis <span class="token operator">=</span> <span class="token function">millis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><br><span class="token comment">// stop/terminate the element</span><br><span class="token keyword">void</span> <span class="token class-name">MyElement03</span><span class="token double-colon punctuation">::</span><span class="token function">term</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// call the default term() on the base class</span><br>  Element<span class="token operator">:</span><span class="token base-clause"><span class="token operator">:</span><span class="token function">term</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span><br><br>  <span class="token comment">// turn LED off.</span><br>  ledState <span class="token operator">=</span> HIGH<span class="token punctuation">;</span><br>  <span class="token function">digitalWrite</span><span class="token punctuation">(</span>ledPin<span class="token punctuation">,</span> ledState<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>It is important to call the base functions before implementing</p>
+<p>The code can be found in the MyElement-03.x implementation files.</p>
+<h2>Participate in configuration</h2>
+<p>The HomeDing library includes a powerful configuration feature that can replace the
+hard-coded constants in the sketch.</p>
+<p>This requires several changes but also give the great value of configuration.</p>
+<p>In this example we like to make it possible to configure the GPIO for the LED
+and the interval time of the blinking.</p>
+<p>The configuration can be added to the <code>config.json</code> file and can include these 2 parameters.
+This replaces he need of the <code>homeding.add(&quot;my/2&quot;, new MyElement02());</code> call.</p>
+<p>The class must be extended using a static create function and a registration state
+in the header file:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/** Factory function to create an element. */</span><br><span class="token keyword">static</span> Element <span class="token operator">*</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">/** static variable to ensure registering in static init phase. */</span><br><span class="token keyword">static</span> <span class="token keyword">bool</span> registered<span class="token punctuation">;</span></code></pre>
+<p>The create function is implemented in the implementation file:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/** static factory function to create a new MyElement03 */</span><br>Element <span class="token operator">*</span><span class="token class-name">MyElement03</span><span class="token double-colon punctuation">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br><span class="token punctuation">{</span><br>  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token function">MyElement03</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span> <span class="token comment">// create()</span></code></pre>
+<p>To activate a element the elements must be registered by a call that adds the class to the registry:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> MyElement03<span class="token double-colon punctuation">::</span>registered <span class="token operator">=</span> <span class="token class-name">ElementRegistry</span><span class="token double-colon punctuation">::</span><span class="token function">registerElement</span><span class="token punctuation">(</span><span class="token string">"my"</span><span class="token punctuation">,</span> MyElement03<span class="token double-colon punctuation">::</span>create<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Now the configuration mechanism knows how to create &quot;my&quot; elements and you can find
+the &quot;my&quot; element in the list of registered that you can request with <a href="http://homeding/api/elements">http://homeding/api/elements</a> <sup class="footnote-ref"><a href="#fn1" id="fnref1:3">[1:3]</a></sup>.</p>
+<p>A configuration that can be used to blink in 100ms interval on D1:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"my"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"3"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D1"</span><span class="token punctuation">,</span><br>    <span class="token property">"interval"</span><span class="token operator">:</span> <span class="token string">"1000ms"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>The set function will get all the configuration parameters passed as key-value pairs and can configure the class variables instead of using constants.</p>
+<p>In the header file the set function must be declared:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">/** declare the set functionality. */</span><br><span class="token keyword">bool</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>value<span class="token punctuation">)</span> <span class="token keyword">override</span><span class="token punctuation">;</span></code></pre>
+<p>The set function is implemented in the implementation file:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token class-name">MyElement03</span><span class="token double-colon punctuation">::</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">bool</span> ret <span class="token operator">=</span> <span class="token class-name">Element</span><span class="token double-colon punctuation">::</span><span class="token function">set</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">_stricmp</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">"pin"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    ledPin <span class="token operator">=</span> <span class="token function">_atopin</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    ret <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">_stricmp</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">"interval"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    interval <span class="token operator">=</span> <span class="token function">_scanDuration</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    ret <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br>  <span class="token keyword">return</span> <span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2>run multiple blinkling elements</h2>
+<p>As another benefit from the configuration mechanism you can run 2 blinking elements in parallel by just configuring 2 instances in <code>config.json</code>:</p>
+<pre class="language-json"><code class="language-json">  <span class="token property">"my"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"3"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D1"</span><span class="token punctuation">,</span><br>      <span class="token property">"interval"</span><span class="token operator">:</span> <span class="token string">"1000ms"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"3b"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"interval"</span><span class="token operator">:</span> <span class="token string">"700ms"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span></code></pre>
+<h2>Add to Library</h2>
+<p>In the case you have done a reusable implementation you may create a pull request on github to include the element into the HomeDing library.</p>
+<p>You can prepare this by:</p>
+<ul>
+<li>moving your implementation files into the src folder of the library</li>
+<li>add a #include &lt;myelement03.h&gt; into the &quot;homeding.h&quot; file by defining a macro
+as it is done with the other elements.</li>
+<li>move the registration call from myelement03.cpp to myelement03.h and surround it with a <code>#ifdef HOMEDING_REGISTER</code> condition.</li>
+</ul>
+<h2>Add a Card implementation for the dashboard</h2>
+<p>Some elements require their own cards on the dashboards.</p>
+<p>This can be implemented in the board.htm file by adding a template.</p>
+<p>You can use the file from GitHub at <a href="https://github.com/HomeDing/WebFiles/blob/master/board.htm">https://github.com/HomeDing/WebFiles/blob/master/board.htm</a> that is not yet minified.</p>
+<p>The html object must be placed inside the <code>&lt;div id=&quot;u-templates&quot; style=&quot;display:none&quot;&gt;</code> container where is will be used as a template for every configured &quot;my&quot; element.</p>
+<p>In this example the configured pin and the interval values are shown.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span> <span class="token attr-name">u-control</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>${id}<span class="token punctuation">"</span></span> <span class="token attr-name">u-is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>generic<span class="token punctuation">"</span></span> <span class="token attr-name">microID</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>${id}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">u-is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>include<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.cHead<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block form-grid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>Pin:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>output</span> <span class="token attr-name">u-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>output</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>Interval:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>output</span> <span class="token attr-name">u-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>interval<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>output</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>replace <code>homeding</code> with the network name of your device to use this link. <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a> <a href="#fnref1:2" class="footnote-backref">↩︎</a> <a href="#fnref1:3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
