@@ -17,13 +17,7 @@ layout: toc.njk
 * [Weather forecast Display](/stories/story-weatherdisplay.md)
 
 
-#### Step-by-Step Guides
-
-* [Setup a Arduino environment](/steps/stepsarduino.md)
-* [Setup a new HomeDing device](/steps/stepsnewdevice.md)
-* [Update Web files](/steps/stepsupdateweb.md)
-* [Create configuration files](/steps/stepsconfigure.md)
-
+#### [Step-by-Step Guides](/steps/index.md)
 
 #### [Sensors](/sensors/sensors.md)
 

@@ -23,7 +23,7 @@ using index.htm.
 To install the library use the Arduino library manager or clone the project <https://github.com/HomeDing/HomeDing> into your arduino library folder.
 
 More on how to setup an IoT device can be found in
-[Step by Step Bring your device to work](/steps/stepsnewdevice.md)
+[Step by Step Bring your device to work](/steps/newdevice.md)
 
 
 ## Development Server

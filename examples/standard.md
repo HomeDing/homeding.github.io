@@ -19,11 +19,11 @@ No additional hardware is required to start this example and the Serial interfac
 
 If this is the first time you use an ESP8266 board, some instructions on how to setup your development environment can be found here:
 
-[Step by Step setting up a development environment](/steps/stepsarduino.md)
+[Step by Step setting up a development environment](/steps/arduinosetup.md)
 
 There are some options in uploading the required software and registration on the network that s described here:
 
-[Step by Step Bring your device to work](/steps/stepsnewdevice.md)
+[Step by Step Bring your device to work](/steps/newdevice.md)
 
 This includes: 
 

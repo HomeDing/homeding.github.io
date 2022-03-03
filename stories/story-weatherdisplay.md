@@ -134,7 +134,7 @@ For simplicity on adding the new device to your home wifi network you may add th
 
 ![Network Secrets in Code](/stories/sketch-secrets.png)
 
-If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description at [Step by Step Bring your device to work](https://homeding.github.io/#page=/stepsnewdevice.md) <https://homeding.github.io/#page=/stepsnewdevice.md>.
+If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description at [Step by Step Bring your device to work](https://homeding.github.io/#page=/newdevice.md) <https://homeding.github.io/#page=/newdevice.md>.
 
 ![WiFi Manager UI](/dev/wifimanager.png)
 

@@ -127,7 +127,7 @@ When you do not want to hard-code your network passphrase use the built-in WiFi 
 by joining the temporary device hotspot named `homeding-xxxxxx` and opening
 [http://192.168.4.1/$setup](http://192.168.4.1/$setup).
 
-A more detailed description on this process can be found on the page [Step by Step Bring your device to work](/steps/stepsnewdevice.md).
+A more detailed description on this process can be found on the page [Step by Step Bring your device to work](/steps/newdevice.md).
 
 
 ## Upload the web UI
