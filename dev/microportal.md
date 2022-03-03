@@ -80,7 +80,7 @@ The list of hostnames returned by this service is used to build the list of devi
 The Homeding devices already have a good presentation UI of the functionality defined by the local configured elements on the `Board` page.
 Some other devices may have a special implemented control page like you can see in the [Radio example](/examples/radio.md).
 
-The portal uses the default page of the device that can be reached by opening `http://{devicename}/` and then following the configured redirect.
+The portal uses the default page of the device that can be reached by opening `http://homeding/` [^hostname] and then following the configured redirect.
 
 The page shown can be changed in the property `homepage` in the [Device Element](/elements/device.md).
 
@@ -94,3 +94,4 @@ https://web.archive.org/web/20151107123618/http://upnp.org/specs/arch/UPnP-arch-
 
 http://wiki.micasaverde.com/index.php/Luup_UPNP_Files -->
 
+[^hostname]: replace `homeding` with the network name of your device to use this link.

@@ -2,6 +2,7 @@
   "ignorePatterns": [
     { "pattern": "^http://homeding/" },
     { "pattern": "^http://airding/" },
+    { "pattern": "^http://{devicename}/" },
     { "pattern": "^http://plug" },
     { "pattern": "^http://outdoor/" },
     { "pattern": "^http://ESP-" },

@@ -68,7 +68,8 @@ Using the built-in WiFi Manager is the preferred method for connecting to a netw
 
 - If the WiFi Manager UI is not starting after joining the network please open http://192.168.4.1/ or http://192.168.4.1/$setup manually.
 
-- The current device name is shown in this dialog and you will find the device later on the registered network using <http://{devicename}>.
+- The current device name is shown in also this dialog
+  and you will find the device later on the registered network using <http://{devicename}>.
 
 - Select your private WiFi Network and enter the passphrase.
 
