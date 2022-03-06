@@ -1,10 +1,11 @@
 ---
 title: Using the I2C bus
+layout: "page.njk"
+tags: ["Implementation"]
+excerpt: >
+  The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data.
+  A central configuration is supported on the device level.
 ---
-
-# {{title}}
-
-The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data.
 
 The data transfer is not as fast as the SPI bus but it is easy to implement
 because fewer lines are required and the chip-select line that enables
@@ -71,7 +72,6 @@ See: [Using the I2C bus](/dev/i2c.md)
 
 ## I2C addresses and chips using them
 
-
 https://i2cdevices.org/addresses
 
 0x27 : LCD Display, PCF8574 Port extender
@@ -82,6 +82,7 @@ https://i2cdevices.org/addresses
 0x77 : (BMP280) BME680
 
 (alternate address in brackets)
+
 
 ## See also
 

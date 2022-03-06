@@ -5,10 +5,16 @@ const myMarkdown = require("./.myMarkdown");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  // eleventy global settings
   eleventyConfig.setQuietMode(true);
 
   // Copy any images and css to `_site`, via Glob pattern (in 0.9.0+)
   // Keeps the same directory structure.
+
+  eleventyConfig.ignores.add(".git/**");
+  eleventyConfig.ignores.add("_site/**");
+  eleventyConfig.ignores.add("node_modules/**");
+  eleventyConfig.ignores.add(".vscode/**");
 
   const contentFolders = ["boards", "concepts", "dev", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
   const assetFolders = ["i", "v02", "v02m", "v03", "v03m"];
@@ -20,12 +26,12 @@ module.exports = function (eleventyConfig) {
   })
 
   assetFolders.forEach(f => {
+    eleventyConfig.ignores.add(f);
     eleventyConfig.addPassthroughCopy(f);
   })
 
   eleventyConfig.addPassthroughCopy("./robots.txt");
   eleventyConfig.addPassthroughCopy("./favicon*.*");
-  eleventyConfig.addPassthroughCopy("./*.css");
   eleventyConfig.addPassthroughCopy("./pages.js");
   eleventyConfig.addPassthroughCopy("./element*.json");
   eleventyConfig.addPassthroughCopy("./*.svg");
@@ -34,18 +40,24 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.htm");
   eleventyConfig.addGlobalData("layout", "default.njk");
 
-  // https://www.11ty.dev/docs/copy/#passthrough-by-file-extension
-  // eleventyConfig.setTemplateFormats([
-  //   "md",
-  //   "css" // css is not yet a recognized template extension in Eleventy
-  // ]);
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: "--- excerpt ---"
+  });
 
-  eleventyConfig.addTransform("insp", function(content) {
+  // https://www.11ty.dev/docs/copy/#passthrough-by-file-extension
+  eleventyConfig.setTemplateFormats([
+    "md",
+    "njk",
+    "css" // css is not yet a recognized template extension in Eleventy
+  ]);
+
+  eleventyConfig.addTransform("insp", function (content) {
     // console.log( this.inputPath, this.outputPath );
     // note that this.outputPath is `false` for serverless templates
     // simply remove whitespace at the beginning of all textlines starting with a tag
     // content = content.replace(/$\s+</mg, "<");
-    return(content);
+    return (content);
   });
 
   eleventyConfig.addFilter("stringify", function (value) {

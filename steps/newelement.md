@@ -1,15 +1,17 @@
 ---
 title: "Create and extend a new Element"
-tags: "steps"
+layout: "page.njk"
+tags: ["steps"]
 date: "2022-03-01"
 excerpt: >
-  The HomeDing library is not a closed eco system but rather allows adding new functionality by adding new Elements
+  How to add new functionality to a HomeDing based device by adding new Elements
   to support a specific functionality, sensor, chip, network service and more.
 ---
 
-# {{title}}
+The HomeDing library is not a closed eco system but allows customization, configuration and extensions.
 
-{{excerpt}}
+This step-by-step article shows how to start with a simple implementation that gets extended
+to support the specific benefits of the ecosystem.
 
 The entrance effort to do so is not more complex than writing a Arduino sketch with a setup and loop function.
 

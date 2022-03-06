@@ -10,6 +10,7 @@
     "build": "npx @11ty/eleventy",
     "build:clean": "npm run clean && npm run build",
     "build:css": "sass docstyle.scss docstyle.css --style=compressed --no-source-map",
+    "build:css-watch": "sass docstyle.scss docstyle.css --style=compressed --no-source-map --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

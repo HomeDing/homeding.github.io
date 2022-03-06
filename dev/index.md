@@ -1,61 +1,87 @@
 ---
-title: Implementation topics
+title: Implementation Details
+description: Hints for implementing and extending Elements and the Web UI
+layout: "page.njk"
+tags: ["Implementation"]
+excerpt: >
+  Hints and details on how to implement new and extend existing elements using an Arduino programming
+  environment and how to implement new cards for the dashboards.
 ---
 
-# {{title}}
+<!-- ## Customize a sketch file -->
 
-Here is some information on extending the HomeDing library by implementing new elements.
+## Implement a new Element
 
-### Firmware implementation
+The HomeDing library is not a closed eco system but rather allows adding new functionality
+by adding new Elements to support a specific functionality, sensor, chip, network service and more.
 
-* [Serial Logger](/dev/logger.md)
-* [Element class](/dev/elementclass.md)
-* [Element registry](/dev/elementregistry.md)
+**[Create and extend a new Element](/steps/newelement.md)**
+
+> This step-by-step article shows how to start with a simple implementation that gets extended
+> to support the specific benefits of the ecosystem.
+
+**Template Element**
+
+> In the development example you can find a Element called "TemplateElement" 
+> that contains all function declarations and empty function implementation for an element
+> that does nothing and some additional information as comments that help implementing new Elements.
+
+> The 2 files (TemplateElement.*) can be copied and renamed and the class name should be adjusted as well to create a new element not doing anything yet.
+
+**[Element Class](/dev/elementclass.md)**
+
+> More details about the base Element Class implementation and available methods can be found in [Element Class](/dev/elementclass.md) description.
+
+**[Using the I2C bus](/dev/i2c.md)**
+
+> The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data.
+> A central configuration is supported on the device level.
+
+**[Element registry](/dev/elementregistry.md)**
+
+> The [Element registry](/dev/elementregistry.md) is the central class that knows all included and available
+> Element classes to allow further creation and customization of new Elements by name at runtime.
+
+
+## Firmware implementation details
+
+Here is some information on how the HomeDing library works and provides some
+useful functionality.
+
+**[WiFi manager](/dev/wifimanager.md)**
+
+**[Serial Logger](/dev/logger.md)**
+
+**[The safemode](/dev/safemode.md)**
+
+**[Network Startup](/dev/startupnet.md)**
+
 <!-- * [_microjson](/_microjson.md) -->
 <!-- * [_customelement](/_customelement.md) -->
-* [WiFi manager](/dev/wifimanager.md)
-* [The safemode](/dev/safemode.md)
-* [Network Startup](/dev/startupnet.md)
 
-### Web-UI Implementation doku
+### Extending the Web UI
 
 * [Introduction](/dev/micro.md)
+
 * [Embedded Web Site for IoT Devices](/dev/website.md)
+
 * [micro behaviors](/dev/microbehaviors.md)
+
 * [micro charts](/dev/microcharts.md)
+
 * [micro icons](/dev/microicons.md)
+
 * [micro javascript utils](/dev/microjavascript.md)
+
 * [micro style](/dev/microstyle.md)
+
 * [micro templates](/dev/microtemplates.md)
+
 <!-- * [monitor](/elements/_monitor.md) -->
+
 * [Portal](/dev/microportal.md)
+
 <!-- * [_iconsforthings](/_iconsforthings.md) -->
-
-
-## Create a new Element implementation
-
-In the development example you can find a Element called "TemplateElement" that contains all function declarations, empty function implementation for an element that does nothing and some additional information as comments that help implementing new Elements.
-
-The 2 files (TemplateElement.*) can be copied and renamed and the class name should be adjusted as well to create a new element not doing anything yet.
-
-You can then start implementing the minimal things:
-
-* Initializing the element properties for taking configuration values into private variables in the `set(name, value)` method.
-* Starting operation mode in the `start()` method. This may include initializing GPIO signals, sensors or other external chips.  
-* Operate in the `loop()` method. Be sure that loop() execution must not consume much time to support the cooperative multitasking. 
-
-More details about the Element Class implementation and the other available methods can be found in [Element Class](/dev/elementclass.md) description.
-
-
-## Element registration
-
-The Element Registry knows all element classes that are available in the firmware to be activated by using the configuration.
-Under normal conditions yu have to specify a short element name when calling `registerElement` in:
-
-    bool TemplateElement::registered =
-    ElementRegistry::registerElement("template", TemplateElement::create);
-
-Details on the Registry can be found in the [Element Registry](/dev/elementregistry.md) documentation.
 
 
 ## Element Card

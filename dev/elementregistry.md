@@ -1,13 +1,13 @@
 ---
 title: Element Registry
+layout: "page.njk"
+tags: ["Implementation"]
+excerpt: >
+  The ElementRegistry is the central class that knows all included and available
+  Element classes to allow further creation and customization of new Elements by name at runtime.
 ---
 
-# {{title}}
-
 ## Why we need a registry
-
-The ElementRegistry is the central class that knows all included and available
-Element classes to allow further creation of new Elements by name at runtime.
 
 This allows specifying the `known elements` at compile time to optimize the programs size  to the available flash memory on the smaller boards but can include all elements for bigger boards.
 
@@ -84,7 +84,8 @@ or use the "MyTemplate" example as a starting point.
 The intension is that it is easy to add any Element to the Library later so anyone can add new functionality to the HomeDing Library.
 
 When implementing an Element (elements/here: My) for a single project / sketch
-the MyElement needs to be registered into the ElementRegistry too (and only once).
+the MyElement needs to be registered into the ElementRegistry too (and only once)
+using a short element name and an elements-specific static create function when calling `registerElement`.
 
 As long as the Element is inside the project folder beside the sketch file the registration is placed in the
 MyElement.cpp file at the end and looks like this:

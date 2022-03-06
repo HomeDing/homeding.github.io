@@ -1,22 +1,37 @@
 ---
 title: Boards Overview
-description: Some Boards supported by the HomeDing library
+description: Boards supported by the HomeDing library
+layout: "page.njk"
+tags: ["Board", "implementation"]
+excerpt: >
+  Details on some boards and devices supported by the HomeDing library.
 ---
 
-# {{title}}
-
-The HomeDing library can be used with many boards and manufacored devices
+The HomeDing library can be used with many boards and manufactured devices
 that use a ESP8266 or ESP32 system-on-chip processor.
 
 On the market you find a lot of solutions like bare chip adapters, development boards,
 IoT devices off-the-shelf and even complete kits that use these chips.
+
 Here you find some common species and bare processors described in detail that you may consider to use
 including hints for configuration and programming.
 
-A good source of development board descriptions, hints as well as references can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
+- [Full feature boards with 4 MByte flash memory](#full-feature-boards-with-4-mbyte-flash-memory)
+- [Devices based on Esp8266](#devices-based-on-esp8266)
+- [Bare ESP-12 boards](#bare-esp-12-boards)
+- [ESP-12 module types](#esp-12-module-types)
+- [Esp8266 boards with 1 MByte flash memory](#esp8266-boards-with-1-mbyte-flash-memory)
+  - [Applicable Examples](#applicable-examples)
+  - [Boards](#boards)
+- [ESP8285 based boards](#esp8285-based-boards)
+- [Comments](#comments)
+- [See also](#see-also)
 
-In the Repository of Tasmota Supported Devices at <https://templates.blakadder.com/> many off-the-shell devices can be identified using a espressif processor.
+A good source of development board descriptions, hints as well as references
+can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
 
+In the Repository of Tasmota Supported Devices at <https://templates.blakadder.com/>
+many off-the-shell devices can be identified using a espressif processor.
 
 ## Full feature boards with 4 MByte flash memory
 
@@ -198,8 +213,3 @@ The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board availa
 * <http://www.forward.com.au/pfod/ESP8266/GPIOpins/index.html>
 * <https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process>
 * <https://tasmota.github.io/docs/Pinouts>
-
-
-## Tags
-
-#board

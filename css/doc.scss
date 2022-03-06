@@ -99,8 +99,8 @@ table {
 
 // card with text only
 .plaincard {
-  padding: $gutter2;
-  min-height: 6rem;
+  padding: $gutter;
+  min-height: 2rem;
 }
 
 // cards with icon
@@ -142,15 +142,15 @@ p > img {
   height: auto;
 }
 
-img[title='w200'] {
+img[title="w200"] {
   width: 200px;
 }
 
-img[title='w400'] {
+img[title="w400"] {
   width: 400px;
 }
 
-img[title='w600'] {
+img[title="w600"] {
   width: 600px;
 }
 
