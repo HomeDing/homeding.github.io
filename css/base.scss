@@ -2,7 +2,6 @@
 // colors, dark mode, sizes, page level layout
 // This is part of the micro css implementation.
 
-
 // ===== Colors =====
 // hue of 220 is signature of this style
 
@@ -32,7 +31,6 @@ $u-border-active: 0.1em solid $u-border-color-active;
 $u-navbar: $u-primary;
 $u-navbar-text: white;
 
-
 // ===== Sizes =====
 
 $white-space: 1rem;
@@ -42,14 +40,12 @@ $gutter2: calc($white-space / 4);
 $u-btn-radius: 0.2em;
 $u-output-border: $u-border-none;
 
-
 // ===== global Layout =====
 
 $u-card-border: none;
 $u-card-radius: 0.4rem;
 $u-card-small-width: 11.5rem;
-$u-card-width: 2* $u-card-small-width + $gutter;
-
+$u-card-width: 2 * $u-card-small-width + $gutter;
 
 // ===== font =====
 
@@ -104,6 +100,7 @@ body {
 p,
 pre,
 code,
+h1,
 h2,
 h3,
 h4 {
@@ -130,29 +127,36 @@ a:hover {
 }
 
 // h1 Page title is always inside u-header
+h1,
 h2,
 h3,
 h4 {
   font-family: $font-sans-serif;
   font-weight: bold;
+
+  &:not(:first-child) {
+    margin-top: $white-space;
+  }
+}
+
+// Title
+h1 {
+  font-size: 2.4rem;
 }
 
 // Chapter
 h2 {
   font-size: 1.6em;
-  min-height: 1.6em;
 }
 
 // Topic
 h3 {
   font-size: 1.25em;
-  min-height: 1.25em;
 }
 
 // Subtitle
 h4 {
   font-size: 1em;
-  min-height: 1em;
 }
 
 code,
@@ -162,7 +166,7 @@ pre > code {
   background-color: rgb(255, 255, 185);
   color: $u-text;
   font-size: 1rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 
   @media print {
     border: 1px solid $u-text;
@@ -197,7 +201,7 @@ button {
   color: currentColor;
 }
 
-input[type='color'] {
+input[type="color"] {
   padding: 0;
   border: none;
 }
@@ -231,8 +235,8 @@ input:invalid {
   border-color: #ff5555;
 }
 
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
   width: 2ch;
   vertical-align: baseline;
 }
@@ -275,7 +279,7 @@ dialog {
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     width: 2rem;
@@ -369,13 +373,6 @@ main {
     width: 2.6rem;
     height: 2.6rem;
     vertical-align: top;
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 2.4rem;
-    font-family: $font-sans-serif;
-    font-weight: bold;
   }
 }
 

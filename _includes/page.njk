@@ -37,7 +37,7 @@ permalink: "{{ page.filePathStem }}.htm"
   <main style="padding:1rem">
     <h1>HomeDing - {{title}}</h1>
 
-    <div class="plaincard">{{excerpt}}</div>
+    {% if excerpt %}<div class="plaincard">{{excerpt}}</div>{% endif %}
     {{ content | safe }}
 
     {% if tags %}

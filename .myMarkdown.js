@@ -39,7 +39,7 @@ module.exports = {
 
       if ((title) && (linkFolder) && (link)) {
         return (div
-          + `<a href="#page=/${linkFolder}/${link}.md">`
+          + `<a href="/${linkFolder}/${link}.htm">`
           + img + '<h3>' + title + '</h3>' + '</a>');
       } else {
         return (div + img);
@@ -52,7 +52,7 @@ module.exports = {
 
       if ((title) && (linkFolder) && (link)) {
         return (div
-          + `<a href="#page=/${linkFolder}/${link}.md">`
+          + `<a href="/${linkFolder}/${link}.htm">`
           + img + '<h3>' + title + '</h3>' + '</a>');
       } else {
         return (div + img);

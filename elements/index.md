@@ -1,8 +1,9 @@
 ---
 title: Elements Overview
+tags: ["Element"]
+layout: "page.njk"
+excerpt: These Elements are implemented in the HomeDing library.
 ---
-
-# {{title}}
 
 Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like [sensors](/sensors/sensors.md). 
 
@@ -148,7 +149,7 @@ The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast
 :::
 
 
-## Logic Elements
+## Logic and Calculation Elements
 
 Logic elements implement using on/off values expressed as 1/0 values. 
 
@@ -169,6 +170,10 @@ The outgoing value is HIGH(1) when all of the given input values are not LOW(0).
 :::element or or
 The [OR Element](/elements/or.md) combines multiple logic input values to a single output value.
 The outgoing value is HIGH(1) when one of the given input values is not LOW(0).
+:::
+
+:::element add add
+The ADD Element sums up multiple input values to create a single output value.
 :::
 
 :::element map map

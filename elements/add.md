@@ -2,15 +2,10 @@
 title: The ADD Element
 id: add
 tags: ["Element"]
+layout: "page.njk"
 description: Calculate sum of values
 excerpt: The ADD Element sums up multiple input values to create a single output value.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 Actions can be send to this element using the properties value[n].
 Every time the value changes the onValue event is emitted with the sum of all input values.
