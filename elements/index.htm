@@ -7,18 +7,14 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <meta name='description' content=''>
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+
   <title>Elements Overview</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
 </head>
 
 <body scroll="0" style="padding:0;">
-  <div class="u-header">
-    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
-    <h1>HomeDing</h1>
-  </div>
-
   <div class="u-navbar" style="margin-bottom: 0;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
@@ -30,177 +26,182 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage x  open"></nav>
+
+  <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>Elements Overview</h1>
-<p>Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like <a href="/sensors/sensors.htm">sensors</a>.</p>
+    <h1>HomeDing - Elements Overview</h1>
+
+    <div class="plaincard">These Elements are implemented in the HomeDing library.</div>
+    <p>Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like <a href="/sensors/sensors.htm">sensors</a>.</p>
 <p>The following element implementations are available in the current version of the HomeDing library.</p>
 <h2>Input Elements</h2>
 <p>These elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors .</p>
-<div class="iconcard"><a href="#page=/elements/digitalin.md"><svg class="icon"><use href="/icons.svg#digitalin"></use></svg><h3>digitalin</h3></a><p>The <a href="/elements/digitalin.htm">DigitalIn Element</a>
+<div class="iconcard"><a href="/elements/digitalin.htm"><svg class="icon"><use href="/icons.svg#digitalin"></use></svg><h3>digitalin</h3></a><p>The <a href="/elements/digitalin.htm">DigitalIn Element</a>
 is used with momentary buttons or switches but also from sensors giving a HIGH/LOW value.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/digitalsignal.md"><svg class="icon"><use href="/icons.svg#digitalin"></use></svg><h3>digitalsignal</h3></a><p>Input Element used to handle digital input
+<div class="iconcard"><a href="/elements/digitalsignal.htm"><svg class="icon"><use href="/icons.svg#digitalin"></use></svg><h3>digitalsignal</h3></a><p>Input Element used to handle digital input
 with short time level changes using interrupts.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/analog.md"><svg class="icon"><use href="/icons.svg#analog"></use></svg><h3>analog</h3></a><p>Input Element to capture a analog voltage using the builtin ADC.</p>
+<div class="iconcard"><a href="/elements/analog.htm"><svg class="icon"><use href="/icons.svg#analog"></use></svg><h3>analog</h3></a><p>Input Element to capture a analog voltage using the builtin ADC.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/rotary.md"><svg class="icon"><use href="/icons.svg#rotary"></use></svg><h3>rotary</h3></a><p>Input Element for using a rotary encoder.</p>
+<div class="iconcard"><a href="/elements/rotary.htm"><svg class="icon"><use href="/icons.svg#rotary"></use></svg><h3>rotary</h3></a><p>Input Element for using a rotary encoder.</p>
 </div>
 <div style="clear:both"></div>
 <h2>Sensor Elements</h2>
 <p>The <a href="/elements/sensors.htm">sensor elements</a> implement the adoption to a very specific sensor or sensor family. They share
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.</p>
-<div class="iconcard"><a href="#page=/elements/dht.md"><svg class="icon"><use href="/icons.svg#dht"></use></svg><h3>dht</h3></a><p>Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
+<div class="iconcard"><a href="/elements/dht.htm"><svg class="icon"><use href="/icons.svg#dht"></use></svg><h3>dht</h3></a><p>Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/ds18b20.md"><svg class="icon"><use href="/icons.svg#ds18b20"></use></svg><h3>ds18b20</h3></a><p>The DS18B20Element retrieves temperature values from DS18B20 aka.
+<div class="iconcard"><a href="/elements/ds18b20.htm"><svg class="icon"><use href="/icons.svg#ds18b20"></use></svg><h3>ds18b20</h3></a><p>The DS18B20Element retrieves temperature values from DS18B20 aka.
 Dallas Temperature sensors and creates actions.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/bme680.md"><svg class="icon"><use href="/icons.svg#bme680"></use></svg><h3>bme680</h3></a><p>Read BME680 sensor data with temperature, humidity, pressure and gas resistance.</p>
+<div class="iconcard"><a href="/elements/bme680.htm"><svg class="icon"><use href="/icons.svg#bme680"></use></svg><h3>bme680</h3></a><p>Read BME680 sensor data with temperature, humidity, pressure and gas resistance.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/pms.md"><svg class="icon"><use href="/icons.svg#pms"></use></svg><h3>pms</h3></a><p>Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
+<div class="iconcard"><a href="/elements/pms.htm"><svg class="icon"><use href="/icons.svg#pms"></use></svg><h3>pms</h3></a><p>Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/bmp280.md"><svg class="icon"><use href="/icons.svg#bmp280"></use></svg><h3>bmp280</h3></a><p>Read sensor values from a BMP280 sensor with temperature and absolute barometric pressure.</p>
+<div class="iconcard"><a href="/elements/bmp280.htm"><svg class="icon"><use href="/icons.svg#bmp280"></use></svg><h3>bmp280</h3></a><p>Read sensor values from a BMP280 sensor with temperature and absolute barometric pressure.</p>
 </div>
 <!-- BME280 -->
 <!-- MPU9250 -->
 <div style="clear:both"></div>
 <p>More detailed information on sensor implementation can be found in <a href="/elements/sensors.htm">sensor elements implementation</a>.</p>
 <h2>Output and Actor Elements</h2>
-<div class="iconcard"><a href="#page=/elements/pwmout.md"><svg class="icon"><use href="/icons.svg#pwmout"></use></svg><h3>pwmout</h3></a><p>The <a href="/elements/pwmout.htm">PWMOut Element</a> is used to output an pwm signals based on actions. e.g. LEDs.</p>
+<div class="iconcard"><a href="/elements/pwmout.htm"><svg class="icon"><use href="/icons.svg#pwmout"></use></svg><h3>pwmout</h3></a><p>The <a href="/elements/pwmout.htm">PWMOut Element</a> is used to output an pwm signals based on actions. e.g. LEDs.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/digitalout.md"><svg class="icon"><use href="/icons.svg#digitalout"></use></svg><h3>digitalout</h3></a><p>The <a href="/elements/digitalout.htm">DigitalOut Element</a> is used to create digital output signals based on actions.</p>
+<div class="iconcard"><a href="/elements/digitalout.htm"><svg class="icon"><use href="/icons.svg#digitalout"></use></svg><h3>digitalout</h3></a><p>The <a href="/elements/digitalout.htm">DigitalOut Element</a> is used to create digital output signals based on actions.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/rfcodes.md"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>rfcodes</h3></a><p>The <a href="/elements/rfcodes.htm">RFCodes Element</a> is used for sending and receiving RF codes on the 433 MHz band
+<div class="iconcard"><a href="/elements/rfcodes.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>rfcodes</h3></a><p>The <a href="/elements/rfcodes.htm">RFCodes Element</a> is used for sending and receiving RF codes on the 433 MHz band
 e.g. to control remote sockets.</p>
 </div>
 <div style="clear:both"></div>
 <h2>Light Elements</h2>
 <p>To control a light with only one channel the <a href="/elements/switch.htm">Switch Element</a> and <a href="/elements/value.htm">Value Element</a> can be used
 to control dimmable LEDs using <a href="/elements/pwmout.htm">PWM Out Element</a> or switching using <a href="/elements/digitalout.htm">DigitalOut Element</a>.</p>
-<div class="iconcard"><a href="#page=/elements/switch.md"><svg class="icon"><use href="/icons.svg#switch"></use></svg><h3>switch</h3></a><p>The <a href="/elements/switch.htm">Switch Element</a> controls a boolean output value with 0 and 1 values.
+<div class="iconcard"><a href="/elements/switch.htm"><svg class="icon"><use href="/icons.svg#switch"></use></svg><h3>switch</h3></a><p>The <a href="/elements/switch.htm">Switch Element</a> controls a boolean output value with 0 and 1 values.
 It can use input from a <a href="/elements/digitalin.htm">DigitalIn Element</a> with a momentary button and the Web UI.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/value.md"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/value.htm">Value Element</a> controls a value in a given range. It can be controlled using several methods
+<div class="iconcard"><a href="/elements/value.htm"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/value.htm">Value Element</a> controls a value in a given range. It can be controlled using several methods
 like a <a href="/elements/digitalin.htm">DigitalIn Element</a> or a <a href="/elements/rotary.htm">Rotary Element</a> and the Web UI.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/pwmout.md"><svg class="icon"><use href="/icons.svg#pwmout"></use></svg><h3>pwmout</h3></a><p>The <a href="/elements/pwmout.htm">PwmOut Element</a> enables creating a PWM digital output signal usually to dimmable LEDs and servos.</p>
+<div class="iconcard"><a href="/elements/pwmout.htm"><svg class="icon"><use href="/icons.svg#pwmout"></use></svg><h3>pwmout</h3></a><p>The <a href="/elements/pwmout.htm">PwmOut Element</a> enables creating a PWM digital output signal usually to dimmable LEDs and servos.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/digitalout.md"><svg class="icon"><use href="/icons.svg#digitalout"></use></svg><h3>digitalout</h3></a><p>The <a href="/elements/digitalout.htm">DigitalOut Element</a> enables creating a digital output on a GPIO pin.</p>
+<div class="iconcard"><a href="/elements/digitalout.htm"><svg class="icon"><use href="/icons.svg#digitalout"></use></svg><h3>digitalout</h3></a><p>The <a href="/elements/digitalout.htm">DigitalOut Element</a> enables creating a digital output on a GPIO pin.</p>
 </div>
 <div style="clear:both"></div>
 <p>For lights like <a href="/boards/bulb.htm">bulbs</a> or LED stripes that have multiple color channels
 the <a href="/elements/color.htm">Color Element</a> can be used to control the light color using a RGB or WRGB color value.</p>
 <p>There are special elements to control specific chips or using the PWM capabilities.</p>
-<div class="iconcard"><a href="#page=/elements/color.md"><svg class="icon"><use href="/icons.svg#color"></use></svg><h3>color</h3></a><p>The <a href="/elements/color.htm">Color Element</a> controls a RGB or WRGB value that can be used to control light Elements with color support.</p>
+<div class="iconcard"><a href="/elements/color.htm"><svg class="icon"><use href="/icons.svg#color"></use></svg><h3>color</h3></a><p>The <a href="/elements/color.htm">Color Element</a> controls a RGB or WRGB value that can be used to control light Elements with color support.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/light.md"><svg class="icon"><use href="/icons.svg#light"></use></svg><h3>light</h3></a><p>The <a href="/elements/light.htm">Light Element</a> can control up to 4 PWM output GPIOs for controlling RGB and WRGB LEDs by color values.</p>
+<div class="iconcard"><a href="/elements/light.htm"><svg class="icon"><use href="/icons.svg#light"></use></svg><h3>light</h3></a><p>The <a href="/elements/light.htm">Light Element</a> can control up to 4 PWM output GPIOs for controlling RGB and WRGB LEDs by color values.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/my9291.md"><svg class="icon"><use href="/icons.svg#led"></use></svg><h3>my9291</h3></a><p>The <a href="/elements/my9291.htm">MY9291 Element</a> implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.</p>
+<div class="iconcard"><a href="/elements/my9291.htm"><svg class="icon"><use href="/icons.svg#led"></use></svg><h3>my9291</h3></a><p>The <a href="/elements/my9291.htm">MY9291 Element</a> implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/neo.md"><svg class="icon"><use href="/icons.svg#neo"></use></svg><h3>neo</h3></a><p>The <a href="/elements/neo.htm">Neo Element</a> implements the protocol to control ws2812 based LEDs also called Neopixel.</p>
+<div class="iconcard"><a href="/elements/neo.htm"><svg class="icon"><use href="/icons.svg#neo"></use></svg><h3>neo</h3></a><p>The <a href="/elements/neo.htm">Neo Element</a> implements the protocol to control ws2812 based LEDs also called Neopixel.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/p9813.md"><svg class="icon"><use href="/icons.svg#led"></use></svg><h3>p9813</h3></a><p>The <a href="/elements/p9813.htm">P9813 Element</a> implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.</p>
+<div class="iconcard"><a href="/elements/p9813.htm"><svg class="icon"><use href="/icons.svg#led"></use></svg><h3>p9813</h3></a><p>The <a href="/elements/p9813.htm">P9813 Element</a> implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.</p>
 </div>
 <h2>Service Elements</h2>
 <p>Service elements interact with services to get or publish data using actions.</p>
-<div class="iconcard"><a href="#page=/elements/weatherfeed.md"><svg class="icon"><use href="/icons.svg#weatherfeed"></use></svg><h3>weatherfeed</h3></a><p>The <a href="/elements/weatherfeed.htm">Weatherfeed Element</a>can retrieve weather forecast information from an internet service.</p>
+<div class="iconcard"><a href="/elements/weatherfeed.htm"><svg class="icon"><use href="/icons.svg#weatherfeed"></use></svg><h3>weatherfeed</h3></a><p>The <a href="/elements/weatherfeed.htm">Weatherfeed Element</a>can retrieve weather forecast information from an internet service.</p>
 </div>
-<h2>Logic Elements</h2>
+<h2>Logic and Calculation Elements</h2>
 <p>Logic elements implement using on/off values expressed as 1/0 values.</p>
-<div class="iconcard"><a href="#page=/elements/button.md"><svg class="icon"><use href="/icons.svg#button"></use></svg><h3>button</h3></a><p>The <a href="/elements/button.htm">Button Element</a> can differentiate clicks, double clicks and long press gestures to send out actions.</p>
+<div class="iconcard"><a href="/elements/button.htm"><svg class="icon"><use href="/icons.svg#button"></use></svg><h3>button</h3></a><p>The <a href="/elements/button.htm">Button Element</a> can differentiate clicks, double clicks and long press gestures to send out actions.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/switch.md"><svg class="icon"><use href="/icons.svg#switch"></use></svg><h3>switch</h3></a><p>The <a href="/elements/switch.htm">Switch Element</a> controls a boolean output value with 0 and 1 values.
+<div class="iconcard"><a href="/elements/switch.htm"><svg class="icon"><use href="/icons.svg#switch"></use></svg><h3>switch</h3></a><p>The <a href="/elements/switch.htm">Switch Element</a> controls a boolean output value with 0 and 1 values.
 It can use input from a <a href="/elements/digitalin.htm">DigitalIn Element</a> with a momentary button and the Web UI.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/and.md"><svg class="icon"><use href="/icons.svg#and"></use></svg><h3>and</h3></a><p>The <a href="/elements/and.htm">AND Element</a> combines multiple logic input values to a single output value.
+<div class="iconcard"><a href="/elements/and.htm"><svg class="icon"><use href="/icons.svg#and"></use></svg><h3>and</h3></a><p>The <a href="/elements/and.htm">AND Element</a> combines multiple logic input values to a single output value.
 The outgoing value is HIGH(1) when all of the given input values are not LOW(0).</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/or.md"><svg class="icon"><use href="/icons.svg#or"></use></svg><h3>or</h3></a><p>The <a href="/elements/or.htm">OR Element</a> combines multiple logic input values to a single output value.
+<div class="iconcard"><a href="/elements/or.htm"><svg class="icon"><use href="/icons.svg#or"></use></svg><h3>or</h3></a><p>The <a href="/elements/or.htm">OR Element</a> combines multiple logic input values to a single output value.
 The outgoing value is HIGH(1) when one of the given input values is not LOW(0).</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/map.md"><svg class="icon"><use href="/icons.svg#map"></use></svg><h3>map</h3></a><p>The <a href="/elements/map.htm">Map Element</a> combines multiple logic input values to a single output value.
+<div class="iconcard"><a href="/elements/add.htm"><svg class="icon"><use href="/icons.svg#add"></use></svg><h3>add</h3></a><p>The ADD Element sums up multiple input values to create a single output value.</p>
+</div>
+<div class="iconcard"><a href="/elements/map.htm"><svg class="icon"><use href="/icons.svg#map"></use></svg><h3>map</h3></a><p>The <a href="/elements/map.htm">Map Element</a> combines multiple logic input values to a single output value.
 The outgoing value is HIGH(1) when one of the given input values is not LOW(0).</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/reference.md"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>reference</h3></a><p>The <a href="/elements/map.htm">Reference Element</a> creates actions by comparing an incoming value with a reference value.</p>
+<div class="iconcard"><a href="/elements/reference.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>reference</h3></a><p>The <a href="/elements/map.htm">Reference Element</a> creates actions by comparing an incoming value with a reference value.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/scene.md"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>scene</h3></a><p>The <a href="/elements/scene.htm">Scene Element</a> sends a series of action triggered by a single incoming action.</p>
+<div class="iconcard"><a href="/elements/scene.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>scene</h3></a><p>The <a href="/elements/scene.htm">Scene Element</a> sends a series of action triggered by a single incoming action.</p>
 </div>
 <div style="clear:both"></div>
 <h2>Display Elements</h2>
 <p>The HomeDing library supports local attached displays but also works fine without a local display.</p>
-<div class="iconcard"><a href="#page=/elements/displayssd1306.md"><svg class="icon"><use href="/icons.svg#displayssd1306"></use></svg><h3>displayssd1306</h3></a><p>The <a href="/elements/ssd1306.htm">DisplaySSD1306 Element</a> configures the display adapter for using SSD1306 compatible OLED displays with 128*32 or 128*64 dots.</p>
+<div class="iconcard"><a href="/elements/displayssd1306.htm"><svg class="icon"><use href="/icons.svg#displayssd1306"></use></svg><h3>displayssd1306</h3></a><p>The <a href="/elements/ssd1306.htm">DisplaySSD1306 Element</a> configures the display adapter for using SSD1306 compatible OLED displays with 128*32 or 128*64 dots.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/displaysh1106.md"><svg class="icon"><use href="/icons.svg#displaysh1106"></use></svg><h3>displaysh1106</h3></a><p>The <a href="/elements/sh1106.htm">DisplaySH1106 Element</a> configures the display adapter for using SH1106 compatible OLED displays with 128*32 or 128*64 dots.</p>
+<div class="iconcard"><a href="/elements/displaysh1106.htm"><svg class="icon"><use href="/icons.svg#displaysh1106"></use></svg><h3>displaysh1106</h3></a><p>The <a href="/elements/sh1106.htm">DisplaySH1106 Element</a> configures the display adapter for using SH1106 compatible OLED displays with 128*32 or 128*64 dots.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/displaylcd.md"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><h3>displaylcd</h3></a><p>The <a href="/elements/lcd.htm">DisplayLCD Element</a> configures the display adapter for using HD44780 compatible LCDs displays using I2C.</p>
+<div class="iconcard"><a href="/elements/displaylcd.htm"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><h3>displaylcd</h3></a><p>The <a href="/elements/lcd.htm">DisplayLCD Element</a> configures the display adapter for using HD44780 compatible LCDs displays using I2C.</p>
 </div>
 <div style="clear:both"></div>
 <p>On the displays several Elements can be used to display data, text and visuals:</p>
-<div class="iconcard"><a href="#page=/elements/displaytext.md"><svg class="icon"><use href="/icons.svg#displaytext"></use></svg><h3>displaytext</h3></a><p>The <a href="/elements/displaytext.htm">DisplayText Element</a> show values as text on the display.</p>
+<div class="iconcard"><a href="/elements/displaytext.htm"><svg class="icon"><use href="/icons.svg#displaytext"></use></svg><h3>displaytext</h3></a><p>The <a href="/elements/displaytext.htm">DisplayText Element</a> show values as text on the display.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/displaydot.md"><svg class="icon"><use href="/icons.svg#displaydot"></use></svg><h3>displaydot</h3></a><p>The <a href="/elements/displaydot.htm">DisplayDot Element</a> show values as a dot on the display.</p>
+<div class="iconcard"><a href="/elements/displaydot.htm"><svg class="icon"><use href="/icons.svg#displaydot"></use></svg><h3>displaydot</h3></a><p>The <a href="/elements/displaydot.htm">DisplayDot Element</a> show values as a dot on the display.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/displaybar.md"><svg class="icon"><use href="/icons.svg#displaybar"></use></svg><h3>displaybar</h3></a><p>The <a href="/elements/displaybar.htm">DisplayBar Element</a> show values as a progress or percentage bar on the display.</p>
+<div class="iconcard"><a href="/elements/displaybar.htm"><svg class="icon"><use href="/icons.svg#displaybar"></use></svg><h3>displaybar</h3></a><p>The <a href="/elements/displaybar.htm">DisplayBar Element</a> show values as a progress or percentage bar on the display.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/displayline.md"><svg class="icon"><use href="/icons.svg#displayline"></use></svg><h3>displayline</h3></a><p>The <a href="/elements/displayline.htm">DisplayLine Element</a> shows a line on the display.</p>
+<div class="iconcard"><a href="/elements/displayline.htm"><svg class="icon"><use href="/icons.svg#displayline"></use></svg><h3>displayline</h3></a><p>The <a href="/elements/displayline.htm">DisplayLine Element</a> shows a line on the display.</p>
 </div>
 <div style="clear:both"></div>
 <p>More detailed information on displays and related elements can be found in <a href="/elements/displays.htm">displays</a></p>
 <h2>Time related Elements</h2>
-<div class="iconcard"><a href="#page=/elements/time.md"><svg class="icon"><use href="/icons.svg#dstime"></use></svg><h3>time</h3></a><p>The <a href="/elements/time.htm">Time Element</a> sends actions with the actual local time.</p>
+<div class="iconcard"><a href="/elements/time.htm"><svg class="icon"><use href="/icons.svg#dstime"></use></svg><h3>time</h3></a><p>The <a href="/elements/time.htm">Time Element</a> sends actions with the actual local time.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/dstime.md"><svg class="icon"><use href="/icons.svg#dstime"></use></svg><h3>dstime</h3></a><p>The <a href="/elements/dstime.htm">DSTime Element</a> can retrieve the local time using the RTC DS3231 chip.</p>
+<div class="iconcard"><a href="/elements/dstime.htm"><svg class="icon"><use href="/icons.svg#dstime"></use></svg><h3>dstime</h3></a><p>The <a href="/elements/dstime.htm">DSTime Element</a> can retrieve the local time using the RTC DS3231 chip.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/ntptime.md"><svg class="icon"><use href="/icons.svg#ntptime"></use></svg><h3>ntptime</h3></a><p>The <a href="/elements/ntptime.htm">NTPTime Element</a> can retrieve the local time using the NTP protocol from a NTP server.</p>
+<div class="iconcard"><a href="/elements/ntptime.htm"><svg class="icon"><use href="/icons.svg#ntptime"></use></svg><h3>ntptime</h3></a><p>The <a href="/elements/ntptime.htm">NTPTime Element</a> can retrieve the local time using the NTP protocol from a NTP server.</p>
 </div>
 <!--
 :::element dcftime dcftime
 The [DCFTime Element](/elements/dcftime.md) can retrieve the local time from a DCF 77kHz signal over the air.
 :::
 -->
-<div class="iconcard"><a href="#page=/elements/schedule.md"><svg class="icon"><use href="/icons.svg#schedule"></use></svg><h3>schedule</h3></a><p>The <a href="/elements/schedule.htm">Schedule Element</a> creates on and off actions based on the actual local time.</p>
+<div class="iconcard"><a href="/elements/schedule.htm"><svg class="icon"><use href="/icons.svg#schedule"></use></svg><h3>schedule</h3></a><p>The <a href="/elements/schedule.htm">Schedule Element</a> creates on and off actions based on the actual local time.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/alarm.md"><svg class="icon"><use href="/icons.svg#schedule"></use></svg><h3>alarm</h3></a><p>The <a href="/elements/alarm.htm">Alarm Element</a> creates actions when reaching a defined time of day.</p>
+<div class="iconcard"><a href="/elements/alarm.htm"><svg class="icon"><use href="/icons.svg#schedule"></use></svg><h3>alarm</h3></a><p>The <a href="/elements/alarm.htm">Alarm Element</a> creates actions when reaching a defined time of day.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/timer.md"><svg class="icon"><use href="/icons.svg#timer"></use></svg><h3>timer</h3></a><p>The <a href="/elements/timer.htm">Timer Element</a> creates timer (duration) based actions.</p>
+<div class="iconcard"><a href="/elements/timer.htm"><svg class="icon"><use href="/icons.svg#timer"></use></svg><h3>timer</h3></a><p>The <a href="/elements/timer.htm">Timer Element</a> creates timer (duration) based actions.</p>
 </div>
 <div style="clear:both"></div>
 <p>More detailed information on time element and time related implementation can be found in <a href="/elements/timeelements.htm">time elements implementation</a>.</p>
 <h2>System Elements</h2>
-<div class="iconcard"><a href="#page=/elements/device.md"><svg class="icon"><use href="/icons.svg#device"></use></svg><h3>device</h3></a><p>The <a href="/elements/device.htm">Device Element</a> is used to configure the device level properties.</p>
+<div class="iconcard"><a href="/elements/device.htm"><svg class="icon"><use href="/icons.svg#device"></use></svg><h3>device</h3></a><p>The <a href="/elements/device.htm">Device Element</a> is used to configure the device level properties.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/ota.md"><svg class="icon"><use href="/icons.svg#ota"></use></svg><h3>ota</h3></a><p>The <a href="/elements/ota.htm">OTA Element</a> is used to enable and configure Over The Air Updates.</p>
+<div class="iconcard"><a href="/elements/ota.htm"><svg class="icon"><use href="/icons.svg#ota"></use></svg><h3>ota</h3></a><p>The <a href="/elements/ota.htm">OTA Element</a> is used to enable and configure Over The Air Updates.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/ssdp.md"><svg class="icon"><use href="/icons.svg#ssdp"></use></svg><h3>ssdp</h3></a><p>The <a href="/elements/ssdp.htm">SSDP Element</a> is used to discovering devices on the network using SSDP protocol.</p>
+<div class="iconcard"><a href="/elements/ssdp.htm"><svg class="icon"><use href="/icons.svg#ssdp"></use></svg><h3>ssdp</h3></a><p>The <a href="/elements/ssdp.htm">SSDP Element</a> is used to discovering devices on the network using SSDP protocol.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/value.md"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/value.htm">Value Element</a> is used to
+<div class="iconcard"><a href="/elements/value.htm"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/value.htm">Value Element</a> is used to
 receive and send actions to use and control an internal value.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/value.md"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/remote.htm">Remote Element</a> is used to
+<div class="iconcard"><a href="/elements/value.htm"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/remote.htm">Remote Element</a> is used to
 send actions to elements in other devices over the local network.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/menu.md"><svg class="icon"><use href="/icons.svg#menu"></use></svg><h3>menu</h3></a><p>The <a href="/elements/menu.htm">Menu Element</a> is used for
+<div class="iconcard"><a href="/elements/menu.htm"><svg class="icon"><use href="/icons.svg#menu"></use></svg><h3>menu</h3></a><p>The <a href="/elements/menu.htm">Menu Element</a> is used for
 displaying and changing multiple values.</p>
 </div>
-<div class="iconcard"><a href="#page=/elements/log.md"><svg class="icon"><use href="/icons.svg#log"></use></svg><h3>log</h3></a><p>The <a href="/elements/log.htm">Log Element</a> is used for
+<div class="iconcard"><a href="/elements/log.htm"><svg class="icon"><use href="/icons.svg#log"></use></svg><h3>log</h3></a><p>The <a href="/elements/log.htm">Log Element</a> is used for
 storing timestamp based sensor values.</p>
 </div>
 <h2>Web UI Elements</h2>
 <p>These elements starting with <strong>web</strong> in their name are only known to the Web UI implementation but are not part of the firmware- The intention is to enrich and customize the Web UI dashboard with elements like presets and macros.</p>
-<div class="iconcard"><a href="#page=/elements/webbutton.md"><svg class="icon"><use href="/icons.svg#button"></use></svg><h3>webbutton</h3></a><p>This element adds a button the Web UI of the board. The button can be used to trigger actions by clicking.</p>
+<div class="iconcard"><a href="/elements/webbutton.htm"><svg class="icon"><use href="/icons.svg#button"></use></svg><h3>webbutton</h3></a><p>This element adds a button the Web UI of the board. The button can be used to trigger actions by clicking.</p>
 </div>
 <h2>Other Elements</h2>
 <p>You can find some more elements in the DevDing example folder.
 These implementations are still experimental cases but are published already maybe with some restricted functionality.</p>
-<div class="iconcard"><a href="#page=/elements/ina219.md"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>ina219</h3></a><p>INA219 sensor, voltage and current.</p>
+<div class="iconcard"><a href="/elements/ina219.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>ina219</h3></a><p>INA219 sensor, voltage and current.</p>
 <p>This sensor is features by the <a href="/examples/probe.htm">Probe example</a></p>
 </div>
-<div class="iconcard"><a href="#page=/elements/ina226.md"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>ina226</h3></a><p>INA226 sensor, voltage and current.</p>
+<div class="iconcard"><a href="/elements/ina226.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>ina226</h3></a><p>INA226 sensor, voltage and current.</p>
 <p>This sensor is features by the <a href="/examples/probe.htm">Probe example</a></p>
 </div>
-<div class="iconcard"><a href="#page=/elements/radio.md"><svg class="icon"><use href="/icons.svg#radio"></use></svg><h3>radio</h3></a><p>This element features the external <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>
+<div class="iconcard"><a href="/elements/radio.htm"><svg class="icon"><use href="/icons.svg#radio"></use></svg><h3>radio</h3></a><p>This element features the external <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>
 to configure and use various FM radio boards.</p>
 <p>This element is part of the <a href="/examples/radio.htm">Radio Example</a>.</p>
 </div>
@@ -246,6 +247,11 @@ to configure and use various FM radio boards.</p>
 <li><a href="/dev/elementclass.htm">Element</a></li>
 </ul>
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="tag-element.htm">Element</a></div>
+    
   </main>
 
   <script>
