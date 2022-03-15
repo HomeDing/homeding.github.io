@@ -33,6 +33,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./robots.txt");
   eleventyConfig.addPassthroughCopy("./favicon*.*");
   eleventyConfig.addPassthroughCopy("./pages.js");
+  eleventyConfig.addPassthroughCopy("./microsvg.js");
+  eleventyConfig.addPassthroughCopy("./elementsvg.js");
   eleventyConfig.addPassthroughCopy("./element*.json");
   eleventyConfig.addPassthroughCopy("./*.svg");
 
