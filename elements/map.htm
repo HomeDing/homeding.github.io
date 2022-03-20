@@ -34,21 +34,20 @@
 
   <main style="padding:1rem">
     <h1>Map Element</h1>
-<div class="iconcard"><svg class="icon"><use href="/icons.svg#default"></use></svg><p>The MapElement uses incoming values to create a new value
-specified by a set of range rules.</p>
+<div class="iconcard"><svg class="icon"><use href="/icons.svg#default"></use></svg><p>The MapElement creates actions based on an in-bound value and range definitions.</p>
 </div>
-<p>The values given by Sensors o other Input elements are often not directly usable for feeding them into actions. Often the value itself needs to be at justed and sometimes different actions need to be sent.</p>
+<p>The values given by sensors or other input elements are often not directly usable for feeding them into actions. The value itself needs to be classified and sometimes different actions need to be sent.</p>
 <p>Examples are:</p>
 <ul>
-<li>Classifying sensor values into <code>low</code>, <code>regular</code> and <code>high</code></li>
-<li>Creating different actions based on the incoming value</li>
+<li>Classifying sensor values into <code>low</code>, <code>regular</code> and <code>high</code>.</li>
+<li>Creating different actions based on the incoming value.</li>
 </ul>
 <p>The map Element provides the list of rules that apply when the inbound value is in the specified range of the map rule.</p>
 <h2>Finding the matching rule</h2>
 <p>Every map rule consists of a min and max range configuration that is compared against the incoming value. The list of rules is processed from the beginning to the end and when a range is found that contains the incoming value the rule is selected for processing.</p>
-<p>Because the min attribute defaults to 0 it is possible to configure the max attribute only when the rules are given in ascending order.
-See Example 1.</p>
-<p>The input value can be either compared by a numeric or a string data type.</p>
+<p>Because the min attribute defaults to 0 it is possible to configure the max attribute only when the rules are given in ascending order.</p>
+<p>See Example 1.</p>
+<p>The input value can either be compared by a numeric or a string data type.</p>
 <h2>Executing</h2>
 <p>The attributes on the matching are used to create actions. When a <code>value</code> is specified the value is taken into the actual value. When no value is given the incoming value is used.</p>
 <p>Then the <code>onValue</code> actions on the rule are sent.</p>
