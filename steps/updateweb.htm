@@ -7,18 +7,14 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <meta name='description' content=''>
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+
   <title>Step by Step uploading the files for the built-in web server</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
 </head>
 
 <body scroll="0" style="padding:0;">
-  <div class="u-header">
-    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
-    <h1>HomeDing</h1>
-  </div>
-
   <div class="u-navbar" style="margin-bottom: 0;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
@@ -30,17 +26,20 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage x  open"></nav>
+
+  <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>Step by Step uploading the files for the built-in web server</h1>
-<p>There are some options to upload / update the files in the filesystem of a device using the HomeDing library. These are outlined here so you can find the procedure that fits best to your setup an situation.</p>
-<p>To upload the firmware &amp; sketch see <a href="/steps/newdevice.htm">Step by Step Bring your device to work</a></p>
+    <h1>HomeDing - Step by Step uploading the files for the built-in web server</h1>
+
+    <div class="plaincard">There are some options to upload / update the files in the filesystem of a device using the HomeDing library. These are outlined here in detail so you can find the procedure that fits best to your setup an situation. 
+</div>
+    <p>To upload the firmware &amp; sketch see <a href="/steps/newdevice.htm">Step by Step Bring your device to work</a></p>
 <h2>Update the Web UI files from the internet</h2>
 <p>This method works even when the file system is empty.
 It can be used for an initial upload.</p>
 <p>Open <a href="http://homeding/$update">http://homeding/$update</a> <sup>*1</sup> to use this upload utility:</p>
-<p><img src="/steps/stepsupdatewebboot.png" alt="Automatic Web Update"></p>
+<p><img src="/steps/updatewebboot.png" alt="Automatic Web Update"></p>
 <p>This is a builtin upload and update tool for the web files from the documentation web site.
 The files are contained in the directory <a href="https://homeding.github.io/v03">https://homeding.github.io/v03</a> and a list of the files can be found <a href="https://homeding.github.io/v03/list.txt">https://homeding.github.io/v03/list.txt</a></p>
 <p>From this file all files are fetched and uploaded to the device one-by-one when pressing the start button.</p>
@@ -50,7 +49,7 @@ The files are contained in the directory <a href="https://homeding.github.io/v03
 <p>This method works even when the file system is empty.
 It can be used for an initial upload.</p>
 <p>Open <a href="http://homeding/$upload">http://homeding/$upload</a> <sup>*1</sup> to use the drag &amp; drop upload utility:</p>
-<p><img src="/steps/stepsupdatewebdrop.png" alt="Drag&amp;drop Web Update"></p>
+<p><img src="/steps/updatewebdrop.png" alt="Drag&amp;drop Web Update"></p>
 <p>The HomeDing device has an embedded web server that offers this simple upload functionality that is built-in the firmware from the sketch.</p>
 <p>You can reach it on a un-configured device using the url <a href="http://ESP-xxxxxx/$upload.htm">http://ESP-xxxxxx/$upload.htm</a>.
 The real server name or the ip-address of an un-configured device can be found in the serial output.</p>
@@ -86,6 +85,11 @@ so it cannot be used for an initial upload.</p>
 <p>See: <a href="https://github.com/esp8266/arduino-esp8266fs-plugin">https://github.com/esp8266/arduino-esp8266fs-plugin</a></p>
 <p><strong><sup>*1</sup></strong>: replace <code>homeding</code> with the network name of your device to use this link.</p>
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="tag-steps.htm">Steps</a></div>
+    
   </main>
 
   <script>
