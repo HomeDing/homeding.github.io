@@ -1,6 +1,6 @@
 ---
 title: "Step by Step Bring your device to work"
-tags: steps
+tags: ["Steps"]
 date: "2020-03-02"
 excerpt: >
   This is a step by step instruction to bring a device based on the HomeDing library to work.

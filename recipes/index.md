@@ -1,6 +1,6 @@
 ---
 title: Recipes Overview
-tags: "Recipe"
+tags: ["Recipe"]
 ---
 
 # {{title}}

@@ -1,6 +1,6 @@
 ---
 title: "Step by Step uploading the files for the built-in web server"
-tags: "steps"
+tags: ["Steps"]
 ---
 
 # {{title}}

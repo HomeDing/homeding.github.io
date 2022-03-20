@@ -96,27 +96,31 @@ module.exports = function (eleventyConfig) {
       return (v);
     };
 
-    eleventyConfig.addFilter("debugger", (...args) => {
-      console.log(...args)
-      // debugger;
-      // console.log('>>', value);
-    })
-
-
     const res = JSON.stringify(value, detect, 2);
     // console.log('>>', res);
     return (res);
 
   });
 
+  eleventyConfig.addFilter("debugger", (...args) => {
+    console.log(...args)
+    // debugger;
+    // console.log('>>', value);
+  })
+
   // ===== Shortcodes =====
 
-  // eleventyConfig.addShortcode("excerpt", function (icon, text) {
-  //   return `<div class="iconcard">
-  //   <svg class="icon"><use href="/icons.svg#${icon}"></use></svg>
-  //   ${text}
-  //   </div>`;
-  // });
+  // include excerpt text by using: {% excerptOf collections, "map" %}
+  eleventyConfig.addShortcode("excerptOf", function (col, name) {
+    if (Array.isArray(col)) {
+      const page = col.find(e => e.url.includes('/' + name + '.'));
+      if (page) {
+        return (page.data.excerpt);
+      }
+    }
+    return ('');
+  }
+  );
 
 
   // ===== Markdown configuration =====

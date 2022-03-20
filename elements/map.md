@@ -2,20 +2,21 @@
 title: Map Element
 id: nn
 tags: ["Element", "WIP"]
+excerpt: >
+  The MapElement creates actions based on an in-bound value and range definitions.
 ---
 
 # {{title}}
 
 :::excerpt default
-The MapElement uses incoming values to create a new value 
-specified by a set of range rules.
+{{excerpt}}
 :::
 
-The values given by Sensors o other Input elements are often not directly usable for feeding them into actions. Often the value itself needs to be at justed and sometimes different actions need to be sent.
+The values given by sensors or other input elements are often not directly usable for feeding them into actions. The value itself needs to be classified and sometimes different actions need to be sent.
 
 Examples are:
-* Classifying sensor values into `low`, `regular` and `high`
-* Creating different actions based on the incoming value
+* Classifying sensor values into `low`, `regular` and `high`.
+* Creating different actions based on the incoming value.
 
 The map Element provides the list of rules that apply when the inbound value is in the specified range of the map rule.
 
@@ -25,9 +26,10 @@ The map Element provides the list of rules that apply when the inbound value is 
 Every map rule consists of a min and max range configuration that is compared against the incoming value. The list of rules is processed from the beginning to the end and when a range is found that contains the incoming value the rule is selected for processing.
 
 Because the min attribute defaults to 0 it is possible to configure the max attribute only when the rules are given in ascending order.
+
 See Example 1.
 
-The input value can be either compared by a numeric or a string data type.
+The input value can either be compared by a numeric or a string data type.
 
 
 ## Executing 

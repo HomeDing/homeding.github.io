@@ -1,6 +1,6 @@
 ---
 title: "Step by Step setting up the Arduino environment"
-tags: "steps"
+tags: ["Steps"]
 date: "2020-03-01"
 excerpt: >
   These are the steps to follow to setup a basic arduino development environment

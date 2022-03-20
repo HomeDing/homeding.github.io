@@ -1,7 +1,7 @@
 ---
 title: "Create and extend a new Element"
 layout: "page.njk"
-tags: ["steps"]
+tags: ["Steps"]
 date: "2022-03-01"
 excerpt: >
   How to add new functionality to a HomeDing based device by adding new Elements

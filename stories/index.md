@@ -1,6 +1,6 @@
 ---
 title: Examples and Stories
-tags: Example, Story
+tags: ["Example", "Story"]
 ---
 
 # {{title}}

@@ -1,6 +1,6 @@
 ---
 title: "Step by Step configuring a device using the builtin IDE"
-tags: "steps"
+tags: ["Steps"]
 date: "2020-03-03"
 excerpt: >
   The configuration of HomeDing based devices is based on 2 files located in the filesystem: 
