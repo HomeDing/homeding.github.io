@@ -177,8 +177,7 @@ The ADD Element sums up multiple input values to create a single output value.
 :::
 
 :::element map map
-The [Map Element](/elements/map.md) combines multiple logic input values to a single output value.
-The outgoing value is HIGH(1) when one of the given input values is not LOW(0).
+{% excerptOf collections.Element, "map" %}
 :::
 
 :::element reference default

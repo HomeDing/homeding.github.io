@@ -1,11 +1,12 @@
 ---
 title: "Step by Step uploading the files for the built-in web server"
 tags: ["Steps"]
+layout: "page.njk"
+excerpt: >
+  There are some options to upload / update the files in the filesystem
+  of a device using the HomeDing library.
+  These are outlined here in detail so you can find the procedure that fits best to your setup an situation. 
 ---
-
-# {{title}}
-
-There are some options to upload / update the files in the filesystem of a device using the HomeDing library. These are outlined here so you can find the procedure that fits best to your setup an situation. 
 
 To upload the firmware & sketch see [Step by Step Bring your device to work](/steps/newdevice.md)
 
@@ -17,7 +18,7 @@ It can be used for an initial upload.
 
 Open <http://homeding/$update> <sup>*1</sup> to use this upload utility:
 
-![Automatic Web Update](/steps/stepsupdatewebboot.png)
+![Automatic Web Update](/steps/updatewebboot.png)
 
 This is a builtin upload and update tool for the web files from the documentation web site.
 The files are contained in the directory <https://homeding.github.io/v03> and a list of the files can be found <https://homeding.github.io/v03/list.txt>
@@ -36,7 +37,7 @@ It can be used for an initial upload.
 
 Open <http://homeding/$upload> <sup>*1</sup> to use the drag & drop upload utility:
 
-![Drag&drop Web Update](/steps/stepsupdatewebdrop.png)
+![Drag&drop Web Update](/steps/updatewebdrop.png)
 
 The HomeDing device has an embedded web server that offers this simple upload functionality that is built-in the firmware from the sketch.
 

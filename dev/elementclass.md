@@ -78,6 +78,9 @@ It checks the passed key and then takes the data or executes the action.
 
 Some Element implementations will only require to implement the setting parameters given from the configuration and others also may react to actions to trigger a functionality or to modify a dynamic property of the Element.
 
+The set function must return `true` when a property is known to the element and was handled.
+
+
 #### Examples:
 
 - The ButtonElement only needs to process the properties for the setup of the implementation

@@ -1,18 +1,13 @@
 ---
 title: "Step by Step configuring a device using the builtin IDE"
 tags: ["Steps"]
+layout: "page.njk"
 date: "2020-03-03"
 excerpt: >
   The configuration of HomeDing based devices is based on 2 files located in the filesystem: 
   env.json, config.json.
   They can be changed by using the built-in editor.
 ---
-
-# {{title}}
-
-::: excerpt
-{{excerpt}}
-:::
 
 The built-in micro IDE that assists in modifying the "env.json", "config.json" and other text based files.
 

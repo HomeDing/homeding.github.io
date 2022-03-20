@@ -2,13 +2,10 @@
 title: "Step by Step Bring your device to work"
 tags: ["Steps"]
 date: "2020-03-02"
+layout: "page.njk"
 excerpt: >
   This is a step by step instruction to bring a device based on the HomeDing library to work.
 ---
-
-# {{title}}
-
-This is a step by step instruction to bring a device based on the HomeDing library to work.
 
 - [Get a (brand new) EPS8266 board.](#get-a-brand-new-eps8266-board)
 - [Upload the appropriate sketch](#upload-the-appropriate-sketch)

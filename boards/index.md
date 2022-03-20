@@ -2,7 +2,7 @@
 title: Boards Overview
 description: Boards supported by the HomeDing library
 layout: "page.njk"
-tags: ["Board", "implementation"]
+tags: ["Board", "Implementation"]
 excerpt: >
   Details on some boards and devices supported by the HomeDing library.
 ---

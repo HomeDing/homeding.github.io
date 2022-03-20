@@ -2,12 +2,11 @@
 title: "Step by Step setting up the Arduino environment"
 tags: ["Steps"]
 date: "2020-03-01"
+layout: "page.njk"
 excerpt: >
   These are the steps to follow to setup a basic arduino development environment
   that allows programming new software to the original Arduino boards.
 ---
-
-# {{title}}
 
 These are the steps to follow to setup a basic arduino development environment that allows programming new software to the original Arduino boards.
 
