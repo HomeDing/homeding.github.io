@@ -2,15 +2,10 @@
 title: Map Element
 id: nn
 tags: ["Element", "WIP"]
+layout: "page.njk"
 excerpt: >
   The MapElement creates actions based on an in-bound value and range definitions.
 ---
-
-# {{title}}
-
-:::excerpt default
-{{excerpt}}
-:::
 
 The values given by sensors or other input elements are often not directly usable for feeding them into actions. The value itself needs to be classified and sometimes different actions need to be sent.
 
