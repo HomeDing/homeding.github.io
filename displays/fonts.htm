@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+
+  <title>Displays</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem">
+    <h1>Displays</h1>
+
+    
+    <h1>Fonts</h1>
+<p>The HomeDing library comes with 3 fonts in the Adafruit GFX format optimized for low resolution displays.</p>
+<p>The fonts are named by the height of the box required to print any text without line breaks.</p>
+<p>They can be used with monochrome displays and colour displays when using the Adafruit GFX library.</p>
+<h2>font10</h2>
+<h2>Font tools</h2>
+<p>The following tools were used and can be used to create more fonts and characters.</p>
+<p>*** - This online tool has some free fonts in a vector format that are used to create pixel based fonts in various sizes and formats.
+The Adafruit GFX .h format is supported and used here.</p>
+<p>On small font sizes the created output is not very usable but can be used as a starting point.</p>
+<p>It can be accessed online using</p>
+<p>&lt;https:// &gt;</p>
+<p>*** - this tool can read the Adafruit GFX .h format and creates editable characters to change size, position and shape of the character bits.</p>
+
+
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

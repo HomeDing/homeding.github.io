@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+
+  <title>Displays</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem">
+    <h1>Displays</h1>
+
+    
+    <h1>Color LCD Displays</h1>
+<p>The support of colorful LCD / TFT displays is done with the help of the Adafruit libraries.</p>
+<p>The Adafruit libraries for displays support a broad range of displays that all share a common graphics library to draw graphic primitives called [Adafruit GFX]
+that supports 16 bit values per pixel. Colors are coded using a 565 bit scheme - enough for text and graphics with selected colors.</p>
+<p>Displaying pictures with rich color depth is somehow limited by this design decision but may LCD displays anyway do not support more tha this.</p>
+<h2>Configuration</h2>
+<p>The [Display Element] supports all parameters to configure all displays. The DisplayConfig structure is used to bundle these and pass them to the dedicated Dispay Adapter. While adopting color displays the set of parameters was extended to support the background color andthe SPI interface. A system wide SPI configuration was also added to the [Device Element].</p>
+<p>By default and during system startup a white draw/text color is used.</p>
+<h2>Reset pin</h2>
+<p>Some displays support a hardware based reset signal that can be controlled by a distinct GPIO output signal. The resetpin can be configured and will be used by the display adapter or driver to initialize the display.</p>
+<h2>Dimming the display</h2>
+<p>Some displays support to control the background light by using a distinct GPIO output signal.
+The brightness pin can be configured and will be used by the display adapter or driver to control the brightness of the display.</p>
+<p>Displays based on OLED technology do not need a background light and brightness must be adjusted by commands to the display chip itself.</p>
+<h2>Rotating the Display</h2>
+<p>Displays are often part of boards and are used in various rotations.</p>
+<p>The rotation can be configured using the values 0, 90, 180 and 270 and will be used to initialize the display adapter or driver.</p>
+<h2>Supported Displays</h2>
+<p><strong>ST7789</strong> - all resolutions supported by the Adafruit ST7789 library can be used.</p>
+<p><strong>Others</strong> - to come.</p>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="tag-element.htm">Element</a><a href="tag-display.htm">Display</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

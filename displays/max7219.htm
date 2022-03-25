@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Using LED matrix based displays based on MAX7219 controller chips.'>
+
+  <title>The DisplayMAX7219 Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem">
+    <h1>The DisplayMAX7219 Element</h1>
+
+    <div class="plaincard">The DisplayMAX7219 Element allows connecting  LED matrix based displays based on MAX7219 controller chips.
+</div>
+    <p>This display implementation supports LED matrix setup with 1 line of 8x8 modules
+using the GFX 8-pixel font.</p>
+<p>The DisplayMAX7219 Element needs to be configured for using the standard SPI interface
+and specifying the select GPIO pin.</p>
+<p>The parent class <code>DisplayElement</code> implements the configuration that is passed to the adapter implementation to initialize the hardware and canvas.</p>
+<p>The <code>DisplayAdapterMAX7219</code> uses the canvas class from the Adafruit_GFX library to create an in-memory picture that can be shifted to the display when drawing of the output element has finished.</p>
+<p>To show some output on the display use the <a href="/elements/displaytext.htm">DisplayText Element</a>
+and the <a href="/elements/displaydot.htm">DisplayDot Element</a></p>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element:</p>
+<p><object data="/element.svg?displaysh1106" type="image/svg+xml"></object></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spiCS</code></td>
+<td>Specifies the spi component select pin of the display.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>The height of the display. 32 or 64</td>
+</tr>
+</tbody>
+</table>
+<h2>Configuration Example</h2>
+<p>The configuration of a display is given by the provided hardware and should be configured in the env.json file:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"DisplayMAX7219"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span><br>      <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token string">"D3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/dev/i2c.htm">Using the I2C bus</a></li>
+<li><a href="https://github.com/squix78/esp8266-oled-ssd1306">esp8266-oled-ssd1306 library</a></li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="tag-element.htm">Element</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

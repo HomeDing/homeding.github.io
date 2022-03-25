@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+
+  <title>Displays</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem">
+    <h1>Displays</h1>
+
+    <div class="plaincard">The HomeDing library supports local displays attached via SPI and I2C bus to show values from the activated elements.
+</div>
+    <p>There is support for simple, single value displays and also pixel based monochrome and color displays.</p>
+<p>It will be used during the startup to display the device name and ip address
+and then can be used to display values by using the Display Information Elements
+to show text, number, signals and graphics.</p>
+<p>Some boards like the <a href="/boards/wifikit8.htm">Wifi Kit 8</a> or the <a href="/boards/wemosoled.htm">Wemos OLED</a>
+already come with an onboard and you can find configuration hints in the boards descriptions.</p>
+<h2>Supported</h2>
+<blockquote>
+<p>Displays Overview</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Driver Chip</th>
+<th>Technology</th>
+<th>Dimensions</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simple displays</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[LiquidChrystal]</td>
+<td>LCD</td>
+<td>8/16/20 chars in 2/4 lines</td>
+<td>character based display</td>
+</tr>
+<tr>
+<td><a href="/elements/max7219.htm">MAX7219</a></td>
+<td>LED</td>
+<td>8*8 LED matrix modules</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/elements/max7219.htm">MAX7219</a></td>
+<td>LED</td>
+<td>8*7 segment LEDs</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/elements/tm1637.htm">TM1637</a></td>
+<td>LED</td>
+<td>up to 6 7-segment LEDs</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Monochrome displays</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/elements/sh1106.htm">SH1106</a></td>
+<td>OLED</td>
+<td>128*32, 128*64</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/elements/ssd1306.htm">SSD1306</a></td>
+<td>OLED</td>
+<td>128*32, 128*64</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/elements/ssd1309.htm">SSD1309</a></td>
+<td>OLED</td>
+<td>compatible with SSD1306</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/elements/max7219.htm">MAX7219</a></td>
+<td>LED</td>
+<td>Multiple LED matrix modules</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Color displays</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/_displays/st7789.htm">ST7789</a></td>
+<td>TFT LCD</td>
+<td>135 * 240</td>
+<td>16-bit color</td>
+</tr>
+</tbody>
+</table>
+<!--
+-->
+<table>
+<thead>
+<tr>
+<th>Driver Chip</th>
+<th>Technology</th>
+<th>Dimensions</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/elements/_tm1638.htm">TM1638</a></td>
+<td>LED</td>
+<td>up to 8 7-segment LEDs and keys</td>
+<td></td>
+</tr>
+<tr>
+<td>[SSD1331]</td>
+<td>OLED Color</td>
+<td>96 * 64</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Simple displays</h2>
+<p>The simple displays use LEDs or 7-segment LEDs to show a value:</p>
+<div class="imgcard"><img src="/sensors/lcd.jpg"><p>The <a href="/elements/lcd.htm">Liquid Chrystal</a> displays based on the HD44780 chip are common in the Arduino framework.</p>
+<p>To control them a I2C adapter with a PCF8574 chip must be used as the ESP8266 / ESP32 has not enough GPIOs to control it directly.</p>
+</div>
+<div class="imgcard"><img src="/sensors/max7219.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
+Multiple displays can be chained to form a bigger matrix.</p>
+<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.</p>
+</div>
+<div class="imgcard"><img src="/sensors/max7219n.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x 7-segment LEDs.</p>
+<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.</p>
+</div>
+<div class="imgcard"><img src="/sensors/tm1637.jpg"><p><strong>TM1637</strong> is a LED driver for up to 6 7-segment LEDs.</p>
+<p>The 4 digit displays are supported by the <a href="/elements/tm1637.htm">TM1637 Element</a>.</p>
+</div>
+<h2>Pixel Based Monochrome Displays</h2>
+<div class="imgcard"><img src="/sensors/oled.jpg"><p>There are many OLED displays available using similar chips and drivers.
+They are controlled using the I2C or SPI bus.</p>
+<p>Supported are the driver chips: <a href="/elements/sh1106.htm">SH1106</a>, <a href="/elements/ssd1306.htm">SSD1306</a>, <a href="/elements/ssd1309.htm">SSD1309</a></p>
+</div>
+<div class="imgcard"><img src="/sensors/ledmatrix.jpg"><p>LED matrixes are supported using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
+</div>
+<h2>Pixel Based Color Displays</h2>
+<div class="imgcard"><img src="/sensors/colorlcd.jpg"><p>Colorful displays are supported by the <code>color</code> configuration on the display elements.</p>
+<p>Supported are the driver chips: <a href="/_displays/st7789.htm">ST7789</a></p>
+</div>
+<!-- * [ST7789]
+  in boards\esp32_ttgo-lcd.md -->
+<!-- - SSD 1331 (in planning) -->
+  <!-- * ssd1322 OLED 480*128 -->
+  <!-- * ssd1325 OLED 128*80 Gray Scale -->
+  <!-- * ssd1327 OLED 128*128 Gray Scale -->
+<h2>Display Information Elements</h2>
+<p>A display usually can show more that just one single information.
+This is why there are some elements implemented that will put a specific type of information
+on the configured display:</p>
+<ul>
+<li><a href="/elements/displaytext.htm">Display text</a> used for text and numbers</li>
+<li><a href="/elements/displaydot.htm">Display a dot</a> used for boolean values</li>
+<li><a href="/elements/displayline.htm">Display a line</a></li>
+</ul>
+<!-- * [displaybar](/elements/displaybar.md) -->
+<h2>Web UI for displays</h2>
+<p>For the display elements a special Web UI is implemented that shows the current display on the web UI of the device.</p>
+<p>The frame is created from the display adapter elements while displaytext and displaydot elements put their information into the frame.</p>
+<p>To keep the initialization in the required order it is recommended to configure the display adapter in the env.json and configure the text and dot elements in the config.json file.</p>
+<h2>Display configuration</h2>
+<p>address, resetpin, height, width,</p>
+<p>rotation 0, 90, 180, 270</p>
+<ul>
+<li>
+<p>color</p>
+</li>
+<li></li>
+</ul>
+<h2>Display actions</h2>
+<p>page, addpage, clear</p>
+<h2>Display events</h2>
+<p>onpage</p>
+<h2>Startup and system information</h2>
+<p>On startup, when a flexible display is configured some system information is displayed before the elements are started. The same information is also written to the Serial interface and can be observed using the Serial Monitor.</p>
+<ol>
+<li>&quot;HomeDing&quot;
+This shows that the system is running a HomeDing sketch and that the display was recognized and is working.</li>
+<li>Devicename and IP address</li>
+<li>cleared</li>
+</ol>
+<h2>See also</h2>
+<ul>
+<li><a href="/dev/i2c.htm">Using the I2C bus</a></li>
+</ul>
+
+
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
