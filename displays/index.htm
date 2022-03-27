@@ -35,10 +35,14 @@
     <div class="plaincard">The HomeDing library supports local displays attached via SPI and I2C bus to show values from the activated elements.
 </div>
     <p>There is support for simple, single value displays and also pixel based monochrome and color displays.</p>
-<p>It will be used during the startup to display the device name and ip address
-and then can be used to display values by using the Display Information Elements
-to show text, number, signals and graphics.</p>
-<p>Some boards like the <a href="/boards/wifikit8.htm">Wifi Kit 8</a> or the <a href="/boards/wemosoled.htm">Wemos OLED</a>
+<p>The simple displays are using the inbound value of the element directly.</p>
+<p>The Monochrome and Color Displays support displaying multiple values by using the Display Information Elements
+like text, numbers, signals and graphics
+that can be positioned on a page of the display using different fonts and colors.</p>
+<p>The Monochrome and Color Displays will be activated already during the startup
+to display the device name and ip address.</p>
+<p>Some boards like the <a href="/boards/wifikit8.htm">Wifi Kit 8</a>, the <a href="/boards/wemosoled.htm">Wemos OLED</a>
+or the <a href="/boards/esp32/ttgo-t-display.htm">TTGO T-Display ESP32 board</a>
 already come with an onboard and you can find configuration hints in the boards descriptions.</p>
 <h2>Supported</h2>
 <blockquote>
@@ -109,7 +113,7 @@ already come with an onboard and you can find configuration hints in the boards 
 <td></td>
 </tr>
 <tr>
-<td><a href="/elements/max7219.htm">MAX7219</a></td>
+<td><a href="/displays/max7219.htm">DisplayMAX7219</a></td>
 <td>LED</td>
 <td>Multiple LED matrix modules</td>
 <td></td>
@@ -121,7 +125,7 @@ already come with an onboard and you can find configuration hints in the boards 
 <td></td>
 </tr>
 <tr>
-<td><a href="/_displays/st7789.htm">ST7789</a></td>
+<td><a href="/displays/st7789.htm">ST7789</a></td>
 <td>TFT LCD</td>
 <td>135 * 240</td>
 <td>16-bit color</td>
@@ -174,14 +178,15 @@ Multiple displays can be chained to form a bigger matrix.</p>
 They are controlled using the I2C or SPI bus.</p>
 <p>Supported are the driver chips: <a href="/elements/sh1106.htm">SH1106</a>, <a href="/elements/ssd1306.htm">SSD1306</a>, <a href="/elements/ssd1309.htm">SSD1309</a></p>
 </div>
-<div class="imgcard"><img src="/sensors/ledmatrix.jpg"><p>LED matrixes are supported using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
+<div class="imgcard"><a href="/displays/max7219.htm"><img src="/displays/max7219.jpg"></a>
+<p>The <a href="/displays/max7219.htm">DisplayMAX7219Element</a> uses LED matrixes as displays
+using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 </div>
 <h2>Pixel Based Color Displays</h2>
-<div class="imgcard"><img src="/sensors/colorlcd.jpg"><p>Colorful displays are supported by the <code>color</code> configuration on the display elements.</p>
-<p>Supported are the driver chips: <a href="/_displays/st7789.htm">ST7789</a></p>
+<div class="imgcard"><a href="/displays/st7789.htm"><img src="/displays/colorlcd.jpg"></a>
+<p>Colorful displays are supported by the <code>color</code> configuration on the display elements.</p>
+<p>The <a href="/displays/st7789.htm">DisplayST7789Element</a> supports the driver chips: <a href="/displays/st7789.htm">ST7789</a>.</p>
 </div>
-<!-- * [ST7789]
-  in boards\esp32_ttgo-lcd.md -->
 <!-- - SSD 1331 (in planning) -->
   <!-- * ssd1322 OLED 480*128 -->
   <!-- * ssd1325 OLED 128*80 Gray Scale -->
