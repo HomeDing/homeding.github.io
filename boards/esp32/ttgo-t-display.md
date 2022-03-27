@@ -7,7 +7,7 @@ excerpt: >
   The LilyGO TTGO T-Display board offer an integrated TFT color display and a USB-C type connector.
 ---
 
-
+![TTGO T-Display](/boards/esp32/ttgo-t-display.jpg)
 
 * Display: IPS ST7789V 1.14 Inch display, 135 * 240 pixels, 64k colors
 * 3.7V battery charging circuit
@@ -18,8 +18,6 @@ excerpt: >
 * PCB dimensions: 51.4 x 25.2mm
 * JST Connector: 2Pin 1.25mmx
 * USB: Type-C
-
-![TTGO T-Display](/boards/esp32/ttgo-t-display.jpg)
 
 ## Connectors
 
