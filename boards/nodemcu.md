@@ -1,10 +1,12 @@
 ---
-title: The NodeMCU development boards
+title: ESP8266 NodeMCU development boards
+description: ESP8266 General purpose development boards
+layout: "page.njk"
+tags: ["Board"]
+excerpt: >
+  The NodeMCU boards are one of the most common development boards.
+  They offer an easy start into the ESP8266 development. The have all you need for programming, offer 4MByte flash memory and a LED on-board.
 ---
-
-# {{title}}
-
-These boards offer an easy start into the ESP8266 development. The have all you need for programming, offer much memory and a LED for `first step` projects is on board.
 
 * Based on ESP-12 or ESP-12E
 * 4 Mbyte Flash ROM
@@ -29,11 +31,11 @@ When you have sensors or other peripherals that use the 3.3V from the board be s
 
 Here is a collection of pictures of known boards:
 
-![node-00](/boards/nodemcu-00.jpg "nodeboard")
-![node-01](/boards/nodemcu-01.jpg "nodeboard")
-![node-02](/boards/nodemcu-02.jpg "nodeboard")
-![node-03](/boards/nodemcu-03.jpg "nodeboard")
-![node-04](/boards/nodemcu-04.jpg "nodeboard")
+![node-00](/boards/nodemcu-00.jpg "w200")
+![node-01](/boards/nodemcu-01.jpg "w200")
+![node-02](/boards/nodemcu-02.jpg "w200")
+![node-03](/boards/nodemcu-03.jpg "w200")
+![node-04](/boards/nodemcu-04.jpg "w200")
 
 I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 regulator.
 

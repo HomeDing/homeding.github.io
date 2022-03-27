@@ -1,0 +1,11 @@
+{% macro imgCard(coll, item = 'div') %}
+
+<div class="imgcard"><img src="{{item}}.jpg">
+
+  **[{% dataOf coll, item, "title" %}]({{item}}.md)**
+
+  {% dataOf coll, item, "excerpt" %}
+
+</div>
+
+{% endmacro %}

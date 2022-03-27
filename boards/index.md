@@ -6,6 +6,7 @@ tags: ["Board", "Implementation"]
 excerpt: >
   Details on some boards and devices supported by the HomeDing library.
 ---
+{% from 'macros.njk' import imgCard %}
 
 The HomeDing library can be used with many boards and manufactured devices
 that use a ESP8266 or ESP32 system-on-chip processor.
@@ -16,7 +17,8 @@ IoT devices off-the-shelf and even complete kits that use these chips.
 Here you find some common species and bare processors described in detail that you may consider to use
 including hints for configuration and programming.
 
-- [Full feature boards with 4 MByte flash memory](#full-feature-boards-with-4-mbyte-flash-memory)
+- [Full feature ESP8266 boards with 4 MByte flash memory](#full-feature-esp8266-boards-with-4-mbyte-flash-memory)
+- [ESP32 boards](#esp32-boards)
 - [Devices based on Esp8266](#devices-based-on-esp8266)
 - [Bare ESP-12 boards](#bare-esp-12-boards)
 - [ESP-12 module types](#esp-12-module-types)
@@ -33,7 +35,7 @@ can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
 In the Repository of Tasmota Supported Devices at <https://templates.blakadder.com/>
 many off-the-shell devices can be identified using a espressif processor.
 
-## Full feature boards with 4 MByte flash memory
+## Full feature ESP8266 boards with 4 MByte flash memory
 
 The following boards with 4 MBytes flash memory have been used for development and their specialties can be found in the board reviews.
 
@@ -42,9 +44,8 @@ The following boards with 4 MBytes flash memory have been used for development a
 * These devices are used for `always-on` scenarios to provide the webserver functionality. Using a battery based power source will only result in a short lifetime maybe a few hours or days.
 * These devices have enough flash capacity to be updated over the network by using the OTA method.
 
-:::board nodemcu
-The **[NodeMCU development boards](/boards/nodemcu.md)** is one of the most common development boards including an usb to serial converter chip.
-:::
+
+{{ imgCard(collections.all, item = '/boards/nodemcu') }}
 
 :::board wifikit8
 The **[Wifi Kit 8 Module ESP8266 with OLED](/boards/wifikit8.md)** is a ESP8266 with 4k Flash, OLED display and Li-Polymer battery support.
@@ -61,6 +62,17 @@ The **[Wemos labeled board with OLED](/boards/wemosoled.md)** is a ESP-12E with 
 :::board wroom2
 The **[Esp-Wroom-02 Module ESP8266 with OLED and 18650](/boards/wroom2.md)** is a ESP-12E with OLED display, LiIon Battery support and switch.
 :::
+
+
+## ESP32 boards
+
+{{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32/azureiotkit') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32/esp32audiokit') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32/ttgo-t-display') }}
 
 
 ## Devices based on Esp8266
