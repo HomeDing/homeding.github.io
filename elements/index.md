@@ -229,7 +229,7 @@ The [DisplayLine Element](/elements/displayline.md) shows a line on the display.
 
 <div style="clear:both"></div>
 
-More detailed information on displays and related elements can be found in [displays](/elements/displays.md)
+More detailed information on displays and related elements can be found in [displays](/displays/index.md)
 
 
 ## Time related Elements

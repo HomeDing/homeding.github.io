@@ -2,16 +2,12 @@
 title: The Analog Element
 id: analog
 tags: ["Element", "Input", "Sensor"]
+layout: "page.njk"
 description: Trigger events based on input voltage
 excerpt: >
   The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events.
   It also handles some of the often occurring problems around capturing analog values.
 ---
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 <!--
 ## Web UI for the Analog Element
@@ -69,6 +65,7 @@ The value given in the actions is `0`.
 
 The ESP8266 chip has only one analog input pin so specifying a pin is not required.
 
+{% include "./elementproperties.md" %}
 
 ### Example Configuration
 

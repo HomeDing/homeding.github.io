@@ -36,15 +36,7 @@ The following properties are available for configuration of the element:
 
 **delay** - This property can be set to delay each step from each other. This property can be specified in milli-seconds or seconds.
 
-From the base element implementation the following properties are available for configuration:
-
-**title** - Caption text for the element. Used in the boards.
-
-**description** - A line of text that gives a short description of the device used in the web UI.
-
-**room** - The location of the device.
-
-**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.
+{% include "./elementproperties.md" %}
 
 
 ### Example Configuration

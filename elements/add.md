@@ -26,6 +26,8 @@ When no input value is given the output value is 0.
 
 **value[1]** - The second input value of the element. Default is 0.
 
+{% include "./elementproperties.md" %}
+
 ### Configuration Example
 
 ``` json

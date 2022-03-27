@@ -35,6 +35,8 @@ When no input value is given the output value is 0 (false).
 
 The non-inverted output value is on HIGH level when all input values are on HIGH level.
 
+{% include "./elementproperties.md" %}
+
 
 ### Configuration Example
 

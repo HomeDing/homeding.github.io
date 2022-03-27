@@ -62,19 +62,13 @@ and effects.
 
 **onBrightness** - These actions are send when the brightness has changed.
 
-
-From the base element implementation the following properties are available for configuration:
-
-**title** - Caption text for the element. Used in the boards.
-
-**description** - A line of text that gives a short description of the device used in the web UI.
-
-**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
-
 <!-- 
 TODO:
 **useState** - This configuration can be set to true to persist the current color and brightness values in the state memory.
 -->
+
+{% include "./elementproperties.md" %}
+
 
 
 ## Colors

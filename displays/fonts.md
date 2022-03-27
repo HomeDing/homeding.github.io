@@ -1,9 +1,7 @@
 ---
-title: Displays
+title: Fonts for pixel based displays
 layout: "page.njk"
 ---
-
-# Fonts
 
 The HomeDing library comes with 3 fonts in the Adafruit GFX format optimized for low resolution displays.
 

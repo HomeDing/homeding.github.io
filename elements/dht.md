@@ -11,8 +11,8 @@ excerpt: >
 
 The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.
 
-![DHT22 pins](/elements/dht22pins.jpg)
-![DHT22 on Breadboard](/elements/dht22board.jpg)
+![DHT22 pins](/elements/dht22pins.jpg "w400")
+![DHT22 on Breadboard](/elements/dht22board.jpg "w200")
 
 
 ## Web UI for the DHT Element
@@ -115,14 +115,7 @@ The default time is set to 3 seconds.
 
 \* This parameter must be specified.
 
-From the base element implementation the following properties are available for configuration:
-
-**title** - Caption text for the element. Used in the boards.
-
-**description** - A line of text that gives a short description of the device used in the web UI.
-
-**loglevel** - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1. 
-
+{% include "./elementproperties.md" %}
 
 ### Configuration Example
 
