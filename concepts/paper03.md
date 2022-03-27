@@ -127,7 +127,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 * Parse the env.json file.
 
-  Here the system elements like the [Device](/elements/device.md), the [displays](/elements/displays.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
+  Here the system elements like the [Device](/elements/device.md), the [displays](/displays/index.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
 
   These elements will be created.
 

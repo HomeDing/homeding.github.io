@@ -8,32 +8,37 @@ excerpt: >
 
 There is support for simple, single value displays and also pixel based monochrome and color displays.
 
-It will be used during the startup to display the device name and ip address
-and then can be used to display values by using the Display Information Elements
-to show text, number, signals and graphics.
+The simple displays are using the inbound value of the element directly.
 
-Some boards like the [Wifi Kit 8](/boards/wifikit8.md) or the [Wemos OLED](/boards/wemosoled.md)
+The Monochrome and Color Displays support displaying multiple values by using the Display Information Elements
+like text, numbers, signals and graphics
+that can be positioned on a page of the display using different fonts and colors.
+
+The Monochrome and Color Displays will be activated already during the startup
+to display the device name and ip address.
+
+Some boards like the [Wifi Kit 8](/boards/wifikit8.md), the [Wemos OLED](/boards/wemosoled.md)
+or the [TTGO T-Display ESP32 board](/boards/esp32/ttgo-t-display.md)
 already come with an onboard and you can find configuration hints in the boards descriptions.
-
 
 ## Supported
 
  >Displays Overview
 
-| Driver Chip             | Technology | Dimensions                 | Remarks                 |
-| ----------------------- | ---------- | -------------------------- | ----------------------- |
-| **Simple displays**     |            |                            |                         |
-| [LiquidChrystal]        | LCD        | 8/16/20 chars in 2/4 lines | character based display |
-| [MAX7219]               | LED        | 8\*8 LED matrix modules    |                         |
-| [MAX7219]               | LED        | 8\*7 segment LEDs          |                         |
-| [TM1637]                | LED        | up to 6 7-segment LEDs     |                         |
-| **Monochrome displays** |            |                            |                         |
-| [SH1106]                | OLED       | 128\*32, 128\*64           |                         |
-| [SSD1306]               | OLED       | 128\*32, 128\*64           |                         |
-| [SSD1309]               | OLED       | compatible with SSD1306    |                         |
-| [MAX7219]               | LED       | Multiple LED matrix modules    |                         |
-| **Color displays**      |            |                            |                         |
-| [ST7789]                | TFT LCD    | 135 \* 240                 | 16-bit color            |
+| Driver Chip             | Technology | Dimensions                  | Remarks                 |
+| ----------------------- | ---------- | --------------------------- | ----------------------- |
+| **Simple displays**     |            |                             |                         |
+| [LiquidChrystal]        | LCD        | 8/16/20 chars in 2/4 lines  | character based display |
+| [MAX7219]               | LED        | 8\*8 LED matrix modules     |                         |
+| [MAX7219]               | LED        | 8\*7 segment LEDs           |                         |
+| [TM1637]                | LED        | up to 6 7-segment LEDs      |                         |
+| **Monochrome displays** |            |                             |                         |
+| [SH1106]                | OLED       | 128\*32, 128\*64            |                         |
+| [SSD1306]               | OLED       | 128\*32, 128\*64            |                         |
+| [SSD1309]               | OLED       | compatible with SSD1306     |                         |
+| [DisplayMAX7219]        | LED        | Multiple LED matrix modules |                         |
+| **Color displays**      |            |                             |                         |
+| [ST7789]                | TFT LCD    | 135 \* 240                  | 16-bit color            |
 
 <!--
 -->
@@ -41,7 +46,7 @@ already come with an onboard and you can find configuration hints in the boards 
 | Driver Chip | Technology | Dimensions                      | Remarks |
 | ----------- | ---------- | ------------------------------- | ------- |
 | [TM1638]    | LED        | up to 8 7-segment LEDs and keys |         |
-| [SSD1331]                | OLED Color    | 96 \* 64                 |             |
+| [SSD1331]   | OLED Color | 96 \* 64                        |         |
 
 ## Simple displays
 
@@ -81,22 +86,24 @@ They are controlled using the I2C or SPI bus.
 Supported are the driver chips: [SH1106], [SSD1306], [SSD1309]
 :::
 
-::: sensor ledmatrix
-LED matrixes are supported using the MAX7219 chip that can chain multiple 8x8 led displays.
-:::
+{% imgcard "/displays/max7219.jpg", "/displays/max7219.htm" %}
+
+The [DisplayMAX7219Element](/displays/max7219.md) uses LED matrixes as displays
+using the MAX7219 chip that can chain multiple 8x8 led displays.
+
+{% endimgcard %}
 
 
 ## Pixel Based Color Displays
 
+{% imgcard "/displays/colorlcd.jpg", "/displays/st7789.htm" %}
 
-::: sensor colorlcd
 Colorful displays are supported by the `color` configuration on the display elements.
 
-Supported are the driver chips: [ST7789]
-:::
+The [DisplayST7789Element](/displays/st7789.md) supports the driver chips: [ST7789].
 
-<!-- * [ST7789]
-  in boards\esp32_ttgo-lcd.md -->
+{% endimgcard %}
+
 
 <!-- - SSD 1331 (in planning) -->
   <!-- * ssd1322 OLED 480*128 -->
@@ -155,9 +162,10 @@ On startup, when a flexible display is configured some system information is dis
 
 [liquid chrystal]: /elements/lcd.md
 [max7219]: /elements/max7219.md
+[displayMax7219]: /displays/max7219.md
 [tm1637]: /elements/tm1637.md
 [tm1638]: /elements/_tm1638.md
 [sh1106]: /elements/sh1106.md
 [ssd1306]: /elements/ssd1306.md
 [ssd1309]: /elements/ssd1309.md
-[st7789]: /_displays/st7789.md
+[st7789]: /displays/st7789.md

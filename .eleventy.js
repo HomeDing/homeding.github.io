@@ -5,6 +5,10 @@ const myMarkdown = require("./.myMarkdown");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  eleventyConfig.chokidarConfig = {
+    usePolling: true
+  };
+
   // eleventy global settings
   eleventyConfig.setQuietMode(true);
 
@@ -16,7 +20,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("node_modules/**");
   eleventyConfig.ignores.add(".vscode/**");
 
-  const contentFolders = ["boards", "concepts", "dev", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
+  const contentFolders = ["boards", "boards/esp32", "concepts", "dev", "displays", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
   const assetFolders = ["i", "v02", "v02m", "v03", "v03m"];
 
   contentFolders.forEach(f => {
@@ -74,6 +78,10 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(result);
   });
 
+  eleventyConfig.addFilter("item", function (obj, name) {
+    return obj[name];
+  });
+
   eleventyConfig.addFilter("print", function (value) {
     const seen = new Set();
 
@@ -102,26 +110,47 @@ module.exports = function (eleventyConfig) {
 
   });
 
-  eleventyConfig.addFilter("debugger", (...args) => {
-    console.log(...args)
-    // debugger;
-    // console.log('>>', value);
-  })
-
   // ===== Shortcodes =====
 
   // include excerpt text by using: {% excerptOf collections, "map" %}
   eleventyConfig.addShortcode("excerptOf", function (col, name) {
+    if (! col) {
+      console.error("excerptOf: no collection given.")
+    }
     if (Array.isArray(col)) {
       const page = col.find(e => e.url.includes('/' + name + '.'));
       if (page) {
         return (page.data.excerpt);
       }
     }
+    console.error("excerptOf: entry not found.")
     return ('');
   }
   );
 
+  
+  // include excerpt text by using: {% dataOf collections.Board, "map" %}
+  eleventyConfig.addShortcode("dataOf", function (col, name, item) {
+    if (! col) {
+      console.error("dataOf: no collection given.")
+    }
+    if (Array.isArray(col)) {
+      const page = col.find(e => e.url.includes(name + '.htm'));
+      if (page) {
+        return (page.data[item]);
+      }
+    }
+    console.error("dataOf: entry not found.")
+    return ('');
+  }
+  );
+
+
+  // include excerpt text by using: {% excerptOf collections, "map" %}
+  eleventyConfig.addPairedShortcode("imgcard", function (content, img, link) {
+    var out = `<div class="imgcard"><a href="${link}"><img src="${img}"></a>${content}</div>`;
+    return (out);
+  });
 
   // ===== Markdown configuration =====
 

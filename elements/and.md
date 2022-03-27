@@ -2,17 +2,12 @@
 title: The Logical AND Element
 id: and
 tags: ["Element", "Logic"]
+layout: "page.njk"
 description: Calculate when all input values are true
 excerpt: >
   The AND Element combines multiple logic input values to a single output value.
   The output value will be true only when all input values are true.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 Actions can be send to this element using the properties value[n].
 Every time the value changes the onValue event is emitted.
