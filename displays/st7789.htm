@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
 
-  <title>Displays</title>
+  <title>Color Displays based on ST7789</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
 </head>
@@ -30,13 +30,14 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>Displays</h1>
+    <h1>Color Displays based on ST7789</h1>
 
     
-    <h1>Color LCD Displays</h1>
-<p>The support of colorful LCD / TFT displays is done with the help of the Adafruit libraries.</p>
+    <p>The support of colorful LCD / TFT displays like the ST7789 based displays
+is done with the help of the Adafruit GFY library.</p>
 <p>The Adafruit libraries for displays support a broad range of displays that all share a common graphics library to draw graphic primitives called [Adafruit GFX]
-that supports 16 bit values per pixel. Colors are coded using a 565 bit scheme - enough for text and graphics with selected colors.</p>
+that supports 16 bit values per pixel. Colors are coded using a 565 bit color scheme,
+enough for text and graphics with selected colors.</p>
 <p>Displaying pictures with rich color depth is somehow limited by this design decision but may LCD displays anyway do not support more tha this.</p>
 <h2>Configuration</h2>
 <p>The [Display Element] supports all parameters to configure all displays. The DisplayConfig structure is used to bundle these and pass them to the dedicated Dispay Adapter. While adopting color displays the set of parameters was extended to support the background color andthe SPI interface. A system wide SPI configuration was also added to the [Device Element].</p>
@@ -53,6 +54,10 @@ The brightness pin can be configured and will be used by the display adapter or 
 <h2>Supported Displays</h2>
 <p><strong>ST7789</strong> - all resolutions supported by the Adafruit ST7789 library can be used.</p>
 <p><strong>Others</strong> - to come.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="fonts.md">Fonts</a></li>
+</ul>
 
 
     
