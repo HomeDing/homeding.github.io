@@ -8,7 +8,7 @@
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content=''>
-  <title>HomeDing Library Documentation</title>
+  <title></title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
 </head>
@@ -40,37 +40,19 @@ without the need for cloud services to be used.</p>
 <p>The devices connect to the local WiFi and offer a direct control using a standard web browser.</p>
 <p>Implementation is done by using the Arduino development environment.</p>
 <p><strong>This is the project containing documentation for the HomeDing library.</strong></p>
-<p><a href="/index.htm">Start browsing the documentation</a>
+<p><a href="https://homeding.github.io/index.htm">Start browsing the documentation</a>
 using index.htm.</p>
 <h2>Install the library</h2>
 <p>To install the library use the Arduino library manager or clone the project <a href="https://github.com/HomeDing/HomeDing">https://github.com/HomeDing/HomeDing</a> into your arduino library folder.</p>
 <p>More on how to setup an IoT device can be found in
-<a href="/steps/newdevice.htm">Step by Step Bring your device to work</a></p>
+<a href="https://homeding.github.io/steps/newdevice.md">Step by Step Bring your device to work</a></p>
 <h2>Development Server</h2>
 <p>This project is structured in the way that it can be used on the free
 Github documentation site at <a href="https://homeding.github.io">https://homeding.github.io</a> where only static files can be hosted.</p>
 <p>This project takes advantage on a client side Markdown to HTML conversion instead of using the builtin *.md to *.html conversion by Github.</p>
 <p>The file <strong>/index.htm</strong> provides the &quot;shell&quot; for the markdown files by loading and transforming them before beeing displayed. The
 <strong>/toc.md</strong> is used for the navigation on the left side that can be opened by the menu icon in the menubar.</p>
-<p>Use links like <a href="https://homeding.github.io/index.htm#page=/elements/index.md">https://homeding.github.io/index.htm#page=/elements/index.md</a>.</p>
-<h2>Local Server</h2>
-<p>To run the website locally a nodejs + express version of a server is available implemented in <code>src/server.ts</code> file.</p>
-<p>to use the server (in short):</p>
-<ul>
-<li>install nodejs</li>
-<li>checkout the project</li>
-<li>install dependencies using <code>npm i</code></li>
-<li>compile typescript using <code>npm run build</code></li>
-<li>start server using <code>npm start</code></li>
-</ul>
-<p>Start the browser using:</p>
-<ul>
-<li><a href="http://localhost:4001/index.htm">http://localhost:4001/index.htm</a> - start the web site</li>
-<li><a href="http://localhost:4001/search">http://localhost:4001/search</a> -- search for <code>???</code> unfinished text marks</li>
-<li><a href="http://localhost:4001/search?query=draft">http://localhost:4001/search?query=draft</a> -- search for anything</li>
-<li><a href="http://localhost:4001/search?query=%23input">http://localhost:4001/search?query=%23input</a> -- search for tag <code>#input</code></li>
-</ul>
-<p>Any pull requests regarding this project is welcome.</p>
+<p>Use links like <a href="https://homeding.github.io/elements/index.md">https://homeding.github.io/elements/index.md</a>.</p>
 
   </main>
 
