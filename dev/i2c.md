@@ -3,7 +3,8 @@ title: Using the I2C bus
 layout: "page.njk"
 tags: ["Implementation"]
 excerpt: >
-  The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data.
+  The I2C bus is used by many components, sensors, displays and other chips
+  to communicate commands and data.
   A central configuration is supported on the device level.
 ---
 
@@ -91,3 +92,4 @@ https://i2cdevices.org/addresses
 * <https://www.smart-prototyping.com/Qwiic.html>
 * <https://diyi0t.com/i2c-tutorial-for-arduino-and-esp8266/>
 * <https://github.com/technoblogy/i2c-detective>
+* [Using the SPI bus](/dev/spi.md)

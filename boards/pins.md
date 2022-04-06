@@ -32,12 +32,12 @@ Not mentioned here are the pin numbers on the real chip. If you need to used the
 | GPIO3  | D9  | Serial0-RX                         | Limited usage for IO                                                                     |
 | GPIO4  | D2  | I2C - SDA                          |                                                                                          |
 | GPIO5  | D1  | I2C - SCL                          |                                                                                          |
-| GPIO6  | --  | SDIO                               | cannot be used                                                                           |
-| GPIO7  | --  | SDIO                               | cannot be used                                                                           |
-| GPIO8  | --  | Serial1-RX, SDIO                   | cannot be used                                                                           |
-| GPIO9  | D11 | SDIO                               | cannot be used                                                                           |
-| GPIO10 | D12 | SDIO                               | cannot be used                                                                           |
-| GPIO11 | --  | SDIO                               | cannot be used                                                                           |
+| GPIO6  | --  | SDIO                               | flash memory (clk), cannot be used as GPIO                                               |
+| GPIO7  | --  | SDIO                               | flash memory (MISO, data0), cannot be used as GPIO                                        |
+| GPIO8  | --  | Serial1-RX, SDIO                   | flash memory (MOSI, data1), cannot be used as GPIO                                        |
+| GPIO9  | D11 | SDIO                               | flash memory (data2), cannot be used as GPIO                                             |
+| GPIO10 | D12 | SDIO                               | flash memory (data3), cannot be used as GPIO                                             |
+| GPIO11 | --  | SDIO                               | flash memory (CS)                                                                        |
 | GPIO12 | D6  | PWM, MISO                          |                                                                                          |
 | GPIO13 | D7  | MOSI                               |                                                                                          |
 | GPIO14 | D5  | PWM, SCK                           |                                                                                          |
@@ -50,7 +50,7 @@ Not mentioned here are the pin numbers on the real chip. If you need to used the
 On boards using a ESP-12 module the Blue LED on ESP-12 can be switched on by pulling the GPIO2(D4) output to LOW.
 
 The NodeMCU boards also have a LED attached to the port GPIO16(D0) that also can be switched on pulling the GPIO2(D4) output to LOW.
-This is a conflict with the deep sleep mode that requires to connect GPIO16 to the RESET. Using the LED will cause a reset in this case.
+This is a conflict with the deep sleep mode that requires to connect GPIO16(D0) to the RESET. Using the LED will cause a reset in this case.
 
 ### Serial communication
 
@@ -58,6 +58,7 @@ By default the boards use the Serial port \#0 to receive and send logging inform
 On many boards these 2 pins GPIO1(D10), GPIO3(D9) are connected to the USB chip to make these available to you computer.
 
 As long as you need to upload new sketches and see your debug output these pins should not be used.
+
 
 ### Booting
 
@@ -74,12 +75,14 @@ This is why many boards have a momentary button to pull the GPIO0(D3) pin down l
 
 The GPIO15 needs a LOW signal after reset as long as you do not use booting from a SD card.
 
+
 ### Flash memory
 
 All the SDIO pins are used to connect the SPI flash that contains the program and other data to the ESP8266 chip.
 These pins cannot be used for other IO.
 
 In general it is not possible to use them as simple digital input or output.
+
 
 ### I2C / Wire Bus
 
@@ -89,6 +92,7 @@ Only 2 lines are required to communicate with many participants on this bus.
 ESP8266 supports this bus by using a software approach. Therefore almost any combination of GPIO lines can be used.
 
 Configuring a NodeMCU1.0 (ESP-12E) includes the definitions for `SCL` and `SDA` as constants that default to
+
 * SCL=GPIO5(D1) (yellow) and
 * SDA=GPIO4(D2) (blue).
 
@@ -96,10 +100,11 @@ When using a plain NodeMCU or ESP-12 board I stick to these ports but other boar
 
 There are boards that already have a display and use other lines. Be sure to read the manual.
 
-The configuration of the I2C bus is required for many elements and is handled centrally by setting the 
+The configuration of the I2C bus is required for many elements and is handled centrally by setting the
 `I2C-SDA` and `I2C-SCL` properties in the device element.
 
 See also
+
 * [Device Element](../elements/device.md).
 * [Using the I2C bus](/dev/i2c.md)
 
@@ -107,7 +112,7 @@ See also
 ## minimal wiring for bare boards like ESP-01, ESP-12E
 
 * **VCC** -- 3.3 V
-* **CH_PD** -- 10kOhm to VCC(\*1) 
+* **CH_PD** -- 10kOhm to VCC(\*1)
 * **GPIO00** -- 10kOhm to VCC(\*1) and **FLASH** button to GND
 * **GPIO02** -- 10kOhm to VCC
 * **GPIO15** -- 10kOhm to GND

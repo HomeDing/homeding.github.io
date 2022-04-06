@@ -76,6 +76,12 @@ This is an UV-index sensor.
 :::
  -->
 
+<!-- 
+:::sensor BH1750
+t.b.d. i2c bus enables sensor for light.
+:::
+ -->
+
 :::sensor linetrack
 This is a **light reflection sensor** using a identify reflecting (white) or non-reflecting (black) surfaces. There is a IR transmitting diode and a IR receiving diode producing a digital output signal.
 The sensitivity can be adjusted.
@@ -132,11 +138,6 @@ As the signals can be very short the [DigitalInterrupt Element](/elements/_digit
 :::
 
 
-<!-- 
-:::sensor BH1750
-t.b.d. i2c bus enables sensor for light.
-:::
- -->
 
 ### Analog Temperature Sensors
 

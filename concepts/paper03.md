@@ -24,12 +24,13 @@ The implementation has borrowed some of the ideas and principles of the “Actor
 
 The “Actors” and “Messages” in this computation model is similar to the “Elements” and “Actions” in the HomeDing Library implementation. However, the HomeDing Library implementation need to respect the limited CPU and memory power of and the things and the network in between. Some pragmatic design decisions of the implementations have been necessary.
 
-Some good readings about this model can be found at
+Some good readings about this general interaction model can be found at
 
 * https://en.wikipedia.org/wiki/Actor_model
 * http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor
 
-## Elements 
+
+## Elements
 
 Like in the Actor Model the functionality is encapsulated inside the components that have a unified interface
 to the outer world but differ in the inner implementation.
@@ -56,20 +57,41 @@ The standard interface of every Element is defined by the base `Element` class. 
 A detailed description of the common Element Interface can be found in [ElementInterface](/dev/elementinterface.md).
 
 
-## Configure and Interact with Elements 
+## Configure and Interact with Elements
 
 Every element can be described by its properties, actions and events. They define the API for the specific Element.
 
-This is the API picture for the timer element:
 
-<object data="/element.svg?timer" type="image/svg+xml"></object>
+### Properties
 
-* **Properties** are there to configure the Element to behave in a specific way.
-* **Actions** (inbound actions) can be sent to an Element at runtime to control the Element and change the internal state.
-* **Events** are created by the element to send (outbound) Actions to other elements.
+Properties are there to configure the Element to define the behavior of the element.
+
+This is done by using the configuration files that control what elements are created
+including their specific setup.
 
 
-## sending Actions by using URLs
+## Events and Actions
+
+
+**Event** - this is what happens inside an element like a new sensor value is available or a timing condition has occurred. **On** this **Event** one or multiple actions can be created.
+
+**Action** - this is the data (key and value) that is passed over to the target element.
+
+What you can see in the configuration is to setup this interaction by specifying the event on the origin element and the actions that will be sent. Here are some examples:
+
+``` txt
+"onValue" : "digitalOut/D5?value=1"
+"onValue" : "digitalOut/D5?value=$v"
+"onValue" : "device/0?log=value:$v"
+```
+
+In the configuration you can specify multiple, comma separated actions on the same event:
+
+``` txt
+"onValue" : "digitalOut/D5?value=1,device/0?log=value:$v"
+```
+
+## sending Actions in the device
 
 The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.
 
@@ -78,18 +100,25 @@ Here some elements will retrieve sensor values, check the state of GPIO pins or 
 
 This action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `22.50`.
 
-To send an Action to an element a http GET requests can be used. This allows sending Action over the network to elements in a device.
-
-* open the url: http://(devicename)/$board/displaytext/info?value=22.50
-* use a command line tool like: curl http://(devicename)/$board/displaytext/info?value=22.50
-* use the [Remote Element](/elements/remote.md) in another HomeDing based device.
-
 Inside the board class the action dispatcher is available.
-Actions are collected in a queue and will be dispatched to the target element shortly after they have been handed over.
+Actions are collected in a queue in memory and will be dispatched to the target element shortly after they have been handed over.
 
 Calling the loop() function / executing the element code is prioritized over sending a message.
 This is why the board implements a store and forward mechanism with a queue.
 The order of the messages is guaranteed to be stable as long as they are not send via network.
+
+
+## sending Actions by using URLs
+
+By using the notation and syntax of Actions you can use a URL to pass an action into a device manually
+e.g. by using
+`http://homeding/api/state/digitalOut/D5?value=1`.
+
+To send an Action to an element over the network the http GET requests can be created using
+
+* open the url in the browser: `http://(devicename)/$board/displaytext/info?value=22.50`
+* use a command line tool like: `curl http://(devicename)/$board/displaytext/info?value=22.50`
+* use the [Remote Element](/elements/remote.md) in another HomeDing based device.
 
 
 ## Chip specific Elements
