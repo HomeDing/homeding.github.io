@@ -2,7 +2,7 @@
 title: ESP32 DevKit Boards
 description: ESP32 General purpose development boards
 layout: "page.njk"
-tags: ["Board"]
+tags: ["Board", "WIP"]
 excerpt: >
   The ESP32 DevKit Boards that come in various formats and sizes with WROOM modules and USB adapter are supported by the HomeDing library.
 ---
@@ -41,9 +41,20 @@ There is a 38-pin version of the ESP32 DevKit
 
 ## JTAG Connections
 
+| ESP Prog | DevKit | ESP32 JTAG Pin |
+| -------- | ------ | -------------- |
+| MTDO     | TDO    | GPIO15         |
+| MTDI     | TDI    | GPIO12         |
+| MTCK     | TCK    | GPIO13         |
+| MTMS     | TMS    | GPIO14         |
+| GND      | GND    | GND            |
+
+
 ![esp32_devkit_jtag1](esp32_devkit_jtag1.png)
 
 ![esp32_devkit_jtag2](esp32_devkit_jtag2.png)
+
+https://www.pschatzmann.ch/home/2022/01/25/platformio-debugging-the-esp32-audiokit-os-x-and-raspberry-pi-os/
 
 
 ## See also
