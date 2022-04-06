@@ -50,7 +50,7 @@
 <h2>Actor Model</h2>
 <p>The implementation has borrowed some of the ideas and principles of the “Actor Model” that is a complete distributed, concurrent computing model.</p>
 <p>The “Actors” and “Messages” in this computation model is similar to the “Elements” and “Actions” in the HomeDing Library implementation. However, the HomeDing Library implementation need to respect the limited CPU and memory power of and the things and the network in between. Some pragmatic design decisions of the implementations have been necessary.</p>
-<p>Some good readings about this model can be found at</p>
+<p>Some good readings about this general interaction model can be found at</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Actor_model">https://en.wikipedia.org/wiki/Actor_model</a></li>
 <li><a href="http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor">http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor</a></li>
@@ -76,29 +76,37 @@ and <a href="/sensors/sensors.htm">Sensors</a> for the list of supported sensors
 <p>A detailed description of the common Element Interface can be found in <a href="/dev/elementinterface.htm">ElementInterface</a>.</p>
 <h2>Configure and Interact with Elements</h2>
 <p>Every element can be described by its properties, actions and events. They define the API for the specific Element.</p>
-<p>This is the API picture for the timer element:</p>
-<p><object data="/element.svg?timer" type="image/svg+xml"></object></p>
-<ul>
-<li><strong>Properties</strong> are there to configure the Element to behave in a specific way.</li>
-<li><strong>Actions</strong> (inbound actions) can be sent to an Element at runtime to control the Element and change the internal state.</li>
-<li><strong>Events</strong> are created by the element to send (outbound) Actions to other elements.</li>
-</ul>
-<h2>sending Actions by using URLs</h2>
+<h3>Properties</h3>
+<p>Properties are there to configure the Element to define the behavior of the element.</p>
+<p>This is done by using the configuration files that control what elements are created
+including their specific setup.</p>
+<h2>Events and Actions</h2>
+<p><strong>Event</strong> - this is what happens inside an element like a new sensor value is available or a timing condition has occurred. <strong>On</strong> this <strong>Event</strong> one or multiple actions can be created.</p>
+<p><strong>Action</strong> - this is the data (key and value) that is passed over to the target element.</p>
+<p>What you can see in the configuration is to setup this interaction by specifying the event on the origin element and the actions that will be sent. Here are some examples:</p>
+<pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1"<br>"onValue" : "digitalOut/D5?value=$v"<br>"onValue" : "device/0?log=value:$v"</code></pre>
+<p>In the configuration you can specify multiple, comma separated actions on the same event:</p>
+<pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1,device/0?log=value:$v"</code></pre>
+<h2>sending Actions in the device</h2>
 <p>The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.</p>
 <p>When an Element is active the <code>loop()</code> function is called periodically so the Element can so something meaningful.
 Here some elements will retrieve sensor values, check the state of GPIO pins or will calculate something and then will create actions like <code>displaytext/info?value=22.50</code> and hand it over to the action dispatcher in the board class.</p>
 <p>This action that will be dispatched to the element <code>displaytext/info</code> and will trigger the action <code>value</code> with then parameter <code>22.50</code>.</p>
-<p>To send an Action to an element a http GET requests can be used. This allows sending Action over the network to elements in a device.</p>
-<ul>
-<li>open the url: http://(devicename)/$board/displaytext/info?value=22.50</li>
-<li>use a command line tool like: curl http://(devicename)/$board/displaytext/info?value=22.50</li>
-<li>use the <a href="/elements/remote.htm">Remote Element</a> in another HomeDing based device.</li>
-</ul>
 <p>Inside the board class the action dispatcher is available.
-Actions are collected in a queue and will be dispatched to the target element shortly after they have been handed over.</p>
+Actions are collected in a queue in memory and will be dispatched to the target element shortly after they have been handed over.</p>
 <p>Calling the loop() function / executing the element code is prioritized over sending a message.
 This is why the board implements a store and forward mechanism with a queue.
 The order of the messages is guaranteed to be stable as long as they are not send via network.</p>
+<h2>sending Actions by using URLs</h2>
+<p>By using the notation and syntax of Actions you can use a URL to pass an action into a device manually
+e.g. by using
+<code>http://homeding/api/state/digitalOut/D5?value=1</code>.</p>
+<p>To send an Action to an element over the network the http GET requests can be created using</p>
+<ul>
+<li>open the url in the browser: <code>http://(devicename)/$board/displaytext/info?value=22.50</code></li>
+<li>use a command line tool like: <code>curl http://(devicename)/$board/displaytext/info?value=22.50</code></li>
+<li>use the <a href="/elements/remote.htm">Remote Element</a> in another HomeDing based device.</li>
+</ul>
 <h2>Chip specific Elements</h2>
 <p>A device may include special chips that can retrieve some environment parameters like temperature, humidity but also power consumption and voltage level.</p>
 <p>These elements are usually asking for new values by implementing the chip specific hardware protocol or read registers using the standard protocols I2C or SPI.</p>

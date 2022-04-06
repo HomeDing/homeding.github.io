@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+
+  <title>Using the SPI bus</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem">
+    <h1>Using the SPI bus</h1>
+
+    <div class="plaincard">The SPI bus is used by components that require fast communication like displays and memory. A central configuration is supported on the device level.
+</div>
+    <p>SPI (Serial Peripheral Interface) is a serial bus interface introduced by Motorola Corp.</p>
+<p>In contrast to the <a href="/dev/i2c.htm">i2c bus</a> the SPI bus supports sending and receiving data at the same time
+by using separate inbound (MISO) and outbound (MOSI) signals on the bus-host, usually the processor.</p>
+<p>There is no addressing of components in the protocol so a dedicated select signal (CS) is required for every slave.</p>
+<h2>Using standard SPI pins on ESP8266</h2>
+<p>There are 2 hardware supported SPI interfaces within the ESP8266.</p>
+<p>The &quot;General SPI&quot; is available on GPIOs 6-11. This bus is used to communicate to the flash memory using multiple data lines
+and cannot be used to connect to SPI clients other than memory.</p>
+<p>The &quot;HSPI&quot; is available on GPIOs 12-15 using the following functions.</p>
+<table>
+<thead>
+<tr>
+<th>GPIO</th>
+<th>functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO12</td>
+<td>MISO</td>
+</tr>
+<tr>
+<td>GPIO13</td>
+<td>MOSI</td>
+</tr>
+<tr>
+<td>GPIO14</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>GPIO15</td>
+<td>CS</td>
+</tr>
+</tbody>
+</table>
+<p>When using the standard <code>SPI</code> Arduino implementation on the ESP8266 these lines are used.
+However each slave device must use it's own chip select (CS) line.</p>
+<h2>Using standard SPI pins on ESP32</h2>
+<p>There are 4 supported SPI interfaces within the ESP32.</p>
+<p>The &quot;SPI0&quot; and &quot;SPI1&quot; are used to communicate with the flash memory. It is using multiple data lines
+and cannot be used to connect to SPI clients other than memory.</p>
+<p>The &quot;SPI2&quot; and &quot;SPI3&quot; can be used as general purpose SPI interfaces also called VSPI and HSPI.</p>
+<p><strong>VSPI</strong></p>
+<p>This SPI is used by the standard Arduino SPI.</p>
+<table>
+<thead>
+<tr>
+<th>GPIO</th>
+<th>functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO19</td>
+<td>MISO</td>
+</tr>
+<tr>
+<td>GPIO23</td>
+<td>MOSI</td>
+</tr>
+<tr>
+<td>GPIO18</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>GPIO05</td>
+<td>CS</td>
+</tr>
+</tbody>
+</table>
+<p>The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
+Each slave device must use it's own chip select (CS) line.</p>
+<p><strong>HSPI</strong></p>
+<p>This SPI is used as an alternative SPI interface often used for SD Cards.</p>
+<table>
+<thead>
+<tr>
+<th>GPIO</th>
+<th>functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO12</td>
+<td>MISO</td>
+</tr>
+<tr>
+<td>GPIO13</td>
+<td>MOSI</td>
+</tr>
+<tr>
+<td>GPIO14</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>GPIO15</td>
+<td>CS</td>
+</tr>
+</tbody>
+</table>
+<p>The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
+Each slave device must use it's own chip select (CS) line.</p>
+<h2>SD Card</h2>
+<p>SD Cards are supported in 2 different SPI implementations by the ESP32:</p>
+<ol>
+<li>the 1-bit SD implementation using the standard SPI interface (VSPI)</li>
+<li>the 4-bit SDMMC implementation using the hardware implemented SD/MMC host controller (HSPI)</li>
+</ol>
+<p>For the later solution the HSPI interface can be extended to use 4 data bits in parallel:</p>
+<table>
+<thead>
+<tr>
+<th>ESP32 PIN</th>
+<th>SD Name</th>
+<th>SD Pin</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO12</td>
+<td>Data 2</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>IO13</td>
+<td>Data 3</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>IO15</td>
+<td>CMD</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VDD</td>
+<td>4</td>
+<td>3.3V</td>
+</tr>
+<tr>
+<td>IO14</td>
+<td>CLK</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VSS</td>
+<td>6</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>IO2</td>
+<td>Data 0</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>IO4</td>
+<td>Data 1</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>9</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Additional signals</h3>
+<p>Some SPI clients require chips and boards that use the I2C bus for communication
+also have some more signals to be controlled by the host like selecting data from commands.</p>
+<p>These are not connected using the SPI core signals and need to be connected by additional wiring.</p>
+<h2>See also</h2>
+<ul>
+<li>
+<p><a href="/dev/i2c.htm">Using the I2C bus</a></p>
+</li>
+<li>
+<p><a href="https://lastminuteengineers.com/esp32-pinout-reference">https://lastminuteengineers.com/esp32-pinout-reference</a></p>
+</li>
+<li>
+<p><a href="https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/">https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/</a></p>
+</li>
+<li>
+<p><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html</a></p>
+</li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="tag-implementation.htm">Implementation</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

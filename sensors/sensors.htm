@@ -69,6 +69,11 @@
 This is an UV-index sensor.
 :::
  -->
+<!-- 
+:::sensor BH1750
+t.b.d. i2c bus enables sensor for light.
+:::
+ -->
 <div class="imgcard"><img src="/sensors/linetrack.jpg"><p>This is a <strong>light reflection sensor</strong> using a identify reflecting (white) or non-reflecting (black) surfaces. There is a IR transmitting diode and a IR receiving diode producing a digital output signal.
 The sensitivity can be adjusted.</p>
 <p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the digital input signal.</p>
@@ -95,11 +100,6 @@ It produces a about 10 seconds HIGH level signal.</p>
 <div class="imgcard"><img src="/sensors/irobstacle.jpg"><p>This is a <strong>Infrared Obstacle sensor</strong> that emits and detects IR light and creates a digital output when there is a reflecting obstacle nearby.</p>
 <p>As the signals can be very short the <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these short impulses and create a clean action on it.</p>
 </div>
-<!-- 
-:::sensor BH1750
-t.b.d. i2c bus enables sensor for light.
-:::
- -->
 <h3>Analog Temperature Sensors</h3>
 <div class="imgcard"><img src="/sensors/ntc.jpg"><p>This is a <strong>temperature sensor</strong> that uses a <strong>temperature variable resistor</strong> ntc to create a analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.</p>
 <p>The Analog output signal can be used to calculate the actual temperature.

@@ -97,37 +97,37 @@
 <td>GPIO6</td>
 <td>--</td>
 <td>SDIO</td>
-<td>cannot be used</td>
+<td>flash memory (clk), cannot be used as GPIO</td>
 </tr>
 <tr>
 <td>GPIO7</td>
 <td>--</td>
 <td>SDIO</td>
-<td>cannot be used</td>
+<td>flash memory (MISO, data0), cannot be used as GPIO</td>
 </tr>
 <tr>
 <td>GPIO8</td>
 <td>--</td>
 <td>Serial1-RX, SDIO</td>
-<td>cannot be used</td>
+<td>flash memory (MOSI, data1), cannot be used as GPIO</td>
 </tr>
 <tr>
 <td>GPIO9</td>
 <td>D11</td>
 <td>SDIO</td>
-<td>cannot be used</td>
+<td>flash memory (data2), cannot be used as GPIO</td>
 </tr>
 <tr>
 <td>GPIO10</td>
 <td>D12</td>
 <td>SDIO</td>
-<td>cannot be used</td>
+<td>flash memory (data3), cannot be used as GPIO</td>
 </tr>
 <tr>
 <td>GPIO11</td>
 <td>--</td>
 <td>SDIO</td>
-<td>cannot be used</td>
+<td>flash memory (CS)</td>
 </tr>
 <tr>
 <td>GPIO12</td>
@@ -164,7 +164,7 @@
 <h3>Onboard LEDs</h3>
 <p>On boards using a ESP-12 module the Blue LED on ESP-12 can be switched on by pulling the GPIO2(D4) output to LOW.</p>
 <p>The NodeMCU boards also have a LED attached to the port GPIO16(D0) that also can be switched on pulling the GPIO2(D4) output to LOW.
-This is a conflict with the deep sleep mode that requires to connect GPIO16 to the RESET. Using the LED will cause a reset in this case.</p>
+This is a conflict with the deep sleep mode that requires to connect GPIO16(D0) to the RESET. Using the LED will cause a reset in this case.</p>
 <h3>Serial communication</h3>
 <p>By default the boards use the Serial port #0 to receive and send logging information and to upload new sketches.
 On many boards these 2 pins GPIO1(D10), GPIO3(D9) are connected to the USB chip to make these available to you computer.</p>
