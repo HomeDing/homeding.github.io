@@ -114,10 +114,6 @@ the <a href="/elements/color.htm">Color Element</a> can be used to control the l
 </div>
 <div class="iconcard"><a href="/elements/p9813.htm"><svg class="icon"><use href="/icons.svg#led"></use></svg><h3>p9813</h3></a><p>The <a href="/elements/p9813.htm">P9813 Element</a> implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.</p>
 </div>
-<h2>Service Elements</h2>
-<p>Service elements interact with services to get or publish data using actions.</p>
-<div class="iconcard"><a href="/elements/weatherfeed.htm"><svg class="icon"><use href="/icons.svg#weatherfeed"></use></svg><h3>weatherfeed</h3></a><p>The <a href="/elements/weatherfeed.htm">Weatherfeed Element</a>can retrieve weather forecast information from an internet service.</p>
-</div>
 <h2>Logic and Calculation Elements</h2>
 <p>Logic elements implement using on/off values expressed as 1/0 values.</p>
 <div class="iconcard"><a href="/elements/button.htm"><svg class="icon"><use href="/icons.svg#button"></use></svg><h3>button</h3></a><p>The <a href="/elements/button.htm">Button Element</a> can differentiate clicks, double clicks and long press gestures to send out actions.</p>
@@ -190,14 +186,26 @@ The [DCFTime Element](/elements/dcftime.md) can retrieve the local time from a D
 <div class="iconcard"><a href="/elements/value.htm"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/value.htm">Value Element</a> is used to
 receive and send actions to use and control an internal value.</p>
 </div>
-<div class="iconcard"><a href="/elements/value.htm"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/remote.htm">Remote Element</a> is used to
-send actions to elements in other devices over the local network.</p>
-</div>
 <div class="iconcard"><a href="/elements/menu.htm"><svg class="icon"><use href="/icons.svg#menu"></use></svg><h3>menu</h3></a><p>The <a href="/elements/menu.htm">Menu Element</a> is used for
 displaying and changing multiple values.</p>
 </div>
 <div class="iconcard"><a href="/elements/log.htm"><svg class="icon"><use href="/icons.svg#log"></use></svg><h3>log</h3></a><p>The <a href="/elements/log.htm">Log Element</a> is used for
 storing timestamp based sensor values.</p>
+</div>
+<h2>Network Elements</h2>
+<p>Things based on the HomeDing library are network connected by default as they integrate a web server and web services.</p>
+<p>The Network Elements extend the base functionality to connect to other devices and services over the network using different protocols.</p>
+<div class="iconcard"><a href="/elements/value.htm"><svg class="icon"><use href="/icons.svg#value"></use></svg><h3>value</h3></a><p>The <a href="/elements/remote.htm">Remote Element</a> is used to
+send actions to elements in other devices over the local network.</p>
+<p>The remote element creates a http GET request.</p>
+<p>URL <a href="https://server/api/type/id?value=">https://server/api/type/id?value=</a></p>
+</div>
+<div class="iconcard"><a href="/elements/mqtt.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>mqtt</h3></a><p>The <a href="/elements/mqtt.htm">MQTT Element</a> allows publishing</p>
+<!-- and subscribing --> with topics on a MQTT broker.
+</div>
+<h3>Service elements</h3>
+<p>Service elements interact with services to get or publish data using actions.</p>
+<div class="iconcard"><a href="/elements/weatherfeed.htm"><svg class="icon"><use href="/icons.svg#weatherfeed"></use></svg><h3>weatherfeed</h3></a><p>The <a href="/elements/weatherfeed.htm">Weatherfeed Element</a>can retrieve weather forecast information from an internet service.</p>
 </div>
 <h2>Web UI Elements</h2>
 <p>These elements starting with <strong>web</strong> in their name are only known to the Web UI implementation but are not part of the firmware- The intention is to enrich and customize the Web UI dashboard with elements like presets and macros.</p>
