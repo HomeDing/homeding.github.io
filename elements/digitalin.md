@@ -1,18 +1,14 @@
 ---
 title: The Digital Input Element
-id: digitalin
+icon: digitalin
 tags: ["Element"]
+layout: "page.njk"
 description: Support digital input signals to create actions. 
 excerpt: >
   The DigitalInElement is used to capture digital input signal and create actions based on level changes.
-  This can e.g. be used to capture actively from buttons and switches but also some sensors offer a digital output.
+  This can e.g. be used to capture actively from buttons and switches but also some sensors offer a digital output
+  as a 0 / 1 value.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 The physical input level can differ from the logical input level. E.g. momentary input buttons may pull an input down to ground while others pull them up. Also switches can be used with this Element.
 
@@ -23,17 +19,19 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?digitalin" type="image/svg+xml"></object>
 
-**pin**\* - Specifies the hardware number of the pin.                                                                                                   
+**pin**\* - Specifies the hardware number of the pin.
 
-**inverse** - In normal mode a HIGH input value is reported as value 1. In inverse mode a LOW input value is reported as value 1. Normal mode is default. 
+**inverse** - In normal mode a HIGH input value is reported as value 1. In inverse mode a LOW input value is reported as value 1. Normal mode is default.
 
-**pullup** - When defining with true the internal pullup resistor for the input pin will be activated.                                                   
+**pullup** - When defining with true the internal pullup resistor for the input pin will be activated.
 
-**onHigh** - Actions.<br/>These actions are emitted when the logical level is switched to `1`.                                                           
+**onHigh** - Actions.<br/>These actions are emitted when the logical level is switched to `1`.
 
-**onLow** - Actions.<br/>These actions are emitted when the logical level is switched to `0`.                                                           
+**onLow** - Actions.<br/>These actions are emitted when the logical level is switched to `0`.
 
-**onValue** - Actions.<br/>These actions are emitted when the logical level is switched.                                                                  
+**onValue** - Actions.<br/>These actions are emitted when the logical level is switched.
+
+{% include "./elementproperties.md" %}
 
 \* This parameter must be specified.
 

@@ -49,7 +49,14 @@ permalink: "{{ page.filePathStem }}.htm"
   <main style="padding:1rem">
     <h1>{{title}}</h1>
 
-    {% if excerpt %}<div class="plaincard">{{excerpt}}</div>{% endif %}
+    {% if excerpt %}
+    {% if icon %}
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#{{icon}}"></use></svg>
+    {% else %}  
+      <div class="plaincard">
+    {% endif %}
+    {{excerpt}}</div>{% endif %}
+      
     {{ content | safe }}
 
     {% if tags %}

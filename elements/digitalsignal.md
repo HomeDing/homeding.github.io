@@ -3,18 +3,13 @@ title: The Digital Signal Element
 id: digitalsignal
 icon: digitalin
 tags: ["Element"]
+layout: "page.njk"
 description: Support digital input signals to create actions. 
 excerpt: >
   The DigitalSignalElement is used to handle digital input with short time level changes
   that might be missed when using the [DigitalInput Element](/elements/digitalin.md).
   On a changing input a pulse value is created with a defined duration.
 ---
-
-# {{title}}
-
-::: excerpt {{icon}}
-{{excerpt}}
-:::
 
 When a digital input signals like spikes are created on a GPIO input they may not last long enough to be detected by reading the actual level in the loop function.
 
@@ -40,6 +35,9 @@ The output signal is generated with a given minimal duration and stays high as l
 
 **onValue** - These actions are emitted when the logical level is switched.
 
+{% include "./elementproperties.md" %}
+
+\* This parameter must be specified.
 
 ### Configuration Example
 

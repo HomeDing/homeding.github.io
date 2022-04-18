@@ -5,7 +5,7 @@ tags: ["Element", "Network"]
 layout: "page.njk"
 description: publishing values to a MQTT Sever
 excerpt: >
-  The MQTTElement enables publishing values to a MQTT Sever using the secure and unsecure mqtt protocol.
+  The MQTTElement enables publishing values to a MQTT Sever using the mqtt protocol.
 ---
 
 MQTT is a protocol with a lot of variations in the implementations.

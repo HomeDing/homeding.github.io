@@ -1,6 +1,6 @@
 ---
 title: The DHT Element
-id: dht
+icon: dht
 tags: ["Element", "Sensor"]
 layout: "page.njk"
 description: Support of the DHT air temperature and humidity sensor chips.
@@ -113,9 +113,9 @@ The default time is set to 3 seconds.
 
 **restart** - This property can be set to true to enable an automated restart when the sensor was not responding data.
 
-\* This parameter must be specified.
-
 {% include "./elementproperties.md" %}
+
+\* This parameter must be specified.
 
 ### Configuration Example
 

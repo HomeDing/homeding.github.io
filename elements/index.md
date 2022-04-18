@@ -5,34 +5,31 @@ layout: "page.njk"
 excerpt: These Elements are implemented in the HomeDing library.
 ---
 
-Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like [sensors](/sensors/sensors.md). 
+Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like [sensors](/sensors/sensors.md).
 
 The following element implementations are available in the current version of the HomeDing library.
 
 
 ## Input Elements
 
-These elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors .
+Input Elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors.
 
 :::element digitalin digitalin
-The [DigitalIn Element](/elements/digitalin.md)
-is used with momentary buttons or switches but also from sensors giving a HIGH/LOW value.
+{% excerptOf collections.Element, "digitalin" %}
 :::
 
 :::element digitalsignal digitalin
-Input Element used to handle digital input
-with short time level changes using interrupts.
+{% excerptOf collections.Element, "digitalsignal" %}
 :::
 
 :::element analog analog
-Input Element to capture a analog voltage using the builtin ADC.
+{% excerptOf collections.Element, "analog" %}
 :::
 
 :::element rotary rotary
-Input Element for using a rotary encoder.
+{% excerptOf collections.Element, "rotary" %}
 :::
 
-<div style="clear:both"></div>
 
 ## Sensor Elements
 
@@ -64,8 +61,6 @@ Read sensor values from a BMP280 sensor with temperature and absolute barometric
 
 <!-- MPU9250 -->
 
-<div style="clear:both"></div>
-
 More detailed information on sensor implementation can be found in [sensor elements implementation](/elements/sensors.md).
 
 
@@ -83,10 +78,6 @@ The [DigitalOut Element](/elements/digitalout.md) is used to create digital outp
 The [RFCodes Element](/elements/rfcodes.md) is used for sending and receiving RF codes on the 433 MHz band
 e.g. to control remote sockets.
 :::
-
-
-
-<div style="clear:both"></div>
 
 
 ## Light Elements
@@ -111,8 +102,6 @@ The [PwmOut Element](/elements/pwmout.md) enables creating a PWM digital output 
 :::element digitalout digitalout
 The [DigitalOut Element](/elements/digitalout.md) enables creating a digital output on a GPIO pin.
 :::
-
-<div style="clear:both"></div>
 
 For lights like [bulbs](/boards/bulb.md) or LED stripes that have multiple color channels
 the [Color Element](/elements/color.md) can be used to control the light color using a RGB or WRGB color value.
@@ -296,26 +285,15 @@ Things based on the HomeDing library are network connected by default as they in
 
 The Network Elements extend the base functionality to connect to other devices and services over the network using different protocols.
 
-
-:::element value value
-The [Remote Element](/elements/remote.md) is used to 
-send actions to elements in other devices over the local network.
-
-The remote element creates a http GET request.
-
-URL https://server/api/type/id?value=
+:::element remote remote
+{% excerptOf collections.Element, "remote" %}
 :::
-
 
 :::element mqtt default
-The [MQTT Element](/elements/mqtt.md) allows publishing
-<!-- and subscribing --> with topics on a MQTT broker.
+{% excerptOf collections.Element, "mqtt" %}
 :::
 
-
-### Service elements
-
-Service elements interact with services to get or publish data using actions. 
+Service elements interact with services to get or publish data using actions.
 
 :::element weatherfeed weatherfeed
 The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast information from an internet service.

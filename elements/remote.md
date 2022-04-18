@@ -3,7 +3,8 @@ title: Remote element
 id: remote
 tags: ["Element"]
 excerpt: >
-  The RemoteElement allows sending actions to other elements in HomeDing devices on the network.
+  The RemoteElement allows sending actions to other elements in HomeDing devices on the network
+  using http GET request.
 ---
 
 # {{title}}
