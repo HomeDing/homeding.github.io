@@ -44,8 +44,13 @@
   <main style="padding:1rem">
     <h1>The Analog Element</h1>
 
-    <div class="plaincard">The AnalogElement is used to capture the voltage level from the Analog Input pin and to emit corresponding events. It also handles some of the often occurring problems around capturing analog values.
+    
+    
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#analog"></use></svg>
+    
+    The AnalogElement is used to capture the voltage level from the Analog Input pin with the integrated ADC and to emit corresponding events. It also handles some of the often occurring problems around capturing analog values.
 </div>
+      
     <!--
 ## Web UI for the Analog Element
 
@@ -90,6 +95,7 @@ The value given in the actions is <code>0</code>.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p>* This parameter must be specified.</p>
 <h3>Example Configuration</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p><strong>Examples</strong></p>

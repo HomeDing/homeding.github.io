@@ -44,8 +44,13 @@
   <main style="padding:1rem">
     <h1>The DHT Element</h1>
 
-    <div class="plaincard">The DHTElement allows retrieving temperature and humidity values from the DHT family and AM2320 sensors and creates actions when new values are available.
+    
+    
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#dht"></use></svg>
+    
+    The DHTElement allows retrieving temperature and humidity values from the DHT family and AM2320 sensors and creates actions when new values are available.
 </div>
+      
     <p>The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.</p>
 <p><img src="/elements/dht22pins.jpg" alt="DHT22 pins" title="w400">
 <img src="/elements/dht22board.jpg" alt="DHT22 on Breadboard" title="w200"></p>
@@ -99,12 +104,12 @@ This output pin can be specified and can be used to re-start the DHT sensor by u
 <p><strong>warmupTime</strong> - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
 The default time is set to 3 seconds.</p>
 <p><strong>restart</strong> - This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
-<p>* This parameter must be specified.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p>* This parameter must be specified.</p>
 <h3>Configuration Example</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp: $v\u00dfC"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=hum: $v%"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
