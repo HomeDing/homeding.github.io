@@ -140,15 +140,6 @@ The [P9813 Element](/elements/p9813.md) implements the protocol to control the P
 :::
 
 
-## Service Elements
-
-Service elements interact with services to get or publish data using actions. 
-
-:::element weatherfeed weatherfeed
-The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast information from an internet service.
-:::
-
-
 ## Logic and Calculation Elements
 
 Logic elements implement using on/off values expressed as 1/0 values. 
@@ -288,11 +279,6 @@ The [Value Element](/elements/value.md) is used to
 receive and send actions to use and control an internal value.
 :::
 
-:::element value value
-The [Remote Element](/elements/remote.md) is used to 
-send actions to elements in other devices over the local network.
-:::
-
 :::element menu menu
 The [Menu Element](/elements/menu.md) is used for
 displaying and changing multiple values.
@@ -302,6 +288,39 @@ displaying and changing multiple values.
 The [Log Element](/elements/log.md) is used for
 storing timestamp based sensor values.
 :::
+
+
+## Network Elements
+
+Things based on the HomeDing library are network connected by default as they integrate a web server and web services.
+
+The Network Elements extend the base functionality to connect to other devices and services over the network using different protocols.
+
+
+:::element value value
+The [Remote Element](/elements/remote.md) is used to 
+send actions to elements in other devices over the local network.
+
+The remote element creates a http GET request.
+
+URL https://server/api/type/id?value=
+:::
+
+
+:::element mqtt default
+The [MQTT Element](/elements/mqtt.md) allows publishing
+<!-- and subscribing --> with topics on a MQTT broker.
+:::
+
+
+### Service elements
+
+Service elements interact with services to get or publish data using actions. 
+
+:::element weatherfeed weatherfeed
+The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast information from an internet service.
+:::
+
 
 
 ## Web UI Elements
