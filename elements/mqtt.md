@@ -38,31 +38,79 @@ When not configures the server identity will not be checked.
 
 **buffersize** - On secured connections this buffer size specifies the fixed maximum length of a received package.
 
-**topic** - The path of the topic to be published or subscribed.
+**publish** - The topic to be used for publishing. See below how to use this parameter.
 
 **retain** - When publishing messages this flag can be set to true to tell the broker
   to remember the last sent message for subscribers.
 
-<!-- **qos** - When subscribing to topic the QOS defines... -->
+**subscribe** - The topic to be subscribed. See below how to use this parameter.
+
+**qos** - When subscribing the QOS defines...
+
+**onValue** - These actions are emitted when a message for the subscribed topic arrived. See below how to use this parameter.
 
 {% include "./elementproperties.md" %}
 
 
-### Configuration Example
+### Configuration Examples
+
+These examples use a DHT Element to create actions to show how they can be send using MQTT.
+
+This configuration simply publishes a single temperature value
 
 ``` json
+"dht": {
+  "on": {
+    ...
+    "ontemperature": "mqtt/home?temperature=$v",
+  }
+},
 "mqtt": {
   "home": {
     "server": "mqtt://pi:rasp-pwd@raspberry:1883",
-    "topic": "home/outside/temp",
+    "publish": "home/outside/temp",
     "retain": 1
   }
 }
 ```
 
+This configuration publishes 2 values from the DHT sensor
+using the wildcard publish mechanism:
+
+```json
+"dht": {
+  "on": {
+    ...
+    "ontemperature": "mqtt/home?temperature=$v",
+    "onhumidity": "mqtt/home?humidity=$v"
+  }
+},
+"mqtt": {
+  "home": {
+    "server": "mqtt://pi:rasp-pwd@raspberry:1883",
+    "publish": "home/outside/+",
+    "retain": 1
+  }
+}
+```
+
+This configuration subscribes to a single topic and value :
+
+``` json
+"mqtt": {
+  "home": {
+    "server": "mqtt://pi:rasp-pwd@raspberry:1883",
+    "subscribe": "home/outside/temp",
+    "retain": 1
+    onValue": "???"
+  }
+}
+```
+
+
 ## Server Connection
 
-The network and security parameters on how to reach the MQTT server on the network are specified by the 
+The network and security parameters on how to reach the MQTT server on the network are specified by the
 `server` parameter using the [MQTT URI-Scheme]:
 
 > **mqtt[s]://[username:password@]servername[:port]**.
@@ -105,7 +153,56 @@ The [MQTT standard port] 1883 is used by default for non-secure connections when
 The [MQTT standard port] 8883 is used by default for secure connections when not specified.
 
 
-## Topic Names
+## Publish and Subscribe to multiple topics
+
+Using MQTT it is common to group all data from a sensor on the same node in the topic tree like:
+
+``` txt
+publish 'outside/sensor/temperature' '24.00'
+publish 'outside/sensor/pressure' '9980'
+publish 'outside/sensor/humidity' '70.20'
+```
+
+The '+` wildcard in a subscription is supports subscribing to all topics within a node:
+
+``` txt
+subscribe 'outside/sensor/+'
+```
+
+This behavior of the MQTTElement is enabled using a `+` wildcard as the last character
+in the `publish` parameter specifying the topic tree.
+When the MQTTElement is active all received actions will be treated as data publishing actions:
+
+``` txt
+/api/state/mqtt/outside?temperature=24.00
+/api/state/mqtt/outside?pressure=9980
+```
+
+Please be aware that common actions using 'start' and 'stop' will not result in data publishing.
+
+
+## Actions for MQTT subscriptions
+
+The `onValue` event occurs when data to a subscribed topic arrives.
+
+The actions can be defined as usual by using the `$v` placeholder for the value
+
+``` json
+  "onValue": "device/0?log=received:$v"
+```
+
+The actions can also contain the following placeholders to send the full ($t) or partial (k) topic name
+
+When receiving `'outside/sensor/temperature'='24.00'` the
+
+* `$t` (topic) placeholder will contain the fill topic name: `outside/sensor/temperature`
+* `$k` (key) placeholder will contain the partial topic name: `temperature`
+* `$v` (value) will contain the value `24.00`
+
+The placeholders for topic names are helpful when subscribing using a wildcard in the subscribe parameter.
+
+
+## Topic Names 
 
 The data processed MQTT brokers are organized in a hierarchical way. The topic names use the syntax contain use a folder syntax like `device/sensor/type`.
 
@@ -113,34 +210,25 @@ When using your private MQTT broker you are free to define your own hierarchy bu
 
 Special characters in topic names to be avoided:
 
-- '#' --  This wildcard is used to subscribe to all messages of a broker across all levels.
-- '+' --  This wildcard is used to subscribe to all messages of a broker within a level.
-- '/' -- used for the hierarchy structure in topic names.
-- '$' --  used as special start character for data from the broker system
+* '#' --  This wildcard is used to subscribe to all messages of a broker across all levels.
+* '+' --  This wildcard is used to subscribe to all messages of a broker within a level.
+* '/' -- used for the hierarchy structure in topic names.
+* '$' --  used as special start character for data from the broker system
 
-- '*' (wildcards), '>' --  may have special meanings
-- (empty topics) -- just don't work.
+* '*' (wildcards), '>' --  may have special meanings
+* (empty topics) -- just don't work.
 
+There are some public available documents on how to build up topic names in general:
 
-### Example configuration
-
-``` json
-"mqtt": {
-  "home": {
-    "server": "mqtt://admin:passwd@homepi:1883",
-    "feed": "outdoor/dht/temp",
-    "retain": 1
-  }
-}
-```
+* <https://tinkerman.cat/post/mqtt-topic-naming-convention>
+* <https://pi3g.com/2019/05/29/mqtt-topic-tree-design-best-practices-tips-examples/>
 
 
 ## See also
 
 * Standard Port Numbers: <https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml>
 * <https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml>
-* <https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-Topics.htm
->
+* <<https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-Topics.htm>
 
 
 [MQTT URI-Scheme]: https://github.com/mqtt/mqtt.org/wiki/URI-Scheme
