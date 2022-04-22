@@ -69,17 +69,26 @@ It supports MQTT 3.1 and 3.1.1. on secure and insecure connections with QoS 0 an
 <p><strong>fingerprint</strong> - On secured connections the fingerprint parameter is used to verify the identity of the server.
 When not configures the server identity will not be checked.</p>
 <p><strong>buffersize</strong> - On secured connections this buffer size specifies the fixed maximum length of a received package.</p>
-<p><strong>topic</strong> - The path of the topic to be published or subscribed.</p>
+<p><strong>publish</strong> - The topic to be used for publishing. See below how to use this parameter.</p>
 <p><strong>retain</strong> - When publishing messages this flag can be set to true to tell the broker
 to remember the last sent message for subscribers.</p>
-<!-- **qos** - When subscribing to topic the QOS defines... -->
+<p><strong>subscribe</strong> - The topic to be subscribed. See below how to use this parameter.</p>
+<p><strong>qos</strong> - When subscribing the QOS defines...</p>
+<p><strong>onValue</strong> - These actions are emitted when a message for the subscribed topic arrived. See below how to use this parameter.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
-<h3>Configuration Example</h3>
-<pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"topic"</span><span class="token operator">:</span> <span class="token string">"home/outside/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h3>Configuration Examples</h3>
+<p>These examples use a DHT Element to create actions to show how they can be send using MQTT.</p>
+<p>This configuration simply publishes a single temperature value</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    ...<br>    <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?temperature=$v"</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token string">"home/outside/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>This configuration publishes 2 values from the DHT sensor
+using the wildcard publish mechanism:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    ...<br>    <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?temperature=$v"</span><span class="token punctuation">,</span><br>    <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?humidity=$v"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token string">"home/outside/+"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>This configuration subscribes to a single topic and value :</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"subscribe"</span><span class="token operator">:</span> <span class="token string">"home/outside/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>    onValue<span class="token string">": "</span>???"<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Server Connection</h2>
 <p>The network and security parameters on how to reach the MQTT server on the network are specified by the
 <code>server</code> parameter using the <a href="https://github.com/mqtt/mqtt.org/wiki/URI-Scheme">MQTT URI-Scheme</a>:</p>
@@ -104,6 +113,28 @@ This can be configured by specifying a username and password in the URI in the <
 <h3>MQTT Port</h3>
 <p>The <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">MQTT standard port</a> 1883 is used by default for non-secure connections when not specified.</p>
 <p>The <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">MQTT standard port</a> 8883 is used by default for secure connections when not specified.</p>
+<h2>Publish and Subscribe to multiple topics</h2>
+<p>Using MQTT it is common to group all data from a sensor on the same node in the topic tree like:</p>
+<pre class="language-txt"><code class="language-txt">publish 'outside/sensor/temperature' '24.00'<br>publish 'outside/sensor/pressure' '9980'<br>publish 'outside/sensor/humidity' '70.20'</code></pre>
+<p>The '+` wildcard in a subscription is supports subscribing to all topics within a node:</p>
+<pre class="language-txt"><code class="language-txt">subscribe 'outside/sensor/+'</code></pre>
+<p>This behavior of the MQTTElement is enabled using a <code>+</code> wildcard as the last character
+in the <code>publish</code> parameter specifying the topic tree.
+When the MQTTElement is active all received actions will be treated as data publishing actions:</p>
+<pre class="language-txt"><code class="language-txt">/api/state/mqtt/outside?temperature=24.00<br>/api/state/mqtt/outside?pressure=9980</code></pre>
+<p>Please be aware that common actions using 'start' and 'stop' will not result in data publishing.</p>
+<h2>Actions for MQTT subscriptions</h2>
+<p>The <code>onValue</code> event occurs when data to a subscribed topic arrives.</p>
+<p>The actions can be defined as usual by using the <code>$v</code> placeholder for the value</p>
+<pre class="language-json"><code class="language-json">  <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=received:$v"</span></code></pre>
+<p>The actions can also contain the following placeholders to send the full ($t) or partial (k) topic name</p>
+<p>When receiving <code>'outside/sensor/temperature'='24.00'</code> the</p>
+<ul>
+<li><code>$t</code> (topic) placeholder will contain the fill topic name: <code>outside/sensor/temperature</code></li>
+<li><code>$k</code> (key) placeholder will contain the partial topic name: <code>temperature</code></li>
+<li><code>$v</code> (value) will contain the value <code>24.00</code></li>
+</ul>
+<p>The placeholders for topic names are helpful when subscribing using a wildcard in the subscribe parameter.</p>
 <h2>Topic Names</h2>
 <p>The data processed MQTT brokers are organized in a hierarchical way. The topic names use the syntax contain use a folder syntax like <code>device/sensor/type</code>.</p>
 <p>When using your private MQTT broker you are free to define your own hierarchy but when using brokers on the internet you must look out for naming conventions respecting a pre-defined structure. This is important especially for clustered brokers that process from many thousands of devices.</p>
@@ -128,15 +159,17 @@ This can be configured by specifying a username and password in the URI in the <
 <p>(empty topics) -- just don't work.</p>
 </li>
 </ul>
-<h3>Example configuration</h3>
-<pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://admin:passwd@homepi:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"feed"</span><span class="token operator">:</span> <span class="token string">"outdoor/dht/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>There are some public available documents on how to build up topic names in general:</p>
+<ul>
+<li><a href="https://tinkerman.cat/post/mqtt-topic-naming-convention">https://tinkerman.cat/post/mqtt-topic-naming-convention</a></li>
+<li><a href="https://pi3g.com/2019/05/29/mqtt-topic-tree-design-best-practices-tips-examples/">https://pi3g.com/2019/05/29/mqtt-topic-tree-design-best-practices-tips-examples/</a></li>
+</ul>
 <h2>See also</h2>
 <ul>
 <li>Standard Port Numbers: <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml</a></li>
 <li><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml</a></li>
 <li>&lt;<a href="https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-Topics.htm">https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-Topics.htm</a></li>
 </ul>
-<blockquote></blockquote>
 
 
     
