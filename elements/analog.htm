@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Trigger events based on input voltage'>
 
-  <title>The Analog Element</title>
+  <title>Analog Element</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
   <style>
@@ -42,7 +42,7 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>The Analog Element</h1>
+    <h1>Analog Element</h1>
 
     
     
@@ -74,8 +74,9 @@ By defining a reference value the reference action will only be dispatched when 
 </ol>
 <p>On the ESP8266 chip the input value has a precision of 2^10 bits and the input value is represented as a value for 0 to 1024 measuring a voltage at the pin from 0 to 1 volts. The input measuring should not occur while the there is data transmitted over the WiFi because the value will be inaccurate.</p>
 <h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element:</p>
 <p><object data="/element.svg?analog" type="image/svg+xml"></object></p>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
 <p><strong>readtimems</strong> - The time between capturing input values in milliseconds.</p>
 <p><strong>hysteresis</strong> - The value action is emitted only when the value differs more than defined by hysteresis. Default=10.</p>
 <p><strong>reference</strong> - The reference action is emitted when the value goes below / above the reference value.</p>
@@ -89,6 +90,7 @@ By defining a reference value the reference action will only be dispatched when 
 The value given in the actions is <code>1</code>.</p>
 <p><strong>onLow</strong> - These actions are send when the value is below the reference value.
 The value given in the actions is <code>0</code>.</p>
+</blockquote>
 <p>The ESP8266 chip has only one analog input pin so specifying a pin is not required.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
@@ -100,24 +102,24 @@ The value given in the actions is <code>0</code>.</p>
 <p>* This parameter must be specified.</p>
 <h3>Example Configuration</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<p><strong>Examples</strong></p>
+<h3>More Examples</h3>
 <p>A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.</p>
 <p>A analog sensing element for weight can produce many values around. When the weight changes significantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.</p>
 <h2>State</h2>
 <p>The following properties are available with the current values at runtime</p>
+<blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>rawvalue</strong> - This is the original value from the ADC pin.</p>
 <p><strong>value</strong> - When no mapping boundaries are given this is equal the raw value.
 When mapping boundaries are given this is the calculated value.</p>
 <p><strong>reference</strong> - This is 1 when the value is above the reference value otherwise 0.</p>
+</blockquote>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"13"</span><span class="token punctuation">,</span><br>    <span class="token property">"rawvalue"</span><span class="token operator">:</span><span class="token string">"721"</span><span class="token punctuation">,</span><br>    <span class="token property">"reference"</span><span class="token operator">:</span><span class="token string">"0"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations">https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations</a></li>
 </ul>
-<h2>Tags</h2>
-<p>#element #input</p>
 
 
     

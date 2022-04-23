@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Support of the DHT air temperature and humidity sensor chips.'>
 
-  <title>The DHT Element</title>
+  <title>DHT Element</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
   <style>
@@ -42,7 +42,7 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>The DHT Element</h1>
+    <h1>DHT Element</h1>
 
     
     
@@ -89,21 +89,25 @@ In the end a physical resistor is not too expensive to be added, it might work w
 <p>The datasheet also suggests using a 100nf capacitor between pin 1 (VCC) and pin 4 (GND) to make power more stable that is also appropriate when a long cable is used.</p>
 <p>There is an option to switch the sensor on and off by using another GPIO pin. See below.</p>
 <h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element:</p>
 <p><object data="/element.svg?dht" type="image/svg+xml"></object></p>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
 <p><strong>pin</strong>* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.</p>
 <p><strong>type</strong> - The type of the sensor. Values are: &quot;DHT11&quot;, &quot;DHT22&quot; and &quot;AUTO&quot;</p>
-<p><strong>onTemperature</strong> - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that stay the same.</p>
-<p><strong>onHumidity</strong> - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.</p>
+<p><strong>onTemperature</strong> - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that &gt; stay the same.</p>
+<p><strong>onHumidity</strong> - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay &gt; the same.</p>
 <p><strong>powerpin</strong> -This output pin can be specified to switch the sensor on and off.
 This output pin can be specified and can be used to re-start the DHT sensor by using the circuit described below.</p>
 <p><strong>powerinverse</strong> -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.</p>
-<p>From the generalized sensor element the following properties are available for configuration:</p>
-<p><strong>readtime</strong> - Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.</p>
+</blockquote>
+<p>From the base <a href="/elements/sensors.htm">Sensor Element</a> implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>readTime</strong> - Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
 <p><strong>resendTime</strong> - The current values of the probe are resent after this specified time even when not changing.</p>
 <p><strong>warmupTime</strong> - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
 The default time is set to 3 seconds.</p>
 <p><strong>restart</strong> - This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
+</blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
@@ -116,9 +120,11 @@ The default time is set to 3 seconds.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp: $v\u00dfC"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=hum: $v%"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
+<blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>temperature</strong> - The last read temperature value from the sensor.</p>
 <p><strong>humidity</strong> - The last read humidity value from the sensor.</p>
+</blockquote>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht/on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"50.50"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>DHT reset and power control</h2>
@@ -153,8 +159,6 @@ it doesn't make sense to read the values from the sensor more frequently.</p>
 <p>To run a ESP8266 and a sensor on low power see <a href="../boards/_lowpower.md">Low Power Modes</a></p>
 </li>
 </ul>
-<h2>Tags</h2>
-<p>#element #sensor</p>
 
 
     
