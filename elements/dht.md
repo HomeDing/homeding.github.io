@@ -1,5 +1,5 @@
 ---
-title: The DHT Element
+title: DHT Element
 icon: dht
 tags: ["Element", "Sensor"]
 layout: "page.njk"
@@ -78,40 +78,30 @@ Some sensors are known to have a pullup already inside, but it doesn't hurt to a
 In the end a physical resistor is not too expensive to be added, it might work without.
 
 
-
 The datasheet also suggests using a 100nf capacitor between pin 1 (VCC) and pin 4 (GND) to make power more stable that is also appropriate when a long cable is used.
 
 There is an option to switch the sensor on and off by using another GPIO pin. See below.
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
-
 <object data="/element.svg?dht" type="image/svg+xml"></object>
 
-**pin**\* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
+The following properties are available for configuration of the element:
 
-**type** - The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
+> **pin**\* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
+>
+> **type** - The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
+>
+> **onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that > stay the same.
+>
+> **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay > the same.
+>
+> **powerpin** -This output pin can be specified to switch the sensor on and off.
+> This output pin can be specified and can be used to re-start the DHT sensor by using the circuit described below.
+>
+> **powerinverse** -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
 
-**onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that stay the same.
-
-**onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
-
-**powerpin** -This output pin can be specified to switch the sensor on and off.
-This output pin can be specified and can be used to re-start the DHT sensor by using the circuit described below.
-
-**powerinverse** -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
-
-From the generalized sensor element the following properties are available for configuration:
-
-**readtime** - Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.
-
-**resendTime** - The current values of the probe are resent after this specified time even when not changing.
-
-**warmupTime** - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
-The default time is set to 3 seconds.
-
-**restart** - This property can be set to true to enable an automated restart when the sensor was not responding data.
+{% include "./sensorproperties.md" %}
 
 {% include "./elementproperties.md" %}
 
@@ -138,11 +128,11 @@ The default time is set to 3 seconds.
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the element is active.
-
-**temperature** - The last read temperature value from the sensor.
-
-**humidity** - The last read humidity value from the sensor.
+> **active** - Is set to true when the element is active.
+>
+> **temperature** - The last read temperature value from the sensor.
+>
+> **humidity** - The last read humidity value from the sensor.
 
 
 ### Example State
@@ -165,11 +155,11 @@ This occurs after some successful operation time and seems to happen more often 
 
 I recommend to power the sensor with 5 V when ever this is possible but here is the approach to reset the sensor by powering off for some time.
 
-This is done by the following circuit that switches the GND level power to the sensor: 
+This is done by the following circuit that switches the GND level power to the sensor:
 
 ![DHT Power switch](/elements/dhtpower.png)
 
-The voltage drop on the 2N7000 MOSFET is very small so the sensor is still working. 
+The voltage drop on the 2N7000 MOSFET is very small so the sensor is still working.
 
 The DHT Element recognizes a unresponsive sensor that war working before and will turn off operation using the `term()` function.
 
@@ -198,10 +188,7 @@ it doesn't make sense to read the values from the sensor more frequently.
 <https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf> and
 <https://cdn-shop.adafruit.com/datasheets/Digital+humidity+and+temperature+sensor+AM2302.pdf>
 
-* A regular reset of the sensor also may be required when sensor readings are ´jumping´: https://forum.arduino.cc/index.php?topic=355137.0
+* A regular reset of the sensor also may be required when sensor readings are ´jumping´: <https://forum.arduino.cc/index.php?topic=355137.0>
 
 * To run a ESP8266 and a sensor on low power see [Low Power Modes](../boards/_lowpower.md)
 
-
-## Tags
-#element #sensor

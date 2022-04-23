@@ -1,5 +1,5 @@
 ---
-title: The Analog Element
+title: Analog Element
 icon: analog
 tags: ["Element", "Input", "Sensor"]
 layout: "page.njk"
@@ -35,33 +35,33 @@ On the ESP8266 chip the input value has a precision of 2^10 bits and the input v
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
-
 <object data="/element.svg?analog" type="image/svg+xml"></object>
 
-**readtimems** - The time between capturing input values in milliseconds.
+The following properties are available for configuration of the element:
 
-**hysteresis** - The value action is emitted only when the value differs more than defined by hysteresis. Default=10.
-
-**reference** - The reference action is emitted when the value goes below / above the reference value.
-
-**mapInMin** - This is the lower bound of the raw value. This will be mapped to the value given by **mapOutMin**.
-
-**mapInMax** - This is the upper bound of the raw value. This will be mapped to the value given by **mapOutMax**.
-
-**mapOutMin** - This is the lower bound of the output value.
-
-**mapOutMax** - This is the upper bound of the output value.
-
-**onValue** - These actions are emitted when the input level has changed.
-
-**onReference** -These actions are emitted when the input level goes across the reference level.
-
-**onHigh** - These actions are send when the value is above the reference value.
-The value given in the actions is `1`.
-
-**onLow** - These actions are send when the value is below the reference value.
-The value given in the actions is `0`.
+> **readtimems** - The time between capturing input values in milliseconds.
+>
+> **hysteresis** - The value action is emitted only when the value differs more than defined by hysteresis. Default=10.
+>
+> **reference** - The reference action is emitted when the value goes below / above the reference value.
+>
+> **mapInMin** - This is the lower bound of the raw value. This will be mapped to the value given by **mapOutMin**.
+>
+> **mapInMax** - This is the upper bound of the raw value. This will be mapped to the value given by **mapOutMax**.
+>
+> **mapOutMin** - This is the lower bound of the output value.
+>
+> **mapOutMax** - This is the upper bound of the output value.
+>
+> **onValue** - These actions are emitted when the input level has changed.
+>
+> **onReference** -These actions are emitted when the input level goes across the reference level.
+>
+> **onHigh** - These actions are send when the value is above the reference value.
+> The value given in the actions is `1`.
+>
+> **onLow** - These actions are send when the value is below the reference value.
+> The value given in the actions is `0`.
 
 The ESP8266 chip has only one analog input pin so specifying a pin is not required.
 
@@ -83,7 +83,7 @@ The ESP8266 chip has only one analog input pin so specifying a pin is not requir
 }
 ```
 
-**Examples**
+### More Examples
 
 A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.
 
@@ -94,14 +94,14 @@ A analog sensing element for weight can produce many values around. When the wei
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the element is active.
-
-**rawvalue** - This is the original value from the ADC pin.
-
-**value** - When no mapping boundaries are given this is equal the raw value.
-When mapping boundaries are given this is the calculated value.
-
-**reference** - This is 1 when the value is above the reference value otherwise 0.
+> **active** - Is set to true when the element is active.
+>
+> **rawvalue** - This is the original value from the ADC pin.
+>
+> **value** - When no mapping boundaries are given this is equal the raw value.
+> When mapping boundaries are given this is the calculated value.
+>
+> **reference** - This is 1 when the value is above the reference value otherwise 0.
 
 
 ### Example State
@@ -121,7 +121,3 @@ When mapping boundaries are given this is the calculated value.
 ## See also
 
 * <https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations>
-
-## Tags
-
-#element #input

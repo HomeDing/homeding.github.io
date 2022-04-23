@@ -1,17 +1,15 @@
 ---
 title: Capacitive Soil Moisture Sensor Recipe
+tags: ["Receipe"]
+layout: "page.njk"
+excerpt: >
+  This recipe shows how to combine a Capacitive Soil Moisture Sensor with the Analog Input Element and a LED. 
 ---
-
-# {{title}}
-
-:::excerpt water
-This recipe shows how to combine a Capacitive Soil Moisture Sensor with the [Analog Input Element](/elements/analog.md) and a LED. 
-:::
 
 The Capacitive Soil Moisture Sensor is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.
 
 To capture this value the analog output pin of the sensor just needs to be connected to the **Vin** or **A0**
-that is giving the input for the [Analog Element](/elements/analog.md).
+that is giving the input for the [Analog Input Element](/elements/analog.md).
 
 You will find out that without any surrounding moisture the raw analog level is high in my case about the value of 700
 and gets lower to about 300 when some moisture is around.

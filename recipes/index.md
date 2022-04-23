@@ -1,9 +1,8 @@
 ---
 title: Recipes Overview
 tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The recipes is a collection of configurations that can be used
 with the standard set of elements included in the [Standard Example](/examples/standard.md).
@@ -35,6 +34,8 @@ They show how multiple elements can be combined to create functionality beyond u
 
 * [Logging Temperature Sensor](/recipes/templogger.md) - Use a DHT sensor and the log element to record values.
 * [Soil Moisture Sensor](/recipes/capasoil.md) - Use a timer and button to give water to plants.
+
+* [MQTT DHT Sensor](/recipes/mqttdht.md) - Use a DHT sensor to report temperature and humidity to a MQTT server.
 
 <!-- * Display temperature from local sensor -->
 <!-- * [Display Time, temperature and humidity](/recipes/tempdisplay.md) -->

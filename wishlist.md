@@ -46,8 +46,10 @@ title: wishlist
 * [/elements/_bme280.md](/elements/_bme280.md) - Sensor for temperature, humidity and absolute barometric pressure.
 * [/elements/_ccs811.md](/elements/_ccs811.md) -
 * [/elements/_dcftimeelement.md](/elements/_dcftimeelement.md) -
+
+* [/elements/_json.md](/elements/_json.md) -
+
 * [/elements/_gy91.md](/elements/_gy91.md) -
-* [/elements/_ina219.md](/elements/_ina219.md) -
 * [/elements/_lipo-charger.md](/elements/_lipo-charger.md) -
 * [/elements/_map.md](/elements/_map.md) -
 * [/elements/_max30105.md](/elements/_max30105.md) -
@@ -68,7 +70,6 @@ title: wishlist
 * [/sensors/_memo.md](/sensors/_memo.md) -
 * [/sensors/_sniffer.md](/sensors/_sniffer.md) -
 * [/stories/_curtain.md](/stories/_curtain.md) -
-
 
 
 **OnShift** when a new text is send to the displaytext element the current displayed text is send using the shift action.
