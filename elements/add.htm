@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Calculate sum of values'>
 
-  <title>The ADD Element</title>
+  <title>ADD Element</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
   <style>
@@ -42,11 +42,11 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>The ADD Element</h1>
+    <h1>ADD Element</h1>
 
     
-      
-      <div class="plaincard">
+    
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#add"></use></svg>
     
     The ADD Element sums up multiple input values to create a single output value.</div>
       
@@ -56,21 +56,26 @@ Every time the value changes the onValue event is emitted with the sum of all in
 <p>The standard card for this element is used showing the current calculated output value.</p>
 <h2>Element Configuration</h2>
 <!-- <object data="/element.svg?add" type="image/svg+xml"></object> -->
-<p>The up to 8 input values can be used for calculation.</p>
-<p>When no input value is given the output value is 0.</p>
+<p>The up to 8 input values can be used for calculation. When no input value is given the output value is 0.</p>
+<blockquote>
 <p><strong>value[0]</strong> - The first input value of the element. Default is 0.</p>
 <p><strong>value[1]</strong> - The second input value of the element. Default is 0.</p>
+</blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h3>Configuration Example</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"add"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=add-output: $v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
+<blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
+</blockquote>
 <h2>Implementation Details</h2>
 <p>When input values have changed event is not created immediately but when the next loop function is called.
 This avoids flickering values on the output for a certain degree.</p>
@@ -83,13 +88,11 @@ This avoids flickering values on the output for a certain degree.</p>
 <ul>
 <li><a href="/elements/index.htm">Elements</a></li>
 </ul>
-<h2>Tags</h2>
-<p>#element #calc-element</p>
 
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="tag-element.htm">Element</a></div>
+    <div class="taglist"><a href="/tag/element.htm">Element</a></div>
     
   </main>
 

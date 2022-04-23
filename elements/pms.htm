@@ -70,10 +70,12 @@ D6 (RX)         pin5 TXD    (black)
 <p><strong>readtime</strong> - The time between capturing 2 probes from the sensor.</p>
 <p><strong>onValue</strong> - These actions are send when the value from the sensor has changed.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h2>Example configuration</h2>
 <pre class="language-json"><code class="language-json"><span class="token property">"pms"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"pm25"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pinrx"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>    <span class="token property">"pintx"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>    <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"read out pm25 sensor"</span><span class="token punctuation">,</span><br>    <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"log/pm?value=$v"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Diagnostic example</h2>

@@ -56,10 +56,12 @@ The default is <code>datetime</code>.</p>
 The default is <code>num</code>.</p>
 <p>See <a href="/dev/microchart-line.htm">Line Microchart</a> for supported data types.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h3>Configuration Example</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"temp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"outside temperature"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"collecting temperature values on a 10 min. interval."</span><span class="token punctuation">,</span><br>      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/templog.txt"</span><span class="token punctuation">,</span><br>      <span class="token property">"yFormat"</span><span class="token operator">:</span> <span class="token string">"num:2"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>

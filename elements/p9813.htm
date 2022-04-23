@@ -67,10 +67,12 @@ The connectivity to the chip must be done using 2 pins:</p>
 <p><strong>clockPin</strong> - The clock signal</p>
 <p><strong>dataPin</strong> - The data signal</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h2>Configuration Examples</h2>
 <pre class="language-json"><code class="language-json"><span class="token property">"p9813"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"strip"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"clockPin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>    <span class="token property">"dataPin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p>The color element can be used to control the color and brightness of the P9813 Element by creating a direct link using the <code>elements</code> property.</p>
@@ -111,7 +113,7 @@ TLC5947</p>
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="tag-element.htm">Element</a><a href="tag-light.htm">Light</a></div>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/light.htm">Light</a></div>
     
   </main>
 
