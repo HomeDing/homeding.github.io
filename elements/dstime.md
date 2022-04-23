@@ -1,18 +1,13 @@
 ---
-title: The DSTime Element
-id: dstime
+title: DSTime Element
+icon: dstime
 tags: ["Element", "Time"]
+layout: "page.njk"
 description: Support getting local time from a DS3231 chip.
 excerpt: >
   The DSTime Element gets the local time from a DS3231 chip that contains a high accurate
   clock running independently from the main board and processor.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 A small battery is required to keep the clock running when power is failing and a crystal oscillator for exact timing is used.
 
@@ -45,11 +40,11 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?dstime" type="image/svg+xml"></object>
 
-| Property   | Description                                           |
-| ---------- | ----------------------------------------------------- |
-| `address`  | Specifies the i2c address of the chip.                |
-| `readtime` | Specifies the time for re-syncing the on board clock. |
+> **address** -- Specifies the i2c address of the chip.
+>
+> **readtime** -- Specifies the time for re-syncing the on board clock.
 
+{% include "./elementproperties.md" %}
 
 ## Example Configuration
 
@@ -82,8 +77,3 @@ The following properties are available for configuration of the element.
 * [Using the I2C bus](/dev/i2c.md)
 * <https://makezine.com/2019/01/18/getting-started-with-real-time-clocks/>
 * <https://richard.burtons.org/2015/04/23/real-time-clock-ds1307ds3231-for-the-esp8266/>
-
-
-## Tags
-
-#element #time

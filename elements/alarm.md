@@ -1,6 +1,5 @@
 ---
-title: The Alarm Element
-id: alarm
+title: Alarm Element
 tags: ["Element", "Time"]
 layout: "page.njk"
 description: Create Alarm events.
@@ -11,13 +10,13 @@ excerpt: The AlarmElement creates a single action at a specific time that can be
 
 ## Element Configuration
 
-This element implements the following properties and actions:
-
 <object data="/element.svg?alarm" type="image/svg+xml"></object>
 
-**time**  the time of day when the a the actions will be emitted.
+This element implements the following properties and actions:
 
-**onTime** The actions to be emitted.
+> **time**  the time of day when the a the actions will be emitted.
+>
+> **onTime** The actions to be emitted.
 
 {% include "./elementproperties.md" %}
 
@@ -34,6 +33,3 @@ This element implements the following properties and actions:
   }
 }
 ```
-
-## Tags
-#element #time

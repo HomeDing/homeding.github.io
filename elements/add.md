@@ -1,6 +1,6 @@
 ---
-title: The ADD Element
-id: add
+title: ADD Element
+icon: add
 tags: ["Element"]
 layout: "page.njk"
 description: Calculate sum of values
@@ -18,13 +18,11 @@ The standard card for this element is used showing the current calculated output
 
 <!-- <object data="/element.svg?add" type="image/svg+xml"></object> -->
 
-The up to 8 input values can be used for calculation.
+The up to 8 input values can be used for calculation. When no input value is given the output value is 0.
 
-When no input value is given the output value is 0.
-
-**value[0]** - The first input value of the element. Default is 0.
-
-**value[1]** - The second input value of the element. Default is 0.
+> **value[0]** - The first input value of the element. Default is 0.
+>
+> **value[1]** - The second input value of the element. Default is 0.
 
 {% include "./elementproperties.md" %}
 
@@ -45,9 +43,9 @@ When no input value is given the output value is 0.
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the element is active.
-
-**value** - Current output value of the element.
+> **active** - Is set to true when the element is active.
+>
+> **value** - Current output value of the element.
 
 ## Implementation Details
 
@@ -56,13 +54,10 @@ This avoids flickering values on the output for a certain degree.
 
 You can set values using a browser by sending actions to the element by requesting for the URLs like:
 
-- <http://homeding/$board/add/a?value[0]=1> to set the first input value to 1
-- <http://homeding/$board/add/a?value[1]=6> to set the second input value to 6
+* <http://homeding/$board/add/a?value[0]=1> to set the first input value to 1
+* <http://homeding/$board/add/a?value[1]=6> to set the second input value to 6
 
 ## See also
 
-- [Elements](/elements/index.md)
+* [Elements](/elements/index.md)
 
-## Tags
-
-#element #calc-element

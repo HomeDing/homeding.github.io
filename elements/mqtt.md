@@ -1,5 +1,5 @@
 ---
-title: The MQTT Element
+title: MQTT Element
 id: mqtt
 tags: ["Element", "Network"]
 layout: "page.njk"
@@ -155,7 +155,7 @@ The [MQTT standard port] 8883 is used by default for secure connections when not
 
 ## Publish and Subscribe to multiple topics
 
-Using MQTT it is common to group all data from a sensor on the same node in the topic tree like:
+Publishing and consuming values from multiple topics of a device or sensor is a common use-case. Using MQTT it is common to group all data from a sensor on the same node in the topic tree like:
 
 ``` txt
 publish 'outside/sensor/temperature' '24.00'
@@ -163,13 +163,14 @@ publish 'outside/sensor/pressure' '9980'
 publish 'outside/sensor/humidity' '70.20'
 ```
 
-The '+` wildcard in a subscription is supports subscribing to all topics within a node:
+The `+` wildcard in a subscription is supports subscribing to all topics within a node:
 
 ``` txt
 subscribe 'outside/sensor/+'
 ```
 
-This behavior of the MQTTElement is enabled using a `+` wildcard as the last character
+The MQTTElement can handle these grouped MQTT topcis and values.
+The mode is enabled using a `+` wildcard as the last character
 in the `publish` parameter specifying the topic tree.
 When the MQTTElement is active all received actions will be treated as data publishing actions:
 
@@ -178,7 +179,9 @@ When the MQTTElement is active all received actions will be treated as data publ
 /api/state/mqtt/outside?pressure=9980
 ```
 
-Please be aware that common actions using 'start' and 'stop' will not result in data publishing.
+Please be aware that common actions/topics using 'start' and 'stop'
+will not result in data publishing as they are handled by the base Element implementation.
+So just avoid these names.
 
 
 ## Actions for MQTT subscriptions
@@ -202,7 +205,7 @@ When receiving `'outside/sensor/temperature'='24.00'` the
 The placeholders for topic names are helpful when subscribing using a wildcard in the subscribe parameter.
 
 
-## Topic Names 
+## Topic Names
 
 The data processed MQTT brokers are organized in a hierarchical way. The topic names use the syntax contain use a folder syntax like `device/sensor/type`.
 

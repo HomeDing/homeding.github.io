@@ -1,16 +1,11 @@
 ---
 title: Time Element
-id: time
-tags: ["Element"]
+icon: time
+tags: ["Element", "Time"]
+layout: "page.njk"
 excerpt: >
   The time element creates actions with the current local time as value.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime.md) , [DSTime](/elements/dstime.md) or [DCFTime](/elements/dcftime.md).
 
@@ -21,21 +16,27 @@ The purpose of this element this for example to show the local time on the displ
 
 ## Element Configuration
 
+<object data="/element.svg?time" type="image/svg+xml"></object>
+
 The following properties are available for configuration of the element:
 
-| Property    | description                                                                                                                                                     |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ontime      | Actions<br>These actions are emitted when the time of day value has changed. The value contains the full time including the seconds.<br> `hh:mm:ss`                        |
-| onminute    | Actions<br>These actions are emitted when the time of day value has changed. The value contains the time of the day including hour and minute but no seconds. <br> `hh:mm` |
-| ondate      | Actions<br>These actions are emitted when the date value has changed. The value contains the full date without the time.<br>  `YYYYY-MM-DD`                                |
-| ontimestamp | Actions<br>These actions are emitted every second with the full timestamp as value.<br> `YYYYY-MM-DD hh:mm:ss`                                                             |
+> **ontime** -- Actions. These actions are emitted when the time of day value has changed.
+> The value contains the full time including the seconds using the format `hh:mm:ss`
+>
+> **onminute** -- Actions. These actions are emitted when the time of day value has changed. The value contains the time of the day including hour and minute but no seconds using the format `hh:mm`
+>
+> **ondate** -- Actions. These actions are emitted when the date value has changed. The value contains the full date without the time using the format `YYYYY-MM-DD`
+>
+> **ontimestamp** -- Actions. These actions are emitted every second with the full timestamp as value using the format `YYYYY-MM-DD hh:mm:ss`
+
+{% include "./elementproperties.md" %}
 
 
 ## Element State
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the element is active.
+> **active** - Is set to true when the element is active.
 
 
 ## Example Configuration

@@ -1,10 +1,13 @@
-## SHT20 High-precision Temperature And Humidity Sensor
+---
+title: SHT20 Element
+icon: dht
+tags: ["Element", "Input"]
+layout: "page.njk"
+excerpt: >
+  The SHT2x sensors provide some high precision temperature and humidity sensors that communicate on the I2C bus.
+---
 
-:::excerpt dht
-The **SHT2x** sensors provide some high precision temperature and humidity sensors that communicate on the I2C bus. 
-:::
-
-In contrast to other sensors like [DHT20](/elements/dht.md) and [Dallas](/elements/ds18b20.md) no proprietary protocol on the wire is used but data is exchanged over I2C. 
+In contrast to other sensors like [DHT20](/elements/dht.md) and [Dallas](/elements/ds18b20.md) no proprietary protocol on the wire is used but data is exchanged over I2C.
 
 There are different housings and boards for the sensor available.
 
@@ -40,16 +43,9 @@ The following properties are available for configuration of the element:
 
 **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
 
-From the generalized sensor element the following properties are available for configuration:
+{% include "./sensorproperties.md" %}
 
-**readTime** - The time between 2 probes from the sensor are fetched. The default value is 1 minute.
-
-**resendTime** - The current values of the probe are resent after this specified time even when not changing.
-
-**warmupTime** - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
-The default time is set to 3 seconds.
-
-**restart** - This property can be set to true to enable an automated restart when the sensor was not responding data.
+{% include "./elementproperties.md" %}
 
 
 ### Configuration Example
@@ -97,5 +93,3 @@ The following properties are available with the current values at runtime
 * <https://www.sensirion.com/SHT20/>
 * <https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT20_Datasheet.pdf>
 * <https://github.com/u-fire/uFire_SHT20/blob/master/src/uFire_SHT20.cpp>
-
-                                              
