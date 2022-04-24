@@ -1,7 +1,7 @@
 ---
-title: The Logical AND Element
-id: and
-tags: ["Element", "Logic"]
+title: AND Element
+icon: and
+tags: ["Element"]
 layout: "page.njk"
 description: Calculate when all input values are true
 excerpt: >
@@ -74,11 +74,8 @@ You can set values using a browser by sending actions to the element by requesti
 * <http://homeding/$board/and/a?value[1]=0> to set the second input value to false
 
 
-
 ## See also
 
 * [Elements](/elements/index.md)
 * [OR Element](/elements/or.md)
-
-## Tags
-#element #logic-element
+* [ADD Element](/elements/add.md)

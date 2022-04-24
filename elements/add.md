@@ -57,7 +57,10 @@ You can set values using a browser by sending actions to the element by requesti
 * <http://homeding/$board/add/a?value[0]=1> to set the first input value to 1
 * <http://homeding/$board/add/a?value[1]=6> to set the second input value to 6
 
+
 ## See also
 
 * [Elements](/elements/index.md)
-
+* [AND Element](/elements/and.md)
+* [OR Element](/elements/or.md)
+* [Calc Element](/elements/calc.md)
