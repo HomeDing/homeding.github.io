@@ -1,17 +1,11 @@
 ---
-title: The Button Element
+title: Button Element
 id: button
 tags: ["Element"]
+layout: "page.njk"
 description: Create actions based on digital input gestures.
 excerpt: The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
-
 
 ## Web UI
 
@@ -112,6 +106,3 @@ that provides the input value to the Button Element.
 
 * [Light timer recipe](/recipes/lighttimer.md)
 * [Remote Button recipe](/recipes/remotebutton.md)
-
-## Tags
-#element #input

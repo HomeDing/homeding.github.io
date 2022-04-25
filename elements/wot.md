@@ -1,13 +1,12 @@
 ---
-title: The WoT Element
+title: WoT Element
 id: wot
 tags: ["Element", "WIP"]
-description: ...
+layout: "page.njk"
+# description: ...
 excerpt: >
   The Element enables ...
 ---
-
-# {{title}}
 
 The HomeDing library includes the wot element that generates interfaces and JSON based descriptions that are compliant with the WoT standard by the W3C Consortium.
 

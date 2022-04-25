@@ -1,16 +1,11 @@
 ---
-title: The WebButton Element
+title: WebButton Element
 id: button
-tags: ["Element"]
+tags: ["WebElement", "WIP"]
+layout: "page.njk"
 excerpt: >
   The WebButton Element allows sending actions directly from the web UI without a corresponding active element in the device.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 The element is displayed as a single button by using the caption given by the description property.
 As this element is never created and active in the device
@@ -54,7 +49,3 @@ The following properties are available for configuration of the element:
 
 * [Light timer recipe](???)
 * [Remotebutton recipe](???)
-
-
-## Tags
-#webelement

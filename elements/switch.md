@@ -1,5 +1,5 @@
 ---
-title: The Switch Element
+title: Switch Element
 id: switch
 tags: ["Element"]
 excerpt: >

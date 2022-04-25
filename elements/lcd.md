@@ -1,5 +1,5 @@
 ---
-title: The Display LCD Element
+title: Display LCD Element
 id: displaylcd
 tags: ["Element"]
 description: Using LCD displays with a HD44780 controller chip.

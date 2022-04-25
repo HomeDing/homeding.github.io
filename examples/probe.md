@@ -1,8 +1,7 @@
 ---
 title: Probe example
+layout: "page.njk"
 ---
-
-# {{title}}
 
 :::excerpt
 This example shows how to implement special, local elements

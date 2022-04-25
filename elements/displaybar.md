@@ -1,5 +1,5 @@
 ---
-title: The DisplayBar Element
+title: DisplayBar Element
 id: displaybar
 tags: ["Element", "WIP"]
 description: Displaying progress values. 

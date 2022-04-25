@@ -1,5 +1,5 @@
 ---
-title: The Schedule Element
+title: Schedule Element
 id: schedule
 tags: ["Element", "Time"]
 description: Create events started on time.

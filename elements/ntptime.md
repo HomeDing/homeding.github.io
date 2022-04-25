@@ -1,5 +1,5 @@
 ---
-title: The NTPTime Element
+title: NTPTime Element
 id: ntptime
 tags: ["Element", "Time"]
 description: Support getting local time from the internet using NTP protocol.

@@ -1,5 +1,5 @@
 ---
-title: The DisplayLine Element
+title: DisplayLine Element
 id: displayline
 tags: ["Element"]
 description: Displaying a static line.

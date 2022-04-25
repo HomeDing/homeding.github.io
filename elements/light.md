@@ -1,5 +1,5 @@
 ---
-title: The Light Element
+title: Light Element
 id: light
 tags: ["Element"]
 description: Support GPIO output pins for controlling lights with multiple color channels.

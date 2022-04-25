@@ -1,5 +1,5 @@
 ---
-title: The Log Element
+title: Log Element
 id: log
 tags: ["Element"]
 description: Support logging of values into a file in the filesystem.

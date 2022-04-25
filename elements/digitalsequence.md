@@ -1,18 +1,13 @@
 ---
-title: The Digital Sequence Element
+title: Digital Sequence Element
 id: digitalsequence
 tags: ["Element", "WIP"]
+layout: "page.njk"
 description: Support digital input signals to create actions. 
 excerpt: >
   The digital sequence Element is used internally for several elements
   that need to analyze timing sequences and digital signals.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 see also [DCF Time Element](/elements/dcftime.md)
 
@@ -141,4 +136,3 @@ static function peek(1)   -> get oldest timing + 1
 ## See also
 
 * NTPTimeElement
-

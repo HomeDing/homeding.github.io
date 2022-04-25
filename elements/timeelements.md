@@ -1,8 +1,7 @@
 ---
 title: Time Elements
+layout: "page.njk"
 ---
-
-# {{title}}
 
 Several elements are related to the current local time. These are bundled together as the time related elements.
 

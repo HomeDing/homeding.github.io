@@ -1,5 +1,5 @@
 ---
-title: The Value Element
+title: Value Element
 id: value
 tags: ["Element"]
 excerpt: >

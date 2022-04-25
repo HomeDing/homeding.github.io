@@ -1,5 +1,5 @@
 ---
-title: The Digital Input Element
+title: Digital Input Element
 icon: digitalin
 tags: ["Element"]
 layout: "page.njk"

@@ -1,5 +1,5 @@
 ---
-title: The Digital Signal Element
+title: Digital Signal Element
 id: digitalsignal
 icon: digitalin
 tags: ["Element"]

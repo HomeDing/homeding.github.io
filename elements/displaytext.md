@@ -1,5 +1,5 @@
 ---
-title: The DisplayText Element
+title: DisplayText Element
 icon: displaytext
 tags: ["Element"]
 layout: "page.njk"

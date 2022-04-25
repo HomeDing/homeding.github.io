@@ -1,5 +1,5 @@
 ---
-title: The PWMOut Element
+title: PWMOut Element
 id: pwmout
 tags: ["Element"]
 description: Support GPIO output pins for PWM signals.

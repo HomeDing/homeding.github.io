@@ -1,5 +1,5 @@
 ---
-title: The Rotary Element
+title: Rotary Element
 icon: rotary
 tags: ["Element", "Input"]
 layout: "page.njk"

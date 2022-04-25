@@ -1,5 +1,5 @@
 ---
-title: The PMS Element
+title: PMS Element
 id: pms
 tags: ["Element"]
 description: Support of the PMS5003 air quality sensors.

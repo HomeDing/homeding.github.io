@@ -46,7 +46,7 @@ Dallas Temperature sensors and creates actions.
 :::
 
 :::element bme680 bme680
-Read BME680 sensor data with temperature, humidity, pressure and gas resistance.
+{% excerptOf collections.Element, "bme680" %}
 :::
 
 :::element pms pms
@@ -54,7 +54,11 @@ Read sensor values from a PMS5003 sensor by plantdata to count micro particles i
 :::
 
 :::element bmp280 bmp280
-Read sensor values from a BMP280 sensor with temperature and absolute barometric pressure.
+{% excerptOf collections.Element, "bmp280" %}
+:::
+
+:::element bl0937 default
+{% excerptOf collections.Element, "bl0937" %}
 :::
 
 <!-- BME280 -->

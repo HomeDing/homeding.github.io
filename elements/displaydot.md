@@ -1,5 +1,5 @@
 ---
-title: The DisplayDot Element
+title: DisplayDot Element
 id: displaydot
 tags: ["Element"]
 description: Displaying boolean values.

@@ -1,5 +1,5 @@
 ---
-title: The Timer Element
+title: Timer Element
 id: timer
 tags: ["Element", "Time"]
 description: Create repeating events.

@@ -1,19 +1,13 @@
 ---
-title: The Digital Output Element
+title: Digital Output Element
 id: digitalout
 tags: ["Element"]
+layout: "page.njk"
 description: Support digital output signals based on actions.
 excerpt: >
   The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element.
   This can e.g. be used to drive a LED or a relay.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
-
 
 ## Web UI for the Timer Element
 
@@ -100,5 +94,3 @@ The state of the digitalout element includes:
 
 * <https://electronics.stackexchange.com/questions/296330/how-to-drive-a-relay-from-esp8266-gpio>
 
-## Tags
-#element #output

@@ -1,5 +1,5 @@
 ---
-title: The WordClock Example
+title: WordClock Example
 ---
 
 # {{title}}
