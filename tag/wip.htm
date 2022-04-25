@@ -7,8 +7,8 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <meta name='description' content=''>
-  <title></title>
+  <meta name='description' content='All pages that are &quot;Work In Progress&quot;.'>
+  <title>Pages marked with a WIP tag</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
   <style>
@@ -40,28 +40,25 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>sinilink relays module</h1>
-<p>This is a ESP8285H16 based board with an onboard MOSFET controlled output delivering the input voltage.</p>
-<p>It is sold as a &quot;relay&quot; board actually not having a relay but a MOSFET to switch the negative output pin.
-It can be supplied by 5V to 36V DC.</p>
-<p>The espressif module uses the same processor from the EPS8266 and includes an integrated 2 MByte Flash rom on the chip.</p>
-<p><img src="sinilink-fet.jpg" alt="sinilink-fet picture" title="w200"></p>
-<h2>Pins in use</h2>
-<p><strong>GPIO2(D4)</strong> - The ESP8285 module has a blue LED that can be switched on by pulling the GPIO2(D4) to LOW.</p>
-<p><strong>GPIO4(D2)</strong> - The red LED and the MOSFET are activated by a HIGH signal on the GPIO4(D2) pin.</p>
-<p><strong>GPIO13(D7)</strong> - The green LED is activated by a HIGH signal on the GPIO13(D7) pin.</p>
-<p><strong>GPIO12(D6)</strong> - The momentary switch pulls the GPIO12(D6) to LOW.</p>
-<ul>
-<li><a href="https://www.espressif.com/sites/default/files/documentation/0a-esp8285_datasheet_en.pdf">https://www.espressif.com/sites/default/files/documentation/0a-esp8285_datasheet_en.pdf</a></li>
-</ul>
-<h2>Setup and Upload</h2>
-<p>The ESP8285 modules are supported as Generic ESP8285 Modules by the Arduino environment and can use the 2MByte flash size with 1MByte filesystem.</p>
-<p>The full standard example can be flashed.</p>
-<h2>Flashing the first time</h2>
-<p>As there is no USB bridge available a external USB adapter has to be used for flashing the firmware for the first time.</p>
-<p>I manages this by attaching the 5 signals GND, 3V3, TX and RX to a USB-Serial adapter. The GPIO0 must be pulled to GND while powering up the board.</p>
-<p>After flashing a first firmware the OTA Update can be used.</p>
+    <h1>Pages marked with a WIP tag</h1>
 
+    
+      
+      <div class="plaincard">
+    
+    These pages contain information that relates to the boards with the ESP8266 or ESP32 processor.
+</div>
+      
+    <p><a href="/elements/dcftime.htm">DCFTime Element</a> -- The DCFtimeElement allows receiving the DCF77 signal that is available in central Europe broadcasting the official central European time.
+<p><a href="/elements/dmx.htm">DMX Element</a> -- <p><a href="/elements/digitalsequence.htm">Digital Sequence Element</a> -- The digital sequence Element is used internally for several elements that need to analyze timing sequences and digital signals.
+<p><a href="/elements/displaybar.htm">DisplayBar Element</a> -- The DisplayBarElement allows sending a progress indicating value to the display to display it at a specified position as a bar or percentage number. The value can be changed by using an action.
+<p><a href="/elements/map.htm">Map Element</a> -- The MapElement creates actions based on an in-bound value and range definitions.
+<p><a href="/elements/radio.htm">Radio Element</a> -- The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.
+<p><a href="/elements/webbutton.htm">WebButton Element</a> -- The WebButton Element allows sending actions directly from the web UI without a corresponding active element in the device.
+<p><a href="/elements/wot.htm">WoT Element</a> -- The Element enables ...
+
+
+    
   </main>
 
   <script>

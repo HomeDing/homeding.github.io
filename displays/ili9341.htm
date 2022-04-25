@@ -40,32 +40,16 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>Displays using GFX Library by Adafruit</h1>
-<p>The display drivers for pixel based displays in the HomeDing Library
-are using drivers based on the GFX library from AdaFruit,
-providing common functionality to output graphic primitives and text.</p>
-<p>This was optimized in version 0.8.1 of the library to enable using the same resources like fonts
-for many different displays and saving overall program space.</p>
-<h2>GFX Library</h2>
-<p>The functionality of the GFX library is used to &quot;draw&quot; all kind of things to the displays.</p>
-<p>On top of this library the display driver chip specific libraries are implemented and provide
-(not so much unified) functionalities that are display specific.</p>
-<p>The Display Item Elements like text, dots, bars, lines are used to specify <strong>what</strong> is drawn.
-They also call the &quot;flush&quot; function at the end of any drawing to enable shifting out the drawn pixels to the display
-for all displays that use a buffred approach.</p>
-<p>The documentation of this library can be found at <a href="https://learn.adafruit.com/adafruit-gfx-graphics-library">https://learn.adafruit.com/adafruit-gfx-graphics-library</a>.</p>
-<h2>GFX Canvas Usage</h2>
-<p>Some displays use no original AdaFruit library but are using the Canvas support of the library.
-A buffer is allocated in main memory representing the pixels and the flush function
-will send all of them to the display.</p>
-<p>See DisplayAdapterMAX7219.</p>
-<p>All drawings are made in main memory</p>
-<p><a href="https://github.com/adafruit/Adafruit_EPD/blob/master/src/Adafruit_EPD.cpp">https://github.com/adafruit/Adafruit_EPD/blob/master/src/Adafruit_EPD.cpp</a></p>
-<h2>See also</h2>
+    <h1>ili9341 Display</h1>
+<h2>XPT2046  touch</h2>
 <ul>
-<li><a href="fonts.md">Fonts</a></li>
-<li><a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-gfx-graphics-library.pdf">https://cdn-learn.adafruit.com/downloads/pdf/adafruit-gfx-graphics-library.pdf</a></li>
+<li><a href="https://techtutorialsx.com/2021/01/31/esp32-ili9341-display-hello-world/#Wiring_the_ESP32_to_the_ILI9341">https://techtutorialsx.com/2021/01/31/esp32-ili9341-display-hello-world/#Wiring_the_ESP32_to_the_ILI9341</a></li>
 </ul>
+<p><a href="https://www.onetransistor.eu/2020/04/wifi-analyzer-esp8266-ili9341-lcd.html">https://www.onetransistor.eu/2020/04/wifi-analyzer-esp8266-ili9341-lcd.html</a></p>
+<p><a href="https://github.com/Bodmer/TFT_eSPI">https://github.com/Bodmer/TFT_eSPI</a></p>
+<p><a href="https://de.aliexpress.com/item/32991977705.html?spm=a2g0s.9042311.0.0.40694c4dNGLn2S">https://de.aliexpress.com/item/32991977705.html?spm=a2g0s.9042311.0.0.40694c4dNGLn2S</a></p>
+<p><a href="http://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218">http://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218</a>
+<a href="http://www.lcdwiki.com/3.2inch_16BIT_Module_ILI9341_SKU:MRB3205">http://www.lcdwiki.com/3.2inch_16BIT_Module_ILI9341_SKU:MRB3205</a></p>
 
   </main>
 

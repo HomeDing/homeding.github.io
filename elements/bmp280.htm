@@ -8,17 +8,23 @@
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Support of the BMP280 air temperature and barometric pressure sensor chips.'>
-  <title>The BMP280 Element</title>
+  <title>BMP280 Element</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
 </head>
 
 <body scroll="0" style="padding:0;">
-  <div class="u-header">
-    <a href="/" title="Startpage"><img class="icon" src="/i/default.svg" /></a>
-    <h1>HomeDing</h1>
-  </div>
-
   <div class="u-navbar" style="margin-bottom: 0;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
@@ -30,13 +36,20 @@
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-  <nav class="inpage x  open"></nav>
+
+  <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>The BMP280 Element</h1>
-<div class="iconcard"><svg class="icon"><use href="/icons.svg#bmp280"></use></svg><p>The BMP280 Element supports the BMP280 sensor chips for air temperature and air absolute barometric pressure.</p>
+    <h1>BMP280 Element</h1>
+
+    
+      
+      <div class="plaincard">
+    
+    The BMP280 Element supports the BMP280 sensor chips for air temperature and air absolute barometric pressure.
 </div>
-<p>Bosch is developing advanced integrated environmental chips sind several years. Some of them are available on breakout boards and can easily be used together with the ESP CPU chips.</p>
+      
+    <p>Bosch is developing advanced integrated environmental chips sind several years. Some of them are available on breakout boards and can easily be used together with the ESP CPU chips.</p>
 <ul>
 <li><a href="/elements/bmp280.htm">BMP280</a> (temp and pressure) in 2012</li>
 <li>BME280 (temp, humidity and pressure) in 2013</li>
@@ -97,6 +110,11 @@ I2C-SDA --------- SDA
 <h2>Tags</h2>
 <p>#element #sensor</p>
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/sensor.htm">Sensor</a></div>
+    
   </main>
 
   <script>

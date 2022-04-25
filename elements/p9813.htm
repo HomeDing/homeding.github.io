@@ -8,7 +8,6 @@
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-
   <title>P9813 Element</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -18,7 +17,6 @@
     padding: 0 4px;
     border-radius: 4px;
     }
-
   .gpio.yellow {background-color: #FF0;}
   .gpio.red {background-color: #F22; color:white}
   .gpio.black {background-color: #111; color:white}
@@ -45,8 +43,8 @@
     <h1>P9813 Element</h1>
 
     
-      
-      <div class="plaincard">
+    
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#light"></use></svg>
     
     The P9813Element implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.
 </div>
@@ -54,7 +52,6 @@
     <p><img src="/elements/p9813.jpg" alt="P9813 led controller board"></p>
 <p>There is a specific protocol required for this chip that packs 3 * 8 bits for red, green and blue into 4 bytes per pixel.
 Some information is sent twice in these 4 byes.</p>
-<!-- <span class="gpio red">pixel</span> -->
 <p>The 4 bytes per pixel are transferred in series over the data line in the interval defined by the clock line.
 There is no strict frequency required and implementation is not very complex to be implemented.</p>
 <p>When using multiple chips chained up in a row every chip can drive a whole RGB LED strip.</p>
@@ -81,34 +78,8 @@ The connectivity to the chip must be done using 2 pins:</p>
 <ul>
 <li>Datasheet: <a href="https://seeeddoc.github.io/Grove-Chainable_RGB_LED/res/P9813_datasheet.pdf">https://seeeddoc.github.io/Grove-Chainable_RGB_LED/res/P9813_datasheet.pdf</a></li>
 <li>Arduino Library: <a href="https://github.com/pjpmarques/ChainableLED">https://github.com/pjpmarques/ChainableLED</a></li>
+<li><a href="https://seeeddoc.github.io/Grove-Chainable_RGB_LED/">https://seeeddoc.github.io/Grove-Chainable_RGB_LED/</a></li>
 </ul>
-<p>One of these chips can</p>
-<ul>
-<li>
-<p><a href="https://seeeddoc.github.io/Grove-Chainable_RGB_LED/">https://seeeddoc.github.io/Grove-Chainable_RGB_LED/</a></p>
-</li>
-<li>
-<p><a href="https://github.com/Seeed-Studio/Grove_Chainable_RGB_LED">https://github.com/Seeed-Studio/Grove_Chainable_RGB_LED</a></p>
-</li>
-<li>
-<p><a href="https://nl.aliexpress.com/item/32722413600.html">https://nl.aliexpress.com/item/32722413600.html</a></p>
-</li>
-<li>
-<p><a href="https://www.robotshop.com/media/files/PDF/datasheet-com53140p.pdf">https://www.robotshop.com/media/files/PDF/datasheet-com53140p.pdf</a></p>
-</li>
-<li>
-<p><a href="https://github.com/Seeed-Studio/Grove_Chainable_RGB_LED/blob/master/ChainableLED.cpp">https://github.com/Seeed-Studio/Grove_Chainable_RGB_LED/blob/master/ChainableLED.cpp</a></p>
-</li>
-<li>
-<p><a href="https://gist.github.com/sodabrew/2655292">https://gist.github.com/sodabrew/2655292</a></p>
-</li>
-<li>
-<p><a href="https://wiki.seeedstudio.com/Grove-LED_Strip_Driver/">https://wiki.seeedstudio.com/Grove-LED_Strip_Driver/</a></p>
-</li>
-</ul>
-<p>Others:</p>
-<p>PCA9685
-TLC5947</p>
 
 
     
