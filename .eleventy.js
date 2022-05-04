@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add(".vscode/**");
 
   const contentFolders = ["boards", "boards/esp32", "concepts", "dev", "displays", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
-  const assetFolders = ["i", "v02", "v02m", "v03", "v03m"];
+  const assetFolders = ["i", "v02", "v02m", "v03", "v03m", "home"];
 
   contentFolders.forEach(f => {
     eleventyConfig.addPassthroughCopy(f + "/*.svg");
@@ -37,6 +37,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./robots.txt");
   eleventyConfig.addPassthroughCopy("./favicon*.*");
   eleventyConfig.addPassthroughCopy("./pages.js");
+  eleventyConfig.addPassthroughCopy("./story.js");
   eleventyConfig.addPassthroughCopy("./microsvg.js");
   eleventyConfig.addPassthroughCopy("./elementsvg.js");
   eleventyConfig.addPassthroughCopy("./element*.json");
