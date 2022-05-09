@@ -167,8 +167,8 @@ displayTextElement
 DMX
 doubleclick
 down
-ds18b20
-ds18b20Element
+dallas
+dallasElement
 dstime
 dstimeelement
 dualLDR

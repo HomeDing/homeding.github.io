@@ -31,7 +31,7 @@ This is the list of the icons available for the HomeDing Library to be used for 
 | displayssd1306 | <svg class="icon small"><use href="./icons.svg#displayssd1306" /></svg> |
 | displaytext    | <svg class="icon small"><use href="./icons.svg#displaytext" /></svg>    |
 | door           | <svg class="icon small"><use href="./icons.svg#door" /></svg>           |
-| ds18b20        | <svg class="icon small"><use href="./icons.svg#ds18b20" /></svg>        |
+| dallas         | <svg class="icon small"><use href="./icons.svg#dallas" /></svg>         |
 | dstime         | <svg class="icon small"><use href="./icons.svg#dstime" /></svg>         |
 | edit           | <svg class="icon small"><use href="./icons.svg#edit" /></svg>           |
 | element        | <svg class="icon small"><use href="./icons.svg#element" /></svg>        |

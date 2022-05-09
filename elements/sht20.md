@@ -7,7 +7,7 @@ excerpt: >
   The SHT2x sensors provide some high precision temperature and humidity sensors that communicate on the I2C bus.
 ---
 
-In contrast to other sensors like [DHT20](/elements/dht.md) and [Dallas](/elements/ds18b20.md) no proprietary protocol on the wire is used but data is exchanged over I2C.
+In contrast to other sensors like [DHT20](/elements/dht.md) and [Dallas](/elements/dallas.md) no proprietary protocol on the wire is used as data is exchanged over I2C.
 
 There are different housings and boards for the sensor available.
 

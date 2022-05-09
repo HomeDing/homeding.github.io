@@ -1,7 +1,7 @@
 ---
 title: Sensor Element Implementation
 id: sensor
-tags: ["Element"]
+tags: ["Element", "Implementation"]
 layout: "page.njk"
 ---
 
@@ -14,7 +14,7 @@ On the board of the device in the Web UI the actual sensor values are shown as w
 
 The HomeDing library supports a collection of common sensor chips:
 
-* [DS18B20 Element](/elements/ds18b20.md) supports the DS18B20 aka. Dallas Temperature sensor.
+* [Dallas Element](/elements/dallas.md) supports the DS18B20 aka. Dallas Temperature sensor.
 * [DHT Element](/elements/dht.md) supports the DHT11, DHT22 and AM2302 temperature+humidity sensors.
 * [SHT20 Element](/elements/sht20.md) supports the SHT2x high precision temperature and humidity sensors.
 * [BMP280 Element](/elements/bmp280.md) supports the BMP280 temperature and absolute barometric pressure sensor.
@@ -73,7 +73,3 @@ The data returned by the `GetProbe()` function will be compared against the last
 When data from the sensor has not changed it may be necessary to trigger the actions from time to tome e.g. to inform remote elements about the actual values.
 
 By specifying the `resendtime` property the resent values are sent even when not changed. 
-
-
-## Tags
-#implementation

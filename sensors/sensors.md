@@ -270,12 +270,12 @@ The special [PMS Element](/elements/pms.md) supports this sensor using a serial 
 :::
 
 
-:::sensor ds18b20
-This **DS18B20** sensor also known as **Dallas Temperature sensors** measures the surrounding air temperature. There are also sensors with the same chip for measuring liquid temperatures.
+:::sensor dallas
+This **Dallas** sensor also known as **Dallas Temperature sensors** measures the surrounding air temperature. There are also sensors with the same chip for measuring liquid temperatures.
 
-A very special wire protocol is used for data transmission and multiple sensors can share the same signal bus.
+A very special `OneWire` protocol is used for data transmission and multiple sensors can share the same signal bus.
 
-The special [DS18B20 Element](/elements/ds18b20.md) supports this sensor.
+The special [Dallas Element](/elements/dallas.md) supports this sensor.
 :::
 
 

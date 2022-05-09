@@ -40,9 +40,8 @@ some common implementation to allow gathering values on a regular basis and upda
 Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.
 :::
 
-:::element ds18b20 ds18b20
-The DS18B20Element retrieves temperature values from DS18B20 aka.
-Dallas Temperature sensors and creates actions.
+:::element dallas dallas
+{% excerptOf collections.Element, "dallas" %}
 :::
 
 :::element bme680 bme680
@@ -337,29 +336,6 @@ to configure and use various FM radio boards.
 
 This element is part of the [Radio Example](/examples/radio.md).
 :::
-
-
-## Required external libraries
-
-| Library used                                        | Elements effected                                                                 |
-| --------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [Adafruit NeoPixel]                                 | [Neo](/elements/neo.md)                                                           |
-| [LiquidCrystal_PCF8574]                             | [LCD display](/elements/lcd.md)                                                   |
-| [ESP8266 and ESP32 Oled Driver for SSD1306 display] | [SSD1306 display](/elements/ssd1306.md) and [SH1106 display](/elements/sh1106.md) |
-| [RotaryEncoder]                                     | [Rotary Element](/elements/rotary.md)                                              |
-| [DHT sensor library for ESPx]                       | [DHT Element](/elements/dht.md)                                                    |
-| [OneWire]                                           | [DS18B20 Element](/elements/ds18b20.md)                                            |
-
-<!-- + Wire + SoftwareSerial -->
-
-[Adafruit NeoPixel]: https://github.com/adafruit/Adafruit_NeoPixel
-[LiquidCrystal_PCF8574]: https://github.com/mathertel/LiquidCrystal_PCF8574
-[ESP8266 and ESP32 Oled Driver for SSD1306 display]: https://github.com/ThingPulse/esp8266-oled-ssd1306
-[RotaryEncoder]: https://github.com/mathertel/RotaryEncoder
-[DHT sensor library for ESPx]: https://github.com/beegee-tokyo/DHTesp
-[OneWire]: https://www.arduino.cc/reference/en/libraries/onewire/
-
-<!-- [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library" -->
 
 
 ## See also

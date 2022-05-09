@@ -1,23 +1,19 @@
 ---
-title: DS18B20 Element
-id: ds18b20
-tags: ["Element"]
-description: Support of the DS18B20 based sensors.
+title: Dallas Element
+id: Dallas
+tags: ["Element", "Sensor"]
+layout: "page.njk"
+description: Support of the Dallas / DS18B20 based sensors.
 excerpt: >
-  The DS18B20Element allows retrieving temperature values from DS18B20 aka. Dallas Temperature sensors
+  The DallasElement allows retrieving temperature values from DS18B20 aka. Dallas Temperature sensors
   and creates actions when new values are available.
 ---
 
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
-
-![DS18B20 pins](/elements/ds18b20pins.jpg)
+![Dallas pins](/elements/dallaspins.jpg)
 
 The DS18B20 is a temperature sensor most often in a simple to-92 housing like a transistor.
-Other forms and types are also available including those that can be in contact with water or other liquids without getting damaged.
+Other forms and types are also available including those that can be in contact with water
+or other liquids without getting damaged.
 
 The data transmission is using 1 wire only (the OneWire protocol).
 In addition to the sensor a 4.7k resistor is required to pull up the data line.
@@ -27,23 +23,25 @@ There have been older versions of this chip like DS1820 and DS18S20 and less acc
 See information in the links to application notes below.
 
 
-<!-- ## Web UI for the DS18B20 Element
+## Web UI for the DS18B20 Element
 
 There is a dedicated card for this element available that shows the actual temperature.
-![DS18B20 Sensor UI](/elements/DS18B20ui.png) -->
+
+![Dallas Sensor UI](/elements/dallasui.png)
 
 
-## Using the DS18B20 Element
+## Using the Dallas Element
 
-The DS18B20 Element is not part of the core set of elements because the low level communication to the chips the `OneWire` library is used and needs to be installed using the Arduino library manager.
+The Dallas Element is not part of the core set of elements because the low level communication to the chips the `OneWire` library is used and needs to be installed using the Arduino library manager.
 
-Install the `DHT sensor library for ESPx` library by beegee-tokyo before including this element.
+The `OneWire`and the `DallasTemperature` library is required by this element
+and installed as dependency when installing the library.
 
-The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and register the element.
+The ``HOMEDING_INCLUDE_DALLAS`` must be defined in the main sketch to compile and register the element.
 
 ``` cpp
 // Use some more Elements that need additional libraries
-#define HOMEDING_INCLUDE_DHT
+#define HOMEDING_INCLUDE_DALLAS
 #include <HomeDing.h>
 ```
 
@@ -54,12 +52,6 @@ The Sensor can be driven by using the GND and 3.3 VCC from the processor board a
 
 In addition to the sensor a 4.7k resistor is required to pull up the data line.
 
-    ESP8266 board     DS18B22
-    GND ------------- (1) GND
-    GPIO2(D4) ------- (2) Data
-    3.3v ------------ (3) VCC
-    
-
 | ESP8266   | DS18B22 | Description                      |
 | --------- | :------ | -------------------------------- |
 | GND       | 1 GND   | Ground                           |
@@ -69,27 +61,27 @@ In addition to the sensor a 4.7k resistor is required to pull up the data line.
 
 ## Element Configuration
 
-<object data="/element.svg?ds18b20" type="image/svg+xml"></object>
+<object data="/element.svg?dallas" type="image/svg+xml"></object>
 
 The following properties are available for configuration of the element:
 
-**pin**\* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
+> **pin**\* - Specifies the hardware number of the pin that is used to connect the Dallas sensor for data.
+>
+> **onTemperature** - These actions are emitted by the element when the temperature gets a new value.
+> The action will not be sent when reading ne sensor values that stay the same.
 
-**readTime** - Time between 2 probes for temperature and humidity being fetched from the sensor. Default value is 1m.
+{% include "./sensorproperties.md" %}
 
-**resendTime** - The current values of the probe are resent after this specified time even when not changing.
-
-**onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading ne sensor values that stay the same.
+{% include "./elementproperties.md" %}
 
 \* This parameter must be specified.
-
 
 ### Configuration Example
 
 
 ``` json
 {
-  "ds18b20": {
+  "dallas": {
     "on": {
       "pin": "D4",
       "readtime": "30s",
@@ -113,7 +105,7 @@ The following properties are available with the current values at runtime
 
 ``` json
 {
-  "ds18b20/on": {
+  "dallas/on": {
     "active":"true",
     "temperature":"27.30"
   }
@@ -132,7 +124,3 @@ The following properties are available with the current values at runtime
 Notes from manufacturer:
 * https://www.maximintegrated.com/en/design/technical-documents/app-notes/4/4377.html
 * https://www.maximintegrated.com/en/design/technical-documents/app-notes/1/162.html
-
-
-## Tags
-#element #sensor

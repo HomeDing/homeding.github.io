@@ -69,12 +69,13 @@ This can be seen in all Example Sketches just before the `#include <HomeDing.h>`
 
 // Use some more Elements that need additional libraries
 #define HOMEDING_INCLUDE_DHT
-#define HOMEDING_INCLUDE_DS18B20
+#define HOMEDING_INCLUDE_DALLAS
 
 #include <HomeDing.h>
 ```
 
-This configuration will include all the core Elements and the individual Element for reading DHT and DS18B20 sensors.
+This configuration will include all the core Elements and the individual Element
+for reading DHT and DS18B20 (aka Dallas)  sensors.
 
 ## Build a new Element for your local usage
 
