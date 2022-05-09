@@ -66,8 +66,7 @@
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.</p>
 <div class="iconcard"><a href="/elements/dht.htm"><svg class="icon"><use href="/icons.svg#dht"></use></svg><h3>dht</h3></a><p>Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.</p>
 </div>
-<div class="iconcard"><a href="/elements/ds18b20.htm"><svg class="icon"><use href="/icons.svg#ds18b20"></use></svg><h3>ds18b20</h3></a><p>The DS18B20Element retrieves temperature values from DS18B20 aka.
-Dallas Temperature sensors and creates actions.</p>
+<div class="iconcard"><a href="/elements/dallas.htm"><svg class="icon"><use href="/icons.svg#dallas"></use></svg><h3>dallas</h3></a><p>The DallasElement allows retrieving temperature values from DS18B20 aka. Dallas Temperature sensors and creates actions when new values are available.</p>
 </div>
 <div class="iconcard"><a href="/elements/bme680.htm"><svg class="icon"><use href="/icons.svg#bme680"></use></svg><h3>bme680</h3></a><p>The BME680Element implements reading the 4 sensor values from a BME680 environment air sensor chip. This sensor can capture temperature, humidity, air pressure and air resistance.</p>
 </div>
@@ -219,43 +218,6 @@ These implementations are still experimental cases but are published already may
 to configure and use various FM radio boards.</p>
 <p>This element is part of the <a href="/examples/radio.htm">Radio Example</a>.</p>
 </div>
-<h2>Required external libraries</h2>
-<table>
-<thead>
-<tr>
-<th>Library used</th>
-<th>Elements effected</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/adafruit/Adafruit_NeoPixel">Adafruit NeoPixel</a></td>
-<td><a href="/elements/neo.htm">Neo</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/mathertel/LiquidCrystal_PCF8574">LiquidCrystal_PCF8574</a></td>
-<td><a href="/elements/lcd.htm">LCD display</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/ThingPulse/esp8266-oled-ssd1306">ESP8266 and ESP32 Oled Driver for SSD1306 display</a></td>
-<td><a href="/elements/ssd1306.htm">SSD1306 display</a> and <a href="/elements/sh1106.htm">SH1106 display</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/mathertel/RotaryEncoder">RotaryEncoder</a></td>
-<td><a href="/elements/rotary.htm">Rotary Element</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/beegee-tokyo/DHTesp">DHT sensor library for ESPx</a></td>
-<td><a href="/elements/dht.htm">DHT Element</a></td>
-</tr>
-<tr>
-<td><a href="https://www.arduino.cc/reference/en/libraries/onewire/">OneWire</a></td>
-<td><a href="/elements/ds18b20.htm">DS18B20 Element</a></td>
-</tr>
-</tbody>
-</table>
-<!-- + Wire + SoftwareSerial -->
-<!-- [TabRF]: https://github.com/mathertel/tabrf "Table driven RF library" -->
 <h2>See also</h2>
 <ul>
 <li><a href="/dev/elementclass.htm">Element</a></li>
