@@ -52,11 +52,11 @@ The Sensor can be driven by using the GND and 3.3 VCC from the processor board a
 
 In addition to the sensor a 4.7k resistor is required to pull up the data line.
 
-| ESP8266   | DS18B22 | Description                      |
-| --------- | :------ | -------------------------------- |
-| GND       | 1 GND   | Ground                           |
-| GPIO2(D4) | 2 Data  | Data  with 4.7 K Resistor to VCC |
-| 3.3v      | 3 VCC   | Power Supply                     |
+| ESP8266   | ESP32 | DS18B22 | Description                      |
+| --------- | ----- | :------ | -------------------------------- |
+| GND       | GND   | 1 GND   | Ground                           |
+| GPIO2(D4) | IO32  | 2 Data  | Data  with 4.7 K Resistor to VCC |
+| 3.3v      | 3.3v  | 3 VCC   | Power Supply                     |
 
 
 ## Element Configuration
@@ -84,7 +84,7 @@ The following properties are available for configuration of the element:
   "dallas": {
     "on": {
       "pin": "D4",
-      "readtime": "30s",
+      "readtime": "10s",
       "resendtime": "60s",
       "ontemperature": "displaytext/temp?value=$v"
     }

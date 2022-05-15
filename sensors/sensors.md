@@ -79,6 +79,7 @@ This is an UV-index sensor.
 <!-- 
 :::sensor BH1750
 t.b.d. i2c bus enables sensor for light.
+[BH1750 Element](/elements/bh1750.md)
 :::
  -->
 
