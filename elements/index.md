@@ -132,6 +132,12 @@ The [P9813 Element](/elements/p9813.md) implements the protocol to control the P
 :::
 
 
+:::element BH1750 default
+This is a light sensor probong for the intensity of light in lumen.
+[BH1750 Element](/elements/bh1750.md)
+:::
+
+
 ## Logic and Calculation Elements
 
 Logic elements implement using on/off values expressed as 1/0 values. 

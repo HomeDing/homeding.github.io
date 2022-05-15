@@ -76,12 +76,10 @@ This is an UV-index sensor.
 :::
  -->
 
-<!-- 
-:::sensor BH1750
-t.b.d. i2c bus enables sensor for light.
+:::sensor no BH1750
+This is a light sensor probong for the intensity of light in lumen.
 [BH1750 Element](/elements/bh1750.md)
 :::
- -->
 
 :::sensor linetrack
 This is a **light reflection sensor** using a identify reflecting (white) or non-reflecting (black) surfaces. There is a IR transmitting diode and a IR receiving diode producing a digital output signal.
