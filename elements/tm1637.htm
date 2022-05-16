@@ -44,32 +44,45 @@
     <h1>TM1637 Element</h1>
 
     
-      
+    
       <div class="plaincard">
     
     The TM1637 is a chip that allows using 7-segment displays up to 6 digits.
 </div>
       
     <p><img src="/elements/tm1637.jpg" alt="TM1637 based display"></p>
-<p>There are many different TM1637 based displays on the market and some also include input. This Element supports displays with 4-digits that can display time as it has colon leds in the middle. The decimal dots (when existing) are not wired and cannot be used.</p>
+<p>There are many different TM1637 based displays on the market and some also include input.
+This Element supports displays with 4-digits that can display time as it has colon leds in the middle.
+The decimal dots (when existing) are not wired and cannot be used.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?tm1637" type="image/svg+xml"></object></p>
+<blockquote>
 <p><strong>value</strong> - The displayed value.
 This can be used to initialize the display until a valid value is passed by a value-action.</p>
 <p><strong>brightness</strong> - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..8. The default is 2.</p>
 <p><strong>clockpin</strong> - Specifies the output pin that is used for the clock signal to the chip.</p>
 <p><strong>datapin</strong> - Specifies the output pin that is used for the data signal to the chip.</p>
 <p><strong>enabled</strong> - to enable / disable the light without loosing the current value and brightness.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h3>Configuration Example</h3>
-<p><strong>ESP8266</strong></p>
+<p>A configuration for a <strong>ESP8266</strong> based board can use the GPIO pins D6 and D7:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<p><strong>ESP32</strong></p>
+<p>A configuration for a <strong>ESP32</strong> based board can use the GPIO pins 25 and 26:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"26"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"25"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
-<p>The following properties are available with the current values at runtime</p>
+<p>The following properties are available with the current values at runtime:</p>
+<blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
+</blockquote>
 <h3>Example State</h3>
 <p>The internal value can be seen in the rotary state but should not directly be used as a value.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"my9291/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"11:55"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>

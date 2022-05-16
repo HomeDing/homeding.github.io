@@ -47,7 +47,7 @@
       
     <p><a href="/elements/add.htm">ADD Element</a> -- The ADD Element sums up multiple input values to create a single output value.<p><a href="/elements/and.htm">AND Element</a> -- The AND Element combines multiple logic input values to a single output value. The output value will be true only when all input values are true.
 <p><a href="/elements/alarm.htm">Alarm Element</a> -- The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.<p><a href="/elements/analog.htm">Analog Element</a> -- The AnalogElement is used to capture the voltage level from the Analog Input pin with the integrated ADC and to emit corresponding events. It also handles some of the often occurring problems around capturing analog values.
-<p><a href="/elements/bh1750.htm">BH1750 Element</a> -- The BH1750Element allows retrieving the environment light intensity from BH1750 based sensors using the i2c bus for communication
+<p><a href="/elements/bh1750.htm">BH1750 Element</a> -- The BH1750Element allows retrieving the environment light intensity from BH1750 Ambient Light based sensors using the i2c bus for communication
 <p><a href="/elements/bl0937.htm">BL0937 Element</a> -- The BL0937Element has been implemented to support single phase energy monitoring using BL0937, HLW8012 or HJL-01 chips that are used in some retail plugs and switches.
 <p><a href="/elements/bme680.htm">BME680 Element</a> -- The BME680Element implements reading the 4 sensor values from a BME680 environment air sensor chip. This sensor can capture temperature, humidity, air pressure and air resistance.
 <p><a href="/elements/bmp280.htm">BMP280 Element</a> -- The BMP280 Element supports the BMP280 sensor chips for air temperature and air absolute barometric pressure.
@@ -63,7 +63,7 @@
 <p><a href="/elements/digitalsequence.htm">Digital Sequence Element</a> -- The digital sequence Element is used internally for several elements that need to analyze timing sequences and digital signals.
 <p><a href="/elements/digitalsignal.htm">Digital Signal Element</a> -- The DigitalSignalElement is used to handle digital input with short time level changes that might be missed when using the [DigitalInput Element](/elements/digitalin.md). On a changing input a pulse value is created with a defined duration.
 <p><a href="/displays/config.htm">Display Configuration</a> -- The displays in the HomeDing library are configured by a unified set of parameters.
-<p><a href="/elements/lcd.htm">Display LCD Element</a> -- The Display Configuration for Monochrome LCDs based on HD44780 chips.
+<p><a href="/displays/lcd.htm">Display LCD Element</a> -- The Display Configuration for Monochrome LCDs based on HD44780 chips.
 <p><a href="/elements/sh1106.htm">Display SH1106 Element</a> -- The DisplaySH1106 Element allows connecting a pixel based OLED display based on a SH1106 chip.
 <p><a href="/elements/ssd1306.htm">Display SSD1306 Element</a> -- The DisplaySSD1306 Element allows connecting a pixel based OLED display based on a SSD1306 chip.
 <p><a href="/elements/ssd1309.htm">Display SSD1309 Element</a> -- The DisplaySSD1309 Element allows connecting a pixel based OLED display based on a SSD1309 chip.
@@ -76,7 +76,7 @@
 <p><a href="/elements/ina226.htm">INA226 Element</a> -- The INA226 is a current and voltage sensor that uses the I2C bus for communication that can measure voltages up to 26V on high-side or low-side and current in various ranges .
 <p><a href="/elements/light.htm">Light Element</a> -- The LightElement is used to send a light value to GPIO output pins. It can also be used as a base class for other light elements using a specific chip or protocol.
 <p><a href="/elements/log.htm">Log Element</a> -- The LogElement enables storing timestamp based values e.g. from a sensor into a local file to be analyzed or displayed later by the Web UI.
-<p><a href="/elements/max7219.htm">MAX7219 Element</a> -- The MAX7219Element enables using a 8*8 dot display or a 8 digit 7-segment display by using a MAX7219 driver chip.
+<p><a href="/elements/max7219.htm">MAX7219 Element</a> -- The MAX7219Element enables using a single 8*8 dot display or a single 8 digit 7-segment display by using a MAX7219 driver chip. For dot matrix displays using multiple chips the DisplayMAX7219 Element offers full display support.
 <p><a href="/elements/mqtt.htm">MQTT Element</a> -- The MQTTElement enables publishing values to a MQTT Sever using the mqtt protocol.
 <p><a href="/elements/my9291.htm">MY9291 Element</a> -- The MY9291Element implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.
 <p><a href="/elements/map.htm">Map Element</a> -- The MapElement creates actions based on an in-bound value and range definitions.

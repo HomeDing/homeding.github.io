@@ -44,7 +44,7 @@
     <h1>Displays</h1>
 
     
-      
+    
       <div class="plaincard">
     
     The HomeDing library supports local displays attached via SPI and I2C bus to show values from the activated elements.
@@ -81,7 +81,7 @@ already come with an onboard and you can find configuration hints in the boards 
 <td></td>
 </tr>
 <tr>
-<td>[LiquidChrystal]</td>
+<td><a href="/displays/lcd.htm">Liquid Chrystal</a></td>
 <td>LCD</td>
 <td>8/16/20 chars in 2/4 lines</td>
 <td>character based display</td>
@@ -176,7 +176,7 @@ already come with an onboard and you can find configuration hints in the boards 
 </table>
 <h2>Simple displays</h2>
 <p>The simple displays use LEDs or 7-segment LEDs to show a value:</p>
-<div class="imgcard"><img src="/sensors/lcd.jpg"><p>The <a href="/elements/lcd.htm">Liquid Chrystal</a> displays based on the HD44780 chip are common in the Arduino framework.</p>
+<div class="imgcard"><img src="/sensors/lcd.jpg"><p>The <a href="/displays/lcd.htm">Liquid Chrystal</a> displays based on the HD44780 chip are common in the Arduino framework.</p>
 <p>To control them a I2C adapter with a PCF8574 chip must be used as the ESP8266 / ESP32 has not enough GPIOs to control it directly.</p>
 </div>
 <div class="imgcard"><img src="/sensors/max7219.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
@@ -200,8 +200,8 @@ using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 </div>
 <h2>Pixel Based Color Displays</h2>
 <div class="imgcard"><a href="/displays/st7789.htm"><img src="/displays/colorlcd.jpg"></a>
-<p>Colorful displays are supported by the <code>color</code> configuration on the display elements.</p>
-<p>The <a href="/displays/st7789.htm">DisplayST7789Element</a> supports the driver chips: <a href="/displays/st7789.htm">ST7789</a>.</p>
+<p>Colorful displays are supported by the <code>color</code> configuration on the display elements.
+The <a href="/displays/st7789.htm">DisplayST7789Element</a> supports the driver chips: <a href="/displays/st7789.htm">ST7789</a>.</p>
 </div>
 <!-- - SSD 1331 (in planning) -->
   <!-- * ssd1322 OLED 480*128 -->

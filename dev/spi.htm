@@ -44,7 +44,7 @@
     <h1>Using the SPI bus</h1>
 
     
-      
+    
       <div class="plaincard">
     
     The SPI bus is used by components that require fast communication like displays and memory. A central configuration is supported on the device level.
@@ -88,12 +88,12 @@ and cannot be used to connect to SPI clients other than memory.</p>
 <p>When using the standard <code>SPI</code> Arduino implementation on the ESP8266 these lines are used.
 However each slave device must use it's own chip select (CS) line.</p>
 <h2>Using standard SPI pins on ESP32</h2>
-<p>There are 4 supported SPI interfaces within the ESP32.</p>
+<p>There are 4 hardware supported SPI interfaces within the ESP32 partly used for special functionality.</p>
 <p>The &quot;SPI0&quot; and &quot;SPI1&quot; are used to communicate with the flash memory. It is using multiple data lines
 and cannot be used to connect to SPI clients other than memory.</p>
-<p>The &quot;SPI2&quot; and &quot;SPI3&quot; can be used as general purpose SPI interfaces also called VSPI and HSPI.</p>
-<p><strong>VSPI</strong></p>
-<p>This SPI is used by the standard Arduino SPI.</p>
+<p>The &quot;SPI2&quot; and &quot;SPI3&quot; can be used as general purpose SPI interfaces also called <code>VSPI</code> and <code>HSPI</code>.</p>
+<h3>The VSPI interface</h3>
+<p>This SPI is used by the standard Arduino SPI implementation.</p>
 <table>
 <thead>
 <tr>
@@ -116,13 +116,13 @@ and cannot be used to connect to SPI clients other than memory.</p>
 </tr>
 <tr>
 <td>GPIO05</td>
-<td>CS</td>
+<td>CS (example)</td>
 </tr>
 </tbody>
 </table>
 <p>The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
 Each slave device must use it's own chip select (CS) line.</p>
-<p><strong>HSPI</strong></p>
+<h3>The HSPI interface</h3>
 <p>This SPI is used as an alternative SPI interface often used for SD Cards.</p>
 <table>
 <thead>
@@ -146,7 +146,7 @@ Each slave device must use it's own chip select (CS) line.</p>
 </tr>
 <tr>
 <td>GPIO15</td>
-<td>CS</td>
+<td>CS (example)</td>
 </tr>
 </tbody>
 </table>

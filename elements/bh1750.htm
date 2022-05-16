@@ -44,10 +44,10 @@
     <h1>BH1750 Element</h1>
 
     
-      
+    
       <div class="plaincard">
     
-    The BH1750Element allows retrieving the environment light intensity from BH1750 based sensors using the i2c bus for communication
+    The BH1750Element allows retrieving the environment light intensity from BH1750 Ambient Light based sensors using the i2c bus for communication
 </div>
       
     <p>From the values of the sensor the lightness in lumen (lx) can directly be calculated as the sensor delivers a linear equivalence.</p>
@@ -84,13 +84,20 @@ The default time is set to 3 seconds.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
-<!--
-### Configuration Example
-
-
-## See also
-
--->
+<h3>Configuration Example</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">}</span><br>  <span class="token property">"bh1750"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"daylight"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x23"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>State</h2>
+<p>The following properties are available with the current values at runtime:</p>
+<blockquote>
+<p><strong>active</strong> - Is set to true when the element is active.</p>
+<p><strong>value</strong> - The current sensor value.</p>
+</blockquote>
+<h3>Example State</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bh1750/new"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"705.6"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="https://randomnerdtutorials.com/esp8266-nodemcu-bh1750-ambient-light-sensor/">https://randomnerdtutorials.com/esp8266-nodemcu-bh1750-ambient-light-sensor/</a></li>
+</ul>
 
 
     

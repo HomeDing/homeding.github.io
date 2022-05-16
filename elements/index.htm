@@ -44,7 +44,7 @@
     <h1>Elements Overview</h1>
 
     
-      
+    
       <div class="plaincard">
     
     These Elements are implemented in the HomeDing library.</div>
@@ -113,6 +113,7 @@ the <a href="/elements/color.htm">Color Element</a> can be used to control the l
 </div>
 <div class="iconcard"><a href="/elements/p9813.htm"><svg class="icon"><use href="/icons.svg#led"></use></svg><h3>p9813</h3></a><p>The <a href="/elements/p9813.htm">P9813 Element</a> implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.</p>
 </div>
+<h2>Light Sensors</h2>
 <div class="iconcard"><a href="/elements/BH1750.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>BH1750</h3></a><p>This is a light sensor probong for the intensity of light in lumen.
 <a href="/elements/bh1750.htm">BH1750 Element</a></p>
 </div>
@@ -144,9 +145,15 @@ The outgoing value is HIGH(1) when one of the given input values is not LOW(0).<
 </div>
 <div class="iconcard"><a href="/elements/displaysh1106.htm"><svg class="icon"><use href="/icons.svg#displaysh1106"></use></svg><h3>displaysh1106</h3></a><p>The <a href="/elements/sh1106.htm">DisplaySH1106 Element</a> configures the display adapter for using SH1106 compatible OLED displays with 128*32 or 128*64 dots.</p>
 </div>
-<div class="iconcard"><a href="/elements/displaylcd.htm"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><h3>displaylcd</h3></a><p>The <a href="/elements/lcd.htm">DisplayLCD Element</a> configures the display adapter for using HD44780 compatible LCDs displays using I2C.</p>
+<div class="iconcard"><a href="/displays/lcd.htm"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg></a>
+<a href="/displays/lcd.htm"><h3>displaylcd</h3></a>
+<p>The <a href="/displays/lcd.htm">DisplayLCD Element</a> configures the display adapter for using HD44780 compatible LCDs displays using I2C.</p>
 </div>
-<div style="clear:both"></div>
+<div class="imgcard"><a href="/displays/max7219.htm"><img src="/displays/max7219.jpg"></a>
+<h3><a href="/displays/max7219.htm">DisplayMAX7219</a></h3>
+<p>The <a href="/displays/max7219.htm">DisplayMAX7219 Element</a> uses LED matrixes as displays
+using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
+</div>
 <p>On the displays several Elements can be used to display data, text and visuals:</p>
 <div class="iconcard"><a href="/elements/displaytext.htm"><svg class="icon"><use href="/icons.svg#displaytext"></use></svg><h3>displaytext</h3></a><p>The <a href="/elements/displaytext.htm">DisplayText Element</a> show values as text on the display.</p>
 </div>
@@ -156,8 +163,13 @@ The outgoing value is HIGH(1) when one of the given input values is not LOW(0).<
 </div>
 <div class="iconcard"><a href="/elements/displayline.htm"><svg class="icon"><use href="/icons.svg#displayline"></use></svg><h3>displayline</h3></a><p>The <a href="/elements/displayline.htm">DisplayLine Element</a> shows a line on the display.</p>
 </div>
-<div style="clear:both"></div>
 <p>More detailed information on displays and related elements can be found in <a href="/displays/index.htm">displays</a></p>
+<h2>One Value Display Elements</h2>
+<p>These Elements can be used to display a single value.</p>
+<div class="iconcard"><a href="/elements/max7219.htm"><svg class="icon"><use href="/icons.svg#max7219"></use></svg><h3>max7219</h3></a><p>The DisplayMAX7219 Element allows connecting  LED matrix based displays based on MAX7219 controller chips.</p>
+</div>
+<div class="iconcard"><a href="/elements/tm1637.htm"><svg class="icon"><use href="/icons.svg#tm1637"></use></svg><h3>tm1637</h3></a><p>The TM1637 is a chip that allows using 7-segment displays up to 6 digits.</p>
+</div>
 <h2>Time related Elements</h2>
 <div class="iconcard"><a href="/elements/time.htm"><svg class="icon"><use href="/icons.svg#dstime"></use></svg><h3>time</h3></a><p>The <a href="/elements/time.htm">Time Element</a> sends actions with the actual local time.</p>
 </div>
