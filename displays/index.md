@@ -28,7 +28,7 @@ already come with an onboard and you can find configuration hints in the boards 
 | Driver Chip             | Technology | Dimensions                  | Remarks                 |
 | ----------------------- | ---------- | --------------------------- | ----------------------- |
 | **Simple displays**     |            |                             |                         |
-| [LiquidChrystal]        | LCD        | 8/16/20 chars in 2/4 lines  | character based display |
+| [Liquid Chrystal]       | LCD        | 8/16/20 chars in 2/4 lines  | character based display |
 | [MAX7219]               | LED        | 8\*8 LED matrix modules     |                         |
 | [MAX7219]               | LED        | 8\*7 segment LEDs           |                         |
 | [TM1637]                | LED        | up to 6 7-segment LEDs      |                         |
@@ -87,21 +87,16 @@ Supported are the driver chips: [SH1106], [SSD1306], [SSD1309]
 :::
 
 {% imgcard "/displays/max7219.jpg", "/displays/max7219.htm" %}
-
-The [DisplayMAX7219Element](/displays/max7219.md) uses LED matrixes as displays
-using the MAX7219 chip that can chain multiple 8x8 led displays.
-
+  The [DisplayMAX7219Element](/displays/max7219.md) uses LED matrixes as displays
+  using the MAX7219 chip that can chain multiple 8x8 led displays.
 {% endimgcard %}
 
 
 ## Pixel Based Color Displays
 
 {% imgcard "/displays/colorlcd.jpg", "/displays/st7789.htm" %}
-
-Colorful displays are supported by the `color` configuration on the display elements.
-
-The [DisplayST7789Element](/displays/st7789.md) supports the driver chips: [ST7789].
-
+  Colorful displays are supported by the `color` configuration on the display elements.
+  The [DisplayST7789Element](/displays/st7789.md) supports the driver chips: [ST7789].
 {% endimgcard %}
 
 
@@ -160,7 +155,7 @@ On startup, when a flexible display is configured some system information is dis
 
 * [Using the I2C bus](/dev/i2c.md)
 
-[liquid chrystal]: /elements/lcd.md
+[liquid chrystal]: /displays/lcd.md
 [max7219]: /elements/max7219.md
 [displayMax7219]: /displays/max7219.md
 [tm1637]: /elements/tm1637.md

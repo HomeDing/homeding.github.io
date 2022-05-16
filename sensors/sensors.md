@@ -1,10 +1,11 @@
 ---
 title: Sensors and Actors
+layout: "page.njk"
+description: List of supported sensors.
+excerpt: >
+  This is a list of sensors, simple input and output components up to interface chips for various purposes
+  that show the wide range of possibilities supported by the HomeDing library.
 ---
-
-# {{title}}
-
-This is a list of sensors, simple input and output components up to interface chips for various purposes that show the wide range of possibilities supported by the HomeDing library.
 
 Many of the sensors offer simple digital or analog signals to be used by the generalized input and output [elements](/elements/index.md).
 
@@ -108,21 +109,21 @@ When used with high frequencies ans used tp detect rotating speed with a wheel t
 
 :::sensor hcsr505
 This is a **Mini PIR Sensor** that creates a digital signal when detecting movements initiated by "warm" objects.
-It produces a about 10 seconds HIGH level signal. 
+It produces a about 10 seconds HIGH level signal.
 
 The [DigitalInput Element](/elements/digitalin.md) can create actions based in the input signal.
 :::
 
 
 :::sensor no hcsr501
-hcsr501 - This is a **PIR Sensor** that creates a digital signal when detecting movements initiated by detecting "warm" objects. It produces a HIGH level signal. Signal length and sensitivity can be adjusted. 
+hcsr501 - This is a **PIR Sensor** that creates a digital signal when detecting movements initiated by detecting "warm" objects. It produces a HIGH level signal. Signal length and sensitivity can be adjusted.
 
 The [DigitalInput Element](/elements/digitalin.md) can create actions based in the input signal.
 :::
 
 
 :::sensor flame
-This is a **flame Sensor** or **IR level Sensor** that creates a digital and analog output signal detecting the amount of IR light. 
+This is a **flame Sensor** or **IR level Sensor** that creates a digital and analog output signal detecting the amount of IR light.
 
 The [DigitalInput Element](/elements/digitalin.md) can create actions based in the digital input signal.
 
@@ -137,13 +138,12 @@ As the signals can be very short the [DigitalInterrupt Element](/elements/_digit
 :::
 
 
-
 ### Analog Temperature Sensors
 
 :::sensor ntc
-This is a **temperature sensor** that uses a **temperature variable resistor** ntc to create a analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range. 
+This is a **temperature sensor** that uses a **temperature variable resistor** ntc to create a analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.
 
-The Analog output signal can be used to calculate the actual temperature. 
+The Analog output signal can be used to calculate the actual temperature.
 The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
 
 Some sensor boards also contain an adjustable reference the sensor value can be compared to to produce a digital output signal.
@@ -158,7 +158,7 @@ See also environmental sensors below.
 :::sensor microphone
 This is a **Analog microphone** combined with a circuit to compare the amplitude to an adjustable threshold.
 
-The Analog output signal can be used for a recording input and the digital output produces LOW signals when the amplitude gets high enough. 
+The Analog output signal can be used for a recording input and the digital output produces LOW signals when the amplitude gets high enough.
 
 On loud sounds many short signal spikes occur that can be catched by the [DigitalInterrupt Element](/elements/_digitalinterrupt.md) to create a clean actions on it.
 :::
@@ -168,13 +168,12 @@ On loud sounds many short signal spikes occur that can be catched by the [Digita
 The **Ultrasonic range** sensor using the hcsr04 board is using Ultrasonic sound impulses that will be reflected by objects and can be used to measure the distance.
 
 <!-- The [HCSR04 Element](/elements/hcsr04.md) can be used to trigger this sensor and calculate the distance. -->
-This sensor is not yet supported directly by the HomeDing library. 
+This sensor is not yet supported directly by the HomeDing library.
 :::
 
 
-
 ## Digital output
- 
+
 :::sensor relay
 The **relay** can be switched using the [Digital Output Element](/elements/digitalout.md) when the board includes a transistor or mosfet to handle the high load demand of a relay.
 
@@ -184,11 +183,11 @@ A relay cannot be used directly with a GPIO pin. There is a example how to contr
 
 ## Sensor Elements with impulse/frequency transfers
 
-Instead of providing a analog level some sensors provide impulses with a timing or a impulse patterns. 
+Instead of providing a analog level some sensors provide impulses with a timing or a impulse patterns.
 
 To communicate with these sensors and actors special libraries and elements are used that implement the specific interface and interpretation of the given data.
 
-:::sensor irrecv 
+:::sensor irrecv
 These IR sensors (VS1838 / TSOP4838)
 are equipped with an embedded chip that can detect signals using a 38kHz carrier frequency.
 When a signal is detected the output is High otherwise low.
@@ -196,14 +195,14 @@ When a signal is detected the output is High otherwise low.
 IR code detection now has to be implemented by analyzing the input level over time and derive the data from this. There are special libraries
 available for this. (e.g. <https://github.com/crankyoldgit/IRremoteESP8266>).
 
-Not yet supported directly by the HomeDing library. Experimental implementation in the DevDing example for RF is available. IR behaves very similar. 
+Not yet supported directly by the HomeDing library. Experimental implementation in the DevDing example for RF is available. IR behaves very similar.
 <!-- https://github.com/z3t0/Arduino-IRremote -->
 :::
 
 
 :::sensor rf433recv
 Receiving **433 MHz radio signals** to create a digital signal.
-Not yet fully supported by the HomeDing library. Experimental implementation in the DevDing example for RF 433 is available. 
+Not yet fully supported by the HomeDing library. Experimental implementation in the DevDing example for RF 433 is available.
 <!-- https://github.com/z3t0/Arduino-IRremote -->
 :::
 
@@ -215,7 +214,7 @@ Not yet fully supported by the HomeDing library. Experimental implementation in 
 :::sensor no bl0937
 Power monitoring chips : **HLW8012 BL0937**
 
-[BL0937 Element](/elements/bl0937.md) 
+[BL0937 Element](/elements/bl0937.md)
 :::
 
 
@@ -225,7 +224,7 @@ These sensor deliver data sets instead of digital or analog values.
 
 They communicate by their specific protocol and actions can be created based on the
 retrieved values.
- . Often these sensors provide multiple values or implement more complex I/O needs.                                                                                                                                                                                                                          
+ . Often these sensors provide multiple values or implement more complex I/O needs.
 
 ### Environment sensing
 
@@ -408,11 +407,11 @@ The chip **p9813** als known as **Groove LED driver** is used to control 12V RGB
 **Neopixel** or **WS2811** are chips with a RGB led and an embedded driver chip that can directly be controlled by a GPIO pin. Multiple LEDs of this type can be chained on stripes or can build a LED grid.
 
 The [Neo Element](/elements/neo.md) supports these LED chains for colors and patterns.
-There is also a special [Neopixel board](/boards/neo.md) available especially for controlling these LEDs. 
+There is also a special [Neopixel board](/boards/neo.md) available especially for controlling these LEDs.
 :::
 
 
-[Light Element](/elements/light.md) : PWM values for single color or RGB Leds attached directly on GPIO pins. 
+[Light Element](/elements/light.md) : PWM values for single color or RGB Leds attached directly on GPIO pins.
 
 
 ## Input Components
@@ -430,7 +429,7 @@ A switch that can give a binary signal and can be use directly with a [DigitalIn
 :::
 
 :::sensor rotary
-The [Rotary Element](/elements/rotary.md) enables decoding the 2 signals from a rotary encoder. 
+The [Rotary Element](/elements/rotary.md) enables decoding the 2 signals from a rotary encoder.
 :::
 
 

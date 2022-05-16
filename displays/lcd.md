@@ -1,18 +1,12 @@
 ---
 title: Display LCD Element
-id: displaylcd
-tags: ["Element"]
+icon: displaylcd
+layout: "page.njk"
+tags: ["Element", "Display"]
 description: Using LCD displays with a HD44780 controller chip.
 excerpt: >
   The Display Configuration for Monochrome LCDs based on HD44780 chips.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
-
 
 In the Arduino Environment the LiquidCrystal library exits for a long time and supports HD44780 compatible LCDs with up to 4 lines of 20 characters. Displays ae available with
 
@@ -88,7 +82,7 @@ This should be done in the `env.json` file:
 
 ## Special characters
 
-The HD44780 displays do have a special character set that is explained in the datasheet. These characters e.g. can be used in the 
+The HD44780 displays do have a special character set that is explained in the datasheet. These characters e.g. can be used in the
 postfix text using the 16-bit UTC notation like `"postfix": "\u00dfC"`.
 
 However the WebUI will use the standard unicode codes as expected in the browser so the special character may look different in the Web UI.

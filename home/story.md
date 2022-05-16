@@ -7,6 +7,8 @@ height: 600px;
 z-index: 10;
 padding: 2em 3em;
 margin-bottom: 1em;
+border-radius: 2em;
+background-color: #f8f8f8;
 }
 
 .page>.row {
@@ -25,7 +27,6 @@ top: 0;
 left: 0px;
 width: 100%;
 height: 100%;
-/* object-fit: fill; */
 }
 
 .time {

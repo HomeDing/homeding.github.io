@@ -115,7 +115,7 @@ module.exports = function (eleventyConfig) {
 
   // include excerpt text by using: {% excerptOf collections, "map" %}
   eleventyConfig.addShortcode("excerptOf", function (col, name) {
-    if (! col) {
+    if (!col) {
       console.error("excerptOf: no collection given.")
     }
     if (Array.isArray(col)) {
@@ -129,10 +129,10 @@ module.exports = function (eleventyConfig) {
   }
   );
 
-  
+
   // include excerpt text by using: {% dataOf collections.Board, "map" %}
   eleventyConfig.addShortcode("dataOf", function (col, name, item) {
-    if (! col) {
+    if (!col) {
       console.error("dataOf: no collection given.")
     }
     if (Array.isArray(col)) {
@@ -149,7 +149,13 @@ module.exports = function (eleventyConfig) {
 
   // include excerpt text by using: {% excerptOf collections, "map" %}
   eleventyConfig.addPairedShortcode("imgcard", function (content, img, link) {
-    var out = `<div class="imgcard"><a href="${link}"><img src="${img}"></a>${content}</div>`;
+    var out = `<div class="imgcard"><a href="${link}"><img src="${img}"></a>\n${content}\n</div>`;
+    return (out);
+  });
+
+  eleventyConfig.addPairedShortcode("iconcard", function (content, icon, link) {
+    var out = `<div class="iconcard"><a href="${link}"><svg class="icon"><use href="/icons.svg#${icon}"></use></svg></a>\n`
+      + `<a href="${link}"><h3>${icon}</h3></a>\n${content}\n</div>`;
     return (out);
   });
 

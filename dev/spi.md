@@ -37,30 +37,30 @@ However each slave device must use it's own chip select (CS) line.
 
 ## Using standard SPI pins on ESP32
 
-There are 4 supported SPI interfaces within the ESP32.
+There are 4 hardware supported SPI interfaces within the ESP32 partly used for special functionality.
 
 The "SPI0" and "SPI1" are used to communicate with the flash memory. It is using multiple data lines
 and cannot be used to connect to SPI clients other than memory.
 
-The "SPI2" and "SPI3" can be used as general purpose SPI interfaces also called VSPI and HSPI.
+The "SPI2" and "SPI3" can be used as general purpose SPI interfaces also called `VSPI` and `HSPI`.
 
 
-**VSPI**
+### The VSPI interface
 
-This SPI is used by the standard Arduino SPI.
+This SPI is used by the standard Arduino SPI implementation.
 
 | GPIO   | functionality |
 | ------ | ------------- |
 | GPIO19 | MISO          |
 | GPIO23 | MOSI          |
 | GPIO18 | CLK           |
-| GPIO05 | CS            |
+| GPIO05 | CS (example)  |
 
 The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
 Each slave device must use it's own chip select (CS) line.
 
 
-**HSPI**
+### The HSPI interface
 
 This SPI is used as an alternative SPI interface often used for SD Cards.
 
@@ -69,7 +69,7 @@ This SPI is used as an alternative SPI interface often used for SD Cards.
 | GPIO12 | MISO          |
 | GPIO13 | MOSI          |
 | GPIO14 | CLK           |
-| GPIO15 | CS            |
+| GPIO15 | CS (example)  |
 
 The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
 Each slave device must use it's own chip select (CS) line.
@@ -112,5 +112,4 @@ These are not connected using the SPI core signals and need to be connected by a
 
 * <https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/>
 * <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html>
-
 

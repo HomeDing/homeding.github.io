@@ -90,12 +90,12 @@ to control dimmable LEDs using [PWM Out Element](/elements/pwmout.md) or switchi
 
 :::element switch switch
 The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
-It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI. 
+It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI.
 :::
 
 :::element value value
 The [Value Element](/elements/value.md) controls a value in a given range. It can be controlled using several methods
-like a [DigitalIn Element](/elements/digitalin.md) or a [Rotary Element](/elements/rotary.md) and the Web UI. 
+like a [DigitalIn Element](/elements/digitalin.md) or a [Rotary Element](/elements/rotary.md) and the Web UI.
 :::
 
 :::element pwmout pwmout
@@ -132,6 +132,8 @@ The [P9813 Element](/elements/p9813.md) implements the protocol to control the P
 :::
 
 
+## Light Sensors
+
 :::element BH1750 default
 This is a light sensor probong for the intensity of light in lumen.
 [BH1750 Element](/elements/bh1750.md)
@@ -140,7 +142,7 @@ This is a light sensor probong for the intensity of light in lumen.
 
 ## Logic and Calculation Elements
 
-Logic elements implement using on/off values expressed as 1/0 values. 
+Logic elements implement using on/off values expressed as 1/0 values.
 
 :::element button button
 The [Button Element](/elements/button.md) can differentiate clicks, double clicks and long press gestures to send out actions.
@@ -148,7 +150,7 @@ The [Button Element](/elements/button.md) can differentiate clicks, double click
 
 :::element switch switch
 The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
-It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI. 
+It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI.
 :::
 
 :::element and and
@@ -192,11 +194,18 @@ The [DisplaySSD1306 Element](/elements/ssd1306.md) configures the display adapte
 The [DisplaySH1106 Element](/elements/sh1106.md) configures the display adapter for using SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.
 :::
 
-:::element displaylcd displaylcd
-The [DisplayLCD Element](/elements/lcd.md) configures the display adapter for using HD44780 compatible LCDs displays using I2C.
-:::
+{% iconcard "displaylcd", "/displays/lcd.htm" %}
+  The [DisplayLCD Element](/displays/lcd.md) configures the display adapter for using HD44780 compatible LCDs displays using I2C.
+{% endiconcard %}
 
-<div style="clear:both"></div>
+{% imgcard "/displays/max7219.jpg", "/displays/max7219.htm" %}
+
+### [DisplayMAX7219](/displays/max7219.md)
+
+  The [DisplayMAX7219 Element](/displays/max7219.md) uses LED matrixes as displays
+  using the MAX7219 chip that can chain multiple 8x8 led displays.
+{% endimgcard %}
+
 
 On the displays several Elements can be used to display data, text and visuals:
 
@@ -216,9 +225,19 @@ The [DisplayBar Element](/elements/displaybar.md) show values as a progress or p
 The [DisplayLine Element](/elements/displayline.md) shows a line on the display.
 :::
 
-<div style="clear:both"></div>
-
 More detailed information on displays and related elements can be found in [displays](/displays/index.md)
+
+## One Value Display Elements
+
+These Elements can be used to display a single value.
+
+:::element max7219 max7219
+{% excerptOf collections.Element, "max7219" %}
+:::
+
+:::element tm1637 tm1637
+{% excerptOf collections.Element, "tm1637" %}
+:::
 
 
 ## Time related Elements
@@ -273,7 +292,7 @@ The [SSDP Element](/elements/ssdp.md) is used to discovering devices on the netw
 :::
 
 :::element value value
-The [Value Element](/elements/value.md) is used to 
+The [Value Element](/elements/value.md) is used to
 receive and send actions to use and control an internal value.
 :::
 
@@ -307,7 +326,6 @@ Service elements interact with services to get or publish data using actions.
 :::element weatherfeed weatherfeed
 The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast information from an internet service.
 :::
-
 
 
 ## Web UI Elements
