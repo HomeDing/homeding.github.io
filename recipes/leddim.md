@@ -1,8 +1,8 @@
 ---
 title: Dimming LED Recipe
+tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This recipe uses 2 digital input signals to change the brightness level of a LED.
 

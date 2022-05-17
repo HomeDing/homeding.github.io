@@ -1,8 +1,8 @@
 ---
 title: Remote Display for Temperature and Humidity
+tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This recipe shows how to implement 2 devices
 * A device named "displayding" with a locally attached display to display some information.

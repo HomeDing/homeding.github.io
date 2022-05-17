@@ -1,8 +1,8 @@
 ---
 title: Servo
+tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This recipe uses a switch element and a value element to set a servo to 2 defined positions.
 

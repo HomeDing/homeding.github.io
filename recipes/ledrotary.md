@@ -1,8 +1,8 @@
 ---
 title: Dimming a LED using a Rotary Encoder
+tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The following elements and hardware is used by this recipe:
 

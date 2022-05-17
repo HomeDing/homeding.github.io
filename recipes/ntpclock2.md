@@ -1,17 +1,26 @@
 ---
-title: NTP based clock with TM1627 display
+title: Time display using a TM1627 display and brightness control
+tags: ["Recipe"]
+layout: "page.njk"
+description: Time display with the brightness control.
 ---
 
-# {{title}}
+A 4-digit 7-segment display with the tm1637 chip to display the current time.
+This display is not a full featured display and can display a single value only.
+It is configured using the [TM1637 Element].
 
-This recipe uses the time from the internet and displays the current local time on a 4 digit display based on the TM1627 chip.
+The time is updated by the [Time Element] every minute.
 
-This recipe can run this on any board.
+The current time is retrieved from an NTP sever on the internet using the [NtpTime Element].
+
+Here an additional [Value Element] is used to control the brightness of a display.
+
+The [RTCState Element] is used save the current brightness value for a reboot.
 
 ![image](/recipes/ntpclock2.jpg "w600")
 
-* In **env.json** the system and hardware should be configured to get the time.
-* In **config.json** the display elements and actions are configured.
+* In **env.json** the system is configured to get the time.
+* In **config.json** the display and control element and actions are configured.
 
 ## Setup the Display
 
@@ -21,7 +30,6 @@ You need to add a [Time Element] and a [TM1627 Element] to the configuration in 
 
 Here the display is connected using the GPIO pins D6 for the clock signal and the D7 for the data signal.
 The GND and 5.0 V must be connected too.
-
 
 ## Setup the Time
 
@@ -44,8 +52,12 @@ The [Time Element] can create actions based on the local time. This is used to u
 The **ontime** event from the [Time Element] send the current time information to the Display element.
 
 
-
 ## env.json configuration
+
+A [NTPtime Element] is configured to get the current time from a NTP server.
+
+A [State Element], here the RTCState Element, is added to store the current brightness value in
+a non volatile memory that keeps the last brightness as long as power is supplied.
 
 ``` json
 {
@@ -55,6 +67,10 @@ The **ontime** event from the [Time Element] send the current time information t
       "NTPServer": "pool.ntp.org",
       "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
     }
+  },
+  "rtcstate": {
+    "0": {
+    }
   }
 }
 ```
@@ -62,16 +78,25 @@ The **ontime** event from the [Time Element] send the current time information t
 
 ## config.json configuration
 
-In **config.json** the display items and the time related actions are configured:
+A 4 digit 7-segment display with the tm1637 chip is defined to display the current time.
+
+The time is updated by the time element every minute.
+
+A brightness value can be configured with initial values.
+By using the useState property this element persists its value in the state memory.
+The current value is stored to rtc memory and will be available after a restart
+as long as power to the board has not been interrupted.
+
 
 ``` json
 {
   "tm1637": {
     "0": {
       "title": "Time Display",
+      "type": "tm1637",
       "clockpin": "D6",
       "datapin": "D7",
-      "brightness": "4",
+      "brightness": "1",
       "value": "--:--"
     }
   },
@@ -79,21 +104,27 @@ In **config.json** the display items and the time related actions are configured
     "clock": {
       "onminute": "tm1637/0?value=$v"
     }
+  },
+  "value": {
+    "bright": {
+      "title": "Brightness",
+      "useState": "true",
+      "min": 0,
+      "max": 8,
+      "value": 4,
+      "onvalue": "tm1637/0?brightness=$v"
+    }
   }
 }
 ```
 
 ## See also
 
-* [NTPTime Element]
-* [Time Element]
-* [TM1627 Element]
-* [Control Brightness Value](/recipes/brightness.md)
+* [NTP Clock with OLED](/recipes/ntpclock.md) - Display the current time and date from the internet time service.
 
-
-## Tags
-#recipe #display
-
-[NTPTime Element]:/elements/ntptime.md
-[Time Element]:/elements/time.md
-[TM1627 Element]: /elements/tm1637.md
+[NTPtime Element]: /elements/ntptime.md
+[Time Element]: /elements/time.md
+[TM1637 Element]: /elements/tm1637.md
+[Value Element]: /elements/value.md
+[State Element]: /elements/state.md
+[RTCState Element]: /elements/state.md

@@ -18,8 +18,7 @@ They show how multiple elements can be combined to create functionality beyond u
 * [LED Rotary recipe](/recipes/ledrotary.md) - Dimming LED using a rotary encoder.
 * [NTP Clock with OLED](/recipes/ntpclock.md) - Display the current time and date from the internet time service.
 * [NTP Clock with TM1627](/recipes/ntpclock2.md) - Display the current time from the internet time service on a 4 digit display.
-* [Control Brightness](/recipes/brightness.md) - Use an additional [value](/elements/value.md)
-    and [State Element](/elements/state.md) to control the brightness of a display.
+
 * [LDR switch](/recipes/ldrswitch.md) - use a LDR to create a touchless on/off switch.
 * [Create plant watering](/recipes/water.md) - Use a timer and button to give water to plants.
 * [Logic Elements](/recipes/logic.md) - Combine values with logical operators.

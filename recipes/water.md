@@ -1,8 +1,8 @@
 ---
 title: Plant Watering
+tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This recipe combines a momentary button and a timer to control a relay that is switched on for 5 min. 3 times a day. This can be used to control a valve for watering plants.
 

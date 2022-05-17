@@ -1,8 +1,8 @@
 ---
 title: Light Toggle with timer
+tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This recipe implements a light switch that keeps light on for a specific time before switching off automatically.
 

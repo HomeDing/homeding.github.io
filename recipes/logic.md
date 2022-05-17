@@ -1,10 +1,8 @@
-
-
 ---
 title: Logical operations
+tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This recipe uses
 * 2 [Switch Elements](/elements/switch.md) to control 2 boolean input values.

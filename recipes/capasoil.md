@@ -1,6 +1,6 @@
 ---
 title: Capacitive Soil Moisture Sensor Recipe
-tags: ["Receipe"]
+tags: ["Recipe"]
 layout: "page.njk"
 excerpt: >
   This recipe shows how to combine a Capacitive Soil Moisture Sensor with the Analog Input Element and a LED. 

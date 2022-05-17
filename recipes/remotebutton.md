@@ -1,8 +1,8 @@
 ---
 title: Remote button
+tags: ["Recipe", "WIP"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 > Draft ???
 
