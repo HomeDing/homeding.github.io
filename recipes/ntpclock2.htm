@@ -7,10 +7,11 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <title>NTP based clock with TM1627 display</title>
+  <meta name='description' content='Time display with the brightness control.'>
+  <title>Time display using a TM1627 display and brightness control</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
   <style>
   .gpio { 
     display:inline-block;
@@ -39,18 +40,26 @@
 
   <nav class="inpage open"></nav>
 
-  <main style="padding:1rem">
-    <h1>NTP based clock with TM1627 display</h1>
-<p>This recipe uses the time from the internet and displays the current local time on a 4 digit display based on the TM1627 chip.</p>
-<p>This recipe can run this on any board.</p>
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>Time display using a TM1627 display and brightness control</h1>
+
+    
+      
+    <p>A 4-digit 7-segment display with the tm1637 chip to display the current time.
+This display is not a full featured display and can display a single value only.
+It is configured using the <a href="/elements/tm1637.htm">TM1637 Element</a>.</p>
+<p>The time is updated by the <a href="/elements/time.htm">Time Element</a> every minute.</p>
+<p>The current time is retrieved from an NTP sever on the internet using the <a href="/elements/ntptime.htm">NtpTime Element</a>.</p>
+<p>Here an additional <a href="/elements/value.htm">Value Element</a> is used to control the brightness of a display.</p>
+<p>The <a href="/elements/state.htm">RTCState Element</a> is used save the current brightness value for a reboot.</p>
 <p><img src="/recipes/ntpclock2.jpg" alt="image" title="w600"></p>
 <ul>
-<li>In <strong>env.json</strong> the system and hardware should be configured to get the time.</li>
-<li>In <strong>config.json</strong> the display elements and actions are configured.</li>
+<li>In <strong>env.json</strong> the system is configured to get the time.</li>
+<li>In <strong>config.json</strong> the display and control element and actions are configured.</li>
 </ul>
 <h2>Setup the Display</h2>
 <p>You need to add a <a href="/elements/ntptime.htm">NTPtime Element</a> to the configuration in <strong>env.json</strong>.</p>
-<p>You need to add a <a href="/elements/time.htm">Time Element</a> and a <a href="/elements/tm1637.htm">TM1627 Element</a> to the configuration in <strong>config.json</strong>.</p>
+<p>You need to add a <a href="/elements/time.htm">Time Element</a> and a [TM1627 Element] to the configuration in <strong>config.json</strong>.</p>
 <p>Here the display is connected using the GPIO pins D6 for the clock signal and the D7 for the data signal.
 The GND and 5.0 V must be connected too.</p>
 <h2>Setup the Time</h2>
@@ -65,20 +74,28 @@ If there is a &quot;summertime&quot; period, the start and end of that period ca
 <p>The <a href="/elements/time.htm">Time Element</a> can create actions based on the local time. This is used to update the display every minute.</p>
 <p>The <strong>ontime</strong> event from the <a href="/elements/time.htm">Time Element</a> send the current time information to the Display element.</p>
 <h2>env.json configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  ...<br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"NTPServer"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>A <a href="/elements/ntptime.htm">NTPtime Element</a> is configured to get the current time from a NTP server.</p>
+<p>A <a href="/elements/state.htm">State Element</a>, here the RTCState Element, is added to store the current brightness value in
+a non volatile memory that keeps the last brightness as long as power is supplied.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  ...<br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"NTPServer"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>config.json configuration</h2>
-<p>In <strong>config.json</strong> the display items and the time related actions are configured:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"tm1637/0?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>A 4 digit 7-segment display with the tm1637 chip is defined to display the current time.</p>
+<p>The time is updated by the time element every minute.</p>
+<p>A brightness value can be configured with initial values.
+By using the useState property this element persists its value in the state memory.
+The current value is stored to rtc memory and will be available after a restart
+as long as power to the board has not been interrupted.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"tm1637"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"tm1637/0?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"bright"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Brightness"</span><span class="token punctuation">,</span><br>      <span class="token property">"useState"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"tm1637/0?brightness=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
-<li><a href="/elements/ntptime.htm">NTPTime Element</a></li>
-<li><a href="/elements/time.htm">Time Element</a></li>
-<li><a href="/elements/tm1637.htm">TM1627 Element</a></li>
-<li><a href="/recipes/brightness.htm">Control Brightness Value</a></li>
+<li><a href="/recipes/ntpclock.htm">NTP Clock with OLED</a> - Display the current time and date from the internet time service.</li>
 </ul>
-<h2>Tags</h2>
-<p>#recipe #display</p>
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/recipe.htm">Recipe</a></div>
+    
   </main>
 
   <script>
