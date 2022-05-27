@@ -51,13 +51,62 @@
 </div>
       
     <p>In contrast to other sensors like <a href="/elements/dht.htm">DHT20</a> and <a href="/elements/dallas.htm">Dallas</a> no proprietary protocol on the wire is used as data is exchanged over I2C.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply voltage</td>
+<td>DC : 2.1 - 3.6 V</td>
+</tr>
+<tr>
+<td>Measuring range (humidity)</td>
+<td>0 ~ 100 % RH</td>
+</tr>
+<tr>
+<td>Measuring range (temperature)</td>
+<td>-40 ~ +125 °C</td>
+</tr>
+<tr>
+<td>Humidity accuracy</td>
+<td>± 3 % RH</td>
+</tr>
+<tr>
+<td>Temperature accuracy</td>
+<td>± 0.3 °C</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>Temperature: 0.04°C, Humidity: 0.01 % RH</td>
+</tr>
+<tr>
+<td>Response time</td>
+<td>Temperature: 5 - 30 s, Humidity: 8 s</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>i2c signal</td>
+</tr>
+<tr>
+<td>i2c address</td>
+<td>0x40</td>
+</tr>
+</tbody>
+</table>
+<p>SHT40 is replacement offering some faster response times and better accuracy.</p>
 <p>There are different housings and boards for the sensor available.</p>
 <p><img src="/elements/sht20.jpg" alt="SHT20 Sensor"></p>
 <h2>Web UI for the SHT20 Element</h2>
 <p>There is a card for this element available that shows the actual temperature and humidity.</p>
 <p><img src="/elements/sht20ui.png" alt="SHT20 Sensor UI"></p>
 <h2>Using the SHT20 Element</h2>
-<p>The SHT20 Element is not part of the core set of elements but can be added to the firmware by including the definition of
+<p>The SHT20 Element is not part of the core set of elements
+because it is not used very frequently.
+It can be registered and added to the firmware by including the definition of
 HOMEDING_INCLUDE_SHT20 in the sketch:</p>
 <p>'''CPP
 #define HOMEDING_INCLUDE_SHT20
@@ -65,9 +114,11 @@ HOMEDING_INCLUDE_SHT20 in the sketch:</p>
 <p>This element requires no extra library and the calculation for temperature and humidity from the raw values is included in the element implementation.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
+<blockquote>
 <p><strong>address</strong> - The i2c address of the sensor. The default value is 0x40.</p>
 <p><strong>onTemperature</strong> - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that stay the same.</p>
 <p><strong>onHumidity</strong> - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.</p>
+</blockquote>
 <p>From the base <a href="/elements/sensors.htm">Sensor Element</a> implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>readTime</strong> - Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
@@ -92,9 +143,9 @@ The default time is set to 3 seconds.</p>
 <p><strong>humidity</strong> - The last read humidity value from the sensor.</p>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"sht20/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"19.92"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"53.4"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2>more</h2>
+<h2>See Also</h2>
 <ul>
-<li><a href="https://www.sensirion.com/SHT20/">https://www.sensirion.com/SHT20/</a></li>
+<li><a href="https://sensirion.com/us/products/catalog/SHT20/">https://sensirion.com/us/products/catalog/SHT20/</a></li>
 <li><a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT20_Datasheet.pdf">https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT20_Datasheet.pdf</a></li>
 <li><a href="https://github.com/u-fire/uFire_SHT20/blob/master/src/uFire_SHT20.cpp">https://github.com/u-fire/uFire_SHT20/blob/master/src/uFire_SHT20.cpp</a></li>
 </ul>
