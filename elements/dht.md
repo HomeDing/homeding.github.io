@@ -64,7 +64,7 @@ The AM2320 sensor is a drop-in replacement for the DHT22 with almost the same wi
 
 In addition to the DHT22 wiring the not connected (nc) pin needs also to be connected to GND to use the compatible data protocol.
 
-The AM2320 sensor also offers to communicate using the [I2C protocol](/dev/i2c.md). This is not supported by the HomeDing library as of now.
+The AM2320 sensor also offers to communicate using the [I2C protocol](/dev/i2c.md). This is supported using the [AM2320 Element] by the HomeDing library.
 
 
 ### About the pull-up resistor
@@ -192,3 +192,4 @@ it doesn't make sense to read the values from the sensor more frequently.
 
 * To run a ESP8266 and a sensor on low power see [Low Power Modes](../boards/_lowpower.md)
 
+[AM2320 Element]: /elements/am2320.md

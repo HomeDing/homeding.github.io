@@ -1,16 +1,10 @@
 ---
 title: Store State
-id: nn
+layout: "page.njk"
 tags: ["Element"]
 excerpt: >
   This element implements storing the current state in some other places as volatile variables.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 The state is a collection of information and values of a device that cannot be found in configuration.
 
@@ -28,7 +22,7 @@ and starting with version 1.0 of the HomeDing library there is a mechanism
 to implement the behavior described above.
 
 
-## State Elements 
+## State Elements
 
 There are multiple **State Elements** that implement the actual storage mechanism.
 When such an Element is configured it registers

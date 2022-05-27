@@ -9,6 +9,21 @@ excerpt: >
 
 In contrast to other sensors like [DHT20](/elements/dht.md) and [Dallas](/elements/dallas.md) no proprietary protocol on the wire is used as data is exchanged over I2C.
 
+| parameter                     | range                                    |
+| ----------------------------- | ---------------------------------------- |
+| Supply voltage                | DC : 2.1 - 3.6 V                         |
+| Measuring range (humidity)    | 0 ~ 100 % RH                             |
+| Measuring range (temperature) | -40 ~ +125 °C                            |
+| Humidity accuracy             | ± 3 % RH                                 |
+| Temperature accuracy          | ± 0.3 °C                                 |
+| Resolution                    | Temperature: 0.04°C, Humidity: 0.01 % RH |
+| Response time                 | Temperature: 5 - 30 s, Humidity: 8 s     |
+| Interface                     | i2c signal                               |
+| i2c address                   | 0x40                                     |
+
+SHT40 is replacement offering some faster response times and better accuracy.
+
+
 There are different housings and boards for the sensor available.
 
 ![SHT20 Sensor](/elements/sht20.jpg)
@@ -23,7 +38,9 @@ There is a card for this element available that shows the actual temperature and
 
 ## Using the SHT20 Element
 
-The SHT20 Element is not part of the core set of elements but can be added to the firmware by including the definition of 
+The SHT20 Element is not part of the core set of elements
+because it is not used very frequently.
+It can be registered and added to the firmware by including the definition of
 HOMEDING_INCLUDE_SHT20 in the sketch:
 
 '''CPP
@@ -37,11 +54,11 @@ This element requires no extra library and the calculation for temperature and h
 
 The following properties are available for configuration of the element:
 
-**address** - The i2c address of the sensor. The default value is 0x40.
-
-**onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that stay the same.
-
-**onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
+> **address** - The i2c address of the sensor. The default value is 0x40.
+>
+> **onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that stay the same.
+>
+> **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay the same.
 
 {% include "./sensorproperties.md" %}
 
@@ -88,8 +105,8 @@ The following properties are available with the current values at runtime
 ```
 
 
-## more
+## See Also
 
-* <https://www.sensirion.com/SHT20/>
+* <https://sensirion.com/us/products/catalog/SHT20/>
 * <https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT20_Datasheet.pdf>
 * <https://github.com/u-fire/uFire_SHT20/blob/master/src/uFire_SHT20.cpp>

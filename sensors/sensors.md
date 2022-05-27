@@ -246,6 +246,14 @@ The [DHT Element](/elements/dht.md) creates actions based on the values polled f
 :::
 
 
+:::sensor am2320 dht
+The **AM2320** is a **air temperature and humidity** sensor with high precision for temperature humidity.
+
+The sensor communicate using the i2c bus.
+
+The [AM2320 Element](/elements/am2320.md) creates actions based on the values polled from the chip.
+:::
+
 :::sensor sht20 dht
 The **SHT20** is a **air temperature and humidity** sensor with high precision for temperature humidity.
 

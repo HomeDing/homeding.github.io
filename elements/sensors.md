@@ -16,6 +16,7 @@ The HomeDing library supports a collection of common sensor chips:
 
 * [Dallas Element](/elements/dallas.md) supports the DS18B20 aka. Dallas Temperature sensor.
 * [DHT Element](/elements/dht.md) supports the DHT11, DHT22 and AM2302 temperature+humidity sensors.
+* [AM2320 Element](/elements/am2320.md) supports the AM2302 temperature+humidity sensor.
 * [SHT20 Element](/elements/sht20.md) supports the SHT2x high precision temperature and humidity sensors.
 * [BMP280 Element](/elements/bmp280.md) supports the BMP280 temperature and absolute barometric pressure sensor.
 * [BMP680 Element](/elements/bme680.md) supports the BME680 temperature, humidity, pressure and gas resistance sensor.
