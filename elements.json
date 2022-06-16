@@ -164,6 +164,18 @@
     "actions": ["ontemperature", "onhumidity"]
   },
 
+  "aht20": {
+    "icon": "dht",
+    "properties": ["type", "address", "readtime", "warmuptime", "resendtime", "restart"],
+    "actions": ["ontemperature", "onhumidity"]
+  },
+
+  "am2320": {
+    "icon": "dht",
+    "properties": ["type", "address", "readtime", "warmuptime", "resendtime", "restart"],
+    "actions": ["ontemperature", "onhumidity"]
+  },
+
   "sht20": {
     "icon": "dht",
     "properties": ["type", "address", "readtime", "warmuptime", "resendtime", "restart"],

@@ -228,12 +228,32 @@ retrieved values.
 
 ### Environment sensing
 
+There are many sensors for temperature and more environment / air parameters varying on interface and parameters:
+
+| Model   | Element          | Temperature | Humidity | Pressure |  VOC  | Protocol |
+| ------- | ---------------- | :---------: | :------: | :------: | :---: | -------- |
+| AHT20   | [AHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
+| AM2120  | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| AM2302  | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| AM2320  | [AM2320 Element] |      X      |    X     |    -     |   -   | I2C, DHT |
+| AM2322  | [DHT Element]    |      X      |    X     |          |       | I2C, DHT |
+| BMP280  | [BMP280 Element] |      X      |    -     |    X     |   -   | I2C      |
+| BME680  | [BME680 Element] |      X      |    -     |    -     |   -   | I2C, SPI |
+| Dallas  | [Dallas Element] |      X      |    -     |    -     |   -   | OneWire  |
+| DS18B20 | [Dallas Element] |      X      |    -     |    -     |   -   | OneWire  |
+| DHT11   | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| DHT20   | [AHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
+| DHT22   | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| SHT20   | [SHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
+| SHT71   |                  |      X      |    X     |    -     |   -   | I2C      |
+| SHT85   |                  |      X      |    X     |    -     |   -   | I2C      |
+
 :::sensor dht22
 The **DHT22** is a **air temperature and humidity** sensor also known as chip **AM2302** that supports a range of -40 to 80°C for temperature with a accuracy of ±0.5% and a full range (0..100%) for humidity.
 
 A very special data transport protocol is used.
 
-The [DHT Element](/elements/dht.md) creates actions based on the values polled from the chip.
+The [DHT Element] creates actions based on the values polled from the chip.
 :::
 
 
@@ -242,7 +262,7 @@ The **DHT11** is a **air temperature and humidity** sensor that supports a range
 
 A very special data transport protocol is used.
 
-The [DHT Element](/elements/dht.md) creates actions based on the values polled from the chip.
+The [DHT Element] creates actions based on the values polled from the chip.
 :::
 
 
@@ -251,7 +271,7 @@ The **AM2320** is a **air temperature and humidity** sensor with high precision 
 
 The sensor communicate using the i2c bus.
 
-The [AM2320 Element](/elements/am2320.md) creates actions based on the values polled from the chip.
+The [AM2320 Element] creates actions based on the values polled from the chip.
 :::
 
 :::sensor sht20 dht
@@ -259,14 +279,14 @@ The **SHT20** is a **air temperature and humidity** sensor with high precision f
 
 The sensor communicate using the i2c bus.
 
-The [SHT20 Element](/elements/sht20.md) creates actions based on the values polled from the chip.
+The [SHT20 Element] creates actions based on the values polled from the chip.
 :::
 
 
 :::sensor bme680
 The **BME680** is a sensor providing **air temperature, humidity, pressure and gas resistance**.
 
-The special [BME680 Element](/elements/bme680.md) supports this sensor using the I2C protocol.
+The special [BME680 Element] supports this sensor using the I2C protocol.
 :::
 
 :::sensor PMS5003
@@ -281,7 +301,11 @@ This **Dallas** sensor also known as **Dallas Temperature sensors** measures the
 
 A very special `OneWire` protocol is used for data transmission and multiple sensors can share the same signal bus.
 
-The special [Dallas Element](/elements/dallas.md) supports this sensor.
+The special [Dallas Element] supports this sensor.
+:::
+
+:::sensor no bmp280
+The BMP280 is a combination of a temperature and absolute barometric pressure sensor.
 :::
 
 
@@ -296,15 +320,10 @@ High precision Temperature Sensor
 :::sensor bme280
 The BME280 is a combination of a temperature, humidity and absolute barometric pressure sensor.
 :::
-
-:::sensor bmp280
-The BMP280 is a combination of a temperature and absolute barometric pressure sensor.
-:::
 -->
 
 <!-- :::sensor ccs811
 **CJMCU-811** or **CCS811**
-
 not yet supported.
 ::: -->
 
@@ -394,8 +413,6 @@ ADC in i2c
 :::
 -->
 
-PWM
-
 
 ## Light control
 
@@ -462,3 +479,10 @@ The [Radio Element](/elements/radio.md) is available as an experimental implemen
 
 * <https://arduinomodules.info/> for a list of common sensor modules
 
+[AHT20 Element]: /elements/aht20.md
+[BME680 Element]: /elements/bme680.md
+[AM2320 Element]: /elements/am2320.md
+[BMP280 Element]: /elements/bmp280.md
+[Dallas Element]: /elements/dallas.md
+[DHT Element]: /elements/dht.md
+[SHT20 Element]: /elements/sht20.md

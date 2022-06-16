@@ -40,6 +40,14 @@ some common implementation to allow gathering values on a regular basis and upda
 Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.
 :::
 
+:::element am2320 dht
+{% excerptOf collections.Element, "am2320" %}
+:::
+
+:::element aht20 dht
+{% excerptOf collections.Element, "aht20" %}
+:::
+
 :::element dallas dallas
 {% excerptOf collections.Element, "dallas" %}
 :::

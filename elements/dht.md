@@ -24,9 +24,9 @@ There is a dedicated card for this element available that shows the actual tempe
 
 ## Using the DHT Element
 
-The DHT Element is not part of the core set of elements because the low level communication to the chips the `DHTesp` library is used and needs to be installed using the Arduino library manager.
+The DHT Element is not part of the core set of elements because the low level communication to the chips the `DHTNEW` library is used and needs to be installed using the Arduino library manager.
 
-Install the `DHT sensor library for ESPx` library by beegee-tokyo before including this element.
+Install the `DHTNEW` library by Rob Tillaart before including this element. When you install the HomeDing Library by using the Arduino library manager it can be installed as a dependency.
 
 The ***HOMEDING_INCLUDE_DHT*** must be defined in the main sketch to compile and register the element.
 
@@ -43,7 +43,7 @@ The following sensor chips from the DHT family are supported by the DHTesp libra
 * DHT11
 * DHT22 (identical to AM2302)
 * AM2302
-* AM2320 (in one-wire mode)
+* AM2320 (in dht mode)
 * RHT03
 
 more details can be found at <https://github.com/beegee-tokyo/DHTesp>
@@ -170,19 +170,11 @@ If failing repeats the sensor is switched off completely but can be restarted by
 
 ## Implementation Details
 
-The implementation uses the DHTesp / `DHT_sensor_library_for_ESPx` library from beegee_tokyo. You need to load this library using the library manager or get it directly from
-<https://github.com/beegee-tokyo/DHTesp>
-
-More documentation can be found at:
-<https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/>
-
-There is the plan to optimize memory consumption by coding the DHTxx protocol directly so all additional code in the library is removed from the firmware.
-
 As the sensor has a builtin sensor period of 0.5 to 2 seconds depending on the model
 it doesn't make sense to read the values from the sensor more frequently.
 
 
-## more
+## See Also
 
 * DataSheet:
 <https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf> and
