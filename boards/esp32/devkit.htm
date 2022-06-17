@@ -47,7 +47,7 @@
     
       <div class="plaincard">
     
-    The ESP32 DevKit Boards that come in various formats and sizes with WROOM modules and USB adapter are supported by the HomeDing library.
+    The ESP32 DevKit Boards come in various formats and sizes with WROOM modules and USB adapter. They are supported by the HomeDing library.
 </div>
       
     <p>As there are many variants of the ESP32 DevKit Boards, be sure to check the used module.
@@ -64,49 +64,27 @@ Most boards use the ESP-WROOM-32 or ESP-WROOM-32D modules.</p>
 <li>520 kByte SRAM</li>
 </ul>
 <!-- See also [ESP-32-WROOM Module] -->
-<h2>38 pin version</h2>
+<h2>ESP32 DevKitC</h2>
 <p>There is a 38-pin version of the ESP32 DevKit</p>
-<!-- ![ESP32 DevKitC Pin Layout](ESP32-DevKitC.png) -->
-<h2>JTAG Connections</h2>
-<table>
-<thead>
-<tr>
-<th>ESP Prog</th>
-<th>DevKit</th>
-<th>ESP32 JTAG Pin</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MTDO</td>
-<td>TDO</td>
-<td>GPIO15</td>
-</tr>
-<tr>
-<td>MTDI</td>
-<td>TDI</td>
-<td>GPIO12</td>
-</tr>
-<tr>
-<td>MTCK</td>
-<td>TCK</td>
-<td>GPIO13</td>
-</tr>
-<tr>
-<td>MTMS</td>
-<td>TMS</td>
-<td>GPIO14</td>
-</tr>
-<tr>
-<td>GND</td>
-<td>GND</td>
-<td>GND</td>
-</tr>
-</tbody>
-</table>
-<p><img src="esp32_devkit_jtag1.png" alt="esp32_devkit_jtag1"></p>
-<p><img src="esp32_devkit_jtag2.png" alt="esp32_devkit_jtag2"></p>
-<p><a href="https://www.pschatzmann.ch/home/2022/01/25/platformio-debugging-the-esp32-audiokit-os-x-and-raspberry-pi-os/">https://www.pschatzmann.ch/home/2022/01/25/platformio-debugging-the-esp32-audiokit-os-x-and-raspberry-pi-os/</a></p>
+<p><img src="ESP32-DevKitC.png" alt="ESP32 DevKitC Pin Layout"></p>
+<!-- 
+## JTAG Connections
+
+| ESP Prog | DevKit | ESP32 JTAG Pin |
+| -------- | ------ | -------------- |
+| MTDO     | TDO    | GPIO15         |
+| MTDI     | TDI    | GPIO12         |
+| MTCK     | TCK    | GPIO13         |
+| MTMS     | TMS    | GPIO14         |
+| GND      | GND    | GND            |
+
+
+![esp32_devkit_jtag1](esp32_devkit_jtag1.png)
+
+![esp32_devkit_jtag2](esp32_devkit_jtag2.png)
+https://www.pschatzmann.ch/home/2022/01/25/platformio-debugging-the-esp32-audiokit-os-x-and-raspberry-pi-os/
+
+-->
 <h2>See also</h2>
 <ul>
 <li><a href="https://circuits4you.com/2018/12/31/esp32-devkit-esp32-wroom-gpio-pinout/">https://circuits4you.com/2018/12/31/esp32-devkit-esp32-wroom-gpio-pinout/</a></li>
@@ -118,7 +96,7 @@ Most boards use the ESP-WROOM-32 or ESP-WROOM-32D modules.</p>
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="/tag/board.htm">Board</a><a href="/tag/wip.htm">Wip</a></div>
+    <div class="taglist"><a href="/tag/board.htm">Board</a></div>
     
   </main>
 

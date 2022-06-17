@@ -76,7 +76,7 @@ By defining a reference value the reference action will only be dispatched when 
 <p><object data="/element.svg?analog" type="image/svg+xml"></object></p>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>
-<p><strong>readtimems</strong> - The time between capturing input values in milliseconds.</p>
+<p><strong>pin</strong> - The analog input pin to be used. On ESP8266 the only pin with ADC functionality is used by default.</p>
 <p><strong>hysteresis</strong> - The value action is emitted only when the value differs more than defined by hysteresis. Default=10.</p>
 <p><strong>reference</strong> - The reference action is emitted when the value goes below / above the reference value.</p>
 <p><strong>mapInMin</strong> - This is the lower bound of the raw value. This will be mapped to the value given by <strong>mapOutMin</strong>.</p>
@@ -90,7 +90,14 @@ The value given in the actions is <code>1</code>.</p>
 <p><strong>onLow</strong> - These actions are send when the value is below the reference value.
 The value given in the actions is <code>0</code>.</p>
 </blockquote>
-<p>The ESP8266 chip has only one analog input pin so specifying a pin is not required.</p>
+<p>From the base <a href="/elements/sensors.htm">Sensor Element</a> implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>readTime</strong> - Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
+<p><strong>resendTime</strong> - The current values of the probe are resent after this specified time even when not changing.</p>
+<p><strong>warmupTime</strong> - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
+The default time is set to 3 seconds.</p>
+<p><strong>restart</strong> - This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
+</blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
@@ -98,9 +105,8 @@ The value given in the actions is <code>0</code>.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
-<p>* This parameter must be specified.</p>
 <h3>Example Configuration</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Level"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Analog value from sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"35"</span><span class="token punctuation">,</span><br>      <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h3>More Examples</h3>
 <p>A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.</p>
 <p>A analog sensing element for weight can produce many values around. When the weight changes significantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.</p>
@@ -108,13 +114,12 @@ The value given in the actions is <code>0</code>.</p>
 <p>The following properties are available with the current values at runtime</p>
 <blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
-<p><strong>rawvalue</strong> - This is the original value from the ADC pin.</p>
 <p><strong>value</strong> - When no mapping boundaries are given this is equal the raw value.
 When mapping boundaries are given this is the calculated value.</p>
 <p><strong>reference</strong> - This is 1 when the value is above the reference value otherwise 0.</p>
 </blockquote>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"13"</span><span class="token punctuation">,</span><br>    <span class="token property">"rawvalue"</span><span class="token operator">:</span><span class="token string">"721"</span><span class="token punctuation">,</span><br>    <span class="token property">"reference"</span><span class="token operator">:</span><span class="token string">"0"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"13"</span><span class="token punctuation">,</span><br>    <span class="token property">"reference"</span><span class="token operator">:</span><span class="token string">"0"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations">https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations</a></li>
