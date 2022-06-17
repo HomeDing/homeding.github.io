@@ -2,9 +2,10 @@
 title: ESP32 DevKit Boards
 description: ESP32 General purpose development boards
 layout: "page.njk"
-tags: ["Board", "WIP"]
+tags: ["Board"]
 excerpt: >
-  The ESP32 DevKit Boards that come in various formats and sizes with WROOM modules and USB adapter are supported by the HomeDing library.
+  The ESP32 DevKit Boards come in various formats and sizes with WROOM modules and USB adapter.
+  They are supported by the HomeDing library.
 ---
 
 As there are many variants of the ESP32 DevKit Boards, be sure to check the used module.
@@ -31,14 +32,14 @@ The ESP32-WROOM module features:
 <!-- See also [ESP-32-WROOM Module] -->
 
 
-## 38 pin version
+## ESP32 DevKitC
 
 There is a 38-pin version of the ESP32 DevKit
 
+![ESP32 DevKitC Pin Layout](ESP32-DevKitC.png)
 
-<!-- ![ESP32 DevKitC Pin Layout](ESP32-DevKitC.png) -->
 
-
+<!-- 
 ## JTAG Connections
 
 | ESP Prog | DevKit | ESP32 JTAG Pin |
@@ -53,9 +54,9 @@ There is a 38-pin version of the ESP32 DevKit
 ![esp32_devkit_jtag1](esp32_devkit_jtag1.png)
 
 ![esp32_devkit_jtag2](esp32_devkit_jtag2.png)
-
 https://www.pschatzmann.ch/home/2022/01/25/platformio-debugging-the-esp32-audiokit-os-x-and-raspberry-pi-os/
 
+-->
 
 ## See also
 

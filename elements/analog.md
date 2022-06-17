@@ -39,7 +39,7 @@ On the ESP8266 chip the input value has a precision of 2^10 bits and the input v
 
 The following properties are available for configuration of the element:
 
-> **readtimems** - The time between capturing input values in milliseconds.
+> **pin** - The analog input pin to be used. On ESP8266 the only pin with ADC functionality is used by default.
 >
 > **hysteresis** - The value action is emitted only when the value differs more than defined by hysteresis. Default=10.
 >
@@ -63,11 +63,10 @@ The following properties are available for configuration of the element:
 > **onLow** - These actions are send when the value is below the reference value.
 > The value given in the actions is `0`.
 
-The ESP8266 chip has only one analog input pin so specifying a pin is not required.
+{% include "./sensorproperties.md" %}
 
 {% include "./elementproperties.md" %}
 
-\* This parameter must be specified.
 
 ### Example Configuration
 
@@ -75,6 +74,9 @@ The ESP8266 chip has only one analog input pin so specifying a pin is not requir
 {
   "analog": {
     "0": {
+      "title": "Level",
+      "description": "Analog value from sensor",
+      "pin": "35",
       "reference" : 500,
       "onvalue": "device/0?log=analogvalue=$v",
       "onreference": "device/0?log=analogref=$v"
@@ -96,8 +98,6 @@ The following properties are available with the current values at runtime
 
 > **active** - Is set to true when the element is active.
 >
-> **rawvalue** - This is the original value from the ADC pin.
->
 > **value** - When no mapping boundaries are given this is equal the raw value.
 > When mapping boundaries are given this is the calculated value.
 >
@@ -111,7 +111,6 @@ The following properties are available with the current values at runtime
   "analog/0": {
     "active":"true",
     "value":"13",
-    "rawvalue":"721",
     "reference":"0"
   }
 }
