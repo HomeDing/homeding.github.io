@@ -57,8 +57,8 @@
 <p>There is a dedicated card for this element available that shows the actual temperature and humidity.</p>
 <p><img src="/elements/dhtui.png" alt="DHT Sensor UI"></p>
 <h2>Using the DHT Element</h2>
-<p>The DHT Element is not part of the core set of elements because the low level communication to the chips the <code>DHTesp</code> library is used and needs to be installed using the Arduino library manager.</p>
-<p>Install the <code>DHT sensor library for ESPx</code> library by beegee-tokyo before including this element.</p>
+<p>The DHT Element is not part of the core set of elements because the low level communication to the chips the <code>DHTNEW</code> library is used and needs to be installed using the Arduino library manager.</p>
+<p>Install the <code>DHTNEW</code> library by Rob Tillaart before including this element. When you install the HomeDing Library by using the Arduino library manager it can be installed as a dependency.</p>
 <p>The <em><strong>HOMEDING_INCLUDE_DHT</strong></em> must be defined in the main sketch to compile and register the element.</p>
 <pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_DHT</span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
 <!-- The DHT Sensor example shows how to configure a sensor device that reads the sensor values from a DHT and shows them in the Web UI. -->
@@ -67,7 +67,7 @@
 <li>DHT11</li>
 <li>DHT22 (identical to AM2302)</li>
 <li>AM2302</li>
-<li>AM2320 (in one-wire mode)</li>
+<li>AM2320 (in dht mode)</li>
 <li>RHT03</li>
 </ul>
 <p>more details can be found at <a href="https://github.com/beegee-tokyo/DHTesp">https://github.com/beegee-tokyo/DHTesp</a></p>
@@ -137,14 +137,9 @@ The default time is set to 3 seconds.</p>
 <p>If this happens during a sensor data read and the <code>restart</code> property is set to true the sensor is switched on again and after the warmup time has passed another data read try is started.</p>
 <p>If failing repeats the sensor is switched off completely but can be restarted by another <code>start</code> action.</p>
 <h2>Implementation Details</h2>
-<p>The implementation uses the DHTesp / <code>DHT_sensor_library_for_ESPx</code> library from beegee_tokyo. You need to load this library using the library manager or get it directly from
-<a href="https://github.com/beegee-tokyo/DHTesp">https://github.com/beegee-tokyo/DHTesp</a></p>
-<p>More documentation can be found at:
-<a href="https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/">https://desire.giesecke.tk/index.php/2018/01/30/esp32-dht11/</a></p>
-<p>There is the plan to optimize memory consumption by coding the DHTxx protocol directly so all additional code in the library is removed from the firmware.</p>
 <p>As the sensor has a builtin sensor period of 0.5 to 2 seconds depending on the model
 it doesn't make sense to read the values from the sensor more frequently.</p>
-<h2>more</h2>
+<h2>See Also</h2>
 <ul>
 <li>
 <p>DataSheet:

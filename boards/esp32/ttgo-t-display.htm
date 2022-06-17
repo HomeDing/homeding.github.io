@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='ESP32 board with integrated TFT color display.'>
+  <title>LilyGO TTGO T-Display</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>LilyGO TTGO T-Display</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    The LilyGO TTGO T-Display board offer an integrated TFT color display and a USB-C type connector.
+</div>
+      
+    <p>This board is not based on a ESP32 module but is using the ESP32-D0WD-Q6 processor directly.</p>
+<p><img src="/boards/esp32/ttgo-t-display.jpg" alt="TTGO T-Display"></p>
+<ul>
+<li>ESP32-D0WD-Q6 (Dual core, 240Mhz  processor)</li>
+<li>Display: IPS ST7789V 1.14 Inch display, 135 * 240 pixels, 64k colors</li>
+<li>3.7V battery charging circuit</li>
+<li>Supply voltage: 3.3V DC or 5V DC</li>
+<li>SRAM: 520KB</li>
+<li>Flash memory: 4MByte</li>
+<li>PCB dimensions: 51.4 x 25.2mm</li>
+<li>JST Connector: 2Pin 1.25mmx</li>
+<li>USB: Type-C</li>
+<li>USB-Bridge: 2104</li>
+</ul>
+<h2>Connectors</h2>
+<pre class="language-txt"><code class="language-txt">    +-------------+<br>    |   T T G O   |<br>G   | +---------+ | 3V<br>G   | |    D    | | 36<br>21  | |    I    | | 37<br>22  | |    S    | | 38<br>17  | |    P    | | 39<br>2   | |    L    | | 32<br>15  | |    A    | | 33<br>13  | |    Y    | | 25<br>12  | |         | | 26<br>G   | |         | | 27<br>G   | |         | |  G<br>3V  | |         | | 5V<br>    | +---------+ |<br>    |             B-RST<br>    | B-2     B-1 |<br>    +-----USB-----+</code></pre>
+<h2>Pin usages</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:right">pin</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TFT Driver</td>
+<td style="text-align:right"></td>
+<td>ST7789 65k color display</td>
+</tr>
+<tr>
+<td>TFT_MISO</td>
+<td style="text-align:right"></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>TFT_MOSI</td>
+<td style="text-align:right">19</td>
+<td>usually MISO on Arduino Setups</td>
+</tr>
+<tr>
+<td>TFT_SCLK</td>
+<td style="text-align:right">18</td>
+<td>= Arduino Standard</td>
+</tr>
+<tr>
+<td>TFT_CS</td>
+<td style="text-align:right">5</td>
+<td></td>
+</tr>
+<tr>
+<td>TFT_DC</td>
+<td style="text-align:right">16</td>
+<td></td>
+</tr>
+<tr>
+<td>TFT_RST</td>
+<td style="text-align:right">23</td>
+<td></td>
+</tr>
+<tr>
+<td>TFT_BL</td>
+<td style="text-align:right">4</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+</tr>
+<tr>
+<td>I2C_SDA</td>
+<td style="text-align:right">21</td>
+<td>+ connector</td>
+</tr>
+<tr>
+<td>I2C_SCL</td>
+<td style="text-align:right">22</td>
+<td>+ connector</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+</tr>
+<tr>
+<td>ADC_IN</td>
+<td style="text-align:right">34</td>
+<td>(Batt_ADC)</td>
+</tr>
+<tr>
+<td>BUTTON1</td>
+<td style="text-align:right">35</td>
+<td></td>
+</tr>
+<tr>
+<td>BUTTON2</td>
+<td style="text-align:right">0</td>
+<td></td>
+</tr>
+<tr>
+<td>ADC Power</td>
+<td style="text-align:right">14</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The TFT is not connected to the usual SPI pins.
+The data pin is attached to pin 19 that is usually used for SPI data input (MISO). As the SPI bus and all TFT connections are not available on the board pins so there will be no conflict.</p>
+<p>The Backlight can be dimmed by using a pwmout on pin 4.</p>
+<h2>config</h2>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"DisplayST7789"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"TTGO-Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"135"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"240"</span><span class="token punctuation">,</span><br>      <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">180</span><span class="token punctuation">,</span><br>      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"spimosi"</span><span class="token operator">:</span> <span class="token number">19</span><span class="token punctuation">,</span><br>      <span class="token property">"spimiso"</span><span class="token operator">:</span> <span class="token string">"-1"</span><span class="token punctuation">,</span><br>      <span class="token property">"spiCLK"</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span><br>      <span class="token property">"spics"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span><br>      <span class="token property">"spidc"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span><br>      <span class="token property">"xspiRST"</span><span class="token operator">:</span> <span class="token number">23</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>For background dimming:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"dim"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"TFT Backlight"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight dimming of ST7789"</span><span class="token punctuation">,</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">128</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"pwmout/dim?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"dim"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"TFT Backlight"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight dimming of ST7789"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">128</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="http://www.lilygo.cn/prod_view.aspx?TypeId=50062&amp;Id=1400&amp;FId=t3:50062:3">http://www.lilygo.cn/prod_view.aspx?TypeId=50062&amp;Id=1400&amp;FId=t3:50062:3</a></li>
+<li><a href="https://github.com/Xinyuan-LilyGO/TTGO-T-Display">https://github.com/Xinyuan-LilyGO/TTGO-T-Display</a></li>
+<li><a href="/dev/spi.htm">SPI</a></li>
+</ul>
+<hr>
+<h2>memo</h2>
+<p>#define VSPI  3 //SPI bus normally attached to pins 5, 18, 19 and 23, but can be matrixed to any pins</p>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/board.htm">Board</a><a href="/tag/wip.htm">Wip</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

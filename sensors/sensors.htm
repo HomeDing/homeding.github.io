@@ -161,6 +161,157 @@ Not yet fully supported by the HomeDing library. Experimental implementation in 
 retrieved values.
 . Often these sensors provide multiple values or implement more complex I/O needs.</p>
 <h3>Environment sensing</h3>
+<p>There are many sensors for temperature and more environment / air parameters varying on interface and parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Element</th>
+<th style="text-align:center">Temperature</th>
+<th style="text-align:center">Humidity</th>
+<th style="text-align:center">Pressure</th>
+<th style="text-align:center">VOC</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AHT20</td>
+<td><a href="/elements/aht20.htm">AHT20 Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>I2C</td>
+</tr>
+<tr>
+<td>AM2120</td>
+<td><a href="/elements/dht.htm">DHT Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>DHT</td>
+</tr>
+<tr>
+<td>AM2302</td>
+<td><a href="/elements/dht.htm">DHT Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>DHT</td>
+</tr>
+<tr>
+<td>AM2320</td>
+<td><a href="/elements/am2320.htm">AM2320 Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>I2C, DHT</td>
+</tr>
+<tr>
+<td>AM2322</td>
+<td><a href="/elements/dht.htm">DHT Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td>I2C, DHT</td>
+</tr>
+<tr>
+<td>BMP280</td>
+<td><a href="/elements/bmp280.htm">BMP280 Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td>I2C</td>
+</tr>
+<tr>
+<td>BME680</td>
+<td><a href="/elements/bme680.htm">BME680 Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>I2C, SPI</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td><a href="/elements/dallas.htm">Dallas Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>OneWire</td>
+</tr>
+<tr>
+<td>DS18B20</td>
+<td><a href="/elements/dallas.htm">Dallas Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>OneWire</td>
+</tr>
+<tr>
+<td>DHT11</td>
+<td><a href="/elements/dht.htm">DHT Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>DHT</td>
+</tr>
+<tr>
+<td>DHT20</td>
+<td><a href="/elements/aht20.htm">AHT20 Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>I2C</td>
+</tr>
+<tr>
+<td>DHT22</td>
+<td><a href="/elements/dht.htm">DHT Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>DHT</td>
+</tr>
+<tr>
+<td>SHT20</td>
+<td><a href="/elements/sht20.htm">SHT20 Element</a></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>I2C</td>
+</tr>
+<tr>
+<td>SHT71</td>
+<td></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>I2C</td>
+</tr>
+<tr>
+<td>SHT85</td>
+<td></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td>I2C</td>
+</tr>
+</tbody>
+</table>
 <div class="imgcard"><img src="/sensors/dht22.jpg"><p>The <strong>DHT22</strong> is a <strong>air temperature and humidity</strong> sensor also known as chip <strong>AM2302</strong> that supports a range of -40 to 80°C for temperature with a accuracy of ±0.5% and a full range (0..100%) for humidity.</p>
 <p>A very special data transport protocol is used.</p>
 <p>The <a href="/elements/dht.htm">DHT Element</a> creates actions based on the values polled from the chip.</p>
@@ -187,6 +338,8 @@ retrieved values.
 <p>A very special <code>OneWire</code> protocol is used for data transmission and multiple sensors can share the same signal bus.</p>
 <p>The special <a href="/elements/dallas.htm">Dallas Element</a> supports this sensor.</p>
 </div>
+<div class="imgcard"><img src="/sensors/no.jpg"><p>The BMP280 is a combination of a temperature and absolute barometric pressure sensor.</p>
+</div>
 <!--
 :::sensor MCP9808
 High precision Temperature Sensor
@@ -196,14 +349,9 @@ High precision Temperature Sensor
 :::sensor bme280
 The BME280 is a combination of a temperature, humidity and absolute barometric pressure sensor.
 :::
-
-:::sensor bmp280
-The BMP280 is a combination of a temperature and absolute barometric pressure sensor.
-:::
 -->
 <!-- :::sensor ccs811
 **CJMCU-811** or **CCS811**
-
 not yet supported.
 ::: -->
 <h3>Motion</h3>
@@ -256,7 +404,6 @@ ADC in i2c
 100 step potentiometer 100k
 :::
 -->
-<p>PWM</p>
 <h2>Light control</h2>
 <div class="imgcard"><img src="/sensors/no.jpg"><p><strong>LEDs</strong> that are directly attached to a GPIO port can be driven by the
 <a href="/elements/digitalout.htm">Digital Output Element</a> that supports switching the LED on or off.</p>

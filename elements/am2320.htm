@@ -51,26 +51,70 @@
 </div>
       
     <p>The AM2320 sensor was created to be a drop-in replacement for the DHT22 but also support the i2c interface.</p>
-<h2>OneWire or i2c Interface</h2>
-<p>The AM2320 sensor was created to be a drop-in replacement for the DHT22 but also support the i2c interface. There is a good article on comparing these two interfces:
+<h3>DHT and I2C support</h3>
+<p>The AM2320 sensor was created to be a drop-in replacement for the DHT22 but also support the i2c interface. There is a good article on comparing these two interfaces:
 See <a href="https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors">https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors</a>
 for the advantage of i2c over DHT22 Wire signals.</p>
-<p>When using the OneWire mode it is important to set pin 3 and 4 to permanent GND level. You can use the DHTElement to implement reading the temperature and humidity values as it supports the OneWire .</p>
-<p>When using the i2c mode pin 3 is used for GND and pin 4 is used for the i2c-clk signal.</p>
-<p>When using the i2c based communication the device may not respond at the first request
+<p>When using the DHT mode it is important to set pin 3 and 4 to permanent GND level.
+You can use the <a href="/elements/dht.htm">DHT Element</a> to implement reading the temperature and humidity values.</p>
+<p>When using the <a href="/dev/i2c.htm">I2C mode</a> pin 3 is used for GND and pin 4 is used for the i2c-clk signal.
+The device may not respond at the first request
 as it stays in an deactivated mode and must be waked up using a i2c read request without data.</p>
 <p>The WireUtils do this when checking for a device to exist on a given address.</p>
-<h2>Web UI for the DHT Element</h2>
+<h2>Web UI for the AM2320 Element</h2>
 <p>There is a dedicated card for sensors supporting temperature and humidity that shows the actual values.</p>
-<p><img src="/elements/dhtui.png" alt="DHT Sensor UI"></p>
+<p><img src="/elements/dhtui.png" alt="T/H Sensor UI"></p>
 <h2>Using the AM2320 Element</h2>
-<p>The DHT Element is not part of the core set of elements
-because it is not used very frequently.
-It can be registered and added to the firmware by including the definition of
-HOMEDING_INCLUDE_AM2320 in the sketch:</p>
-<p>'''CPP</p>
-<h1>define HOMEDING_INCLUDE_AM2320</h1>
-<p>'''</p>
+<p>The AM2320 Element is not part of the core set of elements as it is not used very frequently. It can be registered and added to the firmware by including the definition of
+<code>HOMEDING_INCLUDE_AM2320</code> in the sketch:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_AM2320</span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
+<h2>Connecting a AM2320 Sensor</h2>
+<p>The sensor is using the I2C bus for communication and is usually placed on a adapter board
+giving access to the required pins.</p>
+<p>Using the default I2C bus pins:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>Sensor</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>3 GND</td>
+<td>Ground for I2C and Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio red">VCC</span></td>
+<td>3.3v</td>
+<td>3.3v</td>
+<td>1 VCC/VDD</td>
+<td>Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio blue">SDA</span></td>
+<td>GPIO4(D2)</td>
+<td>IO21</td>
+<td>2 SDA</td>
+<td>I2C Data Signal</td>
+</tr>
+<tr>
+<td><span class="gpio yellow">SCL</span></td>
+<td>GPIO5(D1)</td>
+<td>IO22</td>
+<td>4 SCL</td>
+<td>I2C Clock Signal</td>
+</tr>
+</tbody>
+</table>
+<p>The required power for the sensor is low and the 3.3V from most CPU boards can be used.</p>
+<p>For more details on using the i2c bus and specifying pins in the <a href="/elements/device.htm">Device Element</a> see <a href="/dev/i2c.htm">I2C bus</a>.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>
@@ -94,7 +138,7 @@ The default time is set to 3 seconds.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
 <h3>Configuration Example</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"am2320"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"s"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"am2320-i2c"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"displaytext/h?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"displaytext/t?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"am2320"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"s"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"AM2320"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"displaytext/h?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"displaytext/t?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <blockquote>

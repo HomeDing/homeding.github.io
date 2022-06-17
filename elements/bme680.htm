@@ -62,15 +62,63 @@ The I2C pins are configured using the properties of the <a href="/elements/devic
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span><br>      <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"D1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p>The I2C address of the sensor is 0x77 = 119 by default and is configured using the element configuration.
 The chip offers the possibility using an alternate address. Please refer to the documentation of your sensor board.</p>
+<p>Using the default I2C bus pins:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>Sensor</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>GND</td>
+<td>Ground for I2C and Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio red">VCC</span></td>
+<td>3.3v</td>
+<td>3.3v</td>
+<td>VCC/VDD</td>
+<td>Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio blue">SDA</span></td>
+<td>GPIO4(D2)</td>
+<td>IO21</td>
+<td>SDA</td>
+<td>I2C Data Signal</td>
+</tr>
+<tr>
+<td><span class="gpio yellow">SCL</span></td>
+<td>GPIO5(D1)</td>
+<td>IO22</td>
+<td>SCL</td>
+<td>I2C Clock Signal</td>
+</tr>
+<tr>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>SDD</td>
+<td>not used</td>
+</tr>
+<tr>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>CS</td>
+<td>not used in I2C Mode</td>
+</tr>
+</tbody>
+</table>
 <p><img src="/elements/bme680.jpg" alt="BME680 wiring"></p>
-<pre><code>ESP8266 board     BME680 Sensor
-3.3V ------------ VCC
-GND  ------------ GND
-D1 (SCL) -------- SCL
-D2 (SDA) -------- SDA
-           (open) SDD
-           (open) CS
-</code></pre>
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?bme680" type="image/svg+xml"></object></p>
 <p>These properties can be configured:</p>
@@ -80,10 +128,10 @@ D2 (SDA) -------- SDA
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bme680"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"bd"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x77"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=humidity=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onpressure"</span><span class="token operator">:</span> <span class="token string">"device/0?log=pressure=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"ongas"</span><span class="token operator">:</span> <span class="token string">"device/0?log=gas=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Outbound Actions</h2>
 <p>The actions emitted by the BME680 Element has read some new data (with changed value) from the sensor.</p>
-<p><strong>onTemperature</strong> - These actions are send when a new temperature value has beed read. The value given in the actions is actual temperature in Celcius.</p>
-<p><strong>onHumidity</strong> - These actions are send when a new temperature value has beed read. The value given in the actions is actual Humidity in percentage.</p>
-<p><strong>onPressure</strong> - These actions are send when a new pressure value has beed read. The value given in the actions is actual pressure in hPA.</p>
-<p><strong>onGas</strong> - These actions are send when a new gas resistance value has beed read. The value given in the actions is actual gas resistance value in kOhm.</p>
+<p><strong>onTemperature</strong> - These actions are send when a new temperature value has been read. The value given in the actions is actual temperature in Celcius.</p>
+<p><strong>onHumidity</strong> - These actions are send when a new temperature value has been read. The value given in the actions is actual Humidity in percentage.</p>
+<p><strong>onPressure</strong> - These actions are send when a new pressure value has been read. The value given in the actions is actual pressure in hPA.</p>
+<p><strong>onGas</strong> - These actions are send when a new gas resistance value has been read. The value given in the actions is actual gas resistance value in kOhm.</p>
 <h2>State</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bme680/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"21.21"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"43.48"</span><span class="token punctuation">,</span><br>    <span class="token property">"pressure"</span><span class="token operator">:</span><span class="token string">"99784"</span><span class="token punctuation">,</span><br>    <span class="token property">"gas"</span><span class="token operator">:</span><span class="token string">"72724"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Interpreting the GAS-OHM values</h2>
@@ -130,7 +178,7 @@ D2 (SDA) -------- SDA
 </tr>
 <tr>
 <td>9008 - 8371</td>
-<td>totaly bad</td>
+<td>totally bad</td>
 </tr>
 </tbody>
 </table>

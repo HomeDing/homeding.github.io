@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Support of the AHT20 air temperature and humidity sensor chips.'>
+  <title>AHT20 Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>AHT20 Element</h1>
+
+    
+    
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#dht"></use></svg>
+    
+    The AHT20Element allows retrieving temperature and humidity values from the AHT20 sensors from aosong.
+</div>
+      
+    <p>This temperature and humidity sensor from <a href="http://www.aosong.com/">aosong</a>
+is using the i2c bus for communication and offers a 12 bit resolution for values.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply voltage</td>
+<td>DC : 2.2 - 5.5V</td>
+</tr>
+<tr>
+<td>Measuring range (humidity)</td>
+<td>0 ~ 100 % RH</td>
+</tr>
+<tr>
+<td>Measuring range (temperature)</td>
+<td>-40 ~ + 85 °C</td>
+</tr>
+<tr>
+<td>Humidity accuracy</td>
+<td>± 2 % RH ( 25 °C )</td>
+</tr>
+<tr>
+<td>Temperature accuracy</td>
+<td>± 0.3 °C</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>temperature: 0.01 °C Humidity: 0.024 % RH</td>
+</tr>
+<tr>
+<td>Response time</td>
+<td>temperature: 5s humidity: 8s 1/e (63%)</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>I2C signal</td>
+</tr>
+<tr>
+<td>i2c address</td>
+<td>0x38</td>
+</tr>
+</tbody>
+</table>
+<p>This chip is used inside some packaged sensors like the DHT20 and AM2301B.</p>
+<h2>Web UI for the AHT20 Element</h2>
+<p>There is a dedicated card for this element available to show the actual temperature and humidity.</p>
+<p><img src="/elements/dhtui.png" alt="T/H Sensor UI"></p>
+<h2>Using the AHT20 Element</h2>
+<p>The AHT20 Element is not part of the core set of elements. is is not requiring any library as dependency.</p>
+<p>The <code>HOMEDING_INCLUDE_AHT20</code> must be defined in the main sketch to compile and register the element.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_AHT20</span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
+<h2>Connecting a AHT20 Sensor</h2>
+<p>The sensor is using the I2C bus for communication and is usually placed on a adapter board
+giving access to the required pins.</p>
+<p>Using the default I2C bus pins and my favorite colors:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>Sensor</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>1 GND</td>
+<td>Ground for I2C and Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio red">VCC</span></td>
+<td>3.3v</td>
+<td>3.3v</td>
+<td>VCC/VDD</td>
+<td>Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio blue">SDA</span></td>
+<td>GPIO4(D2)</td>
+<td>IO21</td>
+<td>SDA</td>
+<td>I2C Data Signal</td>
+</tr>
+<tr>
+<td><span class="gpio yellow">SCL</span></td>
+<td>GPIO5(D1)</td>
+<td>IO22</td>
+<td>SCL</td>
+<td>I2C Clock Signal</td>
+</tr>
+</tbody>
+</table>
+<p>The required power for the sensor is low and the 3.3V from most CPU boards can be used.</p>
+<p>For more details on using the i2c bus and specifying pins in the <a href="/elements/device.htm">Device Element</a> see <a href="/dev/i2c.htm">I2C bus</a>.</p>
+<h2>Element Configuration</h2>
+<p><object data="/element.svg?aht20" type="image/svg+xml"></object></p>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
+<p><strong>onTemperature</strong> - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that &gt; stay the same.</p>
+<p><strong>onHumidity</strong> - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay &gt; the same.</p>
+<p><strong>powerinverse</strong> -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.</p>
+</blockquote>
+<p>From the base <a href="/elements/sensors.htm">Sensor Element</a> implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>readTime</strong> - Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
+<p><strong>resendTime</strong> - The current values of the probe are resent after this specified time even when not changing.</p>
+<p><strong>warmupTime</strong> - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
+The default time is set to 3 seconds.</p>
+<p><strong>restart</strong> - This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
+<h3>Configuration Example</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"aht20"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"th"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"AHT20"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp: $v\u00dfC"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=hum: $v%"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Element State</h2>
+<p>The following properties are available with the current values at runtime</p>
+<blockquote>
+<p><strong>active</strong> - Is set to true when the element is active.</p>
+<p><strong>temperature</strong> - The last read temperature value from the sensor.</p>
+<p><strong>humidity</strong> - The last read humidity value from the sensor.</p>
+</blockquote>
+<h3>Example State</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"aht20/th"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.41"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"38.10"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See Also</h2>
+<ul>
+<li><a href="http://www.aosong.com/en/products-32.html">http://www.aosong.com/en/products-32.html</a></li>
+<li><a href="https://www.adafruit.com/product/5183">https://www.adafruit.com/product/5183</a></li>
+<li><a href="https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors">https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors</a></li>
+<li><a href="https://kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html">https://kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html</a></li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/sensor.htm">Sensor</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

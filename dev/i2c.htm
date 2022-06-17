@@ -51,12 +51,49 @@
 </div>
       
     <p>The data transfer is not as fast as the SPI bus but it is easy to implement
-because fewer lines are required and the chip-select line that enables
-an individual bus participant is replaced by a participant address.</p>
-<p>The ESP8266 SoC doesn't have many GPIO lines so using a bus enables more components in the same device.</p>
+because only 2 IO lines are required and there are no chip specific signals
+required as every participant has a dedicated I2C address.</p>
+<p>The ESP8266 and ESP32 SoC doesn't have many GPIO lines so using a bus enables more components in the same device.</p>
 <h2>Wiring</h2>
 <p>I2C requires 4 wires for power and data communication.</p>
-<p>At least the order of the lines are used by some of the standards in the Arduino space is equal.</p>
+<p>Using the default I2C bus pins:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>Ground for I2C and Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio red">VCC</span></td>
+<td>3.3v</td>
+<td>3.3v</td>
+<td>Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio blue">SDA</span></td>
+<td>GPIO4(D2)</td>
+<td>IO21</td>
+<td>I2C Data Signal</td>
+</tr>
+<tr>
+<td><span class="gpio yellow">SCL</span></td>
+<td>GPIO5(D1)</td>
+<td>IO22</td>
+<td>I2C Clock Signal</td>
+</tr>
+</tbody>
+</table>
+<p>The I2C bus can be used with 3.3V and 5V master and slave devices. Please check specific datasheets.</p>
 <h3>Wiring of I2C Connectors by Adafruit</h3>
 <p>Adafruit uses JST PH 4-Pin (2mm) connectors on some boards
 The wires offered are color-coded:</p>
@@ -87,20 +124,77 @@ to also enable/disable the display and controlling power consumption before usin
 when data is ready instead of polling for state.</li>
 </ul>
 <h2>Wire Library and supporting utilities</h2>
-<p>The WireUtil Class in the HomeDing library helps implementing I2C bus data transfers using a data buffer. This class implements some of the common procedures that help implementing I2C based communication to sensors and other chips.</p>
+<p>The WireUtil Class in the HomeDing library helps implementing I2C bus data transfers using a data buffer. This class implements some of the common procedures that help implementing I2C based communication to sensors and other chips
+by using local byte buffers for sending and receiving data.</p>
 <p>It also offers a possibility of dumping the data into the Serial Debug Output for analysis.</p>
 <p>Often I2C adaptions are using a (logical) register based access pattern.
 Here a data centric access is implemented that separates reading / writing data to a buffer from interpretation of the data in the buffer.
 That fits well to those processor implementations that support I2C data exchange through dma implementations.</p>
-<p>See: <a href="/dev/i2c.htm">Using the I2C bus</a></p>
 <h2>I2C addresses and chips using them</h2>
-<p><a href="https://i2cdevices.org/addresses">https://i2cdevices.org/addresses</a></p>
-<p>0x27 : LCD Display, PCF8574 Port extender</p>
-<p>0x68 : MPU9250
-0x69 : (MPU9250)
-0x76 : BMP280
-0x77 : (BMP280) BME680</p>
-<p>(alternate address in brackets)</p>
+<p>Some addresses used by the chips of HomeDing Elements:</p>
+<table>
+<thead>
+<tr>
+<th>address</th>
+<th>used by chips</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x11</td>
+<td>SI4721</td>
+</tr>
+<tr>
+<td>0x27</td>
+<td>LCD,PCF8574</td>
+</tr>
+<tr>
+<td>0x38</td>
+<td>AHT20</td>
+</tr>
+<tr>
+<td>0x3C</td>
+<td>SH1106,SSD1306,SSD1309</td>
+</tr>
+<tr>
+<td>0x40</td>
+<td>INA219,INA226</td>
+</tr>
+<tr>
+<td>0x51</td>
+<td>RTC,PCF8563</td>
+</tr>
+<tr>
+<td>0x5c</td>
+<td>AM2320</td>
+</tr>
+<tr>
+<td>0x62</td>
+<td>SCD-4x</td>
+</tr>
+<tr>
+<td>0x63</td>
+<td>Radio,SI4730</td>
+</tr>
+<tr>
+<td>0x68</td>
+<td>RTC,DS1307,MPU9250</td>
+</tr>
+<tr>
+<td>0x69</td>
+<td>MPU9250</td>
+</tr>
+<tr>
+<td>0x76</td>
+<td>BMP280</td>
+</tr>
+<tr>
+<td>0x77</td>
+<td>BMP280, BME680</td>
+</tr>
+</tbody>
+</table>
+<p>A more complete list can be found at <a href="https://i2cdevices.org/addresses">https://i2cdevices.org/addresses</a></p>
 <h2>See also</h2>
 <ul>
 <li><a href="https://www.adafruit.com/product/3950">https://www.adafruit.com/product/3950</a></li>

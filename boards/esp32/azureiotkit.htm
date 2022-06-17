@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='ESP32 based IoT Kit designed by Microsoft for Azure'>
+  <title>ESP32 Azure IoT Kit</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>ESP32 Azure IoT Kit</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    This is a ESP32 based board based on ESP-WROVER-B module designed by Microsoft as a reference IoT Kit Azure. It is no more fully supported.
+</div>
+      
+    <p><img src="/boards/esp32/azureiotkit.jpg" alt="ESP32 Azure IoT Kit"></p>
+<hr>
+<p>file:///C:/Users/Matthias/Projects/Arduino/Hardware/ESP32/ESP32%20Azure%20Kit/esp32-azure_iot_kit_hardware_design_guide.pdf</p>
+<p><a href="https://github.com/lzyms/ESP32IoTCentral">https://github.com/lzyms/ESP32IoTCentral</a></p>
+<p><a href="https://github.com/ewertons/esp32-azureiotkit-sensors">https://github.com/ewertons/esp32-azureiotkit-sensors</a></p>
+<p>// right button
+#define PIN_INPUT 0</p>
+<p>// Azure LED
+#define PIN_LED 33</p>
+<p><a href="https://forum.arduino.cc/t/how-to-best-configure-esp32-arduino-vs-code-debug/698140">https://forum.arduino.cc/t/how-to-best-configure-esp32-arduino-vs-code-debug/698140</a></p>
+<p><a href="https://www.esp32.com/viewtopic.php?t=23393">https://www.esp32.com/viewtopic.php?t=23393</a></p>
+<h2>See also</h2>
+<ul>
+<li>
+<p><a href="https://www.espressif.com/en/products/devkits/esp32-azure-kit/resources">https://www.espressif.com/en/products/devkits/esp32-azure-kit/resources</a></p>
+</li>
+<li>
+<p><a href="esp32-azure_iot_kit_hardware_design_guide.pdf">Hardwware Design Kit</a></p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/samples/azure-samples/esp32-iot-devkit-get-started/sample/">https://docs.microsoft.com/en-us/samples/azure-samples/esp32-iot-devkit-get-started/sample/</a></p>
+</li>
+<li>
+<p><a href="https://www.bing.com/aclk?ld=e84j1SJUdrrMrkgMfjTDnMvjVUCUwkCsE4dWcgS9pQq1t7lxzMiLJZsrlrkH7Yl5Vko_nFddX8x9Re3CJJJyBl9i1n_se_rY4iVSzRUsWck47IXclY7tu6rVGkRyKRrG6g2yLFlEI2po4MOFSkAx42hnNFZ42usVhyS2kStKWdk1tOcz8GFBGOjlciMOryC02iJRHvoA&amp;u=aHR0cHMlM2ElMmYlMmZhenVyZS5taWNyb3NvZnQuY29tJTJmZGUtZGUlMmZzZXJ2aWNlcyUyZmlvdC1odWIlMmYlM2ZPQ0lEJTNkQUlEMjEwMDA0OV9TRU1fMTZlY2NkYjMxYzIyMTliZjhhYzRhZGY1MDE1M2Q0ZTIlM2FHJTNhcyUyNmVmX2lkJTNkMTZlY2NkYjMxYzIyMTliZjhhYzRhZGY1MDE1M2Q0ZTIlM2FHJTNhcyUyNm1zY2xraWQlM2QxNmVjY2RiMzFjMjIxOWJmOGFjNGFkZjUwMTUzZDRlMg&amp;rlid=16eccdb31c2219bf8ac4adf50153d4e2&amp;ntb=1">https://www.bing.com/aclk?ld=e84j1SJUdrrMrkgMfjTDnMvjVUCUwkCsE4dWcgS9pQq1t7lxzMiLJZsrlrkH7Yl5Vko_nFddX8x9Re3CJJJyBl9i1n_se_rY4iVSzRUsWck47IXclY7tu6rVGkRyKRrG6g2yLFlEI2po4MOFSkAx42hnNFZ42usVhyS2kStKWdk1tOcz8GFBGOjlciMOryC02iJRHvoA&amp;u=aHR0cHMlM2ElMmYlMmZhenVyZS5taWNyb3NvZnQuY29tJTJmZGUtZGUlMmZzZXJ2aWNlcyUyZmlvdC1odWIlMmYlM2ZPQ0lEJTNkQUlEMjEwMDA0OV9TRU1fMTZlY2NkYjMxYzIyMTliZjhhYzRhZGY1MDE1M2Q0ZTIlM2FHJTNhcyUyNmVmX2lkJTNkMTZlY2NkYjMxYzIyMTliZjhhYzRhZGY1MDE1M2Q0ZTIlM2FHJTNhcyUyNm1zY2xraWQlM2QxNmVjY2RiMzFjMjIxOWJmOGFjNGFkZjUwMTUzZDRlMg&amp;rlid=16eccdb31c2219bf8ac4adf50153d4e2&amp;ntb=1</a></p>
+</li>
+<li>
+<p><a href="https://www.esp32.com/viewtopic.php?t=10978">https://www.esp32.com/viewtopic.php?t=10978</a></p>
+</li>
+<li>
+<p>Kauf: <a href="https://www.mouser.de/ProductDetail/Espressif-Systems/ESP32-Azure-IoT-Kit/?qs=PqoDHHvF64%2BuVX1eLQkvaQ==">https://www.mouser.de/ProductDetail/Espressif-Systems/ESP32-Azure-IoT-Kit/?qs=PqoDHHvF64%2BuVX1eLQkvaQ==</a></p>
+</li>
+</ul>
+<p><a href="https://buildazure.com/esp32-azure-iot-kit-dev-board-espressif/">https://buildazure.com/esp32-azure-iot-kit-dev-board-espressif/</a></p>
+<p><a href="https://github.com/espressif/esp-iot-solution/blob/master/examples/esp32_azure_iot_kit/readme_en.md">https://github.com/espressif/esp-iot-solution/blob/master/examples/esp32_azure_iot_kit/readme_en.md</a></p>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/board.htm">Board</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
