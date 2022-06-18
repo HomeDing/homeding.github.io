@@ -11,32 +11,44 @@ excerpt: >
 As there are many variants of the ESP32 DevKit Boards, be sure to check the used module.
 Most boards use the ESP-WROOM-32 or ESP-WROOM-32D modules.
 
+![ESP32 DevKit](/boards/esp32/devkit.jpg "w600")
 
-## 30 pin version
-
-![ESP32 DevKit](/boards/esp32/devkit.jpg "w400")
-
-This is a 30 pin version of the ESP32 DevKit boards with a micro USB port and adapter and 3.3 V regulator.
+There are very similar versions available with different IO pin assignments a
+USB port to Serial adapter and 3.3 V regulator.
+The Reset button (EN) and the Boot button (GPIO0) is available.
 
 Many, but not all GPIOs of the ESP32-WROOM module are available on the pins of the board.
 
 Some have a LED on-board connected to GPIO2.
 
-The Reset button (EN) and the Boot button (GPIO0) is available.
-
 The ESP32-WROOM module features:
 
 * 4 MByte SPI Flash memory
-* 520 kByte SRAM
+* 520 kByte SRAMs
+
+
+## 30 pin version
+
+![ESP32 DevKit 30pin version](/boards/esp32/devkit-30.png "w600")
+
+
+## 38 pin version
+
+![ESP32 DevKit 38pin version](/boards/esp32/devkit-38.png "w600")
+
 
 <!-- See also [ESP-32-WROOM Module] -->
 
+
+<!--
 
 ## ESP32 DevKitC
 
 There is a 38-pin version of the ESP32 DevKit
 
 ![ESP32 DevKitC Pin Layout](ESP32-DevKitC.png)
+
+-->
 
 
 <!-- 

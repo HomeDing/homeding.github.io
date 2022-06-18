@@ -8,65 +8,66 @@ excerpt: >
   connected to the local WiFi by using the Arduino development environment.
 ---
 
-**Making IoT easy** - that is the goal that is the driving reason for implementing the HomeDing library.
+## Making IoT easy
+
+This is the main goal and the driving reason for implementing the HomeDing library.
 
 {% include "./home/story.md" %}
-
 
 The HomeDing library can be used to build small IoT devices connected to the local WiFi by using the Arduino development environment.
 
 The approach is very different to many other IoT solutions regarding these reasons:
 
 
-**IoT devices can be used standalone**
+## IoT devices can be used standalone
 
 > Everything for a useful device fits into the memory available on a standard board.
-> 
+>
 > The board has everything to run independent on their own and can be controlled using a standard web browser.
 > There is no need for a central hub or bridge device - ideal for starting with implementing IoT devices.
 
 
-**No Cloud connection**
+## No Cloud connection
 
-> In contrast to many IoT solutions that rely on some functionality given by a central implementation in the cloud the HomeDing based devices
-> are designed to be used without any cloud support and can run without being connected to the internet. 
+> In contrast to many IoT solutions from vendors that rely on some functionality given by a central implementation in the cloud the HomeDing based devices
+> are designed to be used without any cloud support and can run without being connected to the internet.
 
 
-**Using the Arduino Environment**
+## Using the Arduino Environment
 
 > To enable everyone to create IoT devices easily, the HomeDing library is available in the format of an Arduino library.
 >
 > All you get is OpenSource and a lot of documentation to learn implementing your features.
 
 
-**Easy to be used**
+## Easy to be used
 
 > Many of the standard problems that need to be solved for building IoT devices have been implemented in the library.
 >
 > Just use one of the [examples](/examples/index.md) as a starting code and upload it to the device.
 
 
-**No programming skills required**
+## No programming skills required
 
 > One of the powerful features of the HomeDing library is the availability of specialized elements that can be configured to work together and build solutions.
-> 
-> Start by building your first IoT device by using some of the configuration examples from the [recipes](/recipes/index.md). 
+>
+> Start by building your first IoT device by using some of the configuration examples from the [recipes](/recipes/index.md).
 
 
-**Web enabled** 
+## Web enabled
 
 > The IoT devices all offer a full functional web frontend User Interface (UI) based on the web technologies HTML+CSS+JavaScript.
 >
 > Again, just using the given implementation is an option to start quickly as there are widgets for many of the elements
 > that allow inspecting, controlling and configuration using a standard browser.
-> 
+>
 > If you are not familiar with these technologies you can find some documentation here to learn
-> how to build a full functional Web UI in less than 200k code size. 
+> how to build a full functional Web UI in less than 200k code size.
 
 Special widgets are e.g. available for:
 
-* [Switch](/elements/switch.md) 
-* [Button](/elements/button.md) 
+* [Switch](/elements/switch.md)
+* [Button](/elements/button.md)
 * [Value](/elements/value.md)
 
 <!-- Featuring a broad set of versatile and simple widgets, including:
@@ -87,19 +88,19 @@ The library is currently made especially for the ESP8266 based boards like the N
 Many sensors, displays, input and output functionality is available as [elements](/elements/index.md).
 
 The project is Open Source available on GitHub and all files are licensed under a BSD style license.
-See http://www.mathertel.de/License.aspx
+See <http://www.mathertel.de/License.aspx>
 
-The full documentation is available at: https://homeding.github.io/
+The full documentation is available at: <https://homeding.github.io/>
 
 
 ## HomeDing Concept Papers
 
 Some text on the concepts and architecture of this library.
 
-- [Build your own things easily](/concepts/paper01.md)
-- [Software Architecture](/concepts/paper02.md)
-- [Elements and Actions](/concepts/paper03.md)
-- [Web Server](/concepts/paper04.md)
+* [Build your own things easily](/concepts/paper01.md)
+* [Software Architecture](/concepts/paper02.md)
+* [Elements and Actions](/concepts/paper03.md)
+* [Web Server](/concepts/paper04.md)
 
 
 ## Elements
@@ -130,7 +131,7 @@ For some [boards](/boards/index.md) you can find reviews and summaries with a su
 ## Web interface
 
 Every device based on the Homeding library is connected to the local WiFi network and has a [Web Server](/concepts/paper04.md)
-With a small Web Site built-in to visualize the current functionality or to configure some new functionality using a standard web browser. 
+With a small Web Site built-in to visualize the current functionality or to configure some new functionality using a standard web browser.
 
 The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](/dev/webservices.md).
 
