@@ -1,14 +1,18 @@
 ---
-title: Board Review of Wifi Kit 8 Module ESP8266 with OLED
+title: Wifi Kit 8 Module ESP8266 with OLED
+description: ESP8266 General purpose development board with OLED
+layout: "page.njk"
+tags: ["Board"]
+excerpt: >
+  The Wifi Kit 8 Module ESP8266 with OLED is a ESP8266 with 4k Flash, OLED display and Li-Polymer battery support. It has a slim size and fits well on breadboards.
 ---
-
-# {{title}}
 
 ![wifikit8 board](/boards/wifikit8.jpg)
 
 I bought a Wifi-Kit 8 from eBay because I was searching for small size ESP8266 boards with onboard display.
 
-The official documentation can be found at heltec.cn. There is a possibility to switch to the English language.
+The official documentation can be found at the heltec.cn website.
+
 
 ## Overview
 

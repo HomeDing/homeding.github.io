@@ -1,8 +1,11 @@
 ---
 title: Witty-Board
+description: ESP8266 General purpose development boards with LDR and RGB led.
+layout: "page.njk"
+tags: ["Board"]
+excerpt: >
+  The Witty board offers a ESP8266-12F solution with a RGB LED, a LDR sensor and an input button. It can be used on a breadboard.
 ---
-
-# {{title}}
 
 The Witty board is a cheap ESP8266 board that has a RGB LED, a LDR sensor and an input button. It can eb used on a breadboard.
 
@@ -12,8 +15,8 @@ The Witty board is a cheap ESP8266 board that has a RGB LED, a LDR sensor and an
 
 ## 2 Boards
 
-The witty board uses 2 separate boards that are connected through some connectors. This allows using the board 
-with or without the lower programming board.
+The witty board uses 2 separate boards that are connected through some connectors.
+This allows using the board with or without the lower programming board.
 
 For programming mode both boards need to be connected (the right way) and the USB cable must be connected to the lower board.
 After programming it is possible to used the upper board only by using the USB connector for power supply only.

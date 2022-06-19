@@ -3,10 +3,10 @@ title: Sensor Element Implementation
 id: sensor
 tags: ["Element", "Implementation"]
 layout: "page.njk"
+excerpt: >
+  Many Element implementations for sensors require the same functionality regarding
+  timing and using properties and actions. The abstract SensorElement offers a base class that the specific Element implementations can derive from.
 ---
-
-Many sensor elements offer similar functionality and configuration
-and therefore are based on the abstract implementation of the "SensorElement" class.
 
 These sensor elements enable reading values from a sensor chip on a specific time interval. When new values could be retrieved these are emitted to other elements using actions.
 
@@ -14,6 +14,7 @@ On the board of the device in the Web UI the actual sensor values are shown as w
 
 The HomeDing library supports a collection of common sensor chips:
 
+* [Analog Element](/elements/analog.md) supports reading analog values from the input pins having a ADC converter functionality.
 * [Dallas Element](/elements/dallas.md) supports the DS18B20 aka. Dallas Temperature sensor.
 * [DHT Element](/elements/dht.md) supports the DHT11, DHT22 and AM2302 temperature+humidity sensors.
 * [AM2320 Element](/elements/am2320.md) supports the AM2302 temperature+humidity sensor.

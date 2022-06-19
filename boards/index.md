@@ -1,15 +1,14 @@
 ---
-title: Boards Overview
+title: Boards
 description: Boards supported by the HomeDing library
 layout: "page.njk"
 tags: ["Board", "Implementation"]
 excerpt: >
-  Details on some boards and devices supported by the HomeDing library.
+  The HomeDing library can be used with the ESP8266 and ESP32 chips from Espressif.
+  Here are some boards and devices supported by the HomeDing library.
 ---
-{% from 'macros.njk' import imgCard %}
 
-The HomeDing library can be used with many boards and manufactured devices
-that use a ESP8266 or ESP32 system-on-chip processor.
+{% from 'macros.njk' import imgCard %}
 
 On the market you find a lot of solutions like bare chip adapters, development boards,
 IoT devices off-the-shelf and even complete kits that use these chips.
@@ -17,25 +16,27 @@ IoT devices off-the-shelf and even complete kits that use these chips.
 Here you find some common species and bare processors described in detail that you may consider to use
 including hints for configuration and programming.
 
-- [Full feature ESP8266 boards with 4 MByte flash memory](#full-feature-esp8266-boards-with-4-mbyte-flash-memory)
-- [ESP32 boards](#esp32-boards)
-- [Devices based on Esp8266](#devices-based-on-esp8266)
-- [Bare ESP-12 boards](#bare-esp-12-boards)
-- [ESP-12 module types](#esp-12-module-types)
-- [Esp8266 boards with 1 MByte flash memory](#esp8266-boards-with-1-mbyte-flash-memory)
-  - [Applicable Examples](#applicable-examples)
-  - [Boards](#boards)
-- [ESP8285 based boards](#esp8285-based-boards)
-- [Comments](#comments)
-- [See also](#see-also)
+## DIY development boards
 
-A good source of development board descriptions, hints as well as references
+The NodeMCU boards for ESP8266 and the DevKit Boards for ESP32
+
+There are good options to start a DIY project with breadboard friendly boards.
+You can find these at resellers and eBay :
+
+{{ imgCard(collections.all, item = '/boards/nodemcu') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
+
+A good source of ESP8266 development board descriptions, hints as well as references
 can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
+
+ESP32 boards from espressif :<https://www.espressif.com/en/products/devkits>
 
 In the Repository of Tasmota Supported Devices at <https://templates.blakadder.com/>
 many off-the-shell devices can be identified using a espressif processor.
 
-## Full feature ESP8266 boards with 4 MByte flash memory
+
+## ESP8266 boards with 4 MByte flash memory
 
 The following boards with 4 MBytes flash memory have been used for development and their specialties can be found in the board reviews.
 
@@ -47,13 +48,9 @@ The following boards with 4 MBytes flash memory have been used for development a
 
 {{ imgCard(collections.all, item = '/boards/nodemcu') }}
 
-:::board wifikit8
-The **[Wifi Kit 8 Module ESP8266 with OLED](/boards/wifikit8.md)** is a ESP8266 with 4k Flash, OLED display and Li-Polymer battery support.
-:::
+{{ imgCard(collections.all, item = '/boards/wifikit8') }}
 
-:::board witty
-The **[Witty board](/boards/witty.md)** offers a ESP8266-12F solution with a RGB LED, a LDR sensor and an input button. It can be used on a breadboard.
-:::
+{{ imgCard(collections.all, item = '/boards/witty') }}
 
 :::board wemosoled
 The **[Wemos labeled board with OLED](/boards/wemosoled.md)** is a ESP-12E with OLED display.
@@ -65,6 +62,10 @@ The **[Esp-Wroom-02 Module ESP8266 with OLED and 18650](/boards/wroom2.md)** is 
 
 
 ## ESP32 boards
+
+There are many options for starting with HomeDing with a ESP32 processor.
+There are official boards from espressif 
+<https://www.espressif.com/en/products/devkits> but also other boards from other manufacurers.
 
 {{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
 
