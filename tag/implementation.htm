@@ -8,7 +8,7 @@
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='All pages related to the HomeDing System.'>
-  <title>Pages marked with a Board tag</title>
+  <title>Pages marked with a Implementation tag</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
   <script src="/story.js" type="module"></script>
@@ -41,24 +41,32 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>Pages marked with a Board tag</h1>
+    <h1>Pages marked with a Implementation tag</h1>
 
     
     
       <div class="plaincard">
     
-    These pages contain information that relates to the boards with the ESP8266 or ESP32 processor.
+    These pages contain information about the implementation of the HomeDing library and the Web UI to be uploaded into the flash memory based filesystem.
 </div>
       
-    <p><a href="/boards/index.htm">Boards</a> -- The HomeDing library can be used with the ESP8266 and ESP32 chips from Espressif. Here are some boards and devices supported by the HomeDing library.
-<p><a href="/boards/esp32/esp32audiokit.htm">ESP32 Azure Audio Kit</a> -- This is an ESP32 based board using the ESP-WROVER-B module supporting audio processing.
-<p><a href="/boards/esp32/azureiotkit.htm">ESP32 Azure IoT Kit</a> -- This is a ESP32 based board based on ESP-WROVER-B module designed by Microsoft as a reference IoT Kit Azure. It is no more fully supported.
-<p><a href="/boards/esp32/devkit.htm">ESP32 DevKit Boards</a> -- The ESP32 DevKit Boards come in various formats and sizes with WROOM modules and USB adapter. They are supported by the HomeDing library.
-<p><a href="/boards/nodemcu.htm">ESP8266 NodeMCU development boards</a> -- The NodeMCU boards are one of the most common development boards. They offer an easy start into the ESP8266 development. The have all you need for programming, offer 4MByte flash memory and a LED on-board.
-<p><a href="/boards/esp32/ttgo-t-display.htm">LilyGO TTGO T-Display</a> -- The LilyGO TTGO T-Display board offer an integrated TFT color display and a USB-C type connector.
-<p><a href="/boards/wifikit8.htm">Wifi Kit 8 Module ESP8266 with OLED</a> -- The Wifi Kit 8 Module ESP8266 with OLED is a ESP8266 with 4k Flash, OLED display and Li-Polymer battery support. It has a slim size and fits well on breadboards.
-<p><a href="/boards/witty.htm">Witty-Board</a> -- The Witty board offers a ESP8266-12F solution with a RGB LED, a LDR sensor and an input button. It can be used on a breadboard.
-
+    <h3><a href="/boards/index.htm">Boards</a></h3> 
+<p>The HomeDing library can be used with the ESP8266 and ESP32 chips from Espressif. Here are some boards and devices supported by the HomeDing library.
+</p><h3><a href="/dev/elementclass.htm">Common Functionality or Elements</a></h3> 
+<p>Details on the common functionality provided by the Element base class.
+</p><h3><a href="/dev/elementregistry.htm">Element Registry</a></h3> 
+<p>The ElementRegistry is the central class that knows all included and available Element classes to allow further creation and customization of new Elements by name at runtime.
+</p><h3><a href="/dev/index.htm">Implementation Details</a></h3> 
+<p>Hints and details on how to implement new and extend existing elements using an Arduino programming environment and how to implement new cards for the dashboards.
+</p><h3><a href="/elements/sensors.htm">Sensor Element Implementation</a></h3> 
+<p>Many Element implementations for sensors require the same functionality regarding timing and using properties and actions. The abstract SensorElement offers a base class that the specific Element implementations can derive from.
+</p><h3><a href="/dev/i2c.htm">Using the I2C bus</a></h3> 
+<p>The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data. A central configuration is supported on the device level.
+</p><h3><a href="/dev/spi.htm">Using the SPI bus</a></h3> 
+<p>The SPI bus is used by components that require fast communication like displays and memory. A central configuration is supported on the device level.
+</p><h3><a href="/boards/deepsleep.htm">Using the deep sleep mode</a></h3> 
+<p>The deep sleep mode allows saving energy consumption by also limits the availability of the web server of the de vice.
+</p>
 
     
   </main>
