@@ -26,10 +26,20 @@ The ESP32-WROOM module features:
 * 4 MByte SPI Flash memory
 * 520 kByte SRAMs
 
+In the following pin pictures the most useful functions on a pin are illustrated.
+Some functionality is problematic e.g.
+* using ADC2 win WiFi mode or
+* using the TR/RX pins for different functions but serial communication
+so I don't show it in the pictures.
 
 ## 30 pin version
 
 ![ESP32 DevKit 30pin version](/boards/esp32/devkit-30.png "w600")
+
+
+<!-- ## 36 pin version
+
+![ESP32 DevKit 36pin version](/boards/esp32/devkit-38.png "w600") -->
 
 
 ## 38 pin version
@@ -77,3 +87,4 @@ https://www.pschatzmann.ch/home/2022/01/25/platformio-debugging-the-esp32-audiok
 * <https://github.com/bdring/Grbl_Esp32/wiki/ESP32-DevKit-Versions>
 * <https://randomnerdtutorials.com/getting-started-with-esp32/>
 
+* <https://randomnerdtutorials.com/esp32-pinout-reference-gpios/>

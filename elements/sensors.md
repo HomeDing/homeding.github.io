@@ -56,7 +56,7 @@ When returning `true` the data retrieval is assumed to be completed. The data ha
 When returning `true` and an empty string back it is assumed that the sensor cannot be reached and this will end the current data retrieval.
 
 
-## Sending Actions With Sensor Data.
+## Sending Actions With Sensor Data
 
 > void SendValues(&values);
 
@@ -74,4 +74,4 @@ The data returned by the `GetProbe()` function will be compared against the last
 
 When data from the sensor has not changed it may be necessary to trigger the actions from time to tome e.g. to inform remote elements about the actual values.
 
-By specifying the `resendtime` property the resent values are sent even when not changed. 
+By specifying the `resendtime` property the resent values are sent even when not changed.
