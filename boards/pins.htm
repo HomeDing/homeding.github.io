@@ -52,7 +52,7 @@
 <p>The following overview of the ESP8266 chip and boards was helpful for me to collect all the restrictions.</p>
 <h2>Table of pins</h2>
 <p>The following table is using the <strong>GPIO</strong> pin numbers. They are equivalent to the IOxx numbers in the <a href="https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf">ESP8266 Technical Reference</a> document.</p>
-<p>The Pin notation <strong>Dxx</strong> was introduced by the NodeMCU and are written on some boards near to the connector pins. In the NodeMCU documentation they are also called &quot;IO index&quot;. The numbers differ from the GPIO numbers.</p>
+<p>The Pin notation <strong>Dxx</strong> was introduced by the NodeMCU and are written on some boards near to the connector pins. In the NodeMCU documentation they are also called “IO index”. The numbers differ from the GPIO numbers.</p>
 <p>Not mentioned here are the pin numbers on the real chip. If you need to used them directly, have a look into the <a href="https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf">ESP8266 Technical Reference</a>.</p>
 <table>
 <thead>
@@ -102,19 +102,19 @@
 </tr>
 <tr>
 <td>GPIO6</td>
-<td>--</td>
+<td>–</td>
 <td>SDIO</td>
 <td>flash memory (clk), cannot be used as GPIO</td>
 </tr>
 <tr>
 <td>GPIO7</td>
-<td>--</td>
+<td>–</td>
 <td>SDIO</td>
 <td>flash memory (MISO, data0), cannot be used as GPIO</td>
 </tr>
 <tr>
 <td>GPIO8</td>
-<td>--</td>
+<td>–</td>
 <td>Serial1-RX, SDIO</td>
 <td>flash memory (MOSI, data1), cannot be used as GPIO</td>
 </tr>
@@ -132,7 +132,7 @@
 </tr>
 <tr>
 <td>GPIO11</td>
-<td>--</td>
+<td>–</td>
 <td>SDIO</td>
 <td>flash memory (CS)</td>
 </tr>
@@ -200,7 +200,7 @@ Only 2 lines are required to communicate with many participants on this bus.</p>
 <li>SCL=GPIO5(D1) (yellow) and</li>
 <li>SDA=GPIO4(D2) (blue).</li>
 </ul>
-<p>When using a plain NodeMCU or ESP-12 board I stick to these ports but other boards don't follow this standard.</p>
+<p>When using a plain NodeMCU or ESP-12 board I stick to these ports but other boards don’t follow this standard.</p>
 <p>There are boards that already have a display and use other lines. Be sure to read the manual.</p>
 <p>The configuration of the I2C bus is required for many elements and is handled centrally by setting the
 <code>I2C-SDA</code> and <code>I2C-SCL</code> properties in the device element.</p>
@@ -211,13 +211,13 @@ Only 2 lines are required to communicate with many participants on this bus.</p>
 </ul>
 <h2>minimal wiring for bare boards like ESP-01, ESP-12E</h2>
 <ul>
-<li><strong>VCC</strong> -- 3.3 V</li>
-<li><strong>CH_PD</strong> -- 10kOhm to VCC(*1)</li>
-<li><strong>GPIO00</strong> -- 10kOhm to VCC(*1) and <strong>FLASH</strong> button to GND</li>
-<li><strong>GPIO02</strong> -- 10kOhm to VCC</li>
-<li><strong>GPIO15</strong> -- 10kOhm to GND</li>
-<li><strong>RST</strong> -- 10kOhm to VCC(*1) and <strong>RST</strong> button to GND</li>
-<li><strong>GND</strong> -- Ground</li>
+<li><strong>VCC</strong> – 3.3 V</li>
+<li><strong>CH_PD</strong> – 10kOhm to VCC(*1)</li>
+<li><strong>GPIO00</strong> – 10kOhm to VCC(*1) and <strong>FLASH</strong> button to GND</li>
+<li><strong>GPIO02</strong> – 10kOhm to VCC</li>
+<li><strong>GPIO15</strong> – 10kOhm to GND</li>
+<li><strong>RST</strong> – 10kOhm to VCC(*1) and <strong>RST</strong> button to GND</li>
+<li><strong>GND</strong> – Ground</li>
 </ul>
 <p>*1 some versions do have this resistor on board</p>
 <p>See also: <a href="https://www.esp8266.com/viewtopic.php?t=4890">https://www.esp8266.com/viewtopic.php?t=4890</a></p>

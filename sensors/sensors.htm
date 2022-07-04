@@ -99,11 +99,11 @@ This board has a circuit that compares the analog signal to a adjustable thresho
 <p>For simple on/off situations the <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions.</p>
 <p>When used with high frequencies ans used tp detect rotating speed with a wheel the The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these impulses per timeframe to create a clean action with rotation values.</p>
 </div>
-<div class="imgcard"><img src="/sensors/hcsr505.jpg"><p>This is a <strong>Mini PIR Sensor</strong> that creates a digital signal when detecting movements initiated by &quot;warm&quot; objects.
+<div class="imgcard"><img src="/sensors/hcsr505.jpg"><p>This is a <strong>Mini PIR Sensor</strong> that creates a digital signal when detecting movements initiated by “warm” objects.
 It produces a about 10 seconds HIGH level signal.</p>
 <p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signal.</p>
 </div>
-<div class="imgcard"><img src="/sensors/no.jpg"><p>hcsr501 - This is a <strong>PIR Sensor</strong> that creates a digital signal when detecting movements initiated by detecting &quot;warm&quot; objects. It produces a HIGH level signal. Signal length and sensitivity can be adjusted.</p>
+<div class="imgcard"><img src="/sensors/no.jpg"><p>hcsr501 - This is a <strong>PIR Sensor</strong> that creates a digital signal when detecting movements initiated by detecting “warm” objects. It produces a HIGH level signal. Signal length and sensitivity can be adjusted.</p>
 <p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signal.</p>
 </div>
 <div class="imgcard"><img src="/sensors/flame.jpg"><p>This is a <strong>flame Sensor</strong> or <strong>IR level Sensor</strong> that creates a digital and analog output signal detecting the amount of IR light.</p>
@@ -114,7 +114,7 @@ It produces a about 10 seconds HIGH level signal.</p>
 <p>As the signals can be very short the <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these short impulses and create a clean action on it.</p>
 </div>
 <h3>Analog Temperature Sensors</h3>
-<div class="imgcard"><img src="/sensors/ntc.jpg"><p>This is a <strong>temperature sensor</strong> that uses a <strong>temperature variable resistor</strong> ntc to create a analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.</p>
+<div class="imgcard"><img src="/sensors/ntc.jpg"><p>This is a <strong>temperature sensor</strong> that uses a <strong>temperature variable resistor</strong> ntc to create an analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.</p>
 <p>The Analog output signal can be used to calculate the actual temperature.
 The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the analog input signal.</p>
 <p>Some sensor boards also contain an adjustable reference the sensor value can be compared to to produce a digital output signal.
@@ -135,7 +135,7 @@ The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create action
 <p>A relay cannot be used directly with a GPIO pin. There is a example how to control a relay in <a href="/boards/esp01.htm">ESP-01 Board page</a>.</p>
 </div>
 <h2>Sensor Elements with impulse/frequency transfers</h2>
-<p>Instead of providing a analog level some sensors provide impulses with a timing or a impulse patterns.</p>
+<p>Instead of providing an analog level some sensors provide impulses with a timing or a impulse patterns.</p>
 <p>To communicate with these sensors and actors special libraries and elements are used that implement the specific interface and interpretation of the given data.</p>
 <div class="imgcard"><img src="/sensors/irrecv.jpg"><p>These IR sensors (VS1838 / TSOP4838)
 are equipped with an embedded chip that can detect signals using a 38kHz carrier frequency.
@@ -310,13 +310,22 @@ retrieved values.
 <td style="text-align:center">-</td>
 <td>I2C</td>
 </tr>
+<tr>
+<td>MICS5524</td>
+<td></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">X</td>
+<td>Analog</td>
+</tr>
 </tbody>
 </table>
-<div class="imgcard"><img src="/sensors/dht22.jpg"><p>The <strong>DHT22</strong> is a <strong>air temperature and humidity</strong> sensor also known as chip <strong>AM2302</strong> that supports a range of -40 to 80°C for temperature with a accuracy of ±0.5% and a full range (0..100%) for humidity.</p>
+<div class="imgcard"><img src="/sensors/dht22.jpg"><p>The <strong>DHT22</strong> is a <strong>air temperature and humidity</strong> sensor also known as chip <strong>AM2302</strong> that supports a range of -40 to 80°C for temperature with a accuracy of ±0.5% and a full range (0…100%) for humidity.</p>
 <p>A very special data transport protocol is used.</p>
 <p>The <a href="/elements/dht.htm">DHT Element</a> creates actions based on the values polled from the chip.</p>
 </div>
-<div class="imgcard"><img src="/sensors/dht11.jpg"><p>The <strong>DHT11</strong> is a <strong>air temperature and humidity</strong> sensor that supports a range of -20 to 60°C for temperature with a accuracy of ±2% and a limited range (5..95%) for humidity.</p>
+<div class="imgcard"><img src="/sensors/dht11.jpg"><p>The <strong>DHT11</strong> is a <strong>air temperature and humidity</strong> sensor that supports a range of -20 to 60°C for temperature with a accuracy of ±2% and a limited range (5…95%) for humidity.</p>
 <p>A very special data transport protocol is used.</p>
 <p>The <a href="/elements/dht.htm">DHT Element</a> creates actions based on the values polled from the chip.</p>
 </div>
@@ -338,7 +347,14 @@ retrieved values.
 <p>A very special <code>OneWire</code> protocol is used for data transmission and multiple sensors can share the same signal bus.</p>
 <p>The special <a href="/elements/dallas.htm">Dallas Element</a> supports this sensor.</p>
 </div>
-<div class="imgcard"><img src="/sensors/no.jpg"><p>The BMP280 is a combination of a temperature and absolute barometric pressure sensor.</p>
+<div class="imgcard"><img src="/sensors/no.jpg"><p>The <strong>BMP280</strong> is a combination of a temperature and absolute barometric pressure sensor.</p>
+<p>The <a href="/elements/bmp280.htm">BMP280 Element</a> can read the sensor data and uses the temperature to calibrate the air pressure.</p>
+</div>
+<div class="imgcard"><img src="/sensors/mics5524.jpg"><p>The MICS5524 is a sensor sensible to CO, Alcohol and other VOC Gas.
+It creates an analog voltage level based on the actual mass of the detected gas.
+The signal can be taken as an indicator but not as an absolute, correct value
+without individual calibration of the sensor data.</p>
+<p>The <a href="/elements/analog.htm">Analog Element</a> can be used to gather the sensor value.</p>
 </div>
 <!--
 :::sensor MCP9808
@@ -366,9 +382,9 @@ where you can find the <a href="/elements/ina219.htm">INA219 Element</a>.</p>
 <p>This chip is supported by the <a href="/examples/probe.htm">Probe example</a> in the HomeDing library
 where you can find the <a href="/elements/ina226.htm">INA226 Element</a>.</p>
 </div>
-<div class="imgcard"><img src="/sensors/soil.jpg"><p>The <strong>Soil Moisture Sensor</strong> is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.</p>
+<div class="imgcard"><img src="/sensors/soil.jpg"><p>The <strong>Soil Moisture Sensor</strong> is one of the sensors that creates an analog voltage level based on the surrounding moisture of the sensor.</p>
 </div>
-<div class="imgcard"><img src="/sensors/capasoil.jpg"><p>The <strong>Capacitive Soil Moisture Sensor</strong> is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.</p>
+<div class="imgcard"><img src="/sensors/capasoil.jpg"><p>The <strong>Capacitive Soil Moisture Sensor</strong> is one of the sensors that creates an analog voltage level based on the surrounding moisture of the sensor.</p>
 <p>The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the analog input signal.</p>
 <p>The <a href="/recipes/capasoil.htm">Capacitive Soil Moisture Sensor Recipe</a> shows more details on using such a sensor.</p>
 </div>
@@ -436,6 +452,7 @@ to create actions on the button signal.</p>
 <h2>See also</h2>
 <ul>
 <li><a href="https://arduinomodules.info/">https://arduinomodules.info/</a> for a list of common sensor modules</li>
+<li><a href="https://draeger-it.blog/vergleich-der-sensoren-am2320-dht11-und-dht22/">https://draeger-it.blog/vergleich-der-sensoren-am2320-dht11-und-dht22/</a></li>
 </ul>
 
 

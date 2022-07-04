@@ -77,14 +77,14 @@ It can just be plugged into an USB port.</p>
 <a href="/examples/standard.htm">Standard Example</a> that includes a lot of element types and board features.</p>
 <ul>
 <li>
-<p>Select the &quot;NodeMCU 1.0 (ESP12-E Module)&quot; board in the Arduino Board Manager
+<p>Select the “NodeMCU 1.0 (ESP12-E Module)” board in the Arduino Board Manager
 and use a memory layout that leaves 2 MByte for the file system by selecting
-&quot;4M (FS:2M OTA:~1019kB)&quot; in the &quot;Flash Size&quot; option.</p>
+“4M (FS:2M OTA:~1019kB)” in the “Flash Size” option.</p>
 </li>
 <li>
 <p>You probably will have some benefits from the debug output on the Serial port at this point
-and therefore should activate &quot;Serial&quot; in the &quot;Debug Port&quot; option
-and &quot;None&quot; in the &quot;Debug Level&quot; option.</p>
+and therefore should activate “Serial” in the “Debug Port” option
+and “None” in the “Debug Level” option.</p>
 </li>
 <li>
 <p>Select the right COM port and upload the sketch. It should only take about a minute
@@ -96,11 +96,11 @@ and then reboot the board.</p>
   <source src="/dev/setup-steps.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video> -->
-<p>There is a &quot;hard way&quot; to configure your local WiFi network name and passphrase into the source code in the file &quot;secrets.h&quot;. If you like to follow this approach you can change the file and upload again.</p>
+<p>There is a “hard way” to configure your local WiFi network name and passphrase into the source code in the file “secrets.h”. If you like to follow this approach you can change the file and upload again.</p>
 <p>Using the built-in WiFi Manager is the preferred method for connecting to a network and avoids hard-coding network credentials and re-programming your devices when your network changes .</p>
 <ul>
 <li>
-<p>Connect any laptop or mobile phone to the unsecured WiFi network called &quot;HomeDingXXXX&quot;.</p>
+<p>Connect any laptop or mobile phone to the unsecured WiFi network called “HomeDingXXXX”.</p>
 <p>Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
 automatically open the network configuration page.</p>
 <p><img src="/dev/wifimanager.png" alt="WiFi Manager UI" title="w400"></p>
@@ -116,7 +116,7 @@ and you will find the device later on the registered network using <a href="http
 <p>Select your private WiFi Network and enter the passphrase.</p>
 </li>
 <li>
-<p>Press &quot;Connect&quot; to connect.</p>
+<p>Press “Connect” to connect.</p>
 </li>
 </ul>
 <p>It may take some time and if everything is fine you will see the HomeDing network disappear and you can re-join your local network.</p>
@@ -125,7 +125,7 @@ and you will find the device later on the registered network using <a href="http
 <h2>Find the new device on the network</h2>
 <p>As long as there is no configuration mode requested the device will register itself on the local network
 using a temporary device name and then start into normal operating mode.</p>
-<p>Without any configuration the devicename is constructed by &quot;ESP-&quot; and a device specific hex number given by the digits of the uniques network adapter MAC address.</p>
+<p>Without any configuration the devicename is constructed by “ESP-” and a device specific hex number given by the digits of the uniques network adapter MAC address.</p>
 <p>try:</p>
 <ul>
 <li>http://{devicename from the WIFI Manager dialog}</li>
@@ -148,7 +148,7 @@ This UI is implemented with minimal size (looks plain ugly) but is part of the f
 <p>This method is useful when uploading new files or update individual files. Cannot delete files and keeps other files in place.</p>
 <p>Upload works by using drag&amp;drop:</p>
 <ul>
-<li>select the files (not folders) in the explorer and drop them over the &quot;drop here&quot; region.</li>
+<li>select the files (not folders) in the explorer and drop them over the “drop here” region.</li>
 <li>All files will be uploaded at once.</li>
 </ul>
 <h3>Web based Update</h3>
@@ -169,7 +169,7 @@ It has a upload area that can be used to upload files into the filesystem like i
 <ul>
 <li>
 <p>When working with commandline tools the following cURL statement can be used to upload individual files.</p>
-<p>curl --form &quot;fileupload=test.txt;filename=/test.txt&quot; <a href="http://homeding/">http://homeding/</a></p>
+<p>curl --form “fileupload=test.txt;filename=/test.txt” <a href="http://homeding/">http://homeding/</a></p>
 </li>
 </ul>
 <h2>Choose an icon</h2>

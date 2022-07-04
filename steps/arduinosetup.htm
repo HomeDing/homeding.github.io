@@ -58,34 +58,34 @@
 like <strong>Windows 7 and later</strong> or <strong>MAC OS X 10.10 or newer</strong>.</p>
 <p>The Windows App is some kind of restricted and I cannot recommend to install this option from the Windows Store.</p>
 <p>After clicking on the download option you will be asked to spend some money to the Arduino AG
-but you don't need tp pay and can step forward to the download using the &quot;<strong>JUST DOWNLOAD</strong>&quot;.</p>
+but you don’t need tp pay and can step forward to the download using the “<strong>JUST DOWNLOAD</strong>”.</p>
 <p>Install the software with all options set. This will also install some drivers for the common USB to Serial chips
 that are on the diverse processor boards. This is required for uploading the program to the board
 and see information from the boards sent to the computer e.g. to find bugs in the software.</p>
 <h2>Setup the tools for ESP8266</h2>
 <p>The Arduino environment can be used to target different processors. To use the ESP8266 we need to install some tools.</p>
-<p>First you have to open the Arduino application and configure the source of these tools. In the menu &quot;File&quot; -&gt; &quot;Preferences&quot;
-there is an input field &quot;Additional Boards Manager URLs:&quot; where you have to enter the following URL:</p>
+<p>First you have to open the Arduino application and configure the source of these tools. In the menu “File” -&gt; “Preferences”
+there is an input field “Additional Boards Manager URLs:” where you have to enter the following URL:</p>
 <p><a href="http://arduino.esp8266.com/stable/package_esp8266com_index.json">http://arduino.esp8266.com/stable/package_esp8266com_index.json</a></p>
 <p>If you need multiple URLs in this field you can enter them separated by a comma.</p>
 <h2>Setup the tools for ESP32</h2>
 <p>The Arduino environment can be used to target different processors. To use the ESP32 we need to install some tools.</p>
-<p>First you have to open the Arduino application and configure the source of these tools. In the menu &quot;File&quot; -&gt; &quot;Preferences&quot;
-there is an input field &quot;Additional Boards Manager URLs:&quot; where you have to enter the following URL:</p>
+<p>First you have to open the Arduino application and configure the source of these tools. In the menu “File” -&gt; “Preferences”
+there is an input field “Additional Boards Manager URLs:” where you have to enter the following URL:</p>
 <p><a href="https://dl.espressif.com/dl/package_esp32_index.json">https://dl.espressif.com/dl/package_esp32_index.json</a></p>
 <p>If you need multiple URLs in this field you can enter them separated by a comma.</p>
 <h2>Download the tools for the board</h2>
 <p>The real download of the tools is done using the built-in Boards Manager.</p>
-<p>In the Menü &quot;Tools&quot; you find a line starting with &quot;Board: &quot; that can open a Sub-Menu where you find the &quot;Boards Manager&quot;.</p>
+<p>In the Menü “Tools” you find a line starting with &quot;Board: &quot; that can open a Sub-Menu where you find the “Boards Manager”.</p>
 <p>Here you find the list of available tools to support the specific microprocessor. Search for ESP8266 or ESP32
 and install the latest version of the tools.</p>
 <p>This takes a while so just be patience.</p>
 <h2>Select the Board</h2>
-<p>In the Menü &quot;Tools&quot; you find a line starting with &quot;Board: &quot; that can open a Sub-Menu
+<p>In the Menü “Tools” you find a line starting with &quot;Board: &quot; that can open a Sub-Menu
 where you find all the supported boards.</p>
 <p>Here you need to select the board grouped by the processor type.
-You find boards like &quot;NodeMCU 1.0&quot; that is very common for ESP8266 processors
-or the &quot;ESP32 Dev Module&quot;. You should know what you have.</p>
+You find boards like “NodeMCU 1.0” that is very common for ESP8266 processors
+or the “ESP32 Dev Module”. You should know what you have.</p>
 <h2>Connect the Board - The cable problem</h2>
 <p>The NodeMCU boards all come with a USB port that just needs to be connected to any of the computer USB ports.</p>
 <p>Here is a problem with the cable as there exist many micros usb cables that only connect the GND and +5V connections
@@ -95,8 +95,8 @@ when only power is required when boards can run standalone and only need the pow
 As these boards have different USB bridge chips you might need to find out yourself.
 Most of the USB bridge chips are detected and driver download starts automatically in most cases.</p>
 <p>After have connected the board with the cable you should find a new entry in the
-the Sub-Menü &quot;Tools&quot; -&gt; &quot;Port:&quot; that you need to select.</p>
-<p>If you don't find a new entry please check the following:</p>
+the Sub-Menü “Tools” -&gt; “Port:” that you need to select.</p>
+<p>If you don’t find a new entry please check the following:</p>
 <ul>
 <li>The cable is not providing data connectivity.</li>
 <li>The driver for the USB chip is not installed.</li>

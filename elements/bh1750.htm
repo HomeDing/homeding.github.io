@@ -59,23 +59,29 @@ The Element implementation supports the 3 modes of taking single probes and the 
 <!-- <object data="/element.svg?bh1750" type="image/svg+xml"></object> -->
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>
-<p><strong>address</strong> - The I2C Address of the sensor. The default value is 0x23.</p>
-<p><strong>factor</strong> - The factor used to convert the raw sensor value into lumen (lx). The default value is
+<p><strong>address</strong> – The I2C Address of the sensor. The default value is 0x23.</p>
+<p><strong>factor</strong> – The factor used to convert the raw sensor value into lumen (lx). The default value is
 1.2 from the datasheet.</p>
-<p><strong>mode</strong> - The resolution mode of the sensor to be used:</p>
+<p><strong>mode</strong> – The following probing modes are supported by the element implementation:</p>
 <ul>
-<li>0: 1 lux resolution, Measurement time about 120ms.</li>
-<li>1: 0.5 lux resolution, Measurement time about 120ms.</li>
-<li>3: 4 lux resolution, Measurement time about 16ms.</li>
+<li>
+<p><code>0</code>: 1 lux resolution, Measurement time about 120ms.</p>
+</li>
+<li>
+<p><code>1</code>: 0.5 lux resolution, Measurement time about 120ms.</p>
+</li>
+<li>
+<p><code>3</code>: 4 lux resolution, Measurement time about 16ms.</p>
+</li>
 </ul>
 </blockquote>
 <p>From the base <a href="/elements/sensors.htm">Sensor Element</a> implementation the following properties are available for configuration:</p>
 <blockquote>
-<p><strong>readTime</strong> - Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
-<p><strong>resendTime</strong> - The current values of the probe are resent after this specified time even when not changing.</p>
-<p><strong>warmupTime</strong> - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
+<p><strong>readTime</strong> – Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
+<p><strong>resendTime</strong> – The current values of the probe are resent after this specified time even when not changing.</p>
+<p><strong>warmupTime</strong> – This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
 The default time is set to 3 seconds.</p>
-<p><strong>restart</strong> - This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
+<p><strong>restart</strong> – This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
 </blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
@@ -89,8 +95,8 @@ The default time is set to 3 seconds.</p>
 <h2>State</h2>
 <p>The following properties are available with the current values at runtime:</p>
 <blockquote>
-<p><strong>active</strong> - Is set to true when the element is active.</p>
-<p><strong>value</strong> - The current sensor value.</p>
+<p><strong>active</strong> – Is set to true when the element is active.</p>
+<p><strong>value</strong> – The current sensor value.</p>
 </blockquote>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bh1750/new"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"705.6"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>

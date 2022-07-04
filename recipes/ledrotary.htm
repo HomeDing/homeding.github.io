@@ -57,7 +57,7 @@
 <p><img src="/recipes/ledrotaryflow.png" alt="Elements used in led recipe"></p>
 <p>The <a href="/elements/rotary.htm">Rotary Encoder Element</a> takes the input value from the encoder connected to <code>D5</code> and <code>D6</code>. The common pin of the rotary encoder must be connected to ground (GND).
 It generates actions with values of +10 or -10, sometimes a multiple of them and sends them to the value element.</p>
-<p>The <a href="/elements/value.htm">Value Element</a> specifies the valid range of of 0...255 and gets controlled by the actions from the rotary encoder element to increment or decrement the value. When the maximum level is reached no further increment will be done.</p>
+<p>The <a href="/elements/value.htm">Value Element</a> specifies the valid range of of 0…255 and gets controlled by the actions from the rotary encoder element to increment or decrement the value. When the maximum level is reached no further increment will be done.</p>
 <p>Every time the value of the value element is changed an action with the new value is passed to the pwmout element driving the LED.</p>
 <p>The <a href="/elements/pwmout.htm">PWMout Element</a> is configured to allow values within the same range as passed from the value element corresponding to 0 up to the maxium of the pwm output level at the <code>D4</code> GPIO.</p>
 <p>On many boards there is a built-in LED attached to the GPIO2(D4).</p>

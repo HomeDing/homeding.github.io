@@ -73,40 +73,75 @@ TODO: Picture for is bmp280ui missing
 -->
 <h2>Using the BMP280 Element</h2>
 <p>The BMP280 Element is not part of the core set of elements but it can be added to the sketch and firmware by defining the macro <code>HOMEDING_INCLUDE_BMP280</code>.
-This adds about 2100 bytes to the firmware but doesn't need any external library.</p>
+This adds about 2100 bytes to the firmware but doesn’t need any external library.</p>
 <pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more optional Elements.</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_BMP280</span></span></code></pre>
 <p>The Sensor recipe shows how to configure a sensor device and log an actual value to get insight on passed values using a graphical output.</p>
 <p>A complete story about using sensors with the HomeDing library is available here:
 <a href="/stories/story-airquality.htm">Air Quality Monitoring Story</a></p>
 <h2>Connecting a Sensor</h2>
 <p>The BMP280 sensor must be connected to the common i2c bus and needs 3.3V power supply.</p>
-<pre><code>ESP8266 board     BMP280
-GND ------------- GND
-3.3v ------------ VCC
-I2C-SCL --------- SCL
-I2C-SDA --------- SDA
-</code></pre>
-<p>The common i2c bus is configured in the <a href="/elements/device.htm">device element</a>.</p>
+<p>Using the default I2C bus pins:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>Sensor</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>GND</td>
+<td>Ground for I2C and Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio red">VCC</span></td>
+<td>3.3v</td>
+<td>3.3v</td>
+<td>VCC/VDD</td>
+<td>Power Supply</td>
+</tr>
+<tr>
+<td><span class="gpio blue">SDA</span></td>
+<td>GPIO4(D2)</td>
+<td>IO21</td>
+<td>SDA</td>
+<td>I2C Data Signal</td>
+</tr>
+<tr>
+<td><span class="gpio yellow">SCL</span></td>
+<td>GPIO5(D1)</td>
+<td>IO22</td>
+<td>SCL</td>
+<td>I2C Clock Signal</td>
+</tr>
+</tbody>
+</table>
+<p>The common i2c bus is configured in the <a href="/elements/device.htm">device element</a>.
+For more details on using the i2c bus and specifying pins see <a href="/dev/i2c.htm">I2C bus</a>.</p>
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?bmp280" type="image/svg+xml"></object></p>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>
-<p><strong>address</strong> - The I2C Address of the sensor. The default value is 0x76.</p>
+<p><strong>address</strong> – The I2C Address of the sensor. The default value is 0x76.</p>
+<p><strong>onTemperature</strong> – These actions are send when a new temperature value has been read. The value given in the actions is actual temperature in Celcius.</p>
+<p><strong>onPressure</strong> – These actions are send when a new pressure value has been read. The value given in the actions is actual pressure in hPA.</p>
 </blockquote>
 <p>From the base <a href="/elements/sensors.htm">Sensor Element</a> implementation the following properties are available for configuration:</p>
 <blockquote>
-<p><strong>readTime</strong> - Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
-<p><strong>resendTime</strong> - The current values of the probe are resent after this specified time even when not changing.</p>
-<p><strong>warmupTime</strong> - This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
+<p><strong>readTime</strong> – Time between 2 probes being fetched from the sensor. Default value is 1m.</p>
+<p><strong>resendTime</strong> – The current values of the probe are resent after this specified time even when not changing.</p>
+<p><strong>warmupTime</strong> – This time is waited after powering the sensor on the first start or after a reset before the first data is fetched.
 The default time is set to 3 seconds.</p>
-<p><strong>restart</strong> - This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
+<p><strong>restart</strong> – This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
 </blockquote>
 <h3>Example configuration</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bmp280"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"tp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"readTime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendTime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onPressure"</span><span class="token operator">:</span> <span class="token string">"device/0?log=pressure=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2>Outbound Actions</h2>
-<p>The actions emitted by the BMP280 Element has read some new data (with changed value) from the sensor.</p>
-<p><strong>onTemperature</strong> these actions are send when a new temperature value has beed read. The value given in the actions is actual temperature in Celcius.</p>
-<p><strong>onPressure</strong> these actions are send when a new pressure value has beed read. The value given in the actions is actual pressure in hPA.</p>
 <h2>State</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bmp280/tp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"21.21"</span><span class="token punctuation">,</span><br>    <span class="token property">"pressure"</span><span class="token operator">:</span><span class="token string">"99784"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
@@ -116,8 +151,6 @@ The default time is set to 3 seconds.</p>
 <li><a href="https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/">https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/</a></li>
 <li><strong><a href="https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf">https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf</a></strong> Handbook and programming hints.</li>
 </ul>
-<h2>Tags</h2>
-<p>#element #sensor</p>
 
 
     

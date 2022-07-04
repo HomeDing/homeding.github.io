@@ -72,7 +72,7 @@ When not configures the server identity will not be checked.</p>
 <p><strong>retain</strong> - When publishing messages this flag can be set to true to tell the broker
 to remember the last sent message for subscribers.</p>
 <p><strong>subscribe</strong> - The topic to be subscribed. See below how to use this parameter.</p>
-<p><strong>qos</strong> - When subscribing the QOS defines...</p>
+<p><strong>qos</strong> - When subscribing the QOS defines…</p>
 <p><strong>onValue</strong> - These actions are emitted when a message for the subscribed topic arrived. See below how to use this parameter.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
@@ -124,7 +124,7 @@ The mode is enabled using a <code>+</code> wildcard as the last character
 in the <code>publish</code> parameter specifying the topic tree.
 When the MQTTElement is active all received actions will be treated as data publishing actions:</p>
 <pre class="language-txt"><code class="language-txt">/api/state/mqtt/outside?temperature=24.00<br>/api/state/mqtt/outside?pressure=9980</code></pre>
-<p>Please be aware that common actions/topics using 'start' and 'stop'
+<p>Please be aware that common actions/topics using ‘start’ and ‘stop’
 will not result in data publishing as they are handled by the base Element implementation.
 So just avoid these names.</p>
 <h2>Actions for MQTT subscriptions</h2>
@@ -145,22 +145,22 @@ So just avoid these names.</p>
 <p>Special characters in topic names to be avoided:</p>
 <ul>
 <li>
-<p>'#' --  This wildcard is used to subscribe to all messages of a broker across all levels.</p>
+<p>‘#’ –  This wildcard is used to subscribe to all messages of a broker across all levels.</p>
 </li>
 <li>
-<p>'+' --  This wildcard is used to subscribe to all messages of a broker within a level.</p>
+<p>‘+’ –  This wildcard is used to subscribe to all messages of a broker within a level.</p>
 </li>
 <li>
-<p>'/' -- used for the hierarchy structure in topic names.</p>
+<p>‘/’ – used for the hierarchy structure in topic names.</p>
 </li>
 <li>
-<p>'$' --  used as special start character for data from the broker system</p>
+<p>‘$’ –  used as special start character for data from the broker system</p>
 </li>
 <li>
-<p>'*' (wildcards), '&gt;' --  may have special meanings</p>
+<p>‘*’ (wildcards), ‘&gt;’ –  may have special meanings</p>
 </li>
 <li>
-<p>(empty topics) -- just don't work.</p>
+<p>(empty topics) – just don’t work.</p>
 </li>
 </ul>
 <p>There are some public available documents on how to build up topic names in general:</p>

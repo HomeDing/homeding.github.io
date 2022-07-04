@@ -51,84 +51,55 @@
 </div>
       
     <!-- ## Customize a sketch file -->
-<h2>Implement a new Element</h2>
+<h2>Implementing new Elements</h2>
+<blockquote>
 <p>The HomeDing library is not a closed eco system but rather allows adding new functionality
 by adding new Elements to support a specific functionality, sensor, chip, network service and more.</p>
-<p><strong><a href="/steps/newelement.htm">Create and extend a new Element</a></strong></p>
-<blockquote>
-<p>This step-by-step article shows how to start with a simple implementation that gets extended
-to support the specific benefits of the ecosystem.</p>
-</blockquote>
-<p><strong>Template Element</strong></p>
-<blockquote>
-<p>In the development example you can find a Element called &quot;TemplateElement&quot;
+<p>In the <a href="/steps/newelement.htm">Create and extend a new Element</a> step-by-step article you find
+how to start with a simple Element implementation that gets extended to support the specific benefits of the ecosystem.</p>
+<p>In the development example you can find a Element called <strong>TemplateElement</strong>
 that contains all function declarations and empty function implementation for an element
 that does nothing and some additional information as comments that help implementing new Elements.</p>
-</blockquote>
-<blockquote>
 <p>The 2 files (TemplateElement.*) can be copied and renamed and the class name should be adjusted as well to create a new element not doing anything yet.</p>
-</blockquote>
-<p><strong><a href="/dev/elementclass.htm">Element Class</a></strong></p>
-<blockquote>
-<p>More details about the base Element Class implementation and available methods can be found in <a href="/dev/elementclass.htm">Element Class</a> description.</p>
-</blockquote>
-<p><strong><a href="/dev/i2c.htm">Using the I2C bus</a></strong></p>
-<blockquote>
+<p>More details about the base implementation and available methods can be found in <a href="/dev/elementclass.htm">Element Class</a> description.</p>
 <p>The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data.
-A central configuration is supported on the device level.</p>
-</blockquote>
-<p><strong><a href="/dev/elementregistry.htm">Element registry</a></strong></p>
-<blockquote>
+A central configuration is supported on the device level. Som implementation hits can be found in <a href="/dev/i2c.htm">Using the I2C bus</a>.</p>
 <p>The <a href="/dev/elementregistry.htm">Element registry</a> is the central class that knows all included and available
 Element classes to allow further creation and customization of new Elements by name at runtime.</p>
 </blockquote>
 <h2>Firmware implementation details</h2>
-<p>Here is some information on how the HomeDing library works and provides some
-useful functionality.</p>
-<p><strong><a href="/dev/wifimanager.htm">WiFi manager</a></strong></p>
-<p><strong><a href="/dev/logger.htm">Serial Logger</a></strong></p>
-<p><strong><a href="/dev/safemode.htm">The safemode</a></strong></p>
-<p><strong><a href="/dev/startupnet.htm">Network Startup</a></strong></p>
-<!-- * [_microjson](/_microjson.md) -->
-<!-- * [_customelement](/_customelement.md) -->
-<h3>Extending the Web UI</h3>
+<blockquote>
+<p>There is a list of articles on how the HomeDing library works and is built and provides some
+useful functionality:</p>
 <ul>
-<li>
-<p><a href="/dev/micro.htm">Introduction</a></p>
-</li>
-<li>
-<p><a href="/dev/website.htm">Embedded Web Site for IoT Devices</a></p>
-</li>
-<li>
-<p><a href="/dev/microbehaviors.htm">micro behaviors</a></p>
-</li>
-<li>
-<p><a href="/dev/microcharts.htm">micro charts</a></p>
-</li>
-<li>
-<p><a href="/dev/microicons.htm">micro icons</a></p>
-</li>
-<li>
-<p><a href="/dev/microjavascript.htm">micro javascript utils</a></p>
-</li>
-<li>
-<p><a href="/dev/microstyle.htm">micro style</a></p>
-</li>
-<li>
-<p><a href="/dev/microtemplates.htm">micro templates</a></p>
-</li>
+<li><a href="/dev/wifimanager.htm">WiFi manager</a></li>
+<li><a href="/dev/logger.htm">Serial Logger</a></li>
+<li><a href="/dev/safemode.htm">The safemode</a></li>
+<li><a href="/dev/startupnet.htm">Network Startup</a></li>
+<li><a href="/dev/microjson.htm">Using JSON formatted data</a></li>
 </ul>
-<!-- * [monitor](/elements/_monitor.md) -->
+</blockquote>
+<h2>About the Web UI</h2>
+<blockquote>
+<p>Implementing the Web UI funtionality is almost as important as implementing the Arduino code for the firmware.</p>
+<p>There is a list of articles on how the HomeDing library works and is built and provides some
+useful functionality:</p>
 <ul>
+<li><a href="/dev/micro.htm">Introduction</a></li>
+<li><a href="/dev/website.htm">Embedded Web Site for IoT Devices</a></li>
+<li><a href="/dev/microbehaviors.htm">micro behaviors</a></li>
+<li><a href="/dev/microcharts.htm">micro charts</a></li>
+<li><a href="/dev/microicons.htm">micro icons</a></li>
+<li><a href="/dev/microjavascript.htm">micro javascript utils</a></li>
+<li><a href="/dev/microstyle.htm">micro style</a></li>
+<li><a href="/dev/microtemplates.htm">micro templates</a></li>
 <li><a href="/dev/microportal.htm">Portal</a></li>
 </ul>
+</blockquote>
+<!-- * [monitor](/elements/_monitor.md) -->
 <!-- * [_iconsforthings](/_iconsforthings.md) -->
-<h2>Element Card</h2>
-<p>Every time a element is displayed on the board a <code>card</code> template is used to display the element in a proper way.</p>
-<p>There is a generic implementation that displays the <code>value</code> only.</p>
-<p>For some elements very specific <code>cards</code> are implemented in the files <code>board.htm</code> and <code>board-templates.htm</code>.</p>
-<p>Here you can add new templates for specific elements instead of using the <code>generic</code> template.</p>
 <h2>Element Meta data</h2>
+<blockquote>
 <p>For new elements the list of properties, actions and events should be specified in the <code>elements.json</code> file that is saved on the device.</p>
 <p>This file is the basis for the <code>Add a new element</code> dialog in the board implementation.</p>
 <ul>
@@ -136,6 +107,7 @@ useful functionality.</p>
 <li><strong>Actions</strong> are also implemented in the <code>set(name, value)</code> method but are expected to be used at runtime by incoming actions.</li>
 <li><strong>Events</strong> are outgoing actions to other elements.</li>
 </ul>
+</blockquote>
 <h2>See also</h2>
 <ul>
 <li><a href="/dev/logger.htm">Device Logging</a></li>

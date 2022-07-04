@@ -66,17 +66,17 @@ ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 <p><object data="/element.svg?timer" type="image/svg+xml"></object></p>
 <p><strong>title</strong> - Caption text for the element. Used in the boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
-<p><strong>mode</strong> - The element supports 3 modes: <strong>&quot;on&quot;</strong> for always on, <strong>&quot;off&quot;</strong> for always off and <strong>&quot;timer</strong>&quot; for switching the value using the timer settings.</p>
-<p><strong>restart</strong> - When set to &quot;true&quot; or &quot;1&quot; the timer restarts automatically when cycleTime is over.</p>
-<p><strong>waitTime</strong> - time before &quot;on&quot; action</p>
-<p><strong>pulseTime</strong> - time between &quot;on&quot; and &quot;off&quot; action.</p>
+<p><strong>mode</strong> - The element supports 3 modes: <strong>“on”</strong> for always on, <strong>“off”</strong> for always off and <strong>&quot;timer</strong>&quot; for switching the value using the timer settings.</p>
+<p><strong>restart</strong> - When set to “true” or “1” the timer restarts automatically when cycleTime is over.</p>
+<p><strong>waitTime</strong> - time before “on” action</p>
+<p><strong>pulseTime</strong> - time between “on” and “off” action.</p>
 <p><strong>cycleTime</strong> - time of a complete timer cycle. When  not specified or too low the cycletime gets adjusted to waittime+pulsetime.</p>
 <p><strong>onOn</strong> - These actions are dispatched when the pulse time starts.</p>
 <p><strong>onOff</strong> - These actions are dispatched when the pulse time ends.</p>
 <p><strong>onValue</strong> - These actions are dispatched when the pulse time starts or ends</p>
 <p><strong>onEnd</strong> - These actions are dispatched when a timer ends by using the <code>stop</code> action or when a <code>once</code> timer has finished the cycle. |</p>
 <h2>Control the Element</h2>
-<p>The timer element can run on it's own but can also be controlled by the following incomming actions:</p>
+<p>The timer element can run on it’s own but can also be controlled by the following incomming actions:</p>
 <p><strong>start</strong> - Receiving this action starts the timer from the beginning.</p>
 <p><strong>stop</strong> - Receiving this action stop the timer.</p>
 <p><strong>next</strong> - Receiving this action advances the timer to on / off .</p>
@@ -85,7 +85,7 @@ ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 <h2>State</h2>
 <p>The state of the timer element includes:</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
-<p><strong>mode</strong> - Current mode of the element &quot;on&quot;, &quot;off&quot; or &quot;timer&quot;.</p>
+<p><strong>mode</strong> - Current mode of the element “on”, “off” or “timer”.</p>
 <p><strong>time</strong> - time passed since starting the cycle (in seconds).</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h3>Example for State</h3>

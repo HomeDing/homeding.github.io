@@ -81,7 +81,7 @@ This is implemented by the <a href="/elements/log.htm">Log Element</a>.</p>
 <p>Every time the active log file <code>/log.txt</code> has reached almost 4kByte of text the files will be rotated. The log_old.txt file is deleted and the current log.txt is renamed to log_old.txt. Then all new log output will be written to the log.txt file.</p>
 <h2>Logging Functions</h2>
 <p>The following C Macros and functions are available to create log entries.</p>
-<h3>Raw level logging LOGGER_RAW(...)</h3>
+<h3>Raw level logging LOGGER_RAW(…)</h3>
 <p>This macro is intended to be used for very detailed debug output during the development without looking for a logging level that will be removed later.
 The output is sent to the Serial output port only. The macro is completely disabled when specifying no debug port in the settings.</p>
 <p>This macro will directly push all information to the serial port specified by the debug port option.
@@ -90,7 +90,7 @@ The formatting from printf is used and lines will have a <code>&gt;</code> prefi
 <pre class="language-cpp"><code class="language-cpp"><span class="token function">LOGGER_RAW</span><span class="token punctuation">(</span><span class="token string">"init: path=%s cache_header=%s"</span><span class="token punctuation">,</span> path<span class="token punctuation">,</span> cache_header<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p><strong>Output:</strong></p>
 <pre class="language-text"><code class="language-text">  >init: path=/ cache_header=NO-CACHE</code></pre>
-<h3>Trace level logging LOGGER_TRACE(...) and LOGGER_ETRACE(...)</h3>
+<h3>Trace level logging LOGGER_TRACE(…) and LOGGER_ETRACE(…)</h3>
 <p>This macro is intended to be used for function level tracing e.g. to log the called function and the parameters.</p>
 <p>Like the LOGGER_RAW macro the output is sent to the Serial output port only.</p>
 <p>The functionality of this macro is completely disabled when specifying no debug port in the settings.
@@ -104,7 +104,7 @@ The formatting from printf is used and lines will have a <code>HH:MM:SS [type]/[
 <p><strong>Output:</strong></p>
 <pre><code>19:01:03 displaydot/b:t:set(show:1)
 </code></pre>
-<h3>Trace level logging LOGGER_ERR(...) and LOGGER_EERR(...)</h3>
+<h3>Trace level logging LOGGER_ERR(…) and LOGGER_EERR(…)</h3>
 <p>This macro is intended to be used for error level tracing e.g. to log the error conditions that cause aborting some functionality.</p>
 <p>The output is send to the Serial debug port when configured but is also written to a file in the filesystem for remote analysis.</p>
 <p>The macro is never completely disabled because logging to the file system is working even when no serial output port is available.</p>
@@ -116,7 +116,7 @@ The formatting from printf is used and lines will have a <code>HH:MM:SS [type]/[
 <p><strong>Output:</strong></p>
 <pre><code>19:08:36 displaydot/b:t:set(show:1)
 </code></pre>
-<h3>Trace level logging LOGGER_INFO(...) and LOGGER_EINFO(...)</h3>
+<h3>Trace level logging LOGGER_INFO(…) and LOGGER_EINFO(…)</h3>
 <p>This macro is intended to be used for explicit tracing information e.g. events like starting a service or specific system information.</p>
 <p>The output is send to the Serial debug port when configured but is also written to a file in the filesystem for remote analysis.</p>
 <p>The macro is never completely disabled because logging to the file system is working even when no serial output port is available.</p>

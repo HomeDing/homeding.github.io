@@ -56,19 +56,19 @@ DisplayTextElement may exist multiple times in the configuration by using differ
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?displaytext" type="image/svg+xml"></object></p>
-<p><strong>x</strong> -- Specifies the x position of the text.</p>
-<p><strong>y</strong> -- Specifies the y position of the text.</p>
-<p><strong>clear</strong> -- This property set to any value will remove the text from the display.</p>
-<p><strong>prefix</strong> -- This text is always send to the display as a prefix to the value.</p>
-<p><strong>postfix</strong> -- This text is always send to the display as a postfix to the value.</p>
-<p><strong>fontsize</strong> -- This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize.
+<p><strong>x</strong> – Specifies the x position of the text.</p>
+<p><strong>y</strong> – Specifies the y position of the text.</p>
+<p><strong>clear</strong> – This property set to any value will remove the text from the display.</p>
+<p><strong>prefix</strong> – This text is always send to the display as a prefix to the value.</p>
+<p><strong>postfix</strong> – This text is always send to the display as a postfix to the value.</p>
+<p><strong>fontsize</strong> – This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize.
 For the OLED drivers the font sizes 10, 16 and 24 are supported.</p>
 <p>Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.</p>
 <h2>Element Actions</h2>
 <p>The following actions can be sent to the element:</p>
-<p><strong>value</strong> -- This value is sent to the display including prefix and postfix texts.</p>
-<p><strong>clear</strong> -- The value is cleared and the display is updated by sending prefix and postfix texts.</p>
-<p><strong>redraw</strong> -- The value is sent to the display including prefix and postfix texts.</p>
+<p><strong>value</strong> – This value is sent to the display including prefix and postfix texts.</p>
+<p><strong>clear</strong> – The value is cleared and the display is updated by sending prefix and postfix texts.</p>
+<p><strong>redraw</strong> – The value is sent to the display including prefix and postfix texts.</p>
 <h3>Configuration Example</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"val"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"val="</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the value"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p>The <code>value</code> property can be used to make the displaytext to be visible. Using the browser you can set the value using <a href="http://homeding/$board/displaytext/val?value=hello">http://homeding/$board/displaytext/val?value=hello</a></p>

@@ -55,7 +55,7 @@ Both inputs are configured to use the internal pull up resistors to create a phy
 By pressing the buttons the physical level ist pulled to ground.</p>
 <p>Because this is logically seen as 0 (not pressed) and 1 (pressed) the inverse mode is used.</p>
 <p>The actions are emitted every time the button is pressed (going from 0 to 1).</p>
-<p>The <a href="/elements/value.htm">value element</a> specifies the valid range of of 0...255 and gets controlled by the actions from the input element to increment or decrement the value.
+<p>The <a href="/elements/value.htm">value element</a> specifies the valid range of of 0…255 and gets controlled by the actions from the input element to increment or decrement the value.
 When the maximum level is reached no further increment will be done.</p>
 <p>Every time the value of the value element is changed an action with the new value is passed to the pwm element driving the LED.</p>
 <p>The <a href="/elements/pwmout.htm">pwm element</a> is configured to allow values within the same range as passed from the value element corresponding to 0 up to the maximum of the pwm output level at the <code>D4</code> GPIO.</p>

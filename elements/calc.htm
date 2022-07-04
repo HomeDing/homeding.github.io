@@ -56,15 +56,15 @@
 <p>When no input value is given the output value is 0 by default.</p>
 <h2>Element Configuration</h2>
 <blockquote>
-<p><strong>type</strong> -- (internal)
+<p><strong>type</strong> – (internal)
 This property controls how the input values are scanned and can be modified by the derived elements.
 The logical elements set this to datatype-boolean to enable scanning of <code>true</code> and <code>false</code> values.
 The datatype-numeric and is used by the AddElement for scanning numbers.</p>
-<p><strong>value[n]</strong> --
+<p><strong>value[n]</strong> –
 The input values of the element are given using the value array notation. n must be in the range of 0 to 7.</p>
-<p><strong>invert</strong> --
+<p><strong>invert</strong> –
 The boolean calculations result is inverted when this property is set to true.</p>
-<p><strong>onValue</strong> -- These actions are emitted when the output value has changed.</p>
+<p><strong>onValue</strong> – These actions are emitted when the output value has changed.</p>
 </blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
@@ -75,8 +75,8 @@ The boolean calculations result is inverted when this property is set to true.</
 </blockquote>
 <h2>State</h2>
 <p>The following properties are available with the current values at runtime</p>
-<p><strong>active</strong> -- Is set to true when the element is active.</p>
-<p><strong>value</strong> -- The current output value is reported in the state.</p>
+<p><strong>active</strong> – Is set to true when the element is active.</p>
+<p><strong>value</strong> – The current output value is reported in the state.</p>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"add/duration"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"13"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Implementation details</h2>
@@ -89,7 +89,7 @@ and eases implementation of the calculation elements.</p>
 <ul>
 <li>values that have not been set using a value[] action contain empty strings.</li>
 <li>The number of used i-values is stored in the variable _inputs so re-calculations only need to analyse
-the in-values in index 0...(_inputs-1)</li>
+the in-values in index 0…(_inputs-1)</li>
 <li>DATATYPE::STRING</li>
 </ul>
 <p>The number of max. 8 values can be changed by the CALCELEMENT_MAX_INPUTS definition.</p>

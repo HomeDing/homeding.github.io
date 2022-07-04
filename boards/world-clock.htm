@@ -71,7 +71,7 @@ UART programm download-schnittstelle: IO0 und GND sind kurzgeschlossen wenn das 
 <p>via i2c bus
 address : read A3h and write A2h</p>
 <p>readTime = function (self)
-wkd = {&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot; }
+wkd = {“Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday” }
 i2c.start(<a href="http://self.id">self.id</a>)
 i2c.address(<a href="http://self.id">self.id</a>, self.address, i2c.TRANSMITTER)
 i2c.write(<a href="http://self.id">self.id</a>, 0x02)
