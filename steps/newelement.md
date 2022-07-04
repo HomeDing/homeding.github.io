@@ -13,13 +13,13 @@ The HomeDing library is not a closed eco system but allows customization, config
 This step-by-step article shows how to start with a simple implementation that gets extended
 to support the specific benefits of the ecosystem.
 
-The entrance effort to do so is not more complex than writing a Arduino sketch with a setup and loop function.
+The entrance effort to do so is not more complex than writing a Arduino sketch with a `setup()` and `loop()` function.
 
-The only hard requirement is that there is a cooperative multitasking implemented that relies on a fast returning
-loop() function. Not using delay() or other blocking implementations however is a best practice and required for all
-network attached implementations using the webserver.
+> The only hard requirement is that there is a cooperative multitasking implemented that relies on a fast returning
+> loop() function. Not using delay() or other blocking implementations however is a best practice and required for all
+> network attached implementations using the webserver.
 
-Here you see step by step 
+Here you see step by step
 
 * how to create a new element from a very simple example similar to an Arduino sketch
 * adding stop & resume
@@ -30,21 +30,26 @@ Here you see step by step
 These implementations assume there is a NodeMCU (or compatible) board in use.
 
 
-## simplest Implementation - MyElement-01.h
+## Simplest Implementation - MyElement-01.h
 
 This is an implementation of the original non-blocking BlinkWithoutDelay sketch wrapped inside a class definition.
 
+How to re-arrange code into a class is well known in the Arduino world as all libraries are written this way to offer reusable functionality.
+The Elements in the HomeDing library follow this approach as well. 
+
+In the class you can find the 2 functions `setup()` and `loop()` implemented.
+
 The source code can be found in the "MyElement-01.h" file in the [DevDing example](/examples/devding.md) folder.
 
-To include this Element-wrapped code the header and initialization must be present to your sketch. The lines are part of the example so you just need to uncomment the corresponding lines.
-
-In the headers include section the MyElement-01.h file is included and will be compiled within the sketch file:
+To include this Element-wrapped coding in your firmware the header and initialization must be present to your sketch.
+You can copy the whole implementation into your sketch file or uncomment the `#include` code in the DevDin example.
+Both option will enable that the MyElement-01.h code will be compiled within the sketch file:
 
 ```cpp
 #include "MyElement-01.h"
 ```
 
-In the setup function:
+In the setup function it is required to activate the new Element so the `setup()` and `loop()` functions are called:
 
 ```cpp
 // enable initialization line to see MyElement working
@@ -57,7 +62,7 @@ By wrapping the code into a cpp class it is possible to have multiple "instances
 the implementation code will exist once in the firmware.
 
 Under the hood the `homeding.add(...)` function is creating such a instance and will call the `setup()` and `loop()`
-functions as usual. 
+functions as usual.
 
 
 ## rework into a standard cpp class - MyElement-02.h
@@ -69,15 +74,15 @@ It will help us adding the element to the library at a later step.
 
 The implementation has not changed compared to "MyElement-01.h".
 
-See "MyElement-02.*" files 
+See "MyElement-02.*" files
 
 This is not strictly required at this time but Best Practice in CPP projects.
 
 
-## Element base functionality 
+## Element base functionality
 
-The now implemented class also "derives" from the [Element class](/dev/elementclass.md) that provides some 
-useful basic functionality.
+The now implemented class also "derives" from the [Element class]
+that provides some useful basic functionality.
 
 * The instance is already in he list of active elements. When you request <http://homeding/api/state> [^hostname]
   you can see the is marked as active: `"my/2":{"active":"true"}`.
@@ -125,7 +130,7 @@ void MyElement03::term() {
 }
 ```
 
-It is important to call the base functions before implementing 
+It is important to call the functions of the base class e.g. `Element::start();` before implementing your code.
 
 The code can be found in the MyElement-03.x implementation files.
 
@@ -192,7 +197,7 @@ In the header file the set function must be declared:
 ```cpp
 /** declare the set functionality. */
 bool set(const char *name, const char *value) override;
-``` 
+```
 
 The set function is implemented in the implementation file:
 
@@ -209,7 +214,9 @@ bool MyElement03::set(const char *name, const char *value) {
   }
   return (ret);
 };
-``` 
+```
+
+The [Element class] that is used as the base class also provides a configuration for logging using the **loglevel** configuration that helps understanding from the log output in the debug window what is happening in the element implementation.
 
 
 ## run multiple blinkling elements
@@ -252,7 +259,7 @@ You can use the file from GitHub at <https://github.com/HomeDing/WebFiles/blob/m
 
 The html object must be placed inside the `<div id="u-templates" style="display:none">` container where is will be used as a template for every configured "my" element.
 
-In this example the configured pin and the interval values are shown. 
+In this example the configured pin and the interval values are shown.
 
 ```html
 <div class="card" u-control="my" id="${id}" u-is="generic" microID="${id}">
@@ -265,10 +272,8 @@ In this example the configured pin and the interval values are shown.
 ```
 
 
-
 [^hostname]: replace `homeding` with the network name of your device to use this link.
 
+[Element class]: /dev/elementclass.md
 [Element Registry]: /dev/elementregistry.md
-
-
 

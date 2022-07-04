@@ -56,106 +56,81 @@ The approach is very different to many other IoT solutions regarding these reaso
 
 ## Web enabled
 
+## Web interface
+
+> Every device based on the Homeding library is connected to the local WiFi network and has a [Web Server](/concepts/paper04.md)
+> and a small Web Site built-in to visualize the current functionality or to configure some new functionality using a standard web browser.
+>
 > The IoT devices all offer a full functional web frontend User Interface (UI) based on the web technologies HTML+CSS+JavaScript.
+>
+> The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](/dev/webservices.md).
 >
 > Again, just using the given implementation is an option to start quickly as there are widgets for many of the elements
 > that allow inspecting, controlling and configuration using a standard browser.
 >
-> If you are not familiar with these technologies you can find some documentation here to learn
-> how to build a full functional Web UI in less than 200k code size.
-
-Special widgets are e.g. available for:
-
-* [Switch](/elements/switch.md)
-* [Button](/elements/button.md)
-* [Value](/elements/value.md)
-
-<!-- Featuring a broad set of versatile and simple widgets, including:
-- Stepper
-- Messenger
-- Color
-- Dimmed light
-- Colored light
-- Value
-- Status
-- Gauge
-- Percentage
-- LED
-- Map
-- Chart -->
-
-The library is currently made especially for the ESP8266 based boards like the NodeMCU or similar ones.
-Many sensors, displays, input and output functionality is available as [elements](/elements/index.md).
-
-The project is Open Source available on GitHub and all files are licensed under a BSD style license.
-See <http://www.mathertel.de/License.aspx>
-
-The full documentation is available at: <https://homeding.github.io/>
+> If you like to extend the UI capabilities you can find some documentation in [Implementation Details](/dev/index.md) to see
+> how the full functional Web UI is built with the reduced memory available in microprocessor environments.
 
 
-## HomeDing Concept Papers
+## Processors supported
 
-Some text on the concepts and architecture of this library.
+> The library is currently made especially for the ESP8266 and ESP32 based boards like the NodeMCU or ESP32-DevKit or similar ones.
+> The Arduino environments are used for implementation to keep this easy for DIY projects.
+>
+> Many sensors, displays, input and output functionality is available as [elements](/elements/index.md).
+>
+> For some [boards](/boards/index.md) you can find reviews and summaries with a suitable the configuration of the system.
 
-* [Build your own things easily](/concepts/paper01.md)
-* [Software Architecture](/concepts/paper02.md)
-* [Elements and Actions](/concepts/paper03.md)
-* [Web Server](/concepts/paper04.md)
+
+## Open Source
+
+> The project is Open Source available on GitHub and all files are licensed under a BSD style license.
+> See <http://www.mathertel.de/License.aspx>
+>
+> The full documentation is available at: <https://homeding.github.io/>
+>
+> Some text on the concepts and architecture of this library.
+>
+> * [Build your own things easily](/concepts/paper01.md)
+> * [Software Architecture](/concepts/paper02.md)
+> * [Elements and Actions](/concepts/paper03.md)
+> * [Web Server](/concepts/paper04.md)
 
 
 ## Elements
 
-Elements are the functional blocks for building and configuring a device and they interact using actions.
-
-Each element supports a unique feature, e.g. reads a sensor, drives a display, connects some peripheries or implements some internal logic.
-
-The list of the [elements](/elements/index.md) already provided within this library, the [examples](/examples/index.md) and the [recipes](/recipes/index.md) show you the available features that can be configured.
-
-It is intentionally easy to implement your own specific elements as you can see in some of the [examples](/examples/index.md).
+> Elements are the functional blocks for building and configuring a device and they interact using actions.
+>
+> Each element supports a unique feature, e.g. reads a sensor, drives a display, connects some peripheries or implements some internal logic.
+>
+> The list of the [elements](/elements/index.md) already provided within this library,
+> the [examples](/examples/index.md) and the [recipes](/recipes/index.md) show you the available features that can be configured.
+>
+> It is intentionally easy to implement your own specific elements as you can see in some of the [examples](/examples/index.md).
 
 
 ## Configuration
 
-Instead of compiling and uploading a new firmware to the device every time a change is required the library provides configuration possibilities at runtime.
-
-The configuration of the device implemented as a JSON file activates and configures the required elements as well as defining how the interact with each other and to the outer world over network.
-
-
-## Boards
-
-The HomeDing library can be used with almost any board that is using a ESP8266 processor.
-
-For some [boards](/boards/index.md) you can find reviews and summaries with a suitable the configuration of the system.
+> Instead of compiling and uploading a new firmware to the device every time a change is required
+> the library provides configuration possibilities at runtime.
+>
+> The configuration of the device implemented as a JSON file activates and configures the required elements
+> as well as defining how the interact with each other and to the outer world over network.
 
 
-## Web interface
+## See also
 
-Every device based on the Homeding library is connected to the local WiFi network and has a [Web Server](/concepts/paper04.md)
-With a small Web Site built-in to visualize the current functionality or to configure some new functionality using a standard web browser.
-
-The build-in Web Server also offers a programmable interface by using REST+JSON based [Web-Services](/dev/webservices.md).
-
-
-## Extend and Implement for your needs
-
-See: [Implementation Concepts](/concepts/index.md)
-See: [Implementation References](/dev/index.md)
-
-
-## Read more
-
-Source code can be installed using the Arduino Library Manager or downloaded from <https://www.github.com/Homeding>.
-
-In the documentation you find related links to material that is available on the internet and worth reading.
-
-There are many good resources available to get more information about the ESP8266 boards. Here my recommendations:
-
-### From Espressif
-
-* [ESP8266 documents at espressif](https://www.espressif.com/en/support/download/documents?keys=ESP8266)
-* [The ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
-* [ESP8266EX Datasheet](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
-
-### General Guides
-
-* [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)
+> Extend and Implement for your needs
+>
+> * See: [Implementation Concepts](/concepts/index.md)
+> * See: [Implementation References](/dev/index.md)
+>
+> From Espressif
+>
+> * [ESP8266 documents at espressif](https://www.espressif.com/en/support/download/documents?keys=ESP8266)
+> * [The ESP8266 Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
+> * [ESP8266EX Datasheet](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf)
+>
+> General Guides
+>
+> * [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)

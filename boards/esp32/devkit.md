@@ -28,8 +28,10 @@ The ESP32-WROOM module features:
 
 In the following pin pictures the most useful functions on a pin are illustrated.
 Some functionality is problematic e.g.
+
 * using ADC2 win WiFi mode or
 * using the TR/RX pins for different functions but serial communication
+
 so I don't show it in the pictures.
 
 ## 30 pin version

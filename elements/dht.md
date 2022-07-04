@@ -1,5 +1,5 @@
 ---
-title: DHT Element
+title: DHT Element for Temperature and Humidity Sensors
 icon: dht
 tags: ["Element", "Sensor"]
 layout: "page.njk"
@@ -88,15 +88,15 @@ There is an option to switch the sensor on and off by using another GPIO pin. Se
 
 The following properties are available for configuration of the element:
 
-> **pin**\* - Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
+> **pin**\* -- Specifies the hardware number of the pin that is used to connect the DHT sensor for data.
 >
-> **type** - The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
+> **type** -- The type of the sensor. Values are: "DHT11", "DHT22" and "AUTO"
 >
-> **onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that > stay the same.
+> **onTemperature** -- These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that > stay the same.
 >
-> **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay > the same.
+> **onHumidity** -- These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay > the same.
 >
-> **powerpin** -This output pin can be specified to switch the sensor on and off.
+> **powerpin** -- This output pin can be specified to switch the sensor on and off.
 > This output pin can be specified and can be used to re-start the DHT sensor by using the circuit described below.
 >
 > **powerinverse** -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
@@ -128,11 +128,11 @@ The following properties are available for configuration of the element:
 
 The following properties are available with the current values at runtime
 
-> **active** - Is set to true when the element is active.
+> **active** -- Is set to true when the element is active.
 >
-> **temperature** - The last read temperature value from the sensor.
+> **temperature** -- The last read temperature value from the sensor.
 >
-> **humidity** - The last read humidity value from the sensor.
+> **humidity** -- The last read humidity value from the sensor.
 
 
 ### Example State

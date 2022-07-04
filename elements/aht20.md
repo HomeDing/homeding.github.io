@@ -51,18 +51,19 @@ The `HOMEDING_INCLUDE_AHT20` must be defined in the main sketch to compile and r
 The sensor is using the I2C bus for communication and is usually placed on a adapter board
 giving access to the required pins.
 
-Using the default I2C bus pins and my favorite colors:
+Using the default I2C bus pins:
 
 | Signal                               | ESP8266   | ESP32 | Sensor  | Description                     |
 | ------------------------------------ | --------- | ----- | ------- | ------------------------------- |
-| <span class="gpio black">GND</span>  | GND       | GND   | 1 GND   | Ground for I2C and Power Supply |
+| <span class="gpio black">GND</span>  | GND       | GND   | GND     | Ground for I2C and Power Supply |
 | <span class="gpio red">VCC</span>    | 3.3v      | 3.3v  | VCC/VDD | Power Supply                    |
 | <span class="gpio blue">SDA</span>   | GPIO4(D2) | IO21  | SDA     | I2C Data Signal                 |
 | <span class="gpio yellow">SCL</span> | GPIO5(D1) | IO22  | SCL     | I2C Clock Signal                |
 
 The required power for the sensor is low and the 3.3V from most CPU boards can be used.
 
-For more details on using the i2c bus and specifying pins in the [Device Element](/elements/device.md) see [I2C bus](/dev/i2c.md).
+The common i2c bus is configured in the [device element](/elements/device.md).
+For more details on using the i2c bus and specifying pins see [I2C bus](/dev/i2c.md).
 
 
 ## Element Configuration
@@ -71,15 +72,18 @@ For more details on using the i2c bus and specifying pins in the [Device Element
 
 The following properties are available for configuration of the element:
 
-> **onTemperature** - These actions are emitted by the element when the temperature gets a new value. The action will not be sent when reading the sensor values that > stay the same.
+> **onTemperature** -- These actions are emitted by the element when the temperature gets a new value.
+> The action will not be sent when reading the sensor values that > stay the same.
 >
-> **onHumidity** - These actions are emitted by the element when the humidity gets a new value. The action will not be sent when reading ne sensor values that stay > the same.
+> **onHumidity** -- These actions are emitted by the element when the humidity gets a new value. 
+> The action will not be sent when reading ne sensor values that stay > the same.
 >
-> **powerinverse** -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
+> **powerinverse** -- This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
 
 {% include "./sensorproperties.md" %}
 
 {% include "./elementproperties.md" %}
+
 
 ### Configuration Example
 
@@ -97,15 +101,16 @@ The following properties are available for configuration of the element:
 }
 ```
 
+
 ## Element State
 
 The following properties are available with the current values at runtime
 
-> **active** - Is set to true when the element is active.
+> **active** -- Is set to true when the element is active.
 >
-> **temperature** - The last read temperature value from the sensor.
+> **temperature** -- The last read temperature value from the sensor.
 >
-> **humidity** - The last read humidity value from the sensor.
+> **humidity** -- The last read humidity value from the sensor.
 
 
 ### Example State
@@ -127,4 +132,3 @@ The following properties are available with the current values at runtime
 * <https://www.adafruit.com/product/5183>
 * <https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors>
 * <https://kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html>
-

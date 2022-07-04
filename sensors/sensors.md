@@ -58,7 +58,7 @@ This is a **magnetic hall sensor** that creates an analog signal from the detect
 
 The [DigitalInput Element](/elements/digitalin.md) can create actions based in the digital input signal.
 
-The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
+The [Analog Element] can create actions based in the analog input signal.
 :::
 
 
@@ -67,7 +67,7 @@ The [Analog Element](/elements/analog.md) can create actions based in the analog
 :::sensor ldr
 This is a **light sensitive sensor** using a light defined resistor (LDR) component. This board already has a 10K resistor that creates a variable analog input signal.
 
-The [Analog Element](/elements/analog.md) can create actions based in the input signal.
+The [Analog Element] can create actions based in the input signal.
 :::
 
 
@@ -127,7 +127,7 @@ This is a **flame Sensor** or **IR level Sensor** that creates a digital and ana
 
 The [DigitalInput Element](/elements/digitalin.md) can create actions based in the digital input signal.
 
-The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
+The [Analog Element] can create actions based in the analog input signal.
 :::
 
 
@@ -141,10 +141,10 @@ As the signals can be very short the [DigitalInterrupt Element](/elements/_digit
 ### Analog Temperature Sensors
 
 :::sensor ntc
-This is a **temperature sensor** that uses a **temperature variable resistor** ntc to create a analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.
+This is a **temperature sensor** that uses a **temperature variable resistor** ntc to create an analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.
 
 The Analog output signal can be used to calculate the actual temperature.
-The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
+The [Analog Element] can create actions based in the analog input signal.
 
 Some sensor boards also contain an adjustable reference the sensor value can be compared to to produce a digital output signal.
 The [DigitalInput Element](/elements/digitalin.md) can create actions based on this digital input signal.
@@ -183,7 +183,7 @@ A relay cannot be used directly with a GPIO pin. There is a example how to contr
 
 ## Sensor Elements with impulse/frequency transfers
 
-Instead of providing a analog level some sensors provide impulses with a timing or a impulse patterns.
+Instead of providing an analog level some sensors provide impulses with a timing or a impulse patterns.
 
 To communicate with these sensors and actors special libraries and elements are used that implement the specific interface and interpretation of the given data.
 
@@ -197,7 +197,7 @@ available for this. (e.g. <https://github.com/crankyoldgit/IRremoteESP8266>).
 
 Not yet supported directly by the HomeDing library. Experimental implementation in the DevDing example for RF is available. IR behaves very similar.
 <!-- https://github.com/z3t0/Arduino-IRremote -->
-:::
+ :::
 
 
 :::sensor rf433recv
@@ -230,23 +230,25 @@ retrieved values.
 
 There are many sensors for temperature and more environment / air parameters varying on interface and parameters:
 
-| Model   | Element          | Temperature | Humidity | Pressure |  VOC  | Protocol |
-| ------- | ---------------- | :---------: | :------: | :------: | :---: | -------- |
-| AHT20   | [AHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
-| AM2120  | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
-| AM2302  | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
-| AM2320  | [AM2320 Element] |      X      |    X     |    -     |   -   | I2C, DHT |
-| AM2322  | [DHT Element]    |      X      |    X     |          |       | I2C, DHT |
-| BMP280  | [BMP280 Element] |      X      |    -     |    X     |   -   | I2C      |
-| BME680  | [BME680 Element] |      X      |    -     |    -     |   -   | I2C, SPI |
-| Dallas  | [Dallas Element] |      X      |    -     |    -     |   -   | OneWire  |
-| DS18B20 | [Dallas Element] |      X      |    -     |    -     |   -   | OneWire  |
-| DHT11   | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
-| DHT20   | [AHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
-| DHT22   | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
-| SHT20   | [SHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
-| SHT71   |                  |      X      |    X     |    -     |   -   | I2C      |
-| SHT85   |                  |      X      |    X     |    -     |   -   | I2C      |
+| Model    | Element          | Temperature | Humidity | Pressure |  VOC  | Protocol |
+| -------- | ---------------- | :---------: | :------: | :------: | :---: | -------- |
+| AHT20    | [AHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
+| AM2120   | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| AM2302   | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| AM2320   | [AM2320 Element] |      X      |    X     |    -     |   -   | I2C, DHT |
+| AM2322   | [DHT Element]    |      X      |    X     |          |       | I2C, DHT |
+| BMP280   | [BMP280 Element] |      X      |    -     |    X     |   -   | I2C      |
+| BME680   | [BME680 Element] |      X      |    -     |    -     |   -   | I2C, SPI |
+| Dallas   | [Dallas Element] |      X      |    -     |    -     |   -   | OneWire  |
+| DS18B20  | [Dallas Element] |      X      |    -     |    -     |   -   | OneWire  |
+| DHT11    | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| DHT20    | [AHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
+| DHT22    | [DHT Element]    |      X      |    X     |    -     |   -   | DHT      |
+| SHT20    | [SHT20 Element]  |      X      |    X     |    -     |   -   | I2C      |
+| SHT71    |                  |      X      |    X     |    -     |   -   | I2C      |
+| SHT85    |                  |      X      |    X     |    -     |   -   | I2C      |
+| MICS5524 |                  |      -      |    -     |    -     |   X   | Analog   |
+
 
 :::sensor dht22
 The **DHT22** is a **air temperature and humidity** sensor also known as chip **AM2302** that supports a range of -40 to 80°C for temperature with a accuracy of ±0.5% and a full range (0..100%) for humidity.
@@ -305,7 +307,18 @@ The special [Dallas Element] supports this sensor.
 :::
 
 :::sensor no bmp280
-The BMP280 is a combination of a temperature and absolute barometric pressure sensor.
+The **BMP280** is a combination of a temperature and absolute barometric pressure sensor.
+
+The [BMP280 Element] can read the sensor data and uses the temperature to calibrate the air pressure.
+:::
+
+:::sensor mics5524 mics5524
+The MICS5524 is a sensor sensible to CO, Alcohol and other VOC Gas.
+It creates an analog voltage level based on the actual mass of the detected gas.
+The signal can be taken as an indicator but not as an absolute, correct value
+without individual calibration of the sensor data.
+
+The [Analog Element] can be used to gather the sensor value.
 :::
 
 
@@ -321,6 +334,7 @@ High precision Temperature Sensor
 The BME280 is a combination of a temperature, humidity and absolute barometric pressure sensor.
 :::
 -->
+
 
 <!-- :::sensor ccs811
 **CJMCU-811** or **CCS811**
@@ -351,13 +365,13 @@ where you can find the [INA226 Element](/elements/ina226.md).
 :::
 
 :::sensor soil
-The **Soil Moisture Sensor** is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.
+The **Soil Moisture Sensor** is one of the sensors that creates an analog voltage level based on the surrounding moisture of the sensor.
 :::
 
 :::sensor capasoil
-The **Capacitive Soil Moisture Sensor** is one of the sensors that creates a analog voltage level based on the surrounding moisture of the sensor.
+The **Capacitive Soil Moisture Sensor** is one of the sensors that creates an analog voltage level based on the surrounding moisture of the sensor.
 
-The [Analog Element](/elements/analog.md) can create actions based in the analog input signal.
+The [Analog Element] can create actions based in the analog input signal.
 
 The [Capacitive Soil Moisture Sensor Recipe](/recipes/capasoil.md) shows more details on using such a sensor.
 :::
@@ -478,7 +492,9 @@ The [Radio Element](/elements/radio.md) is available as an experimental implemen
 ## See also
 
 * <https://arduinomodules.info/> for a list of common sensor modules
+* <https://draeger-it.blog/vergleich-der-sensoren-am2320-dht11-und-dht22/>
 
+[Analog Element]: /elements/analog.md
 [AHT20 Element]: /elements/aht20.md
 [BME680 Element]: /elements/bme680.md
 [AM2320 Element]: /elements/am2320.md

@@ -8,7 +8,8 @@
 // https://www.npmjs.com/package/markdown-it-replace-link5
 // https://github.com/markdown-it/markdown-it-footnote
 
-const markdownIt = require("markdown-it");
+
+const markdownIt = require('markdown-it');
 const mdContainer = require('markdown-it-container');
 const mdReplaceLink = require('markdown-it-replace-link');
 const mdFootnotes = require('markdown-it-footnote');
@@ -23,6 +24,7 @@ module.exports = {
       html: true,
       breaks: false,
       linkify: true,
+      typographer: true,
       replaceLink: function (link, env) {
         // console.log("--", link);
         link = link.replace(/(^\/[^.]*)\.md$/, "$1.htm");

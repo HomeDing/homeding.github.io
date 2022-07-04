@@ -19,7 +19,6 @@ title: wishlist
 
 * [/_backend.md](/_backend.md) -
 * [/_CI-GithubActions.md](/_CI-GithubActions.md) -
-* [/_customelement.md](/_customelement.md) -
 * [/_exampledashbutton.md](/_exampledashbutton.md) -
 * [/_googlehome.md](/_googlehome.md) -
 * [/_iconsforthings.md](/_iconsforthings.md) -
