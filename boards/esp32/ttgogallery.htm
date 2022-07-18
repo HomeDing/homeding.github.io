@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <title>NO-TITLE</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem">
+    <h1>TTGO Gallery (T14)</h1>
+<p>This is <strong>Work in progress</strong></p>
+<h2>SoC</h2>
+<p>The <code>ESP32 Wroover-B</code> SoC is used on this board.</p>
+<h2>Pin usages overview</h2>
+<table>
+<thead>
+<tr>
+<th>ESP32</th>
+<th>Function</th>
+<th style="text-align:center">TFT</th>
+<th style="text-align:center">DAC</th>
+<th style="text-align:center">SDMMC</th>
+<th style="text-align:center">MIC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO02</td>
+<td>SD-D0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO04</td>
+<td>SD-D1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO05</td>
+<td>TFT CS</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO12</td>
+<td>SD-D2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO13</td>
+<td>SD-D3</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO14</td>
+<td>SD-CLK</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO15</td>
+<td>SD-CMD</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO18</td>
+<td>SCLK for TFT</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO19</td>
+<td>MOSI for TFT</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>n/a</td>
+<td>MISO for TFT</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO21</td>
+<td>MUTE</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO22</td>
+<td>IIS_DOUT</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO23</td>
+<td>DC</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO25</td>
+<td>IIS_LRCK</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO26</td>
+<td>IIS_BCK</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>IO27</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>IO32</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>IO33</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">X</td>
+</tr>
+</tbody>
+</table>
+<pre><code>#ifndef _TTGO_T14_BOARD_H_
+#define _TTGO_T14_BOARD_H_
+
+#ifdef __cplusplus
+extern &quot;C&quot; {
+#endif
+#include &quot;tftspi.h&quot;
+
+#define PCM5102_MUTE                21
+#define PCM5102_MUTE_ON             0
+#define PCM5102_MUTE_OFF            1
+
+/* I2S gpios */
+#define IIS_DOUT                    22
+#define IIS_LRCK                    25
+#define IIS_BCK                     26
+#define IIS_DSIN                    -1
+#define IIS_SCLK                    -1
+
+/* SPI gpios */
+#define TFT_SPI_MISO                    -1
+#define TFT_SPI_MOSI                    19
+#define TFT_SPI_SCLK                    18
+#define TFT_SPI_CS                      5
+#define TFT_DC                          23
+#define TFT_RESET                       -1
+#define TFT_BACKLIGHT                   27
+#define TFT_CHIP_TYPE                   DISP_TYPE_ST7789V   //DISP_TYPE_ILI9341
+
+#define SDCARD_CMD                      15
+#define SDCARD_D0                       2
+#define SDCARD_D1                       4
+#define SDCARD_D2                       12
+#define SDCARD_D3                       13
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /*_TTGO_T14_BOARD_H_*/
+</code></pre>
+<p>T14 V1.3 Board</p>
+<p>ESP32-WROVER-B</p>
+<h2>TFT LCD display</h2>
+<p>2.4 inch LCD display of type JLX320-00202-BN. This display uses a ST7789V chip and offers the SPI interface.</p>
+<table>
+<thead>
+<tr>
+<th>TFT Pin</th>
+<th>TFT Name</th>
+<th>ESP32</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GND</td>
+<td>GND</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>VCC</td>
+<td>3.3V</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>SCK</td>
+<td>IO18</td>
+<td>SCLK</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>MISO</td>
+</tr>
+<tr>
+<td>4</td>
+<td>RST</td>
+<td>RST</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>CS</td>
+<td>IO5</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>SDA</td>
+<td>IO19</td>
+<td>MOSI, usually MISO on Arduino Setups</td>
+</tr>
+<tr>
+<td>7</td>
+<td>RS</td>
+<td>IO23</td>
+<td>DC</td>
+</tr>
+<tr>
+<td>8</td>
+<td>LED+</td>
+<td></td>
+<td>+3.3 V</td>
+</tr>
+<tr>
+<td>9</td>
+<td>LED-</td>
+<td></td>
+<td>GND via 4.7 Ohm</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Fixed brightness of background LED</li>
+</ul>
+<p>It can be used with the Adafruit_ST7789 library
+by using the initialization of SPI and the Library:</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TFT_CS</span> <span class="token expression"><span class="token number">5</span></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TFT_RST</span> <span class="token expression"><span class="token operator">-</span><span class="token number">1</span></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TFT_DC</span> <span class="token expression"><span class="token number">23</span></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TFT_MISO</span> <span class="token expression"><span class="token number">32</span></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TFT_MOSI</span> <span class="token expression"><span class="token number">19</span> </span><span class="token comment">// Data out</span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TFT_SCLK</span> <span class="token expression"><span class="token number">18</span> </span><span class="token comment">// Clock out</span></span><br><br>Adafruit_ST7789 tft <span class="token operator">=</span> <span class="token function">Adafruit_ST7789</span><span class="token punctuation">(</span>TFT_CS<span class="token punctuation">,</span> TFT_DC<span class="token punctuation">,</span> TFT_RST<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// in setup()...</span><br>  SPI<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span>TFT_SCLK<span class="token punctuation">,</span> TFT_MISO<span class="token punctuation">,</span> TFT_MOSI<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  tft<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token number">240</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Init ST7789 320x240</span></code></pre>
+<p><strong>Display config</strong></p>
+<pre class="language-json"><code class="language-json">  <span class="token property">"DisplayST7789"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"TTGO-Gallery"</span><span class="token punctuation">,</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"240"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"320"</span><span class="token punctuation">,</span><br>      <span class="token property">"spimosi"</span><span class="token operator">:</span> <span class="token number">19</span><span class="token punctuation">,</span><br>      <span class="token property">"spimiso"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span><br>      <span class="token property">"spiclk"</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span><br>      <span class="token property">"spics"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span><br>      <span class="token property">"spidc"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>      <span class="token property">"xlightpin"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">90</span><span class="token punctuation">,</span><br>      <span class="token property">"xresetpin"</span><span class="token operator">:</span> <span class="token number">23</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span></code></pre>
+<p>The documentation of the TTGO-Time-Music-Box mentions a Backlight switch, but this seems to be a wrong hint.</p>
+<h2>SD Card</h2>
+<p>SD Cards are supported in 2 different implementations by the ESP32:</p>
+<ol>
+<li>the 1-bit SD implementation using the SPI interface</li>
+<li>the 4-bit SDMMC implementation using the hardware implemented SD/MMC host controller of the ESP32 chip HS2_*</li>
+</ol>
+<p>The SD card on this board is actually an SDMMC Card implementation using the 4-bit of data transfer.</p>
+<p>The connection used is “Slot 1” / &quot;HS2_* in the docs (standard wiring):</p>
+<table>
+<thead>
+<tr>
+<th>ESP32 PIN</th>
+<th>SD Name</th>
+<th>SD Pin</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO12</td>
+<td>Data 2</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>IO13</td>
+<td>Data 3</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>IO15</td>
+<td>CMD</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VDD</td>
+<td>4</td>
+<td>3.3V</td>
+</tr>
+<tr>
+<td>IO14</td>
+<td>CLK</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VSS</td>
+<td>6</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>IO2</td>
+<td>Data 0</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>IO4</td>
+<td>Data 1</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>9</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>You can use the SDMMC_Test.ino example for the ESP32 Wroover module that works out of the box to verify the hardware configuration and SD card.</p>
+<p>The SDMMC interface is implemented in the ESP-IDF and you can find details at
+<a href="https://espressif-docs.readthedocs-hosted.com/projects/esp-idf/en/latest/api-reference/peripherals/sdmmc_host.html">https://espressif-docs.readthedocs-hosted.com/projects/esp-idf/en/latest/api-reference/peripherals/sdmmc_host.html</a></p>
+<h2>Audio Output Path</h2>
+<h3>I2C</h3>
+<p>The boards allows using the I2S interface from the ESP32 chip to create digital audio signals.</p>
+<h3>DAC</h3>
+<p>The audio feature of this board include a Digital-Analog Converter (DAC) converting the I2C signal from the ESP32 wroover into an analog signal.
+Here the PCM5102A chip is used.</p>
+<p>The PCM5102A has an mute function that can be controlled via IO21. The level has to set to HIGH to disable the MUTE function sou cou can hear something.
+Mute applies to the Line Out and Speaker Output.</p>
+<h1>define PCM5102_MUTE                21</h1>
+<h1>define PCM5102_MUTE_ON             0</h1>
+<h1>define PCM5102_MUTE_OFF            1</h1>
+<p>The following pins are used:</p>
+<table>
+<thead>
+<tr>
+<th>ESP32 PIN</th>
+<th>Name</th>
+<th>PCM5102A Pin</th>
+<th>Headphone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO21</td>
+<td>Mute Control</td>
+<td>XSMT</td>
+<td></td>
+</tr>
+<tr>
+<td>IO22</td>
+<td>Serial Data</td>
+<td>DIN</td>
+<td></td>
+</tr>
+<tr>
+<td>IO25</td>
+<td>WordClock LRCK</td>
+<td>LRCK</td>
+<td></td>
+</tr>
+<tr>
+<td>IO26</td>
+<td>BitClock BCK</td>
+<td>BCK</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>L</td>
+<td>L</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>R</td>
+<td>R</td>
+</tr>
+</tbody>
+</table>
+<p>The analog signal from the DAC is directly available at the headphone connector.
+When there are no headphones plugged in the signal is forwarded to the volume regulator and amplifier on board.</p>
+<h3>Volume control Potentiometer</h3>
+<p>Between the analog signal from the DAC to the Amplifier a 50k potentiometer levels the signal volume.
+By moving beyond lowest volume tThe integrated switch cuts the power from the amplifier chip.</p>
+<h3>Amplifier</h3>
+<p>There is a Amplifier chip on the board that allows directly attaching stereo speakers.</p>
+<p>Here the PAM8403 chip is used. It operates at 5V and can create 2*3W output on 4 Ohm speakers. It ha s also a mute function but this is disabled.</p>
+<h2>Microphone</h2>
+<p>Type ICS-43434</p>
+<p>(434 QJ29Y)
+(4j434 ICS-43434)</p>
+<pre><code>GPIO Pins --- Mic 
+27        --- data  
+32        --- BCK
+33        --- LRCK 
++3v3      --- VCC
+GND       --- GND
+</code></pre>
+<p>Example:</p>
+<p><a href="https://github.com/LilyGO/TTGO-T5S-Epaper/blob/master/ESP32_MEMSMic/ESP32_MEMSMic.ino">https://github.com/LilyGO/TTGO-T5S-Epaper/blob/master/ESP32_MEMSMic/ESP32_MEMSMic.ino</a></p>
+<p><a href="https://github.com/elshnkhll/ICS43434">https://github.com/elshnkhll/ICS43434</a></p>
+<h2>more</h2>
+<p><a href="https://github.com/Xinyuan-LilyGO/Ka-Radio32?spm=a2g0o.detail.1000023.2.41542f1andLoEs">https://github.com/Xinyuan-LilyGO/Ka-Radio32?spm=a2g0o.detail.1000023.2.41542f1andLoEs</a></p>
+<p><a href="https://learn.sparkfun.com/tutorials/i2s-audio-breakout-hookup-guide/all">https://learn.sparkfun.com/tutorials/i2s-audio-breakout-hookup-guide/all</a></p>
+<p><a href="https://github.com/earlephilhower/ESP8266Audio">https://github.com/earlephilhower/ESP8266Audio</a></p>
+<p><a href="https://github.com/Gianbacchio/ESP8266_Spiram">https://github.com/Gianbacchio/ESP8266_Spiram</a></p>
+<p><a href="https://forum.arduino.cc/index.php?topic=522465.0">https://forum.arduino.cc/index.php?topic=522465.0</a></p>
+<h3>Diverse chips</h3>
+<p>CP2104: USB-to-UART Bridge Controller
+ME6211: 3.3 regulator</p>
+<h3>LiPo Battery</h3>
+<p>TP4054: Battery charger</p>
+<p>Blue LED when charging
+TP4054: Battery charger, Blue LED when charging</p>
+<h3>Switch</h3>
+<p>has no function and is shortcut by 0 Ohm resistor.
+between 5V and +5V ???</p>
+<h2>Other infos on ESP32 in general</h2>
+<p><a href="https://docs.espressif.com/projects/esp-idf/en/latest/get-started/">https://docs.espressif.com/projects/esp-idf/en/latest/get-started/</a></p>
+<p><a href="https://randomnerdtutorials.com/esp32-pinout-reference-gpios/">https://randomnerdtutorials.com/esp32-pinout-reference-gpios/</a></p>
+<h2>Fitting Projects</h2>
+<p><a href="https://www.instructables.com/id/ESP32-Photo-Clock/">https://www.instructables.com/id/ESP32-Photo-Clock/</a></p>
+<h2>See also</h2>
+<ul>
+<li>
+<p><a href="https://github.com/azatvaleev/Ka-Radio32">https://github.com/azatvaleev/Ka-Radio32</a></p>
+</li>
+<li>
+<p><a href="https://github.com/MrBuddyCasino/ESP32_MP3_Decoder">https://github.com/MrBuddyCasino/ESP32_MP3_Decoder</a></p>
+</li>
+</ul>
+<p><a href="https://github.com/lewisxhe/TTGO-Time-Music-Box">https://github.com/lewisxhe/TTGO-Time-Music-Box</a></p>
+<ul>
+<li><strong>Source Code</strong>: <a href="https://github.com/lewisxhe/TTGO-Time-Music-Box">https://github.com/lewisxhe/TTGO-Time-Music-Box</a></li>
+<li>Official Product Page: <a href="http://www.lilygo.cn/prod_view.aspx?TypeId=50033&amp;Id=1168">http://www.lilygo.cn/prod_view.aspx?TypeId=50033&amp;Id=1168</a></li>
+<li>Latest Application: <a href="https://github.com/Xinyuan-LilyGO/Ka-Radio32">https://github.com/Xinyuan-LilyGO/Ka-Radio32</a></li>
+<li>Active GitHub: <a href="https://github.com/Xinyuan-LilyGo">https://github.com/Xinyuan-LilyGo</a></li>
+<li>(older GitHub: <a href="https://github.com/LilyGO">https://github.com/LilyGO</a>)</li>
+<li>video: <a href="https://www.youtube.com/watch?v=yfz6r5khsMk">https://www.youtube.com/watch?v=yfz6r5khsMk</a></li>
+<li>Incomplete Hardware Documentation (only pictures) <a href="https://github.com/LilyGO/TTGO_T_Gallery">https://github.com/LilyGO/TTGO_T_Gallery</a></li>
+<li>TTGO-Time-Music-Box <a href="https://github.com/LilyGO/TTGO-Time-Music-Box">https://github.com/LilyGO/TTGO-Time-Music-Box</a></li>
+<li>PCM5102a DAC datasheet <a href="http://www.ti.com/lit/ds/symlink/pcm5102a.pdf">http://www.ti.com/lit/ds/symlink/pcm5102a.pdf</a></li>
+<li>PAM8403 datatsheet <a href="https://www.diodes.com/assets/Datasheets/PAM8403.pdf">https://www.diodes.com/assets/Datasheets/PAM8403.pdf</a></li>
+</ul>
+<p><a href="http://arduino.ru/forum/proekty/wi-fi-internet-radio?page=149">http://arduino.ru/forum/proekty/wi-fi-internet-radio?page=149</a></p>
+
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
