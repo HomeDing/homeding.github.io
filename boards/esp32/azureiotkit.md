@@ -7,27 +7,30 @@ excerpt: >
   This is a ESP32 based board based on ESP-WROVER-B module designed by Microsoft as a reference IoT Kit Azure. It is no more fully supported.
 ---
 
+This is **Work in progress**
+
 ![ESP32 Azure IoT Kit](/boards/esp32/azureiotkit.jpg)
 
---- 
-
-file:///C:/Users/Matthias/Projects/Arduino/Hardware/ESP32/ESP32%20Azure%20Kit/esp32-azure_iot_kit_hardware_design_guide.pdf
+<https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf>
 
 https://github.com/lzyms/ESP32IoTCentral
 
 https://github.com/ewertons/esp32-azureiotkit-sensors
 
 
+```cpp
 // right button
 #define PIN_INPUT 0
 
 // Azure LED
 #define PIN_LED 33
+```
 
 
 https://forum.arduino.cc/t/how-to-best-configure-esp32-arduino-vs-code-debug/698140
 
 https://www.esp32.com/viewtopic.php?t=23393
+
 
 ## See also
 
@@ -42,7 +45,7 @@ https://www.esp32.com/viewtopic.php?t=23393
 
 * Kauf: <https://www.mouser.de/ProductDetail/Espressif-Systems/ESP32-Azure-IoT-Kit/?qs=PqoDHHvF64%2BuVX1eLQkvaQ==>
 
-https://buildazure.com/esp32-azure-iot-kit-dev-board-espressif/
-
-https://github.com/espressif/esp-iot-solution/blob/master/examples/esp32_azure_iot_kit/readme_en.md
+* <https://buildazure.com/esp32-azure-iot-kit-dev-board-espressif/>
+* <https://github.com/espressif/esp-iot-solution/blob/master/examples/esp32_azure_iot_kit/readme_en.md>
+* <https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf>
 

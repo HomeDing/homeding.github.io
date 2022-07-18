@@ -8,3 +8,13 @@ excerpt: >
 ---
 
 ![ESP32 Audio Kit Board](/boards/esp32/esp32audiokit.png)
+
+## Streams
+
+* <https://dispatcher.rndfnk.com/hr/hr3/live/mp3/high>
+
+
+## Audio Support
+
+* <https://github.com/pschatzmann/arduino-audio-tools>
+
