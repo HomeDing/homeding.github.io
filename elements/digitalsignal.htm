@@ -56,12 +56,15 @@ no action can be created so every detected digital signal change will incrementi
 <p>The output signal is generated with a given minimal duration and stays high as long as the input changes.</p>
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?digitalsignal" type="image/svg+xml"></object></p>
-<p><strong>pin</strong> - the GPIO pin used for input.</p>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
+<p><strong>pin</strong>* - the GPIO pin used for input.</p>
 <p><strong>pullup</strong> - When defining with true the internal pullup resistor for the input pin will be activated.</p>
 <p><strong>duration</strong> - the duration of the generated output pulse with a value of 1</p>
 <p><strong>onHigh</strong> - These actions are emitted when the logical level is switched to <code>1</code>.</p>
 <p><strong>onLow</strong> - These actions are emitted when the logical level is switched to <code>0</code>.</p>
 <p><strong>onValue</strong> - These actions are emitted when the logical level is switched.</p>
+</blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
@@ -83,7 +86,7 @@ no action can be created so every detected digital signal change will incrementi
 <li><a href="/elements/digitalin.htm">DigitalInput Element</a></li>
 </ul>
 <h2>Tags</h2>
-<p>#element #input</p>
+<h1>element #input</h1>
 
 
     
