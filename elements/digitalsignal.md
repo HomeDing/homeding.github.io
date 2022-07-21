@@ -23,21 +23,24 @@ The output signal is generated with a given minimal duration and stays high as l
 
 <object data="/element.svg?digitalsignal" type="image/svg+xml"></object>
 
-**pin** - the GPIO pin used for input.
+The following properties are available for configuration of the element:
 
-**pullup** - When defining with true the internal pullup resistor for the input pin will be activated.
-
-**duration** - the duration of the generated output pulse with a value of 1
-
-**onHigh** - These actions are emitted when the logical level is switched to `1`.
-
-**onLow** - These actions are emitted when the logical level is switched to `0`.
-
-**onValue** - These actions are emitted when the logical level is switched.
+> **pin**\* - the GPIO pin used for input.
+>
+> **pullup** - When defining with true the internal pullup resistor for the input pin will be activated.
+>
+> **duration** - the duration of the generated output pulse with a value of 1
+>
+> **onHigh** - These actions are emitted when the logical level is switched to `1`.
+>
+> **onLow** - These actions are emitted when the logical level is switched to `0`.
+>
+> **onValue** - These actions are emitted when the logical level is switched.
 
 {% include "./elementproperties.md" %}
 
 \* This parameter must be specified.
+
 
 ### Configuration Example
 
@@ -55,7 +58,7 @@ The output signal is generated with a given minimal duration and stays high as l
 
 ## State
 
-The state of the DigitalSignal element available at runtime includes the current values: 
+The state of the DigitalSignal element available at runtime includes the current values:
 
 **active** - Is set to true when the Element is active.
 
@@ -79,4 +82,5 @@ The state of the DigitalSignal element available at runtime includes the current
 
 
 ## Tags
-#element #input
+
+# element #input

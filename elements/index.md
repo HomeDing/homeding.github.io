@@ -30,6 +30,9 @@ Input Elements are used to create an action based on a specific input signal lik
 {% excerptOf collections.Element, "rotary" %}
 :::
 
+:::element touch none
+{% excerptOf collections.Element, "touch" %}
+:::
 
 ## Sensor Elements
 
