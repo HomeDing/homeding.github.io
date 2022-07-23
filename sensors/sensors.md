@@ -77,9 +77,10 @@ This is an UV-index sensor.
 :::
  -->
 
-:::sensor no BH1750
-This is a light sensor probong for the intensity of light in lumen.
-[BH1750 Element](/elements/bh1750.md)
+:::sensor BH1750
+This is a light sensor probing for the intensity of light in lumen.
+
+The [BH1750 Element](/elements/bh1750.md) enables creating actions based of the values from the sensor.
 :::
 
 :::sensor linetrack
