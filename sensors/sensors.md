@@ -77,7 +77,7 @@ This is an UV-index sensor.
 :::
  -->
 
-:::sensor BH1750
+:::sensor bh1750
 This is a light sensor probing for the intensity of light in lumen.
 
 The [BH1750 Element](/elements/bh1750.md) enables creating actions based of the values from the sensor.
@@ -99,7 +99,7 @@ The [DigitalInput Element](/elements/digitalin.md) can create actions based in t
 :::
 
 
-:::sensor irTrans
+:::sensor irtrans
 This is a **Light blocking sensor** built from a IR LED and a IR photo resistor. It can be used to detect that the light in the gap is blocked. It creates a digital output.
 
 For simple on/off situations the [DigitalInput Element](/elements/digitalin.md) can create actions.
@@ -269,7 +269,7 @@ The [DHT Element] creates actions based on the values polled from the chip.
 :::
 
 
-:::sensor am2320 dht
+:::sensor no am2320
 The **AM2320** is a **air temperature and humidity** sensor with high precision for temperature humidity.
 
 The sensor communicate using the i2c bus.
@@ -277,7 +277,7 @@ The sensor communicate using the i2c bus.
 The [AM2320 Element] creates actions based on the values polled from the chip.
 :::
 
-:::sensor sht20 dht
+:::sensor sht20
 The **SHT20** is a **air temperature and humidity** sensor with high precision for temperature humidity.
 
 The sensor communicate using the i2c bus.
@@ -292,7 +292,7 @@ The **BME680** is a sensor providing **air temperature, humidity, pressure and g
 The special [BME680 Element] supports this sensor using the I2C protocol.
 :::
 
-:::sensor PMS5003
+:::sensor pms5003
 The **PMS5003** is a laser based **air particle** sensor measuring air pollution.
 
 The special [PMS Element](/elements/pms.md) supports this sensor using a serial port.
