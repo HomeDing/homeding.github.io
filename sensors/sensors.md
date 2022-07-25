@@ -11,6 +11,10 @@ Many of the sensors offer simple digital or analog signals to be used by the gen
 
 Others others are using data transported over a bus like [I2C bus](/dev/i2c.md) or even specific protocols and need special elements.
 
+There is a generalized [Sensor Element](/elements/sensors.md) that is used as a base class for sensors to simplify implementation
+and support the timing of sensor reading cycles.
+
+
 ## Sensors giving digital signals
 
 Many sensors offer direct usable digital signals that can be detected and used as an input to create actions.
