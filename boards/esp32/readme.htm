@@ -41,23 +41,100 @@
 
   <main style="padding:1rem">
     <h1>ESP32 with HomeDing</h1>
+<p>The HomeDing library is compatible to the ESP32 Arduino environment.</p>
+<p>Specific to ESP32 are the following features:</p>
+<ul>
+<li>
+<p>In contrast to the ESP8266 there are no other names for the GPIO pins like the one from NodeMCU.
+The numbers in the processor datasheet are used.</p>
+</li>
+<li>
+<p>The <a href="/elements/touch.htm">Touch Element</a> allows using the ESP32 built-in touch features on the GPIO pins.</p>
+</li>
+<li>
+<p>The <a href="/elements/my9291.htm">MY9291 Element</a> only works with ESP32 by the used library.</p>
+</li>
+</ul>
+<p>TODO:</p>
+<ul>
+<li>[ ] Wakeup / low power consumption in board.cpp</li>
+<li>[ ] reset / restart in board.cpp</li>
+<li>[ ] RTCVariables</li>
+<li>[ ] PMSElement</li>
+</ul>
+<h2>See also</h2>
 <ul>
 <li><a href="https://lastminuteengineers.com/esp32-arduino-ide-tutorial/">https://lastminuteengineers.com/esp32-arduino-ide-tutorial/</a></li>
 </ul>
 <p>Boards Overview from espressif:</p>
 <p><a href="https://www.espressif.com/en/products/devkits">https://www.espressif.com/en/products/devkits</a></p>
 <p><a href="https://www.studiopieters.nl/esp32-pinout/">https://www.studiopieters.nl/esp32-pinout/</a></p>
-<h2>Setup the development with IDF</h2>
-<p><a href="https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</a></p>
-<p><a href="https://docs.espressif.com/projects/esp-idf/en/latest/get-started/windows-setup.html">https://docs.espressif.com/projects/esp-idf/en/latest/get-started/windows-setup.html</a></p>
-<p><a href="https://www.esp32.com/viewtopic.php?t=6383">https://www.esp32.com/viewtopic.php?t=6383</a>
-<a href="https://github.com/Deous/VSC-Guide-for-esp32">https://github.com/Deous/VSC-Guide-for-esp32</a>
-<a href="https://github.com/botofancalin/Esp32_debug_template">https://github.com/botofancalin/Esp32_debug_template</a></p>
-<p><a href="https://randomnerdtutorials.com/esp32-troubleshooting-guide/">https://randomnerdtutorials.com/esp32-troubleshooting-guide/</a></p>
+<h2>ESP32 specific</h2>
+<ul>
+<li>
+<p>ESP32 Arduino Core documentation:</p>
+<ul>
+<li><a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/index.html">https://docs.espressif.com/projects/arduino-esp32/en/latest/index.html</a></li>
+<li><a href="https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html">https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html</a></li>
+</ul>
+</li>
+<li>
+<p>The ESP32 uses partitions to structure the flash memory. The Arduino environment supports a fixed layout that cannot be changed easily.</p>
+<ul>
+<li><a href="https://blog.espressif.com/how-to-use-custom-partition-tables-on-esp32-69c0f3fa89c8">https://blog.espressif.com/how-to-use-custom-partition-tables-on-esp32-69c0f3fa89c8</a></li>
+</ul>
+</li>
+<li>
+<p>Setup the development with Arduino:</p>
+<ul>
+<li><a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html">https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html</a></li>
+<li><a href="https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/">https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/</a></li>
+</ul>
+</li>
+<li>
+<p>A ESP32 specific troubleshooting guide with so me helpful tips on how to setup the dev environment.</p>
+<ul>
+<li><a href="https://randomnerdtutorials.com/esp32-troubleshooting-guide/">https://randomnerdtutorials.com/esp32-troubleshooting-guide/</a></li>
+</ul>
+</li>
+<li>
+<p>Setup Espressif IDF</p>
+<ul>
+<li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/get-started/windows-setup.html">https://docs.espressif.com/projects/esp-idf/en/latest/get-started/windows-setup.html</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.esp32.com/viewtopic.php?t=6383">https://www.esp32.com/viewtopic.php?t=6383</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Deous/VSC-Guide-for-esp32">https://github.com/Deous/VSC-Guide-for-esp32</a></p>
+</li>
+<li>
+<p><a href="https://github.com/botofancalin/Esp32_debug_template">https://github.com/botofancalin/Esp32_debug_template</a></p>
+</li>
+</ul>
 <h2>Projects</h2>
-<p><a href="https://github.com/schreibfaul1/ESP32-audioI2S">https://github.com/schreibfaul1/ESP32-audioI2S</a></p>
+<ul>
+<li><a href="https://github.com/schreibfaul1/ESP32-audioI2S">https://github.com/schreibfaul1/ESP32-audioI2S</a></li>
+</ul>
 <h2>Blogs and Infos</h2>
-<p><a href="http://esp32.net/">http://esp32.net/</a></p>
+<ul>
+<li><a href="http://esp32.net/">http://esp32.net/</a></li>
+</ul>
+<!--
+## JTAG debugging
+
+* <https://www.xjtag.com/>
+* <https://www.xjtag.com/about-jtag/what-is-jtag/>
+
+* https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/jtag-debugging/index.html
+
+* <https://www.youtube.com/watch?v=uq93H7T7cOQ>
+
+* <https://github.com/makercrew/esp_prog_vscode_debug>
+
+* <https://code.visualstudio.com/docs/cpp/cpp-debug>
+-->
 <h2>Modules</h2>
 <ul>
 <li><a href="esp32_devkit.md">esp32 DevKits</a> 30, 36 and 38 pin versions with WROOM module</li>

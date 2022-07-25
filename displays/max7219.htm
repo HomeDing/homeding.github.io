@@ -58,6 +58,53 @@ and specifying the select GPIO pin.</p>
 <p>The <code>DisplayAdapterMAX7219</code> uses the canvas class from the Adafruit_GFX library to create an in-memory picture that can be shifted to the display when drawing of the output element has finished.</p>
 <p>To show some output on the display use the <a href="/elements/displaytext.htm">DisplayText Element</a>
 and the <a href="/elements/displaydot.htm">DisplayDot Element</a></p>
+<h2>Connectivity</h2>
+<p>The MAX7219 based displays uses a SPI based data interface sending data out only.
+On ESP8266 the standard SPI interface is used. On ESP32 the VSPI interface is used.</p>
+<p>The display must use it’s own chip select (CS) line.</p>
+<table>
+<thead>
+<tr>
+<th>MAX7219</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>max7219</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="gpio red">VCC</span></td>
+<td>VCC</td>
+<td>VCC</td>
+<td>+5V, VCC from USB</td>
+</tr>
+<tr>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>Common Ground</td>
+</tr>
+<tr>
+<td><span class="gpio blue">DIN</span></td>
+<td>GPIO13(D7)</td>
+<td>GPIO23</td>
+<td>SPI-MOSI, Data to Matrix</td>
+</tr>
+<tr>
+<td>CS</td>
+<td>GPIO0(D3)</td>
+<td>GPIO05</td>
+<td>CS, Select signal</td>
+</tr>
+<tr>
+<td><span class="gpio yellow">CLK</span></td>
+<td>GPIO14(D5)</td>
+<td>GPIO18</td>
+<td>SPI-CLK, Clock</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a href="/dev/spi.htm">Using the SPI bus</a></p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
 <p><object data="/element.svg?displaysh1106" type="image/svg+xml"></object></p>
