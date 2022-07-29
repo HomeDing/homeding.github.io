@@ -67,11 +67,15 @@ Read sensor values from a PMS5003 sensor by plantdata to count micro particles i
 {% excerptOf collections.Element, "bmp280" %}
 :::
 
+<!--
+:::element bme280 bme280
+{% excerptOf collections.Element, "bme280" %}
+:::
+-->
+
 :::element bl0937 default
 {% excerptOf collections.Element, "bl0937" %}
 :::
-
-<!-- BME280 -->
 
 <!-- MPU9250 -->
 

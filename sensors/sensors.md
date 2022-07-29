@@ -217,8 +217,7 @@ Not yet fully supported by the HomeDing library. Experimental implementation in 
 :::
 
 :::sensor no bl0937
-Power monitoring chips : **HLW8012 BL0937**
-
+{% excerptOf collections.Element, "bl0937" %}
 [BL0937 Element](/elements/bl0937.md)
 :::
 
@@ -334,17 +333,19 @@ High precision Temperature Sensor
 -->
 
 
-<!-- 
+<!--
 :::sensor bme280
 The BME280 is a combination of a temperature, humidity and absolute barometric pressure sensor.
 :::
 -->
 
 
-<!-- :::sensor ccs811
+<!--
+:::sensor ccs811
 **CJMCU-811** or **CCS811**
 not yet supported.
-::: -->
+:::
+-->
 
 ### Motion
 
