@@ -66,7 +66,7 @@ The HLW8012 is an older model while the HJL-01/BL0937 is a newer more stable ver
 <li>I have warned you, do not blame on me.</li>
 </ul>
 </div>
-<h2>Web UI for the DHT Element</h2>
+<h2>Web UI for the BL0937 Element</h2>
 <p>There is a dedicated card for this element available that shows the actual measured values and can switch between voltage and current mode.</p>
 <p><img src="/elements/bl0937ui.png" alt="BL0937 Sensor UI"></p>
 <h2>How the chip works</h2>
@@ -77,39 +77,53 @@ From this measurements the chip creates 38 micro seconds pulses on 2 pins that n
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?bl0937" type="image/svg+xml"></object></p>
 <p>The following properties are available for configuration of the element:</p>
-<p><strong>selpin</strong>* - Specifies the GPIO pin that is used to select current or voltage mode.</p>
-<p><strong>cfpin</strong>*  - Specifies the GPIO pin that is used to capture the cf signal from the chip for power consumption.</p>
-<p><strong>cf1pin</strong>* - Specifies the GPIO pin that is used to capture the cf signal from the chip for current or voltage.</p>
-<p><strong>mode</strong> - specifies wether the current or the voltage mode should be used.</p>
-<p><strong>cycletime</strong> - The cycletime defines the time in msecs that is used to collect impulses. The default is set to 2 seconds (2000 msecs) good for load &gt; 10W.
+<blockquote>
+<p><strong>selpin</strong>* – Specifies the GPIO pin that is used to select current or voltage mode.</p>
+<p><strong>cfpin</strong>*  – Specifies the GPIO pin that is used to capture the cf signal from the chip for power consumption.</p>
+<p><strong>cf1pin</strong>* – Specifies the GPIO pin that is used to capture the cf signal from the chip for current or voltage.</p>
+<p><strong>mode</strong> – specifies wether the current or the voltage mode should be used.</p>
+<p><strong>cycletime</strong> – The cycletime defines the time in milliseconds that is used to collect impulses. The default is set to 2 seconds (2000 milliseconds) good for load &gt; 10W.
 When having lower loads this time may be set to use longer time to count impulses.</p>
-<p><strong>powerfactor</strong> - This factor defines pulse density to power in W.</p>
-<p><strong>currentfactor</strong> - This factor defines pulse density to current in mA.</p>
-<p><strong>voltagefactor</strong> - This factor defines pulse density to voltage in V.</p>
-<p><strong>poweradjust</strong> - This action uses the given power value to calculate the power factor.</p>
-<p><strong>currentadjust</strong> - This action uses the given current value to calculate the current factor.</p>
-<p><strong>voltageadjust</strong> - This action uses the given voltage value to calculate the voltage factor.</p>
-<p><strong>onpower</strong> - These actions are emitted by the element when a new power value was measured.</p>
-<p><strong>oncurrent</strong> - These actions are emitted by the element when a new current value was measured.</p>
-<p><strong>onvoltage</strong> - These actions are emitted by the element when a new voltage value was measured.</p>
+<p><strong>powerfactor</strong> – This factor defines pulse density to power in W.</p>
+<p><strong>currentfactor</strong> – This factor defines pulse density to current in mA.</p>
+<p><strong>voltagefactor</strong> – This factor defines pulse density to voltage in V.</p>
+<p><strong>poweradjust</strong> – This action uses the given power value to calculate the power factor.</p>
+<p><strong>currentadjust</strong> – This action uses the given current value to calculate the current factor.</p>
+<p><strong>voltageadjust</strong> – This action uses the given voltage value to calculate the voltage factor.</p>
+<p><strong>onVoltage</strong> – These actions are emitted by the element when a new voltage value was measured.</p>
+<p><strong>onCurrent</strong> – These actions are emitted by the element when a new current value was measured.</p>
+<p><strong>onPower</strong> – These actions are emitted by the element when a new power value was measured.</p>
+<p><strong>onEnergy</strong> – These actions are emitted by the element when a new energy value was measured.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <p>* These properties are mandatory</p>
 <h3>Configuration Example</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bl0937"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"1000"</span><span class="token punctuation">,</span><br>      <span class="token property">"selpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"cfpin"</span><span class="token operator">:</span> <span class="token string">"D1"</span><span class="token punctuation">,</span><br>      <span class="token property">"cf1pin"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span><br>      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"voltage"</span><span class="token punctuation">,</span><br>      <span class="token property">"powerfactor"</span><span class="token operator">:</span> <span class="token string">"1346829.38"</span><span class="token punctuation">,</span><br>      <span class="token property">"currentfactor"</span><span class="token operator">:</span> <span class="token string">"1346829.38"</span><span class="token punctuation">,</span><br>      <span class="token property">"voltagefactor"</span><span class="token operator">:</span> <span class="token string">"1346829.38"</span><span class="token punctuation">,</span><br>      <span class="token property">"onpower"</span><span class="token operator">:</span> <span class="token string">"displaytext/p?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
-<p><strong>active</strong> - Is set to true when the Element is active.</p>
-<p><strong>cycletime</strong> - The actual cycletime for counting pulses.</p>
-<p><strong>mode</strong> - The actual mode for cf1 pulses.</p>
-<p><strong>power</strong> - The actual  power value.
-<strong>powerfactor</strong> - The actual used factor.</p>
-<p><strong>current</strong> - The actual current value when current mode is active.
-<strong>currentfactor</strong> - The actual used factor.</p>
-<p><strong>voltage</strong> - The actual voltage value when voltage mode is active.
-<strong>voltagefactor</strong> - The actual used factor.</p>
+<blockquote>
+<p><strong>active</strong> – Is set to true when the Element is active.</p>
+<p><strong>cycletime</strong> – The actual cycletime for counting pulses.</p>
+<p><strong>mode</strong> – The actual mode for cf1 pulses.</p>
+<p><strong>power</strong> – The actual  power value.</p>
+<p><strong>powerfactor</strong> – The actual used factor.</p>
+<p><strong>current</strong> – The actual current value when current mode is active.</p>
+<p><strong>currentfactor</strong> – The actual used factor.</p>
+<p><strong>voltage</strong> – The actual voltage value when voltage mode is active.</p>
+<p><strong>voltagefactor</strong> – The actual used factor.</p>
+<p><strong>energy</strong> – The actual voltage value when voltage mode is active.</p>
+</blockquote>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bl0937/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><span class="token property">"cycletime"</span><span class="token operator">:</span><span class="token string">"1000"</span><span class="token punctuation">,</span><span class="token property">"mode"</span><span class="token operator">:</span><span class="token string">"voltage"</span><span class="token punctuation">,</span><br>    <span class="token property">"power"</span><span class="token operator">:</span><span class="token string">"120"</span><span class="token punctuation">,</span><span class="token property">"powerfactor"</span><span class="token operator">:</span><span class="token string">"1346829.38"</span><span class="token punctuation">,</span><br>    <span class="token property">"current"</span><span class="token operator">:</span><span class="token string">"435"</span><span class="token punctuation">,</span><span class="token property">"voltagefactor"</span><span class="token operator">:</span><span class="token string">"129059.00"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bl0937/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><span class="token property">"cycletime"</span><span class="token operator">:</span><span class="token string">"1000"</span><span class="token punctuation">,</span><span class="token property">"mode"</span><span class="token operator">:</span><span class="token string">"voltage"</span><span class="token punctuation">,</span><br>    <span class="token property">"power"</span><span class="token operator">:</span><span class="token string">"120"</span><span class="token punctuation">,</span><span class="token property">"powerfactor"</span><span class="token operator">:</span><span class="token string">"1346829.38"</span><span class="token punctuation">,</span><br>    <span class="token property">"current"</span><span class="token operator">:</span><span class="token string">"435"</span><span class="token punctuation">,</span><span class="token property">"voltagefactor"</span><span class="token operator">:</span><span class="token string">"129059.00"</span><span class="token punctuation">,</span><br>    <span class="token property">"energy"</span><span class="token operator">:</span><span class="token string">"52.83"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Supported retail devices</h2>
 <p>There are some devices available using the ESP8266 processor and one of these energy monitoring chips:</p>
+<blockquote>
 <ul>
 <li>Sonoff POW Power Monitoring Switch</li>
 <li>BlitzWolf BW-SHP6 10A</li>
@@ -117,6 +131,7 @@ When having lower loads this time may be set to use longer time to count impulse
 <li>Gosund SP111 Power Monitoring Plug</li>
 <li>BlitzWolf BW-SHP2 Power Monitoring Plug</li>
 </ul>
+</blockquote>
 <p>Many of them are manufactured by Tuya and re-branded.</p>
 <p>When you find your device in the Template list at <a href="https://templates.blakadder.com/all.html">https://templates.blakadder.com/all.html</a>
 and its functionality mentions a BL0937 or HLW8012 chip like the
@@ -143,6 +158,12 @@ The best results are given by pure resistor loads like classic light bulbs. Here
 <p>enter the 3 factors into the configuration.</p>
 <h2>How the chip works</h2>
 <p><img src="/elements/bl0937pins.png" alt="BL0937 Pins"></p>
+<p>To meassure voltage and current the chips are connected via resistors to the main power signals.
+A special load resistor is required to measure the current and the resulting voltage over the resistor
+is then probed by the chip.</p>
+<p>Voltage or current can be measured alternatively but the energy monitoring is active permanently.</p>
+<p>The result of the measurement are impulses on the CF (energy) and CF1 (Voltage or Current) pins.</p>
+<p>The BL0937 Element captures these pulses using the nanosecond timer to calculate the values.</p>
 <table>
 <thead>
 <tr>
@@ -189,11 +210,13 @@ The best results are given by pure resistor loads like classic light bulbs. Here
 </tr>
 </tbody>
 </table>
-<p>The pins CF and CF1 produce signals</p>
+<p>The pins CF and CF1 produce signals:</p>
+<blockquote>
 <p><strong>SEL signal</strong> - This signal is given by the element to the chip to switch between voltage and current measurement. It can be switched by the <code>mode</code> property of the element.</p>
 <p><strong>CF signal</strong> - This signal emits pulses where the frequency is proportional to the power consumption.
 The maximal frequency is about 6,78 KHz when the limit of the sensor is reached.</p>
 <p><strong>CF1 signal</strong> - This signal emits pulses where the frequency is proportional to the current or voltage value to be measured.</p>
+</blockquote>
 <h2>See also</h2>
 <p>Here are some links related to this chip and flushing a plug device.</p>
 <ul>
@@ -234,8 +257,6 @@ The maximal frequency is about 6,78 KHz when the limit of the sensor is reached.
 <p>Tasmota supported devices <a href="https://templates.blakadder.com/all.html">https://templates.blakadder.com/all.html</a></p>
 </li>
 </ul>
-<h2>Tags</h2>
-<p>#element #sensor</p>
 
 
     
