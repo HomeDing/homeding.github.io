@@ -15,7 +15,7 @@ excerpt: >
 > The HomeDing library is not a closed eco system but rather allows adding new functionality
 > by adding new Elements to support a specific functionality, sensor, chip, network service and more.
 >
-> In the [Create and extend a new Element](/steps/newelement.md) step-by-step article you find 
+> In the [Create and extend a new Element](/steps/newelement.md) step-by-step article you find
 > how to start with a simple Element implementation that gets extended to support the specific benefits of the ecosystem.
 >
 > In the development example you can find a Element called **TemplateElement**
@@ -47,7 +47,7 @@ useful functionality:
 
 ## About the Web UI
 
-> Implementing the Web UI funtionality is almost as important as implementing the Arduino code for the firmware.
+> Implementing the Web UI functionality is almost as important as implementing the Arduino code for the firmware.
 >
 > There is a list of articles on how the HomeDing library works and is built and provides some
 useful functionality:
@@ -75,6 +75,33 @@ useful functionality:
 > * **Properties** are implemented in the `set(name, value)` method to get the configuration values.
 > * **Actions** are also implemented in the `set(name, value)` method but are expected to be used at runtime by incoming actions.
 > * **Events** are outgoing actions to other elements.
+
+
+## Command Line Builds and Uploads
+
+The WebFiles projects that is used to create the Web UI and portal implementation
+all build steps are implemented using the npm tasks defined in package.json.
+Some of them use nodejs scripts under the hood that can also be started directly.
+Best approach is to use the npm tasks. They are also used by the Github Actions.
+
+For direct uploading the `dist` and `minimal` files to a device you can use the following batch files on windows:
+
+The HomeDing project that is used to create the firmware today has no support for command line building.
+It is on the list for future extensions when the Arduino CLI is finally available as a stable release.
+
+For direct uploading of the firmware to a device you can use the following batch file on windows:
+
+``` cmd
+hd-upload.bat <devicename> [firmware]
+```
+
+use `hd-upload.bat --help` to get a brief command and options documentation.
+
+The firmware files must be placed in the `bin` folder using the Arduino command `Export compiled binary`.
+Here you can collect multiple binaries to be uploaded to different devices.
+
+The device must have a [OTA Element](/elements/ota.md) configured to allow uploading of new firmware.
+
 
 ## See also
 

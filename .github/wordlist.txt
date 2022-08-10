@@ -1,4 +1,4 @@
-﻿AC
+AC
 Accelerometer
 actions
 activeState
@@ -114,6 +114,8 @@ currentfactor
 customelement
 cycletime
 DAC
+dallas
+dallasElement
 databinding
 datapin
 datasheet
@@ -167,8 +169,6 @@ displayTextElement
 DMX
 doubleclick
 down
-dallas
-dallasElement
 dstime
 dstimeelement
 dualLDR
@@ -177,6 +177,7 @@ EERR
 EINFO
 element
 elementRegistry
+elementsvg
 enable
 env
 ESP32
@@ -216,9 +217,9 @@ host
 hostname
 hostnames
 hysteresis
-i2cdevices
 i2c-scl
 i2c-sda
+i2cdevices
 icon
 IFTTT
 IKEA
@@ -253,7 +254,6 @@ log
 logElement
 logfile
 loglevel
-loglevel
 mA
 makezine
 manufacturer
@@ -281,6 +281,7 @@ microID
 microIDE
 microJavascript
 microJSON
+microsvg
 microTemplates
 millis
 min
@@ -387,7 +388,6 @@ rda
 readme
 readthedocs
 readtime
-readtime
 readtimems
 reboottime
 received
@@ -441,8 +441,8 @@ Sparkfun
 ssdp
 SSDP
 ssdpElement
-SSID
 ssid
+SSID
 start
 step
 stepsarduino
@@ -507,7 +507,6 @@ wifi
 wifikit
 WLAN
 WRGB
-wroom
 wroom
 xFormat
 yFormat
