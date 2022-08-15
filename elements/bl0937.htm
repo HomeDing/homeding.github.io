@@ -66,14 +66,13 @@ The HLW8012 is an older model while the HJL-01/BL0937 is a newer more stable ver
 <li>I have warned you, do not blame on me.</li>
 </ul>
 </div>
-<h2>Web UI for the BL0937 Element</h2>
-<p>There is a dedicated card for this element available that shows the actual measured values and can switch between voltage and current mode.</p>
-<p><img src="/elements/bl0937ui.png" alt="BL0937 Sensor UI"></p>
-<h2>How the chip works</h2>
 <p>The chip is directly working on the power line signals by measuring voltages and current. This part of the chip is lined out in detail in the datasheet.
 From this measurements the chip creates 38 micro seconds pulses on 2 pins that need to be captured by the microprocessor.</p>
 <p>These chips can monitor power consumption side by side to monitoring either current or voltage.</p>
 <p>The timing of these impulses will be used to calculate the power consumption, actual current and actual voltage. A device specific factor needs to be provided for all the calculations.</p>
+<h2>Web UI for the BL0937 Element</h2>
+<p>There is a dedicated card for this element available that shows the actual measured values and can switch between voltage and current mode.</p>
+<p><img src="/elements/bl0937ui.png" alt="BL0937 Sensor UI"></p>
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?bl0937" type="image/svg+xml"></object></p>
 <p>The following properties are available for configuration of the element:</p>

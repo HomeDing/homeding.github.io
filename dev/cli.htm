@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Update and config of devices using the command line'>
+  <title>Command Line CLI commands</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>Command Line CLI commands</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    Hints and details on how to control many devices using a command line approach.
+</div>
+      
+    <p>If you have more that a handful devices running in your local network you may need some automating
+in controlling and updating. The commandline interface can help you.</p>
+<p>This version is available on Windows only.</p>
+<p>Installing the bonjour package for Windows from Apple is a current pre-requisite.
+Please install the Bonjour Print Services for Windows from <a href="https://support.apple.com/kb/DL999">https://support.apple.com/kb/DL999</a></p>
+<p>In Short:</p>
+<pre class="language-txt"><code class="language-txt">hd-discover -list<br>hd-discover -save<br>hd-backup &lt;devicename><br>hd-backup --all<br>hd-restore &lt;devicename> &lt;target-ip-address|target-hostname></code></pre>
+<h2>HD-Discover</h2>
+<p>The discover command allows finding current active devices on the local network.
+Be aware that you may have multiple local networks when you use WLAN repeaters.</p>
+<p>The discovery is using mDNS also known as Bonjour that allows querying for devices with
+special protocol.</p>
+<p>The command line tool <code>dns-sd</code> is used internally.</p>
+<p>Starting the command with no parameters will give you a brief help:</p>
+<pre class="language-txt"><code class="language-txt">...>hd-discover<br><br>HomeDing Device discover utility.<br><br>This is a utility to discover devices using the homeding library.<br><br>Usage: hd-discover [parameters]<br>  -h, --help     Get a brief help on using this tool<br>  -l, --list     list found devices<br>  -s, --save     save found devices in file `hd-devices`</code></pre>
+<p>Starting the command with the <code>-list</code> parameter will list all Arduino devices based on the homeding library.</p>
+<p>The output is formatted as URL you you can directly open the browser and see the device running.</p>
+<pre class="language-txt"><code class="language-txt">...>hd-discover --list<br><br>HomeDing Device discover utility.<br><br>Searching Arduino HomeDing devices on the local network...<br><br>found devices:<br>  http://airding/<br>  http://plug04/<br>  http://dispding/<br>  http://plug07/<br>  http://bulb04/<br>  http://rfbridge/<br>  http://plug09/<br>  http://switch1/<br>  ...<br><br>done.</code></pre>
+<p>Starting the command with the <code>-save</code> parameter will add the current found devices to the list
+in the file <code>.\configs\hd-devices.txt</code>.</p>
+<p>This file may grow over time when you add or rename devices. It is used by the <code>hd-backup</code> utility.</p>
+<pre class="language-txt"><code class="language-txt">...>hd-discover --save<br><br>HomeDing Device discover utility.<br><br>Searching Arduino HomeDing devices on the local network...<br><br>found devices:<br>  http://airding/<br>  http://plug04/<br>  ...<br><br>adding to .\configs\hd-devices.txt<br><br>done.</code></pre>
+<p>You can use the <code>dns-sd</code> utility also to find web servers (_http._tcp) and Arduino devices (_arduino._tcp)
+by using:</p>
+<pre class="language-txt"><code class="language-txt">dns-sd -B _arduino._tcp</code></pre>
+<p>or</p>
+<pre class="language-txt"><code class="language-txt">dns-sd -B _http._tcp</code></pre>
+<p>You must stop this program by using <ctrl>-C.</p>
+<h2>HD-BackUp</h2>
+<p>Starting the command with no parameters will give you a brief help:</p>
+<pre class="language-txt"><code class="language-txt">...>hd-backup<br><br>HomeDing Configuration Backup Utility.<br><br>This is a utility to download the configuration from a device to the local configs folder<br><br>Usage: hd-backup.bat [parameters] &lt;devicename><br>  -h, --help     Get a brief help on using this tool<br>  --all          download config from from all known devices<br><br>There will be 3 files saved to the folder:<br>  &lt;devicename>-sysinfo.json  containing the result from /api/sysinfo<br>  &lt;devicename>-env.json      containing the file /env.json<br>  &lt;devicename>-config.json   containing the file /config.json</code></pre>
+<p>Starting the command with a devicename parameter creates backup of the /api/sysconf information,
+the /env.json and /config.json files:</p>
+<pre class="language-txt"><code class="language-txt">...>hd-backup plug08<br><br>HomeDing Configuration Backup Utility.<br><br>Backup configuration...<br>  Device name = plug08<br><br>get sysinfo...<br>get env.json...<br>get config.json...<br><br>saved...<br>  .\configs\plug08-config.json<br>  .\configs\plug08-env.json<br>  .\configs\plug08-sysinfo.json<br>done.</code></pre>
+<h2>HD-Restore</h2>
+<p>Starting the command with no parameters will give you a brief help:</p>
+<pre class="language-txt"><code class="language-txt">...>hd-restore<br><br>HomeDing Configuration Restore Utility.<br><br>hd-restore &lt;devicename> &lt;target-ip-address|target-hostname></code></pre>
+<h2>HD-upload</h2>
+<p>Starting the command with no parameters will give you a brief help:</p>
+<pre class="language-txt"><code class="language-txt">...>hd-upload<br><br>HomeDing Firmware OTA upload utility.<br><br>This is a helpful wrapper on Windows for the standard upload tool "espota.py" that<br>searches for the latest build to upload to the specified device.<br>Usage: hd-upload.bat [parameters] &lt;devicename> [firmware]<br>  -h, --help     Get a brief help on using this tool<br>  -p pass        use `pass` as upload password<br><br>The bin file is searched in the build subdirectory<br>When specifying a firmware name the file is taken from the bin directory.<br></code></pre>
+<p>For direct <strong>uploading</strong> of the firmware to a device you can use the following batch file:</p>
+<pre class="language-txt"><code class="language-txt">hd-upload plug08</code></pre>
+<p>The firmware files must be placed in the <code>bin</code> folder using the Arduino command <code>Export compiled binary</code>.
+In this folder you can collect multiple binaries to be uploaded to different devices.</p>
+<p>The device must have a <a href="/elements/ota.htm">OTA Element</a> configured to allow uploading of new firmware.</p>
+<p>A device without configuration files will automatically create a device and ota element
+so can can find and upload firmware from the start.</p>
+<h2>HD-build</h2>
+<p>not yet done.</p>
+<p>The HomeDing project that is used to create the firmware today has no support
+for building a firmware using a command line .</p>
+<p>It is on the list for future extensions when the Arduino CLI is finally available as a stable release.</p>
+<h2>Command Line Builds and Uploads for WebFiles</h2>
+<p>not yet done.</p>
+<p>you find cli command in the WebFiles project.
+These will be moved over to the Arduino Library Root folder.</p>
+<p>The <strong>WebFiles</strong> projects that is used to create the Web UI and portal implementation
+all build steps are implemented using the npm tasks defined in package.json.
+Some of them use nodejs scripts under the hood that can also be started directly.
+Best approach is to use the npm tasks. They are also used by the Github Actions.</p>
+<p>The <code>build</code> and <code>pack</code> tasks create the output folders <code>dist</code> and <code>dist-mini</code> containing the files for the Web UI
+that need to be uploaded into the filesystem of the device.</p>
+<p>For direct uploading the files to a device you can use the following batch files on windows:</p>
+<pre class="language-txt"><code class="language-txt">rem upload files for a 4 MByte flash device <br>md-uploadDist.bat &lt;devicename><br><br>rem upload files for a 1 MByte flash device <br>md-uploadMini.bat &lt;devicename></code></pre>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/implementation.htm">Implementation</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
