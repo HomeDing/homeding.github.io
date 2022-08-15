@@ -183,6 +183,7 @@ env
 ESP32
 ESP8266
 esphome
+espota
 Espressif
 ESPx  
 ETRACE

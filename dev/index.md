@@ -77,30 +77,9 @@ useful functionality:
 > * **Events** are outgoing actions to other elements.
 
 
-## Command Line Builds and Uploads
+## Command Line Builds and Uploads for WebFiles
 
-The WebFiles projects that is used to create the Web UI and portal implementation
-all build steps are implemented using the npm tasks defined in package.json.
-Some of them use nodejs scripts under the hood that can also be started directly.
-Best approach is to use the npm tasks. They are also used by the Github Actions.
-
-For direct uploading the `dist` and `minimal` files to a device you can use the following batch files on windows:
-
-The HomeDing project that is used to create the firmware today has no support for command line building.
-It is on the list for future extensions when the Arduino CLI is finally available as a stable release.
-
-For direct uploading of the firmware to a device you can use the following batch file on windows:
-
-``` cmd
-hd-upload.bat <devicename> [firmware]
-```
-
-use `hd-upload.bat --help` to get a brief command and options documentation.
-
-The firmware files must be placed in the `bin` folder using the Arduino command `Export compiled binary`.
-Here you can collect multiple binaries to be uploaded to different devices.
-
-The device must have a [OTA Element](/elements/ota.md) configured to allow uploading of new firmware.
+See [Command Line CLI commands](/dev/cli.md)
 
 
 ## See also
