@@ -15,17 +15,29 @@ This version is available on Windows only.
 Installing the bonjour package for Windows from Apple is a current pre-requisite.
 Please install the Bonjour Print Services for Windows from <https://support.apple.com/kb/DL999>
 
-In Short:
+The following folders are used in the HomeDing Library folder.
 
-``` txt
-hd-discover -list
-hd-discover -save
-hd-backup <devicename>
-hd-backup --all
-hd-restore <devicename> <target-ip-address|target-hostname>
-```
+**.\configs** -- This folder contains configuration files for the devices.
 
-## HD-Discover
+**.\configs\hd-devices** -- This file contains the list of network names of known devices.
+
+**.\bin** -- This folder contains combined firmware files.
+
+
+### In Short
+
+> ``` txt
+> hd-discover -list
+> hd-discover -save
+> hd-backup <devicename>
+> hd-backup --all
+> hd-restore <devicename> <target-ip-address|target-hostname>
+> hd-upload [options] <devicename> [firmware]
+> hd-webupload [options] <devicename> [example]
+> ```
+
+
+## hd-discover
 
 The discover command allows finding current active devices on the local network.
 Be aware that you may have multiple local networks when you use WLAN repeaters.
@@ -38,7 +50,7 @@ The command line tool `dns-sd` is used internally.
 Starting the command with no parameters will give you a brief help:
 
 ``` txt
-...>hd-discover
+...\libraries\HomeDing>hd-discover
 
 HomeDing Device discover utility.
 
@@ -55,7 +67,7 @@ Starting the command with the `-list` parameter will list all Arduino devices ba
 The output is formatted as URL you you can directly open the browser and see the device running.
 
 ``` txt
-...>hd-discover --list
+...\libraries\HomeDing>hd-discover --list
 
 HomeDing Device discover utility.
 
@@ -81,7 +93,7 @@ in the file `.\configs\hd-devices.txt`.
 This file may grow over time when you add or rename devices. It is used by the `hd-backup` utility.
 
 ``` txt
-...>hd-discover --save
+...\libraries\HomeDing>hd-discover --save
 
 HomeDing Device discover utility.
 
@@ -113,12 +125,14 @@ dns-sd -B _http._tcp
 You must stop this program by using <ctrl>-C.
 
 
-## HD-BackUp
+## hd-backup
+
+The backup command allows downloading configurations to a local folder as a backup.
 
 Starting the command with no parameters will give you a brief help:
 
 ``` txt
-...>hd-backup
+...\libraries\HomeDing>hd-backup
 
 HomeDing Configuration Backup Utility.
 
@@ -138,7 +152,7 @@ Starting the command with a devicename parameter creates backup of the /api/sysc
 the /env.json and /config.json files:
 
 ``` txt
-...>hd-backup plug08
+...\libraries\HomeDing>hd-backup plug08
 
 HomeDing Configuration Backup Utility.
 
@@ -157,46 +171,69 @@ done.
 ```
 
 
-## HD-Restore
+## hd-restore
+
+The restore command allows uploading a configuration from the local folder to a device.
 
 Starting the command with no parameters will give you a brief help:
 
 ``` txt
-...>hd-restore
+...\libraries\HomeDing>hd-restore.bat
 
 HomeDing Configuration Restore Utility.
 
-hd-restore <devicename> <target-ip-address|target-hostname>
+This is a utility to restore a configuration backup to a device.
+
+Usage: hd-restore <devicename> <target-ip-address|target-hostname>
+  -h, --help     Get a brief help on using this tool
+  -l, --list     list existing backups only
+```
+
+Starting the command with a devicename and current target-ip-address or target-hostname
+the configuration files in the .\configs folder will be uploaded to the target device.
+
+```txt
+...\libraries\HomeDing>hd-restore.bat plug08 192.168.2.22
+
+HomeDing Configuration Restore Utility.
+
+restoring configuration plug08 to 192.168.2.22
+restore env.json...
+restore config.json...
+done.
 ```
 
 
-## HD-upload
+## hd-upload
+
+The upload command allows uploading a firmware from the local .\bin folder to a device.
 
 Starting the command with no parameters will give you a brief help:
 
 ``` txt
-...>hd-upload
+...\libraries\HomeDing>hd-upload
 
 HomeDing Firmware OTA upload utility.
 
 This is a helpful wrapper on Windows for the standard upload tool "espota.py" that
 searches for the latest build to upload to the specified device.
-Usage: hd-upload.bat [parameters] <devicename> [firmware]
+Usage: hd-upload.bat [options] <devicename> [firmware]
   -h, --help     Get a brief help on using this tool
   -p pass        use `pass` as upload password
 
 The bin file is searched in the build subdirectory
 When specifying a firmware name the file is taken from the bin directory.
-
 ```
 
-For direct **uploading** of the firmware to a device you can use the following batch file:
+For direct **uploading** of the firmware in the .\build folder to a device you can use the following batch file:
 
 ``` txt
 hd-upload plug08
 ```
 
-The firmware files must be placed in the `bin` folder using the Arduino command `Export compiled binary`.
+Using a named firmware the firmware files must be placed in the `bin` folder
+e.g. using the Arduino command `Export compiled binary`.
+
 In this folder you can collect multiple binaries to be uploaded to different devices.
 
 The device must have a [OTA Element](/elements/ota.md) configured to allow uploading of new firmware.
@@ -205,7 +242,7 @@ A device without configuration files will automatically create a device and ota 
 so can can find and upload firmware from the start.
 
 
-## HD-build
+## hd-build
 
 not yet done.
 
@@ -215,12 +252,58 @@ for building a firmware using a command line .
 It is on the list for future extensions when the Arduino CLI is finally available as a stable release.
 
 
-## Command Line Builds and Uploads for WebFiles
+## hd-webupload
 
-not yet done.
+The webupload command allows uploading the web files from an example a device.
+This is an alternate solution to the /$update tool in the firmware that downloads files from github.
+The webupload command is also available in the WebFiles project that compiles these files.
 
-you find cli command in the WebFiles project.
-These will be moved over to the Arduino Library Root folder.
+The minimal and the standard example have a data folder with a complete set of the web implementation for 1MByte Flash / 4MByte Flash devices.
+
+Starting the command with no parameters will give you a brief help:
+
+```txt
+...\libraries\HomeDing>hd-webupload
+
+HomeDing upload utility uploading web files to device.
+
+This utility enables uploading files from a folder into the filesystem of a device
+using http uploads.
+
+To create the distribution files use npm run build and npm run pack
+
+Usage: hd-webupload.bat [options] <devicename> [example]
+  -h, --help     Get a brief help on using this tool
+  -c, --clean    Clean existing files on device before upload
+```
+
+When no `example` parameter is given the files from the standard data folder are used.
+
+``` txt
+...\libraries\HomeDing>hd-webupload.cmd plug08 minimal
+
+HomeDing upload utility uploading web files to device.
+
+Uploading...
+  Device name = plug08
+  Folder      = .\examples\minimal\data
+
+.\examples\minimal\data\browserconfig.xml
+.\examples\minimal\data\ding.htm
+.\examples\minimal\data\favicon.svg
+.\examples\minimal\data\icons.svg
+.\examples\minimal\data\iotstyle.css
+.\examples\minimal\data\list.txt
+.\examples\minimal\data\micro.js
+.\examples\minimal\data\microide.htm
+.\examples\minimal\data\site.webmanifest
+.\examples\minimal\data\updateicons.htm
+
+http://plug08/ updated.
+```
+
+
+## Building WebFiles
 
 The **WebFiles** projects that is used to create the Web UI and portal implementation
 all build steps are implemented using the npm tasks defined in package.json.

@@ -1,33 +1,31 @@
 ---
 title: HTML Templates for Elements
+description: Element specific UI templates.
+layout: "page.njk"
+tags: ["Implementation", "WIP"]
+excerpt: >
+  For displaying elements of a HomeDing device on the config and landing pages of the
+  [Builtin Web server](/concepts/paper04.md) there are is collection of templates
+  by using a card design available.
 ---
-
-# {{title}}
-
-  For displaying elements of a HomeDing device on the config and landing pages of the [Builtin Web server](/concepts/paper04.md) there are is collection of templates using a card design available.
 
 These templates are included manually or automatically into the pages when a corresponding element is configured.
 
 There are 2 versions of these templates available:
 
-* Inside the file `ding-templates.htm` all implemented templates can be found that support visualization and configuration of the elements.
-*  Inside the fie `min-templates.htm` some templates can be found that visualize the elements that can typically be found in sensor and actor devices that us only 1MByte of flash ram. They do not all support configuration because of the limited space available.
-
-The following Elements have special templates implemented:
-
-| Element                 | Configuration features                                         |
-| ----------------------- | -------------------------------------------------------------- |
-| dstime                  | Setting the on-chip time using the actual time of the browser. |
-| [timer](/elements/timer.md) |
+* Inside the file `ding.htm` all implemented templates can be found that support visualization and configuration
+  of the elements that are part of the minimal example
+  and usually used in 1M flash devices.
+* Inside the fie `board-templates.htm` all existing templates can be found that visualize all kind of elements. 
+  They support configuration of the elements using the configuration dialogs.
 
 
 ## Implementing a Template
 
-Using card design with 3 blocks
+t.b.d.
 
 header
 body
-config
 
 ``` html
 <div class="col card" u-control="log" u-is="log" microID="${id}">
@@ -40,9 +38,6 @@ config
   </div>
   <div class="block">
     <object data="lineChart.svg" type="image/svg+xml" style="width:360px;height:136px"></object>
-  </div>
-  <div class="block config Element" style="position: relative;min-height: 5rem">
-    <div class="form-group"><label>loglevel:</label><input u-value="loglevel" /></div>
   </div>
 </div>
 ```
