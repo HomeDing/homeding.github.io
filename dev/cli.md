@@ -39,7 +39,7 @@ The following folders are used in the HomeDing Library folder.
 
 ## hd-discover
 
-The discover command allows finding current active devices on the local network.
+The `discover` command allows finding current active devices on the local network.
 Be aware that you may have multiple local networks when you use WLAN repeaters.
 
 The discovery is using mDNS also known as Bonjour that allows querying for devices with
@@ -127,7 +127,7 @@ You must stop this program by using <ctrl>-C.
 
 ## hd-backup
 
-The backup command allows downloading configurations to a local folder as a backup.
+The `backup` command allows downloading configurations to a local folder as a backup.
 
 Starting the command with no parameters will give you a brief help:
 
@@ -173,7 +173,7 @@ done.
 
 ## hd-restore
 
-The restore command allows uploading a configuration from the local folder to a device.
+The `restore` command allows uploading a configuration from the local folder to a device.
 
 Starting the command with no parameters will give you a brief help:
 
@@ -206,7 +206,7 @@ done.
 
 ## hd-upload
 
-The upload command allows uploading a firmware from the local .\bin folder to a device.
+The `upload` command allows uploading a firmware from the local .\bin folder to a device.
 
 Starting the command with no parameters will give you a brief help:
 
@@ -242,6 +242,40 @@ A device without configuration files will automatically create a device and ota 
 so can can find and upload firmware from the start.
 
 
+## hd-api
+
+The `api` command allows calling a REST service on a device.
+
+Starting the command with no parameters will give you a brief help:
+
+```txt
+...\libraries\HomeDing>hd-api
+
+HomeDing api utility to call services on a device on CLI.
+
+This utility enables calling a api on the CLI.
+
+Usage: hd-api <devicename> <command>
+  -h, --help     Get a brief help on using this tool
+
+Commands are: sysinfo, elements, list, state, state, reboot, reset, resetall, cleanweb, scan, connect
+```
+
+Using a command will invoke the corresponding api method on the device. The used URL is displayed and
+the result is shown.
+
+```txt
+...\libraries\HomeDing>hd-api.cmd plug05 sysinfo
+
+HomeDing api utility to call services on a device on CLI.
+
+http://plug05/api/sysinfo
+
+{"devicename":"plug05","build":"Aug 15 2022","freeHeap":"35976","flashSize":"1048576","coreVersion":"0.90",
+"coreBuild":"minimal","mac":"24:A1:60:17:8F:C5","fsTotalBytes":"131072","fsUsedBytes":"90112",
+"safemode":"false","upTime":"261068","ssid":"KHMH"}
+```
+
 ## hd-build
 
 not yet done.
@@ -254,7 +288,7 @@ It is on the list for future extensions when the Arduino CLI is finally availabl
 
 ## hd-webupload
 
-The webupload command allows uploading the web files from an example a device.
+The `webupload` command allows uploading the web files from an example a device.
 This is an alternate solution to the /$update tool in the firmware that downloads files from github.
 The webupload command is also available in the WebFiles project that compiles these files.
 

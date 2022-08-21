@@ -499,6 +499,7 @@ The [Radio Element](/elements/radio.md) is available as an experimental implemen
 
 * <https://arduinomodules.info/> for a list of common sensor modules
 * <https://draeger-it.blog/vergleich-der-sensoren-am2320-dht11-und-dht22/>
+* <https://unsinnsbasis.de/sensoren-temperatur-luftfeuchtigkeit/>
 
 [Analog Element]: /elements/analog.md
 [AHT20 Element]: /elements/aht20.md
