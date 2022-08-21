@@ -129,6 +129,7 @@ When having lower loads this time may be set to use longer time to count impulse
 <li>BlitzWolf BW-SHP6 15A</li>
 <li>Gosund SP111 Power Monitoring Plug</li>
 <li>BlitzWolf BW-SHP2 Power Monitoring Plug</li>
+<li>Nous A1, Nous A1T Smart WiFi Socket</li>
 </ul>
 </blockquote>
 <p>Many of them are manufactured by Tuya and re-branded.</p>
@@ -141,19 +142,19 @@ and its functionality mentions a BL0937 or HLW8012 chip like the
 <p>The get the device specific factors a reference load is required where the power consumption is known or use another good power measuring tool.
 The best results are given by pure resistor loads like classic light bulbs. Here a 100W light is used.</p>
 <ul>
-<li>call <a href="http://plug05/$board/bl0937/0?cycletime=5000">http://plug05/$board/bl0937/0?cycletime=5000</a> to create a more precise pulse monitoring 5 sec cycles can be used.</li>
-<li>call <a href="http://plug05/$board/bl0937/0?mode=voltage">http://plug05/$board/bl0937/0?mode=voltage</a></li>
+<li>call <a href="http://socket01/api/state/bl0937/0?cycletime=5000">http://socket01/api/state/bl0937/0?cycletime=5000</a> to create a more precise pulse monitoring 5 sec cycles can be used.</li>
+<li>call <a href="http://socket01/api/state/bl0937/0?mode=voltage">http://socket01/api/state/bl0937/0?mode=voltage</a></li>
 <li>Switch on and wait some cycles (30secs).</li>
-<li>call <a href="http://plug05/$board/bl0937/0?poweradjust=100">http://plug05/$board/bl0937/0?poweradjust=100</a> to adjust the powerfactor</li>
-<li>call <a href="http://plug05/$board/bl0937/0?voltageadjust=226">http://plug05/$board/bl0937/0?voltageadjust=226</a> to adjust the voltagefactor</li>
+<li>call <a href="http://socket01/api/state/bl0937/0?poweradjust=100">http://socket01/api/state/bl0937/0?poweradjust=100</a> to adjust the powerfactor</li>
+<li>call <a href="http://socket01/api/state/bl0937/0?voltageadjust=226">http://socket01/api/state/bl0937/0?voltageadjust=226</a> to adjust the voltagefactor</li>
 <li>calculate the current in mA using the formula current = watt/voltage*1000</li>
-<li>call <a href="http://plug05/$board/bl0937/0">http://plug05/$board/bl0937/0</a> and see the powerfactor and voltagefactor</li>
-<li>call <a href="http://plug05/$board/bl0937/0?mode=current">http://plug05/$board/bl0937/0?mode=current</a></li>
+<li>call <a href="http://socket01/api/state/bl0937/0">http://socket01/api/state/bl0937/0</a> and see the powerfactor and voltagefactor</li>
+<li>call <a href="http://socket01/api/state/bl0937/0?mode=current">http://socket01/api/state/bl0937/0?mode=current</a></li>
 <li>Wait some cycles (30secs).</li>
-<li>call <a href="http://plug05/$board/bl0937/0?currentadjust=435">http://plug05/$board/bl0937/0?currentadjust=435</a></li>
-<li>call <a href="http://plug05/$board/bl0937/0">http://plug05/$board/bl0937/0</a> and see the currentfactor</li>
+<li>call <a href="http://socket01/api/state/bl0937/0?currentadjust=435">http://socket01/api/state/bl0937/0?currentadjust=435</a></li>
+<li>call <a href="http://socket01/api/state/bl0937/0">http://socket01/api/state/bl0937/0</a> and see the currentfactor</li>
 </ul>
-<p>(you may use your device name and adjust the id of the bl0937 element. Here just <code>0</code>was used.)</p>
+<p>(you may use your device name and adjust the id of the bl0937 element. Here just <code>0</code> was used.)</p>
 <p>enter the 3 factors into the configuration.</p>
 <h2>How the chip works</h2>
 <p><img src="/elements/bl0937pins.png" alt="BL0937 Pins"></p>

@@ -64,7 +64,7 @@ Please install the Bonjour Print Services for Windows from <a href="https://supp
 <pre class="language-txt"><code class="language-txt">hd-discover -list<br>hd-discover -save<br>hd-backup &lt;devicename><br>hd-backup --all<br>hd-restore &lt;devicename> &lt;target-ip-address|target-hostname><br>hd-upload [options] &lt;devicename> [firmware]<br>hd-webupload [options] &lt;devicename> [example]</code></pre>
 </blockquote>
 <h2>hd-discover</h2>
-<p>The discover command allows finding current active devices on the local network.
+<p>The <code>discover</code> command allows finding current active devices on the local network.
 Be aware that you may have multiple local networks when you use WLAN repeaters.</p>
 <p>The discovery is using mDNS also known as Bonjour that allows querying for devices with
 special protocol.</p>
@@ -85,21 +85,21 @@ by using:</p>
 <pre class="language-txt"><code class="language-txt">dns-sd -B _http._tcp</code></pre>
 <p>You must stop this program by using <ctrl>-C.</p>
 <h2>hd-backup</h2>
-<p>The backup command allows downloading configurations to a local folder as a backup.</p>
+<p>The <code>backup</code> command allows downloading configurations to a local folder as a backup.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
 <pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-backup<br><br>HomeDing Configuration Backup Utility.<br><br>This is a utility to download the configuration from a device to the local configs folder<br><br>Usage: hd-backup.bat [parameters] &lt;devicename><br>  -h, --help     Get a brief help on using this tool<br>  --all          download config from from all known devices<br><br>There will be 3 files saved to the folder:<br>  &lt;devicename>-sysinfo.json  containing the result from /api/sysinfo<br>  &lt;devicename>-env.json      containing the file /env.json<br>  &lt;devicename>-config.json   containing the file /config.json</code></pre>
 <p>Starting the command with a devicename parameter creates backup of the /api/sysconf information,
 the /env.json and /config.json files:</p>
 <pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-backup plug08<br><br>HomeDing Configuration Backup Utility.<br><br>Backup configuration...<br>  Device name = plug08<br><br>get sysinfo...<br>get env.json...<br>get config.json...<br><br>saved...<br>  .\configs\plug08-config.json<br>  .\configs\plug08-env.json<br>  .\configs\plug08-sysinfo.json<br>done.</code></pre>
 <h2>hd-restore</h2>
-<p>The restore command allows uploading a configuration from the local folder to a device.</p>
+<p>The <code>restore</code> command allows uploading a configuration from the local folder to a device.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
 <pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-restore.bat<br><br>HomeDing Configuration Restore Utility.<br><br>This is a utility to restore a configuration backup to a device.<br><br>Usage: hd-restore &lt;devicename> &lt;target-ip-address|target-hostname><br>  -h, --help     Get a brief help on using this tool<br>  -l, --list     list existing backups only</code></pre>
 <p>Starting the command with a devicename and current target-ip-address or target-hostname
 the configuration files in the .\configs folder will be uploaded to the target device.</p>
 <pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-restore.bat plug08 192.168.2.22<br><br>HomeDing Configuration Restore Utility.<br><br>restoring configuration plug08 to 192.168.2.22<br>restore env.json...<br>restore config.json...<br>done.</code></pre>
 <h2>hd-upload</h2>
-<p>The upload command allows uploading a firmware from the local .\bin folder to a device.</p>
+<p>The <code>upload</code> command allows uploading a firmware from the local .\bin folder to a device.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
 <pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-upload<br><br>HomeDing Firmware OTA upload utility.<br><br>This is a helpful wrapper on Windows for the standard upload tool "espota.py" that<br>searches for the latest build to upload to the specified device.<br>Usage: hd-upload.bat [options] &lt;devicename> [firmware]<br>  -h, --help     Get a brief help on using this tool<br>  -p pass        use `pass` as upload password<br><br>The bin file is searched in the build subdirectory<br>When specifying a firmware name the file is taken from the bin directory.</code></pre>
 <p>For direct <strong>uploading</strong> of the firmware in the .\build folder to a device you can use the following batch file:</p>
@@ -110,13 +110,20 @@ e.g. using the Arduino command <code>Export compiled binary</code>.</p>
 <p>The device must have a <a href="/elements/ota.htm">OTA Element</a> configured to allow uploading of new firmware.</p>
 <p>A device without configuration files will automatically create a device and ota element
 so can can find and upload firmware from the start.</p>
+<h2>hd-api</h2>
+<p>The <code>api</code> command allows calling a REST service on a device.</p>
+<p>Starting the command with no parameters will give you a brief help:</p>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-api<br><br>HomeDing api utility to call services on a device on CLI.<br><br>This utility enables calling a api on the CLI.<br><br>Usage: hd-api &lt;devicename> &lt;command><br>  -h, --help     Get a brief help on using this tool<br><br>Commands are: sysinfo, elements, list, state, state, reboot, reset, resetall, cleanweb, scan, connect</code></pre>
+<p>Using a command will invoke the corresponding api method on the device. The used URL is displayed and
+the result is shown.</p>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-api.cmd plug05 sysinfo<br><br>HomeDing api utility to call services on a device on CLI.<br><br>http://plug05/api/sysinfo<br><br>{"devicename":"plug05","build":"Aug 15 2022","freeHeap":"35976","flashSize":"1048576","coreVersion":"0.90",<br>"coreBuild":"minimal","mac":"24:A1:60:17:8F:C5","fsTotalBytes":"131072","fsUsedBytes":"90112",<br>"safemode":"false","upTime":"261068","ssid":"KHMH"}</code></pre>
 <h2>hd-build</h2>
 <p>not yet done.</p>
 <p>The HomeDing project that is used to create the firmware today has no support
 for building a firmware using a command line .</p>
 <p>It is on the list for future extensions when the Arduino CLI is finally available as a stable release.</p>
 <h2>hd-webupload</h2>
-<p>The webupload command allows uploading the web files from an example a device.
+<p>The <code>webupload</code> command allows uploading the web files from an example a device.
 This is an alternate solution to the /$update tool in the firmware that downloads files from github.
 The webupload command is also available in the WebFiles project that compiles these files.</p>
 <p>The minimal and the standard example have a data folder with a complete set of the web implementation for 1MByte Flash / 4MByte Flash devices.</p>
