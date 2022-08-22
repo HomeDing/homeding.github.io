@@ -59,6 +59,43 @@
 <h2>Connecting</h2>
 <p>Connecting this display type to Arduino was often made using many IO lines by driving the 4-bit interface mode directly.</p>
 <p>For ESP8266 and the limited number of GPIO ports a I2C adapter solution is more adequate. The most frequent found of such an solution ist the PCF8574 remote 8-bit IO adapter chip that converts between the I2C bus and up to 8 digital IO lines.</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>PCF8574 I2C Adapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="gpio red">VCC</span></td>
+<td>VCC</td>
+<td>VCC</td>
+<td>+5V, VCC from USB</td>
+</tr>
+<tr>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>Common Ground</td>
+</tr>
+<tr>
+<td><span class="gpio blue">SDA</span></td>
+<td>GPIO4(D2)</td>
+<td>IO21</td>
+<td>I2C Data Signal</td>
+</tr>
+<tr>
+<td><span class="gpio yellow">SCL</span></td>
+<td>GPIO5(D1)</td>
+<td>IO22</td>
+<td>I2C Clock Signal</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a href="/dev/i2c.htm">Using the I2C bus</a></p>
 <p>See <a href="http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx">http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx</a></p>
 <p>The library used to drive these displays is “LiquidCrystal_PCF8574”.</p>
 <h2>Web UI for the DisplaySH1106 Element</h2>
