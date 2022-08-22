@@ -51,8 +51,8 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
       "name": "plug01",
       "description": "Gosund SP111 with minimal sketch",
       "homepage": "/ding.htm",
-      "led": "D4",
-      "button": "D7"
+      "led": "2",
+      "button": "13"
     }
   },
   "ota": {
@@ -70,7 +70,79 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
 {
   "digitalin": {
     "button": {
-      "pin": "D7",
+      "pin": "13",
+      "inverse": 1,
+      "pullup": 1,
+      "onLow": "switch/relay?toggle=1"
+    }
+  },
+  "schedule": {
+    "0": {
+      "title": "Timer",
+      "mode": "off",
+      "onTime": "20:00:00",
+      "offTime": "22:22:22",
+      "onOn": "switch/relay?value=1",
+      "onOff": "switch/relay?value=0"
+    }
+  },
+  "switch": {
+    "relay": {
+      "title": "Aufgang Licht",
+      "value": 0,
+      "onValue": "digitalout/relay?value=$v,digitalout/led?value=$v"
+    }
+  },
+  "digitalout": {
+    "relay": {
+      "pin": "15",
+      "inverse": "false"
+    },
+    "led": {
+      "pin": "0",
+      "inverse": "true"
+    }
+  },
+  "bl0937": {
+    "0": {
+      "selpin": "12",
+      "cfpin": "5",
+      "cf1pin": "4",
+      "cycletime": "2000",
+      "mode": "voltage",
+      "powerfactor": "1346829",
+      "currentfactor": "11232182",
+      "voltagefactor": "130924"
+    }
+  }
+}```
+
+
+## Nous A1 / Nous A1T
+
+Using a Nous socket is almost the same setup but some pins are used differently.
+
+Also a HLW8012 is used inside with varying factors for power, current and voltage.
+
+```json
+{
+  "device": {
+    "0": {
+      "name": "noussocket",
+      "title": "Nous Socket",
+      "description": "Switchable plug with power meter",
+      "led": "13",
+      "button": "0"
+    }
+  }, ...
+}
+```
+
+```json
+{
+  "digitalin": {
+    "button": {
+      "pin": "0",
       "inverse": 1,
       "pullup": 1,
       "onLow": "switch/relay?toggle=1"
@@ -79,18 +151,34 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
   "switch": {
     "relay": {
       "value": 0,
-      "onValue": "digitalout/relay?value=$v"
+      "onValue": "digitalout/relay?value=$v,digitalout/led?value=$v"
     }
   },
   "digitalout": {
     "relay": {
-      "pin": "D8",
+      "pin": "14",
+      "inverse": "false"
+    },
+    "led": {
+      "pin": "13",
       "inverse": "true"
+    }
+  },
+  "bl0937": {
+    "0": {
+      "loglevel": 2,
+      "selpin": "12",
+      "cfpin": "4",
+      "cf1pin": "5",
+      "cycletime": "2000",
+      "mode": "voltage",
+      "powerfactor": "1713292",
+      "currentfactor": "12972030",
+      "voltagefactor": "142060"
     }
   }
 }
 ```
-
 
 ## See also
 
@@ -100,9 +188,7 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
 ##  Relay
 
 
-Sonoff ITEAD Smart Home WLAN Wireless Switch Modul für Apple Android APP Control
-
-tasmota
+Sonoff ITEAD Smart Home WLAN Wireless Switch Module für Apple Android APP Control
 
 https://www.heise.de/newsticker/meldung/Smart-Home-Hack-Tuya-veroeffentlicht-Sicherheitsupdate-4292028.html
 
@@ -111,4 +197,6 @@ https://www.heise.de/newsticker/meldung/Smart-Home-Hack-Tuya-veroeffentlicht-Sic
 * <https://github.com/arendst/Sonoff-Tasmota/wiki/Tuya-OTA>
 * <https://creationx.de/ratgeber/sonoff/tasmota>
 * <http://www.andremiller.net/content/programming-an-itead-sonoff-wireless-smart-switch-esp8266>
-* <https://blog.moneybag.de/fhem-kurztest-gosund-blitzwolf-wlan-steckdosen/> -->
+* <https://blog.moneybag.de/fhem-kurztest-gosund-blitzwolf-wlan-steckdosen/>
+
+-->

@@ -61,6 +61,6 @@ You can set values using a browser by sending actions to the element by requesti
 ## See also
 
 * [Elements](/elements/index.md)
+* [Calc Element](/elements/calc.md)
 * [AND Element](/elements/and.md)
 * [OR Element](/elements/or.md)
-* [Calc Element](/elements/calc.md)

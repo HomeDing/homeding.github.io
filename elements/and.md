@@ -77,5 +77,6 @@ You can set values using a browser by sending actions to the element by requesti
 ## See also
 
 * [Elements](/elements/index.md)
+* [Calc Element](/elements/calc.md)
 * [OR Element](/elements/or.md)
 * [ADD Element](/elements/add.md)

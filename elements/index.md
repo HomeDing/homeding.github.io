@@ -157,7 +157,7 @@ This is a light sensor probong for the intensity of light in lumen.
 
 ## Logic and Calculation Elements
 
-Logic elements implement using on/off values expressed as 1/0 values.
+Logic elements implement using on/off values expressed as 1/0 values. See [Calc Abstract Element](/elements/calc.md)
 
 :::element button button
 The [Button Element](/elements/button.md) can differentiate clicks, double clicks and long press gestures to send out actions.
