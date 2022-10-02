@@ -343,6 +343,40 @@ The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast
 :::
 
 
+## Audio related Elements
+
+These elements can be used to create / control audio related devices and chips.
+
+:::element radio radio
+This element features the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+to configure and use various FM radio boards.
+
+This element is part of the [Radio Example](/examples/radio.md).
+:::
+
+
+<!-- 
+The TPA2016Element can control a TPA2016 chip that contains a stereo amplifier for analog audio signals with a I2C bus based volume control.
+
+ [tpa2016 Element](/elements/_tpa2016.md)
+
+
+<https://www.sparkfun.com/products/20690>
+
+TPA2016D2
+
+TPA2016D2 stereo, filter-free class-D audio power amplifier. 
+
+Dynamic Range Compression (DRC)
+Automatic Gain Control (AGC)
+configured through software via I2C
+
+class-D 2.8W stereo Amplifier
+
+TPA2005D1
+-->
+
+
 ## Web UI Elements
 
 These elements starting with **web** in their name are only known to the Web UI implementation but are not part of the firmware- The intention is to enrich and customize the Web UI dashboard with elements like presets and macros.
@@ -368,14 +402,6 @@ INA226 sensor, voltage and current.
 
 This sensor is features by the [Probe example](/examples/probe.md)
 :::
-
-:::element radio radio
-This element features the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
-to configure and use various FM radio boards.
-
-This element is part of the [Radio Example](/examples/radio.md).
-:::
-
 
 ## See also
 
