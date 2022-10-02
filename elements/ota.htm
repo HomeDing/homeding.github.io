@@ -61,14 +61,13 @@ The underlying thing is a python script that can be used directly as well.</p>
 <p>There is a python 3 based tool available within the tools folder of the Arduino package for the ESP8266 board.
 To use this tool you need to install Python 3 on your computer as well.</p>
 <p>This script will push an OTA update to the ESP</p>
-<pre><code>python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.7.1\tools\espota.py -i %devicename% -p 8266 --auth=123 -f ..\temp\DevDing.ino.bin
+<pre><code>python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.7.1\tools\espota.py
+  -i %devicename% -p 8266 --auth=123 -f ..\temp\DevDing.ino.bin
 </code></pre>
 <p>(the version number and path to the ers8266 tools may vary)</p>
 <p>use it like:</p>
-<pre><code>python3 espota.py -i &lt;ESP_IP_address&gt; -I &lt;Host_IP_address&gt; -p &lt;ESP_port&gt; -P &lt;Host_port&gt; [-a password] -f &lt;sketch.bin&gt;
-</code></pre>
-<p>or to upload a SPIFFS image:</p>
-<pre><code>python3 espota.py -i &lt;ESP_IP_address&gt; -I &lt;Host_IP_address&gt; -p &lt;ESP_port&gt; -P &lt;HOST_port&gt; [-a password] -s -f &lt;spiffs.bin&gt;
+<pre><code>python3 espota.py -i &lt;ESP_IP_address&gt; -I &lt;Host_IP_address&gt;
+  -p &lt;ESP_port&gt; -P &lt;Host_port&gt; [-a password] -f &lt;sketch.bin&gt;
 </code></pre>
 <h2>Example Configuration</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">8266</span><span class="token punctuation">,</span><br>      <span class="token property">"passwd"</span><span class="token operator">:</span> <span class="token string">"123"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Listen for 'over the air' OTA Updates"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
