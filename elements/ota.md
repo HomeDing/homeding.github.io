@@ -42,18 +42,16 @@ To use this tool you need to install Python 3 on your computer as well.
 This script will push an OTA update to the ESP
 
 ```
-python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.7.1\tools\espota.py -i %devicename% -p 8266 --auth=123 -f ..\temp\DevDing.ino.bin
+python.exe %LOCALAPPDATA%\Arduino15\packages\esp8266\hardware\esp8266\2.7.1\tools\espota.py
+  -i %devicename% -p 8266 --auth=123 -f ..\temp\DevDing.ino.bin
 ```
 
 (the version number and path to the ers8266 tools may vary)
 
 use it like:
 
-    python3 espota.py -i <ESP_IP_address> -I <Host_IP_address> -p <ESP_port> -P <Host_port> [-a password] -f <sketch.bin>
-
-or to upload a SPIFFS image:
-
-    python3 espota.py -i <ESP_IP_address> -I <Host_IP_address> -p <ESP_port> -P <HOST_port> [-a password] -s -f <spiffs.bin>
+    python3 espota.py -i <ESP_IP_address> -I <Host_IP_address>
+      -p <ESP_port> -P <Host_port> [-a password] -f <sketch.bin>
 
 ## Example Configuration
 

@@ -42,7 +42,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./elementsvg.js");
   eleventyConfig.addPassthroughCopy("./element*.json");
   eleventyConfig.addPassthroughCopy("./*.svg");
-  eleventyConfig.addPassthroughCopy("./*.png");
+  eleventyConfig.addPassthroughCopy("./homeding.png");
 
   // https://www.11ty.dev/docs/data-global-custom/
   eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.htm");
