@@ -60,7 +60,6 @@ title: wishlist
 * [/elements/_pcf8574.md](/elements/_pcf8574.md) -
 * [/elements/_pcf8591.md](/elements/_pcf8591.md) -
 * [/elements/_pull.md](/elements/_pull.md) -
-* [/elements/_tpa2016.md](/elements/_tpa2016.md) - Control a TPA2016 chip based amplifier
 * [/elements/__elements.md](/elements/__elements.md) -
 * [/examples/_batteryswitch.md](/examples/_batteryswitch.md) -
 * [/examples/_blink.md](/examples/_blink.md) -
@@ -69,6 +68,10 @@ title: wishlist
 * [/sensors/_memo.md](/sensors/_memo.md) -
 * [/sensors/_sniffer.md](/sensors/_sniffer.md) -
 * [/stories/_curtain.md](/stories/_curtain.md) -
+
+## Audio
+
+* [/elements/_tpa2016.md](/elements/_tpa2016.md) - Control a TPA2016 chip based amplifier
 
 
 **OnShift** when a new text is send to the displaytext element the current displayed text is send using the shift action.
