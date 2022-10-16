@@ -11,6 +11,7 @@
   <title>Micro Templates</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
   <style>
   .gpio { 
     display:inline-block;
@@ -39,10 +40,18 @@
 
   <nav class="inpage open"></nav>
 
-  <main style="padding:1rem">
+  <main style="padding:1rem;max-width: 800px;">
     <h1>Micro Templates</h1>
-<p>The micro framework has a built-in template mechanism that allows creating multiple visible components from a single template object.</p>
-<p>The approach is very similar to the <strong>Web Components</strong> features available already in some browsers.</p>
+
+    
+    
+      <div class="plaincard">
+    
+    The Template mechanism in the micro framework is used for dynamically assembling the UI as specified in the device configuration by using templates.
+</div>
+      
+    <p>The <a href="microjavascript.md">Micro JavaScript Framework</a> has a built-in template mechanism that allows creating multiple visible components from a single template object that is existing in the page inside a hidden container or hidden by itself.</p>
+<p>The approach is very similar to the templating features that can be find in javascript frameworks but this implementation is working client-side only.</p>
 <p>Creating a new html fragment that will be used as a template is easy as implementing any HTML fragment.</p>
 <p>The individual fragments are either declared</p>
 <ul>
@@ -50,15 +59,44 @@
 <li>in a separate file that will be loaded into the template area after loading the page by using the <code>loadfile()</code> function .</li>
 </ul>
 <p>The later allows reusing templates in multiple pages. For the HomeDing device website the file <code>/ding-templates.htm</code> is used.</p>
+<!--
+When a template is used and included in the page it can be populated with data 
+by using a control
+-->
+<p>When using a template element a clone of the complete template object is copied into the right place in the document</p>
+<h2>Template Container</h2>
+<p>The Template Container contains invisible html elements that can be copied to the visible area of the page.
+It must have the <code>id='u-templates'</code>as it is identified by the used micro framework.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>u-templates<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">display</span><span class="token punctuation">:</span>none</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><br>...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The Template Container can contain pre-defined static elements
+but also can be populated from an additional file with template objects
+by using the function <code>micro.loadFile('...')</code>.</p>
 <h2>Implementation of a template</h2>
-<p>Templates are implemented using a declarative approach in HTML that can include placeholders for values.</p>
+<p>Template Elements are implemented using a declarative approach in HTML that can include placeholders for values.</p>
 <p>The <code>u-control</code> attribute is used to identify the root HTML element that will be cloned with all nested HTML objects.</p>
 <p>The <code>u-is</code> attribute is used to identify the behavior / mixin that implements the functionality.</p>
 <p>The special notations of placeholders can be seen in the example like <code>${id}</code>.
 For the HomeDing device website the <code>id</code> like <code>button/left</code> and the <code>type</code> like <code>button</code> is available as placeholders. This is used to create meaningful names for icons and to set the <code>microID</code> attribute. The <code>microID</code> attribute is used to bind a HTML control to the element with the same id.</p>
+<p>Template elements can be used by adding them to an already existing html element in the page by calling the
+<code>micro.insertTemplate</code> function.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> newControl <span class="token operator">=</span> <span class="token function">insertTemplate</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> controlName<span class="token punctuation">,</span> initialProperties<span class="token punctuation">)</span></code></pre>
+<p><strong>root</strong> – This parameter is used to specify the root object. The template will be appended inside this object.</p>
+<p><strong>controlName</strong> – This parameter is used to identify the right template element using the <code>u-control</code> attribute.</p>
+<p><strong>props</strong> – This Object can contain attributes with values for the placeholders in the template.</p>
+<h3>Data binding</h3>
+<p>The templates can include placeholder for values by using a syntax like: <code>${id}</code>. When loading a template
+these placeholders are replaced by the values in the corresponding attributes of the <code>props</code> parameter of the
+<code>insertTemplate</code> function.</p>
+<p>The implementation can only replace placeholders with simple attribute names.</p>
+<h3>Lazy Loading of images</h3>
+<p>Images and other tags that refer to other ressources by the src attribute must not be loaded
+before the template elements are used.</p>
+<p>When a template is loaded in all elements an existing value from a <code>data-src</code> attribute is copied into the <code>src</code> attribute
+so images are loaded only after the template is used.</p>
+<p>This avoids loading a lot of images for invisible templates.</p>
 <h3>Example</h3>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col card<span class="token punctuation">"</span></span> <span class="token attr-name">u-control</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pwmout<span class="token punctuation">"</span></span> <span class="token attr-name">u-is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pwmout<span class="token punctuation">"</span></span> <span class="token attr-name">microID</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>${id}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/i/pwmout.svg<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>${id}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">u-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activeState<span class="token punctuation">"</span></span> <span class="token attr-name">u-active</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>active<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>setconfig<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h2>Templates for Elements</h2>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col card<span class="token punctuation">"</span></span> <span class="token attr-name">u-control</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pwmout<span class="token punctuation">"</span></span> <span class="token attr-name">u-is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pwmout<span class="token punctuation">"</span></span> <span class="token attr-name">microID</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>${id}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">data-src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/i/pwmout.svg<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>${id}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">u-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>activeState<span class="token punctuation">"</span></span> <span class="token attr-name">u-active</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>active<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>setconfig<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2>Templates for Elements in the dashboards</h2>
 <p>The main purpose templates are used for are the individual cards for every configured element on the <a href="/dev/dashboard.htm">dashboard</a>.</p>
 <p>Every time a new element is found in the configuration the corresponding template is cloned. If no specific template for the element can be found the general usable template <code>generic</code> is used instead.</p>
 <p>The templates are cloned into the visible document by using the function ???</p>
@@ -76,6 +114,11 @@ For the HomeDing device website the <code>id</code> like <code>button/left</code
 <li><a href="https://johnresig.com/blog/javascript-micro-templating/">https://johnresig.com/blog/javascript-micro-templating/</a></li>
 </ul>
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/implementation.htm">Implementation</a></div>
+    
   </main>
 
   <script>
