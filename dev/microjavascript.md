@@ -1,51 +1,17 @@
-## micro JavaScript Library
+---
+title: Micro JavaScript Framework
+layout: "page.njk"
+tags: ["Implementation"]
+excerpt: >
+  The UI for HomeDing devices is 
+  implementation by using a small and specialized clients side framework fousing on a small implementation footprint to make it usable in embedded devices.
+---
 
+## Using Templates
 
-t.b.c
+this is describe in the [Micro Templates](/dev/microtemplates.md) page.
 
-
-
-* Task Queue => Promises
-
-## HTML Templates
-
-Templates for the web framework are combinations of standard HTML elements to create layout and details of the controls for the specific use case. These template objects are placed inside a template area or can be loaded from a HTML file when required.
-
-A template object is identified by the `u-control` property that must have a unique name.
-
-When using the template to create a new control a clone of the complete template object is copied into the right place in the document:
-
-``` javascript
-var newControl = insertTemplate(container, controlName, initialProperties)
-```
-
-The placeholders ${type} and ${id} will be replaced by the corresponding values of the initial properties.
-
-For adding functionality to the new object the value of the `u-behavior` property specifies what behavior will be added to the created component.
-
-Here is an example of a simple control that displays a card with some specific information for a button control.
-
-``` html
-<div class='card' microID="${id}" u-control='button' u-behavior='button'>
-  <div class="block header">
-    <h2>${id}</h2>
-      <h4 property='description'></h4>
-      <span class="activeState" u-active='active'></span>
-      <span class="config"></span>
-    </div>
-  <div class="block">
-    <img src="/i/button.svg" class="u-button" style="border-radius:3rem;float:left;height:5rem;margin-right:1rem" >
-  </div>
-</div>
-```
-
-How templates for elements are implemented and how to use the functionalities of the landing page and config page
-is explained in [Builtin Web server](/concepts/paper04.md)   and [Templates for Elements](/dev/elementcards.md).
-
-
-In this example the outer element and the block structure of this control is given by the design of cards similar to the one you can find in the bootstrap framework.
-
-There are several behaviors already implemented to visualize and configure elements that can be found in the `ding.js` file.
+<!-- * Task Queue => Promises -->
 
 
 ## Micro-Behavior implementations for Elements
@@ -73,3 +39,73 @@ A HTML element with this classname and a value 1 will get a green color assigned
 <!-- * function binding -->
 
 <!-- * data binding -->
+
+
+## Dialogs with Forms
+
+Some functionality in the UI is using dialogs and sequences of dialogs by using html &gt;dialog&lt; and &gt;form&lt; elements.
+
+A Dialog implemented by specifying the class `dialogform` on the element will include some useful functionality for using forms in dialogs:
+
+``` html
+<dialog id="action" u-is="dialogform">
+  <h2>Config...</h2>
+  <div class="u-close" u-action="close"></div>
+
+  <form method="dialog">
+    <div class="form-grid">
+      <label>Target:</label><select name="target">
+        <option disabled selected hidden>Select target...</option>
+        <option value="switch/0">switch/0</option>
+        <option value="timer/0">timer/0</option>
+      </select>
+      <label>Action:</label>
+      <select name="event">
+        <option value="in">in</option>
+        <option value="out">out</option>
+      </select>
+      <label>Sound:</label><input name="sound"/>
+      <label>Volume:</label><input name="volume" type="range" min="0" max="15" />
+    </div>
+    <div><button u-action="return" style="float:right">Save</button></div>
+  </form>
+</dialog>
+```
+
+## Open Dialogs
+
+To open a dialog the DialogFormClass provides the method `openModalForm`.
+
+The `name` 
+
+The `data` 
+A object with known input values
+Extra attributes may given and they are returned unchanged in the result data object
+
+The `fCallBack`
+and a callback function for dialog results can be given as parameters:
+
+``` javascript
+DialogFormClass.openModalForm('action', {
+  target: "switch/0",
+  sound: "bell",
+  extra: "notused"
+}, function (data) {
+  // result of action dialog 
+  alert("Dialog result=\n"
+  + JSON.stringify(data, undefined, 2));
+});
+```
+
+## Chaining Dialogs
+## Nesting Dialogs
+
+next:llll
+
+
+
+Using `DialogFormClass.openModalForm()`
+
+see `DialogFormClass` implementation in `src\DialogForm.ts`.
+
+

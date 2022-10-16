@@ -76,6 +76,13 @@ There are official boards from espressif
 {{ imgCard(collections.all, item = '/boards/esp32/ttgo-t-display') }}
 
 
+## ESP32-C3 boards
+
+The C3 variant of the ESP32 is also supported. It has less IO pins and is not supporting touch input. As it is "cost-effective" RISC-V based SoC that may replace
+ESP8266 some time. The Arduino ESP32 supports this variant.
+
+t.b.d.
+
 ## Devices based on Esp8266
 
 ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.  
