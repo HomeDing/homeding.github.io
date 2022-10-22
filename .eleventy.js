@@ -125,7 +125,7 @@ module.exports = function (eleventyConfig) {
         return (page.data.excerpt);
       }
     }
-    console.error("excerptOf: entry not found.")
+    console.error(`excerptOf: entry ${name} not found.`)
     return ('');
   }
   );

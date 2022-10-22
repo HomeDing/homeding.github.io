@@ -18,7 +18,7 @@ including hints for configuration and programming.
 
 ## DIY development boards
 
-The NodeMCU boards for ESP8266 and the DevKit Boards for ESP32
+The NodeMCU boards for ESP8266 and the DevKit Boards for ESP32 and ESP32-S3
 
 There are good options to start a DIY project with breadboard friendly boards.
 You can find these at resellers and eBay :
@@ -78,10 +78,15 @@ There are official boards from espressif
 
 ## ESP32-C3 boards
 
-The C3 variant of the ESP32 is also supported. It has less IO pins and is not supporting touch input. As it is "cost-effective" RISC-V based SoC that may replace
-ESP8266 some time. The Arduino ESP32 supports this variant.
+The [ESP32-C3](/boards/esp32/esp32c3.md) variant of the ESP32 is also supported.
+It has less IO pins and is not supporting touch input.
+As it is "cost-effective" RISC-V based SoC that may replace ESP8266 some time.
+The Arduino ESP32 supports this variant.
 
-t.b.d.
+{{ imgCard(collections.all, item = '/boards/esp32/core-esp32c3') }}
+
+
+<!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
 
 ## Devices based on Esp8266
 
