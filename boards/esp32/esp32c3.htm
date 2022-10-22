@@ -50,76 +50,13 @@
     There are several ESP32-C3 DevKit Boards listed here. They are supported by the HomeDing library.
 </div>
       
-    <p>The C3 variant of the ESP32 is supported by the HomeDing library.
-It has less IO pins than the original ESP32 and is not supporting touch input.
-As it is “cost-effective” RISC-V based SoC that may replace
-ESP8266 some time. The Arduino ESP32 adaption supports this variant.</p>
-<h2>CORE-ESP32-C3 Development Board and OLED+Joystick Shield</h2>
-<p>The CORE-ESP32 board that is labeled with <code>luatos.com</code> is a breadboard friendly
-small development board using the ESP32-C3 processor and USB-C interface.</p>
-<p><img src="/boards/esp32/core-esp32s3.jpg" alt="core-esp32c3 board"></p>
-<p>This is a small board that fits good on breadboards.</p>
-<p>There are 2 main board variants that differ in the implementation of the USB port.</p>
-<p><strong>Important:</strong> Be sure to flash in DIO mode. QIO did not work for me.</p>
-<p>The following components are already on-board:</p>
-<ul>
-<li>
-<p>IO12: LED (right to USB)</p>
-</li>
-<li>
-<p>IO13: LED (left to USB)</p>
-</li>
-<li>
-<p>RST: RST Button</p>
-</li>
-<li>
-<p>IO9: Boot Button</p>
-</li>
-<li>
-<p>IO2: SPI-SCK</p>
-</li>
-<li>
-<p>IO3: SPI-MOSI</p>
-</li>
-<li>
-<p>I10: SPI-MISO</p>
-</li>
-<li>
-<p>I07: SPI-CS</p>
-</li>
-<li>
-<p>IO4: I2C-SDA</p>
-</li>
-<li>
-<p>IO5: I2C-SCL</p>
-</li>
-</ul>
-<p><img src="/boards/esp32/core-esp32s3-shield.jpg" alt="core-esp32c3 shield"></p>
-<p>There is a TFT display and a digital joystick shield available that can be stacked upon the CPU board.
-It offers a 0.96 inch display with 80*160 pixels and 262K Color
-based on the ST7735S driver chip.</p>
-<!--
-    esp32c3 = {
-        useFont = false,
-        spi = 2,
-        spiCS = 7,
-        spiSpeed = 40*1000*1000,
-        lcdDC = 6,
-        lcdRST = 10,
-        lcdBL = 11,
-        keyL = 13,
-        keyR = 8,
-        keyU = 5,
-        keyD = 9,
-        keyO = 4,
-    },
-right: reset
-
-(7789)
--->
+    <pre class="language-txt"><code class="language-txt">14:50:58 diag/0:t Chip-Info:<br>14:50:58 diag/0:t   model: 5<br>14:50:58 diag/0:t     ESP32-C3<br>14:50:58 diag/0:t   features: 00000012<br>14:50:58 diag/0:t     2.4GHz WiFi<br>14:50:58 diag/0:t     Bluetooth LE<br>14:50:58 diag/0:t   cores: 1<br>14:50:58 diag/0:t   revision: 3<br>14:50:58 diag/0:t ChipModel: ESP32-C3<br>14:50:58 diag/0:t Flash:<br>14:50:58 diag/0:t   ChipSize: 4194304<br>14:50:58 diag/0:t   ChipMode: 2<br>14:50:58 diag/0:t   ChipSpeed: 80000000</code></pre>
+<div class="imgcard"><img src="/boards/esp32/core-esp32c3.jpg">
+<p><strong><a href="/boards/esp32/core-esp32c3.htm">CORE-ESP32C3 development board</a></strong></p>
+<p>The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC that fits good on a breadboard and has the option for a LCD + digital joystick shield on top. The ESP32-C3 variant is supported by the HomeDing library.</p>
+</div>
 <h2>See also</h2>
 <ul>
-<li><a href="https://wiki.luatos.com/chips/esp32c3/board.html">https://wiki.luatos.com/chips/esp32c3/board.html</a></li>
 <li><a href="https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/">https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/</a></li>
 </ul>
 
