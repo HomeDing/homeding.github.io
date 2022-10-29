@@ -69,10 +69,7 @@ title: wishlist
 * [/sensors/_sniffer.md](/sensors/_sniffer.md) -
 * [/stories/_curtain.md](/stories/_curtain.md) -
 
-## Audio
-
-* [/elements/_tpa2016.md](/elements/_tpa2016.md) - Control a TPA2016 chip based amplifier
-
+_audio.md
 
 **OnShift** when a new text is send to the displaytext element the current displayed text is send using the shift action.
 This action can be used to chain multiple displaytext elements for displaying multiple lines.

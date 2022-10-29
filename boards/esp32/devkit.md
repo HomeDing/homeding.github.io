@@ -26,6 +26,21 @@ The ESP32-WROOM module features:
 * 4 MByte SPI Flash memory
 * 520 kByte SRAMs
 
+00:00:03 diag/0:t Chip-Info:
+00:00:03 diag/0:t   model: 1
+00:00:03 diag/0:t     ESP32
+00:00:03 diag/0:t   features: 00000032
+00:00:03 diag/0:t     2.4GHz WiFi
+00:00:03 diag/0:t     Bluetooth LE
+00:00:03 diag/0:t     Bluetooth Classic
+00:00:03 diag/0:t   cores: 2
+00:00:03 diag/0:t   revision: 1
+00:00:03 diag/0:t ChipModel: ESP32-D0WDQ6
+00:00:03 diag/0:t Flash:
+00:00:03 diag/0:t   ChipSize: 4194304
+00:00:03 diag/0:t   ChipMode: 0
+00:00:03 diag/0:t   ChipSpeed: 80000000
+
 In the following pin pictures the most useful functions on a pin are illustrated.
 Some functionality is problematic e.g.
 
