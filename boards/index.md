@@ -75,6 +75,8 @@ There are official boards from espressif
 
 {{ imgCard(collections.all, item = '/boards/esp32/ttgo-t-display') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32/ttgogallery') }}
+
 
 ## ESP32-C3 boards
 

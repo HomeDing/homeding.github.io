@@ -1,6 +1,19 @@
-# TTGO Gallery (T14)
+---
+title: TTGO Gallery (T14)
+description: ESP32 Wroover board with integrated TFT color display and audio.
+layout: "page.njk"
+tags: ["Board", "WIP"]
+excerpt: >
+  The LilyGO TTGO Gallery (T14) board offers an integrated TFT color display, SD Card, 4 buttons and Audio DAC output with amplifier.
+---
 
-This is **Work in progress**
+
+Upload using
+
+* PSRAM Enabled
+* QIO
+* 240MHz
+
 
 ## SoC
 
@@ -58,7 +71,7 @@ extern "C" {
 #define TFT_SPI_CS                      5
 #define TFT_DC                          23
 #define TFT_RESET                       -1
-#define TFT_BACKLIGHT                   27
+#define TFT_BACKLIGHT                   27 // not working
 #define TFT_CHIP_TYPE                   DISP_TYPE_ST7789V   //DISP_TYPE_ILI9341
 
 #define SDCARD_CMD                      15
@@ -120,12 +133,39 @@ Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
 **Display config**
 
 ``` json
+{
+  "device": {
+    "0": {
+      "name": "ttradio",
+      "title": "TTGO Galery",
+      "description": "ESP32 with color TFT display",
+      "loglevel": 2,
+      "safemode": "false",
+      "button": 0,
+      "homepage": "/index.htm",
+      "xi2c-SDA": "21",
+      "xi2c-SCL": "22"
+    }
+  },
+  "ota": {
+    "0": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "Listen for 'over the air' OTA Updates"
+    }
+  },
+  "ntptime": {
+    "on": {
+      "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+    }
+  },
   "DisplayST7789": {
     "0": {
-      "description": "TTGO-Gallery",
+      "description": "TTGO-Display",
       "loglevel": 2,
       "width": "240",
       "height": "320",
+      "back": "black",
       "spimosi": 19,
       "spimiso": 32,
       "spiclk": 18,
@@ -136,10 +176,67 @@ Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
       "xresetpin": 23
     }
   }
+}
 ```
 
 The documentation of the TTGO-Time-Music-Box mentions a Backlight switch, but this seems to be a wrong hint.
 
+
+``` json
+{
+  "displaytext": {
+    "time": {
+      "description": "Display the time",
+      "x": 1,
+      "y": 1,
+      "fontsize": 24,
+      "color": "white"
+    },
+    "station": {
+      "x": 0,
+      "y": 30,
+      "fontsize": 16,
+      "color": "#8888FF"
+    },
+    "info": {
+      "x": 0,
+      "y": 65,
+      "fontsize": 16,
+      "color": "#FFFF00"
+    }
+  },
+  "value": {
+    "volume": {
+      "value": 10,
+      "min": 0,
+      "max": 21,
+      "onValue": "audio/0?volume=$v"
+    }
+  },
+  "digitalout": {
+    "mute": {
+      "title": "mute amp",
+      "pin": 21,
+      "value": 1
+    }
+  },
+  "audio": {
+    "0": {
+      "title": "audio processing",
+      "bclk": 26,
+      "lrc": 25,
+      "dout": 22,
+      "ontitle": "displaytext/info?value=$v",
+      "onstation": "displaytext/station?value=$v"
+    }
+  },
+  "time": {
+    "clock": {
+      "onminute": "displaytext/time?value=$v"
+    }
+  }
+}
+```
 
 ## SD Card
 
@@ -184,9 +281,9 @@ Here the PCM5102A chip is used.
 The PCM5102A has an mute function that can be controlled via IO21. The level has to set to HIGH to disable the MUTE function sou cou can hear something.
 Mute applies to the Line Out and Speaker Output.
 
-# define PCM5102_MUTE                21
-# define PCM5102_MUTE_ON             0
-# define PCM5102_MUTE_OFF            1
+    #define PCM5102_MUTE                21
+    #define PCM5102_MUTE_ON             0
+    #define PCM5102_MUTE_OFF            1
 
 The following pins are used:
 
