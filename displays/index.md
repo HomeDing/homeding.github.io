@@ -38,7 +38,8 @@ already come with an onboard and you can find configuration hints in the boards 
 | [SSD1309]               | OLED       | compatible with SSD1306     |                         |
 | [DisplayMAX7219]        | LED        | Multiple LED matrix modules |                         |
 | **Color displays**      |            |                             |                         |
-| [ST7789]                | TFT LCD    | 135 \* 240                  | 16-bit color            |
+| [ST7789]                | TFT LCD    | up to 320\*240              | 16-bit color (262k)     |
+| [ST7735]                | TFT LCD    | up to 132\*160              | 16-bit color (262k)     |
 
 <!--
 -->
@@ -96,7 +97,12 @@ Supported are the driver chips: [SH1106], [SSD1306], [SSD1309]
 
 {% imgcard "/displays/colorlcd.jpg", "/displays/st7789.htm" %}
   Colorful displays are supported by the `color` configuration on the display elements.
-  The [DisplayST7789Element](/displays/st7789.md) supports the driver chips: [ST7789].
+  The [Display ST7789 Element](/displays/st7789.md) supports the ST7789 driver chips.
+{% endimgcard %}
+
+{% imgcard "/displays/colorlcd.jpg", "/displays/st7735.htm" %}
+  Colorful displays are supported by the `color` configuration on the display elements.
+  The [Display ST7735 Element](/displays/st7735.md) supports the ST7735 driver chips.
 {% endimgcard %}
 
 
@@ -154,6 +160,7 @@ On startup, when a flexible display is configured some system information is dis
 ## See also
 
 * [Using the I2C bus](/dev/i2c.md)
+* [Using the SPI bus](/dev/spi.md)
 
 [liquid chrystal]: /displays/lcd.md
 [max7219]: /elements/max7219.md
@@ -164,3 +171,5 @@ On startup, when a flexible display is configured some system information is dis
 [ssd1306]: /elements/ssd1306.md
 [ssd1309]: /elements/ssd1309.md
 [st7789]: /displays/st7789.md
+[st7735]: /displays/st7735.md
+
