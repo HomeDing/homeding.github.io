@@ -143,8 +143,14 @@ already come with an onboard and you can find configuration hints in the boards 
 <tr>
 <td><a href="/displays/st7789.htm">ST7789</a></td>
 <td>TFT LCD</td>
-<td>135 * 240</td>
-<td>16-bit color</td>
+<td>up to 320*240</td>
+<td>16-bit color (262k)</td>
+</tr>
+<tr>
+<td><a href="/displays/st7735.htm">ST7735</a></td>
+<td>TFT LCD</td>
+<td>up to 132*160</td>
+<td>16-bit color (262k)</td>
 </tr>
 </tbody>
 </table>
@@ -201,7 +207,11 @@ using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 <h2>Pixel Based Color Displays</h2>
 <div class="imgcard"><a href="/displays/st7789.htm"><img src="/displays/colorlcd.jpg"></a>
 <p>Colorful displays are supported by the <code>color</code> configuration on the display elements.
-The <a href="/displays/st7789.htm">DisplayST7789Element</a> supports the driver chips: <a href="/displays/st7789.htm">ST7789</a>.</p>
+The <a href="/displays/st7789.htm">Display ST7789 Element</a> supports the ST7789 driver chips.</p>
+</div>
+<div class="imgcard"><a href="/displays/st7735.htm"><img src="/displays/colorlcd.jpg"></a>
+<p>Colorful displays are supported by the <code>color</code> configuration on the display elements.
+The <a href="/displays/st7735.htm">Display ST7735 Element</a> supports the ST7735 driver chips.</p>
 </div>
 <!-- - SSD 1331 (in planning) -->
   <!-- * ssd1322 OLED 480*128 -->
@@ -245,6 +255,7 @@ This shows that the system is running a HomeDing sketch and that the display was
 <h2>See also</h2>
 <ul>
 <li><a href="/dev/i2c.htm">Using the I2C bus</a></li>
+<li><a href="/dev/spi.htm">Using the SPI bus</a></li>
 </ul>
 
 
