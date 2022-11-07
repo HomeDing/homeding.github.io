@@ -205,7 +205,7 @@ They are controlled using the I2C or SPI bus.</p>
 using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 </div>
 <h2>Pixel Based Color Displays</h2>
-<div class="imgcard"><a href="/displays/st7789.htm"><img src="/displays/colorlcd.jpg"></a>
+<div class="imgcard"><a href="/displays/st7789.htm"><img src="/displays/st7789.jpg"></a>
 <p>Colorful displays are supported by the <code>color</code> configuration on the display elements.
 The <a href="/displays/st7789.htm">Display ST7789 Element</a> supports the ST7789 driver chips.</p>
 </div>
@@ -213,7 +213,9 @@ The <a href="/displays/st7789.htm">Display ST7789 Element</a> supports the ST778
 <p>Colorful displays are supported by the <code>color</code> configuration on the display elements.
 The <a href="/displays/st7735.htm">Display ST7735 Element</a> supports the ST7735 driver chips.</p>
 </div>
-<!-- - SSD 1331 (in planning) -->
+<!--
+TODO: other display
+SSD 1331 (in planning) -->
   <!-- * ssd1322 OLED 480*128 -->
   <!-- * ssd1325 OLED 128*80 Gray Scale -->
   <!-- * ssd1327 OLED 128*128 Gray Scale -->
@@ -232,20 +234,23 @@ on the configured display:</p>
 <p>The frame is created from the display adapter elements while displaytext and displaydot elements put their information into the frame.</p>
 <p>To keep the initialization in the required order it is recommended to configure the display adapter in the env.json and configure the text and dot elements in the config.json file.</p>
 <h2>Display configuration</h2>
-<p>address, resetpin, height, width,</p>
-<p>rotation 0, 90, 180, 270</p>
-<ul>
-<li>
-<p>color</p>
-</li>
-<li></li>
-</ul>
+<p><strong>address</strong> – For displays using the I2C bus the I2C address can be configured.</p>
+<p><strong>resetpin</strong> – For displays using a individual reset signal the pin can be configured.</p>
+<p><strong>height</strong> – The physical height of the display.</p>
+<p><strong>width</strong> – The physical height of the display.</p>
+<p><strong>rotation</strong> – The rotation of the display with possible values of 0, 90, 180 or 270.
+Using the rotation 90 or 270 the visible height and width are swapped from the physical height and width.</p>
 <h2>Display actions</h2>
-<p>page, addpage, clear</p>
+<p><strong>page</strong> – when multiple pages are defined the actual displayed page can be set.</p>
+<!--
+TODO: **addpage** -- 
+
+TODO: **clear** -- clear the display
+-->
 <h2>Display events</h2>
-<p>onpage</p>
+<p><strong>onpage</strong> – These actions are send when the current displayed page is changed.</p>
 <h2>Startup and system information</h2>
-<p>On startup, when a flexible display is configured some system information is displayed before the elements are started. The same information is also written to the Serial interface and can be observed using the Serial Monitor.</p>
+<p>On startup, when a display is configured, some system information is displayed before the elements are started. The same information is also written to the Serial interface and can be observed using the Serial Monitor.</p>
 <ol>
 <li>“HomeDing”
 This shows that the system is running a HomeDing sketch and that the display was recognized and is working.</li>

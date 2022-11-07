@@ -44,15 +44,21 @@
     <h1>Color Displays based on ST7789</h1>
 
     
+    
+      <div class="plaincard">
+    
+    The DisplayST7789Element enables using ST7789 based TFT color displays.
+</div>
       
-    <p>The support of colorful LCD / TFT displays like the ST7789 based displays
+    <p><img src="/displays/st7789.jpg" alt="st7789 display"></p>
+<p>The support of colorful LCD / TFT displays like the ST7789 based displays
 is done with the help of the Adafruit GFX library.</p>
 <p>The Adafruit libraries for displays support a broad range of displays that all share a common graphics library to draw graphic primitives called [Adafruit GFX]
 that supports 16 bit values per pixel. Colors are coded using a 565 bit color scheme,
 enough for text and graphics with selected colors.</p>
 <p>Displaying pictures with rich color depth is somehow limited by this design decision but may LCD displays anyway do not support more tha this.</p>
 <h2>Configuration</h2>
-<p>The [Display Element] supports all parameters to configure all displays. The DisplayConfig structure is used to bundle these and pass them to the dedicated Dispay Adapter. While adopting color displays the set of parameters was extended to support the background color andthe SPI interface. A system wide SPI configuration was also added to the [Device Element].</p>
+<p>The Display ST7789 Element supports all parameters to configure all displays. The DisplayConfig structure is used to bundle these and pass them to the dedicated Dispay Adapter. While adopting color displays the set of parameters was extended to support the background color andthe SPI interface. A system wide SPI configuration was also added to the Device Element.</p>
 <p>By default and during system startup a white draw/text color is used.</p>
 <h2>Reset pin</h2>
 <p>Some displays support a hardware based reset signal that can be controlled by a distinct GPIO output signal. The resetpin can be configured and will be used by the display adapter or driver to initialize the display.</p>
@@ -63,13 +69,14 @@ The brightness pin can be configured and will be used by the display adapter or 
 <h2>Rotating the Display</h2>
 <p>Displays are often part of boards and are used in various rotations.</p>
 <p>The rotation can be configured using the values 0, 90, 180 and 270 and will be used to initialize the display adapter or driver.</p>
-<h2>Supported Displays</h2>
+<h2>Display Resolutions</h2>
 <p><strong>ST7789</strong> - all resolutions supported by the Adafruit ST7789 library can be used.</p>
-<p><strong>Others</strong> - to come.</p>
 <h2>See also</h2>
 <ul>
-<li><a href="fonts.md">Fonts</a></li>
+<li><a href="/displays/index.htm">Displays</a></li>
 <li><a href="/displays/st7735.htm">Display ST7735 Element</a></li>
+<li><a href="/boards/esp32/ttgo-t-display.htm">TTGO t-display board</a></li>
+<li><a href="/displays/fonts.htm">Fonts</a></li>
 </ul>
 
 
