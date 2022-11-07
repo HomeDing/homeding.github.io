@@ -78,6 +78,7 @@ The special [MAX7219 Element](/elements/max7219.md) supports this chip.
 The 4 digit displays are supported by the [TM1637 Element](/elements/tm1637.md).
 :::
 
+
 ## Pixel Based Monochrome Displays
 
 ::: sensor oled
@@ -95,7 +96,7 @@ Supported are the driver chips: [SH1106], [SSD1306], [SSD1309]
 
 ## Pixel Based Color Displays
 
-{% imgcard "/displays/colorlcd.jpg", "/displays/st7789.htm" %}
+{% imgcard "/displays/st7789.jpg", "/displays/st7789.htm" %}
   Colorful displays are supported by the `color` configuration on the display elements.
   The [Display ST7789 Element](/displays/st7789.md) supports the ST7789 driver chips.
 {% endimgcard %}
@@ -106,7 +107,9 @@ Supported are the driver chips: [SH1106], [SSD1306], [SSD1309]
 {% endimgcard %}
 
 
-<!-- - SSD 1331 (in planning) -->
+<!--
+TODO: other display
+SSD 1331 (in planning) -->
   <!-- * ssd1322 OLED 480*128 -->
   <!-- * ssd1325 OLED 128*80 Gray Scale -->
   <!-- * ssd1327 OLED 128*128 Gray Scale -->
@@ -132,25 +135,37 @@ To keep the initialization in the required order it is recommended to configure 
 
 ## Display configuration
 
-address, resetpin, height, width,
+**address** -- For displays using the I2C bus the I2C address can be configured.
 
-rotation 0, 90, 180, 270
+**resetpin** -- For displays using a individual reset signal the pin can be configured.
 
-* color
+**height** -- The physical height of the display.
 
-*
+**width** -- The physical height of the display.
+
+**rotation** -- The rotation of the display with possible values of 0, 90, 180 or 270.
+Using the rotation 90 or 270 the visible height and width are swapped from the physical height and width.
+
 
 ## Display actions
 
-page, addpage, clear
+**page** -- when multiple pages are defined the actual displayed page can be set.
+
+<!--
+TODO: **addpage** -- 
+
+TODO: **clear** -- clear the display
+-->
+
 
 ## Display events
 
-onpage
+**onpage** -- These actions are send when the current displayed page is changed.
+
 
 ## Startup and system information
 
-On startup, when a flexible display is configured some system information is displayed before the elements are started. The same information is also written to the Serial interface and can be observed using the Serial Monitor.
+On startup, when a display is configured, some system information is displayed before the elements are started. The same information is also written to the Serial interface and can be observed using the Serial Monitor.
 
 1. "HomeDing"
    This shows that the system is running a HomeDing sketch and that the display was recognized and is working.

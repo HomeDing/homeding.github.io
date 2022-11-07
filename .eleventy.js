@@ -27,7 +27,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(f + "/*.svg");
     eleventyConfig.addPassthroughCopy(f + "/*.jpg");
     eleventyConfig.addPassthroughCopy(f + "/*.png");
+    eleventyConfig.addWatchTarget(f);
   })
+  eleventyConfig.setWatchThrottleWaitTime(2000); // in milliseconds
 
   assetFolders.forEach(f => {
     eleventyConfig.ignores.add(f);
