@@ -50,14 +50,50 @@
     There are several ESP32-C3 DevKit Boards listed here. They are supported by the HomeDing library.
 </div>
       
-    <pre class="language-txt"><code class="language-txt">14:50:58 diag/0:t Chip-Info:<br>14:50:58 diag/0:t   model: 5<br>14:50:58 diag/0:t     ESP32-C3<br>14:50:58 diag/0:t   features: 00000012<br>14:50:58 diag/0:t     2.4GHz WiFi<br>14:50:58 diag/0:t     Bluetooth LE<br>14:50:58 diag/0:t   cores: 1<br>14:50:58 diag/0:t   revision: 3<br>14:50:58 diag/0:t ChipModel: ESP32-C3<br>14:50:58 diag/0:t Flash:<br>14:50:58 diag/0:t   ChipSize: 4194304<br>14:50:58 diag/0:t   ChipMode: 2<br>14:50:58 diag/0:t   ChipSpeed: 80000000</code></pre>
+    <p>This SoC is positioned as a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity
+for secure IoT applications.</p>
+<p>It is often seen as a replacement option for the ESP8266.</p>
+<p>The ESP32-C3 offers less IO pins that the ESP32 or ESP32-S3 chips and comes in a smaller
+32 pin QFN32 package (5×5 mm).
+.</p>
+<p>It has noticeable more internal memory and cpu power as the ESP8266:</p>
+<ul>
+<li>384 KB of ROM</li>
+<li>400 KB of static RAM, 16 KB for caching
+• 8 KB of static RTC RAM that keeps data as long as powered.</li>
+<li>Single Core 160 MHz CPU frequency
+• 4 Kbit of eFuse memory for special data like encryption keys</li>
+</ul>
+<h2>Flash Memory</h2>
+<p>The ‘F’ version of the chip offers an internal 4 MByte Flash ROM that can be flashed using the QIO mode. It sopports external Flash up to 16 MByte.</p>
+<h2>USB and JTAG Support</h2>
+<p>The ESP32-C3 SoC directly supports USB ports using IO18 and IO19.</p>
+<p>To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.</p>
+<h2>CAN bus Support</h2>
+<p>…</p>
+<h2>Bluetooth LE</h2>
+<p>The ESP32-C3 supports Bluetooth LE , Bluetooth 5 and Bluetooth mesh.</p>
+<h2>Powersave modes</h2>
+<p>several sleep modes:</p>
+<ul>
+<li>Modem-sleep mode</li>
+<li>Light-sleep mode</li>
+<li>Deep-sleep mode</li>
+</ul>
+<h2>Watchdog timer</h2>
+<h2>Cryptographic Hardware Accelerators</h2>
+<pre class="language-txt"><code class="language-txt">14:50:58 diag/0:t Chip-Info:<br>14:50:58 diag/0:t   model: 5<br>14:50:58 diag/0:t     ESP32-C3<br>14:50:58 diag/0:t   features: 00000012<br>14:50:58 diag/0:t     2.4GHz WiFi<br>14:50:58 diag/0:t     Bluetooth LE<br>14:50:58 diag/0:t   cores: 1<br>14:50:58 diag/0:t   revision: 3<br>14:50:58 diag/0:t ChipModel: ESP32-C3<br>14:50:58 diag/0:t Flash:<br>14:50:58 diag/0:t   ChipSize: 4194304<br>14:50:58 diag/0:t   ChipMode: 2<br>14:50:58 diag/0:t   ChipSpeed: 80000000</code></pre>
 <div class="imgcard"><img src="/boards/esp32/core-esp32c3.jpg">
 <p><strong><a href="/boards/esp32/core-esp32c3.htm">CORE-ESP32C3 development board</a></strong></p>
 <p>The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC that fits good on a breadboard and has the option for a LCD + digital joystick shield on top. The ESP32-C3 variant is supported by the HomeDing library.</p>
 </div>
 <h2>See also</h2>
 <ul>
+<li>Product web site: <a href="https://www.espressif.com/en/products/socs/esp32-c3">https://www.espressif.com/en/products/socs/esp32-c3</a></li>
+<li>Official datasheet: <a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf</a></li>
+<li></li>
 <li><a href="https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/">https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/</a></li>
+<li></li>
 </ul>
 
 
