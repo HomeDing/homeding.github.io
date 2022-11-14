@@ -1,10 +1,10 @@
 ---
 title: The Network Startup Sequence
+layout: "page.njk"
+tags: ["Implementation"]
+excerpt: >
+  After a reboot or when powering up a board the network connection needs to be established or configured. Therefore the startup sequence is focusing on  re-establishing a prior network configuration and also give the user the chance to enter the setup mode.
 ---
-
-# {{title}}
-
-After a reboot or when powering up a board the network connection needs to be established or configured. Therefore the startup sequence is focusing on  re-establishing a prior network configuration and also give the user the chance to enter the setup mode.
 
 The following flow is implemented:
 
@@ -18,4 +18,12 @@ Otherwise a fresh connect is started to the last configured network from the  [W
 
 Sometimes the wireless network is just not available and a network connection can not be established. In this case no [WiFi Manager](/dev/wifimanager.md) is started and by restarting the device another connection attempt will be made. This allows starting normal operation mode as soon as possible after a network dropout.
 
+## System LED
+
+when a System led is configured in the device configuration the following signals can be seen:
+
+| state of the device   | frequency | signal form  |
+| --------------------- | --------- | ------------ |
+| connecting to network | 2 sec     | long signal  |
+| WiFi Manager mode     | 6 sec     | short signal |
 
