@@ -1,6 +1,6 @@
 ---
 title: Diag Element
-tags: ["Implementation"]
+tags: ["Implementation", "Element"]
 layout: "page.njk"
 description: Make some diagnose information available.
 excerpt: >

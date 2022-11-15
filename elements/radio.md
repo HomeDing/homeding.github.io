@@ -1,7 +1,7 @@
 ---
 title: Radio Element
 id: radio
-tags: ["WIP"]
+tags: ["Element", "WIP"]
 layout: "page.njk"
 excerpt: >
   The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.

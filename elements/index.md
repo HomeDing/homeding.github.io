@@ -346,11 +346,42 @@ The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast
 These elements can be used to create / control audio related devices and chips.
 
 :::element radio radio
-This element features the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
-to configure and use various FM radio boards.
+{% excerptOf collections.Element, "radio" %}
+
+This element is using the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+to configure and use various FM radio chips and boards.
 
 This element is part of the [Radio Example](/examples/radio.md).
 :::
+
+:::element audio no
+{% excerptOf collections.Element, "audio" %}
+
+This element is part of the [WebRadio Example](/examples/webradio.md).
+:::
+
+## Other Elements
+
+You can find some more elements in the examples folder.
+
+These implementations are for special purpose or are still experimental cases
+but are published already maybe with some restricted functionality.
+
+:::element diag no
+{% excerptOf collections.Element, "diag" %}
+This element is part of the [DevDing example](/examples/devding.md)
+:::
+
+:::element ina219 no
+{% excerptOf collections.Element, "ina219" %}
+This sensor is part of the [Probe example](/examples/probe.md)
+:::
+
+:::element ina226 no
+{% excerptOf collections.Element, "ina226" %}
+This sensor is part of the [Probe example](/examples/probe.md)
+:::
+
 
 
 <!-- 
@@ -383,23 +414,6 @@ These elements starting with **web** in their name are only known to the Web UI 
   This element adds a button the Web UI of the board. The button can be used to trigger actions by clicking.
 :::
 
-
-## Other Elements
-
-You can find some more elements in the DevDing example folder.
-These implementations are still experimental cases but are published already maybe with some restricted functionality.
-
-:::element ina219 default
-INA219 sensor, voltage and current.
-
-This sensor is features by the [Probe example](/examples/probe.md)
-:::
-
-:::element ina226 default
-INA226 sensor, voltage and current.
-
-This sensor is features by the [Probe example](/examples/probe.md)
-:::
 
 ## See also
 
