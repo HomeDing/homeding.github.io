@@ -226,9 +226,26 @@ storing timestamp based sensor values.</p>
 </div>
 <h2>Audio related Elements</h2>
 <p>These elements can be used to create / control audio related devices and chips.</p>
-<div class="iconcard"><a href="/elements/radio.htm"><svg class="icon"><use href="/icons.svg#radio"></use></svg><h3>radio</h3></a><p>This element features the external <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>
-to configure and use various FM radio boards.</p>
+<div class="iconcard"><a href="/elements/radio.htm"><svg class="icon"><use href="/icons.svg#radio"></use></svg><h3>radio</h3></a><p>The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.</p>
+<p>This element is using the external <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>
+to configure and use various FM radio chips and boards.</p>
 <p>This element is part of the <a href="/examples/radio.htm">Radio Example</a>.</p>
+</div>
+<div class="iconcard"><a href="/elements/audio.htm"><svg class="icon"><use href="/icons.svg#no"></use></svg><h3>audio</h3></a><p>The Audio Element enables configurable audio processing on ESP32 chips.</p>
+<p>This element is part of the <a href="/examples/webradio.htm">WebRadio Example</a>.</p>
+</div>
+<h2>Other Elements</h2>
+<p>You can find some more elements in the examples folder.</p>
+<p>These implementations are for special purpose or are still experimental cases
+but are published already maybe with some restricted functionality.</p>
+<div class="iconcard"><a href="/elements/diag.htm"><svg class="icon"><use href="/icons.svg#no"></use></svg><h3>diag</h3></a><p>The DiagElement is part of the DevDing Example  and offers some additional diagnose information.</p>
+<p>This element is part of the <a href="/examples/devding.htm">DevDing example</a></p>
+</div>
+<div class="iconcard"><a href="/elements/ina219.htm"><svg class="icon"><use href="/icons.svg#no"></use></svg><h3>ina219</h3></a><p>The INA219 is a current and voltage sensor that uses the I2C bus for communication that can measure voltages up to 26V and current in various ranges.</p>
+<p>This sensor is part of the <a href="/examples/probe.htm">Probe example</a></p>
+</div>
+<div class="iconcard"><a href="/elements/ina226.htm"><svg class="icon"><use href="/icons.svg#no"></use></svg><h3>ina226</h3></a><p>The INA226 is a current and voltage sensor that uses the I2C bus for communication that can measure voltages up to 26V on high-side or low-side and current in various ranges .</p>
+<p>This sensor is part of the <a href="/examples/probe.htm">Probe example</a></p>
 </div>
 <!-- 
 The TPA2016Element can control a TPA2016 chip that contains a stereo amplifier for analog audio signals with a I2C bus based volume control.
@@ -253,15 +270,6 @@ TPA2005D1
 <h2>Web UI Elements</h2>
 <p>These elements starting with <strong>web</strong> in their name are only known to the Web UI implementation but are not part of the firmware- The intention is to enrich and customize the Web UI dashboard with elements like presets and macros.</p>
 <div class="iconcard"><a href="/elements/webbutton.htm"><svg class="icon"><use href="/icons.svg#button"></use></svg><h3>webbutton</h3></a><p>This element adds a button the Web UI of the board. The button can be used to trigger actions by clicking.</p>
-</div>
-<h2>Other Elements</h2>
-<p>You can find some more elements in the DevDing example folder.
-These implementations are still experimental cases but are published already maybe with some restricted functionality.</p>
-<div class="iconcard"><a href="/elements/ina219.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>ina219</h3></a><p>INA219 sensor, voltage and current.</p>
-<p>This sensor is features by the <a href="/examples/probe.htm">Probe example</a></p>
-</div>
-<div class="iconcard"><a href="/elements/ina226.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>ina226</h3></a><p>INA226 sensor, voltage and current.</p>
-<p>This sensor is features by the <a href="/examples/probe.htm">Probe example</a></p>
 </div>
 <h2>See also</h2>
 <ul>
