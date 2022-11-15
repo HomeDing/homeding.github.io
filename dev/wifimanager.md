@@ -1,21 +1,28 @@
 ---
 title: WiFi Manager Details
+layout: "page.njk"
+tags: ["Implementation"]
+excerpt: >
+  The WiFi-Manager is a module in the HomeDing library to register a device in the local network.
+  It is implemented in every device in the board class.
+
+  When the device has not been connected to the local home network the Wifi-Manager exposes a temporary, unprotected
+  Wifi Network named HomeDingNNNNNN using the 192.168.4.xxx ip range. The device is always available on the URL
+  <http://192.168.4.1/>.
+
+  Any device like mobile phone or laptop with WLAN can join this network for configuration.
 ---
 
-# {{title}}
-
-:::excerpt
-The WiFi-Manager is a module in the HomeDing library to register a device in the local network.
-It is implemented in every device in the board class.
-
-When the device has not been connected to the local home network the Wifi-Manager exposes a temporary, unprotected
-Wifi Network named HomeDingNNNNNN using the 192.168.4.xxx ip range. The device is always available on the URL
- <http://192.168.4.1/>.
-
-Any device like mobile phone or laptop with WLAN can join this network for configuration.
-:::
-
 There is a walk-through description on how to use the WiFi Manager in [Step by Step Bring your device to work](/steps/newdevice.md). 
+
+## Start WiFi Manager
+
+The WiFi Manager will automatically be started when no previous network and no configured network could be found.
+
+The WiFi Manager can be started by pressing then sys button during the connect attempts or
+by resetting the device without power loss 2 times in a row.
+
+See [The Network Startup Sequence](/dev/startupnet.md) for details.
 
 
 ## Wifi Setup Dialog
@@ -23,7 +30,7 @@ There is a walk-through description on how to use the WiFi Manager in [Step by S
 The dialog that enables selecting an available network and entering the corresponding network passphrase
 is available on every device by using the **/\$setup.htm** URL.
 
-* When the device has no local network credentials the device opens a new open WiFi network
+* The device opens a new open WiFi network
   named `HomeDingNNNNNN` where NNNNNN is a hex value derived from the mac address so somehow unique.
   
   On this WiFi the device is reachable on the fixed IP address 192.168.4.1 and the dialog is available
@@ -32,27 +39,33 @@ is available on every device by using the **/\$setup.htm** URL.
 * The setup dialog is also available when the device has a network registration
   and is available on the local network using <http://homeding/$setup.htm>
 
-In this dialog is coded into the firmware to make it available even when the UI Web files have not been uploaded yet.
+* The setup dialog will show the available networks after some seconds to choose one.
 
-It can also be used in case the device is connected to re-configure the device to join another network.
+* The network passphrase must be entered in the form.
+
+In this dialog will automatically be shown when starting the plain url of the device while beeing in WiFi Manager Mode.
+
+The Wifi Setup Dialog can also be used while the device is connected and running
+to re-configure the device to join another network.
 
 
-## Starting the Wifi-Manager
+## System LED
 
-The board starts into the WiFiManager mode
-* when no network configuration is available
-* when started manually by pressing the system or flash button AFTER the reset button or connecting to USB.
-* when 8 attempts to connect have not been successful
-* when using the reset button two times in a row in-between 6 seconds (value from the **connectTime** device parameter).
+when a System LED is configured in the device configuration the following signals can be seen:
 
-When a LED is configured on the device element there are different pulse patterns:
-* 1 second pulse length having a short LED-ON phase when trying to connect the network in save mode 
-* 1 second pulse length having a longer LED-ON phase when trying to connect the network in non-save mode
-* 3 second pulse length with a short LED-ON phase when the Wifi-Manager is active. 
+| state of the device                  | frequency      | signal form       |
+| ------------------------------------ | -------------- | ----------------- |
+| connecting to network in safe mode   | 1 per 700msec. | fast long pulse   |
+| connecting to network in unsafe mode | 1 per 700msec. | fast short pulse  |
+| WiFi Manager mode                    | 1 per 3 sec.   | slow short signal |
 
-After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had an outage and WiFiManager was started caused by the missing network.
 
-Under normal operating conditions when the device was added to the network the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.
+## Restart
+
+After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had an outage and WiFiManager was started caused by power failures or a temporary missing network.
+
+Under normal operating conditions when the device was previously added to a network
+the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.
 
 
 ## WiFiManager UI
@@ -64,10 +77,10 @@ The WiFiManager presents a minimal UI that shows some minimal information about 
 * The current devicename is displayed.
 * In the Network drop-down the local available WiFi networks are listed and the right network can be selected.
 * The passphrase for this network needs to be entered.
-<!-- * Using the `re-scan` the available networks are scanned again. -->
+* When reloading the page the available networks will be scanned again.
 * Using the `Connect` button the device tries to connect the selected network and then reboots into the normal operation mode.
 
-The WiFi manager UI can also be accessed during normal operation using the link <http://homeding/$setup.htm>.
+The WiFi manager UI can also be accessed during normal operation using the link <http://{devicename}/$setup.htm>.
 
 How to bring a device from an empty board into full operating can be found in [Setup a new device Step by Step](/steps/newdevice.md)
 
