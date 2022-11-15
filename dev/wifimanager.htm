@@ -11,6 +11,7 @@
   <title>WiFi Manager Details</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
   <style>
   .gpio { 
     display:inline-block;
@@ -39,22 +40,30 @@
 
   <nav class="inpage open"></nav>
 
-  <main style="padding:1rem">
+  <main style="padding:1rem;max-width: 800px;">
     <h1>WiFi Manager Details</h1>
-<div class="plaincard"><p>The WiFi-Manager is a module in the HomeDing library to register a device in the local network.
-It is implemented in every device in the board class.</p>
-<p>When the device has not been connected to the local home network the Wifi-Manager exposes a temporary, unprotected
-Wifi Network named HomeDingNNNNNN using the <a href="http://192.168.4.xxx">192.168.4.xxx</a> ip range. The device is always available on the URL
-<a href="http://192.168.4.1/">http://192.168.4.1/</a>.</p>
-<p>Any device like mobile phone or laptop with WLAN can join this network for configuration.</p>
+
+    
+    
+      <div class="plaincard">
+    
+    The WiFi-Manager is a module in the HomeDing library to register a device in the local network. It is implemented in every device in the board class.
+When the device has not been connected to the local home network the Wifi-Manager exposes a temporary, unprotected Wifi Network named HomeDingNNNNNN using the 192.168.4.xxx ip range. The device is always available on the URL &lt;http://192.168.4.1/&gt;.
+Any device like mobile phone or laptop with WLAN can join this network for configuration.
 </div>
-<p>There is a walk-through description on how to use the WiFi Manager in <a href="/steps/newdevice.htm">Step by Step Bring your device to work</a>.</p>
+      
+    <p>There is a walk-through description on how to use the WiFi Manager in <a href="/steps/newdevice.htm">Step by Step Bring your device to work</a>.</p>
+<h2>Start WiFi Manager</h2>
+<p>The WiFi Manager will automatically be started when no previous network and no configured network could be found.</p>
+<p>The WiFi Manager can be started by pressing then sys button during the connect attempts or
+by resetting the device without power loss 2 times in a row.</p>
+<p>See <a href="/dev/startupnet.htm">The Network Startup Sequence</a> for details.</p>
 <h2>Wifi Setup Dialog</h2>
 <p>The dialog that enables selecting an available network and entering the corresponding network passphrase
 is available on every device by using the <strong>/$setup.htm</strong> URL.</p>
 <ul>
 <li>
-<p>When the device has no local network credentials the device opens a new open WiFi network
+<p>The device opens a new open WiFi network
 named <code>HomeDingNNNNNN</code> where NNNNNN is a hex value derived from the mac address so somehow unique.</p>
 <p>On this WiFi the device is reachable on the fixed IP address 192.168.4.1 and the dialog is available
 using the <a href="http://192.168.4.1/$setup.htm">http://192.168.4.1/$setup.htm</a> URL.</p>
@@ -63,25 +72,48 @@ using the <a href="http://192.168.4.1/$setup.htm">http://192.168.4.1/$setup.htm<
 <p>The setup dialog is also available when the device has a network registration
 and is available on the local network using <a href="http://homeding/$setup.htm">http://homeding/$setup.htm</a></p>
 </li>
+<li>
+<p>The setup dialog will show the available networks after some seconds to choose one.</p>
+</li>
+<li>
+<p>The network passphrase must be entered in the form.</p>
+</li>
 </ul>
-<p>In this dialog is coded into the firmware to make it available even when the UI Web files have not been uploaded yet.</p>
-<p>It can also be used in case the device is connected to re-configure the device to join another network.</p>
-<h2>Starting the Wifi-Manager</h2>
-<p>The board starts into the WiFiManager mode</p>
-<ul>
-<li>when no network configuration is available</li>
-<li>when started manually by pressing the system or flash button AFTER the reset button or connecting to USB.</li>
-<li>when 8 attempts to connect have not been successful</li>
-<li>when using the reset button two times in a row in-between 6 seconds (value from the <strong>connectTime</strong> device parameter).</li>
-</ul>
-<p>When a LED is configured on the device element there are different pulse patterns:</p>
-<ul>
-<li>1 second pulse length having a short LED-ON phase when trying to connect the network in save mode</li>
-<li>1 second pulse length having a longer LED-ON phase when trying to connect the network in non-save mode</li>
-<li>3 second pulse length with a short LED-ON phase when the Wifi-Manager is active.</li>
-</ul>
-<p>After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had an outage and WiFiManager was started caused by the missing network.</p>
-<p>Under normal operating conditions when the device was added to the network the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.</p>
+<p>In this dialog will automatically be shown when starting the plain url of the device while beeing in WiFi Manager Mode.</p>
+<p>The Wifi Setup Dialog can also be used while the device is connected and running
+to re-configure the device to join another network.</p>
+<h2>System LED</h2>
+<p>when a System LED is configured in the device configuration the following signals can be seen:</p>
+<table>
+<thead>
+<tr>
+<th>state of the device</th>
+<th>frequency</th>
+<th>signal form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>connecting to network in safe mode</td>
+<td>1 per 700msec.</td>
+<td>fast long pulse</td>
+</tr>
+<tr>
+<td>connecting to network in unsafe mode</td>
+<td>1 per 700msec.</td>
+<td>fast short pulse</td>
+</tr>
+<tr>
+<td>WiFi Manager mode</td>
+<td>1 per 3 sec.</td>
+<td>slow short signal</td>
+</tr>
+</tbody>
+</table>
+<h2>Restart</h2>
+<p>After 5 minutes the WiFiManager will stop itself and the device will be rebooted. This will bring the device back into the regular operating mode in the case the local network had an outage and WiFiManager was started caused by power failures or a temporary missing network.</p>
+<p>Under normal operating conditions when the device was previously added to a network
+the startup sequence automatically connects the device to the last known network. This typically needs a few seconds only.</p>
 <h2>WiFiManager UI</h2>
 <p>The WiFiManager presents a minimal UI that shows some minimal information about the device and a form to configure the secured network access.</p>
 <p><img src="/dev/wifimanager.png" alt="WiFiManager dialog"></p>
@@ -89,12 +121,10 @@ and is available on the local network using <a href="http://homeding/$setup.htm"
 <li>The current devicename is displayed.</li>
 <li>In the Network drop-down the local available WiFi networks are listed and the right network can be selected.</li>
 <li>The passphrase for this network needs to be entered.</li>
-</ul>
-<!-- * Using the `re-scan` the available networks are scanned again. -->
-<ul>
+<li>When reloading the page the available networks will be scanned again.</li>
 <li>Using the <code>Connect</code> button the device tries to connect the selected network and then reboots into the normal operation mode.</li>
 </ul>
-<p>The WiFi manager UI can also be accessed during normal operation using the link <a href="http://homeding/$setup.htm">http://homeding/$setup.htm</a>.</p>
+<p>The WiFi manager UI can also be accessed during normal operation using the link <a href="http://%7Bdevicename%7D/$setup.htm">http://{devicename}/$setup.htm</a>.</p>
 <p>How to bring a device from an empty board into full operating can be found in <a href="/steps/newdevice.htm">Setup a new device Step by Step</a></p>
 <h2>WiFi Manager Configuration</h2>
 <p>The WiFi Manager can be configured by some properties of the <a href="/elements/device.htm">Device Element</a>.</p>
@@ -170,6 +200,11 @@ bool ESPSerialWiFiManager::_connect_wps(){
 * <https://internetofhomethings.com/homethings/?p=631>
 -->
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/implementation.htm">Implementation</a></div>
+    
   </main>
 
   <script>

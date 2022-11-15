@@ -76,6 +76,10 @@
 <p>The SPI bus is used by components that require fast communication like displays and memory. A central configuration is supported on the device level.
 </p><h3><a href="/boards/deepsleep.htm">Using the deep sleep mode</a></h3> 
 <p>The deep sleep mode allows saving energy consumption by also limits the availability of the web server of the de vice.
+</p><h3><a href="/dev/wifimanager.htm">WiFi Manager Details</a></h3> 
+<p>The WiFi-Manager is a module in the HomeDing library to register a device in the local network. It is implemented in every device in the board class.
+When the device has not been connected to the local home network the Wifi-Manager exposes a temporary, unprotected Wifi Network named HomeDingNNNNNN using the 192.168.4.xxx ip range. The device is always available on the URL &lt;http://192.168.4.1/&gt;.
+Any device like mobile phone or laptop with WLAN can join this network for configuration.
 </p>
 
     

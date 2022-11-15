@@ -53,9 +53,31 @@
     <p>The following flow is implemented:</p>
 <p><img src="/dev/startupnetflow.png" alt="startupnetflow.png"></p>
 <p>The full start of the board is delayed for 6 seconds to give the user the chance to start the setup mode. See <a href="/dev/wifimanager.htm">WiFi Manager</a>.</p>
-<p>When a connection to a network already had been established before the start the builtin autostart feature of the ESP8266 normally only needs a few seconds to re-establish the connection. This is based on the auto reconnect feature of the esp8266 SDK that stores the ssid and network passphrase in flash memory after each successfull network connection.</p>
-<p>Otherwise a fresh connect is started to the last configured network from the  <a href="/dev/wifimanager.htm">WiFi Manager</a> or the optional network and password configuration given in the file <code>secret.h</code>.</p>
-<p>Sometimes the wireless network is just not available and a network connection can not be established. In this case no <a href="/dev/wifimanager.htm">WiFi Manager</a> is started and by restarting the device another connection attempt will be made. This allows starting normal operation mode as soon as possible after a network dropout.</p>
+<h2>Try 1 : reconnect</h2>
+<p>When a connection to a network already had been established before the start the builtin autostart feature of the ESP8266 normally only needs a few seconds to re-establish the connection. This is based on the auto reconnect feature that stores the ssid and network passphrase in flash memory after each successfull network connection.</p>
+<p>By default 12 sec. are given for re-connecting.
+The duration can be configures using the <code>connecttime</code> property in the device configuration.</p>
+<h2>Try 2 : connect to configured network from WiFi Manager</h2>
+<p>When the first attempt did not connect
+a fresh connect is started to the configured network from the <a href="/dev/wifimanager.htm">WiFi Manager</a>.</p>
+<p>By default 12 sec. are given for connecting.
+The duration can be configures using the <code>connecttime</code> property in the device configuration.</p>
+<h2>Try 3 : connect to the hard-coded network</h2>
+<p>When the previous attempts did not connect
+the optional network and password configuration given in the file <code>secret.h</code>.
+When no password is configured (empty strings) this try is not executed.</p>
+<h2>Try again</h2>
+<p>Sometimes the wireless network is just not available and a network connection can not be established.
+In this case no <a href="/dev/wifimanager.htm">WiFi Manager</a> is started and by restarting the device another connection attempt will be made.
+This allows starting normal operation mode as soon as possible after a network dropout.</p>
+<h2>Start WiFi Manager</h2>
+<p>The WiFi Manager will automatically be started when no previous network and no configured network could be found.</p>
+<p>The WiFi Manager can be started by pressing then sys button during the connect attempts in the 1-3 phases.
+Therefore even when a connection was established fast these phases will stay and wait for a possible WiFi Manager configuration request.</p>
+<p>The WiFi Manager can be started also by resetting the device without power loss 2 times in a row
+during the  connect attempts in the 1-3 phases in case no system-button is available or configured.</p>
+<h2>WiFi Manager</h2>
+<p>The WiFi Manager will stay for about 5 min. and wait for a configuration attempt.</p>
 <h2>System LED</h2>
 <p>when a System led is configured in the device configuration the following signals can be seen:</p>
 <table>
@@ -68,14 +90,19 @@
 </thead>
 <tbody>
 <tr>
-<td>connecting to network</td>
-<td>2 sec</td>
-<td>long signal</td>
+<td>connecting to network in safe mode</td>
+<td>1 per 700msec.</td>
+<td>fast long pulse</td>
+</tr>
+<tr>
+<td>connecting to network in unsafe mode</td>
+<td>1 per 700msec.</td>
+<td>fast short pulse</td>
 </tr>
 <tr>
 <td>WiFi Manager mode</td>
-<td>6 sec</td>
-<td>short signal</td>
+<td>1 per 3 sec.</td>
+<td>slow short signal</td>
 </tr>
 </tbody>
 </table>
