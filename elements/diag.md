@@ -31,7 +31,7 @@ On the Serial output some information about the Chips and memory is shown by usi
 
 ## I2C scan
 
-by using the url http://{devicename}/diag ths I2C bus will be scanned for existing devices.
+by using the url <http://{devicename}/diag> ths I2C bus will be scanned for existing devices.
 The result of the scan is shown as plain TXT output in the browser:
 
 <!-- TODO: -->

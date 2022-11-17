@@ -20,11 +20,10 @@ The standard card for this element is used showing the current calculated output
 
 The up to 8 input values can be used for calculation. When no input value is given the output value is 0.
 
-> **value[0]** - The first input value of the element. Default is 0.
->
-> **value[1]** - The second input value of the element. Default is 0.
+{% include "./calcproperties.md" %}
 
 {% include "./elementproperties.md" %}
+
 
 ### Configuration Example
 

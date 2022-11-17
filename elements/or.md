@@ -31,13 +31,11 @@ The up to 8 input values can be preset and the output can be inverted.
 
 When no input value is given the output value is 0.
 
-**value[0]** - The first input value of the element. Default is 0.
-
-**value[1]** - The second input value of the element. Default is 0.
-
-**invert** - The output value can be logically inverted by setting this property to true. Default is false.
-
 The non-inverted output value is on HIGH level when all input values are on HIGH level.
+
+{% include "./calcproperties.md" %}
+
+{% include "./elementproperties.md" %}
 
 
 ### Configuration Example

@@ -26,14 +26,9 @@ The up to 8 input values can be used for calculation.
 
 When no input value is given the output value is 0 (false).
 
-**value[0]** - The first input value of the element. Default is 0 (false).
-
-**value[1]** - The second input value of the element. Default is 0 (false).
-
-
-**invert** - The output value can be logically inverted by setting this property to 1 (true). Default is false.
-
 The non-inverted output value is on HIGH level when all input values are on HIGH level.
+
+{% include "./calcproperties.md" %}
 
 {% include "./elementproperties.md" %}
 

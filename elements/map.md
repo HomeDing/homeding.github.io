@@ -1,6 +1,6 @@
 ---
 title: Map Element
-id: nn
+id: map
 tags: ["Element", "WIP"]
 layout: "page.njk"
 excerpt: >
@@ -10,6 +10,7 @@ excerpt: >
 The values given by sensors or other input elements are often not directly usable for feeding them into actions. The value itself needs to be classified and sometimes different actions need to be sent.
 
 Examples are:
+
 * Classifying sensor values into `low`, `regular` and `high`.
 * Creating different actions based on the incoming value.
 
@@ -27,7 +28,7 @@ See Example 1.
 The input value can either be compared by a numeric or a string data type.
 
 
-## Executing 
+## Executing
 
 The attributes on the matching are used to create actions. When a `value` is specified the value is taken into the actual value. When no value is given the incoming value is used.
 
@@ -92,7 +93,7 @@ Same with actions on the rules level. In the status the original inbound value w
 
 This example also shows how to simplify the `min` and `max` attributes.
 When not specified they default to the infinity min and max.
-The ranges all overlap but the intended rule-set works because always the first matching rule will be selected. 
+The ranges all overlap but the intended rule-set works because always the first matching rule will be selected.
 
 
 ## Element Configuration
@@ -101,21 +102,23 @@ The following properties are available for configuration of the element:
 
 <object data="/element.svg?map" type="image/svg+xml"></object>
 
-**type** -  "string" or "numeric" value comparison. numeric is default.
+> **type** -  "string" or "numeric" value comparison. numeric is default.
+>
+> **onValue** - These actions will be emitted when ever a new resulting value is found.
+>
+> **rules** - This property configures the list of mapping rules. It must be in the order from lowest to highest.
+>
+> **rules[n].min** - set the lower bound of the range.
+>
+> **rules[n].max** - set the upper bound of the range.
+>
+> **rules[n].equal** - set the lower and upper bound of the range.
+>
+> **rules[n].value** - the new value applied when rule fits the inbound value.
+>
+> **rules[n].onValue** - These actions will be emitted when the rule was selected.
 
-**onValue** - These actions will be emitted when ever a new resulting value is found.
-
-**rules** - This property configures the list of mapping rules. It must be in the order from lowest to highest.
-
-**rules[n].min** - set the lower bound of the range.
-
-**rules[n].max** - set the upper bound of the range.
-
-**rules[n].equal** - set the lower and upper bound of the range.
-
-**rules[n].value** - the new value applied when rule fits the inbound value.
-
-**rules[n].onValue** - These actions will be emitted when the rule was selected.
+{% include "./elementproperties.md" %}
 
 
 ### Example using mapped values
@@ -153,10 +156,10 @@ This example configuration enables using a numeric value (e.g. from a switch) in
 
 ### Example by mapping actions
 
-- value coming in via action
-- find relevant mapping entry from the rules list
-- setting new value (optional).
-- sending out the action specified in the mapping entry
+* value coming in via action
+* find relevant mapping entry from the rules list
+* setting new value (optional).
+* sending out the action specified in the mapping entry
 
 
 ``` json
@@ -204,8 +207,3 @@ The following properties are available with the current values at runtime
   }
 }
 ```
-
-
-## Tags
-
-#element

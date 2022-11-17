@@ -17,6 +17,56 @@ The Audio processing is moved to another ESP32 FreeRTOS Task and runs in the bac
 There can only be one AudioElement created per device.
 
 
+## Element Configuration
+
+The properties correspond to the api given by the audio library.
+However not all features are yet support by configuration.
+
+> **url** -- set new streaming url
+> 
+> **volume** -- set volume
+> 
+> **balance** -- set right-left balance
+> 
+> **low** -- adjust low-tone level in the range -20 ... +6. Default level is 0.
+> 
+> **mid** -- adjust mid-tone level in the range -20 ... +6. Default level is 0.
+> 
+> **high** -- adjust high-tone level in the range -20 ... +6. Default level is 0.
+> 
+> **ontitle** -- these actions are send when a title is included in the streaming.
+> 
+> **onstation** -- these actions are send when a station name is included in the streaming.
+> 
+> **bclk**\* -- set the pin used for the i2s clock signal
+> 
+> **lrc**\* -- set the pin used for the i2s LR signal
+> 
+> **dout**\* -- set the pin used for the i2s DOUT signal
+
+\* This parameter is mandatory and must be set.
+The element also supports RDS signals for the chips that decode these signals.
+
+{% include "./elementproperties.md" %}
+
+### Example configuration
+
+``` json
+{
+  "audio": {
+    "0": {
+      "title": "audio processing",
+      "bclk": 26,
+      "lrc": 25,
+      "dout": 22,
+      "url": "audio/0?url=https://dispatcher.rndfnk.com/hr/hr3/live/mp3/high",
+      "ontitle": "displaytext/info?value=$v",
+      "onstation": "displaytext/station?value=$v"
+    }
+  }
+}
+```
+
 
 ## See also
 

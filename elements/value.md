@@ -1,18 +1,12 @@
 ---
 title: Value Element
 id: value
+layout: "page.njk"
 tags: ["Element"]
 excerpt: >
   The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
   This can e.g. be used to drive a LED or a relay.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
-
 
 ## Web UI
 
@@ -62,14 +56,14 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?value" type="image/svg+xml"></object>
 
-**min** Defines the minimum of the value.                                  
+**min** Defines the minimum of the value.
 
-**max** Defines the maximum of the value.                                  
+**max** Defines the maximum of the value.
 
 **step** The value will be incremented / decremented by the multiple of the step value
 when using the up / down actions.
 
-**value** An initial/default value can be set using the configuration.       
+**value** An initial/default value can be set using the configuration.
 
 **onValue** These actions will be emitted whenever the value has changed.
 
@@ -122,7 +116,4 @@ The current value is reported as the state of a value element.
 * Menu Element
 * LED Recipe
 
-
-## Tags
-#element #data
 
