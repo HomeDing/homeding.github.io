@@ -77,6 +77,7 @@ The ranges all overlap but the intended rule-set works because always the first 
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
 <p><object data="/element.svg?map" type="image/svg+xml"></object></p>
+<blockquote>
 <p><strong>type</strong> -  “string” or “numeric” value comparison. numeric is default.</p>
 <p><strong>onValue</strong> - These actions will be emitted when ever a new resulting value is found.</p>
 <p><strong>rules</strong> - This property configures the list of mapping rules. It must be in the order from lowest to highest.</p>
@@ -85,6 +86,14 @@ The ranges all overlap but the intended rule-set works because always the first 
 <p><strong>rules[n].equal</strong> - set the lower and upper bound of the range.</p>
 <p><strong>rules[n].value</strong> - the new value applied when rule fits the inbound value.</p>
 <p><strong>rules[n].onValue</strong> - These actions will be emitted when the rule was selected.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h3>Example using mapped values</h3>
 <p>This example configuration enables using a numeric value (e.g. from a switch) into 2 color values used for a RGB LED.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"select a color based on a numeric value"</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/l?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"green"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D8,D6,D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
@@ -102,8 +111,6 @@ The ranges all overlap but the intended rule-set works because always the first 
 <p><strong>value</strong> - Current output value of the element.</p>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map/colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2>Tags</h2>
-<p>#element</p>
 
 
     

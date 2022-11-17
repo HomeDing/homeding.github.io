@@ -140,6 +140,13 @@ For more details on using the i2c bus and specifying pins see <a href="/dev/i2c.
 The default time is set to 3 seconds.</p>
 <p><strong>restart</strong> – This property can be set to true to enable an automated restart when the sensor was not responding data.</p>
 </blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h3>Example configuration</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bmp280"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"tp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x77"</span><span class="token punctuation">,</span><br>      <span class="token property">"readTime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendTime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onPressure"</span><span class="token operator">:</span> <span class="token string">"device/0?log=pressure=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>State</h2>

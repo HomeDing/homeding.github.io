@@ -55,6 +55,33 @@
 <p>The AudioElement just adds a thin wrapper to configure and control the library.</p>
 <p>The Audio processing is moved to another ESP32 FreeRTOS Task and runs in the background.
 There can only be one AudioElement created per device.</p>
+<h2>Element Configuration</h2>
+<p>The properties correspond to the api given by the audio library.
+However not all features are yet support by configuration.</p>
+<blockquote>
+<p><strong>url</strong> – set new streaming url</p>
+<p><strong>volume</strong> – set volume</p>
+<p><strong>balance</strong> – set right-left balance</p>
+<p><strong>low</strong> – adjust low-tone level in the range -20 … +6. Default level is 0.</p>
+<p><strong>mid</strong> – adjust mid-tone level in the range -20 … +6. Default level is 0.</p>
+<p><strong>high</strong> – adjust high-tone level in the range -20 … +6. Default level is 0.</p>
+<p><strong>ontitle</strong> – these actions are send when a title is included in the streaming.</p>
+<p><strong>onstation</strong> – these actions are send when a station name is included in the streaming.</p>
+<p><strong>bclk</strong>* – set the pin used for the i2s clock signal</p>
+<p><strong>lrc</strong>* – set the pin used for the i2s LR signal</p>
+<p><strong>dout</strong>* – set the pin used for the i2s DOUT signal</p>
+</blockquote>
+<p>* This parameter is mandatory and must be set.
+The element also supports RDS signals for the chips that decode these signals.</p>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
+<h3>Example configuration</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"audio"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"audio processing"</span><span class="token punctuation">,</span><br>      <span class="token property">"bclk"</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span><br>      <span class="token property">"lrc"</span><span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span><br>      <span class="token property">"dout"</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span><br>      <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=https://dispatcher.rndfnk.com/hr/hr3/live/mp3/high"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontitle"</span><span class="token operator">:</span> <span class="token string">"displaytext/info?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onstation"</span><span class="token operator">:</span> <span class="token string">"displaytext/station?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/index.htm">Elements</a></li>

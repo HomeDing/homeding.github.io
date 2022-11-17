@@ -58,10 +58,20 @@ Every time the value changes the onValue event is emitted.</p>
 <p><object data="/element.svg?and" type="image/svg+xml"></object></p>
 <p>The up to 8 input values can be used for calculation.</p>
 <p>When no input value is given the output value is 0 (false).</p>
-<p><strong>value[0]</strong> - The first input value of the element. Default is 0 (false).</p>
-<p><strong>value[1]</strong> - The second input value of the element. Default is 0 (false).</p>
-<p><strong>invert</strong> - The output value can be logically inverted by setting this property to 1 (true). Default is false.</p>
 <p>The non-inverted output value is on HIGH level when all input values are on HIGH level.</p>
+<p>The <a href="/elements/calc.htm">Calc Element</a> is used as a base class
+where the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>type</strong> – (internal)
+This property controls how the input values are scanned and can be modified by the derived elements.
+The logical elements set this to datatype-boolean to enable scanning of <code>true</code> and <code>false</code> values.
+The datatype-numeric and is used by the AddElement for scanning numbers.</p>
+<p><strong>value[n]</strong> –
+The input values of the element are given using the value array notation. n must be in the range of 0 to 7.</p>
+<p><strong>invert</strong> –
+The boolean calculations result is inverted when this property is set to true.</p>
+<p><strong>onValue</strong> – These actions are emitted when the output value has changed.</p>
+</blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>

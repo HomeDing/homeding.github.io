@@ -56,9 +56,18 @@ Every time the value changes the onValue event is emitted with the sum of all in
 <h2>Element Configuration</h2>
 <!-- <object data="/element.svg?add" type="image/svg+xml"></object> -->
 <p>The up to 8 input values can be used for calculation. When no input value is given the output value is 0.</p>
+<p>The <a href="/elements/calc.htm">Calc Element</a> is used as a base class
+where the following properties are available for configuration:</p>
 <blockquote>
-<p><strong>value[0]</strong> - The first input value of the element. Default is 0.</p>
-<p><strong>value[1]</strong> - The second input value of the element. Default is 0.</p>
+<p><strong>type</strong> – (internal)
+This property controls how the input values are scanned and can be modified by the derived elements.
+The logical elements set this to datatype-boolean to enable scanning of <code>true</code> and <code>false</code> values.
+The datatype-numeric and is used by the AddElement for scanning numbers.</p>
+<p><strong>value[n]</strong> –
+The input values of the element are given using the value array notation. n must be in the range of 0 to 7.</p>
+<p><strong>invert</strong> –
+The boolean calculations result is inverted when this property is set to true.</p>
+<p><strong>onValue</strong> – These actions are emitted when the output value has changed.</p>
 </blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
