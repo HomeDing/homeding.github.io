@@ -1,18 +1,14 @@
 ---
 title: Light Element
 id: light
-tags: ["Element"]
+layout: "page.njk"
+tags: ["Element", "Light"]
 description: Support GPIO output pins for controlling lights with multiple color channels.
 excerpt: >
-  The LightElement is used to send a light value to GPIO output pins.
-  It can also be used as a base class for other light elements using a specific chip or protocol.
+  The LightElement is used as a base class to control a light by WRGB Value and Brightness. It can control
+  up to 4 PWM GPIO output pins directly for WRGB lights.
+  It is used as a base class for other light elements using a specific chip or protocol.
 ---
-
-# {{title}}
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 The base implementation in the LightElement can be used for single channel light values like a single LED or a single RGB Led attached directly to GPIO pins.
 

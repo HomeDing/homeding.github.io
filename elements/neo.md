@@ -1,10 +1,9 @@
 ---
 title: Neo Element
 id: neo
+layout: "page.njk"
 tags: ["Element", "Light"]
 ---
-
-# {{title}}
 
 Neopixels is a brand name for LED stripes with the ws2812 chip.
 
