@@ -11,6 +11,7 @@
   <title>Neo Element</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
   <style>
   .gpio { 
     display:inline-block;
@@ -39,9 +40,12 @@
 
   <nav class="inpage open"></nav>
 
-  <main style="padding:1rem">
+  <main style="padding:1rem;max-width: 800px;">
     <h1>Neo Element</h1>
-<p>Neopixels is a brand name for LED stripes with the ws2812 chip.</p>
+
+    
+      
+    <p>Neopixels is a brand name for LED stripes with the ws2812 chip.</p>
 <p>These LED stripes and RGB LEDs are using the ws2812 or similar protocol that sends RGB values over a 1 wire data line. Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.</p>
 <p>The neo allows driving these LEDs by using the Adafruit Neopixel Library and by providing some color animations and transitions.</p>
 <p>A very similar functionality applies to the <a href="/elements/light.htm">Light Element</a> that can drive a single RGB or single color LED.</p>
@@ -104,6 +108,11 @@ Examples for color setting actions are:</p>
 <h2>Tags</h2>
 <p>#element #output #light</p>
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/light.htm">Light</a></div>
+    
   </main>
 
   <script>
