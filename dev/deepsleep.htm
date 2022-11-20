@@ -96,6 +96,8 @@ and will restart all elements.</p>
 <p>Therefore a device restart after a deep sleep will ignore the <code>connecttime</code> device configuration and will start execution as soon as the network is connected. This results in an executing device after 1 to 3 seconds as there is no need to wait for the configuration button to be pressed.</p>
 <p>It is not possible to exactly detect a reset that was caused by a wake-up from sleep mode as this is done ba setting a flag before entering the deep sleep mode in RTC memory. Resetting a device that is in deep sleep mode will probably
 start without waiting for the <code>connecttime</code> to be over. A power-down, power-up cycle will however start with a full <code>connecttime</code>.</p>
+<p>The Greeting Phase on the Board startup sequence is also skipped so reduced information is shown
+in the log output.</p>
 <h2>Trigger the deep sleep phase</h2>
 <p>To start the sleep mode th device must have finished executing.
 Therefore a <code>sleep</code> action must be sent to the <code>device</code> element e.g.
@@ -166,9 +168,11 @@ To get into a full <strong>hardware reset</strong></p>
 <li>a power-down and power-up cycle must occur.</li>
 </ul>
 </blockquote>
+<!-- https://randomnerdtutorials.com/esp32-touch-wake-up-deep-sleep -->
 <h2>See also</h2>
 <ul>
 <li><a href="https://randomnerdtutorials.com/esp8266-deep-sleep-with-arduino-ide/">https://randomnerdtutorials.com/esp8266-deep-sleep-with-arduino-ide/</a></li>
+<li><a href="https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/">https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/</a></li>
 <li><a href="https://diyprojects.io/esp8266-deep-sleep-mode-test-wake-pir-motion-detector/#.XkmIu0eSkuU">https://diyprojects.io/esp8266-deep-sleep-mode-test-wake-pir-motion-detector/#.XkmIu0eSkuU</a></li>
 <li>Some chips cannot use the deep sleep more, see <a href="https://github.com/esp8266/Arduino/issues/6007">https://github.com/esp8266/Arduino/issues/6007</a></li>
 <li><a href="/boards/watchdog.htm">Watchdog timers</a></li>
