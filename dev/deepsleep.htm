@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <title>Using the deep sleep mode</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>Using the deep sleep mode</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    The deep sleep mode allows saving energy consumption by powering down the device for a defined time to support situations where &quot;always on&quot; is not possible.
+</div>
+      
+    <p>In some use case there is not enough power available to run a device with a full web server
+functionality enabled all day long. Using the deep sleep mode for inactive devices
+enables devices to use batteries as a power source.</p>
+<p>The deep sleep mode limits the availability to reach the device as the WiFi connection
+that is consuming a lot of power also will be offline and the embedded web server of the device will not be reachable.</p>
+<p>Examples:</p>
+<ul>
+<li>A button for a door bell should run for months / years but only needs to be active when a visitor come to the door.</li>
+<li>A temperature sensor on the outside is placed where no constant power is available</li>
+<li>Control that your plats have enough water.</li>
+<li>Windows must be monitored to be closed and you don’t want to have wires all across the walls.</li>
+</ul>
+<p>All of these use case not only must work they also must be reliable.</p>
+<p>Handling low power situations successfully is a hard engineering job
+and some microprocessors are especially made for this purpose.
+The capabilities of the device and sensors also significantly impact on the demands placed on the power supply.</p>
+<p>The ESP8266 chips are <strong>not</strong> made for these extremely low power use cases as the minimal current is about 20 to 40 µA. Other processors use 20 nA, 1000 times less.</p>
+<p>The ESP32 chips are using about 10 mA during deep sleep mode.</p>
+<p>Using WiFi network for data transport has a lot of advantages but is not energy efficient. E.g. registering a device on a WiFi network requires some significant time and sending WiFi signals also require a minimum of power.</p>
+<p>Other network technologies allow sending data without registration so there is less startup time.</p>
+<!-- How to implement an outdoor sensor with a solar panel and rechargeable battery is shown in the [Outdoor sensor story](/stories/story-outdoor.md). -->
+<h2>Hardware requirements for ESP8266</h2>
+<p>To make the deep sleep mode in the ESP8266 work 2 pins must be connected:</p>
+<p>Pin <span class="gpio black">RST</span> and Pin <span class="gpio blue">GPIO16/D0</span>.</p>
+<p>This allows to recall the halted CPU by the builtin timer.
+To wake up after a deep sleep the sleep timer that is implemented in low-power hardware will pull GPIO16/D0 to GND for some time and this will trigger a reset of the processor.</p>
+<p>This connection is not available on nodeMCU and many other boards and must be connected externally.</p>
+<h2>Reset after Deep Sleep</h2>
+<p>In the deep sleep mode most of the functionality is switched off and only some specific RTC memory areas
+and a simple hardware based count-down timer are kept active. The ESP32 offers also a low power Processor that may run during deep sleep of the main processors.</p>
+<p>Using the deep sleep mode requires at least the following configurations:</p>
+<ul>
+<li>how long the device can be set as rest.</li>
+<li>when to shut down</li>
+<li>when to wake up again</li>
+</ul>
+<h2>Device configuration</h2>
+<p>To activate the deep sleep the deep sleep duration must be set in the <a href="/elements/device.htm">device element</a> using the <code>sleeptime</code> property and configure a duration.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"sleeptime"</span><span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span><br>      ...<br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>There is a maximum time about 71 min. the sleep mode can be activated. The device will power up triggered by the timer
+and will restart all elements.</p>
+<h2>Restart after Deep Sleep Mode</h2>
+<p>When devices use the deep sleep mode it is critical to not loose time during execution as this time will cause power consumption.</p>
+<p>Therefore a device restart after a deep sleep will ignore the <code>connecttime</code> device configuration and will start execution as soon as the network is connected. This results in an executing device after 1 to 3 seconds as there is no need to wait for the configuration button to be pressed.</p>
+<p>It is not possible to exactly detect a reset that was caused by a wake-up from sleep mode as this is done ba setting a flag before entering the deep sleep mode in RTC memory. Resetting a device that is in deep sleep mode will probably
+start without waiting for the <code>connecttime</code> to be over. A power-down, power-up cycle will however start with a full <code>connecttime</code>.</p>
+<h2>Trigger the deep sleep phase</h2>
+<p>To start the sleep mode th device must have finished executing.
+Therefore a <code>sleep</code> action must be sent to the <code>device</code> element e.g.
+after reading and logging a sensor value:</p>
+<p>Example:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"log/t?value=$v,device/0?sleep=true"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Cancelling a deep sleep phase</h2>
+<p>The sleep mode can also be disabled completely by sending a <code>sleep</code> action with value 0 to the device element using:
+<a href="http://homeding/api/device/0?nosleep">http://homeding/api/device/0?nosleep</a>.</p>
+<p>This enables configuration and modification of the devices even when they are
+configured for sleep mode and accessed remotely.</p>
+<h2>Defer the start of the deep sleep phase</h2>
+<p>The real start of the sleep mode is not exactly given by the <code>sleep</code> action but is delayed
+some cycles to give enough time to dispatch process results and finish any pending actions.</p>
+<p>The board will give any existing element some <code>loop()</code> time to execute and when all elements are through the sleep mode will be started. Also some elements like the <a href="/elements/remote.htm">Remote Element</a> will need some time to finish.</p>
+<p>A delay of starting the sleep mode will happen on the following conditions:</p>
+<ul>
+<li>A <code>sleep</code> action is passed to the board to be dispatched.</li>
+<li>When there was no wake-up from an previous sleep but any other reset reason. Tn this case the deep sleep phase
+will not started before waiting for 60 seconds.</li>
+<li>No action is pending to be executed.</li>
+<li>All elements got at least once the chance to act by calling the loop() function.</li>
+<li>When no element actively delays the sleep mode by calling <code>board-&gt;deferSleepMode()</code>.</li>
+<li>The <code>nosleep</code> action on the device was not called.</li>
+</ul>
+<h2>Temporarily disable the deep sleep phase</h2>
+<p>The rules to defer the deep sleep mode allows configuring a device with the web ui when using the following sequence:</p>
+<ol>
+<li>Reset the device using the RST button or by a power off on cycle.
+This will cause that the sleep mode will wait at least 60 seconds before getting started.</li>
+<li>Open a browser to trigger the action to disable the sleep mode using the url
+<a href="http://homeding/$board/device/0?nosleep">http://homeding/$board/device/0?nosleep</a></li>
+<li>Start the board or ide url of the device for working:
+<ul>
+<li><a href="http://homeding/board.htm">http://homeding/board.htm</a></li>
+<li><a href="http://homeding/microide.htm">http://homeding/microide.htm</a></li>
+</ul>
+</li>
+<li>To continue using the deep sleep reset the board again by the RST button or the reset function in the IDE.</li>
+</ol>
+<h2>Logfile - first reboot</h2>
+<p>Here is a typical log output with some hints recorded after a hardware reset.</p>
+<pre class="language-txt"><code class="language-txt">00:00:00 sys:i Device starting...<br>00:00:04 sys:t connected.<br>00:00:11 dht/on:t getProbe()<br>00:00:11 root:i T:24.90<br>00:00:11 root:i H:70.00<br>00:00:11 device/0:i start sleep(true)<br>00:00:41 sys:i sleep...</code></pre>
+<ul>
+<li>The first regular reset by Hardware reset button or by using the reboot service is starting the device.</li>
+<li>After ~4 seconds the device has a network connection.</li>
+<li>The device waits for end of 10 seconds to give the user the chance to start config mode.</li>
+<li>After ~11 seconds the sensor gets a probe and starts going for the sleep mode.</li>
+<li>The time between the initiation of the sleep by the sensor having a measurement
+is delayed for ~30 seconds before it is actually executed.</li>
+<li>After ~41 seconds the sleep mode is entered.</li>
+</ul>
+<p>During the 30 seconds delayed time the web server is active so it is possible to send a request to the device
+like <code>http://homeding/api/device/0?nosleep</code> to block any sleep mode from execution and to use the web UI for configuration until another reboot is initiated.</p>
+<h2>Logfile - reboot from sleep mode</h2>
+<p>Here is a typical log output with some hints recorded after a wake-up reset from deep sleep mode.</p>
+<pre class="language-txt"><code class="language-txt">00:00:00 sys:i Device starting...<br>00:00:00 sys:i Reset from Deep Sleep mode.<br>00:00:02 sys:t connected.<br>00:00:03 dht/on:t getProbe()<br>00:00:03 root:i T:23.40<br>00:00:03 root:i H:72.10<br>00:00:03 device/0:i start sleep(true)<br>00:00:03 sys:t sleep...</code></pre>
+<p>In this case no waiting for config mode and no 30 seconds waiting before entering sleep mode is present.
+Everything else woks exactly the same as before but the whole sequence is executed faster.</p>
+<blockquote>
+<p><strong>Important node</strong></p>
+<p>The implementation of the deep sleep mode uses a memory location in the RTC memory
+to remember that the next reboot is caused by a deep sleep.
+When a manual reset id given by pressing the RESET button the first reset is always interpreted as a return from deep sleep.
+To get into a full <strong>hardware reset</strong></p>
+<ul>
+<li>a second reset following quick after the first must be used</li>
+<li>a power-down and power-up cycle must occur.</li>
+</ul>
+</blockquote>
+<h2>See also</h2>
+<ul>
+<li><a href="https://randomnerdtutorials.com/esp8266-deep-sleep-with-arduino-ide/">https://randomnerdtutorials.com/esp8266-deep-sleep-with-arduino-ide/</a></li>
+<li><a href="https://diyprojects.io/esp8266-deep-sleep-mode-test-wake-pir-motion-detector/#.XkmIu0eSkuU">https://diyprojects.io/esp8266-deep-sleep-mode-test-wake-pir-motion-detector/#.XkmIu0eSkuU</a></li>
+<li>Some chips cannot use the deep sleep more, see <a href="https://github.com/esp8266/Arduino/issues/6007">https://github.com/esp8266/Arduino/issues/6007</a></li>
+<li><a href="/boards/watchdog.htm">Watchdog timers</a></li>
+<li><a href="https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/">https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/</a></li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/implementation.htm">Implementation</a><a href="/tag/system.htm">System</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
