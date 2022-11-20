@@ -1,8 +1,9 @@
 ---
 title: The Web of Things (WoT)
+description: Insights into the design of an IoT device,
+layout: "page.njk"
+tags: ["Implementation", "WIP"]
 ---
-
-# {{title}}
 
 Today there are many proprietary approaches how "Things" are built. Many of them cannot be integrated or connected and standardization is required to create flexibility in combining devices to create solutions.
 

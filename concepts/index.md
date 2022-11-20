@@ -1,19 +1,22 @@
 ---
 title: Building Connected Things Concepts
+description: Insights into the design of an IoT device,
+layout: "page.njk"
+tags: ["Implementation"]
+excerpt: >
+  The HomeDing library is made to build devices connected to a local WiFi network
+  that deliver a full functional solution without the need to use a central
+  server or external cloud services. Here are the conceptual ideas influencing the design
+  of the HomeDing library.
 ---
 
-# {{title}}
-
-The HomeDing library is made to build devices connected to a local WiFi network
-that deliver a full functional solution without the need to use a central
-server or external cloud services.
-
-The conceptional ideas are
+The conceptional goals are
 
 - IoT devices can be used standalone
 - Easy to be used
 - Using the Arduino Environment for development
 - Full control just by using a web browser
+- Options may include networking and cloud features
 
 The solution should be usable by everyone from pupils to professionals by
 offering multiple entry points for using the library and examples.

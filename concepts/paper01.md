@@ -1,8 +1,9 @@
 ---
 title: Building your own connected Things made easy
+description: Insights into the design of an IoT device,
+layout: "page.njk"
+tags: ["Implementation"]
 ---
-
-# {{title}}
 
 1. **Building your own connected Things made easy**
 2. [Software Architecture](/concepts/paper02.md)

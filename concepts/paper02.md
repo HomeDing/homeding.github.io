@@ -1,8 +1,9 @@
 ---
 title: Software and Library Architecture
+description: Insights into the design of an IoT device,
+layout: "page.njk"
+tags: ["Implementation"]
 ---
-
-# {{title}}
 
 1. [Building your own connected Things made easy](/concepts/paper01.md)
 2. **Software Architecture**
