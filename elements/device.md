@@ -83,7 +83,7 @@ More hints on the I2C bus implementation see [I2C](/dev/i2c.md)
 
 > **sleep** - To start a deep sleep a `sleep` action needs to be send to the device element.
 > A `sleep=false` action will disable any sleep mode until next restart.
-> See also [deep sleep mode](/boards/deepsleep.md).
+> See also [deep sleep mode](/dev/deepsleep.md).
 >
 > **nosleep** -  To block any deep sleep on the device
 > until the next reboot a `nosleep` action can be send to the device element.
@@ -128,5 +128,5 @@ The following action is implemented:
 
 * [WiFiManager](/dev/wifimanager.md)
 * [Device Logging](/dev/logger.md)
-* [deep sleep mode](/boards/deepsleep.md)
+* [deep sleep mode](/dev/deepsleep.md)
 * Cache-control http header : <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>

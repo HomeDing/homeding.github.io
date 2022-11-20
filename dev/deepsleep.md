@@ -90,6 +90,9 @@ Therefore a device restart after a deep sleep will ignore the `connecttime` devi
 It is not possible to exactly detect a reset that was caused by a wake-up from sleep mode as this is done ba setting a flag before entering the deep sleep mode in RTC memory. Resetting a device that is in deep sleep mode will probably
 start without waiting for the `connecttime` to be over. A power-down, power-up cycle will however start with a full `connecttime`.
 
+The Greeting Phase on the Board startup sequence is also skipped so reduced information is shown
+in the log output.
+
 
 ## Trigger the deep sleep phase
 
@@ -197,18 +200,21 @@ Everything else woks exactly the same as before but the whole sequence is execut
 
 
 > **Important node**
-> 
+>
 > The implementation of the deep sleep mode uses a memory location in the RTC memory
 > to remember that the next reboot is caused by a deep sleep.
 > When a manual reset id given by pressing the RESET button the first reset is always interpreted as a return from deep sleep.
 > To get into a full **hardware reset**
->   * a second reset following quick after the first must be used
->   * a power-down and power-up cycle must occur.
+>
+> * a second reset following quick after the first must be used
+> * a power-down and power-up cycle must occur.
 
+<!-- https://randomnerdtutorials.com/esp32-touch-wake-up-deep-sleep -->
 
 ## See also
 
 * <https://randomnerdtutorials.com/esp8266-deep-sleep-with-arduino-ide/>
+* <https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/>
 * <https://diyprojects.io/esp8266-deep-sleep-mode-test-wake-pir-motion-detector/#.XkmIu0eSkuU>
 * Some chips cannot use the deep sleep more, see <https://github.com/esp8266/Arduino/issues/6007>
 * [Watchdog timers](/boards/watchdog.md)

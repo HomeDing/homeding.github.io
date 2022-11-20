@@ -302,6 +302,7 @@ neoPixel
 next
 nF
 NodeMCU
+nosleep
 NTP
 ntpserver
 ntptime
