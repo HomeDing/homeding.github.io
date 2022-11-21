@@ -5,15 +5,20 @@ tags: ["Element"]
 layout: "page.njk"
 description: Audio processing on ESP32
 excerpt: >
-  The Audio Element enables configurable audio processing on ESP32 chips.
+  The Audio Element enables audio streaming and audio processing
+  in a background task.
 ---
+
+Based on this Element you can implement internet audio streaming devices.
+
+It requires a ESP32 or ESP32-S3 processor that supports multiple tasks
+and PSRAM for buffering audio data.
 
 The AudioElement uses the ESP32 specific audio library from
 <https://github.com/schreibfaul1/ESP32-audioI2S> that must be installed separately.
 
-The AudioElement just adds a thin wrapper to configure and control the library.
+The AudioElement just adds a thin wrapper to configure and control the library. The Audio processing itself is started on another ESP32 FreeRTOS task and runs in the background.
 
-The Audio processing is moved to another ESP32 FreeRTOS Task and runs in the background.
 There can only be one AudioElement created per device.
 
 
