@@ -1,9 +1,8 @@
 ---
 title: Alarm with timer for duration Recipe
 tags: ["Recipe"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This recipe uses a alarm and timer element to create a digital signal with a specific duration
 at a output pin.

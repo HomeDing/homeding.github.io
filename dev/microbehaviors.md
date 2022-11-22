@@ -1,8 +1,7 @@
 ---
 title: Micro Behaviors
+layout: "page.njk"
 ---
-
-# {{title}}
 
 Javascript Behaviors are around for many years and are used to extend regular HTML elements with specific functionality. The new `Web Components` technologies is following this approach to define templates and their behavior as well. However this doesn't work yet in all current used browsers. (see <https://caniuse.com/#feat=custom-elementsv1>)
 

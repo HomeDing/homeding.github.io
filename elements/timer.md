@@ -4,9 +4,8 @@ id: timer
 tags: ["Element", "Time"]
 description: Create repeating events.
 excerpt: The TimerElement creates events based on a one-time or cyclic timing pattern.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

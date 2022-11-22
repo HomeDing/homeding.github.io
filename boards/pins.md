@@ -1,8 +1,8 @@
 ---
 title: Using IO pins of the ESP8266 based boards
+tags: ["Board"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The ESP8266 17 General Purpose Input/Output (GPIO) pins that can be used for a variety of uses.
 
@@ -33,8 +33,8 @@ Not mentioned here are the pin numbers on the real chip. If you need to used the
 | GPIO4  | D2  | I2C - SDA                          |                                                                                          |
 | GPIO5  | D1  | I2C - SCL                          |                                                                                          |
 | GPIO6  | --  | SDIO                               | flash memory (clk), cannot be used as GPIO                                               |
-| GPIO7  | --  | SDIO                               | flash memory (MISO, data0), cannot be used as GPIO                                        |
-| GPIO8  | --  | Serial1-RX, SDIO                   | flash memory (MOSI, data1), cannot be used as GPIO                                        |
+| GPIO7  | --  | SDIO                               | flash memory (MISO, data0), cannot be used as GPIO                                       |
+| GPIO8  | --  | Serial1-RX, SDIO                   | flash memory (MOSI, data1), cannot be used as GPIO                                       |
 | GPIO9  | D11 | SDIO                               | flash memory (data2), cannot be used as GPIO                                             |
 | GPIO10 | D12 | SDIO                               | flash memory (data3), cannot be used as GPIO                                             |
 | GPIO11 | --  | SDIO                               | flash memory (CS)                                                                        |
@@ -135,7 +135,7 @@ GPIO14(D5) for digital input and output signals is a good ideas as long as they 
 
 ## See also
 
-* [deep sleep mode](/boards/deepsleep.md)
+* [deep sleep mode](/dev/deepsleep.md)
 * [ESP8266 Technical Reference]
 * [ESP8266EX datasheet]
 * [NodeMCU Documentation]

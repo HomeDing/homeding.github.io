@@ -1,8 +1,7 @@
 ---
 title: Outdoor Sensor
+layout: "page.njk"
 ---
-
-# {{title}}
 
 Some weather parameters are interesting to be measured by using an outside sensor like
 

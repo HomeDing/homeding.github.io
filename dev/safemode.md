@@ -1,8 +1,7 @@
 ---
 title: Safemode
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The safemode should be enabled on all HomeDing based devices in regular operating conditions. It is reasonable measurement against external attempts to change and misuse the device over the network.
 

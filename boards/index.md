@@ -64,7 +64,7 @@ The **[Esp-Wroom-02 Module ESP8266 with OLED and 18650](/boards/wroom2.md)** is 
 ## ESP32 boards
 
 There are many options for starting with HomeDing with a ESP32 processor.
-There are official boards from espressif 
+There are official boards from espressif
 <https://www.espressif.com/en/products/devkits> but also other boards from other manufacurers.
 
 {{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
@@ -92,7 +92,7 @@ The Arduino ESP32 supports this variant.
 
 ## Devices based on Esp8266
 
-ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.  
+ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.
 
 :::board sonoffbasic
 The **[Sonoff Basic](/boards/sonoffbasic.md)** is a off-the-shelf solution to switch main power consumers.
@@ -101,7 +101,7 @@ It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal 
 :::
 
 :::board sonoffs20
-The **[Sonoff S20](/boards/sonoffs20.md)** is a off-the-shelf plug available for different plug types. 
+The **[Sonoff S20](/boards/sonoffs20.md)** is a off-the-shelf plug available for different plug types.
 
 It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
 :::
@@ -117,7 +117,7 @@ and the [BL0937 chip](/elements/bl0937.md).
 :::board bulb
 **[Bulb devices](/boards/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
 
-They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using 
+They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using
 the [Color Element](/elements/color.md) and [Switch Element](/elements/switch.md) for control.
 :::
 
@@ -167,13 +167,13 @@ On the **ESP-12F**, in addition to the ESP-12E some more pins are available on t
 
 :::board esp12s
 The **ESP-12S** is an optimized version from esp-12f with a better antenna signal. FLASH SPI signals are not available.
-::: 
+:::
 
 :::board espwroom
-The **ESP-WROOM-02** is not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte. I found it mounted on a wider board including battery based power management. 
+The **ESP-WROOM-02** is not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte. I found it mounted on a wider board including battery based power management.
 
 
-::: 
+:::
 
 
 ## Esp8266 boards with 1 MByte flash memory
@@ -220,7 +220,7 @@ The ESP8285 was released in 2016 as a cheaper replacement for ESp8266 with an in
 ESP8285 = ESP8266 + 1M Flash in the same chip.
 
 
-## Comments 
+## Comments
 
 The lack of the metal housing of the high frequency emitting CPU and bus to the flash chip may be the reason why they don't have a CE certificate.
 

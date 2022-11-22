@@ -79,7 +79,7 @@ The LiPo connector is type JST with 1.25mm pin distance.
 
 ## Critics
 
-The Wifi Kit 8 Module is not designed to be used for [deep sleep mode](/boards/deepsleep.md):
+The Wifi Kit 8 Module is not designed to be used for [deep sleep mode](/dev/deepsleep.md):
 
 The GPIO16(D0) pin is required to be connected to RESET to support Deep Sleep but it is also required
 to be pulled to low to reset the display - causing a reset.

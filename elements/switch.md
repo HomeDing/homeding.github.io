@@ -4,9 +4,8 @@ id: switch
 tags: ["Element"]
 excerpt: >
   The SwitchElement is used to toggle the state of a boolean value to on or off by a single action.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

@@ -4,9 +4,8 @@ id: menu
 tags: ["Element"]
 excerpt: >
   The MenuElement allows controlling multiple values or switches by using a single rotary encoder.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

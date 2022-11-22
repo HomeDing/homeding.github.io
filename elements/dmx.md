@@ -2,9 +2,8 @@
 title: DMX Element
 id: nn
 tags: ["WIP"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The DMX 
 

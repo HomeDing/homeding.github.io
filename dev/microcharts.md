@@ -1,8 +1,7 @@
 ---
 title: Micro Charts
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ??? WIP
 

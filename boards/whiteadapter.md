@@ -1,16 +1,17 @@
 ---
 title: White Adapter board for ESP8266
+description: ESP8266 board for using ESP-12 on breadboards.
+layout: "page.njk"
+tags: ["Board"]
+excerpt: >
+   This 'white' adapter board helps soldering ESP-12 of similar boards in regular breadboards and prototype boards.
+   The signals are straight forward routed from the board to the connectors with some exceptions only:
 ---
-
-# {{title}}
 
 ![White Adapter Board](/boards/whiteadapter.jpg)
 
-This 'white' adapter board helps soldering ESP-12 of similar boards in regular breadboards and prototype boards.
-
-The signals are straight forward routed from the board to the connectors with some exceptions only:
-
 ![Adapter Board with Wires](/boards/whiteadapterwires.png)
+
 
 ### Resistor on the left
 
@@ -19,9 +20,13 @@ This is one of the required conditions so the module can start.
 
 Some boards (at least some ESP-12E) already have an internal resistor for the same reason so the board just adds another one - not harmful.
 
+
 ## Resistor in the middle
 
 This 0 Ohm resistor actually is a bridge between VCC and Module-VCC required when no regulator is installed.
+
+When you add a regulator (see below) this resistor **MUST** be removed.
+
 
 ### Resistor on the right
 
@@ -53,19 +58,12 @@ To add a regulator to the bottom layer of the board the following steps must be 
      |             |
      +-------------+
       |     |     |
-     GND - IN -  OUT
+     GND   IN    OUT
 ```
+
 * add capacitors at least 100nF to the IN and OUT VCC level.
-
-
-<!-- TODO: picture of adapter board with added regulator ??? -->
 
 
 ## See also
 
 * [Witty board](/boards/witty.md)
-
-
-## Tags
-
-#board

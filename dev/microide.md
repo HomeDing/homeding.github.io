@@ -1,8 +1,7 @@
 ---
 title: Miro IDE
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The Web UI implementation from the HomeDing library supports a minimal **Integrated Development Environment** (IDE)
 that allows modifying text based files using any browser.

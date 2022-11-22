@@ -1,12 +1,9 @@
 ---
 title: 2 channel relay
+layout: "page.njk"
+excerpt: >
+  This board can switch 2 relay outputs using a ESP-01 board.
 ---
-
-# {{title}}
-
-:::excerpt
-This board can switch 2 relay outputs using a ESP-01 board.
-:::
 
 ![2 channel relay board](/boards/2-channel-relay.jpg)
 
@@ -24,7 +21,7 @@ This board itself offers some options that may be found at other boards too:
 * The second relay is controlled by the GPIO2.
 
 * The GND and +5V is available on pins.
-  
+
 * There are pins that give access to more of the ESP-01 pins.
 
   In this case the TX and RX signals are available via an 1k resistor.
@@ -49,7 +46,7 @@ In the **env.json** file the device specific settings must be configured.
 * A `button` is not available.
 * To enable timers a ntp time source is used here as well. This can be let out when no real-time is required for a specific use case.
 * enable safemode after full configuration.
- 
+
 ``` json
 {
   "device": {
@@ -133,7 +130,7 @@ One Button
 
 down->stop->up->stop->
 
-A click on the button can create a "next" action to advance. When the max-duration or 0 is reached in up or down direction the shade control element automatically advances to the next stop state. 
+A click on the button can create a "next" action to advance. When the max-duration or 0 is reached in up or down direction the shade control element automatically advances to the next stop state.
 
 
 ## Fan Control
@@ -146,7 +143,8 @@ A cooling fan that has 4 levels of speed (0,1,2,3)  air fans
 * [DigitalOut Element](/elements/digitalout.md)
 
 <!-- * <https://www.youtube.com/watch?v=qahdTG4TE-A> -->
-* 
+*
+
 ## Tags
 
-#board
+# board

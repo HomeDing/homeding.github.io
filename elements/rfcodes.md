@@ -4,9 +4,8 @@ id: nn
 tags: ["Element"]
 excerpt: >
   The **RFCodes Element** is used send and receive RF signals to simple switching and dimming devices.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

@@ -1,12 +1,9 @@
 ---
 title: Sonoff S20
+layout: "page.njk"
+excerpt: >
+  The Sonoff S20 is a smart socket off-the-shelf product using a ESP8266 with 1MByte Flash.
 ---
-
-# {{title}}
-
-:::excerpt
-The Sonoff S20 is a smart socket off-the-shelf product using a ESP8266 with 1MByte Flash.
-:::
 
 ![Sonoff S20](/boards/sonoffs20.jpg)
 
@@ -26,15 +23,17 @@ with options for time based switching.
 
 
 :::warning
+
 * This warning is serious.
-* Never handle projects that are connected to the mains voltage. 
+* Never handle projects that are connected to the mains voltage.
 * Stay away from devices with contact to mains voltage.
-* Uploading firmware to devices that have contact to mains voltage is dangerous. 
+* Uploading firmware to devices that have contact to mains voltage is dangerous.
 * DO NOT connect the any device to the mains during flashing or while using the serial interface.
 * You may kill your computer and yourself.
 * The USB-Serial adapters offer enough power to flash the device.
 * When you are making these kind of projects you really need to know what you are doing.
 * I have warned you, do not blame on me.
+
 :::
 
 ## Example env.json configuration
@@ -97,8 +96,8 @@ This configuration allows switching the relay using the button and showing the r
 * [Switch Element](/elements/switch.md)
 * [DigitalOut Element](/elements/digitalout.md)
 * <http://www.andremiller.net/content/programming-an-itead-sonoff-wireless-smart-switch-esp8266>
- 
+
 
 ## Tags
 
-#board
+# board

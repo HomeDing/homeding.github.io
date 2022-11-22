@@ -1,10 +1,8 @@
 ---
 title: wishlist
+layout: "page.njk"
+tags: ["WIP"]
 ---
-
-# {{title}}
-
-> Draft ???
 
 [home](/index.md)
 

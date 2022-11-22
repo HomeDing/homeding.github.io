@@ -5,9 +5,8 @@ tags: ["Element"]
 excerpt: >
   The SceneElement is used to send a series of actions triggered by a single incoming action.
   They can be send out step by step using a defined delay.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

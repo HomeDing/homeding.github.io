@@ -1,10 +1,10 @@
 ---
 title: Build a Weather forecast display
+layout: "page.njk"
+tags: ["WIP"]
 ---
 
-# {{title}}
-
-**This is Work in progress** <!-- ??? -->
+**This is Work in progress** <!-- TODO: -->
 
 **Table of Contents**
 

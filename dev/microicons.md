@@ -1,8 +1,7 @@
 ---
 title: Available Icons for Elements
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This is the list of the icons available for the HomeDing Library to be used for visualizing elements: 
 

@@ -1,8 +1,7 @@
 ---
 title: Actual Versions of the WebUI available to download.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 > Draft???
 

@@ -1,8 +1,7 @@
 ---
 title: Elements API
+layout: "page.njk"
 ---
-
-# {{title}}
 
 To implement an element a new class has to be created to implement the functions required for the specific element.
 
@@ -20,16 +19,16 @@ Be aware that there is a name for the element `my` defined in the registration f
 
 ## main functions
 
-As with normal Arduino sketches there are 2 functions init() and loop() that are used to initialize and run the element. 
+As with normal Arduino sketches there are 2 functions init() and loop() that are used to initialize and run the element.
 
-Because every element also participates in exchanging actions there is a third function named set that gets called for receiving actions. 
+Because every element also participates in exchanging actions there is a third function named set that gets called for receiving actions.
 
 
 ### init(base)
 
 This function is called just after a new element object is created from the class and before any property is set from the configuration. You can create default settings in here.
 
-A reference to the board object is passed to allow access to the common features supported by the board class. 
+A reference to the board object is passed to allow access to the common features supported by the board class.
 
 The Elements that deriving from the Element class must call the init() method of the Element class (e.g. `Element::init(board);`).
 
@@ -44,8 +43,8 @@ The action name and the parameters are already given as 2 parameters the action 
 
 You need to implement some code for all incoming actions that are element specific.
 
-The easiest case is to initialize a member of the class with a new value. There are some methods available to convert the parameter given as a string    
-to the appropriate type like 
+The easiest case is to initialize a member of the class with a new value. There are some methods available to convert the parameter given as a string
+to the appropriate type like
 
 * `_atotime` for time and duration values
 * `_atopin` for pin definitions
@@ -53,7 +52,7 @@ to the appropriate type like
 * `_atob` for boolean values
 * `atoi` for numeric values is given from the esp8266 library.
 
-Within this method the set() of the Element class (e.g. `ret = Element::set(name, value);`) needs to be called whenever the action is not handled in a meaningful way or when the name is unknown. 
+Within this method the set() of the Element class (e.g. `ret = Element::set(name, value);`) needs to be called whenever the action is not handled in a meaningful way or when the name is unknown.
 
 
 ### start()

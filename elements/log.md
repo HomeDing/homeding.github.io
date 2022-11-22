@@ -6,9 +6,8 @@ description: Support logging of values into a file in the filesystem.
 excerpt: >
   The LogElement enables storing timestamp based values e.g. from a sensor
   into a local file to be analyzed or displayed later by the Web UI.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

@@ -1,8 +1,7 @@
 ---
 title: Pie Microchart
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The Pie Microchart displays a pie with segments corresponding to the fraction of the given values.
 

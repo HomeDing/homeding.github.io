@@ -1,8 +1,7 @@
 ---
 title: Board ESP8266 ESP-01
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The ESP-­01 and ESP-­01S modules contain a ESP8266 MCU and a up to 1 MByte flash memory chip.
 
@@ -37,7 +36,7 @@ The original version of the ESP-01 board has 2 LEDs:
 * The red LED is connected to the 3.3V Power supply and lights up constantly.
 * The blue LED is connected to the Serial output pin and lights up when data is sent. When not using the TX Serial output the pin and LED can be used as a digital output too.
 
-There have been critics about these 2 LEDs and some recommend to unsolder them e.g. to save power for battery driven solutions. 
+There have been critics about these 2 LEDs and some recommend to unsolder them e.g. to save power for battery driven solutions.
 
 ## ESP-01S LEDs
 
@@ -130,20 +129,20 @@ After starting the program you can use it for input and output like the GPIO0 pi
 ## Reset
 
 The Reset(RST) line seems to be very sensitive regarding short spike impulses. There is an interesting investigation on this (in German) on the web site
-https://blog.thesen.eu/esp8266-reset-probleme-loesen-und-relais-stabil-schalten/.
+<https://blog.thesen.eu/esp8266-reset-probleme-loesen-und-relais-stabil-schalten/>.
 
 The outcome from this: pull RST high with a resistor and add a 100nF capacitor.
 
 
 ## Modification for deep sleep mode
 
-The ESP8266 supports a [deep sleep mode](/boards/deepsleep.md) that needs an external connection between the GPIO16 and the RESET.
+The ESP8266 supports a [deep sleep mode](/dev/deepsleep.md) that needs an external connection between the GPIO16 and the RESET.
 
 Here is a picture on how to create such a connection on an ESP-01:
 
 ![board-esp01-with-deep-sleep](/boards/esp01-wire.jpg)
 
-More details and hints on using the deep sleep mode can be found in [deepsleep](/boards/deepsleep.md)
+More details and hints on using the deep sleep mode can be found in [deepsleep](/dev/deepsleep.md)
 
 
 ## Modification for supporting PUYA Flash chips
@@ -159,17 +158,17 @@ For version 2.5.2 of the ESP8266 board package this can be enabled by adding the
 ```
 
 For the next version this option may be activated by default. See  
-https://github.com/esp8266/Arduino/pull/6362
+<https://github.com/esp8266/Arduino/pull/6362>
 
-Background information can be found in: https://github.com/esp8266/Arduino/issues/6221
+Background information can be found in: <https://github.com/esp8266/Arduino/issues/6221>
 
 
 ## See also
 
-* https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/
-* https://www.esp8266.com/viewtopic.php?t=11657
-* https://www.instructables.com/id/USB-to-ESP-01-Board-Adapter-Modification/
+* <https://www.instructables.com/id/How-to-use-the-ESP8266-01-pins/>
+* <https://www.esp8266.com/viewtopic.php?t=11657>
+* <https://www.instructables.com/id/USB-to-ESP-01-Board-Adapter-Modification/>
 
 ## Tags
 
-#board
+# board

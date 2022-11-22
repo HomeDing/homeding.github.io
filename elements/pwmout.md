@@ -5,9 +5,8 @@ tags: ["Element"]
 description: Support GPIO output pins for PWM signals.
 excerpt: >
   The PWMOutElement is used to create a variable PWM signal at the specified output pin. This can be used to drive a LED or a servo motor.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

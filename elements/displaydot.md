@@ -7,9 +7,8 @@ excerpt: >
   The DisplayDot Element allows sending a boolean value to the display
   and show it at a specified position as a shallow or filled dot/circle.
   The value can be changed by using an action.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

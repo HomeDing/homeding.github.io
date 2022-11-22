@@ -4,9 +4,8 @@ id: schedule
 tags: ["Element", "Time"]
 description: Create events started on time.
 excerpt: The ScheduleElement creates events based on the current time.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

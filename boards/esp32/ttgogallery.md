@@ -115,7 +115,7 @@ By moving beyond lowest volume the integrated switch cuts the power from the amp
 There is a Class-D Amplifier chip on the board that allows directly attaching stereo speakers.
 
 Here the PAM8403 chip is used. It operates at 5V and can create 2*3W output on 4 Ohm speakers.
-It offers also a mute function but this is disabled on this board.  
+It offers also a mute function but this is disabled on this board.
 
 
 ## SD Card

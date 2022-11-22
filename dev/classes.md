@@ -1,11 +1,10 @@
 ---
 title: Class implementation documentation
+tags: ["Implementation"]
+layout: "page.njk"
+excerpt: >
+  Beside the Element implementations in the \<type\>Element classes there are some classes that implement common functionality or utilities:
 ---
-
-# {{title}}
-
-Beside the Element implementations in the \<type\>Element classes there are some classes that implement common functionality or utilities:
-
 
 ### Board.cpp
 
@@ -54,12 +53,12 @@ See: [Device Logging](/dev/logger.md)
 
 ### MicroJsonComposer.cpp
 
-This class helps producing a JSON formatted string used in the responses from server calls.  
+This class helps producing a JSON formatted string used in the responses from server calls.
 
 
 ### MicroJsonParser.cpp
 
-This class helps parsing JSON formatted strings used to read config files and web requests.  
+This class helps parsing JSON formatted strings used to read config files and web requests.
 
 
 ### WireUtil Class
@@ -71,5 +70,4 @@ Here a data centric access is implemented that separates reading / writing data 
 That fits well to those processor implementations that support I2C data exchange through dma implementations.
 
 See: [Using the I2C bus](/dev/i2c.md)
-
 

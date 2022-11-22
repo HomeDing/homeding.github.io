@@ -1,8 +1,7 @@
 ---
 title: Web Services for IoT Devices
+layout: "page.njk"
 ---
-
-# {{title}}
 
 To interact with the elements and some device features the integrated web server exposes some services.
 

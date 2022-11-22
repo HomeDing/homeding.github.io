@@ -5,9 +5,8 @@ tags: ["Element", "Time"]
 description: Support getting local time from the internet using NTP protocol.
 excerpt: >
   The NTPTimeElement can retrieve the local time from an external ntp server on the internet.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

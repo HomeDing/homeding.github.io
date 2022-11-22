@@ -1,8 +1,7 @@
 ---
 title: Line Microchart
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The Line Microchart displays a series of values using a line on a x/y area with optional axis and reference lines.
 

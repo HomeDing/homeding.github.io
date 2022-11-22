@@ -10,9 +10,9 @@ excerpt: >
 ![ESP32 Audio Kit Board](/boards/esp32/esp32audiokit.png)
 
 ESP32-A1S Module
-https://docs.ai-thinker.com/en/esp32-audio-kit
+<https://docs.ai-thinker.com/en/esp32-audio-kit>
 
-AC101 
+AC101
 JTAG
 SD-CARD
 Battery, 3.7V lithium battery charging
@@ -31,7 +31,7 @@ EN = RST
 
 To upload a sketch the Board can be configured in Arduino using:
 
-<!-- 
+<!--
 * **ESP32 Wroover Board (esp32)**
 * Partition Scheme: 4MB with spiffs (1.2App, 1.5 SPIFFS)
 * QIO
@@ -52,7 +52,7 @@ To upload a sketch the Board can be configured in Arduino using:
 i2s_config->ws_io_num = GPIO_NUM_26;
 i2s_config->data_out_num = GPIO_NUM_25;
 i2s_config->data_in_num = GPIO_NUM_35;
-        
+
 | IO25  | IIS_LRCK     |       |   x   |       |       |
 
 <!-- 

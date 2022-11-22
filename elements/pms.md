@@ -6,9 +6,8 @@ description: Support of the PMS5003 air quality sensors.
 excerpt: >
   The PMSElement allows using the laser based air particle and pollution sensor
   PMS5003 from plantower to report the number of micro particles in the air.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

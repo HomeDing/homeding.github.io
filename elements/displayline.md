@@ -6,9 +6,8 @@ description: Displaying a static line.
 excerpt: >
   The DisplayLineElement allows drawing a simple fixed line on the display
   when the display supports pixel drawing.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

@@ -2,9 +2,8 @@
 title: WeatherFeed Element
 id: nn
 tags: ["Element"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 The WeatherFeedElement pulls information on the weather forecasts for a specific location from the internet
 and dispatches actions with specific data items.

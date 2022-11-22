@@ -35,10 +35,10 @@ cooperative in this.
 
 A more complete implementation of an Element requires a few functions to be implemented to participate more in the ecosystem:
 
-- set()
-- start()
-- loop()
-- pushState()
+* set()
+* start()
+* loop()
+* pushState()
 
 The [DigitalIn Element](/elements/digitalin.md) or other elements in the src folder of the library
 can be examined as examples.
@@ -60,8 +60,8 @@ and before the first configuration property is passed to the Element implementat
 
 It is preferred to initialize the element member variables not in the creation method of the class because:
 
-- some initialization routines will start after the creation of static classes
-- some initialization of libraries require parameters that are likely to be available after the configuration is passed.
+* some initialization routines will start after the creation of static classes
+* some initialization of libraries require parameters that are likely to be available after the configuration is passed.
 
 In the HomeDing Library therefore the creation is primarily done in the `init` method and not in the class creator methods.
 (e.g. see <https://stackoverflow.com/questions/18806141/move-object-creation-to-setup-function-of-arduino>).
@@ -81,12 +81,12 @@ Some Element implementations will only require to implement the setting paramete
 The set function must return `true` when a property is known to the element and was handled.
 
 
-#### Examples:
+#### Examples
 
-- The ButtonElement only needs to process the properties for the setup of the implementation
+* The ButtonElement only needs to process the properties for the setup of the implementation
   like the hardware pin and the triggered actions.
 
-- The TimerElement also implements the „next“ and „start“ actions that need no parameter 
+* The TimerElement also implements the „next“ and „start“ actions that need no parameter
   but can be used when the timer is active to manipulate the actual state.
 
 When the key parameter is not known to the element itself the `set` function of the base Element class must be called
@@ -126,8 +126,8 @@ This is not a limitation because the configuration values are available anyhow b
 
 Samples can be found in the provided Element implementations.
 
-- The ButtonElement only needs to push the current level of the Button.
-- The TimerElement is reporting the current state and level of the timer and the current (relative) time from the start.
+* The ButtonElement only needs to push the current level of the Button.
+* The TimerElement is reporting the current state and level of the timer and the current (relative) time from the start.
 
 There are even Elements like the RemoteElement that do not ned to implement this function because they have no inner dynamic variables.
 
@@ -139,9 +139,9 @@ The `pushState` function of the base Element class must be called.
 As you know from Arduino sketches the `loop` function is the place where all the activity of a sketch is implemented.
 The same with the elements. Here is the place to have some useful implementation. Examples are:
 
-- Check some input and create a event eventually (like the ButtonElement does)
-- Check timing conditions (like the TimerElement does)
-- Read a sensor from time to time (like the DHTElement does)
+* Check some input and create a event eventually (like the ButtonElement does)
+* Check timing conditions (like the TimerElement does)
+* Read a sensor from time to time (like the DHTElement does)
 
 The `loop` function is only called for elements in the active state. These are the Elements that did not initialize properly (likely because of a wrong configuration or missing hardware).
 
@@ -157,7 +157,7 @@ The allocated resources should be freed (e.g. disabling attached modules or rele
 
 Inside the setup() method it is possible to register a webserver endpoint that exposes specific functionality of an element as a service.
 
-An example can be found in the diag element in the DevDing example  
+An example can be found in the diag element in the DevDing example
 
 ``` cpp
   _board->server->on("/diag", HTTP_GET, [this]() {
@@ -168,7 +168,6 @@ An example can be found in the diag element in the DevDing example
 The `_scanI2C()` method scans the local I2C bus for responsive devices and returns a String with some details.
 
 This service can be called using the url: `http://<devicename>/diag`.
-
 
 
 ## Common Element member variables and helper methods

@@ -1,10 +1,8 @@
 ---
 title: Examples and Stories
 tags: ["Example", "Story"]
+layout: "page.njk"
 ---
-
-# {{title}}
-
 
 ## Examples
 

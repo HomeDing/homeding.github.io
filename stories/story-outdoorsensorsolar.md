@@ -1,8 +1,7 @@
 ---
 title: Outdoor Sensor with Solar Panel
+layout: "page.njk"
 ---
-
-# {{title}}
 
 This is a draft story.
 

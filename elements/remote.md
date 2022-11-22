@@ -5,9 +5,8 @@ tags: ["Element"]
 excerpt: >
   The RemoteElement allows sending actions to other elements in HomeDing devices on the network
   using http GET request.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

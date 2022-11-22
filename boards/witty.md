@@ -21,7 +21,7 @@ This allows using the board with or without the lower programming board.
 For programming mode both boards need to be connected (the right way) and the USB cable must be connected to the lower board.
 After programming it is possible to used the upper board only by using the USB connector for power supply only.
 
-The upper board hosts a momentary switch at GPIO4(D2), the LED and a LDR sensor. The 
+The upper board hosts a momentary switch at GPIO4(D2), the LED and a LDR sensor. The
 ESP8266-12F used offers 4 MB of flash memory.
 
 The lower board hosts the CH340 USB to Serial bridge chip, the RST momentary switch and the GPIO0(D3) FLASH momentary switch.
@@ -42,7 +42,7 @@ in the same order very similar to the [White Adapter board](/boards/whiteadapter
 ![witty-adapter](/boards/witty-adapter.jpg)
 ![witty-adapter-back](/boards/witty-adapter-back.jpg)
 
-The obvious difference are the added components and the existing voltage regulator so the board can be driven by 5 V from the lower board. 
+The obvious difference are the added components and the existing voltage regulator so the board can be driven by 5 V from the lower board.
 
 There is the option to add a voltage adapter to the [White Adapter board](/boards/whiteadapter.md) as well.
 
@@ -92,7 +92,7 @@ It can be driven by the LightElement using the following configuration:
 ``` json
 "light": {
   "l": {
-    "pin": "D8,D6,D7", // red,green,blue or white,red,green,blue 
+    "pin": "D8,D6,D7", // red,green,blue or white,red,green,blue
     "value": "x203050"
   }
 }
@@ -101,10 +101,10 @@ It can be driven by the LightElement using the following configuration:
 
 ## LDR
 
-The willy board also has a Light Dependant Resistor (LDR) attached to the analog input The actual value can be read by using the 
+The willy board also has a Light Dependant Resistor (LDR) attached to the analog input The actual value can be read by using the
 [AnalogInput Element](/elements/analog.md).
 
-By using an reference of about 300 it is possible to use it similar to a button. 
+By using an reference of about 300 it is possible to use it similar to a button.
 When covering the LDR sensor with a finger the values drops below.
 
 ``` json
@@ -117,7 +117,7 @@ When covering the LDR sensor with a finger the values drops below.
 }
 ```
 
-The recipe [LDR switch](/recipes/ldrswitch.md) you can find a configuration that 
+The recipe [LDR switch](/recipes/ldrswitch.md) you can find a configuration that
 uses a LDR to create a touchless on/off switch.
 
 
@@ -155,11 +155,11 @@ Taster: GPIO4(D2)
 
 ## See also
 
-* https://blog.moneybag.de/fhem-witty-board-einfache-iot-funktionen-schnell-gebaut/
-* https://www.faranux.com/product/witty-cloud-board/
-* https://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/
+* <https://blog.moneybag.de/fhem-witty-board-einfache-iot-funktionen-schnell-gebaut/>
+* <https://www.faranux.com/product/witty-cloud-board/>
+* <https://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/>
 
 
 ## Tags
 
-#board
+# board

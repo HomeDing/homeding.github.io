@@ -1,8 +1,8 @@
 ---
 title: Word Clock Example 
+tags: ["Board"]
+layout: "page.njk"
 ---
-
-# {{title}}
 
 <https://www.ebay.de/itm/274588288050>
 <http://www.chinalctech.com/cpzx/Clock_module/477.html>
@@ -14,22 +14,22 @@ SSD1306 0x3C
 
 SCL 14
 SDA 12
-PCF8563T 0x51 
+PCF8563T 0x51
 
 ESP8266 ESP-12F 0,96 inch OLED Display WiFi Uhr Modul Wetter Prognose IIC I2C Interface Micro USB 5V Für Arduino DIY
- 
+
 Interface Beschreibung:
 Onboard reife und stabile ESP-12F WIFI modul, große kapazität 4M BYTE FLASH;
- 
+
 Onboard I2C kommunikation interface 0,96 inch OLED display;
 Onboard PCF8563T uhr schaltung, es kann in der regel auch wenn die power ist off;
- 
+
 Die ESP8266 UART interface ist vorbehalten zu unterstützung die zweite zeit und schreiben ihre eigenen firmware;
- 
+
 Power versorgung: MICRO USB 5V netzteil;
- 
+
 Doppel-schicht struktur design, kleine größe und gute aussehen, die beste wahl für DIY WIFI uhr
- 
+
 Spezifikation:
 0,96 inch OLED display: die fahrer IC ist SSD1306;
 ESP12FWF modul: FLASH kapazität ist 4 MBYTE;
@@ -37,7 +37,6 @@ MICRO USB5V netzteil interface;
 PCF8563T uhr chip;
 CR1220 taste batterie; versorgung power zu uhr schaltung nach dem ausschalten
 UART programm download-schnittstelle: IO0 und GND sind kurzgeschlossen wenn das herunterladen, 3V3, TXD, RXD, GND sind jeweils Verbinden zu 3V3, RXD, TXD, GND von externe TTL serial port modul (wie FT232 modul), download
- 
 
 
 https://ae01.alicdn.com/kf/H4dc0fe4f6201499ab7794701e6d76630T.png

@@ -1,8 +1,7 @@
 ---
 title: WordClock Example
+layout: "page.njk"
 ---
-
-# {{title}}
 
 :::excerpt default
 This folder contains an example for a wordclock implementations (Germany layout). It also illustrates how to implement something special
@@ -16,7 +15,7 @@ This is a very specific piece of source code exactly for this specific IoT Devic
 yourself by using various libraries the ecosystem of the HomeDing is also a good starting point.
 
 
-## Base Sketch 
+## Base Sketch
 
 The sketch file (WordClock.ino) is a copy of the Standard example but some elements are not included to keep the resulting firmware small.
 
@@ -24,7 +23,7 @@ This sketch creates the runtime environment and includes the helpful elements.
 The Arduino typical setup() and loop() approach can also be used but is better contained in a separate file.
 
 
-## Project specific code 
+## Project specific code
 
 Beside the functionality in the base sketch a new Element is implemented in the WordClock.cpp file
 that includes the specific code for this device. This element class is then plugged into the ecosystem of actions.

@@ -4,7 +4,7 @@ description: ESP32-C3 General purpose development boards
 layout: "page.njk"
 tags: ["Board"]
 excerpt: >
-  There are several ESP32-C3 DevKit Boards listed here.
+  There are several ESP32-C3 DevKit Boards available using the ESP32-C3 chip.
   They are supported by the HomeDing library.
 ---
 
@@ -17,15 +17,20 @@ It is often seen as a replacement option for the ESP8266.
 
 The ESP32-C3 offers less IO pins that the ESP32 or ESP32-S3 chips and comes in a smaller
 32 pin QFN32 package (5×5 mm).
-.
+
+<!-- The ESP32-C3 also can be fond in a (4×4 mm) package . -->
+
+It is part of some modules that offer PCB antenna or antenna connectors.
+
+There is even a ESP-01 kind of module available.
 
 It has noticeable more internal memory and cpu power as the ESP8266:
 
 * 384 KB of ROM
 * 400 KB of static RAM, 16 KB for caching
-• 8 KB of static RTC RAM that keeps data as long as powered. 
+* 8 KB of static RTC RAM that keeps data as long as powered.
 * Single Core 160 MHz CPU frequency
-• 4 Kbit of eFuse memory for special data like encryption keys
+* 4 Kbit of eFuse memory for special data like encryption keys
 
 
 ## Flash Memory
@@ -42,11 +47,15 @@ To use the USB port as Serial port the CDC on boot option must be enabled in the
 
 ## CAN bus Support
 
-...
+available but never tested with HomeDing library.
+
 
 ## Bluetooth LE
 
 The ESP32-C3 supports Bluetooth LE , Bluetooth 5 and Bluetooth mesh.
+
+Bluetooth support is not yet given by the HomeDing library.
+
 
 ## Powersave modes
 
@@ -56,11 +65,25 @@ several sleep modes:
 * Light-sleep mode
 * Deep-sleep mode
 
+
 ## Watchdog timer
+
 
 ## Cryptographic Hardware Accelerators
 
+Secure communication, signing packages and flash memory is supported by some built-in special functionality.
 
+This results in faster secure (https) network requests.
+
+
+## Example Boards with ESP32-C3i
+
+{{ imgCard(collections.all, item = '/boards/esp32/core-esp32c3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32/esp32c3-micro') }}
+
+
+## Log info from the [DIAG Element](/elements/diag.md)
 
 ``` txt
 14:50:58 diag/0:t Chip-Info:
@@ -78,13 +101,9 @@ several sleep modes:
 14:50:58 diag/0:t   ChipSpeed: 80000000
 ```
 
-{{ imgCard(collections.all, item = '/boards/esp32/core-esp32c3') }}
-
 
 ## See also
 
 * Product web site: <https://www.espressif.com/en/products/socs/esp32-c3>
 * Official datasheet: <https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf>
-* 
 * <https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/>
-* 

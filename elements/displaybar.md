@@ -7,9 +7,8 @@ excerpt: >
   The DisplayBarElement allows sending a progress indicating value to the display
   to display it at a specified position as a bar or percentage number.
   The value can be changed by using an action.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}

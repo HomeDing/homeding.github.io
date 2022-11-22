@@ -350,10 +350,10 @@ that need to be uploaded into the filesystem of the device.
 For direct uploading the files to a device you can use the following batch files on windows:
 
 ``` txt
-rem upload files for a 4 MByte flash device 
+rem upload files for a 4 MByte flash device
 md-uploadDist.bat <devicename>
 
-rem upload files for a 1 MByte flash device 
-md-uploadMini.bat <devicename>
+rem upload files for a 1 MByte flash device
+cmd-uploadMini.bat <devicename>
 ```
 

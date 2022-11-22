@@ -1,13 +1,11 @@
 ---
-title: Plug and Socket Devices
+title: Retail Plug and Socket Devices
+tags: ["Board"]
+layout: "page.njk"
+excerpt: >
+  There are many devices on the market that use the ESP8266 chip to control main power by internal relays.
+  The [Minimal Sketch](/examples/minimal.md) supports these use cases.
 ---
-
-# {{title}}
-
-:::excerpt
-There are many devices on the market that use the ESP8266 chip to control main power by internal relays.
-The [Minimal Sketch](/examples/minimal.md) supports these use cases.
-:::
 
 **Tuya** is a manufacturer and provider of IoT devices using the ESP8266 chip. This company is the manufacturer of many IoT devices.
 
@@ -23,7 +21,7 @@ The TASMOTA firmware implementation is one with constant support to even new dev
 
 The documentation on the devices to flash the TASMOTA firmware also has some hints on the GPIO functionality and the supported features and a picture for identification.
 
-There is a input button, 2 LEDs in red and blue, a relay and a power measurement chip included in this device. The input button, LEDs and the relay can directly be used by digital in and out to create a remote switch. 
+There is a input button, 2 LEDs in red and blue, a relay and a power measurement chip included in this device. The input button, LEDs and the relay can directly be used by digital in and out to create a remote switch.
 
 The power measurement chip is from type [BL0937](/elements/bl0937.md) that can be found in many plug devices.
 

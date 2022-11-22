@@ -16,7 +16,7 @@ There are 2 versions of these templates available:
 * Inside the file `ding.htm` all implemented templates can be found that support visualization and configuration
   of the elements that are part of the minimal example
   and usually used in 1M flash devices.
-* Inside the fie `board-templates.htm` all existing templates can be found that visualize all kind of elements. 
+* Inside the fie `board-templates.htm` all existing templates can be found that visualize all kind of elements.
   They support configuration of the elements using the configuration dialogs.
 
 

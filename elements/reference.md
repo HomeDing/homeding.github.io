@@ -4,9 +4,8 @@ id: reference
 tags: ["Element"]
 excerpt: >
   The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
+layout: "page.njk"
 ---
-
-# {{title}}
 
 ::: excerpt {{id}}
 {{excerpt}}
