@@ -55,7 +55,9 @@
 </p><h3><a href="/concepts/index.htm">Building Connected Things Concepts</a></h3> 
 <p>The HomeDing library is made to build devices connected to a local WiFi network that deliver a full functional solution without the need to use a central server or external cloud services. Here are the conceptual ideas influencing the design of the HomeDing library.
 </p><h3><a href="/concepts/paper01.htm">Building your own connected Things made easy</a></h3> 
-<p></p><h3><a href="/dev/cli.htm">Command Line CLI commands</a></h3> 
+<p></p><h3><a href="/dev/classes.htm">Class implementation documentation</a></h3> 
+<p>Beside the Element implementations in the \&lt;type\&gt;Element classes there are some classes that implement common functionality or utilities:
+</p><h3><a href="/dev/cli.htm">Command Line CLI commands</a></h3> 
 <p>Hints and details on how to control many devices using a command line approach.
 </p><h3><a href="/dev/elementclass.htm">Common Functionality or Elements</a></h3> 
 <p>Details on the common functionality provided by the Element base class.
@@ -69,7 +71,8 @@
 <p>For displaying elements of a HomeDing device on the config and landing pages of the [Builtin Web server](/concepts/paper04.md) there are is collection of templates by using a card design available.
 </p><h3><a href="/dev/index.htm">Implementation Details</a></h3> 
 <p>Hints and details on how to implement new and extend existing elements using an Arduino programming environment and how to implement new cards for the dashboards.
-</p><h3><a href="/dev/microjavascript.htm">Micro JavaScript Framework</a></h3> 
+</p><h3><a href="/dev/logger.htm">Logging</a></h3> 
+<p></p><h3><a href="/dev/microjavascript.htm">Micro JavaScript Framework</a></h3> 
 <p>The UI for HomeDing devices is  implementation by using a small and specialized clients side framework fousing on a small implementation footprint to make it usable in embedded devices.
 </p><h3><a href="/dev/microtemplates.htm">Micro Templates</a></h3> 
 <p>The Template mechanism in the micro framework is used for dynamically assembling the UI as specified in the device configuration by using templates.
@@ -83,11 +86,10 @@
 <p>The I2C bus is used by many components, sensors, displays and other chips to communicate commands and data. A central configuration is supported on the device level.
 </p><h3><a href="/dev/spi.htm">Using the SPI bus</a></h3> 
 <p>The SPI bus is used by components that require fast communication like displays and memory. A central configuration is supported on the device level.
-</p><h3><a href="/boards/deepsleep.htm">Using the deep sleep mode</a></h3> 
-<p>The deep sleep mode allows saving energy consumption by also limits the availability of the web server of the de vice.
 </p><h3><a href="/dev/deepsleep.htm">Using the deep sleep mode</a></h3> 
 <p>The deep sleep mode allows saving energy consumption by powering down the device for a defined time to support situations where &quot;always on&quot; is not possible.
-</p><h3><a href="/concepts/paper04.htm">WebServer and Web UI</a></h3> 
+</p><h3><a href="/dev/manifest.htm">Web Manifest for HomeDing based devices</a></h3> 
+<p></p><h3><a href="/concepts/paper04.htm">WebServer and Web UI</a></h3> 
 <p></p><h3><a href="/dev/wifimanager.htm">WiFi Manager Details</a></h3> 
 <p>The WiFi-Manager is a module in the HomeDing library to register a device in the local network. It is implemented in every device in the board class.
 When the device has not been connected to the local home network the Wifi-Manager exposes a temporary, unprotected Wifi Network named HomeDingNNNNNN using the 192.168.4.xxx ip range. The device is always available on the URL &lt;http://192.168.4.1/&gt;.

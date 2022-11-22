@@ -11,6 +11,7 @@
   <title>Dashboard</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
   <style>
   .gpio { 
     display:inline-block;
@@ -39,9 +40,17 @@
 
   <nav class="inpage open"></nav>
 
-  <main style="padding:1rem">
+  <main style="padding:1rem;max-width: 800px;">
     <h1>Dashboard</h1>
-<p>This is an example of a dashboard for a indoor air quality sensor device like the one described in the <a href="/stories/story-airquality.htm">Airquality story</a>.</p>
+
+    
+    
+      <div class="plaincard">
+    
+    This is an example of a dashboard for a indoor air quality sensor device like the one described in the [Airquality story](/stories/story-airquality.md).
+</div>
+      
+    <p>This is an example of a dashboard for a indoor air quality sensor device like the one described in the <a href="/stories/story-airquality.htm">Airquality story</a>.</p>
 <p><img src="/dev/dashboard.png" alt="dashboard ui"></p>
 <h2>Dashboard features</h2>
 <p>The dashboard implementation is a generic approach to visualize the configured elements with their current
@@ -60,6 +69,8 @@ there is an implementation that visualizes the actual situation on the display.<
 <p>The WebButton is a element that only exists for displaying a button in the dashboard that can trigger actions.</p>
 <p><img src="/elements/webbuttoncard.png" alt="webbuttoncard"></p>
 
+
+    
   </main>
 
   <script>
