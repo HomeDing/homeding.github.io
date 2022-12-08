@@ -47,25 +47,35 @@
     
       <div class="plaincard">
     
-    The SceneElement is used to send a series of actions triggered by a single incoming action. They can be send out step by step using a defined delay.
+    The SceneElement is used to operate on a list of actions triggered by incoming actions. They can be send out step by step using a defined delay or by actions.
 </div>
       
-    <div class="iconcard"><svg class="icon"><use href="/icons.svg#scene"></use></svg><p>The SceneElement is used to send a series of actions triggered by a single incoming action. They can be send out step by step using a defined delay.</p>
+    <div class="iconcard"><svg class="icon"><use href="/icons.svg#scene"></use></svg><p>The SceneElement is used to operate on a list of actions triggered by incoming actions. They can be send out step by step using a defined delay or by actions.</p>
 </div>
-<p>In normal cases when only one or few actions should be triggered multiple actions can be listed inline.
-The scene element allows sending multiple actions beyond this limit or when different element
+<p>In the configuration a list of <code>steps</code> is defined containing actions for other elements.</p>
+<p>This list can be executed automatically using a defined <code>delay</code> and a <code>start</code> action
+or can be started individually by a <code>next</code> action.</p>
+<p>In normal cases when only one or few actions should be triggered multiple actions can be listed inline
+in action configurations of elements.</p>
+<p>The scene element allows sending multiple actions beyond this limit or when different element
 need to send the same list of events but different values.</p>
 <p>The scene element also can be used to configure presets of multiple element values
 at a single place by using multiple scene definitions.</p>
-<p>A scene element can also be triggered over the network by using a simple link like:</p>
-<pre><code>http://homeding/$board/scene/day?start
-http://homeding/$board/scene/night?start
-</code></pre>
+<p>A scene element can also be controlled over the network by using a simple links like:</p>
+<pre class="language-txt"><code class="language-txt">http://homeding/$board/scene/day?start<br>http://homeding/$board/scene/night?start<br>http://homeding/$board/scene/stations?next</code></pre>
 <h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element:</p>
 <p><object data="/element.svg?scene" type="image/svg+xml"></object></p>
-<p><strong>steps[]</strong> - This is an array of actions are emitted when the value of the scene element is set to any value.</p>
-<p><strong>delay</strong> - This property can be set to delay each step from each other. This property can be specified in milli-seconds or seconds.</p>
+<p>This element implements the following properties and actions:</p>
+<blockquote>
+<p><strong>steps[]</strong> - This is an array of actions are emitted
+when the value of the scene element is set to any value.</p>
+<p><strong>delay</strong> - This property can be set to enable automatic starting all steps one after one.
+This property specifies the delay duration like <code>2s</code>.
+When not set a <code>next</code> action is required to advance to the next step.</p>
+<p><strong>start</strong> - This action is used to start at step[0] and advance automatically when a delay is configured.</p>
+<p><strong>next</strong> - This action will start sending the actions of the next step.</p>
+<p><strong>prev</strong> - This action will start sending the actions of the previous step</p>
+</blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
@@ -73,12 +83,12 @@ http://homeding/$board/scene/night?start
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
-<h3>Example Configuration</h3>
+<h3>Configuration Example</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"scene"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"day"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"light/ceiling?brightness=$v"</span><span class="token punctuation">,</span><br>        <span class="token string">"light/wall?brightness=$v"</span><span class="token punctuation">,</span><br>        <span class="token string">"switch/steps?value=0"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">1</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>    <span class="token property">"night"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"light/ceiling?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"light/wall?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"switch/steps?value=1"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">0</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"off"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"light/ceiling?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"light/wall?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"switch/steps?value=0"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">0</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>State</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"scene/night"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Tags</h2>
-<p>#element</p>
+<h1>element</h1>
 
 
     
