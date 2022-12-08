@@ -28,25 +28,27 @@ The properties correspond to the api given by the audio library.
 However not all features are yet support by configuration.
 
 > **url** -- set new streaming url
-> 
+>
 > **volume** -- set volume
-> 
+>
 > **balance** -- set right-left balance
-> 
+>
 > **low** -- adjust low-tone level in the range -20 ... +6. Default level is 0.
-> 
+>
 > **mid** -- adjust mid-tone level in the range -20 ... +6. Default level is 0.
-> 
+>
 > **high** -- adjust high-tone level in the range -20 ... +6. Default level is 0.
-> 
+>
+> **mono** -- force mono mode as output. Default is 0 (stereo).
+>
 > **ontitle** -- these actions are send when a title is included in the streaming.
-> 
+>
 > **onstation** -- these actions are send when a station name is included in the streaming.
-> 
+>
 > **bclk**\* -- set the pin used for the i2s clock signal
-> 
+>
 > **lrc**\* -- set the pin used for the i2s LR signal
-> 
+>
 > **dout**\* -- set the pin used for the i2s DOUT signal
 
 \* This parameter is mandatory and must be set.

@@ -7,7 +7,7 @@ excerpt: >
   The LilyGO TTGO Gallery (T14) board offers an integrated TFT color display, SD Card, 4 buttons and Audio DAC output with amplifier.
 ---
 
-This board can be sold as a standalone board or within the TTGO T-Gallery kit in some documentations named T14 (v1.3).
+This board can be sold as a standalone board, as part of the TTGO T-Gallery kit, sometimes called TTGO-Time-Music-Box and in some documentations named T14 (v1.3).
 
 It is built using a ESP32 Wroover Module, digital audio output using the I2S bus, a stereo amplifier and a colorful TFT display.
 
@@ -87,7 +87,7 @@ The following components are chained:
 * ESP32 I2S out
 * DAC PCM5102A
 * Line-Out Connector
-* Volume Potentiomenter
+* Volume Potentiometer
 * Amplifier
 
 
