@@ -1,5 +1,5 @@
 {
-  "name": "site",
+  "name": "homeding-documentation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,18 +12,23 @@
     "build:clean": "npm run clean && npm run build",
     "build:css": "sass docstyle.scss docstyle.css --style=compressed --no-source-map",
     "build:css-watch": "sass docstyle.scss docstyle.css --style=compressed --no-source-map --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm outdated"
   },
   "keywords": [],
   "author": "",
   "license": "BSD-3",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
     "debug": "^4.3.1",
+    "eslint-plugin-html": "^7.1.0",
     "markdown-it-container": "^3.0.0",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-replace-link": "^1.1.0",
-    "sass": "^1.49.9"
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.10"
   }
 }

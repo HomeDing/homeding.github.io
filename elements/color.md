@@ -111,6 +111,69 @@ by changing the hue value. The `duration` parameter is used to specify the numbe
 
 see [Bulb board](/boards/bulb.md)
 
+## Color and Light Element linking
+
+The Color element can control light elements using actions or using a direct connect.
+
+To connect using actions the `onvalue` and `onbrightness` actions must be configured
+to send the color and brightness values to the corresponding light element.
+
+Here is an example where a color element is controlling a NeoElement with 8 LEDS using actions:
+
+``` json
+{
+
+  "neo": {
+    "d2": {
+      "pin": "D4",
+      "count": 8
+    }
+  },
+  "color": {
+    "l": {
+      "title": "Color Control",
+      "config": "RGB",
+      "mode": "fix",
+      "duration": "12s",
+      "value": "xFF0000",
+      "brightness": 20,
+      "onvalue": "neo/d2?value=$v",
+      "onbrightness": "neo/d2?brightness=$v"
+    }
+  }
+}
+```
+
+When using fast animations within the color element the color element can 
+send the current value and brightness to a light element 
+
+Here is the same example where a color element is controlling a NeoElement with 8 LEDS
+but using a direct connect:
+
+
+``` json
+{
+  "neo": {
+    "d4": {
+      "pin": "D4",
+      "count": 8
+    }
+  },
+  "color": {
+    "l": {
+      "title": "Color Control",
+      "config": "RGB",
+      "mode": "fix",
+      "duration": "12s",
+      "value": "xFF0000",
+      "brightness": "20",
+      "connect": [
+        "neo/d4"
+      ]
+    }
+  }
+}
+```
 
 ## See also
 

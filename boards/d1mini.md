@@ -7,6 +7,10 @@ There are many different mini boards available with differend ESP processors.
 
 They share the position of 2 connectors with 8 pins that are compatible to a certain degree.
 
+* 11 digital input/output pins
+* 1 analog input(3.2V max input)
+* 3V3, 5V, GND and RST are always in the same position 
+
 
 ## D1 mini ESP8266
 
@@ -31,8 +35,10 @@ and includes:
 The D1 mini pro board is based on the ESP8266 MCU and 4 MByte flash memory chip
 and includes:
 
-* Lipo charger
-* i2c connector using ??? standard
+* Built-in PCB antenna or External antenna connector
+* Lithium battery interface, 500mA Max charging current with a PH 2.0 connector
+* i2c connector using the Qwiic standard JST SH 4-pin (1mm)
+* RST and GPIO16 can be connected using a solder spot on the back to support deep sleep mode.  
 
 ![d1mini pro](/boards/d1minipro.jpg)
 
@@ -74,4 +80,6 @@ There are several shields available for these boards.
 
 ![d1mini pins](/boards/d1mini.png)
 
+* WeMos D1 Boards: <https://www.wemos.cc/en/latest/d1/index.html>
+* WeMos Shields: <https://www.wemos.cc/en/latest/d1_mini_shield/index.html>
 * <https://homeding.github.io/dev/i2c.htm>
