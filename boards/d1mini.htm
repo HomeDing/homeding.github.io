@@ -47,6 +47,11 @@
       
     <p>There are many different mini boards available with differend ESP processors.</p>
 <p>They share the position of 2 connectors with 8 pins that are compatible to a certain degree.</p>
+<ul>
+<li>11 digital input/output pins</li>
+<li>1 analog input(3.2V max input)</li>
+<li>3V3, 5V, GND and RST are always in the same position</li>
+</ul>
 <h2>D1 mini ESP8266</h2>
 <p>The D1 mini boards use a ESP8266 MCU and 4 MByte flash memory chip.</p>
 <p>(no picture)</p>
@@ -62,8 +67,10 @@ and includes:</p>
 <p>The D1 mini pro board is based on the ESP8266 MCU and 4 MByte flash memory chip
 and includes:</p>
 <ul>
-<li>Lipo charger</li>
-<li>i2c connector using ??? standard</li>
+<li>Built-in PCB antenna or External antenna connector</li>
+<li>Lithium battery interface, 500mA Max charging current with a PH 2.0 connector</li>
+<li>i2c connector using the Qwiic standard JST SH 4-pin (1mm)</li>
+<li>RST and GPIO16 can be connected using a solder spot on the back to support deep sleep mode.</li>
 </ul>
 <p><img src="/boards/d1minipro.jpg" alt="d1mini pro"></p>
 <h2>C3 pico</h2>
@@ -93,6 +100,8 @@ using a ESP32  MCU and 4 MByte flash memory chip.</p>
 <h2>See also</h2>
 <p><img src="/boards/d1mini.png" alt="d1mini pins"></p>
 <ul>
+<li>WeMos D1 Boards: <a href="https://www.wemos.cc/en/latest/d1/index.html">https://www.wemos.cc/en/latest/d1/index.html</a></li>
+<li>WeMos Shields: <a href="https://www.wemos.cc/en/latest/d1_mini_shield/index.html">https://www.wemos.cc/en/latest/d1_mini_shield/index.html</a></li>
 <li><a href="https://homeding.github.io/dev/i2c.htm">https://homeding.github.io/dev/i2c.htm</a></li>
 </ul>
 
