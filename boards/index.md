@@ -48,9 +48,12 @@ The following boards with 4 MBytes flash memory have been used for development a
 
 {{ imgCard(collections.all, item = '/boards/nodemcu') }}
 
+{{ imgCard(collections.all, item = '/boards/d1mini') }}
+
 {{ imgCard(collections.all, item = '/boards/wifikit8') }}
 
 {{ imgCard(collections.all, item = '/boards/witty') }}
+
 
 :::board wemosoled
 The **[Wemos labeled board with OLED](/boards/wemosoled.md)** is a ESP-12E with OLED display.

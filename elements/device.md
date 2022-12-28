@@ -61,6 +61,8 @@ Because there is only 1 bus available in the Arduino boards the configuration is
 > **I2C-SDA** - the data line of the i2c bus.
 >
 > **I2C-SCL** - the clock line of the i2c bus.
+>
+> **I2C-frequency** - the clock speed on the i2c bus in Hz. Default is `100000` Hz. Can be reduced or changed up to `1000000` Hz.
 
 The device Element is only defining what pins are used for the I2C bus but does no further initialization.
 

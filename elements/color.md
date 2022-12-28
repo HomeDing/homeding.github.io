@@ -156,6 +156,7 @@ but using a direct connect:
   "neo": {
     "d4": {
       "pin": "D4",
+      "config": "rgb",
       "count": 8
     }
   },

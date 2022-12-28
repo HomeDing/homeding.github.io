@@ -134,6 +134,13 @@ The following env.json file can be used on these boards:
     }
   },
 
+  "ntptime": {
+    "0": {
+        "ntpserver": "pool.ntp.org",
+        "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+    }
+  },
+
   "ssdp": {
     "0": {
       "manufacturer": "Matthias Hertel"

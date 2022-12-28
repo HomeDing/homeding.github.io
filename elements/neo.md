@@ -34,12 +34,12 @@ The following properties are available for configuration of the element.
 
 **value** - Is used for color mode to pass a list of colors like `red,blue,green,white` . See explanation for `Color mode` below, 
 
+**config** - Neo Pixels my have different colors on the channels. Can be set to `rgb` or `grb` (default).
+
 **mode** - The effect to be used. See below
 
 **duration** in msecs - This parameter is used to specify the number you of milliseconds for a transition in a color animation
 or fading from one value to another. When not specified the value 0 is used to make the new value effective immediately.
-
-
 
 
 ## Color mode
