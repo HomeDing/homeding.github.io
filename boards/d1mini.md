@@ -97,6 +97,7 @@ The SHT30 shield with a digital temperature and humidity sensor
 can be stacked upon a board or by using a Qwiic connector cable.
 {% endimgcard %}
 
+<!-- Micro SD Shield v1.2.0   -->
 
 ## See also
 
