@@ -8,7 +8,7 @@
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <title>NO-TITLE</title>
+  <title>RDA 5807 FM Radio Tuner</title>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
   <style>
@@ -40,23 +40,27 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h1>CHECKS</h1>
-<h2>collections</h2>
-<p>[&quot;all&quot;,&quot;Steps&quot;,&quot;WIP&quot;,&quot;Board&quot;,&quot;Implementation&quot;,&quot;System&quot;,&quot;Element&quot;,&quot;Display&quot;,&quot;Sensor&quot;,&quot;Time&quot;,&quot;Input&quot;,&quot;Light&quot;,&quot;Network&quot;,&quot;WebElement&quot;,&quot;Recipe&quot;,&quot;Receipe&quot;,&quot;Example&quot;,&quot;Story&quot;,&quot;Audio&quot;]</p>
-<h2>Test excerptOf</h2>
-<p>The MapElement creates actions based on an in-bound value and range definitions.</p>
-<h2>Steps files with excerpts</h2>
-<ul><li><a href="/steps/arduinosetup.htm">Step by Step setting up the Arduino environment</a><br />
-These are the steps to follow to setup a basic arduino development environment that allows programming new software to the original Arduino boards.
-</li><li><a href="/steps/newdevice.htm">Step by Step Bring your device to work</a><br />
-This is a step by step instruction to bring a device based on the HomeDing library to work.
-</li><li><a href="/steps/configure.htm">Step by Step configuring a device using the builtin IDE</a><br />
-The configuration of HomeDing based devices is based on 2 files located in the filesystem:  env.json, config.json. They can be changed by using the built-in editor.
-</li><li><a href="/steps/newelement.htm">Create and extend a new Element</a><br />
-How to add new functionality to a HomeDing based device by adding new Elements to support a specific functionality, sensor, chip, network service and more.
-</li><li><a href="/steps/updateweb.htm">Step by Step uploading the files for the built-in web server</a><br />
-There are some options to upload / update the files in the filesystem of a device using the HomeDing library. These are outlined here in detail so you can find the procedure that fits best to your setup an situation. 
-</li></ul>
+    <p>The RDA5807 radio chip is available in several variants.</p>
+<p>It supports the following features</p>
+<ul>
+<li>FM in range 50 - 115 MHz</li>
+<li>RDS Information</li>
+<li>Output Volume control</li>
+<li>Digital adaptive noise cancellation</li>
+<li>Bass Boost</li>
+<li>Analog Line Level Output.</li>
+<li>Frequency spacing 25KHz, 50KHz, 100KHz, 200KHz</li>
+<li>Programmable de-emphasis (50/75 µs)</li>
+<li>I2C Control</li>
+</ul>
+<p>The RDA5807 radio chip is one of the radio chips supported by the
+<a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>.</p>
+<h2>RDA5807M Module</h2>
+<p>The RDA5807 radio chip is available on small boards including the resonator and some capacitors
+that can easily be used by soldering wires or connector pins to it.</p>
+<p><img src="rda5807m-pins.png" alt="Alt text" title="w200"></p>
+<h2>RDA5807M Module with LCD Example</h2>
+<p><img src="rda5807m-example.png" alt="Alt text"></p>
 
   </main>
 
