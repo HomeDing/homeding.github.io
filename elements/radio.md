@@ -31,6 +31,8 @@ To make the Radio Element available for configuration it needs to be included in
 The RadioDing example uses this element to create a remote controllable radio that uses the 
 RDA5807M radio chip from RDA Microelectronics or SI473xx radio chips from Silicon.
 
+
+
 Look into the [Radio example](/examples/radio.md) for details.
 -->
 
@@ -72,6 +74,7 @@ Some stations use this to give additional info so there might be also other text
 
 * [Radio example](/examples/radio.md)
 * [radio library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
+* [RDA5807 FM Tuner](/elements/audio/rda5807.md)
 * <https://www.hackster.io/CesarSound/am-fm-sw-radio-receiver-si4730-si4735-79438f>
 * SI4730 board <https://www.aliexpress.com/i/32288294783.html>
 

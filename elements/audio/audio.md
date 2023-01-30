@@ -21,7 +21,6 @@ The AudioElement just adds a thin wrapper to configure and control the library. 
 
 There can only be one AudioElement created per device.
 
-
 ## Element Configuration
 
 The properties correspond to the api given by the audio library.
@@ -54,7 +53,8 @@ However not all features are yet support by configuration.
 \* This parameter is mandatory and must be set.
 The element also supports RDS signals for the chips that decode these signals.
 
-{% include "./elementproperties.md" %}
+{% include "../elementproperties.md" %}
+
 
 ### Example configuration
 

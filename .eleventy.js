@@ -15,13 +15,11 @@ module.exports = function (eleventyConfig) {
   // Copy any images and css to `_site`, via Glob pattern (in 0.9.0+)
   // Keeps the same directory structure.
 
-  eleventyConfig.ignores.add(".git/**");
   eleventyConfig.ignores.add("_site/**");
-  eleventyConfig.ignores.add("node_modules/**");
   eleventyConfig.ignores.add(".vscode/**");
 
-  const contentFolders = ["boards", "boards/esp32", "concepts", "dev", "displays", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
-  const assetFolders = ["i", "v02", "v02m", "v03", "v03m", "v09", "v09m", "home"];
+  const contentFolders = ["boards", "boards/esp32", "concepts", "dev", "displays", "elements/audio", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
+  const assetFolders = ["i", "v03", "v03m", "v09", "v09m", "home"];
 
   contentFolders.forEach(f => {
     eleventyConfig.addPassthroughCopy(f + "/*.svg");
