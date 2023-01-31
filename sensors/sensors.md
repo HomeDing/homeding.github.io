@@ -485,14 +485,14 @@ There is a very specific example that shows how to use the HomeDing and the [Rad
 :::sensor si4721
 The **si4721** is a FM Transceiver that can receive and send FM Audio.
 
-The [Radio Element](/elements/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library supporting only receiving mode.
+The [Radio Element](/elements/audio/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library supporting only receiving mode.
 :::
 
 
 :::sensor si4730
 The **si4730** is a AM/FM Radio Receiver chip and module.  
 
-The [Radio Element](/elements/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library.
+The [Radio Element](/elements/audio/radio.md) is available as an experimental implementation in the DevDing example using the Arduino Radio library.
 :::
 
 ## See also
