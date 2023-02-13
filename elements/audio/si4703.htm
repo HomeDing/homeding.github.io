@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <title>SI4703 FM Radio Tuner</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>SI4703 FM Radio Tuner</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    The SI4703 created by Silicon Labs and now owned by SkyWorks is a radio chip for receiving FM stereo radio signals and RDS information.
+</div>
+      
+    <p>The SI4703 supports the following features</p>
+<ul>
+<li>FM in range 76 - 108 MHz</li>
+<li>RDS Information</li>
+<li>Output Volume control</li>
+<li>Digital adaptive noise cancellation</li>
+<li>Analog Line Level Output.</li>
+<li>Frequency spacing 50KHz, 100KHz, 200KHz</li>
+<li>Programmable de-emphasis (50/75 µs)</li>
+<li>I2C Control</li>
+</ul>
+<p>The SI4703 radio chip is one of the radio chips supported by the <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>.</p>
+<h2>SI4703 Modules</h2>
+<p>There are multiple variants if modules with a si4703 radio chip available. Here 2 versions I got.
+They both have a SI4703 but with different Firmware versions. The first 4 numbers on th chip will tell you:</p>
+<ul>
+<li><code>0316</code> is a SI4703 with Firmware 16 (on the left)</li>
+<li><code>0319</code> is a SI4703 with Firmware 19 (on the right)</li>
+</ul>
+<p>Both work.</p>
+<p><img src="si4703-modules.jpg" alt="2 different si4703 modules"></p>
+<h2>Starting with a SI4703 module</h2>
+<p>The <code>TestSI4703</code> example is a good starting sketch for your setup before adding maybe more peripherals.
+It shows that the radio chip can tune a fixed Frequency.</p>
+<p>A SI4703 module has to be connected by using the following connections:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Arduino UNO</th>
+<th>ESP8266</th>
+<th>ESP32</th>
+<th>Radio chip signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCC (red)</td>
+<td>3.3V</td>
+<td>3v3</td>
+<td>3v3</td>
+<td>VCC</td>
+</tr>
+<tr>
+<td>GND (black)</td>
+<td>GND</td>
+<td>GND</td>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>SCL (yellow)</td>
+<td>A5 / SCL</td>
+<td>D1</td>
+<td>22</td>
+<td>SCLK</td>
+</tr>
+<tr>
+<td>SDA (blue)</td>
+<td>A4 / SDA</td>
+<td>D2</td>
+<td>21</td>
+<td>SDIO</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>D2</td>
+<td>D5</td>
+<td></td>
+<td>RST</td>
+</tr>
+</tbody>
+</table>
+<p>The Reset signal is somehow special for this chip and must be connected as it is used together with the SDA line
+in the startup phase to tell the chip to use the I2C protocol.</p>
+<p>These two signals also mut be configured to the radio class before calling the <code>initWire</code> function
+and the Wire interface must not be used before.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// SI4703 special pins.</span><br>radio<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span>RADIO_RESETPIN<span class="token punctuation">,</span> RESET_PIN<span class="token punctuation">)</span><span class="token punctuation">;</span><br>radio<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span>RADIO_MODEPIN<span class="token punctuation">,</span> MODE_PIN<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Change the Station in the sketch to a frequency with a signal that is strong on your place and upload.</p>
+<h2>Using SI4703 Modules with other Examples</h2>
+<p>In the other examples you may have to activate the line that uses a SI4703 Class for the global radio variable.</p>
+<p>Also make sure that the SI4703 special pins RESET and SDA are configured.</p>
+<h2>Register Overview</h2>
+<p><img src="si4703-registers.png" alt="Alt text"></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/audio/radio.htm">Radio Element</a></li>
+<li><a href="/examples/radio.htm">Radio example</a></li>
+<li><a href="https://www.skyworksinc.com/en/Products/Audio-and-Radio/Si4702-03-FM-Radio-Receivers/Si4703">https://www.skyworksinc.com/en/Products/Audio-and-Radio/Si4702-03-FM-Radio-Receivers/Si4703</a></li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/audio.htm">Audio</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
