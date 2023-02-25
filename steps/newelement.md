@@ -32,14 +32,14 @@ These implementations assume there is a NodeMCU (or compatible) board in use.
 
 ## Simplest Implementation - MyElement-01.h
 
-This is an implementation of the original non-blocking BlinkWithoutDelay sketch wrapped inside a class definition.
+This is an implementation of the original non-blocking BlinkWithoutDelay sketch wrapped inside a Element class definition.
 
 How to re-arrange code into a class is well known in the Arduino world as all libraries are written this way to offer reusable functionality.
 The Elements in the HomeDing library follow this approach as well. 
 
 In the class you can find the 2 functions `setup()` and `loop()` implemented.
 
-The source code can be found in the "MyElement-01.h" file in the [DevDing example](/examples/devding.md) folder.
+The source code can be found in the "MyElement-01.h" file in the [tutorial example](/examples/tutorial.md) folder.
 
 To include this Element-wrapped coding in your firmware the header and initialization must be present to your sketch.
 You can copy the whole implementation into your sketch file or uncomment the `#include` code in the DevDin example.
@@ -270,6 +270,11 @@ In this example the configured pin and the interval values are shown.
   </div>
 </div>
 ```
+
+## See also
+
+* [template example](/examples/template.md)
+
 
 
 [^hostname]: replace `homeding` with the network name of your device to use this link.

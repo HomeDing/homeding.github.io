@@ -93,6 +93,14 @@ The Arduino ESP32 supports this variant.
 
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
 
+## ESP32-S3 boards
+
+The ESP32-S3 variant of the ESP32 is also supported.
+The Arduino ESP32 supports this variant.
+
+{{ imgCard(collections.all, item = '/boards/esp32/lilygo-t-dongle-s3') }}
+
+
 ## Devices based on Esp8266
 
 ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.

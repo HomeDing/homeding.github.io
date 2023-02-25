@@ -25,12 +25,12 @@ host a compfortable Web application to display and modify what happens inside th
 There are different methods available on how to upload / update these files in the filesystem of a device. These are outlined here so you can find the procedure that fits best to your setup an situation.
 
 
-## [Configuring a device using the builtin IDE](http://localhost:8080/steps/configure.htm)
+## [Configuring a device using the builtin IDE](/steps/configure.htm)
 
 The configuration of HomeDing based devices is based on 2 files located in the filesystem: env.json, config.json. They can be changed by using the built-in editor.
 
 
-## [Create and extend a new Element](http://localhost:8080/steps/newelement.htm)
+## [Create and extend a new Element](/steps/newelement.htm)
 
 How to add new functionality to a HomeDing based device by adding new Elements to support a specific functionality, sensor, chip, network service and more.
 

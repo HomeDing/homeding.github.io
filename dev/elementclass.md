@@ -18,7 +18,7 @@ In addition Elements can expose very specific REST services to expose element sp
 ## Minimal Element implementations
 
 There is a step-by-step example on [How to create and extend a new Element](/steps/newelement.md)
-and the related "MyElement" implementation filescan be found in the [DevDing example](/examples/devding.md).
+and the related "MyElement" implementation filescan be found in the [Tutorial example](/examples/tutorial.md).
 
 
 ## Cooperative Elements
