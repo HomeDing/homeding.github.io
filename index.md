@@ -4,8 +4,9 @@ description: An Arduino Library that makes IoT devices building easy.
 layout: "homepage.njk"
 excerpt: >
   The HomeDing library is a low code to build small IoT devices
-  without the need for cloud services 
-  connected to the local WiFi by using the Arduino development environment.
+  without the need for cloud services.
+  They are connected to your home WiFi and have a built-in web server with a rich user interface.
+  Make your own by using the Arduino development environment.
 ---
 
 ## Making IoT easy

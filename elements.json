@@ -225,7 +225,7 @@
   },
 
   "light": {
-    "properties": ["pin", "duration"],
+    "properties": ["pin", "duration", "mode"],
     "events": ["value", "enable", "brightness"]
   },
 

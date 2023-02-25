@@ -2,17 +2,17 @@
 
 This is **Work in progress**
 
-https://github.com/LilyGO/T5-4Inch7-Doc/blob/main/source/introduction/index.rst
+<https://github.com/LilyGO/T5-4Inch7-Doc/blob/main/source/introduction/index.rst>
 
-https://github.com/Xinyuan-LilyGO/LilyGo-EPD47
-https://github.com/vroland/epdiy
-
-
-https://hackaday.io/project/168193-epdiy-976-e-paper-controller
-https://github.com/G6EJD/ESP32-e-Paper-Weather-Display
+<https://github.com/Xinyuan-LilyGO/LilyGo-EPD47>
+<https://github.com/vroland/epdiy>
 
 
-ILYGO T5 EPD47 development board onboard features:
+<https://hackaday.io/project/168193-epdiy-976-e-paper-controller>
+<https://github.com/G6EJD/ESP32-e-Paper-Weather-Display>
+
+
+LILYGO T5 EPD47 development board onboard features:
 
 * ESP32-D0WD-Q6
 * 4.7-inch e-ink screen
