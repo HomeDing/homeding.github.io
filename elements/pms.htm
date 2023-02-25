@@ -62,14 +62,13 @@
 <p>This sensor has its own onboard processor driving a laser based particle detection in a constant flow of air.
 It communicates the results of measurement every second using a 9600 baud serial interface.</p>
 <p>The PMS5003 device should be attached using the following connections:</p>
-<pre><code>ESP8266         PMS5003
+<p>ESP8266         PMS5003
 +5V             pin1, VCC   (black)
 GND             pin2, GND   (red)
-+3.3V -- 10k -- pin3 SET
++3.3V – 10k – pin3 SET
 D5 (TX)         pin4 RXD    (red)
 D6 (RX)         pin5 TXD    (black)
-+3.3V -- 10k -- pin6 RESET
-</code></pre>
++3.3V – 10k – pin6 RESET</p>
 <p>(as suggested by the plantower-pms5003-manual_v2-3.pdf)</p>
 <p>The 10k resistors are not strictly required as the pins seem to be internally pulled to VCC as well.</p>
 <h2>Sensor Interface</h2>

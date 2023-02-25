@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='USB stick board with display and ESP32-S3.'>
+  <title>LilyGO T-Dongle S3</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>LilyGO T-Dongle S3</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display, a APA102 LED, a input button and SD card slot.
+</div>
+      
+    <h2>Features</h2>
+<p>The following features are available on this board.</p>
+<h3>Input Button</h3>
+<p>The input button on the back of the stick pulls the esp32-pin 0 down when pressed.</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Button</td>
+<td>GPIO0</td>
+</tr>
+</tbody>
+</table>
+<h3>Color LED</h3>
+<p>APA102 LED</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Clock</td>
+<td>39</td>
+</tr>
+</tbody>
+</table>
+<p>APA102 LEDs are currently not supported by the HomeDing Library.</p>
+<!-- TODO: APA102Element similar to NEOElement -->
+<h3>ST7735 based display</h3>
+<p>The display has a 80 * 160 resolution and is using the following pins:</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS</td>
+<td>GPIO4</td>
+</tr>
+<tr>
+<td>MOSI</td>
+<td>GPIO3</td>
+</tr>
+<tr>
+<td>CLK</td>
+<td>GPIO5</td>
+</tr>
+<tr>
+<td>DC</td>
+<td>GPIO2</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>GPIO1</td>
+</tr>
+<tr>
+<td>LED</td>
+<td>GPIO38</td>
+</tr>
+</tbody>
+</table>
+<h3>SD Card</h3>
+<p>#define SD_MMC_D0_PIN  14
+#define SD_MMC_D1_PIN  17
+#define SD_MMC_D2_PIN  21
+#define SD_MMC_D3_PIN  18
+#define SD_MMC_CLK_PIN 12
+#define SD_MMC_CMD_PIN 16</p>
+<h3>Diag output</h3>
+<pre class="language-txt"><code class="language-txt">I2C pins sda=-1 scl=-1<br>Reset Reason: 12<br> Free Heap: 310160<br> Mac-address: F4:12:FA:41:38:18<br>Chip-Info:<br>  model: ESP32-S3(9)<br>  features: 00000012<br>    2.4GHz WiFi<br>    Bluetooth LE<br>  cores: 2<br>  revision: 0<br>ChipModel: ESP32-S3<br>Flash:<br>  Size: 16777216<br>  Mode: QIO(0)<br>  Speed: 80000000</code></pre>
+<h2>Board configuration</h2>
+<p>The following <code>env.json</code> configuration can be used for this board and contains settings for</p>
+<ul>
+<li>The device in general</li>
+<li>The ST7735 based display</li>
+<li>A value and pwm output to control the display brightness</li>
+<li>The digital input signal definition for the button on the back.</li>
+</ul>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"dongle-s3"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-S3 based USB stick."</span><span class="token punctuation">,</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"T-Dongle-S3"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"38"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"DisplayST7735"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"80"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"160"</span><span class="token punctuation">,</span><br>      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">270</span><span class="token punctuation">,</span><br>      <span class="token property">"spiClk"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span><br>      <span class="token property">"spiMosi"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span><br>      <span class="token property">"spiDC"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">1</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Brightness"</span><span class="token punctuation">,</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"128"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"pwmout/displayled?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Backlight"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight LED dimming"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"38"</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Board test config</h2>
+<p>For first testing purpose the following configuration in <code>config.json</code> can be used:</p>
+<ul>
+<li>Dispay the current time on the display</li>
+</ul>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the time"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="https://www.lilygo.cc/products/t-dongle-s3">https://www.lilygo.cc/products/t-dongle-s3</a></li>
+<li><a href="https://github.com/Xinyuan-LilyGO/T-Dongle-S3">https://github.com/Xinyuan-LilyGO/T-Dongle-S3</a></li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/board.htm">Board</a><a href="/tag/wip.htm">Wip</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

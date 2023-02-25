@@ -64,7 +64,7 @@ enough for text and graphics with selected colors.</p>
 <h2>Dimming the display</h2>
 <p>Some displays support to control the background light by using a distinct GPIO output signal.
 The brightness pin can be configured and will be used by the display adapter or driver to control the brightness of the display.</p>
-<p>Displays based on OLED technology do not need a background light and brightness must be adjusted by commands to the display chip itself.</p>
+<p>Displays based on TFT technology need a background light. This is often available on a GPIO pin and may be dimmed using PWM output.</p>
 <h2>Rotating the Display</h2>
 <p>Displays are often part of boards and are used in various rotations.</p>
 <p>The rotation can be configured using the values 0, 90, 180 and 270 and will be used to initialize the display adapter or driver.</p>

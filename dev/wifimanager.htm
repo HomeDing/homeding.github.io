@@ -139,22 +139,19 @@ Defaults is <code>GPIO0(D3)</code></p>
 <h2>Information in the Serial Monitor</h2>
 <p>A device starting without a network configuration will go into WiFi Manager mode.</p>
 <p>The information you can find in the Log on the Serial Monitor includes:</p>
-<pre><code>00:00:03 sys:i Device starting...
+<p>00:00:03 sys:i Device starting…
 00:00:03 &gt;HomeDing                    // Startup Welcome Message
-00:00:03 &gt;config.. HomeDing5D26A5     // Config mode and Name of Setup-Network
-00:00:03 sys:i  AP-IP: 192.168.4.1    // IP Address of the device
-</code></pre>
+00:00:03 &gt;config… HomeDing5D26A5     // Config mode and Name of Setup-Network
+00:00:03 sys:i  AP-IP: 192.168.4.1    // IP Address of the device</p>
 <p>After choosing the network and entering the passPhrase in the setup dialog using <a href="http://192.168.4.1/$setup">http://192.168.4.1/$setup</a>:</p>
-<pre><code>00:01:07 &gt;setup network DEVNET        // chosen Network name
+<p>00:01:07 &gt;setup network DEVNET        // chosen Network name
 00:01:15 &gt;ok.                         // access could be established
-00:01:15 sys:i reboot...              // reboot for new configuration
-</code></pre>
+00:01:15 sys:i reboot…              // reboot for new configuration</p>
 <p>A regular startup will follow:</p>
-<pre><code>00:00:03 sys:i Device starting...
+<p>00:00:03 sys:i Device starting…
 00:00:03 &gt;HomeDing                    // Startup Welcome Message
 00:00:13 &gt;ESP-5D26A5 192.168.2.229    // Device name and IP address on the new network
-00:00:13 sys:i ESP-5D26A5 (192.168.2.229) connected to DEVNET (unsafe mode)
-</code></pre>
+00:00:13 sys:i ESP-5D26A5 (192.168.2.229) connected to DEVNET (unsafe mode)</p>
 <p>The device is now reachable using <a href="http://ESP-5D26A5">http://ESP-5D26A5</a> or <a href="http://192.168.2.229">http://192.168.2.229</a></p>
 <!-- ## WPS
 NOT IMPLEMENTED YET
