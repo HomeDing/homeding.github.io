@@ -42,7 +42,7 @@ because it is not used very frequently.
 It can be registered and added to the firmware by including the definition of
 HOMEDING_INCLUDE_SHT20 in the sketch:
 
-``` CPP
+``` cpp
 #define HOMEDING_INCLUDE_SHT20
 ```
 
