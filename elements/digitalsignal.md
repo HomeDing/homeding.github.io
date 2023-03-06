@@ -1,7 +1,6 @@
 ---
 title: Digital Signal Element
 icon: digitalsignal
-icon: digitalin
 tags: ["Element", "Input"]
 layout: "page.njk"
 description: Support digital input signals to create actions. 
