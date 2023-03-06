@@ -77,5 +77,5 @@ The internal value can be seen in the rotary state but should not directly be us
 
 ## See also
 
-* Value Element
+* [Value Element](/elements/value.md)
 * [Recipe: Dimming a LED using a Rotary Encoder](/recipes/ledrotary.md)

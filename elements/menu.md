@@ -1,15 +1,11 @@
 ---
 title: Menu Element
-id: menu
+icon: menu
 tags: ["Element"]
 excerpt: >
   The MenuElement allows controlling multiple values or switches by using a single rotary encoder.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 In the configuration a list of elements is defined that can be controlled.
 

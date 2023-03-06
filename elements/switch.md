@@ -1,15 +1,11 @@
 ---
 title: Switch Element
-id: switch
+icon: switch
 tags: ["Element"]
 excerpt: >
   The SwitchElement is used to toggle the state of a boolean value to on or off by a single action.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 It is implemented as a special value element using the range 0 to 1 and can be used with the menu element.
 

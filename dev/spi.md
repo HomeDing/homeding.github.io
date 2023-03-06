@@ -1,7 +1,7 @@
 ---
 title: Using the SPI bus
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
 excerpt: >
   The SPI bus is used by components that require fast communication like displays and memory.
   A central configuration is supported on the device level.

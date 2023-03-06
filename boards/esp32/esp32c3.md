@@ -1,8 +1,8 @@
 ---
 title: ESP32-C3 Boards
-description: ESP32-C3 General purpose development boards
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP32-C3 General purpose development boards
 excerpt: >
   There are several ESP32-C3 DevKit Boards available using the ESP32-C3 chip.
   They are supported by the HomeDing library.

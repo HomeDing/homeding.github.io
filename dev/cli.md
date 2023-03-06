@@ -1,8 +1,8 @@
 ---
 title: Command Line CLI commands
-description: Update and config of devices using the command line
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
+description: Update and config of devices using the command line
 excerpt: >
   Hints and details on how to control many devices using a command line approach.
 ---
@@ -192,7 +192,7 @@ Usage: hd-restore <devicename> <target-ip-address|target-hostname>
 Starting the command with a devicename and current target-ip-address or target-hostname
 the configuration files in the .\configs folder will be uploaded to the target device.
 
-```txt
+``` txt
 ...\libraries\HomeDing>hd-restore.bat plug08 192.168.2.22
 
 HomeDing Configuration Restore Utility.
@@ -248,7 +248,7 @@ The `api` command allows calling a REST service on a device.
 
 Starting the command with no parameters will give you a brief help:
 
-```txt
+``` txt
 ...\libraries\HomeDing>hd-api
 
 HomeDing api utility to call services on a device on CLI.
@@ -264,7 +264,7 @@ Commands are: sysinfo, elements, list, state, state, reboot, reset, resetall, cl
 Using a command will invoke the corresponding api method on the device. The used URL is displayed and
 the result is shown.
 
-```txt
+``` txt
 ...\libraries\HomeDing>hd-api.cmd plug05 sysinfo
 
 HomeDing api utility to call services on a device on CLI.
@@ -296,7 +296,7 @@ The minimal and the standard example have a data folder with a complete set of t
 
 Starting the command with no parameters will give you a brief help:
 
-```txt
+``` txt
 ...\libraries\HomeDing>hd-webupload
 
 HomeDing upload utility uploading web files to device.

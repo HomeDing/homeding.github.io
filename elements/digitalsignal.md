@@ -1,8 +1,8 @@
 ---
 title: Digital Signal Element
-id: digitalsignal
+icon: digitalsignal
 icon: digitalin
-tags: ["Element"]
+tags: ["Element", "Input"]
 layout: "page.njk"
 description: Support digital input signals to create actions. 
 excerpt: >
@@ -44,6 +44,8 @@ The following properties are available for configuration of the element:
 
 ### Configuration Example
 
+This example shows how to configure this element:
+
 ``` json
 {
   "digitalsignal": {
@@ -79,8 +81,3 @@ The state of the DigitalSignal element available at runtime includes the current
 ## See also
 
 * [DigitalInput Element](/elements/digitalin.md)
-
-
-## Tags
-
-# element #input

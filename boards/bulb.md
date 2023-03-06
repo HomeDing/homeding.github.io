@@ -1,5 +1,6 @@
 ---
 title: Bulb Devices
+tags: ["Board", "Light"]
 layout: "page.njk"
 description: Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.
 ---
@@ -248,7 +249,3 @@ I used a programming setup for ESP-01 boards with some wires that can be soldere
 * <https://github.com/arendst/Sonoff-Tasmota/wiki/Tuya-OTA>
 * <https://templates.blakadder.com/bulb.html>.
 
-
-## Tags
-
-# element #light

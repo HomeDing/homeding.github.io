@@ -1,6 +1,6 @@
 ---
 title: WebButton Element
-id: button
+icon: button
 tags: ["WebElement", "WIP"]
 layout: "page.njk"
 excerpt: >

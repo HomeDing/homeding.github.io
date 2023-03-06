@@ -1,8 +1,8 @@
 ---
 title: Wifi Kit 8 Module ESP8266 with OLED
-description: ESP8266 General purpose development board with OLED
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP8266 General purpose development board with OLED
 excerpt: >
   The Wifi Kit 8 Module ESP8266 with OLED is a ESP8266 with 4k Flash, OLED display and Li-Polymer battery support. It has a slim size and fits well on breadboards.
 ---

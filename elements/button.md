@@ -1,6 +1,6 @@
 ---
 title: Button Element
-id: button
+icon: button
 tags: ["Element"]
 layout: "page.njk"
 description: Create actions based on digital input gestures.
@@ -59,7 +59,9 @@ The given value is `click`, `doubleclick` or `press`. This allows button actions
 It is typical to use the Button Element together with a [Digital Input Element](/elements/digitalin.md)
 that provides the input value to the Button Element.
 
-### Example Configuration
+### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {

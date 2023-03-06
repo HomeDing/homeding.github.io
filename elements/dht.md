@@ -107,7 +107,10 @@ The following properties are available for configuration of the element:
 
 \* This parameter must be specified.
 
+
 ### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {

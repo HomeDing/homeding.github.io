@@ -1,6 +1,6 @@
 ---
 title: Digital Output Element
-id: digitalout
+icon: digitalout
 tags: ["Element"]
 layout: "page.njk"
 description: Support digital output signals based on actions.
@@ -55,6 +55,8 @@ The physical output depends on `inverse`.
 
 
 ### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {

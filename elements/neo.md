@@ -1,8 +1,8 @@
 ---
 title: Neo Element
-id: neo
-layout: "page.njk"
+icon: neo
 tags: ["Element", "Light"]
+layout: "page.njk"
 ---
 
 Neopixels is a brand name for LED stripes with the ws2812 chip.
@@ -103,6 +103,3 @@ Example:
 * Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
 * [Light Element](/elements/light.md)
 
-
-## Tags
-#element #output #light

@@ -56,7 +56,9 @@ The element also supports RDS signals for the chips that decode these signals.
 {% include "../elementproperties.md" %}
 
 
-### Example configuration
+### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {

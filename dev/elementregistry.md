@@ -1,7 +1,7 @@
 ---
 title: Element Registry
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
 excerpt: >
   The ElementRegistry is the central class that knows all included and available
   Element classes to allow further creation and customization of new Elements by name at runtime.

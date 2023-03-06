@@ -1,8 +1,8 @@
 ---
 title: Light Element
-id: light
-layout: "page.njk"
+icon: light
 tags: ["Element", "Light"]
+layout: "page.njk"
 description: Support GPIO output pins for controlling lights with multiple color channels.
 excerpt: >
   The LightElement is used as a base class to control a light by WRGB Value and Brightness. It can control
@@ -50,7 +50,9 @@ There are some simple colors available by name:
 | #ffffffff   | white |
 
 
-### Example configuration
+### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {
@@ -89,6 +91,3 @@ There are no actions being sent by this element.
 * [NeoElement](/elements/neo.md)
 * Gamma correction tricks <https://learn.adafruit.com/led-tricks-gamma-correction>
 
-
-## Tags
-#element #output #light

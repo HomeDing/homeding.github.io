@@ -35,6 +35,7 @@ The non-inverted output value is on HIGH level when all input values are on HIGH
 
 ### Configuration Example
 
+This example shows how to configure this element:
 
 ``` json
 {

@@ -1,6 +1,6 @@
 ---
 title: Dallas Element
-id: Dallas
+icon: dallas
 tags: ["Element", "Sensor"]
 layout: "page.njk"
 description: Support of the Dallas / DS18B20 based sensors.
@@ -76,8 +76,10 @@ The following properties are available for configuration of the element:
 
 \* This parameter must be specified.
 
+
 ### Configuration Example
 
+This example shows how to configure this element:
 
 ``` json
 {

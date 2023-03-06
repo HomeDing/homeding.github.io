@@ -1,5 +1,6 @@
 ---
 title: Sonoff Basic (R1)
+tags: ["Board"]
 layout: "page.njk"
 excerpt: >
   The Sonoff Basic is a smart relay off-the-shelf product using a ESP8266 with 1MByte Flash.
@@ -119,7 +120,3 @@ The on-board button is pulling GPIO0 down and can be used to start the programmi
 * <http://www.andremiller.net/content/programming-an-itead-sonoff-wireless-smart-switch-esp8266>
 * <https://www.jackenhack.com/sonoff-switch-i2c/>
 
-
-## Tags
-
-# board

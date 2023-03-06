@@ -1,8 +1,8 @@
 ---
 title: Display LCD Element
 icon: displaylcd
-layout: "page.njk"
 tags: ["Element", "Display"]
+layout: "page.njk"
 description: Using LCD displays with a HD44780 controller chip.
 excerpt: >
   The Display Configuration for Monochrome LCDs based on HD44780 chips.

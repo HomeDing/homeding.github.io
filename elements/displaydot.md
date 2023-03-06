@@ -1,18 +1,14 @@
 ---
 title: DisplayDot Element
-id: displaydot
+icon: displaydot
 tags: ["Element"]
+layout: "page.njk"
 description: Displaying boolean values.
 excerpt: >
   The DisplayDot Element allows sending a boolean value to the display
   and show it at a specified position as a shallow or filled dot/circle.
   The value can be changed by using an action.
-layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 Because there may be more values presented on a display at the same time the
 DisplayDotElement may exist multiple times in the configuration by using different positions.
@@ -31,9 +27,9 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?displaydot" type="image/svg+xml"></object>
 
-**x** -- Specifies the x position of the dot/circle.                                                          
+**x** -- Specifies the x position of the dot/circle.
 
-**y** -- Specifies the y position of the dot/circle.                                                          
+**y** -- Specifies the y position of the dot/circle.
 
 ## Element Actions
 
@@ -43,11 +39,12 @@ The following actions can be sent to the element:
 
 **clear** -- The value is set to false and the display is updated.
 
-**redraw** -- The display is updated.                                                        
+**redraw** -- The display is updated.
 
 
 ### Configuration Example
 
+This example shows how to configure this element:
 
 ``` json
 {
@@ -80,7 +77,3 @@ The following properties are available with the current values at runtime
   }
 }
 ```
-
-
-## Tags
-#element #display

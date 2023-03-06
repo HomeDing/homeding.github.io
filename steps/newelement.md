@@ -1,7 +1,7 @@
 ---
 title: "Create and extend a new Element"
-layout: "page.njk"
 tags: ["Steps"]
+layout: "page.njk"
 date: "2022-03-01"
 excerpt: >
   How to add new functionality to a HomeDing based device by adding new Elements
@@ -45,13 +45,13 @@ To include this Element-wrapped coding in your firmware the header and initializ
 You can copy the whole implementation into your sketch file or uncomment the `#include` code in the DevDin example.
 Both option will enable that the MyElement-01.h code will be compiled within the sketch file:
 
-```cpp
+``` cpp
 #include "MyElement-01.h"
 ```
 
 In the setup function it is required to activate the new Element so the `setup()` and `loop()` functions are called:
 
-```cpp
+``` cpp
 // enable initialization line to see MyElement working
 homeding.add("my/1", new MyElement01());
 ```
@@ -171,7 +171,7 @@ Element *MyElement03::create()
 
 To activate a element the elements must be registered by a call that adds the class to the registry:
 
-```cpp
+``` cpp
 bool MyElement03::registered = ElementRegistry::registerElement("my", MyElement03::create);
 ```
 
@@ -194,14 +194,14 @@ The set function will get all the configuration parameters passed as key-value p
 
 In the header file the set function must be declared:
 
-```cpp
+``` cpp
 /** declare the set functionality. */
 bool set(const char *name, const char *value) override;
 ```
 
 The set function is implemented in the implementation file:
 
-```cpp
+``` cpp
 bool MyElement03::set(const char *name, const char *value) {
   bool ret = Element::set(name, value);
 
@@ -261,7 +261,7 @@ The html object must be placed inside the `<div id="u-templates" style="display:
 
 In this example the configured pin and the interval values are shown.
 
-```html
+``` html
 <div class="card" u-control="my" id="${id}" u-is="generic" microID="${id}">
   <div u-is="include" ref=".cHead"></div>
   <div class="block form-grid">

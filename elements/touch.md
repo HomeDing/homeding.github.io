@@ -53,6 +53,8 @@ A reference value can be set to create the binary value that is HIGH(1) when tou
 
 ### Configuration Example
 
+This example shows how to configure this element:
+
 ``` json
 {
   "touch": {

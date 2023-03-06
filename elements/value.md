@@ -1,8 +1,8 @@
 ---
 title: Value Element
-id: value
-layout: "page.njk"
+icon: value
 tags: ["Element"]
+layout: "page.njk"
 excerpt: >
   The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
   This can e.g. be used to drive a LED or a relay.

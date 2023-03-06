@@ -1,17 +1,13 @@
 ---
 title: PMS Element
-id: pms
+icon: pms
 tags: ["Element"]
+layout: "page.njk"
 description: Support of the PMS5003 air quality sensors.
 excerpt: >
   The PMSElement allows using the laser based air particle and pollution sensor
   PMS5003 from plantower to report the number of micro particles in the air.
-layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 ![PMS5003 sensor](/elements/pms5003.jpg)
 
@@ -110,7 +106,3 @@ You can use this sketch to verify that the sensor is communicating correctly in 
 * http://www.aqmd.gov/docs/default-source/aq-spec/resources-page/plantower-pms5003-manual_v2-3.pdf
 * http://luftdaten.info/
 * https://github.com/avaldebe/PMserial/blob/master/README.md
-
-
-## Tags
-#element #sensor

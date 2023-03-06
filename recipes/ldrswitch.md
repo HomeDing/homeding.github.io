@@ -49,7 +49,3 @@ The digital signal from the switch is given to an [Digital Output](/elements/dig
 * [Digital Output Element](/elements/digitalout.md)
 * [Switch Element](/elements/switch.md)
 
-## Tags
-
-#recipe
-

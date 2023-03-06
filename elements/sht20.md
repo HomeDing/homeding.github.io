@@ -23,7 +23,6 @@ In contrast to other sensors like [DHT20](/elements/dht.md) and [Dallas](/elemen
 
 SHT40 is replacement offering some faster response times and better accuracy.
 
-
 There are different housings and boards for the sensor available.
 
 ![SHT20 Sensor](/elements/sht20.jpg)
@@ -43,9 +42,9 @@ because it is not used very frequently.
 It can be registered and added to the firmware by including the definition of
 HOMEDING_INCLUDE_SHT20 in the sketch:
 
-'''CPP
+``` CPP
 #define HOMEDING_INCLUDE_SHT20
-'''
+```
 
 This element requires no extra library and the calculation for temperature and humidity from the raw values is included in the element implementation.
 
@@ -66,6 +65,8 @@ The following properties are available for configuration of the element:
 
 
 ### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {

@@ -1,6 +1,6 @@
 ---
 title: Device Element
-id: device
+icon: device
 tags: ["Element", "System"]
 layout: "page.njk"
 description: Support global device settings. 
@@ -102,7 +102,9 @@ The following action is implemented:
 
 <!-- reset , restart ??? -->
 
-## Configuration Example
+### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {

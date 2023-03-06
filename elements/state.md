@@ -1,7 +1,7 @@
 ---
 title: Store State
-layout: "page.njk"
 tags: ["Element"]
+layout: "page.njk"
 excerpt: >
   This element implements storing the current state in some other places as volatile variables.
 ---

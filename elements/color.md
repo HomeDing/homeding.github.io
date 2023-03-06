@@ -1,8 +1,8 @@
 ---
 title: Color Element
-id: color
-layout: "page.njk"
+icon: color
 tags: ["Element", "Light"]
+layout: "page.njk"
 description: Support Color values for light controlling elements. 
 excerpt: >
   The Color Element allows controlling a value for a light emitting element using the
@@ -46,14 +46,14 @@ while the white value from the sliders 4 is not shown.
 The following properties are available for configuration of the color element.
 
 > **config** - The color can be set to `RGB` or `WRGB` to include the white part in the value. Default is `RGB`.
-> 
+>
 > **mode** - The effect to be used. possible values are `fix`, `fade`, `wheel` and `pulse`.  
 > The default setting is is `fix`. See explanation for `Color mode` below.
-> 
+>
 > **value** - Is used to set the new color value in mode `fix` or `fade`.
-> 
+>
 > **duration** - This parameter is used to specify the time for a transition in mode `fade`, `wheel` and `pulse`.
-> 
+>
 > **brightness** - This parameter is used to specify the overall brightness of a light as a factor to the given color value
 > and effects.
 >
@@ -61,7 +61,7 @@ The following properties are available for configuration of the color element.
 > by the color element.
 >
 > **onValue** - These actions are send when the color value has changed.
-> 
+>
 > **onBrightness** - These actions are send when the brightness has changed.
 
 <!-- 
@@ -144,8 +144,8 @@ Here is an example where a color element is controlling a NeoElement with 8 LEDS
 }
 ```
 
-When using fast animations within the color element the color element can 
-send the current value and brightness to a light element 
+When using fast animations within the color element the color element can
+send the current value and brightness to a light element
 
 Here is the same example where a color element is controlling a NeoElement with 8 LEDS
 but using a direct connect:

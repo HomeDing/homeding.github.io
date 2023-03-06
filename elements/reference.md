@@ -1,15 +1,11 @@
 ---
 title: Reference Element
-id: reference
+icon: reference
 tags: ["Element"]
 excerpt: >
   The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 The output of comparing the 2 values can be used to switch a device on or off. This can be used e.g. to control heating or light
 based on the actual temperature or light brightness.
@@ -40,6 +36,8 @@ The value given in the actions is `0`.
 
 
 ### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {
@@ -81,8 +79,3 @@ The following properties are available with the current values at runtime
 * [Elements](/elements/index.md)
 * [Analog Element](/elements/analog.md)
 <!-- * [Thermostat Recipe](/recipes/thermostat.md) -->
-  
-
-## Tags
-
-#element #logic-element

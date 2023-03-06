@@ -1,7 +1,7 @@
 ---
 title: Portal
-description: Portal
 layout: "page.njk"
+description: Portal
 excerpt: >
   This Portal feature enables inspecting and controlling the local HomeDing devices
   by using a central web application.

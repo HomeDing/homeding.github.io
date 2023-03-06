@@ -1,6 +1,6 @@
 ---
 title: Sensor Element Implementation
-id: sensor
+icon: sensor
 tags: ["Element", "Implementation"]
 layout: "page.njk"
 excerpt: >

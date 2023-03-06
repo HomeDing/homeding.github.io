@@ -1,7 +1,7 @@
 ---
 title: Micro Templates
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
 excerpt: >
   The Template mechanism in the micro framework
   is used for dynamically assembling the UI as specified in the device configuration by using templates.

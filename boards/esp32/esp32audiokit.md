@@ -1,8 +1,8 @@
 ---
 title: Ai-Thinker ESP32 Audio Kit
-description: ESP32 Board with Audio features
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP32 Board with Audio features
 excerpt: >
   This is an ESP32 based board using the ESP-WROVER-B module supporting audio processing.
 ---

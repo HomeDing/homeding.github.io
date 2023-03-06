@@ -20,8 +20,10 @@ This element implements the following properties and actions:
 
 {% include "./elementproperties.md" %}
 
+
 ### Configuration Example
 
+This example shows how to configure this element:
 
 ``` json
 {

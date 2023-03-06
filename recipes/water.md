@@ -50,6 +50,3 @@ The central element is a switch that controls a relay on a digital output. There
   }
 }
 ```
-
-## Tags
-#recipe #timer

@@ -1,5 +1,6 @@
 ---
 title: Outdoor Sensor
+tags: ["Story"]
 layout: "page.njk"
 ---
 
@@ -389,10 +390,6 @@ The HomeDing library offers a lot of options that can be used to create more val
 * [BME680 Element](/elements/bme680.md) temperature, humidity, air pressure and air resistance.
 * [Story - Outdoor Sensor with Solar Panel](/stories/story-outdoorsensorsolar.md)
 * [Story - Outdoor Sensor](/stories/story-outdoorsensor.md)
-
-#### Tags
-
-#story #sensor #element #dht
 
 [Homeding library]: https://github.com/HomeDing
 [Log Element]: /elements/log.md

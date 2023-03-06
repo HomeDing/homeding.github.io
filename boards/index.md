@@ -1,8 +1,8 @@
 ---
 title: Boards
-description: Boards supported by the HomeDing library
-layout: "page.njk"
 tags: ["Board", "Implementation"]
+layout: "page.njk"
+description: Boards supported by the HomeDing library
 excerpt: >
   The HomeDing library can be used with the ESP8266 and ESP32 chips from Espressif.
   Here are some boards and devices supported by the HomeDing library.

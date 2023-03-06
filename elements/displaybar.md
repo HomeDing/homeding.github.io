@@ -1,18 +1,14 @@
 ---
 title: DisplayBar Element
-id: displaybar
+icon: displaybar
 tags: ["Element", "WIP"]
+layout: "page.njk"
 description: Displaying progress values. 
 excerpt: >
   The DisplayBarElement allows sending a progress indicating value to the display
   to display it at a specified position as a bar or percentage number.
   The value can be changed by using an action.
-layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 <!-- not implemented check doku ???  -->
 
@@ -47,8 +43,9 @@ The following properties are available with the current values at runtime
 **value** - Current output value of the element.
 
 
-## Configuration Example
+### Configuration Example
 
+This example shows how to configure this element:
 
 ``` json
 {
@@ -69,6 +66,3 @@ The following properties are available with the current values at runtime
   }
 }
 ```
-
-## Tags
-#element #display

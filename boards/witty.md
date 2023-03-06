@@ -1,8 +1,8 @@
 ---
 title: Witty-Board
-description: ESP8266 General purpose development boards with LDR and RGB led.
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP8266 General purpose development boards with LDR and RGB led.
 excerpt: >
   The Witty board offers a ESP8266-12F solution with a RGB LED, a LDR sensor and an input button. It can be used on a breadboard.
 ---
@@ -159,7 +159,3 @@ Taster: GPIO4(D2)
 * <https://www.faranux.com/product/witty-cloud-board/>
 * <https://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/>
 
-
-## Tags
-
-# board

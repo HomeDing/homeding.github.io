@@ -1,5 +1,6 @@
 ---
 title: Board Review ESP8266 with OLED
+tags: ["Board"]
 layout: "page.njk"
 ---
 

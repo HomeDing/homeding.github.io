@@ -1,8 +1,8 @@
 ---
 title: Building Connected Things Concepts
-description: Insights into the design of an IoT device,
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
+description: Insights into the design of an IoT device,
 excerpt: >
   The HomeDing library is made to build devices connected to a local WiFi network
   that deliver a full functional solution without the need to use a central

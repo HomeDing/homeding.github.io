@@ -49,6 +49,7 @@ TODO:
 ### Configuration Example
 
 This element requires no parameters.
+This example shows how to configure this element:
 
 ``` json
 {

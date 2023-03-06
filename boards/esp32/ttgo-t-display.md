@@ -1,8 +1,8 @@
 ---
 title: LilyGO TTGO T-Display
-description: ESP32 board with integrated TFT color display.
-layout: "page.njk"
 tags: ["Board", "WIP"]
+layout: "page.njk"
+description: ESP32 board with integrated TFT color display.
 excerpt: >
   The LilyGO TTGO T-Display board offer an integrated TFT color display and a USB-C type connector.
 ---
@@ -25,7 +25,7 @@ This board is not based on a ESP32 module but is using the ESP32-D0WD-Q6 process
 
 ## Connectors
 
-```txt
+``` txt
     +-------------+
     |   T T G O   |
 G   | +---------+ | 3V

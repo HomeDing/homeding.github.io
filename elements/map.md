@@ -1,6 +1,6 @@
 ---
 title: Map Element
-id: map
+icon: map
 tags: ["Element", "WIP"]
 layout: "page.njk"
 excerpt: >

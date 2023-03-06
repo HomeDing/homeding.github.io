@@ -1,5 +1,6 @@
 ---
 title: Pie Microchart
+tags: ["Implementation", "System"]
 layout: "page.njk"
 ---
 
@@ -62,9 +63,4 @@ The **clear()** method will remove the pie completely.
 * [Micro Charts](/dev/microcharts.md)
 * [Line Chart](/dev/microchart-line.md)
 * [Gauge Chart](/dev/microchart-gauge.md)
-
-
-## Tags
-
-#microchart
 

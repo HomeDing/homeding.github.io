@@ -1,8 +1,8 @@
 ---
 title: CORE-ESP32C3 development board
-description: ESP32C3 board with LCD and digital joystick.
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP32C3 board with LCD and digital joystick.
 excerpt: >
   The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC
   that fits good on a breadboard and has the option for a LCD + digital joystick shield on top.

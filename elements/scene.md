@@ -1,16 +1,12 @@
 ---
 title: Scene Element
-id: scene
+icon: scene
 tags: ["Element"]
 excerpt: >
   The SceneElement is used to operate on a list of actions triggered by incoming actions.
   They can be send out step by step using a defined delay or by actions.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 In the configuration a list of `steps` is defined containing actions for other elements.
 
@@ -29,9 +25,9 @@ at a single place by using multiple scene definitions.
 A scene element can also be controlled over the network by using a simple links like:
 
 ``` txt
-http://homeding/$board/scene/day?start
-http://homeding/$board/scene/night?start
-http://homeding/$board/scene/stations?next
+http://homeding/api/state/scene/day?start=1
+http://homeding/api/state/scene/night?start=1
+http://homeding/api/state/scene/stations?next=1
 ```
 
 ## Element Configuration
@@ -57,6 +53,8 @@ This element implements the following properties and actions:
 
 
 ### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {
@@ -92,6 +90,8 @@ This element implements the following properties and actions:
 
 ## State
 
+Some internal values of the element can be observed in the state.
+
 ``` json
 {
   "scene/night": {
@@ -100,6 +100,6 @@ This element implements the following properties and actions:
 }
 ```
 
-## Tags
+## See also
 
-# element
+* [Select Element](/elements/select.md)

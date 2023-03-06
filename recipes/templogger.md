@@ -80,9 +80,6 @@ min. period and writes out the average of the collected values.
 }
 ```
 
-## Tags
-#recipe #sensor
-
 [DHT Sensor]:/elements/dht.md
 [DHT Element]:/elements/dht.md
 [Logging Element]:/elements/log.md

@@ -108,6 +108,3 @@ For sending out to 2 remote elements the 2 remote configurations are used.
   }
 }
 ```
-
-## Tags
-#recipe #sensor #remote #display

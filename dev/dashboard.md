@@ -1,10 +1,10 @@
 ---
 title: Dashboard
+layout: "page.njk"
 description: Dashboards
 excerpt: >
   This is an example of a dashboard for a indoor air quality sensor device
   like the one described in the [Airquality story](/stories/story-airquality.md).
-layout: "page.njk"
 ---
 
 {{excerpt}}

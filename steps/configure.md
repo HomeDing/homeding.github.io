@@ -27,7 +27,7 @@ On new devices the `env.json` and `config.json` files will not exist as they are
 
 The minimal file of env.json should contain a device element configuration to define the name of the device on the network.
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -52,7 +52,7 @@ device, ota, ssdp, ntptime, displays.
 
 The config.json file is created the same way as the env.json file. The minimal content of this file can be empty or a JSON without element definitions.
 
-```json
+``` json
 {}
 ```
 

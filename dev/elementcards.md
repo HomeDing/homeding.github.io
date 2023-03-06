@@ -1,8 +1,8 @@
 ---
 title: HTML Templates for Elements
-description: Element specific UI templates.
-layout: "page.njk"
 tags: ["Implementation", "WIP"]
+layout: "page.njk"
+description: Element specific UI templates.
 excerpt: >
   For displaying elements of a HomeDing device on the config and landing pages of the
   [Builtin Web server](/concepts/paper04.md) there are is collection of templates

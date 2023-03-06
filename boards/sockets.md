@@ -122,7 +122,7 @@ Using a Nous socket is almost the same setup but some pins are used differently.
 
 Also a HLW8012 is used inside with varying factors for power, current and voltage.
 
-```json
+``` json
 {
   "device": {
     "0": {
@@ -136,7 +136,7 @@ Also a HLW8012 is used inside with varying factors for power, current and voltag
 }
 ```
 
-```json
+``` json
 {
   "digitalin": {
     "button": {

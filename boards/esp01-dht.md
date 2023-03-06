@@ -1,5 +1,6 @@
 ---
 title: ESP-01board with DHT22
+tags: ["Board"]
 layout: "page.njk"
 ---
 
@@ -71,7 +72,3 @@ The config.json file should contain the following configuration. More options ar
 * [ESP-01 board](/boards/esp01.md)
 * [Outdoor sensor with solar](/stories/story-outdoorsensorsolar.md)
 
-
-## Tags
-
-#board

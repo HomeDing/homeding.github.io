@@ -1,5 +1,6 @@
 ---
 title: Line Microchart
+tags: ["Implementation", "System"]
 layout: "page.njk"
 ---
 
@@ -152,16 +153,8 @@ ranges analog vertical axis implementation.
 
 ```
 
-
-
 ## See also
 
 * [Micro Charts](/dev/microcharts.md)
 * [Pie Chart](/dev/microchart-pie.md)
 * [Gauge Chart](/dev/microchart-gauge.md)
-
-
-## Tags
-
-#microchart
-

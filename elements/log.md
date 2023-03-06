@@ -1,17 +1,13 @@
 ---
 title: Log Element
-id: log
+icon: log
 tags: ["Element"]
+layout: "page.njk"
 description: Support logging of values into a file in the filesystem.
 excerpt: >
   The LogElement enables storing timestamp based values e.g. from a sensor
   into a local file to be analyzed or displayed later by the Web UI.
-layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 This enables using sensor values to be displayed in graphs in the Web UI for this element.
 
@@ -54,6 +50,8 @@ See [Line Microchart](/dev/microchart-line.md) for supported data types.
 
 
 ### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {
@@ -139,7 +137,3 @@ It is possible to pass multiple values that are separated by a `;` character in 
 The notation `value[0]=` is equal to using `value=` with a single value.
 
 -->
-
-## Tags
-
-#element #sensor #data

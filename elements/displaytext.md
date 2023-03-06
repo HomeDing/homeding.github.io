@@ -1,7 +1,7 @@
 ---
 title: DisplayText Element
 icon: displaytext
-tags: ["Element"]
+tags: ["Element", "Display"]
 layout: "page.njk"
 description: Displaying text values.
 excerpt: >
@@ -22,17 +22,17 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?displaytext" type="image/svg+xml"></object>
 
-**x** -- Specifies the x position of the text.                                                          
+**x** -- Specifies the x position of the text.
 
-**y** -- Specifies the y position of the text.                                                          
+**y** -- Specifies the y position of the text.
 
-**clear** -- This property set to any value will remove the text from the display.                          
+**clear** -- This property set to any value will remove the text from the display.
 
-**prefix** -- This text is always send to the display as a prefix to the value.                              
+**prefix** -- This text is always send to the display as a prefix to the value.
 
-**postfix** -- This text is always send to the display as a postfix to the value.                             
+**postfix** -- This text is always send to the display as a postfix to the value.
 
-**fontsize** -- This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize. 
+**fontsize** -- This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize.
 For the OLED drivers the font sizes 10, 16 and 24 are supported.
 
 Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
@@ -46,11 +46,12 @@ The following actions can be sent to the element:
 
 **clear** -- The value is cleared and the display is updated by sending prefix and postfix texts.
 
-**redraw** -- The value is sent to the display including prefix and postfix texts.                                                        
+**redraw** -- The value is sent to the display including prefix and postfix texts.
 
 
 ### Configuration Example
 
+This example shows how to configure this element:
 
 ``` json
 {
@@ -90,6 +91,3 @@ The following properties are available with the current values at runtime
   }
 }
 ```
-
-## Tags
-#element #display

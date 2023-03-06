@@ -1,5 +1,6 @@
 ---
 title: Sonoff S20
+tags: ["Board"]
 layout: "page.njk"
 excerpt: >
   The Sonoff S20 is a smart socket off-the-shelf product using a ESP8266 with 1MByte Flash.
@@ -97,7 +98,3 @@ This configuration allows switching the relay using the button and showing the r
 * [DigitalOut Element](/elements/digitalout.md)
 * <http://www.andremiller.net/content/programming-an-itead-sonoff-wireless-smart-switch-esp8266>
 
-
-## Tags
-
-# board

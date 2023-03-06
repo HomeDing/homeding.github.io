@@ -1,5 +1,6 @@
 ---
 title: NTP based clock with OLED
+tags: ["Recipe"]
 layout: "page.njk"
 ---
 
@@ -108,10 +109,6 @@ In `config.json` the display items and the time related actions are configured:
 * [DisplaySSD1306 Element]
 * [DisplaySSD1309 Element]
 * [DisplayText Element]
-
-
-## Tags
-#recipe #display
 
 [NTPTime Element]:/elements/ntptime.md
 [Time Element]:/elements/time.md

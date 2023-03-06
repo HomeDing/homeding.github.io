@@ -1,7 +1,7 @@
 ---
 title: WeatherFeed Element
-id: nn
-tags: ["Element"]
+icon: no
+tags: ["Element", "Input"]
 layout: "page.njk"
 ---
 
@@ -62,7 +62,7 @@ The location of the weather forecast
 
 **actions** / **actions** - The action to be dispatched.
 
-### Example Configuration
+### Configuration Example
 
 /data/2.5/onecall?units=metric&${loc}&exclude=current,hourly&appid=${key}
 
@@ -164,7 +164,3 @@ Here is a shortened example with comments from the response:
 * Anonymously accessible server is http://metaweather.com.
 
 * https://circuits4you.com/2019/03/22/esp8266-weather-station-arduino/
-
-
-## Tags
-#element #input

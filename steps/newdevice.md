@@ -76,7 +76,7 @@ It may take some time and if everything is fine you will see the HomeDing networ
 
 You may also look into the Serial output using the `Serial Monitor` of the Arduino Environment to see some messages about what is happening inside the device.
 
-```txt
+``` txt
 SDK:2.2.2-dev(38a443e)/Core:2.6.3=20603000/lwIP:STABLE-2_1_2_RELEASE/glue:1.2-16-ge23a07e/BearSSL:89454af
 00:00:02 sys:i Device starting...
 ...

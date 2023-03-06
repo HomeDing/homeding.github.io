@@ -1,6 +1,6 @@
 ---
 title: DMX Element
-id: nn
+icon: no
 tags: ["WIP"]
 layout: "page.njk"
 ---

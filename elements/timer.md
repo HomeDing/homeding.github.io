@@ -1,15 +1,11 @@
 ---
 title: Timer Element
-id: timer
+icon: timer
 tags: ["Element", "Time"]
 description: Create repeating events.
 excerpt: The TimerElement creates events based on a one-time or cyclic timing pattern.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 During the specified time period the output value will be switched on and off once. The timer can be restarted automatically.
 

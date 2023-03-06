@@ -1,15 +1,11 @@
 ---
 title: RFCodes Element
-id: nn
+icon: no
 tags: ["Element"]
 excerpt: >
   The **RFCodes Element** is used send and receive RF signals to simple switching and dimming devices.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 This Element is part of the RFBridge Example and not available in the core library elements. To use this element you can use the RFBridge Example or have to copy it into your sketch folder.
 

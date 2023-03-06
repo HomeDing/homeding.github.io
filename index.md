@@ -1,7 +1,7 @@
 ---
 title: The HomeDing Library
-description: An Arduino Library that makes IoT devices building easy.
 layout: "homepage.njk"
+description: An Arduino Library that makes IoT devices building easy.
 excerpt: >
   The HomeDing library is a low code to build small IoT devices
   without the need for cloud services.

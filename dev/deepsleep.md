@@ -158,7 +158,7 @@ The rules to defer the deep sleep mode allows configuring a device with the web 
 
 Here is a typical log output with some hints recorded after a hardware reset.
 
-```txt
+``` txt
 00:00:00 sys:i Device starting...
 00:00:04 sys:t connected.
 00:00:11 dht/on:t getProbe()
@@ -184,7 +184,7 @@ like `http://homeding/api/device/0?nosleep` to block any sleep mode from executi
 
 Here is a typical log output with some hints recorded after a wake-up reset from deep sleep mode.
 
-```txt
+``` txt
 00:00:00 sys:i Device starting...
 00:00:00 sys:i Reset from Deep Sleep mode.
 00:00:02 sys:t connected.

@@ -312,6 +312,7 @@ offtime
 Ohm
 OLED
 on
+onbrightness
 onchange
 onClick
 onCurrent
@@ -511,5 +512,7 @@ WLAN
 WRGB
 wroom
 xFormat
+xrrggbb
+xwwrrggbb
 yFormat
 zone

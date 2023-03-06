@@ -1,6 +1,6 @@
 ---
 title: MQTT Element
-id: mqtt
+icon: mqtt
 tags: ["Element", "Network"]
 layout: "page.njk"
 description: publishing values to a MQTT Sever
@@ -77,7 +77,7 @@ This configuration simply publishes a single temperature value
 This configuration publishes 2 values from the DHT sensor
 using the wildcard publish mechanism:
 
-```json
+``` json
 "dht": {
   "on": {
     ...

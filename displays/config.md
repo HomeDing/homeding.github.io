@@ -1,8 +1,8 @@
 ---
 title: Display Configuration
 tags: ["Element", "Display"]
-description: Parameters to configure display support.
 layout: "page.njk"
+description: Parameters to configure display support.
 excerpt: >
   The displays in the HomeDing library are configured by a unified set of parameters.
 ---

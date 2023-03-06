@@ -68,7 +68,9 @@ The following properties are available for configuration of the element:
 {% include "./elementproperties.md" %}
 
 
-### Example Configuration
+### Configuration Example
+
+This example shows how to configure this element:
 
 ``` json
 {

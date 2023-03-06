@@ -1,6 +1,6 @@
 ---
 title: Digital Sequence Element
-id: digitalsequence
+icon: digitalsequence
 tags: ["Element", "WIP"]
 layout: "page.njk"
 description: Support digital input signals to create actions. 

@@ -1,8 +1,8 @@
 ---
 title: D1 Mini Boards (ESP8266 and ESP32)
-description: ESP8266 General purpose development boards with same form factor.
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP8266 General purpose development boards with same form factor.
 excerpt: >
   There are many different mini boards available with differend ESP processors
   that share the same form factor and connector pin assignments.

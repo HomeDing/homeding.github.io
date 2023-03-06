@@ -1,16 +1,12 @@
 ---
 title: Multicast DNS Service
-id: mdns
+icon: mdns
 tags: ["Element", "System"]
 excerpt: >
   The mDNS service is used as the standard device discovery mechanism for HomeDing devices.
   This allows finding all devices in the home network.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 
 Multicast DNS (mDNS) is a protocol that sends one to many network packages containing DNS information records. This is also known as `zeroconf` or `bonjour` protocol and allows finding network devices

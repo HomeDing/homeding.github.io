@@ -1,8 +1,8 @@
 ---
 title: LilyGO T-Dongle S3
-description: USB stick board with display and ESP32-S3.
-layout: "page.njk"
 tags: ["Board", "WIP"]
+layout: "page.njk"
+description: USB stick board with display and ESP32-S3.
 excerpt: >
   The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display,
   a APA102 LED, a input button and SD card slot.
@@ -29,8 +29,8 @@ APA102 LED
 
 | function | ESP32 pin |
 | -------- | --------- |
-| Data     | 40     |
-| Clock    | 39     |
+| Data     | 40        |
+| Clock    | 39        |
 
 APA102 LEDs are currently not supported by the HomeDing Library.
 
@@ -53,19 +53,20 @@ The display has a 80 * 160 resolution and is using the following pins:
 
 ### SD Card
 
+| function | ESP32 pin |
+| -------- | --------- |
+| CLK      | GPIO12    |
+| CMD      | GPIO16    |
+| D0       | GPIO14    |
+| D1       | GPIO17    |
+| D2       | GPIO21    |
+| D3       | GPIO18    |
 
-
-#define SD_MMC_D0_PIN  14
-#define SD_MMC_D1_PIN  17
-#define SD_MMC_D2_PIN  21
-#define SD_MMC_D3_PIN  18
-#define SD_MMC_CLK_PIN 12
-#define SD_MMC_CMD_PIN 16
 
 
 ### Diag output
 
-```txt
+``` txt
 I2C pins sda=-1 scl=-1
 Reset Reason: 12
  Free Heap: 310160
@@ -143,7 +144,18 @@ The following `env.json` configuration can be used for this board and contains s
       "range": "255",
       "inverse": "1"
     }
+  },
+  "sdmmc": {
+    "0": {
+      "mmcD0": "14",
+      "mmcD1": "17",
+      "mmcD2": "21",
+      "mmcD3": "18",
+      "mmcCLK": "12",
+      "mmcCMD": "16"
+    }
   }
+
 }
 ```
 

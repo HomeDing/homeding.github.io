@@ -1,7 +1,7 @@
 ---
 title: Embedded Web Site for IoT Devices
-description: Dashboard and Configuration Editor for IoT devices.
 layout: "page.njk"
+description: Dashboard and Configuration Editor for IoT devices.
 ---
 
 :::excerpt

@@ -21,7 +21,7 @@ A link to this URL is also present on the default page index.htm.
 
 #### Example with comments
 
-```json
+``` json
 {
   "devicename": "displayding", // network name of the device
   "build": "Jan 2 2019",       // build-date of the uploaded sketch
@@ -69,7 +69,7 @@ This REST service returns an array with all elements that are implemented in the
 
 Example:
 
-```json
+``` json
 [
   "ssdp", "ota", "device", "time", "remote", "ntptime", "dstime", "serialcmd", "value", "button",
   "analog", "timer", "schedule", "digitalout", "pwmout", "displaytext", "displaydot", "displayLCD",
@@ -84,7 +84,7 @@ This service is required for the network configuration page (/$setup) and return
 
 This service has to be called multiple times. The first time starts scanning and results will be available some seconds later.
 
-```json
+``` json
 [
   { "id": "VVBLHH09092", "rssi": "-83", "open": "0" },
   { "id": "devnet", "rssi": "-67", "open": "0" },
@@ -106,7 +106,7 @@ This service returns the state of all existing elements running in the device.
 
 Example:
 
-```json
+``` json
 {
   "device/0": {
     "active": "true",
@@ -126,7 +126,7 @@ Example:
 
 This service returns the state of the element addressed by the more specific url. It is an excerpt of the full state above.
 
-```json
+``` json
 {
   "dht/on": {
     "active": "true",

@@ -1,16 +1,12 @@
 ---
 title: NTPTime Element
-id: ntptime
+icon: ntptime
 tags: ["Element", "Time"]
 description: Support getting local time from the internet using NTP protocol.
 excerpt: >
   The NTPTimeElement can retrieve the local time from an external ntp server on the internet.
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 The NTPTimeElement is one of the time elements that are used to get a local time from a external source
 and to adjust the `real local time`w on the board.
@@ -88,7 +84,3 @@ The following properties are available with the current values at runtime
 ## See also
 
 * [Time Elements](/elements/timeelements.md)
-
-
-## Tags
-#element #time

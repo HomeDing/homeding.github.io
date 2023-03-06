@@ -1,8 +1,8 @@
 ---
 title: Common Functionality or Elements
-description: Details on the common functionality provided by the Element base class.
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
+description: Details on the common functionality provided by the Element base class.
 excerpt: >
   Details on the common functionality provided by the Element base class.
 ---

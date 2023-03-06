@@ -1,16 +1,12 @@
 ---
 title: OTA Element
-id: ota
+icon: ota
 tags: ["Element"]
 excerpt: >
   The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA).
   **The update doesn't work in safemode** see [safemode](/dev/safemode.md);
 layout: "page.njk"
 ---
-
-::: excerpt {{id}}
-{{excerpt}}
-:::
 
 The OTAElement enables the upload of new sketch versions to the device over the network using the standard Arduino network based upload procedure. When this element is configured the device shows up in the list of ports in the Arduino programming environment.
 
@@ -70,10 +66,6 @@ use it like:
 
 - [safemode](/dev/safemode.md)
 - Hardening the IoT device: https://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html
-
-## Tags
-
-#element #system
 
 <!--
 

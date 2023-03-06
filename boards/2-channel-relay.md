@@ -1,5 +1,6 @@
 ---
 title: 2 channel relay
+tags: ["Board"]
 layout: "page.njk"
 excerpt: >
   This board can switch 2 relay outputs using a ESP-01 board.
@@ -143,8 +144,3 @@ A cooling fan that has 4 levels of speed (0,1,2,3)  air fans
 * [DigitalOut Element](/elements/digitalout.md)
 
 <!-- * <https://www.youtube.com/watch?v=qahdTG4TE-A> -->
-*
-
-## Tags
-
-# board

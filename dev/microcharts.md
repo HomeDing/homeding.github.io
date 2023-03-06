@@ -1,9 +1,8 @@
 ---
 title: Micro Charts
+tags: ["Implementation", "System", "WIP"]
 layout: "page.njk"
 ---
-
-??? WIP
 
 Some visuals on the board and index implementation are not based on HTML but on SVG technology to visualize data.
 
@@ -97,8 +96,4 @@ The **clear** method removes the actual data and deletes all elements representi
 * [Pie Chart](/dev/microchart-pie.md)
 * [Gauge Chart](/dev/microchart-gauge.md)
 
-
-## Tags
-
-#microchart
 

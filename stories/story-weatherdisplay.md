@@ -1,7 +1,7 @@
 ---
 title: Build a Weather forecast display
-layout: "page.njk"
 tags: ["WIP"]
+layout: "page.njk"
 ---
 
 **This is Work in progress** <!-- TODO: -->

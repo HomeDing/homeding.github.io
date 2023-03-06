@@ -1,6 +1,6 @@
 ---
 title: DCFTime Element
-id: dcftime
+icon: dcftime
 tags: ["Element", "Time", "WIP"]
 layout: "page.njk"
 description: Support DCF77 signals to get current time over the air. 

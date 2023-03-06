@@ -1,7 +1,7 @@
 ---
 title: WiFi Manager Details
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
 excerpt: >
   The WiFi-Manager is a module in the HomeDing library to register a device in the local network.
   It is implemented in every device in the board class.

@@ -1,8 +1,8 @@
 ---
 title: White Adapter board for ESP8266
-description: ESP8266 board for using ESP-12 on breadboards.
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP8266 board for using ESP-12 on breadboards.
 excerpt: >
    This 'white' adapter board helps soldering ESP-12 of similar boards in regular breadboards and prototype boards.
    The signals are straight forward routed from the board to the connectors with some exceptions only:

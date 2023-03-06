@@ -1,8 +1,8 @@
 ---
 title: Implementation Details
-description: Hints for implementing and extending Elements and the Web UI
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
+description: Hints for implementing and extending Elements and the Web UI
 excerpt: >
   Hints and details on how to implement new and extend existing elements using an Arduino programming
   environment and how to implement new cards for the dashboards.

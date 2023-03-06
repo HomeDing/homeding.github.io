@@ -1,7 +1,7 @@
 ---
 title: Micro JavaScript Framework
-layout: "page.njk"
 tags: ["Implementation"]
+layout: "page.njk"
 excerpt: >
   The UI for HomeDing devices is 
   implementation by using a small and specialized clients side framework fousing on a small implementation footprint to make it usable in embedded devices.

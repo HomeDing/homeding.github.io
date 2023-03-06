@@ -27,6 +27,8 @@ The up to 8 input values can be used for calculation. When no input value is giv
 
 ### Configuration Example
 
+This example shows how to configure this element:
+
 ``` json
 {
   "add": {

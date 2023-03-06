@@ -1,6 +1,6 @@
 ---
 title: Radio Element
-id: radio
+icon: radio
 tags: ["Element", "WIP"]
 layout: "page.njk"
 excerpt: >

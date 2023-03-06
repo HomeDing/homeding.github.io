@@ -1,8 +1,8 @@
 ---
 title: ESP8266 NodeMCU development boards
-description: ESP8266 General purpose development boards
-layout: "page.njk"
 tags: ["Board"]
+layout: "page.njk"
+description: ESP8266 General purpose development boards
 excerpt: >
   The NodeMCU boards are one of the most common development boards.
   They offer an easy start into the ESP8266 development. The have all you need for programming, offer 4MByte flash memory and a LED on-board.
@@ -160,6 +160,3 @@ The following env.json file can be used on these boards:
 * ESP8266 board adoption for Arduino: <https://arduino-esp8266.readthedocs.io/en/latest/index.html>
 
 
-## Tags
-
-# board

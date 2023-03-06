@@ -1,5 +1,6 @@
 ---
 title: Gauge Microchart
+tags: ["Implementation", "System"]
 layout: "page.njk"
 ---
 
@@ -70,9 +71,3 @@ The **clear()** method will set the needle below minimum and clears the displaye
 * [Micro Charts](/dev/microcharts.md)
 * [Line Chart](/dev/microchart-line.md)
 * [Pie Chart](/dev/microchart-pie.md)
-
-
-## Tags
-
-#microchart
-
