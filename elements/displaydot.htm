@@ -45,14 +45,12 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaydot"></use></svg>
     
     The DisplayDot Element allows sending a boolean value to the display and show it at a specified position as a shallow or filled dot/circle. The value can be changed by using an action.
 </div>
       
-    <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaydot"></use></svg><p>The DisplayDot Element allows sending a boolean value to the display and show it at a specified position as a shallow or filled dot/circle. The value can be changed by using an action.</p>
-</div>
-<p>Because there may be more values presented on a display at the same time the
+    <p>Because there may be more values presented on a display at the same time the
 DisplayDotElement may exist multiple times in the configuration by using different positions.</p>
 <p>It is not required for all displays to support all these Elements and when a device only has a simple LCD
 attached maybe only using the DisplayTextElements is appropriate.</p>
@@ -69,6 +67,7 @@ attached maybe only using the DisplayTextElements is appropriate.</p>
 <p><strong>clear</strong> – The value is set to false and the display is updated.</p>
 <p><strong>redraw</strong> – The display is updated.</p>
 <h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaydot"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"b"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display a blinking dot"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
@@ -76,8 +75,6 @@ attached maybe only using the DisplayTextElements is appropriate.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaydot/b"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"1"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2>Tags</h2>
-<p>#element #display</p>
 
 
     

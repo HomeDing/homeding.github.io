@@ -45,7 +45,7 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaymax7219"></use></svg>
     
     The DisplayMAX7219 Element allows connecting  LED matrix based displays based on MAX7219 controller chips.
 </div>
@@ -126,8 +126,9 @@ On ESP8266 the standard SPI interface is used. On ESP32 the VSPI interface is us
 </tr>
 </tbody>
 </table>
-<h2>Configuration Example</h2>
-<p>The configuration of a display is given by the provided hardware and should be configured in the env.json file:</p>
+<h3>Configuration Example</h3>
+<p>The configuration of a display is given by the provided hardware and should be configured in the env.json file.</p>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"DisplayMAX7219"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span><br>      <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token string">"D3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>

@@ -45,14 +45,12 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaybar"></use></svg>
     
     The DisplayBarElement allows sending a progress indicating value to the display to display it at a specified position as a bar or percentage number. The value can be changed by using an action.
 </div>
       
-    <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaybar"></use></svg><p>The DisplayBarElement allows sending a progress indicating value to the display to display it at a specified position as a bar or percentage number. The value can be changed by using an action.</p>
-</div>
-<!-- not implemented check doku ???  -->
+    <!-- not implemented check doku ???  -->
 <p>Because there may be more values presented on a display at the same time the
 DisplayBarElement may exist multiple times in the configuration by using different positions.</p>
 <p>It is not required for all displays to support all these Elements and when a device only has a simple LCD
@@ -88,12 +86,11 @@ attached maybe only using the DisplayTextElements is appropriate.</p>
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
-<h2>Configuration Example</h2>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displayBar"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    ???<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Example State</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displayBar/on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"50.50"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2>Tags</h2>
-<p>#element #display</p>
 
 
     

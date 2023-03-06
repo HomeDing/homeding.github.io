@@ -45,7 +45,7 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#button"></use></svg>
     
     The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.</div>
       
@@ -76,7 +76,8 @@ The given value is <code>click</code>, <code>doubleclick</code> or <code>press</
 <h2>Control the Element</h2>
 <p>It is typical to use the Button Element together with a <a href="/elements/digitalin.htm">Digital Input Element</a>
 that provides the input value to the Button Element.</p>
-<h3>Example Configuration</h3>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"up button signal"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"button/up?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"button"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onClick"</span><span class="token operator">:</span> <span class="token string">"device/main?log=click."</span><span class="token punctuation">,</span><br>      <span class="token property">"onDoubleClick"</span><span class="token operator">:</span> <span class="token string">" device/main?log=doubleclick."</span><span class="token punctuation">,</span><br>      <span class="token property">"onPress"</span><span class="token operator">:</span> <span class="token string">" device/main?log=press."</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p><strong>active</strong> - Is set to true when the element is active.</p>

@@ -45,14 +45,12 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#remote"></use></svg>
     
     The RemoteElement allows sending actions to other elements in HomeDing devices on the network using http GET request.
 </div>
       
-    <div class="iconcard"><svg class="icon"><use href="/icons.svg#remote"></use></svg><p>The RemoteElement allows sending actions to other elements in HomeDing devices on the network using http GET request.</p>
-</div>
-<p>Every local defined remote element is a shadow of another element on a remote board and acts as a proxy for addressing the remote element as if it was part of the local configuration.</p>
+    <p>Every local defined remote element is a shadow of another element on a remote board and acts as a proxy for addressing the remote element as if it was part of the local configuration.</p>
 <p>It has its own local name like “remote/led” to be used in messages. The configuration of this element specifies the device/network name of the remote thing and the type and id of the element inside. The property name and the value is passed unchanged.</p>
 <p>Because network delivery is slow compared to local dispatching actions locally the action will be queued and executed one-by-one even when multiple actions are waiting to be send  out.</p>
 <p>The Remote Element can only send one message at a time but you can of course have multiple remote element definitions in a config.</p>

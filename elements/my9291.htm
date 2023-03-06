@@ -45,14 +45,12 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#led"></use></svg>
     
     The MY9291Element implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.
 </div>
       
-    <div class="iconcard"><svg class="icon"><use href="/icons.svg#no"></use></svg><p>The MY9291Element implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.</p>
-</div>
-<h2>Element Configuration</h2>
+    <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?my9291" type="image/svg+xml"></object></p>
 <p><strong>value</strong> - Is used for color mode to pass a list of colors like <code>red,blue,green,white</code>. See <a href="/elements/light.htm">LightElement</a>.</p>
@@ -61,6 +59,7 @@
 <p><strong>clockpin</strong> - Specifies the output pin that is used for the clock signal to the chip.</p>
 <p><strong>enabled</strong> - to enable / disable the light without loosing the current value and brightness.</p>
 <h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"my9291"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Couch-Lampe"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"50"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x00008000"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
@@ -73,13 +72,11 @@
 <ul>
 <li><a href="/elements/light.htm">LightElement</a></li>
 </ul>
-<h2>Tags</h2>
-<p>#element #output #light</p>
 
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="/tag/element.htm">Element</a></div>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/.htm"></a><a href="/tag/light.htm">Light</a></div>
     
   </main>
 

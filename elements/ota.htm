@@ -45,14 +45,12 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#ota"></use></svg>
     
     The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA). **The update doesn&#39;t work in safemode** see [safemode](/dev/safemode.md);
 </div>
       
-    <div class="iconcard"><svg class="icon"><use href="/icons.svg#ota"></use></svg><p>The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA). <strong>The update doesn't work in safemode</strong> see <a href="/dev/safemode.htm">safemode</a>;</p>
-</div>
-<p>The OTAElement enables the upload of new sketch versions to the device over the network using the standard Arduino network based upload procedure. When this element is configured the device shows up in the list of ports in the Arduino programming environment.</p>
+    <p>The OTAElement enables the upload of new sketch versions to the device over the network using the standard Arduino network based upload procedure. When this element is configured the device shows up in the list of ports in the Arduino programming environment.</p>
 <p>The OTAElement is a system element to enable this functionality only. It cannot send or receive actions.</p>
 <p>It uses the mDNS implementation to advertise the device for being reachable for updates.
 Since the OTA Element initializes the mDNS protocol to register on the network no mDNS library needs to be used and initiated explicitly.</p>
@@ -84,8 +82,6 @@ To use this tool you need to install Python 3 on your computer as well.</p>
 <li><a href="/dev/safemode.htm">safemode</a></li>
 <li>Hardening the IoT device: <a href="https://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html">https://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html</a></li>
 </ul>
-<h2>Tags</h2>
-<p>#element #system</p>
 <!--
 
 ## TODO:signed firmware

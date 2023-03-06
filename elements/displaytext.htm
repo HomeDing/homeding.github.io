@@ -70,6 +70,7 @@ For the OLED drivers the font sizes 10, 16 and 24 are supported.</p>
 <p><strong>clear</strong> – The value is cleared and the display is updated by sending prefix and postfix texts.</p>
 <p><strong>redraw</strong> – The value is sent to the display including prefix and postfix texts.</p>
 <h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"val"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"val="</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the value"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p>The <code>value</code> property can be used to make the displaytext to be visible. Using the browser you can set the value using <a href="http://homeding/$board/displaytext/val?value=hello">http://homeding/$board/displaytext/val?value=hello</a></p>
 <p>The <code>clear </code> property can be used to remove the text. <a href="http://homeding/$board/displaytext/val?clear=1">http://homeding/$board/displaytext/val?clear=1</a></p>
@@ -79,13 +80,11 @@ For the OLED drivers the font sizes 10, 16 and 24 are supported.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaytext/val"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"10"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2>Tags</h2>
-<p>#element #display</p>
 
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="/tag/element.htm">Element</a></div>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/display.htm">Display</a></div>
     
   </main>
 

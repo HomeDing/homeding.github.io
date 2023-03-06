@@ -45,7 +45,7 @@
 
     
     
-      <div class="iconcard"><svg class="icon"><use href="/icons.svg#digitalin"></use></svg>
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#digitalsignal"></use></svg>
     
     The DigitalSignalElement is used to handle digital input with short time level changes that might be missed when using the [DigitalInput Element](/elements/digitalin.md). On a changing input a pulse value is created with a defined duration.
 </div>
@@ -74,6 +74,7 @@ no action can be created so every detected digital signal change will incrementi
 </blockquote>
 <p>* This parameter must be specified.</p>
 <h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalsignal"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"d5"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Listen for level changes on pin D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"console/log?value=D5:$v"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>State</h2>
 <p>The state of the DigitalSignal element available at runtime includes the current values:</p>
@@ -85,13 +86,11 @@ no action can be created so every detected digital signal change will incrementi
 <ul>
 <li><a href="/elements/digitalin.htm">DigitalInput Element</a></li>
 </ul>
-<h2>Tags</h2>
-<h1>element #input</h1>
 
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="/tag/element.htm">Element</a></div>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/input.htm">Input</a></div>
     
   </main>
 

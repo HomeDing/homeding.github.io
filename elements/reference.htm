@@ -45,14 +45,12 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#reference"></use></svg>
     
     The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
 </div>
       
-    <div class="iconcard"><svg class="icon"><use href="/icons.svg#reference"></use></svg><p>The ReferenceElement allows creating actions by comparing an incoming value with a reference value.</p>
-</div>
-<p>The output of comparing the 2 values can be used to switch a device on or off. This can be used e.g. to control heating or light
+    <p>The output of comparing the 2 values can be used to switch a device on or off. This can be used e.g. to control heating or light
 based on the actual temperature or light brightness.</p>
 <!-- ## Web UI for the AND Element -->
 <h2>Element Configuration</h2>
@@ -67,6 +65,7 @@ The value given in the actions is <code>1</code>.</p>
 <p><strong>onLow</strong> - These actions are send when the value is below the reference value.
 The value given in the actions is <code>0</code>.</p>
 <h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"reference"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"temp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Heater Control"</span><span class="token punctuation">,</span><br>      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"digitalout/heater?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"1"</span><br>    <span class="token punctuation">}</span><br>...<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
@@ -80,8 +79,6 @@ The value given in the actions is <code>0</code>.</p>
 <li><a href="/elements/analog.htm">Analog Element</a></li>
 </ul>
 <!-- * [Thermostat Recipe](/recipes/thermostat.md) -->
-<h2>Tags</h2>
-<p>#element #logic-element</p>
 
 
     

@@ -108,9 +108,7 @@
 because it is not used very frequently.
 It can be registered and added to the firmware by including the definition of
 HOMEDING_INCLUDE_SHT20 in the sketch:</p>
-<p>‘’‘CPP
-#define HOMEDING_INCLUDE_SHT20
-‘’’</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_SHT20</span></span></code></pre>
 <p>This element requires no extra library and the calculation for temperature and humidity from the raw values is included in the element implementation.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
@@ -135,6 +133,7 @@ The default time is set to 3 seconds.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
 <h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"sht20"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"SHT20 Sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x40"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp: $v\u00dfC"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=hum: $v%"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>

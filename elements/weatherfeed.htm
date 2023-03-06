@@ -87,7 +87,7 @@ The location of the weather forecast</p>
 <p><strong>actions</strong> - a list of path and actions that create actions based on values from the server</p>
 <p><strong>actions</strong> / <strong>path</strong> - A path in the JSON result from the server</p>
 <p><strong>actions</strong> / <strong>actions</strong> - The action to be dispatched.</p>
-<h3>Example Configuration</h3>
+<h3>Configuration Example</h3>
 <p>/data/2.5/onecall?units=metric&amp;${loc}&amp;exclude=current,hourly&amp;appid=${key}</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"weatherfeed"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"api.openweathermap.org"</span><span class="token punctuation">,</span><br>      <span class="token property">"get"</span><span class="token operator">:</span> <span class="token string">"/data/2.5/onecall?units=metric&amp;${loc}&amp;exclude=current,hourly&amp;appid=${key}"</span><span class="token punctuation">,</span><br>      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"12345678901234567890123456789012"</span><span class="token punctuation">,</span><br>      <span class="token property">"loc"</span><span class="token operator">:</span> <span class="token string">"lat=50.23&amp;lon=8.65"</span><span class="token punctuation">,</span><br>      <span class="token property">"actions"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[1]/temp/day"</span><span class="token punctuation">,</span><br>          <span class="token property">"action"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp:$v"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[1]/humidity"</span><span class="token punctuation">,</span><br>          <span class="token property">"action"</span><span class="token operator">:</span> <span class="token string">"device/0?log=hum:$v"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[1]/weather/description"</span><span class="token punctuation">,</span><br>          <span class="token property">"action"</span><span class="token operator">:</span> <span class="token string">"device/0?log=is:$v"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span> </code></pre>
 <h3>Get Raw Result</h3>
@@ -107,13 +107,11 @@ The location of the weather forecast</p>
 <p><a href="https://circuits4you.com/2019/03/22/esp8266-weather-station-arduino/">https://circuits4you.com/2019/03/22/esp8266-weather-station-arduino/</a></p>
 </li>
 </ul>
-<h2>Tags</h2>
-<p>#element #input</p>
 
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="/tag/element.htm">Element</a></div>
+    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/input.htm">Input</a></div>
     
   </main>
 

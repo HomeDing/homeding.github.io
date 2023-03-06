@@ -45,7 +45,7 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#max7219"></use></svg>
     
     The MAX7219Element enables using a single 8*8 dot display or a single 8 digit 7-segment display by using a MAX7219 driver chip. For dot matrix displays using multiple chips the DisplayMAX7219 Element offers full display support.
 </div>
@@ -59,7 +59,8 @@
 <p><strong>cspin</strong> - The pin for the cs signal line.</p>
 <p><strong>brightness</strong> - The brightness of the display in range 0…16.</p>
 <p><strong>mode</strong> - <code>8x8</code> or <code>numeric</code>.</p>
-<h3>Example Configuration</h3>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"max7219"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"wordclock matrix"</span><span class="token punctuation">,</span><br>      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"8x8"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h3>Connecting the MAX7219</h3>
 <p>The MAX7219 is using the SPI interface and protocol to receive commands and data. There is no data sent by the MAX7219.</p>

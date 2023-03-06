@@ -45,7 +45,7 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#device"></use></svg>
     
     The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.
 </div>
@@ -118,7 +118,8 @@ until the next reboot a <code>nosleep</code> action can be send to the device el
 No settings are changed or cleared.</p>
 </blockquote>
 <!-- reset , restart ??? -->
-<h2>Configuration Example</h2>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"wmleaks"</span><span class="token punctuation">,</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Water Leakage"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Monitor water leaks at the washing machine"</span><span class="token punctuation">,</span><br>      <span class="token property">"room"</span><span class="token operator">:</span> <span class="token string">"Cellar"</span><span class="token punctuation">,</span><br>      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span><br>      <span class="token property">"sleeptime"</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"ding-info.htm"</span><span class="token punctuation">,</span><br>      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"I2C-SDA"</span> <span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"I2C-SCL"</span> <span class="token operator">:</span> <span class="token string">"D5"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>

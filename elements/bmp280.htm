@@ -45,7 +45,7 @@
 
     
     
-      <div class="plaincard">
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#bmp280"></use></svg>
     
     The BMP280 Element supports the BMP280 sensor chips for air temperature and air absolute barometric pressure.
 </div>
@@ -147,7 +147,8 @@ The default time is set to 3 seconds.</p>
 <p><strong>room</strong> - The location of the device.</p>
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
-<h3>Example configuration</h3>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bmp280"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"tp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x77"</span><span class="token punctuation">,</span><br>      <span class="token property">"readTime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendTime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onPressure"</span><span class="token operator">:</span> <span class="token string">"device/0?log=pressure=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>State</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bmp280/tp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"21.21"</span><span class="token punctuation">,</span><br>    <span class="token property">"pressure"</span><span class="token operator">:</span><span class="token string">"99784"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>

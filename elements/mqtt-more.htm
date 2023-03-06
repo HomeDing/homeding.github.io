@@ -40,7 +40,8 @@
   <nav class="inpage open"></nav>
 
   <main style="padding:1rem">
-    <h2>Setup a private mqtt server</h2>
+    <h1>More on MQTT</h1>
+<h2>Setup a private mqtt server</h2>
 <p><a href="https://mosquitto.org/man/mosquitto-conf-5.html">https://mosquitto.org/man/mosquitto-conf-5.html</a></p>
 <ul>
 <li><a href="http://www.steves-internet-guide.com/">http://www.steves-internet-guide.com/</a></li>
@@ -69,7 +70,8 @@
 <p><code>mathertel/feeds/counter/csv</code>.
 <code>mathertel/feeds/counter/json</code>.</p>
 <p><a href="https://io.adafruit.com/api/docs/mqtt.htm">https://io.adafruit.com/api/docs/mqtt.htm</a></p>
-<h3>Example configuration</h3>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"ada"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtts://mathertel:1234-1234-1234-1234@io.adafruit.com:8883"</span><span class="token punctuation">,</span><br>    <span class="token property">"topic"</span><span class="token operator">:</span> <span class="token string">"mathertel/feeds/counter"</span><span class="token punctuation">,</span><br>    <span class="token property">"fingerprint"</span><span class="token operator">:</span> <span class="token string">"59 3C 48 0A B1 8B 39 4E 0D 58 50 47 9A 13 55 60 CC A0 1D AF"</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p>{your Adafruit IO username}/feeds/{feed key}
 {your Adafruit IO username}/feeds/{feed key}/csv
@@ -87,15 +89,17 @@ Password: “3DES…PK4” (mentioned as <code>SECRET_DEVICE_KEY</code> in the c
 <p>The topics / feeds are named using the pattern</p>
 <p>“/a/d/” + <device-id> + “/e/o” for subscribing.
 “/a/d/” + <device-id> + “/e/i” for publishing.</p>
-<h3>Example configuration</h3>
-<pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"xx"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"https://mqtts-up.iot.arduino.cc:8884"</span><span class="token punctuation">,</span><br>    <span class="token property">"user"</span><span class="token operator">:</span> <span class="token string">"adce94ef-73ed-4386-a7ff-b1b9366b7232"</span><span class="token punctuation">,</span><br>    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"3DEWS9BVSYTH0HGAHPK4"</span><span class="token punctuation">,</span><br>    <span class="token property">"feed"</span><span class="token operator">:</span> <span class="token string">"/a/d/adce94ef-73ed-4386-a7ff-b1b9366b7232/e/i/temp"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"xx"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"https://mqtts-up.iot.arduino.cc:8884"</span><span class="token punctuation">,</span><br>    <span class="token property">"user"</span><span class="token operator">:</span> <span class="token string">"adce94ef-73ed-4386-a7ff-b1b9366b7232"</span><span class="token punctuation">,</span><br>    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"3DEWS9BVSYTH0HGAHPK4"</span><span class="token punctuation">,</span><br>    <span class="token property">"feed"</span><span class="token operator">:</span> <span class="token string">"/a/d/adce94ef-73ed-4386-a7ff-b1b9366b7232/e/i/temp"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br></code></pre>
 <h2><a href="http://public.mqtthq.com">public.mqtthq.com</a></h2>
 <p>This is one of the unsecured MQTT brokers on the internet driven by &lt;<a href="http://controlbits.com">controlbits.com</a>&gt;
 where you can publish and subscribe to values.</p>
 <p><a href="http://MQTTHQ.com">MQTTHQ.com</a> works without any account and all data you publish will be visible to anyone who knows the topic name.</p>
 <p>Data is not stored on the server so only connected clients will get an update.</p>
 <p>More information can be found on <a href="https://mqtthq.com">https://mqtthq.com</a>.</p>
-<h3>Example configuration</h3>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"xx"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"http://public.mqtthq.com:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"feed"</span><span class="token operator">:</span> <span class="token string">"mathertel/f/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"user"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">""</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <h2>raspberryPi with mosquitto</h2>
 <pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"dispi"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"http://dispi:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"feed"</span><span class="token operator">:</span> <span class="token string">"outdoor/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"user"</span><span class="token operator">:</span> <span class="token string">"homesa"</span><span class="token punctuation">,</span><br>    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"Home4mqtt"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
@@ -117,7 +121,7 @@ Add shortcut commands               ✔
 Update systemd script               ✔</p>
 <p>You can now start Node-RED with the command  node-red-start
 or using the icon under   Menu / Programming / Node-RED
-Then point your browser to localhost:1880 or http://{your_pi_ip-address}:1880</p>
+Then point your browser to localhost:1880 or <a href="http://%7Byour_pi_ip-address%7D:1880">http://{your_pi_ip-address}:1880</a></p>
 <p>Started :  Wed 13 Apr 2022 07:33:23 PM CEST
 Finished:  Wed 13 Apr 2022 07:36:39 PM CEST</p>
 <p>You may want to run   node-red admin init
@@ -176,7 +180,7 @@ TX[49]: 30 3E 00 2D 2F 61 2F 74 2F 32 32 34 62 38 34 63 39 2D 37 62 35 37 2D 34 
 TX[15]: 9F A2 00 64 74 65 6D 70 02 FA 41 A2 7A E1 FF
 “…dtemp…A.z…”</p>
 <p><a href="https://dzone.com/articles/setting-up-your-own-arduino-iot-cloud-server">https://dzone.com/articles/setting-up-your-own-arduino-iot-cloud-server</a></p>
-<h2>Sources:</h2>
+<h2>Sources</h2>
 <p><a href="https://github.com/arduino-libraries/ArduinoMqttClient/tree/master/examples">https://github.com/arduino-libraries/ArduinoMqttClient/tree/master/examples</a></p>
 <p><a href="https://makoserver.net/tutorials/">https://makoserver.net/tutorials/</a></p>
 <p>npm install node-red-contrib-chartjs</p>
