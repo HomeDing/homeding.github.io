@@ -47,9 +47,11 @@
     
       <div class="iconcard"><svg class="icon"><use href="/icons.svg#schedule"></use></svg>
     
-    The ScheduleElement creates events based on the current time.</div>
+    The ScheduleElement creates events based on the current time.
+</div>
       
-    <p>When using this element a real time retrieving element must be configured as well like the <a href="/elements/ntptime.htm">NTPTime</a> or <a href="/elements/dcftime.htm">DCFTime</a>.</p>
+    <p>When using this element a real time retrieving element must be configured as well
+like the <a href="/elements/ntptime.htm">NTPTime</a> or <a href="/elements/dcftime.htm">DCFTime</a>.</p>
 <p>One Schedule Element can be used to create a timespan during a day that creates 2 possible events.
 The first one when the <code>on</code>-time has passed and a second one when the <code>off</code>-time has passed.</p>
 <p>When starting the device the following events are emitted:</p>
@@ -60,16 +62,30 @@ The first one when the <code>on</code>-time has passed and a second one when the
 </ul>
 <p>The <code>onvalue</code> event is always emitted together with the <code>on</code> and <code>off</code> event situations.</p>
 <h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element:</p>
 <p><object data="/element.svg?schedule" type="image/svg+xml"></object></p>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
 <p><strong>title</strong> - Caption text for the element. Used in the boards.</p>
 <p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
-<p><strong>mode</strong> - The element supports 3 modes: <strong>“on”</strong> for always on, <strong>“off”</strong> for always off and <strong>&quot;timer</strong>&quot; for switching the value using the timer settings.</p>
+<p><strong>mode</strong> - The element supports 3 modes:</p>
+<ul>
+<li><strong>“on”</strong> for always on,</li>
+<li><strong>“off”</strong> for always off and</li>
+<li><strong>&quot;timer</strong>&quot; for switching the value using the timer settings.</li>
+</ul>
 <p><strong>ontime</strong> - Specifies the start of the time span.</p>
 <p><strong>offtime</strong> - Specifies the end of the time span.</p>
 <p><strong>onon</strong> - These actions are emitted when the on time has passed.</p>
 <p><strong>onoff</strong> - These actions are emitted when the off time has passed.</p>
 <p><strong>onvalue</strong> - These actions are emitted when the value is changing.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>

@@ -100,7 +100,7 @@
 <p>The library used to drive these displays is “LiquidCrystal_PCF8574”.</p>
 <h2>Web UI for the DisplaySH1106 Element</h2>
 <p>There is a dedicated card for this element available that will be used for the web server config and landing pages:</p>
-<p><img src="/elements/lcdui.png" alt="LCD Web UI"></p>
+<p><img src="/elements/display/lcdui.png" alt="LCD Web UI"></p>
 <p>This card shows the current output that can also be seen on the local attached display. It is updated every time the status of the device is polled by the page.</p>
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?lcd" type="image/svg+xml"></object></p>
@@ -108,8 +108,8 @@
 <p><strong>address</strong> the address of the display on the I2C bus. Defaults to 0x3C.</p>
 <p><strong>height</strong> the number of lines the display supports.</p>
 <p>The initialization of the I2C bus uses the SDA and SCL pins defined in the device configuration.</p>
-<p>To show some output on the display use the <a href="/elements/displaytext.htm">DisplayText Element</a>
-and the <a href="/elements/displaydot.htm">DisplayDot Element</a></p>
+<p>To show some output on the display use the <a href="/elements/display/text.htm">DisplayText Element</a>
+and the <a href="/elements/display/dot.htm">DisplayDot Element</a></p>
 <h2>Configuration</h2>
 <p>The DisplayLCD Element can be used to configure the LCDDisplayAdapter.</p>
 <p>This should be done in the <code>env.json</code> file:</p>
@@ -121,8 +121,8 @@ postfix text using the 16-bit UTC notation like <code>&quot;postfix&quot;: &quot
 <h2>See also</h2>
 <ul>
 <li><a href="/dev/i2c.htm">Using the I2C bus</a></li>
-<li><a href="/elements/displaytext.htm">DisplayText Element</a></li>
-<li><a href="/elements/displaydot.htm">Display Dot</a></li>
+<li><a href="/elements/display/text.htm">DisplayText Element</a></li>
+<li><a href="/elements/display/dot.htm">Display Dot</a></li>
 </ul>
 
 

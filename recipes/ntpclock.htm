@@ -54,8 +54,8 @@ In <code>config.json</code> the display elements and actions are configured.</p>
 <p><img src="/recipes/ntpclockpanel.png" alt="image"></p>
 <h2>Setup the Display</h2>
 <p>You may need to add a Display Element configuration in <code>env.json</code>.
-Here a <a href="/elements/ssd1306.htm">DisplaySSD1306 Element</a> is used but you can also use other
-displays like <a href="/elements/sh1106.htm">DisplaySH1106 Element</a> or <a href="/elements/ssd1309.htm">DisplaySSD1309 Element</a>.</p>
+Here a <a href="/elements/display/ssd1306.htm">DisplaySSD1306 Element</a> is used but you can also use other
+displays like <a href="/elements/display/sh1106.htm">DisplaySH1106 Element</a> or <a href="/elements/display/ssd1309.htm">DisplaySSD1309 Element</a>.</p>
 <h2>Setup the Time</h2>
 <p>The <a href="/elements/ntptime.htm">NTPTime Element</a> configures the ESP8266 system to use a ntp server from the internet to get the current time.
 This time always returns the greenwich time (GMT).
@@ -67,7 +67,7 @@ If there is a “summertime” period, the start and end of that period can be c
 <h2>Time Actions and Output</h2>
 <p>The <a href="/elements/time.htm">Time Element</a> can create actions based on the local time. This is used to update the display every second and every time the date changes.</p>
 <p>The <code>ondate</code> and <code>ontime</code> events from the <a href="/elements/time.htm">Time Element</a> send the current date / time information to the displayText elements.</p>
-<p>The <a href="/elements/displaytext.htm">DisplayText Element</a> defines the place on the display where the time will be shown.</p>
+<p>The <a href="/elements/display/text.htm">DisplayText Element</a> defines the place on the display where the time will be shown.</p>
 <h2>env.json configuration</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  ...<br><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"NTPServer"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <br>  <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"local display"</span><span class="token punctuation">,</span><br>      <span class="token property">"resetPin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">32</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>config.json configuration</h2>
@@ -77,10 +77,10 @@ If there is a “summertime” period, the start and end of that period can be c
 <ul>
 <li><a href="/elements/ntptime.htm">NTPTime Element</a></li>
 <li><a href="/elements/time.htm">Time Element</a></li>
-<li><a href="/elements/sh1106.htm">DisplaySH1106 Element</a></li>
-<li><a href="/elements/ssd1306.htm">DisplaySSD1306 Element</a></li>
-<li><a href="/elements/ssd1309.htm">DisplaySSD1309 Element</a></li>
-<li><a href="/elements/displaytext.htm">DisplayText Element</a></li>
+<li><a href="/elements/display/sh1106.htm">DisplaySH1106 Element</a></li>
+<li><a href="/elements/display/ssd1306.htm">DisplaySSD1306 Element</a></li>
+<li><a href="/elements/display/ssd1309.htm">DisplaySSD1309 Element</a></li>
+<li><a href="/elements/display/text.htm">DisplayText Element</a></li>
 </ul>
 
 

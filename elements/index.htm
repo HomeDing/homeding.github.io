@@ -61,7 +61,7 @@
 </div>
 <div class="iconcard"><a href="/elements/rotary.htm"><svg class="icon"><use href="/icons.svg#rotary"></use></svg><h3>rotary</h3></a><p>The RotaryElement is used to capture increments and decrements for values using a rotary encoder.</p>
 </div>
-<div class="iconcard"><a href="/elements/touch.htm"><svg class="icon"><use href="/icons.svg#none"></use></svg><h3>touch</h3></a><p>The TouchElement enables creating Actions by using touch input on the ESP32.</p>
+<div class="iconcard"><a href="/elements/touch.htm"><svg class="icon"><use href="/icons.svg#touch"></use></svg><h3>touch</h3></a><p>The TouchElement enables creating Actions by using touch input on the ESP32.</p>
 </div>
 <h2>Sensor Elements</h2>
 <p>The <a href="/elements/sensors.htm">sensor elements</a> implement the adoption to a very specific sensor or sensor family. They share
@@ -122,7 +122,7 @@ the <a href="/elements/color.htm">Color Element</a> can be used to control the l
 <div class="iconcard"><a href="/elements/p9813.htm"><svg class="icon"><use href="/icons.svg#led"></use></svg><h3>p9813</h3></a><p>The <a href="/elements/p9813.htm">P9813 Element</a> implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.</p>
 </div>
 <h2>Light Sensors</h2>
-<div class="iconcard"><a href="/elements/BH1750.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>BH1750</h3></a><p>This is a light sensor probong for the intensity of light in lumen.
+<div class="iconcard"><a href="/elements/bh1750.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>bh1750</h3></a><p>This is a light sensor probong for the intensity of light in lumen.
 <a href="/elements/bh1750.htm">BH1750 Element</a></p>
 </div>
 <h2>Logic and Calculation Elements</h2>
@@ -144,18 +144,18 @@ The outgoing value is HIGH(1) when one of the given input values is not LOW(0).<
 </div>
 <div class="iconcard"><a href="/elements/reference.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>reference</h3></a><p>The <a href="/elements/map.htm">Reference Element</a> creates actions by comparing an incoming value with a reference value.</p>
 </div>
-<div class="iconcard"><a href="/elements/scene.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>scene</h3></a><p>The <a href="/elements/scene.htm">Scene Element</a> sends a series of action triggered by a single incoming action.</p>
+<div class="iconcard"><a href="/elements/scene.htm"><svg class="icon"><use href="/icons.svg#scene"></use></svg><h3>scene</h3></a><p>The SelectElement is used to choose one of many options with keys and a values. When selecting one of the options a key action and a value action is dispatched.</p>
 </div>
-<div style="clear:both"></div>
+<div class="iconcard"><a href="/elements/select.htm"><svg class="icon"><use href="/icons.svg#select"></use></svg><h3>select</h3></a><p>The SelectElement is used to choose one of many options with keys and a values. When selecting one of the options a key action and a value action is dispatched.</p>
+</div>
 <h2>Display Elements</h2>
-<p>The HomeDing library supports local attached displays but also works fine without a local display.</p>
-<div class="iconcard"><a href="/elements/displayssd1306.htm"><svg class="icon"><use href="/icons.svg#displayssd1306"></use></svg><h3>displayssd1306</h3></a><p>The <a href="/elements/ssd1306.htm">DisplaySSD1306 Element</a> configures the display adapter for using SSD1306 compatible OLED displays with 128*32 or 128*64 dots.</p>
+<p>The HomeDing library supports local attached <a href="/elements/display/index.htm">displays</a> but also works fine without a local display.</p>
+<div class="iconcard"><a href="/elements/display/ssd1306.htm"><svg class="icon"><use href="/icons.svg#displayssd1306"></use></svg><h3>display/ssd1306</h3></a><p>The <a href="/elements/display/ssd1306.htm">DisplaySSD1306 Element</a> configures the display adapter for using SSD1306 compatible OLED displays with 128*32 or 128*64 dots.</p>
 </div>
-<div class="iconcard"><a href="/elements/displaysh1106.htm"><svg class="icon"><use href="/icons.svg#displaysh1106"></use></svg><h3>displaysh1106</h3></a><p>The <a href="/elements/sh1106.htm">DisplaySH1106 Element</a> configures the display adapter for using SH1106 compatible OLED displays with 128*32 or 128*64 dots.</p>
+<div class="iconcard"><a href="/elements/display/sh1106.htm"><svg class="icon"><use href="/icons.svg#displaysh1106"></use></svg><h3>display/sh1106</h3></a><p>A The <a href="/elements/display/sh1106.htm">DisplaySH1106 Element</a> configures the display adapter for using SH1106 compatible OLED displays with 128*32 or 128*64 dots.</p>
 </div>
-<div class="iconcard"><a href="/displays/lcd.htm"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg></a>
-<a href="/displays/lcd.htm"><h3>displaylcd</h3></a>
-<p>The <a href="/displays/lcd.htm">DisplayLCD Element</a> configures the display adapter for using HD44780 compatible LCDs displays using I2C.</p>
+<div class="iconcard"><a href="/elements/display/lcd.htm"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><h3>display/lcd</h3></a><p>The <a href="/elements/display/lcd.htm">DisplayLCD Element</a> configures the display adapter
+for using HD44780 compatible LCDs displays using I2C.</p>
 </div>
 <div class="imgcard"><a href="/displays/max7219.htm"><img src="/displays/max7219.jpg"></a>
 <h3><a href="/displays/max7219.htm">DisplayMAX7219</a></h3>
@@ -163,15 +163,15 @@ The outgoing value is HIGH(1) when one of the given input values is not LOW(0).<
 using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 </div>
 <p>On the displays several Elements can be used to display data, text and visuals:</p>
-<div class="iconcard"><a href="/elements/displaytext.htm"><svg class="icon"><use href="/icons.svg#displaytext"></use></svg><h3>displaytext</h3></a><p>The <a href="/elements/displaytext.htm">DisplayText Element</a> show values as text on the display.</p>
+<div class="iconcard"><a href="/elements/display/text.htm"><svg class="icon"><use href="/icons.svg#displaytext"></use></svg><h3>display/text</h3></a><p>The <a href="/elements/display/text.htm">DisplayText Element</a> show values as text on the display.</p>
 </div>
-<div class="iconcard"><a href="/elements/displaydot.htm"><svg class="icon"><use href="/icons.svg#displaydot"></use></svg><h3>displaydot</h3></a><p>The <a href="/elements/displaydot.htm">DisplayDot Element</a> show values as a dot on the display.</p>
+<div class="iconcard"><a href="/elements/display/dot.htm"><svg class="icon"><use href="/icons.svg#displaydot"></use></svg><h3>display/dot</h3></a><p>The <a href="/elements/display/dot.htm">DisplayDot Element</a> show values as a dot on the display.</p>
 </div>
-<div class="iconcard"><a href="/elements/displaybar.htm"><svg class="icon"><use href="/icons.svg#displaybar"></use></svg><h3>displaybar</h3></a><p>The <a href="/elements/displaybar.htm">DisplayBar Element</a> show values as a progress or percentage bar on the display.</p>
+<div class="iconcard"><a href="/elements/display/bar.htm"><svg class="icon"><use href="/icons.svg#displaybar"></use></svg><h3>display/bar</h3></a><p>The <a href="/elements/display/bar.htm">DisplayBar Element</a> show values as a progress or percentage bar on the display.</p>
 </div>
-<div class="iconcard"><a href="/elements/displayline.htm"><svg class="icon"><use href="/icons.svg#displayline"></use></svg><h3>displayline</h3></a><p>The <a href="/elements/displayline.htm">DisplayLine Element</a> shows a line on the display.</p>
+<div class="iconcard"><a href="/elements/display/line.htm"><svg class="icon"><use href="/icons.svg#displayline"></use></svg><h3>display/line</h3></a><p>The <a href="/elements/display/line.htm">DisplayLine Element</a> shows a line on the display.</p>
 </div>
-<p>More detailed information on displays and related elements can be found in <a href="/displays/index.htm">displays</a></p>
+<p>More detailed information on displays and related elements can be found in <a href="/elements/display/index.htm">displays</a>.</p>
 <h2>One Value Display Elements</h2>
 <p>These Elements can be used to display a single value.</p>
 <div class="iconcard"><a href="/elements/max7219.htm"><svg class="icon"><use href="/icons.svg#max7219"></use></svg><h3>max7219</h3></a><p>The DisplayMAX7219 Element allows connecting  LED matrix based displays based on MAX7219 controller chips.</p>
@@ -186,7 +186,7 @@ using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 <div class="iconcard"><a href="/elements/ntptime.htm"><svg class="icon"><use href="/icons.svg#ntptime"></use></svg><h3>ntptime</h3></a><p>The <a href="/elements/ntptime.htm">NTPTime Element</a> can retrieve the local time using the NTP protocol from a NTP server.</p>
 </div>
 <!--
-:::element dcftime dcftime
+:::element dcftime
 The [DCFTime Element](/elements/dcftime.md) can retrieve the local time from a DCF 77kHz signal over the air.
 :::
 -->
@@ -196,7 +196,6 @@ The [DCFTime Element](/elements/dcftime.md) can retrieve the local time from a D
 </div>
 <div class="iconcard"><a href="/elements/timer.htm"><svg class="icon"><use href="/icons.svg#timer"></use></svg><h3>timer</h3></a><p>The <a href="/elements/timer.htm">Timer Element</a> creates timer (duration) based actions.</p>
 </div>
-<div style="clear:both"></div>
 <p>More detailed information on time element and time related implementation can be found in <a href="/elements/timeelements.htm">time elements implementation</a>.</p>
 <h2>System Elements</h2>
 <div class="iconcard"><a href="/elements/device.htm"><svg class="icon"><use href="/icons.svg#device"></use></svg><h3>device</h3></a><p>The <a href="/elements/device.htm">Device Element</a> is used to configure the device level properties.</p>
@@ -231,7 +230,7 @@ storing timestamp based sensor values.</p>
 to configure and use various FM radio chips and boards.</p>
 <p>This element is part of the <a href="/examples/radio.htm">Radio Example</a>.</p>
 </div>
-<div class="iconcard"><a href="/elements/audio.htm"><svg class="icon"><use href="/icons.svg#no"></use></svg><h3>audio</h3></a><p>The Audio Element enables audio streaming and audio processing in a background task.</p>
+<div class="iconcard"><a href="/elements/audio/audio.htm"><svg class="icon"><use href="/icons.svg#audio"></use></svg><h3>audio/audio</h3></a><p>The Audio Element enables audio streaming and audio processing in a background task. The Audio Element is part of the WebRadio Example.</p>
 <p>The <a href="/elements/audio/audio.htm">Audio Element</a> element is part of the <a href="/examples/webradio.htm">WebRadio Example</a>.</p>
 </div>
 <h2>Other Elements</h2>

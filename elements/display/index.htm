@@ -81,7 +81,7 @@ already come with an onboard and you can find configuration hints in the boards 
 <td></td>
 </tr>
 <tr>
-<td><a href="/displays/lcd.htm">Liquid Chrystal</a></td>
+<td><a href="/elements/display/lcd.htm">Liquid Chrystal</a></td>
 <td>LCD</td>
 <td>8/16/20 chars in 2/4 lines</td>
 <td>character based display</td>
@@ -111,19 +111,19 @@ already come with an onboard and you can find configuration hints in the boards 
 <td></td>
 </tr>
 <tr>
-<td><a href="/elements/sh1106.htm">SH1106</a></td>
+<td><a href="/elements/display/sh1106.htm">SH1106</a></td>
 <td>OLED</td>
 <td>128*32, 128*64</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="/elements/ssd1306.htm">SSD1306</a></td>
+<td><a href="/elements/display/ssd1306.htm">SSD1306</a></td>
 <td>OLED</td>
 <td>128*32, 128*64</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="/elements/ssd1309.htm">SSD1309</a></td>
+<td><a href="/elements/display/ssd1309.htm">SSD1309</a></td>
 <td>OLED</td>
 <td>compatible with SSD1306</td>
 <td></td>
@@ -141,13 +141,13 @@ already come with an onboard and you can find configuration hints in the boards 
 <td></td>
 </tr>
 <tr>
-<td><a href="/displays/st7789.htm">ST7789</a></td>
+<td><a href="/elements/display/st7789.htm">ST7789</a></td>
 <td>TFT LCD</td>
 <td>up to 320*240</td>
 <td>16-bit color (262k)</td>
 </tr>
 <tr>
-<td><a href="/displays/st7735.htm">ST7735</a></td>
+<td><a href="/elements/display/st7735.htm">ST7735</a></td>
 <td>TFT LCD</td>
 <td>up to 132*160</td>
 <td>16-bit color (262k)</td>
@@ -182,7 +182,7 @@ already come with an onboard and you can find configuration hints in the boards 
 </table>
 <h2>Simple displays</h2>
 <p>The simple displays use LEDs or 7-segment LEDs to show a value:</p>
-<div class="imgcard"><img src="/sensors/lcd.jpg"><p>The <a href="/displays/lcd.htm">Liquid Chrystal</a> displays based on the HD44780 chip are common in the Arduino framework.</p>
+<div class="imgcard"><img src="/sensors/lcd.jpg"><p>The <a href="/elements/display/lcd.htm">Liquid Chrystal</a> displays based on the HD44780 chip are common in the Arduino framework.</p>
 <p>To control them a I2C adapter with a PCF8574 chip must be used as the ESP8266 / ESP32 has not enough GPIOs to control it directly.</p>
 </div>
 <div class="imgcard"><img src="/sensors/max7219.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
@@ -198,7 +198,7 @@ Multiple displays can be chained to form a bigger matrix.</p>
 <h2>Pixel Based Monochrome Displays</h2>
 <div class="imgcard"><img src="/sensors/oled.jpg"><p>There are many OLED displays available using similar chips and drivers.
 They are controlled using the I2C or SPI bus.</p>
-<p>Supported are the driver chips: <a href="/elements/sh1106.htm">SH1106</a>, <a href="/elements/ssd1306.htm">SSD1306</a>, <a href="/elements/ssd1309.htm">SSD1309</a></p>
+<p>Supported are the driver chips: <a href="/elements/display/sh1106.htm">SH1106</a>, <a href="/elements/display/ssd1306.htm">SSD1306</a>, <a href="/elements/display/ssd1309.htm">SSD1309</a></p>
 </div>
 <div class="imgcard"><a href="/displays/max7219.htm"><img src="/displays/max7219.jpg"></a>
 <p>The <a href="/displays/max7219.htm">DisplayMAX7219Element</a> uses LED matrixes as displays
@@ -207,11 +207,11 @@ using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 <h2>Pixel Based Color Displays</h2>
 <div class="imgcard"><a href="/displays/st7789.htm"><img src="/displays/st7789.jpg"></a>
 <p>Colorful displays are supported by the <code>color</code> configuration on the display elements.
-The <a href="/displays/st7789.htm">Display ST7789 Element</a> supports the ST7789 driver chips.</p>
+The <a href="/elements/display/st7789.htm">Display ST7789 Element</a> supports the ST7789 driver chips.</p>
 </div>
 <div class="imgcard"><a href="/displays/st7735.htm"><img src="/displays/colorlcd.jpg"></a>
 <p>Colorful displays are supported by the <code>color</code> configuration on the display elements.
-The <a href="/displays/st7735.htm">Display ST7735 Element</a> supports the ST7735 driver chips.</p>
+The <a href="/elements/display/st7735.htm">Display ST7735 Element</a> supports the ST7735 driver chips.</p>
 </div>
 <!--
 TODO: other display
@@ -224,9 +224,9 @@ SSD 1331 (in planning) -->
 This is why there are some elements implemented that will put a specific type of information
 on the configured display:</p>
 <ul>
-<li><a href="/elements/displaytext.htm">Display text</a> used for text and numbers</li>
-<li><a href="/elements/displaydot.htm">Display a dot</a> used for boolean values</li>
-<li><a href="/elements/displayline.htm">Display a line</a></li>
+<li><a href="/elements/display/text.htm">Display Text Element</a> used for text and numbers</li>
+<li><a href="/elements/display/dot.htm">Display a dot</a> used for boolean values</li>
+<li><a href="/elements/display/line.htm">Display a line</a></li>
 </ul>
 <!-- * [displaybar](/elements/displaybar.md) -->
 <h2>Web UI for displays</h2>

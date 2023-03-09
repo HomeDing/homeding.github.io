@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <title>Select Element</title>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/concepts/index.htm" class="button">Concepts</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav class="inpage open"></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>Select Element</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    The SelectElement is used to choose one of many options with keys and a values. When selecting one of the options a key action and a value action is dispatched.
+</div>
+      
+    <p>This is useful when a parameter to an action is not a numeric or boolean value that can be given
+by a <a href="/elements/value.htm">Value Element</a> or <a href="/elements/switch.htm">Switch Element</a>.</p>
+<p>In the configuration a list of <code>options</code> is defined containing each a <code>key</code> and <code>value</code>.</p>
+<p>When selecting one of the options by the web frontend or by an event
+a key and a value actions will be dispatched.</p>
+<p>A select element can also be controlled over the network by using a simple links like:</p>
+<pre class="language-txt"><code class="language-txt">http://homeding/api/state/select/station?key=hr3<br>http://homeding/api/state/select/station?index=2<br>http://homeding/api/state/select/station?next=1</code></pre>
+<h2>Web UI for the PWMOut Element</h2>
+<p>There is a dedicated card for this element available that will be used for the web server config and landing pages:</p>
+<p><img src="/elements/selectui.png" alt="Select Web UI"></p>
+<p>The Web UI for the Select element shows the actual selected key and all available options for selecting.</p>
+<h2>Element Configuration</h2>
+<p><object data="/element.svg?select" type="image/svg+xml"></object></p>
+<p>This element implements the following properties and actions:</p>
+<blockquote>
+<p><strong>options[]</strong> - This is the array of options with <code>key</code> and <code>value</code>.</p>
+<p><strong>key</strong> - This action is used to select the option with a specific key.</p>
+<p><strong>index</strong> - This action is used to select the <code>n</code>th option.</p>
+<p><strong>next</strong> - This action will select the next option.</p>
+<p><strong>prev</strong> - This action will select the previous option.</p>
+<p><strong>onKey</strong> - This action will be dispatched with the current selected <code>key</code>.</p>
+<p><strong>onValue</strong> - This action will be dispatched with the current selected <code>value</code>.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"select"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"station"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"options"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span> <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"hr3"</span><span class="token punctuation">,</span> <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"https://dispatcher.rndfnk.com/hr/hr3/live/mp3/high"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span> <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"hr-info"</span><span class="token punctuation">,</span> <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"https://dispatcher.rndfnk.com/hr/hrinfo/live/mp3/high"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span> <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"swr3"</span><span class="token punctuation">,</span> <span class="token property">"value"</span><span class="token operator">:</span>       <span class="token string">"audio/0?url=https://liveradio.swr.de/sw331ch/swr3/"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span> <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"you-fm"</span><span class="token punctuation">,</span> <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"audio/0?url=https://dispatcher.rndfnk.com/hr/youfm/live/mp3/high"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span> <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"christmas"</span><span class="token punctuation">,</span> <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=https://1000christmashits.stream.laut.fm/1000christmashits"</span> <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"onkey"</span><span class="token operator">:</span> <span class="token string">"displaytext/station?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>State</h2>
+<p>Some internal values of the element can be observed in the state.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"select/station"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"index"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"hr-info"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"https://dispatcher.rndfnk.com/hr/hrinfo/live/mp3/high"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/scene.htm">Scene Element</a></li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/element.htm">Element</a></div>
+    
+  </main>
+
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+    navObj.classList.toggle('open', (window.innerWidth > 880));
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
