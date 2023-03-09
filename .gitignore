@@ -5,5 +5,7 @@ build
 _articles
 _site
 _back
-_*.md
+_*.*
 *.ppt*
+*.pdf
+*.docx

@@ -62,7 +62,7 @@ These are not connected using the 4 core signals and need to be connected by add
 
 **Examples:**
 
-* The [OLED Display SH1106](/elements/sh1106.md) is an example that offers a reset pin
+* The [OLED Display SH1106](/elements/display/sh1106.md) is an example that offers a reset pin
   to also enable/disable the display and controlling power consumption before using the I2C bus.
 * The CCS811 sensor offers a signal (INT) that can be used to trigger a software interrupt
   when data is ready instead of polling for state.

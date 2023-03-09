@@ -2,12 +2,14 @@
 title: Schedule Element
 icon: schedule
 tags: ["Element", "Time"]
-description: Create events started on time.
-excerpt: The ScheduleElement creates events based on the current time.
 layout: "page.njk"
+description: Create events started on time.
+excerpt: >
+  The ScheduleElement creates events based on the current time.
 ---
 
-When using this element a real time retrieving element must be configured as well like the [NTPTime](/elements/ntptime.md) or [DCFTime](/elements/dcftime.md).
+When using this element a real time retrieving element must be configured as well
+like the [NTPTime](/elements/ntptime.md) or [DCFTime](/elements/dcftime.md).
 
 One Schedule Element can be used to create a timespan during a day that creates 2 possible events.
 The first one when the `on`-time has passed and a second one when the `off`-time has passed.
@@ -23,26 +25,31 @@ The `onvalue` event is always emitted together with the `on` and `off` event sit
 
 ## Element Configuration
 
-The following properties are available for configuration of the element:
-
 <object data="/element.svg?schedule" type="image/svg+xml"></object>
 
-**title** - Caption text for the element. Used in the boards.
+The following properties are available for configuration of the element:
 
-**description** - A line of text that gives a short description of the device used in the web UI.
+> **title** - Caption text for the element. Used in the boards.
+>
+> **description** - A line of text that gives a short description of the device used in the web UI.
+>
+> **mode** - The element supports 3 modes:
+>
+> * **"on"** for always on,
+> * **"off"** for always off and
+> * **"timer**" for switching the value using the timer settings.
+>
+> **ontime** - Specifies the start of the time span.
+>
+> **offtime** - Specifies the end of the time span.
+>
+> **onon** - These actions are emitted when the on time has passed.
+>
+> **onoff** - These actions are emitted when the off time has passed.
+>
+> **onvalue** - These actions are emitted when the value is changing.
 
-**mode** - The element supports 3 modes: **"on"** for always on, **"off"** for always off and **"timer**" for switching the value using the timer settings.
-
-**ontime** - Specifies the start of the time span.
-
-**offtime** - Specifies the end of the time span.
-
-**onon** - These actions are emitted when the on time has passed.
-
-**onoff** - These actions are emitted when the off time has passed.
-
-**onvalue** - These actions are emitted when the value is changing.
-
+{% include "./elementproperties.md" %}
 
 ## Element State
 

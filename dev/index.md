@@ -60,10 +60,11 @@ useful functionality:
 > * [micro javascript utils](/dev/microjavascript.md)
 > * [micro style](/dev/microstyle.md)
 > * [micro templates](/dev/microtemplates.md)
+> * [dialogs](/dev/dialogs.md)
 > * [Portal](/dev/microportal.md)
 
-<!-- * [monitor](/elements/_monitor.md) -->
-<!-- * [_iconsforthings](/_iconsforthings.md) -->
+<!-- TODO: * [monitor](/elements/_monitor.md) -->
+<!-- TODO: * [_iconsforthings](/_iconsforthings.md) -->
 
 
 ## Element Meta data

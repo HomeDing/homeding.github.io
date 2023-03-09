@@ -23,7 +23,7 @@ layout: toc.njk
 
 #### [Elements](/elements/index.md)
 
-#### [Displays](/displays/index.md)
+#### [Displays](/elements/display/index.md)
 
 #### [Boards](/boards/index.md)
 

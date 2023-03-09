@@ -98,12 +98,12 @@ Supported are the driver chips: [SH1106], [SSD1306], [SSD1309]
 
 {% imgcard "/displays/st7789.jpg", "/displays/st7789.htm" %}
   Colorful displays are supported by the `color` configuration on the display elements.
-  The [Display ST7789 Element](/displays/st7789.md) supports the ST7789 driver chips.
+  The [Display ST7789 Element](/elements/display/st7789.md) supports the ST7789 driver chips.
 {% endimgcard %}
 
 {% imgcard "/displays/colorlcd.jpg", "/displays/st7735.htm" %}
   Colorful displays are supported by the `color` configuration on the display elements.
-  The [Display ST7735 Element](/displays/st7735.md) supports the ST7735 driver chips.
+  The [Display ST7735 Element](/elements/display/st7735.md) supports the ST7735 driver chips.
 {% endimgcard %}
 
 
@@ -120,9 +120,9 @@ A display usually can show more that just one single information.
 This is why there are some elements implemented that will put a specific type of information
 on the configured display:
 
-* [Display text](/elements/displaytext.md) used for text and numbers
-* [Display a dot](/elements/displaydot.md) used for boolean values
-* [Display a line](/elements/displayline.md)
+* [Display Text Element](/elements/display/text.md) used for text and numbers
+* [Display a dot](/elements/display/dot.md) used for boolean values
+* [Display a line](/elements/display/line.md)
 <!-- * [displaybar](/elements/displaybar.md) -->
 
 ## Web UI for displays
@@ -177,14 +177,14 @@ On startup, when a display is configured, some system information is displayed b
 * [Using the I2C bus](/dev/i2c.md)
 * [Using the SPI bus](/dev/spi.md)
 
-[liquid chrystal]: /displays/lcd.md
+[liquid chrystal]: /elements/display/lcd.md
 [max7219]: /elements/max7219.md
 [displayMax7219]: /displays/max7219.md
 [tm1637]: /elements/tm1637.md
 [tm1638]: /elements/_tm1638.md
-[sh1106]: /elements/sh1106.md
-[ssd1306]: /elements/ssd1306.md
-[ssd1309]: /elements/ssd1309.md
-[st7789]: /displays/st7789.md
-[st7735]: /displays/st7735.md
+[sh1106]: /elements/display/sh1106.md
+[ssd1306]: /elements/display/ssd1306.md
+[ssd1309]: /elements/display/ssd1309.md
+[st7789]: /elements/display/st7789.md
+[st7735]: /elements/display/st7735.md
 

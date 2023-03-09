@@ -2,10 +2,10 @@
 title: Scene Element
 icon: scene
 tags: ["Element"]
-excerpt: >
-  The SceneElement is used to operate on a list of actions triggered by incoming actions.
-  They can be send out step by step using a defined delay or by actions.
 layout: "page.njk"
+excerpt: >
+  The Scene Element sends a series of actions triggered by a single incoming action.
+  They can be send out step by step using a defined delay or by actions.
 ---
 
 In the configuration a list of `steps` is defined containing actions for other elements.

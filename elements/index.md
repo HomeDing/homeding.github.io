@@ -14,7 +14,7 @@ The following element implementations are available in the current version of th
 
 Input Elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors.
 
-:::element digitalin digitalin
+:::element digitalin
 {% excerptOf collections.Element, "digitalin" %}
 :::
 
@@ -22,24 +22,25 @@ Input Elements are used to create an action based on a specific input signal lik
 {% excerptOf collections.Element, "digitalsignal" %}
 :::
 
-:::element analog analog
+:::element analog
 {% excerptOf collections.Element, "analog" %}
 :::
 
-:::element rotary rotary
+:::element rotary
 {% excerptOf collections.Element, "rotary" %}
 :::
 
-:::element touch none
+:::element touch
 {% excerptOf collections.Element, "touch" %}
 :::
+
 
 ## Sensor Elements
 
 The [sensor elements](/elements/sensors.md) implement the adoption to a very specific sensor or sensor family. They share
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
 
-:::element dht dht
+:::element dht
 Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.
 :::
 
@@ -51,19 +52,19 @@ Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create acti
 {% excerptOf collections.Element, "aht20" %}
 :::
 
-:::element dallas dallas
+:::element dallas
 {% excerptOf collections.Element, "dallas" %}
 :::
 
-:::element bme680 bme680
+:::element bme680
 {% excerptOf collections.Element, "bme680" %}
 :::
 
-:::element pms pms
+:::element pms
 Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.
 :::
 
-:::element bmp280 bmp280
+:::element bmp280
 {% excerptOf collections.Element, "bmp280" %}
 :::
 
@@ -82,11 +83,11 @@ More detailed information on sensor implementation can be found in [sensor eleme
 
 ## Output and Actor Elements
 
-:::element pwmout pwmout
+:::element pwmout
 The [PWMOut Element](/elements/pwmout.md) is used to output an pwm signals based on actions. e.g. LEDs.
 :::
 
-:::element digitalout digitalout
+:::element digitalout
 The [DigitalOut Element](/elements/digitalout.md) is used to create digital output signals based on actions.
 :::
 
@@ -101,21 +102,21 @@ e.g. to control remote sockets.
 To control a light with only one channel the [Switch Element](/elements/switch.md) and [Value Element](/elements/value.md) can be used
 to control dimmable LEDs using [PWM Out Element](/elements/pwmout.md) or switching using [DigitalOut Element](/elements/digitalout.md).
 
-:::element switch switch
+:::element switch
 The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
 It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI.
 :::
 
-:::element value value
+:::element value
 The [Value Element](/elements/value.md) controls a value in a given range. It can be controlled using several methods
 like a [DigitalIn Element](/elements/digitalin.md) or a [Rotary Element](/elements/rotary.md) and the Web UI.
 :::
 
-:::element pwmout pwmout
+:::element pwmout
 The [PwmOut Element](/elements/pwmout.md) enables creating a PWM digital output signal usually to dimmable LEDs and servos.
 :::
 
-:::element digitalout digitalout
+:::element digitalout
 The [DigitalOut Element](/elements/digitalout.md) enables creating a digital output on a GPIO pin.
 :::
 
@@ -124,11 +125,11 @@ the [Color Element](/elements/color.md) can be used to control the light color u
 
 There are special elements to control specific chips or using the PWM capabilities.
 
-:::element color color
+:::element color
 The [Color Element](/elements/color.md) controls a RGB or WRGB value that can be used to control light Elements with color support.
 :::
 
-:::element light light
+:::element light
 The [Light Element](/elements/light.md) can control up to 4 PWM output GPIOs for controlling RGB and WRGB LEDs by color values.
 :::
 
@@ -136,7 +137,7 @@ The [Light Element](/elements/light.md) can control up to 4 PWM output GPIOs for
 The [MY9291 Element](/elements/my9291.md) implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.
 :::
 
-:::element neo neo
+:::element neo
 The [Neo Element](/elements/neo.md) implements the protocol to control ws2812 based LEDs also called Neopixel.
 :::
 
@@ -147,7 +148,7 @@ The [P9813 Element](/elements/p9813.md) implements the protocol to control the P
 
 ## Light Sensors
 
-:::element BH1750 default
+:::element bh1750 default
 This is a light sensor probong for the intensity of light in lumen.
 [BH1750 Element](/elements/bh1750.md)
 :::
@@ -157,30 +158,30 @@ This is a light sensor probong for the intensity of light in lumen.
 
 Logic elements implement using on/off values expressed as 1/0 values. See [Calc Abstract Element](/elements/calc.md)
 
-:::element button button
+:::element button
 The [Button Element](/elements/button.md) can differentiate clicks, double clicks and long press gestures to send out actions.
 :::
 
-:::element switch switch
+:::element switch
 The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
 It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI.
 :::
 
-:::element and and
+:::element and
 The [AND Element](/elements/and.md) combines multiple logic input values to a single output value.
 The outgoing value is HIGH(1) when all of the given input values are not LOW(0).
 :::
 
-:::element or or
+:::element or
 The [OR Element](/elements/or.md) combines multiple logic input values to a single output value.
 The outgoing value is HIGH(1) when one of the given input values is not LOW(0).
 :::
 
-:::element add add
+:::element add
 The ADD Element sums up multiple input values to create a single output value.
 :::
 
-:::element map map
+:::element map
 {% excerptOf collections.Element, "map" %}
 :::
 
@@ -188,28 +189,31 @@ The ADD Element sums up multiple input values to create a single output value.
 The [Reference Element](/elements/map.md) creates actions by comparing an incoming value with a reference value.
 :::
 
-:::element scene default
-The [Scene Element](/elements/scene.md) sends a series of action triggered by a single incoming action.
+:::element scene
+{% excerptOf collections.Element, "select" %}
 :::
 
-<div style="clear:both"></div>
+:::element select
+{% excerptOf collections.Element, "select" %}
+:::
 
 
 ## Display Elements
 
-The HomeDing library supports local attached displays but also works fine without a local display.
+The HomeDing library supports local attached [displays](/elements/display/index.md) but also works fine without a local display.
 
-:::element displayssd1306 displayssd1306
-The [DisplaySSD1306 Element](/elements/ssd1306.md) configures the display adapter for using SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.
+:::element display/ssd1306
+The [DisplaySSD1306 Element](/elements/display/ssd1306.md) configures the display adapter for using SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.
 :::
 
-:::element displaysh1106 displaysh1106
-The [DisplaySH1106 Element](/elements/sh1106.md) configures the display adapter for using SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.
+:::element display/sh1106
+A The [DisplaySH1106 Element](/elements/display/sh1106.md) configures the display adapter for using SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.
 :::
 
-{% iconcard "displaylcd", "/displays/lcd.htm" %}
-  The [DisplayLCD Element](/displays/lcd.md) configures the display adapter for using HD44780 compatible LCDs displays using I2C.
-{% endiconcard %}
+:::element display/lcd
+The [DisplayLCD Element](/elements/display/lcd.md) configures the display adapter
+for using HD44780 compatible LCDs displays using I2C.
+:::
 
 {% imgcard "/displays/max7219.jpg", "/displays/max7219.htm" %}
 
@@ -222,33 +226,33 @@ The [DisplaySH1106 Element](/elements/sh1106.md) configures the display adapter 
 
 On the displays several Elements can be used to display data, text and visuals:
 
-:::element displaytext displaytext
-The [DisplayText Element](/elements/displaytext.md) show values as text on the display.
+:::element display/text
+The [DisplayText Element](/elements/display/text.md) show values as text on the display.
 :::
 
-:::element displaydot displaydot
-The [DisplayDot Element](/elements/displaydot.md) show values as a dot on the display.
+:::element display/dot
+The [DisplayDot Element](/elements/display/dot.md) show values as a dot on the display.
 :::
 
-:::element displaybar displaybar
-The [DisplayBar Element](/elements/displaybar.md) show values as a progress or percentage bar on the display.
+:::element display/bar
+The [DisplayBar Element](/elements/display/bar.md) show values as a progress or percentage bar on the display.
 :::
 
-:::element displayline displayline
-The [DisplayLine Element](/elements/displayline.md) shows a line on the display.
+:::element display/line
+The [DisplayLine Element](/elements/display/line.md) shows a line on the display.
 :::
 
-More detailed information on displays and related elements can be found in [displays](/displays/index.md)
+More detailed information on displays and related elements can be found in [displays](/elements/display/index.md).
 
 ## One Value Display Elements
 
 These Elements can be used to display a single value.
 
-:::element max7219 max7219
+:::element max7219
 {% excerptOf collections.Element, "max7219" %}
 :::
 
-:::element tm1637 tm1637
+:::element tm1637
 {% excerptOf collections.Element, "tm1637" %}
 :::
 
@@ -259,21 +263,21 @@ These Elements can be used to display a single value.
 The [Time Element](/elements/time.md) sends actions with the actual local time.
 :::
 
-:::element dstime dstime
+:::element dstime
 The [DSTime Element](/elements/dstime.md) can retrieve the local time using the RTC DS3231 chip.
 :::
 
-:::element ntptime ntptime
+:::element ntptime
 The [NTPTime Element](/elements/ntptime.md) can retrieve the local time using the NTP protocol from a NTP server.
 :::
 
 <!--
-:::element dcftime dcftime
+:::element dcftime
 The [DCFTime Element](/elements/dcftime.md) can retrieve the local time from a DCF 77kHz signal over the air.
 :::
 -->
 
-:::element schedule schedule
+:::element schedule
 The [Schedule Element](/elements/schedule.md) creates on and off actions based on the actual local time.
 :::
 
@@ -281,40 +285,38 @@ The [Schedule Element](/elements/schedule.md) creates on and off actions based o
 The [Alarm Element](/elements/alarm.md) creates actions when reaching a defined time of day.
 :::
 
-:::element timer timer
+:::element timer
 The [Timer Element](/elements/timer.md) creates timer (duration) based actions.
 :::
-
-<div style="clear:both"></div>
 
 More detailed information on time element and time related implementation can be found in [time elements implementation](/elements/timeelements.md).
 
 
 ## System Elements
 
-:::element device device
+:::element device
 The [Device Element](/elements/device.md) is used to configure the device level properties.
 :::
 
-:::element ota ota
+:::element ota
 The [OTA Element](/elements/ota.md) is used to enable and configure Over The Air Updates.
 :::
 
-:::element ssdp ssdp
+:::element ssdp
 The [SSDP Element](/elements/ssdp.md) is used to discovering devices on the network using SSDP protocol.
 :::
 
-:::element value value
+:::element value
 The [Value Element](/elements/value.md) is used to
 receive and send actions to use and control an internal value.
 :::
 
-:::element menu menu
+:::element menu
 The [Menu Element](/elements/menu.md) is used for
 displaying and changing multiple values.
 :::
 
-:::element log log
+:::element log
 The [Log Element](/elements/log.md) is used for
 storing timestamp based sensor values.
 :::
@@ -326,7 +328,7 @@ Things based on the HomeDing library are network connected by default as they in
 
 The Network Elements extend the base functionality to connect to other devices and services over the network using different protocols.
 
-:::element remote remote
+:::element remote
 {% excerptOf collections.Element, "remote" %}
 :::
 
@@ -336,7 +338,7 @@ The Network Elements extend the base functionality to connect to other devices a
 
 Service elements interact with services to get or publish data using actions.
 
-:::element weatherfeed weatherfeed
+:::element weatherfeed
 The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast information from an internet service.
 :::
 
@@ -345,7 +347,7 @@ The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast
 
 The [Audio Elements](/elements/audio/index.md) can be used to create / control audio related devices and chips.
 
-:::element radio radio
+:::element radio
 {% excerptOf collections.Element, "radio" %}
 
 This element is using the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
@@ -354,11 +356,12 @@ to configure and use various FM radio chips and boards.
 This element is part of the [Radio Example](/examples/radio.md).
 :::
 
-:::element audio no
+:::element audio/audio audio
 {% excerptOf collections.Element, "audio" %}
 
 The [Audio Element](/elements/audio/audio.md) element is part of the [WebRadio Example](/examples/webradio.md).
 :::
+
 
 ## Other Elements
 

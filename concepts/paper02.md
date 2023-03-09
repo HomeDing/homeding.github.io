@@ -79,7 +79,7 @@ The configuration of the HomeDing device is using in 2 files:
     * [Device Element](/elements/device.md)
     * [OTA Element](/elements/ota.md)
     * [SSDP Element](/elements/ssdp.md)
-    * [Display Elements](/displays/index.md)
+    * [Display Elements](/elements/display/index.md)
 
   There is no real need to change this file frequently and it stays the same for a specific board. In the documentation about the boards I know you can find samples for typical env.json files. 
 

@@ -32,7 +32,7 @@ Some elements only exist to capture configuration properties. Most of them speci
 Examples are:
 
 * [Device](/elements/device.md)
-* [Displays](/displays/index.md)
+* [Displays](/elements/display/index.md)
 * [OTA](/elements/ota.md)
 * [SSPD](/elements/ssdp.md)
 

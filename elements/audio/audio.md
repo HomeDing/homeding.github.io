@@ -7,9 +7,11 @@ description: Audio processing on ESP32
 excerpt: >
   The Audio Element enables audio streaming and audio processing
   in a background task.
+  The Audio Element is part of the WebRadio Example.
 ---
 
-Based on this Element you can implement internet audio streaming devices.
+Based on this Element you can implement internet audio streaming devices as shown in the
+[Webradio Example](/examples/webradio.md).
 
 It requires a ESP32 or ESP32-S3 processor that supports multiple tasks
 and PSRAM for buffering audio data.

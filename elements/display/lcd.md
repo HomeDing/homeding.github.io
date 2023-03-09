@@ -37,7 +37,7 @@ The library used to drive these displays is "LiquidCrystal_PCF8574".
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 
-![LCD Web UI](/elements/lcdui.png)
+![LCD Web UI](/elements/display/lcdui.png)
 
 This card shows the current output that can also be seen on the local attached display. It is updated every time the status of the device is polled by the page.
 
@@ -53,8 +53,8 @@ The following properties are available for configuration of the element:
 
 The initialization of the I2C bus uses the SDA and SCL pins defined in the device configuration.
 
-To show some output on the display use the [DisplayText Element](/elements/displaytext.md)
-and the [DisplayDot Element](/elements/displaydot.md)
+To show some output on the display use the [DisplayText Element](/elements/display/text.md)
+and the [DisplayDot Element](/elements/display/dot.md)
 
 
 ## Configuration
@@ -100,5 +100,5 @@ However the WebUI will use the standard unicode codes as expected in the browser
 ## See also
 
 * [Using the I2C bus](/dev/i2c.md)
-* [DisplayText Element](/elements/displaytext.md)
-* [Display Dot](/elements/displaydot.md)
+* [DisplayText Element](/elements/display/text.md)
+* [Display Dot](/elements/display/dot.md)

@@ -101,7 +101,7 @@ module.exports = {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*element\s+(\S+)\s*(\S*)/);
-          return renderIconCard(m[2] ? m[2] : "no", m[1], 'elements', m[1]);
+          return renderIconCard(m[2] ? m[2] : m[1].replace(/\//g, "") , m[1], 'elements', m[1]);
 
         } else {
           return '</div>\n';

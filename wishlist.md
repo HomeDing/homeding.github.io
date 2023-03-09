@@ -1,7 +1,7 @@
 ---
 title: wishlist
-layout: "page.njk"
 tags: ["WIP"]
+layout: "page.njk"
 ---
 
 [home](/index.md)
