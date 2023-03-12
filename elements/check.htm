@@ -36,12 +36,12 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
 
-  <nav class="inpage open"></nav>
+  <nav></nav>
 
-  <main style="padding:1rem">
+  <main style="padding:1rem;max-width: 800px;">
     <h1>CHECKS</h1>
 <h2>collections</h2>
-<p>[&quot;all&quot;,&quot;Steps&quot;,&quot;WIP&quot;,&quot;Board&quot;,&quot;Light&quot;,&quot;Implementation&quot;,&quot;System&quot;,&quot;Element&quot;,&quot;Sensor&quot;,&quot;Time&quot;,&quot;Input&quot;,&quot;Network&quot;,&quot;null&quot;,&quot;FS&quot;,&quot;WebElement&quot;,&quot;Recipe&quot;,&quot;Receipe&quot;,&quot;Example&quot;,&quot;Story&quot;,&quot;Audio&quot;,&quot;Display&quot;]</p>
+<p>[&quot;all&quot;,&quot;Steps&quot;,&quot;Element&quot;,&quot;WIP&quot;,&quot;Board&quot;,&quot;Light&quot;,&quot;Implementation&quot;,&quot;System&quot;,&quot;Sensor&quot;,&quot;Time&quot;,&quot;Input&quot;,&quot;Network&quot;,&quot;null&quot;,&quot;FS&quot;,&quot;WebElement&quot;,&quot;Recipe&quot;,&quot;Receipe&quot;,&quot;Example&quot;,&quot;Story&quot;,&quot;Audio&quot;,&quot;Display&quot;]</p>
 <h2>Test excerptOf</h2>
 <p>The MapElement creates actions based on an in-bound value and range definitions.</p>
 <h2>Steps files with excerpts</h2>
@@ -60,10 +60,18 @@ There are some options to upload / update the files in the filesystem of a devic
   </main>
 
   <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
-    navObj.classList.toggle('open', (window.innerWidth > 880));
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
 
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');

@@ -37,7 +37,7 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
 
-  <nav class="inpage open"></nav>
+  <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
     <h1>Fonts for pixel based displays</h1>
@@ -62,10 +62,18 @@ The Adafruit GFX .h format is supported and used here.</p>
   </main>
 
   <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
-    navObj.classList.toggle('open', (window.innerWidth > 880));
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
 
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');

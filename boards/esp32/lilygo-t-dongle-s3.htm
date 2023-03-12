@@ -37,7 +37,7 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
 
-  <nav class="inpage open"></nav>
+  <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
     <h1>LilyGO T-Dongle S3</h1>
@@ -160,6 +160,14 @@
 </tr>
 </tbody>
 </table>
+<h2>Arduino Board Configuration</h2>
+<p>ESP32S3 Dev Module
+JTAG Adapter disabled
+PSRam disabled
+Flash Mode QIO 80 MHz
+Flash Size: 4MB
+USB Mode Hardware CDC and JTAG
+USB CDC On Boot: Enabled</p>
 <h3>Diag output</h3>
 <pre class="language-txt"><code class="language-txt">I2C pins sda=-1 scl=-1<br>Reset Reason: 12<br> Free Heap: 310160<br> Mac-address: F4:12:FA:41:38:18<br>Chip-Info:<br>  model: ESP32-S3(9)<br>  features: 00000012<br>    2.4GHz WiFi<br>    Bluetooth LE<br>  cores: 2<br>  revision: 0<br>ChipModel: ESP32-S3<br>Flash:<br>  Size: 16777216<br>  Mode: QIO(0)<br>  Speed: 80000000</code></pre>
 <h2>Board configuration</h2>
@@ -191,10 +199,18 @@
   </main>
 
   <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
-    navObj.classList.toggle('open', (window.innerWidth > 880));
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
 
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');

@@ -36,9 +36,9 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
 
-  <nav class="inpage open"></nav>
+  <nav></nav>
 
-  <main style="padding:1rem">
+  <main style="padding:1rem;max-width: 800px;">
     <h1>HomeDing Library Documentation</h1>
 <p><a href="https://github.com/HomeDing/homeding.github.io/actions/workflows/md-linkcheck.yml"><img src="https://github.com/HomeDing/homeding.github.io/actions/workflows/md-linkcheck.yml/badge.svg" alt="Check Markdown links"></a></p>
 <p>The HomeDing library is a low code approach to build small IoT devices
@@ -63,10 +63,18 @@ Github documentation site at <a href="https://homeding.github.io">https://homedi
   </main>
 
   <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
-    navObj.classList.toggle('open', (window.innerWidth > 880));
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
 
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');

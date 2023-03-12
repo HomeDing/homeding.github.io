@@ -36,9 +36,9 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
 
-  <nav class="inpage open"></nav>
+  <nav></nav>
 
-  <main style="padding:1rem">
+  <main style="padding:1rem;max-width: 800px;">
     <h1>More on MQTT</h1>
 <h2>Setup a private mqtt server</h2>
 <p><a href="https://mosquitto.org/man/mosquitto-conf-5.html">https://mosquitto.org/man/mosquitto-conf-5.html</a></p>
@@ -187,10 +187,18 @@ TX[15]: 9F A2 00 64 74 65 6D 70 02 FA 41 A2 7A E1 FF
   </main>
 
   <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
-    navObj.classList.toggle('open', (window.innerWidth > 880));
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
 
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
