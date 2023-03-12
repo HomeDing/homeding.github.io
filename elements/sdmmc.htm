@@ -32,7 +32,6 @@
     </svg>
 
     <a href="/index.htm" class="button">Home</a>
-    <a href="/concepts/index.htm" class="button">Concepts</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
@@ -45,7 +44,7 @@
 
     
     
-      <div class="iconcard"><svg class="icon"><use href="/icons.svg#no"></use></svg>
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#sdcard"></use></svg>
     
     The SDMMCElement implements access to the file system on a SDMMC card on ESP32 processors and boards.
 </div>
@@ -62,13 +61,10 @@ for recording sensor data or serving additional files on the web frontend.</p>
 provides a fast 4-bit bus implementation for SD cards.</p>
 <p>See SDElement that is available on ESP32 and ESP8266 boards offers
 a slower alternative using SPI access to SD Cards.</p>
-<!--
-## current limitations
-
-The sd filesystem is availabe readonly in the /sd folder through the web server.
-
-File uploads and File deletes through the web server is not supported as of now.
--->
+<h1>File upload</h1>
+<p>Files can be uploaded to the sd card using the integrated IDE.
+For updates of multiple files an larger volume
+the sd card can be removed and updated directly from a PC.</p>
 <h2>HomeDing Filesystem Utility</h2>
 <p>The mandatory flash file system LittleFS using flash memory
 is used as the root file system to store at least the configuration files.</p>

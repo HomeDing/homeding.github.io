@@ -32,7 +32,6 @@
     </svg>
 
     <a href="/index.htm" class="button">Home</a>
-    <a href="/concepts/index.htm" class="button">Concepts</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
@@ -69,10 +68,10 @@
 <p>On the device named <strong>dht22-probe</strong> the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span> <span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"remote/display-t?show=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"remote/display-h?show=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"remote"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"display-t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"displaybox"</span><span class="token punctuation">,</span><br>      <span class="token property">"remoteid"</span><span class="token operator">:</span> <span class="token string">"displaytext/t"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"display-h"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"displaybox"</span><span class="token punctuation">,</span><br>      <span class="token property">"remoteid"</span><span class="token operator">:</span> <span class="token string">"displaytext/h"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>TODO</h2>
-<ul>
-<li>[ ] keep/queue messages when network is not available.</li>
-<li>[ ] detect that remote element is not available -&gt; slow down, retry</li>
-<li>[ ] Define what to do in case of an overflow.</li>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> keep/queue messages when network is not available.</label></li>
+<li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> detect that remote element is not available -&gt; slow down, retry</label></li>
+<li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> Define what to do in case of an overflow.</label></li>
 </ul>
 
 
