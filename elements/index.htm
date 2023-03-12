@@ -223,6 +223,12 @@ storing timestamp based sensor values.</p>
 <p>Service elements interact with services to get or publish data using actions.</p>
 <div class="iconcard"><a href="/elements/weatherfeed.htm"><svg class="icon"><use href="/icons.svg#weatherfeed"></use></svg><h3>weatherfeed</h3></a><p>The <a href="/elements/weatherfeed.htm">Weatherfeed Element</a>can retrieve weather forecast information from an internet service.</p>
 </div>
+<h2>Storage related Elements</h2>
+<ul>
+<li>SD Card Element</li>
+</ul>
+<div class="iconcard"><a href="/elements/sdmmc.htm"><svg class="icon"><use href="/icons.svg#sdcard"></use></svg><h3>sdmmc</h3></a><p>The SDMMCElement implements access to the file system on a SDMMC card on ESP32 processors and boards.</p>
+</div>
 <h2>Audio related Elements</h2>
 <p>The <a href="/elements/audio/index.htm">Audio Elements</a> can be used to create / control audio related devices and chips.</p>
 <div class="iconcard"><a href="/elements/radio.htm"><svg class="icon"><use href="/icons.svg#radio"></use></svg><h3>radio</h3></a><p>The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.</p>
@@ -246,26 +252,6 @@ but are published already maybe with some restricted functionality.</p>
 <div class="iconcard"><a href="/elements/ina226.htm"><svg class="icon"><use href="/icons.svg#no"></use></svg><h3>ina226</h3></a><p>The INA226 is a current and voltage sensor that uses the I2C bus for communication that can measure voltages up to 26V on high-side or low-side and current in various ranges .</p>
 <p>This sensor is part of the <a href="/examples/probe.htm">Probe example</a></p>
 </div>
-<!-- 
-The TPA2016Element can control a TPA2016 chip that contains a stereo amplifier for analog audio signals with a I2C bus based volume control.
-
- [tpa2016 Element](/elements/_tpa2016.md)
-
-
-<https://www.sparkfun.com/products/20690>
-
-TPA2016D2
-
-TPA2016D2 stereo, filter-free class-D audio power amplifier. 
-
-Dynamic Range Compression (DRC)
-Automatic Gain Control (AGC)
-configured through software via I2C
-
-class-D 2.8W stereo Amplifier
-
-TPA2005D1
--->
 <h2>Web UI Elements</h2>
 <p>These elements starting with <strong>web</strong> in their name are only known to the Web UI implementation but are not part of the firmware- The intention is to enrich and customize the Web UI dashboard with elements like presets and macros.</p>
 <div class="iconcard"><a href="/elements/webbutton.htm"><svg class="icon"><use href="/icons.svg#button"></use></svg><h3>webbutton</h3></a><p>This element adds a button the Web UI of the board. The button can be used to trigger actions by clicking.</p>
