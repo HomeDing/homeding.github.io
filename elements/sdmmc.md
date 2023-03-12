@@ -1,6 +1,6 @@
 ---
 title: SD MMC card Element
-icon: no
+icon: sdcard
 tags: ["Element", "FS"]
 layout: "page.njk"
 description: Using SD MMC cards for storing local files on ESP32.
@@ -25,14 +25,12 @@ provides a fast 4-bit bus implementation for SD cards.
 See SDElement that is available on ESP32 and ESP8266 boards offers 
 a slower alternative using SPI access to SD Cards.
 
-<!--
-## current limitations
 
-The sd filesystem is availabe readonly in the /sd folder through the web server.
+# File upload
 
-File uploads and File deletes through the web server is not supported as of now.
--->
-
+Files can be uploaded to the sd card using the integrated IDE.
+For updates of multiple files an larger volume
+the sd card can be removed and updated directly from a PC.
 
 
 ## HomeDing Filesystem Utility
@@ -44,7 +42,3 @@ The files on a SD card are added (mounted) to this file system inside the /sd fo
 
 When implementing Elements that need files on the file system the HomeDingFS class provides
 static functions for accessing files and directories by using the right filesystem for flash or sd.
-
-
-
-

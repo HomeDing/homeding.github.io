@@ -13,19 +13,21 @@ const markdownIt = require('markdown-it');
 const mdContainer = require('markdown-it-container');
 const mdReplaceLink = require('markdown-it-replace-link');
 const mdFootnotes = require('markdown-it-footnote');
+const mdTaskLists = require('markdown-it-task-lists');
+const mdItAttrs = require('markdown-it-attrs');
 
 module.exports = {
 
   initArguments: {},
-  configFunction: function (eleventyConfig, options = {}) {
-    console.log("myMarkdown setup");
+  configFunction: function(eleventyConfig, options = {}) {
+    console.log("myMarkdown setup...");
 
     let markdownLib = markdownIt({
       html: true,
       breaks: false,
       linkify: true,
       typographer: true,
-      replaceLink: function (link, env) {
+      replaceLink: function(link, env) {
         // console.log("--", link);
         link = link.replace(/(^\/[^.]*)\.md$/, "$1.htm");
         return (link);
@@ -33,6 +35,8 @@ module.exports = {
     });
 
     markdownLib.use(mdReplaceLink);
+    markdownLib.use(mdTaskLists, { enabled: true, label: true });
+    markdownLib.use(mdItAttrs);
     markdownLib.use(mdFootnotes, { backref: false });
 
     function renderIconCard(icon, title, linkFolder, link) {
@@ -64,7 +68,7 @@ module.exports = {
 
     // ::: excerpt [icon]
     markdownLib.use(mdContainer, 'excerpt', {
-      render: function (tokens, idx) {
+      render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*excerpt\s+(.*)$/);
@@ -82,7 +86,7 @@ module.exports = {
     // card for boards in boards folder
     // ::: board image
     markdownLib.use(mdContainer, 'board', {
-      render: function (tokens, idx) {
+      render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*board\s+(.*)$/);
@@ -97,11 +101,11 @@ module.exports = {
     // card for elements in elements folder
     // ::: element title [icon]
     markdownLib.use(mdContainer, 'element', {
-      render: function (tokens, idx) {
+      render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*element\s+(\S+)\s*(\S*)/);
-          return renderIconCard(m[2] ? m[2] : m[1].replace(/\//g, "") , m[1], 'elements', m[1]);
+          return renderIconCard(m[2] ? m[2] : m[1].replace(/\//g, ""), m[1], 'elements', m[1]);
 
         } else {
           return '</div>\n';
@@ -112,7 +116,7 @@ module.exports = {
     // card for sensors in sensors folder
     // ::: sensor image
     markdownLib.use(mdContainer, 'sensor', {
-      render: function (tokens, idx) {
+      render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
@@ -124,7 +128,7 @@ module.exports = {
     });
 
     markdownLib.use(mdContainer, 'warning', {
-      render: function (tokens, idx) {
+      render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*warning\s+(.*)$/);

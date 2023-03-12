@@ -3,6 +3,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const myMarkdown = require("./.myMarkdown");
 
 module.exports = function (eleventyConfig) {
+  console.log("eleventy setup...");
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.chokidarConfig = {

@@ -3,13 +3,6 @@ layout: toc.njk
 ---
 ### [The HomeDing Library](/index.md)
 
-#### [Concepts](/concepts/index.md)
-
-* [Making IoT easy](/concepts/paper01.md)
-* [Software Architecture](/concepts/paper02.md)
-* [Elements and Actions](/concepts/paper03.md)
-* [Builtin Web server](/concepts/paper04.md)
-
 #### [Examples and Stories](/stories/index.md)
 
 * [Outdoor Environment Sensor](/stories/story-outdoorsensor.md)
@@ -28,6 +21,13 @@ layout: toc.njk
 #### [Boards](/boards/index.md)
 
 #### [Recipes](/recipes/index.md)
+
+#### [Concepts](/concepts/index.md)
+
+<!-- * [Making IoT easy](/concepts/paper01.md)
+* [Software Architecture](/concepts/paper02.md)
+* [Elements and Actions](/concepts/paper03.md)
+* [Builtin Web server](/concepts/paper04.md) -->
 
 #### [Implementation details](/dev/index.md)
 
