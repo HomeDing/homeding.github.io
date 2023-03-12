@@ -14,13 +14,11 @@ permalink: "{{ page.filePathStem }}.htm"
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
   <title>{{ title }}</title>
   <meta name="title" content="The HomeDing Library">
-  <meta name="description" content="An Arduino Library that makes Iot devices building easy.">
-  <meta name='description' content='{{ description }}'>
+  <meta property="og:description" content="An Arduino Library that makes Iot devices building easy.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://homeding.github.io/">
   <meta property="og:title" content="The HomeDing Library">
-  <meta property="og:description" content="An Arduino Library that makes Iot devices building easy.">
   <meta property="og:image" content="homeding.png">
 
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
@@ -46,13 +44,12 @@ permalink: "{{ page.filePathStem }}.htm"
     </svg>
 
     <a href="/index.htm" class="button">Home</a>
-    <a href="/concepts/index.htm" class="button">Concepts</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
 
-  <nav class="inpage open"></nav>
+  <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
     <h1>{{title}}</h1>
@@ -74,10 +71,18 @@ permalink: "{{ page.filePathStem }}.htm"
   </main>
 
   <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
 
-    navObj.classList.toggle('open', (window.innerWidth > 880));
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
 
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');

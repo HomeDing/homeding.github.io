@@ -4,7 +4,6 @@
 position: relative;
 width: 800px;
 height: 600px;
-z-index: 10;
 padding: 2em 3em;
 margin-bottom: 1em;
 border-radius: 2em;
@@ -36,7 +35,6 @@ top: 0;
 right: 4px;
 height: 100%;
 width: 24px;
-z-index: 12;
 }
 
 .time>.time {
