@@ -46,7 +46,7 @@
     
       <div class="iconcard"><svg class="icon"><use href="/icons.svg#displaymax7219"></use></svg>
     
-    The DisplayMAX7219 Element allows connecting  LED matrix based displays based on MAX7219 controller chips.
+    The DisplayMAX7219 Element implements a larger display by using LED 8x8 led displays matrixes based on MAX7219 controller chips.
 </div>
       
     <p>This display implementation supports LED matrix setup with 1 line of 8x8 modules
@@ -57,6 +57,7 @@ and specifying the select GPIO pin.</p>
 <p>The <code>DisplayAdapterMAX7219</code> uses the canvas class from the Adafruit_GFX library to create an in-memory picture that can be shifted to the display when drawing of the output element has finished.</p>
 <p>To show some output on the display use the <a href="/elements/display/text.htm">DisplayText Element</a>
 and the <a href="/elements/display/dot.htm">DisplayDot Element</a></p>
+<p><img src="/elements/display/max7219.jpg" alt="LED matrix based on MAX7219"></p>
 <h2>Connectivity</h2>
 <p>The MAX7219 based displays uses a SPI based data interface sending data out only.
 On ESP8266 the standard SPI interface is used. On ESP32 the VSPI interface is used.</p>

@@ -46,9 +46,15 @@
     
       <div class="plaincard">
     
-    These Elements are implemented in the HomeDing library.</div>
+    Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like Sensors, Displays, Light, I/O control and internal control logic. Elements are implemented in the HomeDing library as Components that can be controlled using setup configuration and runtime actions.
+</div>
       
-    <p>Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like <a href="/sensors/sensors.htm">sensors</a>.</p>
+    <ul>
+<li><a href="/elements/sensors.htm">Sensor Elements</a> and <a href="/sensors/sensors.htm">Sensor components</a></li>
+<li><a href="/elements/light.htm">Light Elements</a></li>
+<li><a href="/elements/audio/index.htm">Audio Elements</a></li>
+<li><a href="/elements/display/index.htm">Displays</a></li>
+</ul>
 <p>The following element implementations are available in the current version of the HomeDing library.</p>
 <h2>Input Elements</h2>
 <p>Input Elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors.</p>
@@ -85,7 +91,7 @@ TODO: element bme280 bme280
 <div class="iconcard"><a href="/elements/bl0937.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>bl0937</h3></a><p>The BL0937Element has been implemented to support single phase energy monitoring using BL0937, HLW8012 or HJL-01 chips that are used in some retail plugs and switches.</p>
 </div>
 <!-- MPU9250 -->
-<p>More detailed information on sensor implementation can be found in <a href="/elements/sensors.htm">sensor elements implementation</a>.</p>
+<p>More detailed information on sensor implementation can be found in <a href="/elements/sensors.htm">sensor Elements</a> implementation.</p>
 <h2>Output and Actor Elements</h2>
 <div class="iconcard"><a href="/elements/pwmout.htm"><svg class="icon"><use href="/icons.svg#pwmout"></use></svg><h3>pwmout</h3></a><p>The <a href="/elements/pwmout.htm">PWMOut Element</a> is used to output an pwm signals based on actions. e.g. LEDs.</p>
 </div>
@@ -143,7 +149,7 @@ The outgoing value is HIGH(1) when one of the given input values is not LOW(0).<
 </div>
 <div class="iconcard"><a href="/elements/reference.htm"><svg class="icon"><use href="/icons.svg#default"></use></svg><h3>reference</h3></a><p>The <a href="/elements/map.htm">Reference Element</a> creates actions by comparing an incoming value with a reference value.</p>
 </div>
-<div class="iconcard"><a href="/elements/scene.htm"><svg class="icon"><use href="/icons.svg#scene"></use></svg><h3>scene</h3></a><p>The SelectElement is used to choose one of many options with keys and a values. When selecting one of the options a key action and a value action is dispatched.</p>
+<div class="iconcard"><a href="/elements/scene.htm"><svg class="icon"><use href="/icons.svg#scene"></use></svg><h3>scene</h3></a><p>The Scene Element sends a series of actions triggered by a single incoming action. They can be send out step by step using a defined delay or by actions.</p>
 </div>
 <div class="iconcard"><a href="/elements/select.htm"><svg class="icon"><use href="/icons.svg#select"></use></svg><h3>select</h3></a><p>The SelectElement is used to choose one of many options with keys and a values. When selecting one of the options a key action and a value action is dispatched.</p>
 </div>
@@ -153,13 +159,9 @@ The outgoing value is HIGH(1) when one of the given input values is not LOW(0).<
 </div>
 <div class="iconcard"><a href="/elements/display/sh1106.htm"><svg class="icon"><use href="/icons.svg#displaysh1106"></use></svg><h3>display/sh1106</h3></a><p>A The <a href="/elements/display/sh1106.htm">DisplaySH1106 Element</a> configures the display adapter for using SH1106 compatible OLED displays with 128*32 or 128*64 dots.</p>
 </div>
-<div class="iconcard"><a href="/elements/display/lcd.htm"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><h3>display/lcd</h3></a><p>The <a href="/elements/display/lcd.htm">DisplayLCD Element</a> configures the display adapter
-for using HD44780 compatible LCDs displays using I2C.</p>
+<div class="iconcard"><a href="/elements/display/lcd.htm"><svg class="icon"><use href="/icons.svg#displaylcd"></use></svg><h3>display/lcd</h3></a><p>The DisplayLCD Element implements the display using Monochrome LCDs based on HD44780 chips. The display is connected by using the PCF8574 I2C chip to control the direct input lines of the display.</p>
 </div>
-<div class="imgcard"><a href="/displays/max7219.htm"><img src="/displays/max7219.jpg"></a>
-<h3><a href="/displays/max7219.htm">DisplayMAX7219</a></h3>
-<p>The <a href="/displays/max7219.htm">DisplayMAX7219 Element</a> uses LED matrixes as displays
-using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
+<div class="iconcard"><a href="/elements/display/max7219.htm"><svg class="icon"><use href="/icons.svg#displaymax7219"></use></svg><h3>display/max7219</h3></a><p>The DisplayMAX7219 Element implements a larger display by using LED 8x8 led displays matrixes based on MAX7219 controller chips.</p>
 </div>
 <p>On the displays several Elements can be used to display data, text and visuals:</p>
 <div class="iconcard"><a href="/elements/display/text.htm"><svg class="icon"><use href="/icons.svg#displaytext"></use></svg><h3>display/text</h3></a><p>The <a href="/elements/display/text.htm">DisplayText Element</a> show values as text on the display.</p>
@@ -173,7 +175,7 @@ using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
 <p>More detailed information on displays and related elements can be found in <a href="/elements/display/index.htm">displays</a>.</p>
 <h2>One Value Display Elements</h2>
 <p>These Elements can be used to display a single value.</p>
-<div class="iconcard"><a href="/elements/max7219.htm"><svg class="icon"><use href="/icons.svg#max7219"></use></svg><h3>max7219</h3></a><p>The DisplayMAX7219 Element allows connecting  LED matrix based displays based on MAX7219 controller chips.</p>
+<div class="iconcard"><a href="/elements/max7219.htm"><svg class="icon"><use href="/icons.svg#max7219"></use></svg><h3>max7219</h3></a><p>The DisplayMAX7219 Element implements a larger display by using LED 8x8 led displays matrixes based on MAX7219 controller chips.</p>
 </div>
 <div class="iconcard"><a href="/elements/tm1637.htm"><svg class="icon"><use href="/icons.svg#tm1637"></use></svg><h3>tm1637</h3></a><p>The TM1637 is a chip that allows using 7-segment displays up to 6 digits.</p>
 </div>
@@ -226,11 +228,13 @@ storing timestamp based sensor values.</p>
 <ul>
 <li>SD Card Element</li>
 </ul>
+<div class="iconcard"><a href="/elements/sd.htm"><svg class="icon"><use href="/icons.svg#sdcard"></use></svg><h3>sd</h3></a><p>The Element …</p>
+</div>
 <div class="iconcard"><a href="/elements/sdmmc.htm"><svg class="icon"><use href="/icons.svg#sdcard"></use></svg><h3>sdmmc</h3></a><p>The SDMMCElement implements access to the file system on a SDMMC card on ESP32 processors and boards.</p>
 </div>
 <h2>Audio related Elements</h2>
 <p>The <a href="/elements/audio/index.htm">Audio Elements</a> can be used to create / control audio related devices and chips.</p>
-<div class="iconcard"><a href="/elements/radio.htm"><svg class="icon"><use href="/icons.svg#radio"></use></svg><h3>radio</h3></a><p>The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.</p>
+<div class="iconcard"><a href="/elements/audio/radio.htm"><svg class="icon"><use href="/icons.svg#audioradio"></use></svg><h3>audio/radio</h3></a><p>The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.</p>
 <p>This element is using the external <a href="http://www.mathertel.de/Arduino/RadioLibrary.aspx">Radio Library</a>
 to configure and use various FM radio chips and boards.</p>
 <p>This element is part of the <a href="/examples/radio.htm">Radio Example</a>.</p>
