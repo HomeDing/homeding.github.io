@@ -2,14 +2,14 @@
 title: TTGO Gallery (T14)
 tags: ["Board", "WIP"]
 layout: "page.njk"
-description: ESP32 Wroover board with integrated TFT color display and audio.
+description: ESP32 Wrover-B board with integrated TFT color display and audio.
 excerpt: >
   The LilyGO TTGO Gallery (T14) board offers an integrated TFT color display, SD Card, 4 buttons and Audio DAC output with amplifier.
 ---
 
 This board can be sold as a standalone board, as part of the TTGO T-Gallery kit, sometimes called TTGO-Time-Music-Box and in some documentations named T14 (v1.3).
 
-It is built using a ESP32 Wroover Module, digital audio output using the I2S bus, a stereo amplifier and a colorful TFT display.
+It is built using a ESP32 Wrover-B Module, digital audio output using the I2S bus, a stereo amplifier and a colorful TFT display.
 
 The [WebRadio example](/examples/webradio.md) is based on using this board.
 
@@ -70,7 +70,7 @@ The background LED is powered by 3.3V VCC so brightness cannot be adjusted.
 
 Some documentation of the TTGO-Time-Music-Box mentions a Backlight switch, but this seems to be a wrong hint.
 
-The Homeding library supports this LCD using the [Display ST7789 Element](/displays/st7789.md)
+The Homeding library supports this LCD using the [Display ST7789 Element](/elements/display/st7789.md)
 based on the Adafruit_ST7789 library.
 
 The display configuration can be found below.

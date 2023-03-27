@@ -1,0 +1,40 @@
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html
+
+
+
+ESP-IDF version 4.3.2
+
+in C:\Users\Matthias\esp\esp-idf
+
+ESP-IDF tools
+
+in C:\Users\Matthias\.espressif
+
+
+
+Using Embedded Python 3.8.7
+
+Using Embedded Git :
+      C:\Users\Matthias\.espressif\tools\idf-git\2.30.1\cmd\git.exe
+
+Will install ESP-IDF v4.3.2 into:
+      C:\Users\Matthias\esp\esp-idf
+
+IDF tools directory (IDF_TOOLS_PATH): 
+      C:\Users\Matthias\.espressif
+
+
+
+## ESP32 Azure IOT Kit
+
+#define PIN_INPUT 0
+#define PIN_LED 33
+
+
+## DOIT ESP32 DEV Kit
+
+Blue LED : GPIO2
+
+
+
+

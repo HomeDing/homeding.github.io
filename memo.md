@@ -12,10 +12,11 @@ This page is used for temporary saving some information that will be required fo
 ## icons and defs
 
 * [ ] icon: dcftime
-* [X] icon: digitalsequence
+* [ ] icon: digitalsequence
 * [ ] icon + def: displaybar
 * [ ] icon: wot
-* [ ] icon: schedule (rework)
+* [ ] icon: timer + schedule (rework)
+* [ ] SD Card for mini board: docu and image
 
 
 ## Audio

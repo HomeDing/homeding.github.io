@@ -9,13 +9,20 @@ excerpt: >
   that need to analyze timing sequences and digital signals.
 ---
 
+
+
 see also [DCF Time Element](/elements/dcftime.md)
 
 For some elements it is required to listen to the digital input at the specific GPIO pin
 for discovering the specific protocol and data.
 
+The DigitalSequence Element helps with collecting the timing and level information from the digital signal
+by recording the timings into a ring buffer.
+
 
 ## Recording
+
+
 
 The digital sequence Element records the timings in a ring buffer to be picked up by the element
 that can decode the protocol.

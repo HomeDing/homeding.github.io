@@ -1,6 +1,6 @@
 ---
 title: D1 Mini Boards (ESP8266 and ESP32)
-tags: ["Board"]
+tags: ["Board", "WIP"]
 layout: "page.njk"
 description: ESP8266 General purpose development boards with same form factor.
 excerpt: >
@@ -97,7 +97,18 @@ The SHT30 shield with a digital temperature and humidity sensor
 can be stacked upon a board or by using a Qwiic connector cable.
 {% endimgcard %}
 
-<!-- Micro SD Shield v1.2.0   -->
+{% imgcard "/boards/d1-sdshield.jpg", "" %}
+TODO:
+
+The Micro SD Card shield adds a sd card slot to the SPI bus.
+
+* D5 CLK 
+* D6 MISO 
+* D7 MOSI
+* D4 CS 
+
+{% endimgcard %}
+
 
 ## See also
 

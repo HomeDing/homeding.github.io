@@ -5,7 +5,8 @@ tags: ["Element", "Display"]
 layout: "page.njk"
 description: Using LCD displays with a HD44780 controller chip.
 excerpt: >
-  The Display Configuration for Monochrome LCDs based on HD44780 chips.
+  The DisplayLCD Element implements the display using Monochrome LCDs based on HD44780 chips.
+  The display is connected by using the PCF8574 I2C chip to control the direct input lines of the display.
 ---
 
 In the Arduino Environment the LiquidCrystal library exits for a long time and supports HD44780 compatible LCDs with up to 4 lines of 20 characters. Displays ae available with
@@ -33,7 +34,7 @@ See [http://mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx](http://mathertel.de
 
 The library used to drive these displays is "LiquidCrystal_PCF8574".
 
-## Web UI for the DisplaySH1106 Element
+## Web UI for the DisplayLCD Element
 
 There is a dedicated card for this element available that will be used for the web server config and landing pages:
 

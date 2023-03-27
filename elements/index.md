@@ -2,10 +2,17 @@
 title: Elements Overview
 tags: ["Element"]
 layout: "page.njk"
-excerpt: These Elements are implemented in the HomeDing library.
+excerpt: >
+  Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality
+  like Sensors, Displays, Light, I/O control and internal control logic.
+  Elements are implemented in the HomeDing library as Components that can be controlled using setup configuration and runtime actions.
 ---
 
-Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like [sensors](/sensors/sensors.md).
+* [Sensor Elements](/elements/sensors.md) and [Sensor components](/sensors/sensors.md)
+* [Light Elements](/elements/light.md)
+* [Audio Elements](/elements/audio/index.md)
+* [Displays](/elements/display/index.md)
+
 
 The following element implementations are available in the current version of the HomeDing library.
 
@@ -78,7 +85,7 @@ TODO: element bme280 bme280
 
 <!-- MPU9250 -->
 
-More detailed information on sensor implementation can be found in [sensor elements implementation](/elements/sensors.md).
+More detailed information on sensor implementation can be found in [sensor Elements](/elements/sensors.md) implementation.
 
 
 ## Output and Actor Elements
@@ -190,7 +197,7 @@ The [Reference Element](/elements/map.md) creates actions by comparing an incomi
 :::
 
 :::element scene
-{% excerptOf collections.Element, "select" %}
+{% excerptOf collections.Element, "scene" %}
 :::
 
 :::element select
@@ -211,17 +218,12 @@ A The [DisplaySH1106 Element](/elements/display/sh1106.md) configures the displa
 :::
 
 :::element display/lcd
-The [DisplayLCD Element](/elements/display/lcd.md) configures the display adapter
-for using HD44780 compatible LCDs displays using I2C.
+{% excerptOf collections.Element, "display/lcd" %}
 :::
 
-{% imgcard "/displays/max7219.jpg", "/displays/max7219.htm" %}
-
-### [DisplayMAX7219](/displays/max7219.md)
-
-  The [DisplayMAX7219 Element](/displays/max7219.md) uses LED matrixes as displays
-  using the MAX7219 chip that can chain multiple 8x8 led displays.
-{% endimgcard %}
+:::element display/max7219
+{% excerptOf collections.Element, "display/max7219" %}
+:::
 
 
 On the displays several Elements can be used to display data, text and visuals:
@@ -243,6 +245,7 @@ The [DisplayLine Element](/elements/display/line.md) shows a line on the display
 :::
 
 More detailed information on displays and related elements can be found in [displays](/elements/display/index.md).
+
 
 ## One Value Display Elements
 
@@ -347,6 +350,10 @@ The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast
 
 * SD Card Element
 
+:::element sd sdcard
+{% excerptOf collections.Element, "sd" %}
+:::
+
 :::element sdmmc sdcard
 {% excerptOf collections.Element, "sdmmc" %}
 :::
@@ -356,7 +363,7 @@ The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast
 
 The [Audio Elements](/elements/audio/index.md) can be used to create / control audio related devices and chips.
 
-:::element radio
+:::element audio/radio
 {% excerptOf collections.Element, "radio" %}
 
 This element is using the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)

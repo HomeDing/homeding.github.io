@@ -12,6 +12,7 @@ excerpt: >
 There are 2 SD card supporting elements in the Homeding library, supporting the 2 different available wirings:
 
 * SD card using the MMC support by ESP32 (SDMMCElement)
+
 * SD cards using standard SPI data transfer. (SDElement)
 
 Only one of these Elements can be activated at a time.
@@ -19,8 +20,8 @@ Only one of these Elements can be activated at a time.
 Both implementations enable using the SD card memory for storing files locally e.g.,
 for recording sensor data or serving additional files on the web frontend.
 
-The ESP32 SDMMC implementation is supported by the hardware and
-provides a fast 4-bit bus implementation for SD cards.
+The SDMMC is available on ESP32 boards and is supported by the hardware.
+It provides a fast 4-bit bus implementation for SD cards.
 
 See SDElement that is available on ESP32 and ESP8266 boards offers 
 a slower alternative using SPI access to SD Cards.
