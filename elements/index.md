@@ -83,7 +83,13 @@ TODO: element bme280 bme280
 {% excerptOf collections.Element, "bl0937" %}
 :::
 
-<!-- MPU9250 -->
+<!-- MPU9250 
+ 3-Axis gyroscope
+ 3-Axis accelerometer.
+ 3-Axis magnetometer 
+ 
+<https://media.digikey.com/pdf/Data%20Sheets/TDK%20PDFs/MPU-9250_Rev_1.1.pdf> 
+-->
 
 More detailed information on sensor implementation can be found in [sensor Elements](/elements/sensors.md) implementation.
 
