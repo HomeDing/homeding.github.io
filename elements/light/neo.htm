@@ -22,6 +22,7 @@
   .gpio.red {background-color: #F22; color:white}
   .gpio.black {background-color: #111; color:white}
   .gpio.blue {background-color: #22F; color:white}
+  main h2 {margin-top: 1rem !important;}
   </style>
 </head>
 
@@ -43,11 +44,14 @@
     <h1>Neo Element</h1>
 
     
+    
+      <div class="iconcard"><svg class="icon"><use href="/icons.svg#neo"></use></svg>
+    
+    The Neo Element allows driving these LEDs and provides some color animations and transitions. Neopixels is a brand name for LED stripes with the ws2812 chip.
+</div>
       
-    <p>Neopixels is a brand name for LED stripes with the ws2812 chip.</p>
-<p>These LED stripes and RGB LEDs are using the ws2812 or similar protocol that sends RGB values over a 1 wire data line. Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.</p>
-<p>The neo allows driving these LEDs by using the Adafruit Neopixel Library and by providing some color animations and transitions.</p>
-<p>A very similar functionality applies to the <a href="/elements/light.htm">Light Element</a> that can drive a single RGB or single color LED.</p>
+    <p>These LED stripes and RGB LEDs are using the ws2812 chip with a specific protocol that sends RGB values over a 1 wire data line.
+Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.</p>
 <!--
 If you require more complex light situations and light animations 
 Consider using the [DMX Element](/dmx.md) to get light input actions using the DMX Artnet protocol that is supported by light mixers and consoles for stage and installation purpose.
@@ -74,7 +78,7 @@ Examples for color setting actions are:</p>
 </ul>
 <p>When assigning a single color value all the pixels will be set to this color.</p>
 <p>When passing a list of color values the pattern is repeated until all pixels have been assigned a new color.</p>
-<p>For valid color values, see <a href="/elements/light.htm">LightElement</a>.</p>
+<p>For valid color values, see <a href="/elements/light/light.htm">LightElement</a>.</p>
 <h2>Wheel mode</h2>
 <p>This mode is activated by setting the <code>mode</code> property to <code>wheel</code>.</p>
 <p>In this mode the colors of all pixels are changing slowly through all colors of the RGB spectrum.</p>
@@ -103,7 +107,7 @@ Examples for color setting actions are:</p>
 <h2>See also</h2>
 <ul>
 <li>Good hardware tips from <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels">https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels</a></li>
-<li><a href="/elements/light.htm">Light Element</a></li>
+<li><a href="/elements/light/light.htm">Light Element</a></li>
 </ul>
 
 

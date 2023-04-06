@@ -22,6 +22,7 @@
   .gpio.red {background-color: #F22; color:white}
   .gpio.black {background-color: #111; color:white}
   .gpio.blue {background-color: #22F; color:white}
+  main h2 {margin-top: 1rem !important;}
   </style>
 </head>
 
@@ -55,11 +56,17 @@
 <ul>
 <li>4MB Flash</li>
 <li>Ceramic WiFi Antenna</li>
+<li>One Neo Pixel/ws2812 LED.</li>
 <li>QWIIC compatible socket for wiring I2c based sensors.</li>
-<li>OLED display based on SSD1306 chip attached through I2C Interface</li>
-<li>USB-C connector us directly connected to ESP32-C3 processor.</li>
+<li>OLED display based on SSD1306 chip attached through I2C Interface.</li>
+<li>USB-C connector, directly connected to ESP32-C3 processor.</li>
 <li>5V to 3.3V regulator on board.</li>
 </ul>
+<h2>WS2812 RGB LED</h2>
+<ul>
+<li>This LED is attached to the pin GPIO 2 and can be controlled by using a <a href="/elements/light/neo.htm">Neo Element</a>.</li>
+</ul>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"neo"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"bar"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><span class="token punctuation">,</span><br>      <span class="token property">"count"</span><span class="token operator">:</span> <span class="token number">1</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>System configuration</h2>
 <p>This <strong>env.json</strong> file can be used as a starting point for configuring this board type.</p>
 <p>It contains the onboard special hardware initialization for the IO09 button, the OLED display and the
