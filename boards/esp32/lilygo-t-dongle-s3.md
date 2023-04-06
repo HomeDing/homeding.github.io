@@ -64,13 +64,16 @@ The display has a 80 * 160 resolution and is using the following pins:
 
 ## Arduino Board Configuration
 
-ESP32S3 Dev Module
-JTAG Adapter disabled
-PSRam disabled
-Flash Mode QIO 80 MHz
-Flash Size: 4MB
-USB Mode Hardware CDC and JTAG
-USB CDC On Boot: Enabled
+To compile for this board in Arduino the following settings for the board can be used:
+
+* ESP32S3 Dev Module
+* JTAG Adapter disabled
+* PSRam disabled
+* Flash Mode QIO 80 MHz
+* Flash Size: 4MB
+* USB Mode Hardware CDC and JTAG
+* USB CDC On Boot: Enabled
+
 
 ### Diag output
 

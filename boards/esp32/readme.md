@@ -8,7 +8,7 @@ Specific to ESP32 are the following features:
 The numbers in the processor datasheet are used.
 
 * The [Touch Element](/elements/touch.md) allows using the ESP32 built-in touch features on the GPIO pins.
-* The [MY9291 Element](/elements/my9291.md) only works with ESP32 by the used library.
+* The [MY9291 Element](/elements/light/my9291.md) only works with ESP8266 by the used library.
 
 TODO:
 

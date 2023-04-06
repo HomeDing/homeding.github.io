@@ -8,7 +8,7 @@ excerpt: >
   Here are some boards and devices supported by the HomeDing library.
 ---
 
-{% from 'macros.njk' import imgCard %}
+{% from 'macros.njk' import imgCard, elemCard with context %}
 
 On the market you find a lot of solutions like bare chip adapters, development boards,
 IoT devices off-the-shelf and even complete kits that use these chips.
@@ -129,7 +129,7 @@ and the [BL0937 chip](/elements/bl0937.md).
 **[Bulb devices](/boards/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
 
 They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using
-the [Color Element](/elements/color.md) and [Switch Element](/elements/switch.md) for control.
+the [Color Element](/elements/light/color.md) and [Switch Element](/elements/switch.md) for control.
 :::
 
 <!-- ESP8266 Module Series

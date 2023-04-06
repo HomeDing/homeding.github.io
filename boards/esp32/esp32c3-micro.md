@@ -15,10 +15,28 @@ This board comes with
 
 * 4MB Flash
 * Ceramic WiFi Antenna
+* One Neo Pixel/ws2812 LED.
 * QWIIC compatible socket for wiring I2c based sensors.
-* OLED display based on SSD1306 chip attached through I2C Interface 
-* USB-C connector us directly connected to ESP32-C3 processor.
+* OLED display based on SSD1306 chip attached through I2C Interface.
+* USB-C connector, directly connected to ESP32-C3 processor.
 * 5V to 3.3V regulator on board.
+
+
+## WS2812 RGB LED
+
+* This LED is attached to the pin GPIO 2 and can be controlled by using a [Neo Element](/elements/light/neo.md).
+
+``` json
+{
+  "neo": {
+    "bar": {
+      "pin": "2",
+      "value": "red",
+      "count": 1
+    }
+  }
+}
+```
 
 ## System configuration
 

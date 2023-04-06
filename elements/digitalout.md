@@ -6,7 +6,7 @@ layout: "page.njk"
 description: Support digital output signals based on actions.
 excerpt: >
   The DigitalOutElement is used with the GPIO pins of the board to create a digital output level based on actions sent to the element.
-  This can e.g. be used to drive a LED or a relay.
+  This can e.g. be used to switch a LED or relay on/off. 
 ---
 
 ## Web UI for the Timer Element

@@ -2,7 +2,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const myMarkdown = require("./.myMarkdown");
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   console.log("eleventy setup...");
   eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("_site/**");
   eleventyConfig.ignores.add(".vscode/**");
 
-  const contentFolders = ["boards", "boards/esp32", "concepts", "dev", "elements/audio", "elements/display", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
+  const contentFolders = ["boards", "boards/esp32", "concepts", "dev", "elements/audio", "elements/display", "elements/light", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
   const assetFolders = ["i", "v03", "v03m", "v09", "v09m", "home"];
 
   contentFolders.forEach(f => {
@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
     "css" // css is not yet a recognized template extension in Eleventy
   ]);
 
-  eleventyConfig.addTransform("insp", function (content) {
+  eleventyConfig.addTransform("insp", function(content) {
     // console.log( this.inputPath, this.outputPath );
     // note that this.outputPath is `false` for serverless templates
     // simply remove whitespace at the beginning of all textlines starting with a tag
@@ -69,11 +69,11 @@ module.exports = function (eleventyConfig) {
     return (content);
   });
 
-  eleventyConfig.addFilter("stringify", function (value) {
+  eleventyConfig.addFilter("stringify", function(value) {
     return JSON.stringify(value);
   });
 
-  eleventyConfig.addFilter("keys", function (value) {
+  eleventyConfig.addFilter("keys", function(value) {
     let result = [];
     for (const k in value) {
       result.push(k);
@@ -81,11 +81,11 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(result);
   });
 
-  eleventyConfig.addFilter("item", function (obj, name) {
+  eleventyConfig.addFilter("item", function(obj, name) {
     return obj[name];
   });
 
-  eleventyConfig.addFilter("print", function (value) {
+  eleventyConfig.addFilter("print", function(value) {
     const seen = new Set();
 
     function detect(k, v) {
@@ -116,7 +116,7 @@ module.exports = function (eleventyConfig) {
   // ===== Shortcodes =====
 
   // include excerpt text by using: {% excerptOf collections, "map" %}
-  eleventyConfig.addShortcode("excerptOf", function (col, name) {
+  eleventyConfig.addShortcode("excerptOf", function(col, name) {
     if (!col) {
       console.error("excerptOf: no collection given.")
     }
@@ -132,8 +132,42 @@ module.exports = function (eleventyConfig) {
   );
 
 
+  // include page title text by using: {% title collections, "map" %}
+  eleventyConfig.addShortcode("titleOf", function(col, name) {
+    if (!col) {
+      console.error("titleOf: no collection given.")
+    }
+    if (Array.isArray(col)) {
+      const page = col.find(e => e.url.includes('/' + name + '.'));
+      if (page) {
+        return (page.data.title);
+      }
+    }
+    console.error(`titleOf: entry ${name} not found.`)
+    return ('');
+  }
+  );
+
+
+  // include page title text by using: {% title collections, "map" %}
+  eleventyConfig.addShortcode("urlOf", function(col, name) {
+    if (!col) {
+      console.error("titleOf: no collection given.")
+    }
+    if (Array.isArray(col)) {
+      const page = col.find(e => e.url.includes('/' + name + '.'));
+      if (page) {
+        return (page.url);
+      }
+    }
+    console.error(`urlOf: entry ${name} not found.`)
+    return ('');
+  }
+  );
+
+
   // include excerpt text by using: {% dataOf collections.Board, "map" %}
-  eleventyConfig.addShortcode("dataOf", function (col, name, item) {
+  eleventyConfig.addShortcode("dataOf", function(col, name, item) {
     if (!col) {
       console.error("dataOf: no collection given.")
     }
@@ -150,14 +184,15 @@ module.exports = function (eleventyConfig) {
 
 
   // include excerpt text by using: {% excerptOf collections, "map" %}
-  eleventyConfig.addPairedShortcode("imgcard", function (content, img, link) {
-    var out = `<div class="imgcard"><a href="${link}"><img src="${img}"></a>\n${content}\n</div>`;
+  eleventyConfig.addPairedShortcode("imgcard", function(content, img, link) {
+    link = link.replace(/\.md$/, ".htm");
+    var out = `<div class="imgcard"><a href="${link}"><img src="${img}"></a>\n${content}\n</div>\n`;
     return (out);
   });
 
-  eleventyConfig.addPairedShortcode("iconcard", function (content, icon, link) {
-    var out = `<div class="iconcard"><a href="${link}"><svg class="icon"><use href="/icons.svg#${icon}"></use></svg></a>\n`
-      + `<a href="${link}"><h3>${icon}</h3></a>\n${content}\n</div>`;
+  eleventyConfig.addPairedShortcode("iconcard", function(content, icon, link) {
+    link = link.replace(/\.md$/, ".htm");
+    var out = `<div class="iconcard"><a href="${link}"><svg class="icon"><use href="/icons.svg#${icon}"></use></svg></a>\n${content}\n</div>\n`;
     return (out);
   });
 

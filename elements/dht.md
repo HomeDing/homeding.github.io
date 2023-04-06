@@ -1,12 +1,12 @@
 ---
-title: DHT Element for Temperature and Humidity Sensors
+title: DHT Element
 icon: dht
 tags: ["Element", "Sensor"]
 layout: "page.njk"
 description: Support of the DHT air temperature and humidity sensor chips.
 excerpt: >
-  The DHTElement allows retrieving temperature and humidity values from the DHT family
-  and AM2320 sensors and creates actions when new values are available.
+  The DHT Element allows retrieving temperature and humidity values from the
+  DHT11, DHT22 and AM2302 sensors and creates actions when new values are available.
 ---
 
 The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.

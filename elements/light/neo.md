@@ -3,15 +3,13 @@ title: Neo Element
 icon: neo
 tags: ["Element", "Light"]
 layout: "page.njk"
+excerpt: >
+  The Neo Element allows driving these LEDs and provides some color animations and transitions.
+  Neopixels is a brand name for LED stripes with the ws2812 chip.
 ---
 
-Neopixels is a brand name for LED stripes with the ws2812 chip.
-
-These LED stripes and RGB LEDs are using the ws2812 or similar protocol that sends RGB values over a 1 wire data line. Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.
-
-The neo allows driving these LEDs by using the Adafruit Neopixel Library and by providing some color animations and transitions.
-
-A very similar functionality applies to the [Light Element](/elements/light.md) that can drive a single RGB or single color LED.
+These LED stripes and RGB LEDs are using the ws2812 chip with a specific protocol that sends RGB values over a 1 wire data line.
+Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.
 
 <!--
 If you require more complex light situations and light animations 
@@ -55,7 +53,7 @@ When assigning a single color value all the pixels will be set to this color.
 
 When passing a list of color values the pattern is repeated until all pixels have been assigned a new color.
 
-For valid color values, see [LightElement](/elements/light.md).
+For valid color values, see [LightElement](/elements/light/light.md).
 
 
 ## Wheel mode
@@ -101,5 +99,5 @@ Example:
 ## See also
 
 * Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
-* [Light Element](/elements/light.md)
+* [Light Element](/elements/light/light.md)
 

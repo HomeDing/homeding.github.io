@@ -8,8 +8,10 @@ excerpt: >
   Elements are implemented in the HomeDing library as Components that can be controlled using setup configuration and runtime actions.
 ---
 
+{% from 'macros.njk' import imgCard, elemCard with context %}
+
 * [Sensor Elements](/elements/sensors.md) and [Sensor components](/sensors/sensors.md)
-* [Light Elements](/elements/light.md)
+* [Light Elements](/elements/light/light.md)
 * [Audio Elements](/elements/audio/index.md)
 * [Displays](/elements/display/index.md)
 
@@ -21,25 +23,11 @@ The following element implementations are available in the current version of th
 
 Input Elements are used to create an action based on a specific input signal like digital HIGH/LOW or analog signals or values from sensors like movement detectors.
 
-:::element digitalin
-{% excerptOf collections.Element, "digitalin" %}
-:::
-
-:::element digitalsignal digitalin
-{% excerptOf collections.Element, "digitalsignal" %}
-:::
-
-:::element analog
-{% excerptOf collections.Element, "analog" %}
-:::
-
-:::element rotary
-{% excerptOf collections.Element, "rotary" %}
-:::
-
-:::element touch
-{% excerptOf collections.Element, "touch" %}
-:::
+{{ elemCard("digitalin") }}
+{{ elemCard("digitalsignal", "digitalin") }}
+{{ elemCard("analog") }}
+{{ elemCard("rotary") }}
+{{ elemCard("touch") }}
 
 
 ## Sensor Elements
@@ -47,41 +35,16 @@ Input Elements are used to create an action based on a specific input signal lik
 The [sensor elements](/elements/sensors.md) implement the adoption to a very specific sensor or sensor family. They share
 some common implementation to allow gathering values on a regular basis and updating other elements or even other boards by sending actions with the current value.
 
-:::element dht
-Use DHT11, DHT22 and AM2302 sensors for temperature and humidity and create actions.
-:::
+{{ elemCard("dht") }}
+{{ elemCard("am2320", "dht") }}
+{{ elemCard("aht20", "dht") }}
+{{ elemCard("dallas") }}
+{{ elemCard("bme680") }}
+{{ elemCard("pms") }}
+{{ elemCard("bmp280") }}
+{{ elemCard("bl0937", "no") }}
 
-:::element am2320 dht
-{% excerptOf collections.Element, "am2320" %}
-:::
-
-:::element aht20 dht
-{% excerptOf collections.Element, "aht20" %}
-:::
-
-:::element dallas
-{% excerptOf collections.Element, "dallas" %}
-:::
-
-:::element bme680
-{% excerptOf collections.Element, "bme680" %}
-:::
-
-:::element pms
-Read sensor values from a PMS5003 sensor by plantdata to count micro particles in the air.
-:::
-
-:::element bmp280
-{% excerptOf collections.Element, "bmp280" %}
-:::
-
-<!--
-TODO: element bme280 bme280
--->
-
-:::element bl0937 default
-{% excerptOf collections.Element, "bl0937" %}
-:::
+<!-- TODO: element bme280 bme280 -->
 
 <!-- MPU9250 
  3-Axis gyroscope
@@ -100,9 +63,7 @@ More detailed information on sensor implementation can be found in [sensor Eleme
 The [PWMOut Element](/elements/pwmout.md) is used to output an pwm signals based on actions. e.g. LEDs.
 :::
 
-:::element digitalout
-The [DigitalOut Element](/elements/digitalout.md) is used to create digital output signals based on actions.
-:::
+{{ elemCard("digitalout") }}
 
 :::element rfcodes default
 The [RFCodes Element](/elements/rfcodes.md) is used for sending and receiving RF codes on the 433 MHz band
@@ -112,51 +73,27 @@ e.g. to control remote sockets.
 
 ## Light Elements
 
-To control a light with only one channel the [Switch Element](/elements/switch.md) and [Value Element](/elements/value.md) can be used
-to control dimmable LEDs using [PWM Out Element](/elements/pwmout.md) or switching using [DigitalOut Element](/elements/digitalout.md).
+To control a simple light or bulb the [Switch Element](/elements/switch.md) and [Value Element](/elements/value.md) can be used
+to control on/off and the brightness of LEDs using [PWM Out Element](/elements/pwmout.md) or [DigitalOut Element](/elements/digitalout.md).
 
-:::element switch
-The [Switch Element](/elements/switch.md) controls a boolean output value with 0 and 1 values.
-It can use input from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and the Web UI.
-:::
+To control lights, [bulbs](/boards/bulb.md) and LED stripes with colors the following special light elements can be used.
 
-:::element value
-The [Value Element](/elements/value.md) controls a value in a given range. It can be controlled using several methods
-like a [DigitalIn Element](/elements/digitalin.md) or a [Rotary Element](/elements/rotary.md) and the Web UI.
-:::
+There are special elements to control specific chips or using the PWM capabilities:
 
-:::element pwmout
-The [PwmOut Element](/elements/pwmout.md) enables creating a PWM digital output signal usually to dimmable LEDs and servos.
-:::
+{{ elemCard("light") }}
+{{ elemCard("my9291", "led") }}
 
-:::element digitalout
-The [DigitalOut Element](/elements/digitalout.md) enables creating a digital output on a GPIO pin.
-:::
+The [Color Element](/elements/light/color.md) can be used to create a light color value of your choice.
 
-For lights like [bulbs](/boards/bulb.md) or LED stripes that have multiple color channels
-the [Color Element](/elements/color.md) can be used to control the light color using a RGB or WRGB color value.
+{{ elemCard("color") }}
 
-There are special elements to control specific chips or using the PWM capabilities.
+For LED stripes the [Stripe Element](/elements/light/stripe.md) provides the base functionality to control a series of LEDs with individual color values and a overall brightness.
 
-:::element color
-The [Color Element](/elements/color.md) controls a RGB or WRGB value that can be used to control light Elements with color support.
-:::
+The stripes can be controlled from the following elements implementing the specific protocols:
 
-:::element light
-The [Light Element](/elements/light.md) can control up to 4 PWM output GPIOs for controlling RGB and WRGB LEDs by color values.
-:::
-
-:::element my9291 led
-The [MY9291 Element](/elements/my9291.md) implements the protocol to control the Taiwan Mingyang MY9291 LED driver chip that can be found in some bulbs.
-:::
-
-:::element neo
-The [Neo Element](/elements/neo.md) implements the protocol to control ws2812 based LEDs also called Neopixel.
-:::
-
-:::element p9813 led
-The [P9813 Element](/elements/p9813.md) implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.
-:::
+{{ elemCard("neo") }}
+{{ elemCard("apa102", "led") }}
+{{ elemCard("p9813", "led") }}
 
 
 ## Light Sensors
@@ -194,61 +131,31 @@ The outgoing value is HIGH(1) when one of the given input values is not LOW(0).
 The ADD Element sums up multiple input values to create a single output value.
 :::
 
-:::element map
-{% excerptOf collections.Element, "map" %}
-:::
+{{ elemCard("map") }}
 
 :::element reference default
 The [Reference Element](/elements/map.md) creates actions by comparing an incoming value with a reference value.
 :::
 
-:::element scene
-{% excerptOf collections.Element, "scene" %}
-:::
-
-:::element select
-{% excerptOf collections.Element, "select" %}
-:::
+{{ elemCard("scene") }}
+{{ elemCard("select") }}
 
 
 ## Display Elements
 
 The HomeDing library supports local attached [displays](/elements/display/index.md) but also works fine without a local display.
 
-:::element display/ssd1306
-The [DisplaySSD1306 Element](/elements/display/ssd1306.md) configures the display adapter for using SSD1306 compatible OLED displays with 128\*32 or 128\*64 dots.
-:::
-
-:::element display/sh1106
-A The [DisplaySH1106 Element](/elements/display/sh1106.md) configures the display adapter for using SH1106 compatible OLED displays with 128\*32 or 128\*64 dots.
-:::
-
-:::element display/lcd
-{% excerptOf collections.Element, "display/lcd" %}
-:::
-
-:::element display/max7219
-{% excerptOf collections.Element, "display/max7219" %}
-:::
-
+{{ elemCard("ssd1306", "displayssd1306") }}
+{{ elemCard("sh1106", "displaysh1106") }}
+{{ elemCard("lcd", "displaylcd") }}
+{{ elemCard("max7219", "displaymax7219") }}
 
 On the displays several Elements can be used to display data, text and visuals:
 
-:::element display/text
-The [DisplayText Element](/elements/display/text.md) show values as text on the display.
-:::
-
-:::element display/dot
-The [DisplayDot Element](/elements/display/dot.md) show values as a dot on the display.
-:::
-
-:::element display/bar
-The [DisplayBar Element](/elements/display/bar.md) show values as a progress or percentage bar on the display.
-:::
-
-:::element display/line
-The [DisplayLine Element](/elements/display/line.md) shows a line on the display.
-:::
+{{ elemCard("text", "displaytext") }}
+{{ elemCard("dot", "displaydot") }}
+<!-- { { elemCard("bar", "displaybar") }} -->
+{{ elemCard("line", "displayline") }}
 
 More detailed information on displays and related elements can be found in [displays](/elements/display/index.md).
 
@@ -257,13 +164,8 @@ More detailed information on displays and related elements can be found in [disp
 
 These Elements can be used to display a single value.
 
-:::element max7219
-{% excerptOf collections.Element, "max7219" %}
-:::
-
-:::element tm1637
-{% excerptOf collections.Element, "tm1637" %}
-:::
+{{ elemCard("max7219") }}
+{{ elemCard("tm1637") }}
 
 
 ## Time related Elements
@@ -337,9 +239,7 @@ Things based on the HomeDing library are network connected by default as they in
 
 The Network Elements extend the base functionality to connect to other devices and services over the network using different protocols.
 
-:::element remote
-{% excerptOf collections.Element, "remote" %}
-:::
+{{ elemCard("remote") }}
 
 :::element mqtt default
 {% excerptOf collections.Element, "mqtt" %}

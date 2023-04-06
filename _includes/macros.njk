@@ -7,5 +7,14 @@
   {% dataOf coll, item, "excerpt" %}
 
 </div>
+{% endmacro %}
 
+
+{% macro elemCard(name, icon) %}
+{% if not icon %}{% set icon = name %}{% endif %}
+<div class="iconcard">
+  <a href="{% urlOf collections.Element, name %}"><svg class="icon"><use href="/icons.svg#{{icon}}"></use></svg></a>
+  <h3><a href="{% urlOf collections.Element, name %}">{% dataOf collections.Element, name, "title" %}</a> ({{name}})</h3>
+  <p>{% dataOf collections.Element, name, "excerpt" %}</p>
+</div>
 {% endmacro %}

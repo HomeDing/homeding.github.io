@@ -84,7 +84,7 @@ The 2 connectors with 8 pins have the following ports assigned in the ESP8266.
 There are some shields for the board forma factor available. Here some examples:
 
 {% imgcard "/boards/d1-8x8rgbshield.jpg", "" %}
-The D1 8x8 RGB Shield has 64 WS2812 LEDs that can be addressed using the [Neo Element](/elements/neo.md)
+The D1 8x8 RGB Shield has 64 WS2812 LEDs that can be addressed using the [Neo Element](/elements/light/neo.md)
 using `"config": "rgb"`.
 {% endimgcard %}
 

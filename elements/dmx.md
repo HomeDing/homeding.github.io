@@ -26,5 +26,5 @@ Artnet Receiver
 
 ## See also
 
-* [Neo element](/elements/neo.md)
-* [RGBElement](/elements/light.md)
+* [Neo element](/elements/light/neo.md)
+* [RGBElement](/elements/light/light.md)

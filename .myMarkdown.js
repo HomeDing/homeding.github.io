@@ -99,7 +99,7 @@ module.exports = {
 
 
     // card for elements in elements folder
-    // ::: element title [icon]
+    // :::element title [icon]
     markdownLib.use(mdContainer, 'element', {
       render: function(tokens, idx) {
         var t = tokens[idx];
