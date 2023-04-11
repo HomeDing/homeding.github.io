@@ -41,7 +41,7 @@ This element implements the following properties and actions:
 >
 > **delay** - This property can be set to enable automatic starting all steps one after one.
 > This property specifies the delay duration like `2s`.
-> When not set a `next` action is required to advance to the next step.
+> When set to 0 (no automatic next step) a `next` action is required to advance to the next step. Default is `100ms`
 >
 > **start** - This action is used to start at step[0] and advance automatically when a delay is configured.
 >

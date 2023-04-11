@@ -35,7 +35,7 @@ The configuration combines an digitalin, a timer, a switch and a digitalout elem
       "loglevel": "0",
       "description": "reset after timeout",
       "pulseTime": "00:05:00",
-      "onEnd": "switch/light?value=0"
+      "onOff": "switch/light?value=0"
     }
   }, 
 
@@ -66,5 +66,4 @@ more functions can be supported:
 * The `click` action of the button will start the timer as before.
 * A `doubleclick` will turn off the light immediately by sending an action to the timer that sets the timer to the end state.
 * When more momentary buttons are required to control the light you can use other device that have a configuration from the [Remote Button recipe](/recipes/remotebutton.md).
-
 

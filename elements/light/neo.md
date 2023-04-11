@@ -4,7 +4,8 @@ icon: neo
 tags: ["Element", "Light"]
 layout: "page.njk"
 excerpt: >
-  The Neo Element allows driving these LEDs and provides some color animations and transitions.
+  The Neo Element implements using LED Stripes and LED panels
+  based on the ws2812 chip and protocol and provides some color animations and transitions.
   Neopixels is a brand name for LED stripes with the ws2812 chip.
 ---
 

@@ -1,0 +1,7 @@
+# LP55231
+
+The SparkFun LP55231 LED Driver Breakout is a self-contained solution for developing and deploying the nine-channel I2C LED controller. Remarkably simple, the breakout is equipped primarily with just the LP55231 LED controller IC, plus three RGB LEDs.
+
+It also features pads and jumpers for replacing the onboard LEDs with external ones, and configuring the I2C bus, which allows you to daisy-chain up to four LP55231s. This breakout drives the LEDs using Pulse Width Modulation (PWM), so it is well-suited for variable intensity and color-mixing applications!
+
+https://www.sparkfun.com/products/13884
