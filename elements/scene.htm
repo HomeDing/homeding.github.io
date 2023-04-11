@@ -69,7 +69,7 @@ at a single place by using multiple scene definitions.</p>
 when the value of the scene element is set to any value.</p>
 <p><strong>delay</strong> - This property can be set to enable automatic starting all steps one after one.
 This property specifies the delay duration like <code>2s</code>.
-When not set a <code>next</code> action is required to advance to the next step.</p>
+When set to 0 (no automatic next step) a <code>next</code> action is required to advance to the next step. Default is <code>100ms</code></p>
 <p><strong>start</strong> - This action is used to start at step[0] and advance automatically when a delay is configured.</p>
 <p><strong>next</strong> - This action will start sending the actions of the next step.</p>
 <p><strong>prev</strong> - This action will start sending the actions of the previous step</p>
