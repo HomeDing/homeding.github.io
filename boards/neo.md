@@ -1,9 +1,15 @@
-## Neopixel board
-
-The neo board is a very specific adapter between a neopixel stripe, wheel or array and a ESP8266 ESP-01 board.
+---
+title: Neopixel board for ESP-01
+icon: neo
+tags: ["Element", "Light"]
+layout: "page.njk"
+excerpt: >
+  The neo board is a very specific adapter to drive a Neopixel based
+  stripe, wheel or array using a ESP-01 board.
+  The ESP-01 boards are available with ESP8266 and ESP32-C3 chips. 
+---
 
 ![neopixel board](/boards/neo.jpg)
-
 
 ## Overview
 
@@ -23,28 +29,19 @@ An env.json file for the system configuration:
 ``` json
 {
   "device": {
-    "0": {
-      "loglevel": 0,
+    "main": {
       "name": "neoding",
-      "reboottime": "24h",
-      "description": "Neopixel adapter with ESP-01."
+      "description": "ESP-01 board with Neopixels"
     }
   },
   "ota": {
-    "0": {
+    "main": {
       "port": 8266,
-      "description": "Listen for 'over the air' OTA Updates"
-    }
-  },
-  "ssdp": {
-    "0": {
-      "manufacturer": "Matthias Hertel",
-      "ManufacturerURL": "https://www.mathertel.de",
-      "ModelURL": "http://www.mathertel.de/HomeDing"
+      "passwd": "123",
+      "description": "allow Over the Air Updates"
     }
   }
-}
-```
+}```
 
 ## Configuration
 
@@ -52,11 +49,31 @@ A config.json file for enabling the neopixels:
 
 ``` json
 {
+  "switch": {
+    "relay": {
+      "title": "enable",
+      "description": "On/Off",
+      "value": 0,
+      "onValue": "neo/bar?enable=$v"
+    }
+  },
   "neo": {
-    "0": {
+    "bar": {
       "pin": "2",
-      "count":16,
-      "value":"red"
+      "count": 39,
+      "config": "grb"
+    }
+  },
+  "color": {
+    "l": {
+      "title": "Color Control",
+      "mode": "fix",
+      "duration": "12s",
+      "value": "0",
+      "brightness": "20",
+      "connect": [
+        "neo/bar"
+      ]
     }
   }
 }
