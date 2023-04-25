@@ -41,7 +41,8 @@ An env.json file for the system configuration:
       "description": "allow Over the Air Updates"
     }
   }
-}```
+}
+```
 
 ## Configuration
 

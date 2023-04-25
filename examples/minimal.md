@@ -1,6 +1,7 @@
 ---
 title: Minimal Sized Example
 layout: "page.njk"
+tags: ["Example"]
 description: Example for devices with only 1MByte flash memory.
 ---
 

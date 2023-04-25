@@ -12,7 +12,6 @@ The Witty board is a cheap ESP8266 board that has a RGB LED, a LDR sensor and an
 ![witty board 2](/boards/witty.jpg)
 ![witty board 1](/boards/witty1.jpg)
 
-
 ## 2 Boards
 
 The witty board uses 2 separate boards that are connected through some connectors.
@@ -28,8 +27,7 @@ The lower board hosts the CH340 USB to Serial bridge chip, the RST momentary swi
 
 Here are the signals on the connectors:
 
-![witty pins](/boards/wittypins.png )
-
+![witty pins](/boards/wittypins.png)
 
 ## Witty vs. Adapter
 
@@ -46,7 +44,6 @@ The obvious difference are the added components and the existing voltage regulat
 
 There is the option to add a voltage adapter to the [White Adapter board](/boards/whiteadapter.md) as well.
 
-
 ## System configuration
 
 The device settings in env.json may look like this:
@@ -56,30 +53,38 @@ This button is located on the lower board. To use the button on the upper board 
 
 As the startup mode indicator the D7 is configured in this example using the blue of the RGB LED.
 
-``` json
+```json
 {
   "device": {
     "0": {
       "name": "witty",
-      "logfile": 1,
-      "led": "D7",
+      "title": "WittyBoard",
+      "description": "Witty board with RGB LED and LDR",
+      "loglevel": 2,
+      "led": "D4",
       "button": "D3",
-      "description": "Witty board with RGB LED and LCD"
+      "homepage": "/ding.htm"
+    }
+  },
+  "ota": {
+    "0": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "Listen for 'over the air' OTA Updates"
     }
   }
 }
 ```
 
-
 ## RGB LED
 
 There is a RGB LED on the board that is directly driven by the following GPIO pins:
 
-| Color | Pin        |
-| ----- | ---------- |
-| red   | GPIO15(D8) |
+| Color | Pin |
+| ----- | --- |
+| red | GPIO15(D8) |
 | green | GPIO12(D6) |
-| blue  | GPIO13(D7) |
+| blue | GPIO13(D7) |
 
 There is also a blue LED on the ESP-12 module on GPIO2(D4).
 
@@ -87,17 +92,34 @@ To reduce the power consumption the LEDs will not consuming the possible 20 mA p
 
 This is a good solution for using the LED as an indicator but not as a source of light.
 
-It can be driven by the LightElement using the following configuration:
+It can be driven by the LightElement + ColorElement combination using the following configuration:
 
-``` json
-"light": {
-  "l": {
-    "pin": "D8,D6,D7", // red,green,blue or white,red,green,blue
-    "value": "x203050"
+```json
+{
+  "light": {
+    "l": {
+      "loglevel": 2,
+      "pin": "D8,D6,D7",
+      "mode": "pwm",
+      "enable": "true",
+      "value": "x603050",
+      "brightness": "20"
+    }
+  },
+  "color": {
+    "l": {
+      "title": "WittyRGB",
+      "loglevel": 2,
+      "config": "RGB",
+      "mode": "fix",
+      "duration": "4s",
+      "value": "x200000",
+      "onvalue": "light/l?value=$v",
+      "onbrightness": "light/l?brightness=$v"
+    }
   }
 }
 ```
-
 
 ## LDR
 
@@ -107,7 +129,7 @@ The willy board also has a Light Dependant Resistor (LDR) attached to the analog
 By using an reference of about 300 it is possible to use it similar to a button.
 When covering the LDR sensor with a finger the values drops below.
 
-``` json
+```json
 "analog": {
   "0": {
     "reference" : 300,
@@ -120,21 +142,18 @@ When covering the LDR sensor with a finger the values drops below.
 The recipe [LDR switch](/recipes/ldrswitch.md) you can find a configuration that
 uses a LDR to create a touchless on/off switch.
 
-
 ## Buttons
 
 There is a button on the upper (main) board attached to the GPIO4(D2) pin that can be used for any purpose.
 
-``` json
+```json
 ... ???
 Taster: GPIO4(D2)
 ```
 
-
 ## Example config.json
 
-
-``` json
+```json
 {
   "light": {
     "l": {
@@ -144,7 +163,7 @@ Taster: GPIO4(D2)
   },
   "analog": {
     "0": {
-      "reference" : 300,
+      "reference": 300,
       "onvalue": "device/0?log=analogvalue=$v",
       "onreference": "device/0?log=analogref=$v"
     }
@@ -152,10 +171,8 @@ Taster: GPIO4(D2)
 }
 ```
 
-
 ## See also
 
 * <https://blog.moneybag.de/fhem-witty-board-einfache-iot-funktionen-schnell-gebaut/>
 * <https://www.faranux.com/product/witty-cloud-board/>
 * <https://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/>
-

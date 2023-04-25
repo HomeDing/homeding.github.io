@@ -1,6 +1,7 @@
 ---
 title: Standard Example
 layout: "page.njk"
+tags: ["Example"]
 ---
 
 :::excerpt

@@ -31,6 +31,10 @@ It can be used with any board that has a 4MByte Flash memory like the [nodemcu b
 shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
 It can be used with any board that has a 4MByte Flash memory like the [nodemcu boards](/boards/nodemcu.md).
 
+* **[Micro](/examples/micro.md)**
+The micro firmware for HomeDing enabled devices
+is not a real example but is used to flash small devices
+with firmware for specific conditions.
 
 <!--
 * **[Radio](/examples/radio.md)** This example is built as an extension of the standard example but shows how a special element that is only used for this sketch can be included.

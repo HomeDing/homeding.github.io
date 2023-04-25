@@ -1,6 +1,7 @@
 ---
 title: WordClock Example
 layout: "page.njk"
+tags: ["Example"]
 ---
 
 :::excerpt default

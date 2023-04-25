@@ -1,6 +1,7 @@
 ---
 title: HomeDing - PWMLED Example ???
 layout: "page.njk"
+tags: ["Example"]
 ---
 
 > #Draft

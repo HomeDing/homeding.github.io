@@ -1,6 +1,7 @@
 ---
 title: Probe example
 layout: "page.njk"
+tags: ["Example"]
 ---
 
 :::excerpt
