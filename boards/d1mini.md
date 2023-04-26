@@ -83,21 +83,21 @@ The 2 connectors with 8 pins have the following ports assigned in the ESP8266.
 
 There are some shields for the board forma factor available. Here some examples:
 
-{% imgcard "/boards/d1-8x8rgbshield.jpg", "" %}
+{% imgcard "/boards/d1mini-8x8rgbshield.jpg", "" %}
 The D1 8x8 RGB Shield has 64 WS2812 LEDs that can be addressed using the [Neo Element](/elements/light/neo.md)
 using `"config": "rgb"`.
 {% endimgcard %}
 
-{% imgcard "/boards/d1-freeshield.jpg", "" %}
+{% imgcard "/boards/d1mini-freeshield.jpg", "" %}
 This shield can be used to apply special configurations by soldering.
 {% endimgcard %}
 
-{% imgcard "/boards/d1-sht30shield.jpg", "" %}
+{% imgcard "/boards/d1mini-sht30shield.jpg", "" %}
 The SHT30 shield with a digital temperature and humidity sensor
 can be stacked upon a board or by using a Qwiic connector cable.
 {% endimgcard %}
 
-{% imgcard "/boards/d1-sdshield.jpg", "" %}
+{% imgcard "/boards/d1mini-sdshield.jpg", "" %}
 TODO:
 
 The Micro SD Card shield adds a sd card slot to the SPI bus.
@@ -112,8 +112,7 @@ The Micro SD Card shield adds a sd card slot to the SPI bus.
 
 ## See also
 
-![d1mini pins](/boards/d1mini.png)
-
 * WeMos D1 Boards: <https://www.wemos.cc/en/latest/d1/index.html>
 * WeMos Shields: <https://www.wemos.cc/en/latest/d1_mini_shield/index.html>
+* <https://wolles-elektronikkiste.de/wemos-d1-mini-boards>
 * <https://homeding.github.io/dev/i2c.htm>

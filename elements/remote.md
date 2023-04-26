@@ -10,11 +10,14 @@ layout: "page.njk"
 
 Every local defined remote element is a shadow of another element on a remote board and acts as a proxy for addressing the remote element as if it was part of the local configuration.
 
-It has its own local name like “remote/led” to be used in messages. The configuration of this element specifies the device/network name of the remote thing and the type and id of the element inside. The property name and the value is passed unchanged.
+It has its own local id like `ledstribe` in the "remote/ledstribe” configuration to be used in messages. The configuration of this element specifies the device/network name of the remote device.
 
-Because network delivery is slow compared to local dispatching actions locally the action will be queued and executed one-by-one even when multiple actions are waiting to be send  out.
+Any Element in the remote device can then be used by addressing it using {device}:type/id?name=value.
+The property name and the value is passed unchanged.
 
-The Remote Element can only send one message at a time but you can of course have multiple remote element definitions in a config.
+Because network delivery is slow compared to local dispatching actions locally the action will be queued and executed one-by-one even when multiple actions are waiting to be send out.
+
+The Remote Element can only send one message at a time but you can of course have multiple remote element definitions in a config for multiple remote devices.
 
 The outgoing network package  is sent immediately when an action is triggered. The answer is then received and analyzed in the next loop event and is not blocking the internal execution of actions.
 
@@ -74,20 +77,15 @@ On the device named **dht22-probe** the dht element is configured to create acti
   },
 
   "remote": {
-    "display-t": {
-      "host": "displaybox",
-      "remoteid": "displaytext/t"
-    },
-    "display-h": {
-      "host": "displaybox",
-      "remoteid": "displaytext/h"
+    "display": {
+      "host": "displaybox"
     }
   }
 }
 ```
 
 ## TODO
+
 - [ ] keep/queue messages when network is not available.
 - [ ] detect that remote element is not available -> slow down, retry
 - [ ] Define what to do in case of an overflow.
-
