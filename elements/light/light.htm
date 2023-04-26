@@ -71,13 +71,14 @@ that</p>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?light" type="image/svg+xml"></object></p>
 <blockquote>
+<p><strong>value</strong> – This is the value used for the PWM output. This can be a single value for one pin or a (W)RGB value for up to 4 &gt; pins. The values is always using the 32-bit storage format for RGB values like <code>x00rrggbb</code> or 0…255.</p>
+<p><strong>brightness</strong> – The brightness factor can be used to dim the light in general. The brightness value must be in the range 0…&gt; 255. The default is 128.</p>
+<p><strong>enable</strong> – This boolean 0/1 value controls the output. When 0 is given the value for output is given with 0 but the current &gt; value is kept. This allows easy switching on and off.</p>
 <p><strong>pin</strong> – Specifies the output pin(s) that are used to connect to the light. This can be a list with up to 4 pins.
 Define one pin for normal single color leds (“pin”:“D6”)
 for 3 pins RGB (e.g. <code>&quot;pin&quot;: &quot;D8,D6,D7&quot;</code>) or
 for 4 pins for WRGB (e.g. <code>&quot;pin&quot;:&quot;15,14,12,5&quot;</code>).</p>
-<p><strong>value</strong> – This is the value used for the PWM output. This can be a single value for one pin or a (W)RGB value for up to 4 &gt; pins. The values is always using the 32-bit storage format for RGB values like <code>x00rrggbb</code> or 0…255.</p>
-<p><strong>brightness</strong> – The brightness factor can be used to dim the light in general. The brightness value must be in the range 0…&gt; 255. The default is 128.</p>
-<p><strong>enable</strong> – This boolean 0/1 value controls the output. When 0 is given the value for output is given with 0 but the current &gt; value is kept. This allows easy switching on and off.</p>
+<p><strong>mode</strong> – The mode must be set to <code>pwm</code> to directly enable LED control using pwm signal. For other light implementations the mode must not be set to not conflict with protocols of specific implementations.</p>
 </blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
@@ -124,7 +125,7 @@ The format #RRGGBB is used like in the css web standard and some plain color nam
 </table>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"lx"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"25"</span><br>      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"0"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"lx"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"15,14,12,5"</span><span class="token punctuation">,</span><br>      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"pwm"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x100000"</span><span class="token punctuation">,</span><br>      <span class="token property">"enable"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"25"</span><span class="token punctuation">,</span><br>      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"3s"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Outbound Actions</h2>
 <p>There are no actions being sent by this element.</p>
 <h2>State</h2>
