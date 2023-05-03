@@ -52,24 +52,42 @@
       
     <p>There are 2 SD card supporting elements in the Homeding library, supporting the 2 different available wirings:</p>
 <ul>
-<li>
-<p>SD card using the MMC support by ESP32 (SDMMCElement)</p>
-</li>
-<li>
-<p>SD cards using standard SPI data transfer. (SDElement)</p>
-</li>
+<li>SD cards using standard SPI data transfer is supported by the <a href="/elements/sd.htm">SD Element</a></li>
+<li>SD card using the MMC support available on with ESP32 processors is supported by the <a href="/elements/sdmmc.htm">SD MMC Element</a></li>
 </ul>
 <p>Only one of these Elements can be activated at a time.</p>
-<p>Both implementations enable using the SD card memory for storing files locally e.g.,
-for recording sensor data or serving additional files on the web frontend.</p>
-<p>The SDMMC is available on ESP32 boards and is supported by the hardware.
+<p>Both implementations enable using the SD card memory for storing files locally
+e.g. for recording sensor data or serving additional files on the web frontend.</p>
+<p>The SDMMC Element is available on ESP32 boards only and fast data transfer is supported by the hardware.
 It provides a fast 4-bit bus implementation for SD cards.</p>
-<p>See SDElement that is available on ESP32 and ESP8266 boards offers
+<p>See <a href="/elements/sd.htm">SD Element</a> that is available on ESP32 and ESP8266 boards offers
 a slower alternative using SPI access to SD Cards.</p>
-<h1>File upload</h1>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
+<p><strong>mmcd0</strong> –  data line 0.</p>
+<p><strong>mmcd1</strong> –  data line 1</p>
+<p><strong>mmcd2</strong> – data line 2</p>
+<p><strong>mmcd3</strong> – data line 3</p>
+<p><strong>mmcclk</strong> – Clock</p>
+<p><strong>mmccmd</strong> – Command</p>
+<p>The SD_MMC pins can be freely defined on the ESP32-S3 processors.
+On other ESP32 processors the pins are defined by the chip hardware and no pin configuration is required.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> <br>  <span class="token property">"sdmmc"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"mmcD0"</span><span class="token operator">:</span> <span class="token string">"14"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD1"</span><span class="token operator">:</span> <span class="token string">"17"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD2"</span><span class="token operator">:</span> <span class="token string">"21"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD3"</span><span class="token operator">:</span> <span class="token string">"18"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcCLK"</span><span class="token operator">:</span> <span class="token string">"12"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcCMD"</span><span class="token operator">:</span> <span class="token string">"16"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2>File upload</h2>
 <p>Files can be uploaded to the sd card using the integrated IDE.
 For updates of multiple files an larger volume
-the sd card can be removed and updated directly from a PC.</p>
+the sd card can be removed and updated directly by mounting on a PC.</p>
 <h2>HomeDing Filesystem Utility</h2>
 <p>The mandatory flash file system LittleFS using flash memory
 is used as the root file system to store at least the configuration files.</p>

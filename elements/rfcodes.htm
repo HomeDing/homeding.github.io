@@ -50,12 +50,31 @@
     The **RFCodes Element** is used send and receive RF signals to simple switching and dimming devices.
 </div>
       
-    <p>This Element is part of the RFBridge Example and not available in the core library elements. To use this element you can use the RFBridge Example or have to copy it into your sketch folder.</p>
-<p>This element is built upon the tabRF library that needs to be installed separately.
-This library allows specifying multiple rf codes and their timing and can transmit and receive/decode these codes
+    <h2>About using RF 433 based communication</h2>
+<p>In contrast to WiFi, Tread or ZigBee the 433 MHz based communication to devices is using a fire-and-forget approach, lacks in getting received handshakes and therefore is unreliable by design.</p>
+<p>Also many devices exist that share the same protocol with only a few possible device addresses and can conflict with other devices in the neighborhood.</p>
+<p>Be aware that this band is potentially also used by others. More details in German can be found in the thread
+<a href="https://forum.iobroker.net/topic/27660/warnung-vor-433mhz-komponenten">https://forum.iobroker.net/topic/27660/warnung-vor-433mhz-komponenten</a>.</p>
+<p>Summary: Unreliable but cheap.</p>
+<p>This also applies to other open band in other parts in the world as the protocol chips can be used for multiple band.</p>
+<h2>Using RFCodes for sending</h2>
+<p>The <a href="https://github.com/mathertel/rfcodes">RFCodes library</a> is used by this Element and must be installed.</p>
+<p>Picture from remote sender</p>
+<ul>
+<li>Rf codes update to include all protocols used in the household</li>
+<li>Upload</li>
+<li>Configure a [Remote Element]</li>
+<li>Map code to action for remote device.</li>
+</ul>
+<h2>- Remote Element updated</h2>
+<p>…</p>
+<h2>webproxy configuration</h2>
+<p>This Element is part of the RFBridge Example and not available in the core library elements. To use this element you can use the RFBridge Example or have to copy it into your sketch folder.</p>
+<p>This element is built upon the RFCodes library that needs to be installed before compiling.</p>
+<p>This library allows specifying multiple rf codes and their timing and can transmit and receive/decode these codes
 by using RF433 transmitters and receivers.</p>
 <h2>Web UI for the RFCodes Element</h2>
-<p>There is a dedicated card for this element available that allows sending 2 codes usually to switch a socket on and off.</p>
+<p>There is a dedicated card for this element available that shows the last detected code.</p>
 <!-- ![DigitalOut Web UI](/elements/rfcodesui.png) -->
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
@@ -63,9 +82,9 @@ by using RF433 transmitters and receivers.</p>
 <p>Switchable plugs and dimmers are typically controlled by a ON/OFF code that also can used for UP/DOWN of dim level or moving of shades.
 Therefore every element supports up to 2 codes that can be send over the RF transmitter.</p>
 <p>The following properties are available for configuration of the element:</p>
-<p><strong>pin</strong> - This property defines the pin that is connected to the RF transmitter.</p>
-<p><strong>codeon</strong> - This property specifies the code that is sent when a action with a value &gt; 0 is received.</p>
-<p><strong>codeoff</strong> - This property specifies the code that is sent when a action with a value == 0 is received.</p>
+<p><strong>pin</strong> – This property defines the pin that is connected to the RF transmitter.</p>
+<p>(<strong>codeon</strong> - This property specifies the code that is sent when a action with a value &gt; 0 is received.</p>
+<p><strong>codeoff</strong> - This property specifies the code that is sent when a action with a value == 0 is received.)</p>
 <h2>Read more about 433 MHz units</h2>
 <p>You should not use a transmitter or receiver without an antenna
 as an wire antenna with the correct length makes a huge difference.</p>
@@ -185,7 +204,7 @@ Key Feature</p>
 <li>Working Distance : 300 m</li>
 <li>Dimension : 31.5<em>13.6</em>5 mm</li>
 </ul>
-<h2>read also:</h2>
+<h2>read also</h2>
 <p><a href="https://hoeser-medien.de/2020/05/hoerrmann-supramatic-mit-esp8266-tasmota-und-433-mhz-ansteuern/">https://hoeser-medien.de/2020/05/hoerrmann-supramatic-mit-esp8266-tasmota-und-433-mhz-ansteuern/</a></p>
 <h2>HC12</h2>
 <p><a href="https://arduino-projekte.webnode.at/meine-projekte/parametrieren-des-hc-12/">https://arduino-projekte.webnode.at/meine-projekte/parametrieren-des-hc-12/</a></p>
