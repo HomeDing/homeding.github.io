@@ -7,17 +7,53 @@ excerpt: >
 layout: "page.njk"
 ---
 
+
+## About using RF 433 based communication
+
+In contrast to WiFi, Tread or ZigBee the 433 MHz based communication to devices is using a fire-and-forget approach, lacks in getting received handshakes and therefore is unreliable by design.
+
+Also many devices exist that share the same protocol with only a few possible device addresses and can conflict with other devices in the neighborhood.
+
+Be aware that this band is potentially also used by others. More details in German can be found in the thread
+<https://forum.iobroker.net/topic/27660/warnung-vor-433mhz-komponenten>.
+
+Summary: Unreliable but cheap.
+
+This also applies to other open band in other parts in the world as the protocol chips can be used for multiple band.
+
+## Using RFCodes for sending
+
+The [RFCodes library](https://github.com/mathertel/rfcodes) is used by this Element and must be installed.
+
+
+Picture from remote sender
+
+* Rf codes update to include all protocols used in the household
+* Upload
+* Configure a [Remote Element]
+* Map code to action for remote device.
+
+## - Remote Element updated
+
+...
+
+## webproxy configuration
+
+
 This Element is part of the RFBridge Example and not available in the core library elements. To use this element you can use the RFBridge Example or have to copy it into your sketch folder.
 
-This element is built upon the tabRF library that needs to be installed separately.
+This element is built upon the RFCodes library that needs to be installed before compiling.
+
 This library allows specifying multiple rf codes and their timing and can transmit and receive/decode these codes
 by using RF433 transmitters and receivers.
 
+
 ## Web UI for the RFCodes Element
 
-There is a dedicated card for this element available that allows sending 2 codes usually to switch a socket on and off.
+There is a dedicated card for this element available that shows the last detected code.
 
 <!-- ![DigitalOut Web UI](/elements/rfcodesui.png) -->
+
 
 ## Element Configuration
 
@@ -30,11 +66,12 @@ Therefore every element supports up to 2 codes that can be send over the RF tran
 
 The following properties are available for configuration of the element:
 
-**pin** - This property defines the pin that is connected to the RF transmitter.
+**pin** -- This property defines the pin that is connected to the RF transmitter.
 
-**codeon** - This property specifies the code that is sent when a action with a value > 0 is received.
+(**codeon** - This property specifies the code that is sent when a action with a value > 0 is received.
 
-**codeoff** - This property specifies the code that is sent when a action with a value == 0 is received.
+**codeoff** - This property specifies the code that is sent when a action with a value == 0 is received.)
+
 
 ## Read more about 433 MHz units
 
@@ -47,27 +84,27 @@ Or use a helix with a wire of about lamda/8. This is sold with many receivers an
 
 You can also build a dipol antenna as shown here: <https://crycode.de/diy-433-mhz-dipol-antenne>
 
-https://wolles-elektronikkiste.de/433-mhz-funk-mit-dem-arduino
+<https://wolles-elektronikkiste.de/433-mhz-funk-mit-dem-arduino>
 
-https://www.sweetpi.de/blog/329/ein-ueberblick-ueber-433mhz-funksteckdosen-und-deren-protokolle
+<https://www.sweetpi.de/blog/329/ein-ueberblick-ueber-433mhz-funksteckdosen-und-deren-protokolle>
 
 chip: HS1527
 1:31
 1:3
 3:1
 
-https://www.youtube.com/watch?v=9JBkpcDb5wI
+<https://www.youtube.com/watch?v=9JBkpcDb5wI>
 
 rc-switch
 
 ## ASK and OOK modulation
 
-- <https://en.wikipedia.org/wiki/Amplitude-shift_keying>
-- <https://en.wikipedia.org/wiki/On%E2%80%93off_keying>
+* <https://en.wikipedia.org/wiki/Amplitude-shift_keying>
+* <https://en.wikipedia.org/wiki/On%E2%80%93off_keying>
 
 ## See also
 
-- <https://www.mikrocontroller.net/articles/IRMP>
+* <https://www.mikrocontroller.net/articles/IRMP>
 
 ## RxB8 Receiver
 
@@ -79,7 +116,7 @@ A receiver based on the chip SYN470R.
 
 It is using a crystal for getting a intermediate frequency so the receiving frequency is very accurate.
 
-http://www.eeant.com/datasheet/et-rxb-12.pdf
+<http://www.eeant.com/datasheet/et-rxb-12.pdf>
 
 +------------------------------------+
 | |
@@ -91,7 +128,7 @@ Ant GND VCC Data Data GND
 This receiver has a adjustable, resonant circuit that can detect 433 MHz frequencies. A precise crystal is missing
 and also the receiving quality is poor under several conditions.
 
-See also https://blog.thesen.eu/433mhz-empfaenger-fuer-arduino-co-rxb12-vs-xy-mk-5v/
+See also <https://blog.thesen.eu/433mhz-empfaenger-fuer-arduino-co-rxb12-vs-xy-mk-5v/>
 
 My assumption: prefer any crystal based receiver.
 
@@ -99,8 +136,8 @@ My assumption: prefer any crystal based receiver.
 
 Common:
 
-- Modulation Mode : ASK / OOK
-- Operating Frequency : 433.92 Mhz
+* Modulation Mode : ASK / OOK
+* Operating Frequency : 433.92 Mhz
 
 | Type            | VCC         | Remarks                                               |
 | --------------- | ----------- | ----------------------------------------------------- |
@@ -120,6 +157,7 @@ Common:
 
 433.92 Mhz
 Key Feature
+
 * Modulation Mode : ASK / OOK
 * Operating Voltage : 4.5~5.5 V
 * Operating Current : 9.6 mA
@@ -129,13 +167,13 @@ Key Feature
 * Working Distance : 300 m
 * Dimension : 31.5*13.6*5 mm
 
-## read also:
+## read also
 
-https://hoeser-medien.de/2020/05/hoerrmann-supramatic-mit-esp8266-tasmota-und-433-mhz-ansteuern/
+<https://hoeser-medien.de/2020/05/hoerrmann-supramatic-mit-esp8266-tasmota-und-433-mhz-ansteuern/>
 
 ## HC12
 
-https://arduino-projekte.webnode.at/meine-projekte/parametrieren-des-hc-12/
+<https://arduino-projekte.webnode.at/meine-projekte/parametrieren-des-hc-12/>
 
 ## RFM69HW
 

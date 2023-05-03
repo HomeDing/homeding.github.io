@@ -22,6 +22,7 @@ The input button on the back of the stick pulls the esp32-pin 0 down when presse
 | -------- | --------- |
 | Button   | GPIO0     |
 
+Don't configure this button in the device configuration to start the config mode as it is set to active LOW
 
 ### Color LED
 
@@ -113,7 +114,7 @@ The following `env.json` configuration can be used for this board and contains s
       "name": "dongle-s3",
       "description": "ESP32-S3 based USB stick.",
       "title": "T-Dongle-S3",
-      "button": "0",
+      "x-button": "0",
       "led": "38"
     }
   },

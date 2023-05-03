@@ -35,7 +35,7 @@ The following properties are available for configuration of the element.
 
 ## Example
 
-On the 	device named **logger** 2 display elements are defined but there is no local element that produces actions for these.
+On the device named **logger** 2 display elements are defined but there is no local element that produces actions for these.
 
 ``` json
 {
@@ -86,6 +86,6 @@ On the device named **dht22-probe** the dht element is configured to create acti
 
 ## TODO
 
-- [ ] keep/queue messages when network is not available.
-- [ ] detect that remote element is not available -> slow down, retry
-- [ ] Define what to do in case of an overflow.
+* [ ] keep/queue messages when network is not available.
+* [ ] detect that remote element is not available -> slow down, retry
+* [ ] Define what to do in case of an overflow.
