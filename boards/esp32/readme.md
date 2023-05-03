@@ -1,4 +1,12 @@
-# ESP32 with HomeDing
+---
+title: About using the ESP32 with HomeDing
+tags: ["Board", "WIP", "TODO"]
+layout: "page.njk"
+description: Links, material and tips for using ESP32 based boards with the HomeDing library.
+excerpt: >
+  Links, material and tips for using ESP32 based boards with the HomeDing library.
+---
+
 
 The HomeDing library is compatible to the ESP32 Arduino environment.
 
@@ -28,7 +36,7 @@ Boards Overview from espressif:
 <https://www.studiopieters.nl/esp32-pinout/>
 
 
-## ESP32 specific
+## ESP32 specific topics
 
 * ESP32 Arduino Core documentation:
   * <https://docs.espressif.com/projects/arduino-esp32/en/latest/index.html>
@@ -50,6 +58,20 @@ Boards Overview from espressif:
 * <https://www.esp32.com/viewtopic.php?t=6383>
 * <https://github.com/Deous/VSC-Guide-for-esp32>
 * <https://github.com/botofancalin/Esp32_debug_template>
+
+
+## Auto Upload Probelms
+
+Uploading a new firmware via the USB interface does not work fully automatically on some boards as expected.
+This is caused by a timing problem with the EN signal (RST).
+
+If you can upload by using the manual reset sequence (Press Boot, Press and release EN, Release Boot)
+adding a 10µF capacitor to EN and GND may help.
+
+![ESP32 on breadboard with EN capacitor]
+
+See also <https://electronics.stackexchange.com/questions/569788/how-esp32-auto-upload-issue-has-been-fixed-by-adding-capacitor>
+
 
 
 ## Projects
