@@ -90,9 +90,8 @@
 </tbody>
 </table>
 <p>APA102 LEDs are currently not supported by the HomeDing Library.</p>
-<!-- TODO: APA102Element similar to NEOElement -->
 <h3>ST7735 based display</h3>
-<p>The display has a 80 * 160 resolution and is using the following pins:</p>
+<p>The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:</p>
 <table>
 <thead>
 <tr>
@@ -128,6 +127,9 @@
 </tbody>
 </table>
 <h3>SD Card</h3>
+<p>The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
+As the ESP32-S3 processor offers flexibility in using custom defined pins
+a pin configuration (see below) must be given:</p>
 <table>
 <thead>
 <tr>
