@@ -24,6 +24,7 @@ The input button on the back of the stick pulls the esp32-pin 0 down when presse
 
 Don't configure this button in the device configuration to start the config mode as it is set to active LOW
 
+
 ### Color LED
 
 APA102 LED
@@ -35,12 +36,10 @@ APA102 LED
 
 APA102 LEDs are currently not supported by the HomeDing Library.
 
-<!-- TODO: APA102Element similar to NEOElement -->
-
 
 ### ST7735 based display
 
-The display has a 80 * 160 resolution and is using the following pins:
+The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:
 
 | function | ESP32 pin |
 | -------- | --------- |
@@ -54,6 +53,10 @@ The display has a 80 * 160 resolution and is using the following pins:
 
 ### SD Card
 
+The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
+As the ESP32-S3 processor offers flexibility in using custom defined pins
+a pin configuration (see below) must be given:
+
 | function | ESP32 pin |
 | -------- | --------- |
 | CLK      | GPIO12    |
@@ -62,6 +65,7 @@ The display has a 80 * 160 resolution and is using the following pins:
 | D1       | GPIO17    |
 | D2       | GPIO21    |
 | D3       | GPIO18    |
+
 
 ## Arduino Board Configuration
 

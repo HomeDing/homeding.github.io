@@ -15,7 +15,7 @@ There are several shields available for these boards.
 * Schematic: <https://github.com/artofcircuits/Store/blob/main/WeMOS%20D1%20Mini%20ESP32/WEMOS-D1-MINI-ESP32-SCH.jpg>
 * <https://iotspace.dev/category/wemos-d1-mini/>
 
-![d1mini pins](/boards/d1mini.png)
+<!-- ![d1mini pins](/boards/d1minipins.png) -->
 
 power led: red
 Blue LED on IO2 (active low)

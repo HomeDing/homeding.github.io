@@ -90,6 +90,19 @@ The Arduino ESP32 supports this variant.
 
 {{ imgCard(collections.all, item = '/boards/esp32/core-esp32c3') }}
 
+### C3 pico
+
+{% imgcard "/boards/esp32/esp32-c3pico.jpg", "" %}
+The C3 pico board is based on the ESP32-C3 MCU with 4 MByte internal flash memory
+and includes
+
+* Lipo charger
+* i2c connector using the Qwiic standard JST SH 4-pin (1mm)
+* RST button
+* pin 9 button
+* USB-C connector
+{% endimgcard %}
+
 
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
 

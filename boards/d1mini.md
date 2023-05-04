@@ -16,15 +16,16 @@ They share the position of 2 connectors with 8 pins that are compatible to a cer
 * 3V3, 5V, GND and RST are always in the same position
 * RST momentary button
 
+## ESP8266 based boards
 
-## D1 mini ESP8266
+### D1 mini ESP8266
 
 The D1 mini boards use a ESP8266 MCU and 4 MByte flash memory chip.
 
 (no picture)
 
 
-## D1 mini V4
+### D1 mini V4
 
 {% imgcard "/boards/d1miniv4.jpg", "" %}
 The D1 mini board labeld with v4 uses a ESP8266 MCU and 4 MByte flash memory chip
@@ -35,7 +36,7 @@ and includes:
 {% endimgcard %}
 
 
-## D1 mini pro
+### D1 mini pro
 
 {% imgcard "/boards/d1minipro.jpg", "" %}
   The D1 mini pro board is based on the ESP8266 MCU and 4 MByte flash memory chip
@@ -48,35 +49,32 @@ and includes:
 {% endimgcard %}
 
 
-## C3 pico
-
-{% imgcard "/boards/c3pico.jpg", "" %}
-The C3 pico board is based on the ESP32-C3 MCU with 4 MByte internal flash memory
-and includes
-
-* Lipo charger
-* i2c connector using the Qwiic standard JST SH 4-pin (1mm)
-* RST button
-* pin 9 button
-* USB-C connector
-{% endimgcard %}
 
 
-## D1 mini ESP32
+### Pins for ESP8266 boards
+
+All the ESP8266 based boards above use the same pin assignments and are interchangeable.
+The 2 connectors with 8 pins have the following ports assigned in the ESP8266.
+
+![d1mini pins](/boards/d1minipins.png)
+
+
+
+## ESP32 based boards
+
+
+### D1 mini ESP32
 
 {% imgcard "", "/boards/esp32/d1miniesp32.md" %}
 A similar [D1 mini ESP32 board](/boards/esp32/d1miniesp32.md) exists
 using a ESP32  MCU and 4 MByte flash memory chip.
+
+/boards/esp32/d1miniesp32.jpg
+
 {% endimgcard %}
 
 There are several shields available for these boards.
 
-
-## Pins
-
-The 2 connectors with 8 pins have the following ports assigned in the ESP8266.
-
-![d1mini pins](/boards/d1mini.png)
 
 
 ## Shields
@@ -84,28 +82,32 @@ The 2 connectors with 8 pins have the following ports assigned in the ESP8266.
 There are some shields for the board forma factor available. Here some examples:
 
 {% imgcard "/boards/d1mini-8x8rgbshield.jpg", "" %}
-The D1 8x8 RGB Shield has 64 WS2812 LEDs that can be addressed using the [Neo Element](/elements/light/neo.md)
-using `"config": "rgb"`.
+The D1 Mini 8x8 RGB Shield has 64 WS2812 LEDs that
+can be addressed using the [Neo Element](/elements/light/neo.md).
+
+The data signal for the chain of WS2812 LEDs is bound to D4.
+
+The WS2812 leds use `"config": "rgb"`.
 {% endimgcard %}
 
+
 {% imgcard "/boards/d1mini-freeshield.jpg", "" %}
-This shield can be used to apply special configurations by soldering.
+This is a shield you can use to create and apply special configurations by soldering
+components on the free grid.
 {% endimgcard %}
+
 
 {% imgcard "/boards/d1mini-sht30shield.jpg", "" %}
 The SHT30 shield with a digital temperature and humidity sensor
-can be stacked upon a board or by using a Qwiic connector cable.
+can be stacked upon a board or can be attached by using a Qwiic connector cable.
 {% endimgcard %}
 
+
 {% imgcard "/boards/d1mini-sdshield.jpg", "" %}
-TODO:
+The D1-Mini SD Card shield adds a sd card slot for min sd cards to the standard SPI bus.
 
-The Micro SD Card shield adds a sd card slot to the SPI bus.
-
-* D5 CLK 
-* D6 MISO 
-* D7 MOSI
-* D4 CS 
+The CS assignment can be changed on the back of the shield by cutting
+the default (D4) wiring and soldering a bridge for another pin.
 
 {% endimgcard %}
 
