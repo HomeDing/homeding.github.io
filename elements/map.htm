@@ -68,9 +68,49 @@
 <p>Then the <code>onValue</code> actions on the map Element are sent.</p>
 <h3>Example 1</h3>
 <p>This example works on an incoming temperature and creates a green color for good values:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"light color based on temperature."</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"blue"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"22"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"green"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"light color based on temperature."</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"blue"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"22"</span><span class="token punctuation">,</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"green"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>Same with actions on the rules level. In the status the original inbound value will be reported</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"light color based on temperature."</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=blue"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"22"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=green"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=red"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"light color based on temperature."</span><span class="token punctuation">,</span>
+      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span>
+          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=blue"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"22"</span><span class="token punctuation">,</span>
+          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=green"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/t?value=red"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>This example also shows how to simplify the <code>min</code> and <code>max</code> attributes.
 When not specified they default to the infinity min and max.
 The ranges all overlap but the intended rule-set works because always the first matching rule will be selected.</p>
@@ -96,7 +136,31 @@ The ranges all overlap but the intended rule-set works because always the first 
 </blockquote>
 <h3>Example using mapped values</h3>
 <p>This example configuration enables using a numeric value (e.g. from a switch) into 2 color values used for a RGB LED.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"select a color based on a numeric value"</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/l?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"green"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D8,D6,D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"select a color based on a numeric value"</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"light/l?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"equal"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"green"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D8,D6,D7"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h3>Example by mapping actions</h3>
 <ul>
 <li>value coming in via action</li>
@@ -104,13 +168,39 @@ The ranges all overlap but the intended rule-set works because always the first 
 <li>setting new value (optional).</li>
 <li>sending out the action specified in the mapping entry</li>
 </ul>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"m"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"map-action"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"send actions based on a value-action"</span><span class="token punctuation">,</span><br>      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/up?value=0,digitalout/down?value=0,switch/down?value=0,switch/up?value=0,timer/rst?stop"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/down?value=1,digitalout/up?value=0,switch/down?value=1,switch/up?value=0,timer/rst?start"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span><br>          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/down?value=0,digitalout/up?value=1,switch/down?value=0,switch/up?value=1,timer/rst?start"</span><br>        <span class="token punctuation">}</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"m"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"map-action"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"send actions based on a value-action"</span><span class="token punctuation">,</span>
+      <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/up?value=0,digitalout/down?value=0,switch/down?value=0,switch/up?value=0,timer/rst?stop"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/down?value=1,digitalout/up?value=0,switch/down?value=1,switch/up?value=0,timer/rst?start"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+          <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/down?value=0,digitalout/up?value=1,switch/down?value=0,switch/up?value=1,timer/rst?start"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"map/colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"map/colors"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"red"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
 
     

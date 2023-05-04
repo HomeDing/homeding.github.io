@@ -101,9 +101,23 @@ when using the up / down actions.</p>
 </ul>
 <h2>Element State</h2>
 <p>The current value is reported as the state of a value element.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"value/volume"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"4"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"value/volume"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"4"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Example Configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"volume"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"radio/r?volume=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"volume"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"radio/r?volume=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li>Rotary Encoder</li>

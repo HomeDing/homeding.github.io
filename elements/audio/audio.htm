@@ -86,7 +86,19 @@ The element also supports RDS signals for the chips that decode these signals.</
 </blockquote>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"audio"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"audio processing"</span><span class="token punctuation">,</span><br>      <span class="token property">"bclk"</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span><br>      <span class="token property">"lrc"</span><span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span><br>      <span class="token property">"dout"</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span><br>      <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=https://dispatcher.rndfnk.com/hr/hr3/live/mp3/high"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontitle"</span><span class="token operator">:</span> <span class="token string">"displaytext/info?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onstation"</span><span class="token operator">:</span> <span class="token string">"displaytext/station?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"audio"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"audio processing"</span><span class="token punctuation">,</span>
+      <span class="token property">"bclk"</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
+      <span class="token property">"lrc"</span><span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
+      <span class="token property">"dout"</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+      <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=https://dispatcher.rndfnk.com/hr/hr3/live/mp3/high"</span><span class="token punctuation">,</span>
+      <span class="token property">"ontitle"</span><span class="token operator">:</span> <span class="token string">"displaytext/info?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onstation"</span><span class="token operator">:</span> <span class="token string">"displaytext/station?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/index.htm">Elements</a></li>

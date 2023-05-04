@@ -69,10 +69,49 @@ If there is a “summertime” period, the start and end of that period can be c
 <p>The <code>ondate</code> and <code>ontime</code> events from the <a href="/elements/time.htm">Time Element</a> send the current date / time information to the displayText elements.</p>
 <p>The <a href="/elements/display/text.htm">DisplayText Element</a> defines the place on the display where the time will be shown.</p>
 <h2>env.json configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  ...<br><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"NTPServer"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <br>  <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"local display"</span><span class="token punctuation">,</span><br>      <span class="token property">"resetPin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">32</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  ...
+
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"NTPServer"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    
+  <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"local display"</span><span class="token punctuation">,</span>
+      <span class="token property">"resetPin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">32</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>config.json configuration</h2>
 <p>In <code>config.json</code> the display items and the time related actions are configured:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"date"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"show the date"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span><br>      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"show the time"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"ondate"</span><span class="token operator">:</span> <span class="token string">"displaytext/date?show=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontime"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?show=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"date"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"show the date"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"show the time"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"ondate"</span><span class="token operator">:</span> <span class="token string">"displaytext/date?show=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"ontime"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?show=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/ntptime.htm">NTPTime Element</a></li>

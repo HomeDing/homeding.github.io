@@ -49,7 +49,41 @@
 <p>#Draft</p>
 </blockquote>
 <p>Example dimming a LED using PWM Analog output and buttons.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"button"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">"value/led?up=16"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"down"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">13</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">"value/led?down=16"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"pwmout/led?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build-in LED"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build-in LED"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"button"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">"value/led?up=16"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"down"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">13</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">"value/led?down=16"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+
+  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"pwmout/led?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build-in LED"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build-in LED"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
 
     

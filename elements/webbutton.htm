@@ -63,7 +63,14 @@ These will trigger the events defined in the configuration.</p>
 <p><strong>description</strong> - The caption of the button is taken from this property.</p>
 <p><strong>onclick</strong> - These actions are emitted when a single press gesture was detected.</p>
 <h2>Example Configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"webbutton"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Start fan"</span><span class="token punctuation">,</span><br>      <span class="token property">"onClick"</span><span class="token operator">:</span> <span class="token string">"timer/fan?start=1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"webbutton"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Start fan"</span><span class="token punctuation">,</span>
+      <span class="token property">"onClick"</span><span class="token operator">:</span> <span class="token string">"timer/fan?start=1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="???">Light timer recipe</a></li>

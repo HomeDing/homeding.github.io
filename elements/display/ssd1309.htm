@@ -96,7 +96,26 @@
 </tbody>
 </table>
 <h2>Example configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"dispding"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"IoT Dev-Device with display"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"i2c-SDA"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span><br>      <span class="token property">"i2c-SCL"</span><span class="token operator">:</span> <span class="token string">"D1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  ...<br>  <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"60"</span><span class="token punctuation">,</span><br>      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"dispding"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"IoT Dev-Device with display"</span><span class="token punctuation">,</span>
+      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span>
+      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SDA"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SCL"</span><span class="token operator">:</span> <span class="token string">"D1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  ...
+  <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"60"</span><span class="token punctuation">,</span>
+      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/dev/i2c.htm">Using the I2C bus</a></li>

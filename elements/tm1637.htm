@@ -74,9 +74,29 @@ This can be used to initialize the display until a valid value is passed by a va
 </blockquote>
 <h3>Configuration Example</h3>
 <p>A configuration for a <strong>ESP8266</strong> based board can use the GPIO pins D6 and D7:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span>
+      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
+      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>A configuration for a <strong>ESP32</strong> based board can use the GPIO pins 25 and 26:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"26"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"25"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span>
+      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"26"</span><span class="token punctuation">,</span>
+      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"25"</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime:</p>
 <blockquote>
@@ -85,7 +105,12 @@ This can be used to initialize the display until a valid value is passed by a va
 </blockquote>
 <h3>Example State</h3>
 <p>The internal value can be seen in the rotary state but should not directly be used as a value.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"my9291/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"11:55"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"my9291/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"11:55"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Implementation hints</h2>
 <p>The TM1637 is controlled using a clock and a data signal. The protocol is similar to I2C protocol. The TM1637 cannot be part of the I2C bus but always needs a one-to-one connectivity.</p>
 <p>The protocol implementation is present in the tm1637.h file and supports only displaying 4 digits and the colon right now.</p>

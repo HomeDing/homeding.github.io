@@ -56,7 +56,40 @@
 <p>By using 2 <a href="/elements/switch.htm">Switch Elements</a> to control 2 boolean input values.</p>
 <p>These values are sent to 2 logical elements the <a href="/elements/and.htm">AND Element</a> and the <a href="/elements/or.htm">OR Element</a>
 where the calculated outputs are displayed.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"in1"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"and/a?value[0]=$v,or/o?value[0]=$v"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"in2"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"and/a?value[1]=$v,or/o?value[1]=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"and"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Logical AND"</span><span class="token punctuation">,</span><br>      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"true"</span><span class="token punctuation">,</span><br>        <span class="token string">"false"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=AND:$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"and/a"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"or"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"o"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Logical OR"</span><span class="token punctuation">,</span><br>      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"true"</span><span class="token punctuation">,</span><br>        <span class="token string">"false"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=OR:$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"or/o"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"in1"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"and/a?value[0]=$v,or/o?value[0]=$v"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"in2"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"and/a?value[1]=$v,or/o?value[1]=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"and"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Logical AND"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"true"</span><span class="token punctuation">,</span>
+        <span class="token string">"false"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=AND:$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"and/a"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"or"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"o"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Logical OR"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"true"</span><span class="token punctuation">,</span>
+        <span class="token string">"false"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=OR:$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"or/o"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/switch.htm">Switch Element</a></li>

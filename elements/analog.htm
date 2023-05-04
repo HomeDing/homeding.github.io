@@ -107,7 +107,18 @@ The default time is set to 3 seconds.</p>
 </blockquote>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Level"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Analog value from sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"35"</span><span class="token punctuation">,</span><br>      <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"analog"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Level"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Analog value from sensor"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"35"</span><span class="token punctuation">,</span>
+      <span class="token property">"reference"</span> <span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogvalue=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onreference"</span><span class="token operator">:</span> <span class="token string">"device/0?log=analogref=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h3>More Examples</h3>
 <p>A water sensor that is used to detect water on the floor may have some small current leakages but when there is real water coming to the sensor the measured value rises significantly. A reference action can be the solution.</p>
 <p>A analog sensing element for weight can produce many values around. When the weight changes significantly a value action can be used. Small changes that occur by movements of the weight can be filtered out by specifying a hysteresis value.</p>
@@ -120,7 +131,13 @@ When mapping boundaries are given this is the calculated value.</p>
 <p><strong>reference</strong> - This is 1 when the value is above the reference value otherwise 0.</p>
 </blockquote>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"analog/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"13"</span><span class="token punctuation">,</span><br>    <span class="token property">"reference"</span><span class="token operator">:</span><span class="token string">"0"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"analog/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"13"</span><span class="token punctuation">,</span>
+    <span class="token property">"reference"</span><span class="token operator">:</span><span class="token string">"0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations">https://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations</a></li>

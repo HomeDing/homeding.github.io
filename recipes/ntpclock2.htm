@@ -77,7 +77,19 @@ If there is a “summertime” period, the start and end of that period can be c
 <p>A <a href="/elements/ntptime.htm">NTPtime Element</a> is configured to get the current time from a NTP server.</p>
 <p>A <a href="/elements/state.htm">State Element</a>, here the RTCState Element, is added to store the current brightness value in
 a non volatile memory that keeps the last brightness as long as power is supplied.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  ...<br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"NTPServer"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  ...
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"NTPServer"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>config.json configuration</h2>
 <p>A 4 digit 7-segment display with the tm1637 chip is defined to display the current time.</p>
 <p>The time is updated by the time element every minute.</p>
@@ -85,7 +97,33 @@ a non volatile memory that keeps the last brightness as long as power is supplie
 By using the useState property this element persists its value in the state memory.
 The current value is stored to rtc memory and will be available after a restart
 as long as power to the board has not been interrupted.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"tm1637"</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"tm1637/0?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"bright"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Brightness"</span><span class="token punctuation">,</span><br>      <span class="token property">"useState"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"tm1637/0?brightness=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tm1637"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Time Display"</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"tm1637"</span><span class="token punctuation">,</span>
+      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
+      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--:--"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"tm1637/0?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"bright"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Brightness"</span><span class="token punctuation">,</span>
+      <span class="token property">"useState"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"tm1637/0?brightness=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/recipes/ntpclock.htm">NTP Clock with OLED</a> - Display the current time and date from the internet time service.</li>

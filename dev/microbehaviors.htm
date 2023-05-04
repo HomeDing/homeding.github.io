@@ -52,7 +52,12 @@
 <h2>Implementing a Behavior</h2>
 <p>Behaviors provide a specific functionality for a web component specified in HTML. They are implemented by using a typescript class
 that extends the <code>MicroControlClass</code> or the <code>GenericWidgetClass</code>. When extending <code>GenericWidgetClass</code> some functionalities for representing a HomeDing element are already available.</p>
-<pre class="language-typescript"><code class="language-typescript"><span class="token decorator"><span class="token at operator">@</span><span class="token function">MicroControl</span></span><span class="token punctuation">(</span><span class="token string">"switch"</span><span class="token punctuation">)</span><br><span class="token keyword">class</span> <span class="token class-name">SwitchWidgetClass</span> <span class="token keyword">extends</span> <span class="token class-name">GenericWidgetClass</span> <span class="token punctuation">{</span><br>  <span class="token function">onclick</span><span class="token punctuation">(</span>e<span class="token operator">:</span> MouseEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token operator">...</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-typescript"><code class="language-typescript"><span class="token decorator"><span class="token at operator">@</span><span class="token function">MicroControl</span></span><span class="token punctuation">(</span><span class="token string">"switch"</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">SwitchWidgetClass</span> <span class="token keyword">extends</span> <span class="token class-name">GenericWidgetClass</span> <span class="token punctuation">{</span>
+  <span class="token function">onclick</span><span class="token punctuation">(</span>e<span class="token operator">:</span> MouseEvent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>This Typescript Class is then specifying the methods, event handlers and local private variables of the template using <code>u-is='switch'</code>.</p>
 <p>In short:</p>
 <ul>

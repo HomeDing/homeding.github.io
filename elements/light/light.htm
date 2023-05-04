@@ -125,11 +125,28 @@ The format #RRGGBB is used like in the css web standard and some plain color nam
 </table>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"lx"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"15,14,12,5"</span><span class="token punctuation">,</span><br>      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"pwm"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x100000"</span><span class="token punctuation">,</span><br>      <span class="token property">"enable"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"25"</span><span class="token punctuation">,</span><br>      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"3s"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lx"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"15,14,12,5"</span><span class="token punctuation">,</span>
+      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"pwm"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x100000"</span><span class="token punctuation">,</span>
+      <span class="token property">"enable"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"25"</span><span class="token punctuation">,</span>
+      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"3s"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Outbound Actions</h2>
 <p>There are no actions being sent by this element.</p>
 <h2>State</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"light/lx"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token property">"brightness"</span><span class="token operator">:</span><span class="token string">"43.48"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"light/lx"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"brightness"</span><span class="token operator">:</span><span class="token string">"43.48"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/light/neo.htm">NeoElement</a></li>

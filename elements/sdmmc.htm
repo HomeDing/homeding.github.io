@@ -83,7 +83,18 @@ On other ESP32 processors the pins are defined by the chip hardware and no pin c
 </blockquote>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> <br>  <span class="token property">"sdmmc"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"mmcD0"</span><span class="token operator">:</span> <span class="token string">"14"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD1"</span><span class="token operator">:</span> <span class="token string">"17"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD2"</span><span class="token operator">:</span> <span class="token string">"21"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD3"</span><span class="token operator">:</span> <span class="token string">"18"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcCLK"</span><span class="token operator">:</span> <span class="token string">"12"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcCMD"</span><span class="token operator">:</span> <span class="token string">"16"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> 
+  <span class="token property">"sdmmc"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"mmcD0"</span><span class="token operator">:</span> <span class="token string">"14"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcD1"</span><span class="token operator">:</span> <span class="token string">"17"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcD2"</span><span class="token operator">:</span> <span class="token string">"21"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcD3"</span><span class="token operator">:</span> <span class="token string">"18"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcCLK"</span><span class="token operator">:</span> <span class="token string">"12"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcCMD"</span><span class="token operator">:</span> <span class="token string">"16"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>File upload</h2>
 <p>Files can be uploaded to the sd card using the integrated IDE.
 For updates of multiple files an larger volume

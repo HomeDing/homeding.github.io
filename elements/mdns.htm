@@ -83,7 +83,20 @@ without the need for a dedicated central DNS server.</p>
 <p>In the devices the mDNS implementation is covered by the ESP8266mDNS/ESPmDNS library provided by the Arduino board base  firmware.</p>
 <p>In the portal and the CLI tool the mDNS implementation is covered by the <code>multicast-dns</code> javascript library.</p>
 <p>http:///<portal-server>/api/discovery</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"airding"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>    <span class="token property">"host"</span><span class="token operator">:</span><span class="token string">"airding.local"</span><span class="token punctuation">,</span><br>    <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token property">"path"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span><br>    <span class="token property">"ts"</span><span class="token operator">:</span><span class="token string">"2021-05-09T11:28:56.486Z"</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"rfbridge"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>    <span class="token property">"host"</span><span class="token operator">:</span><span class="token string">"rfbridge.local"</span><span class="token punctuation">,</span><br>    <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"Funk Schaltsteckdosen"</span><span class="token punctuation">,</span><br>    <span class="token property">"path"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span><br>    <span class="token property">"ts"</span><span class="token operator">:</span><span class="token string">"2021-05-09T11:28:56.485Z"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"airding"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token property">"host"</span><span class="token operator">:</span><span class="token string">"airding.local"</span><span class="token punctuation">,</span>
+    <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"path"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+    <span class="token property">"ts"</span><span class="token operator">:</span><span class="token string">"2021-05-09T11:28:56.486Z"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"rfbridge"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token property">"host"</span><span class="token operator">:</span><span class="token string">"rfbridge.local"</span><span class="token punctuation">,</span>
+    <span class="token property">"title"</span><span class="token operator">:</span><span class="token string">"Funk Schaltsteckdosen"</span><span class="token punctuation">,</span>
+    <span class="token property">"path"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+    <span class="token property">"ts"</span><span class="token operator">:</span><span class="token string">"2021-05-09T11:28:56.485Z"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Used in the Home Portal solution.
 multicast DNSservice</p>
 <h2>See also</h2>

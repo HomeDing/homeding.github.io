@@ -52,7 +52,26 @@
 This is one reason why the standard wiring for LEDs is to light the LED on GPIO16(D0) when the output level is low.</p>
 <p>Therefore the <code>inverse</code> mode is enabled and the initial (logical input) value is set to 0.</p>
 <h2>Configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"blink"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Timer for testing"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"LOOP"</span><span class="token punctuation">,</span><br>      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"0s"</span><span class="token punctuation">,</span><br>      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"1s"</span><span class="token punctuation">,</span><br>      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"2s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"blink"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Timer for testing"</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"LOOP"</span><span class="token punctuation">,</span>
+      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"0s"</span><span class="token punctuation">,</span>
+      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"1s"</span><span class="token punctuation">,</span>
+      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"2s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/digitalout.htm">Digital Output Element</a></li>

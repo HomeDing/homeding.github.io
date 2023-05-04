@@ -67,7 +67,9 @@ as it stays in an deactivated mode and must be waked up using a i2c read request
 <h2>Using the AM2320 Element</h2>
 <p>The AM2320 Element is not part of the core set of elements as it is not used very frequently. It can be registered and added to the firmware by including the definition of
 <code>HOMEDING_INCLUDE_AM2320</code> in the sketch:</p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_AM2320</span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_AM2320</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
 <h2>Connecting a AM2320 Sensor</h2>
 <p>The sensor is using the I2C bus for communication and is usually placed on a adapter board
 giving access to the required pins.</p>
@@ -139,7 +141,17 @@ The default time is set to 3 seconds.</p>
 </blockquote>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"am2320"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"s"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"AM2320"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"displaytext/h?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"displaytext/t?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"am2320"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"s"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"AM2320"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"displaytext/h?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"displaytext/t?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <blockquote>
@@ -148,7 +160,13 @@ The default time is set to 3 seconds.</p>
 <p><strong>humidity</strong> - The last read humidity value from the sensor.</p>
 </blockquote>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"am2320/s"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"50.50"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"am2320/s"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span><span class="token punctuation">,</span>
+    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"50.50"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See Also</h2>
 <ul>
 <li><a href="http://www.aosong.com/en/products-41.html">http://www.aosong.com/en/products-41.html</a></li>

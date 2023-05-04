@@ -52,7 +52,19 @@
       
     <h2>Serial output</h2>
 <p>On the Serial output some information about the Chips and memory is shown by using ESP32 SDK functions:</p>
-<pre class="language-txt"><code class="language-txt">14:50:58 diag/0:t Chip-Info:<br>14:50:58 diag/0:t   model: 5<br>14:50:58 diag/0:t     ESP32-C3<br>14:50:58 diag/0:t   features: 00000012<br>14:50:58 diag/0:t     2.4GHz WiFi<br>14:50:58 diag/0:t     Bluetooth LE<br>14:50:58 diag/0:t   cores: 1<br>14:50:58 diag/0:t   revision: 3<br>14:50:58 diag/0:t ChipModel: ESP32-C3<br>14:50:58 diag/0:t Flash:<br>14:50:58 diag/0:t   ChipSize: 4194304<br>14:50:58 diag/0:t   ChipMode: 2<br>14:50:58 diag/0:t   ChipSpeed: 80000000</code></pre>
+<pre class="language-txt"><code class="language-txt">14:50:58 diag/0:t Chip-Info:
+14:50:58 diag/0:t   model: 5
+14:50:58 diag/0:t     ESP32-C3
+14:50:58 diag/0:t   features: 00000012
+14:50:58 diag/0:t     2.4GHz WiFi
+14:50:58 diag/0:t     Bluetooth LE
+14:50:58 diag/0:t   cores: 1
+14:50:58 diag/0:t   revision: 3
+14:50:58 diag/0:t ChipModel: ESP32-C3
+14:50:58 diag/0:t Flash:
+14:50:58 diag/0:t   ChipSize: 4194304
+14:50:58 diag/0:t   ChipMode: 2
+14:50:58 diag/0:t   ChipSpeed: 80000000</code></pre>
 <h2>I2C scan</h2>
 <p>by using the url <a href="http://%7Bdevicename%7D/diag">http://{devicename}/diag</a> ths I2C bus will be scanned for existing devices.
 The result of the scan is shown as plain TXT output in the browser:</p>
@@ -66,7 +78,12 @@ TODO:
 <h3>Configuration Example</h3>
 <p>This element requires no parameters.
 This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/examples/devding.htm">DevDing Example</a></li>

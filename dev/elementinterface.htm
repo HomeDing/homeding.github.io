@@ -83,7 +83,10 @@ to the appropriate type like</p>
 <h3>Class initialize</h3>
 <p>Some elements need a valid local time to operate. The event when the element normal operation is started can be configured in
 the class initializer like you can find in the LogElement:</p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token class-name">LogElement</span><span class="token double-colon punctuation">::</span><span class="token function">LogElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br><span class="token punctuation">{</span><br>  startupMode <span class="token operator">=</span> Element_StartupMode<span class="token double-colon punctuation">::</span>Time<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token class-name">LogElement</span><span class="token double-colon punctuation">::</span><span class="token function">LogElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  startupMode <span class="token operator">=</span> Element_StartupMode<span class="token double-colon punctuation">::</span>Time<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>See also <a href="/dev/wifimanager.htm">wifimanager</a></p>
 <h3>pushState(cbFunc)</h3>
 <p>ELements report some internal state when the pushState method is called.

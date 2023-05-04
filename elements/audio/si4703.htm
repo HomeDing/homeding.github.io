@@ -127,7 +127,9 @@ It shows that the radio chip can tune a fixed Frequency.</p>
 in the startup phase to tell the chip to use the I2C protocol.</p>
 <p>These two signals also mut be configured to the radio class before calling the <code>initWire</code> function
 and the Wire interface must not be used before.</p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// SI4703 special pins.</span><br>radio<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span>RADIO_RESETPIN<span class="token punctuation">,</span> RESET_PIN<span class="token punctuation">)</span><span class="token punctuation">;</span><br>radio<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span>RADIO_MODEPIN<span class="token punctuation">,</span> MODE_PIN<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// SI4703 special pins.</span>
+radio<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span>RADIO_RESETPIN<span class="token punctuation">,</span> RESET_PIN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+radio<span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span>RADIO_MODEPIN<span class="token punctuation">,</span> MODE_PIN<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Change the Station in the sketch to a frequency with a signal that is strong on your place and upload.</p>
 <h2>Using SI4703 Modules with other Examples</h2>
 <p>In the other examples you may have to activate the line that uses a SI4703 Class for the global radio variable.</p>

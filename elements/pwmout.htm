@@ -90,7 +90,17 @@
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h2>Example Configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP-12 blue led (D4) can be dimmed"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
+      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP-12 blue led (D4) can be dimmed"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <!-- http://devdevice/$board/pwmout/led?value=0
 http://devdevice/$board/pwmout/led?value=100
 http://devdevice/$board/pwmout/led?value=255 -->

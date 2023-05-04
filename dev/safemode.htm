@@ -63,7 +63,14 @@ In the case the device has no element configured the safemode is disabled by the
 <p>It is possible disable safemode by using the physical RESET button (see below).</p>
 <h2>Enabling Save Mode</h2>
 <p>The save mode is enabled permanently by adding the <code>safemode</code> property with <code>true</code> to the device configuration.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token comment">// ...</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>This should be done by changing the <code>env.json</code> file using the IDE or by uploading a new env.json file with the setting enabled.
 Starting with the next boot the device will run in this mode until the mode is disabled using one of the methods mentioned below.
 It is best practice to configure the <code>device</code> element first in <code>env.json</code></p>
@@ -93,7 +100,10 @@ The OTA upload is disabled to avoid reconfiguration or reprogramming from a remo
 <p>The board class has a public boolean member <code>safemode</code> that is set to true when the save mode has been set.
 This variable is set to the configured value while reading the configuration and creating the elements.</p>
 <p>To implement functions that only work when save mode is not set use</p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> _board<span class="token operator">-></span>safemode<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// execute unsafe stuff</span><br>   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> _board<span class="token operator">-></span>safemode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// execute unsafe stuff</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li>secure parameters</li>

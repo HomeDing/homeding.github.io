@@ -51,7 +51,39 @@
 The switch only provides a 0 / 1 boolean value but also onHgh and onLow actions can be send.
 These actions are used to set the value element to the required low and high value.
 As this is passed to the PWMOut element the position of the servo is controlled.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"digitalinput"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"switch/pos?switch=1"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pos"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"onHigh"</span><span class="token operator">:</span> <span class="token string">"value/pos?value=42"</span><span class="token punctuation">,</span>   <br>    <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"value/pos?value=210"</span>   <br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br><span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pos"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"pwmout/servo?value=$v"</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span><br><br><span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"servo"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>    <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"output signal for the servo"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"digitalinput"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"switch/pos?switch=1"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"pos"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"onHigh"</span><span class="token operator">:</span> <span class="token string">"value/pos?value=42"</span><span class="token punctuation">,</span>   
+    <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"value/pos?value=210"</span>   
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"pos"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"pwmout/servo?value=$v"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"servo"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
+    <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"output signal for the servo"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/digitalin.htm">Digital Input Element</a></li>

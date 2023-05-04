@@ -78,19 +78,44 @@ The default is <code>num</code>.</p>
 </blockquote>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"temp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"outside temperature"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"collecting temperature values on a 10 min. interval."</span><span class="token punctuation">,</span><br>      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/templog.txt"</span><span class="token punctuation">,</span><br>      <span class="token property">"yFormat"</span><span class="token operator">:</span> <span class="token string">"num:2"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"temp"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"outside temperature"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"collecting temperature values on a 10 min. interval."</span><span class="token punctuation">,</span>
+      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span>
+      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/templog.txt"</span><span class="token punctuation">,</span>
+      <span class="token property">"yFormat"</span><span class="token operator">:</span> <span class="token string">"num:2"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime:</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - The last recorded value.</p>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"log/t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"15.91"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"log/t"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"15.91"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Implementation Details</h2>
 <p>When the configured file size is reached the current file is renamed from &lt;filename&gt;.txt to &lt;filename&gt;_old.txt and a new
 &lt;filename&gt;.txt is started.</p>
 <p>The files format is a list of CSV values where the current javascript time (seconds since 01.01.1970) is used in the first column.</p>
 <p>Example:</p>
-<pre class="language-json"><code class="language-json"><span class="token number">1558409166</span><span class="token punctuation">,</span><span class="token number">15</span><br><span class="token number">1558409466</span><span class="token punctuation">,</span><span class="token number">16</span><br><span class="token number">1558409766</span><span class="token punctuation">,</span><span class="token number">18</span><br><span class="token number">1558410066</span><span class="token punctuation">,</span><span class="token number">22</span><br><span class="token number">1558410366</span><span class="token punctuation">,</span><span class="token number">19</span><br><span class="token number">1558410666</span><span class="token punctuation">,</span><span class="token number">12</span><br><span class="token number">1558410966</span><span class="token punctuation">,</span><span class="token number">9</span><br><span class="token number">1558411266</span><span class="token punctuation">,</span><span class="token number">7</span><br><span class="token number">1558411566</span><span class="token punctuation">,</span><span class="token number">7</span><br><span class="token number">1558411866</span><span class="token punctuation">,</span><span class="token number">6</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token number">1558409166</span><span class="token punctuation">,</span><span class="token number">15</span>
+<span class="token number">1558409466</span><span class="token punctuation">,</span><span class="token number">16</span>
+<span class="token number">1558409766</span><span class="token punctuation">,</span><span class="token number">18</span>
+<span class="token number">1558410066</span><span class="token punctuation">,</span><span class="token number">22</span>
+<span class="token number">1558410366</span><span class="token punctuation">,</span><span class="token number">19</span>
+<span class="token number">1558410666</span><span class="token punctuation">,</span><span class="token number">12</span>
+<span class="token number">1558410966</span><span class="token punctuation">,</span><span class="token number">9</span>
+<span class="token number">1558411266</span><span class="token punctuation">,</span><span class="token number">7</span>
+<span class="token number">1558411566</span><span class="token punctuation">,</span><span class="token number">7</span>
+<span class="token number">1558411866</span><span class="token punctuation">,</span><span class="token number">6</span></code></pre>
 <p>When using the <code>averagetime</code> parameter a new interval is started with a first value.
 The interval terminates automatically when the <code>averagetime</code> is over.
 This results in no recordings when a sensor is not giving values.</p>

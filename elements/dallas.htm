@@ -66,7 +66,9 @@ In addition to the sensor a 4.7k resistor is required to pull up the data line.<
 <p>The <code>OneWire</code>and the <code>DallasTemperature</code> library is required by this element
 and installed as dependency when installing the library.</p>
 <p>The <code>HOMEDING_INCLUDE_DALLAS</code> must be defined in the main sketch to compile and register the element.</p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_DALLAS</span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_DALLAS</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
 <h2>Connecting a Sensor</h2>
 <p>The Sensor can be driven by using the GND and 3.3 VCC from the processor board and only one data line to a free GPIO port.</p>
 <p>In addition to the sensor a 4.7k resistor is required to pull up the data line.</p>
@@ -126,13 +128,27 @@ The default time is set to 3 seconds.</p>
 <p>* This parameter must be specified.</p>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dallas"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"60s"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"displaytext/temp?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dallas"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span>
+      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"60s"</span><span class="token punctuation">,</span>
+      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"displaytext/temp?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the Element is active.</p>
 <p><strong>temperature</strong> - The last read temperature value from the sensor.</p>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dallas/on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dallas/on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li>OneWire library: <a href="https://github.com/PaulStoffregen/OneWire">https://github.com/PaulStoffregen/OneWire</a></li>

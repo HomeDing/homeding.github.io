@@ -61,7 +61,13 @@ Please install the Bonjour Print Services for Windows from <a href="https://supp
 <p><strong>.\bin</strong> – This folder contains combined firmware files.</p>
 <h3>In Short</h3>
 <blockquote>
-<pre class="language-txt"><code class="language-txt">hd-discover -list<br>hd-discover -save<br>hd-backup &lt;devicename><br>hd-backup --all<br>hd-restore &lt;devicename> &lt;target-ip-address|target-hostname><br>hd-upload [options] &lt;devicename> [firmware]<br>hd-webupload [options] &lt;devicename> [example]</code></pre>
+<pre class="language-txt"><code class="language-txt">hd-discover -list
+hd-discover -save
+hd-backup &lt;devicename>
+hd-backup --all
+hd-restore &lt;devicename> &lt;target-ip-address|target-hostname>
+hd-upload [options] &lt;devicename> [firmware]
+hd-webupload [options] &lt;devicename> [example]</code></pre>
 </blockquote>
 <h2>hd-discover</h2>
 <p>The <code>discover</code> command allows finding current active devices on the local network.
@@ -70,14 +76,53 @@ Be aware that you may have multiple local networks when you use WLAN repeaters.<
 special protocol.</p>
 <p>The command line tool <code>dns-sd</code> is used internally.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-discover<br><br>HomeDing Device discover utility.<br><br>This is a utility to discover devices using the homeding library.<br><br>Usage: hd-discover [parameters]<br>  -h, --help     Get a brief help on using this tool<br>  -l, --list     list found devices<br>  -s, --save     save found devices in file `hd-devices`</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-discover
+
+HomeDing Device discover utility.
+
+This is a utility to discover devices using the homeding library.
+
+Usage: hd-discover [parameters]
+  -h, --help     Get a brief help on using this tool
+  -l, --list     list found devices
+  -s, --save     save found devices in file `hd-devices`</code></pre>
 <p>Starting the command with the <code>-list</code> parameter will list all Arduino devices based on the homeding library.</p>
 <p>The output is formatted as URL you you can directly open the browser and see the device running.</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-discover --list<br><br>HomeDing Device discover utility.<br><br>Searching Arduino HomeDing devices on the local network...<br><br>found devices:<br>  http://airding/<br>  http://plug04/<br>  http://dispding/<br>  http://plug07/<br>  http://bulb04/<br>  http://rfbridge/<br>  http://plug09/<br>  http://switch1/<br>  ...<br><br>done.</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-discover --list
+
+HomeDing Device discover utility.
+
+Searching Arduino HomeDing devices on the local network...
+
+found devices:
+  http://airding/
+  http://plug04/
+  http://dispding/
+  http://plug07/
+  http://bulb04/
+  http://rfbridge/
+  http://plug09/
+  http://switch1/
+  ...
+
+done.</code></pre>
 <p>Starting the command with the <code>-save</code> parameter will add the current found devices to the list
 in the file <code>.\configs\hd-devices.txt</code>.</p>
 <p>This file may grow over time when you add or rename devices. It is used by the <code>hd-backup</code> utility.</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-discover --save<br><br>HomeDing Device discover utility.<br><br>Searching Arduino HomeDing devices on the local network...<br><br>found devices:<br>  http://airding/<br>  http://plug04/<br>  ...<br><br>adding to .\configs\hd-devices.txt<br><br>done.</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-discover --save
+
+HomeDing Device discover utility.
+
+Searching Arduino HomeDing devices on the local network...
+
+found devices:
+  http://airding/
+  http://plug04/
+  ...
+
+adding to .\configs\hd-devices.txt
+
+done.</code></pre>
 <p>You can use the <code>dns-sd</code> utility also to find web servers (_http._tcp) and Arduino devices (_arduino._tcp)
 by using:</p>
 <pre class="language-txt"><code class="language-txt">dns-sd -B _arduino._tcp</code></pre>
@@ -87,21 +132,75 @@ by using:</p>
 <h2>hd-backup</h2>
 <p>The <code>backup</code> command allows downloading configurations to a local folder as a backup.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-backup<br><br>HomeDing Configuration Backup Utility.<br><br>This is a utility to download the configuration from a device to the local configs folder<br><br>Usage: hd-backup.bat [parameters] &lt;devicename><br>  -h, --help     Get a brief help on using this tool<br>  --all          download config from from all known devices<br><br>There will be 3 files saved to the folder:<br>  &lt;devicename>-sysinfo.json  containing the result from /api/sysinfo<br>  &lt;devicename>-env.json      containing the file /env.json<br>  &lt;devicename>-config.json   containing the file /config.json</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-backup
+
+HomeDing Configuration Backup Utility.
+
+This is a utility to download the configuration from a device to the local configs folder
+
+Usage: hd-backup.bat [parameters] &lt;devicename>
+  -h, --help     Get a brief help on using this tool
+  --all          download config from from all known devices
+
+There will be 3 files saved to the folder:
+  &lt;devicename>-sysinfo.json  containing the result from /api/sysinfo
+  &lt;devicename>-env.json      containing the file /env.json
+  &lt;devicename>-config.json   containing the file /config.json</code></pre>
 <p>Starting the command with a devicename parameter creates backup of the /api/sysconf information,
 the /env.json and /config.json files:</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-backup plug08<br><br>HomeDing Configuration Backup Utility.<br><br>Backup configuration...<br>  Device name = plug08<br><br>get sysinfo...<br>get env.json...<br>get config.json...<br><br>saved...<br>  .\configs\plug08-config.json<br>  .\configs\plug08-env.json<br>  .\configs\plug08-sysinfo.json<br>done.</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-backup plug08
+
+HomeDing Configuration Backup Utility.
+
+Backup configuration...
+  Device name = plug08
+
+get sysinfo...
+get env.json...
+get config.json...
+
+saved...
+  .\configs\plug08-config.json
+  .\configs\plug08-env.json
+  .\configs\plug08-sysinfo.json
+done.</code></pre>
 <h2>hd-restore</h2>
 <p>The <code>restore</code> command allows uploading a configuration from the local folder to a device.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-restore.bat<br><br>HomeDing Configuration Restore Utility.<br><br>This is a utility to restore a configuration backup to a device.<br><br>Usage: hd-restore &lt;devicename> &lt;target-ip-address|target-hostname><br>  -h, --help     Get a brief help on using this tool<br>  -l, --list     list existing backups only</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-restore.bat
+
+HomeDing Configuration Restore Utility.
+
+This is a utility to restore a configuration backup to a device.
+
+Usage: hd-restore &lt;devicename> &lt;target-ip-address|target-hostname>
+  -h, --help     Get a brief help on using this tool
+  -l, --list     list existing backups only</code></pre>
 <p>Starting the command with a devicename and current target-ip-address or target-hostname
 the configuration files in the .\configs folder will be uploaded to the target device.</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-restore.bat plug08 192.168.2.22<br><br>HomeDing Configuration Restore Utility.<br><br>restoring configuration plug08 to 192.168.2.22<br>restore env.json...<br>restore config.json...<br>done.</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-restore.bat plug08 192.168.2.22
+
+HomeDing Configuration Restore Utility.
+
+restoring configuration plug08 to 192.168.2.22
+restore env.json...
+restore config.json...
+done.</code></pre>
 <h2>hd-upload</h2>
 <p>The <code>upload</code> command allows uploading a firmware from the local .\bin folder to a device.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-upload<br><br>HomeDing Firmware OTA upload utility.<br><br>This is a helpful wrapper on Windows for the standard upload tool "espota.py" that<br>searches for the latest build to upload to the specified device.<br>Usage: hd-upload.bat [options] &lt;devicename> [firmware]<br>  -h, --help     Get a brief help on using this tool<br>  -p pass        use `pass` as upload password<br><br>The bin file is searched in the build subdirectory<br>When specifying a firmware name the file is taken from the bin directory.</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-upload
+
+HomeDing Firmware OTA upload utility.
+
+This is a helpful wrapper on Windows for the standard upload tool "espota.py" that
+searches for the latest build to upload to the specified device.
+Usage: hd-upload.bat [options] &lt;devicename> [firmware]
+  -h, --help     Get a brief help on using this tool
+  -p pass        use `pass` as upload password
+
+The bin file is searched in the build subdirectory
+When specifying a firmware name the file is taken from the bin directory.</code></pre>
 <p>For direct <strong>uploading</strong> of the firmware in the .\build folder to a device you can use the following batch file:</p>
 <pre class="language-txt"><code class="language-txt">hd-upload plug08</code></pre>
 <p>Using a named firmware the firmware files must be placed in the <code>bin</code> folder
@@ -113,10 +212,27 @@ so can can find and upload firmware from the start.</p>
 <h2>hd-api</h2>
 <p>The <code>api</code> command allows calling a REST service on a device.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-api<br><br>HomeDing api utility to call services on a device on CLI.<br><br>This utility enables calling a api on the CLI.<br><br>Usage: hd-api &lt;devicename> &lt;command><br>  -h, --help     Get a brief help on using this tool<br><br>Commands are: sysinfo, elements, list, state, state, reboot, reset, resetall, cleanweb, scan, connect</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-api
+
+HomeDing api utility to call services on a device on CLI.
+
+This utility enables calling a api on the CLI.
+
+Usage: hd-api &lt;devicename> &lt;command>
+  -h, --help     Get a brief help on using this tool
+
+Commands are: sysinfo, elements, list, state, state, reboot, reset, resetall, cleanweb, scan, connect</code></pre>
 <p>Using a command will invoke the corresponding api method on the device. The used URL is displayed and
 the result is shown.</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-api.cmd plug05 sysinfo<br><br>HomeDing api utility to call services on a device on CLI.<br><br>http://plug05/api/sysinfo<br><br>{"devicename":"plug05","build":"Aug 15 2022","freeHeap":"35976","flashSize":"1048576","coreVersion":"0.90",<br>"coreBuild":"minimal","mac":"24:A1:60:17:8F:C5","fsTotalBytes":"131072","fsUsedBytes":"90112",<br>"safemode":"false","upTime":"261068","ssid":"KHMH"}</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-api.cmd plug05 sysinfo
+
+HomeDing api utility to call services on a device on CLI.
+
+http://plug05/api/sysinfo
+
+{"devicename":"plug05","build":"Aug 15 2022","freeHeap":"35976","flashSize":"1048576","coreVersion":"0.90",
+"coreBuild":"minimal","mac":"24:A1:60:17:8F:C5","fsTotalBytes":"131072","fsUsedBytes":"90112",
+"safemode":"false","upTime":"261068","ssid":"KHMH"}</code></pre>
 <h2>hd-build</h2>
 <p>not yet done.</p>
 <p>The HomeDing project that is used to create the firmware today has no support
@@ -128,9 +244,39 @@ This is an alternate solution to the /$update tool in the firmware that download
 The webupload command is also available in the WebFiles project that compiles these files.</p>
 <p>The minimal and the standard example have a data folder with a complete set of the web implementation for 1MByte Flash / 4MByte Flash devices.</p>
 <p>Starting the command with no parameters will give you a brief help:</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-webupload<br><br>HomeDing upload utility uploading web files to device.<br><br>This utility enables uploading files from a folder into the filesystem of a device<br>using http uploads.<br><br>To create the distribution files use npm run build and npm run pack<br><br>Usage: hd-webupload.bat [options] &lt;devicename> [example]<br>  -h, --help     Get a brief help on using this tool<br>  -c, --clean    Clean existing files on device before upload</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-webupload
+
+HomeDing upload utility uploading web files to device.
+
+This utility enables uploading files from a folder into the filesystem of a device
+using http uploads.
+
+To create the distribution files use npm run build and npm run pack
+
+Usage: hd-webupload.bat [options] &lt;devicename> [example]
+  -h, --help     Get a brief help on using this tool
+  -c, --clean    Clean existing files on device before upload</code></pre>
 <p>When no <code>example</code> parameter is given the files from the standard data folder are used.</p>
-<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-webupload.cmd plug08 minimal<br><br>HomeDing upload utility uploading web files to device.<br><br>Uploading...<br>  Device name = plug08<br>  Folder      = .\examples\minimal\data<br><br>.\examples\minimal\data\browserconfig.xml<br>.\examples\minimal\data\ding.htm<br>.\examples\minimal\data\favicon.svg<br>.\examples\minimal\data\icons.svg<br>.\examples\minimal\data\iotstyle.css<br>.\examples\minimal\data\list.txt<br>.\examples\minimal\data\micro.js<br>.\examples\minimal\data\microide.htm<br>.\examples\minimal\data\site.webmanifest<br>.\examples\minimal\data\updateicons.htm<br><br>http://plug08/ updated.</code></pre>
+<pre class="language-txt"><code class="language-txt">...\libraries\HomeDing>hd-webupload.cmd plug08 minimal
+
+HomeDing upload utility uploading web files to device.
+
+Uploading...
+  Device name = plug08
+  Folder      = .\examples\minimal\data
+
+.\examples\minimal\data\browserconfig.xml
+.\examples\minimal\data\ding.htm
+.\examples\minimal\data\favicon.svg
+.\examples\minimal\data\icons.svg
+.\examples\minimal\data\iotstyle.css
+.\examples\minimal\data\list.txt
+.\examples\minimal\data\micro.js
+.\examples\minimal\data\microide.htm
+.\examples\minimal\data\site.webmanifest
+.\examples\minimal\data\updateicons.htm
+
+http://plug08/ updated.</code></pre>
 <h2>Building WebFiles</h2>
 <p>The <strong>WebFiles</strong> projects that is used to create the Web UI and portal implementation
 all build steps are implemented using the npm tasks defined in package.json.
@@ -139,7 +285,11 @@ Best approach is to use the npm tasks. They are also used by the Github Actions.
 <p>The <code>build</code> and <code>pack</code> tasks create the output folders <code>dist</code> and <code>dist-mini</code> containing the files for the Web UI
 that need to be uploaded into the filesystem of the device.</p>
 <p>For direct uploading the files to a device you can use the following batch files on windows:</p>
-<pre class="language-txt"><code class="language-txt">rem upload files for a 4 MByte flash device<br>md-uploadDist.bat &lt;devicename><br><br>rem upload files for a 1 MByte flash device<br>cmd-uploadMini.bat &lt;devicename></code></pre>
+<pre class="language-txt"><code class="language-txt">rem upload files for a 4 MByte flash device
+md-uploadDist.bat &lt;devicename>
+
+rem upload files for a 1 MByte flash device
+cmd-uploadMini.bat &lt;devicename></code></pre>
 
 
     

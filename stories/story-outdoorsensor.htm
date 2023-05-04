@@ -123,7 +123,8 @@ But you can also use the built-in WiFi Manager to add the device to the network 
 <p>When the device boots with the new firmware for the first time you can use the Serial Monitor to inspect the
 output during booting.</p>
 <p>Here you can see the information about the interim name of the device, the IP address and the network it connected to:</p>
-<pre class="language-txt"><code class="language-txt">00:00:10 sys:i ESP-5D2122 192.168.2.175<br>00:00:10 sys:i Connected to DEVNET unsafe</code></pre>
+<pre class="language-txt"><code class="language-txt">00:00:10 sys:i ESP-5D2122 192.168.2.175
+00:00:10 sys:i Connected to DEVNET unsafe</code></pre>
 <p>Here the temporary devicename is <strong>ESP-5D2122</strong> and <strong>DEVNET</strong> is the network joined.</p>
 <h2>Joining the WiFi Network using the WiFi Manager</h2>
 <p>When you have configured your local WiFi network in secrets.h the device will be available on your network.</p>
@@ -150,13 +151,48 @@ and copy the following configuration into the right text area and then click the
 <p>When you reboot the device either by pressing the reset button on the board or in the UI the device will register itself
 on the network using the name specified in the env.json file (here: outdoor).
 Opening the url <code>http://outdoor</code> will redirect directly to the built-in dashboard.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"outdoor"</span><span class="token punctuation">,</span><br>      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Outdoor sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span><br>      <span class="token property">"homepage"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D4"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">8266</span><span class="token punctuation">,</span><br>      <span class="token property">"passwd"</span><span class="token operator">:</span> <span class="token string">"123"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Listen for 'over the air' OTA Updates"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ssdp"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"ModelUrl"</span><span class="token operator">:</span> <span class="token string">"https://www.mathertel.de/Arduino"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"outdoor"</span><span class="token punctuation">,</span>
+      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Outdoor sensor"</span><span class="token punctuation">,</span>
+      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"homepage"</span><span class="token operator">:</span><span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
+      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D4"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">8266</span><span class="token punctuation">,</span>
+      <span class="token property">"passwd"</span><span class="token operator">:</span> <span class="token string">"123"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Listen for 'over the air' OTA Updates"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ssdp"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"ModelUrl"</span><span class="token operator">:</span> <span class="token string">"https://www.mathertel.de/Arduino"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h3>config.json</h3>
 <p>The <code>config.json</code> contains the sensor specific settings.</p>
 <p>To create a <code>config.json</code> file on the device just open the IDE from the menu
 and copy the following configuration into the right text area and then click the save button.</p>
 <p>When requested enter <code>/config.json</code> into the filename field.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span>
+      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Wiring (simple)</h2>
 <p>The principle wiring of a DHT22 sensor can be seen in this picture:</p>
 <p><img src="/elements/dhtwires.png" alt="DHTWiring" title="w400"></p>
@@ -202,13 +238,54 @@ most of the time to all consumers.
 Actions can also be sent across the network to other devices.</p>
 <p>An accurate time is required for logging.
 Therefore we use the ntptime element to get the current time from a ntp server with adjustments to the timezone you are living in.</p>
-<pre class="language-json"><code class="language-json"><span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <p>You may want to adjust the time zone to fit your location in the ntptime element. This element is often configured in the env.json file but also works in the config.json file.</p>
 <p>The <a href="/elements/log.htm">Log Element</a> is configured to collect data into a pair of files:</p>
-<pre class="language-json"><code class="language-json"><span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"h"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log humidity"</span><span class="token punctuation">,</span><br>    <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span><br>    <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>    <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/humlog.txt"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"h"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log humidity"</span><span class="token punctuation">,</span>
+    <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span>
+    <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span>
+    <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/humlog.txt"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>The same can be done for temperature.</p>
 <p>Now the config.json file should contain:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"log/h?value=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"log/t?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log temperature"</span><span class="token punctuation">,</span><br>      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/templog.txt"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"h"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log humidity"</span><span class="token punctuation">,</span><br>      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/humlog.txt"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Temperature and Humidity sensor"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"log/h?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"log/t?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log temperature"</span><span class="token punctuation">,</span>
+      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span>
+      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/templog.txt"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"h"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log humidity"</span><span class="token punctuation">,</span>
+      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span>
+      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/humlog.txt"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Click “save” and reboot the device again so the elements will start working.</p>
 <h2>Extending a temperature log</h2>
 <p>very similar to the step before a temperature log can be added. The final config.json contains also the log/t configuration.</p>
@@ -218,7 +295,17 @@ Therefore we use the ntptime element to get the current time from a ntp server w
 to enable power some seconds before a sensor reading is required and then cut off power after getting a value.</p>
 <p>The DHT22 wiring has to be changed so that the GND pin is attached to a GPIO (D6 is used here).</p>
 <p>In the config.json file the 3 parameters have to be added:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      ...<br>      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"powerpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"powerinverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      ...<br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      ...
+      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"powerpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
+      <span class="token property">"powerinverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      ...
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Device Dashboard</h2>
 <p>The information the device is gathering can be found on the device dashboard.</p>
 <p>Open <a href="http://outdoor/board.htm">http://outdoor/board.htm</a> to open the dashboard and see current sensor values.</p>

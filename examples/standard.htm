@@ -70,11 +70,40 @@ This example e.G. runs on all the <a href="/boards/nodemcu.htm">nodemcu boards</
 <p><strong>env.json</strong></p>
 <p>The boot process can show it’s state on a LED. Here the LED(D4) from the ESP-12 module is configured for this purpose.</p>
 <p>The FLASH button(D3) can be used to start the config mode manually.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"homeding"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"minimal config for http://homeding device"</span><span class="token punctuation">,</span><br>      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span><br>      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"homeding"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"minimal config for http://homeding device"</span><span class="token punctuation">,</span>
+      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span>
+      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
+      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p><strong>config.json:</strong></p>
 <p>As a starting configuration the blink recipe can be used when your board is a
 <a href="/boards/nodemcu.htm">NodeMCU board</a> with a ESP-12 module the led will blink slowly.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"blink"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Timer for testing"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"LOOP"</span><span class="token punctuation">,</span><br>      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"0s"</span><span class="token punctuation">,</span><br>      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"1s"</span><span class="token punctuation">,</span><br>      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"2s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"blink"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Timer for testing"</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"LOOP"</span><span class="token punctuation">,</span>
+      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"0s"</span><span class="token punctuation">,</span>
+      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"1s"</span><span class="token punctuation">,</span>
+      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"2s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>This configuration can be used as a starting point to implement your own projects.</p>
 <h2>See also</h2>
 <ul>

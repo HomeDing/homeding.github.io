@@ -60,7 +60,9 @@
 <p>The DHT Element is not part of the core set of elements because the low level communication to the chips the <code>DHTNEW</code> library is used and needs to be installed using the Arduino library manager.</p>
 <p>Install the <code>DHTNEW</code> library by Rob Tillaart before including this element. When you install the HomeDing Library by using the Arduino library manager it can be installed as a dependency.</p>
 <p>The <em><strong>HOMEDING_INCLUDE_DHT</strong></em> must be defined in the main sketch to compile and register the element.</p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_DHT</span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more Elements that need additional libraries</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_DHT</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;HomeDing.h></span></span></code></pre>
 <!-- The DHT Sensor example shows how to configure a sensor device that reads the sensor values from a DHT and shows them in the Web UI. -->
 <p>The following sensor chips from the DHT family are supported by the DHTesp library:</p>
 <ul>
@@ -117,7 +119,18 @@ The default time is set to 3 seconds.</p>
 <p>* This parameter must be specified.</p>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp: $v\u00dfC"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=hum: $v%"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span>
+      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span>
+      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp: $v\u00dfC"</span><span class="token punctuation">,</span>
+      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=hum: $v%"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <blockquote>
@@ -126,7 +139,13 @@ The default time is set to 3 seconds.</p>
 <p><strong>humidity</strong> – The last read humidity value from the sensor.</p>
 </blockquote>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht/on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"50.50"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht/on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"27.30"</span><span class="token punctuation">,</span>
+    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"50.50"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>DHT reset and power control</h2>
 <p>I had the problem with unresponsive sensors that is also discussed on the internet.</p>
 <p>This occurs after some successful operation time and seems to happen more often when the sensor is using a 3.3 V power supply instead of 5V.</p>

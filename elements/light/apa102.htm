@@ -82,12 +82,24 @@ or fading from one value to another. When not specified the value 0 is used to m
 <p>* This parameter must be specified.</p>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"apa102"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span><br>      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span><br>      <span class="token property">"count"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"30"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"apa102"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span>
+      <span class="token property">"count"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"30"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Links</h2>
 <p>APA102 Vs. APA102C: <a href="https://forums.adafruit.com/viewtopic.php?t=66973">https://forums.adafruit.com/viewtopic.php?t=66973</a></p>
 <p><a href="https://hackaday.io/project/21293-digital-led-display-apa107apa102ws2812bsk6812/">https://hackaday.io/project/21293-digital-led-display-apa107apa102ws2812bsk6812/</a></p>
 <p><a href="https://github.com/pololu/apa102-arduino/blob/master/APA102.h">https://github.com/pololu/apa102-arduino/blob/master/APA102.h</a></p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Copyright Pololu Corporation.  For more information, see http://www.pololu.com/</span><br><br><span class="token macro property"><span class="token directive-hash">#</span> <span class="token directive keyword">pragma</span> <span class="token expression">once</span></span></code></pre>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Copyright Pololu Corporation.  For more information, see http://www.pololu.com/</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span> <span class="token directive keyword">pragma</span> <span class="token expression">once</span></span></code></pre>
 
 
     

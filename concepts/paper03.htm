@@ -95,7 +95,9 @@ including their specific setup.</p>
 <p><strong>Event</strong> - this is what happens inside an element like a new sensor value is available or a timing condition has occurred. <strong>On</strong> this <strong>Event</strong> one or multiple actions can be created.</p>
 <p><strong>Action</strong> - this is the data (key and value) that is passed over to the target element.</p>
 <p>What you can see in the configuration is to setup this interaction by specifying the event on the origin element and the actions that will be sent. Here are some examples:</p>
-<pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1"<br>"onValue" : "digitalOut/D5?value=$v"<br>"onValue" : "device/0?log=value:$v"</code></pre>
+<pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1"
+"onValue" : "digitalOut/D5?value=$v"
+"onValue" : "device/0?log=value:$v"</code></pre>
 <p>In the configuration you can specify multiple, comma separated actions on the same event:</p>
 <pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1,device/0?log=value:$v"</code></pre>
 <h2>sending Actions in the device</h2>

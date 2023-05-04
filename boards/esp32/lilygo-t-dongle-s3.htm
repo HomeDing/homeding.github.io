@@ -176,7 +176,22 @@ a pin configuration (see below) must be given:</p>
 <li>USB CDC On Boot: Enabled</li>
 </ul>
 <h3>Diag output</h3>
-<pre class="language-txt"><code class="language-txt">I2C pins sda=-1 scl=-1<br>Reset Reason: 12<br> Free Heap: 310160<br> Mac-address: F4:12:FA:41:38:18<br>Chip-Info:<br>  model: ESP32-S3(9)<br>  features: 00000012<br>    2.4GHz WiFi<br>    Bluetooth LE<br>  cores: 2<br>  revision: 0<br>ChipModel: ESP32-S3<br>Flash:<br>  Size: 16777216<br>  Mode: QIO(0)<br>  Speed: 80000000</code></pre>
+<pre class="language-txt"><code class="language-txt">I2C pins sda=-1 scl=-1
+Reset Reason: 12
+ Free Heap: 310160
+ Mac-address: F4:12:FA:41:38:18
+Chip-Info:
+  model: ESP32-S3(9)
+  features: 00000012
+    2.4GHz WiFi
+    Bluetooth LE
+  cores: 2
+  revision: 0
+ChipModel: ESP32-S3
+Flash:
+  Size: 16777216
+  Mode: QIO(0)
+  Speed: 80000000</code></pre>
 <h2>Board configuration</h2>
 <p>The following <code>env.json</code> configuration can be used for this board and contains settings for</p>
 <ul>
@@ -185,13 +200,92 @@ a pin configuration (see below) must be given:</p>
 <li>A value and pwm output to control the display brightness</li>
 <li>The digital input signal definition for the button on the back.</li>
 </ul>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"dongle-s3"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-S3 based USB stick."</span><span class="token punctuation">,</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"T-Dongle-S3"</span><span class="token punctuation">,</span><br>      <span class="token property">"x-button"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"38"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"DisplayST7735"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"80"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"160"</span><span class="token punctuation">,</span><br>      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">270</span><span class="token punctuation">,</span><br>      <span class="token property">"spiClk"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span><br>      <span class="token property">"spiMosi"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span><br>      <span class="token property">"spiDC"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">1</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Brightness"</span><span class="token punctuation">,</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"128"</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"pwmout/displayled?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Backlight"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight LED dimming"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"38"</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span><br>      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"sdmmc"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"mmcD0"</span><span class="token operator">:</span> <span class="token string">"14"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD1"</span><span class="token operator">:</span> <span class="token string">"17"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD2"</span><span class="token operator">:</span> <span class="token string">"21"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcD3"</span><span class="token operator">:</span> <span class="token string">"18"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcCLK"</span><span class="token operator">:</span> <span class="token string">"12"</span><span class="token punctuation">,</span><br>      <span class="token property">"mmcCMD"</span><span class="token operator">:</span> <span class="token string">"16"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"dongle-s3"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-S3 based USB stick."</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"T-Dongle-S3"</span><span class="token punctuation">,</span>
+      <span class="token property">"x-button"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"38"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"DisplayST7735"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"80"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"160"</span><span class="token punctuation">,</span>
+      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">270</span><span class="token punctuation">,</span>
+      <span class="token property">"spiClk"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      <span class="token property">"spiMosi"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">"spiDC"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Brightness"</span><span class="token punctuation">,</span>
+      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"128"</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"pwmout/displayled?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Backlight"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight LED dimming"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"38"</span><span class="token punctuation">,</span>
+      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"sdmmc"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"mmcD0"</span><span class="token operator">:</span> <span class="token string">"14"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcD1"</span><span class="token operator">:</span> <span class="token string">"17"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcD2"</span><span class="token operator">:</span> <span class="token string">"21"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcD3"</span><span class="token operator">:</span> <span class="token string">"18"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcCLK"</span><span class="token operator">:</span> <span class="token string">"12"</span><span class="token punctuation">,</span>
+      <span class="token property">"mmcCMD"</span><span class="token operator">:</span> <span class="token string">"16"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
 <h2>Board test config</h2>
 <p>For first testing purpose the following configuration in <code>config.json</code> can be used:</p>
 <ul>
 <li>Dispay the current time on the display</li>
 </ul>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span><br>      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the time"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the time"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="https://www.lilygo.cc/products/t-dongle-s3">https://www.lilygo.cc/products/t-dongle-s3</a></li>

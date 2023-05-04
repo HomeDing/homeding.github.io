@@ -70,14 +70,29 @@
 </blockquote>
 <p>* This parameter must be specified.</p>
 <h2>Example Configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"rotary"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Rotary Input"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin1"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin2"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"step"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"value/led?up=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"rotary"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Rotary Input"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin1"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin2"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
+      <span class="token property">"step"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"value/led?up=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h3>Example State</h3>
 <p>The internal value can be seen in the rotary state but should not directly be used as a value.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"rotary/in"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"4"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"rotary/in"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"4"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/value.htm">Value Element</a></li>

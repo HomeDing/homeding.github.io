@@ -60,7 +60,9 @@ need to send the same list of events but different values.</p>
 <p>The scene element also can be used to configure presets of multiple element values
 at a single place by using multiple scene definitions.</p>
 <p>A scene element can also be controlled over the network by using a simple links like:</p>
-<pre class="language-txt"><code class="language-txt">http://homeding/api/state/scene/day?start=1<br>http://homeding/api/state/scene/night?start=1<br>http://homeding/api/state/scene/stations?next=1</code></pre>
+<pre class="language-txt"><code class="language-txt">http://homeding/api/state/scene/day?start=1
+http://homeding/api/state/scene/night?start=1
+http://homeding/api/state/scene/stations?next=1</code></pre>
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?scene" type="image/svg+xml"></object></p>
 <p>This element implements the following properties and actions:</p>
@@ -83,10 +85,42 @@ When set to 0 (no automatic next step) a <code>next</code> action is required to
 </blockquote>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"scene"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"day"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"light/ceiling?brightness=$v"</span><span class="token punctuation">,</span><br>        <span class="token string">"light/wall?brightness=$v"</span><span class="token punctuation">,</span><br>        <span class="token string">"switch/steps?value=0"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">1</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>    <span class="token property">"night"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"light/ceiling?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"light/wall?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"switch/steps?value=1"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">0</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"off"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"light/ceiling?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"light/wall?brightness=0"</span><span class="token punctuation">,</span><br>        <span class="token string">"switch/steps?value=0"</span><br>      <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">0</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"scene"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"day"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"light/ceiling?brightness=$v"</span><span class="token punctuation">,</span>
+        <span class="token string">"light/wall?brightness=$v"</span><span class="token punctuation">,</span>
+        <span class="token string">"switch/steps?value=0"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token property">"night"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"light/ceiling?brightness=0"</span><span class="token punctuation">,</span>
+        <span class="token string">"light/wall?brightness=0"</span><span class="token punctuation">,</span>
+        <span class="token string">"switch/steps?value=1"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"off"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"steps"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"light/ceiling?brightness=0"</span><span class="token punctuation">,</span>
+        <span class="token string">"light/wall?brightness=0"</span><span class="token punctuation">,</span>
+        <span class="token string">"switch/steps?value=0"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"delay"</span><span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>State</h2>
 <p>Some internal values of the element can be observed in the state.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"scene/night"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"scene/night"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/select.htm">Select Element</a></li>

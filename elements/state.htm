@@ -73,7 +73,9 @@ They actually do not participate in the actions but register a state storage mec
 <h3>RTC State</h3>
 <p>The RTCStateElement registers itself for saving the state information in the RTC Memory that is available in the ESP8266 processor. Here state survives reboots and software updates as long as the power of the device is not switched off.</p>
 <p>The following configuration enables this state mechanism:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"0"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"0"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>There is not much space in the RTC Memory and only 200 characters can be used to store the state information.</p>
 <p>The state is formatted as a series of actions like:</p>
 <pre class="language-json"><code class="language-json"><span class="token string">"switch/power?value=1,value/speed?value=12"</span></code></pre>
@@ -84,7 +86,14 @@ They actually do not participate in the actions but register a state storage mec
 <p>value, switch</p>
 <p>To enabled saving and loading the state of an Element the <code>useState</code> property must be enabled.</p>
 <p>Here is an example for a switch supporting 0 and 1 values. The default value is <code>0</code> == Off while the value after a reboot is taken from the state memory.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"power"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"value"</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"useState"</span><span class="token operator">:</span><span class="token number">1</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"power"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"value"</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"useState"</span><span class="token operator">:</span><span class="token number">1</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <!-- 
 [](https://www.dweet.io/play/)
 

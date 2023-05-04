@@ -83,7 +83,15 @@ The boolean calculations result is inverted when this property is set to true.</
 <p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
 <h3>Configuration Example</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"or"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"o"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token string">"false"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span><br>      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=or-output: $v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"or"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"o"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token string">"false"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=or-output: $v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>

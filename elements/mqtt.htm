@@ -84,12 +84,44 @@ to remember the last sent message for subscribers.</p>
 <h3>Configuration Examples</h3>
 <p>These examples use a DHT Element to create actions to show how they can be send using MQTT.</p>
 <p>This configuration simply publishes a single temperature value</p>
-<pre class="language-json"><code class="language-json"><span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    ...<br>    <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?temperature=$v"</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token string">"home/outside/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    ...
+    <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?temperature=$v"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span>
+    <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token string">"home/outside/temp"</span><span class="token punctuation">,</span>
+    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>This configuration publishes 2 values from the DHT sensor
 using the wildcard publish mechanism:</p>
-<pre class="language-json"><code class="language-json"><span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    ...<br>    <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?temperature=$v"</span><span class="token punctuation">,</span><br>    <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?humidity=$v"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token string">"home/outside/+"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    ...
+    <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?temperature=$v"</span><span class="token punctuation">,</span>
+    <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"mqtt/home?humidity=$v"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span>
+    <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token string">"home/outside/+"</span><span class="token punctuation">,</span>
+    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>This configuration subscribes to a single topic and value :</p>
-<pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span><br>    <span class="token property">"subscribe"</span><span class="token operator">:</span> <span class="token string">"home/outside/temp"</span><span class="token punctuation">,</span><br>    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span><br>    onValue<span class="token string">": "</span>???"<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token property">"mqtt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"server"</span><span class="token operator">:</span> <span class="token string">"mqtt://pi:rasp-pwd@raspberry:1883"</span><span class="token punctuation">,</span>
+    <span class="token property">"subscribe"</span><span class="token operator">:</span> <span class="token string">"home/outside/temp"</span><span class="token punctuation">,</span>
+    <span class="token property">"retain"</span><span class="token operator">:</span> <span class="token number">1</span>
+    onValue<span class="token string">": "</span>???"
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Server Connection</h2>
 <p>The network and security parameters on how to reach the MQTT server on the network are specified by the
 <code>server</code> parameter using the <a href="https://github.com/mqtt/mqtt.org/wiki/URI-Scheme">MQTT URI-Scheme</a>:</p>
@@ -116,14 +148,17 @@ This can be configured by specifying a username and password in the URI in the <
 <p>The <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">MQTT standard port</a> 8883 is used by default for secure connections when not specified.</p>
 <h2>Publish and Subscribe to multiple topics</h2>
 <p>Publishing and consuming values from multiple topics of a device or sensor is a common use-case. Using MQTT it is common to group all data from a sensor on the same node in the topic tree like:</p>
-<pre class="language-txt"><code class="language-txt">publish 'outside/sensor/temperature' '24.00'<br>publish 'outside/sensor/pressure' '9980'<br>publish 'outside/sensor/humidity' '70.20'</code></pre>
+<pre class="language-txt"><code class="language-txt">publish 'outside/sensor/temperature' '24.00'
+publish 'outside/sensor/pressure' '9980'
+publish 'outside/sensor/humidity' '70.20'</code></pre>
 <p>The <code>+</code> wildcard in a subscription is supports subscribing to all topics within a node:</p>
 <pre class="language-txt"><code class="language-txt">subscribe 'outside/sensor/+'</code></pre>
 <p>The MQTTElement can handle these grouped MQTT topcis and values.
 The mode is enabled using a <code>+</code> wildcard as the last character
 in the <code>publish</code> parameter specifying the topic tree.
 When the MQTTElement is active all received actions will be treated as data publishing actions:</p>
-<pre class="language-txt"><code class="language-txt">/api/state/mqtt/outside?temperature=24.00<br>/api/state/mqtt/outside?pressure=9980</code></pre>
+<pre class="language-txt"><code class="language-txt">/api/state/mqtt/outside?temperature=24.00
+/api/state/mqtt/outside?pressure=9980</code></pre>
 <p>Please be aware that common actions/topics using ‘start’ and ‘stop’
 will not result in data publishing as they are handled by the base Element implementation.
 So just avoid these names.</p>

@@ -61,7 +61,16 @@
 <p><strong>mode</strong> - <code>8x8</code> or <code>numeric</code>.</p>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"max7219"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"wordclock matrix"</span><span class="token punctuation">,</span><br>      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span><br>      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"8x8"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"max7219"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"wordclock matrix"</span><span class="token punctuation">,</span>
+      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"8x8"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h3>Connecting the MAX7219</h3>
 <p>The MAX7219 is using the SPI interface and protocol to receive commands and data. There is no data sent by the MAX7219.</p>
 <p>Here D3 is used for selecting (enabling) the chip.</p>
@@ -110,7 +119,13 @@
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"max7219/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"mode"</span><span class="token operator">:</span><span class="token string">"8x8"</span><span class="token punctuation">,</span><br>    <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"5"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"max7219/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"mode"</span><span class="token operator">:</span><span class="token string">"8x8"</span><span class="token punctuation">,</span>
+    <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"5"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/displays/max7219.htm">DisplayMAX7219 Element</a>

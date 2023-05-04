@@ -134,12 +134,26 @@ The formatting from printf is used and lines will have a <code>HH:MM:SS [type]/[
 </code></pre>
 <h2>Set loglevel for the device</h2>
 <p>By using the configuration of the <a href="/elements/device.htm">Device Element</a> the device wide log level can be specified.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      ...<br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      ...
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Set loglevel for individual Elements</h2>
 <p>It is possible to set the logging level for a specific element in the config.json file so trace information can be produced of a specific element but not for all elements.
 The default is to have an overall error level for logging and trace level logging should be enabled on the element level.</p>
 <p><strong>Example:</strong></p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"button"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      ...<br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"button"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      ...
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/log.htm">Log Element</a></li>

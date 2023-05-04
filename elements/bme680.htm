@@ -59,7 +59,14 @@ It uses the I2C bus for connection.</p>
 <h2>Sensor Connectivity</h2>
 <p>The sensor chip uses a 3.3 V Supply voltage on VCC and GND and needs to be connected to the SDA and SCL line of the I2C bus.
 The I2C pins are configured using the properties of the <a href="/elements/device.htm">device element</a> and the I2C bus is normally shared by multiple elements e.g. sensors.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span><br>      <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"D1"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"D1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>The I2C address of the sensor is 0x77 = 119 by default and is configured using the element configuration.
 The chip offers the possibility using an alternate address. Please refer to the documentation of your sensor board.</p>
 <p>Using the default I2C bus pins:</p>
@@ -126,7 +133,18 @@ The chip offers the possibility using an alternate address. Please refer to the 
 <p><strong>readTime</strong> Time between 2 probes from the sensor are fetched. The default value is 1 minute.</p>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bme680"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"bd"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x77"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=humidity=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onpressure"</span><span class="token operator">:</span> <span class="token string">"device/0?log=pressure=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"ongas"</span><span class="token operator">:</span> <span class="token string">"device/0?log=gas=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"bme680"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"bd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x77"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span>
+      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"device/0?log=temp=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onhumidity"</span><span class="token operator">:</span> <span class="token string">"device/0?log=humidity=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onpressure"</span><span class="token operator">:</span> <span class="token string">"device/0?log=pressure=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"ongas"</span><span class="token operator">:</span> <span class="token string">"device/0?log=gas=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Outbound Actions</h2>
 <p>The actions emitted by the BME680 Element has read some new data (with changed value) from the sensor.</p>
 <p><strong>onTemperature</strong> - These actions are send when a new temperature value has been read. The value given in the actions is actual temperature in Celcius.</p>
@@ -134,7 +152,15 @@ The chip offers the possibility using an alternate address. Please refer to the 
 <p><strong>onPressure</strong> - These actions are send when a new pressure value has been read. The value given in the actions is actual pressure in hPA.</p>
 <p><strong>onGas</strong> - These actions are send when a new gas resistance value has been read. The value given in the actions is actual gas resistance value in kOhm.</p>
 <h2>State</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"bme680/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"21.21"</span><span class="token punctuation">,</span><br>    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"43.48"</span><span class="token punctuation">,</span><br>    <span class="token property">"pressure"</span><span class="token operator">:</span><span class="token string">"99784"</span><span class="token punctuation">,</span><br>    <span class="token property">"gas"</span><span class="token operator">:</span><span class="token string">"72724"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"bme680/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"temperature"</span><span class="token operator">:</span><span class="token string">"21.21"</span><span class="token punctuation">,</span>
+    <span class="token property">"humidity"</span><span class="token operator">:</span><span class="token string">"43.48"</span><span class="token punctuation">,</span>
+    <span class="token property">"pressure"</span><span class="token operator">:</span><span class="token string">"99784"</span><span class="token punctuation">,</span>
+    <span class="token property">"gas"</span><span class="token operator">:</span><span class="token string">"72724"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Interpreting the GAS-OHM values</h2>
 <p>There are some discussions about how to interpret the values from the gas sensor.</p>
 <p>The number is not related directly to quality of the air and Bosch supports a (closed source) library to calculate a proprietary Air Quality Index (IAQ).</p>

@@ -64,12 +64,43 @@ The property name and the value is passed unchanged.</p>
 <!-- missing property descriptions ??? -->
 <h2>Example</h2>
 <p>On the device named <strong>logger</strong> 2 display elements are defined but there is no local element that produces actions for these.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">36</span><span class="token punctuation">,</span><br>      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"Temp:"</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"°C"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"h"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span><br>      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"Hum: "</span><span class="token punctuation">,</span><br>      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"%"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">36</span><span class="token punctuation">,</span>
+      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"Temp:"</span><span class="token punctuation">,</span>
+      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"°C"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"h"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"Hum: "</span><span class="token punctuation">,</span>
+      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"%"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>You can test these by using the following URLs to trigger the actions with your browser:</p>
 <p><a href="http://homeding/$board/display/t?show=20.30">http://homeding/$board/display/t?show=20.30</a></p>
 <p><a href="http://homeding/$board/display/h?show=45.00">http://homeding/$board/display/h?show=45.00</a></p>
 <p>On the device named <strong>dht22-probe</strong> the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span> <span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"remote/display-t?show=$v"</span><span class="token punctuation">,</span><br>      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"remote/display-h?show=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><br>  <span class="token property">"remote"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"display"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"displaybox"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span> <span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"remote/display-t?show=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"remote/display-h?show=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"remote"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"display"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"displaybox"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>TODO</h2>
 <ul class="contains-task-list">
 <li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> keep/queue messages when network is not available.</label></li>

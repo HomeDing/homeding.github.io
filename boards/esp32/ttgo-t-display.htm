@@ -65,7 +65,24 @@
 <li>USB-Bridge: 2104</li>
 </ul>
 <h2>Connectors</h2>
-<pre class="language-txt"><code class="language-txt">    +-------------+<br>    |   T T G O   |<br>G   | +---------+ | 3V<br>G   | |    D    | | 36<br>21  | |    I    | | 37<br>22  | |    S    | | 38<br>17  | |    P    | | 39<br>2   | |    L    | | 32<br>15  | |    A    | | 33<br>13  | |    Y    | | 25<br>12  | |         | | 26<br>G   | |         | | 27<br>G   | |         | |  G<br>3V  | |         | | 5V<br>    | +---------+ |<br>    |             B-RST<br>    | B-2     B-1 |<br>    +-----USB-----+</code></pre>
+<pre class="language-txt"><code class="language-txt">    +-------------+
+    |   T T G O   |
+G   | +---------+ | 3V
+G   | |    D    | | 36
+21  | |    I    | | 37
+22  | |    S    | | 38
+17  | |    P    | | 39
+2   | |    L    | | 32
+15  | |    A    | | 33
+13  | |    Y    | | 25
+12  | |         | | 26
+G   | |         | | 27
+G   | |         | |  G
+3V  | |         | | 5V
+    | +---------+ |
+    |             B-RST
+    | B-2     B-1 |
+    +-----USB-----+</code></pre>
 <h2>Pin usages</h2>
 <table>
 <thead>
@@ -162,9 +179,46 @@
 The data pin is attached to pin 19 that is usually used for SPI data input (MISO). As the SPI bus and all TFT connections are not available on the board pins so there will be no conflict.</p>
 <p>The Backlight can be dimmed by using a pwmout on pin 4.</p>
 <h2>config</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"DisplayST7789"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"TTGO-Display"</span><span class="token punctuation">,</span><br>      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"135"</span><span class="token punctuation">,</span><br>      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"240"</span><span class="token punctuation">,</span><br>      <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">180</span><span class="token punctuation">,</span><br>      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>      <span class="token property">"spimosi"</span><span class="token operator">:</span> <span class="token number">19</span><span class="token punctuation">,</span><br>      <span class="token property">"spimiso"</span><span class="token operator">:</span> <span class="token string">"-1"</span><span class="token punctuation">,</span><br>      <span class="token property">"spiCLK"</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span><br>      <span class="token property">"spics"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span><br>      <span class="token property">"spidc"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span><br>      <span class="token property">"xspiRST"</span><span class="token operator">:</span> <span class="token number">23</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"DisplayST7789"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"TTGO-Display"</span><span class="token punctuation">,</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"135"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"240"</span><span class="token punctuation">,</span>
+      <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">180</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"spimosi"</span><span class="token operator">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
+      <span class="token property">"spimiso"</span><span class="token operator">:</span> <span class="token string">"-1"</span><span class="token punctuation">,</span>
+      <span class="token property">"spiCLK"</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+      <span class="token property">"spics"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span>
+      <span class="token property">"spidc"</span><span class="token operator">:</span> <span class="token string">"16"</span><span class="token punctuation">,</span>
+      <span class="token property">"xspiRST"</span><span class="token operator">:</span> <span class="token number">23</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>For background dimming:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"dim"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"TFT Backlight"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight dimming of ST7789"</span><span class="token punctuation">,</span><br>      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">128</span><span class="token punctuation">,</span><br>      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"pwmout/dim?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"dim"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"TFT Backlight"</span><span class="token punctuation">,</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight dimming of ST7789"</span><span class="token punctuation">,</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span><br>      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span><br>      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">128</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dim"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"TFT Backlight"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight dimming of ST7789"</span><span class="token punctuation">,</span>
+      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">128</span><span class="token punctuation">,</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"pwmout/dim?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dim"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"TFT Backlight"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight dimming of ST7789"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span>
+      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">128</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="http://www.lilygo.cn/prod_view.aspx?TypeId=50062&amp;Id=1400&amp;FId=t3:50062:3">http://www.lilygo.cn/prod_view.aspx?TypeId=50062&amp;Id=1400&amp;FId=t3:50062:3</a></li>

@@ -60,7 +60,14 @@ If there is a “summertime” period, the start and end of that period can be c
 <p>The POSIX format for this configuration is explained here: <a href="https://developer.ibm.com/technologies/systems/articles/au-aix-posix/">https://developer.ibm.com/technologies/systems/articles/au-aix-posix/</a>.</p>
 <p>Examples for timezones can be found in <a href="https://sites.google.com/a/usapiens.com/opnode/time-zones">https://sites.google.com/a/usapiens.com/opnode/time-zones</a>.</p>
 <p>See <a href="https://sites.google.com/a/usapiens.com/opnode/time-zones">https://sites.google.com/a/usapiens.com/opnode/time-zones</a> for examples.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"ntpserver"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span><br>        <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"ntpserver"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span>
+        <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Setup the Sensor and Logging</h2>
 <p>The <a href="/elements/dht.htm">DHT Sensor</a> is connected using 2 GPIO pins:</p>
 <ul>
@@ -75,7 +82,28 @@ when permanently powered.</p>
 in a file with the name given by the <code>filename</code> parameter.
 Using the <code>averagetime</code> the <a href="/elements/log.htm">Logging Element</a> collects samples during the 10
 min. period and writes out the average of the collected values.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span><br>      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span><br>      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span><br>      <span class="token property">"powerpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span><br>      <span class="token property">"powerinverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"log/t?value=$v"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log temperature"</span><span class="token punctuation">,</span><br>      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span><br>      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/templog.txt"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"30s"</span><span class="token punctuation">,</span>
+      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"resendtime"</span><span class="token operator">:</span> <span class="token string">"2m"</span><span class="token punctuation">,</span>
+      <span class="token property">"powerpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
+      <span class="token property">"powerinverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"log/t?value=$v"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"log temperature"</span><span class="token punctuation">,</span>
+      <span class="token property">"averagetime"</span><span class="token operator">:</span> <span class="token string">"00:10:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"filesize"</span><span class="token operator">:</span> <span class="token string">"10000"</span><span class="token punctuation">,</span>
+      <span class="token property">"filename"</span><span class="token operator">:</span> <span class="token string">"/templog.txt"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
 
     

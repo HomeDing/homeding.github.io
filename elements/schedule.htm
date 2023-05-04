@@ -91,9 +91,23 @@ The first one when the <code>on</code>-time has passed and a second one when the
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h2>Example Configuration</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"schedule"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"lights"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"ontime"</span><span class="token operator">:</span> <span class="token string">"04:00:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"offtime"</span><span class="token operator">:</span> <span class="token string">"18:00:00"</span><span class="token punctuation">,</span><br>      <span class="token property">"onon"</span><span class="token operator">:</span> <span class="token string">"device/main?log=now on."</span><span class="token punctuation">,</span><br>      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">" device/main?log=now off."</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"schedule"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lights"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"ontime"</span><span class="token operator">:</span> <span class="token string">"04:00:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"offtime"</span><span class="token operator">:</span> <span class="token string">"18:00:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"onon"</span><span class="token operator">:</span> <span class="token string">"device/main?log=now on."</span><span class="token punctuation">,</span>
+      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">" device/main?log=now off."</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Example State</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"button/start"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> ???<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"button/start"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> ???
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/timeelements.htm">Time Elements</a></li>

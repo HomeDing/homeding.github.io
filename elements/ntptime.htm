@@ -71,13 +71,25 @@ If you have a device with these requirements a chip based real-time like the  <a
 <p>See <a href="https://developer.ibm.com/technologies/systems/articles/au-aix-posix/">https://developer.ibm.com/technologies/systems/articles/au-aix-posix/</a> that explains the format for this configuration.</p>
 <p>See <a href="https://raw.githubusercontent.com/nayarsystems/posix_tz_db/master/zones.csv">https://raw.githubusercontent.com/nayarsystems/posix_tz_db/master/zones.csv</a> or <strong>TZ.h</strong> for examples.</p>
 <h3>Configuration Example</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"ntpserver"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span><br>        <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"ntpserver"</span><span class="token operator">:</span> <span class="token string">"pool.ntp.org"</span><span class="token punctuation">,</span>
+        <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>now</strong>  the current time of the board.</p>
 <h2>Element State Example</h2>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"ntptime/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"now"</span><span class="token operator">:</span> <span class="token string">"2018-11-22 20:43:08"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ntptime/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"now"</span><span class="token operator">:</span> <span class="token string">"2018-11-22 20:43:08"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/timeelements.htm">Time Elements</a></li>

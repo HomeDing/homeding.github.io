@@ -50,7 +50,24 @@
 <h2>Options</h2>
 <p>The Gauge Chart requires to set the options to create the scale of the chart
 including the colors of the arc in the background.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  title<span class="token operator">:</span> <span class="token string">"Room Temperature"</span><span class="token punctuation">,</span><br>  units<span class="token operator">:</span> <span class="token string">"°C"</span><span class="token punctuation">,</span><br>  minimum<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span><br>  maximum<span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span><br>  segments<span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token punctuation">{</span><br>      value<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span><br>      color<span class="token operator">:</span> 'white'<br>    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>      value<span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span><br>      color<span class="token operator">:</span> '#44ff44'<br>    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>      color<span class="token operator">:</span> '#ff4444'<br>    <span class="token punctuation">}</span><br><br>  <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">"Room Temperature"</span><span class="token punctuation">,</span>
+  units<span class="token operator">:</span> <span class="token string">"°C"</span><span class="token punctuation">,</span>
+  minimum<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+  maximum<span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+  segments<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      value<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+      color<span class="token operator">:</span> 'white'
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      value<span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+      color<span class="token operator">:</span> '#44ff44'
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      color<span class="token operator">:</span> '#ff4444'
+    <span class="token punctuation">}</span>
+
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
 <ul>
 <li><strong>title</strong> - This text will be displayed on top of the gauge.</li>
 <li><strong>units</strong> - This text will be displayed below the actual value.</li>

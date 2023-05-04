@@ -87,7 +87,19 @@ ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 <p><strong>stop</strong> - Receiving this action stop the timer.</p>
 <p><strong>next</strong> - Receiving this action advances the timer to on / off .</p>
 <h3>Configuration Example</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"timer"</span><span class="token punctuation">,</span><br>      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span><br>      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span><br>      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"8s"</span><span class="token punctuation">,</span><br>      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"20s"</span><span class="token punctuation">,</span><br>      <span class="token property">"onon"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?on"</span><span class="token punctuation">,</span><br>      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?off"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"timer"</span><span class="token punctuation">,</span>
+      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span>
+      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"8s"</span><span class="token punctuation">,</span>
+      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"20s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onon"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?on"</span><span class="token punctuation">,</span>
+      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?off"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>State</h2>
 <p>The state of the timer element includes:</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
@@ -95,7 +107,14 @@ ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 <p><strong>time</strong> - time passed since starting the cycle (in seconds).</p>
 <p><strong>value</strong> - Current output value of the element.</p>
 <h3>Example for State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"timer/relay"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span><br>    <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span><br>    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span><br>    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"timer/relay"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
+    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/timeelements.htm">Time Elements</a></li>

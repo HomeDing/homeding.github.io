@@ -88,7 +88,14 @@ and a simple hardware based count-down timer are kept active. The ESP32 offers a
 </ul>
 <h2>Device configuration</h2>
 <p>To activate the deep sleep the deep sleep duration must be set in the <a href="/elements/device.htm">device element</a> using the <code>sleeptime</code> property and configure a duration.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"sleeptime"</span><span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span><br>      ...<br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"sleeptime"</span><span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
+      ...
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>There is a maximum time about 71 min. the sleep mode can be activated. The device will power up triggered by the timer
 and will restart all elements.</p>
 <h2>Restart after Deep Sleep Mode</h2>
@@ -103,7 +110,13 @@ in the log output.</p>
 Therefore a <code>sleep</code> action must be sent to the <code>device</code> element e.g.
 after reading and logging a sensor value:</p>
 <p>Example:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"log/t?value=$v,device/0?sleep=true"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"ontemperature"</span><span class="token operator">:</span> <span class="token string">"log/t?value=$v,device/0?sleep=true"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Cancelling a deep sleep phase</h2>
 <p>The sleep mode can also be disabled completely by sending a <code>sleep</code> action with value 0 to the device element using:
 <a href="http://homeding/api/device/0?nosleep">http://homeding/api/device/0?nosleep</a>.</p>
@@ -140,7 +153,13 @@ This will cause that the sleep mode will wait at least 60 seconds before getting
 </ol>
 <h2>Logfile - first reboot</h2>
 <p>Here is a typical log output with some hints recorded after a hardware reset.</p>
-<pre class="language-txt"><code class="language-txt">00:00:00 sys:i Device starting...<br>00:00:04 sys:t connected.<br>00:00:11 dht/on:t getProbe()<br>00:00:11 root:i T:24.90<br>00:00:11 root:i H:70.00<br>00:00:11 device/0:i start sleep(true)<br>00:00:41 sys:i sleep...</code></pre>
+<pre class="language-txt"><code class="language-txt">00:00:00 sys:i Device starting...
+00:00:04 sys:t connected.
+00:00:11 dht/on:t getProbe()
+00:00:11 root:i T:24.90
+00:00:11 root:i H:70.00
+00:00:11 device/0:i start sleep(true)
+00:00:41 sys:i sleep...</code></pre>
 <ul>
 <li>The first regular reset by Hardware reset button or by using the reboot service is starting the device.</li>
 <li>After ~4 seconds the device has a network connection.</li>
@@ -154,7 +173,14 @@ is delayed for ~30 seconds before it is actually executed.</li>
 like <code>http://homeding/api/device/0?nosleep</code> to block any sleep mode from execution and to use the web UI for configuration until another reboot is initiated.</p>
 <h2>Logfile - reboot from sleep mode</h2>
 <p>Here is a typical log output with some hints recorded after a wake-up reset from deep sleep mode.</p>
-<pre class="language-txt"><code class="language-txt">00:00:00 sys:i Device starting...<br>00:00:00 sys:i Reset from Deep Sleep mode.<br>00:00:02 sys:t connected.<br>00:00:03 dht/on:t getProbe()<br>00:00:03 root:i T:23.40<br>00:00:03 root:i H:72.10<br>00:00:03 device/0:i start sleep(true)<br>00:00:03 sys:t sleep...</code></pre>
+<pre class="language-txt"><code class="language-txt">00:00:00 sys:i Device starting...
+00:00:00 sys:i Reset from Deep Sleep mode.
+00:00:02 sys:t connected.
+00:00:03 dht/on:t getProbe()
+00:00:03 root:i T:23.40
+00:00:03 root:i H:72.10
+00:00:03 device/0:i start sleep(true)
+00:00:03 sys:t sleep...</code></pre>
 <p>In this case no waiting for config mode and no 30 seconds waiting before entering sleep mode is present.
 Everything else woks exactly the same as before but the whole sequence is executed faster.</p>
 <blockquote>
