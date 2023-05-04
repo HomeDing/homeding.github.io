@@ -24,12 +24,12 @@ and cannot be used to connect to SPI clients other than memory.
 
 The "HSPI" is available on GPIOs 12-15 using the following functions.
 
-| GPIO   | functionality |
-| ------ | ------------- |
-| GPIO12 | MISO          |
-| GPIO13 | MOSI          |
-| GPIO14 | CLK           |
-| GPIO15 | CS            |
+| GPIO   | pin | functionality |
+| ------ | --- | ------------- |
+| GPIO12 | D6  | MISO          |
+| GPIO13 | D7  | MOSI          |
+| GPIO14 | D5  | CLK           |
+| GPIO15 | D8  | CS            |
 
 When using the standard `SPI` Arduino implementation on the ESP8266 these lines are used.
 However each slave device must use it's own chip select (CS) line.
@@ -49,12 +49,12 @@ The "SPI2" and "SPI3" can be used as general purpose SPI interfaces also called 
 
 This SPI is used by the standard Arduino SPI implementation.
 
-| GPIO   | functionality |
-| ------ | ------------- |
-| GPIO19 | MISO          |
-| GPIO23 | MOSI          |
-| GPIO18 | CLK           |
-| GPIO05 | CS (example)  |
+| GPIO   | function     |
+| ------ | ------------ |
+| GPIO19 | MISO         |
+| GPIO23 | MOSI         |
+| GPIO18 | CLK          |
+| GPIO05 | CS (example) |
 
 The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
 Each slave device must use it's own chip select (CS) line.
