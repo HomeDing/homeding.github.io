@@ -186,7 +186,11 @@ module.exports = function(eleventyConfig) {
   // include excerpt text by using: {% excerptOf collections, "map" %}
   eleventyConfig.addPairedShortcode("imgcard", function(content, img, link) {
     link = link.replace(/\.md$/, ".htm");
-    var out = `<div class="imgcard"><a href="${link}"><img src="${img}"></a>\n${content}\n</div>\n`;
+    let out = `<div class="imgcard">`;
+    if (link) out += `<a href="${link}">`;
+    out += `<img src="${img}">`;
+    if (link) out += `</a>\n`;
+    out += `\n${content}\n</div>\n`;
     return (out);
   });
 

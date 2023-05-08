@@ -8,10 +8,46 @@ excerpt: >
   a APA102 LED, a input button and SD card slot.
 ---
 
-
-## Features
-
 The following features are available on this board.
+
+* ST7735 based display
+* SD Card slot
+* A momentary Input button
+* Color LED
+
+
+### ST7735 based display
+
+![Display of the dongle](lilygo-t-dongle-s3-display.jpg)
+
+The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:
+
+| function | ESP32 pin |
+| -------- | --------- |
+| CS       | GPIO4     |
+| MOSI     | GPIO3     |
+| CLK      | GPIO5     |
+| DC       | GPIO2     |
+| Reset    | GPIO1     |
+| LED      | GPIO38    |
+
+
+### SD Card
+
+![SD-Card slot the dongle](lilygo-t-dongle-s3-sd.jpg)
+
+The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
+As the ESP32-S3 processor offers flexibility in using custom defined pins
+a pin configuration (see below) must be given:
+
+| function | ESP32 pin |
+| -------- | --------- |
+| CLK      | GPIO12    |
+| CMD      | GPIO16    |
+| D0       | GPIO14    |
+| D1       | GPIO17    |
+| D2       | GPIO21    |
+| D3       | GPIO18    |
 
 
 ### Input Button
@@ -35,36 +71,6 @@ APA102 LED
 | Clock    | 39        |
 
 APA102 LEDs are currently not supported by the HomeDing Library.
-
-
-### ST7735 based display
-
-The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:
-
-| function | ESP32 pin |
-| -------- | --------- |
-| CS       | GPIO4     |
-| MOSI     | GPIO3     |
-| CLK      | GPIO5     |
-| DC       | GPIO2     |
-| Reset    | GPIO1     |
-| LED      | GPIO38    |
-
-
-### SD Card
-
-The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
-As the ESP32-S3 processor offers flexibility in using custom defined pins
-a pin configuration (see below) must be given:
-
-| function | ESP32 pin |
-| -------- | --------- |
-| CLK      | GPIO12    |
-| CMD      | GPIO16    |
-| D0       | GPIO14    |
-| D1       | GPIO17    |
-| D2       | GPIO21    |
-| D3       | GPIO18    |
 
 
 ## Arduino Board Configuration
@@ -118,6 +124,7 @@ The following `env.json` configuration can be used for this board and contains s
       "name": "dongle-s3",
       "description": "ESP32-S3 based USB stick.",
       "title": "T-Dongle-S3",
+      "loglevel": 2,
       "x-button": "0",
       "led": "38"
     }
@@ -129,6 +136,8 @@ The following `env.json` configuration can be used for this board and contains s
       "width": "80",
       "height": "160",
       "rotation": 270,
+      "invert": "true",
+      "background": "black",
       "spiClk": 5,
       "spiMosi": 3,
       "spiDC": 2,
@@ -141,6 +150,20 @@ The following `env.json` configuration can be used for this board and contains s
       "pin": "0",
       "inverse": "1",
       "pullup": 1
+    }
+  },
+  "color": {
+    "l": {
+      "title": "Color Control",
+      "config": "RGB",
+      "mode": "fix",
+      "loglevel": 2,
+      "duration": "4s",
+      "value": "xFF0000",
+      "brightness": "20",
+      "connect": [
+        "apa102/led"
+      ]
     }
   },
   "value": {
@@ -161,6 +184,20 @@ The following `env.json` configuration can be used for this board and contains s
       "inverse": "1"
     }
   },
+  "diag": {
+    "0": {}
+  },
+  "apa102": {
+    "led": {
+      "datapin": 40,
+      "clockpin": 39,
+      "count": 1,
+      "loglevel": 2,
+      "duration": "4s",
+      "xbrightness": "30",
+      "xvalue": "x203050"
+    }
+  },
   "sdmmc": {
     "0": {
       "mmcD0": "14",
@@ -171,7 +208,6 @@ The following `env.json` configuration can be used for this board and contains s
       "mmcCMD": "16"
     }
   }
-
 }
 ```
 
