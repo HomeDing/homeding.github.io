@@ -50,8 +50,89 @@
     The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display, a APA102 LED, a input button and SD card slot.
 </div>
       
-    <h2>Features</h2>
-<p>The following features are available on this board.</p>
+    <p>The following features are available on this board.</p>
+<ul>
+<li>ST7735 based display</li>
+<li>SD Card slot</li>
+<li>A momentary Input button</li>
+<li>Color LED</li>
+</ul>
+<h3>ST7735 based display</h3>
+<p><img src="lilygo-t-dongle-s3-display.jpg" alt="Display of the dongle"></p>
+<p>The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS</td>
+<td>GPIO4</td>
+</tr>
+<tr>
+<td>MOSI</td>
+<td>GPIO3</td>
+</tr>
+<tr>
+<td>CLK</td>
+<td>GPIO5</td>
+</tr>
+<tr>
+<td>DC</td>
+<td>GPIO2</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>GPIO1</td>
+</tr>
+<tr>
+<td>LED</td>
+<td>GPIO38</td>
+</tr>
+</tbody>
+</table>
+<h3>SD Card</h3>
+<p><img src="lilygo-t-dongle-s3-sd.jpg" alt="SD-Card slot the dongle"></p>
+<p>The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
+As the ESP32-S3 processor offers flexibility in using custom defined pins
+a pin configuration (see below) must be given:</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLK</td>
+<td>GPIO12</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>GPIO16</td>
+</tr>
+<tr>
+<td>D0</td>
+<td>GPIO14</td>
+</tr>
+<tr>
+<td>D1</td>
+<td>GPIO17</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>GPIO21</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>GPIO18</td>
+</tr>
+</tbody>
+</table>
 <h3>Input Button</h3>
 <p>The input button on the back of the stick pulls the esp32-pin 0 down when pressed.</p>
 <table>
@@ -90,80 +171,6 @@
 </tbody>
 </table>
 <p>APA102 LEDs are currently not supported by the HomeDing Library.</p>
-<h3>ST7735 based display</h3>
-<p>The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:</p>
-<table>
-<thead>
-<tr>
-<th>function</th>
-<th>ESP32 pin</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CS</td>
-<td>GPIO4</td>
-</tr>
-<tr>
-<td>MOSI</td>
-<td>GPIO3</td>
-</tr>
-<tr>
-<td>CLK</td>
-<td>GPIO5</td>
-</tr>
-<tr>
-<td>DC</td>
-<td>GPIO2</td>
-</tr>
-<tr>
-<td>Reset</td>
-<td>GPIO1</td>
-</tr>
-<tr>
-<td>LED</td>
-<td>GPIO38</td>
-</tr>
-</tbody>
-</table>
-<h3>SD Card</h3>
-<p>The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
-As the ESP32-S3 processor offers flexibility in using custom defined pins
-a pin configuration (see below) must be given:</p>
-<table>
-<thead>
-<tr>
-<th>function</th>
-<th>ESP32 pin</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CLK</td>
-<td>GPIO12</td>
-</tr>
-<tr>
-<td>CMD</td>
-<td>GPIO16</td>
-</tr>
-<tr>
-<td>D0</td>
-<td>GPIO14</td>
-</tr>
-<tr>
-<td>D1</td>
-<td>GPIO17</td>
-</tr>
-<tr>
-<td>D2</td>
-<td>GPIO21</td>
-</tr>
-<tr>
-<td>D3</td>
-<td>GPIO18</td>
-</tr>
-</tbody>
-</table>
 <h2>Arduino Board Configuration</h2>
 <p>To compile for this board in Arduino the following settings for the board can be used:</p>
 <ul>
@@ -206,6 +213,7 @@ Flash:
       <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"dongle-s3"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-S3 based USB stick."</span><span class="token punctuation">,</span>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"T-Dongle-S3"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token property">"x-button"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
       <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"38"</span>
     <span class="token punctuation">}</span>
@@ -217,6 +225,8 @@ Flash:
       <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"80"</span><span class="token punctuation">,</span>
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"160"</span><span class="token punctuation">,</span>
       <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">270</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
       <span class="token property">"spiClk"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
       <span class="token property">"spiMosi"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
       <span class="token property">"spiDC"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
@@ -229,6 +239,20 @@ Flash:
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
       <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"color"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Color Control"</span><span class="token punctuation">,</span>
+      <span class="token property">"config"</span><span class="token operator">:</span> <span class="token string">"RGB"</span><span class="token punctuation">,</span>
+      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"fix"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"xFF0000"</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"20"</span><span class="token punctuation">,</span>
+      <span class="token property">"connect"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"apa102/led"</span>
+      <span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -249,6 +273,20 @@ Flash:
       <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"apa102"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+      <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span>
+      <span class="token property">"count"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span>
+      <span class="token property">"xbrightness"</span><span class="token operator">:</span> <span class="token string">"30"</span><span class="token punctuation">,</span>
+      <span class="token property">"xvalue"</span><span class="token operator">:</span> <span class="token string">"x203050"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"sdmmc"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"mmcD0"</span><span class="token operator">:</span> <span class="token string">"14"</span><span class="token punctuation">,</span>
@@ -259,7 +297,6 @@ Flash:
       <span class="token property">"mmcCMD"</span><span class="token operator">:</span> <span class="token string">"16"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-
 <span class="token punctuation">}</span></code></pre>
 <h2>Board test config</h2>
 <p>For first testing purpose the following configuration in <code>config.json</code> can be used:</p>
