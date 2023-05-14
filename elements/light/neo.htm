@@ -47,11 +47,13 @@
     
       <div class="iconcard"><svg class="icon"><use href="/icons.svg#neo"></use></svg>
     
-    The Neo Element implements using LED Stripes and LED panels based on the ws2812 chip and protocol and provides some color animations and transitions. Neopixels is a brand name for LED stripes with the ws2812 chip.
+    The Neo Element implements using LED Stripes and LED panels based on the ws2812 chip and protocol and provides some color animations and transitions. Neopixels is a brand name for LED stripes with the ws2812 chips.
 </div>
       
-    <p>These LED stripes and RGB LEDs are using the ws2812 chip with a specific protocol that sends RGB values over a 1 wire data line.
-Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.</p>
+    <p>These LED stripes and RGB LEDs are using the ws2812 chip with a specific protocol that sends RGB
+values over a 1 wire data line. Multiple LEDs on a single data line are chained so the data goes
+through the first LED to the next one. Every LED is taking of the very first RGB value and
+passes on all the others.</p>
 <!--
 If you require more complex light situations and light animations 
 Consider using the [DMX Element](/dmx.md) to get light input actions using the DMX Artnet protocol that is supported by light mixers and consoles for stage and installation purpose.
@@ -60,14 +62,48 @@ https://www.bastelgarage.ch/esp-01-ws2812-sk6812-steuerplatine
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?neo" type="image/svg+xml"></object></p>
-<p><strong>pin</strong>* - The pin that is used for data transmission to the first ws2812 in the chain. Defaults to GPIO2(D4).</p>
-<p><strong>count</strong> - Number of pixels that are attached. The default is 8 and must be specified in the config only.</p>
-<p><strong>brightness</strong> - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0…255. The default is 127.</p>
-<p><strong>value</strong> - Is used for color mode to pass a list of colors like <code>red,blue,green,white</code> . See explanation for <code>Color mode</code> below,</p>
-<p><strong>config</strong> - Neo Pixels my have different colors on the channels. Can be set to <code>rgb</code> or <code>grb</code> (default).</p>
-<p><strong>mode</strong> - The effect to be used. See below</p>
-<p><strong>duration</strong> in msecs - This parameter is used to specify the number you of milliseconds for a transition in a color animation
-or fading from one value to another. When not specified the value 0 is used to make the new value effective immediately.</p>
+<blockquote>
+<p><strong>config</strong> - Neo Pixels my have different colors on the channels. Can be set to <code>rgb</code> or <code>grb</code>
+(default).</p>
+</blockquote>
+<p>From the Stripe Element base implementation the following properties are available for
+configuration:</p>
+<blockquote>
+<p><strong>value</strong> - Is used for color mode to pass a single color like <code>green</code> or a list of colors like
+<code>red,blue,green,white</code>. See explanation for <code>Color mode</code> below,</p>
+<p><strong>mode</strong> – The effect to be used. See below.</p>
+<p><strong>duration</strong> – The duration of a effect cycle animation or transition in msecs.</p>
+<p><strong>effectLength</strong> – A length parameter to the effect. See below.</p>
+<p><strong>datapin</strong> – The pin that is used for data transmission to the first LED in the chain. If
+only one pin is required to be specified the <strong>pin</strong> property can be used too.</p>
+<p><strong>clockpin</strong> – The pin that is used for clock signal when required by the LED chips transfer protocol.</p>
+<p><strong>count</strong> – Number of pixels that are attached. The default is 8 and must be specified in the
+config only.</p>
+</blockquote>
+<p>From the Light Element base implementation the following properties are available for
+configuration:</p>
+<blockquote>
+<p><strong>enable</strong></p>
+<p><strong>brightness</strong> – The brightness factor can be used to dim the light in general. The brightness
+value must be in the range 0…100. The default is 50.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"neo"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"rgb"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"count"</span><span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Color mode</h2>
 <p>The color mode is switched on by an action that sets the <strong>value</strong> properties to a list of colors.
 Examples for color setting actions are:</p>
@@ -77,16 +113,9 @@ Examples for color setting actions are:</p>
 <li><code>neo/stripe?value=xFF0000,x00FF00,x0000FF</code></li>
 </ul>
 <p>When assigning a single color value all the pixels will be set to this color.</p>
-<p>When passing a list of color values the pattern is repeated until all pixels have been assigned a new color.</p>
+<p>When passing a list of color values the pattern is repeated until all pixels have been assigned
+a new color.</p>
 <p>For valid color values, see <a href="/elements/light/light.htm">LightElement</a>.</p>
-<h2>Wheel mode</h2>
-<p>This mode is activated by setting the <code>mode</code> property to <code>wheel</code>.</p>
-<p>In this mode the colors of all pixels are changing slowly through all colors of the RGB spectrum.</p>
-<p>The <strong>duration</strong> parameter is used to specify the number you of milliseconds for a complete cycle.</p>
-<p>Example:</p>
-<ul>
-<li><code>neo/stripe?mode=wheel</code></li>
-</ul>
 <h2>Flow mode</h2>
 <p>This mode is activated by setting the <code>mode</code> property to <code>flow</code>.</p>
 <p>In this mode the colors of all pixels are changing slowly through all colors of the RGB spectrum with every pixel along the stripe having a delay.</p>
@@ -95,19 +124,12 @@ Examples for color setting actions are:</p>
 <ul>
 <li><code>neo/stripe?mode=flow</code></li>
 </ul>
-<h2>Pulse mode</h2>
-<p>This mode is activated by setting the <code>mode</code> property to <code>pulse</code> after setting colors like in the color mode.</p>
-<p>In this mode the given colors from the value are used with a up and down ramping brightness.</p>
-<p>The <strong>duration</strong> parameter is used to specify the number you of milliseconds for a complete cycle.</p>
-<p>Example:</p>
-<ul>
-<li><code>neo/stripe?value=green</code></li>
-<li><code>neo/stripe?mode=pulse</code></li>
-</ul>
 <h2>See also</h2>
 <ul>
-<li>Good hardware tips from <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels">https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels</a></li>
+<li><a href="/elements/light/color.htm">Color Element</a></li>
+<li><a href="/elements/light/stripe.htm">Stripe Element</a></li>
 <li><a href="/elements/light/light.htm">Light Element</a></li>
+<li>Good hardware tips from <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels">https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels</a></li>
 </ul>
 
 

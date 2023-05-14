@@ -112,12 +112,15 @@ TODO:
 <h2>Color modes</h2>
 <p><strong>fix</strong> – by this mode the new color and brightness values are applied immediately.</p>
 <p><strong>fade</strong> – by this mode the new color and brightness values are applied slowly controlled by the duration parameter.</p>
-<p><strong>pulse</strong> –  This mode is an animation where the brightness is pulsed with the given color.
-The <code>duration</code> parameter is used to specify the number you of milliseconds for a complete cycle.
-<strong>wheel</strong> – This mode is an animation where one color is applied by fading slowly through colors
-by changing the hue value. The <code>duration</code> parameter is used to specify the number you of milliseconds for a complete cycle.</p>
+<p><strong>pulse</strong> – This mode is an animation where the brightness is pulsed with the given color.
+The <code>duration</code> parameter is used to specify the number you of milliseconds for a complete
+cycle. Example: <code>color/l1?mode=pulse</code></p>
+<p><strong>wheel</strong> – This mode is an animation where one color is applied by fading slowly through
+colors by changing the hue value. The <code>duration</code> parameter is used to specify the number you
+of milliseconds for a complete cycle. Example: <code>color/l1?mode=wheel</code></p>
 <p><strong>flow</strong> – This mode is an animation where all hue values will flow through the pixels.
-It is directly supported by the new element. The <code>duration</code> parameter is used to specify the number you of milliseconds for a complete cycle.</p>
+It is directly supported by the new element. The <code>duration</code> parameter is used to specify the
+number you of milliseconds for a complete cycle.</p>
 <table>
 <thead>
 <tr>
@@ -125,7 +128,7 @@ It is directly supported by the new element. The <code>duration</code> parameter
 <th style="text-align:center">color</th>
 <th style="text-align:center">light</th>
 <th style="text-align:center">my9291</th>
-<th style="text-align:center">neo</th>
+<th style="text-align:center">stripe</th>
 </tr>
 </thead>
 <tbody>
@@ -167,7 +170,7 @@ It is directly supported by the new element. The <code>duration</code> parameter
 </tbody>
 </table>
 <h2>Example configuration</h2>
-<p>see <a href="/boards/bulb.htm">Bulb board</a></p>
+<p>See <a href="/boards/bulb.htm">Bulb board</a></p>
 <h2>Color and Light Element linking</h2>
 <p>The Color element can control light elements using actions or using a direct connect.</p>
 <p>To connect using actions the <code>onvalue</code> and <code>onbrightness</code> actions must be configured
@@ -222,7 +225,6 @@ but using a direct connect:</p>
 <span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
-<li>Good hardware tips from <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels">https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels</a></li>
 <li><a href="/elements/light/light.htm">Light Element</a></li>
 <li><a href="/elements/light/my9291.htm">MY9291 Element</a></li>
 <li><a href="/elements/light/neo.htm">Neo Element</a></li>

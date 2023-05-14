@@ -60,8 +60,36 @@ They share the position of 2 connectors with 8 pins that are compatible to a cer
 </ul>
 <h2>ESP8266 based boards</h2>
 <h3>D1 mini ESP8266</h3>
+<p><img src="d1mini.jpg" alt="D1 mini ESP8266 board"></p>
 <p>The D1 mini boards use a ESP8266 MCU and 4 MByte flash memory chip.</p>
-<p>(no picture)</p>
+<p>A board configuration (env.json)</p>
+<pre class="language-JSON"><code class="language-JSON">{
+  "device": {
+    "0": {
+      "name": "d1mini",
+      "title": "D1 mini",
+      "loglevel": 2,
+      "description": "D1 mini board with ESP8266",
+      "logfile": 1,
+      "safemode": "false",
+      "homepage": "/index.htm",
+      "led": "D4",
+      "cache": "etag"
+    }
+  },
+  "ota": {
+    "0": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "for 'over the air' OTA Updates"
+    }
+  },
+  "ntptime": {
+    "0": {
+      "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+    }
+  }
+}</code></pre>
 <h3>D1 mini V4</h3>
 <div class="imgcard"><img src="/boards/d1miniv4.jpg">
 <p>The D1 mini board labeld with v4 uses a ESP8266 MCU and 4 MByte flash memory chip
@@ -110,10 +138,20 @@ components on the free grid.</p>
 <p>The SHT30 shield with a digital temperature and humidity sensor
 can be stacked upon a board or can be attached by using a Qwiic connector cable.</p>
 </div>
-<div class="imgcard"><img src="/boards/d1mini-sdshield.jpg">
+<div class="imgcard"><img src="/boards/d1mini-sd.jpg">
 <p>The D1-Mini SD Card shield adds a sd card slot for min sd cards to the standard SPI bus.</p>
 <p>The CS assignment can be changed on the back of the shield by cutting
 the default (D4) wiring and soldering a bridge for another pin.</p>
+</div>
+<div class="imgcard"><img src="/boards/d1mini-sd18b20.jpg">
+<p>The SD18B20 Shield has a Dallas / DS18B20 sensor that can be used with the
+<a href="../elements/dallas.md">Dallas Element</a> to retrieve the local temperature.</p>
+<p>The Data pin of the sensor is connected to D2.</p>
+</div>
+<div class="imgcard"><img src="/boards/d1mini-buzzer.jpg">
+<p>The Buzzer Shield has a passive speaker that can be used with the
+<a href="../elements/tone.md">Tone Element</a> to make some noise.</p>
+<p>The buzzer can be connected to various pins by closing one of the solder pads.</p>
 </div>
 <h2>See also</h2>
 <ul>

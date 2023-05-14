@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Remote element</title>
+  <title>Remote Element</title>
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -41,62 +41,85 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>Remote element</h1>
+    <h1>Remote Element</h1>
 
     
     
       <div class="iconcard"><svg class="icon"><use href="/icons.svg#remote"></use></svg>
     
-    The RemoteElement allows sending actions to other elements in HomeDing devices on the network using http GET request.
+    The Remote Element allows sending actions over the network to other elements in HomeDing devices using http GET requests.
 </div>
       
-    <p>Every local defined remote element is a shadow of another element on a remote board and acts as a proxy for addressing the remote element as if it was part of the local configuration.</p>
-<p>It has its own local id like <code>ledstribe</code> in the &quot;remote/ledstribe” configuration to be used in messages. The configuration of this element specifies the device/network name of the remote device.</p>
-<p>Any Element in the remote device can then be used by addressing it using {device}:type/id?name=value.
-The property name and the value is passed unchanged.</p>
-<p>Because network delivery is slow compared to local dispatching actions locally the action will be queued and executed one-by-one even when multiple actions are waiting to be send out.</p>
-<p>The Remote Element can only send one message at a time but you can of course have multiple remote element definitions in a config for multiple remote devices.</p>
-<p>The outgoing network package  is sent immediately when an action is triggered. The answer is then received and analyzed in the next loop event and is not blocking the internal execution of actions.</p>
-<p>The central networking feature of the board only allows one current remote action at a time but is implementing this asynchronously. When the network feature of the board is available again it can be used by the next Remote Element.</p>
+    <p>To enable sending actions to other DomeDing Devices the Remote Element creates a connectivity to
+the specified device. It will receive the local actions and transfer it to the remote device
+over the network.</p>
+<p>All you need to configure is the real hostname in the <code>host</code> attribute of the remote device.</p>
+<p>The Remote Element can now be addressed in actions using the extended addressing like:
+<code>alight:light/0?enable=1</code>.</p>
+<p>The action dispatcher in the board implementation will detect that the element is not a local
+element by this syntax and will try to find the <code>remote/alight</code> Element.</p>
+<p>If this Element was configured it will receive the action and will try to transfer it to the
+remote element.</p>
+<p>Any Element in the remote device can then be used by addressing it using the syntax
+<code>{device}:type/id?name=value</code>. The property name and the value is passed unchanged.</p>
+<p>Because network delivery may be slow compared to local dispatching actions locally the action will
+be queued and executed one-by-one even when multiple actions are waiting to be send out.</p>
+<blockquote>
+<p><strong>Note</strong> – The Remote Element might not be able to transfer the action near time or event not
+at all when the remote device is not available. In this case the action will be dropped after
+about 20 seconds.</p>
+</blockquote>
+<h2>Limitations</h2>
+<p>The Remote Element can only send one message at a time but you can of course have multiple
+remote element definitions in a config for multiple remote devices.</p>
+<p>The outgoing network package is processed immediately when an action is given to the Remote
+Element. This includes retgrieving the IP Address of the remote device in he first
+communication. When multiple steps are required and answers are received and need to be parsed
+these steps are executed by the next loop to not block the internal execution of actions during
+this time.</p>
+<p>The central networking feature of the board only allows one current remote action at a time but
+is implementing this asynchronously. When the network feature of the board is available again it
+can be used by the next Remote Element.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?remote" type="image/svg+xml"></object></p>
-<!-- missing property descriptions ??? -->
+<blockquote>
+<p><strong>host</strong> – the full hostname of the remote device.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> - The location of the device.</p>
+<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h2>Example</h2>
-<p>On the device named <strong>logger</strong> 2 display elements are defined but there is no local element that produces actions for these.</p>
+<p>On the device named <strong>logger</strong> 2 display elements are defined but there is no local element that
+produces actions for these.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"t"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">36</span><span class="token punctuation">,</span>
-      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"Temp:"</span><span class="token punctuation">,</span>
-      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"°C"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"h"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
-      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"Hum: "</span><span class="token punctuation">,</span>
-      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"%"</span>
+  <span class="token property">"remote"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"alight"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Accent light in the Hall"</span><span class="token punctuation">,</span>
+      <span class="token property">"room"</span><span class="token operator">:</span> <span class="token string">"hall"</span><span class="token punctuation">,</span>
+      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"bulb01"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<p>You can test these by using the following URLs to trigger the actions with your browser:</p>
-<p><a href="http://homeding/$board/display/t?show=20.30">http://homeding/$board/display/t?show=20.30</a></p>
-<p><a href="http://homeding/$board/display/h?show=45.00">http://homeding/$board/display/h?show=45.00</a></p>
-<p>On the device named <strong>dht22-probe</strong> the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:</p>
+<p>To use the functionality the following combination of a sensor and a remote Element can be used
+to display sensor values on a remote display:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"dht"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
       <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DHT22"</span><span class="token punctuation">,</span>
       <span class="token property">"readtime"</span> <span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span>
-      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"remote/display-t?show=$v"</span><span class="token punctuation">,</span>
-      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"remote/display-h?show=$v"</span>
+      <span class="token property">"onTemperature"</span><span class="token operator">:</span> <span class="token string">"box:displaytext/t?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onHumidity"</span><span class="token operator">:</span> <span class="token string">"box:displaytext/h?value=$v"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
   <span class="token property">"remote"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"display"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"box"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"displaybox"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
