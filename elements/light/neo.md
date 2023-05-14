@@ -4,13 +4,15 @@ icon: neo
 tags: ["Element", "Light"]
 layout: "page.njk"
 excerpt: >
-  The Neo Element implements using LED Stripes and LED panels
-  based on the ws2812 chip and protocol and provides some color animations and transitions.
-  Neopixels is a brand name for LED stripes with the ws2812 chip.
+  The Neo Element implements using LED Stripes and LED panels based on the ws2812 chip
+  and protocol and provides some color animations and transitions.
+  Neopixels is a brand name for LED stripes with the ws2812 chips.
 ---
 
-These LED stripes and RGB LEDs are using the ws2812 chip with a specific protocol that sends RGB values over a 1 wire data line.
-Multiple LEDs on a single data line are chained so the data goes through the first LED to the next one. Every LED is taking of the very first RGB value and passes on all the others.
+These LED stripes and RGB LEDs are using the ws2812 chip with a specific protocol that sends RGB
+values over a 1 wire data line. Multiple LEDs on a single data line are chained so the data goes
+through the first LED to the next one. Every LED is taking of the very first RGB value and
+passes on all the others.
 
 <!--
 If you require more complex light situations and light animations 
@@ -25,21 +27,55 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?neo" type="image/svg+xml"></object>
 
-**pin**\* - The pin that is used for data transmission to the first ws2812 in the chain. Defaults to GPIO2(D4).
+> **config** - Neo Pixels my have different colors on the channels. Can be set to `rgb` or `grb`
+> (default).
 
-**count** - Number of pixels that are attached. The default is 8 and must be specified in the config only.
+From the Stripe Element base implementation the following properties are available for
+configuration:
 
-**brightness** - The brightness factor can be used to dim the light in general. The brightness value must be in the range 0..255. The default is 127.
+> **value** - Is used for color mode to pass a single color like `green` or a list of colors like
+> `red,blue,green,white`. See explanation for `Color mode` below,
+>
+> **mode** -- The effect to be used. See below.
+>
+> **duration** -- The duration of a effect cycle animation or transition in msecs.
+>
+> **effectLength** -- A length parameter to the effect. See below.
+>
+> **datapin** -- The pin that is used for data transmission to the first LED in the chain. If
+> only one pin is required to be specified the **pin** property can be used too.
+>
+> **clockpin** -- The pin that is used for clock signal when required by the LED chips transfer protocol.
+>
+> **count** -- Number of pixels that are attached. The default is 8 and must be specified in the
+> config only.
 
-**value** - Is used for color mode to pass a list of colors like `red,blue,green,white` . See explanation for `Color mode` below, 
+From the Light Element base implementation the following properties are available for
+configuration:
 
-**config** - Neo Pixels my have different colors on the channels. Can be set to `rgb` or `grb` (default).
+> **enable**
+>
+> **brightness** -- The brightness factor can be used to dim the light in general. The brightness
+> value must be in the range 0..100. The default is 50.
 
-**mode** - The effect to be used. See below
 
-**duration** in msecs - This parameter is used to specify the number you of milliseconds for a transition in a color animation
-or fading from one value to another. When not specified the value 0 is used to make the new value effective immediately.
+{% include "../elementproperties.md" %}
 
+
+### Configuration Example
+
+This example shows how to configure this element:
+
+``` json
+{
+  "neo": {
+    "rgb": {
+      "datapin": "2",
+      "count": 1
+    }
+  },
+}
+```
 
 ## Color mode
 
@@ -52,22 +88,10 @@ Examples for color setting actions are:
 
 When assigning a single color value all the pixels will be set to this color.
 
-When passing a list of color values the pattern is repeated until all pixels have been assigned a new color.
+When passing a list of color values the pattern is repeated until all pixels have been assigned
+a new color.
 
 For valid color values, see [LightElement](/elements/light/light.md).
-
-
-## Wheel mode
-
-This mode is activated by setting the `mode` property to `wheel`.
-
-In this mode the colors of all pixels are changing slowly through all colors of the RGB spectrum.
-
-The **duration** parameter is used to specify the number you of milliseconds for a complete cycle.
-
-Example:
-
-* `neo/stripe?mode=wheel`
 
 
 ## Flow mode
@@ -83,22 +107,9 @@ Example:
 * `neo/stripe?mode=flow`
 
 
-## Pulse mode
-
-This mode is activated by setting the `mode` property to `pulse` after setting colors like in the color mode.
-
-In this mode the given colors from the value are used with a up and down ramping brightness.
-
-The **duration** parameter is used to specify the number you of milliseconds for a complete cycle.
-
-Example:
-
-* `neo/stripe?value=green`
-* `neo/stripe?mode=pulse`
-
-
 ## See also
 
-* Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
+* [Color Element](/elements/light/color.md)
+* [Stripe Element](/elements/light/stripe.md)
 * [Light Element](/elements/light/light.md)
-
+* Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>

@@ -20,9 +20,41 @@ They share the position of 2 connectors with 8 pins that are compatible to a cer
 
 ### D1 mini ESP8266
 
+![D1 mini ESP8266 board](d1mini.jpg)
+
 The D1 mini boards use a ESP8266 MCU and 4 MByte flash memory chip.
 
-(no picture)
+A board configuration (env.json)
+
+```JSON
+{
+  "device": {
+    "0": {
+      "name": "d1mini",
+      "title": "D1 mini",
+      "loglevel": 2,
+      "description": "D1 mini board with ESP8266",
+      "logfile": 1,
+      "safemode": "false",
+      "homepage": "/index.htm",
+      "led": "D4",
+      "cache": "etag"
+    }
+  },
+  "ota": {
+    "0": {
+      "port": 8266,
+      "passwd": "123",
+      "description": "for 'over the air' OTA Updates"
+    }
+  },
+  "ntptime": {
+    "0": {
+      "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+    }
+  }
+}
+```
 
 
 ### D1 mini V4
@@ -49,15 +81,12 @@ and includes:
 {% endimgcard %}
 
 
-
-
 ### Pins for ESP8266 boards
 
 All the ESP8266 based boards above use the same pin assignments and are interchangeable.
 The 2 connectors with 8 pins have the following ports assigned in the ESP8266.
 
 ![d1mini pins](/boards/d1minipins.png)
-
 
 
 ## ESP32 based boards
@@ -103,12 +132,26 @@ can be stacked upon a board or can be attached by using a Qwiic connector cable.
 {% endimgcard %}
 
 
-{% imgcard "/boards/d1mini-sdshield.jpg", "" %}
+{% imgcard "/boards/d1mini-sd.jpg", "" %}
 The D1-Mini SD Card shield adds a sd card slot for min sd cards to the standard SPI bus.
 
 The CS assignment can be changed on the back of the shield by cutting
 the default (D4) wiring and soldering a bridge for another pin.
 
+{% endimgcard %}
+
+{% imgcard "/boards/d1mini-sd18b20.jpg", "" %}
+The SD18B20 Shield has a Dallas / DS18B20 sensor that can be used with the
+[Dallas Element](../elements/dallas.md) to retrieve the local temperature.
+
+The Data pin of the sensor is connected to D2.
+{% endimgcard %}
+
+{% imgcard "/boards/d1mini-buzzer.jpg", "" %}
+The Buzzer Shield has a passive speaker that can be used with the
+[Tone Element](../elements/tone.md) to make some noise.
+
+The buzzer can be connected to various pins by closing one of the solder pads.
 {% endimgcard %}
 
 

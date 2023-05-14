@@ -90,26 +90,31 @@ Some named color values are supported:
 
 **fade** -- by this mode the new color and brightness values are applied slowly controlled by the duration parameter.
 
-**pulse** --  This mode is an animation where the brightness is pulsed with the given color.
-  The `duration` parameter is used to specify the number you of milliseconds for a complete cycle.
-**wheel** -- This mode is an animation where one color is applied by fading slowly through colors
-by changing the hue value. The `duration` parameter is used to specify the number you of milliseconds for a complete cycle.
+**pulse** -- This mode is an animation where the brightness is pulsed with the given color.
+  The `duration` parameter is used to specify the number you of milliseconds for a complete
+  cycle. Example: `color/l1?mode=pulse`
+
+**wheel** -- This mode is an animation where one color is applied by fading slowly through
+  colors by changing the hue value. The `duration` parameter is used to specify the number you
+  of milliseconds for a complete cycle. Example: `color/l1?mode=wheel`
 
 **flow** -- This mode is an animation where all hue values will flow through the pixels.
-  It is directly supported by the new element. The `duration` parameter is used to specify the number you of milliseconds for a complete cycle.
+  It is directly supported by the new element. The `duration` parameter is used to specify the
+  number you of milliseconds for a complete cycle.
 
-| mode  | color | light | my9291 |  neo  |
-| ----- | :---: | :---: | :----: | :---: |
-| fix   |   X   |   X   |   X    |   X   |
-| fade  |   X   |       |        |       |
-| pulse |   X   |       |        |       |
-| wheel |   X   |       |        |       |
-| flow  |       |       |        |   X   |
+| mode  | color | light | my9291 |  stripe  |
+| ----- | :---: | :---: | :----: | :------: |
+| fix   |   X   |   X   |   X    |    X     |
+| fade  |   X   |       |        |          |
+| pulse |   X   |       |        |          |
+| wheel |   X   |       |        |          |
+| flow  |       |       |        |    X     |
 
 
 ## Example configuration
 
-see [Bulb board](/boards/bulb.md)
+See [Bulb board](/boards/bulb.md)
+
 
 ## Color and Light Element linking
 
@@ -178,7 +183,6 @@ but using a direct connect:
 
 ## See also
 
-* Good hardware tips from <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>
 * [Light Element](/elements/light/light.md)
 * [MY9291 Element](/elements/light/my9291.md)
 * [Neo Element](/elements/light/neo.md)

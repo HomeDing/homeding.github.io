@@ -1,27 +1,52 @@
 ---
-title: Remote element
+title: Remote Element
 icon: remote
 tags: ["Element"]
 excerpt: >
-  The RemoteElement allows sending actions to other elements in HomeDing devices on the network
-  using http GET request.
+  The Remote Element allows sending actions over the network to other elements in
+  HomeDing devices using http GET requests.
 layout: "page.njk"
 ---
 
-Every local defined remote element is a shadow of another element on a remote board and acts as a proxy for addressing the remote element as if it was part of the local configuration.
+To enable sending actions to other DomeDing Devices the Remote Element creates a connectivity to
+the specified device. It will receive the local actions and transfer it to the remote device
+over the network.
 
-It has its own local id like `ledstribe` in the "remote/ledstribe” configuration to be used in messages. The configuration of this element specifies the device/network name of the remote device.
+All you need to configure is the real hostname in the `host` attribute of the remote device.
 
-Any Element in the remote device can then be used by addressing it using {device}:type/id?name=value.
-The property name and the value is passed unchanged.
+The Remote Element can now be addressed in actions using the extended addressing like:
+`alight:light/0?enable=1`.
 
-Because network delivery is slow compared to local dispatching actions locally the action will be queued and executed one-by-one even when multiple actions are waiting to be send out.
+The action dispatcher in the board implementation will detect that the element is not a local
+element by this syntax and will try to find the `remote/alight` Element.
 
-The Remote Element can only send one message at a time but you can of course have multiple remote element definitions in a config for multiple remote devices.
+If this Element was configured it will receive the action and will try to transfer it to the
+remote element.
 
-The outgoing network package  is sent immediately when an action is triggered. The answer is then received and analyzed in the next loop event and is not blocking the internal execution of actions.
+Any Element in the remote device can then be used by addressing it using the syntax
+`{device}:type/id?name=value`. The property name and the value is passed unchanged.
 
-The central networking feature of the board only allows one current remote action at a time but is implementing this asynchronously. When the network feature of the board is available again it can be used by the next Remote Element.
+Because network delivery may be slow compared to local dispatching actions locally the action will
+be queued and executed one-by-one even when multiple actions are waiting to be send out.
+
+> **Note** -- The Remote Element might not be able to transfer the action near time or event not
+> at all when the remote device is not available. In this case the action will be dropped after
+> about 20 seconds.
+
+## Limitations
+
+The Remote Element can only send one message at a time but you can of course have multiple
+remote element definitions in a config for multiple remote devices.
+
+The outgoing network package is processed immediately when an action is given to the Remote
+Element. This includes retgrieving the IP Address of the remote device in he first
+communication. When multiple steps are required and answers are received and need to be parsed
+these steps are executed by the next loop to not block the internal execution of actions during
+this time.
+
+The central networking feature of the board only allows one current remote action at a time but
+is implementing this asynchronously. When the network feature of the board is available again it
+can be used by the next Remote Element.
 
 
 ## Element Configuration
@@ -30,39 +55,30 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?remote" type="image/svg+xml"></object>
 
-<!-- missing property descriptions ??? -->
+> **host** -- the full hostname of the remote device.
+
+{% include "./elementproperties.md" %}
 
 
 ## Example
 
-On the device named **logger** 2 display elements are defined but there is no local element that produces actions for these.
+On the device named **logger** 2 display elements are defined but there is no local element that
+produces actions for these.
 
 ``` json
 {
-  "displaytext": {
-    "t": {
-      "x": 0,
-      "y": 36,
-      "prefix": "Temp:",
-      "postfix": "°C"
-    },
-    "h": {
-      "x": 0,
-      "y": 50,
-      "prefix": "Hum: ",
-      "postfix": "%"
+  "remote": {
+    "alight": {
+      "title": "Accent light in the Hall",
+      "room": "hall",
+      "host": "bulb01"
     }
   }
 }
 ```
 
-You can test these by using the following URLs to trigger the actions with your browser:
-
-<http://homeding/$board/display/t?show=20.30>
-
-<http://homeding/$board/display/h?show=45.00>
-
-On the device named **dht22-probe** the dht element is configured to create actions when the temperature or humidity changes and the values are passed to the 2 defined remotes:
+To use the functionality the following combination of a sensor and a remote Element can be used
+to display sensor values on a remote display:
 
 ``` json
 {
@@ -71,13 +87,13 @@ On the device named **dht22-probe** the dht element is configured to create acti
       "pin": 0,
       "type": "DHT22",
       "readtime" : "10s",
-      "onTemperature": "remote/display-t?show=$v",
-      "onHumidity": "remote/display-h?show=$v"
+      "onTemperature": "box:displaytext/t?value=$v",
+      "onHumidity": "box:displaytext/h?value=$v"
     }
   },
 
   "remote": {
-    "display": {
+    "box": {
       "host": "displaybox"
     }
   }
