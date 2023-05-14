@@ -16,7 +16,6 @@ This page is used for temporary saving some information that will be required fo
 * [ ] icon + def: displaybar
 * [ ] icon: wot
 * [ ] icon: timer + schedule (rework)
-* [ ] SD Card for mini board: docu and image
 
 
 ## Audio

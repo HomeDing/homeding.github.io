@@ -24,6 +24,13 @@ TODO:
 * [ ] reset / restart in board.cpp
 * [ ] RTCVariables
 * [ ] PMSElement
+* [ ] Tone Element for ESP32
+  * <https://www.thomascountz.com/2021/02/21/arduino-tone-for-esp32>
+  * <https://github.com/Dlloydev/ESP32-ESP32S2-AnalogWrite>
+  * <https://www.pschatzmann.ch/home/2021/01/07/esp32-tone/>
+
+
+
 
 ## See also
 

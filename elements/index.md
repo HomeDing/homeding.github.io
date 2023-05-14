@@ -269,9 +269,14 @@ The [Weatherfeed Element](/elements/weatherfeed.md)can retrieve weather forecast
 
 The [Audio Elements](/elements/audio/index.md) can be used to create / control audio related devices and chips.
 
-:::element audio/radio
-{% excerptOf collections.Element, "radio" %}
+:::element audio/tone tone
+{% excerptOf collections.Element, "tone" %}
 
+[Tone Element](../elements/tone.md) to make some noise.
+:::
+
+:::element audio/radio radio
+{% excerptOf collections.Element, "radio" %}
 This element is using the external [Radio Library](http://www.mathertel.de/Arduino/RadioLibrary.aspx)
 to configure and use various FM radio chips and boards.
 
