@@ -416,6 +416,7 @@ RotaryEncoder
 rotaryside
 rssi
 rtcState
+RTTTL
 rules
 runtime
 safemode

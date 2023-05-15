@@ -40,6 +40,9 @@ The Web UI for the Select element shows the actual selected key and all availabl
 
 This element implements the following properties and actions:
 
+> **cycle** -- This boolean parameter allows the `next` and `prev` actions to cycle through the
+> given options.
+>
 > **options[]** - This is the array of options with `key` and `value`.
 >
 > **key** - This action is used to select the option with a specific key.
@@ -72,12 +75,16 @@ This example shows how to configure this element:
         { "key": "you-fm", "value":"audio/0?url=https://dispatcher.rndfnk.com/hr/youfm/live/mp3/high"},
         { "key": "christmas", "value": "audio/0?url=https://1000christmashits.stream.laut.fm/1000christmashits" }
       ],
-      "onkey": "displaytext/station?value=$v",
-      "onvalue": "audio/0?url=$v"
+      "cycle": "1",
+      "onKey": "displaytext/station?value=$v",
+      "onValue": "audio/0?url=$v"
     }
   }
 }
 ```
+
+It is not required to specify a value for each options in case the keys can be used in the created action using the onKey events only.
+
 
 ## State
 
