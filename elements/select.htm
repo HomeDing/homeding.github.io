@@ -67,6 +67,8 @@ http://homeding/api/state/select/station?next=1</code></pre>
 <p><object data="/element.svg?select" type="image/svg+xml"></object></p>
 <p>This element implements the following properties and actions:</p>
 <blockquote>
+<p><strong>cycle</strong> – This boolean parameter allows the <code>next</code> and <code>prev</code> actions to cycle through the
+given options.</p>
 <p><strong>options[]</strong> - This is the array of options with <code>key</code> and <code>value</code>.</p>
 <p><strong>key</strong> - This action is used to select the option with a specific key.</p>
 <p><strong>index</strong> - This action is used to select the <code>n</code>th option.</p>
@@ -94,11 +96,13 @@ http://homeding/api/state/select/station?next=1</code></pre>
         <span class="token punctuation">{</span> <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"you-fm"</span><span class="token punctuation">,</span> <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"audio/0?url=https://dispatcher.rndfnk.com/hr/youfm/live/mp3/high"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span> <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"christmas"</span><span class="token punctuation">,</span> <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=https://1000christmashits.stream.laut.fm/1000christmashits"</span> <span class="token punctuation">}</span>
       <span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token property">"onkey"</span><span class="token operator">:</span> <span class="token string">"displaytext/station?value=$v"</span><span class="token punctuation">,</span>
-      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=$v"</span>
+      <span class="token property">"cycle"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"onKey"</span><span class="token operator">:</span> <span class="token string">"displaytext/station?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"audio/0?url=$v"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<p>It is not required to specify a value for each options in case the keys can be used in the created action using the onKey events only.</p>
 <h2>State</h2>
 <p>Some internal values of the element can be observed in the state.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
