@@ -48,13 +48,15 @@
       <div class="iconcard"><svg class="icon"><use href="/icons.svg#scene"></use></svg>
     
     The Scene Element sends a series of actions triggered by a single incoming action. They can be send out step by step using a defined delay or by actions.
-</div>
+
+    </div>
       
     <p>In the configuration a list of <code>steps</code> is defined containing actions for other elements.</p>
 <p>This list can be executed automatically using a defined <code>delay</code> and a <code>start</code> action
 or can be started individually by a <code>next</code> action.</p>
 <p>In normal cases when only one or few actions should be triggered multiple actions can be listed inline
 in action configurations of elements.</p>
+<p><img src="sceneui.png" alt="Scene Element Eb UI"></p>
 <p>The scene element allows sending multiple actions beyond this limit or when different element
 need to send the same list of events but different values.</p>
 <p>The scene element also can be used to configure presets of multiple element values

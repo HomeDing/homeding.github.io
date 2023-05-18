@@ -48,7 +48,8 @@
       <div class="iconcard"><svg class="icon"><use href="/icons.svg#digitalsignal"></use></svg>
     
     The DigitalSignalElement is used to handle digital input with short time level changes that might be missed when using the [DigitalInput Element](/elements/digitalin.md). On a changing input a pulse value is created with a defined duration.
-</div>
+
+    </div>
       
     <p>When a digital input signals like spikes are created on a GPIO input they may not last long enough to be detected by reading the actual level in the loop function.</p>
 <p>To avoid missing these input signals interrupts are used that are triggered by the GPIO hardware when the signal level changes. Inside the interrupt routine itself

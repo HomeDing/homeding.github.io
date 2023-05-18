@@ -47,15 +47,20 @@
       
     <h2>Examples</h2>
 <p>These examples that come with the library. They are used as the base for the educative stories that explain</p>
-<p><strong><a href="/examples/standard.htm">Standard Example</a></strong></p>
-<blockquote>
-<p>This example has a sketch and the web site for a NodeMCU or similar board. Most of the recipes work with this sketch.</p>
-</blockquote>
-<p><strong><a href="/examples/minimal.htm">Minimal Example</a></strong></p>
-<blockquote>
-<p>This example shows how to reduce the number of available elements and use only a bare minimum part of the embedded web site
-so the whole solution fits into a ESP8266 board with only 1 MByte Flash memory like the ESP-01.</p>
-</blockquote>
+<h2>The <strong><a href="/examples/standard.htm">Standard Example</a></strong></h2>
+<p>This example has a sketch and the web site for a ESP8266 based NodeMCU or similar board or ESP32
+based boards. It requires 4MByte Flash to include most of the existing elements in the library,
+the full web UI and most of the recipes work with this sketch.</p>
+<p>It is the best starting Firmware.</p>
+<h2>The <strong><a href="/examples/minimal.htm">Minimal Examples</a></strong></h2>
+<p>These examples shows how to reduce the number of available elements and use only a bare minimum
+part of the embedded web site so the whole solution fits into a ESP8266 board and devices with
+only 1 MByte Flash memory like the ESP-01 and of-the-shelf bulbs or sockets.</p>
+<p>The <strong>Bulb Example</strong> includes the elements usable for bulbs to control and drive LEDs like
+value, switch, rtcstate, time, ntptime, scene, light, color, neo, my9291.</p>
+<p>The <strong>Plug Example</strong> includes the elements usable for relays and plug devices including power
+measurement like</p>
+<p>“remote” ??</p>
 <p><strong><a href="/examples/probe.htm">Probe Example</a></strong></p>
 <blockquote>
 <p>shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
@@ -76,7 +81,7 @@ It can be used with any board that has a 4MByte Flash memory like the <a href="/
 with pictures and extensive step-by-step documentation.</p>
 <p>These examples can be extended or modified by configuration. Examples on how to configure elements
 can be found  in the <a href="/recipes/index.htm">recipes collection</a> and in the <a href="/elements/index.htm">elements documentation</a>.</p>
-<p><strong>Building a Simple Sensor device</strong></p>
+<h3>Building a Simple Sensor device</h3>
 <blockquote>
 <p>The <a href="/stories/story-outdoorsensor.htm">Outdoor Sensor Story</a> is about
 how to build a device that simply captures the air temperature and humidity parameters
@@ -95,6 +100,8 @@ and organic gas values and the PMS5003 to get density of the micro particles.</p
 how to build a device with a display to show actual weather conditions from a remote sensor
 and the future weather from an internet service.</p>
 </blockquote>
+<h3>Smart control for single and multiple lights</h3>
+<p><a href="/stories/light-scenes/index.htm">Smart control for light</a></p>
 <h2>See also</h2>
 <ul>
 <li><a href="/examples/index.htm">Examples</a> in detail</li>
