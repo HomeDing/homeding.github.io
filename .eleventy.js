@@ -19,13 +19,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("_site/**");
   eleventyConfig.ignores.add(".vscode/**");
 
-  const contentFolders = ["boards", "boards/esp32", "concepts", "dev", "elements/audio", "elements/display", "elements/light", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
+  const contentFolders = ["boards", "boards", "concepts", "dev", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
   const assetFolders = ["i", "v03", "v03m", "v09", "v09m", "home"];
 
   contentFolders.forEach(f => {
-    eleventyConfig.addPassthroughCopy(f + "/*.svg");
-    eleventyConfig.addPassthroughCopy(f + "/*.jpg");
-    eleventyConfig.addPassthroughCopy(f + "/*.png");
+    eleventyConfig.addPassthroughCopy(f + "/**/*.svg");
+    eleventyConfig.addPassthroughCopy(f + "/**/*.jpg");
+    eleventyConfig.addPassthroughCopy(f + "/**/*.png");
     eleventyConfig.addWatchTarget(f);
   })
   eleventyConfig.setWatchThrottleWaitTime(2000); // in milliseconds

@@ -3,23 +3,28 @@ title: RFCodes Element
 icon: no
 tags: ["Element"]
 excerpt: >
-  The **RFCodes Element** is used send and receive RF signals to simple switching and dimming devices.
+  The RFCodes Element is used send and receive RF signals to switching and dimming devices
+  using RF protocols like RF433 or RF315.
 layout: "page.njk"
 ---
 
 
 ## About using RF 433 based communication
 
-In contrast to WiFi, Tread or ZigBee the 433 MHz based communication to devices is using a fire-and-forget approach, lacks in getting received handshakes and therefore is unreliable by design.
+In contrast to WiFi, Tread or ZigBee the 433 or 315 MHz based communication to devices is using
+a fire-and-forget approach, lacks in getting received handshakes and therefore is unreliable by
+design.
 
-Also many devices exist that share the same protocol with only a few possible device addresses and can conflict with other devices in the neighborhood.
+Also many devices exist that share the same protocol with only a few possible device addresses
+and can conflict with other devices in the neighborhood.
 
-Be aware that this band is potentially also used by others. More details in German can be found in the thread
-<https://forum.iobroker.net/topic/27660/warnung-vor-433mhz-komponenten>.
+Be aware that this band is potentially also used by others. More details in German can be found
+in the thread <https://forum.iobroker.net/topic/27660/warnung-vor-433mhz-komponenten>.
 
 Summary: Unreliable but cheap.
 
 This also applies to other open band in other parts in the world as the protocol chips can be used for multiple band.
+
 
 ## Using RFCodes for sending
 

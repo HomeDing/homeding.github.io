@@ -16,6 +16,8 @@ or can be started individually by a `next` action.
 In normal cases when only one or few actions should be triggered multiple actions can be listed inline
 in action configurations of elements.
 
+![Scene Element Eb UI](sceneui.png)
+
 The scene element allows sending multiple actions beyond this limit or when different element
 need to send the same list of events but different values.
 

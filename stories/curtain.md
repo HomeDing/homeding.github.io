@@ -3,7 +3,7 @@ title: Smart control for shades, blinds and curtains
 layout: "page.njk"
 ---
 
-The aim was to automate the existing shades in my household to bring them in on several conditions like
+The aim is to automate the existing shades in my household to bring them in on several conditions like
 
 * late in the night (when forgot to to so)
 * in case of rain

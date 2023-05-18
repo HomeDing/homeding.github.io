@@ -9,16 +9,28 @@ layout: "page.njk"
 These examples that come with the library. They are used as the base for the educative stories that explain 
 
 
-**[Standard Example](/examples/standard.md)**
+## The **[Standard Example](/examples/standard.md)**
 
-> This example has a sketch and the web site for a NodeMCU or similar board. Most of the recipes work with this sketch.
+This example has a sketch and the web site for a ESP8266 based NodeMCU or similar board or ESP32
+based boards. It requires 4MByte Flash to include most of the existing elements in the library,
+the full web UI and most of the recipes work with this sketch.
+
+It is the best starting Firmware.
 
 
-**[Minimal Example](/examples/minimal.md)**
+## The **[Minimal Examples](/examples/minimal.md)**
 
-> This example shows how to reduce the number of available elements and use only a bare minimum part of the embedded web site 
-> so the whole solution fits into a ESP8266 board with only 1 MByte Flash memory like the ESP-01.
+These examples shows how to reduce the number of available elements and use only a bare minimum
+part of the embedded web site so the whole solution fits into a ESP8266 board and devices with
+only 1 MByte Flash memory like the ESP-01 and of-the-shelf bulbs or sockets.
 
+The **Bulb Example** includes the elements usable for bulbs to control and drive LEDs like
+value, switch, rtcstate, time, ntptime, scene, light, color, neo, my9291.
+
+The **Plug Example** includes the elements usable for relays and plug devices including power
+measurement like
+
+"remote" ??
 
 **[Probe Example](/examples/probe.md)**
 
@@ -49,7 +61,7 @@ These examples can be extended or modified by configuration. Examples on how to 
 can be found  in the [recipes collection](/recipes/index.md) and in the [elements documentation](/elements/index.md).
 
 
-**Building a Simple Sensor device**
+### Building a Simple Sensor device
 
 > The [Outdoor Sensor Story](/stories/story-outdoorsensor.md) is about
 > how to build a device that simply captures the air temperature and humidity parameters
@@ -70,6 +82,11 @@ can be found  in the [recipes collection](/recipes/index.md) and in the [element
 > The [Weather Display](/stories/story-weatherdisplay.md) is about
 > how to build a device with a display to show actual weather conditions from a remote sensor
 > and the future weather from an internet service.
+
+
+### Smart control for single and multiple lights
+
+[Smart control for light](/stories/light-scenes/index.md)
 
 
 ## See also
