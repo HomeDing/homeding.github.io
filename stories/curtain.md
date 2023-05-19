@@ -1,5 +1,6 @@
 ---
 title: Smart control for shades, blinds and curtains
+tags: ["Story"]
 layout: "page.njk"
 ---
 
@@ -26,6 +27,7 @@ The official product web site is here: <https://www.loratap.com/sc500w-p0108.htm
 
 
 :::warning
+
 * This warning is serious.
 * Never handle projects that are connected to the mains voltage. 
 * Stay away from devices with contact to mains voltage.
@@ -34,6 +36,7 @@ The official product web site is here: <https://www.loratap.com/sc500w-p0108.htm
 * You may kill your computer and yourself.
 * When you are making these kind of projects you really need to know what you are doing.
 * I have warned you, do not blame on me.
+
 :::
 
 ## Uploading firmware

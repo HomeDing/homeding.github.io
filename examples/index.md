@@ -25,16 +25,18 @@ This example shows how to reduce the number of available elements and use only a
 
 * **[Develop](/examples/devding.md)**
 This example is very like the [standard example](/examples/standard.md) but has some add-ons that help during development.
-It can be used with any board that has a 4MByte Flash memory like the [nodemcu boards](/boards/nodemcu.md).
+It can be used with any board that has a 4MByte Flash memory like the [NodeMCU](/boards/nodemcu.md) boards.
 
-* **[Probe](/examples/probe.md)**
-shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
-It can be used with any board that has a 4MByte Flash memory like the [nodemcu boards](/boards/nodemcu.md).
+* **[Probe](/examples/probe.md)** -- {% excerptOf collections.Example, "probe" %} It can be used
+  with any board that has a 4MByte Flash memory like the [NodeMCU](/boards/nodemcu.md) boards.
+
+* **[RFBridge](/examples/rfbridge.md)** -- {% excerptOf collections.Example, "rfbridge" %}
 
 * **[Micro](/examples/micro.md)**
 The micro firmware for HomeDing enabled devices
 is not a real example but is used to flash small devices
 with firmware for specific conditions.
+
 
 <!--
 * **[Radio](/examples/radio.md)** This example is built as an extension of the standard example but shows how a special element that is only used for this sketch can be included.
@@ -53,14 +55,16 @@ Under normal conditions the [Standard Example](/examples/standard.md) offers a s
 In some cases there will not be enough memory to upload or there is the need
 to add some specific elements for a specific solution. This can be done using the following mechanisms.
 
+## Include Elements to a firmware
 
-### HOMEDING_INCLUDE_xxx Definitions.
+When a sketch is compiled to a firmware a small, large or a special set of elements can be
+added. These are then available to be configured. 
 
-The HOMEDING_INCLUDE_xxx definitions control what elements will be registered in the [Element Registry](/dev/elementregistry.md).
+The `HOMEDING_INCLUDE_xxx` definitions control what elements will be registered in the [Element Registry](/dev/elementregistry.md).
 
 In the *.ino file of every example you can find a list of HOMEDING_INCLUDE_xxx definitions that can be commented out or activated to specify what elements are later available for configuration. By disabling the definitions you can remove individual elements when they are not required to save program space.
 
-The [Minimal Example](/examples/minimal.md) is derived from the standard example by just disabling elements this way.
+The [Minimal Examples](/examples/minimal.md) is derived from the standard example by just disabling elements this way.
 
 Some elements that require a specific external library that are disables in the [Standard Example](/examples/standard.md) can be included this way.
 

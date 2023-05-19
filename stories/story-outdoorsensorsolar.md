@@ -1,5 +1,6 @@
 ---
 title: Outdoor Sensor with Solar Panel
+tags: ["Story"]
 layout: "page.njk"
 ---
 

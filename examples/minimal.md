@@ -3,21 +3,28 @@ title: Minimal Sized Example
 layout: "page.njk"
 tags: ["Example"]
 description: Example for devices with only 1MByte flash memory.
+excerpt: >
+  The Minimal examples can be used on ESP8266 boards that only have a small amount of
+  Flash Memory (1 MByte) available for program and web UI storage like the ESP-01
+  board and devices like the sonoff S20 switch, sockets or bulbs.
+
 ---
 
-:::excerpt
-The **minimal example** 
-runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage
-like the [ESP-01 board](/boards/esp01.md) and devices like [sonoff S20 switch](/boards/sonoffbasic.md) and [bulbs](/boards/bulb.md).
-:::
+The [bulb example](/examples/bulb.md) in the HomeDing library is made especially for WiFi bulbs with the ESP8266 processor inside.
+These devices only have a small amount of Flash Memory available (1 MByte) for program and web UI storage.
 
-The examples in the HomeDing library are used to compile a firmware that provides the base functionality
-combined with a set of elements that can be used in the configuration of the device.
+The [plug example](/examples/plug.md) in the HomeDing library is made especially for plugs / socket switches.
+These devices only have a small amount of Flash Memory available (1 MByte) for program and web UI storage.
+
+Because the flash memory is very limited on these devices the minimal sketch only contains
+Elements that are used within bulbs. e.g. no sensors and provide the base functionality combined
+with a set of elements that can be used in the configuration of the device.
 
 
-## Approach for development 
+## Approach for development
 
 These devices are not really usable during development.
+
 * Diagnostic Elements cannot be compiled into the sketch to reduce program size.
 * Log files cannot be stored on the device
 * The filesystem on the device is very limited.
@@ -25,30 +32,37 @@ These devices are not really usable during development.
 * A auto-reset feature is missing for flashing new firmware over USB.
 
 Thereforefore it is recommended:
+
 * Use a board like a [NodeMCU](/boards/nodemcu.md) but keep an eye of memory consumption.
 * Use a [ESP-01 board](/boards/esp01.md) to verify the solution is working with the target sizing.
 * Uploading a new firware to the target device.
 
 
-## Reduced memory footprint 
+## Reduced memory footprint
 
-Compared to the [Standard example](/examples/standard.md) some measures have been taken to reduce required program memory. 
+Compared to the [Standard example](/examples/standard.md) some measures have been taken to
+reduce required program memory.
 
-From the 1 MByte of memory only 128kByte of memory is used for the file system
-leaving about 445 kByte for program space while still enabling OTA / network based updates.
+From the 1 MByte of memory only 128kByte of memory is used for the file system leaving about 445
+kByte for program space while still enabling OTA / network based updates.
 
-When compiling the sketch to create a firmware only a small set of elements are included (see below). The web files are also minimized and reduced in functionality to allow a minimal UI implementation and logging is disabled to save memory in the filesystem.
-Compared to the Standard example about 52 kByte less program space is required.
-When disabling the debug port in the Board configuration another 1.5 kByte can be saved. 
+When compiling the sketch to create a firmware only a small set of elements are included (see
+below). The web files are also minimized and reduced in functionality to allow a minimal UI
+implementation and logging is disabled to save memory in the filesystem. Compared to the
+Standard example about 52 kByte less program space is required. When disabling the debug port in
+the Board configuration another 1.5 kByte can be saved.
 
 
-## Reducing the set of Elements 
+## Reducing the set of Elements
 
-The elements that are included in this example sketch are those that support sockets, switches and lights but no sensors and displays. The logical, time and remote elements are included as well to support integration.
+The elements that are included in this example sketch are those that support sockets, switches
+and lights but no sensors and displays. The logical, time and remote elements are included as
+well to support integration.
 
 As of this writing the elements included are:
 
-ota, device, value, button, switch, and, reference, time, alarm, ntptime, timer, schedule, digitalin, digitalout, remote, dht, color, light, neo, bl0937, my9291, ssdp
+ota, device, value, button, switch, and, reference, time, alarm, ntptime, timer, schedule,
+digitalin, digitalout, remote, dht, color, light, neo, bl0937, my9291, ssdp
 
 You can control what elements are included in the firmware file by enabling or disabling the #define statements for registering the elements in the sketch file.
 
@@ -76,7 +90,7 @@ See [Step by Step uploading the files for the web UI](/steps/updateweb.md).
 The files for such minimal devices are reduced and available in the `v03m` folder (not `v03`).
 Please be sure to adjust the URL by appending #v03m like <http://outdoor/$update.htm#v03m>.
 You may need to refresh the page until you see the text
-**loading from: https://homeding.github.io/v03m/**.
+**loading from: <https://homeding.github.io/v03m/>**.
 
 
 ## Web UI
@@ -100,8 +114,6 @@ Not included elements of the library can be added by defining the Element to be 
 When you implement your own elements you can just add them to the sketch folder.
 
 
-
-
 <!-- 
 ## OTA Update
 
@@ -112,5 +124,4 @@ When you implement your own elements you can just add them to the sketch folder.
 * <https://goblinsleg.wordpress.com/category/sonoff-tasmota/>
 * <https://goblinsleg.wordpress.com/2017/12/28/diy-home-automation-with-openhab-2-part-3/>
  -->
-
 

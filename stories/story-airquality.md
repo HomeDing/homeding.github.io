@@ -1,5 +1,6 @@
 ---
 title: Build a Inhouse IoT Air Quality sensor no cloud required
+tags: ["Story"]
 layout: "page.njk"
 ---
 

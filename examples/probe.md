@@ -2,17 +2,21 @@
 title: Probe example
 layout: "page.njk"
 tags: ["Example"]
+excerpt: >
+  This example shows how to implement special, local elements that can retrieve sensor data from
+  INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging
+  device.
 ---
 
-:::excerpt
-This example shows how to implement special, local elements
-that can retrieve sensor data from INA219 and INA266 current and voltage sensors
-to build a low-voltage power consumption logging device.
-:::
+The example can be used with any board that has a minimum of 4MByte Flash memory like the
+[nodemcu boards](/boards/nodemcu.md).
 
-This device is made to probe voltage and current on the power supply of another device for a long time (like days) and log the probe values into a log element to be inspected.
+This device is made to probe voltage and current on the power supply of another device for a
+long time (like days) and log the probe values into a log element to be inspected.
 
-The two sensors supported in this example behave very similar but are different in the register layout and capabilities. Each of them is supported using a specific element and a specific Arduino library. Document on the elements can be found here:
+The two sensors supported in this example behave very similar but are different in the register
+layout and capabilities. Each of them is supported using a specific element and a specific
+Arduino library. Document on the elements can be found here:
 
 * [INA219 Element](/elements/ina219.md)
 * [INA226 Element](/elements/ina226.md)
@@ -24,7 +28,8 @@ The display is there to see the actual values.
 
 ## Web User interface
 
-The probe device can be accessed using a standard browser and displays the current values as well as the log from the current measures:
+The probe device can be accessed using a standard browser and displays the current values as
+well as the log from the current measures:
 
 ![INA219 Sensor](/examples/probe-ui.png "w600")
 
@@ -33,11 +38,13 @@ The probe device can be accessed using a standard browser and displays the curre
 
 ![INA219 Sensor](/examples/probe-ina219.jpg "w600")
 
-This example adds a INA219 element that retrieves data from the INA219 sensor using the INA219_WE library.
+This example adds a INA219 element that retrieves data from the INA219 sensor using the
+INA219_WE library.
 
 The shown sensor board has a 0.1 Ohm shunt resistor and can meassure event low current values.
 
-In the configuration some options can be modified. They are related to the features of the underlying library.
+In the configuration some options can be modified. They are related to the features of the
+underlying library.
 
 **Example:**
 
@@ -67,7 +74,9 @@ In the configuration some options can be modified. They are related to the featu
 
 This example adds a INA226 element that retrieves data from the INA226 sensor using the INA226_WE library.
 
-The shown sensor board has a 0.002 Ohm shunt resistor and can measure up to 20 A. When using it for low-current values the resolution doesn't fit. There are other boards with a different shunt resistor that fits better for low-current measurements.
+The shown sensor board has a 0.002 Ohm shunt resistor and can measure up to 20 A. When using it
+for low-current values the resolution doesn't fit. There are other boards with a different shunt
+resistor that fits better for low-current measurements.
 
 In the configuration some options can be modified. They are related to the features of the underlying library.
 

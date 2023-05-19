@@ -1,6 +1,7 @@
 ---
 title: Smart control for single and multiple lights
 layout: "page.njk"
+tags: ["Story"]
 excerpt: >
   This story is about controlling and automating lights in a room like WiFi Bulbs or
   Floor Lamps switched on and off by a smart plug to light up for a specific need and create an
@@ -178,7 +179,7 @@ created. By sending a `next` action to the [Select Element] the scene will be ac
 ```
 
 The [Select Element] also simplifies sending the action to activate a new scene to multiple bulbs or plugs
-by extending the actions in the onkey event to send the event to a remote device:
+by extending the actions in the `onKey` event to send the event to a remote device:
 
 ``` json
 "onkey": "bulb01:scene/$v?start=1,bulb02:scene/$v?start=1"
@@ -189,6 +190,7 @@ By sending `select/scenes?key=off` it is possible to turn all lights off by a si
 
 ## Remote Control
 
+The [RFBridge Example](/examples/rfbridge.md) 
 When using a web based UI
 is not always available
 a simple RF Remote and a RF receiver can be integrated
