@@ -44,64 +44,110 @@
     <h1>Examples and Stories</h1>
 
     
+    
+      <div class="plaincard">
+    
+    The Homeding library comes with some example sketches but also with some more detailed building stories and educative stories explaining insights and options.
+
+    </div>
       
-    <h2>Examples</h2>
-<p>These examples that come with the library. They are used as the base for the educative stories that explain</p>
-<h2>The <strong><a href="/examples/standard.htm">Standard Example</a></strong></h2>
-<p>This example has a sketch and the web site for a ESP8266 based NodeMCU or similar board or ESP32
-based boards. It requires 4MByte Flash to include most of the existing elements in the library,
-the full web UI and most of the recipes work with this sketch.</p>
-<p>It is the best starting Firmware.</p>
-<h2>The <strong><a href="/examples/minimal.htm">Minimal Examples</a></strong></h2>
-<p>These examples shows how to reduce the number of available elements and use only a bare minimum
-part of the embedded web site so the whole solution fits into a ESP8266 board and devices with
-only 1 MByte Flash memory like the ESP-01 and of-the-shelf bulbs or sockets.</p>
+    <p>The <strong>examples</strong> can be used as a starting point for new projects. As the HomeDing Library enables runtime configuration
+there are many examples on how to configure elements in the <a href="/elements/index.htm">Elements</a> descriptions and in the
+<a href="/recipes/index.htm">Recipes collection</a>.</p>
+<p>The <strong>stories</strong> provide a full documentation required to build a specific device for a specific need
+with pictures and extensive step-by-step documentation.</p>
+<h2>Examples</h2>
+<p>The <a href="/examples/index.htm">Examples</a> are installed in the Arduino Environment together with the
+library and can be found in the examples list of the Arduino IDE. In the
+<a href="/examples/index.htm">Examples</a> description you can also find a short description on how to
+include/exclude the Elements in a specific firmware.</p>
+<h4><a href="/examples/standard.htm">Standard Example</a></h4>
+<blockquote>
+<p>The Standard Example is a good starting point for building new devices using a ESP8266 based
+board like the <a href="/boards/nodemcu.htm">NodeMCU</a> versions or ESP32 based boards and requires 4MByte flash memory at a
+minimum.</p>
+<p>It has most existing elements enabled ready for configuration and also
+has the files for the embedded web server in the data folder.</p>
+<p>Most of the <a href="/recipes/index.htm">recipes</a> work with this sketch.</p>
+</blockquote>
+<h4><a href="/examples/minimal.htm">Minimal Examples</a></h4>
+<blockquote>
+<p>The <strong>Plug</strong> and <strong>Bulb</strong> examples show how to reduce the number of available elements and use
+only a bare minimum part of the embedded web site so the whole solution fits into a ESP8266
+board and devices with only 1 MByte Flash memory like the ESP-01 and of-the-shelf bulbs or
+sockets.</p>
+</blockquote>
+<blockquote>
 <p>The <strong>Bulb Example</strong> includes the elements usable for bulbs to control and drive LEDs like
 value, switch, rtcstate, time, ntptime, scene, light, color, neo, my9291.</p>
 <p>The <strong>Plug Example</strong> includes the elements usable for relays and plug devices including power
 measurement like</p>
-<p>“remote” ??</p>
-<p><strong><a href="/examples/probe.htm">Probe Example</a></strong></p>
-<blockquote>
-<p>shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
-It can be used with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">nodemcu boards</a>.</p>
 </blockquote>
-<p><strong><a href="/examples/devding.htm">Develop Example</a></strong></p>
+<h4><a href="/examples/rfbridge.htm">RFBridge Example</a></h4>
 <blockquote>
-<p>This example is very like the <a href="/examples/standard.htm">standard example</a> but has some add-ons that help during development.
-It can be used with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">nodemcu boards</a>.</p>
+<p>The RFBridge Example uses a local element for communicating over RF signals by using 433 or 315
+MHz receivers and transmitters to build a special purpose device for bridging between WiFi and
+RF protocols.</p>
 </blockquote>
-<p><strong><a href="/examples/radio.htm">Radio Example</a></strong></p>
+<h4><a href="/examples/probe.htm">Probe Example</a></h4>
 <blockquote>
-<p>t.b.d.</p>
+<p>The Probe Example shows how to implement special, local elements that can retrieve sensor data
+from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption
+logging device. It can be used with any board that has a 4MByte Flash memory like the
+<a href="/boards/nodemcu.htm">NodeMCU</a> boards.</p>
 </blockquote>
-<!-- * **[RFBridge](/examples/_RFGateway.md)** -->
+<h4><a href="/examples/devding.htm">Develop Example</a></h4>
+<blockquote>
+<p>This example is very like the <a href="/examples/standard.htm">Standard Example</a> but has some add-ons
+that help during development. It can be used with any board that has a 4MByte Flash memory
+like the <a href="/boards/nodemcu.htm">NodeMCU</a> boards.</p>
+</blockquote>
+<h4>Webradio Example</h4>
+<blockquote>
+<p>The Webradio Example is implemented especially for the ESP32 Wroover with PSRAM to build a Web
+Radio by using an Arduino library. This Web Radio can be controlled through the embedded web
+interface.</p>
+</blockquote>
+<h4><a href="/examples/radio.htm">Radio Example</a></h4>
+<blockquote>
+<p>The Radio example has a local Element to control the features of the Arduino <a href="https://github.com/mathertel/Radio">Radio
+Library</a> that to control many Radio FM receiver chips.
+The <a href="https://homeding.github.io/elements/audio/radio.htm">Radio Element</a> is available as part of
+this example.</p>
+</blockquote>
+<h4><a href="/examples/micro.htm">Micro Example</a></h4>
+<blockquote>
+<p>This is not a real example but is used to flash small devices with firmware for specific conditions.
+See also <a href="https://github.com/HomeDing/HomeDing/tree/develop/examples/micro">Micro Example Readme</a></p>
+</blockquote>
 <h2>Stories</h2>
 <p>The stories provide a full documentation required to build a specific device for a specific need
 with pictures and extensive step-by-step documentation.</p>
-<p>These examples can be extended or modified by configuration. Examples on how to configure elements
-can be found  in the <a href="/recipes/index.htm">recipes collection</a> and in the <a href="/elements/index.htm">elements documentation</a>.</p>
-<h3>Building a Simple Sensor device</h3>
+<h4>Building a Simple Sensor device</h4>
 <blockquote>
 <p>The <a href="/stories/story-outdoorsensor.htm">Outdoor Sensor Story</a> is about
 how to build a device that simply captures the air temperature and humidity parameters
 from a DHT22 sensor by using the low-code <a href="https://github.com/HomeDing">Homeding library</a> and provide a graph with latest values.</p>
 </blockquote>
-<p><strong>Building a Air Quality Sensor device</strong></p>
+<h4>Building a Air Quality Sensor device</h4>
 <blockquote>
-<p>The <a href="/stories/story-airquality.htm">Air Quality Sensor</a> is about
-how to build an indoor air quality sensor.</p>
-<p>The sensors used here are the BME680 for getting temperature, humidity, pressure
-and organic gas values and the PMS5003 to get density of the micro particles.</p>
+<p>The <a href="/stories/story-airquality.htm">Air Quality Sensor</a> is about how to build an indoor air
+quality sensor.</p>
+<p>The sensors used here are the BME680 for getting temperature, humidity, pressure and organic
+gas values and the PMS5003 to get density of the micro particles.</p>
 </blockquote>
-<p><strong>Building a Weather Display</strong></p>
+<h4><strong>Building a Weather Display</strong></h4>
 <blockquote>
 <p>The <a href="/stories/story-weatherdisplay.htm">Weather Display</a> is about
 how to build a device with a display to show actual weather conditions from a remote sensor
 and the future weather from an internet service.</p>
 </blockquote>
-<h3>Smart control for single and multiple lights</h3>
-<p><a href="/stories/light-scenes/index.htm">Smart control for light</a></p>
+<h4>Smart control for single and multiple lights</h4>
+<blockquote>
+<p>The <a href="/stories/light-scenes/index.htm">Smart control for light</a> is about controlling and
+automating lights in a room like WiFi Bulbs or Floor Lamps switched on and off by a smart plug
+to light up for a specific need and create an <strong>Ambience</strong> that fits.</p>
+</blockquote>
 <h2>See also</h2>
 <ul>
 <li><a href="/examples/index.htm">Examples</a> in detail</li>

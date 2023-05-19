@@ -44,13 +44,20 @@
     <h1>Probe example</h1>
 
     
+    
+      <div class="plaincard">
+    
+    This example shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
+
+    </div>
       
-    <div class="plaincard"><p>This example shows how to implement special, local elements
-that can retrieve sensor data from INA219 and INA266 current and voltage sensors
-to build a low-voltage power consumption logging device.</p>
-</div>
-<p>This device is made to probe voltage and current on the power supply of another device for a long time (like days) and log the probe values into a log element to be inspected.</p>
-<p>The two sensors supported in this example behave very similar but are different in the register layout and capabilities. Each of them is supported using a specific element and a specific Arduino library. Document on the elements can be found here:</p>
+    <p>The example can be used with any board that has a minimum of 4MByte Flash memory like the
+<a href="/boards/nodemcu.htm">nodemcu boards</a>.</p>
+<p>This device is made to probe voltage and current on the power supply of another device for a
+long time (like days) and log the probe values into a log element to be inspected.</p>
+<p>The two sensors supported in this example behave very similar but are different in the register
+layout and capabilities. Each of them is supported using a specific element and a specific
+Arduino library. Document on the elements can be found here:</p>
 <ul>
 <li><a href="/elements/ina219.htm">INA219 Element</a></li>
 <li><a href="/elements/ina226.htm">INA226 Element</a></li>
@@ -58,13 +65,16 @@ to build a low-voltage power consumption logging device.</p>
 <p>They are doumented</p>
 <p>The display is there to see the actual values.</p>
 <h2>Web User interface</h2>
-<p>The probe device can be accessed using a standard browser and displays the current values as well as the log from the current measures:</p>
+<p>The probe device can be accessed using a standard browser and displays the current values as
+well as the log from the current measures:</p>
 <p><img src="/examples/probe-ui.png" alt="INA219 Sensor" title="w600"></p>
 <h2>INA219 Sensor</h2>
 <p><img src="/examples/probe-ina219.jpg" alt="INA219 Sensor" title="w600"></p>
-<p>This example adds a INA219 element that retrieves data from the INA219 sensor using the INA219_WE library.</p>
+<p>This example adds a INA219 element that retrieves data from the INA219 sensor using the
+INA219_WE library.</p>
 <p>The shown sensor board has a 0.1 Ohm shunt resistor and can meassure event low current values.</p>
-<p>In the configuration some options can be modified. They are related to the features of the underlying library.</p>
+<p>In the configuration some options can be modified. They are related to the features of the
+underlying library.</p>
 <p><strong>Example:</strong></p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"ina219"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -85,7 +95,9 @@ to build a low-voltage power consumption logging device.</p>
 <h2>INA226 Sensor</h2>
 <p><img src="/examples/probe-ina226.jpg" alt="INA226 Sensor" title="w600"></p>
 <p>This example adds a INA226 element that retrieves data from the INA226 sensor using the INA226_WE library.</p>
-<p>The shown sensor board has a 0.002 Ohm shunt resistor and can measure up to 20 A. When using it for low-current values the resolution doesn’t fit. There are other boards with a different shunt resistor that fits better for low-current measurements.</p>
+<p>The shown sensor board has a 0.002 Ohm shunt resistor and can measure up to 20 A. When using it
+for low-current values the resolution doesn’t fit. There are other boards with a different shunt
+resistor that fits better for low-current measurements.</p>
 <p>In the configuration some options can be modified. They are related to the features of the underlying library.</p>
 <p><strong>Example:</strong></p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>

@@ -44,13 +44,20 @@
     <h1>Minimal Sized Example</h1>
 
     
+    
+      <div class="plaincard">
+    
+    The Minimal examples can be used on ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage like the ESP-01 board and devices like the sonoff S20 switch, sockets or bulbs.
+
+    </div>
       
-    <div class="plaincard"><p>The <strong>minimal example</strong>
-runs on the ESP8266 boards that only have a small amount of Flash Memory (1 MByte) available for program and web UI storage
-like the <a href="/boards/esp01.htm">ESP-01 board</a> and devices like <a href="/boards/sonoffbasic.htm">sonoff S20 switch</a> and <a href="/boards/bulb.htm">bulbs</a>.</p>
-</div>
-<p>The examples in the HomeDing library are used to compile a firmware that provides the base functionality
-combined with a set of elements that can be used in the configuration of the device.</p>
+    <p>The <a href="/examples/bulb.htm">bulb example</a> in the HomeDing library is made especially for WiFi bulbs with the ESP8266 processor inside.
+These devices only have a small amount of Flash Memory available (1 MByte) for program and web UI storage.</p>
+<p>The <a href="/examples/plug.htm">plug example</a> in the HomeDing library is made especially for plugs / socket switches.
+These devices only have a small amount of Flash Memory available (1 MByte) for program and web UI storage.</p>
+<p>Because the flash memory is very limited on these devices the minimal sketch only contains
+Elements that are used within bulbs. e.g. no sensors and provide the base functionality combined
+with a set of elements that can be used in the configuration of the device.</p>
 <h2>Approach for development</h2>
 <p>These devices are not really usable during development.</p>
 <ul>
@@ -67,16 +74,22 @@ combined with a set of elements that can be used in the configuration of the dev
 <li>Uploading a new firware to the target device.</li>
 </ul>
 <h2>Reduced memory footprint</h2>
-<p>Compared to the <a href="/examples/standard.htm">Standard example</a> some measures have been taken to reduce required program memory.</p>
-<p>From the 1 MByte of memory only 128kByte of memory is used for the file system
-leaving about 445 kByte for program space while still enabling OTA / network based updates.</p>
-<p>When compiling the sketch to create a firmware only a small set of elements are included (see below). The web files are also minimized and reduced in functionality to allow a minimal UI implementation and logging is disabled to save memory in the filesystem.
-Compared to the Standard example about 52 kByte less program space is required.
-When disabling the debug port in the Board configuration another 1.5 kByte can be saved.</p>
+<p>Compared to the <a href="/examples/standard.htm">Standard example</a> some measures have been taken to
+reduce required program memory.</p>
+<p>From the 1 MByte of memory only 128kByte of memory is used for the file system leaving about 445
+kByte for program space while still enabling OTA / network based updates.</p>
+<p>When compiling the sketch to create a firmware only a small set of elements are included (see
+below). The web files are also minimized and reduced in functionality to allow a minimal UI
+implementation and logging is disabled to save memory in the filesystem. Compared to the
+Standard example about 52 kByte less program space is required. When disabling the debug port in
+the Board configuration another 1.5 kByte can be saved.</p>
 <h2>Reducing the set of Elements</h2>
-<p>The elements that are included in this example sketch are those that support sockets, switches and lights but no sensors and displays. The logical, time and remote elements are included as well to support integration.</p>
+<p>The elements that are included in this example sketch are those that support sockets, switches
+and lights but no sensors and displays. The logical, time and remote elements are included as
+well to support integration.</p>
 <p>As of this writing the elements included are:</p>
-<p>ota, device, value, button, switch, and, reference, time, alarm, ntptime, timer, schedule, digitalin, digitalout, remote, dht, color, light, neo, bl0937, my9291, ssdp</p>
+<p>ota, device, value, button, switch, and, reference, time, alarm, ntptime, timer, schedule,
+digitalin, digitalout, remote, dht, color, light, neo, bl0937, my9291, ssdp</p>
 <p>You can control what elements are included in the firmware file by enabling or disabling the #define statements for registering the elements in the sketch file.</p>
 <p>If you like to know what element are available in a device just ask for the URL http://&lt;devicename&gt;/$elements</p>
 <h2>How to Configure and Upload</h2>

@@ -64,12 +64,15 @@ This example shows how to reduce the number of available elements and use only a
 <li>
 <p><strong><a href="/examples/devding.htm">Develop</a></strong>
 This example is very like the <a href="/examples/standard.htm">standard example</a> but has some add-ons that help during development.
-It can be used with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">nodemcu boards</a>.</p>
+It can be used with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">NodeMCU</a> boards.</p>
 </li>
 <li>
-<p><strong><a href="/examples/probe.htm">Probe</a></strong>
-shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
-It can be used with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">nodemcu boards</a>.</p>
+<p><strong><a href="/examples/probe.htm">Probe</a></strong> – This example shows how to implement special, local elements that can retrieve sensor data from INA219 and INA266 current and voltage sensors to build a low-voltage power consumption logging device.
+It can be used
+with any board that has a 4MByte Flash memory like the <a href="/boards/nodemcu.htm">NodeMCU</a> boards.</p>
+</li>
+<li>
+<p><strong><a href="/examples/rfbridge.htm">RFBridge</a></strong> – This example has a local RFCodes Element to send and receive RF Signals using 433 MHz transmitters and receivers with the <a href="https://github.com/mathertel/rfcodes">RFCodes library</a>. Some more Elements help to automate light and switch processes.</p>
 </li>
 <li>
 <p><strong><a href="/examples/micro.htm">Micro</a></strong>
@@ -90,10 +93,12 @@ There is also a special WebUI page for the remote control of the radio.
 <p>Under normal conditions the <a href="/examples/standard.htm">Standard Example</a> offers a solution where all required elements are compiled and ready to be configured.</p>
 <p>In some cases there will not be enough memory to upload or there is the need
 to add some specific elements for a specific solution. This can be done using the following mechanisms.</p>
-<h3>HOMEDING_INCLUDE_xxx Definitions.</h3>
-<p>The HOMEDING_INCLUDE_xxx definitions control what elements will be registered in the <a href="/dev/elementregistry.htm">Element Registry</a>.</p>
+<h2>Include Elements to a firmware</h2>
+<p>When a sketch is compiled to a firmware a small, large or a special set of elements can be
+added. These are then available to be configured.</p>
+<p>The <code>HOMEDING_INCLUDE_xxx</code> definitions control what elements will be registered in the <a href="/dev/elementregistry.htm">Element Registry</a>.</p>
 <p>In the *.ino file of every example you can find a list of HOMEDING_INCLUDE_xxx definitions that can be commented out or activated to specify what elements are later available for configuration. By disabling the definitions you can remove individual elements when they are not required to save program space.</p>
-<p>The <a href="/examples/minimal.htm">Minimal Example</a> is derived from the standard example by just disabling elements this way.</p>
+<p>The <a href="/examples/minimal.htm">Minimal Examples</a> is derived from the standard example by just disabling elements this way.</p>
 <p>Some elements that require a specific external library that are disables in the <a href="/examples/standard.htm">Standard Example</a> can be included this way.</p>
 <h3>Implement local elements.</h3>
 <p>In the folder of the script you can add  some elements that are not part of the library but will also be compiled together with the sketch and therefore are also available for configuration.</p>

@@ -7,8 +7,8 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Outdoor Sensor with Solar Panel</title>
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <title>RF Bridge Example</title>
+  <meta name='description' content='--'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
   <script src="/story.js" type="module"></script>
@@ -41,29 +41,42 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>Outdoor Sensor with Solar Panel</h1>
+    <h1>RF Bridge Example</h1>
 
     
+    
+      <div class="plaincard">
+    
+    This example has a local RFCodes Element to send and receive RF Signals using 433 MHz transmitters and receivers with the &lt;a href=&quot;https://github.com/mathertel/rfcodes&quot;&gt;RFCodes library&lt;/a&gt;. Some more Elements help to automate light and switch processes.
+
+    </div>
       
-    <p>This is a draft story.</p>
-<p>This is an extension to the <a href="/stories/story-outdoorsensor.htm">Outdoor Sensor Story</a>.</p>
-<p><img src="/stories/outdoorsolar01.jpg" alt="Outdoor solar driven sensor" title="w200">
-<img src="/stories/outdoorsolar02.jpg" alt="Outdoor solar driven sensor" title="w200">
-<img src="/stories/outdoorsolar03.jpg" alt="Outdoor solar driven sensor" title="w200">
-<img src="/stories/outdoorsolar04.jpg" alt="Outdoor solar driven sensor" title="w200"></p>
-<h2>Topics to explain</h2>
+    <p>The [RFCodes Element] depends on the <a href="https://github.com/mathertel/rfcodes">RFCodes library</a>
+that you can find also through the Arduino library manager. Be sure to install it before
+compiling/verifying/uploading.</p>
 <ul>
-<li>Low Power</li>
-<li>many hours during the night without power.</li>
-<li>using deep sleep mode to save energy</li>
-<li>not reachable with a web browser</li>
-<li>housing recommendations</li>
+<li>2 new elements</li>
+<li>not in standard as only used for a gateway</li>
+<li>can receive and send</li>
+<li>needs xxxx library to be installed</li>
+<li>proprietary RF singals can be added</li>
 </ul>
+<h2>RF sending device</h2>
+<p>This example shows how to combine the Elements RFSend and Schedule to build a device that you can use to replace a RF sender
+and also includes some basic scheduling features.
+In this example you can also find a nice web UI for controlling the configured elements.</p>
+<h2>RF probing</h2>
+<p>include input, UI</p>
+<h2>RF receiving</h2>
+<p>MAP</p>
+<h2>configure a command</h2>
+<!-- reference to rfsend library -->
+<p><a href="/elements/rfcodes.htm">RFCodes Element</a></p>
 
 
     
     <h2>Tags</h2>
-    <div class="taglist"><a href="/tag/story.htm">Story</a></div>
+    <div class="taglist"><a href="/tag/example.htm">Example</a><a href="/tag/wip.htm">Wip</a></div>
     
   </main>
 
