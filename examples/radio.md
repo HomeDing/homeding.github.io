@@ -199,7 +199,7 @@ I added a 100nF capacitor next to the radio.
     "0": {
       "description": "vol up",
       "pin": "D7",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onhigh": "value/volume?up=1",
       "onlow": "value/volume?up=1"

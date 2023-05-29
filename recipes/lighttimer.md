@@ -24,7 +24,7 @@ The configuration combines an digitalin, a timer, a switch and a digitalout elem
     "up": {
       "pin": "D6",
       "description": "up button signal",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onLow": "switch/light?toggle=1,timer/done?start=1"
     }
@@ -50,7 +50,7 @@ The configuration combines an digitalin, a timer, a switch and a digitalout elem
   "digitalout": {
     "light": {
       "pin": "D0",
-      "inverse": "true",
+      "invert": "true",
       "value": "0",
       "description": "Light output on port D0 = GPIO16"
     }

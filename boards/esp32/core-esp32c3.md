@@ -97,11 +97,11 @@ The following `env.json` configuration can be used for this board:
     }
   },
   "digitalin": {
-    "right": { "pin": "19", "inverse": "1", "pullup": 1 },
-    "up":    { "pin":  "8", "inverse": "1", "pullup": 1 },
-    "press": { "pin":  "4", "inverse": "1", "pullup": 1 },
-    "left":  { "pin":  "9", "inverse": "1", "pullup": 1 },
-    "down":  { "pin":  "5", "inverse": "1", "pullup": 1 }
+    "right": { "pin": "19", "invert": "1", "pullup": 1 },
+    "up":    { "pin":  "8", "invert": "1", "pullup": 1 },
+    "press": { "pin":  "4", "invert": "1", "pullup": 1 },
+    "left":  { "pin":  "9", "invert": "1", "pullup": 1 },
+    "down":  { "pin":  "5", "invert": "1", "pullup": 1 }
   },
   "digitalout": {
     "ledD4": { "pin":"12" },

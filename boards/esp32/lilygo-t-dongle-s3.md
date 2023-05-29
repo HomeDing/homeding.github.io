@@ -148,7 +148,7 @@ The following `env.json` configuration can be used for this board and contains s
   "digitalin": {
     "pin": {
       "pin": "0",
-      "inverse": "1",
+      "invert": "1",
       "pullup": 1
     }
   },
@@ -181,7 +181,7 @@ The following `env.json` configuration can be used for this board and contains s
       "description": "Backlight LED dimming",
       "pin": "38",
       "range": "255",
-      "inverse": "1"
+      "invert": "1"
     }
   },
   "diag": {

@@ -83,7 +83,7 @@ As a starting configuration the blink recipe can be used when your board is a
   "digitalout": {
     "led": {
       "pin": "D0",
-      "inverse": "true",
+      "invert": "true",
       "value": "0",
       "description": "Builtin LED is on Port D0 = GPIO16"
     }

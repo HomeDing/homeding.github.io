@@ -21,7 +21,7 @@ This is can be achieved by using 3 elements:
 
 ![Elements used in led recipe](/recipes/ledflow.png)
 
-The [digital input elements](/elements/digitalin.md) transfers the physical signal (LOW when the button in pressed) to a logical level (1 when the button is pressed) using the "inverse" property with 1.
+The [digital input elements](/elements/digitalin.md) transfers the physical signal (LOW when the button in pressed) to a logical level (1 when the button is pressed) using the "invert" property with 1.
 The internal pullup is enabled to keep the input on HIGH when no button is pressed. On nodemcu boards there is also an external resistor doing this but on other pins this is required.
 
 When the input signal goes low an action is sent to the switch for toggling.
@@ -75,7 +75,7 @@ The `env.json` can be taken from the board description because it has no special
     "in": {
       "description": "Input momentary button",
       "pin": "D3",
-      "inverse": 1,
+      "invert": 1,
       "pullup": 1,
       "onLow": "switch/light?toggle=1"
     }
@@ -92,7 +92,7 @@ The `env.json` can be taken from the board description because it has no special
   "digitalout": {
     "led": {
       "pin": "D4",
-      "inverse": "true",
+      "invert": "true",
       "description": "Builtin LED on Port D4"
     }
   }

@@ -13,7 +13,7 @@ The action is directed to the digitalout element.
 The current on the GPIO pins flowing into GND can be much higher than the current given by a HIGH level.
 This is one reason why the standard wiring for LEDs is to light the LED on GPIO16(D0) when the output level is low.
 
-Therefore the `inverse` mode is enabled and the initial (logical input) value is set to 0.
+Therefore the `invert` mode is enabled and the initial (logical input) value is set to 0.
 
 ## Configuration
 
@@ -32,7 +32,7 @@ Therefore the `inverse` mode is enabled and the initial (logical input) value is
   "digitalout": {
     "led": {
       "pin": "D4",
-      "inverse": "true",
+      "invert": "true",
       "value": "0",
       "description": "Builtin LED is on Port D0 = GPIO16"
     }

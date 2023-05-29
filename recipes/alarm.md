@@ -30,7 +30,7 @@ This shows how a timer can be used to "forward" the action from a alarm element 
   "digitalout": {
     "led": {
       "pin": "D0",
-      "inverse": "true",
+      "invert": "true",
       "value": "0",
       "description": "Builtin LED is on Port D0 = GPIO16"
     }

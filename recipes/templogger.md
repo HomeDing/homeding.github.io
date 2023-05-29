@@ -65,7 +65,7 @@ min. period and writes out the average of the collected values.
       "restart": "true",
       "resendtime": "2m",
       "powerpin": "D6",
-      "powerinverse": "true",
+      "powerinvert": "true",
       "ontemperature": "log/t?value=$v"
     }
   },

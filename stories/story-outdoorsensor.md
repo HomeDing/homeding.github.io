@@ -353,7 +353,7 @@ In the config.json file the 3 parameters have to be added:
       ...
       "restart": "true",
       "powerpin": "D6",
-      "powerinverse": "true",
+      "powerinvert": "true",
       ...
     }
   }

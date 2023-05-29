@@ -71,7 +71,7 @@ This configuration allows switching the relay using the button and showing the r
   "digitalin": {
     "button": {
       "pin": "D3",
-      "inverse": 1,
+      "invert": 1,
       "pullup": 1,
       "onLow": "switch/relay?toggle=1"
     }
@@ -85,7 +85,7 @@ This configuration allows switching the relay using the button and showing the r
   "digitalout": {
     "relay": {
       "pin": "D6",
-      "inverse": "false"
+      "invert": "false"
     }
   }
 }

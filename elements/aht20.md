@@ -78,7 +78,7 @@ The following properties are available for configuration of the element:
 > **onHumidity** -- These actions are emitted by the element when the humidity gets a new value. 
 > The action will not be sent when reading ne sensor values that stay > the same.
 >
-> **powerinverse** -- This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
+> **powerinvert** -- This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
 
 {% include "./sensorproperties.md" %}
 

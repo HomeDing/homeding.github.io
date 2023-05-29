@@ -69,7 +69,7 @@ This example shows how to configure this element:
     "up": {
       "pin": "D6",
       "description": "up button signal",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onvalue": "button/up?value=$v"
     }

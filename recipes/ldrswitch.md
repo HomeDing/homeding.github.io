@@ -35,7 +35,7 @@ The digital signal from the switch is given to an [Digital Output](/elements/dig
   "digitalout": {
     "led": {
       "pin": "D4",
-      "inverse": "true",
+      "invert": "true",
       "value": "0",
       "description": "Builtin LED on GPIO2(D4)"
     }

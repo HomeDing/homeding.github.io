@@ -184,7 +184,7 @@ The configuration in the **env.json** file setting up all integrated hardware an
       "title": "mute amp",
       "pin": 21,
       "value": 0,
-      "inverse": "true"
+      "invert": "true"
     }
   }
 }

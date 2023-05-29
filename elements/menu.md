@@ -91,7 +91,7 @@ Rotary, digitalin ---> menu
     "0": {
       "description": "select",
       "pin": "D7",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onlow": "menu/0?select=1"
     }

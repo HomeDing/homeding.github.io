@@ -68,7 +68,7 @@ This example shows how to configure this element:
   "digitalout": {
     "led": {
       "pin": "27",
-      "inverse": "1"
+      "invert": "1"
     }
   },
 }

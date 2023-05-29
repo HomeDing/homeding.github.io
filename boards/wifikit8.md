@@ -144,7 +144,7 @@ The onboard button labeled "PRG" pulls D3 down and can be used with a digital in
       "loglevel": 2,
       "pin": "D3",
       "description": "onboard button signal",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onvalue": "device/0?log=D3:$v"
     }

@@ -77,7 +77,7 @@ The switch has the current value modified and send a action to the digital outpu
     "in": {
       "description": "Input momentary button",
       "pin": "D3",
-      "inverse": 1,
+      "invert": 1,
       "pullup": 1,
       "onLow": "switch/light?toggle=1"
     }
@@ -94,7 +94,7 @@ The switch has the current value modified and send a action to the digital outpu
   "digitalout": {
     "led": {
       "pin": "D0",
-      "inverse": "true",
+      "invert": "true",
       "description": "Builtin LED is on Port D0 = GPIO16"
     }
   }
@@ -109,7 +109,7 @@ To use a momentary button at another device the digital input there can use a re
     "in": {
       "description": "Input momentary button",
       "pin": "D3",
-      "inverse": 1,
+      "invert": 1,
       "pullup": 1,
       "onLow": "remote/light?toggle=1"
     }

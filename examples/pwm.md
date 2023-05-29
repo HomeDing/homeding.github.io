@@ -13,12 +13,12 @@ Example dimming a LED using PWM Analog output and buttons.
   "button": {
     "up": {
       "pin": 12,
-      "inverse": "true",
+      "invert": "true",
       "onoff": "value/led?up=16"
     },
     "down": {
       "pin": 13,
-      "inverse": "true",
+      "invert": "true",
       "onoff": "value/led?down=16"
     }
   },
@@ -39,7 +39,7 @@ Example dimming a LED using PWM Analog output and buttons.
       "pin": 16,
       "range": 255,
       "value": 10,
-      "inverse": "true",
+      "invert": "true",
       "description": "Build-in LED"
     }
   }

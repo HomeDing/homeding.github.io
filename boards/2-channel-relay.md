@@ -95,11 +95,11 @@ This is a very simple configuration for **config.json** that enables switching e
   "digitalout": {
     "gpio0": {
       "pin": "0",
-      "inverse": "false"
+      "invert": "false"
     },
     "gpio2": {
       "pin": "2",
-      "inverse": "false"
+      "invert": "false"
     }
   }
 }

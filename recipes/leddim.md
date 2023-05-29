@@ -17,7 +17,7 @@ The increment button must be connected to `D5` and ground. The decrement button 
 Both inputs are configured to use the internal pull up resistors to create a physical HIGH level when the buttons are not pressed.
 By pressing the buttons the physical level ist pulled to ground.
 
-Because this is logically seen as 0 (not pressed) and 1 (pressed) the inverse mode is used.
+Because this is logically seen as 0 (not pressed) and 1 (pressed) the invert mode is used.
 
 The actions are emitted every time the button is pressed (going from 0 to 1).
 
@@ -72,14 +72,14 @@ The `env.json` can be taken from the board description because it has no special
     "up": {
       "loglevel": 2,
       "pin": "D5",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onlow": "value/led?up=10"
     },
     "down": {
       "loglevel": 2,
       "pin": "D6",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onlow": "value/led?down=10"
     }

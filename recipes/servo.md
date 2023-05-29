@@ -19,7 +19,7 @@ As this is passed to the PWMOut element the position of the servo is controlled.
     "in": {
       "onLow": "switch/pos?switch=1",
       "pin": "D5",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
     }
   },

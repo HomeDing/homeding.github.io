@@ -145,28 +145,28 @@ These are the basic element configurations for the joystick button and the 2 onb
     "up": {
       "pin": "D6",
       "description": "up button signal",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onvalue": "button/up?value=$v"
     },
     "down": {
       "pin": "D7",
       "description": "down button signal",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onvalue": "device/0?log=down-input:$v"
     },
     "left": {
       "pin": "D3",
       "description": "left button signal",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onvalue": "device/0?log=left-input:$v"
     },
     "press": {
       "pin": "D5",
       "description": "press button signal",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onvalue": "device/0?log=press-input:$v"
     }
@@ -174,7 +174,7 @@ These are the basic element configurations for the joystick button and the 2 onb
   "digitalout": {
     "led": {
       "pin": "D0",
-      "inverse": "true",
+      "invert": "true",
       "value": "0",
       "description": "Builtin LED is on Port D0 = GPIO16"
     }
@@ -184,7 +184,7 @@ These are the basic element configurations for the joystick button and the 2 onb
       "pin": "D4",
       "range": 255,
       "value": 10,
-      "inverse": "true",
+      "invert": "true",
       "description": "Build-in LED on module"
     }
   },

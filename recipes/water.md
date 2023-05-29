@@ -17,7 +17,7 @@ The central element is a switch that controls a relay on a digital output. There
   "digitalin": {
     "button": {
       "pin": "D7",
-      "inverse": 1,
+      "invert": 1,
       "pullup": 1,
       "onLow": "switch/relay?toggle=1"
     }
@@ -41,11 +41,11 @@ The central element is a switch that controls a relay on a digital output. There
   "digitalout": {
     "relay": {
       "pin": "D8",
-      "inverse": "false"
+      "invert": "false"
     },
     "led": {
       "pin": "D3",
-      "inverse": "true"
+      "invert": "true"
     }
   }
 }

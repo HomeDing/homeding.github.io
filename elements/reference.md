@@ -45,7 +45,7 @@ This example shows how to configure this element:
     "temp": {
       "title": "Heater Control",
       "onreference": "digitalout/heater?value=$v",
-      "inverse": "true",
+      "invert": "true",
       "value": "1"
     }
 ...

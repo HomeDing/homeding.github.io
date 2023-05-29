@@ -99,7 +99,7 @@ The following properties are available for configuration of the element:
 > **powerpin** -- This output pin can be specified to switch the sensor on and off.
 > This output pin can be specified and can be used to re-start the DHT sensor by using the circuit described below.
 >
-> **powerinverse** -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
+> **powerinvert** -This property controls the physical level of the powerpin. When set to true the sensor is enabled by creating a physical LOW level.
 
 {% include "./sensorproperties.md" %}
 

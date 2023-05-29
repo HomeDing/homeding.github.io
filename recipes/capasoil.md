@@ -39,7 +39,7 @@ an onReference action with a value of 0 is triggered that will switch the LED on
     "red": {
       "description": "Led showing low water situation.",
       "pin": "D0",
-      "inverse": "false"
+      "invert": "false"
     }
   }
 }

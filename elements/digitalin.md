@@ -21,7 +21,7 @@ The following properties are available for configuration of the element.
 
 **pin**\* - Specifies the hardware number of the pin.
 
-**inverse** - In normal mode a HIGH input value is reported as value 1. In inverse mode a LOW input value is reported as value 1. Normal mode is default.
+**invert** - In normal mode a HIGH input value is reported as value 1. In invert mode a LOW input value is reported as value 1. Normal mode is default.
 
 **pullup** - When defining with true the internal pullup resistor for the input pin will be activated.
 
@@ -52,7 +52,7 @@ The following properties are available with the current values at runtime
   "digitalin": {
     "start": {
       "pin": "D7",
-      "inverse": "true",
+      "invert": "true",
       "pullup": "true",
       "onHigh": "device/0?log=start.",
       "onLow": " device/0?log=stop.",

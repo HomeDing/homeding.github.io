@@ -1,8 +1,10 @@
 ---
-title: Audio Chips Overview
+title: Audio Elements Overview
 tags: ["Element", "Audio"]
 layout: "page.njk"
-excerpt: These Audio Components are supported by the HomeDing library.
+excerpt:
+  These Audio related components and elements are supported
+  by the HomeDing library.
 ---
 
 Building IoT Devices that have audio capabilities is possible with the HomeDing library.
@@ -11,6 +13,12 @@ Building IoT Devices that have audio capabilities is possible with the HomeDing 
 
 * [rda5807 FM Tuner chip](/elements/audio/rda5807.md)
 
+* [examples/radio](/examples/radio.md)
+
+RDA5807M --  A radio chip from RDA Microelectronics
+SI473xx -- radio chips from Silicon.
+
+
 ## Amplifiers
 
 <!-- 
@@ -18,6 +26,8 @@ The TPA2016Element can control a TPA2016 chip that contains a stereo amplifier f
 
  [tpa2016 Element](/elements/audio/_tpa2016.md)
 
+TPA2016
+* [/elements/_tpa2016.md](/elements/audio/_tpa2016.md) - Control a TPA2016 chip based amplifier
 
 <https://www.sparkfun.com/products/20690>
 
@@ -32,6 +42,12 @@ configured through software via I2C
 class-D 2.8W stereo Amplifier
 
 TPA2005D1
+-->
+
+<!-- 
+## PT2322  5.1 channel analog audio processor
+
+https://www.hackster.io/dilshan-jayakody/5-1-channel-analog-audio-processor-a78559?mc_cid=4d1cf49036&mc_eid=0e4a02bdf3
 -->
 
 

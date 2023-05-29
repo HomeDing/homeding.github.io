@@ -15,13 +15,9 @@ layout: "page.njk"
 | (t.b.d.)       | Detect noise using a microphone                                                              |
 
 
-* [/_backend.md](/_backend.md) -
-* [/_CI-GithubActions.md](/_CI-GithubActions.md) -
-* [/_exampledashbutton.md](/_exampledashbutton.md) -
-* [/_googlehome.md](/_googlehome.md) -
-* [/_iconsforthings.md](/_iconsforthings.md) -
-* [/manifest.md](/dev/manifest.md) -
-* [/_microjson.md](/_microjson.md) -
+* [/_backend.md](/dev/_backend.md) -
+* [/_example/dashbutton.md](/_examples/dashbutton.md) -
+* [/dev/_microjson.md](/dev/_microjson.md) -
 * [/_moisturesonsor.md](/_moisturesonsor.md) -
 * [/_private.md](/_private.md) -
 * [/_reset.md](/_reset.md) -
@@ -34,10 +30,8 @@ layout: "page.njk"
 * [/boards/esp32/_esp32-modules.md](/boards/esp32/_esp32-modules.md) -
 * [/boards/esp32/_g.md](/boards/esp32/_g.md) -
 * [/boards/esp32/_ttgo-lcd.md](/boards/esp32/_ttgo-lcd.md) -
-* [/boards/esp32/_ttgogallery.md](/boards/esp32/_ttgogallery.md) -
 * [/displays/ili9341.md](/elements/displays/ili9341.md) -
 * [/displays/_ssd1331.md](/elements/displays/_ssd1331.md) -
-* [/displays/st7789.md](/elements/displays/st7789.md) -
 * [/elements/_ad5258.md](/elements/_ad5258.md) -
 * [/elements/_ads1115.md](/elements/_ads1115.md) -
 * [/elements/_bme280.md](/elements/_bme280.md) - Sensor for temperature, humidity and absolute barometric pressure.

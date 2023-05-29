@@ -26,7 +26,7 @@ Values are availabe on the topics `diysensor/dht/temperature` and `diysensor/dht
       "readtime": "2m",
       "restart": "true",
       "powerpin": "D6",
-      "powerinverse": "true",
+      "powerinvert": "true",
       "ontemperature": "mqtt/home?temperature=$v",
       "onhumidity": "mqtt/home?humidity=$v"
     }

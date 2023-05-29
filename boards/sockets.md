@@ -69,7 +69,7 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
   "digitalin": {
     "button": {
       "pin": "13",
-      "inverse": 1,
+      "invert": 1,
       "pullup": 1,
       "onLow": "switch/relay?toggle=1"
     }
@@ -94,11 +94,11 @@ The power measurement chip is from type [BL0937](/elements/bl0937.md) that can b
   "digitalout": {
     "relay": {
       "pin": "15",
-      "inverse": "false"
+      "invert": "false"
     },
     "led": {
       "pin": "0",
-      "inverse": "true"
+      "invert": "true"
     }
   },
   "bl0937": {
@@ -141,7 +141,7 @@ Also a HLW8012 is used inside with varying factors for power, current and voltag
   "digitalin": {
     "button": {
       "pin": "0",
-      "inverse": 1,
+      "invert": 1,
       "pullup": 1,
       "onLow": "switch/relay?toggle=1"
     }
@@ -155,11 +155,11 @@ Also a HLW8012 is used inside with varying factors for power, current and voltag
   "digitalout": {
     "relay": {
       "pin": "14",
-      "inverse": "false"
+      "invert": "false"
     },
     "led": {
       "pin": "13",
-      "inverse": "true"
+      "invert": "true"
     }
   },
   "bl0937": {
