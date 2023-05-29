@@ -53,7 +53,7 @@ Each of them send an action for increment or decrement to the value element.</p>
 <p>The increment button must be connected to <code>D5</code> and ground. The decrement button mst be connected to <code>D6</code> and ground.
 Both inputs are configured to use the internal pull up resistors to create a physical HIGH level when the buttons are not pressed.
 By pressing the buttons the physical level ist pulled to ground.</p>
-<p>Because this is logically seen as 0 (not pressed) and 1 (pressed) the inverse mode is used.</p>
+<p>Because this is logically seen as 0 (not pressed) and 1 (pressed) the invert mode is used.</p>
 <p>The actions are emitted every time the button is pressed (going from 0 to 1).</p>
 <p>The <a href="/elements/value.htm">value element</a> specifies the valid range of of 0…255 and gets controlled by the actions from the input element to increment or decrement the value.
 When the maximum level is reached no further increment will be done.</p>
@@ -94,14 +94,14 @@ When the maximum level is reached no further increment will be done.</p>
     <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"onlow"</span><span class="token operator">:</span> <span class="token string">"value/led?up=10"</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token property">"down"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"onlow"</span><span class="token operator">:</span> <span class="token string">"value/led?down=10"</span>
     <span class="token punctuation">}</span>

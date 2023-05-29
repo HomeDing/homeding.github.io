@@ -71,8 +71,8 @@
 <td>Specifies the hardware number of the pin.</td>
 </tr>
 <tr>
-<td><code>inverse</code></td>
-<td>set to ‘true’ for inverse mode. Normal mode is default.</td>
+<td><code>invert</code></td>
+<td>set to ‘true’ for invert mode. Normal mode is default.</td>
 </tr>
 <tr>
 <td><code>value</code></td>
@@ -82,10 +82,10 @@
 </table>
 <p>* This parameter must be specified.</p>
 <p>The physical output level can differ from the logical output value because some external components require am active HIGH and other active LOW signal.</p>
-<p>This can be configured by using the <code>inverse</code> property.
-In normal mode (<code>inverse</code>: “false”) a HIGH output level is created on value 1.
-In <code>inverse</code> mode (<code>inverse</code>: “true”) a LOW output level is created on value 1. Normal mode is default.</p>
-<p>There are some GPIO pins it the ESP8266 that require to be HIGH when booting. Here the inverse mode is recommended for the output signal.</p>
+<p>This can be configured by using the <code>invert</code> property.
+In normal mode (<code>invert</code>: “false”) a HIGH output level is created on value 1.
+In <code>invert</code> mode (<code>invert</code>: “true”) a LOW output level is created on value 1. Normal mode is default.</p>
+<p>There are some GPIO pins it the ESP8266 that require to be HIGH when booting. Here the invert mode is recommended for the output signal.</p>
 <h2>Element Actions</h2>
 <p>The following actions are available to change the output level:</p>
 <table>
@@ -110,14 +110,14 @@ In <code>inverse</code> mode (<code>inverse</code>: “true”) a LOW output lev
 </tr>
 </tbody>
 </table>
-<p>The physical output depends on <code>inverse</code>.</p>
+<p>The physical output depends on <code>invert</code>.</p>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span>
     <span class="token punctuation">}</span>

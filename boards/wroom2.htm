@@ -229,28 +229,28 @@ When pressing the joystick while the LED is blinking the device switches to conf
     <span class="token property">"up"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"up button signal"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"button/up?value=$v"</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token property">"down"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"down button signal"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=down-input:$v"</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token property">"left"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"left button signal"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=left-input:$v"</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token property">"press"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"press button signal"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=press-input:$v"</span>
     <span class="token punctuation">}</span>
@@ -258,7 +258,7 @@ When pressing the joystick while the LED is blinking the device switches to conf
   <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span>
     <span class="token punctuation">}</span>
@@ -268,7 +268,7 @@ When pressing the joystick while the LED is blinking the device switches to conf
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
       <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
       <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build-in LED on module"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>

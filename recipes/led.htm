@@ -57,7 +57,7 @@ with a button and a LED.</p>
 <li>The <a href="/elements/digitalout.htm">digital output element</a> controls the voltage level of the output pin with the LED.</li>
 </ul>
 <p><img src="/recipes/ledflow.png" alt="Elements used in led recipe"></p>
-<p>The <a href="/elements/digitalin.htm">digital input elements</a> transfers the physical signal (LOW when the button in pressed) to a logical level (1 when the button is pressed) using the “inverse” property with 1.
+<p>The <a href="/elements/digitalin.htm">digital input elements</a> transfers the physical signal (LOW when the button in pressed) to a logical level (1 when the button is pressed) using the “invert” property with 1.
 The internal pullup is enabled to keep the input on HIGH when no button is pressed. On nodemcu boards there is also an external resistor doing this but on other pins this is required.</p>
 <p>When the input signal goes low an action is sent to the switch for toggling.</p>
 <p>The <a href="/elements/switch.htm">switch element</a> exactly was built to get the wanted on/off toggling.
@@ -98,7 +98,7 @@ The onValue action will be send every time the output value is changing and the 
     <span class="token property">"in"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Input momentary button"</span><span class="token punctuation">,</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
       <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"switch/light?toggle=1"</span>
     <span class="token punctuation">}</span>
@@ -115,7 +115,7 @@ The onValue action will be send every time the output value is changing and the 
   <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
-      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED on Port D4"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
