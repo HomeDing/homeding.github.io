@@ -15,6 +15,7 @@ excerpt: >
 * [Audio Elements](/elements/audio/index.md)
 * [Displays](/elements/display/index.md)
 
+There is a [Element Sheet](/elements/sheet.md) availabe as table data.
 
 The following element implementations are available in the current version of the HomeDing library.
 
