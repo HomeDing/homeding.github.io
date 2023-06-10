@@ -21,37 +21,46 @@ Some boards like the [Wifi Kit 8](/boards/wifikit8.md), the [Wemos OLED](/boards
 or the [TTGO T-Display ESP32 board](/boards/esp32/ttgo-t-display.md)
 already come with an onboard and you can find configuration hints in the boards descriptions.
 
-## Supported
+## Supported Display Chips
 
- >Displays Overview
+The following displays can show multiple values using DisplayText and DiplayDot Elements.
+When the display supports pixel level control also DisplayLine Element can be used.
 
-| Driver Chip             | Technology | Dimensions                  | Remarks                 |
-| ----------------------- | ---------- | --------------------------- | ----------------------- |
-| **Simple displays**     |            |                             |                         |
-| [Liquid Chrystal]       | LCD        | 8/16/20 chars in 2/4 lines  | character based display |
-| [MAX7219]               | LED        | 8\*8 LED matrix modules     |                         |
-| [MAX7219]               | LED        | 8\*7 segment LEDs           |                         |
-| [TM1637]                | LED        | up to 6 7-segment LEDs      |                         |
-| **Monochrome displays** |            |                             |                         |
-| [SH1106]                | OLED       | 128\*32, 128\*64            |                         |
-| [SSD1306]               | OLED       | 128\*32, 128\*64            |                         |
-| [SSD1309]               | OLED       | compatible with SSD1306     |                         |
-| [DisplayMAX7219]        | LED        | Multiple LED matrix modules |                         |
-| **Color displays**      |            |                             |                         |
-| [ST7789]                | TFT LCD    | up to 320\*240              | 16-bit color (262k)     |
-| [ST7735]                | TFT LCD    | up to 132\*160              | 16-bit color (262k)     |
+| Driver Chip       | Technology | Dimensions                 | Remarks         |
+| ----------------- | ---------- | -------------------------- | --------------- |
+| **Text displays** |            |                            |                 |
+| [Liquid Chrystal] | LCD        | 8/16/20 chars in 2/4 lines | character based |
+| **Monochrome**    |            |                            |                 |
+| [SH1106]          | OLED       | 128\*32, 128\*64           |                 |
+| [SSD1306]         | OLED       | 128\*32, 128\*64           |                 |
+| [SSD1309]         | OLED       | compatible with SSD1306    |                 |
+| [DisplayMAX7219]  | LED        | Chained LED matrix modules |                 |
+| **Color**         |            |                            |                 |
+| [ST7789]          | TFT LCD    | up to 320\*240             | 16-bit color    |
+| [ST7796]          | TFT LCD    | 320\*480                   | 16-bit color    | *2 |
+| [ST7735]          | TFT LCD    | up to 132\*160             | 16-bit color    | *2 | [b1](../../boards/esp32/lilygo-t-dongle-s3.md) |
+| ST7262            |            |                            |                 |    | [b0](../../boards/esp32/_panel-big.md)         |
+
+The DisplayButton Element can be used when a touch control is available within the display
+to allow click based activities.
 
 <!--
--->
-
 | Driver Chip | Technology | Dimensions                      | Remarks |
 | ----------- | ---------- | ------------------------------- | ------- |
 | [TM1638]    | LED        | up to 8 7-segment LEDs and keys |         |
 | [SSD1331]   | OLED Color | 96 \* 64                        |         |
+-->
 
 ## Simple displays
 
 The simple displays use LEDs or 7-segment LEDs to show a value:
+
+
+| Driver Chip | Technology | Dimensions              | Remarks |
+| ----------- | ---------- | ----------------------- | ------- |
+| [MAX7219]   | LED        | 8\*7 segment LEDs       |         |
+| [TM1637]    | LED        | up to 6 7-segment LEDs  |         |
+| [MAX7219]   | LED        | 8\*8 LED matrix modules |         |
 
 ::: sensor lcd
 The [Liquid Chrystal] displays based on the HD44780 chip are common in the Arduino framework.
@@ -181,7 +190,6 @@ On startup, when a display is configured, some system information is displayed b
 [max7219]: /elements/max7219.md
 [displayMax7219]: /displays/max7219.md
 [tm1637]: /elements/tm1637.md
-[tm1638]: /elements/_tm1638.md
 [sh1106]: /elements/display/sh1106.md
 [ssd1306]: /elements/display/ssd1306.md
 [ssd1309]: /elements/display/ssd1309.md

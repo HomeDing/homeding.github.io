@@ -31,6 +31,35 @@ The built-in display based on the ST7735 chip has a 80 * 160 resolution and is u
 | Reset    | GPIO1     |
 | LED      | GPIO38    |
 
+As this display is using the available resolution of the ST7735 (132 x 162) only partally a
+column offset of 26 and a row offset of 1 must be configured.
+
+This display is supported by the Arduino_GFX library mentioned as "096-ips-lcd-80x160".
+
+The complete configuration of the DisplayST7735 Element can be found below.
+
+  "DisplayST7735": {
+    "0": {
+      "description": "Display",
+      "loglevel": 2,
+      "width": "80",
+      "height": "160",
+      "rotation": 270,
+      "invert": "true",
+      "background": "x008000",
+      "spiClk": 5,
+      "spiMosi": 3,
+      "spiDC": 2,
+      "spiCS": 4,
+      "colOffset": 26,
+      "rowOffset": 1,
+      "resetpin": 1
+    }
+  },
+
+
+ * see https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160
+
 
 ### SD Card
 
@@ -116,6 +145,8 @@ The following `env.json` configuration can be used for this board and contains s
 * A value and pwm output to control the display brightness
 * The digital input signal definition for the button on the back.
 
+<!-- <http://dongle-s3/env.json> -->
+
 
 ``` json
 {
@@ -125,7 +156,6 @@ The following `env.json` configuration can be used for this board and contains s
       "description": "ESP32-S3 based USB stick.",
       "title": "T-Dongle-S3",
       "loglevel": 2,
-      "x-button": "0",
       "led": "38"
     }
   },
@@ -136,43 +166,24 @@ The following `env.json` configuration can be used for this board and contains s
       "width": "80",
       "height": "160",
       "rotation": 270,
-      "invert": "true",
-      "background": "black",
+      "colOffset": 26,
+      "rowOffset": 1,
+
+      "busmode": "spi",
       "spiClk": 5,
       "spiMosi": 3,
       "spiDC": 2,
       "spiCS": 4,
-      "resetpin": 1
+      "resetpin": 1,
+
+      "background": "x001020"
     }
   },
   "digitalin": {
     "pin": {
       "pin": "0",
-      "invert": "1",
+      "inverse": "1",
       "pullup": 1
-    }
-  },
-  "color": {
-    "l": {
-      "title": "Color Control",
-      "config": "RGB",
-      "mode": "fix",
-      "loglevel": 2,
-      "duration": "4s",
-      "value": "xFF0000",
-      "brightness": "20",
-      "connect": [
-        "apa102/led"
-      ]
-    }
-  },
-  "value": {
-    "displayled": {
-      "title": "Display Brightness",
-      "min": "0",
-      "max": "255",
-      "value": "128",
-      "onvalue": "pwmout/displayled?value=$v"
     }
   },
   "pwmout": {
@@ -181,11 +192,8 @@ The following `env.json` configuration can be used for this board and contains s
       "description": "Backlight LED dimming",
       "pin": "38",
       "range": "255",
-      "invert": "1"
+      "inverse": "1"
     }
-  },
-  "diag": {
-    "0": {}
   },
   "apa102": {
     "led": {
