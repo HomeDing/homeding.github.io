@@ -95,6 +95,31 @@
 </tr>
 </tbody>
 </table>
+<p>As this display is using the available resolution of the ST7735 (132 x 162) only partally a
+column offset of 26 and a row offset of 1 must be configured.</p>
+<p>This display is supported by the Arduino_GFX library mentioned as “096-ips-lcd-80x160”.</p>
+<p>The complete configuration of the DisplayST7735 Element can be found below.</p>
+<p>“DisplayST7735”: {
+“0”: {
+“description”: “Display”,
+“loglevel”: 2,
+“width”: “80”,
+“height”: “160”,
+“rotation”: 270,
+“invert”: “true”,
+“background”: “x008000”,
+“spiClk”: 5,
+“spiMosi”: 3,
+“spiDC”: 2,
+“spiCS”: 4,
+“colOffset”: 26,
+“rowOffset”: 1,
+“resetpin”: 1
+}
+},</p>
+<ul>
+<li>see <a href="https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160">https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160</a></li>
+</ul>
 <h3>SD Card</h3>
 <p><img src="lilygo-t-dongle-s3-sd.jpg" alt="SD-Card slot the dongle"></p>
 <p>The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
@@ -208,6 +233,7 @@ Flash:
 <li>A value and pwm output to control the display brightness</li>
 <li>The digital input signal definition for the button on the back.</li>
 </ul>
+<!-- <http://dongle-s3/env.json> -->
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -215,7 +241,6 @@ Flash:
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-S3 based USB stick."</span><span class="token punctuation">,</span>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"T-Dongle-S3"</span><span class="token punctuation">,</span>
       <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-      <span class="token property">"x-button"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
       <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"38"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -226,43 +251,24 @@ Flash:
       <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"80"</span><span class="token punctuation">,</span>
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"160"</span><span class="token punctuation">,</span>
       <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">270</span><span class="token punctuation">,</span>
-      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
-      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+      <span class="token property">"colOffset"</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
+      <span class="token property">"rowOffset"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+
+      <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"spi"</span><span class="token punctuation">,</span>
       <span class="token property">"spiClk"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
       <span class="token property">"spiMosi"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
       <span class="token property">"spiDC"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">1</span>
+      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"x001020"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
-      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"color"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Color Control"</span><span class="token punctuation">,</span>
-      <span class="token property">"config"</span><span class="token operator">:</span> <span class="token string">"RGB"</span><span class="token punctuation">,</span>
-      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"fix"</span><span class="token punctuation">,</span>
-      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"xFF0000"</span><span class="token punctuation">,</span>
-      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"20"</span><span class="token punctuation">,</span>
-      <span class="token property">"connect"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token string">"apa102/led"</span>
-      <span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Brightness"</span><span class="token punctuation">,</span>
-      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
-      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"128"</span><span class="token punctuation">,</span>
-      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"pwmout/displayled?value=$v"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -271,11 +277,8 @@ Flash:
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight LED dimming"</span><span class="token punctuation">,</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"38"</span><span class="token punctuation">,</span>
       <span class="token property">"range"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span>
-      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+      <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span>
     <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"apa102"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
