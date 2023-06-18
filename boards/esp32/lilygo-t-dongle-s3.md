@@ -38,7 +38,7 @@ This display is supported by the Arduino_GFX library mentioned as "096-ips-lcd-8
 
 The complete configuration of the DisplayST7735 Element can be found below.
 
- * see https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160
+See also <https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160>
 
 
 ### SD Card

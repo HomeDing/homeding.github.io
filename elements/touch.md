@@ -34,7 +34,6 @@ lower numbers are created when the capacity is higher caused by the finger nearb
 A reference value can be set to create the binary value that is HIGH(1) when touched and LOW(0) otherwise.
 
 
-
 ## Element Configuration
 
 <object data="/element.svg?touch" type="image/svg+xml"></object>
