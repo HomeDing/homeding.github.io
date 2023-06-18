@@ -26,7 +26,7 @@ layout: "page.njk"
 The weather of today is a fact, just look outside or use some sensors.
 The weather of tomorrow is relevant for planning.
 
-This is about a device that shows the weather forecast on a display and also allows automation of other devices based on weather forecast information. 
+This is about a device that shows the weather forecast on a display and also allows automation of other devices based on weather forecast information.
 
 ![Weather display](/stories/weatherdisp1.jpg)
 
@@ -35,7 +35,7 @@ This solution here uses a ESP8266 board and a OLED display. This Material that y
 The software is based on the HomeDing library for IoT devices and the OpenWeather forecast service.
 The library also supports looking into the display of the device remotely using a web browser.
 
-The ESP8266 board used here is a combination of a ESP8266 with 4 MByte Flash ram and a 128*32 pixel display. 
+The ESP8266 board used here is a combination of a ESP8266 with 4 MByte Flash ram and a 128*32 pixel display.
 
 * The actual temperature and humidity is taken from a DHT22 sensor attached to the device.
 * The forecast information is coming from the OpenWeather service. The free version (only registration) is sufficient.
@@ -55,7 +55,6 @@ The Homeding library provides a web version when opening the http://<devicename>
 ![Weather board screenshot](/stories/weatherboard.png)
 
 
-
 ## Supplies
 
 The hardware parts you need to build this project and used in this story are:
@@ -67,6 +66,7 @@ The hardware parts you need to build this project and used in this story are:
 ![Weather display](/stories/weatherdisp2.jpg)
 
 There are boards available that already have both combined like
+
 * **[Wifi Kit 8 Module ESP8266 with OLED](https://homeding.github.io/#page=/boards/wifikit8.md)
 * **[ESP8266 with OLED and 18650](https://homeding.github.io/#page=/boards/wroom2.md)
 * **[ESP8266 with OLED](https://homeding.github.io/#page=/boards/wemosoled.md)
@@ -78,7 +78,7 @@ The system configuration for these boards can be found on these pages. Here a no
 
 1. To install latest version of Arduino IDE (currently version 1.8.12) please visit <https://www.arduino.cc/>.
 
-2. Download the Arduino IDE for your operating system from the `Software -> Download` menu. 
+2. Download the Arduino IDE for your operating system from the `Software -> Download` menu.
 
 3. Install the Arduino software and all drivers.
   
@@ -90,8 +90,8 @@ The system configuration for these boards can be found on these pages. Here a no
 6. Open the menu Boards Manager in the Arduino IDE from the Tools -> Board menu
     and find entry **esp8266 by ESP8266 Community** and install the latest version.
 
-7. Use the Board Manager to install the ESP8266 support. 
-   
+7. Use the Board Manager to install the ESP8266 support.
+
    A detailed instruction can be found here: <https://arduino-esp8266.readthedocs.io/en/latest/installing.html#boards-manager>
 
 8. Setup the board options for a NodeMCU 1.0 with 1MByte reserved memory for the File System
@@ -105,7 +105,7 @@ Now you are ready to build Arduino projects, edit sketches and upload them to th
 
 Open the Library Manager in Arduino Environment and search for the HomeDing library and install it.
 
-The HomeDing library relies on some common extra libraries for sensors and displays to work. These libraries will be installed automatically as dependencies. 
+The HomeDing library relies on some common extra libraries for sensors and displays to work. These libraries will be installed automatically as dependencies.
 
 ![Install libraries](/stories/arduino-libraryinstall.png)
 
@@ -143,11 +143,11 @@ Now everything regarding implementation of the sketch is done and the firmware c
 
 ## Web based Upload of the web UI Files
 
-The standard example comes with a `data` folder that contains all file for the web UI. These files are also available in the HomeDing documentation web site and can be transferred by opening the page `/$boot.htm`. Use http://\<devicename\>/$boot.htm and use the devicename or ip address of your board. 
+The standard example comes with a `data` folder that contains all file for the web UI. These files are also available in the HomeDing documentation web site and can be transferred by opening the page `/$boot.htm`. Use http://\<devicename\>/$boot.htm and use the devicename or ip address of your board.
 
 ??? devicename example of a fresh device.
 
-The press `start` and you see the UI files transferred from the web site to the device. 
+The press `start` and you see the UI files transferred from the web site to the device.
 
 This method is useful when starting with a new board or to update to a new version of the UI files.
 
@@ -196,7 +196,7 @@ The device hardware specific configuration of the board and the display should b
 
 ## Create the configuration for a weather display
 
-The display is used to show some values from the forecast so we need to configure the service parameters, some text output and where to find the information to be displayed in the result from the service. 
+The display is used to show some values from the forecast so we need to configure the service parameters, some text output and where to find the information to be displayed in the result from the service.
 
 The following configuration can be used:
 
@@ -295,9 +295,6 @@ The values themselves will be "pushed" by the the `weatherfeed` element to the d
 The `displayText` elements are used to display the information given by the actions from the `weatherfeed` element.
 
 
-
-
-
 ## Links and references
 
 * HomeDing Source Code Repository: <https://github.com/HomeDing/HomeDing>
@@ -315,10 +312,4 @@ DisplayText
 
 
 [Standard Example]: https://homeding.github.io/#page=/examples/standard.md
-[DHT Element]: https://homeding.github.io/#page=/elements/dht.md
 [WeatherFeed Element]: <https://homeding.github.io/#page=/elements/WeatherFeed.md>
-
-[BME680 Element]: https://homeding.github.io/#page=/elements/bme680.md
-[PMS Element]: https://homeding.github.io/#page=/elements/pms.md
-[Log element]: https://homeding.github.io/#page=/elements/log.md
-[NPTTime Element]: https://homeding.github.io/#page=/elements/ntptime.md

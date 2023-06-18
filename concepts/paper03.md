@@ -13,7 +13,7 @@ description: Insights into the design of an IoT device,
 
 The power, flexibility and the extensibility of the HomeDing library comes from 2 main design decisions:
 
-* the unified and standardized implementation of the Elements and 
+* the unified and standardized implementation of the Elements and
 * the way Elements can interact locally and over the network by using messages.
 
 These were influenced by the [W3C Web of Things] standardization, the well-known Actor Interaction Model concepts and the REST full addressing.
@@ -27,8 +27,8 @@ The “Actors” and “Messages” in this computation model is similar to the 
 
 Some good readings about this general interaction model can be found at
 
-* https://en.wikipedia.org/wiki/Actor_model
-* http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor
+* <https://en.wikipedia.org/wiki/Actor_model>
+* <http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor>
 
 
 ## Elements
@@ -135,7 +135,7 @@ When new sensor values are found the Element will send out a configurable action
 Displays, Logging and also elements on remote devices are connected this way.
 
 
-## Consuming internet based services 
+## Consuming internet based services
 
 There are services on the internet that offer interesting data or services that can be consumed by calling the external website. These services sometimes require a registration to get an access key but still are called without using an inbound communication and open incoming boards.
 
@@ -143,7 +143,7 @@ In contrast to actions where changes are dispatched using actions to the receivi
 
 The `HttpClientElement` takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific  url.
 
-Implementing a specific service can now be done using this base class like implementing the `WeatherFeedElement` that can retrieve weather from openweathermap.org. 
+Implementing a specific service can now be done using this base class like implementing the `WeatherFeedElement` that can retrieve weather from openweathermap.org.
 
 
 ## The Life Cycle of the Board and Elements
@@ -153,7 +153,7 @@ The implementation of the Board class is the part of the HomeDing Library that o
 ### Initialization Phase
 
 * Start the board and make unique facilitating classes like the file service
-  and the web server available by initializing them. 
+  and the web server available by initializing them.
 
 * Parse the env.json file.
 
@@ -207,7 +207,7 @@ Other Elements require a specific library. These Elements must be activated in t
 Examples are [DHT Element](/elements/dht.md), [RFCodes Element](/elements/rfcodes.md) or [DCFTime Element](/elements/dcftime.md).
 
 As the ESP8266 chips offer a lot of program memory this approach works fine when boards have a 4MByte Flash memory.
-The [Standard Example](/examples/standard.md) includes the most common elements of the library and can be used to flash many boards and hardware setups. 
+The [Standard Example](/examples/standard.md) includes the most common elements of the library and can be used to flash many boards and hardware setups.
 
 For compiling to different memory setups, like the ESP-01 board it is possible to compile with a reduced set of elements so to make the program fit into memory.
 See example [minimal footprint example](/examples/minimal.md).

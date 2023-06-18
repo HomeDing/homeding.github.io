@@ -16,7 +16,7 @@ Devices that are available must be found before they can be used.
 
 ## Use a device without discovery
 
-As a simple mechanism the device name that is defined in the device configuration in env.json can be used to create a shortcut like http://homeding/ in the browser favorites or on the desktop.
+As a simple mechanism the device name that is defined in the device configuration in env.json can be used to create a shortcut like <http://homeding/> in the browser favorites or on the desktop.
 
 When there is no device configuration with a devicename the device will create a temporary name and report it together with the temporary ip address in the serial output.
 
@@ -27,9 +27,9 @@ The Arduino environment includes a mechanism based on the mDNS protocol to detec
 
 Here you find all devices including the HomeDing based devices that have a ota configuration.
 
-Hint: HomeDing based devices that have no configuration also run a OTA Element and can be discovered. 
+Hint: HomeDing based devices that have no configuration also run a OTA Element and can be discovered.
 
-Now you have the device name and the URL to the device you can use the built-in UI pages like http://ESP-xxxxxx/$upload.htm to start uploading the web files and create a valid configuration.
+Now you have the device name and the URL to the device you can use the built-in UI pages like <http://ESP-xxxxxx/$upload.htm> to start uploading the web files and create a valid configuration.
 
 The Arduino IDE detects devices that publish an _arduino._tcp service using the mDNS protocol.
 
@@ -80,4 +80,4 @@ There are some applications available that can show what services are announced 
 
 ## See also
 
-*  multicast DNS (mDNS) protocol <https://en.wikipedia.org/wiki/Multicast_DNS>
+* multicast DNS (mDNS) protocol <https://en.wikipedia.org/wiki/Multicast_DNS>

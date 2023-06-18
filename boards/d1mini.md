@@ -105,7 +105,6 @@ using a ESP32  MCU and 4 MByte flash memory chip.
 There are several shields available for these boards.
 
 
-
 ## Shields
 
 There are some shields for the board forma factor available. Here some examples:

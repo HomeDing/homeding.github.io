@@ -1,4 +1,5 @@
 ---
+title: Table Of Content
 layout: toc.njk
 ---
 ### [The HomeDing Library](/index.md)
@@ -65,5 +66,3 @@ layout: toc.njk
 
 <!-- ### Examples
 * [examples/setup](/examples/setup.md) -->
-
-

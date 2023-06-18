@@ -20,7 +20,7 @@ The numbers in the processor datasheet are used.
 
 TODO:
 
-* [ ] Wakeup / low power consumption in board.cpp 
+* [ ] Wakeup / low power consumption in board.cpp
 * [ ] reset / restart in board.cpp
 * [ ] RTCVariables
 * [ ] PMSElement
@@ -28,8 +28,6 @@ TODO:
   * <https://www.thomascountz.com/2021/02/21/arduino-tone-for-esp32>
   * <https://github.com/Dlloydev/ESP32-ESP32S2-AnalogWrite>
   * <https://www.pschatzmann.ch/home/2021/01/07/esp32-tone/>
-
-
 
 
 ## See also
@@ -78,7 +76,6 @@ adding a 10µF capacitor to EN and GND may help.
 ![ESP32 on breadboard with EN capacitor]
 
 See also <https://electronics.stackexchange.com/questions/569788/how-esp32-auto-upload-issue-has-been-fixed-by-adding-capacitor>
-
 
 
 ## Projects

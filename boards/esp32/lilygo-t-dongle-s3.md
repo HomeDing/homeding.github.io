@@ -38,26 +38,6 @@ This display is supported by the Arduino_GFX library mentioned as "096-ips-lcd-8
 
 The complete configuration of the DisplayST7735 Element can be found below.
 
-  "DisplayST7735": {
-    "0": {
-      "description": "Display",
-      "loglevel": 2,
-      "width": "80",
-      "height": "160",
-      "rotation": 270,
-      "invert": "true",
-      "background": "x008000",
-      "spiClk": 5,
-      "spiMosi": 3,
-      "spiDC": 2,
-      "spiCS": 4,
-      "colOffset": 26,
-      "rowOffset": 1,
-      "resetpin": 1
-    }
-  },
-
-
  * see https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160
 
 

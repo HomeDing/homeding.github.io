@@ -12,11 +12,11 @@ excerpt: >
 
 The conceptional goals are
 
-- IoT devices can be used standalone
-- Easy to be used
-- Using the Arduino Environment for development
-- Full control just by using a web browser
-- Options may include networking and cloud features
+* IoT devices can be used standalone
+* Easy to be used
+* Using the Arduino Environment for development
+* Full control just by using a web browser
+* Options may include networking and cloud features
 
 The solution should be usable by everyone from pupils to professionals by
 offering multiple entry points for using the library and examples.

@@ -12,7 +12,7 @@ description: Insights into the design of an IoT device,
 5. [Device Discovery](/concepts/paper05.md)
 
 
-## Overview 
+## Overview
 
 Building things without the need to use a cloud solution is possible because every device can be directly reached using a standard browser.
 A small web server in every devices enables
@@ -48,7 +48,7 @@ Included functionality:
 * Web based IDE to list and edit files.
 * Current system log information
 * Network setup dialog
-* A graphical overview of the defined actions between elements 
+* A graphical overview of the defined actions between elements
 
 See also
 [Embedded Web Site for HomeDing Devices](/dev/website.md).

@@ -39,17 +39,17 @@ The whole solution fits into a 4GByte Flash memory available on a cheap ESP8266 
 
 To make building your own network connected things real easy the following design was chosen:
 
-- Things implemented using the Homeding library are designed to be used in a home network.
-- No central hub system or internet registration is required to run these devices.
-- Things are self-contained and need no support or connectivity to a cloud solution. Using cloud services is a option only.
-- Every Thing directly supports WLAN for the home network access.
-- It is using the simple protocol REST over http that can directly be used by every browser.
-- For many simple solutions it is possible to start without actively programming, just configure the functionality.
-- Open Source.
-- It is easy to extend the functionality by writing a new element implementation. Examples and documentation are available.
-- Optimized for a small footprint not for maximal performance.
-- Build by using the Arduino programming environment and experience.
-- It is easy to build your own functionality wrapped into an Element implementation and contribute new Elements to the library.
+* Things implemented using the Homeding library are designed to be used in a home network.
+* No central hub system or internet registration is required to run these devices.
+* Things are self-contained and need no support or connectivity to a cloud solution. Using cloud services is a option only.
+* Every Thing directly supports WLAN for the home network access.
+* It is using the simple protocol REST over http that can directly be used by every browser.
+* For many simple solutions it is possible to start without actively programming, just configure the functionality.
+* Open Source.
+* It is easy to extend the functionality by writing a new element implementation. Examples and documentation are available.
+* Optimized for a small footprint not for maximal performance.
+* Build by using the Arduino programming environment and experience.
+* It is easy to build your own functionality wrapped into an Element implementation and contribute new Elements to the library.
 
 The HomeDing library is be documented to make it easy for beginners to understand the basics of the various technologies used.
 For advanced programmers the documentation helps to understand the architecture and how to contribute to the community around it.

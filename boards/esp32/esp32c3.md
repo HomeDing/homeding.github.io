@@ -83,6 +83,13 @@ This results in faster secure (https) network requests.
 {{ imgCard(collections.all, item = '/boards/esp32/esp32c3-micro') }}
 
 
+## TODO: ESP01-C3
+
+
+* DIO
+* 4MByte
+* Pin 3 - led
+
 ## Log info from the [DIAG Element](/elements/diag.md)
 
 ``` txt

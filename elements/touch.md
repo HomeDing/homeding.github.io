@@ -3,20 +3,23 @@ title: Touch Element
 tags: ["Element", "Input"]
 layout: "page.njk"
 excerpt: >
-  The TouchElement enables creating Actions by using touch input on the ESP32.
+  The TouchElement enables creating Actions by using touch input feature of
+  the ESP32 than detects changes in the capacity e.g. when a finger is nearby. 
 ---
 
-The touch functionality of the ESP32 is based on meassuring
-the capacity resistance on a free floating pad that changes when e.g. a finger
-gets nearby. This allows really cheap input implementations.
+This is a hardware supported detection available on some GPIO without further hardware requirements.
+This allows really cheap input implementations using a 1cm² pad under a isolation foil.
+
+The GPIO contact must not be touched directly.
 
 The touch functionality is not available on ESP8266 processor so this element will not be part of a ESP8266 firmware.
 
-When using an ESP8266 or other processors there are sensor boards using special chips or transistors to create a binary signal from a touch gesture.
-For these solutions a simple [DigitalInput Element] can be used as input element.
+When using an ESP8266 or other processors there are sensor boards using special chips or
+transistors to create a binary signal from a touch gesture. For these solutions a simple
+[DigitalInput Element] can be used as input element.
 
-There are also touch sensors implementations available that use 2 pins to probe for the capacity resistance using a ADC.
-But there is only one ADC input in the ESP8266 processors available.
+There are also touch sensors implementations available that use 2 pins to probe for the capacity
+resistance using a ADC. But there is only one ADC input in the ESP8266 processors available.
 
 
 ## Connecting a Touch Sensor
@@ -100,6 +103,7 @@ The state of the TouchElement Element available at runtime includes the current 
 
 * <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/touch_pad.html>
 * <https://randomnerdtutorials.com/esp32-touch-pins-arduino-ide/>
-
+* [DigitalInput Element]
+* [DisplayTouch Element](/elements/display/touch.md) for Display with touch detection.
 
 [DigitalInput Element]: /elements/digitalin.md

@@ -15,7 +15,7 @@ These are the functional blocks of a device based on the HomeDing library:
 
 ![Internal software architecture blocks](/concepts/architectureblocks.png "w600")
 
-The library provides a web server 
+The library provides a web server
 as the **door** to the network that enables to use the UI from the files on the filesystem and by providing REST based services to interact with the device.
 
 The firmware contains a collection of elements that deliver a specific functionality like probing a sensor or controlling a digital output pin. They can be
@@ -54,7 +54,7 @@ Because the processors today include the WLAN networking capabilities directly t
 For simple solutions this also adds too much overhead and complexity to have a smart easy start building your own things.
 
 
-## Elements 
+## Elements
 
 The Elements are the implementation blocks for the adaption of specific sensors, actors, other IO attached modules and for more time and logic modules. They are created and initialized on demand by the board when reading the configuration files.
 
@@ -76,12 +76,12 @@ Be aware that the number of configured elements is also a limiting factor becaus
 The configuration of the HomeDing device is using in 2 files:
 
 * The system, hardware related features and the network configuration is defined in the `env.json` file. This file contains the configuration of the system level elements and hardware related elements like
-    * [Device Element](/elements/device.md)
-    * [OTA Element](/elements/ota.md)
-    * [SSDP Element](/elements/ssdp.md)
-    * [Display Elements](/elements/display/index.md)
+  * [Device Element](/elements/device.md)
+  * [OTA Element](/elements/ota.md)
+  * [SSDP Element](/elements/ssdp.md)
+  * [Display Elements](/elements/display/index.md)
 
-  There is no real need to change this file frequently and it stays the same for a specific board. In the documentation about the boards I know you can find samples for typical env.json files. 
+  There is no real need to change this file frequently and it stays the same for a specific board. In the documentation about the boards I know you can find samples for typical env.json files.
 
 * The configuration of other elements is  placed in the `config.json` file. This file can be updated to change the behavior of the device.
 

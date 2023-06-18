@@ -17,7 +17,6 @@ The W3C consortium that is standardizing many web technologies has published pap
 The interaction model described by this standard is covering the way how the devices and the Elements in HomeDing based devices interact using actions.
 
 
-
 <!--
 To enable the standard interfaces in the HomeDing library the
 [WoT Element](/elements/wot.md) needs to be configured.
@@ -29,8 +28,7 @@ the following changes are implemented starting with version ??? :
 
 -->
 
-- The term "Action" and "Event" in the documentation and in the implementation is used exactly as described and used in the standard.
-
+* The term "Action" and "Event" in the documentation and in the implementation is used exactly as described and used in the standard.
 
 
 ## See also

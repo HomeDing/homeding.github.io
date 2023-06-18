@@ -7,7 +7,7 @@ excerpt: >
   This is a step by step instruction to bring a device based on the HomeDing library to work.
 ---
 
-- [Get a (brand new) EPS8266 board.](#get-a-brand-new-eps8266-board)
+- [Get a (brand new) EPS8266 board](#get-a-brand-new-eps8266-board)
 - [Upload the appropriate sketch](#upload-the-appropriate-sketch)
 - [Register the device on the local WiFi network](#register-the-device-on-the-local-wifi-network)
 - [Find the new device on the network](#find-the-new-device-on-the-network)
@@ -20,7 +20,7 @@ excerpt: >
 - [Choose an icon](#choose-an-icon)
 - [See also](#see-also)
 
-## Get a (brand new) EPS8266 board.
+## Get a (brand new) EPS8266 board
 
 The following steps assume a board of this kind but different boards will not work very different.
 
@@ -34,15 +34,15 @@ See also [Boards supported by the HomeDing library](/boards/index.md)
 For a NodeMCU board having a ESP8266 chip and 4 MByte of Flash ROM the best sketch to start is the
 [Standard Example](/examples/standard.md) that includes a lot of element types and board features.
 
-- Select the "NodeMCU 1.0 (ESP12-E Module)" board in the Arduino Board Manager
+* Select the "NodeMCU 1.0 (ESP12-E Module)" board in the Arduino Board Manager
   and use a memory layout that leaves 2 MByte for the file system by selecting
   "4M (FS:2M OTA:~1019kB)" in the "Flash Size" option.
 
-- You probably will have some benefits from the debug output on the Serial port at this point
+* You probably will have some benefits from the debug output on the Serial port at this point
   and therefore should activate "Serial" in the "Debug Port" option
   and "None" in the "Debug Level" option.
 
-- Select the right COM port and upload the sketch. It should only take about a minute
+* Select the right COM port and upload the sketch. It should only take about a minute
   and then reboot the board.
 
 ## Register the device on the local WiFi network
@@ -56,21 +56,21 @@ There is a "hard way" to configure your local WiFi network name and passphrase i
 
 Using the built-in WiFi Manager is the preferred method for connecting to a network and avoids hard-coding network credentials and re-programming your devices when your network changes .
 
-- Connect any laptop or mobile phone to the unsecured WiFi network called "HomeDingXXXX".
+* Connect any laptop or mobile phone to the unsecured WiFi network called "HomeDingXXXX".
 
   Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
   automatically open the network configuration page.
 
   ![WiFi Manager UI](/dev/wifimanager.png "w400")
 
-- If the WiFi Manager UI is not starting after joining the network please open http://192.168.4.1/ or http://192.168.4.1/$setup manually.
+* If the WiFi Manager UI is not starting after joining the network please open <http://192.168.4.1/> or <http://192.168.4.1/$setup> manually.
 
-- The current device name is shown in also this dialog
+* The current device name is shown in also this dialog
   and you will find the device later on the registered network using <http://{devicename}>.
 
-- Select your private WiFi Network and enter the passphrase.
+* Select your private WiFi Network and enter the passphrase.
 
-- Press "Connect" to connect.
+* Press "Connect" to connect.
 
 It may take some time and if everything is fine you will see the HomeDing network disappear and you can re-join your local network.
 
@@ -95,18 +95,18 @@ Without any configuration the devicename is constructed by "ESP-" and a device s
 
 try:
 
-- http://{devicename from the WIFI Manager dialog}
-- http://{devicename from the Serial Monitor} (should be identical)
-- http://{ip-address from the Serial Monitor}
+* http://{devicename from the WIFI Manager dialog}
+* http://{devicename from the Serial Monitor} (should be identical)
+* http://{ip-address from the Serial Monitor}
 
 
 ## Upload the Web UI files to the onboard file system
 
 There are 3 sources where you can find the files to upload for the web UI.
 
-- The `data` folder in the standard example has a copy of the WebUI files that fits to the set of elements of the standard example and some more.
-- On homeding.github.io these files are available as well and can be downloaded.
-- The `WebFiles` project on https://www.github.com/HomeDing/WebFiles is used to create files for the WebUI.
+* The `data` folder in the standard example has a copy of the WebUI files that fits to the set of elements of the standard example and some more.
+* On homeding.github.io these files are available as well and can be downloaded.
+* The `WebFiles` project on <https://www.github.com/HomeDing/WebFiles> is used to create files for the WebUI.
 
 To transfer the files to the device multiple methods are available:
 
@@ -121,7 +121,8 @@ This UI is implemented with minimal size (looks plain ugly) but is part of the f
 This method is useful when uploading new files or update individual files. Cannot delete files and keeps other files in place.
 
 Upload works by using drag&drop:
-* select the files (not folders) in the explorer and drop them over the "drop here" region. 
+
+* select the files (not folders) in the explorer and drop them over the "drop here" region.
 * All files will be uploaded at once.
 
 
@@ -134,7 +135,7 @@ This is available at <http://homeding/$update>.
 
 By pressing the start button all files from the homeding documentation website are transferred to the device.
 
-The list of files and files for download are available at: https://homeding.github.io/v03/list.txt.
+The list of files and files for download are available at: <https://homeding.github.io/v03/list.txt>.
 
 This method is useful when updating a standard firmware by a new version and the UI files need to be updated
 or when starting with a new board.
@@ -155,9 +156,9 @@ The [Micro IDE](/dev/microide.md) can create new files and can update existing f
 
 ### Using Upload tools like cUrl
 
-- When working with commandline tools the following cURL statement can be used to upload individual files.
+* When working with commandline tools the following cURL statement can be used to upload individual files.
 
-  curl --form "fileupload=test.txt;filename=/test.txt" http://homeding/
+  curl --form "fileupload=test.txt;filename=/test.txt" <http://homeding/>
 
 
 ## Choose an icon
@@ -169,6 +170,6 @@ Every device can have a special icon that you will recognize in the shortcut or 
 
 ## See also
 
-- [Standard Example](/examples/standard.md)
-- [Recipes](/recipes/index.md)
-- [Elements](/elements/index.md)
+* [Standard Example](/examples/standard.md)
+* [Recipes](/recipes/index.md)
+* [Elements](/elements/index.md)

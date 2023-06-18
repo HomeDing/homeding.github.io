@@ -123,6 +123,12 @@ SSD 1331 (in planning) -->
   <!-- * ssd1325 OLED 128*80 Gray Scale -->
   <!-- * ssd1327 OLED 128*128 Gray Scale -->
 
+
+## Touch enabled Displays
+
+See [Display Touch Element](/elements/display/touch.md)
+
+
 ## Display Information Elements
 
 A display usually can show more that just one single information.
@@ -154,6 +160,10 @@ To keep the initialization in the required order it is recommended to configure 
 
 **rotation** -- The rotation of the display with possible values of 0, 90, 180 or 270.
 Using the rotation 90 or 270 the visible height and width are swapped from the physical height and width.
+
+colOffset
+
+rowOffset
 
 
 ## Display actions

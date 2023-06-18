@@ -8,7 +8,7 @@ This is **Work in progress**
 Example: CameraWebServer.ino from ESP32 Arduino Board
 
 
-ARCELI 
+ARCELI
 
 Camera: OV2640 2 Mega Pixels Camera 1632 * 1232 UXGA,
 Type C USB Port and 3D WiFi Antenna
@@ -17,10 +17,9 @@ Type C USB Port and 3D WiFi Antenna
 DOWDQ6
 
 
+Board details: <https://github.com/m5stack/M5Stack-Camera>
 
-Board details: https://github.com/m5stack/M5Stack-Camera
-
-https://docs.m5stack.com/#/de/quick_start/m5camera/m5camera_quick_start;
+<https://docs.m5stack.com/#/de/quick_start/m5camera/m5camera_quick_start>;
 
 
  MPU6050
