@@ -51,15 +51,25 @@
 
     </div>
       
-    <p><img src="/boards/esp32/core-esp32s3.jpg" alt="core-esp32c3 board"></p>
-<h2>Board Description</h2>
-<p>The CORE-ESP32 board that is labeled with <code>luatos.com</code> is a breadboard friendly
-small development board using the ESP32-C3 processor and USB-C interface.</p>
-<p>This is a small board 21mm * 51mm that fits good on breadboards.</p>
+    <p><img src="/boards/esp32/core-esp32c3.jpg" alt="core-esp32c3 board"></p>
+<p>The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC.</p>
+<ul>
+<li>This is a small board 21mm * 51mm that fits good on breadboards.</li>
+<li>2 LEDs</li>
+<li>Reset button + 1</li>
+<li>BOOT button</li>
+<li>2.4G PCB onboard antenna</li>
+</ul>
 <p>There are 2 main board variants that differ in the implementation of the USB port.</p>
+<ul>
+<li>One variant has an onboard CH343 USB to serial adapter.</li>
+<li>Second variant exposes the USB port of the ESP32-C3 directly.</li>
+</ul>
+<p>The CORE-ESP32 board is labeled with <code>luatos.com</code></p>
+<h2>OnBoard components</h2>
 <p>The following components are already on-board:</p>
 <ul>
-<li>4MB single channel SPI FLASH (flash using DIO mode)<br>
+<li>4MB single channel SPI FLASH with 2 data lines.<br>
 <strong>Important:</strong> Be sure to flash in DIO mode. QIO doesn’t work.</li>
 <li>IO12: LED D4 (right to USB)</li>
 <li>IO13: LED D5 (left to USB)</li>
@@ -78,27 +88,12 @@ small development board using the ESP32-C3 processor and USB-C interface.</p>
 <li>IO04: I2C-SDA</li>
 <li>IO05: I2C-SCL</li>
 </ul>
-<h2>1. Product description</h2>
-<p>The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC.</p>
-<ul>
-<li>Dimensions length and width 21mm*51mm</li>
-<li>2-way SMD LED indicator</li>
-<li>1 reset button + 1 BOOT button</li>
-<li>1 channel USB to TTL download debugging port</li>
-<li>2.4G PCB onboard antenna</li>
-</ul>
-<h2>LCD + Digital Joystick Shield</h2>
-<p>There is a TFT display and a digital joystick shield available that can be stacked upon the CPU board.</p>
-<p>It offers a 0.96 inch display with 80*160 pixels and 262K Color
-based on the ST7735S driver chip.</p>
-<p>The Boot and Reset buttons are not reachable after mounting this board.</p>
-<p><img src="/boards/esp32/core-esp32s3-shield.jpg" alt="core-esp32c3 shield"></p>
-<h2>Board configuration</h2>
+<h3>Board configuration</h3>
 <p>The following <code>env.json</code> configuration can be used for this board:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"core-esp32c3"</span><span class="token punctuation">,</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"core-c3"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-C3 based dev board."</span><span class="token punctuation">,</span>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"CORE-ESP32C3"</span><span class="token punctuation">,</span>
       <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"9"</span><span class="token punctuation">,</span>
@@ -107,31 +102,76 @@ based on the ST7735S driver chip.</p>
       <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"4"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"ledD4"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"12"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"ledD5"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"13"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>LCD + Digital Joystick Shield</h2>
+<p>There is a TFT display and a digital joystick shield available that can be stacked upon the CPU board.</p>
+<p>It offers a 0.96 inch display with 80*160 pixels and 262K Color
+based on the ST7735S driver chip.</p>
+<p>The Boot and Reset buttons are not reachable after mounting this board.</p>
+<p><img src="/boards/esp32/core-esp32c3-shield.jpg" alt="core-esp32c3 shield"></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th style="text-align:right">GPIO pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>down</td>
+<td style="text-align:right">13</td>
+</tr>
+<tr>
+<td>left</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td>up</td>
+<td style="text-align:right">8</td>
+</tr>
+<tr>
+<td>right</td>
+<td style="text-align:right">9</td>
+</tr>
+<tr>
+<td>press</td>
+<td style="text-align:right">4</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>down</strong> key conflicts with the on-board LED that must not used as digital output
+when the shield is used.</p>
+<h2>Shield configuration</h2>
+<p>The following configuration can be used for the Shield:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"DisplayST7735"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display"</span><span class="token punctuation">,</span>
       <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"80"</span><span class="token punctuation">,</span>
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"160"</span><span class="token punctuation">,</span>
+      <span class="token property">"colOffset"</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
+      <span class="token property">"rowOffset"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+
+      <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"spi"</span><span class="token punctuation">,</span>
       <span class="token property">"spiClk"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token property">"spiMosi"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+      <span class="token property">"resetPin"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
       <span class="token property">"spiDC"</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
       <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
       <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">270</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"right"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"19"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"right"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span>  <span class="token string">"9"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token property">"up"</span><span class="token operator">:</span>    <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span>  <span class="token string">"8"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"press"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span>  <span class="token string">"4"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"left"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span>  <span class="token string">"9"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"down"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span>  <span class="token string">"5"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"ledD4"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span><span class="token string">"12"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"ledD5"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span><span class="token string">"13"</span> <span class="token punctuation">}</span>
-
+    <span class="token property">"left"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span>  <span class="token string">"5"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"down"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"13"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"press"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span>  <span class="token string">"4"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h2>Pictures</h2>

@@ -47,18 +47,19 @@
     
       <div class="plaincard">
     
-    The TouchElement enables creating Actions by using touch input on the ESP32.
+    The TouchElement enables creating Actions by using touch input feature of the ESP32 than detects changes in the capacity e.g. when a finger is nearby. 
 
     </div>
       
-    <p>The touch functionality of the ESP32 is based on meassuring
-the capacity resistance on a free floating pad that changes when e.g. a finger
-gets nearby. This allows really cheap input implementations.</p>
+    <p>This is a hardware supported detection available on some GPIO without further hardware requirements.
+This allows really cheap input implementations using a 1cm² pad under a isolation foil.</p>
+<p>The GPIO contact must not be touched directly.</p>
 <p>The touch functionality is not available on ESP8266 processor so this element will not be part of a ESP8266 firmware.</p>
-<p>When using an ESP8266 or other processors there are sensor boards using special chips or transistors to create a binary signal from a touch gesture.
-For these solutions a simple <a href="/elements/digitalin.htm">DigitalInput Element</a> can be used as input element.</p>
-<p>There are also touch sensors implementations available that use 2 pins to probe for the capacity resistance using a ADC.
-But there is only one ADC input in the ESP8266 processors available.</p>
+<p>When using an ESP8266 or other processors there are sensor boards using special chips or
+transistors to create a binary signal from a touch gesture. For these solutions a simple
+<a href="/elements/digitalin.htm">DigitalInput Element</a> can be used as input element.</p>
+<p>There are also touch sensors implementations available that use 2 pins to probe for the capacity
+resistance using a ADC. But there is only one ADC input in the ESP8266 processors available.</p>
 <h2>Connecting a Touch Sensor</h2>
 <p>A touch sensor is built by a simple electrically conductive area.
 This allows detecting a finger or a equivalent object nearby as this changes the capacity resistance.
@@ -115,6 +116,8 @@ A reference value can be set to create the binary value that is HIGH(1) when tou
 <ul>
 <li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/touch_pad.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/touch_pad.html</a></li>
 <li><a href="https://randomnerdtutorials.com/esp32-touch-pins-arduino-ide/">https://randomnerdtutorials.com/esp32-touch-pins-arduino-ide/</a></li>
+<li><a href="/elements/digitalin.htm">DigitalInput Element</a></li>
+<li><a href="/elements/display/touch.htm">DisplayTouch Element</a> for Display with touch detection.</li>
 </ul>
 
 
