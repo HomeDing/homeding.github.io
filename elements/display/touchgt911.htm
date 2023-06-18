@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Display Touch Element</title>
+  <title>Display TouchGT 911 Element</title>
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -41,28 +41,39 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>Display Touch Element</h1>
+    <h1>Display TouchGT 911 Element</h1>
 
     
     
       <div class="plaincard">
     
-    The Display Touch Elements enables detecting touch events by touching a specific area on a display.
+    This Display Touch Elements enables retrieving touch events on displays using the 5-Point Capacitive Touch Sensor based on the GT911 chip.
 
     </div>
       
-    <p>The Display Touch Element interface with the chips that can detect touch positions on a touch
-enabled display. These elements will try to find an active
-<a href="/elements/display/button.htm">DisplayButton Element</a> that corresponds
-to the touch coordinates so that Actions can be triggered through the button element.
-This allows having multiple buttons placed on the same display for different purpose.</p>
-<p>There are some different chips and technologies available for touch detection:</p>
-<h2>Capacitive Touch Sensors</h2>
-<p>The <a href="touchgt911.md">DisplayTouchGT911</a> Element is enabling the GT911 is a 5-Point Capacitive
-Touch Sensors for 7&quot; to 8&quot; panels using the I2c bus for communication. It can deliver Input
-results every 40 / 10 msec.</p>
-<h2>Res</h2>
+    <!-- TODO: documentation
 
+
+There are multiple implementations - even some for arduino but they are all in an early stage or
+not maintained any more.
+
+* <https://github.com/arduino-libraries/Arduino_GigaDisplayTouch> This library is in an early
+  stage and implemented for Arduino boards based on mbed operating system only. I like the
+  cleaness of the interface. Rotation support is missing as well.
+* <https://github.com/TAMCTec/gt911-arduino> This library is almost working but has some buffer
+  overflows when communication is not correct (found more than 5 points) and needs software reset.
+* <https://github.com/u4mzu4/Arduino_GT911_Library>
+
+The gt911.h / gt911.cpp is my own assembled version working for ESP32.
+
+### See also
+
+* <https://github.com/goodix> reference implementation for Android
+* <https://www.goodix.com/en/product/touch/touch_screen_controller>
+* <https://github.com/lvgl/lvgl_esp32_drivers/blob/master/lvgl_touch/gt911.h>
+
+
+ -->
 
     
     <h2>Tags</h2>
