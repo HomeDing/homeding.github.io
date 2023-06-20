@@ -3,9 +3,27 @@ title: Display TouchGT 911 Element
 tags: ["Element", "Display", "Input"]
 layout: "page.njk"
 excerpt: >
-  This Display Touch Elements enables retrieving touch events on displays
+  The Display Touch GT911 Element enables retrieving touch events on displays
   using the 5-Point Capacitive Touch Sensor based on the GT911 chip.
 ---
+
+The DisplayTouchElements share the same functionality while supporting different Touch controllers.
+
+The GT911 Controller is using the i2c bus for communication.
+
+## Element Configuration
+
+<!-- <object data="/element.svg?analog" type="image/svg+xml"></object> -->
+
+The following properties are available for configuration of the element:
+
+**width** --
+
+**height** --
+
+**rotation** --
+
+**address** -- The I2C address of the GT911 controller.
 
 <!-- TODO: documentation
 
@@ -30,3 +48,8 @@ The gt911.h / gt911.cpp is my own assembled version working for ESP32.
 
 
  -->
+
+## See also
+
+* [Display Touch Elements](touch.md)
+* [i2c bus](/dev/i2c.md)
