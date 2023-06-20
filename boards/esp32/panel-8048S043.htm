@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <title>NO-TITLE</title>
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>Panel ESP32-8048S043C</h1>
+<h1>HomeDing Display Example</h1>
+<p>This example is about using the HomeDing library to implement a device with a
+large (600*600 px) display.</p>
+<p>waiting for IDF 5.1 in espressif/arduino …</p>
+<p>There are some boards available that already combine display, touchscreen and processor.
+The one used here is labeled <strong>ESP32-8048S043C</strong> from <a href="http://www.jczn1688.com">http://www.jczn1688.com</a> and available
+on AliExpress. On the web site you find documentation but be they seem not to fit to the current boards.
+Some testing was required.</p>
+<p>These type of boards are available in various versions with different displays and touchscreen
+drivers and this example may be adapted to other configurations when required.</p>
+<p>The <strong>ESP32-8048S043C</strong> has the following components:</p>
+<ul>
+<li>ESP32-S3 Processor</li>
+<li>16M Flash Memory</li>
+<li>8M PSRAM</li>
+<li>I2C bus using SDA=19, CLK=20</li>
+<li>Display: ST7262: 4.3 inch, 800 * 480 px, 16 bit color, parallel mode</li>
+<li>Touch Sensor: GT911 on I2C, Address 0x5D</li>
+<li>SD Card</li>
+</ul>
+<p>Download of files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688</p>
+<!-- <https://github.com/PaulStoffregen/XPT2046_Touchscreen> -->
+<!-- ## ESP3248S035 -->
+<h2>Display</h2>
+<p>// option 1:
+// ST7262 IPS LCD 800x480
+Arduino_RPi_DPI_RGBPanel <em>gfx = new Arduino_RPi_DPI_RGBPanel(
+bus,
+800 /</em> width <em>/, 0 /</em> hsync_polarity <em>/, 8 /</em> hsync_front_porch <em>/, 4 /</em> hsync_pulse_width <em>/, 8 /</em> hsync_back_porch <em>/,
+480 /</em> height <em>/, 0 /</em> vsync_polarity <em>/, 8 /</em> vsync_front_porch <em>/, 4 /</em> vsync_pulse_width <em>/, 8 /</em> vsync_back_porch <em>/,
+1 /</em> pclk_active_neg <em>/, 16000000 /</em> prefer_speed <em>/, true /</em> auto_flush */);</p>
+<p>The display is connected to the Processor using 4 control signals and 16 data signals.
+It is designed to use DMA to transfer the display data from RAM to the display.</p>
+<p>It uses 16 bits per pixel and 16 data pins with</p>
+<ul>
+<li>5 bits for red</li>
+<li>6 bits for green</li>
+<li>5 bits for blue</li>
+</ul>
+<p>These kind of displays are supported by the Adafruit_GFX library using the GFXcanvas16 class that draws
+all graphics to a memory buffer.
+To implement a displayAdapter this class can be used. Instead of sending the graphic bits to the display
+over a SPI or I2C bus a DMA transfer can be configured that is triggered upon
+finishing drawing of an element
+and continues sending the pixesl to the display in the background.</p>
+<p>The connection for the display is configured using the following pins:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th style="text-align:right">0</th>
+<th style="text-align:right">1</th>
+<th style="text-align:right">2</th>
+<th style="text-align:right">3</th>
+<th style="text-align:right">4</th>
+<th style="text-align:right">5</th>
+<th style="text-align:right">6</th>
+<th style="text-align:right">7</th>
+<th style="text-align:right">8</th>
+<th style="text-align:right">9</th>
+<th style="text-align:right">10</th>
+<th style="text-align:right">11</th>
+<th style="text-align:right">12</th>
+<th style="text-align:right">13</th>
+<th style="text-align:right">14</th>
+<th style="text-align:right">15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal</td>
+<td style="text-align:right">r4</td>
+<td style="text-align:right">r3</td>
+<td style="text-align:right">r2</td>
+<td style="text-align:right">r1</td>
+<td style="text-align:right">r0</td>
+<td style="text-align:right">g5</td>
+<td style="text-align:right">g4</td>
+<td style="text-align:right">g3</td>
+<td style="text-align:right">g2</td>
+<td style="text-align:right">g1</td>
+<td style="text-align:right">g0</td>
+<td style="text-align:right">b4</td>
+<td style="text-align:right">b3</td>
+<td style="text-align:right">b2</td>
+<td style="text-align:right">b1</td>
+<td style="text-align:right">b0</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">46</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">7</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">16</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">45</td>
+<td style="text-align:right">48</td>
+<td style="text-align:right">47</td>
+<td style="text-align:right">21</td>
+<td style="text-align:right">14</td>
+</tr>
+</tbody>
+</table>
+<p>The RAM for the display image is allocated in the PSRAM using 800<em>400</em>2 bytes = 640.000 bytes = <strong>625 kBytes</strong>.</p>
+<p>HSYNC io39
+VSYNC io41
+DE io40
+DCLK 42???</p>
+<p>40 /* DE <em>/, 41 /</em> VSYNC <em>/, 39 /</em> HSYNC <em>/, 42 /</em> PCLK */,</p>
+<p>All these details are used to populate a <code>esp_lcd_rgb_panel_config_t</code> structure
+to configure the DMA that is used to drive a RGB panel.</p>
+<p>Arduino_ESP32RGBPanel <em>bus = new Arduino_ESP32RGBPanel(
+GFX_NOT_DEFINED /</em> CS <em>/, GFX_NOT_DEFINED /</em> SCK <em>/, GFX_NOT_DEFINED /</em> SDA <em>/,
+40 /</em> DE <em>/, 41 /</em> VSYNC <em>/, 39 /</em> HSYNC <em>/, 42 /</em> PCLK */,</p>
+<p>45 /* R0 <em>/, 48 /</em> R1 <em>/, 47 /</em> R2 <em>/, 21 /</em> R3 <em>/, 14 /</em> R4 <em>/,
+5  /</em> G0 <em>/, 6  /</em> G1 <em>/, 7  /</em> G2 <em>/, 15 /</em> G3 <em>/, 16 /</em> G4 <em>/, 4 /</em> G5 <em>/,
+8  /</em> B0 <em>/, 3  /</em> B1 <em>/, 46 /</em> B2 <em>/, 9  /</em> B3 <em>/, 1  /</em> B4 */</p>
+<ul>
+<li>ESP32-S3 DMA (EDMA) with PSRAM and LCD
+<a href="https://esp32.com/viewtopic.php?t=24096">https://esp32.com/viewtopic.php?t=24096</a></li>
+</ul>
+<h3>Backlight control</h3>
+<p>TFT_BL GPIO02</p>
+<h3>Drawing in the Display Buffer</h3>
+<p>The AdaFruit GFX library offers the functionality to draw the graphics and text in a
+16 bits per pixel buffer that fits for RGB panels.</p>
+<h2>Touch panel</h2>
+<p>TAMC_GT911</p>
+<h2>connectors</h2>
+<p>HC 1.25  4pwt</p>
+<ul>
+<li>Serial Interface</li>
+<li>11, 12, 13, 19</li>
+<li>17, 18 GND, 3v3</li>
+<li>17, 18, 19, 20</li>
+</ul>
+<p>ESP3248S035</p>
+<p><a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>
+Download passwort: jczn1688</p>
+<p>clk_src 0</p>
+<p>timings:
+pclk_hz 16000000
+h_res 800
+v_res 480
+hsync_pulse_width 4
+hsync_back_porch 8
+hsync_front_porch 8
+vsync_pulse_width 4
+vsync_back_porch 8
+vsync_front_porch 8
+flags.hsync_idle_low 1
+flags.vsync_idle_low 1
+flags.de_idle_high 0
+flags.pclk_active_neg 1
+flags.pclk_idle_high 0</p>
+<p>data_width 16
+sram_trans_align 8
+psram_trans_align 64
+hsync_gpio_num 39
+vsync_gpio_num 41
+de_gpio_num 40
+pclk_gpio_num 42</p>
+<p>data_gpio_nums[0] 8
+data_gpio_nums[1] 3
+data_gpio_nums[2] 46
+data_gpio_nums[3] 9
+data_gpio_nums[4] 1
+data_gpio_nums[5] 5
+data_gpio_nums[6] 6
+data_gpio_nums[7] 7
+data_gpio_nums[8] 15
+data_gpio_nums[9] 16
+data_gpio_nums[10] 4
+data_gpio_nums[11] 45
+data_gpio_nums[12] 48
+data_gpio_nums[13] 47
+data_gpio_nums[14] 21
+data_gpio_nums[15] 14
+_useBigEndian 0
+_useBigEndian 0</p>
+<h2>Adafruit_GFX restrictions and rework requests</h2>
+<p>Canvas classes cannot be sub-classed for implementing specific displays:</p>
+<ul>
+<li>
+<p>The buffer allocation is inside the provate implementation and cannot be changed.
+Some displays require display memory to be allocated in a specific way e. g. when display is using DMA for data transfer.</p>
+</li>
+<li>
+<p>Colors are fixed to maximum 16 bit (physical) within all color parameters
+but displays supporting rgb888 (24 bit) are already available.</p>
+</li>
+<li>
+<p>Graphical “objects” like buttons should by refactored to be additional objects.
+As they may overlap or update on their own a layer upon the GFX is required to redraw defined objects when required.</p>
+</li>
+<li>
+<p>Some implementations treat “textsize” as a multiple of the builtin font size. A “registered/available” fonts manager is missing.</p>
+</li>
+<li>
+<p>uint16_t color - to color type definitions</p>
+</li>
+<li>
+<p>may include a color scheme for objects.</p>
+</li>
+<li>
+<p>buffer memory allocation and handling is</p>
+</li>
+</ul>
+
+  </main>
+
+  <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
