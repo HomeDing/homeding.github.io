@@ -43,4 +43,3 @@ The following properties are available with the current values at runtime
 
 * Display Touch Elements
 
-
