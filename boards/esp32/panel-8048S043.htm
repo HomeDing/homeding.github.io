@@ -7,10 +7,11 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>NO-TITLE</title>
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <title>Panel ESP32-8048S043C</title>
+  <meta name='description' content='ESP32-S3 board with fast 800 * 480 px, 16 bit LCD color touch display'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
   <style>
   .gpio { 
     display:inline-block;
@@ -21,6 +22,7 @@
   .gpio.red {background-color: #F22; color:white}
   .gpio.black {background-color: #111; color:white}
   .gpio.blue {background-color: #22F; color:white}
+  main h2 {margin-top: 1rem !important;}
   </style>
 </head>
 
@@ -40,14 +42,18 @@
 
   <main style="padding:1rem;max-width: 800px;">
     <h1>Panel ESP32-8048S043C</h1>
-<h1>HomeDing Display Example</h1>
-<p>This example is about using the HomeDing library to implement a device with a
-large (600*600 px) display.</p>
-<p>waiting for IDF 5.1 in espressif/arduino …</p>
-<p>There are some boards available that already combine display, touchscreen and processor.
-The one used here is labeled <strong>ESP32-8048S043C</strong> from <a href="http://www.jczn1688.com">http://www.jczn1688.com</a> and available
-on AliExpress. On the web site you find documentation but be they seem not to fit to the current boards.
-Some testing was required.</p>
+
+    
+    
+      <div class="plaincard">
+    
+    This panel is using a ESP32-S3 processor with 16M Flash and   8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing Display Example]
+
+    </div>
+      
+    <p>There are some boards available that already combine display, touchscreen and processor that have been tested using the [HomeDing Display Example].</p>
+<p>The one used here is labeled <strong>ESP32-8048S043C</strong> from <a href="http://www.jczn1688.com">http://www.jczn1688.com</a> and available
+on AliExpress. On the web site you find documentation but be they seem not to fit to the current boards. Some testing was required.</p>
 <p>These type of boards are available in various versions with different displays and touchscreen
 drivers and this example may be adapted to other configurations when required.</p>
 <p>The <strong>ESP32-8048S043C</strong> has the following components:</p>
@@ -62,7 +68,6 @@ drivers and this example may be adapted to other configurations when required.</
 </ul>
 <p>Download of files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688</p>
 <!-- <https://github.com/PaulStoffregen/XPT2046_Touchscreen> -->
-<!-- ## ESP3248S035 -->
 <h2>Display</h2>
 <p>// option 1:
 // ST7262 IPS LCD 800x480
@@ -182,9 +187,7 @@ GFX_NOT_DEFINED /</em> CS <em>/, GFX_NOT_DEFINED /</em> SCK <em>/, GFX_NOT_DEFIN
 <li>17, 18 GND, 3v3</li>
 <li>17, 18, 19, 20</li>
 </ul>
-<p>ESP3248S035</p>
-<p><a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>
-Download passwort: jczn1688</p>
+<hr>
 <p>clk_src 0</p>
 <p>timings:
 pclk_hz 16000000
@@ -226,35 +229,12 @@ data_gpio_nums[14] 21
 data_gpio_nums[15] 14
 _useBigEndian 0
 _useBigEndian 0</p>
-<h2>Adafruit_GFX restrictions and rework requests</h2>
-<p>Canvas classes cannot be sub-classed for implementing specific displays:</p>
-<ul>
-<li>
-<p>The buffer allocation is inside the provate implementation and cannot be changed.
-Some displays require display memory to be allocated in a specific way e. g. when display is using DMA for data transfer.</p>
-</li>
-<li>
-<p>Colors are fixed to maximum 16 bit (physical) within all color parameters
-but displays supporting rgb888 (24 bit) are already available.</p>
-</li>
-<li>
-<p>Graphical “objects” like buttons should by refactored to be additional objects.
-As they may overlap or update on their own a layer upon the GFX is required to redraw defined objects when required.</p>
-</li>
-<li>
-<p>Some implementations treat “textsize” as a multiple of the builtin font size. A “registered/available” fonts manager is missing.</p>
-</li>
-<li>
-<p>uint16_t color - to color type definitions</p>
-</li>
-<li>
-<p>may include a color scheme for objects.</p>
-</li>
-<li>
-<p>buffer memory allocation and handling is</p>
-</li>
-</ul>
 
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/board.htm">Board</a><a href="/tag/wip.htm">Wip</a></div>
+    
   </main>
 
   <script>
