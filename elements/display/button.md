@@ -41,5 +41,5 @@ The following properties are available with the current values at runtime
 
 ## See also
 
-* Display Touch Elements
+* [Display Touch Elements](/elements/display/touch.md)
 
