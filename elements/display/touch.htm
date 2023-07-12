@@ -56,12 +56,24 @@ enabled display. These elements will try to find an active
 <a href="/elements/display/button.htm">DisplayButton Element</a> that corresponds
 to the touch coordinates so that Actions can be triggered through the button element.
 This allows having multiple buttons placed on the same display for different purpose.</p>
-<p>There are some different chips and technologies available for touch detection:</p>
+<p>There are some different chips and technologies available for touch detection.</p>
 <h2>Capacitive Touch Sensors</h2>
+<p>Capacitive touchscreens are often used on smartphones and tablets as they are very responsive to
+a touch and even work through screen protector glass. They work by messuring the changing
+capacity when a object (finger or stylus) is nearby the surface. They don’t need any touch
+force. However they may report accidentally touch events.</p>
 <p>The <a href="touchgt911.md">DisplayTouchGT911</a> Element is enabling the GT911 is a 5-Point Capacitive
 Touch Sensors for 7&quot; to 8&quot; panels using the I2c bus for communication. It can deliver Input
 results every 40 / 10 msec.</p>
-<h2>Res</h2>
+<h2>Resistive Touch Sensors</h2>
+<p>Resistive touchscreens work by messuring the changed resistance when some pressure is made on the surface.
+They are often cheaper and may be better in rough environments and do not support multi-touch events.
+A stylus is often required to create accurate touch events.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/display/button.htm">DisplayButton Element</a></li>
+<li><a href="https://www.makeuseof.com/tag/differences-capacitive-resistive-touchscreens-si/">https://www.makeuseof.com/tag/differences-capacitive-resistive-touchscreens-si/</a></li>
+</ul>
 
 
     
