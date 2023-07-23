@@ -132,7 +132,7 @@ Scan i2c (sda=25, scl=26)...
   6 devices found.
 ```
 
-## Device Configutation
+## Device Configuration
 
 This is a device specific configuration for this board :
 
@@ -192,7 +192,14 @@ SSD1306
 
 ## SD Card
 
-SDElement to mount the sd card file system on the `/sd` folder.
+The SD card is available at the standard SPI bus of ESP32. The
+[SD Card Element](/elements/sd.md) can be used to extend the filesystem
+and to mount the sd card file system on the `/sd` folder.
+
+| function | ESP32 pin |
+| -------- | --------- |
+| CS       | GPIO13    | ??? TODO: to be verified !
+| SPI-bus  | VSPI      |
 
 
 ## Critics
