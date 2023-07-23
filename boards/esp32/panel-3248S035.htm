@@ -55,10 +55,10 @@
 <h2>Arduino Configuration</h2>
 <ul>
 <li>Board: ESP32 Dev Module</li>
-<li>PSRAM: disabled</li>
 <li>CPU: 240 MHz</li>
-<li>Flash Mode: DIO</li>
 <li>Flash: 4MB</li>
+<li>Flash Mode: DIO</li>
+<li>PSRAM: disabled</li>
 </ul>
 <pre class="language-txt"><code class="language-txt">{
     "board": "espressif:esp32:esp32",
@@ -67,23 +67,75 @@
 <h2>Components</h2>
 <p>The following components are available on the board:</p>
 <ul>
+<li>ESP32</li>
 <li>LCD ST7796 320 * 480 px using SPI bus</li>
-<li>IO27 – LCD Backlight</li>
+<li>LCD Backlight on IO27</li>
 <li>GT911 Touch Controller using i2c bus</li>
 <li>SD card</li>
 <li>RGB LED</li>
 <li>IO34 – Light sensor</li>
+<li>Reset button (RST)</li>
+<li>Boot button (GPIO0)</li>
 </ul>
+<h2>Light Sensor</h2>
+<p>A Light sensor with a LDR is populated to the board and connected to pin GPIO34.</p>
+<p>Using the <a href="/elements/analog.htm">Analog Input Element</a> the value can be read and mapped to the range of display brightness.</p>
+<p>The configuration below maps the raw analog values to the brightness of the background light.</p>
+<p>From my testings a value of 20 is usable in low light situations and a value of 80 fits to normal indoor situations:</p>
+<pre class="language-JSON"><code class="language-JSON">{
+  "analog": {
+    "ldr": {
+      "pin": 34,
+      "readtime": "500ms",
+      "mapInMin": "0",
+      "mapOutMin": "80",
+      "mapInMax": "200",
+      "mapOutMax": "20",
+      "constrain": "true",
+      "onvalue": "DisplayST7796/0?brightness=$v"
+    }
+  }
+}</code></pre>
+<h2>LCD and Touch Display</h2>
+<p>The Display is based on the ST7796 driver chip with a 320*480 display.</p>
+<p>For Touch events there are 2 versions available.</p>
+<ul>
+<li>The capacitive GT911 based version.</li>
+<li>The resistive version.</li>
+</ul>
+<p>Configuration can be found below.</p>
+<h2>SD Card</h2>
+<p>The SD card is available at the standard SPI bus of ESP32. The
+<a href="/elements/sd.htm">SD Card Element</a> can be used to extend the filesystem
+and to mount the sd card file system on the <code>/sd</code> folder.</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS</td>
+<td>GPIO5</td>
+</tr>
+<tr>
+<td>SPI-bus</td>
+<td>VSPI</td>
+</tr>
+</tbody>
+</table>
+<h2>Device configuration</h2>
 <p>This device configuration can be used:</p>
 <pre class="language-JSON"><code class="language-JSON">{
   "device": {
     "0": {
-      "name": "panel480",
-      "title": "Panel480",
-      "description": "Panel with 480 px",
-      "loglevel": "2",
-      "xbutton": "D3",
-      "xled": "4",
+      "name": "panel3248",
+      "title": "ESP32-3248S035",
+      "description": "320*480 Touch Panel from JCZN",
+      "button": "0",
+      "xled": "16",
       "logfile": 1,
       "safemode": "false",
       "homepage": "/board.htm",
@@ -93,10 +145,7 @@
     }
   },
   "ota": {
-    "0": {
-      "port": 8266,
-      "passwd": "123"
-    }
+    "0": {}
   },
   "ntptime": {
     "on": {
@@ -108,7 +157,8 @@
       "pin": "4,16,17",
       "mode": "pwm",
       "invert": "true",
-      "enable": "true"
+      "enable": "true",
+      "value": "x000000"
     }
   },
   "color": {
@@ -118,9 +168,21 @@
       "config": "RGB",
       "mode": "fix",
       "duration": "4s",
-      "value": "x004466aa",
-      "brightness": "20",
+      "value": "x000000",
+      "brightness": "50",
       "connect": [ "light/l" ]
+    }
+  },
+  "analog": {
+    "ldr": {
+      "pin": 34,
+      "readtime": "500ms",
+      "mapInMin": "0",
+      "mapOutMin": "80",
+      "mapInMax": "200",
+      "mapOutMax": "20",
+      "constrain": "true",
+      "onvalue": "DisplayST7796/0?brightness=$v"
     }
   },
   "DisplayST7796": {
@@ -133,41 +195,11 @@
     }
   },
   "DisplayTouchGT911": {
-    "0": {
-      "address": "0x5D"
-    }
+    "0": { "address": "0x5D" }
   }
 }</code></pre>
-<p>–</p>
-<p>Download of files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688</p>
-<h2>Adafruit_GFX restrictions and rework requests</h2>
-<p>Canvas classes cannot be sub-classed for implementing specific displays:</p>
-<ul>
-<li>
-<p>The buffer allocation is inside the provate implementation and cannot be changed.
-Some displays require display memory to be allocated in a specific way e. g. when display is using DMA for data transfer.</p>
-</li>
-<li>
-<p>Colors are fixed to maximum 16 bit (physical) within all color parameters
-but displays supporting rgb888 (24 bit) are already available.</p>
-</li>
-<li>
-<p>Graphical “objects” like buttons should by refactored to be additional objects.
-As they may overlap or update on their own a layer upon the GFX is required to redraw defined objects when required.</p>
-</li>
-<li>
-<p>Some implementations treat “textsize” as a multiple of the builtin font size. A “registered/available” fonts manager is missing.</p>
-</li>
-<li>
-<p>uint16_t color - to color type definitions</p>
-</li>
-<li>
-<p>may include a color scheme for objects.</p>
-</li>
-<li>
-<p>buffer memory allocation and handling is</p>
-</li>
-</ul>
+<p>Download of supporting files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688</p>
+<h2>See also</h2>
 
 
     

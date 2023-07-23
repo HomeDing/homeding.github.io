@@ -53,16 +53,15 @@
       
     <p>There are 2 elements supporting SD cards in the Homeding library, supporting the 2 different available wirings:</p>
 <ul>
-<li>SD cards using standard SPI data transfer is supported by the <a href="/elements/sd.htm">SD Element</a></li>
+<li>SD cards using standard SPI data transfer is supported by the SD Element</li>
 <li>SD card using the MMC support available on with ESP32 processors is supported by the <a href="/elements/sdmmc.htm">SD MMC Element</a></li>
 </ul>
 <p>Only one of these Elements can be activated at a time.</p>
 <p>Both implementations enable using the SD card memory for storing files locally
 e.g. for recording sensor data or serving additional files on the web frontend.</p>
 <p>The SD Element uses the system wide SPI bus for data transfer and is available on ESP8266 and ESP32 boards.</p>
-<p>The pins that are used by the SPI bus in general
-can be configured in the Device Element.</p>
-<p>The SPI Chip Select signal for the SD card is configured in the Element configuration.</p>
+<p>The pins that are used by the SPI bus in general can be configured in the Device Element.</p>
+<p>Only the SPI Chip Select signal for the SD card has to be configured in the SD Element configuration.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>

@@ -130,7 +130,7 @@ Scan i2c (sda=25, scl=26)...
 127 adresses scanned.
   6 devices found.
 </code></pre>
-<h2>Device Configutation</h2>
+<h2>Device Configuration</h2>
 <p>This is a device specific configuration for this board :</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -179,7 +179,27 @@ Scan i2c (sda=25, scl=26)...
 <li>0x3c: (SH1106,SSD1306,SSD1309)</li>
 </ul>
 <h2>SD Card</h2>
-<p>SDElement to mount the sd card file system on the <code>/sd</code> folder.</p>
+<p>The SD card is available at the standard SPI bus of ESP32. The
+<a href="/elements/sd.htm">SD Card Element</a> can be used to extend the filesystem
+and to mount the sd card file system on the <code>/sd</code> folder.</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS</td>
+<td>GPIO13</td>
+</tr>
+<tr>
+<td>SPI-bus</td>
+<td>VSPI</td>
+</tr>
+</tbody>
+</table>
 <h2>Critics</h2>
 <ul>
 <li>
