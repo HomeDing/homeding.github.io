@@ -1,5 +1,5 @@
 ---
-title: ESP32-C3 micro board with LCD
+title: ESP32-C3 micro board with OLED display
 tags: ["Board"]
 layout: "page.njk"
 description: Very small ESP32-C3 Board with OLED display.
@@ -8,6 +8,8 @@ excerpt: >
   and a single NeoPixel.
 ---
 
+![ESP32-C3 micro board with LCD](micro.jpg)
+
 This board is not supported by Adafruit library. Some small modifications must be made that can be found in
 <https://github.com/mathertel/Adafruit_SSD1306>.
 
@@ -15,7 +17,7 @@ This board comes with
 
 * 4MB Flash
 * Ceramic WiFi Antenna
-* One Neo Pixel/ws2812 LED.
+* One Neo Pixel/WS2812 LED.
 * QWIIC compatible socket for wiring I2c based sensors.
 * OLED display based on SSD1306 chip attached through I2C Interface.
 * USB-C connector, directly connected to ESP32-C3 processor.
@@ -37,6 +39,7 @@ This board comes with
   }
 }
 ```
+
 
 ## System configuration
 
@@ -62,10 +65,7 @@ neopixel.
     }
   },
   "ota": {
-    "0": {
-      "port": 8266,
-      "passwd": "123"
-    }
+    "0": { }
   },
   "ntptime": {
     "0": {
@@ -135,7 +135,7 @@ The **config.json** file will contain the functionality of the device. This is a
 
 ## See Also
 
-* [ESP32-C3 Boards](/boards/esp32/esp32c3.md)
+* [ESP32-C3 Boards](/boards/esp32c3/index.md)
 * <https://github.com/01Space/ESP32-C3-0.42LCD>
 
 

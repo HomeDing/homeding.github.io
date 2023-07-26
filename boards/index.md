@@ -83,14 +83,14 @@ There are official boards from espressif
 
 ## ESP32-C3 boards
 
-The [ESP32-C3](/boards/esp32/esp32c3.md) variant of the ESP32 is also supported.
+The [ESP32-C3](/boards/esp32c3/index.md) variant of the ESP32 is also supported.
 It has less IO pins and is not supporting touch input.
 As it is "cost-effective" RISC-V based SoC that may replace ESP8266 some time.
 The Arduino ESP32 supports this variant.
 
-{{ imgCard(collections.all, item = '/boards/esp32/core-esp32c3') }}
+{{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
 
-### C3 pico
+{{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
 
 {% imgcard "/boards/esp32/esp32-c3pico.jpg", "" %}
 The C3 pico board is based on the ESP32-C3 MCU with 4 MByte internal flash memory
@@ -102,6 +102,8 @@ and includes
 * pin 9 button
 * USB-C connector
 {% endimgcard %}
+
+{{ imgCard(collections.all, item = '/boards/esp32/esp32c3-01') }}
 
 
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->

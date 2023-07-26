@@ -2,9 +2,9 @@
 title: ESP32-C3 Boards
 tags: ["Board"]
 layout: "page.njk"
-description: ESP32-C3 General purpose development boards
+description: ESP32-C3 based boards
 excerpt: >
-  There are several ESP32-C3 DevKit Boards available using the ESP32-C3 chip.
+  There are several ESP32-C3 based Boards available using the ESP32-C3 chip.
   They are supported by the HomeDing library.
 ---
 
@@ -76,14 +76,33 @@ Secure communication, signing packages and flash memory is supported by some bui
 This results in faster secure (https) network requests.
 
 
-## Example Boards with ESP32-C3i
+## Example Boards with ESP32-C3
 
-{{ imgCard(collections.all, item = '/boards/esp32/core-esp32c3') }}
+{{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
 
-{{ imgCard(collections.all, item = '/boards/esp32/esp32c3-micro') }}
+{{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
 
 
-## TODO: ESP01-C3
+## Board ESP32-C3 ESP-01
+
+{{ imgCard(collections.all, item = '/boards/esp32/esp32c3-01') }}
+
+The ESP32-C3 processor is now also available in a ESP01 form factor board.
+
+More details, see [Board ESP32-C3 ESP-01](/boards/esp32/esp32c3-01.md).
+
+The ESP01 form factor was initially used for the ESP8266 processor on the [Board ESP8266 ESP-01](/boards/esp01.md).
+The original version has limited Flash memory (512kByte).
+
+As of it's popularity there are variants using the ESP8266 and ESP8285 (= ESP8266 + 1M Flash in the same chip)
+and more flash memory.
+
+
+ but current modules offer at least 1MByte flash data.
+
+
+
+There is a 
 
 
 * DIO

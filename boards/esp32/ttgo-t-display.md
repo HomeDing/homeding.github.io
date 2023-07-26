@@ -11,19 +11,50 @@ This board is not based on a ESP32 module but is using the ESP32-D0WD-Q6 process
 
 ![TTGO T-Display](/boards/esp32/ttgo-t-display.jpg)
 
-* ESP32-D0WD-Q6 (Dual core, 240Mhz  processor)
+* ESP32-D0WD-Q6 Processor (Dual core, 240Mhz  processor)
 * Display: IPS ST7789V 1.14 Inch display, 135 * 240 pixels, 64k colors
 * 3.7V battery charging circuit
 * Supply voltage: 3.3V DC or 5V DC
 * SRAM: 520KB
-* Flash memory: 4MByte
+* Flash memory: 4MByte in QIO Mode
 * PCB dimensions: 51.4 x 25.2mm
 * JST Connector: 2Pin 1.25mmx
 * USB: Type-C
-* USB-Bridge: 2104
+* USB-Bridge: CP2104 chip
 
 
-## Connectors
+## Arduino Board Configuration
+
+The ESP32 Dev Module (esp32) can be used with the following settings:
+
+* JTAG Adapter: Disbled
+* PSRAM: Disbled
+* Partition Scheme: Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
+* CPU Frequency: 240MHz
+* Flash Mode: **QIO**
+* Flash Frequency: 80 MHz
+* Flash Size: 4MByte (32Mbit)
+* Upload Speed: 921600
+* Arduino Runs On: Core 1
+* Events Runs On: Core 1
+* Core Debug Level: None
+* Erase All Flash: Disabled
+
+
+## Display ST7789
+
+The display is a IPS type TFT display using the ST7789 driver chip on the SPI bus.
+
+The chip supports a maximal display resolution of 240\*320 pixels in 262k colors but this display only supports 135\*240 pixels with 64k colors in RGB565 addressing.
+
+Therefore the display offsets must be specified in the configuration.
+
+See configuration in `env.json` below.
+
+
+## External Connectors
+
+Some power and GPIO pins are available for external components:
 
 ``` txt
     +-------------+
@@ -46,22 +77,18 @@ G   | |         | |  G
     +-----USB-----+
 ```
 
-## Pin usages
 
-| Name       |  pin | Remarks                        |
+## Internal GPIO usages
+
+| Name       | GPIO | Remarks                        |
 | ---------- | ---: | ------------------------------ |
-| TFT Driver |      | ST7789 65k color display       |
 | TFT_MISO   |      | n/a                            |
 | TFT_MOSI   |   19 | usually MISO on Arduino Setups |
 | TFT_SCLK   |   18 | = Arduino Standard             |
 | TFT_CS     |    5 |                                |
 | TFT_DC     |   16 |                                |
 | TFT_RST    |   23 |                                |
-| TFT_BL     |    4 |                                |
-|            |      |                                |
-| I2C_SDA    |   21 | + connector                    |
-| I2C_SCL    |   22 | + connector                    |
-|            |      |                                |
+| TFT_BL     |    4 | TFT Backlight    |
 | ADC_IN     |   34 | (Batt_ADC)                     |
 | BUTTON1    |   35 |                                |
 | BUTTON2    |    0 |                                |
@@ -70,52 +97,56 @@ G   | |         | |  G
 The TFT is not connected to the usual SPI pins.
 The data pin is attached to pin 19 that is usually used for SPI data input (MISO). As the SPI bus and all TFT connections are not available on the board pins so there will be no conflict.
 
-The Backlight can be dimmed by using a pwmout on pin 4.
+The Backlight can be dimmed by using a GPIO 4 and can be used to adjust the brightness.
 
-## config
+
+## Example env.json Device Configuration 
 
 ``` json
 {
-  "DisplayST7789": {
+  "device": {
     "0": {
-      "description": "TTGO-Display",
-      "width": "135",
-      "height": "240",
-      "lightpin": 4,
-      "rotation": 180,
-      "invert": 1,
-      "spimosi": 19,
-      "spimiso": "-1",
-      "spiCLK": 18,
-      "spics": "5",
-      "spidc": "16",
-      "xspiRST": 23
-    }
-  }
-}
-```
-
-For background dimming:
-
-``` json
-{
-  "value": {
-    "dim": {
-      "title": "TFT Backlight",
-      "description": "Backlight dimming of ST7789",
-      "min": 0,
-      "max": 255,
-      "value": 128,
-      "onvalue": "pwmout/dim?value=$v"
+      "name": "tdisplay",
+      "title": "T-Display",
+      "description": "LilyGO TTGO T-Display",
+      "safemode": "false",
+      "button": 0,
+      "homepage": "/index.htm"
     }
   },
-  "pwmout": {
+
+  "ota": { "0": {} },
+
+  "DisplayST7789": {
+    "0": {
+      "description": "ST7789 Display",
+      "width": "135",
+      "height": "240",
+
+      "rotation": "180",
+      "colOffset": "52",
+      "rowOffset": "40",
+      "ips": "true",
+
+      "lightpin": "4",
+ 
+      "spimosi": "19",
+      "spiCLK": "18",
+      "spics": "5",
+      "spidc": "16",
+    
+      "spiRST": "23"
+    }
+  },
+
+  "value": {
     "dim": {
-      "title": "TFT Backlight",
-      "description": "Backlight dimming of ST7789",
-      "pin": "4",
-      "range": 255,
-      "value": 128
+      "title": "Display Backlight",
+      "description": "Manual Backlight control",
+      "min": "0",
+      "max": "100",
+      "value": "50",
+      "onvalue": "DisplayST7789/0?brightness=$v"
     }
   }
 }
@@ -124,12 +155,8 @@ For background dimming:
 
 ## See also
 
+* [Display Elements](/elements/display/index.md)
+* [ST7789 Display Element](/elements/display/st7789.md)
+* [SPI](/dev/spi.md)
 * <http://www.lilygo.cn/prod_view.aspx?TypeId=50062&Id=1400&FId=t3:50062:3>
 * <https://github.com/Xinyuan-LilyGO/TTGO-T-Display>
-* [SPI](/dev/spi.md)
-
---- 
-
-## memo
-
-#define VSPI  3 //SPI bus normally attached to pins 5, 18, 19 and 23, but can be matrixed to any pins
