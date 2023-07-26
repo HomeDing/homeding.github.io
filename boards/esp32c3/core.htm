@@ -51,51 +51,68 @@
 
     </div>
       
-    <p><img src="/boards/esp32/core-esp32c3.jpg" alt="core-esp32c3 board"></p>
+    <p><img src="/boards/esp32c3/core.jpg" alt="core-esp32c3 board"></p>
 <p>The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC.</p>
 <ul>
+<li>ESP32-C3 processor</li>
+<li>4 MByte Flash memory in DIO mode</li>
 <li>This is a small board 21mm * 51mm that fits good on breadboards.</li>
 <li>2 LEDs</li>
-<li>Reset button + 1</li>
+<li>Reset button</li>
 <li>BOOT button</li>
 <li>2.4G PCB onboard antenna</li>
 </ul>
+<p>The CORE-ESP32 board is labeled with <code>luatos.com</code></p>
+<h2>Arduino Board Configuration</h2>
 <p>There are 2 main board variants that differ in the implementation of the USB port.</p>
 <ul>
 <li>One variant has an onboard CH343 USB to serial adapter.</li>
 <li>Second variant exposes the USB port of the ESP32-C3 directly.</li>
 </ul>
-<p>The CORE-ESP32 board is labeled with <code>luatos.com</code></p>
-<h2>OnBoard components</h2>
+<p>The ESP32C3 Dev Module (esp32) can be used with the following settings:</p>
+<ul>
+<li>JTAG Adapter: Disbled</li>
+<li>USB CDC On Boot: Disbled for version with CH343 USB adapter</li>
+<li>USB CDC On Boot: Enabled for version with direct USB connection</li>
+<li>Partition Scheme: Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)</li>
+<li>CPU Frequency: 160MHz</li>
+<li>Flash Mode: <strong>DIO</strong></li>
+<li>Flash Frequency: 80 MHz</li>
+<li>Flash Size: 4MByte (32Mbit)</li>
+<li>Upload Speed: 921600</li>
+<li>Core Debug Level: None</li>
+<li>Erase All Flash: Disabled</li>
+</ul>
+<h2>Main Board components</h2>
 <p>The following components are already on-board:</p>
 <ul>
 <li>4MB single channel SPI FLASH with 2 data lines.<br>
 <strong>Important:</strong> Be sure to flash in DIO mode. QIO doesn’t work.</li>
-<li>IO12: LED D4 (right to USB)</li>
-<li>IO13: LED D5 (left to USB)</li>
+<li>GPIO12: LED D4 (right to USB)</li>
+<li>GPIO13: LED D5 (left to USB)</li>
 <li>RST: RST Button</li>
-<li>IO09: Boot Button</li>
+<li>GPIO09: Boot Button</li>
 </ul>
 <p>The SPI bus is available and also used by the LCD display.</p>
 <ul>
-<li>IO02: SPI-SCK</li>
-<li>IO03: SPI-MOSI</li>
-<li>IO10: SPI-MISO</li>
-<li>IO07: SPI-CS</li>
+<li>GPIO02: SPI-SCK</li>
+<li>GPIO03: SPI-MOSI</li>
+<li>GPIO10: SPI-MISO</li>
+<li>GPIO07: SPI-CS</li>
 </ul>
 <p>The I2C bus is mentioned in the manual but not labeled on board:</p>
 <ul>
-<li>IO04: I2C-SDA</li>
-<li>IO05: I2C-SCL</li>
+<li>GPIO04: I2C-SDA</li>
+<li>GPIO05: I2C-SCL</li>
 </ul>
 <h3>Board configuration</h3>
 <p>The following <code>env.json</code> configuration can be used for this board:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"core-c3"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-C3 based dev board."</span><span class="token punctuation">,</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"corec3"</span><span class="token punctuation">,</span>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"CORE-ESP32C3"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP32-C3 based dev board."</span><span class="token punctuation">,</span>
       <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"9"</span><span class="token punctuation">,</span>
       <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"12"</span><span class="token punctuation">,</span>
       <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span>
@@ -110,36 +127,36 @@
 <h2>LCD + Digital Joystick Shield</h2>
 <p>There is a TFT display and a digital joystick shield available that can be stacked upon the CPU board.</p>
 <p>It offers a 0.96 inch display with 80*160 pixels and 262K Color
-based on the ST7735S driver chip.</p>
-<p>The Boot and Reset buttons are not reachable after mounting this board.</p>
-<p><img src="/boards/esp32/core-esp32c3-shield.jpg" alt="core-esp32c3 shield"></p>
+based on the ST7735S driver chip. The background lightning is not adjustable and always on.</p>
+<p>The Boot and Reset buttons are not reachable any more after mounting this board.</p>
+<p><img src="/boards/esp32c3/core-shield.jpg" alt="core-esp32c3 shield"></p>
 <table>
 <thead>
 <tr>
 <th>key</th>
-<th style="text-align:right">GPIO pin</th>
+<th>GPIO pin</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>down</td>
-<td style="text-align:right">13</td>
+<td>GPIO13</td>
 </tr>
 <tr>
 <td>left</td>
-<td style="text-align:right">5</td>
+<td>GPIO5</td>
 </tr>
 <tr>
 <td>up</td>
-<td style="text-align:right">8</td>
+<td>GPIO8</td>
 </tr>
 <tr>
 <td>right</td>
-<td style="text-align:right">9</td>
+<td>GPIO9</td>
 </tr>
 <tr>
 <td>press</td>
-<td style="text-align:right">4</td>
+<td>GPIO4</td>
 </tr>
 </tbody>
 </table>
@@ -175,12 +192,14 @@ when the shield is used.</p>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h2>Pictures</h2>
-<p><img src="/boards/esp32/core-esp32c3-soldered.jpg" alt="core-esp32c3 board with pins" title="w200">
-<img src="/boards/esp32/core-esp32c3-stacked.jpg" alt="core-esp32c3 on breadboard" title="w200"></p>
+<p><img src="/boards/esp32c3/core-soldered.jpg" alt="core-esp32c3 board with pins" title="w200">
+<img src="/boards/esp32c3/core-stacked.jpg" alt="core-esp32c3 on breadboard" title="w200"></p>
 <h2>See also</h2>
 <ul>
 <li><a href="https://luatos.com/t/esp32c3">https://luatos.com/t/esp32c3</a></li>
 <li><a href="https://wiki.luatos.com/chips/esp32c3/board.html">https://wiki.luatos.com/chips/esp32c3/board.html</a></li>
+<li>luatos wiki: <a href="https://wiki.luatos.com">https://wiki.luatos.com</a></li>
+<li>luatos code: <a href="https://gitee.com/dreamcmi/LuatOS-ESP32">https://gitee.com/dreamcmi/LuatOS-ESP32</a></li>
 <li><a href="https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/">https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/</a></li>
 <li><a href="https://gitee.com/wendal">https://gitee.com/wendal</a></li>
 </ul>

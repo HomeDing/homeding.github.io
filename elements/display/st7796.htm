@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Color Displays based on ST7789</title>
+  <title>Color Displays based on ST7796</title>
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -41,43 +41,31 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>Color Displays based on ST7789</h1>
+    <h1>Color Displays based on ST7796</h1>
 
     
     
       <div class="plaincard">
     
-    The DisplayST7789Element enables using ST7789 based TFT color displays.
+    The DisplayST7796Element enables using ST7796 based TFT color displays.
 
     </div>
       
-    <p><img src="/elements/display/st7789.jpg" alt="st7789 display"></p>
-<p>The support of colorful LCD / TFT displays like the ST7789 based displays.</p>
-<p>The chip supports TFT displays
-with a maximal display resolution of 240*320 pixels in 262k colors.</p>
-<p>Some available displays only use a portion of the maximum display size an are not using the full 18 bits of colour.</p>
-<p>The implementation is done with the help of the GFX library for Arduino and supports 16 bit color values per pixel. Colors are coded using a 565 bit color scheme.</p>
-<p>Displaying pictures with rich color depth is somehow limited by this design decision.</p>
-<h2>Configuration</h2>
-<p>The Display ST7789 Element supports all parameters to configure all displays. The DisplayConfig structure is used to bundle these and pass them to the dedicated Dispay Adapter. While adopting color displays the set of parameters was extended to support the background color andthe SPI interface. A system wide SPI configuration was also added to the Device Element.</p>
-<p>By default and during system startup a white draw/text color is used.</p>
-<h2>Reset pin</h2>
-<p>Some displays support a hardware based reset signal that can be controlled by a distinct GPIO output signal. The resetpin can be configured and will be used by the display adapter or driver to initialize the display.</p>
-<h2>Dimming the display</h2>
-<p>TFT displays need a background lightning.</p>
-<p>The control of the background light is not available in the st7789 display driver chip.</p>
-<p>Some displays support to control the background light by using a distinct GPIO output signal.</p>
-<p>The light pin can be configured and will be used by the display adapter or driver to control the brightness of the display.</p>
-<h2>Rotating the Display</h2>
-<p>Displays are often part of boards and are used in various rotations.</p>
-<p>The rotation can be configured using the values 0, 90, 180 and 270 and will be used to initialize the display adapter or driver.</p>
+    <p>This display uses the <strong>GFX Library for Arduino</strong>. It must be installed using the Arduino Library Manager.</p>
+<p><strong>brightness</strong> – set the brightness of the background light in the range 0…100</p>
+<p>From my testings a value of 20 is usable in low light situations and a value of 80 fits to normal indoor situations.</p>
+<p>Using the builtin LDR the light situation of the environment can be detected to adjust the brightness.</p>
+<p>LDR 0 =&gt; 80
+LDR 200 =&gt; 20</p>
+<p>“mapInMin”: “0”, “mapOutMin” : “80”,
+“mapInMax”: “200”, “mapOutMin” : “20”,</p>
+<p>lightpin // the pin used for PWM based backlight control</p>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/display/index.htm">Displays</a></li>
-<li><a href="/elements/display/st7735.htm">Display ST7735 Element</a></li>
-<li><a href="/boards/esp32/ttgo-t-display.htm">TTGO t-display board</a></li>
+<li><a href="/elements/display/st7789.htm">Color Displays based on ST7789</a></li>
 <li><a href="/displays/fonts.htm">Fonts</a></li>
-<li><a href="/boards/esp32/ttgo-t-display.htm">LilyGO TTGO T-Display</a> ESP32 board</li>
+<li><a href="/boards/esp32/panel-3248S035.htm">Panel ESP32-3248S035</a></li>
 </ul>
 
 
