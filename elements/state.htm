@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Store State</title>
+  <title>State Storage</title>
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -41,19 +41,51 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>Store State</h1>
+    <h1>State Storage</h1>
 
     
     
       <div class="plaincard">
     
-    This element implements storing the current state in some other places as volatile variables.
+    Enable devices to restart with the values and the current state after a reboot or deep sleep.
 
     </div>
       
-    <p>The state is a collection of information and values of a device that cannot be found in configuration.</p>
-<p>When a IoT device is starting up it can use the values from the configuration if the elements
-like the current value of a switch that controls the light or power.</p>
+    <p>Usually elements start with the settings given by the configuration files.
+But in some situations and with some elements the last used working mode or value should be used
+after a planned (or unplanned) restart of the device.</p>
+<p>Example: When a light device like a bulb is starting up it can use the color and brightness
+values that where used before the restart. These values will be used to overwrite the values
+from the configuration.</p>
+<p>Typically Elements know whether they should support this feature like a power switching device.
+Other Elements like sensors have no obvious use case for this.</p>
+<p>As the value element is also supporting saving the current value as a state it can be used to
+even save a last known sensor value.</p>
+<p>All Elements can save any values by calling the function <code>saveState(key, value)</code> implemented by
+the Element base class. in the element configuration the property <code>persist</code></p>
+<p>This information will be used to create an action <code>type/id?{key}={value}</code> on the next element
+restart before starting the element. This action will then overwrite the configuration or value
+from the element configuration.</p>
+<p>To avoid too much and too frequent storing these key+values the the state mechanism
+must be configured on the global and the element level.</p>
+<h2>Elements persisting their state</h2>
+<p>Elements have to implement saving their current values using the <code>saveState(key, value)</code>
+function.</p>
+<p>In the Element the configuration of the persist property</p>
+<p>To avoid too much and too frequent storing these key+values the the state mechanism
+must be configured on the global and the element level.</p>
+<p>The global configuration that enables the state mechanism is done by configuration of an
+available state element</p>
+<p>, is specifying the state storage and is specifyin:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"0"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The values will be persisted using</p>
+<p>TO effectively store this key</p>
+<p>like the current value in the device state</p>
+<p>just use</p>
+<p>This element implements storing the current state in some other places as volatile variables.</p>
+<p>The state is a collection of information and values of a device that cannot be found in configuration.</p>
 <p>That is a situation that normally changes over time because e.g. a light may be switched or a
 schedule may be adjusted.
 When the device is switched off and on or was just restarted it is obvious that the latest
@@ -62,7 +94,7 @@ that can be found in the configuration files.</p>
 <p>This set of information in application architecture is called the “state”
 and starting with version 1.0 of the HomeDing library there is a mechanism
 to implement the behavior described above.</p>
-<h2>State Elements</h2>
+<h2>Persisting all state</h2>
 <p>There are multiple <strong>State Elements</strong> that implement the actual storage mechanism.
 When such an Element is configured it registers
 itself in the board class and offer their functionality to all other elements.</p>

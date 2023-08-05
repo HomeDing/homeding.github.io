@@ -44,6 +44,7 @@
 <p>Module: ESP-WROOM-32</p>
 <p>Board: Wemos LOLIN32
 OLED: SSD1306, 0.96″</p>
+<p><a href="https://randomnerdtutorials.com/esp32-built-in-oled-ssd1306/">https://randomnerdtutorials.com/esp32-built-in-oled-ssd1306/</a></p>
 <p>see also:</p>
 <p><a href="https://www.electrorules.com/esp32-pinout-reference/">https://www.electrorules.com/esp32-pinout-reference/</a></p>
 <p><a href="https://randomnerdtutorials.com/esp32-pinout-reference-gpios/">https://randomnerdtutorials.com/esp32-pinout-reference-gpios/</a></p>
@@ -62,33 +63,20 @@ OLED: SSD1306, 0.96″</p>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">8266</span><span class="token punctuation">,</span>
-      <span class="token property">"passwd"</span><span class="token operator">:</span> <span class="token string">"123"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Listen for 'over the air' OTA Updates"</span>
-    <span class="token punctuation">}</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"ssdp"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"Manufacturer"</span><span class="token operator">:</span> <span class="token string">"me"</span><span class="token punctuation">,</span>
-      <span class="token property">"ModelUrl"</span><span class="token operator">:</span> <span class="token string">"https://www.mathertel.de/Arduino"</span>
-    <span class="token punctuation">}</span>
+  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"60"</span><span class="token punctuation">,</span>
       <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"128"</span><span class="token punctuation">,</span>
-      <span class="token property">"xresetpin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span>
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ota"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?value=$v"</span>
@@ -100,52 +88,6 @@ OLED: SSD1306, 0.96″</p>
       <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
       <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">128</span><span class="token punctuation">,</span>
       <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displayssd1306/0?brightness=$v"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"tout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"outside temperature"</span><span class="token punctuation">,</span>
-      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"log/tout?value=$v,displaytext/tout?value=$v"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"hout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"outside humidity"</span><span class="token punctuation">,</span>
-      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"log/hout?value=$v,displaytext/hout?value=$v"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"weatherfeed"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"home"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"api.openweathermap.org"</span><span class="token punctuation">,</span>
-      <span class="token property">"get"</span><span class="token operator">:</span> <span class="token string">"/data/2.5/onecall?units=metric&amp;${loc}&amp;exclude=current,hourly&amp;appid=${key}&amp;lang=en"</span><span class="token punctuation">,</span>
-      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"835653bf60675caf2c8e6a797f2a0ac2"</span><span class="token punctuation">,</span>
-      <span class="token property">"loc"</span><span class="token operator">:</span> <span class="token string">"lat=50.23&amp;lon=8.65"</span><span class="token punctuation">,</span>
-      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"04:00:00"</span><span class="token punctuation">,</span>
-      <span class="token property">"actions"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[0]/temp/day"</span><span class="token punctuation">,</span>
-          <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/t0?value=$v"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[0]/humidity"</span><span class="token punctuation">,</span>
-          <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/h0?value=$v"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[0]/weather[0]/description"</span><span class="token punctuation">,</span>
-          <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/d0?value=$v"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[1]/temp/day"</span><span class="token punctuation">,</span>
-          <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/t1?value=$v"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[1]/humidity"</span><span class="token punctuation">,</span>
-          <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/h1?value=$v"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"daily[1]/weather[0]/description"</span><span class="token punctuation">,</span>
-          <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/d1?value=$v"</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -153,53 +95,7 @@ OLED: SSD1306, 0.96″</p>
       <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
       <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
       <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the value"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"t0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">55</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
-      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--.--"</span><span class="token punctuation">,</span>
-      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"°C "</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the temp forecast"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"h0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
-      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"%"</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"--"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the hum forecast"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"d0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
-      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"txt"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the forecast description"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"t1"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">55</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">41</span><span class="token punctuation">,</span>
-      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"##.##"</span><span class="token punctuation">,</span>
-      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"°C "</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the temp forecast"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"h1"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">41</span><span class="token punctuation">,</span>
-      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">"%"</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"##.##"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the hum forecast"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"d1"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">51</span><span class="token punctuation">,</span>
-      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"txt"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the forecast description"</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the time"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
