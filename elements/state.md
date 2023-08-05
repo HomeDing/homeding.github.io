@@ -1,15 +1,77 @@
 ---
-title: Store State
+title: State Storage
 tags: ["Element"]
 layout: "page.njk"
 excerpt: >
-  This element implements storing the current state in some other places as volatile variables.
+  Enable devices to restart with the values and the current state after a reboot or deep sleep.
 ---
+
+Usually elements start with the settings given by the configuration files.
+But in some situations and with some elements the last used working mode or value should be used
+after a planned (or unplanned) restart of the device.
+
+Example: When a light device like a bulb is starting up it can use the color and brightness
+values that where used before the restart. These values will be used to overwrite the values
+from the configuration.
+
+Typically Elements know whether they should support this feature like a power switching device.
+Other Elements like sensors have no obvious use case for this.
+
+As the value element is also supporting saving the current value as a state it can be used to
+even save a last known sensor value.
+
+All Elements can save any values by calling the function `saveState(key, value)` implemented by
+the Element base class. in the element configuration the property `persist`
+
+This information will be used to create an action `type/id?{key}={value}` on the next element
+restart before starting the element. This action will then overwrite the configuration or value
+from the element configuration.
+
+To avoid too much and too frequent storing these key+values the the state mechanism
+must be configured on the global and the element level.
+
+
+## Elements persisting their state
+
+Elements have to implement saving their current values using the `saveState(key, value)`
+function.
+
+In the Element the configuration of the persist property  
+
+To avoid too much and too frequent storing these key+values the the state mechanism
+must be configured on the global and the element level.
+
+
+
+
+
+
+The global configuration that enables the state mechanism is done by configuration of an
+available state element 
+
+, is specifying the state storage and is specifyin:
+
+``` json
+{
+  "rtcstate": {"0":{}}
+}
+```
+
+
+The values will be persisted using
+
+TO effectively store this key
+
+like the current value in the device state
+
+just use
+
+
+  This element implements storing the current state in some other places as volatile variables.
+
 
 The state is a collection of information and values of a device that cannot be found in configuration.
 
-When a IoT device is starting up it can use the values from the configuration if the elements
-like the current value of a switch that controls the light or power.
 
 That is a situation that normally changes over time because e.g. a light may be switched or a
 schedule may be adjusted.
@@ -22,7 +84,7 @@ and starting with version 1.0 of the HomeDing library there is a mechanism
 to implement the behavior described above.
 
 
-## State Elements
+## Persisting all state
 
 There are multiple **State Elements** that implement the actual storage mechanism.
 When such an Element is configured it registers
@@ -31,10 +93,11 @@ itself in the board class and offer their functionality to all other elements.
 All other Elements can then pass values to the registered State element to be saved by using the save() function. State Elements will collect these values in the format of actions and will update the current list of state actions in the storage.
 
 When a device is re-starting the state element will create actions to update the given values in the elements.
-This is done just after the initialization from the configuration files and before the elements get started. 
+This is done just after the initialization from the configuration files and before the elements get started.
 
 As of now there are 2 State Elements available that can be enabled by configuring them in the `env.json` configuration.
 They actually do not participate in the actions but register a state storage mechanism for other elements.
+
 
 ### RTC State
 

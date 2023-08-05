@@ -1,6 +1,6 @@
 ---
 title: Display TouchGT 911 Element
-tags: ["Element", "Display", "Input"]
+tags: ["Element", "Display", "Input", "WIP"]
 layout: "page.njk"
 excerpt: >
   The Display Touch GT911 Element enables retrieving touch events on displays
