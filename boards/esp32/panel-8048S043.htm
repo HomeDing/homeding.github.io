@@ -47,11 +47,36 @@
     
       <div class="plaincard">
     
-    This panel is using a ESP32-S3 processor with 16M Flash and   8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing Display Example]
+    This panel is using a ESP32-S3 processor with 16M Flash and 8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing Display Example]
 
     </div>
       
     <p>There are some boards available that already combine display, touchscreen and processor that have been tested using the [HomeDing Display Example].</p>
+<ul>
+<li>I2C bus using SDA=19, CLK=20</li>
+<li>Display: ST7262: 4.3 inch, 800 * 480 px, 16 bit color, parallel mode</li>
+<li>Touch Sensor: GT911 on I2C, Address 0x5D</li>
+<li>SD Card</li>
+</ul>
+<h2>Arduino Configuration</h2>
+<p>The ESP32S3 Dev Module (esp32) can be used with the following settings:</p>
+<ul>
+<li>JTAG Adapter: Disbled</li>
+<li>PSRAM: QSPI PSRAM</li>
+<li>Flash Mode: QIO 80MHz</li>
+<li>Flash Size: 16MByte (128Mbit)</li>
+<li>Arduino Runs On: Core 1</li>
+<li>Events Runs On: Core 1</li>
+<li>USB Mode: Hardware CDC amd JTAG</li>
+<li>USB CDC On Boot: Disabled</li>
+<li>USB Firmware MSC on Boot: Disabled</li>
+<li>Upload Mode: UAT0 / Hardware CDC</li>
+<li>Partition Scheme: ___</li>
+<li>CPU Frequency: 240MHz</li>
+<li>Upload Speed: 921600</li>
+<li>Core Debug Level: None</li>
+<li>Erase All Flash: Disabled</li>
+</ul>
 <p>The one used here is labeled <strong>ESP32-8048S043C</strong> from <a href="http://www.jczn1688.com">http://www.jczn1688.com</a> and available
 on AliExpress. On the web site you find documentation but be they seem not to fit to the current boards. Some testing was required.</p>
 <p>These type of boards are available in various versions with different displays and touchscreen
@@ -68,6 +93,9 @@ drivers and this example may be adapted to other configurations when required.</
 </ul>
 <p>Download of files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688</p>
 <!-- <https://github.com/PaulStoffregen/XPT2046_Touchscreen> -->
+<h2>env.json configuration</h2>
+<pre class="language-json"><code class="language-json"></code></pre>
+<h2>Boot Button</h2>
 <h2>Display</h2>
 <p>// option 1:
 // ST7262 IPS LCD 800x480
@@ -174,9 +202,6 @@ GFX_NOT_DEFINED /</em> CS <em>/, GFX_NOT_DEFINED /</em> SCK <em>/, GFX_NOT_DEFIN
 </ul>
 <h3>Backlight control</h3>
 <p>TFT_BL GPIO02</p>
-<h3>Drawing in the Display Buffer</h3>
-<p>The AdaFruit GFX library offers the functionality to draw the graphics and text in a
-16 bits per pixel buffer that fits for RGB panels.</p>
 <h2>Touch panel</h2>
 <p>TAMC_GT911</p>
 <h2>connectors</h2>
@@ -229,6 +254,50 @@ data_gpio_nums[14] 21
 data_gpio_nums[15] 14
 _useBigEndian 0
 _useBigEndian 0</p>
+<p>{
+“device”: {
+“0”: {
+“name”: “panel”,
+“title”: “Panel 800*480”,
+“description”: “Panel with 800 px”,
+“loglevel”: “2”,
+“xbutton”: “D3”,
+“xled”: “4”,
+“logfile”: 1,
+“safemode”: “false”,
+“homepage”: “/board.htm”,
+“cache”: “max-age=600”,
+“i2c-SDA”: “19”,
+“i2c-SCL”: “20”
+}
+},
+“ota”: {
+“0”: {
+“port”: 8266,
+“passwd”: “123”
+}
+},
+“ntptime”: {
+“on”: {
+“zone”: “CET-1CEST,M3.5.0,M10.5.0/3”
+}
+},
+“diag”: {
+“0”: {}
+},
+“DisplayEsp32panel”: {
+“0”: {
+“width”: “800”,
+“height”: “480”,
+“color”: “x000000”,
+“background”: “xccccff”,
+“lightpin”: 2
+}
+},
+“DisplayTouchGT911”: {
+“0”: { “address”: “0x5D” }
+}
+}</p>
 
 
     
