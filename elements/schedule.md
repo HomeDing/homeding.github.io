@@ -29,25 +29,21 @@ The `onvalue` event is always emitted together with the `on` and `off` event sit
 
 The following properties are available for configuration of the element:
 
-> **title** - Caption text for the element. Used in the boards.
->
-> **description** - A line of text that gives a short description of the device used in the web UI.
->
-> **mode** - The element supports 3 modes:
+> **mode** -- The element supports 3 modes:
 >
 > * **"on"** for always on,
 > * **"off"** for always off and
 > * **"timer**" for switching the value using the timer settings.
 >
-> **ontime** - Specifies the start of the time span.
+> **ontime** -- Specifies the start of the time span.
 >
-> **offtime** - Specifies the end of the time span.
+> **offtime** -- Specifies the end of the time span.
 >
-> **onon** - These actions are emitted when the on time has passed.
+> **onon** -- These actions are emitted when the on time has passed.
 >
-> **onoff** - These actions are emitted when the off time has passed.
+> **onoff** -- These actions are emitted when the off time has passed.
 >
-> **onvalue** - These actions are emitted when the value is changing.
+> **onvalue** -- These actions are emitted when the value is changing.
 
 {% include "./elementproperties.md" %}
 
@@ -55,9 +51,9 @@ The following properties are available for configuration of the element:
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the element is active.
+**active** -- Is set to true when the element is active.
 
-**value** - Current output value of the element.
+**value** -- Current output value of the element.
 
 ## Example Configuration
 

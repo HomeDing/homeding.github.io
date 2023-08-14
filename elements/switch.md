@@ -20,14 +20,25 @@ The Web UI for the Switch Element shows the actual state of the switch and the o
 
 ## Element Configuration
 
-The following properties are available for configuration of the element.
-
 <object data="/element.svg?switch" type="image/svg+xml"></object>
+
+The following properties are available for configuration of the element:
+
+> **value** -- An initial/default value can be set using the configuration.
+> 
+> **onValue** -- These actions will be emitted whenever the value has changed.
+> 
+> **label** -- The label is used together with the menu element to show the current selected value.
+
+{% include "./elementproperties.md" %}
 
 In some cases it is required to use a momentary input to change the state of a boolean value from on to off and reverse.
 
 It is also possible to use multiple momentary input elements even from external devices located at different places for the same switch.
 
+This Element supports [Persisting Current State of Elements](/elements/state.md) for the current values.
+
+> **useState** -- set to true for saving the current values in the Device State.
 
 ## Inbound Actions
 
@@ -124,3 +135,10 @@ To use a momentary button at another device the digital input there can use a re
   }
 }
 ```
+
+## See also
+
+* [Persisting Current State of Elements](/elements/state.md)
+* [Rotary Element](/elements/rotary.md)
+* [Menu Element](/elements/menu.md)
+* [LED On/OFF Recipe](/recipes/led.md)

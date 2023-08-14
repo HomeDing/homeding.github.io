@@ -1,5 +1,5 @@
 ---
-title: State Storage
+title: Persisting Current State of Elements
 tags: ["Element"]
 layout: "page.njk"
 excerpt: >
@@ -34,117 +34,65 @@ must be configured on the global and the element level.
 ## Elements persisting their state
 
 Elements have to implement saving their current values using the `saveState(key, value)`
-function.
+function. To enable the values from an element get part of the device state the property
+`useState` must be set to `true`.
 
-In the Element the configuration of the persist property  
+```JSON
+{
+  "value": {
+    "sw": {
+      "title": "Stateful Value",
+      "min": "0",
+      "max": "100",
+      "useState": "true"
+    }
+  }
+}
+```
+
+Elements may persist a single value or even multiple values in the state.
+
+Elements that change their state very frequently should not persist their values
+as this will result in much IO on the filesystem that may burn down Flash memory.
+
+
+## Persisting the state of the device
+
+The values from the elements configured with `useState` flag to true will be collected
+inside the `DeviceState` storage.
+
+The global configuration that enables saving it to a permanent media the `StateElement` can be
+configured:
+
+> **savedelay** -- This value must be given with a duration > 0. After this duration the state
+> will be saved. This should be a value that is high enough to save the current state not too
+> often.
+>
+> **clear** -- This action will clear out any state values from elements.
+
+In the Element the configuration of the persist property 
 
 To avoid too much and too frequent storing these key+values the the state mechanism
 must be configured on the global and the element level.
 
-
-
-
-
-
-The global configuration that enables the state mechanism is done by configuration of an
-available state element 
-
-, is specifying the state storage and is specifyin:
-
-``` json
+``` JSON
 {
-  "rtcstate": {"0":{}}
+  "state": {
+    "0": { "savedelay": "8s"}
+  }
 }
 ```
 
-
-The values will be persisted using
-
-TO effectively store this key
-
-like the current value in the device state
-
-just use
-
-
-  This element implements storing the current state in some other places as volatile variables.
-
-
-The state is a collection of information and values of a device that cannot be found in configuration.
-
-
-That is a situation that normally changes over time because e.g. a light may be switched or a
-schedule may be adjusted.
-When the device is switched off and on or was just restarted it is obvious that the latest
-actual values of these elements should be present as these values are more accurate than the values
-that can be found in the configuration files.
-
-This set of information in application architecture is called the "state"
-and starting with version 1.0 of the HomeDing library there is a mechanism
-to implement the behavior described above.
-
-
-## Persisting all state
-
-There are multiple **State Elements** that implement the actual storage mechanism.
-When such an Element is configured it registers
-itself in the board class and offer their functionality to all other elements.
-
-All other Elements can then pass values to the registered State element to be saved by using the save() function. State Elements will collect these values in the format of actions and will update the current list of state actions in the storage.
-
-When a device is re-starting the state element will create actions to update the given values in the elements.
-This is done just after the initialization from the configuration files and before the elements get started.
-
-As of now there are 2 State Elements available that can be enabled by configuring them in the `env.json` configuration.
-They actually do not participate in the actions but register a state storage mechanism for other elements.
-
-
-### RTC State
-
-The RTCStateElement registers itself for saving the state information in the RTC Memory that is available in the ESP8266 processor. Here state survives reboots and software updates as long as the power of the device is not switched off.
-
-The following configuration enables this state mechanism:
-
-``` json
-{
-  "rtcstate": {"0":{}}
-}
-```
-
-There is not much space in the RTC Memory and only 200 characters can be used to store the state information.
-
-The state is formatted as a series of actions like:
-
-``` json
-"switch/power?value=1,value/speed?value=12"
-```
-
-### EEPROM State
-
-t.b.d.
+The values will be persisted using the local file system in a hidden file.
 
 
 ## Elements with State
 
 There are multiple Elements that support saving and loading state:
 
-value, switch
+* [Value Element](/elements/value.md)
+* [Switch Element](/elements/switch.md)
 
-
-To enabled saving and loading the state of an Element the `useState` property must be enabled.
-
-Here is an example for a switch supporting 0 and 1 values. The default value is `0` == Off while the value after a reboot is taken from the state memory.
-
-``` json
-{
-  "switch": {
-    "power": {
-      "value":0,
-      "useState":1
-    }
-  }
-}
-```
 
 <!-- 
 [](https://www.dweet.io/play/)

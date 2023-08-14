@@ -52,26 +52,33 @@ Here the ValueElement can help. It allows
 
 ## Element Configuration
 
-The following properties are available for configuration of the element.
-
 <object data="/element.svg?value" type="image/svg+xml"></object>
 
-**min** Defines the minimum of the value.
+The following properties are available for configuration of the element.
 
-**max** Defines the maximum of the value.
+> **min** -- Defines the minimum of the value.
+> 
+> **max** -- Defines the maximum of the value.
+> 
+> **step** -- The value will be incremented / decremented by the multiple of the step value
+> when using the up / down actions.
+> 
+> **value** -- An initial/default value can be set using the configuration.
+> 
+> **onValue** -- These actions will be emitted whenever the value has changed.
+> 
+> **up** -- the value can be incremented by the passed value. Negative values are allowed.
+> 
+> **down** -- the value can be decremented by the passed value.
+> 
+> **label** -- The label is used together with the menu element to show the current selected value.
 
-**step** The value will be incremented / decremented by the multiple of the step value
-when using the up / down actions.
+{% include "./elementproperties.md" %}
 
-**value** An initial/default value can be set using the configuration.
+This Element supports [Persisting Current State of Elements](/elements/state.md) for the current values.
 
-**onValue** These actions will be emitted whenever the value has changed.
+> **useState** -- set to true for saving the current values in the Device State.
 
-**up** the value can be incremented by the passed value. Negative values are allowed.
-
-**down** the value can be decremented by the passed value.
-
-**label** The label is used together with the menu element to show the current selected value.
 
 ## Examples for actions
 
@@ -112,8 +119,9 @@ The current value is reported as the state of a value element.
 
 ## See also
 
-* Rotary Encoder
-* Menu Element
-* LED Recipe
+* [Persisting Current State of Elements](/elements/state.md)
+* [Rotary Element](/elements/rotary.md)
+* [Menu Element](/elements/menu.md)
+* [Dimmable LED recipe](/recipes/leddim.md)
 
 
