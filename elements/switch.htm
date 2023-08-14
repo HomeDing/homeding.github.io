@@ -57,10 +57,26 @@
 <p><img src="/elements/switchui.png" alt="Switch Web UI"></p>
 <p>The Web UI for the Switch Element shows the actual state of the switch and the output value as a green/red signal.</p>
 <h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?switch" type="image/svg+xml"></object></p>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
+<p><strong>value</strong> – An initial/default value can be set using the configuration.</p>
+<p><strong>onValue</strong> – These actions will be emitted whenever the value has changed.</p>
+<p><strong>label</strong> – The label is used together with the menu element to show the current selected value.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> – The location of the device.</p>
+<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <p>In some cases it is required to use a momentary input to change the state of a boolean value from on to off and reverse.</p>
 <p>It is also possible to use multiple momentary input elements even from external devices located at different places for the same switch.</p>
+<p>This Element supports <a href="/elements/state.htm">Persisting Current State of Elements</a> for the current values.</p>
+<blockquote>
+<p><strong>useState</strong> – set to true for saving the current values in the Device State.</p>
+</blockquote>
 <h2>Inbound Actions</h2>
 <p>The actions received by the switch element can set the value to a specific logical level or toggle the existing level.</p>
 <p><strong>switch/{id}/toggle=1</strong> this inbound action will toggle the logical level of the switch from High to Low and reverse.</p>
@@ -130,6 +146,13 @@ The value given in the actions is <code>0</code> or <code>1</code>.</p>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/state.htm">Persisting Current State of Elements</a></li>
+<li><a href="/elements/rotary.htm">Rotary Element</a></li>
+<li><a href="/elements/menu.htm">Menu Element</a></li>
+<li><a href="/recipes/led.htm">LED On/OFF Recipe</a></li>
+</ul>
 
 
     

@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>State Storage</title>
+  <title>Persisting Current State of Elements</title>
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -41,7 +41,7 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>State Storage</h1>
+    <h1>Persisting Current State of Elements</h1>
 
     
     
@@ -70,63 +70,47 @@ from the element configuration.</p>
 must be configured on the global and the element level.</p>
 <h2>Elements persisting their state</h2>
 <p>Elements have to implement saving their current values using the <code>saveState(key, value)</code>
-function.</p>
+function. To enable the values from an element get part of the device state the property
+<code>useState</code> must be set to <code>true</code>.</p>
+<pre class="language-JSON"><code class="language-JSON">{
+  "value": {
+    "sw": {
+      "title": "Stateful Value",
+      "min": "0",
+      "max": "100",
+      "useState": "true"
+    }
+  }
+}</code></pre>
+<p>Elements may persist a single value or even multiple values in the state.</p>
+<p>Elements that change their state very frequently should not persist their values
+as this will result in much IO on the filesystem that may burn down Flash memory.</p>
+<h2>Persisting the state of the device</h2>
+<p>The values from the elements configured with <code>useState</code> flag to true will be collected
+inside the <code>DeviceState</code> storage.</p>
+<p>The global configuration that enables saving it to a permanent media the <code>StateElement</code> can be
+configured:</p>
+<blockquote>
+<p><strong>savedelay</strong> – This value must be given with a duration &gt; 0. After this duration the state
+will be saved. This should be a value that is high enough to save the current state not too
+often.</p>
+<p><strong>clear</strong> – This action will clear out any state values from elements.</p>
+</blockquote>
 <p>In the Element the configuration of the persist property</p>
 <p>To avoid too much and too frequent storing these key+values the the state mechanism
 must be configured on the global and the element level.</p>
-<p>The global configuration that enables the state mechanism is done by configuration of an
-available state element</p>
-<p>, is specifying the state storage and is specifyin:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"0"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>The values will be persisted using</p>
-<p>TO effectively store this key</p>
-<p>like the current value in the device state</p>
-<p>just use</p>
-<p>This element implements storing the current state in some other places as volatile variables.</p>
-<p>The state is a collection of information and values of a device that cannot be found in configuration.</p>
-<p>That is a situation that normally changes over time because e.g. a light may be switched or a
-schedule may be adjusted.
-When the device is switched off and on or was just restarted it is obvious that the latest
-actual values of these elements should be present as these values are more accurate than the values
-that can be found in the configuration files.</p>
-<p>This set of information in application architecture is called the “state”
-and starting with version 1.0 of the HomeDing library there is a mechanism
-to implement the behavior described above.</p>
-<h2>Persisting all state</h2>
-<p>There are multiple <strong>State Elements</strong> that implement the actual storage mechanism.
-When such an Element is configured it registers
-itself in the board class and offer their functionality to all other elements.</p>
-<p>All other Elements can then pass values to the registered State element to be saved by using the save() function. State Elements will collect these values in the format of actions and will update the current list of state actions in the storage.</p>
-<p>When a device is re-starting the state element will create actions to update the given values in the elements.
-This is done just after the initialization from the configuration files and before the elements get started.</p>
-<p>As of now there are 2 State Elements available that can be enabled by configuring them in the <code>env.json</code> configuration.
-They actually do not participate in the actions but register a state storage mechanism for other elements.</p>
-<h3>RTC State</h3>
-<p>The RTCStateElement registers itself for saving the state information in the RTC Memory that is available in the ESP8266 processor. Here state survives reboots and software updates as long as the power of the device is not switched off.</p>
-<p>The following configuration enables this state mechanism:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"0"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>There is not much space in the RTC Memory and only 200 characters can be used to store the state information.</p>
-<p>The state is formatted as a series of actions like:</p>
-<pre class="language-json"><code class="language-json"><span class="token string">"switch/power?value=1,value/speed?value=12"</span></code></pre>
-<h3>EEPROM State</h3>
-<p>t.b.d.</p>
+<pre class="language-JSON"><code class="language-JSON">{
+  "state": {
+    "0": { "savedelay": "8s"}
+  }
+}</code></pre>
+<p>The values will be persisted using the local file system in a hidden file.</p>
 <h2>Elements with State</h2>
 <p>There are multiple Elements that support saving and loading state:</p>
-<p>value, switch</p>
-<p>To enabled saving and loading the state of an Element the <code>useState</code> property must be enabled.</p>
-<p>Here is an example for a switch supporting 0 and 1 values. The default value is <code>0</code> == Off while the value after a reboot is taken from the state memory.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"power"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"value"</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>
-      <span class="token property">"useState"</span><span class="token operator">:</span><span class="token number">1</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<ul>
+<li><a href="/elements/value.htm">Value Element</a></li>
+<li><a href="/elements/switch.htm">Switch Element</a></li>
+</ul>
 <!-- 
 [](https://www.dweet.io/play/)
 

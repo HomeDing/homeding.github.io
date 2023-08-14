@@ -81,17 +81,30 @@ ToDo: A default value can be specified in the configuration but can be saved to 
 <li>Send out an action when the value changes.</li>
 </ul>
 <h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?value" type="image/svg+xml"></object></p>
-<p><strong>min</strong> Defines the minimum of the value.</p>
-<p><strong>max</strong> Defines the maximum of the value.</p>
-<p><strong>step</strong> The value will be incremented / decremented by the multiple of the step value
+<p>The following properties are available for configuration of the element.</p>
+<blockquote>
+<p><strong>min</strong> – Defines the minimum of the value.</p>
+<p><strong>max</strong> – Defines the maximum of the value.</p>
+<p><strong>step</strong> – The value will be incremented / decremented by the multiple of the step value
 when using the up / down actions.</p>
-<p><strong>value</strong> An initial/default value can be set using the configuration.</p>
-<p><strong>onValue</strong> These actions will be emitted whenever the value has changed.</p>
-<p><strong>up</strong> the value can be incremented by the passed value. Negative values are allowed.</p>
-<p><strong>down</strong> the value can be decremented by the passed value.</p>
-<p><strong>label</strong> The label is used together with the menu element to show the current selected value.</p>
+<p><strong>value</strong> – An initial/default value can be set using the configuration.</p>
+<p><strong>onValue</strong> – These actions will be emitted whenever the value has changed.</p>
+<p><strong>up</strong> – the value can be incremented by the passed value. Negative values are allowed.</p>
+<p><strong>down</strong> – the value can be decremented by the passed value.</p>
+<p><strong>label</strong> – The label is used together with the menu element to show the current selected value.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> – The location of the device.</p>
+<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
+<p>This Element supports <a href="/elements/state.htm">Persisting Current State of Elements</a> for the current values.</p>
+<blockquote>
+<p><strong>useState</strong> – set to true for saving the current values in the Device State.</p>
+</blockquote>
 <h2>Examples for actions</h2>
 <p>The value element accepts actions like</p>
 <ul>
@@ -121,9 +134,10 @@ when using the up / down actions.</p>
 <span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
-<li>Rotary Encoder</li>
-<li>Menu Element</li>
-<li>LED Recipe</li>
+<li><a href="/elements/state.htm">Persisting Current State of Elements</a></li>
+<li><a href="/elements/rotary.htm">Rotary Element</a></li>
+<li><a href="/elements/menu.htm">Menu Element</a></li>
+<li><a href="/recipes/leddim.htm">Dimmable LED recipe</a></li>
 </ul>
 
 

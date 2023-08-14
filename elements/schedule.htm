@@ -66,31 +66,29 @@ The first one when the <code>on</code>-time has passed and a second one when the
 <p><object data="/element.svg?schedule" type="image/svg+xml"></object></p>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>
-<p><strong>title</strong> - Caption text for the element. Used in the boards.</p>
-<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
-<p><strong>mode</strong> - The element supports 3 modes:</p>
+<p><strong>mode</strong> – The element supports 3 modes:</p>
 <ul>
 <li><strong>“on”</strong> for always on,</li>
 <li><strong>“off”</strong> for always off and</li>
 <li><strong>&quot;timer</strong>&quot; for switching the value using the timer settings.</li>
 </ul>
-<p><strong>ontime</strong> - Specifies the start of the time span.</p>
-<p><strong>offtime</strong> - Specifies the end of the time span.</p>
-<p><strong>onon</strong> - These actions are emitted when the on time has passed.</p>
-<p><strong>onoff</strong> - These actions are emitted when the off time has passed.</p>
-<p><strong>onvalue</strong> - These actions are emitted when the value is changing.</p>
+<p><strong>ontime</strong> – Specifies the start of the time span.</p>
+<p><strong>offtime</strong> – Specifies the end of the time span.</p>
+<p><strong>onon</strong> – These actions are emitted when the on time has passed.</p>
+<p><strong>onoff</strong> – These actions are emitted when the off time has passed.</p>
+<p><strong>onvalue</strong> – These actions are emitted when the value is changing.</p>
 </blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
-<p><strong>title</strong> - Caption text for the element. Used by the element specific cards on the dash boards.</p>
-<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
-<p><strong>room</strong> - The location of the device.</p>
-<p><strong>loglevel</strong> - This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> – The location of the device.</p>
+<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
 </blockquote>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
-<p><strong>active</strong> - Is set to true when the element is active.</p>
-<p><strong>value</strong> - Current output value of the element.</p>
+<p><strong>active</strong> – Is set to true when the element is active.</p>
+<p><strong>value</strong> – Current output value of the element.</p>
 <h2>Example Configuration</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"schedule"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
