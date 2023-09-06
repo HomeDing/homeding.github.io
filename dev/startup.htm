@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <title>The Startup Sequence</title>
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  main h2 {margin-top: 1rem !important;}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>The Startup Sequence</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    After a reboot or when powering up the network connection needs to be established or configured and the operating mode is chosen based on counting reset cycles.
+
+    </div>
+      
+    <p>[ ] 5 minutes startup timeout to restart
+[ ] 60 seconds runtime to set the reset counter to 0</p>
+<p>There are several operating modes implemented that help in network and device configurations and allow even
+starting a device without or with a wrong configuration. This is based on the available network configuration
+and a counter of the latest reset cycles.</p>
+<p>The network configuration is given by the <a href="/dev/wifimanager.htm">WiFi Manager</a>.</p>
+<p>The reset counter is incremented immediately after the restart of the device and is set to the value 0
+after successfully running a device for at least 60 seconds.</p>
+<p>A reset can be enforced by powering off and on the device or by using the <code>RST</code> / <code>EN</code> button
+that is available on many boards.</p>
+<p>Sometimes the wireless network is not available and a configured network connection can not be
+established. In this case the device will restart after 5 minutes with a reset
+counter set to 0. This allows starting in a normal operation mode after a network dropout.</p>
+<h2>Captive Mode</h2>
+<p>This mode is automatically chosen when no network configuration is given or after several resets
+in a row.</p>
+<p>In this operating mode an access point is created with a name <code>HomeDing-xxxxxx</code> using the last 6
+digits of the MAC adddress of the board. Any client can connect to this access point and can
+access the WiFi Setup Dialog of the <a href="/dev/wifimanager.htm">WiFi Manager</a>.</p>
+<p>In this mode NO configured element will be activated.</p>
+<p>Using the WiFi Setup Dialog the network connection details can configured and persisted on the
+board.</p>
+<p>The reset counter is set to 0 after successfully running the captive mode for at least 60 seconds
+or by updating a new network connectivity.</p>
+<h2>Normal Run Mode</h2>
+<p>This mode is enabled when the reset counter has the value 1.</p>
+<p>This is the regular working mode for a configured device.</p>
+<ul>
+<li>All configured Elements created.</li>
+<li>The last <a href="/elements/state.htm">state information of elements</a> is given to the elements.</li>
+<li>The System Elements are started.</li>
+<li>When network is available the Elements requiring a Network are started.</li>
+<li>When a current time is available the Elements requiring a current time are started.</li>
+</ul>
+<p>When the <code>secure</code> property is set in the device configuration some
+device configuration functionality is disabled protect.</p>
+<h2>Unsecure Run Mode</h2>
+<p>This mode is enabled when the reset counter has the value 2.  It can be enabled by resetting or
+re-powering the device twice within 60 seconds. This mode and behaves exactly like the Normal
+Run Mode in the non-secure mode.</p>
+<p>This mode is available for enabling OTA updates on devices with the <code>secure</code> property is set in
+the device configuration.</p>
+<h2>Bare Run Mode</h2>
+<p>This mode is enabled when the reset counter has the value 3.</p>
+<ul>
+<li>The network configuration is used for network connectivity.</li>
+<li>Only a [Device element] and an [OTA Element] is created without loading any configuration
+file.</li>
+</ul>
+<p>This results in a device using a generic name like <code>ESP-xxxxxx</code> or <code>ESP32-xxxxxx</code>. on the local
+network.</p>
+<p>The Web Server files can be uploaded and the device can be configured through uploaded
+configuration files or the integrated IDE functionality.</p>
+<h2>Enforced Captive Mode</h2>
+<p>This mode is enabled when the reset counter has the value 4 or greater. The device runs the
+Captive mode described above.</p>
+<p>When the Captive mode is unused for 5 minutes or ended by configuring a new network connectivity
+the reset counter is set to 0 and a restart is executed.</p>
+<hr>
+<h2>System LED</h2>
+<p>when a System led is configured in the device configuration the following signals can be seen:</p>
+<table>
+<thead>
+<tr>
+<th>state of the device</th>
+<th>frequency</th>
+<th>signal form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>connecting to network in safe mode</td>
+<td>1 per 700msec.</td>
+<td>fast long pulse</td>
+</tr>
+<tr>
+<td>connecting to network in unsafe mode</td>
+<td>1 per 700msec.</td>
+<td>fast short pulse</td>
+</tr>
+<tr>
+<td>WiFi Manager mode</td>
+<td>1 per 3 sec.</td>
+<td>slow short signal</td>
+</tr>
+</tbody>
+</table>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/implementation.htm">Implementation</a></div>
+    
+  </main>
+
+  <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
