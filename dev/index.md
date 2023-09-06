@@ -41,7 +41,7 @@ useful functionality:
 > * [WiFi manager](/dev/wifimanager.md)
 > * [Serial Logger](/dev/logger.md)
 > * [The safemode](/dev/safemode.md)
-> * [Network Startup](/dev/startupnet.md)
+> * [Network Startup](/dev/startup.md)
 > * [Using JSON formatted data](/dev/microjson.md)
 
 

@@ -22,7 +22,7 @@ The WiFi Manager will automatically be started when no previous network and no c
 The WiFi Manager can be started by pressing then sys button during the connect attempts or
 by resetting the device without power loss 2 times in a row.
 
-See [The Network Startup Sequence](/dev/startupnet.md) for details.
+See [The Network Startup Sequence](/dev/startup.md) for details.
 
 
 ## Wifi Setup Dialog
