@@ -51,21 +51,22 @@
 
     </div>
       
-    <h2>Serial output</h2>
-<p>On the Serial output some information about the Chips and memory is shown by using ESP32 SDK functions:</p>
-<pre class="language-txt"><code class="language-txt">14:50:58 diag/0:t Chip-Info:
-14:50:58 diag/0:t   model: 5
-14:50:58 diag/0:t     ESP32-C3
-14:50:58 diag/0:t   features: 00000012
-14:50:58 diag/0:t     2.4GHz WiFi
-14:50:58 diag/0:t     Bluetooth LE
-14:50:58 diag/0:t   cores: 1
-14:50:58 diag/0:t   revision: 3
-14:50:58 diag/0:t ChipModel: ESP32-C3
-14:50:58 diag/0:t Flash:
-14:50:58 diag/0:t   ChipSize: 4194304
-14:50:58 diag/0:t   ChipMode: 2
-14:50:58 diag/0:t   ChipSpeed: 80000000</code></pre>
+    <h2>Configuration</h2>
+<p>This element requires no parameters and can be activated using the configuration:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Configuration Example</h2>
+<p>This information can be retrieved using the endpoint <code>http://devicename/diag</code>.</p>
+<pre class="language-txt"><code class="language-txt">**Info**
+DeviceName: hdboard
+Build Date &amp; Time: Sep  6 2023T16:42:09
+State: []
+Mac-address: C4:DE:E2:13:3A:14
+
+no i2c bus.</code></pre>
 <h2>I2C scan</h2>
 <p>by using the url <a href="http://%7Bdevicename%7D/diag">http://{devicename}/diag</a> ths I2C bus will be scanned for existing devices.
 The result of the scan is shown as plain TXT output in the browser:</p>
@@ -76,15 +77,38 @@ The result of the scan is shown as plain TXT output in the browser:</p>
 
 TODO:
 -->
-<h3>Configuration Example</h3>
-<p>This element requires no parameters.
-This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<h2>ChipInfo</h2>
+<p>This information can be retrieved using the endpoint <code>http://devicename/chipinfo</code>.</p>
+<p>Some details on the used chip on the board is shown:</p>
+<pre class="language-txt"><code class="language-txt">Chip Infos:
+  model: ESP32(1)
+  features: 00000032
+    2.4GHz WiFi
+    Bluetooth LE
+    Bluetooth Classic
+  cores: 2
+  revision: 3
+
+ChipModel: ESP32-D0WD-V3
+
+Flash:  Size: 4096 kByte
+  Mode: QIO(0)
+  Speed: 80000000</code></pre>
+<h2>Profiling Results</h2>
+<p>This information can be retrieved using the endpoint <code>http://devicename/profile</code>.</p>
+<p>Profiling the loop() times can be enabled by including the &lt;hdProfile.h&gt; in &lt;homeding.h&gt;
+manually, recompile and upload the extended sketch.</p>
+<p>This will result in recoding the time consumed by the loop() function of elements to identify
+non-cooperative elements.</p>
+<p>The <a href="/elements/diag.htm">Diag Element</a> provides a simple web page showing the current recorded
+times using <code>http://devicename/profile</code> :</p>
+<pre class="language-txt"><code class="language-txt">Profile Loop-Times (usecs):
+Element             | Average | Maximum | Count
+device/0            |       1 |      15 |  67312
+ota/0               |      10 |      72 |  67312
+diag/0              |       0 |       8 |  67312
+switch/led          |       0 |      11 |  67311
+digitalout/led      |       0 |       9 |  67311</code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/examples/devding.htm">DevDing Example</a></li>

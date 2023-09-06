@@ -109,35 +109,107 @@ configuration files or the integrated IDE functionality.</p>
 Captive mode described above.</p>
 <p>When the Captive mode is unused for 5 minutes or ended by configuring a new network connectivity
 the reset counter is set to 0 and a restart is executed.</p>
-<hr>
-<h2>System LED</h2>
-<p>when a System led is configured in the device configuration the following signals can be seen:</p>
-<table>
-<thead>
-<tr>
-<th>state of the device</th>
-<th>frequency</th>
-<th>signal form</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>connecting to network in safe mode</td>
-<td>1 per 700msec.</td>
-<td>fast long pulse</td>
-</tr>
-<tr>
-<td>connecting to network in unsafe mode</td>
-<td>1 per 700msec.</td>
-<td>fast short pulse</td>
-</tr>
-<tr>
-<td>WiFi Manager mode</td>
-<td>1 per 3 sec.</td>
-<td>slow short signal</td>
-</tr>
-</tbody>
-</table>
+<h2>Startup logging output</h2>
+<p>The following samples will show you how the startup sequence is shown in the log and explains the output in detail.</p>
+<h3>Device Startup on first time</h3>
+<p>After uploading the HomeDing firmware the very first time the log output will show the following
+messages:</p>
+<pre class="language-txt"><code class="language-txt">00:00:06 >Device DevDing starting...
+00:00:06 >formatting...
+00:00:06 >setup done
+00:00:06 >Captive Mode: HomeDing123A45</code></pre>
+<p>The <code>Device ____ starting...</code> messages is showing the name of the sketch (example) that is used.</p>
+<p>The <code>formatting...</code> message is shown because the filesystem will be created during this very
+first start sequence.</p>
+<p>The <code>setup done</code> messages is created at the end of the Arduino startup() function just before
+the loop() will start.</p>
+<p>The <code>Captive Mode: HomeDingNNNNNN</code> message is shown when an Access point is created with the given name
+for starting a network configuration with the [WiFi Manager].</p>
+<p>This sequence of messages will also happen when uploading the firmware with the <code>Erase All Flash Before Sketch Upload: Enabled</code> option.</p>
+<h3>Device Startup without configuration</h3>
+<p>When no network configuration is available the device will immediately start into the Captive mode.</p>
+<pre class="language-txt"><code class="language-txt">00:00:06 >Device DevDing starting...
+00:00:06 >setup done
+00:00:06 >Captive Mode: HomeDing123A45</code></pre>
+<p>After 5 minutes without using the captive mode the device will restart:</p>
+<pre class="language-txt"><code class="language-txt">00:05:06 >no config.
+00:05:06 >reboot...</code></pre>
+<p>The <code>no config.</code> message is shown after 5 minutes without getting a network configuration.</p>
+<p>The <code>reboot...</code> message is shown because a reboot was initiated.</p>
+<h3>Network configuration</h3>
+<p>In Captive mode, when a configuration is given using the [WiFi Manager] the following logs are
+created:</p>
+<pre class="language-txt"><code class="language-txt">00:02:39 >setup network ____
+00:02:44 >ok. 
+00:02:44 >reboot...</code></pre>
+<p>The <code>setup network ____</code> message is shown when a new network configuration is received.</p>
+<p>The <code>ok.</code> message is shown when the network connection was successful.</p>
+<p>The <code>reboot...</code> message is shown because a reboot was initiated.</p>
+<h3>Regular Startup Without Configuration</h3>
+<p>The startup mesages on a regular boot when no configuration is available (or is not used in bare
+mode) look like:</p>
+<pre class="language-txt"><code class="language-txt">00:00:06 >Device DevDing starting...
+00:00:06 >setup done
+00:00:06 >HomeDing
+00:00:06 >connect as 'esp32-123a45' to WiFI DEVNET...
+00:00:12 >esp32-123a45 192.168.2.206
+00:00:12 >connected to DEVNET (unsafe mode)
+00:00:12 >start http://esp32-123a45/</code></pre>
+<p><code>HomeDing</code> Greeting
+This message is also shown on an attached and configured display.</p>
+<p><code>connect as 'esp32-123a45' to WiFI DEVNET...</code> – devicename and network name used for connecting</p>
+<p><code>esp32-123a45 192.168.2.206</code> - successful connected to the network with the devicename and IP address.
+This message is also shown on an attached and configured display.</p>
+<p><code>start http://esp32-123a45/</code></p>
+<h3>Regular Startup</h3>
+<p>The following startup mesages are created for a configured device (name=“hdboard”) and safemode
+enabled.
+They look similar to the messages written when no element configuration is given but the devicename is taken from the device Element.</p>
+<pre class="language-txt"><code class="language-txt">00:11:09 >Device DevDing starting...
+00:11:09 >setup done
+00:11:09 >HomeDing 
+00:11:09 >connect as 'hdboard' to WiFI DEVNET...
+00:11:12 >hdboard 192.168.2.206
+00:11:12 >connected to DEVNET (safe mode)
+00:11:12 >start http://hdboard/</code></pre>
+<p>see also: <a href="/dev/safemode.htm">Safe Mode</a></p>
+<h3>2. reset in between 60 seconds</h3>
+<p>When a second reset or reboot is executed without having 60 seconds of normal operating time
+the device will start in unsafe mode and the connected message will look like:</p>
+<pre class="language-txt"><code class="language-txt">00:15:22 >Device DevDing starting...
+00:15:22 >setup done
+00:15:22 >reset #2
+00:15:22 >HomeDing 
+00:15:22 >connect as 'hdboard' to WiFI DEVNET...
+00:15:23 >hdboard 192.168.2.206
+00:15:23 >connected to DEVNET (unsafe mode)
+00:15:23 >start http://hdboard/</code></pre>
+<p>The <code>reset #2</code> message shows the internal reset counter.</p>
+<p>see also: <a href="/dev/safemode.htm">Safe Mode</a></p>
+<h3>3. reset in between 60 seconds</h3>
+<p>When a third reset or reboot is executed without having 60 seconds of normal operating time the
+device will start in <strong>bare</strong> mode. In this mode the device will start using the network
+configuration but no device configuration file will be used. The message sequence will look
+like:</p>
+<pre class="language-txt"><code class="language-txt">00:00:06 >Device DevDing starting...
+00:00:06 >setup done
+00:00:06 >reset #3
+00:00:06 >HomeDing 
+00:00:06 >connect as 'esp32-123a45' to WiFI DEVNET...
+00:00:08 >esp32-123a45 192.168.2.206
+00:00:08 >connected to DEVNET (unsafe mode)
+00:00:08 >start http://esp32-123a45/</code></pre>
+<p>The <code>reset #3</code> message shows the internal reset counter.</p>
+<p>The same devicename is used that is used on booting without configuration. The IP address will
+likely be the same.</p>
+<h3>4. reset in between 60 seconds</h3>
+<p>When a forth reset or reboot is executed without having 60 seconds of normal operating time the captive mode is started
+without connecting the device to a local network.</p>
+<pre class="language-txt"><code class="language-txt">00:00:06 >Device DevDing starting...
+00:00:06 >setup done
+00:00:06 >reset #4
+00:00:06 >Captive Mode: HomeDing123A45</code></pre>
+<p>The <code>reset #4</code> message shows the internal reset counter.</p>
 
 
     
