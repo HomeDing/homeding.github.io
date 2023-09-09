@@ -39,16 +39,20 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h2>Micro JSON Parser implementation</h2>
-<p>t.b.d.</p>
+    <h1>Micro JSON Parser</h1>
+<p>The JavaScript Object Notation format is often used on the web wehn implementing services and providing data.</p>
+<p>Parsing JSON data is therefore available in the HomeDing library in an integrated class. It is a
+streaming parser that has a very low memory footprint and avoids loading the whole text into memory. It is used for:</p>
 <ul>
-<li>minimal footprint</li>
-<li>streaming parser</li>
-<li>limited array</li>
-<li>JSON path not used in favour of URL syntax, addressing via URLs</li>
-<li>no malloc inside</li>
+<li>parsing the configuration files.</li>
+<li>loading and parsing the results from web services.</li>
 </ul>
-<p>callback is: (level, path name, value) ???</p>
+<p>The implementation is using a very low memory consumption and has only a few limitations:</p>
+<ul>
+<li>There is only one callback entry point for the streaming parser, not multiple events.</li>
+<li>All data elements are treated as strings.</li>
+<li>no comments.</li>
+</ul>
 
   </main>
 

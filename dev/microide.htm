@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Miro IDE</title>
+  <title>Micro IDE</title>
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -41,18 +41,19 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>Miro IDE</h1>
+    <h1>Micro IDE</h1>
 
     
       
     <p>The Web UI implementation from the HomeDing library supports a minimal <strong>Integrated Development Environment</strong> (IDE)
 that allows modifying text based files using any browser.</p>
-<p>Using this functionality no physical access is required.</p>
+<p>For using this functionality no physical access to the device is required.
+It is mainly used for inspecting and changing the configuration fies but also can be used for uploading any files to the filesystem.</p>
+<p>Changing the configuration files allows much flexibility at runtime so no new firmware must be uploaded to extend the functionality.</p>
+<h2>The UI of the IDE</h2>
 <p><img src="/dev/microide.png" alt="Micro IDE screenshot"></p>
-<p>After loading the page the micro IDE automatically loads the list of files that can be found in the SPIFFS file system of the device in the left panel.</p>
-<p>By clicking on the filename the file content is displayed inside the right panel. The current filename is displayed above</p>
-<p>By clicking the <code>[X]</code> the file can be deleted after a confirmation.</p>
-<h2>Menu</h2>
+<p>After loading the page the micro IDE automatically loads the list of files that can be found in the file system of the device in the left panel.</p>
+<h2>The Menu</h2>
 <p>The menu can be used to navigate to the</p>
 <ul>
 <li>The configured home page (see <a href="/elements/device.htm">device element</a> )</li>
@@ -60,10 +61,16 @@ that allows modifying text based files using any browser.</p>
 <li>(The Micro IDE, Here you are)</li>
 <li>The system log when enabled in the <a href="/elements/device.htm">device element</a></li>
 </ul>
-<h2>Reload</h2>
+<h3>List of current files</h3>
+<p>By clicking on the filename the content is retrieved from the device and is displayed inside the right panel. This works for all text based files. Other formats will not be shown correctly.</p>
+<p>The current filename is displayed above.</p>
+<p>By clicking the <code>[X]</code> the file can be deleted after a confirmation.</p>
+<p>Folders are shown by their name and can be opened to display all files inside the folder.</p>
+<p>When there is a SD card configured there will be a folder <code>sd</code> that contains the files in the file system of the SDcard.</p>
+<h2>Reload button</h2>
 <p>This button reloads the list of files.</p>
 <h2>Drop area</h2>
-<p>Files can be dragged from the local file explorer can be dropped here to be uploaded into the filesystem of the device.</p>
+<p>Files can be dragged from the local file explorer and dropped here to be uploaded into the current folder in the filesystem of the device or SD card.</p>
 <p>The drop area supports dropping single files as well as dropping multiple files.</p>
 <p>After upload the list of files is refreshed.</p>
 <h2>Reboot</h2>
@@ -71,11 +78,10 @@ that allows modifying text based files using any browser.</p>
 <p>After changing a configuration the new configuration will be active after rebooting the device.</p>
 <h2>Save</h2>
 <p>After changing a file the file can be saved using this button. There is no semantic check done and the current text is taken as it is.</p>
-<p>There is a prompt before actually saving the file that allows entering a new or different file name.
-Filenames must start with a slash character ( <code>/a.txt</code> is ok where <code>a.txt</code> is not).</p>
+<p>There is a prompt before actually saving the file that allows entering a new or different file name.</p>
 <p>To create a new file you can reload the IDE to get a blank file content to start.</p>
 <h2>JSON checker and formatter</h2>
-<p>Editing the <code>/env.json</code> and <code>/config.json</code> files are the most common use cases.</p>
+<p>Editing the <code>env.json</code> and <code>config.json</code> files are the most common use cases.</p>
 <p>When editing files with the filetype <code>*.json</code> there is a check if the text is in proper JSON format. This will show up a green <code>ok</code>.</p>
 <p>When a red <code>no</code> is shown the text is not good JSON format.</p>
 <p>This is especially critical for the <code>env.json</code> file.</p>

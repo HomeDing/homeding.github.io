@@ -50,13 +50,24 @@
 The SCSS compiler is only used to allow easy development using nesting the css rules and to use variables to apply the colors in a consistent way. Macros, enumerations etc. are not used to allow easy reading for all who know about css.</p>
 <p>The micro styleSheet file contains some of the basics required to build responsive UI:</p>
 <ul>
-<li>some basic normalization CSS rules</li>
-<li>mobile first approach to the Device UI screens and desktop design for the embedded IDE.</li>
-<li>a grid with a 6 column layout (not 12 or 24 to avoid too much CSS code).</li>
-<li>card style components</li>
-<li>.</li>
-<li>support of once buttons, ???</li>
-<li>header</li>
+<li>
+<p>some basic normalization CSS rules</p>
+</li>
+<li>
+<p>mobile first approach to the Device UI screens and desktop design for the embedded IDE.</p>
+</li>
+<li>
+<p>a grid with a 6 column layout (not 12 or 24 to avoid too much CSS code).</p>
+</li>
+<li>
+<p>card style components</p>
+</li>
+<li>
+<p>support of once buttons, ???</p>
+</li>
+<li>
+<p>header</p>
+</li>
 </ul>
 <p>The class names known from bootstrap has been used as much as possible.</p>
 <p>The UI controls used to build the ui for elements are using <code>u-&lt;type&gt;</code> class names that are also used to attach the functionality.</p>
@@ -65,9 +76,11 @@ The SCSS compiler is only used to allow easy development using nesting the css r
 <p>Remark
 Using the BEM naming convention is very popular to style implementations but here another approach and notation was used to reduce text size. A concept to a similar approach can be found at <a href="https://www.sitepoint.com/title-css-simple-approach-css-class-naming/">https://www.sitepoint.com/title-css-simple-approach-css-class-naming/</a>. While this implementation is more complete the micro css implementation for the HomeDing devices only supports some of the constructs.</p>
 </blockquote>
-<h2>Cards</h2>
+<h2>Implemented UI components</h2>
+<h3>Cards</h3>
 <p>The cards layout element is used to wrap one context in a visual area. In the HomeDing UIs it is used to wrap one element or a summary of the complete device.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre class="language-html"><code class="language-html">???
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>some Text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
@@ -86,14 +99,14 @@ Using the BEM naming convention is very popular to style implementations but her
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h2>Header</h2>
+<h3>Header</h3>
 <p>The header in the micro-css is used to display the primary icon of the device, the name and links to important pages. It is (re-)used on almost all pages.</p>
-<p>The header also acts as a navigation bar.</p>
+<p>The header also acts as a navigation bar. ???</p>
 <p>It is implemented as a special row that can contain text, links and icons nested in links. The items are center aligned.</p>
-<p>The primary header (h1) should be included in the header.</p>
+<p>The primary header text (h1) should be included in the header.</p>
 <p>Images with class <code>icon</code> are sized accordingly.</p>
 <p>Links can be used trigger a navigation.</p>
-<h2>Icons</h2>
+<h3>Icons</h3>
 <p>see <a href="/dev/microicons.htm">microicons</a></p>
 <h3>u-valueindicator</h3>
 <p>This class is used to visualize binary values like true/false, high/low or 1/0.</p>

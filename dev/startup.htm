@@ -73,7 +73,7 @@ access the WiFi Setup Dialog of the <a href="/dev/wifimanager.htm">WiFi Manager<
 <p>In this mode NO configured element will be activated.</p>
 <p>Using the WiFi Setup Dialog the network connection details can configured and persisted on the
 board.</p>
-<p>The reset counter is set to 0 after successfully running the captive mode for at least 60 seconds
+<p>The reset counter is always set to 0 after successfully running the captive mode
 or by updating a new network connectivity.</p>
 <h2>Normal Run Mode</h2>
 <p>This mode is enabled when the reset counter has the value 1.</p>
@@ -210,6 +210,8 @@ without connecting the device to a local network.</p>
 00:00:06 >reset #4
 00:00:06 >Captive Mode: HomeDing123A45</code></pre>
 <p>The <code>reset #4</code> message shows the internal reset counter.</p>
+<p>The reset counter is set to 0 after successfully running the captive mode
+or after updating the network connectivity.</p>
 
 
     

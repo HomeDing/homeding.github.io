@@ -92,18 +92,27 @@ and <a href="/sensors/sensors.htm">Sensors</a> for the list of supported sensors
 <p>This is done by using the configuration files that control what elements are created
 including their specific setup.</p>
 <h2>Events and Actions</h2>
-<p><strong>Event</strong> - this is what happens inside an element like a new sensor value is available or a timing condition has occurred. <strong>On</strong> this <strong>Event</strong> one or multiple actions can be created.</p>
-<p><strong>Action</strong> - this is the data (key and value) that is passed over to the target element.</p>
+<h3>Events</h3>
+<p>An Event is what happens inside an element like a new sensor value is available or a timing condition has occurred. <strong>On</strong> this <strong>Event</strong> one or multiple actions can be created.</p>
+<p>Event configurations therefore typically start with a <code>on</code> prefix.</p>
+<h3>Actions</h3>
+<p>An Action is the data (key and value) that is passed over to the target element mentioned in the action notation.</p>
+<p>The notation for Actions used within the HomeDing library is taken from the URL syntax using</p>
+<pre class="language-txt"><code class="language-txt">&lt;type>/&lt;id>?&lt;key>=&lt;value></code></pre>
+<p>like:</p>
+<pre class="language-txt"><code class="language-txt">digitalOut/D5?value=$v</code></pre>
+<h3>Configuration Examples</h3>
 <p>What you can see in the configuration is to setup this interaction by specifying the event on the origin element and the actions that will be sent. Here are some examples:</p>
 <pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1"
 "onValue" : "digitalOut/D5?value=$v"
 "onValue" : "device/0?log=value:$v"</code></pre>
 <p>In the configuration you can specify multiple, comma separated actions on the same event:</p>
 <pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1,device/0?log=value:$v"</code></pre>
-<h2>sending Actions in the device</h2>
+<h2>dispatching Actions in the device</h2>
 <p>The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.</p>
-<p>When an Element is active the <code>loop()</code> function is called periodically so the Element can so something meaningful.
-Here some elements will retrieve sensor values, check the state of GPIO pins or will calculate something and then will create actions like <code>displaytext/info?value=22.50</code> and hand it over to the action dispatcher in the board class.</p>
+<p>When an Element is active the <code>loop()</code> function is called periodically so the Element can so something meaningful.</p>
+<p>Some elements will retrieve sensor values, check the state of GPIO pins or will calculate something.</p>
+<p>Then they might create actions like <code>displaytext/info?value=22.50</code> and hand it over to the action dispatcher in the board class.</p>
 <p>This action that will be dispatched to the element <code>displaytext/info</code> and will trigger the action <code>value</code> with then parameter <code>22.50</code>.</p>
 <p>Inside the board class the action dispatcher is available.
 Actions are collected in a queue in memory and will be dispatched to the target element shortly after they have been handed over.</p>
