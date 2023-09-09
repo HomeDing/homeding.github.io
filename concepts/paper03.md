@@ -73,10 +73,30 @@ including their specific setup.
 
 ## Events and Actions
 
+### Events
 
-**Event** - this is what happens inside an element like a new sensor value is available or a timing condition has occurred. **On** this **Event** one or multiple actions can be created.
+An Event is what happens inside an element like a new sensor value is available or a timing condition has occurred. **On** this **Event** one or multiple actions can be created.
 
-**Action** - this is the data (key and value) that is passed over to the target element.
+Event configurations therefore typically start with a `on` prefix.
+
+
+### Actions
+
+An Action is the data (key and value) that is passed over to the target element mentioned in the action notation.
+
+The notation for Actions used within the HomeDing library is taken from the URL syntax using
+
+```txt
+<type>/<id>?<key>=<value>
+```
+
+like:
+
+```txt
+digitalOut/D5?value=$v
+```
+
+### Configuration Examples
 
 What you can see in the configuration is to setup this interaction by specifying the event on the origin element and the actions that will be sent. Here are some examples:
 
@@ -92,12 +112,16 @@ In the configuration you can specify multiple, comma separated actions on the sa
 "onValue" : "digitalOut/D5?value=1,device/0?log=value:$v"
 ```
 
-## sending Actions in the device
+
+## dispatching Actions in the device
 
 The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.
 
 When an Element is active the `loop()` function is called periodically so the Element can so something meaningful.
-Here some elements will retrieve sensor values, check the state of GPIO pins or will calculate something and then will create actions like `displaytext/info?value=22.50` and hand it over to the action dispatcher in the board class.
+
+Some elements will retrieve sensor values, check the state of GPIO pins or will calculate something.
+
+Then they might create actions like `displaytext/info?value=22.50` and hand it over to the action dispatcher in the board class.
 
 This action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `22.50`.
 

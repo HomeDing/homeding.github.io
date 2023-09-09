@@ -42,7 +42,7 @@ In this mode NO configured element will be activated.
 Using the WiFi Setup Dialog the network connection details can configured and persisted on the
 board.
 
-The reset counter is set to 0 after successfully running the captive mode for at least 60 seconds
+The reset counter is always set to 0 after successfully running the captive mode
 or by updating a new network connectivity.
 
 
@@ -272,6 +272,9 @@ without connecting the device to a local network.
 ```
 
 The `reset #4` message shows the internal reset counter.
+
+The reset counter is set to 0 after successfully running the captive mode
+or after updating the network connectivity.
 
 
 [Safe Mode]:/dev/safemode.md

@@ -13,8 +13,7 @@ The micro styleSheet file contains some of the basics required to build responsi
 * some basic normalization CSS rules
 * mobile first approach to the Device UI screens and desktop design for the embedded IDE.
 * a grid with a 6 column layout (not 12 or 24 to avoid too much CSS code).
-* card style components
-* .
+* card style components
 * support of once buttons, ???
 * header
 
@@ -27,11 +26,15 @@ Defining the CSS on a global level in a shared css file allows implementing smal
 > Remark
 Using the BEM naming convention is very popular to style implementations but here another approach and notation was used to reduce text size. A concept to a similar approach can be found at <https://www.sitepoint.com/title-css-simple-approach-css-class-naming/>. While this implementation is more complete the micro css implementation for the HomeDing devices only supports some of the constructs.
 
-## Cards
+
+## Implemented UI components
+
+### Cards
 
 The cards layout element is used to wrap one context in a visual area. In the HomeDing UIs it is used to wrap one element or a summary of the complete device.
 
 ``` html
+???
 <div class="col">
   <div class="card">
     <div class="block">
@@ -53,22 +56,22 @@ The cards layout element is used to wrap one context in a visual area. In the Ho
 </div>
 ```
 
-## Header
+### Header
 
 The header in the micro-css is used to display the primary icon of the device, the name and links to important pages. It is (re-)used on almost all pages.
 
-The header also acts as a navigation bar.
+The header also acts as a navigation bar. ???
 
 It is implemented as a special row that can contain text, links and icons nested in links. The items are center aligned.
 
-The primary header (h1) should be included in the header.
+The primary header text (h1) should be included in the header.
 
 Images with class `icon` are sized accordingly.
 
 Links can be used trigger a navigation.
 
 
-## Icons
+### Icons
 
 see [microicons](/dev/microicons.md)
 

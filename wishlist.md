@@ -17,7 +17,7 @@ layout: "page.njk"
 
 * [/_backend.md](/dev/_backend.md) -
 * [/_example/dashbutton.md](/_examples/dashbutton.md) -
-* [/dev/_microjson.md](/dev/_microjson.md) -
+* [/dev/microjson.md](/dev/microjson.md) -
 * [/_moisturesonsor.md](/_moisturesonsor.md) -
 * [/_private.md](/_private.md) -
 * [/_reset.md](/_reset.md) -

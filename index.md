@@ -3,28 +3,38 @@ title: The HomeDing Library
 layout: "homepage.njk"
 description: An Arduino Library that makes IoT devices building easy.
 excerpt: >
-  The HomeDing library is a low code to build small IoT devices
-  without the need for cloud services.
-  They are connected to your home WiFi and have a built-in web server with a rich user interface.
+  The HomeDing library was created to implement standalone IoT devices with the Arduino framework easily.
+
+  Using cloud services or MQTT are options but not required.
+
+  Connect to your home WiFi using a simple form and then customize using a low code and easy configuration.
+
+  The built-in web server with a rich user interface allows controlling the device and
+  shows all information of the connected sensors and peripherals.
+  
   Make your own by using the Arduino development environment.
 ---
 
 ## Making IoT easy
 
-This is the main goal and the driving reason for implementing the HomeDing library.
+The main goals and the driving reasons for implementing the HomeDing library are simplicity in creating new IoT devices that can run on their own and have no need for cloud services. All you need is a standard browser.
+
+They have all you need built-in:
+
+* A firmware that knows how to interact with a lot of possible sensors and chips
+* A web server to host the UI files and the api.
+* A editor for configuration
+* A page to view data and control the device.
+
+
+##
 
 {% include "./home/story.md" %}
-
-The HomeDing library can be used to build small IoT devices connected to the local WiFi by using the Arduino development environment.
-
-The approach is very different to many other IoT solutions regarding these reasons:
 
 
 ## IoT devices can be used standalone
 
-> Everything for a useful device fits into the memory available on a standard board.
->
-> The board has everything to run independent on their own and can be controlled using a standard web browser.
+> Everything for a useful device fits into the memory available on a standard ESP8266 or ESP32 board.
 > There is no need for a central hub or bridge device - ideal for starting with implementing IoT devices.
 
 
