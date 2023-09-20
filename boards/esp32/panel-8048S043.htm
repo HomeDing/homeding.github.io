@@ -51,18 +51,25 @@
 
     </div>
       
-    <p>There are some boards available that already combine display, touchscreen and processor that have been tested using the [HomeDing Display Example].</p>
+    <p>There are some boards with displays and touchscreens available that combine display.</p>
+<p><img src="panel-8048S043.jpg" alt="ESP32-8048S043C board"></p>
+<p><img src="panel-8048S043back.jpg" alt="ESP32-8048S043C board-back"></p>
+<p>This board is equipped with:</p>
 <ul>
-<li>I2C bus using SDA=19, CLK=20</li>
-<li>Display: ST7262: 4.3 inch, 800 * 480 px, 16 bit color, parallel mode</li>
+<li>ESP32-S3 processor</li>
+<li>16 MByte Flash in QIO mode</li>
+<li>8 MByte PSRAM OPI</li>
+<li>4.3 inch, 800 * 480 px Display based on ST7262: 16 bit color, special ESP32-S3 parallel mode
+The display is supported by the “GFX Library for Arduino”.</li>
 <li>Touch Sensor: GT911 on I2C, Address 0x5D</li>
-<li>SD Card</li>
+<li>I2C bus using SDA=19, CLK=20</li>
+<li>SD Card slot</li>
 </ul>
 <h2>Arduino Configuration</h2>
 <p>The ESP32S3 Dev Module (esp32) can be used with the following settings:</p>
 <ul>
 <li>JTAG Adapter: Disbled</li>
-<li>PSRAM: QSPI PSRAM</li>
+<li>PSRAM: OPI PSRAM</li>
 <li>Flash Mode: QIO 80MHz</li>
 <li>Flash Size: 16MByte (128Mbit)</li>
 <li>Arduino Runs On: Core 1</li>
@@ -82,222 +89,123 @@ on AliExpress. On the web site you find documentation but be they seem not to fi
 <p>These type of boards are available in various versions with different displays and touchscreen
 drivers and this example may be adapted to other configurations when required.</p>
 <p>The <strong>ESP32-8048S043C</strong> has the following components:</p>
-<ul>
-<li>ESP32-S3 Processor</li>
-<li>16M Flash Memory</li>
-<li>8M PSRAM</li>
-<li>I2C bus using SDA=19, CLK=20</li>
-<li>Display: ST7262: 4.3 inch, 800 * 480 px, 16 bit color, parallel mode</li>
-<li>Touch Sensor: GT911 on I2C, Address 0x5D</li>
-<li>SD Card</li>
-</ul>
 <p>Download of files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688</p>
 <!-- <https://github.com/PaulStoffregen/XPT2046_Touchscreen> -->
 <h2>env.json configuration</h2>
-<pre class="language-json"><code class="language-json"></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"panel"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Panel 800*480"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Panel with 800 px"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+      <span class="token property">"cache"</span><span class="token operator">:</span> <span class="token string">"etag"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SDA"</span><span class="token operator">:</span> <span class="token string">"19"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SCL"</span><span class="token operator">:</span> <span class="token string">"20"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"DisplayEsp32panel"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+      <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"x000000"</span><span class="token punctuation">,</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"xbbbbbb"</span><span class="token punctuation">,</span>
+      <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"DisplayTouchGT911"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x5D"</span><span class="token punctuation">,</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"1200"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"880"</span><span class="token punctuation">,</span>
+      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"interruptpin"</span><span class="token operator">:</span> <span class="token string">"-1"</span><span class="token punctuation">,</span>
+      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token string">"38"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"10"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"gpio0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
 <h2>Boot Button</h2>
+<p>The Boot button is connected to GPIO0 and is used to start the ESP32 into the sketch download mode.
+Pressing this button will pull the GPIO0 low.</p>
+<p>You can use this as a general purpose input button.</p>
 <h2>Display</h2>
-<p>// option 1:
-// ST7262 IPS LCD 800x480
-Arduino_RPi_DPI_RGBPanel <em>gfx = new Arduino_RPi_DPI_RGBPanel(
-bus,
-800 /</em> width <em>/, 0 /</em> hsync_polarity <em>/, 8 /</em> hsync_front_porch <em>/, 4 /</em> hsync_pulse_width <em>/, 8 /</em> hsync_back_porch <em>/,
-480 /</em> height <em>/, 0 /</em> vsync_polarity <em>/, 8 /</em> vsync_front_porch <em>/, 4 /</em> vsync_pulse_width <em>/, 8 /</em> vsync_back_porch <em>/,
-1 /</em> pclk_active_neg <em>/, 16000000 /</em> prefer_speed <em>/, true /</em> auto_flush */);</p>
-<p>The display is connected to the Processor using 4 control signals and 16 data signals.
-It is designed to use DMA to transfer the display data from RAM to the display.</p>
-<p>It uses 16 bits per pixel and 16 data pins with</p>
-<ul>
-<li>5 bits for red</li>
-<li>6 bits for green</li>
-<li>5 bits for blue</li>
-</ul>
-<p>These kind of displays are supported by the Adafruit_GFX library using the GFXcanvas16 class that draws
-all graphics to a memory buffer.
-To implement a displayAdapter this class can be used. Instead of sending the graphic bits to the display
-over a SPI or I2C bus a DMA transfer can be configured that is triggered upon
-finishing drawing of an element
-and continues sending the pixesl to the display in the background.</p>
-<p>The connection for the display is configured using the following pins:</p>
+<p>The IPS LCD display is supporting a resolution of 800x480 pixels and is based on the ST7262 chip.</p>
+<p>It is connected to the processor using 4 control signals and 16 data signals and is designed to
+use DMA to transfer the display data from RAM to the display.</p>
+<p>It supports a 16 bit color depth: 5 bits red, 6 bits green, 5 bits blue</p>
+<p>The display setup using the “GFX Library for Arduino” is:</p>
+<pre class="language-cpp"><code class="language-cpp">Arduino_ESP32RGBPanel <span class="token operator">*</span>rgbpanel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Arduino_ESP32RGBPanel</span><span class="token punctuation">(</span>
+    <span class="token number">40</span> <span class="token comment">/* DE */</span><span class="token punctuation">,</span> <span class="token number">41</span> <span class="token comment">/* VSYNC */</span><span class="token punctuation">,</span> <span class="token number">39</span> <span class="token comment">/* HSYNC */</span><span class="token punctuation">,</span> <span class="token number">42</span> <span class="token comment">/* PCLK */</span><span class="token punctuation">,</span>
+    <span class="token number">45</span> <span class="token comment">/* R0 */</span><span class="token punctuation">,</span> <span class="token number">48</span> <span class="token comment">/* R1 */</span><span class="token punctuation">,</span> <span class="token number">47</span> <span class="token comment">/* R2 */</span><span class="token punctuation">,</span> <span class="token number">21</span> <span class="token comment">/* R3 */</span><span class="token punctuation">,</span> <span class="token number">14</span> <span class="token comment">/* R4 */</span><span class="token punctuation">,</span>
+    <span class="token number">5</span> <span class="token comment">/* G0 */</span><span class="token punctuation">,</span> <span class="token number">6</span> <span class="token comment">/* G1 */</span><span class="token punctuation">,</span> <span class="token number">7</span> <span class="token comment">/* G2 */</span><span class="token punctuation">,</span> <span class="token number">15</span> <span class="token comment">/* G3 */</span><span class="token punctuation">,</span> <span class="token number">16</span> <span class="token comment">/* G4 */</span><span class="token punctuation">,</span> <span class="token number">4</span> <span class="token comment">/* G5 */</span><span class="token punctuation">,</span>
+    <span class="token number">8</span> <span class="token comment">/* B0 */</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token comment">/* B1 */</span><span class="token punctuation">,</span> <span class="token number">46</span> <span class="token comment">/* B2 */</span><span class="token punctuation">,</span> <span class="token number">9</span> <span class="token comment">/* B3 */</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token comment">/* B4 */</span><span class="token punctuation">,</span>
+
+    <span class="token number">0</span> <span class="token comment">/* hsync_polarity */</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token comment">/* hsync_front_porch */</span><span class="token punctuation">,</span> <span class="token number">4</span> <span class="token comment">/* hsync_pulse_width */</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token comment">/* hsync_back_porch */</span><span class="token punctuation">,</span>
+    <span class="token number">0</span> <span class="token comment">/* vsync_polarity */</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token comment">/* vsync_front_porch */</span><span class="token punctuation">,</span> <span class="token number">4</span> <span class="token comment">/* vsync_pulse_width */</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token comment">/* vsync_back_porch */</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The RAM for the display image is allocated in the PSRAM using 800<em>400</em>2 bytes = 640.000 bytes = <strong>625 kBytes</strong>.</p>
+<h3>Backlight control</h3>
+<p>The display uses a backlight that can be controlled on through GPIO02.</p>
+<h2>Touch panel</h2>
+<p>The touch panel is a capacitive type based on the GT911 chip.</p>
+<p>There is a variant of this board available using a resistive touch sensor.</p>
+<p>The communication to the GT911 chip is using the i2c bus on address 0x5d.</p>
+<h2>SD Card</h2>
+<p>The SD card is available at the standard SPI bus of ESP32. The
+<a href="/elements/sd.htm">SD Card Element</a> can be used to extend the filesystem
+and to mount the sd card file system on the <code>/sd</code> folder.</p>
 <table>
 <thead>
 <tr>
-<th>#</th>
-<th style="text-align:right">0</th>
-<th style="text-align:right">1</th>
-<th style="text-align:right">2</th>
-<th style="text-align:right">3</th>
-<th style="text-align:right">4</th>
-<th style="text-align:right">5</th>
-<th style="text-align:right">6</th>
-<th style="text-align:right">7</th>
-<th style="text-align:right">8</th>
-<th style="text-align:right">9</th>
-<th style="text-align:right">10</th>
-<th style="text-align:right">11</th>
-<th style="text-align:right">12</th>
-<th style="text-align:right">13</th>
-<th style="text-align:right">14</th>
-<th style="text-align:right">15</th>
+<th>function</th>
+<th>ESP32 pin</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>signal</td>
-<td style="text-align:right">r4</td>
-<td style="text-align:right">r3</td>
-<td style="text-align:right">r2</td>
-<td style="text-align:right">r1</td>
-<td style="text-align:right">r0</td>
-<td style="text-align:right">g5</td>
-<td style="text-align:right">g4</td>
-<td style="text-align:right">g3</td>
-<td style="text-align:right">g2</td>
-<td style="text-align:right">g1</td>
-<td style="text-align:right">g0</td>
-<td style="text-align:right">b4</td>
-<td style="text-align:right">b3</td>
-<td style="text-align:right">b2</td>
-<td style="text-align:right">b1</td>
-<td style="text-align:right">b0</td>
+<td>CS</td>
+<td>GPIO10</td>
 </tr>
 <tr>
-<td>GPIO</td>
-<td style="text-align:right">8</td>
-<td style="text-align:right">3</td>
-<td style="text-align:right">46</td>
-<td style="text-align:right">9</td>
-<td style="text-align:right">1</td>
-<td style="text-align:right">5</td>
-<td style="text-align:right">6</td>
-<td style="text-align:right">7</td>
-<td style="text-align:right">15</td>
-<td style="text-align:right">16</td>
-<td style="text-align:right">4</td>
-<td style="text-align:right">45</td>
-<td style="text-align:right">48</td>
-<td style="text-align:right">47</td>
-<td style="text-align:right">21</td>
-<td style="text-align:right">14</td>
+<td>SPI-bus</td>
+<td>VSPI</td>
 </tr>
 </tbody>
 </table>
-<p>The RAM for the display image is allocated in the PSRAM using 800<em>400</em>2 bytes = 640.000 bytes = <strong>625 kBytes</strong>.</p>
-<p>HSYNC io39
-VSYNC io41
-DE io40
-DCLK 42???</p>
-<p>40 /* DE <em>/, 41 /</em> VSYNC <em>/, 39 /</em> HSYNC <em>/, 42 /</em> PCLK */,</p>
-<p>All these details are used to populate a <code>esp_lcd_rgb_panel_config_t</code> structure
-to configure the DMA that is used to drive a RGB panel.</p>
-<p>Arduino_ESP32RGBPanel <em>bus = new Arduino_ESP32RGBPanel(
-GFX_NOT_DEFINED /</em> CS <em>/, GFX_NOT_DEFINED /</em> SCK <em>/, GFX_NOT_DEFINED /</em> SDA <em>/,
-40 /</em> DE <em>/, 41 /</em> VSYNC <em>/, 39 /</em> HSYNC <em>/, 42 /</em> PCLK */,</p>
-<p>45 /* R0 <em>/, 48 /</em> R1 <em>/, 47 /</em> R2 <em>/, 21 /</em> R3 <em>/, 14 /</em> R4 <em>/,
-5  /</em> G0 <em>/, 6  /</em> G1 <em>/, 7  /</em> G2 <em>/, 15 /</em> G3 <em>/, 16 /</em> G4 <em>/, 4 /</em> G5 <em>/,
-8  /</em> B0 <em>/, 3  /</em> B1 <em>/, 46 /</em> B2 <em>/, 9  /</em> B3 <em>/, 1  /</em> B4 */</p>
+<h2>See also</h2>
 <ul>
-<li>ESP32-S3 DMA (EDMA) with PSRAM and LCD
-<a href="https://esp32.com/viewtopic.php?t=24096">https://esp32.com/viewtopic.php?t=24096</a></li>
+<li>ESP32-S3 DMA (EDMA) with PSRAM and LCD  <a href="https://esp32.com/viewtopic.php?t=24096">https://esp32.com/viewtopic.php?t=24096</a></li>
+<li><a href="http://www.jczn1688.com">http://www.jczn1688.com</a></li>
+<li><a href="https://wiki.makerfabs.com/Sunton_ESP32_S3_4.3_inch_800x400_IPS_with_Touch.html">https://wiki.makerfabs.com/Sunton_ESP32_S3_4.3_inch_800x400_IPS_with_Touch.html</a></li>
+<li><a href="https://www.makerfabs.com/sunton-esp32-s3-4-3-inch-ips-with-touch.html">https://www.makerfabs.com/sunton-esp32-s3-4-3-inch-ips-with-touch.html</a></li>
 </ul>
-<h3>Backlight control</h3>
-<p>TFT_BL GPIO02</p>
-<h2>Touch panel</h2>
-<p>TAMC_GT911</p>
-<h2>connectors</h2>
-<p>HC 1.25  4pwt</p>
-<ul>
-<li>Serial Interface</li>
-<li>11, 12, 13, 19</li>
-<li>17, 18 GND, 3v3</li>
-<li>17, 18, 19, 20</li>
-</ul>
-<hr>
-<p>clk_src 0</p>
-<p>timings:
-pclk_hz 16000000
-h_res 800
-v_res 480
-hsync_pulse_width 4
-hsync_back_porch 8
-hsync_front_porch 8
-vsync_pulse_width 4
-vsync_back_porch 8
-vsync_front_porch 8
-flags.hsync_idle_low 1
-flags.vsync_idle_low 1
-flags.de_idle_high 0
-flags.pclk_active_neg 1
-flags.pclk_idle_high 0</p>
-<p>data_width 16
-sram_trans_align 8
-psram_trans_align 64
-hsync_gpio_num 39
-vsync_gpio_num 41
-de_gpio_num 40
-pclk_gpio_num 42</p>
-<p>data_gpio_nums[0] 8
-data_gpio_nums[1] 3
-data_gpio_nums[2] 46
-data_gpio_nums[3] 9
-data_gpio_nums[4] 1
-data_gpio_nums[5] 5
-data_gpio_nums[6] 6
-data_gpio_nums[7] 7
-data_gpio_nums[8] 15
-data_gpio_nums[9] 16
-data_gpio_nums[10] 4
-data_gpio_nums[11] 45
-data_gpio_nums[12] 48
-data_gpio_nums[13] 47
-data_gpio_nums[14] 21
-data_gpio_nums[15] 14
-_useBigEndian 0
-_useBigEndian 0</p>
-<p>{
-“device”: {
-“0”: {
-“name”: “panel”,
-“title”: “Panel 800*480”,
-“description”: “Panel with 800 px”,
-“loglevel”: “2”,
-“xbutton”: “D3”,
-“xled”: “4”,
-“logfile”: 1,
-“safemode”: “false”,
-“homepage”: “/board.htm”,
-“cache”: “max-age=600”,
-“i2c-SDA”: “19”,
-“i2c-SCL”: “20”
-}
-},
-“ota”: {
-“0”: {
-“port”: 8266,
-“passwd”: “123”
-}
-},
-“ntptime”: {
-“on”: {
-“zone”: “CET-1CEST,M3.5.0,M10.5.0/3”
-}
-},
-“diag”: {
-“0”: {}
-},
-“DisplayEsp32panel”: {
-“0”: {
-“width”: “800”,
-“height”: “480”,
-“color”: “x000000”,
-“background”: “xccccff”,
-“lightpin”: 2
-}
-},
-“DisplayTouchGT911”: {
-“0”: { “address”: “0x5D” }
-}
-}</p>
 
 
     

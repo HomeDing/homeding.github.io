@@ -42,50 +42,76 @@
     <h1>XIAO ESP32 C3</h1>
 <p>The XIAO ESP32C3 board using the ESP32-C3 processor is a very small board that can easily be
 flashed and comes with a connector for an external antenna.</p>
-<p>As there are no additional components and LEDs this board is fits good for un-powered/battery
-based use cases. It has a onboard lithium battery charging chip to recharge using the USB-C
-connector.</p>
-<p>Select Board: XIAO_ESP32C3 (esp32)</p>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Seeed Studio XIAO ESP32C3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Processor</td>
-<td>ESP32-C3 32-bit RISC-V @160MHz</td>
-</tr>
-<tr>
-<td>Memory</td>
-<td>400KB SRAM, 4MB onboard Flash</td>
-</tr>
-<tr>
-<td>Onboard Buttons</td>
-<td>Reset/ Boot Button</td>
-</tr>
-<tr>
-<td>Onboard LEDs</td>
-<td>Charge LED</td>
-</tr>
-</tbody>
-</table>
-<p>Battery connector on the bottom with solder pads.</p>
-<p><a href="https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/">https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/</a></p>
-<p><a href="https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html">https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html</a></p>
-<p>Chip Infos:
-model: ESP32-C3(5)
-features: 00000012
-2.4GHz WiFi
-Bluetooth LE
-cores: 1
-revision: 4</p>
-<p>ChipModel: ESP32-C3</p>
-<p>Flash:  Size: 4096 kByte
-Mode: QIO(0)
-Speed: 80000000</p>
+<p><img src="xiao-c3.jpg" alt="XIAO ESP32C3 board"></p>
+<p>The ESP32-C3 processor has a 32-bit single core RISC-V cpu running at max. 160MHz and
+400KB SRAM memory. Bluetooth LE is supported.</p>
+<p>As there are no additional power consuming components on this board is fits good for
+un-powered/battery based use cases. It has a onboard lithium battery charging chip to recharge
+using the USB-C connector.</p>
+<ul>
+<li>$5 low price</li>
+<li>An external antenna must be connected. There is no antenna on board but a I-PEX connector.</li>
+<li>On board LiPo battery charger chip for a battery connected at the bottom side with solder pads.</li>
+<li>Very small size</li>
+<li>The OnBoard LED is a charging indicator</li>
+</ul>
+<h2>Arduino Board configuration</h2>
+<p>The ESP32 board Manager in the Arduino environment has a dedicated board type
+<code>XIAO_ESP32C3 (esp32)</code> that fits to this board.</p>
+<ul>
+<li>Flash Mode is QIO</li>
+<li>Flash Size 4MByte (32Mbit)</li>
+</ul>
+<h2>System configuration</h2>
+<p>This <strong>env.json</strong> file can be used as a starting point for configuring this board type:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"xiaoc3"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"XIAO ESP32C3"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"XIAO_ESP32C3 board"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"logFile"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"xi2c-scl"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span>
+      <span class="token property">"xci2c-sda"</span><span class="token operator">:</span> <span class="token string">"4"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"state"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"savedelay"</span><span class="token operator">:</span> <span class="token string">"8s"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"boot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Boot button signal"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"9"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3>config.json</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"sw"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Stateful Value"</span><span class="token punctuation">,</span>
+      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
+      <span class="token property">"useState"</span><span class="token operator">:</span> <span class="token string">"true"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>See Also</h2>
+<ul>
+<li>Manufacurer and Shop: <a href="https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html">https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html</a></li>
+<li><a href="https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/">https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/</a></li>
+<li><a href="https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html">https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html</a></li>
+</ul>
 
   </main>
 

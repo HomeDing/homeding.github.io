@@ -78,11 +78,9 @@ See also <a href="/dev/logger.htm">Device Logging</a>.</p>
 </blockquote>
 <h3>WiFi-Manager and Startup settings</h3>
 <blockquote>
-<p><strong>led</strong> - The GPIO pin of the system LED. Defaults is <code>no LED</code>.</p>
-<p><strong>button</strong> - The GPIO pin of the system button. Defaults is ‘GPIO0(D3)’</p>
-<p><strong>connectTime</strong> - The available time after a reboot of the device to start network configuration. Default: “6s”.</p>
+<p><strong>connectTime</strong> - The maximal time to search for a network connection. Default: “30s”.</p>
+<p>Detailed description see <a href="/dev/wifimanager.htm">WiFiManager</a>.</p>
 </blockquote>
-<p>Detailed description for <code>ConnectTime</code>, <code>button</code> and <code>led</code> see <a href="/dev/wifimanager.htm">WiFiManager</a>.</p>
 <h3>I2C bus</h3>
 <p>Many connected sensors and displays are connected via the I2C bus. This bus must be initialized according to the onboard wiring by using the right SDA and SCL pins.</p>
 <p>Because there is only 1 bus available in the Arduino boards the configuration is done centrally in the device.</p>
@@ -101,7 +99,7 @@ This defaults to <code>/index.htm</code></p>
 <p><strong>cache</strong> - This property can be used to replace the default http <code>cache-control</code> header
 for accessing the static files by a custom value.
 The default cache header is <code>&quot;no-cache&quot;</code> that is good while developing and configuring.
-But when have a stable configuration caching can be switched on using a value like <code>&quot;max-age=120&quot;</code></p>
+But when have a stable configuration caching can be switched on using a value like <code>&quot;max-age=120&quot;</code> or <code>&quot;etag&quot;</code></p>
 </blockquote>
 <h3>Deep Sleep mode</h3>
 <blockquote>
