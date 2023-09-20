@@ -43,13 +43,9 @@ The following properties are available for configuration of the element.
 
 ### WiFi-Manager and Startup settings
 
-> **led** - The GPIO pin of the system LED. Defaults is `no LED`.
+> **connectTime** - The maximal time to search for a network connection. Default: "30s".
 >
-> **button** - The GPIO pin of the system button. Defaults is 'GPIO0(D3)'
->
-> **connectTime** - The available time after a reboot of the device to start network configuration. Default: "6s".
-
-Detailed description for `ConnectTime`, `button` and `led` see [WiFiManager](/dev/wifimanager.md).
+> Detailed description see [WiFiManager](/dev/wifimanager.md).
 
 
 ### I2C bus
@@ -78,7 +74,7 @@ More hints on the I2C bus implementation see [I2C](/dev/i2c.md)
 > **cache** - This property can be used to replace the default http `cache-control` header
 > for accessing the static files by a custom value.
 > The default cache header is `"no-cache"` that is good while developing and configuring.
-> But when have a stable configuration caching can be switched on using a value like `"max-age=120"`
+> But when have a stable configuration caching can be switched on using a value like `"max-age=120"` or `"etag"`
 
 
 ### Deep Sleep mode
