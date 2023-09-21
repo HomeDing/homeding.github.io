@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <title>ESP32-S3 Boards</title>
+  <meta name='description' content='ESP32-S3 based boards'>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  main h2 {margin-top: 1rem !important;}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>ESP32-S3 Boards</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    There are several boards available using the ESP32-S3 chip. Boards based on the ESP32-S3 variant offer a High performance dual core SoC with vector hardware acceleration and special display interfaces.
+
+    </div>
+      
+    <p>The ESP32-S3 variant of the ESP32 is also supported by the Arduino ESP32 Board package from esprerssif and by the Homeding library.</p>
+<p>The ESP32-S3 is a
+Xtensa® 32-bit LX7 single or dual-core processor that operates at up to 240 MHz.</p>
+<p>It offers:</p>
+<ul>
+<li>Wi-Fi (2.4 GHz, single band)</li>
+<li>Bluetooth 5, LE and Mesh</li>
+<li>CPU clock speed up to 240 MHz</li>
+<li>Max 45 configurable GPIOs</li>
+<li>512 KB static RAM</li>
+<li>16 KB of static RTC RAM that keeps data as long as powered.</li>
+<li>4 Kbit of eFuse memory for special data like encryption keys</li>
+<li>384 KB of ROM</li>
+<li>integrated Touch sensors</li>
+<li>SD/MMC interface</li>
+<li>Camera interface</li>
+<li>Various Display interfaces</li>
+<li>USB and USB OTG interface</li>
+<li>2 * I2C Interface</li>
+<li>4 * SPI Interface</li>
+<li>2 * I2S Interface</li>
+<li>JTAG interface</li>
+<li>PWM for LEDs</li>
+<li>low-power-mode</li>
+<li>crypro acceleration</li>
+<li>Secure Boot</li>
+<li>Flash encryption</li>
+<li>Direct USB support.</li>
+<li>integrated Flash Memory (option)</li>
+<li>integrated PSRAM Memory (option)</li>
+</ul>
+<p>This SoC is positioned as a high-power SoC
+MCU with Wi-Fi and Bluetooth 5 (LE) for general purpose devices. The built-in LCD interface allows fast display performance.</p>
+<p>It is part of some modules that offer PCB antenna or antenna connectors.</p>
+<p>The official Arduino Nano ESP32
+is based on this processor using a custom Module from U-BLOX.</p>
+<h2>Flash and PSRAM Memory options</h2>
+<p>Some versions of the chip offer an internal 4 MByte Flash ROM and/or internal
+PSRAM.</p>
+<h2>USB and JTAG Support</h2>
+<p>The ESP32-S3 SoC directly supports USB and USB OTG ports and also has a built-in JTAG adapter for debugging.</p>
+<p>To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.</p>
+<h2>Bluetooth LE</h2>
+<p>The ESP32-S3 supports Bluetooth LE , Bluetooth 5 and Bluetooth mesh.</p>
+<p>Bluetooth support is not yet given by the HomeDing library.</p>
+<h2>Powersave modes</h2>
+<p>several sleep modes:</p>
+<ul>
+<li>Modem-sleep mode</li>
+<li>Light-sleep mode</li>
+<li>Deep-sleep mode</li>
+</ul>
+<h2>Watchdog timer</h2>
+<h2>Cryptographic Hardware Accelerators</h2>
+<p>Secure communication, signing packages and flash memory is supported by some built-in special functionality.</p>
+<p>This results in faster secure (https) network requests.</p>
+<h2>Boards with ESP32-S3</h2>
+<div class="imgcard"><img src="/boards/esp32s3/arduino-nano-esp32.jpg">
+<p><strong><a href="/boards/esp32s3/arduino-nano-esp32.htm">Arduino Nano ESP32</a></strong></p>
+<p>This board is an official Arduino board with the ESP32-S3 chip</p>
+</div>
+<div class="imgcard"><img src="/boards/esp32s3/sc01-plus.jpg">
+<p><strong><a href="/boards/esp32s3/sc01-plus.htm">ESP32S3 SC01 Plus</a></strong></p>
+<p>This board is …</p>
+</div>
+<h2>Log info from the <a href="/elements/diag.htm">DIAG Element</a></h2>
+<pre class="language-txt"><code class="language-txt">???
+ 
+</code></pre>
+<h2>See also</h2>
+<ul>
+<li>Product web site: <a href="https://www.espressif.com/en/products/socs/esp32-s3">https://www.espressif.com/en/products/socs/esp32-s3</a></li>
+<li>Official datasheet: <a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf</a></li>
+</ul>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/board.htm">Board</a><a href="/tag/wip.htm">Wip</a></div>
+    
+  </main>
+
+  <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

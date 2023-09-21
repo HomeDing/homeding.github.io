@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <title>Arduino Nano ESP32</title>
+  <meta name='description' content='Arduino Nano ESP32'>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+  <script src="/story.js" type="module"></script>
+  <style>
+  .gpio { 
+    display:inline-block;
+    padding: 0 4px;
+    border-radius: 4px;
+    }
+  .gpio.yellow {background-color: #FF0;}
+  .gpio.red {background-color: #F22; color:white}
+  .gpio.black {background-color: #111; color:white}
+  .gpio.blue {background-color: #22F; color:white}
+  main h2 {margin-top: 1rem !important;}
+  </style>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>Arduino Nano ESP32</h1>
+
+    
+    
+      <div class="plaincard">
+    
+    This board is an official Arduino board with the ESP32-S3 chip
+
+    </div>
+      
+    <p>This board can be bought from the Arduino Store. <a href="https://store.arduino.cc/products/nano-esp32">https://store.arduino.cc/products/nano-esp32</a></p>
+<p>NORA-W106-10B: <a href="https://www.u-blox.com/en/product/nora-w10-series">https://www.u-blox.com/en/product/nora-w10-series</a>
+DataSheet: <a href="https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf">https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf</a></p>
+<p>MCU: Xtensa LX7, 240 MHz dual-core
+RAM: 512 kByte
+PSRAM 8192 kByte
+Flash: 16 MByte</p>
+<h2>Arduino Board Configuration</h2>
+<p>To compile for this board in Arduino the following settings for the board can be used:</p>
+<ul>
+<li>ESP32S3 Dev Module</li>
+<li>JTAG Adapter disabled</li>
+<li>PSRam disabled</li>
+<li>Flash Mode QIO 80 MHz</li>
+<li>Flash Size: 4MB</li>
+<li>USB Mode Hardware CDC and JTAG</li>
+<li>USB CDC On Boot: Enabled</li>
+</ul>
+<h2>See Also</h2>
+<ul>
+<li>Arduino Getting Started with Nano ESP32: <a href="https://docs.arduino.cc/tutorials/nano-esp32/getting-started-nano-esp32">https://docs.arduino.cc/tutorials/nano-esp32/getting-started-nano-esp32</a></li>
+<li>Cheat Sheet: <a href="https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet">https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet</a></li>
+<li>Data sheet <a href="https://docs.arduino.cc/static/b8af299e4c00e7220396e2c4c528c12a/ABX00083-datasheet.pdf">https://docs.arduino.cc/static/b8af299e4c00e7220396e2c4c528c12a/ABX00083-datasheet.pdf</a></li>
+<li>Full pin diagram: <a href="https://docs.arduino.cc/static/f712042dfc42b75d6745293a60d6cd4a/ABX00083-full-pinout.pdf">https://docs.arduino.cc/static/f712042dfc42b75d6745293a60d6cd4a/ABX00083-full-pinout.pdf</a></li>
+<li>Full pin schematics: <a href="https://docs.arduino.cc/static/ba720d742e9db4f65d217a422f155695/ABX00083-schematics.pdf">https://docs.arduino.cc/static/ba720d742e9db4f65d217a422f155695/ABX00083-schematics.pdf</a></li>
+</ul>
+<p>static const int8_t TO_GPIO_NUMBER[NUM_DIGITAL_PINS] = {
+[D0]        = 44, // RX
+[D1]        = 43, // TX
+[D2]        = 5,
+[D3]        = 6,  // CTS
+[D4]        = 7,  // DSR
+[D5]        = 8,
+[D6]        = 9,
+[D7]        = 10,
+[D8]        = 17,
+[D9]        = 18,
+[D10]       = 21, // SS
+[D11]       = 38, // MOSI
+[D12]       = 47, // MISO
+[D13]       = 48, // SCK, LED_BUILTIN
+[LED_RED]   = 46,
+[LED_GREEN] = 0,
+[LED_BLUE]  = 45, // RTS
+[A0]        = 1,  // DTR
+[A1]        = 2,
+[A2]        = 3,
+[A3]        = 4,
+[A4]        = 11, // SDA
+[A5]        = 12, // SCL
+[A6]        = 13,
+[A7]        = 14,
+};</p>
+
+
+    
+    <h2>Tags</h2>
+    <div class="taglist"><a href="/tag/board.htm">Board</a><a href="/tag/wip.htm">Wip</a></div>
+    
+  </main>
+
+  <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
