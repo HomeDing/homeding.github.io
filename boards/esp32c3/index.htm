@@ -47,28 +47,38 @@
     
       <div class="plaincard">
     
-    There are several ESP32-C3 based Boards available using the ESP32-C3 chip. They are supported by the HomeDing library.
+    There are several boards available using the ESP32-C3 chip. Boards based on the ESP32-C3 variant offer a &quot;cost-effective&quot; RISC-V based SoC that can replace ESP8266 boards.
 
     </div>
       
-    <p>This SoC is positioned as a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity
-for secure IoT applications.</p>
-<p>It is often seen as a replacement option for the ESP8266.</p>
+    <p>The ESP32-C3 variant of the ESP32 is also supported by the Arduino ESP32 Board package from esprerssif and by the Homeding library.</p>
+<p>The ESP32-C3 is a single-core SoC based on the open-source 32-bit RISC-V architecture.</p>
+<p>It offers:</p>
+<ul>
+<li>Wi-Fi</li>
+<li>Bluetooth 5 (LE)</li>
+<li>CPU clock speed up to 160 MHz</li>
+<li>Max 22 configurable GPIOs</li>
+<li>400 KB static RAM, 16 KB for caching</li>
+<li>8 KB of static RTC RAM that keeps data as long as powered.</li>
+<li>4 Kbit of eFuse memory for special data like encryption keys</li>
+<li>384 KB of ROM</li>
+<li>low-power-mode</li>
+<li>crypro acceleration</li>
+<li>Secure Boot</li>
+<li>Flash encryption</li>
+<li>Direct USB support.</li>
+<li>integrated Flash Memory (option)</li>
+</ul>
+<p>This SoC is positioned as a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity for secure IoT applications.</p>
+<p>It is often seen as a more secure and powerful replacement option for the ESP8266 and
+has noticeable more internal memory and cpu power as the ESP8266:</p>
 <p>The ESP32-C3 offers less IO pins that the ESP32 or ESP32-S3 chips and comes in a smaller
-32 pin QFN32 package (5×5 mm).</p>
-<!-- The ESP32-C3 also can be fond in a (4×4 mm) package . -->
+32 pin QFN32 package (5×5 mm) or (4×4 mm) package.</p>
 <p>It is part of some modules that offer PCB antenna or antenna connectors.</p>
 <p>There is even a ESP-01 kind of module available.</p>
-<p>It has noticeable more internal memory and cpu power as the ESP8266:</p>
-<ul>
-<li>384 KB of ROM</li>
-<li>400 KB of static RAM, 16 KB for caching</li>
-<li>8 KB of static RTC RAM that keeps data as long as powered.</li>
-<li>Single Core 160 MHz CPU frequency</li>
-<li>4 Kbit of eFuse memory for special data like encryption keys</li>
-</ul>
 <h2>Flash Memory</h2>
-<p>The ‘F’ version of the chip offers an internal 4 MByte Flash ROM that can be flashed using the QIO mode. It sopports external Flash up to 16 MByte.</p>
+<p>The ‘F’ version of the chip offers an internal 4 MByte Flash ROM that can be flashed using the QIO mode. It supports external Flash up to 16 MByte.</p>
 <h2>USB and JTAG Support</h2>
 <p>The ESP32-C3 SoC directly supports USB ports using IO18 and IO19.</p>
 <p>To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.</p>
@@ -88,7 +98,7 @@ for secure IoT applications.</p>
 <h2>Cryptographic Hardware Accelerators</h2>
 <p>Secure communication, signing packages and flash memory is supported by some built-in special functionality.</p>
 <p>This results in faster secure (https) network requests.</p>
-<h2>Example Boards with ESP32-C3</h2>
+<h2>Boards with ESP32-C3</h2>
 <div class="imgcard"><img src="/boards/esp32c3/core.jpg">
 <p><strong><a href="/boards/esp32c3/core.htm">CORE-ESP32C3 development board</a></strong></p>
 <p>The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC that fits good on a breadboard and has the option for a LCD + digital joystick shield on top. The ESP32-C3 variant is supported by the HomeDing library.</p>
@@ -108,13 +118,6 @@ for secure IoT applications.</p>
 The original version has limited Flash memory (512kByte).</p>
 <p>As of it’s popularity there are variants using the ESP8266 and ESP8285 (= ESP8266 + 1M Flash in the same chip)
 and more flash memory.</p>
-<p>but current modules offer at least 1MByte flash data.</p>
-<p>There is a</p>
-<ul>
-<li>DIO</li>
-<li>4MByte</li>
-<li>Pin 3 - led</li>
-</ul>
 <h2>Log info from the <a href="/elements/diag.htm">DIAG Element</a></h2>
 <pre class="language-txt"><code class="language-txt">14:50:58 diag/0:t Chip-Info:
 14:50:58 diag/0:t   model: 5
