@@ -11,7 +11,7 @@ excerpt: >
 
 {% from 'macros.njk' import imgCard %}
 
-The ESP32-S3 variant of the ESP32 is also supported by the Arduino ESP32 Board package from esprerssif and by the Homeding library.
+The ESP32-S3 variant of the ESP32 is also supported by the Arduino ESP32 Board package from Espressif and by the Homeding library.
 
 The ESP32-S3 is a 
 Xtensa® 32-bit LX7 single or dual-core processor that operates at up to 240 MHz.
@@ -23,7 +23,7 @@ It offers:
 * Max 45 configurable GPIOs
 * 512 KB static RAM
 * 16 KB of static RTC RAM that keeps data as long as powered.
-* 4 Kbit of eFuse memory for special data like encryption keys
+* 4 KBit of eFuse memory for special data like encryption keys
 * 384 KB of ROM
 * integrated Touch sensors
 * SD/MMC interface
@@ -56,8 +56,7 @@ is based on this processor using a custom Module from U-BLOX.
 
 ## Flash and PSRAM Memory options
 
-Some versions of the chip offer an internal 4 MByte Flash ROM and/or internal 
-PSRAM.
+Some versions of the chip offer an internal 4 MByte Flash ROM and/or internal PSRAM.
 
 
 ## USB and JTAG Support

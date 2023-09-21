@@ -53,3 +53,7 @@ The gt911.h / gt911.cpp is my own assembled version working for ESP32.
 
 * [Display Touch Elements](touch.md)
 * [i2c bus](/dev/i2c.md)
+* <https://gitlab.com/AdyaAdya/goodix-touchscreen-linux-driver/-/blob/master/goodix_mainline.c?ref_type=heads>
+* <https://github.com/nik-sharky/arduino-goodix>
+
+* <https://github.com/klaper/Sonoff-Tasmota/blob/4d9272f701682ecca3f93af927cf768a4a3274ce/lib/lib_display/GT911/GT911.cpp>
