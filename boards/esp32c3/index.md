@@ -4,38 +4,49 @@ tags: ["Board"]
 layout: "page.njk"
 description: ESP32-C3 based boards
 excerpt: >
-  There are several ESP32-C3 based Boards available using the ESP32-C3 chip.
-  They are supported by the HomeDing library.
+  There are several boards available using the ESP32-C3 chip.
+  Boards based on the ESP32-C3 variant offer a "cost-effective"
+  RISC-V based SoC that can replace ESP8266 boards.
 ---
 
 {% from 'macros.njk' import imgCard %}
 
-This SoC is positioned as a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity
-for secure IoT applications.
+The ESP32-C3 variant of the ESP32 is also supported by the Arduino ESP32 Board package from esprerssif and by the Homeding library.
 
-It is often seen as a replacement option for the ESP8266.
+The ESP32-C3 is a single-core SoC based on the open-source 32-bit RISC-V architecture.
+
+It offers:
+* Wi-Fi
+* Bluetooth 5 (LE)
+* CPU clock speed up to 160 MHz
+* Max 22 configurable GPIOs
+* 400 KB static RAM, 16 KB for caching
+* 8 KB of static RTC RAM that keeps data as long as powered.
+* 4 Kbit of eFuse memory for special data like encryption keys
+* 384 KB of ROM
+* low-power-mode
+* crypro acceleration
+* Secure Boot
+* Flash encryption
+* Direct USB support.
+* integrated Flash Memory (option)
+
+This SoC is positioned as a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity for secure IoT applications.
+
+It is often seen as a more secure and powerful replacement option for the ESP8266 and 
+has noticeable more internal memory and cpu power as the ESP8266:
 
 The ESP32-C3 offers less IO pins that the ESP32 or ESP32-S3 chips and comes in a smaller
-32 pin QFN32 package (5×5 mm).
-
-<!-- The ESP32-C3 also can be fond in a (4×4 mm) package . -->
+32 pin QFN32 package (5×5 mm) or (4×4 mm) package.
 
 It is part of some modules that offer PCB antenna or antenna connectors.
 
 There is even a ESP-01 kind of module available.
 
-It has noticeable more internal memory and cpu power as the ESP8266:
-
-* 384 KB of ROM
-* 400 KB of static RAM, 16 KB for caching
-* 8 KB of static RTC RAM that keeps data as long as powered.
-* Single Core 160 MHz CPU frequency
-* 4 Kbit of eFuse memory for special data like encryption keys
-
 
 ## Flash Memory
 
-The 'F' version of the chip offers an internal 4 MByte Flash ROM that can be flashed using the QIO mode. It sopports external Flash up to 16 MByte.
+The 'F' version of the chip offers an internal 4 MByte Flash ROM that can be flashed using the QIO mode. It supports external Flash up to 16 MByte.
 
 
 ## USB and JTAG Support
@@ -76,7 +87,7 @@ Secure communication, signing packages and flash memory is supported by some bui
 This results in faster secure (https) network requests.
 
 
-## Example Boards with ESP32-C3
+## Boards with ESP32-C3
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
 
@@ -98,16 +109,7 @@ As of it's popularity there are variants using the ESP8266 and ESP8285 (= ESP826
 and more flash memory.
 
 
- but current modules offer at least 1MByte flash data.
 
-
-
-There is a 
-
-
-* DIO
-* 4MByte
-* Pin 3 - led
 
 ## Log info from the [DIAG Element](/elements/diag.md)
 

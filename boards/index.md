@@ -81,12 +81,26 @@ There are official boards from espressif
 {{ imgCard(collections.all, item = '/boards/esp32/ttgogallery') }}
 
 
+## ESP32-S3 boards
+
+The [ESP32-S3](/boards/esp32s3/index.md) variant of the ESP32 is supported by the Arduino Framework
+and by the HomeDing library.
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/xiao-esp32s3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/panel-8048S043') }}
+
+
+
+
 ## ESP32-C3 boards
 
-The [ESP32-C3](/boards/esp32c3/index.md) variant of the ESP32 is also supported.
-It has less IO pins and is not supporting touch input.
-As it is "cost-effective" RISC-V based SoC that may replace ESP8266 some time.
-The Arduino ESP32 supports this variant.
+The [ESP32-C3](/boards/esp32c3/index.md) variant of the ESP32 is supported by the Arduino Framework
+and by the HomeDing library.
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
 

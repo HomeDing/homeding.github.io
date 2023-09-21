@@ -18,6 +18,8 @@ using the USB-C connector.
 * Very small size
 * The OnBoard LED is a charging indicator
 
+A Battery connector is on the bottom available on solder pads.
+
 
 ## Arduino Board configuration
 
@@ -26,6 +28,7 @@ The ESP32 board Manager in the Arduino environment has a dedicated board type
 
 * Flash Mode is QIO
 * Flash Size 4MByte (32Mbit)
+* 400KB SRAM Memory 
 
 ## System configuration
 
@@ -87,4 +90,5 @@ This **env.json** file can be used as a starting point for configuring this boar
 * Manufacurer and Shop: <https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html>
 * <https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/>
 * <https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html>
+
 

@@ -97,17 +97,11 @@ This results in faster secure (https) network requests.
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32s3/xiao-esp32s3') }}
+
 {{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
 
-
-
-## Log info from the [DIAG Element](/elements/diag.md)
-
-``` txt
-???
- 
-
-```
+{{ imgCard(collections.all, item = '/boards/esp32s3/panel-8048S043') }}
 
 
 ## See also
