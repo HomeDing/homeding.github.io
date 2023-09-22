@@ -100,7 +100,7 @@ This results in faster secure (https) network requests.
 
 The ESP32-C3 processor is now also available in a ESP01 form factor board.
 
-More details, see [Board ESP32-C3 ESP-01](/boards/esp32/esp32c3-01.md).
+More details, see [Board ESP32-C3 ESP-01](/boards/esp32c3/esp32c3-01.md).
 
 The ESP01 form factor was initially used for the ESP8266 processor on the [Board ESP8266 ESP-01](/boards/esp01.md).
 The original version has limited Flash memory (512kByte).

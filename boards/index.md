@@ -16,18 +16,25 @@ IoT devices off-the-shelf and even complete kits that use these chips.
 Here you find some common species and bare processors described in detail that you may consider to use
 including hints for configuration and programming.
 
+* [ESP32 boards](/boards/esp32/index.htm)
+* [ESP32-C3 boards](/boards/esp32c3/index.htm)
+* [ESP32-S3 boards](/boards/esp32s3/index.htm)
+
+
 ## DIY development boards
 
-The NodeMCU boards for ESP8266 and the DevKit Boards for ESP32 and ESP32-S3
+The NodeMCU boards for ESP8266 and the DevKit Boards for ESP32, ESP32-C3 and ESP32-S3
 
 There are good options to start a DIY project with breadboard friendly boards.
-You can find these at resellers and eBay :
+You can find these in the Arduino Store, at resellers and eBay :
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
 
 {{ imgCard(collections.all, item = '/boards/nodemcu') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
 
-A good source of ESP8266 development board descriptions, hints as well as references
+The ESP8266 development board descriptions, hints and more references
 can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
 
 ESP32 boards from espressif :<https://www.espressif.com/en/products/devkits>
@@ -83,8 +90,8 @@ There are official boards from espressif
 
 ## ESP32-S3 boards
 
-The [ESP32-S3](/boards/esp32s3/index.md) variant of the ESP32 is supported by the Arduino Framework
-and by the HomeDing library.
+The [ESP32-S3](/boards/esp32s3/index.md) variant of the ESP32 is supported by the Arduino
+Framework and by the HomeDing library.
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
 
@@ -93,8 +100,6 @@ and by the HomeDing library.
 {{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/panel-8048S043') }}
-
-
 
 
 ## ESP32-C3 boards
