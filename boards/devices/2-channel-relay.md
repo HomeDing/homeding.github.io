@@ -1,7 +1,7 @@
 ---
 title: 2 channel relay
 tags: ["Board"]
-layout: "page.njk[]"
+layout: "page.njk"
 excerpt: >
   This board can switch 2 relay outputs using a ESP-01 board.
 ---
@@ -10,7 +10,7 @@ excerpt: >
 
 2-channel relay is required for some use cases where devices like fans offer multiple speed
 modes or curtain / shade control. It requires an ESP01 compatible board like the
-[ESP8266 ESP-01](/boards/esp01.md) or [ESP32-C3 ESP-01](/boards/esp32c3/esp01c3.md).
+[ESP8266 ESP-01](/boards/esp8266/esp01.md) or [ESP32-C3 ESP-01](/boards/esp32c3/esp01c3.md).
 
 This board itself offers some options that may be found at other boards too:
 
@@ -28,7 +28,7 @@ As there are many boards like these even with 4 relay output this may vary from 
 
 Enable the ESP-01 compatible board to be used with the HomeDing environment by flashing the minimal sketch.
 
-Using a ESP8266 some details on this can be found in the [ESP-01 board](/boards/esp01.md) description.
+Using a ESP8266 some details on this can be found in the [ESP-01 board](/boards/esp8266/esp01.md) description.
 As the minimal sketch includes many elements for implementing switches this can be used for relay very well.
 
 Using a [ESP32-C3 ESP-01](/boards/esp32c3/esp01c3.md) is a option without low flash memory limitations.
@@ -135,7 +135,7 @@ A cooling fan that has 4 levels of speed (0,1,2,3)  air fans
 
 ## See also
 
-* [ESP-01 board](/boards/esp01.md)
+* [ESP-01 board](/boards/esp8266/esp01.md)
 * [DigitalOut Element](/elements/digitalout.md)
 
 <!-- * <https://www.youtube.com/watch?v=qahdTG4TE-A> -->

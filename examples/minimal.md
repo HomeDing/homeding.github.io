@@ -34,7 +34,7 @@ These devices are not really usable during development.
 Thereforefore it is recommended:
 
 * Use a board like a [NodeMCU](/boards/nodemcu.md) but keep an eye of memory consumption.
-* Use a [ESP-01 board](/boards/esp01.md) to verify the solution is working with the target sizing.
+* Use a [ESP-01 board](/boards/esp8266/esp01.md) to verify the solution is working with the target sizing.
 * Uploading a new firware to the target device.
 
 

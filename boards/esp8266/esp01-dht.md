@@ -12,7 +12,7 @@ This little board has a DHT22 sensor and power regulator for a ESP-01 module.
 ![ESP-01 base board with DHT22](/boards/esp01-dht.jpg)
 
 The ESP-01 only offers only small flash sizes so it is recommended to load the minimal sketch with added support for the DHTElement on the ESP-01 by using one of the adapter options.
-See general [ESP-01 board](/boards/esp01.md) description.
+See general [ESP-01 board](/boards/esp8266/esp01.md) description.
 
 This small board with the onboard regulator generates some intrinsic heat
 and the temperature measured by the sensor is some small amount above the real air temperature for this reason.
@@ -69,6 +69,6 @@ The config.json file should contain the following configuration. More options ar
 
 * [Boards overview](/boards/index.md)
 * [DHT Element](/elements/dht.md)
-* [ESP-01 board](/boards/esp01.md)
+* [ESP-01 board](/boards/esp8266/esp01.md)
 * [Outdoor sensor with solar](/stories/story-outdoorsensorsolar.md)
 

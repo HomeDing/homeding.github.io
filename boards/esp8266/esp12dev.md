@@ -8,7 +8,7 @@ layout: "page.njk"
 This is an adapter board that can be used to flash ESP-12 modules before adding them to a device.
 :::
 
-![dev board](/boards/esp12dev.jpg)
+![dev board](/boards/esp8266/esp12dev.jpg)
 
 Using ESP-12 modules instead of using full featured boards like [nodemcu](/boards/nodemcu.md)
 is especially suitable for creating devices that run on battery or low power conditions and therefore

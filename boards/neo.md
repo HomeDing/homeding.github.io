@@ -19,7 +19,7 @@ You can find these adapters in various shops.
 
 The data line for the neopixels is attached to the GPIO02 and the button can be used to reset the board.
 
-Because this is only an adapter for an ESP01 board all the information on the [ESP01 board](/boards/esp01.md) apply.
+Because this is only an adapter for an ESP01 board all the information on the [ESP01 board](/boards/esp8266/esp01.md) apply.
 
 
 ## System configuration

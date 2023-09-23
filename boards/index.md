@@ -122,7 +122,7 @@ and includes
 * USB-C connector
 {% endimgcard %}
 
-{{ imgCard(collections.all, item = '/boards/esp32/esp32c3-01') }}
+{{ imgCard(collections.all, item = '/boards/esp32c3/esp32c3-01') }}
 
 
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
@@ -132,7 +132,7 @@ and includes
 The ESP32-S3 variant of the ESP32 is also supported.
 The Arduino ESP32 supports this variant.
 
-{{ imgCard(collections.all, item = '/boards/esp32/lilygo-t-dongle-s3') }}
+{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-dongle-s3') }}
 
 
 ## Devices based on Esp8266
@@ -181,7 +181,7 @@ These boards help implementing things using the ESP-12 boards directly.
 When used alone an external power supply and some minimal wiring is required.
 
 :::board esp12dev
-The **[Esp-12 development boards](/boards/esp12dev.md)** is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
+The **[Esp-12 development boards](/boards/esp8266/esp12dev.md)** is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
 This solution is especially suitable for creating devices that run on battery or low power conditions and therefore do not need USB chips.
 :::
 
@@ -240,7 +240,7 @@ The [minimal example](/examples/minimal.md) can be flashed onto these boards by 
 The following are boards and solutions with 1 MBytes flash memory chips.
 
 :::board esp01
-The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.
+The [ESP-01](/boards/esp8266/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.
 
 There are variants of this board with different antenna and different flash sizes.
 :::
@@ -273,7 +273,7 @@ Less memory is cheaper. These boards have no difference regarding the CPU and RA
 
 Older boards with 512 KByte are still available but should be avoided because OTA probably will not work caused by this small memory size.
 
-The [ESP-01](/boards/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances.
+The [ESP-01](/boards/esp8266/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances.
 
 
 ## See also

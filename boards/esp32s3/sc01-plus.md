@@ -2,10 +2,12 @@
 title: ESP32S3 SC01 Plus
 tags: ["Board", "WIP"]
 layout: "page.njk"
-description: Board with display
+description: ESP32-S3 Board with touch display
 excerpt: >
-  This board is ...
+  This touch display and board offers a 480 * 320 LCD display and is based on a ESP32-S3 processor.
 ---
+
+http://en.wireless-tag.com/product-item-26.html
 
 
 ```cpp

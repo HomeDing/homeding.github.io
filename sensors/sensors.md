@@ -182,7 +182,7 @@ This sensor is not yet supported directly by the HomeDing library.
 :::sensor relay
 The **relay** can be switched using the [Digital Output Element](/elements/digitalout.md) when the board includes a transistor or mosfet to handle the high load demand of a relay.
 
-A relay cannot be used directly with a GPIO pin. There is a example how to control a relay in [ESP-01 Board page](/boards/esp01.md).
+A relay cannot be used directly with a GPIO pin. There is a example how to control a relay in [ESP-01 Board page](/boards/esp8266/esp01.md).
 :::
 
 
