@@ -49,7 +49,7 @@
 </div>
 <p>There are many different bulb devices that use RGB and white LED variants. The bulbs that use GPIOs with PWM or the chips
 like MY9231, MY9291.</p>
-<p><img src="/boards/bulb.jpg" alt="WiFi Bulb" title="w200"></p>
+<p><img src="/boards/devices/bulb.jpg" alt="WiFi Bulb" title="w200"></p>
 <p>The biggest challenge with these bulbs is that there is usually no easy way to get to the serial port without destroying the housing.</p>
 <p>Therefore bulbs are used here, that can also be flashed with a new software via the network. This is done by the program <strong>tuya-convert</strong> that runs on a Raspberry pi.</p>
 <p>The <a href="/examples/minimal.htm">Minimal Example</a> can be used in bulbs and other light devices.</p>
@@ -155,12 +155,12 @@ The <a href="/elements/light/my9291.htm">MY9291 Element</a> can create the 4-cha
 <li><a href="https://templates.blakadder.com/lyasi_pt-bw09.html">https://templates.blakadder.com/lyasi_pt-bw09.html</a></li>
 </ul>
 <p>Here are some picture from a disassembly of a bulb:</p>
-<p><img src="/boards/bulb.jpg" alt="bulb" title="w200">
-<img src="/boards/bulbparts.jpg" alt="bulb" title="w200">
-<img src="/boards/bulb01.jpg" alt="bulb" title="w200">
-<img src="/boards/bulb02.jpg" alt="bulb" title="w200">
-<img src="/boards/bulb03.jpg" alt="bulb" title="w200">
-<img src="/boards/bulb04.jpg" alt="bulb" title="w200"></p>
+<p><img src="/boards/devices/bulb.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulbparts.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulb01.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulb02.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulb03.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulb04.jpg" alt="bulb" title="w200"></p>
 <p>It is almost impossible to open this kind of a bulb and get access to the programming signals without breaking the housing.</p>
 <p>I used a programming setup for ESP-01 boards with some wires that can be soldered easily to the connectors of the module with the ESP8266.</p>
 <p>On the bottom side the signals VCC(3.3V), GND, RX and TX are available.
@@ -169,7 +169,7 @@ The RESET and FLASH signals are available on 2 connectors on the bottom side.</p
 <p>Many bulbs are using the PWM signals from the ESP8266 chip with some power switching mosfets to drive the LEDs.
 These can be controlled using the <a href="/elements/light/light.htm">Light Element</a> that can create 4-channels of PWM signals from a color value.
 It supports RGB and WRGB color values, a general brightness and enable switch.</p>
-<p><img src="/boards/bulbrgb.jpg" alt="bulb" title="w200"></p>
+<p><img src="/boards/devices/bulbrgb.jpg" alt="bulb" title="w200"></p>
 <p><strong>config.json</strong></p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -205,11 +205,11 @@ It supports RGB and WRGB color values, a general brightness and enable switch.</
 <p>These bulbs are internally of this type:</p>
 <p><a href="https://templates.blakadder.com/blitzwolf_BW-LT21.html">https://templates.blakadder.com/blitzwolf_BW-LT21.html</a></p>
 <p>Here are some picture from a disassembly of a broken bulb:</p>
-<p><img src="/boards/bulbrgb01.jpg" alt="bulb" title="w200">
-<img src="/boards/bulbrgb02.jpg" alt="bulb" title="w200">
-<img src="/boards/bulbrgb03.jpg" alt="bulb" title="w200">
-<img src="/boards/bulbrgb04.jpg" alt="bulb" title="w200">
-<img src="/boards/bulbrgb05.jpg" alt="bulb" title="w200"></p>
+<p><img src="/boards/devices/bulbrgb01.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulbrgb02.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulbrgb03.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulbrgb04.jpg" alt="bulb" title="w200">
+<img src="/boards/devices/bulbrgb05.jpg" alt="bulb" title="w200"></p>
 <p>It is possible to open this bulb by gently pulling off the transparent cap. There are 2 small boards visible.
 The one with the processor has some good soldering pads for RX, TX and GPIO0. The VCC and GND signals are available on the connectors.</p>
 <p>Soldering is a little bit tricky but can be managed.</p>

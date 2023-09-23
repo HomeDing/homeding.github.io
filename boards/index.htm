@@ -146,7 +146,7 @@ Framework and by the HomeDing library.</p>
 </div>
 <div class="imgcard"><img src="/boards/esp32s3/sc01-plus.jpg">
 <p><strong><a href="/boards/esp32s3/sc01-plus.htm">ESP32S3 SC01 Plus</a></strong></p>
-<p>This board is …</p>
+<p>This touch display and board offers a 480 * 320 LCD display and is based on a ESP32-S3 processor.</p>
 </div>
 <div class="imgcard"><img src="/boards/esp32s3/panel-8048S043.jpg">
 <p><strong><a href="/boards/esp32s3/panel-8048S043.htm">Panel ESP32-8048S043C</a></strong></p>
@@ -174,15 +174,17 @@ and includes</p>
 <li>USB-C connector</li>
 </ul>
 </div>
-<div class="imgcard"><img src="/boards/esp32/esp32c3-01.jpg">
-<p><strong><a href="/boards/esp32/esp32c3-01.htm"></a></strong></p>
+<div class="imgcard"><img src="/boards/esp32c3/esp32c3-01.jpg">
+<p><strong><a href="/boards/esp32c3/esp32c3-01.htm">Board ESP32-C3 ESP-01</a></strong></p>
+<p>The ESP32-C3 processor is now also available in a ESP01 form factor board including 4MByte flash and an external antenna connector.</p>
 </div>
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
 <h2>ESP32-S3 boards</h2>
 <p>The ESP32-S3 variant of the ESP32 is also supported.
 The Arduino ESP32 supports this variant.</p>
-<div class="imgcard"><img src="/boards/esp32/lilygo-t-dongle-s3.jpg">
-<p><strong><a href="/boards/esp32/lilygo-t-dongle-s3.htm"></a></strong></p>
+<div class="imgcard"><img src="/boards/esp32s3/lilygo-t-dongle-s3.jpg">
+<p><strong><a href="/boards/esp32s3/lilygo-t-dongle-s3.htm">LilyGO T-Dongle S3</a></strong></p>
+<p>The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display, a APA102 LED, a input button and SD card slot.</p>
 </div>
 <h2>Devices based on Esp8266</h2>
 <p>ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.</p>
@@ -197,7 +199,7 @@ of the plugged-in load.</p>
 <p>It is using the ESP8266 CPU and 1 MByte Flash and can be used with the <a href="/examples/minimal.htm">Minimal Example</a>
 and the <a href="/elements/bl0937.htm">BL0937 chip</a>.</p>
 </div>
-<div class="imgcard"><img src="/boards/bulb.jpg"><p><strong><a href="/boards/bulb.htm">Bulb devices</a></strong> build on base of the ESP8266 chip are supported by the minimal sketch.</p>
+<div class="imgcard"><img src="/boards/bulb.jpg"><p><strong><a href="/boards/devices/bulb.htm">Bulb devices</a></strong> build on base of the ESP8266 chip are supported by the minimal sketch.</p>
 <p>They are using the ESP8266 CPU and 1 MByte Flash and can be used with the <a href="/examples/minimal.htm">Minimal Example</a> using
 the <a href="/elements/light/color.htm">Color Element</a> and <a href="/elements/switch.htm">Switch Element</a> for control.</p>
 </div>
@@ -211,7 +213,7 @@ ESP-14
 <h2>Bare ESP-12 boards</h2>
 <p>These boards help implementing things using the ESP-12 boards directly.
 When used alone an external power supply and some minimal wiring is required.</p>
-<div class="imgcard"><img src="/boards/esp12dev.jpg"><p>The <strong><a href="/boards/esp12dev.htm">Esp-12 development boards</a></strong> is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
+<div class="imgcard"><img src="/boards/esp12dev.jpg"><p>The <strong><a href="/boards/esp8266/esp12dev.htm">Esp-12 development boards</a></strong> is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
 This solution is especially suitable for creating devices that run on battery or low power conditions and therefore do not need USB chips.</p>
 </div>
 <div class="imgcard"><img src="/boards/whiteadapter.jpg"><p>The <strong><a href="/boards/whiteadapter.htm">White ESP-12 adapter</a></strong> enables using ESP-12 type boards on a breadboard and includes some resistors and a power regulator option.</p>
@@ -239,7 +241,7 @@ The SOC and processor itself offer the full features but connectivity on the pin
 <!-- The [sensor example](/elements/sensors.md) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration. -->
 <h3>Boards</h3>
 <p>The following are boards and solutions with 1 MBytes flash memory chips.</p>
-<div class="imgcard"><img src="/boards/esp01.jpg"><p>The <a href="/boards/esp01.htm">ESP-01</a> is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.</p>
+<div class="imgcard"><img src="/boards/esp01.jpg"><p>The <a href="/boards/esp8266/esp01.htm">ESP-01</a> is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.</p>
 <p>There are variants of this board with different antenna and different flash sizes.</p>
 </div>
 <div class="imgcard"><img src="/boards/neo.jpg"><p>The <a href="/boards/neo.htm">neo board</a> is a very specific adapter
@@ -255,7 +257,7 @@ to run a DHT22 sensor using  a ESP8266 ESP-01 board.</p>
 <p>The lack of the metal housing of the high frequency emitting CPU and bus to the flash chip may be the reason why they don’t have a CE certificate.</p>
 <p>Less memory is cheaper. These boards have no difference regarding the CPU and RAM but these boards offer less flash memory, fewer I/O ports and often do not include a USB converter.</p>
 <p>Older boards with 512 KByte are still available but should be avoided because OTA probably will not work caused by this small memory size.</p>
-<p>The <a href="/boards/esp01.htm">ESP-01</a> is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances.</p>
+<p>The <a href="/boards/esp8266/esp01.htm">ESP-01</a> is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances.</p>
 <h2>See also</h2>
 <ul>
 <li><a href="/boards/pins.htm">ESP8266 pins</a></li>

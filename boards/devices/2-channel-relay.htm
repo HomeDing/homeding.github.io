@@ -51,33 +51,26 @@
 
     </div>
       
-    <p><img src="/boards/2-channel-relay.jpg" alt="2 channel relay board"></p>
-<p>2-channel relay is required for some use cases where devices like fans offer multiple speed modes or curtain / shade control.</p>
+    <p><img src="/boards/devices/2-channel-relay.jpg" alt="2 channel relay board"></p>
+<p>2-channel relay is required for some use cases where devices like fans offer multiple speed
+modes or curtain / shade control. It requires an ESP01 compatible board like the
+<a href="/boards/esp8266/esp01.htm">ESP8266 ESP-01</a> or <a href="/boards/esp32c3/esp01c3.htm">ESP32-C3 ESP-01</a>.</p>
 <p>This board itself offers some options that may be found at other boards too:</p>
 <ul>
-<li>
-<p>The DC input can be 5V or 12V. The option must be selected using a jumper.</p>
-<p>When using 12V an additional regulator is reducing to 5 V as each relay is driven by 5V.</p>
-</li>
-<li>
-<p>The first relay is controlled by the GPIO0.</p>
-</li>
-<li>
-<p>The second relay is controlled by the GPIO2.</p>
-</li>
-<li>
-<p>The GND and +5V is available on pins.</p>
-</li>
-<li>
-<p>There are pins that give access to more of the ESP-01 pins.</p>
-<p>In this case the TX and RX signals are available via an 1k resistor.</p>
-</li>
+<li>The DC input can be 5V or 12V. The option must be selected using a jumper.
+When using 12V an additional regulator is reducing to 5 V as each relay is driven by 5V.</li>
+<li>The first relay is controlled by the GPIO0.</li>
+<li>The second relay is controlled by the GPIO2.</li>
+<li>The GND and +5V is available on pins.</li>
+<li>There are pins that give access to more of the ESP-01 pins.
+In this case the TX and RX signals are available via an 1k resistor.</li>
 </ul>
 <p>As there are many boards like these even with 4 relay output this may vary from board to board.</p>
 <h2>Flashing</h2>
-<p>Enable the ESP-01 component to be used with the HomeDing environment by flashing the minimal sketch.</p>
-<p>Details on this can be found in the <a href="/boards/esp01.htm">ESP-01 board</a> description.</p>
-<p>As the minimal sketch includes many elements for implementing switches this can be used for relay very well.</p>
+<p>Enable the ESP-01 compatible board to be used with the HomeDing environment by flashing the minimal sketch.</p>
+<p>Using a ESP8266 some details on this can be found in the <a href="/boards/esp8266/esp01.htm">ESP-01 board</a> description.
+As the minimal sketch includes many elements for implementing switches this can be used for relay very well.</p>
+<p>Using a <a href="/boards/esp32c3/esp01c3.htm">ESP32-C3 ESP-01</a> is a option without low flash memory limitations.</p>
 <h2>System Configuration</h2>
 <p>In the <strong>env.json</strong> file the device specific settings must be configured.</p>
 <ul>
@@ -155,7 +148,7 @@ knows roughly how many seconds are required to fully open or close and can autom
 <p>A cooling fan that has 4 levels of speed (0,1,2,3)  air fans</p>
 <h2>See also</h2>
 <ul>
-<li><a href="/boards/esp01.htm">ESP-01 board</a></li>
+<li><a href="/boards/esp8266/esp01.htm">ESP-01 board</a></li>
 <li><a href="/elements/digitalout.htm">DigitalOut Element</a></li>
 </ul>
 <!-- * <https://www.youtube.com/watch?v=qahdTG4TE-A> -->
