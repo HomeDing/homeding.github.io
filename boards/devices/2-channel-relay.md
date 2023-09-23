@@ -1,42 +1,37 @@
 ---
 title: 2 channel relay
 tags: ["Board"]
-layout: "page.njk"
+layout: "page.njk[]"
 excerpt: >
   This board can switch 2 relay outputs using a ESP-01 board.
 ---
 
-![2 channel relay board](/boards/2-channel-relay.jpg)
+![2 channel relay board](/boards/devices/2-channel-relay.jpg)
 
-2-channel relay is required for some use cases where devices like fans offer multiple speed modes or curtain / shade control.
-
+2-channel relay is required for some use cases where devices like fans offer multiple speed
+modes or curtain / shade control. It requires an ESP01 compatible board like the
+[ESP8266 ESP-01](/boards/esp01.md) or [ESP32-C3 ESP-01](/boards/esp32c3/esp01c3.md).
 
 This board itself offers some options that may be found at other boards too:
 
 * The DC input can be 5V or 12V. The option must be selected using a jumper.
-
   When using 12V an additional regulator is reducing to 5 V as each relay is driven by 5V.
-
 * The first relay is controlled by the GPIO0.
-
 * The second relay is controlled by the GPIO2.
-
 * The GND and +5V is available on pins.
-
 * There are pins that give access to more of the ESP-01 pins.
-
   In this case the TX and RX signals are available via an 1k resistor.
 
 As there are many boards like these even with 4 relay output this may vary from board to board.
 
-
 ## Flashing
 
-Enable the ESP-01 component to be used with the HomeDing environment by flashing the minimal sketch.
+Enable the ESP-01 compatible board to be used with the HomeDing environment by flashing the minimal sketch.
 
-Details on this can be found in the [ESP-01 board](/boards/esp01.md) description.
-
+Using a ESP8266 some details on this can be found in the [ESP-01 board](/boards/esp01.md) description.
 As the minimal sketch includes many elements for implementing switches this can be used for relay very well.
+
+Using a [ESP32-C3 ESP-01](/boards/esp32c3/esp01c3.md) is a option without low flash memory limitations.
 
 
 ## System Configuration

@@ -77,7 +77,7 @@ e.g. to control remote sockets.
 To control a simple light or bulb the [Switch Element](/elements/switch.md) and [Value Element](/elements/value.md) can be used
 to control on/off and the brightness of LEDs using [PWM Out Element](/elements/pwmout.md) or [DigitalOut Element](/elements/digitalout.md).
 
-To control lights, [bulbs](/boards/bulb.md) and LED stripes with colors the following special light elements can be used.
+To control lights, [bulbs](/boards/devices/bulb.md) and LED stripes with colors the following special light elements can be used.
 
 There are special elements to control specific chips or using the PWM capabilities:
 

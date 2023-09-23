@@ -12,7 +12,7 @@ Light emitting devices like bulbs with ESP chip are supported by the HomeDing li
 There are many different bulb devices that use RGB and white LED variants. The bulbs that use GPIOs with PWM or the chips
 like MY9231, MY9291.
 
-![WiFi Bulb](/boards/bulb.jpg "w200")
+![WiFi Bulb](/boards/devices/bulb.jpg "w200")
 
 The biggest challenge with these bulbs is that there is usually no easy way to get to the serial port without destroying the housing.  
 
@@ -160,12 +160,12 @@ These bulbs are internally of this type:
 
 Here are some picture from a disassembly of a bulb:
 
-![bulb](/boards/bulb.jpg "w200")
-![bulb](/boards/bulbparts.jpg "w200")
-![bulb](/boards/bulb01.jpg "w200")
-![bulb](/boards/bulb02.jpg "w200")
-![bulb](/boards/bulb03.jpg "w200")
-![bulb](/boards/bulb04.jpg "w200")
+![bulb](/boards/devices/bulb.jpg "w200")
+![bulb](/boards/devices/bulbparts.jpg "w200")
+![bulb](/boards/devices/bulb01.jpg "w200")
+![bulb](/boards/devices/bulb02.jpg "w200")
+![bulb](/boards/devices/bulb03.jpg "w200")
+![bulb](/boards/devices/bulb04.jpg "w200")
 
 It is almost impossible to open this kind of a bulb and get access to the programming signals without breaking the housing.
 
@@ -180,7 +180,7 @@ Many bulbs are using the PWM signals from the ESP8266 chip with some power switc
 These can be controlled using the [Light Element](/elements/light/light.md) that can create 4-channels of PWM signals from a color value.
 It supports RGB and WRGB color values, a general brightness and enable switch.
 
-![bulb](/boards/bulbrgb.jpg "w200")
+![bulb](/boards/devices/bulbrgb.jpg "w200")
 
 **config.json**
 
@@ -224,11 +224,11 @@ These bulbs are internally of this type:
 
 Here are some picture from a disassembly of a broken bulb:
 
-![bulb](/boards/bulbrgb01.jpg "w200")
-![bulb](/boards/bulbrgb02.jpg "w200")
-![bulb](/boards/bulbrgb03.jpg "w200")
-![bulb](/boards/bulbrgb04.jpg "w200")
-![bulb](/boards/bulbrgb05.jpg "w200")
+![bulb](/boards/devices/bulbrgb01.jpg "w200")
+![bulb](/boards/devices/bulbrgb02.jpg "w200")
+![bulb](/boards/devices/bulbrgb03.jpg "w200")
+![bulb](/boards/devices/bulbrgb04.jpg "w200")
+![bulb](/boards/devices/bulbrgb05.jpg "w200")
 
 It is possible to open this bulb by gently pulling off the transparent cap. There are 2 small boards visible.
 The one with the processor has some good soldering pads for RX, TX and GPIO0. The VCC and GND signals are available on the connectors.

@@ -160,7 +160,7 @@ and the [BL0937 chip](/elements/bl0937.md).
 :::
 
 :::board bulb
-**[Bulb devices](/boards/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
+**[Bulb devices](/boards/devices/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
 
 They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using
 the [Color Element](/elements/light/color.md) and [Switch Element](/elements/switch.md) for control.

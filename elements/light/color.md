@@ -113,7 +113,7 @@ Some named color values are supported:
 
 ## Example configuration
 
-See [Bulb board](/boards/bulb.md)
+See [Bulb board](/boards/devices/bulb.md)
 
 
 ## Color and Light Element linking
