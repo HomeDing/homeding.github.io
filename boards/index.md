@@ -43,13 +43,21 @@ In the Repository of Tasmota Supported Devices at <https://templates.blakadder.c
 many off-the-shell devices can be identified using a espressif processor.
 
 
-## ESP8266 boards with 4 MByte flash memory
+## ESP8266 boards
 
-The following boards with 4 MBytes flash memory have been used for development and their specialties can be found in the board reviews.
+The HomeDing library is compatible to the Arduino environment using the ESP8266 board package.
+Most boards offer 4 MByte flash memory. Some boards and devices with less flash memory are supported as well. See below. 
 
-* The [standard example](/examples/standard.md) can be flashed onto these boards by providing most of the [elements](/elements/index.md) and [display adapters](/elements/display/index.md).
-* The web interface is working out of the box by using 1MByte of the flash memory and includes the Web UI, IDE features and logging capabilities.
-* These devices are used for `always-on` scenarios to provide the webserver functionality. Using a battery based power source will only result in a short lifetime maybe a few hours or days.
+Specific to ESP8266 are the following features:
+
+* The [MY9291 Element](/elements/light/my9291.md) only works with ESP8266 by the used library.
+
+* The [standard example](/examples/standard.md) can be flashed onto these boards by providing
+  most of the [elements](/elements/index.md) and [display adapters](/elements/display/index.md).
+* The web interface is working out of the box by using 1MByte of the flash memory and includes
+  the Web UI, IDE features and logging capabilities.
+* These devices are used for `always-on` scenarios to provide the webserver functionality. Using
+  a battery based power source will only result in a short lifetime maybe a few hours or days.
 * These devices have enough flash capacity to be updated over the network by using the OTA method.
 
 
@@ -73,9 +81,20 @@ The **[Esp-Wroom-02 Module ESP8266 with OLED and 18650](/boards/wroom2.md)** is 
 
 ## ESP32 boards
 
+The HomeDing library is compatible to the ESP32 Arduino environment.
+
+Specific to ESP32 are the following features:
+
+* Usually there are no other names for the GPIO pins and GPIO numbers from the processor descriptions are used.
+* An exception is the [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32) having printed
+  pin numbers that differ from the GPIO numbers.
+* The [Touch Element](/elements/touch.md) allows using the ESP32 built-in touch features on the GPIO pins.
+
 There are many options for starting with HomeDing with a ESP32 processor.
 There are official boards from espressif
 <https://www.espressif.com/en/products/devkits> but also other boards from other manufacurers.
+
+Some boards have been tested:
 
 {{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
 
@@ -91,9 +110,13 @@ There are official boards from espressif
 ## ESP32-S3 boards
 
 The [ESP32-S3](/boards/esp32s3/index.md) variant of the ESP32 is supported by the Arduino
-Framework and by the HomeDing library.
+Framework and by the HomeDing library. There is an official [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32) board using this processor.
+
+Some boards have been tested:
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-dongle-s3') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/xiao-esp32s3') }}
 
@@ -107,11 +130,14 @@ Framework and by the HomeDing library.
 The [ESP32-C3](/boards/esp32c3/index.md) variant of the ESP32 is supported by the Arduino Framework
 and by the HomeDing library.
 
+Some boards have been tested:
+
 {{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
 
 {% imgcard "/boards/esp32/esp32-c3pico.jpg", "" %}
+
 The C3 pico board is based on the ESP32-C3 MCU with 4 MByte internal flash memory
 and includes
 
@@ -127,12 +153,6 @@ and includes
 
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
 
-## ESP32-S3 boards
-
-The ESP32-S3 variant of the ESP32 is also supported.
-The Arduino ESP32 supports this variant.
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-dongle-s3') }}
 
 
 ## Devices based on Esp8266

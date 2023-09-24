@@ -11,7 +11,8 @@ excerpt: >
 
 {% from 'macros.njk' import imgCard %}
 
-The ESP32-C3 variant of the ESP32 is also supported by the Arduino ESP32 Board package from esprerssif and by the Homeding library.
+The ESP32-C3 variant of the ESP32 is supported by the espressif ESP32 Board package and by the
+Homeding library.
 
 The ESP32-C3 is a single-core SoC based on the open-source 32-bit RISC-V architecture.
 

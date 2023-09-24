@@ -11,10 +11,13 @@ excerpt: >
 
 {% from 'macros.njk' import imgCard %}
 
-The ESP32-S3 variant of the ESP32 is also supported by the Arduino ESP32 Board package from Espressif and by the Homeding library.
+The ESP32-S3 variant of the ESP32 is supported by the espressif ESP32 Board package and by the
+Homeding library.
 
-The ESP32-S3 is a 
-Xtensa® 32-bit LX7 single or dual-core processor that operates at up to 240 MHz.
+The Arduino ESP32 Board package supports the [Arduino Nano ESP32] board only.
+
+The ESP32-S3 is based on the Xtensa 32-bit LX7 single or dual-core processor that operates at
+up to 240 MHz.
 
 It offers:
 * Wi-Fi (2.4 GHz, single band)
@@ -50,7 +53,7 @@ This SoC is positioned as a high-power SoC
 It is part of some modules that offer PCB antenna or antenna connectors.
 
 
-The official Arduino Nano ESP32
+The official [Arduino Nano ESP32]
 is based on this processor using a custom Module from U-BLOX.
 
 
@@ -107,3 +110,5 @@ This results in faster secure (https) network requests.
 
 * Product web site: <https://www.espressif.com/en/products/socs/esp32-s3>
 * Official datasheet: <https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>
+
+[Arduino Nano ESP32]:/boards/esp32s3/arduino-nano-esp32

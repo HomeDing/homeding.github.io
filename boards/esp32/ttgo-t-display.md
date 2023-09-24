@@ -25,7 +25,10 @@ This board is not based on a ESP32 module but is using the ESP32-D0WD-Q6 process
 
 ## Arduino Board Configuration
 
-The ESP32 Dev Module (esp32) can be used with the following settings:
+The board can be used with the following Arduino settings:
+
+* Package: esp32 by Espressif
+* Board: ESP32 Dev Module
 
 * JTAG Adapter: Disbled
 * PSRAM: Disbled
@@ -43,9 +46,11 @@ The ESP32 Dev Module (esp32) can be used with the following settings:
 
 ## Display ST7789
 
-The display is a IPS type TFT display using the ST7789 driver chip on the SPI bus.
+The display is a IPS type TFT display using the ST7789 driver chip on the SPI bus. It is
+supported by the `GFX Library for Arduino`.
 
-The chip supports a maximal display resolution of 240\*320 pixels in 262k colors but this display only supports 135\*240 pixels with 64k colors in RGB565 addressing.
+The chip supports a maximal display resolution of 240\*320 pixels in 262k colors but this
+display only supports 135\*240 pixels with 64k colors in RGB565 addressing.
 
 Therefore the display offsets must be specified in the configuration.
 
