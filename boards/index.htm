@@ -81,13 +81,29 @@ can be found at <a href="https://arduino-esp8266.readthedocs.io/en/latest/boards
 <p>ESP32 boards from espressif :<a href="https://www.espressif.com/en/products/devkits">https://www.espressif.com/en/products/devkits</a></p>
 <p>In the Repository of Tasmota Supported Devices at <a href="https://templates.blakadder.com/">https://templates.blakadder.com/</a>
 many off-the-shell devices can be identified using a espressif processor.</p>
-<h2>ESP8266 boards with 4 MByte flash memory</h2>
-<p>The following boards with 4 MBytes flash memory have been used for development and their specialties can be found in the board reviews.</p>
+<h2>ESP8266 boards</h2>
+<p>The HomeDing library is compatible to the Arduino environment using the ESP8266 board package.
+Most boards offer 4 MByte flash memory. Some boards and devices with less flash memory are supported as well. See below.</p>
+<p>Specific to ESP8266 are the following features:</p>
 <ul>
-<li>The <a href="/examples/standard.htm">standard example</a> can be flashed onto these boards by providing most of the <a href="/elements/index.htm">elements</a> and <a href="/elements/display/index.htm">display adapters</a>.</li>
-<li>The web interface is working out of the box by using 1MByte of the flash memory and includes the Web UI, IDE features and logging capabilities.</li>
-<li>These devices are used for <code>always-on</code> scenarios to provide the webserver functionality. Using a battery based power source will only result in a short lifetime maybe a few hours or days.</li>
-<li>These devices have enough flash capacity to be updated over the network by using the OTA method.</li>
+<li>
+<p>The <a href="/elements/light/my9291.htm">MY9291 Element</a> only works with ESP8266 by the used library.</p>
+</li>
+<li>
+<p>The <a href="/examples/standard.htm">standard example</a> can be flashed onto these boards by providing
+most of the <a href="/elements/index.htm">elements</a> and <a href="/elements/display/index.htm">display adapters</a>.</p>
+</li>
+<li>
+<p>The web interface is working out of the box by using 1MByte of the flash memory and includes
+the Web UI, IDE features and logging capabilities.</p>
+</li>
+<li>
+<p>These devices are used for <code>always-on</code> scenarios to provide the webserver functionality. Using
+a battery based power source will only result in a short lifetime maybe a few hours or days.</p>
+</li>
+<li>
+<p>These devices have enough flash capacity to be updated over the network by using the OTA method.</p>
+</li>
 </ul>
 <div class="imgcard"><img src="/boards/nodemcu.jpg">
 <p><strong><a href="/boards/nodemcu.htm">ESP8266 NodeMCU development boards</a></strong></p>
@@ -110,9 +126,18 @@ many off-the-shell devices can be identified using a espressif processor.</p>
 <div class="imgcard"><img src="/boards/wroom2.jpg"><p>The <strong><a href="/boards/wroom2.htm">Esp-Wroom-02 Module ESP8266 with OLED and 18650</a></strong> is a ESP-12E with OLED display, LiIon Battery support and switch.</p>
 </div>
 <h2>ESP32 boards</h2>
+<p>The HomeDing library is compatible to the ESP32 Arduino environment.</p>
+<p>Specific to ESP32 are the following features:</p>
+<ul>
+<li>Usually there are no other names for the GPIO pins and GPIO numbers from the processor descriptions are used.</li>
+<li>An exception is the <a href="/boards/esp32s3/arduino-nano-esp32">Arduino Nano ESP32</a> having printed
+pin numbers that differ from the GPIO numbers.</li>
+<li>The <a href="/elements/touch.htm">Touch Element</a> allows using the ESP32 built-in touch features on the GPIO pins.</li>
+</ul>
 <p>There are many options for starting with HomeDing with a ESP32 processor.
 There are official boards from espressif
 <a href="https://www.espressif.com/en/products/devkits">https://www.espressif.com/en/products/devkits</a> but also other boards from other manufacurers.</p>
+<p>Some boards have been tested:</p>
 <div class="imgcard"><img src="/boards/esp32/devkit.jpg">
 <p><strong><a href="/boards/esp32/devkit.htm">ESP32 DevKit Boards</a></strong></p>
 <p>The ESP32 DevKit Boards come in various formats and sizes with WROOM modules and USB adapter. They are supported by the HomeDing library.</p>
@@ -135,10 +160,15 @@ There are official boards from espressif
 </div>
 <h2>ESP32-S3 boards</h2>
 <p>The <a href="/boards/esp32s3/index.htm">ESP32-S3</a> variant of the ESP32 is supported by the Arduino
-Framework and by the HomeDing library.</p>
+Framework and by the HomeDing library. There is an official <a href="/boards/esp32s3/arduino-nano-esp32">Arduino Nano ESP32</a> board using this processor.</p>
+<p>Some boards have been tested:</p>
 <div class="imgcard"><img src="/boards/esp32s3/arduino-nano-esp32.jpg">
 <p><strong><a href="/boards/esp32s3/arduino-nano-esp32.htm">Arduino Nano ESP32</a></strong></p>
 <p>This board is an official Arduino board with the ESP32-S3 chip</p>
+</div>
+<div class="imgcard"><img src="/boards/esp32s3/lilygo-t-dongle-s3.jpg">
+<p><strong><a href="/boards/esp32s3/lilygo-t-dongle-s3.htm">LilyGO T-Dongle S3</a></strong></p>
+<p>The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display, a APA102 LED, a input button and SD card slot.</p>
 </div>
 <div class="imgcard"><img src="/boards/esp32s3/xiao-esp32s3.jpg">
 <p><strong><a href="/boards/esp32s3/xiao-esp32s3.htm">NO-TITLE</a></strong></p>
@@ -155,6 +185,7 @@ Framework and by the HomeDing library.</p>
 <h2>ESP32-C3 boards</h2>
 <p>The <a href="/boards/esp32c3/index.htm">ESP32-C3</a> variant of the ESP32 is supported by the Arduino Framework
 and by the HomeDing library.</p>
+<p>Some boards have been tested:</p>
 <div class="imgcard"><img src="/boards/esp32c3/core.jpg">
 <p><strong><a href="/boards/esp32c3/core.htm">CORE-ESP32C3 development board</a></strong></p>
 <p>The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC that fits good on a breadboard and has the option for a LCD + digital joystick shield on top. The ESP32-C3 variant is supported by the HomeDing library.</p>
@@ -179,13 +210,6 @@ and includes</p>
 <p>The ESP32-C3 processor is now also available in a ESP01 form factor board including 4MByte flash and an external antenna connector.</p>
 </div>
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
-<h2>ESP32-S3 boards</h2>
-<p>The ESP32-S3 variant of the ESP32 is also supported.
-The Arduino ESP32 supports this variant.</p>
-<div class="imgcard"><img src="/boards/esp32s3/lilygo-t-dongle-s3.jpg">
-<p><strong><a href="/boards/esp32s3/lilygo-t-dongle-s3.htm">LilyGO T-Dongle S3</a></strong></p>
-<p>The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display, a APA102 LED, a input button and SD card slot.</p>
-</div>
 <h2>Devices based on Esp8266</h2>
 <p>ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.</p>
 <div class="imgcard"><img src="/boards/sonoffbasic.jpg"><p>The <strong><a href="/boards/sonoffbasic.htm">Sonoff Basic</a></strong> is a off-the-shelf solution to switch main power consumers.</p>

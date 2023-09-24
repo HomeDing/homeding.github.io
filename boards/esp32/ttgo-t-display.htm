@@ -66,24 +66,56 @@
 <li>USB-Bridge: CP2104 chip</li>
 </ul>
 <h2>Arduino Board Configuration</h2>
-<p>The ESP32 Dev Module (esp32) can be used with the following settings:</p>
+<p>The board can be used with the following Arduino settings:</p>
 <ul>
-<li>JTAG Adapter: Disbled</li>
-<li>PSRAM: Disbled</li>
-<li>Partition Scheme: Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)</li>
-<li>CPU Frequency: 240MHz</li>
-<li>Flash Mode: <strong>QIO</strong></li>
-<li>Flash Frequency: 80 MHz</li>
-<li>Flash Size: 4MByte (32Mbit)</li>
-<li>Upload Speed: 921600</li>
-<li>Arduino Runs On: Core 1</li>
-<li>Events Runs On: Core 1</li>
-<li>Core Debug Level: None</li>
-<li>Erase All Flash: Disabled</li>
+<li>
+<p>Package: esp32 by Espressif</p>
+</li>
+<li>
+<p>Board: ESP32 Dev Module</p>
+</li>
+<li>
+<p>JTAG Adapter: Disbled</p>
+</li>
+<li>
+<p>PSRAM: Disbled</p>
+</li>
+<li>
+<p>Partition Scheme: Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)</p>
+</li>
+<li>
+<p>CPU Frequency: 240MHz</p>
+</li>
+<li>
+<p>Flash Mode: <strong>QIO</strong></p>
+</li>
+<li>
+<p>Flash Frequency: 80 MHz</p>
+</li>
+<li>
+<p>Flash Size: 4MByte (32Mbit)</p>
+</li>
+<li>
+<p>Upload Speed: 921600</p>
+</li>
+<li>
+<p>Arduino Runs On: Core 1</p>
+</li>
+<li>
+<p>Events Runs On: Core 1</p>
+</li>
+<li>
+<p>Core Debug Level: None</p>
+</li>
+<li>
+<p>Erase All Flash: Disabled</p>
+</li>
 </ul>
 <h2>Display ST7789</h2>
-<p>The display is a IPS type TFT display using the ST7789 driver chip on the SPI bus.</p>
-<p>The chip supports a maximal display resolution of 240*320 pixels in 262k colors but this display only supports 135*240 pixels with 64k colors in RGB565 addressing.</p>
+<p>The display is a IPS type TFT display using the ST7789 driver chip on the SPI bus. It is
+supported by the <code>GFX Library for Arduino</code>.</p>
+<p>The chip supports a maximal display resolution of 240*320 pixels in 262k colors but this
+display only supports 135*240 pixels with 64k colors in RGB565 addressing.</p>
 <p>Therefore the display offsets must be specified in the configuration.</p>
 <p>See configuration in <code>env.json</code> below.</p>
 <h2>External Connectors</h2>
