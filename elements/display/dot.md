@@ -27,9 +27,9 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?displaydot" type="image/svg+xml"></object>
 
-**x** -- Specifies the x position of the dot/circle.
+{% include "./outputproperties.md" %}
 
-**y** -- Specifies the y position of the dot/circle.
+{% include "../elementproperties.md" %}
 
 ## Element Actions
 
@@ -77,3 +77,10 @@ The following properties are available with the current values at runtime
   }
 }
 ```
+
+## See also
+
+* [DisplayText Element](/elements/display/text.md)
+* [DisplayDot Element](/elements/display/dot.md)
+* [DisplayLine Element](/elements/display/line.md)
+* [DisplayButton Element](/elements/display/button.md)

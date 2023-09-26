@@ -7,13 +7,13 @@ excerpt: >
   Links, material and tips for using ESP32 based boards with the HomeDing library.
 ---
 
-
 The HomeDing library is compatible to the ESP32 Arduino environment.
 
 Specific to ESP32 are the following features:
 
-* In contrast to the ESP8266 there are no other names for the GPIO pins like the one from NodeMCU.
-The numbers in the processor datasheet are used.
+* Usually there are no other names for the GPIO pins and GPIO numbers from the processor descriptions are used.
+* An exception is the [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32) having printed
+  pin numbers that differ from the GPIO numbers.
 
 * The [Touch Element](/elements/touch.md) allows using the ESP32 built-in touch features on the GPIO pins.
 * The [MY9291 Element](/elements/light/my9291.md) only works with ESP8266 by the used library.
@@ -21,8 +21,6 @@ The numbers in the processor datasheet are used.
 TODO:
 
 * [ ] Wakeup / low power consumption in board.cpp
-* [ ] reset / restart in board.cpp
-* [ ] RTCVariables
 * [ ] PMSElement
 * [ ] Tone Element for ESP32
   * <https://www.thomascountz.com/2021/02/21/arduino-tone-for-esp32>

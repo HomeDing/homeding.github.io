@@ -42,4 +42,7 @@ The following properties are available with the current values at runtime
 ## See also
 
 * [Display Touch Elements](/elements/display/touch.md)
-
+* [DisplayText Element](/elements/display/text.md)
+* [DisplayDot Element](/elements/display/dot.md)
+* [DisplayLine Element](/elements/display/line.md)
+* [DisplayButton Element](/elements/display/button.md)

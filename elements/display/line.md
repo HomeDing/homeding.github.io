@@ -21,13 +21,13 @@ The following properties are available for configuration of the element.
 
 <object data="/element.svg?displayline" type="image/svg+xml"></object>
 
-**x0** -- Specifies the starting x position of the line.
+> **x1** -- Specifies the ending x position of the line.
+>
+> **y1** -- Specifies the ending y position of the line.
 
-**y0** -- Specifies the starting y position of the dot/circle.
+{% include "./outputproperties.md" %}
 
-**x1** -- Specifies the ending x position of the line.
-
-**y1** -- Specifies the ending y position of the dot/circle.
+{% include "../elementproperties.md" %}
 
 ## Element Actions
 
@@ -70,3 +70,10 @@ The following properties are available with the current values at runtime
   }
 }
 ```
+
+## See also
+
+* [DisplayText Element](/elements/display/text.md)
+* [DisplayDot Element](/elements/display/dot.md)
+* [DisplayLine Element](/elements/display/line.md)
+* [DisplayButton Element](/elements/display/button.md)

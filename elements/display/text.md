@@ -20,25 +20,25 @@ The DisplayTextElement is included in the collection of core elements.
 
 The following properties are available for configuration of the element.
 
-<object data="/element.svg?displaytext" type="image/svg+xml"></object>
+> <object data="/element.svg?displaytext" type="image/svg+xml"></object>
+>
+> **clear** -- This property set to any value will remove the text from the display.
+>
+> **prefix** -- This text is always send to the display as a prefix to the value.
+>
+> **postfix** -- This text is always send to the display as a postfix to the value.
+>
+> **fontsize** -- This is the fontsize to be used. Do not specify or use 0 to get the
+> default/smallest fontsize. For the OLED drivers the font sizes 10, 16 and 24 are supported.
+>
+> Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
 
-**x** -- Specifies the x position of the text.
+{% include "./outputproperties.md" %}
 
-**y** -- Specifies the y position of the text.
-
-**clear** -- This property set to any value will remove the text from the display.
-
-**prefix** -- This text is always send to the display as a prefix to the value.
-
-**postfix** -- This text is always send to the display as a postfix to the value.
-
-**fontsize** -- This is the fontsize to be used. Do not specify or use 0 to get the default/smallest fontsize.
-For the OLED drivers the font sizes 10, 16 and 24 are supported.
-
-Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
-
+{% include "../elementproperties.md" %}
 
 ## Element Actions
+
 
 The following actions can be sent to the element:
 
@@ -69,7 +69,7 @@ This example shows how to configure this element:
 
 The `value` property can be used to make the displaytext to be visible. Using the browser you can set the value using <http://homeding/$board/displaytext/val?value=hello>
 
-The `clear ` property can be used to remove the text. <http://homeding/$board/displaytext/val?clear=1>
+The `clear` property can be used to remove the text. <http://homeding/$board/displaytext/val?clear=1>
 
 
 ## Element State
@@ -91,3 +91,10 @@ The following properties are available with the current values at runtime
   }
 }
 ```
+
+## See also
+
+* [DisplayText Element](/elements/display/text.md)
+* [DisplayDot Element](/elements/display/dot.md)
+* [DisplayLine Element](/elements/display/line.md)
+* [DisplayButton Element](/elements/display/button.md)
