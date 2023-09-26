@@ -57,10 +57,31 @@ attached maybe only using the DisplayTextElements is appropriate.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?displayline" type="image/svg+xml"></object></p>
-<p><strong>x0</strong> – Specifies the starting x position of the line.</p>
-<p><strong>y0</strong> – Specifies the starting y position of the dot/circle.</p>
+<blockquote>
 <p><strong>x1</strong> – Specifies the ending x position of the line.</p>
-<p><strong>y1</strong> – Specifies the ending y position of the dot/circle.</p>
+<p><strong>y1</strong> – Specifies the ending y position of the line.</p>
+</blockquote>
+<p>From the base Display Output Element implementation the following properties are available for
+configuration:</p>
+<blockquote>
+<p><strong>x</strong> – Specifies the x position of the Element.</p>
+<p><strong>y</strong> – Specifies the y position of the Element.</p>
+<p><strong>width</strong> – Specifies the width of the Element.</p>
+<p><strong>height</strong> – Specifies the height of the Element.</p>
+<p><strong>color</strong> – Specifies the draw color of the Element. When no color is specified on the
+element the default color from the display is used.</p>
+</blockquote>
+<blockquote>
+<p><strong>background</strong> – Specifies the background color of the Element. When no color is specified on
+the element the default color from the display is used.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> – The location of the device.</p>
+<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+</blockquote>
 <h2>Element Actions</h2>
 <p>The following actions can be sent to the element:</p>
 <p><strong>redraw</strong> – The display is updated.</p>
@@ -86,6 +107,13 @@ attached maybe only using the DisplayTextElements is appropriate.</p>
     <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/elements/display/text.htm">DisplayText Element</a></li>
+<li><a href="/elements/display/dot.htm">DisplayDot Element</a></li>
+<li><a href="/elements/display/line.htm">DisplayLine Element</a></li>
+<li><a href="/elements/display/button.htm">DisplayButton Element</a></li>
+</ul>
 
 
     

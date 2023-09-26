@@ -55,8 +55,11 @@
 <p>Specific to ESP32 are the following features:</p>
 <ul>
 <li>
-<p>In contrast to the ESP8266 there are no other names for the GPIO pins like the one from NodeMCU.
-The numbers in the processor datasheet are used.</p>
+<p>Usually there are no other names for the GPIO pins and GPIO numbers from the processor descriptions are used.</p>
+</li>
+<li>
+<p>An exception is the <a href="/boards/esp32s3/arduino-nano-esp32">Arduino Nano ESP32</a> having printed
+pin numbers that differ from the GPIO numbers.</p>
 </li>
 <li>
 <p>The <a href="/elements/touch.htm">Touch Element</a> allows using the ESP32 built-in touch features on the GPIO pins.</p>
@@ -68,8 +71,6 @@ The numbers in the processor datasheet are used.</p>
 <p>TODO:</p>
 <ul class="contains-task-list">
 <li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> Wakeup / low power consumption in board.cpp</label></li>
-<li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> reset / restart in board.cpp</label></li>
-<li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> RTCVariables</label></li>
 <li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> PMSElement</label></li>
 <li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> Tone Element for ESP32</label>
 <ul>
