@@ -177,7 +177,7 @@ module.exports = function(eleventyConfig) {
         return (page.data[item]);
       }
     }
-    console.error("dataOf: entry not found.")
+    console.error("dataOf: entry `" + name + "` not found.")
     return ('');
   }
   );
