@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
   <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>D1 Mini SD Card shield (ESP8266 and ESP32)</title>
+  <title>D1 Mini SD Card shield</title>
   <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
   <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
   <script src="/pages.js"></script>
@@ -41,11 +41,60 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <h1>D1 Mini SD Card shield (ESP8266 and ESP32)</h1>
+    <h1>D1 Mini SD Card shield</h1>
 
     
+    
+      <div class="plaincard">
+    
+    The SD Card shield for the D1 Mini sized boards.
+
+    </div>
       
-    <p>TODO: To be written</p>
+    <p>The SD Card shield adds a SD card slot to the <a href="/dev/spi.htm">SPI bus</a> that can extend the file system of a
+HomeDing device using the <a href="/elements/sd.htm">SD Element</a>.</p>
+<p>This shield is made for the <a href="/boards/d1mini.htm">D1 mini boards</a> that are available in many variations and different processors.</p>
+<p><img src="/boards/d1mini-sd.jpg" alt="d1mini-sd"></p>
+<h2>Pins in use</h2>
+<p>The SD card is using the SPI bus for data transfer. The following pins are used:</p>
+<table>
+<thead>
+<tr>
+<th>D1 mini</th>
+<th>ESP8266</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D5</td>
+<td>GPIO14</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>GPIO12</td>
+<td>MISO</td>
+</tr>
+<tr>
+<td>D7</td>
+<td>GPIO13</td>
+<td>MOSI</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>GPIO00</td>
+<td>CS</td>
+</tr>
+</tbody>
+</table>
+<h2>See also</h2>
+<ul>
+<li><a href="/boards/d1mini.htm">D1 mini boards</a></li>
+<li><a href="/elements/sd.htm">SD Element</a></li>
+<li><a href="/dev/spi.htm">SPI bus</a></li>
+<li><a href="https://www.wemos.cc/en/latest/d1_mini_shield/micro_sd.html">https://www.wemos.cc/en/latest/d1_mini_shield/micro_sd.html</a></li>
+</ul>
 
 
     
