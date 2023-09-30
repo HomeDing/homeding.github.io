@@ -60,8 +60,6 @@ The following properties are available with the current values at runtime
 **active** - Is set to true when the element is active.
 
 
-
-
 ### Example State
 
 ``` json
