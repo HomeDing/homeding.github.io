@@ -35,11 +35,11 @@ The following properties are available for configuration of the element.
 
 The following actions can be sent to the element:
 
-**value** -- This boolean interpreted value is sent to the display.
-
-**clear** -- The value is set to false and the display is updated.
-
-**redraw** -- The display is updated.
+> **value** -- This boolean interpreted value is sent to the display.
+>
+> **clear** -- The value is set to false and the display is updated.
+>
+> **redraw** -- The display is updated.
 
 
 ### Configuration Example
@@ -58,13 +58,14 @@ This example shows how to configure this element:
 }
 ```
 
+
 ## Element State
 
 The following properties are available with the current values at runtime
 
-**active** - Is set to true when the element is active.
-
-**value** - Current output value of the element.
+> **active** - Is set to true when the element is active.
+>
+> **value** - Current output value of the element.
 
 
 ### Example State
