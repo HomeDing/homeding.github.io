@@ -54,7 +54,7 @@
     <p>The SD Card shield adds a SD card slot to the <a href="/dev/spi.htm">SPI bus</a> that can extend the file system of a
 HomeDing device using the <a href="/elements/sd.htm">SD Element</a>.</p>
 <p>This shield is made for the <a href="/boards/d1mini.htm">D1 mini boards</a> that are available in many variations and different processors.</p>
-<p><img src="/boards/d1mini-sd.jpg" alt="d1mini-sd"></p>
+<p><img src="/boards/d1mini-shield-sd.jpg" alt="d1mini-sd"></p>
 <h2>Pins in use</h2>
 <p>The SD card is using the SPI bus for data transfer. The following pins are used:</p>
 <table>
@@ -88,6 +88,17 @@ HomeDing device using the <a href="/elements/sd.htm">SD Element</a>.</p>
 </tr>
 </tbody>
 </table>
+<p>The CS assignment can be changed on the back of the shield to avoid conflicts with other shields
+by cutting the default (D4) wiring and soldering a bridge for another pin.</p>
+<h2>Configuration</h2>
+<p>This example shows how to configure the SD element to use this shield on a ESP8266:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> 
+  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D4"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/boards/d1mini.htm">D1 mini boards</a></li>
