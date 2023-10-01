@@ -55,8 +55,7 @@ layout: "page.njk"
 * [/elements/__elements.md](/elements/__elements.md) -
 * [/examples/_batteryswitch.md](/examples/_batteryswitch.md) -
 * [/examples/_blink.md](/examples/_blink.md) -
-* [/md/_memo.md](/md/_memo.md) -
-* [/sensors/_memo.md](/sensors/_memo.md) -
+* [/md/_memo.md](/md/_memo.md) 
 * [/sensors/_sniffer.md](/sensors/_sniffer.md) -
 * [/stories/_curtain.md](/stories/_curtain.md) -
 
