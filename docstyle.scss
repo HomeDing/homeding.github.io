@@ -3,6 +3,36 @@
 @import "./css/base";
 @import "./css/doc";
 
+
+// GPIO coloring in documentation
+
+.gpio {
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.gpio.yellow {
+  background-color: #FF0;
+}
+.gpio.red {
+  background-color: #F22;
+  color: white
+}
+.gpio.black {
+  background-color: #111;
+  color: white
+}
+.gpio.blue {
+  background-color: #22F;
+  color: white
+}
+main h2 {
+  margin-top: 1rem !important;
+}
+
+
+// taglists with links to tag collection pages
+
 .taglist {
   // background-color: yellow;
 
