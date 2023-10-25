@@ -1,51 +1,33 @@
+
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
-  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Pages marked with a Element tag</title>
-  <meta name='description' content='All pages related to HomeDing Elements.'>
-  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
-  <script src="/pages.js"></script>
-  <script src="/story.js" type="module"></script>
-  <style>
-  .gpio { 
-    display:inline-block;
-    padding: 0 4px;
-    border-radius: 4px;
-    }
-  .gpio.yellow {background-color: #FF0;}
-  .gpio.red {background-color: #F22; color:white}
-  .gpio.black {background-color: #111; color:white}
-  .gpio.blue {background-color: #22F; color:white}
-  main h2 {margin-top: 1rem !important;}
-  </style>
-</head>
-
-<body scroll="0" style="padding:0;">
-  <div class="u-navbar" style="margin-bottom: 0;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
-    </svg>
-
-    <a href="/index.htm" class="button">Home</a>
-    <a href="/elements/index.htm" class="button">Elements</a>
-    <a href="/boards/index.htm" class="button">Boards</a>
-    <a href="/recipes/index.htm" class="button">Recipes</a>
-  </div>
-
-  <nav></nav>
-
-  <main style="padding:1rem;max-width: 800px;">
-    <h1>Pages marked with a Element tag</h1>
-
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+    <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+    <title>Pages marked with a Element tag</title>
+    <meta name='description' content='All pages related to HomeDing Elements.'>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/pages.js"></script>
+    <script src="/story.js" type="module"></script>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
+    </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>Pages marked with a Element tag</h1>
       
-    <p><a href="/elements/add.htm">ADD Element</a> -- The ADD Element sums up multiple input values to create a single output value.<p><a href="/elements/aht20.htm">AHT20 Element</a> -- The AHT20Element allows retrieving temperature and humidity values from the AHT20 sensors from aosong.
+        <p><a href="/elements/add.htm">ADD Element</a> -- The ADD Element sums up multiple input values to create a single output value.<p><a href="/elements/aht20.htm">AHT20 Element</a> -- The AHT20Element allows retrieving temperature and humidity values from the AHT20 sensors from aosong.
 <p><a href="/elements/am2320.htm">AM2320 Element</a> -- The AM2320Element allows retrieving temperature and humidity values  and creates actions when new values are available.
 <p><a href="/elements/and.htm">AND Element</a> -- The AND Element combines multiple logic input values to a single output value. The output value will be true only when all input values are true.
 <p><a href="/elements/light/apa102.htm">APA102 Element</a> -- The APA102 Element implements using LED Stripes and LED panels based on the apa102 chip and protocol and provides some color animations and transitions.
@@ -125,31 +107,23 @@
 <p><a href="/elements/value.htm">Value Element</a> -- The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value. This can e.g. be used to drive a LED or a relay.
 <p><a href="/elements/weatherfeed.htm">WeatherFeed Element</a> -- <p><a href="/elements/wot.htm">WoT Element</a> -- The Element enables ...
 
-
-    
-  </main>
-
-  <script>
-    const param = {
-      MENU_MIN_WIDTH: 1030
-    };
-
-    var mbObj = document.querySelector('#menuButton');
-    var navObj = document.querySelector('nav');
-
-   if (window.innerWidth > param.MENU_MIN_WIDTH) {
-      // menu is inside the page
-      navObj.classList.add('open');
-      navObj.classList.add('inpage');
-    }
-
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
-
-    lazyLoadHTM('nav', '/toc.htm');
-  </script>
-  
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+    </body>
   </body>
-
 </html>

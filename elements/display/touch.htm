@@ -1,57 +1,40 @@
+
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
-  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-  <title>Display Touch Element</title>
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
-  <script src="/pages.js"></script>
-  <script src="/story.js" type="module"></script>
-  <style>
-  .gpio { 
-    display:inline-block;
-    padding: 0 4px;
-    border-radius: 4px;
-    }
-  .gpio.yellow {background-color: #FF0;}
-  .gpio.red {background-color: #F22; color:white}
-  .gpio.black {background-color: #111; color:white}
-  .gpio.blue {background-color: #22F; color:white}
-  main h2 {margin-top: 1rem !important;}
-  </style>
-</head>
-
-<body scroll="0" style="padding:0;">
-  <div class="u-navbar" style="margin-bottom: 0;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
-    </svg>
-
-    <a href="/index.htm" class="button">Home</a>
-    <a href="/elements/index.htm" class="button">Elements</a>
-    <a href="/boards/index.htm" class="button">Boards</a>
-    <a href="/recipes/index.htm" class="button">Recipes</a>
-  </div>
-
-  <nav></nav>
-
-  <main style="padding:1rem;max-width: 800px;">
-    <h1>Display Touch Element</h1>
-
-    
-    
-      <div class="plaincard">
-    
-    The Display Touch Elements enables detecting touch events by touching a specific area on a display.
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+    <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+    <title>Display Touch Element</title>
+    <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/pages.js"></script>
+    <script src="/story.js" type="module"></script>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
     </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>Display Touch Element</h1>
       
-    <p>The Display Touch Element interface with the chips that can detect touch positions on a touch
+        
+            <div class="plaincard">
+            
+            The Display Touch Elements enables detecting touch events by touching a specific area on a display.
+
+          </div>
+        
+        <p>The Display Touch Element interface with the chips that can detect touch positions on a touch
 enabled display. These elements will try to find an active
 <a href="/elements/display/button.htm">DisplayButton Element</a> that corresponds
 to the touch coordinates so that Actions can be triggered through the button element.
@@ -75,34 +58,34 @@ A stylus is often required to create accurate touch events.</p>
 <li><a href="https://www.makeuseof.com/tag/differences-capacitive-resistive-touchscreens-si/">https://www.makeuseof.com/tag/differences-capacitive-resistive-touchscreens-si/</a></li>
 </ul>
 
-
-    
-    <h2>Tags</h2>
-    <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/display.htm">Display</a><a href="/tag/input.htm">Input</a></div>
-    
-  </main>
-
-  <script>
-    const param = {
-      MENU_MIN_WIDTH: 1030
-    };
-
-    var mbObj = document.querySelector('#menuButton');
-    var navObj = document.querySelector('nav');
-
-   if (window.innerWidth > param.MENU_MIN_WIDTH) {
-      // menu is inside the page
-      navObj.classList.add('open');
-      navObj.classList.add('inpage');
-    }
-
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
-
-    lazyLoadHTM('nav', '/toc.htm');
-  </script>
-  
+        
+          <h2>Tags</h2>
+          <div class="taglist">
+            
+              <a href="/tag/element.htm">Element</a>
+            
+              <a href="/tag/display.htm">Display</a>
+            
+              <a href="/tag/input.htm">Input</a>
+            
+          </div>
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+    </body>
   </body>
-
 </html>
