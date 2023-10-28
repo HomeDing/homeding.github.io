@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
     <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
     <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-    <title>Display Touch Element</title>
+    <title>Display TouchFT6336U Element</title>
     <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/pages.js"></script>
@@ -25,49 +25,42 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>Display Touch Element</h1>
+      <h1>Display TouchFT6336U Element</h1>
       
-        
-            <div class="plaincard">
-            
-            The Display Touch Elements enables detecting touch events by touching a specific area on a display.
-
-          </div>
-        
-        <p>The Display Touch Element interface with the chips that can detect touch positions on a touch
-enabled display.</p>
-<p>The touch events are used together with the displayed buttons. Based on the coordinates an
-active <a href="/elements/display/button.htm">DisplayButton Element</a> is searched and the actions of the
-Button Element are triggered. This allows having multiple buttons placed on the same display for
-different purpose.</p>
-<p>There are some different chips and technologies available for touch detection.</p>
-<h2>Capacitive Touch Sensors</h2>
-<p>Capacitive touchscreens are often used on smartphones and tablets as they are very responsive to
-a touch and even work through screen protector glass. They work by messuring the changing
-capacity when a object (finger or stylus) is nearby the surface. They don’t need any touch
-force. However they may report accidentally touch events.</p>
-<p>The <a href="touchgt911.md">DisplayTouchGT911</a> Element is enabling the GT911 is a 5-Point Capacitive
-Touch Sensors for 7&quot; to 8&quot; panels using the I2c bus for communication. It can deliver Input
-results every 40 / 10 msec.</p>
-<h2>Resistive Touch Sensors</h2>
-<p>Resistive touchscreens work by messuring the changed resistance when some pressure is made on the surface.
-They are often cheaper and may be better in rough environments and do not support multi-touch events.
-A stylus is often required to create accurate touch events.</p>
+        <p>The FT6336U from FocalTech is a Self-Capacitive Touch Panel Controller and is part of the FT6x36 controller family.</p>
+<p>These controllers have an internal processor
+and firmware that actively scans the panel, detects the touch events and calculates coordinates and gestures.</p>
+<p>The FT6336U variant is prepared to read up to 2 touch points and can detect some simple gestures.</p>
+<h2>Driver Implementation</h2>
+<p>The processor on the board can read the event data from the FT6x36 chip using the i2c bus using a 8-bit register addressing mode.</p>
+<p>This interface is directly supporting reading the coordinates with the resolution of the underlying display when configured correctly by the vendor.</p>
+<p>The implementation can be found directly in the Element reading the 5 relevant registers with
+the coordinates for the first touch point. This is done directly without using one of the
+available Arduino libraries.</p>
+<h2>Element Configuration</h2>
+<!-- <object data="/element.svg?touchft6336" type="image/svg+xml"></object> -->
+<p>There is no need con figure the i2c address as there is a fixed address used for these drivers.</p>
+<p>The width and height is already known to the display touch controller through the configuration.</p>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
+<p><strong>rotation</strong> – Rotation of the display in use using 0, 90, 180 or 270 degree.</p>
+</blockquote>
 <h2>See also</h2>
 <ul>
-<li><a href="/elements/display/button.htm">DisplayButton Element</a></li>
-<li><a href="https://www.makeuseof.com/tag/differences-capacitive-resistive-touchscreens-si/">https://www.makeuseof.com/tag/differences-capacitive-resistive-touchscreens-si/</a></li>
+<li><a href="/elements/display/touch.htm">Display Touch Elements</a></li>
+<li><a href="/dev/i2c.htm">i2c bus</a></li>
+<li><a href="boards%5Cesp32s3%5Csc01-plus.md">ESP32S3 SC01 Plus Panel</a></li>
 </ul>
 
         
           <h2>Tags</h2>
           <div class="taglist">
             
-              <a href="/tag/element.htm">Element</a>
-            
               <a href="/tag/display.htm">Display</a>
             
-              <a href="/tag/input.htm">Input</a>
+              <a href="/tag/element.htm">Element</a>
+            
+              <a href="/tag/wip.htm">Wip</a>
             
           </div>
         
