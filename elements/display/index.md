@@ -126,8 +126,13 @@ SSD 1331 (in planning) -->
 
 ## Touch enabled Displays
 
-See [Display Touch Element](/elements/display/touch.md)
+See [Display Touch Element](/elements/display/touch.md).
 
+Supported chips are:
+
+* [GT911](/elements/display/touchgt911.md)
+* [FT6336](/elements/display/touchft6336.md)
+* 
 
 ## Display Information Elements
 

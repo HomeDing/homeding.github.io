@@ -3,15 +3,17 @@ title: Display Touch Element
 tags: ["Element", "Display", "Input"]
 layout: "page.njk"
 excerpt: >
-  The Display Touch Elements enables detecting touch events by touching a specific area
-  on a display.
+  The Display Touch Elements enables detecting touch events by touching a specific area on a
+  display.
 ---
 
 The Display Touch Element interface with the chips that can detect touch positions on a touch
-enabled display. These elements will try to find an active
-[DisplayButton Element](/elements/display/button.md) that corresponds
-to the touch coordinates so that Actions can be triggered through the button element.
-This allows having multiple buttons placed on the same display for different purpose.
+enabled display.
+
+The touch events are used together with the displayed buttons. Based on the coordinates an
+active [DisplayButton Element](/elements/display/button.md) is searched and the actions of the
+Button Element are triggered. This allows having multiple buttons placed on the same display for
+different purpose.
 
 There are some different chips and technologies available for touch detection.
 
