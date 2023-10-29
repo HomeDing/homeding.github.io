@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
     <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
     <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
-    <title>ESP32S3 SC01 Plus</title>
+    <title>ESP32S3 SC01 Plus Panel</title>
     <meta name='description' content='ESP32-S3 Board with touch display'>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/pages.js"></script>
@@ -25,38 +25,38 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>ESP32S3 SC01 Plus</h1>
+      <h1>ESP32S3 SC01 Plus Panel</h1>
       
         
             <div class="plaincard">
             
-            This touch display and board offers a 480 * 320 LCD display and is based on a ESP32-S3 processor.
+            This touch display panel with a 320 * 480 LCD display based on a ESP32-S3 processor. This panel is supported by the [HomeDing BigDisplay Example].
 
           </div>
         
-        <p><a href="http://en.wireless-tag.com/product-item-26.html">http://en.wireless-tag.com/product-item-26.html</a></p>
-<pre class="language-cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">ZX3D50CE02S</span> <span class="token comment">// or called "WT32-SC01 PLUS"</span></span>
-
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">GFX_DEV_DEVICE</span> <span class="token expression">ZX3D50CE02S</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">GFX_BL</span> <span class="token expression"><span class="token number">45</span></span></span>
-Arduino_DataBus <span class="token operator">*</span>bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Arduino_ESP32LCD8</span><span class="token punctuation">(</span>
-    <span class="token number">0</span> <span class="token comment">/* DC */</span><span class="token punctuation">,</span> GFX_NOT_DEFINED <span class="token comment">/* CS */</span><span class="token punctuation">,</span> <span class="token number">47</span> <span class="token comment">/* WR */</span><span class="token punctuation">,</span> GFX_NOT_DEFINED <span class="token comment">/* RD */</span><span class="token punctuation">,</span>
-    <span class="token number">9</span> <span class="token comment">/* D0 */</span><span class="token punctuation">,</span> <span class="token number">46</span> <span class="token comment">/* D1 */</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token comment">/* D2 */</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token comment">/* D3 */</span><span class="token punctuation">,</span> <span class="token number">18</span> <span class="token comment">/* D4 */</span><span class="token punctuation">,</span> <span class="token number">17</span> <span class="token comment">/* D5 */</span><span class="token punctuation">,</span> <span class="token number">16</span> <span class="token comment">/* D6 */</span><span class="token punctuation">,</span> <span class="token number">15</span> <span class="token comment">/* D7 */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Arduino_GFX <span class="token operator">*</span>gfx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Arduino_ST7796</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> <span class="token number">4</span> <span class="token comment">/* RST */</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token comment">/* rotation */</span><span class="token punctuation">,</span> <span class="token boolean">true</span> <span class="token comment">/* IPS */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>16MB SPI flash
-2MB PSRAM</p>
-<h2>LCD</h2>
-<p>ST7701</p>
-<p>480*320, RGB565 color mode</p>
-<p>MCU8080 8Bit Interface</p>
-<h1>Touch</h1>
-<p>FT6336U, Single touch</p>
-<p><a href="https://github.com/aselectroworks/Arduino-FT6336U">https://github.com/aselectroworks/Arduino-FT6336U</a></p>
-<p>TP_INT GPIO 7 Touch interrupt
-TP_SDA GPIO 6 Touch IIC data
-TP_SCL GPIO 5 Touch IIC clock
-TP_RST GPIO 4 Touch reset, multiplexed with LCD rese</p>
+        <p><img src="./sc01-plus.jpg" alt="sc01-plus.jpg" title="w600"></p>
+<p>This board is equipped with:</p>
+<ul>
+<li>3.5 inch, 320 * 480 px Display based on ST7796UI supporting 16 bit color 8-bit parallel interface
+The display is supported by the “GFX Library for Arduino”.</li>
+<li>Touch Sensor: FT6336U on I2C, Address 0x38</li>
+<li>ESP32-S3 processor</li>
+<li>16 MByte Flash in QIO mode</li>
+<li>2 MByte PSRAM (OPI)</li>
+<li>I2C bus using SDA=6, CLK=5</li>
+<li>USB-C connector connected to the processor</li>
+<li>SD Card slot</li>
+</ul>
+<p>There are connectors on the board supporting RS485, Speaker and GPIO.</p>
+<p>The Board is manufacured by Smart Panlee with id ZX3D50CE08S-USRC-4832.</p>
+<h2>LCD Display</h2>
+<p>The ST7796UI based Display can be used by configuring the <a href="/elements/display/st7796.htm">DisplayST7796 Element</a>.</p>
+<p>The configuration is provided below.</p>
+<h2>Display Touch</h2>
+<p>The Touch controller FT6336U is used in this panel and can be used by configuring the
+<a href="/elements/display/touchft6336.htm">DisplayTouchFT6336 Element</a>.</p>
+<p>This FT6x36 variant supports up to 2 touch points.</p>
+<p>The configuration is provided below.</p>
 <h2>SD Card</h2>
 <p>[4] SD Card Interface (Tab.4)
 Description Module Pin Remark
@@ -64,6 +64,54 @@ SD_CS GPIO 41 SD card chip selection
 SD_DI（MOSI） GPIO 40 SD card data input
 SD_CLK GPIO 39 SD card clock
 SD_DO（MISO） GPIO 38 SD card data</p>
+<h2>Configuration</h2>
+<p>The configuration in the <strong>env.json</strong> file setting up all integrated hardware and common elements:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"sc01panel"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"SC01-Panel"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"SC01 Plus Panel"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+      <span class="token property">"xcache"</span><span class="token operator">:</span> <span class="token string">"etag"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SDA"</span><span class="token operator">:</span> <span class="token string">"6"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SCL"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span>
+      <span class="token property">"spi-scl"</span><span class="token operator">:</span> <span class="token string">"39"</span><span class="token punctuation">,</span>
+      <span class="token property">"spi-miso"</span><span class="token operator">:</span> <span class="token string">"38"</span><span class="token punctuation">,</span>
+      <span class="token property">"spi-mosi"</span><span class="token operator">:</span> <span class="token string">"40"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"DisplayST7796"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"lcd8"</span><span class="token punctuation">,</span>
+      <span class="token property">"ips"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"320"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+      <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+
+      <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+      <span class="token property">"border"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"#cccccc"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"DisplayTouchFT6336"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"320"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token string">"0"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"SD Card"</span><span class="token punctuation">,</span> <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"41"</span> <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li>
@@ -73,16 +121,13 @@ SD_DO（MISO） GPIO 38 SD card data</p>
 <p><a href="http://en.wireless-tag.com/product-item-26.html">http://en.wireless-tag.com/product-item-26.html</a></p>
 </li>
 <li>
+<p><a href="https://img01.71360.com/file/read/www2/M00/4E/C6/rBwBEmRl7OaAW78bABKfZLYNMv4194.pdf?dl=1&amp;dlf=WT32-SC01+PLUS+Datasheet-V1.5+EN.pdf">https://img01.71360.com/file/read/www2/M00/4E/C6/rBwBEmRl7OaAW78bABKfZLYNMv4194.pdf?dl=1&amp;dlf=WT32-SC01+PLUS+Datasheet-V1.5+EN.pdf</a></p>
+</li>
+<li>
 <p><a href="https://99tech.com.au/product/lcd-wt32-sc01-plus">https://99tech.com.au/product/lcd-wt32-sc01-plus</a></p>
 </li>
 <li>
 <p><a href="https://99tech.com.au/mx-m/lcd/lcd-wt32-sc01-plus_datasheet.pdf">https://99tech.com.au/mx-m/lcd/lcd-wt32-sc01-plus_datasheet.pdf</a></p>
-</li>
-<li>
-<p><a href="https://github.com/fantasticdonkey/uFT6336U/blob/master/uFT6336U.py">https://github.com/fantasticdonkey/uFT6336U/blob/master/uFT6336U.py</a></p>
-</li>
-<li>
-<p><a href="https://github.com/m5stack/M5Core2/blob/master/src/M5Touch.cpp">https://github.com/m5stack/M5Core2/blob/master/src/M5Touch.cpp</a></p>
 </li>
 </ul>
 
@@ -91,8 +136,6 @@ SD_DO（MISO） GPIO 38 SD card data</p>
           <div class="taglist">
             
               <a href="/tag/board.htm">Board</a>
-            
-              <a href="/tag/wip.htm">Wip</a>
             
           </div>
         
