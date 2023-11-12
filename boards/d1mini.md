@@ -8,8 +8,12 @@ excerpt: >
   that share the same form factor and connector pin assignments.
 ---
 
+The D1 mini format foe boards and shield was created by the [wemos.cc](https://www.wemos.cc/)
+company and is a good base for starting with DIY devices.
+
 There are many different mini boards available with differend ESP processors.
-They share the position of 2 connectors with 8 pins that are compatible to a certain degree.
+
+They all share the position of 2 connectors with 8 pins that are compatible to a certain degree.
 
 * 11 digital input/output pins
 * 1 analog input(3.2V max input)
@@ -91,6 +95,8 @@ The 2 connectors with 8 pins have the following ports assigned in the ESP8266.
 
 ## ESP32 based boards
 
+There are some ESP32 based boards that use the same form factor but may not be completely compatible.
+
 
 ### D1 mini ESP32
 
@@ -101,6 +107,18 @@ using a ESP32  MCU and 4 MByte flash memory chip.
 /boards/esp32/d1miniesp32.jpg
 
 {% endimgcard %}
+
+
+### D1 mini ESP32 c3
+
+<https://www.wemos.cc/en/latest/c3/index.html>
+
+* [Board D1 Mini ESP32 C3 mini](/boards/esp32c3/d1mini-c3-mini.md)
+
+* [Board D1 Mini ESP32 C3 pico](/boards/esp32c3/d1mini-c3-pico.md)
+
+
+
 
 There are several shields available for these boards.
 

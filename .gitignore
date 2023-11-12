@@ -9,3 +9,6 @@ _*.*
 *.ppt*
 *.pdf
 *.docx
+.zettel-notes/**
+
+!_template.md

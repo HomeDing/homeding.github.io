@@ -6,6 +6,10 @@ layout: "page.njk"
 
 The Line Microchart displays a series of values using a line on a x/y area with optional axis and reference lines.
 
+It is a pure JavaScript based implementation that uses SVG to display the graph and axis.
+
+The JSON object passed as parameter defines the options for the chart and includes the data of the line chart.
+
 ![LineChart Screenshot](/dev/microchart-line.png)
 
 

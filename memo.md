@@ -10,7 +10,7 @@ This page is used for temporary saving some information that will be required fo
 
 
 ## icons and defs
-
+* [ ] color state
 * [ ] icon: dcftime
 * [ ] icon: digitalsequence
 * [ ] icon + def: displaybar

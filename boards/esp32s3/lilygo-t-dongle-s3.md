@@ -45,7 +45,8 @@ See also <https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-
 
 ![SD-Card slot the dongle](lilygo-t-dongle-s3-sd.jpg)
 
-The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
+The SD Card inside the USB connector is connected directly to the ESP32-S3 processor
+using the MMC interface.
 As the ESP32-S3 processor offers flexibility in using custom defined pins
 a pin configuration (see below) must be given:
 

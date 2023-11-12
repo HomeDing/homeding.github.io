@@ -4,16 +4,22 @@ tags: ["Story"]
 layout: "page.njk"
 ---
 
-The aim is to automate the existing shades in my household to bring them in on several conditions like
+The purpose of this smart device implementation is to automate existing shades  to bring them in on several conditions. This can also used to control curtains or blinds that are typically controlled by 2 momentary switches.
 
-* late in the night (when forgot to to so)
-* in case of rain
+The possibilities are 
+
+* bring shades inlate in the night (when forgot to to so)
+* or in case of rain
 * in case of too much wind
+* open blinds in the morning 
+* shut down blinds in the evening
 
-but to keep the wall switch enabled for easy controlling in place.
+but to keep the existing wall switch in place enabled for easy manual controlling.
+
+## Choose the device
 
 Because the space in the switch box is limited I choose to use one of the ESP8266 based devices
-with 2 relays to control the shades. The one I choose also provides 2 inputs that can be given
+with 2 relays. The one I choose also provides 2 inputs that can be given
 AC Power, very useful to keep a local switch functional.
 
 Here you see the picture of a **LoraTap SC500W** that comes with some helpful descriptions on
@@ -48,8 +54,8 @@ how to wire the motor and switch. The official product web site is here:
 
 You can try to use a firmware upload without opening the switch using the tuya-convert utility
 that you can find at <https://tasmota.github.io/docs/Tuya-Convert/>. This may work when the
-firmware is of an older type. I got new ones where the tuya-convert approach did not work any
-more.
+firmware is of an older type. I got new ones where the tuya-convert approach
+did not work any more.
 
 After opening the case you can see that a TYWE2S module made by Tuya is used inside that is also
 documented on <https://developer.tuya.com/en/docs/iot/tywe2s?id=K9hhi0xr3f3ub>,

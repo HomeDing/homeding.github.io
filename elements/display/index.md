@@ -1,5 +1,5 @@
 ---
-title: Displays
+title: Display Elements
 layout: "page.njk"
 excerpt: >
   The HomeDing library supports local displays attached via SPI and I2C bus

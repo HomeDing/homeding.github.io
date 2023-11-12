@@ -47,7 +47,7 @@ The "SPI2" and "SPI3" can be used as general purpose SPI interfaces also called 
 
 ### The VSPI interface
 
-This SPI is used by the standard Arduino SPI implementation.
+The VSPI is the SPI interface is used by the standard Arduino SPI implementation.
 
 | GPIO   | function     |
 | ------ | ------------ |
@@ -56,8 +56,11 @@ This SPI is used by the standard Arduino SPI implementation.
 | GPIO18 | CLK          |
 | GPIO05 | CS (example) |
 
-The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
+Some ESP32 chips have fixed GPIO ports assigned to the VSPI bus and the
+MISO, MOSI and CLK pins cannot be changed and must not be initialized.
+Before using the interface a SPI.begin() must be called.
 Each slave device must use it's own chip select (CS) line.
+
 
 
 ### The HSPI interface

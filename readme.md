@@ -33,4 +33,3 @@ The file **/index.htm** provides the "shell" for the markdown files by loading a
 **/toc.md** is used for the navigation on the left side that can be opened by the menu icon in the menubar.
 
 Use links like <https://homeding.github.io/elements/index.md>.
-
