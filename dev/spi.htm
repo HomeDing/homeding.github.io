@@ -82,7 +82,7 @@ However each slave device must use it’s own chip select (CS) line.</p>
 and cannot be used to connect to SPI clients other than memory.</p>
 <p>The “SPI2” and “SPI3” can be used as general purpose SPI interfaces also called <code>VSPI</code> and <code>HSPI</code>.</p>
 <h3>The VSPI interface</h3>
-<p>This SPI is used by the standard Arduino SPI implementation.</p>
+<p>The VSPI is the SPI interface is used by the standard Arduino SPI implementation.</p>
 <table>
 <thead>
 <tr>
@@ -109,7 +109,9 @@ and cannot be used to connect to SPI clients other than memory.</p>
 </tr>
 </tbody>
 </table>
-<p>The MISO, MOSI and CLK pins cannot be changed and must not be initialized.
+<p>Some ESP32 chips have fixed GPIO ports assigned to the VSPI bus and the
+MISO, MOSI and CLK pins cannot be changed and must not be initialized.
+Before using the interface a SPI.begin() must be called.
 Each slave device must use it’s own chip select (CS) line.</p>
 <h3>The HSPI interface</h3>
 <p>This SPI is used as an alternative SPI interface often used for SD Cards.</p>
@@ -258,6 +260,12 @@ also have some more signals to be controlled by the host like selecting data fro
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

@@ -196,6 +196,12 @@ It has a upload area that can be used to upload files into the filesystem like i
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

@@ -27,7 +27,11 @@
     <main style="padding:1rem;max-width: 800px;">
       <h1>wishlist</h1>
       
-        <p><a href="/index.htm">home</a></p>
+        <ul>
+<li><a href="/index.htm">home</a></li>
+<li><a href="/readme.htm">readme</a></li>
+</ul>
+<pre class="mermaid">graph TD;&#10;A[Want graphs in 11ty] --&gt;|Search Plugin| B(Found plugin);&#10;B --&gt; C{Use plugin?};&#10;C --&gt;|Yes| D[NICE GRAPHS];&#10;C --&gt;|No| E[NO GRAPHS];&#10;&#10;</pre>
 <h2>Planed Elements</h2>
 <table>
 <thead>
@@ -204,6 +208,12 @@ This action can be used to chain multiple displaytext elements for displaying mu
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

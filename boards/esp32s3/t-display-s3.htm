@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+  <title>NO-TITLE</title>
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>T-Display-S3</h1>
+<p><a href="https://github.com/Xinyuan-LilyGO/T-Display-S3">https://github.com/Xinyuan-LilyGO/T-Display-S3</a></p>
+<p><a href="https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/lib/TouchLib/README.md">https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/lib/TouchLib/README.md</a></p>
+<p><a href="https://github.com/mjdonders/CST816_TouchLib">https://github.com/mjdonders/CST816_TouchLib</a></p>
+<p>{
+“build”: {
+“arduino”: {
+“ldscript”: “esp32s3_out.ld”,
+“memory_type”: “qio_opi”,
+“partitions”: “default_16MB.csv”
+},
+“core”: “esp32”,
+“extra_flags”: [
+“-DBOARD_HAS_PSRAM”
+],
+“f_cpu”: “240000000L”,
+“f_flash”: “80000000L”,
+“flash_mode”: “qio”,
+“hwids”: [
+[
+“0X303A”,
+“0x1001”
+]
+],
+“mcu”: “esp32s3”,
+“variant”: “esp32s3”
+},
+“connectivity”: [
+“wifi”,
+“bluetooth”
+],
+“debug”: {
+“openocd_target”: “esp32s3.cfg”
+},
+“frameworks”: [
+“arduino”,
+“espidf”
+],
+“name”: “T-DisplayS3”,
+“upload”: {
+“flash_size”: “16MB”,
+“maximum_ram_size”: 327680,
+“maximum_size”: 16777216,
+“require_upload_port”: true,
+“speed”: 921600
+},
+“url”: “<a href="https://www.lilygo.cc/products/t-display-s3">https://www.lilygo.cc/products/t-display-s3</a>”,
+“vendor”: “LILYGO”
+}</p>
+
+  </main>
+
+  <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

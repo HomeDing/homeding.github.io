@@ -48,6 +48,8 @@
 </p><h3><a href="/concepts/paper05.htm">Device Discovery</a></h3> 
 <p></p><h3><a href="/elements/diag.htm">Diag Element</a></h3> 
 <p>The DiagElement is part of the DevDing Example  and offers some additional diagnose information.
+</p><h3><a href="/dev/displays.htm">Display Classes</a></h3> 
+<p>The C++ Classes used for displays and their dependencies.
 </p><h3><a href="/dev/elementregistry.htm">Element Registry</a></h3> 
 <p>The ElementRegistry is the central class that knows all included and available Element classes to allow further creation and customization of new Elements by name at runtime.
 </p><h3><a href="/concepts/paper03.htm">Elements and Actions</a></h3> 
@@ -102,6 +104,12 @@ Any device like mobile phone or laptop with WLAN can join this network for confi
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

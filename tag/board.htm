@@ -38,7 +38,7 @@
 <p><a href="/boards/esp32/readme.htm">About using the ESP32 with HomeDing</a> -- Links, material and tips for using ESP32 based boards with the HomeDing library.
 <p><a href="/boards/esp32/esp32audiokit.htm">Ai-Thinker ESP32 Audio Kit</a> -- This is an ESP32 based board using the ESP-WROVER-B module supporting audio processing.
 <p><a href="/boards/esp32s3/arduino-nano-esp32.htm">Arduino Nano ESP32</a> -- This board is an official Arduino board with the ESP32-S3 chip
-<p><a href="/boards/esp32c3/esp32c3-01.htm">Board ESP32-C3 ESP-01</a> -- The ESP32-C3 processor is now also available in a ESP01 form factor board including 4MByte flash and an external antenna connector.
+<p><a href="/boards/esp32/d1miniesp32.htm">Board D1 Mini ESP32</a> -- <p><a href="/boards/esp32c3/d1mini-c3-mini.htm">Board D1 Mini ESP32 C3 mini</a> -- <p><a href="/boards/esp32c3/d1mini-c3-pico.htm">Board D1 Mini ESP32 C3 pico</a> -- <p><a href="/boards/esp32c3/esp32c3-01.htm">Board ESP32-C3 ESP-01</a> -- The ESP32-C3 processor is now also available in a ESP01 form factor board including 4MByte flash and an external antenna connector.
 <p><a href="/boards/esp8266/esp01.htm">Board ESP8266 ESP-01</a> -- <p><a href="/boards/wroom2.htm">Board Review ESP8266 -12 with OLED and 18650</a> -- <p><a href="/boards/wemosoled.htm">Board Review ESP8266 with OLED</a> -- <p><a href="/boards/index.htm">Boards</a> -- The HomeDing library can be used with the ESP8266 and ESP32 chips from Espressif. Here are some boards and devices supported by the HomeDing library.
 <p><a href="/boards/devices/bulb.htm">Bulb Devices</a> -- <p><a href="/boards/esp32c3/core.htm">CORE-ESP32C3 development board</a> -- The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC that fits good on a breadboard and has the option for a LCD + digital joystick shield on top. The ESP32-C3 variant is supported by the HomeDing library.
 <p><a href="/boards/d1mini.htm">D1 Mini Boards (ESP8266 and ESP32)</a> -- There are many different mini boards available with differend ESP processors that share the same form factor and connector pin assignments.
@@ -55,12 +55,11 @@
 <p><a href="/boards/esp8266/esp12dev.htm">Esp-12 development board</a> -- <p><a href="/boards/esp32s3/lilygo-t-dongle-s3.htm">LilyGO T-Dongle S3</a> -- The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display, a APA102 LED, a input button and SD card slot.
 <p><a href="/boards/esp32/ttgo-t-display.htm">LilyGO TTGO T-Display</a> -- The LilyGO TTGO T-Display board offer an integrated TFT color display and a USB-C type connector.
 <p><a href="/dev/logger.htm">Logging</a> -- <p><a href="/boards/esp32/panel-3248S035.htm">Panel ESP32-3248S035</a> -- This panel is using a ESP32 processor with 4M Flash Memory in combination with a 480*320px 16 bit color display and touch controller. This panel is supported by the [HomeDing Display Example]
-<p><a href="/boards/esp32s3/panel-8048S043.htm">Panel ESP32-8048S043C</a> -- This panel is using a ESP32-S3 processor with 16M Flash and 8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing Display Example]
+<p><a href="/boards/esp32s3/panel-8048S043.htm">Panel ESP32-8048S043C</a> -- This panel is using a ESP32-S3 processor with 16M Flash and 8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing BigDisplay Example]
 <p><a href="/boards/sockets.htm">Retail Plug and Socket Devices</a> -- There are many devices on the market that use the ESP8266 chip to control main power by internal relays. The [Minimal Sketch](/examples/minimal.md) supports these use cases.
 <p><a href="/boards/sonoffbasic.htm">Sonoff Basic (R1)</a> -- The Sonoff Basic is a smart relay off-the-shelf product using a ESP8266 with 1MByte Flash.
-<p><a href="/boards/esp32/ttgogallery.htm">TTGO Gallery (T14)</a> -- The LilyGO TTGO Gallery (T14) board offers an integrated TFT color display, SD Card, 4 buttons and Audio DAC output with amplifier.
-<p><a href="/boards/esp32c3/0-template.htm"></a> -- This board uses a ESP32-C3 processor ...
 <p><a href="/boards/sonoffs20.htm">Sonoff S20</a> -- The Sonoff S20 is a smart socket off-the-shelf product using a ESP8266 with 1MByte Flash.
+<p><a href="/boards/esp32/ttgogallery.htm">TTGO Gallery (T14)</a> -- The LilyGO TTGO Gallery (T14) board offers an integrated TFT color display, SD Card, 4 buttons and Audio DAC output with amplifier.
 <p><a href="/boards/pins.htm">Using IO pins of the ESP8266 based boards</a> -- <p><a href="/boards/whiteadapter.htm">White Adapter board for ESP8266</a> -- This &#39;white&#39; adapter board helps soldering ESP-12 of similar boards in regular breadboards and prototype boards. The signals are straight forward routed from the board to the connectors with some exceptions only:
 <p><a href="/boards/wifikit8.htm">Wifi Kit 8 Module ESP8266 with OLED</a> -- The Wifi Kit 8 Module ESP8266 with OLED is a ESP8266 with 4k Flash, OLED display and Li-Polymer battery support. It has a slim size and fits well on breadboards.
 <p><a href="/boards/witty.htm">Witty-Board</a> -- The Witty board offers a ESP8266-12F solution with a RGB LED, a LDR sensor and an input button. It can be used on a breadboard.
@@ -82,6 +81,12 @@
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

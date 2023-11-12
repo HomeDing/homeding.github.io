@@ -28,6 +28,8 @@
       <h1>Line Microchart</h1>
       
         <p>The Line Microchart displays a series of values using a line on a x/y area with optional axis and reference lines.</p>
+<p>It is a pure JavaScript based implementation that uses SVG to display the graph and axis.</p>
+<p>The JSON object passed as parameter defines the options for the chart and includes the data of the line chart.</p>
 <p><img src="/dev/microchart-line.png" alt="LineChart Screenshot"></p>
 <h2>Global Options</h2>
 <p>The Line Chart requires not to set the global options.</p>
@@ -158,6 +160,12 @@ ranges analog vertical axis implementation.
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

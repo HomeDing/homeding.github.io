@@ -27,15 +27,19 @@
     <main style="padding:1rem;max-width: 800px;">
       <h1>Smart control for shades, blinds and curtains</h1>
       
-        <p>The aim is to automate the existing shades in my household to bring them in on several conditions like</p>
+        <p>The purpose of this smart device implementation is to automate existing shades  to bring them in on several conditions. This can also used to control curtains or blinds that are typically controlled by 2 momentary switches.</p>
+<p>The possibilities are</p>
 <ul>
-<li>late in the night (when forgot to to so)</li>
-<li>in case of rain</li>
+<li>bring shades inlate in the night (when forgot to to so)</li>
+<li>or in case of rain</li>
 <li>in case of too much wind</li>
+<li>open blinds in the morning</li>
+<li>shut down blinds in the evening</li>
 </ul>
-<p>but to keep the wall switch enabled for easy controlling in place.</p>
+<p>but to keep the existing wall switch in place enabled for easy manual controlling.</p>
+<h2>Choose the device</h2>
 <p>Because the space in the switch box is limited I choose to use one of the ESP8266 based devices
-with 2 relays to control the shades. The one I choose also provides 2 inputs that can be given
+with 2 relays. The one I choose also provides 2 inputs that can be given
 AC Power, very useful to keep a local switch functional.</p>
 <p>Here you see the picture of a <strong>LoraTap SC500W</strong> that comes with some helpful descriptions on
 how to wire the motor and switch. The official product web site is here:
@@ -63,8 +67,8 @@ It must be ensured that it never happens that both directions are ON at the same
 <h3>tuya-convert - may not work</h3>
 <p>You can try to use a firmware upload without opening the switch using the tuya-convert utility
 that you can find at <a href="https://tasmota.github.io/docs/Tuya-Convert/">https://tasmota.github.io/docs/Tuya-Convert/</a>. This may work when the
-firmware is of an older type. I got new ones where the tuya-convert approach did not work any
-more.</p>
+firmware is of an older type. I got new ones where the tuya-convert approach
+did not work any more.</p>
 <p>After opening the case you can see that a TYWE2S module made by Tuya is used inside that is also
 documented on <a href="https://developer.tuya.com/en/docs/iot/tywe2s?id=K9hhi0xr3f3ub">https://developer.tuya.com/en/docs/iot/tywe2s?id=K9hhi0xr3f3ub</a>,
 <a href="https://developer.tuya.com/en/docs/iot/wifie2smodule?id=K9605u79tgxug">https://developer.tuya.com/en/docs/iot/wifie2smodule?id=K9605u79tgxug</a> and
@@ -224,6 +228,12 @@ processor + 1MByte Flash integrated.</p>
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

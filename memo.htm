@@ -30,6 +30,7 @@
         <p style="padding:0.5em;background-color:#FF8888">This page is used for temporary saving some information that will be required for further tasks or documentation.</p>
 <h2>icons and defs</h2>
 <ul class="contains-task-list">
+<li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> color state</label></li>
 <li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> icon: dcftime</label></li>
 <li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> icon: digitalsequence</label></li>
 <li class="task-list-item enabled"><label><input class="task-list-item-checkbox"type="checkbox"> icon + def: displaybar</label></li>
@@ -72,6 +73,12 @@ configured through software via I2C</p>
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

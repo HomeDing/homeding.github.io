@@ -106,7 +106,7 @@ is based on this processor using a custom Module from U-BLOX.</p>
 </div>
 <div class="imgcard"><img src="/boards/esp32s3/panel-8048S043.jpg">
 <p><strong><a href="/boards/esp32s3/panel-8048S043.htm">Panel ESP32-8048S043C</a></strong></p>
-<p>This panel is using a ESP32-S3 processor with 16M Flash and 8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing Display Example]</p>
+<p>This panel is using a ESP32-S3 processor with 16M Flash and 8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing BigDisplay Example]</p>
 </div>
 <h2>See also</h2>
 <ul>
@@ -140,6 +140,12 @@ is based on this processor using a custom Module from U-BLOX.</p>
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

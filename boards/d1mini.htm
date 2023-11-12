@@ -34,8 +34,10 @@
 
           </div>
         
-        <p>There are many different mini boards available with differend ESP processors.
-They share the position of 2 connectors with 8 pins that are compatible to a certain degree.</p>
+        <p>The D1 mini format foe boards and shield was created by the <a href="https://www.wemos.cc/">wemos.cc</a>
+company and is a good base for starting with DIY devices.</p>
+<p>There are many different mini boards available with differend ESP processors.</p>
+<p>They all share the position of 2 connectors with 8 pins that are compatible to a certain degree.</p>
 <ul>
 <li>11 digital input/output pins</li>
 <li>1 analog input(3.2V max input)</li>
@@ -99,12 +101,23 @@ and includes:</p>
 The 2 connectors with 8 pins have the following ports assigned in the ESP8266.</p>
 <p><img src="/boards/d1minipins.png" alt="d1mini pins"></p>
 <h2>ESP32 based boards</h2>
+<p>There are some ESP32 based boards that use the same form factor but may not be completely compatible.</p>
 <h3>D1 mini ESP32</h3>
 <div class="imgcard"><a href="/boards/esp32/d1miniesp32.htm"><img src=""></a>
 <p>A similar <a href="/boards/esp32/d1miniesp32.htm">D1 mini ESP32 board</a> exists
 using a ESP32  MCU and 4 MByte flash memory chip.</p>
 <p>/boards/esp32/d1miniesp32.jpg</p>
 </div>
+<h3>D1 mini ESP32 c3</h3>
+<p><a href="https://www.wemos.cc/en/latest/c3/index.html">https://www.wemos.cc/en/latest/c3/index.html</a></p>
+<ul>
+<li>
+<p><a href="/boards/esp32c3/d1mini-c3-mini.htm">Board D1 Mini ESP32 C3 mini</a></p>
+</li>
+<li>
+<p><a href="/boards/esp32c3/d1mini-c3-pico.htm">Board D1 Mini ESP32 C3 pico</a></p>
+</li>
+</ul>
 <p>There are several shields available for these boards.</p>
 <h2>Shields</h2>
 <p>There are some shields for the board forma factor available. Here some examples:</p>
@@ -171,6 +184,12 @@ the default (D4) wiring and soldering a bridge for another pin.</p>
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

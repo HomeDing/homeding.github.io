@@ -43,6 +43,12 @@
 <li>Flash Mode: DIO</li>
 <li>PSRAM: disabled</li>
 </ul>
+<p>#define TOUCH_SDA 33
+#define TOUCH_SCL 32
+#define TOUCH_INT 21
+#define TOUCH_RST 25
+#define TOUCH_WIDTH 320
+#define TOUCH_HEIGHT 480</p>
 <pre class="language-txt"><code class="language-txt">{
     "board": "espressif:esp32:esp32",
     "configuration": "JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=dio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none"
@@ -138,9 +144,10 @@ and to mount the sd card file system on the <code>/sd</code> folder.</p>
 <pre class="language-JSON"><code class="language-JSON">{
   "device": {
     "0": {
-      "name": "panel3248",
+      "name": "panel480",
       "title": "ESP32-3248S035",
       "description": "320*480 Touch Panel from JCZN",
+      "loglevel": "2",
       "button": "0",
       "xled": "16",
       "logfile": 1,
@@ -158,6 +165,9 @@ and to mount the sd card file system on the <code>/sd</code> folder.</p>
     "on": {
       "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
     }
+  },
+  "diag": {
+    "0": {}
   },
   "light": {
     "l": {
@@ -192,19 +202,33 @@ and to mount the sd card file system on the <code>/sd</code> folder.</p>
       "onvalue": "DisplayST7796/0?brightness=$v"
     }
   },
+
   "DisplayST7796": {
     "0": {
       "height": "480",
       "width": "320",
-      "color": "x000000",
+      "color": "black",
+      "border": "black",
       "background": "xccccff",
-      "lightpin": 27
+      "lightpin": 27,
+      "bus": "hspi",
+      "spidc": "2",
+      "spics": "15",
+      "spiclk": "14",
+      "spimosi": "13",
+      "spimiso": "12"
     }
   },
+
   "DisplayTouchGT911": {
-    "0": { "address": "0x5D" }
+    "0": {
+      "address": "0x5D",
+      "resetpin": "25",
+      "interruptpin": "21"
+    }
   }
-}</code></pre>
+}
+</code></pre>
 <p>Download of supporting files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688</p>
 <h2>See also</h2>
 
@@ -234,6 +258,12 @@ and to mount the sd card file system on the <code>/sd</code> folder.</p>
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>

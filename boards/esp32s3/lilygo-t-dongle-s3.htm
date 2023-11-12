@@ -85,7 +85,8 @@ column offset of 26 and a row offset of 1 must be configured.</p>
 <p>See also <a href="https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160">https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160</a></p>
 <h3>SD Card</h3>
 <p><img src="lilygo-t-dongle-s3-sd.jpg" alt="SD-Card slot the dongle"></p>
-<p>The SD Card inside the USB connector is connected directly to the ESP32-S3 processor.
+<p>The SD Card inside the USB connector is connected directly to the ESP32-S3 processor
+using the MMC interface.
 As the ESP32-S3 processor offers flexibility in using custom defined pins
 a pin configuration (see below) must be given:</p>
 <table>
@@ -322,6 +323,12 @@ Flash:
         });
         lazyLoadHTM('nav', '/toc.htm');
       </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
     </body>
   </body>
 </html>
