@@ -5,7 +5,7 @@ layout: "page.njk"
 description: ESP32-S3 based boards
 excerpt: >
   There are several boards available using the ESP32-S3 chip.
-  Boards based on the ESP32-S3 variant offer a High performance dual core SoC
+  Boards based on the ESP32-S3 variant offer a high performance dual core SoC
   with vector hardware acceleration and special display interfaces.
 ---
 
@@ -20,6 +20,7 @@ The ESP32-S3 is based on the Xtensa 32-bit LX7 single or dual-core processor tha
 up to 240 MHz.
 
 It offers:
+
 * Wi-Fi (2.4 GHz, single band)
 * Bluetooth 5, LE and Mesh
 * CPU clock speed up to 240 MHz
@@ -109,6 +110,11 @@ This results in faster secure (https) network requests.
 ## See also
 
 * Product web site: <https://www.espressif.com/en/products/socs/esp32-s3>
-* Official datasheet: <https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>
+* ESP32-S3 datasheet <https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>
+* [Arduino Nano ESP32]
+* [XIAO ESP32 S3]
+* [ESP32-C3 boards](/boards/esp32c3/index.md)
 
-[Arduino Nano ESP32]:/boards/esp32s3/arduino-nano-esp32
+
+[Arduino Nano ESP32]:/boards/esp32s3/arduino-nano-esp32.md
+[XIAO ESP32 S3]:/boards/esp32s3/xiao-esp32s3.md

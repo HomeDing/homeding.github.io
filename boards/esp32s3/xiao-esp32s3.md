@@ -1,5 +1,19 @@
-# XIAO ESP32 S3
+---
+title: XIAO ESP32 S3
+tags: ["Board", "WIP"]
+layout: "page.njk"
+description: ESP32-S3 board
+excerpt: >
+  The XIAO ESP32 S3 is a thumb-size board with external antenna designed for low power consumption.
+---
 
+The Seeed Studio XIAO ESP32S3 board offers a Xtensa 32-bit LX7 dual-core processor, WiFi, Bluetooth LE 5.0
+and lithium battery charging management in a thumb-sized compact design.
+The antenna is connected using a IPEX connector.  
+ 
+The small size of 21 * 17.5 mm and the design for low power makes this board ideal to be embedded in IoT devices.
+
+```
 Product parameters:
 Model: Seed Studio XIAO ESP32S3
 Main control chip: ESP32-S3
@@ -25,8 +39,12 @@ BLE Enable Power Consumption: Active Model:~85 mA
 Working temperature: -40 ° C~65 ° C
 Size: 21 x 17.5mm
 
-<https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>
 
-<https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/>
+```
 
-<https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html>
+## See Also
+
+* Product at SeeedStudio <https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html>
+* Article at SeeedStudio <https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/>
+* [ESP32-S3 Boards](/boards/esp32s3/index.md)
+* ESP32-S3 datasheet <https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>

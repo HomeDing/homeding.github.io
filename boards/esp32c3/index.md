@@ -94,6 +94,12 @@ This results in faster secure (https) network requests.
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32c3/weact-core-c3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32c3/super-mini-c3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32c3/xiao-c3') }}
+
 
 ## Board ESP32-C3 ESP-01
 
@@ -136,3 +142,4 @@ and more flash memory.
 * Product web site: <https://www.espressif.com/en/products/socs/esp32-c3>
 * Official datasheet: <https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf>
 * <https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/>
+* [ESP32-S3 Boards](/boards/esp32s3/index.md)

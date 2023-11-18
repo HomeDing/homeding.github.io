@@ -1,6 +1,13 @@
-# XIAO ESP32 C3
+---
+title: XIAO ESP32 C3
+tags: ["Board", "WIP"]
+layout: "page.njk"
+description: ESP32-C3 thumb-size board with external antenna.
+excerpt: >
+  The XIAO ESP32 C3 is a thumb-size board with external antenna.
+---
 
-The XIAO ESP32C3 board using the ESP32-C3 processor is a very small board that can easily be
+The XIAO ESP32 C3 board using the ESP32-C3 processor is a very small board that can easily be
 flashed and comes with a connector for an external antenna.
 
 ![XIAO ESP32C3 board](xiao-c3.jpg)

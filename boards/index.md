@@ -118,6 +118,8 @@ Some boards have been tested:
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-dongle-s3') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-display-s3') }}
+
 {{ imgCard(collections.all, item = '/boards/esp32s3/xiao-esp32s3') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}

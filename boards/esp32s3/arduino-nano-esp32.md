@@ -9,7 +9,7 @@ excerpt: >
 
 This board can be bought from the Arduino Store. <https://store.arduino.cc/products/nano-esp32>
 
-
+![Arduino Nano ESP32](arduino-nano-esp32.jpg)
 
 
 NORA-W106-10B: <https://www.u-blox.com/en/product/nora-w10-series>

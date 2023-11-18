@@ -7,6 +7,8 @@ https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/lib/TouchLib/README.md
 https://github.com/mjdonders/CST816_TouchLib
 
 
+http://en.hynitron.com/product/wearable/124
+
 
 {
   "build": {
