@@ -51,7 +51,7 @@ The following properties are available for configuration of the element:
 
 ## Boards
 
-The following boards are useing the GT911 controller:
+The following boards are using the GT911 controller:
 
 * [Panel ESP32-3248S035](/boards/esp32/panel-3248S035.md)
 * [Panel ESP32-8048S043C](/boards/esp32s3/panel-8048S043.md)

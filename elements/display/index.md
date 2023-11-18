@@ -126,13 +126,17 @@ SSD 1331 (in planning) -->
 
 ## Touch enabled Displays
 
-See [Display Touch Element](/elements/display/touch.md).
+Displays including a touch controller can be used to control the device
+by UI elements such as buttons.
+
+See [Display Touch Elements](/elements/display/touch.md) for more information about how to configure and use these display touch controllers.
 
 Supported chips are:
 
 * [GT911](/elements/display/touchgt911.md)
 * [FT6336](/elements/display/touchft6336.md)
-* 
+* [CST816](/elements/display/touchcst816.md)
+
 
 ## Display Information Elements
 
