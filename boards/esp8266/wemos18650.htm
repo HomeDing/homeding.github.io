@@ -1,0 +1,226 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+    <link rel="icon" type="image/png" href="favicon48.png" sizes="48x48">
+    <title>WeMos ESP8266 board with OLED and 18650</title>
+    <meta name='description' content='ESP8266 with OLED display, joystick input and 18650 battery holder.'>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/pages.js"></script>
+    <script src="/story.js" type="module"></script>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
+    </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>WeMos ESP8266 board with OLED and 18650</h1>
+      
+        
+            <div class="plaincard">
+            
+            This board from WeMos has a OLED display on a ESP-12E module based ESP8266 board with a joystick input, LiIon Battery support and on/off switch.
+
+          </div>
+        
+        <p><img src="/boards/esp8266/wemos18650.jpg" alt="/boards/esp8266/wemos18650.jpg"></p>
+<p>This board is equipped with:</p>
+<ul>
+<li>ESP8266-12 module</li>
+<li>OLED display based on the SSD1306 chip</li>
+<li>A „joystick“ type of button that can be used as input and hardware reset.</li>
+<li>A standard 18650 li-ion battery holder attached to the back</li>
+<li>Charging chip for charging through the USB port</li>
+<li>A power switch that separates all power consumption from the battery</li>
+</ul>
+<h2>Arduino Board Configuration</h2>
+<p>The Arduino Board Manager supports this board by installing the <code>esp8266 by ESP8266 Community</code> package.
+It can be used with the following settings:</p>
+<ul>
+<li>Board: <strong>NodeMCU (ESP-12E Module)</strong></li>
+<li>CPU Frequency: 80 MHz</li>
+<li>VTables: Flash</li>
+<li>C++ Exception: Disabled</li>
+<li>Stack Protection: Disabled</li>
+<li>SSL Support: AllSSL Ciphers (most compatible)</li>
+<li>MMU: 32kB cache + 32kB</li>
+<li>IRAM (balanced)* Upload Speed: 921600</li>
+<li>Non-32-Bit Access: Use pgm_read macros for IRAM/PROGMEM</li>
+<li>Flash Size: 4MByte (FS:2MB OTA:~1019kB)</li>
+<li>Builtin Led: 2+</li>
+<li>IwIP Variant: v2 Lower Memory</li>
+<li>Debug port: Serial</li>
+<li>Debug level: None</li>
+<li>Erase Flash: All Flash Contents on first upload, then Only Sketch</li>
+<li>Upload Speed: 921600</li>
+</ul>
+<p>This setting is identical to the standard NodeMCU settongs. However the features on the board
+are extended and not all signals are available to connectors.</p>
+<h2>OLED Display</h2>
+<p>The display is using the OLED technology and the chip is attached using the internal I2C bus and
+is supported by the SSD1306 Element and Display adapter.</p>
+<p>The display resolution is 128x64 pixels.</p>
+<p>The display can be used by configuring the <a href="/elements/display/ssd1306.htm">DisplaySSD1306 Element</a>.</p>
+<p>The full configuration is provided below.</p>
+<h2>Joystick</h2>
+<p>The joystick button is connected to 4 input pins and to the reset pin as well this makes this
+button almost useless for games and menu selection functionality because it will happen by
+accident that the reset direction (move to the right) is activated.</p>
+<table>
+<thead>
+<tr>
+<th>Joystick</th>
+<th>Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Right</td>
+<td>Reset</td>
+</tr>
+<tr>
+<td>Left</td>
+<td>GPIO0(D3)</td>
+</tr>
+<tr>
+<td>Up</td>
+<td>GPIO12(D6)</td>
+</tr>
+<tr>
+<td>Down</td>
+<td>GPIO13(D7)</td>
+</tr>
+<tr>
+<td>Press</td>
+<td>GPIO14(D5)</td>
+</tr>
+</tbody>
+</table>
+<h3>Onboard LED</h3>
+<p>There is a green LED at GPIO16(D0).</p>
+<p>The green LED at GPIO16(D0) only can be used when there is no need for <a href="/dev/deepsleep.htm">deep sleep</a> functionality
+and only can be switched on and off.</p>
+<p>In cannot be dimmed using by PWM because GPIO16 is not supporting this.</p>
+<p>The blue LED on the ESP-12 can also be used GPIO2(D4).</p>
+<h3>I2C / WIRE Bus</h3>
+<p>The internally used I2C Bus for the connection with the OLED is not available at a connector. Therefore it is difficult to add more I2C bus devices to this bus.</p>
+<p>Also the board doesn’t use the common and default pins that are defined by
+SCL=GPIO5(D1) and SDA=GPIO4(D2).</p>
+<p>The board uses</p>
+<ul>
+<li><code>SCL</code> = <code>GPIO4</code> (<code>D2</code>) (yellow) and</li>
+<li><code>SDA</code> = <code>GPIO5</code> (<code>D1</code>) (blue)</li>
+</ul>
+<h2>Board configuration</h2>
+<p>The display configuration is defined in <code>env.json</code> together with the system button and led for configuration.
+When pressing the joystick while the LED is blinking the device switches to config mode.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"wemos18650"</span><span class="token punctuation">,</span>
+      <span class="token property">"reboottime"</span><span class="token operator">:</span> <span class="token string">"24h"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"D1"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span>
+      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
+      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"ESP8266 board with OLED and 18650"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ssdp"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"60"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>These are the basic element configurations for the joystick button and the 2 onboard LEDs.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"up"</span><span class="token operator">:</span>    <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D6"</span><span class="token punctuation">,</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Button Up"</span><span class="token punctuation">,</span>    <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/up?value=$v"</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"down"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D7"</span><span class="token punctuation">,</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Button Down"</span><span class="token punctuation">,</span>  <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/down?value=$v"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"left"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D3"</span><span class="token punctuation">,</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Button Left"</span><span class="token punctuation">,</span>  <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/left?value=$v"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"press"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D5"</span><span class="token punctuation">,</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Button Press"</span><span class="token punctuation">,</span> <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"displaytext/press?value=$v"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"up"</span><span class="token operator">:</span>    <span class="token punctuation">{</span> <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"up"</span>    <span class="token punctuation">,</span>  <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"down"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"down"</span>  <span class="token punctuation">,</span>  <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"left"</span><span class="token operator">:</span>  <span class="token punctuation">{</span> <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"left"</span>  <span class="token punctuation">,</span>  <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">40</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"press"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"press"</span> <span class="token punctuation">,</span>  <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">50</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D0"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin LED is on Port D0 = GPIO16"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"D4"</span><span class="token punctuation">,</span>
+      <span class="token property">"range"</span><span class="token operator">:</span> <span class="token number">255</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build-in LED on module"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="/boards/nodemcu.htm">ESP8266 NodeMCU development boards</a></li>
+<li><a href="/elements/display/ssd1306.htm">ssd1306 OLED displays</a></li>
+<li><a href="/dev/i2c.htm">Using the I2C bus</a></li>
+</ul>
+
+        
+          <h2>Tags</h2>
+          <div class="taglist">
+            
+              <a href="/tag/board.htm">Board</a>
+            
+          </div>
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
+    </body>
+  </body>
+</html>
