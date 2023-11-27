@@ -67,9 +67,9 @@ The hardware parts you need to build this project and used in this story are:
 
 There are boards available that already have both combined like
 
-* **[Wifi Kit 8 Module ESP8266 with OLED](https://homeding.github.io/#page=/boards/wifikit8.md)
-* **[ESP8266 with OLED and 18650](https://homeding.github.io/#page=/boards/wroom2.md)
-* **[ESP8266 with OLED](https://homeding.github.io/#page=/boards/wemosoled.md)
+* **[Wifi Kit 8 Module ESP8266 with OLED](/boards/wifikit8.md)
+* **[ESP8266 with OLED and 18650](/boards/esp8266/wemos18650.md)
+* **[ESP8266 with OLED](/boards/wemosoled.md)
 
 The system configuration for these boards can be found on these pages. Here a nodemcu and a discrete display is used.
 

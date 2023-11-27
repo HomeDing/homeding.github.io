@@ -7,7 +7,8 @@ layout: "page.njk"
 This recipe uses the time from the internet and displays the current local time on a OLED display.
 
 This recipe can run this on a board that has a display integrated like the
-[wifikit8](/boards/wifikit8.md) or [wroom2](/boards/wroom2.md) ure use a separate display.
+[wifikit8](/boards/wifikit8.md) or [Wifi Kit 8 Module ESP8266 with
+OLED](/boards/esp8266/wemos18650.md) or by using a separate connected display.
 
 ![image](/recipes/ntpclock.png)
 

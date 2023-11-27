@@ -1,11 +1,12 @@
 ---
-title: Boards
+title: Boards and Processor modules
 tags: ["Board", "Implementation"]
 layout: "page.njk"
 description: Boards supported by the HomeDing library
 excerpt: >
-  The HomeDing library can be used with the ESP8266 and ESP32 chips from Espressif.
-  Here are some boards and devices supported by the HomeDing library.
+  The HomeDing library can be used with Boards and Processor modules
+  using the the ESP8266 and ESP32 chips from Espressif.
+  In this overview some boards and devices can be found that are supported by the HomeDing library.
 ---
 
 {% from 'macros.njk' import imgCard, elemCard with context %}
@@ -69,14 +70,9 @@ Specific to ESP8266 are the following features:
 
 {{ imgCard(collections.all, item = '/boards/witty') }}
 
+{{ imgCard(collections.all, item = '/boards/wemosoled') }}
 
-:::board wemosoled
-The **[Wemos labeled board with OLED](/boards/wemosoled.md)** is a ESP-12E with OLED display.
-:::
-
-:::board wroom2
-The **[Esp-Wroom-02 Module ESP8266 with OLED and 18650](/boards/wroom2.md)** is a ESP-12E with OLED display, LiIon Battery support and switch.
-:::
+{{ imgCard(collections.all, item = '/boards/esp8266/wemos18650') }}
 
 
 ## ESP32 boards

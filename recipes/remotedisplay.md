@@ -43,8 +43,8 @@ Having done this configuration the display will be used on system startup showin
 
 ### Display elements configuration
 
-The following configuration used 2 display elements for text to define 
-the position and size of the information that will be shown:
+The following configuration used 2 display elements for text to define the position and size of
+the information that will be shown:
 
 ``` json
 {

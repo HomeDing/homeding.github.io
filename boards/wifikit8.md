@@ -50,7 +50,7 @@ There are 2 pin diagrams on this site. Be sure to get the right one. (see Links)
 ## OLED Display
 
 The OLED display is the only embedded component on this board. It uses the same SSD1306 driver chip like the on in the
-[wroom2 board](/boards/wroom2.md) board but only provides 32px in height.
+[Wifi Kit 8 Module ESP8266 with OLED](/boards/esp8266/wemos18650.md) board but only provides 32px in height.
 
 The I2C bus for the display is using GPIO4 and GPIO5 and the I2C address is 0x3c.
 
