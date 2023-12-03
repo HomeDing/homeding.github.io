@@ -177,7 +177,7 @@ It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal 
 and the [BL0937 chip](/elements/bl0937.md).
 :::
 
-:::board bulb
+:::board devices/bulb
 **[Bulb devices](/boards/devices/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
 
 They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using
@@ -198,7 +198,7 @@ ESP-14
 These boards help implementing things using the ESP-12 boards directly.
 When used alone an external power supply and some minimal wiring is required.
 
-:::board esp12dev
+:::board esp8266/esp12dev
 The **[Esp-12 development boards](/boards/esp8266/esp12dev.md)** is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
 This solution is especially suitable for creating devices that run on battery or low power conditions and therefore do not need USB chips.
 :::
@@ -218,24 +218,22 @@ ON the ESP-12 with 4 GByte Flash the [standard example](/examples/standard.md) c
 
 The ESP-12 format is a common format but there are different sub-versions available. The all use the ESP8266 SoC but flash size and available pins differ:
 
-:::board esp12e
+:::board esp8266/esp12e
 The **ESP-12** (old) and **ESP-12E** modules offer 8+8 pins at the sides where most of the interesting pins from the ESP8266 SoC chips are available.
 
 They are manufactured by different vendors.
 :::
 
-:::board esp12f
+:::board esp8266/esp12f
 On the **ESP-12F**, in addition to the ESP-12E some more pins are available on the "bottom" side that are th signals to the FLASH memory. They are not of much use in most scenarios but in the case you want to add some SPI RAM.
 :::
 
-:::board esp12s
+:::board esp8266/esp12s
 The **ESP-12S** is an optimized version from esp-12f with a better antenna signal. FLASH SPI signals are not available.
 :::
 
-:::board espwroom
+:::board esp8266/espwroom
 The **ESP-WROOM-02** is not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte. I found it mounted on a wider board including battery based power management.
-
-
 :::
 
 
@@ -257,21 +255,21 @@ The [minimal example](/examples/minimal.md) can be flashed onto these boards by 
 
 The following are boards and solutions with 1 MBytes flash memory chips.
 
-:::board esp01
+:::board esp8266/esp01
 The [ESP-01](/boards/esp8266/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.
 
 There are variants of this board with different antenna and different flash sizes.
 :::
 
 
-:::board neo
-The [neo board](/boards/neo.md) is a very specific adapter
+:::board esp8266/neo
+The [neo board](/boards/esp8266/neo.md) is a very specific adapter
 to run a neopixel stripe, wheel or array using a ESP8266 ESP-01 board.
 :::
 
 
-:::board esp01-dht
-The [ESP-01 with DHT22 board](/boards/esp01-dht.md) is a very specific adapter
+:::board esp8266/esp01-dht
+The [ESP-01 with DHT22 board](/boards/esp8266/esp01-dht.md) is a very specific adapter
 to run a DHT22 sensor using  a ESP8266 ESP-01 board.
 :::
 

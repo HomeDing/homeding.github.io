@@ -61,7 +61,7 @@ While the core library is portable to other processors there will be some ESP826
 > "Ding" not only sounds friendly, it is the German word for "Thing".
 > As this library targets building small devices for a typical home environment "HomeDing" chosen for the project name.
 
-The documentation is available on GitHub at [https://github.com/HomeDing/HomeDing](https://github.com/HomeDing/HomeDing.md).
+The documentation is available on GitHub at [https://homeding.github.io/](https://homeding.github.io/).
 
 Once it is in a valid beta state it will be continued here.
 
