@@ -30,7 +30,7 @@
         <p>The ESP-­01 and ESP-­01S modules contain a ESP8266 MCU and a up to 1 MByte flash memory chip.</p>
 <p>It is the cheapest available board with the ESP8266 and comes with a standard male adaptor.</p>
 <h2>Overview table</h2>
-<p><img src="/boards/esp01-pins.png" alt="board-esp01-pins"></p>
+<p><img src="/boards/esp8266/esp01-pins.png" alt="board-esp01-pins"></p>
 <table>
 <thead>
 <tr>
@@ -81,7 +81,7 @@
 <p>There are multiple versions of the ESP-01 board available. In the early days also 512kByte flash memory versions have been available now most of them come with 1 MByte of flash memory. The ESP-01S has a slightly different wiring regarding the LED and a different layout of the PCB antenna ans also comes with 1MByte of flash memory.</p>
 <h2>ESP-01 LEDs</h2>
 <p>The original version of the ESP-01 board has 2 LEDs:</p>
-<p><img src="/boards/esp01-leds.jpg" alt="board-esp01-leds"></p>
+<p><img src="/boards/esp8266/esp01-leds.jpg" alt="board-esp01-leds"></p>
 <ul>
 <li>The red LED is connected to the 3.3V Power supply and lights up constantly.</li>
 <li>The blue LED is connected to the Serial output pin and lights up when data is sent. When not using the TX Serial output the pin and LED can be used as a digital output too.</li>
@@ -96,14 +96,14 @@
 </ul>
 <h2>Self-Made Adaptors</h2>
 <p>With some soldering and a USB-to-Serial adapter you can build your own adapter board:</p>
-<p><img src="/boards/esp01adapt1.jpg" alt="selfmade adapter1">
-<img src="/boards/esp01adapt2.jpg" alt="selfmade adapter2"></p>
+<p><img src="/boards/esp8266/esp01adapt1.jpg" alt="selfmade adapter1">
+<img src="/boards/esp8266/esp01adapt2.jpg" alt="selfmade adapter2"></p>
 <p>Some of the USB Adapters like the on I use also have a 3.3 V regulator available, but they usually so not offer much current.</p>
 <p>Be sure to add a reset (RST) and flash GPIO0(D3) button with 10k resistor to VCC and button to GND.</p>
 <p>The 3 LEDs show the actual level of GPIO0(D3) and GPIO2(D4).</p>
 <p>Another idea is to use a ESP01 USB adapter and add the reset (RST) and flash GPIO0(D3) buttons as you can see here.</p>
-<p><img src="/boards/esp01prog1.jpg" alt="customized adapter1">
-<img src="/boards/esp01prog2.jpg" alt="customized adapter2"></p>
+<p><img src="/boards/esp8266/esp01prog1.jpg" alt="customized adapter1">
+<img src="/boards/esp8266/esp01prog2.jpg" alt="customized adapter2"></p>
 <h2>Minimum adapter</h2>
 <p>The minimum wiring to use (run) this board is to have the following external wiring:</p>
 <ul>
@@ -130,7 +130,7 @@ and this will cause to start the cip in upload FLASH mode every time the device 
 <p>Relays need more current then a pin of the ESP8266 can deliver. Therefore, a transistor is often used for amplifying the signal.</p>
 <p>When attaching a transistor to the IO pin you also have to face not pulling the level to low. Therefore a PNP transistor to high is a good solution. When the output current you need is higher than the amount the chip can deliver directly. If you don’t have a relays that is driven by 3.3 volts  (very likely) you can use a second transistor to drive the relay using another voltage.</p>
 <p>Here is a sample off driving a 5V relay:</p>
-<p><img src="/boards/gpio-relay.png" alt="GPIO driving a relay"></p>
+<p><img src="/boards/esp8266/gpio-relay.png" alt="GPIO driving a relay"></p>
 <h2>GPIO 1 / Serial TX</h2>
 <p>You can control the blue LED if you do not need the TX function. TX is actually GPIO1 so by setting GPIO1 to HIGH will light up the LED of a ESP-01 board. Of course sending output to serial will spoil things.</p>
 <h2>GPIO2</h2>
@@ -143,7 +143,7 @@ After starting the program you can use it for input and output like the GPIO0 pi
 <h2>Modification for deep sleep mode</h2>
 <p>The ESP8266 supports a <a href="/dev/deepsleep.htm">deep sleep mode</a> that needs an external connection between the GPIO16 and the RESET.</p>
 <p>Here is a picture on how to create such a connection on an ESP-01:</p>
-<p><img src="/boards/esp01-wire.jpg" alt="board-esp01-with-deep-sleep"></p>
+<p><img src="/boards/esp8266/esp01-wire.jpg" alt="board-esp01-with-deep-sleep"></p>
 <p>More details and hints on using the deep sleep mode can be found in <a href="/dev/deepsleep.htm">deepsleep</a></p>
 <h2>Modification for supporting PUYA Flash chips</h2>
 <p>Some of the ESP8266 ESP-01 boards use a (cheaper) flash chip from the vendor PUYA. This chip has a slightly different behavior when writing data to the flash memory than the original flash chips that have been used. Therefore a modification in the code needs to be activated.</p>
