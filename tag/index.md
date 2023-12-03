@@ -6,12 +6,16 @@ excerpt: >
   All tags used in this documentation.
 ---
 
-* [board](/tag/board.md)
-* [element](/tag/element.md)
-* [implementation](/tag/implementation.md)
-* [sensor](/tag/sensor.md)
-* [system](/tag/system.md)
-* [time](/tag/time.md)
+* [Audio](/tag/audio.md)
+* [Board](/tag/board.md)
+* [Element](/tag/element.md)
+* [Example](/tag/example.md)
+* [Implementation](/tag/implementation.md)
+* [Light](/tag/light.md)
+* [Recipe](/tag/recipe.md)
+* [Sensor](/tag/sensor.md)
+* [System](/tag/system.md)
+* [Time](/tag/time.md)
 
 Temporary Tags
 

@@ -97,20 +97,20 @@ They are controlled using the I2C or SPI bus.
 Supported are the driver chips: [SH1106], [SSD1306], [SSD1309]
 :::
 
-{% imgcard "/displays/max7219.jpg", "/displays/max7219.htm" %}
-  The [DisplayMAX7219Element](/displays/max7219.md) uses LED matrixes as displays
+{% imgcard "/elements/display/max7219.jpg", "/elements/display/max7219.htm" %}
+  The [DisplayMAX7219Element](/elements/display/max7219.md) uses LED matrixes as displays
   using the MAX7219 chip that can chain multiple 8x8 led displays.
 {% endimgcard %}
 
 
 ## Pixel Based Color Displays
 
-{% imgcard "/displays/st7789.jpg", "/displays/st7789.htm" %}
+{% imgcard "/elements/display/st7789.jpg", "/elements/display/st7789.htm" %}
   Colorful displays are supported by the `color` configuration on the display elements.
   The [Display ST7789 Element](/elements/display/st7789.md) supports the ST7789 driver chips.
 {% endimgcard %}
 
-{% imgcard "/displays/colorlcd.jpg", "/displays/st7735.htm" %}
+{% imgcard "/elements/display/colorlcd.jpg", "/elements/display/st7735.htm" %}
   Colorful displays are supported by the `color` configuration on the display elements.
   The [Display ST7735 Element](/elements/display/st7735.md) supports the ST7735 driver chips.
 {% endimgcard %}
@@ -207,7 +207,7 @@ On startup, when a display is configured, some system information is displayed b
 
 [liquid chrystal]: /elements/display/lcd.md
 [max7219]: /elements/max7219.md
-[displayMax7219]: /displays/max7219.md
+[displayMax7219]: /elements/display/max7219.md
 [tm1637]: /elements/tm1637.md
 [sh1106]: /elements/display/sh1106.md
 [ssd1306]: /elements/display/ssd1306.md

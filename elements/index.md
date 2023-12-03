@@ -272,8 +272,6 @@ The [Audio Elements](/elements/audio/index.md) can be used to create / control a
 
 :::element audio/tone tone
 {% excerptOf collections.Element, "tone" %}
-
-[Tone Element](../elements/audio/tone.md) to make some noise.
 :::
 
 
@@ -287,8 +285,6 @@ This element is part of the [Radio Example](/examples/radio.md).
 
 :::element audio/audio audio
 {% excerptOf collections.Element, "audio" %}
-
-The [Audio Element](/elements/audio/audio.md) element is part of the [WebRadio Example](/examples/webradio.md).
 :::
 
 
