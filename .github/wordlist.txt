@@ -146,7 +146,7 @@ digitalin
 DigitalInElement
 DigitalInput
 DigitalInputElement
-DigitalInterrupt
+DigitalSignal
 digitalout
 DigitalOutElement
 digitaloutui

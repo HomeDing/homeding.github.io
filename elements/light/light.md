@@ -23,7 +23,7 @@ Other Elements for controlling single value lights are:
 
 * [MY9291 Element](/elements/light/my9291.htm)
 
-The LED stripes with individual controllable LEDs are based on the [Stripe Element](/stripe.md)
+The LED stripes with individual controllable LEDs are based on the [Stripe Element](/elements/light/stripe.md)
 that
 
 * [Neo Element](/elements/light/neo.md)
