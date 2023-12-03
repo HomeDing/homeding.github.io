@@ -276,8 +276,6 @@ The [Audio Elements](/elements/audio/index.md) can be used to create / control a
 [Tone Element](../elements/audio/tone.md) to make some noise.
 :::
 
-[void](../elements/void.md)
-
 
 :::element audio/radio radio
 {% excerptOf collections.Element, "radio" %}

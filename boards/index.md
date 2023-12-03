@@ -82,7 +82,7 @@ The HomeDing library is compatible to the ESP32 Arduino environment.
 Specific to ESP32 are the following features:
 
 * Usually there are no other names for the GPIO pins and GPIO numbers from the processor descriptions are used.
-* An exception is the [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32) having printed
+* An exception is the [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32.md) having printed
   pin numbers that differ from the GPIO numbers.
 * The [Touch Element](/elements/touch.md) allows using the ESP32 built-in touch features on the GPIO pins.
 
@@ -106,7 +106,7 @@ Some boards have been tested:
 ## ESP32-S3 boards
 
 The [ESP32-S3](/boards/esp32s3/index.md) variant of the ESP32 is supported by the Arduino
-Framework and by the HomeDing library. There is an official [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32) board using this processor.
+Framework and by the HomeDing library. There is an official [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32.md) board using this processor.
 
 Some boards have been tested:
 
