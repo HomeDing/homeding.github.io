@@ -166,7 +166,7 @@ The Data pin of the sensor is connected to D2.
 
 {% imgcard "/boards/d1mini-buzzer.jpg", "" %}
 The Buzzer Shield has a passive speaker that can be used with the
-[Tone Element](../elements/tone.md) to make some noise.
+[Tone Element](../elements/audio/tone.md) to make some noise.
 
 The buzzer can be connected to various pins by closing one of the solder pads.
 {% endimgcard %}
