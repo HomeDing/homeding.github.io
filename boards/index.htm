@@ -214,7 +214,7 @@ of the plugged-in load.</p>
 <p>It is using the ESP8266 CPU and 1 MByte Flash and can be used with the <a href="/examples/minimal.htm">Minimal Example</a>
 and the <a href="/elements/bl0937.htm">BL0937 chip</a>.</p>
 </div>
-<div class="imgcard"><img src="/boards/bulb.jpg"><p><strong><a href="/boards/devices/bulb.htm">Bulb devices</a></strong> build on base of the ESP8266 chip are supported by the minimal sketch.</p>
+<div class="imgcard"><img src="/boards/devices/bulb.jpg"><p><strong><a href="/boards/devices/bulb.htm">Bulb devices</a></strong> build on base of the ESP8266 chip are supported by the minimal sketch.</p>
 <p>They are using the ESP8266 CPU and 1 MByte Flash and can be used with the <a href="/examples/minimal.htm">Minimal Example</a> using
 the <a href="/elements/light/color.htm">Color Element</a> and <a href="/elements/switch.htm">Switch Element</a> for control.</p>
 </div>
@@ -228,7 +228,7 @@ ESP-14
 <h2>Bare ESP-12 boards</h2>
 <p>These boards help implementing things using the ESP-12 boards directly.
 When used alone an external power supply and some minimal wiring is required.</p>
-<div class="imgcard"><img src="/boards/esp12dev.jpg"><p>The <strong><a href="/boards/esp8266/esp12dev.htm">Esp-12 development boards</a></strong> is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
+<div class="imgcard"><img src="/boards/esp8266/esp12dev.jpg"><p>The <strong><a href="/boards/esp8266/esp12dev.htm">Esp-12 development boards</a></strong> is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
 This solution is especially suitable for creating devices that run on battery or low power conditions and therefore do not need USB chips.</p>
 </div>
 <div class="imgcard"><img src="/boards/whiteadapter.jpg"><p>The <strong><a href="/boards/whiteadapter.htm">White ESP-12 adapter</a></strong> enables using ESP-12 type boards on a breadboard and includes some resistors and a power regulator option.</p>
@@ -238,14 +238,14 @@ This solution is especially suitable for creating devices that run on battery or
 <h2>ESP-12 module types</h2>
 <p>ON the ESP-12 with 4 GByte Flash the <a href="/examples/standard.htm">standard example</a> can be uploaded by providing most of the <a href="/elements/index.htm">elements</a> and <a href="/elements/display/index.htm">display adapters</a> out of the box.</p>
 <p>The ESP-12 format is a common format but there are different sub-versions available. The all use the ESP8266 SoC but flash size and available pins differ:</p>
-<div class="imgcard"><img src="/boards/esp12e.jpg"><p>The <strong>ESP-12</strong> (old) and <strong>ESP-12E</strong> modules offer 8+8 pins at the sides where most of the interesting pins from the ESP8266 SoC chips are available.</p>
+<div class="imgcard"><img src="/boards/esp8266/esp12e.jpg"><p>The <strong>ESP-12</strong> (old) and <strong>ESP-12E</strong> modules offer 8+8 pins at the sides where most of the interesting pins from the ESP8266 SoC chips are available.</p>
 <p>They are manufactured by different vendors.</p>
 </div>
-<div class="imgcard"><img src="/boards/esp12f.jpg"><p>On the <strong>ESP-12F</strong>, in addition to the ESP-12E some more pins are available on the “bottom” side that are th signals to the FLASH memory. They are not of much use in most scenarios but in the case you want to add some SPI RAM.</p>
+<div class="imgcard"><img src="/boards/esp8266/esp12f.jpg"><p>On the <strong>ESP-12F</strong>, in addition to the ESP-12E some more pins are available on the “bottom” side that are th signals to the FLASH memory. They are not of much use in most scenarios but in the case you want to add some SPI RAM.</p>
 </div>
-<div class="imgcard"><img src="/boards/esp12s.jpg"><p>The <strong>ESP-12S</strong> is an optimized version from esp-12f with a better antenna signal. FLASH SPI signals are not available.</p>
+<div class="imgcard"><img src="/boards/esp8266/esp12s.jpg"><p>The <strong>ESP-12S</strong> is an optimized version from esp-12f with a better antenna signal. FLASH SPI signals are not available.</p>
 </div>
-<div class="imgcard"><img src="/boards/espwroom.jpg"><p>The <strong>ESP-WROOM-02</strong> is not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte. I found it mounted on a wider board including battery based power management.</p>
+<div class="imgcard"><img src="/boards/esp8266/espwroom.jpg"><p>The <strong>ESP-WROOM-02</strong> is not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte. I found it mounted on a wider board including battery based power management.</p>
 </div>
 <h2>Esp8266 boards with 1 MByte flash memory</h2>
 <p>There are some boards around that only provide 1 MByte flash memory.
@@ -256,13 +256,13 @@ The SOC and processor itself offer the full features but connectivity on the pin
 <!-- The [sensor example](/elements/sensors.md) can be flashed onto these boards to create small sensor solutions with a set of available sensor elements and most core elements but no display adapters. The functionality will be activated through the configuration. -->
 <h3>Boards</h3>
 <p>The following are boards and solutions with 1 MBytes flash memory chips.</p>
-<div class="imgcard"><img src="/boards/esp01.jpg"><p>The <a href="/boards/esp8266/esp01.htm">ESP-01</a> is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.</p>
+<div class="imgcard"><img src="/boards/esp8266/esp01.jpg"><p>The <a href="/boards/esp8266/esp01.htm">ESP-01</a> is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.</p>
 <p>There are variants of this board with different antenna and different flash sizes.</p>
 </div>
-<div class="imgcard"><img src="/boards/neo.jpg"><p>The <a href="/boards/neo.htm">neo board</a> is a very specific adapter
+<div class="imgcard"><img src="/boards/esp8266/neo.jpg"><p>The <a href="/boards/esp8266/neo.htm">neo board</a> is a very specific adapter
 to run a neopixel stripe, wheel or array using a ESP8266 ESP-01 board.</p>
 </div>
-<div class="imgcard"><img src="/boards/esp01-dht.jpg"><p>The <a href="/boards/esp01-dht.htm">ESP-01 with DHT22 board</a> is a very specific adapter
+<div class="imgcard"><img src="/boards/esp8266/esp01-dht.jpg"><p>The <a href="/boards/esp8266/esp01-dht.htm">ESP-01 with DHT22 board</a> is a very specific adapter
 to run a DHT22 sensor using  a ESP8266 ESP-01 board.</p>
 </div>
 <h2>ESP8285 based boards</h2>
