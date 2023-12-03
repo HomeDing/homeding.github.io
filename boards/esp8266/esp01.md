@@ -10,7 +10,7 @@ It is the cheapest available board with the ESP8266 and comes with a standard ma
 
 ## Overview table
 
-![board-esp01-pins](/boards/esp01-pins.png)
+![board-esp01-pins](/boards/esp8266/esp01-pins.png)
 
 | Connector | Feature                       |
 | --------- | ----------------------------- |
@@ -32,7 +32,7 @@ There are multiple versions of the ESP-01 board available. In the early days als
 
 The original version of the ESP-01 board has 2 LEDs:
 
-![board-esp01-leds](/boards/esp01-leds.jpg)
+![board-esp01-leds](/boards/esp8266/esp01-leds.jpg)
 
 * The red LED is connected to the 3.3V Power supply and lights up constantly.
 * The blue LED is connected to the Serial output pin and lights up when data is sent. When not using the TX Serial output the pin and LED can be used as a digital output too.
@@ -52,8 +52,8 @@ This board is a newer version that
 
 With some soldering and a USB-to-Serial adapter you can build your own adapter board:
 
-![selfmade adapter1](/boards/esp01adapt1.jpg)
-![selfmade adapter2](/boards/esp01adapt2.jpg)
+![selfmade adapter1](/boards/esp8266/esp01adapt1.jpg)
+![selfmade adapter2](/boards/esp8266/esp01adapt2.jpg)
 
 Some of the USB Adapters like the on I use also have a 3.3 V regulator available, but they usually so not offer much current.
 
@@ -63,8 +63,8 @@ The 3 LEDs show the actual level of GPIO0(D3) and GPIO2(D4).
 
 Another idea is to use a ESP01 USB adapter and add the reset (RST) and flash GPIO0(D3) buttons as you can see here.
 
-![customized adapter1](/boards/esp01prog1.jpg)
-![customized adapter2](/boards/esp01prog2.jpg)
+![customized adapter1](/boards/esp8266/esp01prog1.jpg)
+![customized adapter2](/boards/esp8266/esp01prog2.jpg)
 
 
 ## Minimum adapter
@@ -113,7 +113,7 @@ When attaching a transistor to the IO pin you also have to face not pulling the 
 
 Here is a sample off driving a 5V relay:
 
-![GPIO driving a relay](/boards/gpio-relay.png)
+![GPIO driving a relay](/boards/esp8266/gpio-relay.png)
 
 
 ## GPIO 1 / Serial TX
@@ -141,7 +141,7 @@ The ESP8266 supports a [deep sleep mode](/dev/deepsleep.md) that needs an extern
 
 Here is a picture on how to create such a connection on an ESP-01:
 
-![board-esp01-with-deep-sleep](/boards/esp01-wire.jpg)
+![board-esp01-with-deep-sleep](/boards/esp8266/esp01-wire.jpg)
 
 More details and hints on using the deep sleep mode can be found in [deepsleep](/dev/deepsleep.md)
 

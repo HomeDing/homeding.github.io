@@ -20,5 +20,5 @@ excerpt: >
 Temporary Tags
 
 * [todo](/tag/todo.md)
-* [Work in Progress](/tag/WIP.md)
+* [Work in Progress](/tag/wip.md)
 

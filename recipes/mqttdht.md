@@ -1,6 +1,6 @@
 ---
 title: Use a DHT sensor to report temperature and humidity to a MQTT server.
-tags: ["Receipe"]
+tags: ["Recipe"]
 layout: "page.njk"
 excerpt: >
   This recipe shows how to combine a DHT sensor probing temperature and humidity and publish both values to a mqtt server.

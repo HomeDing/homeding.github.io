@@ -87,10 +87,10 @@ The example includes the OTA upload feature to enable remote updates.
 
 See [Step by Step uploading the files for the web UI](/steps/updateweb.md).
 
-The files for such minimal devices are reduced and available in the `v03m` folder (not `v03`).
-Please be sure to adjust the URL by appending #v03m like <http://outdoor/$update.htm#v03m>.
+The files for such minimal devices are reduced and available in the `v09m` folder (not `v09`).
+Please be sure to adjust the URL by appending #v09m like <http://outdoor/$update.htm#v09m>.
 You may need to refresh the page until you see the text
-**loading from: <https://homeding.github.io/v03m/>**.
+**loading from: <https://homeding.github.io/v09m/>**.
 
 
 ## Web UI

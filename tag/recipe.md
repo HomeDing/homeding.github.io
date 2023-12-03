@@ -5,5 +5,9 @@ description: All pages explaining recipes using HomeDing Elements.
 ---
 
 {%- for post in collections.Recipe | sort(false, true, 'data.title')  -%}
-<p><a href="<\<{{ post.url | url }}\>>">{{ post.data.title }}</a> -- {{ post.data.excerpt }}
+<p><a href="{{ post.url | url }}">{{ post.data.title }}</a> -- {{ post.data.excerpt }}
 {%- endfor -%}
+
+## See also
+
+* [All Tags](/tag/index.md)

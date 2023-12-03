@@ -40,7 +40,7 @@ There are other chips supported by the radio library and some of them also provi
 
 The used components and the principle wiring can be seen in this block diagram:
 
-![Radio Building Blocks](/examples\radioblocks.png)
+![Radio Building Blocks](/examples/radioblocks.png)
 
 
 ## Wiring

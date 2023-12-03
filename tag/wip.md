@@ -9,3 +9,7 @@ excerpt: >
 {%- for post in collections.WIP | sort(false, true, 'data.title')  -%}
 <p><a href="{{ post.url | url }}">{{ post.data.title }}</a> -- {{ post.data.excerpt }}
 {%- endfor -%}
+
+## See also
+
+* [All Tags](/tag/index.md)

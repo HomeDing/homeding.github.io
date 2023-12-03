@@ -185,6 +185,6 @@ it doesn't make sense to read the values from the sensor more frequently.
 
 * A regular reset of the sensor also may be required when sensor readings are ´jumping´: <https://forum.arduino.cc/index.php?topic=355137.0>
 
-* To run a ESP8266 and a sensor on low power see [Low Power Modes](../boards/_lowpower.md)
+<!-- * To run a ESP8266 and a sensor on low power see [Low Power Modes](../boards/_lowpower.md) -->
 
 [AM2320 Element]: /elements/am2320.md
