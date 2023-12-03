@@ -42,16 +42,16 @@ and support the timing of sensor reading cycles.</p>
 <p>Many sensors offer direct usable digital signals that can be detected and used as an input to create actions.</p>
 <h3>Mechanical sensors</h3>
 <div class="imgcard"><img src="/sensors/knocksensor.jpg"><p>This is a sensor known as <strong>knock sensor</strong> that creates short-time connections between the 2 pins when shaken or getting massive vibrations.</p>
-<p>The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these spike impulses and creates a clean actions.</p>
+<p>The <a href="/elements/digitalsignal.htm">DigitalSignal Element</a> can capture these spike impulses and creates a clean actions.</p>
 </div>
 <div class="imgcard"><img src="/sensors/tiltsensor.jpg"><p>This is a <strong>mercury tilt sensor</strong> that creates connections between the 2 pins when the position of the switch is upwards.</p>
 <p>The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions based in the input signal.</p>
 </div>
 <div class="imgcard"><img src="/sensors/ball.jpg"><p>This is a <strong>ball on contacts sensor</strong> that creates / breaks connections between the 2 pins when the position of the sensor changes or bumps.</p>
-<p>The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these signals and spike impulses and creates a clean actions.</p>
+<p>The <a href="/elements/digitalsignal.htm">DigitalSignal Element</a> can capture these signals and spike impulses and creates a clean actions.</p>
 </div>
 <div class="imgcard"><img src="/sensors/shock.jpg"><p>This is a <strong>shock sensor</strong> that creates connections between the 2 pins when a massive force is against the sensor.</p>
-<p>The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these spike impulses and create a clean action on it.</p>
+<p>The <a href="/elements/digitalsignal.htm">DigitalSignal Element</a> can capture these spike impulses and create a clean action on it.</p>
 </div>
 <h3>Magnetic sensors</h3>
 <div class="imgcard"><img src="/sensors/reed.jpg"><p>This is a <strong>reed sensor</strong> that creates connections between the 2 pins when a high value magnetic field is given.</p>
@@ -83,7 +83,7 @@ This board has a circuit that compares the analog signal to a adjustable thresho
 </div>
 <div class="imgcard"><img src="/sensors/irtrans.jpg"><p>This is a <strong>Light blocking sensor</strong> built from a IR LED and a IR photo resistor. It can be used to detect that the light in the gap is blocked. It creates a digital output.</p>
 <p>For simple on/off situations the <a href="/elements/digitalin.htm">DigitalInput Element</a> can create actions.</p>
-<p>When used with high frequencies ans used tp detect rotating speed with a wheel the The <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these impulses per timeframe to create a clean action with rotation values.</p>
+<p>When used with high frequencies ans used tp detect rotating speed with a wheel the The <a href="/elements/digitalsignal.htm">DigitalSignal Element</a> can capture these impulses per timeframe to create a clean action with rotation values.</p>
 </div>
 <div class="imgcard"><img src="/sensors/hcsr505.jpg"><p>This is a <strong>Mini PIR Sensor</strong> that creates a digital signal when detecting movements initiated by “warm” objects.
 It produces a about 10 seconds HIGH level signal.</p>
@@ -97,7 +97,7 @@ It produces a about 10 seconds HIGH level signal.</p>
 <p>The <a href="/elements/analog.htm">Analog Element</a> can create actions based in the analog input signal.</p>
 </div>
 <div class="imgcard"><img src="/sensors/irobstacle.jpg"><p>This is a <strong>Infrared Obstacle sensor</strong> that emits and detects IR light and creates a digital output when there is a reflecting obstacle nearby.</p>
-<p>As the signals can be very short the <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> can capture these short impulses and create a clean action on it.</p>
+<p>As the signals can be very short the <a href="/elements/digitalsignal.htm">DigitalSignal Element</a> can capture these short impulses and create a clean action on it.</p>
 </div>
 <h3>Analog Temperature Sensors</h3>
 <div class="imgcard"><img src="/sensors/ntc.jpg"><p>This is a <strong>temperature sensor</strong> that uses a <strong>temperature variable resistor</strong> ntc to create an analog output value. There are many form factors for sensors of this kind. The do not have a linear behavior but can be very accurate and can have a wide range.</p>
@@ -110,7 +110,7 @@ The <a href="/elements/digitalin.htm">DigitalInput Element</a> can create action
 <h3>Sound sensors</h3>
 <div class="imgcard"><img src="/sensors/microphone.jpg"><p>This is a <strong>Analog microphone</strong> combined with a circuit to compare the amplitude to an adjustable threshold.</p>
 <p>The Analog output signal can be used for a recording input and the digital output produces LOW signals when the amplitude gets high enough.</p>
-<p>On loud sounds many short signal spikes occur that can be catched by the <a href="/elements/_digitalinterrupt.htm">DigitalInterrupt Element</a> to create a clean actions on it.</p>
+<p>On loud sounds many short signal spikes occur that can be catched by the <a href="/elements/digitalsignal.htm">DigitalSignal Element</a> to create a clean actions on it.</p>
 </div>
 <div class="imgcard"><img src="/sensors/hcsr04.jpg"><p>The <strong>Ultrasonic range</strong> sensor using the hcsr04 board is using Ultrasonic sound impulses that will be reflected by objects and can be used to measure the distance.</p>
 <!-- The [HCSR04 Element](/elements/hcsr04.md) can be used to trigger this sensor and calculate the distance. -->
