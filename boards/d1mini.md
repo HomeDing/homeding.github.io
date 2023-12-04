@@ -159,14 +159,14 @@ the default (D4) wiring and soldering a bridge for another pin.
 
 {% imgcard "/boards/d1mini-sd18b20.jpg", "" %}
 The SD18B20 Shield has a Dallas / DS18B20 sensor that can be used with the
-[Dallas Element](../elements/dallas.md) to retrieve the local temperature.
+[Dallas Element](/elements/dallas.md) to retrieve the local temperature.
 
 The Data pin of the sensor is connected to D2.
 {% endimgcard %}
 
 {% imgcard "/boards/d1mini-buzzer.jpg", "" %}
 The Buzzer Shield has a passive speaker that can be used with the
-[Tone Element](../elements/audio/tone.md) to make some noise.
+[Tone Element](/elements/audio/tone.md) to make some noise.
 
 The buzzer can be connected to various pins by closing one of the solder pads.
 {% endimgcard %}

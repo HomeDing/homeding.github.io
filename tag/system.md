@@ -8,6 +8,9 @@ description: All pages related to the HomeDing System.
 <p><a href="{{ post.url | url }}">{{ post.data.title }}</a> -- {{ post.data.excerpt }}
 {%- endfor -%}
 
-## See also
 
-* [All Tags](/tag/index.md)
+<h2> See also</h2>
+
+<ul>
+  <li><a href="/tag/index.htm">All Tags</a></li>
+</ul>

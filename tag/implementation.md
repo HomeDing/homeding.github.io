@@ -12,6 +12,9 @@ excerpt: >
 <p>{{ post.data.excerpt }}</p>
 {%- endfor -%}
 
-## See also
 
-* [All Tags](/tag/index.md)
+<h2> See also</h2>
+
+<ul>
+  <li><a href="/tag/index.htm">All Tags</a></li>
+</ul>

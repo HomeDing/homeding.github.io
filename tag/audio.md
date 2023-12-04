@@ -9,6 +9,8 @@ description: All pages explaining Audio features of the HomeDing Library.
 {%- endfor -%}
 
 
-## See also
+<h2> See also</h2>
 
-* [All Tags](/tag/index.md)
+<ul>
+  <li><a href="/tag/index.htm">All Tags</a></li>
+</ul>

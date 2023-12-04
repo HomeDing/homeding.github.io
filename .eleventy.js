@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add(".vscode/**");
 
   const contentFolders = ["boards", "boards", "concepts", "dev", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
-  const assetFolders = ["i", "v03", "v03m", "v09", "v09m", "home"];
+  const assetFolders = ["i", "v09", "v09m", "home"];
 
   contentFolders.forEach(f => {
     eleventyConfig.addPassthroughCopy(f + "/**/*.svg");

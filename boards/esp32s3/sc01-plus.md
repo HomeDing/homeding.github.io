@@ -8,7 +8,7 @@ excerpt: >
   This panel is supported by the [HomeDing BigDisplay Example].
 ---
 
-![sc01-plus.jpg](./sc01-plus.jpg "w600")
+![sc01-plus.jpg](/boards/esp32s3/sc01-plus.jpg "w600")
 
 This board is equipped with:
 
