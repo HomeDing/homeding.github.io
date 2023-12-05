@@ -452,7 +452,7 @@ The chip **p9813** als known as **Groove LED driver** is used to control 12V RGB
 **Neopixel** or **WS2811** are chips with a RGB led and an embedded driver chip that can directly be controlled by a GPIO pin. Multiple LEDs of this type can be chained on stripes or can build a LED grid.
 
 The [Neo Element](/elements/light/neo.md) supports these LED chains for colors and patterns.
-There is also a special [Neopixel board](/boards/neo.md) available especially for controlling these LEDs.
+There is also a special [Neopixel board](/boards/esp8266/neo.md) available especially for controlling these LEDs.
 :::
 
 

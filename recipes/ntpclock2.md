@@ -15,7 +15,7 @@ The current time is retrieved from an NTP sever on the internet using the [NtpTi
 
 Here an additional [Value Element] is used to control the brightness of a display.
 
-The [RTCState Element] is used save the current brightness value for a reboot.
+The [State Element] is used save the current brightness value for a reboot.
 
 ![image](/recipes/ntpclock2.jpg "w600")
 
@@ -56,7 +56,7 @@ The **ontime** event from the [Time Element] send the current time information t
 
 A [NTPtime Element] is configured to get the current time from a NTP server.
 
-A [State Element], here the RTCState Element, is added to store the current brightness value in
+The [State Element] is configured to store the current brightness value in
 a non volatile memory that keeps the last brightness as long as power is supplied.
 
 ``` json
@@ -68,7 +68,7 @@ a non volatile memory that keeps the last brightness as long as power is supplie
       "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
     }
   },
-  "rtcstate": {
+  "state": {
     "0": {
     }
   }
@@ -127,4 +127,3 @@ as long as power to the board has not been interrupted.
 [TM1637 Element]: /elements/tm1637.md
 [Value Element]: /elements/value.md
 [State Element]: /elements/state.md
-[RTCState Element]: /elements/state.md

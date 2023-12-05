@@ -53,10 +53,8 @@ https://www.hackster.io/dilshan-jayakody/5-1-channel-analog-audio-processor-a785
 
 ## Elements
 
-:::element audio no
+:::element audio/audio no
 {% excerptOf collections.Element, "audio" %}
-
-The [Audio Element](/elements/audio/audio.md)  is part of the [WebRadio Example](/examples/webradio.md).
 :::
 
 

@@ -23,7 +23,7 @@ light devices like NEOpixel based strip controllers.
 * [ota Element](/elements/ota.md) -- for OTA update support
 * [ntptime Element](/elements/ntptime.md) -- for self-hosted time based on/off automation
 * [time Element](/elements/time.md) - time based events
-* [rtcstate Element](/elements/rtcstate.md) -- to save the state of the last settings 
+* [state Element](/elements/state.md) -- to save the state of the last settings 
 * [scene Element](/elements/scene.md) -- support multiples scene specific settings
 * [switch Element](/elements/switch.md) -- interactive switch on/off
 * [value Element](/elements/value.md) -- support of simple values like brightness 

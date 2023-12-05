@@ -149,7 +149,7 @@ can be stacked upon a board or can be attached by using a Qwiic connector cable.
 {% endimgcard %}
 
 
-{% imgcard "/boards/d1mini-sd.jpg", "" %}
+{% imgcard "/boards/d1mini-sdshield.jpg", "" %}
 The D1-Mini SD Card shield adds a sd card slot for min sd cards to the standard SPI bus.
 
 The CS assignment can be changed on the back of the shield by cutting

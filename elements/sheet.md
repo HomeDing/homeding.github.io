@@ -18,7 +18,7 @@ The "set" column shows the collections of elements that can be activated by a si
 | [reference](/elements/reference.md)            | CORE        |    x     |   x   |       |       |               |
 | [analog](/elements/analog.md)                  | CORE        |    x     |   x   |       |       |               |
 | [map](/elements/map.md)                        | CORE        |    x     |   x   |       |       |               |
-| [rtcstate](/elements/rtcstate.md)              | SYSTEM-FULL |    x     |   x   |   x   |   x   |               |
+| [state](/elements/state.md)                    | SYSTEM-FULL |    x     |   x   |   x   |   x   |               |
 | [time](/elements/time.md)                      | SYSTEM      |    x     |   x   |   x   |   x   |               |
 | [alarm](/elements/alarm.md)                    | CORE        |    x     |   x   |       |   x   |               |
 | [dstime](/elements/dstime.md)                  |             |    x     |   x   |       |       |               |

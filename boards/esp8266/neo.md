@@ -9,7 +9,7 @@ excerpt: >
   The ESP-01 boards are available with ESP8266 and ESP32-C3 chips. 
 ---
 
-![neopixel board](/boards/neo.jpg)
+![neopixel board](/boards/esp8266/neo.jpg)
 
 ## Overview
 

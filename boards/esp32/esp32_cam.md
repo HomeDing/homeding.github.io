@@ -14,7 +14,9 @@ Camera: OV2640 2 Mega Pixels Camera 1632 * 1232 UXGA,
 Type C USB Port and 3D WiFi Antenna
 4MByte Flash
 
-DOWDQ6
+<!-- DOWDQ6 -->
+
+<!-- Camera: OV5640 2 Mega Pixels Camera 1632 * 1232 UXGA, -->
 
 
 Board details: <https://github.com/m5stack/M5Stack-Camera>

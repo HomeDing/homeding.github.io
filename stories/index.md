@@ -42,7 +42,7 @@ include/exclude the Elements in a specific firmware.
 > sockets.
 
 > The **Bulb Example** includes the elements usable for bulbs to control and drive LEDs like
-> value, switch, rtcstate, time, ntptime, scene, light, color, neo, my9291.
+> value, switch, state, time, ntptime, scene, light, color, neo, my9291.
 >
 > The **Plug Example** includes the elements usable for relays and plug devices including power
 > measurement like
