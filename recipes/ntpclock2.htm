@@ -33,7 +33,7 @@ It is configured using the <a href="/elements/tm1637.htm">TM1637 Element</a>.</p
 <p>The time is updated by the <a href="/elements/time.htm">Time Element</a> every minute.</p>
 <p>The current time is retrieved from an NTP sever on the internet using the <a href="/elements/ntptime.htm">NtpTime Element</a>.</p>
 <p>Here an additional <a href="/elements/value.htm">Value Element</a> is used to control the brightness of a display.</p>
-<p>The <a href="/elements/state.htm">RTCState Element</a> is used save the current brightness value for a reboot.</p>
+<p>The <a href="/elements/state.htm">State Element</a> is used save the current brightness value for a reboot.</p>
 <p><img src="/recipes/ntpclock2.jpg" alt="image" title="w600"></p>
 <ul>
 <li>In <strong>env.json</strong> the system is configured to get the time.</li>
@@ -57,7 +57,7 @@ If there is a “summertime” period, the start and end of that period can be c
 <p>The <strong>ontime</strong> event from the <a href="/elements/time.htm">Time Element</a> send the current time information to the Display element.</p>
 <h2>env.json configuration</h2>
 <p>A <a href="/elements/ntptime.htm">NTPtime Element</a> is configured to get the current time from a NTP server.</p>
-<p>A <a href="/elements/state.htm">State Element</a>, here the RTCState Element, is added to store the current brightness value in
+<p>The <a href="/elements/state.htm">State Element</a> is configured to store the current brightness value in
 a non volatile memory that keeps the last brightness as long as power is supplied.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   ...
@@ -67,7 +67,7 @@ a non volatile memory that keeps the last brightness as long as power is supplie
       <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"rtcstate"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"state"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
