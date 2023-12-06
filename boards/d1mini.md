@@ -8,6 +8,8 @@ excerpt: >
   that share the same form factor and connector pin assignments.
 ---
 
+{% from 'macros.njk' import imgCard, elemCard with context %}
+
 The D1 mini format for boards and shield was created by the [wemos.cc](https://www.wemos.cc/)
 company and is a good base for starting with DIY devices.
 
@@ -111,24 +113,14 @@ using a ESP32  MCU and 4 MByte flash memory chip.
 
 ### D1 mini ESP32-C3
 
-<https://www.wemos.cc/en/latest/c3/index.html>
+{{ imgCard(collections.all, item = '/boards/esp32c3/mini') }}
 
-* [Board D1 Mini ESP32 C3 mini](/boards/esp32c3/d1mini-c3-mini.md)
-
-
-The ESP32 C3 pico has a very small size but is packed with some special features like a RGB LED and LiPo charging.  
-
-* [Board D1 Mini ESP32 C3 pico](/boards/esp32c3/d1mini-c3-pico.md)
-
-
-
-
-There are several shields available for these boards.
+{{ imgCard(collections.all, item = '/boards/esp32c3/pico') }}
 
 
 ## Shields
 
-There are some shields for the board forma factor available. Here some examples:
+There are some shields for the board form-factor available. Here some examples:
 
 {% imgcard "/boards/d1mini-8x8rgbshield.jpg", "" %}
 The D1 Mini 8x8 RGB Shield has 64 WS2812 LEDs that

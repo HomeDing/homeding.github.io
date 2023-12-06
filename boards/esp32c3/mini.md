@@ -1,7 +1,9 @@
 ---
-title: Board D1 Mini ESP32 C3
+title: Board C3 Mini 
 tags: ["Board", "WIP"]
 layout: "page.njk"
+excerpt: >
+  This is D1 mini compatible board based on the EPS32-C3 MCU.
 ---
 
 <!-- ![d1mini c3 pico](/boards/esp32c3/d1mini-c3-pico.jpg) -->

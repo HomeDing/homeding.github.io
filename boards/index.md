@@ -134,17 +134,7 @@ Some boards have been tested:
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
 
-{% imgcard "/boards/esp32/esp32-c3pico.jpg", "" %}
-
-The C3 pico board is based on the ESP32-C3 MCU with 4 MByte internal flash memory
-and includes
-
-* Lipo charger
-* i2c connector using the Qwiic standard JST SH 4-pin (1mm)
-* RST button
-* pin 9 button
-* USB-C connector
-{% endimgcard %}
+{{ imgCard(collections.all, item = '/boards/esp32c3/pico') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/esp32c3-01') }}
 
