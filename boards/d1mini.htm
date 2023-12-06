@@ -34,16 +34,19 @@
 
           </div>
         
-        <p>The D1 mini format foe boards and shield was created by the <a href="https://www.wemos.cc/">wemos.cc</a>
+        <p>The D1 mini format for boards and shield was created by the <a href="https://www.wemos.cc/">wemos.cc</a>
 company and is a good base for starting with DIY devices.</p>
-<p>There are many different mini boards available with differend ESP processors.</p>
-<p>They all share the position of 2 connectors with 8 pins that are compatible to a certain degree.</p>
+<p>There are many different mini boards available also with differend ESP processors. They all
+share the position of 2 connectors with 8 pins that are compatible to a certain degree and can
+be combined with the available shields.</p>
+<p>The ESP8266 versions have been out first offering</p>
 <ul>
 <li>11 digital input/output pins</li>
 <li>1 analog input(3.2V max input)</li>
 <li>3V3, 5V, GND and RST are always in the same position</li>
 <li>RST momentary button</li>
 </ul>
+<p>Some boards offer i2c connectors.</p>
 <h2>ESP8266 based boards</h2>
 <h3>D1 mini ESP8266</h3>
 <p><img src="d1mini.jpg" alt="D1 mini ESP8266 board"></p>
@@ -64,11 +67,7 @@ company and is a good base for starting with DIY devices.</p>
     }
   },
   "ota": {
-    "0": {
-      "port": 8266,
-      "passwd": "123",
-      "description": "for 'over the air' OTA Updates"
-    }
+    "0": { }
   },
   "ntptime": {
     "0": {
@@ -108,15 +107,14 @@ The 2 connectors with 8 pins have the following ports assigned in the ESP8266.</
 using a ESP32  MCU and 4 MByte flash memory chip.</p>
 <p>/boards/esp32/d1miniesp32.jpg</p>
 </div>
-<h3>D1 mini ESP32 c3</h3>
+<h3>D1 mini ESP32-C3</h3>
 <p><a href="https://www.wemos.cc/en/latest/c3/index.html">https://www.wemos.cc/en/latest/c3/index.html</a></p>
 <ul>
-<li>
-<p><a href="/boards/esp32c3/d1mini-c3-mini.htm">Board D1 Mini ESP32 C3 mini</a></p>
-</li>
-<li>
-<p><a href="/boards/esp32c3/d1mini-c3-pico.htm">Board D1 Mini ESP32 C3 pico</a></p>
-</li>
+<li><a href="/boards/esp32c3/d1mini-c3-mini.htm">Board D1 Mini ESP32 C3 mini</a></li>
+</ul>
+<p>The ESP32 C3 pico has a very small size but is packed with some special features like a RGB LED and LiPo charging.</p>
+<ul>
+<li><a href="/boards/esp32c3/d1mini-c3-pico.htm">Board D1 Mini ESP32 C3 pico</a></li>
 </ul>
 <p>There are several shields available for these boards.</p>
 <h2>Shields</h2>
@@ -145,7 +143,7 @@ the default (D4) wiring and soldering a bridge for another pin.</p>
 <a href="/elements/dallas.htm">Dallas Element</a> to retrieve the local temperature.</p>
 <p>The Data pin of the sensor is connected to D2.</p>
 </div>
-<div class="imgcard"><img src="/boards/d1mini-buzzer.jpg">
+<div class="imgcard"><img src="/boards/d1mini-buzzershield.jpg">
 <p>The Buzzer Shield has a passive speaker that can be used with the
 <a href="/elements/audio/tone.htm">Tone Element</a> to make some noise.</p>
 <p>The buzzer can be connected to various pins by closing one of the solder pads.</p>
