@@ -1,9 +1,9 @@
 ---
 title: D1 Mini SD Card shield
-tags: ["Board", "WIP"]
+tags: ["Board"]
 layout: "page.njk"
 excerpt: >
-  The SD Card shield for the D1 Mini sized boards.
+  The SD Card shield for the D1 Mini sized boards using 1wire SPI for data transfer.
 ---
 
 The SD Card shield adds a SD card slot to the [SPI bus] that can extend the file system of a

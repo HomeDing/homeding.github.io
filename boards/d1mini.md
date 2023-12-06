@@ -8,17 +8,21 @@ excerpt: >
   that share the same form factor and connector pin assignments.
 ---
 
-The D1 mini format foe boards and shield was created by the [wemos.cc](https://www.wemos.cc/)
+The D1 mini format for boards and shield was created by the [wemos.cc](https://www.wemos.cc/)
 company and is a good base for starting with DIY devices.
 
-There are many different mini boards available with differend ESP processors.
+There are many different mini boards available also with differend ESP processors. They all
+share the position of 2 connectors with 8 pins that are compatible to a certain degree and can
+be combined with the available shields.
 
-They all share the position of 2 connectors with 8 pins that are compatible to a certain degree.
+The ESP8266 versions have been out first offering
 
 * 11 digital input/output pins
 * 1 analog input(3.2V max input)
 * 3V3, 5V, GND and RST are always in the same position
 * RST momentary button
+
+Some boards offer i2c connectors.
 
 ## ESP8266 based boards
 
@@ -46,11 +50,7 @@ A board configuration (env.json)
     }
   },
   "ota": {
-    "0": {
-      "port": 8266,
-      "passwd": "123",
-      "description": "for 'over the air' OTA Updates"
-    }
+    "0": { }
   },
   "ntptime": {
     "0": {
@@ -109,11 +109,14 @@ using a ESP32  MCU and 4 MByte flash memory chip.
 {% endimgcard %}
 
 
-### D1 mini ESP32 c3
+### D1 mini ESP32-C3
 
 <https://www.wemos.cc/en/latest/c3/index.html>
 
 * [Board D1 Mini ESP32 C3 mini](/boards/esp32c3/d1mini-c3-mini.md)
+
+
+The ESP32 C3 pico has a very small size but is packed with some special features like a RGB LED and LiPo charging.  
 
 * [Board D1 Mini ESP32 C3 pico](/boards/esp32c3/d1mini-c3-pico.md)
 
@@ -164,7 +167,7 @@ The SD18B20 Shield has a Dallas / DS18B20 sensor that can be used with the
 The Data pin of the sensor is connected to D2.
 {% endimgcard %}
 
-{% imgcard "/boards/d1mini-buzzer.jpg", "" %}
+{% imgcard "/boards/d1mini-buzzershield.jpg", "" %}
 The Buzzer Shield has a passive speaker that can be used with the
 [Tone Element](/elements/audio/tone.md) to make some noise.
 
