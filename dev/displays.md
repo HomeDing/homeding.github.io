@@ -48,5 +48,7 @@ created and initialized by the corresponding `Display<Chip>Element` class.
 
 The `DisplayAGFXAdapter` is a base implementation for display drivers from the Arduino_GFX library. This library supports various chips and is very similar to the Adafruit GFX library.
 
+The `DisplayOutputElement` is a base implementation for Elements shown on the display.
+
 The full list of Elements for using displays can be found in the [Display Elements](/elements/display/index.md) documentation.
 

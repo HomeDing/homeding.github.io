@@ -44,9 +44,9 @@ The following properties are available for configuration of the element:
 
 > **address** -- The I2C address of the CST816 controller. The driver can autodetect the i2c address.
 >
-> **width** -- The width of the touch surface
+> **width** -- The width of the touch surface. When not specified the width of the display is used.
 >
-> **height** -- The height of the touch surface
+> **height** -- The height of the touch surface. When not specified the height of the display is used.
 >
 > **rotation** -- Rotation of the display in use using 0, 90, 180 or 270 degree.
 >
@@ -61,8 +61,6 @@ The following properties are available for configuration of the element:
 {
   "DisplayTouchCST816": {
     "0": {
-      "width": "170",
-      "height": "320",
       "rotation": "270",
       "resetpin": 21,
       "interruptpin": 16
@@ -77,7 +75,7 @@ The following properties are available for configuration of the element:
 The following boards are using the CST816 controller:
 
 * [LilyGO T-Display-S3](/boards/esp32s3/lilygo-t-display-s3.md)
-
+* [ESP32-C3 micro board with a round Touch Display](/boards/esp32c3/jczn-esp32-2424s012.md)
 
 ## See also
 
