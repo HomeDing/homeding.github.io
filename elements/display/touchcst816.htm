@@ -59,8 +59,8 @@ was taken as a primary source.</p>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>
 <p><strong>address</strong> – The I2C address of the CST816 controller. The driver can autodetect the i2c address.</p>
-<p><strong>width</strong> – The width of the touch surface</p>
-<p><strong>height</strong> – The height of the touch surface</p>
+<p><strong>width</strong> – The width of the touch surface. When not specified the width of the display is used.</p>
+<p><strong>height</strong> – The height of the touch surface. When not specified the height of the display is used.</p>
 <p><strong>rotation</strong> – Rotation of the display in use using 0, 90, 180 or 270 degree.</p>
 <p><strong>resetpin</strong> – The GPIO for the reset signal to the chip.</p>
 <p><strong>interruptpin</strong> – The GPIO for the interrupt signal to the chip. (not actually used)</p>
@@ -69,8 +69,6 @@ was taken as a primary source.</p>
 <pre class="language-JSON"><code class="language-JSON">{
   "DisplayTouchCST816": {
     "0": {
-      "width": "170",
-      "height": "320",
       "rotation": "270",
       "resetpin": 21,
       "interruptpin": 16
@@ -81,6 +79,7 @@ was taken as a primary source.</p>
 <p>The following boards are using the CST816 controller:</p>
 <ul>
 <li><a href="/boards/esp32s3/lilygo-t-display-s3.htm">LilyGO T-Display-S3</a></li>
+<li><a href="/boards/esp32c3/jczn-esp32-2424s012.htm">ESP32-C3 micro board with a round Touch Display</a></li>
 </ul>
 <h2>See also</h2>
 <ul>

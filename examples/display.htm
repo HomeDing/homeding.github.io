@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <title>NO-TITLE</title>
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <p>Display</p>
+<p>Some ESP32 boards are available that combine display, touch screen and processor for
+implementing panels.</p>
+<p>The Display example shows how to implement devices that take advantage of the
+touch screens and has some additional elements implemented especially for this scenario.</p>
+<p>As the final sketch file will exceed the memory available in ESP8266 and ESP32C3 processors they
+should be avoided. The size of the sketch can be reduced by disabling elements that are not used
+for a specific board.</p>
+<h3>System and Core Elements</h3>
+<p>The full set of the core Elements are included in the firmware created by the Display Example
+and can be activated by configuration.</p>
+<ul>
+<li><a href="/elements/ntptime.htm">NTPTIME</a></li>
+<li><a href="/elements/time.htm">Time</a></li>
+<li><a href="/elements/value.htm">Value</a></li>
+<li><a href="/elements/button.htm">Button</a></li>
+<li><a href="/elements/switch.htm">Switch</a></li>
+<li><a href="/elements/analog.htm">Analog</a></li>
+<li><a href="/elements/digitalin.htm">DigitalIn</a></li>
+<li><a href="/elements/digitalsignal.htm">DigitalSignal</a></li>
+<li><a href="/elements/digitalout.htm">DigitalOut</a></li>
+<li><a href="/elements/pwmout.htm">PWMOut</a></li>
+<li><a href="/elements/and.htm">AND</a></li>
+<li><a href="/elements/or.htm">OR</a></li>
+<li><a href="/elements/add.htm">ADD</a></li>
+<li><a href="/elements/scene.htm">SCENE</a></li>
+<li><a href="/elements/select.htm">SELECT</a></li>
+<li><a href="/elements/reference.htm">REFERENCE</a></li>
+<li><a href="/elements/timer.htm">Timer</a></li>
+<li><a href="/elements/schedule.htm">Schedule</a></li>
+<li><a href="/elements/alarm.htm">Alarm</a></li>
+<li><a href="/elements/map.htm">MAP</a></li>
+<li><a href="/elements/log.htm">LOG</a></li>
+<li><a href="/elements/remote.htm">REMOTE</a></li>
+</ul>
+<h3>Display and Touch Elements</h3>
+<ul>
+<li>
+<p><a href="/elements/">Touch</a></p>
+</li>
+<li>
+<p>DISPLAYGC9A01</p>
+</li>
+<li>
+<p>DISPLAYST7796</p>
+</li>
+<li>
+<p>DISPLAYESP32PANEL</p>
+</li>
+<li>
+<p>DISPLAYST7789</p>
+</li>
+</ul>
+<p>// #define HOMEDING_INCLUDE_DISPLAYTOUCHGT911</p>
+<h1>define HOMEDING_INCLUDE_DISPLAYTOUCHFT6336</h1>
+<p>// #define HOMEDING_INCLUDE_DISPLAYTOUCHCST816</p>
+<p>// Enable Elements for LIGHT control</p>
+<h1>define HOMEDING_INCLUDE_COLOR</h1>
+<h1>define HOMEDING_INCLUDE_LIGHT</h1>
+<h1>define HOMEDING_INCLUDE_NEOPIXEL</h1>
+<h1>define HOMEDING_INCLUDE_APA102</h1>
+<h1>define HOMEDING_INCLUDE_MY9291</h1>
+<p>// Network Services</p>
+<h1>define HOMEDING_INCLUDE_MQTT</h1>
+<h1>define HOMEDING_INCLUDE_WEATHERFEED</h1>
+<h1>define HOMEDING_INCLUDE_SDMMC</h1>
+<h1>define HOMEDING_INCLUDE_SD</h1>
+<h3>Sensors</h3>
+<p>Panels may be used to control the room temperature so some sensors from the HmeDing library
+included in the firmware created by the Display Example and can be activated by configuration.</p>
+<ul>
+<li>DHT</li>
+<li>AM2320</li>
+<li>SHT20</li>
+<li>AHT20</li>
+<li>DALLAS</li>
+</ul>
+<h2>Display Output Elements</h2>
+<h3>Analog Clock</h3>
+<p>The Analog Clock Element implementation can be found in the src sub-folder of the sketch. When
+configured it will draw an analog clock at the specified location on the screen in the specified colors.</p>
+<p>For more information on the supported configuration properties see
+[AnalogClock Element].</p>
+<h3></h3>
+
+  </main>
+
+  <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>
