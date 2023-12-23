@@ -66,6 +66,35 @@ Some versions of the chip offer an internal 4 MByte Flash ROM and/or internal PS
 ## USB and JTAG Support
 
 The ESP32-S3 SoC directly supports USB and USB OTG ports and also has a built-in JTAG adapter for debugging.
+Some boards still come with a USB to Serial chip.
+
+### Using a board with a USB to Serial chip
+
+When you find a USB to Serial converter on the board the configuration for the USB features in
+the ESP32-S3 SoC must look like:
+
+* USB Mode: Hardware CDC amd JTAG
+* USB CDC On Boot: Disabled
+* USB Firmware MSC on Boot: Disabled
+* USB DFU on Boot: Disabled
+* Upload Mode: UART0 / Hardware CDC
+
+
+### Using a board with direct USB connectivity (CDC mode)
+
+These boards offer a USB connector that is connected to the GPIO19 (D-) and GPIO20 (D+). The
+configuration for the USB features in the ESP32-S3 SoC must look like:
+
+* USB Mode: Hardware CDC amd JTAG
+* USB CDC On Boot: Enabled
+* USB Firmware MSC on Boot: Disabled
+* USB DFU on Boot: Disabled
+* Upload Mode: UART0 / Hardware CDC
+
+
+When you find a USB to Serial converter on the board the configuration for the USB features in
+the ESP32-S3 SoC must look like:
+
 
 To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.
 
@@ -114,6 +143,7 @@ This results in faster secure (https) network requests.
 * [Arduino Nano ESP32]
 * [XIAO ESP32 S3]
 * [ESP32-C3 boards](/boards/esp32c3/index.md)
+* <https://www.youtube.com/watch?v=hJSBTFsOnoA>
 
 
 [Arduino Nano ESP32]:/boards/esp32s3/arduino-nano-esp32.md
