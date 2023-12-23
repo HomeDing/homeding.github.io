@@ -75,7 +75,30 @@ is based on this processor using a custom Module from U-BLOX.</p>
 <h2>Flash and PSRAM Memory options</h2>
 <p>Some versions of the chip offer an internal 4 MByte Flash ROM and/or internal PSRAM.</p>
 <h2>USB and JTAG Support</h2>
-<p>The ESP32-S3 SoC directly supports USB and USB OTG ports and also has a built-in JTAG adapter for debugging.</p>
+<p>The ESP32-S3 SoC directly supports USB and USB OTG ports and also has a built-in JTAG adapter for debugging.
+Some boards still come with a USB to Serial chip.</p>
+<h3>Using a board with a USB to Serial chip</h3>
+<p>When you find a USB to Serial converter on the board the configuration for the USB features in
+the ESP32-S3 SoC must look like:</p>
+<ul>
+<li>USB Mode: Hardware CDC amd JTAG</li>
+<li>USB CDC On Boot: Disabled</li>
+<li>USB Firmware MSC on Boot: Disabled</li>
+<li>USB DFU on Boot: Disabled</li>
+<li>Upload Mode: UART0 / Hardware CDC</li>
+</ul>
+<h3>Using a board with direct USB connectivity (CDC mode)</h3>
+<p>These boards offer a USB connector that is connected to the GPIO19 (D-) and GPIO20 (D+). The
+configuration for the USB features in the ESP32-S3 SoC must look like:</p>
+<ul>
+<li>USB Mode: Hardware CDC amd JTAG</li>
+<li>USB CDC On Boot: Enabled</li>
+<li>USB Firmware MSC on Boot: Disabled</li>
+<li>USB DFU on Boot: Disabled</li>
+<li>Upload Mode: UART0 / Hardware CDC</li>
+</ul>
+<p>When you find a USB to Serial converter on the board the configuration for the USB features in
+the ESP32-S3 SoC must look like:</p>
 <p>To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.</p>
 <h2>Bluetooth LE</h2>
 <p>The ESP32-S3 supports Bluetooth LE , Bluetooth 5 and Bluetooth mesh.</p>
@@ -115,6 +138,7 @@ is based on this processor using a custom Module from U-BLOX.</p>
 <li><a href="/boards/esp32s3/arduino-nano-esp32.htm">Arduino Nano ESP32</a></li>
 <li><a href="/boards/esp32s3/xiao-esp32s3.htm">XIAO ESP32 S3</a></li>
 <li><a href="/boards/esp32c3/index.htm">ESP32-C3 boards</a></li>
+<li><a href="https://www.youtube.com/watch?v=hJSBTFsOnoA">https://www.youtube.com/watch?v=hJSBTFsOnoA</a></li>
 </ul>
 
         
