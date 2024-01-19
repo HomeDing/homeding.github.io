@@ -24,15 +24,19 @@ and cannot be used to connect to SPI clients other than memory.
 
 The "HSPI" is available on GPIOs 12-15 using the following functions.
 
-| GPIO   | pin | functionality |
-| ------ | --- | ------------- |
-| GPIO12 | D6  | MISO          |
-| GPIO13 | D7  | MOSI          |
-| GPIO14 | D5  | CLK           |
-| GPIO15 | D8  | CS            |
+| GPIO   | ESP8266 pin | functionality |
+| ------ | ----------- | ------------- |
+| GPIO12 | D6          | MISO          |
+| GPIO13 | D7          | MOSI          |
+| GPIO14 | D5          | SCL (Clock)   |
+| GPIO15 | D8          | CS            |
 
 When using the standard `SPI` Arduino implementation on the ESP8266 these lines are used.
 However each slave device must use it's own chip select (CS) line.
+
+The SPI pins MISO, MOSI and SCL are configured in the [Device Element] as they are shared among all devices on the bus.
+
+The CS pin is must be specified individually for every device on the bus. The DC pin may be shared.
 
 
 ## Using standard SPI pins on ESP32
@@ -60,7 +64,6 @@ Some ESP32 chips have fixed GPIO ports assigned to the VSPI bus and the
 MISO, MOSI and CLK pins cannot be changed and must not be initialized.
 Before using the interface a SPI.begin() must be called.
 Each slave device must use it's own chip select (CS) line.
-
 
 
 ### The HSPI interface
@@ -112,7 +115,6 @@ These are not connected using the SPI core signals and need to be connected by a
 
 * [Using the I2C bus](/dev/i2c.md)
 * <https://lastminuteengineers.com/esp32-pinout-reference>
-
 * <https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/>
 * <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html>
 

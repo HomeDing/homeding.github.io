@@ -90,6 +90,7 @@ Some addresses used by the chips of HomeDing Elements:
 | 0x27    | LCD,PCF8574            |
 | 0x38    | AHT20                  |
 | 0x3C    | SH1106,SSD1306,SSD1309 |
+| 0x3D    | SH1106,SSD1306         |
 | 0x40    | INA219,INA226          |
 | 0x51    | RTC,PCF8563            |
 | 0x5c    | AM2320                 |
@@ -105,6 +106,7 @@ A more complete list can be found at <https://i2cdevices.org/addresses>
 
 ## See also
 
+* <https://i2cdevices.org/>
 * <https://www.adafruit.com/product/3950>
 * <https://www.sparkfun.com/qwiic#faqs>
 * <https://www.smart-prototyping.com/Qwiic.html>
