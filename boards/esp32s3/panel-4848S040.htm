@@ -206,22 +206,20 @@ u-carousel {
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h2>I2C bus</h2>
-<p>The display touch controller is connected using the <a href="/dev/i2c.htm">i2c bus</a>.
-The ESP32 pins in used are specified in the device configuration.</p>
+<p>The display touch controller is connected using the <a href="/dev/i2c.htm">i2c bus</a>. The ESP32 pins in used are specified in the device
+configuration.</p>
 <h2>SPI bus</h2>
-<p>The display and the SD card are using the <a href="/dev/spi.htm">SPI bus</a>.
-The ESP32 pins in used are specified in the device configuration.</p>
+<p>The display and the SD card are using the <a href="/dev/spi.htm">SPI bus</a>. The ESP32 pins in used are specified in the device configuration.</p>
 <h2>Display</h2>
-<p>The IPS LCD display is supporting a resolution of 480 * 480 pixels and 16-bit colors and is
-based on the ST7701 chip.</p>
-<p>It is connected to the processor using the ESP32-S3 specific 16-bit data bus using DMA to
-transfer for pixel data and the SPI bus in 9-bit mode for commands and configuration.</p>
-<p>The SPI bus is using the 9-bit data transfer can only be used for sending information. As the
-9-bit mode is not supported by the Arduino environment the spi bus configuration must be given
-on the display element.</p>
+<p>The IPS LCD display is supporting a resolution of 480 * 480 pixels and 16-bit colors and is based on the ST7701 chip.</p>
+<p>It is connected to the processor using the ESP32-S3 specific 16-bit data bus using DMA to transfer for pixel data and the SPI bus in
+9-bit mode for commands and configuration.</p>
+<p>The SPI bus is using the 9-bit data transfer can only be used for sending information. As the 9-bit mode is not supported by the
+Arduino environment the spi bus configuration must be given on the display element.</p>
 <p>The pins in use can be found in the env.json configuration.</p>
 <p>It is supported by current version of the “GFX Library for Arduino”.</p>
-<p>Both communication mechanisms (9-bit SPI and 16-bit Panel) must be configured and the display must be initialized with the board specific initialization sequence from the provided examples.</p>
+<p>Both communication mechanisms (9-bit SPI and 16-bit Panel) must be configured and the display must be initialized with the board
+specific initialization sequence from the provided examples.</p>
 <pre class="language-cpp"><code class="language-cpp"><span class="token comment">// 9-bit mode SPI</span>
 bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Arduino_ESP32SPI</span><span class="token punctuation">(</span>
     GFX_NOT_DEFINED <span class="token comment">/* DC */</span><span class="token punctuation">,</span> <span class="token number">39</span> <span class="token comment">/* CS */</span><span class="token punctuation">,</span> <span class="token number">48</span> <span class="token comment">/* SCK */</span><span class="token punctuation">,</span> <span class="token number">47</span> <span class="token comment">/* MOSI */</span><span class="token punctuation">,</span> GFX_NOT_DEFINED <span class="token comment">/* MISO */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -321,6 +319,7 @@ several use-cases. The specific configuration can be found above.</p>
 <li><a href="/boards/esp32s3/index.htm">ESP32-S3 Boards</a></li>
 <li><a href="http://www.jczn1688.com">http://www.jczn1688.com</a></li>
 <li><a href="http://pan.jczn1688.com/pd/1/ESP32%20module/4.0inch_ESP32-4848S040.zip">http://pan.jczn1688.com/pd/1/ESP32 module/4.0inch_ESP32-4848S040.zip</a></li>
+<li><a href="https://eshop.eca.ir/%D8%A8%D8%B1%D8%AF-%D8%AA%D8%BA%D8%B0%DB%8C%D9%87-%D8%B3%D9%88%D8%A6%DB%8C%DA%86%DB%8C%D9%86%DA%AF/22071-%D9%85%D8%A7%DA%98%D9%88%D9%84-%D8%AA%D8%BA%D8%B0%DB%8C%D9%87-%D8%B3%D9%88%D8%A6%DB%8C%DA%86%DB%8C%D9%86%DA%AF-12-%D9%88%D9%84%D8%AA-%D8%AC%D8%B1%DB%8C%D8%A7%D9%86-%D8%AB%D8%A7%D8%A8%D8%AA-450ma-%D9%86%D8%B3%D9%84-6.html">https://eshop.eca.ir/برد-تغذیه-سوئیچینگ/22071-ماژول-تغذیه-سوئیچینگ-12-ولت-جریان-ثابت-450ma-نسل-6.html</a></li>
 </ul>
 <!--
 * <https://github.com/rzeldent/platformio-espressif32-sunton/blob/main/esp32-4848S040C.json>

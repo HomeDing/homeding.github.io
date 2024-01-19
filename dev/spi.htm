@@ -47,7 +47,7 @@ and cannot be used to connect to SPI clients other than memory.</p>
 <thead>
 <tr>
 <th>GPIO</th>
-<th>pin</th>
+<th>ESP8266 pin</th>
 <th>functionality</th>
 </tr>
 </thead>
@@ -65,7 +65,7 @@ and cannot be used to connect to SPI clients other than memory.</p>
 <tr>
 <td>GPIO14</td>
 <td>D5</td>
-<td>CLK</td>
+<td>SCL (Clock)</td>
 </tr>
 <tr>
 <td>GPIO15</td>
@@ -76,6 +76,8 @@ and cannot be used to connect to SPI clients other than memory.</p>
 </table>
 <p>When using the standard <code>SPI</code> Arduino implementation on the ESP8266 these lines are used.
 However each slave device must use it’s own chip select (CS) line.</p>
+<p>The SPI pins MISO, MOSI and SCL are configured in the [Device Element] as they are shared among all devices on the bus.</p>
+<p>The CS pin is must be specified individually for every device on the bus. The DC pin may be shared.</p>
 <h2>Using standard SPI pins on ESP32</h2>
 <p>There are 4 hardware supported SPI interfaces within the ESP32 partly used for special functionality.</p>
 <p>The “SPI0” and “SPI1” are used to communicate with the flash memory. It is using multiple data lines
@@ -222,18 +224,10 @@ also have some more signals to be controlled by the host like selecting data fro
 <p>These are not connected using the SPI core signals and need to be connected by additional wiring.</p>
 <h2>See also</h2>
 <ul>
-<li>
-<p><a href="/dev/i2c.htm">Using the I2C bus</a></p>
-</li>
-<li>
-<p><a href="https://lastminuteengineers.com/esp32-pinout-reference">https://lastminuteengineers.com/esp32-pinout-reference</a></p>
-</li>
-<li>
-<p><a href="https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/">https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/</a></p>
-</li>
-<li>
-<p><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html</a></p>
-</li>
+<li><a href="/dev/i2c.htm">Using the I2C bus</a></li>
+<li><a href="https://lastminuteengineers.com/esp32-pinout-reference">https://lastminuteengineers.com/esp32-pinout-reference</a></li>
+<li><a href="https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/">https://techoverflow.net/2021/07/26/what-is-the-spi-pinout-of-the-esp32-esp-wroom-32/</a></li>
+<li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html</a></li>
 </ul>
 
         
