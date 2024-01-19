@@ -135,6 +135,8 @@ This results in faster secure (https) network requests.
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/panel-8048S043') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32s3/panel-4848S040') }}
+
 
 ## See also
 

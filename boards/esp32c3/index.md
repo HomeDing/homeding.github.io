@@ -17,6 +17,7 @@ Homeding library.
 The ESP32-C3 is a single-core SoC based on the open-source 32-bit RISC-V architecture.
 
 It offers:
+
 * Wi-Fi
 * Bluetooth 5 (LE)
 * CPU clock speed up to 160 MHz
@@ -34,7 +35,7 @@ It offers:
 
 This SoC is positioned as a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity for secure IoT applications.
 
-It is often seen as a more secure and powerful replacement option for the ESP8266 and 
+It is often seen as a more secure and powerful replacement option for the ESP8266 and
 has noticeable more internal memory and cpu power as the ESP8266:
 
 The ESP32-C3 offers less IO pins that the ESP32 or ESP32-S3 chips and comes in a smaller
@@ -52,9 +53,10 @@ The 'F' version of the chip offers an internal 4 MByte Flash ROM that can be fla
 
 ## USB and JTAG Support
 
-The ESP32-C3 SoC directly supports USB ports using IO18 and IO19.
+When the board has a USB connector that is connected to the GPIO19 (D-) and GPIO20 (D+). The
+configuration for the USB features in the ESP32-c3 SoC must have:
 
-To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.
+* USB CDC On Boot: Enabled
 
 
 ## CAN bus Support
@@ -116,8 +118,6 @@ As of it's popularity there are variants using the ESP8266 and ESP8285 (= ESP826
 and more flash memory.
 
 
-
-
 ## Log info from the [DIAG Element](/elements/diag.md)
 
 ``` txt
@@ -142,4 +142,3 @@ and more flash memory.
 * Product web site: <https://www.espressif.com/en/products/socs/esp32-c3>
 * Official datasheet: <https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf>
 * <https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/>
-* [ESP32-S3 Boards](/boards/esp32s3/index.md)

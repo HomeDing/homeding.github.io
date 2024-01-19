@@ -26,6 +26,19 @@ The pins that are used by the SPI bus in general can be configured in the Device
 
 Only the SPI Chip Select signal for the SD card has to be configured in the SD Element configuration.
 
+Micro SD Card SPI Mode
+
+| Pin | Description         |
+| --- | ------------------- |
+| 1   | Chip Select (CS)    |
+| 2   |   |
+| 3   | SPI-MISO (Data in)                 |
+| 4   | VDD                 |
+| 5   | SPI-CLK             |
+| 6   | GND                 |
+| 7   | SPI-MOSO (Data out) |
+| 8   |                     |
+| 9   |                     |
 
 ## Element Configuration
 

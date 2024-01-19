@@ -55,3 +55,7 @@ http://en.hynitron.com/product/wearable/124
   "url": "https://www.lilygo.cc/products/t-display-s3",
   "vendor": "LILYGO"
 }
+
+## See also
+
+* [ESP32-S3 Boards](/boards/esp32s3/index.md)

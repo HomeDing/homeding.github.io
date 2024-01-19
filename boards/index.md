@@ -122,6 +122,7 @@ Some boards have been tested:
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/panel-8048S043') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32s3/panel-4848S040') }}
 
 ## ESP32-C3 boards
 

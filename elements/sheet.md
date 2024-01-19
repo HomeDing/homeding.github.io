@@ -56,7 +56,6 @@ The "set" column shows the collections of elements that can be activated by a si
 | [am2320](/elements/am2320.md)                  |             |    x     |   x   |       |       |               |
 | [aht20](/elements/aht20.md)                    |             |    x     |   x   |       |       |               |
 | [sht20](/elements/sht20.md)                    |             |    x     |   x   |       |       |               |
-| [scd4x](/elements/scd4x.md)                    |             |    x     |   x   |       |       |               |
 | [rotary](/elements/rotary.md)                  |             |    x     |   x   |       |       |               |
 | [dallas](/elements/dallas.md)                  |             |    x     |   x   |       |       |               |
 | [bmp280](/elements/bmp280.md)                  |             |    x     |   x   |       |       |               |
@@ -70,3 +69,7 @@ The "set" column shows the collections of elements that can be activated by a si
 | [tone](/elements/audio/tone.md)                |             |    x     |       |       |       |               |
 | [radio](/elements/audio/radio.md)              |             |    x     |       |       |       |               |
 | [bl0937](/elements/bl0937.md)                  |             |          |       |       |   x   |               |
+
+<!-- 
+| [_scd4x](/elements/_scd4x.md)                  |             |    x     |   x   |       |       |               |
+-->

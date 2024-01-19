@@ -204,6 +204,7 @@ On startup, when a display is configured, some system information is displayed b
 
 * [Using the I2C bus](/dev/i2c.md)
 * [Using the SPI bus](/dev/spi.md)
+* [Drawing with GFX](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-gfx-graphics-library.pdf)
 
 [liquid chrystal]: /elements/display/lcd.md
 [max7219]: /elements/max7219.md
