@@ -64,8 +64,11 @@ has noticeable more internal memory and cpu power as the ESP8266:</p>
 <h2>Flash Memory</h2>
 <p>The ‘F’ version of the chip offers an internal 4 MByte Flash ROM that can be flashed using the QIO mode. It supports external Flash up to 16 MByte.</p>
 <h2>USB and JTAG Support</h2>
-<p>The ESP32-C3 SoC directly supports USB ports using IO18 and IO19.</p>
-<p>To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.</p>
+<p>When the board has a USB connector that is connected to the GPIO19 (D-) and GPIO20 (D+). The
+configuration for the USB features in the ESP32-c3 SoC must have:</p>
+<ul>
+<li>USB CDC On Boot: Enabled</li>
+</ul>
 <h2>CAN bus Support</h2>
 <p>available but never tested with HomeDing library.</p>
 <h2>Bluetooth LE</h2>
@@ -133,7 +136,6 @@ and more flash memory.</p>
 <li>Product web site: <a href="https://www.espressif.com/en/products/socs/esp32-c3">https://www.espressif.com/en/products/socs/esp32-c3</a></li>
 <li>Official datasheet: <a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf</a></li>
 <li><a href="https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/">https://hackaday.com/2021/02/08/hands-on-the-risc-v-esp32-c3-will-be-your-new-esp8266/</a></li>
-<li><a href="/boards/esp32s3/index.htm">ESP32-S3 Boards</a></li>
 </ul>
 
         

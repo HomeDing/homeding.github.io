@@ -37,55 +37,110 @@
 
           </div>
         
-        <p>This display implementation features supported by this adapter are:</p>
+        <p>This OLED displays offer a mono color (e.g. white on black) output with various resolutions and
+can be addressed using the <a href="/dev/i2c.htm">Wire / I2C</a> or the <a href="/dev/spi.htm">SPI</a> protocol.</p>
+<p>This display implementation features supported by this adapter are:</p>
 <ul>
-<li>128*64 or 128*32 display resolutions</li>
-<li>Text output in the font sizes 10,16 and 24 px.</li>
-<li>Binary output shown as a filled or empty circle</li>
+<li>128*64, 128*32 or 64*32 display resolutions.</li>
+<li>typically 0.96 inch (128*64 resolution)</li>
+<li>typically 0.91 inch (128*32 resolution)</li>
+<li>typically 0.49 inch (64*32 resolution)</li>
 </ul>
-<p>The DisplaySSD1306 Element needs to be configured to activate the display adapter for the OLED
-displays based on SSD1306 chips.</p>
-<p>The <code>DisplayElement</code> implements the configuration that specifies the hardware related parameters by using the configuration from the configuration file.</p>
-<p>The <code>DisplayAdapter</code> class implements the communication with the chip that is integrated into the OLED display and connected through the I2C bus by using the Arduino library <code>ESP8266 and ESP32 Oled Driver for SSD1306 display</code> that can be installed using the Arduino Library Manager or can be downloaded from
-<a href="https://github.com/squix78/esp8266-oled-ssd1306">https://github.com/squix78/esp8266-oled-ssd1306</a>.</p>
-<p>To show some output on the display use the <a href="/elements/display/text.htm">DisplayText Element</a>
-and the <a href="/elements/display/dot.htm">DisplayDot Element</a></p>
-<h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element:</p>
+<p>Displays are availabe in several colors and also mixed colors. One pixel always has one color so these are not real color displays.</p>
+<p><img src="/elements/display/ssd1306.jpg" alt="SSD1306 display"></p>
+<p>The implementation is done with the help of the GFX library for Arduino.</p>
+<h2>Web UI for the Display Element</h2>
+<p><img src="/elements/display/sh1106ui.png" alt="sh1106 Web UI"></p>
+<p>This card shows the current output page that can also be seen on the local attached display. It is updated every time the status of
+the device is polled by the page.</p>
+<h2>Display Configuration</h2>
 <p><object data="/element.svg?displaysh1106" type="image/svg+xml"></object></p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>address</code></td>
-<td>Specifies the i2c address of the display.</td>
-</tr>
-<tr>
-<td><code>height</code></td>
-<td>The height of the display. 32 or 64</td>
-</tr>
-</tbody>
-</table>
-<h3>Configuration Example</h3>
-<p>The configuration of a display is given by the provided hardware and should be configured in the env.json file:</p>
+<p>The display is configured using the following parameters:</p>
+<p><strong>width</strong> - The width of the display either characters or pixels.</p>
+<p><strong>height</strong> - The height of the display either characters or pixels.</p>
+<p><strong>rotation</strong> - Some displays can be rotated. The rotation of the display is given by values of 0, 90, 180 or 270.</p>
+<p><strong>page</strong> – The logical page that is displayed.</p>
+<p><strong>brightness</strong> – The  displays an be adjusted in brightness / contrast by specifying a value using the brightness event in a range of 0 to 100. This has a limited range (limited by the chip).</p>
+<p><strong>busmode</strong> – This parameter specifies the bus type. Default is <code>i2c</code>.</p>
+<h3>I2C Configuration Example</h3>
+<p>The SSD1306 based displays can be connected to the SDA and SCL pins of the <a href="/dev/i2c.htm">i2c bus</a> that is configured
+in the <a href="/elements/device.htm">device</a>:</p>
+<p><strong>busmode</strong> – This parameter specifies the bus type and must be specified as <code>i2c</code>.</p>
+<p><strong>address</strong> - The i2c address of the display must be specified. Typical values are <code>0x3C</code> and <code>0x3D</code>.</p>
+<p><strong>busspeed</strong> – The bus speed used for the display can be specified up to 400KHz.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"DisplaySSD1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"60"</span><span class="token punctuation">,</span>
-      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span>
+      ...
+      <span class="token property">"I2C-SDA"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span>
+      <span class="token property">"I2C-SCL"</span><span class="token operator">:</span> <span class="token string">"D1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"displayssd1306"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"display"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"local display"</span><span class="token punctuation">,</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"128"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"64"</span><span class="token punctuation">,</span>
+      <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"i2c"</span><span class="token punctuation">,</span>
+      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x3C"</span><span class="token punctuation">,</span>
+      <span class="token property">"busspeed"</span><span class="token operator">:</span> <span class="token string">"400000"</span><span class="token punctuation">,</span>
+      <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"50"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<!-- ### SPI Configuration Example
+
+The SH1106 based displays can be connected to the [SPI bus](/dev/spi.md).
+This must must be defined in the device configuration and the display configuration:
+
+**busmode** -- This parameter specifies the bus type and must be specified as that is used to connect the display. Available interfaces are `i2c` or `spi`.
+
+
+| GPIO   | ESP8266 pin | functionality |
+| ------ | ----------- | ------------- |
+| GPIO12 | D6          | MISO          |
+| GPIO13 | D7          | MOSI          |
+| GPIO14 | D5          | CLK           |
+| GPIO15 | D8          | CS            |
+
+
+## SPI Versions
+
+There are versions of this display that can be connected using the [spi bus](/dev/spi.md) using
+5 to 7 connections.
+
+| Display Signal                               | ESP8266 pin | Description                     |
+| -------------------------------------------- | ----------- | ------------------------------- |
+| <span class="gpio black">GND</span>          |             | Ground for I2C and power supply |
+| <span class="gpio red">VCC</span>            |             | Power supply                    |
+| <span class="gpio yellow">SCL</span> or `D0` | D5          | SPI clock signal                |
+| <span class="gpio blue">MOSI</span> or `D1`  | D7          | SPI MOSI data signal            |
+|                                              | n/a         | SPI MISO data signal            |
+| RES                                          |             | Reset signal (optional)         |
+| DC                                           |             | SPI Data/Command signal         |
+| CS                                           | D8          | SPI Chip Select signal          |
+
+There are versions with only 6 pins that do not have a CS signal connector.
+
+-->
 <h2>See also</h2>
 <ul>
-<li><a href="/dev/i2c.htm">Using the I2C bus</a></li>
-<li><a href="https://github.com/squix78/esp8266-oled-ssd1306">esp8266-oled-ssd1306 library</a></li>
-<li><a href="https://iotexpert.com/debugging-ssd1306-display-problems/">https://iotexpert.com/debugging-ssd1306-display-problems/</a></li>
+<li>
+<p><a href="/dev/i2c.htm">Using the I2C bus</a></p>
+</li>
+<li>
+<p><a href="/dev/spi.htm">Using the SPI bus</a></p>
+</li>
+<li>
+<p><a href="https://github.com/squix78/esp8266-oled-ssd1306">esp8266-oled-ssd1306 library</a></p>
+</li>
+<li>
+<p><a href="https://iotexpert.com/debugging-ssd1306-display-problems/">https://iotexpert.com/debugging-ssd1306-display-problems/</a></p>
+</li>
+<li>
+<p><a href="https://www.electronicshub.org/nodemcu-esp8266-oled-display/">https://www.electronicshub.org/nodemcu-esp8266-oled-display/</a></p>
+</li>
 </ul>
 
         

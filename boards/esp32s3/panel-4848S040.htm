@@ -1,0 +1,366 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+    <title>Panel ESP32-4848S040</title>
+    <meta name='description' content='ESP32-S3 based wall mounted device with a fast 480 * 480 px 16 bit LCD color touch display'>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/pages.js"></script>
+    <script src="/story.js" type="module"></script>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
+    </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>Panel ESP32-4848S040</h1>
+      
+        
+            <div class="plaincard">
+            
+            This panel is a ready to used wall-mount device based on the ESP32-S3 processor supporting 16M Flash and 8M PSRAM Memory in combination with a 480px * 480px 16 bit color display and touch controller.  
+
+          </div>
+        
+        <p>This panel including advanced graphic features is supported by the <a href="/examples/display.htm">HomeDing Display Example</a>.</p>
+<p>This board is equipped with:</p>
+<ul>
+<li>ESP32-S3 processor</li>
+<li>16 MByte Flash in QIO mode</li>
+<li>8 MByte PSRAM OPI</li>
+<li>4.3 inch, 480 * 480 px Display based on ST7701: 16 bit color, special ESP32-S3 parallel mode
+The display is supported by the “GFX Library for Arduino”.</li>
+<li>Touch Sensor: GT911 on I2C, Address 0x5D</li>
+<li>I2C bus using SDA=19, CLK=20</li>
+<li>SD Card slot</li>
+</ul>
+<div class="warning"><h3>Warning</h3>
+<ul>
+<li>This warning is serious.</li>
+<li>Stay away from devices with contact to mains voltage.</li>
+<li>Never handle this module when connected to the mains voltage as the contacts are not safe.</li>
+<li>Uploading firmware to devices that have contact to mains voltage is dangerous.</li>
+<li>DO NOT connect the any device to the mains during flashing or while using the serial interface.</li>
+<li>You may kill your computer and yourself.</li>
+<li>When you are making these kind of projects you really need to know what you are doing.</li>
+<li>I have warned you, do not blame on me.</li>
+</ul>
+</div>
+<p>There are 2 versions available equipped with 1 to 3 relays.</p>
+<p>A download of supporting files is available at<br>
+<a href="http://pan.jczn1688.com/pd/1/ESP32%20module/4.0inch_ESP32-4848S040.zip">http://pan.jczn1688.com/pd/1/ESP32 module/4.0inch_ESP32-4848S040.zip</a></p>
+<style>
+u-carousel {
+  timeline-scope: --carousel;
+
+  display:block;
+  width: 600px;
+  height: auto;
+
+  position: relative;
+  margin: 1em auto;
+  background: white;
+
+  .entries {
+    scroll-timeline: --carousel x;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+    padding: 0;
+
+    > li {
+      scroll-snap-align: center;
+      flex: 100% 0 0;
+
+      display: grid;
+      place-content: center;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 600px;
+    }
+  }
+}
+
+</style>
+<u-carousel>
+  <ul class="entries" tabindex="0">
+  <li><img src="./panel-4848S040.jpg" alt="Front View" title="" draggable="false"></li>
+  <li><img src="./panel-4848S040-01.jpg" alt="Front to Back connectors" title="" draggable="false"></li>
+  <li><img src="./panel-4848S040-02.jpg" alt="Side View" title="" draggable="false"></li>
+  <li><img src="./panel-4848S040-03.jpg" alt="Front Module open" title="" draggable="false"></li>
+  <li><img src="./panel-4848S040-04.jpg" alt="Front Module details" title="" draggable="false"></li>
+  <li><img src="./panel-4848S040-05.jpg" alt="Back View" title="" draggable="false"></li>
+  </ul>
+</u-carousel>
+<p>The front part contains the ESP32-S3 processor module and most of the built-in features. There are extra connectors for connecting a LIPO battery, a speaker and the serial interface that cannot be used when the panel is closed.</p>
+<p>The back part contains a power supply and the 1 to 3 relays.</p>
+<p>Both parts are connected by the 8-pin connector.</p>
+<h2>Arduino Configuration</h2>
+<p>The ESP32S3 Dev Module (esp32) can be used with the following settings:</p>
+<ul>
+<li>JTAG Adapter: Disbled</li>
+<li>PSRAM: OPI PSRAM</li>
+<li>Flash Mode: QIO 80MHz</li>
+<li>Flash Size: 16MByte (128Mbit)</li>
+<li>Arduino Runs On: Core 1</li>
+<li>Events Runs On: Core 1</li>
+<li>USB Mode: Hardware CDC amd JTAG</li>
+<li>USB CDC On Boot: Disabled</li>
+<li>USB Firmware MSC on Boot: Disabled</li>
+<li>Upload Mode: UAT0 / Hardware CDC</li>
+<li>Partition Scheme: ___</li>
+<li>CPU Frequency: 240MHz (WiFi)</li>
+<li>Upload Speed: 921600</li>
+<li>Core Debug Level: None</li>
+<li>Erase All Flash: Disabled</li>
+</ul>
+<p>The USB-C connector uses a CH340 USB to Serial converter chip and connects to the Serial port of the ESP32-S3.</p>
+<h2>env.json Configuration</h2>
+<p>This is a board configuration in the <code>env.json</code> file to support the hardware configuration of this  board:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"wallpanel"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"ESP32-4848S040"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"480*480 Touch Panel from JCZN"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+      <span class="token property">"cache"</span><span class="token operator">:</span> <span class="token string">"max-age=600"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SDA"</span><span class="token operator">:</span> <span class="token string">"19"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SCL"</span><span class="token operator">:</span> <span class="token string">"45"</span><span class="token punctuation">,</span>
+      <span class="token property">"spi-scl"</span><span class="token operator">:</span> <span class="token number">48</span><span class="token punctuation">,</span>
+      <span class="token property">"spi-mosi"</span><span class="token operator">:</span> <span class="token number">47</span><span class="token punctuation">,</span>
+      <span class="token property">"spi-miso"</span><span class="token operator">:</span> <span class="token number">41</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"DisplayEsp32panel"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+      <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">38</span><span class="token punctuation">,</span>
+
+      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span>
+      <span class="token property">"spiclk"</span><span class="token operator">:</span> <span class="token number">48</span><span class="token punctuation">,</span>
+      <span class="token property">"spimosi"</span><span class="token operator">:</span> <span class="token number">47</span><span class="token punctuation">,</span>
+      <span class="token property">"buspins"</span><span class="token operator">:</span> <span class="token string">"11,12,13,14,0, 8,20,3,46,9,10, 4,5,6,7,15"</span><span class="token punctuation">,</span>
+
+      <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"x000000"</span><span class="token punctuation">,</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"#cccccc"</span><span class="token punctuation">,</span>
+      <span class="token property">"border"</span><span class="token operator">:</span> <span class="token string">"black"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"DisplayTouchGT911"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x5D"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"42"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"relay1"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Relay 1"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"40"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>I2C bus</h2>
+<p>The display touch controller is connected using the <a href="/dev/i2c.htm">i2c bus</a>.
+The ESP32 pins in used are specified in the device configuration.</p>
+<h2>SPI bus</h2>
+<p>The display and the SD card are using the <a href="/dev/spi.htm">SPI bus</a>.
+The ESP32 pins in used are specified in the device configuration.</p>
+<h2>Display</h2>
+<p>The IPS LCD display is supporting a resolution of 480 * 480 pixels and 16-bit colors and is
+based on the ST7701 chip.</p>
+<p>It is connected to the processor using the ESP32-S3 specific 16-bit data bus using DMA to
+transfer for pixel data and the SPI bus in 9-bit mode for commands and configuration.</p>
+<p>The SPI bus is using the 9-bit data transfer can only be used for sending information. As the
+9-bit mode is not supported by the Arduino environment the spi bus configuration must be given
+on the display element.</p>
+<p>The pins in use can be found in the env.json configuration.</p>
+<p>It is supported by current version of the “GFX Library for Arduino”.</p>
+<p>Both communication mechanisms (9-bit SPI and 16-bit Panel) must be configured and the display must be initialized with the board specific initialization sequence from the provided examples.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token comment">// 9-bit mode SPI</span>
+bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Arduino_ESP32SPI</span><span class="token punctuation">(</span>
+    GFX_NOT_DEFINED <span class="token comment">/* DC */</span><span class="token punctuation">,</span> <span class="token number">39</span> <span class="token comment">/* CS */</span><span class="token punctuation">,</span> <span class="token number">48</span> <span class="token comment">/* SCK */</span><span class="token punctuation">,</span> <span class="token number">47</span> <span class="token comment">/* MOSI */</span><span class="token punctuation">,</span> GFX_NOT_DEFINED <span class="token comment">/* MISO */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// panel (Hardware) specific</span>
+Arduino_ESP32RGBPanel <span class="token operator">*</span>rgbpanel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Arduino_ESP32RGBPanel</span><span class="token punctuation">(</span>
+    <span class="token number">18</span> <span class="token comment">/* DE */</span><span class="token punctuation">,</span> <span class="token number">17</span> <span class="token comment">/* VSYNC */</span><span class="token punctuation">,</span> <span class="token number">16</span> <span class="token comment">/* HSYNC */</span><span class="token punctuation">,</span> <span class="token number">21</span> <span class="token comment">/* PCLK */</span><span class="token punctuation">,</span>
+    <span class="token number">4</span> <span class="token comment">/* R0 */</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token comment">/* R1 */</span><span class="token punctuation">,</span> <span class="token number">6</span> <span class="token comment">/* R2 */</span><span class="token punctuation">,</span> <span class="token number">7</span> <span class="token comment">/* R3 */</span><span class="token punctuation">,</span> <span class="token number">15</span> <span class="token comment">/* R4 */</span><span class="token punctuation">,</span>
+    <span class="token number">8</span> <span class="token comment">/* G0 */</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token comment">/* G1 */</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token comment">/* G2 */</span><span class="token punctuation">,</span> <span class="token number">46</span> <span class="token comment">/* G3 */</span><span class="token punctuation">,</span> <span class="token number">9</span> <span class="token comment">/* G4 */</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token comment">/* G5 */</span><span class="token punctuation">,</span>
+    <span class="token number">11</span> <span class="token comment">/* B0 */</span><span class="token punctuation">,</span> <span class="token number">12</span> <span class="token comment">/* B1 */</span><span class="token punctuation">,</span> <span class="token number">13</span> <span class="token comment">/* B2 */</span><span class="token punctuation">,</span> <span class="token number">14</span> <span class="token comment">/* B3 */</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token comment">/* B4 */</span><span class="token punctuation">,</span>
+    <span class="token number">1</span> <span class="token comment">/* hsync_polarity */</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token comment">/* hsync_front_porch */</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token comment">/* hsync_pulse_width */</span><span class="token punctuation">,</span> <span class="token number">50</span> <span class="token comment">/* hsync_back_porch */</span><span class="token punctuation">,</span>
+    <span class="token number">1</span> <span class="token comment">/* vsync_polarity */</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token comment">/* vsync_front_porch */</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token comment">/* vsync_pulse_width */</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token comment">/* vsync_back_porch */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// panel parameters &amp; setup</span>
+gfx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Arduino_RGB_Display</span><span class="token punctuation">(</span>
+    <span class="token number">480</span> <span class="token comment">/* width */</span><span class="token punctuation">,</span> <span class="token number">480</span> <span class="token comment">/* height */</span><span class="token punctuation">,</span> rgbpanel<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token comment">/* rotation */</span><span class="token punctuation">,</span> <span class="token boolean">true</span> <span class="token comment">/* auto_flush */</span><span class="token punctuation">,</span>
+    bus<span class="token punctuation">,</span> GFX_NOT_DEFINED <span class="token comment">/* RST */</span><span class="token punctuation">,</span> st7701_4848S040_init<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>st7701_4848S040_init<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The init sequence can be found in the examples for this board or in the HomeDing Display implementation: &lt;&gt;</p>
+<!-- https://github.com/HomeDing/HomeDing/blob/master/src/displays/DisplayESP32PanelAdapter.h -->
+<h2>Touch Controller</h2>
+<p>This devices uses a GT911 display touch chip connected to he I2C bus. The <a href="/elements/display/touchgt911.htm">Display TouchGT911 Element</a>
+can be used with address 0x5D.</p>
+<p>The reset and interrupt pins are not connected.</p>
+<h2>Relay control</h2>
+<p>The 1 to 3 relays in the device are located in the back part of the module and can be controlled using the GPIO 40, 2 and 1. The env.json configuration above has a <a href="/elements/digitalout.htm">Digital Output Element</a> for the relay # 1.</p>
+<h2>Battery Connector</h2>
+<p>I have not yet found out how this can be used.</p>
+<p>maybe: IP5306</p>
+<h2>Speaker Connector</h2>
+<p>I have not yet found out how this can be used.
+maybe: NS4168</p>
+<h2>SW1</h2>
+<p>There is a hidden momentary button beside the USB Connector.</p>
+<p>I have not yet found out how this is connected.</p>
+<h2>USB-C Connector</h2>
+<p>This can be used for uploading new software and powering the device. There is a CH350
+USB-to-Serial chip used for flashing the software so no direct connection using the internal USB
+of the ESP32-S3.</p>
+<h2>TF Card</h2>
+<p>The module has a SD card connector and SD cards can be inserted in the slot above the USB connector.</p>
+<p>This enables using files on the sd card by configuring the <a href="/elements/sd.htm">SD Element</a> for
+several use-cases. The specific configuration can be found above.</p>
+<p>The Micro SD Card supports the SPI Mode using the following GPIOs:</p>
+<table>
+<thead>
+<tr>
+<th>SD Pin</th>
+<th>Description</th>
+<th>ESP32 Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>not used</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chip Select (CS)</td>
+<td>GPIO42</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SPI-MOSI (Data in)</td>
+<td>GPIO47</td>
+</tr>
+<tr>
+<td>4</td>
+<td>VDD</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>SPI-CLK</td>
+<td>GPIO48</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GND</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>SPI-MISO (Data out)</td>
+<td>GPIO41</td>
+</tr>
+<tr>
+<td>8</td>
+<td>not used</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>See also</h2>
+<ul>
+<li><a href="/boards/esp32s3/index.htm">ESP32-S3 Boards</a></li>
+<li><a href="http://www.jczn1688.com">http://www.jczn1688.com</a></li>
+<li><a href="http://pan.jczn1688.com/pd/1/ESP32%20module/4.0inch_ESP32-4848S040.zip">http://pan.jczn1688.com/pd/1/ESP32 module/4.0inch_ESP32-4848S040.zip</a></li>
+</ul>
+<!--
+* <https://github.com/rzeldent/platformio-espressif32-sunton/blob/main/esp32-4848S040C.json>
+* <https://github.com/rzeldent/esp32-smartdisplay>
+* <https://github.com/tbxMb/openHASP/commit/e12d3153cfe0d78633d16343ff5a3dbeff2b96d0>
+Sunton Store in Aliexpress
+Guition Store in Aliexpress -->
+
+        
+          <h2>Tags</h2>
+          <div class="taglist">
+            
+              <a href="/tag/board.htm">Board</a>
+            
+              <a href="/tag/wip.htm">Wip</a>
+            
+          </div>
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
+    </body>
+  </body>
+</html>

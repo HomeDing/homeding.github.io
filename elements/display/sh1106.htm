@@ -41,23 +41,30 @@
 can be addressed using the <a href="/dev/i2c.htm">Wire / I2C</a> or the <a href="/dev/spi.htm">SPI</a> protocol.</p>
 <p>The chip supports a resolution up to 132 * 64 pixels.
 Some available displays only use a portion of the maximum display size. Some displays emit white, blue or yellow color on a pixel cannot be changed.</p>
+<p><img src="/elements/display/sh1106.jpg" alt="SH1106 display"></p>
 <p>The implementation is done with the help of the GFX library for Arduino.</p>
-<!-- ![SH1106 display](/elements/display/sh1106.jpg) -->
-<h2>Configuration</h2>
-<p>The displays are configured using the following parameters. Some displays will not support all functionality.</p>
+<h2>Display Configuration</h2>
+<p>The display is configured using the following parameters:</p>
 <p><strong>width</strong> - The width of the display either characters or pixels.</p>
 <p><strong>height</strong> - The height of the display either characters or pixels.</p>
 <p><strong>rotation</strong> - Some displays can be rotated. The rotation of the display is given by values of 0, 90, 180 or 270.</p>
 <p><strong>page</strong> – The logical page that is displayed.</p>
-<p><strong>busmode</strong> – This parameter specifies the bus type that is used to connect the display. Available interfaces are <code>i2c</code> or <code>spi</code>.</p>
-<p>When connected using the <a href="/dev/i2c.htm">i2c bus</a> the SDA and SCL pins defined in the
-<a href="/elements/device.htm">device</a> configuration are used and following parameters must be set:</p>
-<p><strong>address</strong> - The i2c address of the display when using the i2c bus for connecting the display.
-By setting this parameter some display implementation will attach to the i2c bus otherwise to the SPI bus.</p>
-<p><strong>busspeed</strong> – The bus speed used for the display can be specified up to 400KHz.</p>
 <p><strong>brightness</strong> – The  displays an be adjusted in brightness / contrast by specifying a value using the brightness event in a range of 0 to 100. This has a limited range (limited by the chip).</p>
-<h3>Configuration Example</h3>
+<p><strong>busmode</strong> – This parameter specifies the bus type. Default is <code>i2c</code>.</p>
+<h3>I2C Configuration Example</h3>
+<p>The SH1106 based displays can be connected to the SDA and SCL pins of the <a href="/dev/i2c.htm">i2c bus</a> that is configured
+in the <a href="/elements/device.htm">device</a>:</p>
+<p><strong>busmode</strong> – This parameter specifies the bus type and must be specified as <code>i2c</code>.</p>
+<p><strong>address</strong> - The i2c address of the display must be specified. Typical values are <code>0x3C</code> and <code>0x3D</code>.</p>
+<p><strong>busspeed</strong> – The bus speed used for the display can be specified up to 400KHz.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      ...
+      <span class="token property">"I2C-SDA"</span><span class="token operator">:</span> <span class="token string">"D2"</span><span class="token punctuation">,</span>
+      <span class="token property">"I2C-SCL"</span><span class="token operator">:</span> <span class="token string">"D1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"displaysh1106"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"display"</span><span class="token punctuation">,</span>
@@ -66,21 +73,25 @@ By setting this parameter some display implementation will attach to the i2c bus
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"64"</span><span class="token punctuation">,</span>
       <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"i2c"</span><span class="token punctuation">,</span>
       <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x3C"</span><span class="token punctuation">,</span>
-      <span class="token property">"busspeed"</span><span class="token operator">:</span> <span class="token string">"1000000"</span><span class="token punctuation">,</span>
+      <span class="token property">"busspeed"</span><span class="token operator">:</span> <span class="token string">"400000"</span><span class="token punctuation">,</span>
       <span class="token property">"brightness"</span><span class="token operator">:</span> <span class="token string">"50"</span><span class="token punctuation">,</span>
       <span class="token property">"page"</span><span class="token operator">:</span> <span class="token string">"1"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<!-- ### SPI Configuration Example
+
+The SH1106 based displays can be connected to the [SPI bus](/dev/spi.md).
+This must must be defined in the device configuration and the display configuration:
+
+**busmode** -- This parameter specifies the bus type and must be specified as that is used to connect the display. Available interfaces are `i2c` or `spi`.
+
+
+-->
 <h2>Web UI for the Display Element</h2>
 <p><img src="/elements/display/sh1106ui.png" alt="sh1106 Web UI"></p>
 <p>This card shows the current output page that can also be seen on the local attached display.
 It is updated every time the status of the device is polled by the page.</p>
-<h2>Events</h2>
-<p><strong>brightness</strong> - Some displays an be adjusted in brightness or contrast by specifying a value using the brightness event in a range of 0 tp 100.</p>
-<p><strong>page</strong> -</p>
-<p><strong>addpage</strong> -</p>
-<p><strong>clear</strong> -</p>
 <h2>Actions</h2>
 <p><strong>onpage</strong> -</p>
 <h2>Element State</h2>

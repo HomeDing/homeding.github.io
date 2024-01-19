@@ -48,6 +48,53 @@ e.g. for recording sensor data or serving additional files on the web frontend.<
 <p>The SD Element uses the system wide SPI bus for data transfer and is available on ESP8266 and ESP32 boards.</p>
 <p>The pins that are used by the SPI bus in general can be configured in the Device Element.</p>
 <p>Only the SPI Chip Select signal for the SD card has to be configured in the SD Element configuration.</p>
+<p>Micro SD Card SPI Mode</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Chip Select (CS)</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>SPI-MISO (Data in)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>VDD</td>
+</tr>
+<tr>
+<td>5</td>
+<td>SPI-CLK</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SPI-MOSO (Data out)</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>
