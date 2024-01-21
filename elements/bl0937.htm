@@ -37,23 +37,23 @@
         <p>All of these chips work the same by sending pulse signals that represent voltage, current and power. They have the same chip layout and pins.
 As they directly work with the main power signals, only using some resistors to reduce high voltage and high current they are not intended to be used on DIY IoT devices.
 The HLW8012 is an older model while the HJL-01/BL0937 is a newer more stable version.</p>
-<div class="warning"><h3>Warning</h3>
-<ul>
-<li>This warning is serious.</li>
-<li>Never handle projects that are connected to the mains voltage.</li>
-<li>Stay away from devices with contact to mains voltage.</li>
-<li>Uploading firmware to devices that have contact to mains voltage is dangerous.</li>
-<li>DO NOT connect the any device to the mains during flashing or while using the serial interface.</li>
-<li>You may kill your computer and yourself.</li>
-<li>The USB-Serial adapters offer enough power to flash the device.</li>
-<li>When you are making these kind of projects you really need to know what you are doing.</li>
-<li>I have warned you, do not blame on me.</li>
-</ul>
-</div>
 <p>The chip is directly working on the power line signals by measuring voltages and current. This part of the chip is lined out in detail in the datasheet.
 From this measurements the chip creates 38 micro seconds pulses on 2 pins that need to be captured by the microprocessor.</p>
 <p>These chips can monitor power consumption side by side to monitoring either current or voltage.</p>
 <p>The timing of these impulses will be used to calculate the power consumption, actual current and actual voltage. A device specific factor needs to be provided for all the calculations.</p>
+<div class="warning">
+<h3>Warning</h3>
+<ul>
+<li>This warning is serious.</li>
+<li>Stay away from devices with contact to mains voltage.</li>
+<li>Never handle this module when connected to the mains voltage as the contacts are not safe.</li>
+<li>Uploading firmware to devices that have contact to mains voltage is dangerous.</li>
+<li>DO NOT connect the any device to the mains during flashing or while using the serial interface.</li>
+<li>You may kill your computer and yourself.</li>
+<li>When you are making these kind of projects you really need to know what you are doing.</li>
+<li>I have warned you, do not blame on me.</li>
+</ul>
+</div>
 <h2>Web UI for the BL0937 Element</h2>
 <p>There is a dedicated card for this element available that shows the actual measured values and can switch between voltage and current mode.</p>
 <p><img src="/elements/bl0937ui.png" alt="BL0937 Sensor UI"></p>
