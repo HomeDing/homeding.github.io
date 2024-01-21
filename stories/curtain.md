@@ -35,18 +35,7 @@ how to wire the motor and switch. The official product web site is here:
 > It must be ensured that it never happens that both directions are ON at the same time.
 
 
-:::warning
-
-* This warning is serious.
-* Never handle projects that are connected to the mains voltage.
-* Stay away from devices with contact to mains voltage.
-* Uploading firmware to devices that have contact to mains voltage is dangerous.
-* DO NOT connect the any device to the mains during flashing or while using the serial interface.
-* You may kill your computer and yourself.
-* When you are making these kind of projects you really need to know what you are doing.
-* I have warned you, do not blame on me.
-
-:::
+{% include "../dev/power-warning.md" %}
 
 ## Uploading firmware
 

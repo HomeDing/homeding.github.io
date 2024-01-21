@@ -1,7 +1,7 @@
 // .myMarkdown.js
 // local plugin implementation to enrich the markdown with
 // - replace-link -- patch all internal *.md links
-// - containers: excerpt, board, element, sensor, warning
+// - containers: excerpt, board, element, sensor
 
 // https://v0-5-1.11ty.dev/docs/languages/markdown/
 // https://www.11ty.dev/docs/languages/markdown/
@@ -121,18 +121,6 @@ module.exports = {
         if (t.nesting === 1) {
           var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
           return renderImageCard(m[1], undefined, 'sensors', m[1]);
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-    markdownLib.use(mdContainer, 'warning', {
-      render: function(tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*warning\s+(.*)$/);
-          return '<div class="warning"><h3>Warning</h3>\n';
         } else {
           return '</div>\n';
         }

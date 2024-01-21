@@ -23,19 +23,8 @@ with options for time based switching.
 | GPIO12(D6) | relay+LED | relay and LED(blue), (1 to switch on).      |
 
 
-:::warning
+{% include "../dev/power-warning.md" %}
 
-* This warning is serious.
-* Never handle projects that are connected to the mains voltage.
-* Stay away from devices with contact to mains voltage.
-* Uploading firmware to devices that have contact to mains voltage is dangerous.
-* DO NOT connect the any device to the mains during flashing or while using the serial interface.
-* You may kill your computer and yourself.
-* The USB-Serial adapters offer enough power to flash the device.
-* When you are making these kind of projects you really need to know what you are doing.
-* I have warned you, do not blame on me.
-
-:::
 
 ## Example env.json configuration
 

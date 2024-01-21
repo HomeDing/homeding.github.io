@@ -42,19 +42,7 @@ Place a Minimal.ino.bin file in the firmware folder on the raspberry pi to direc
 
 I cannot recommend his procedure because you probably will need to open the device by damaging some of the housing. I did it with a broken device.
 
-:::warning
-
-* This warning is serious.
-* Never handle projects that are connected to the mains voltage.
-* Stay away from devices with contact to mains voltage.
-* Uploading firmware to devices that have contact to mains voltage is dangerous.
-* DO NOT connect the any device to the mains during flashing or while using the serial interface.
-* You may kill your computer and yourself.
-* The USB-Serial adapters offer enough power to flash the device.
-* When you are making these kind of projects you really need to know what you are doing.
-* I have warned you, do not blame on me.
-
-:::
+{% include "../../dev/power-warning.md" %}
 
 Other bulbs use different board layout and some investigation is required to find out.
 A good source of helping information is the repository of device specific templates for the TASMOTA firmware at

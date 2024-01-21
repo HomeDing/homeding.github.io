@@ -7,9 +7,10 @@ excerpt: >
   The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.
 ---
 
-:::warning
+<div style="background-color: #ffe87c">
 This element is still an experimental implementation and available in the radio example.
-:::
+</div>
+
 
 ## Radio library dependency
 
