@@ -61,16 +61,46 @@ u-carousel {
   margin: 1em auto;
   background: white;
 
+  .prev, .next {
+    position: absolute;
+    top:0;
+    top: 50%; transform: translateY(-50%);
+    width:4rem;height:4rem;
+    border-radius:50%;
+    border:0;
+
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  	transition-property: opacity;
+    K  	transition-duration: 0.2s;
+  }
+
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+
+  .prev { left:0; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M34,44l-28,-20l28,-20Z' /></svg>");
+  }
+  
+  .next { right:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M14,44l28,-20l-28,-20Z' /></svg>");
+ }
+
   .entries {
-    scroll-timeline: --carousel x;
+    scroll-timeline-name: --carousel;
+    scroll-timeline-axis: x;
 
     display: flex;
     width: 100%;
     flex-direction: row;
 
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 
     padding: 0;
@@ -93,6 +123,8 @@ u-carousel {
 
 </style>
 <u-carousel>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
   <ul class="entries" tabindex="0">
   <li><img src="./panel-4848S040.jpg" alt="Front View" title="" draggable="false"></li>
   <li><img src="./panel-4848S040-01.jpg" alt="Front to Back connectors" title="" draggable="false"></li>
@@ -106,7 +138,7 @@ u-carousel {
 <p>The back part contains a power supply and the 1 to 3 relays.</p>
 <p>Both parts are connected by the 8-pin connector.</p>
 <div class="warning">
-<h3>Warning</h3>
+<h4>Warning</h4>
 <ul>
 <li>This warning is serious.</li>
 <li>Stay away from devices with contact to mains voltage.</li>

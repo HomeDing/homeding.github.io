@@ -47,6 +47,88 @@ can be addressed using the <a href="/dev/i2c.htm">Wire / I2C</a> or the <a href=
 <li>typically 0.49 inch (64*32 resolution)</li>
 </ul>
 <p>Displays are availabe in several colors and also mixed colors. One pixel always has one color so these are not real color displays.</p>
+<style>
+u-carousel {
+  timeline-scope: --carousel;
+
+  display:block;
+  width: 600px;
+  height: auto;
+
+  position: relative;
+  margin: 1em auto;
+  background: white;
+
+  .prev, .next {
+    position: absolute;
+    top:0;
+    top: 50%; transform: translateY(-50%);
+    width:4rem;height:4rem;
+    border-radius:50%;
+    border:0;
+
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  	transition-property: opacity;
+    K  	transition-duration: 0.2s;
+  }
+
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+
+  .prev { left:0; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M34,44l-28,-20l28,-20Z' /></svg>");
+  }
+  
+  .next { right:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M14,44l28,-20l-28,-20Z' /></svg>");
+ }
+
+  .entries {
+    scroll-timeline-name: --carousel;
+    scroll-timeline-axis: x;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 0;
+
+    > li {
+      scroll-snap-align: center;
+      flex: 100% 0 0;
+
+      display: grid;
+      place-content: center;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 600px;
+    }
+  }
+}
+
+</style>
+<u-carousel>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
+  <ul class="entries" tabindex="0">
+  <li><img src="./ssd1306.jpg" alt="Display connected with i2c bus." title="" draggable="false"></li>
+  <li><img src="./ssd1306-spi7.jpg" alt="Display connected with SPI bus all pins." title="" draggable="false"></li>
+  <li><img src="./ssd1306-spi6.jpg" alt="Display connected with SPI bus - no DC pin." title="" draggable="false"></li>
+  </ul>
+</u-carousel>
 <p><img src="/elements/display/ssd1306.jpg" alt="SSD1306 display"></p>
 <p>The implementation is done with the help of the GFX library for Arduino.</p>
 <h2>Web UI for the Display Element</h2>
