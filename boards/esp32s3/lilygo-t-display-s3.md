@@ -4,19 +4,26 @@ tags: ["Board", "WIP"]
 layout: "page.njk"
 description: ESP32-S3 board with integrated TFT color display.
 excerpt: > 
-  The LilyGO T-Display-S3 board offer an integrated TFT color display with
+  The LilyGO T-Display-S3 board has an integrated TFT color display **with**
   optional capacitive touch and a USB-C type connector.
 ---
 
-This board is based on a ESP32-C3 module.
+The T-Display-S3 is a [ESP32-S3](/boards/esp32s3/index.md) based development with a 1.9" IPS LCD color touch screen and two
+separate momentary buttons. Communication to the display is using a fast 8 bit interface. The USB-C board is supported by the
+ESP32-S3 chip.
+
+![TTGO T-Display](/boards/esp32s3/lilygo-t-display-s3.jpg)
+
 
 ## Arduino Board Configuration
 
-The board is known in the list of board configurations for esp32 by espresif.
+The board is known in the list of predefined board configurations for esp32 by espresif.
 It can be used with the following Arduino settings:
 
 * Package: esp32 by Espressif
 * Board: LilyGO T-Display-S3
+
+The following board settings can be used:
 
 * JTAG Adapter: Disbled
 * Arduino Runs On: Core 1
@@ -30,42 +37,13 @@ It can be used with the following Arduino settings:
 * Core Debug Level: None
 * Erase All Flash: Disabled
 
+For the Arduino-CLI the following boardname and build properties can be used:
 
-<!--
-
-![TTGO T-Display](/boards/esp32/ttgo-t-display.jpg)
-
-* ESP32-D0WD-Q6 Processor (Dual core, 240Mhz  processor)
-* Display: IPS ST7789V 1.14 Inch display, 135 * 240 pixels, 64k colors
-* 3.7V battery charging circuit
-* Supply voltage: 3.3V DC or 5V DC
-* SRAM: 520KB
-* Flash memory: 4MByte in QIO Mode
-* PCB dimensions: 51.4 x 25.2mm
-* JST Connector: 2Pin 1.25mmx
-* USB: Type-C
-* USB-Bridge: CP2104 chip
-
-
-## Arduino Board Configuration
-
-The board can be used with the following Arduino settings:
-
-* Package: esp32 by Espressif
-* Board: ESP32 Dev Module
-
-* JTAG Adapter: Disbled
-* PSRAM: Disbled
-* Partition Scheme: Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
-* CPU Frequency: 240MHz
-* Flash Mode: **QIO**
-* Flash Frequency: 80 MHz
-* Flash Size: 4MByte (32Mbit)
-* Upload Speed: 921600
-* Arduino Runs On: Core 1
-* Events Runs On: Core 1
-* Core Debug Level: None
-* Erase All Flash: Disabled
+```bash
+fqbn = "esp32:esp32:lilygo_t_display_s3"
+properties = "JTAGAdapter=default,LoopCore=1,EventsCore=1,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,
+  DFUOnBoot=default,UploadMode=default,PartitionScheme=app3M_fat9M_16MB,DebugLevel=none,EraseFlash=none"
+```
 
 
 ## Display ST7789
@@ -73,134 +51,53 @@ The board can be used with the following Arduino settings:
 The display is a IPS type TFT display using the ST7789 driver chip on the SPI bus. It is
 supported by the `GFX Library for Arduino`.
 
-The chip supports a maximal display resolution of 240\*320 pixels in 262k colors but this
-display only supports 135\*240 pixels with 64k colors in RGB565 addressing.
+The board supports a display resolution of 170\*320 pixels in 64k colors in RGB565 addressing.
 
-Therefore the display offsets must be specified in the configuration.
-
-See configuration in `env.json` below.
+The background lightning can be adjusted using PWM based LED control on pin GPIO38.
 
 
-## External Connectors
+## Touch CST816
 
-Some power and GPIO pins are available for external components:
+The touch screen is using the CST816 chip that is supported by the
+[Display TouchCST816 Element](/elements/display/touchcst816.md). Is is using the [i2c bus](/dev/i2c.md) as an interface and the
+SCL and SDA pins must be specified in the [device element](/elements/device.md) configuration.
 
-``` txt
-    +-------------+
-    |   T T G O   |
-G   | +---------+ | 3V
-G   | |    D    | | 36
-21  | |    I    | | 37
-22  | |    S    | | 38
-17  | |    P    | | 39
-2   | |    L    | | 32
-15  | |    A    | | 33
-13  | |    Y    | | 25
-12  | |         | | 26
-G   | |         | | 27
-G   | |         | |  G
-3V  | |         | | 5V
-    | +---------+ |
-    |             B-RST
-    | B-2     B-1 |
-    +-----USB-----+
-```
+The touch controller goes beyond the graphics surface and when touching the soft button marked with a circle below the display
+the touch controller reports a touch event on location ???
 
+## Power
 
-## Internal GPIO usages
+The board can be powered through the USB-C connector. It does not support the complete USB-C specification, especially not the
+USB-C voltage negotiation protocol and a USB2.0 USB-A to USB-C cable must be used.
 
-| Name       | GPIO | Remarks                        |
-| ---------- | ---: | ------------------------------ |
-| TFT_MISO   |      | n/a                            |
-| TFT_MOSI   |   19 | usually MISO on Arduino Setups |
-| TFT_SCLK   |   18 | = Arduino Standard             |
-| TFT_CS     |    5 |                                |
-| TFT_DC     |   16 |                                |
-| TFT_RST    |   23 |                                |
-| TFT_BL     |    4 | TFT Backlight    |
-| ADC_IN     |   34 | (Batt_ADC)                     |
-| BUTTON1    |   35 |                                |
-| BUTTON2    |    0 |                                |
-| ADC Power  |   14 |                                |
+There is a LiPo charger chip and a JST-GH 1.25mm 2pin battery connector so the device can run some time on this power supply, depending from the given LiPo capacity.
 
-The TFT is not connected to the usual SPI pins.
-The data pin is attached to pin 19 that is usually used for SPI data input (MISO). As the SPI bus and all TFT connections are not available on the board pins so there will be no conflict.
+The battery mode (no VCC from the USB-C connector) can be controlled by 2 pins:
 
-The Backlight can be dimmed by using a GPIO 4 and can be used to adjust the brightness.
+**GPIO4** -- This pin can be used to messure the current battery voltage and calculate the remaining battery capacity from this.
+  
+???
+
+**GPI15** -- This pin can enable power to the display that is disabled while on battery mode by default.
+When the pin is pulled high the 3.3 volt is given to the display and the green LED on the board.
+
+???
 
 
-## Example env.json Device Configuration 
+## Buttons
+
+The board is equipped with 3 momentary buttons:
+
+* The reset button is reachable at the side of the main board.
+* The Boot button is connected to GPIO0 as usual. It is located **???** left to the USB-C port.
+* THe Key Button is connected to GPIO14 and is located **???** left to the USB-C port.
+
+The Key button and the Boot button can be used for functional purpose when the device has booted.
+
+
+## Example env.json Device Configuration
 
 ``` json
-{
-  "device": {
-    "0": {
-      "name": "tdisplay",
-      "title": "T-Display",
-      "description": "LilyGO TTGO T-Display",
-      "safemode": "false",
-      "button": 0,
-      "homepage": "/index.htm"
-    }
-  },
-
-  "ota": { "0": {} },
-
-  "DisplayST7789": {
-    "0": {
-      "description": "ST7789 Display",
-      "width": "135",
-      "height": "240",
-
-      "rotation": "180",
-      "colOffset": "52",
-      "rowOffset": "40",
-      "ips": "true",
-
-      "lightpin": "4",
- 
-      "spimosi": "19",
-      "spiCLK": "18",
-      "spics": "5",
-      "spidc": "16",
-    
-      "spiRST": "23"
-    }
-  },
-
-  "value": {
-    "dim": {
-      "title": "Display Backlight",
-      "description": "Manual Backlight control",
-      "min": "0",
-      "max": "100",
-      "value": "50",
-      "onvalue": "DisplayST7789/0?brightness=$v"
-    }
-  }
-}
-```
-
-
-## See also
-
-* [Display Elements](/elements/display/index.md)
-* [ST7789 Display Element](/elements/display/st7789.md)
-* [SPI](/dev/spi.md)
-* <http://www.lilygo.cn/prod_view.aspx?TypeId=50062&Id=1400&FId=t3:50062:3>
-* <https://github.com/Xinyuan-LilyGO/TTGO-T-Display>
-
-
-https://github.com/teastainGit/LilyGO-T-display-S3-setup-and-examples
-
-https://github.com/Xinyuan-LilyGO/T-Display-S3
-
-
- -->
-
-
- ``` json
-
 {
   "device": {
     "0": {
@@ -220,17 +117,16 @@ https://github.com/Xinyuan-LilyGO/T-Display-S3
   "ota": {
     "0": {}
   },
-  "diag": {
-    "0": {}
-  },
+
   "DisplayST7789": {
     "0": {
-      "busmode": "par8",
-      "buspins": "39, 40, 41, 42, 45, 46, 47, 48",
-      "ips": 1,
       "width": "170",
       "height": "320",
       "rotation": "270",
+
+      "busmode": "par8",
+      "buspins": "39, 40, 41, 42, 45, 46, 47, 48",
+      "ips": 1,
       "rowOffset": 0,
       "colOffset": 35,
       "resetpin": 5,
@@ -239,11 +135,13 @@ https://github.com/Xinyuan-LilyGO/T-Display-S3
       "dcpin": "7",
       "wrpin": "8",
       "rdpin": "9",
+
       "color": "black",
       "border": "black",
       "background": "#cccccc"
     }
   },
+
   "DisplayTouchCST816": {
     "0": {
       "width": "170",
@@ -258,6 +156,124 @@ https://github.com/Xinyuan-LilyGO/T-Display-S3
 
 ## See Also
 
+* <https://www.lilygo.cc/products/t-display-s3>
 * <https://github.com/Xinyuan-LilyGO/T-Display-S3>
-* [Display TouchCST816 Element](/elements/display/touchcst816.md)
+* <https://github.com/teastainGit/LilyGO-T-display-S3-setup-and-examples>
+
+* [Display Elements](/elements/display/index.md)
 * [Display ST7789 Element](/elements/display/st7789.md)
+* [Display TouchCST816 Element](/elements/display/touchcst816.md)
+
+* [I2C bus](/dev/i2c.md)
+* <http://www.lilygo.cn/prod_view.aspx?TypeId=50062&Id=1400&FId=t3:50062:3>
+* <https://github.com/Xinyuan-LilyGO/TTGO-T-Display>
+
+
+---
+
+```
+#include "Arduino.h"
+#include "TFT_eSPI.h" /* Please use the TFT library provided in the library. */
+#include <esp_adc_cal.h>
+
+#if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5,0,0)
+#error  "The current version is not supported for the time being, please use a version below Arduino ESP32 3.0"
+#endif
+
+/* The product now has two screens, and the initialization code needs a small change in the new version. The LCD_MODULE_CMD_1 is used to define the
+ * switch macro. */
+#define LCD_MODULE_CMD_1
+#define PIN_POWER_ON                 15
+#define PIN_BAT_VOLT                 4
+#define PIN_LCD_BL                   38
+
+TFT_eSPI tft = TFT_eSPI();
+unsigned long targetTime = 0;
+
+
+#if defined(LCD_MODULE_CMD_1)
+typedef struct {
+    uint8_t cmd;
+    uint8_t data[14];
+    uint8_t len;
+} lcd_cmd_t;
+
+lcd_cmd_t lcd_st7789v[] = {
+    {0x11, {0}, 0 | 0x80},
+    {0x3A, {0X05}, 1},
+    {0xB2, {0X0B, 0X0B, 0X00, 0X33, 0X33}, 5},
+    {0xB7, {0X75}, 1},
+    {0xBB, {0X28}, 1},
+    {0xC0, {0X2C}, 1},
+    {0xC2, {0X01}, 1},
+    {0xC3, {0X1F}, 1},
+    {0xC6, {0X13}, 1},
+    {0xD0, {0XA7}, 1},
+    {0xD0, {0XA4, 0XA1}, 2},
+    {0xD6, {0XA1}, 1},
+    {0xE0, {0XF0, 0X05, 0X0A, 0X06, 0X06, 0X03, 0X2B, 0X32, 0X43, 0X36, 0X11, 0X10, 0X2B, 0X32}, 14},
+    {0xE1, {0XF0, 0X08, 0X0C, 0X0B, 0X09, 0X24, 0X2B, 0X22, 0X43, 0X38, 0X15, 0X16, 0X2F, 0X37}, 14},
+};
+#endif
+
+void setup()
+{
+
+    // This IO15 must be set to HIGH, otherwise nothing will be displayed when USB is not connected.
+    pinMode(PIN_POWER_ON, OUTPUT);
+    digitalWrite(PIN_POWER_ON, HIGH);
+
+    Serial.begin(115200);
+
+    tft.begin();
+    tft.setRotation(3);
+    tft.setTextSize(1);
+    tft.fillScreen(TFT_BLACK);
+    tft.setTextColor(TFT_GREEN, TFT_BLACK);
+
+#if defined(LCD_MODULE_CMD_1)
+    for (uint8_t i = 0; i < (sizeof(lcd_st7789v) / sizeof(lcd_cmd_t)); i++) {
+        tft.writecommand(lcd_st7789v[i].cmd);
+        for (int j = 0; j < lcd_st7789v[i].len & 0x7f; j++) {
+            tft.writedata(lcd_st7789v[i].data[j]);
+        }
+
+        if (lcd_st7789v[i].len & 0x80) {
+            delay(120);
+        }
+    }
+#endif
+
+    // Turn on backlight
+    ledcSetup(0, 2000, 8);
+    ledcAttachPin(PIN_LCD_BL, 0);
+    ledcWrite(0, 255);
+
+}
+
+void loop()
+{
+    if (millis() > targetTime) {
+        esp_adc_cal_characteristics_t adc_chars;
+
+        // Get the internal calibration value of the chip
+        esp_adc_cal_value_t val_type = esp_adc_cal_characterize(ADC_UNIT_1, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_12, 1100, &adc_chars);
+        uint32_t raw = analogRead(PIN_BAT_VOLT);
+        uint32_t v1 = esp_adc_cal_raw_to_voltage(raw, &adc_chars) * 2; //The partial pressure is one-half
+
+        tft.fillScreen(TFT_BLACK);
+        tft.setCursor(0, 0);
+
+        // If the battery is not connected, the ADC detects the charging voltage of TP4056, which is inaccurate.
+        // Can judge whether it is greater than 4300mV. If it is less than this value, it means the battery exists.
+        if (v1 > 4300) {
+            tft.print("No battery connect!");
+        } else {
+            tft.print(v1);
+            tft.print("mV");
+        }
+        targetTime = millis() + 1000;
+    }
+    delay(20);
+}
+```

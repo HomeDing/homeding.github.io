@@ -8,17 +8,29 @@ excerpt: >
   a APA102 LED, a input button and SD card slot.
 ---
 
+{% from 'macros.njk' import carousel %}
+
+{{ carousel([
+  { "file": "./lilygo-t-dongle-s3-display.jpg", "text": "LilyGO T-Dongle S3"},
+  { "file": "./lilygo-t-dongle-s3-sd.jpg", "text": "SD-Card slot the dongle."}
+]) }}
+
+
+This panel including advanced graphic features is supported by the [HomeDing Display Example](/examples/display.md).
+
 The following features are available on this board.
 
-* ST7735 based display
-* SD Card slot
+This board is equipped with:
+
+* ESP32-S3 processor
+* 16 MByte Flash in QIO mode
+* 80 * 160 px based on ST7735: 16-bit color, SPI
+* SD card slot
 * A momentary Input button
 * Color LED
 
 
 ### ST7735 based display
-
-![Display of the dongle](lilygo-t-dongle-s3-display.jpg)
 
 The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:
 
@@ -41,9 +53,7 @@ The complete configuration of the DisplayST7735 Element can be found below.
 See also <https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160>
 
 
-### SD Card
-
-![SD-Card slot the dongle](lilygo-t-dongle-s3-sd.jpg)
+### Faster SD Card
 
 The SD Card inside the USB connector is connected directly to the ESP32-S3 processor
 using the MMC interface.
@@ -62,7 +72,7 @@ a pin configuration (see below) must be given:
 
 ### Input Button
 
-The input button on the back of the stick pulls the esp32-pin 0 down when pressed. 
+The input button on the back of the stick pulls the esp32-pin 0 down when pressed.
 
 | function | ESP32 pin |
 | -------- | --------- |
@@ -73,14 +83,14 @@ Don't configure this button in the device configuration to start the config mode
 
 ### Color LED
 
-APA102 LED
+The color LED on the backside is a APA102 LED supported by the [APA102 Element](/elements/light/apa102.md).
+
+Data and Clock lines are connected on these pins:
 
 | function | ESP32 pin |
 | -------- | --------- |
 | Data     | 40        |
 | Clock    | 39        |
-
-APA102 LEDs are currently not supported by the HomeDing Library.
 
 
 ## Arduino Board Configuration
@@ -95,27 +105,15 @@ To compile for this board in Arduino the following settings for the board can be
 * USB Mode Hardware CDC and JTAG
 * USB CDC On Boot: Enabled
 
+For the Arduino-CLI the following boardname and build properties can be used:
 
-### Diag output
-
-``` txt
-I2C pins sda=-1 scl=-1
-Reset Reason: 12
- Free Heap: 310160
- Mac-address: F4:12:FA:41:38:18
-Chip-Info:
-  model: ESP32-S3(9)
-  features: 00000012
-    2.4GHz WiFi
-    Bluetooth LE
-  cores: 2
-  revision: 0
-ChipModel: ESP32-S3
-Flash:
-  Size: 16777216
-  Mode: QIO(0)
-  Speed: 80000000
+```bash
+fqbn = "esp32:esp32:esp32s3"
+properties = "JTAGAdapter=default,PSRAM=disabled,FlashMode=qio,FlashSize=16M,
+  LoopCore=1,EventsCore=1,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,
+  UploadMode=default,PartitionScheme=default,CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none"
 ```
+
 
 ## Board configuration
 
@@ -140,15 +138,16 @@ The following `env.json` configuration can be used for this board and contains s
       "led": "38"
     }
   },
+
   "DisplayST7735": {
     "0": {
       "description": "Display",
-      "loglevel": 2,
       "width": "80",
       "height": "160",
       "rotation": 270,
       "colOffset": 26,
       "rowOffset": 1,
+      "ips": 1,
 
       "busmode": "spi",
       "spiClk": 5,
@@ -157,36 +156,40 @@ The following `env.json` configuration can be used for this board and contains s
       "spiCS": 4,
       "resetpin": 1,
 
-      "background": "x001020"
+      "background": "black"
     }
   },
+
   "digitalin": {
     "pin": {
+      "description": "Momentary button",
       "pin": "0",
       "inverse": "1",
       "pullup": 1
     }
   },
+
   "pwmout": {
     "displayled": {
-      "title": "Display Backlight",
-      "description": "Backlight LED dimming",
+      "title": "Backlight",
+      "description": "Display Backlight",
       "pin": "38",
       "range": "255",
       "inverse": "1"
     }
   },
+
   "apa102": {
     "led": {
+      "description": "RGB color LED",
       "datapin": 40,
       "clockpin": 39,
       "count": 1,
       "loglevel": 2,
-      "duration": "4s",
-      "xbrightness": "30",
-      "xvalue": "x203050"
+      "duration": "4s"
     }
   },
+
   "sdmmc": {
     "0": {
       "mmcD0": "14",
@@ -201,38 +204,40 @@ The following `env.json` configuration can be used for this board and contains s
 ```
 
 
-## Board test config
+### Diag and chipinfo output
 
-For first testing purpose the following configuration in `config.json` can be used:
+``` txt
+**Info**
+DeviceName: dongle-s3
+Build Date & Time: Jan 26 2024T08:09:56
+State: []
+Mac-address: F4:12:FA:41:xx:xx
 
-* Dispay the current time on the display
-
-
-``` json
-{
-  "ntptime": {
-    "0": {
-      "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
-    }
-  },
-  "time": {
-    "clock": {
-      "onminute": "displaytext/time?value=$v"
-    }
-  },
-  "displaytext": {
-    "time": {
-      "x": 8,
-      "y": 8,
-      "fontsize": 32,
-      "description": "Display the time"
-    }
-  }
-}
+no i2c bus.
 ```
+
+``` txt
+Chip Infos:
+  model: esp32s3(9)
+  features: 00000012
+    2.4GHz WiFi
+    Bluetooth LE
+  cores: 2
+  revision: 0
+
+Flash:  Size: 16384 kByte
+  Mode: QIO(0)
+  Speed: 80000000
+
+PSRAM:  Size: 0 kByte
+```
+
 
 ## See also
 
+* [Color Display based on ST7735](/elements/display/st7735.md)
+* [APA102 Element](/elements/light/apa102.md)
+* [SD Card](/elements/sdmmc.md)
 * <https://www.lilygo.cc/products/t-dongle-s3>
 * <https://github.com/Xinyuan-LilyGO/T-Dongle-S3>
 

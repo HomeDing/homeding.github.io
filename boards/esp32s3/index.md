@@ -47,15 +47,12 @@ It offers:
 * integrated Flash Memory (option)
 * integrated PSRAM Memory (option)
 
-This SoC is positioned as a high-power SoC
- MCU with Wi-Fi and Bluetooth 5 (LE) for general purpose devices. The built-in LCD interface allows fast display performance.
-
+This SoC is positioned as a high-power SoC MCU with Wi-Fi and Bluetooth 5 (LE) for general purpose devices. The built-in LCD
+interface allows fast display performance.
 
 It is part of some modules that offer PCB antenna or antenna connectors.
 
-
-The official [Arduino Nano ESP32]
-is based on this processor using a custom Module from U-BLOX.
+The official [Arduino Nano ESP32] is based on this processor using a custom Module from U-BLOX.
 
 
 ## Flash and PSRAM Memory options
@@ -92,8 +89,7 @@ configuration for the USB features in the ESP32-S3 SoC must look like:
 * Upload Mode: UART0 / Hardware CDC
 
 
-When you find a USB to Serial converter on the board the configuration for the USB features in
-the ESP32-S3 SoC must look like:
+When you find a USB to Serial converter on the board the configuration for the USB features in the ESP32-S3 SoC must look like:
 
 
 To use the USB port as Serial port the CDC on boot option must be enabled in the Arduino configuration.
@@ -129,6 +125,10 @@ This results in faster secure (https) network requests.
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-dongle-s3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-display-s3') }}
+
 {{ imgCard(collections.all, item = '/boards/esp32s3/xiao-esp32s3') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
@@ -143,10 +143,8 @@ This results in faster secure (https) network requests.
 * Product web site: <https://www.espressif.com/en/products/socs/esp32-s3>
 * ESP32-S3 datasheet <https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>
 * [Arduino Nano ESP32]
-* [XIAO ESP32 S3]
 * [ESP32-C3 boards](/boards/esp32c3/index.md)
 * <https://www.youtube.com/watch?v=hJSBTFsOnoA>
 
 
 [Arduino Nano ESP32]:/boards/esp32s3/arduino-nano-esp32.md
-[XIAO ESP32 S3]:/boards/esp32s3/xiao-esp32s3.md
