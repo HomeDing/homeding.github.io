@@ -39,7 +39,10 @@ When the display supports pixel level control also DisplayLine Element can be us
 | [ST7789]          | TFT LCD    | up to 320\*240             | 16-bit color    |
 | [ST7796]          | TFT LCD    | 320\*480                   | 16-bit color    | *2 |
 | [ST7735]          | TFT LCD    | up to 132\*160             | 16-bit color    | *2 | [b1](/boards/esp32s3/lilygo-t-dongle-s3.md) |
-| ST7262            |            |                            |                 |    | [b0](/boards/esp32s3/panel-8048S043.md)         |
+| ST7262            |            |                            |                 |    | [b0](/boards/esp32s3/panel-8048S043.md)     |
+| [ESP32Panel]      | TFT LCD    | using the 16-bit panel bus |                 |
+| [ST7701]          | TFT LCD    | using the 16-bit panel bus |                 |
+
 
 The DisplayButton Element can be used when a touch control is available within the display
 to allow click based activities.
@@ -215,4 +218,5 @@ On startup, when a display is configured, some system information is displayed b
 [ssd1309]: /elements/display/ssd1309.md
 [st7789]: /elements/display/st7789.md
 [st7735]: /elements/display/st7735.md
-
+[ESP32Panel]: /elements/display/panel.md
+[ST7701]: /elements/display/st7701.md

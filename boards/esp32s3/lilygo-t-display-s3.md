@@ -70,18 +70,22 @@ the touch controller reports a touch event on location ???
 The board can be powered through the USB-C connector. It does not support the complete USB-C specification, especially not the
 USB-C voltage negotiation protocol and a USB2.0 USB-A to USB-C cable must be used.
 
-There is a LiPo charger chip and a JST-GH 1.25mm 2pin battery connector so the device can run some time on this power supply, depending from the given LiPo capacity.
+The board can run by using the power from a 3.7 V LiPo battery pack attached to the JST-GH 1.25mm 2pin connector on the board.
+There is a LiPo charger chip that loads the battery.
 
-The battery mode (no VCC from the USB-C connector) can be controlled by 2 pins:
+The time the device can run on batter power supply depends on the given LiPo capacity. As the display is the most power
+consuming part of the device this is switched off on battery mode (no power provided by USB-C).
+
+The battery mode can be controlled by 2 pins:
+
+**GPI15** -- This pin can enable the power to the display on battery. When the pin is pulled high the 3.3 volt is given to the
+display and the green LED on the board.
+A [Digital Output Element](/elements/digitalout.md) can be used to control this signal.
+
+There is a recipe below that uses the menu touch button to trigger a timer so the display is on for some seconds when needed. 
 
 **GPIO4** -- This pin can be used to messure the current battery voltage and calculate the remaining battery capacity from this.
   
-???
-
-**GPI15** -- This pin can enable power to the display that is disabled while on battery mode by default.
-When the pin is pulled high the 3.3 volt is given to the display and the green LED on the board.
-
-???
 
 
 ## Buttons
@@ -152,6 +156,12 @@ The Key button and the Boot button can be used for functional purpose when the d
     }
   }
 }
+```
+
+## Enable the display when touching the menu button
+
+```json
+
 ```
 
 ## See Also
