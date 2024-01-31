@@ -34,15 +34,99 @@
 
           </div>
         
-        <p>The following features are available on this board.</p>
+        <style>
+u-carousel {
+  timeline-scope: --carousel;
+
+  display:block;
+  width: 600px;
+  height: auto;
+
+  position: relative;
+  margin: 1em auto;
+  background: white;
+
+  .prev, .next {
+    position: absolute;
+    top:0;
+    top: 50%; transform: translateY(-50%);
+    width:4rem;height:4rem;
+    border-radius:50%;
+    border:0;
+
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  	transition-property: opacity;
+    K  	transition-duration: 0.2s;
+  }
+
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+
+  .prev { left:0; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M34,44l-28,-20l28,-20Z' /></svg>");
+  }
+  
+  .next { right:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M14,44l28,-20l-28,-20Z' /></svg>");
+ }
+
+  .entries {
+    scroll-timeline-name: --carousel;
+    scroll-timeline-axis: x;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 0;
+
+    > li {
+      scroll-snap-align: center;
+      flex: 100% 0 0;
+
+      display: grid;
+      place-content: center;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 600px;
+    }
+  }
+}
+
+</style>
+<u-carousel>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
+  <ul class="entries" tabindex="0">
+  <li><img src="./lilygo-t-dongle-s3-display.jpg" alt="LilyGO T-Dongle S3" title="" draggable="false"></li>
+  <li><img src="./lilygo-t-dongle-s3-sd.jpg" alt="SD-Card slot the dongle." title="" draggable="false"></li>
+  </ul>
+</u-carousel>
+<p>This panel including advanced graphic features is supported by the <a href="/examples/display.htm">HomeDing Display Example</a>.</p>
+<p>The following features are available on this board.</p>
+<p>This board is equipped with:</p>
 <ul>
-<li>ST7735 based display</li>
-<li>SD Card slot</li>
+<li>ESP32-S3 processor</li>
+<li>16 MByte Flash in QIO mode</li>
+<li>80 * 160 px based on ST7735: 16-bit color, SPI</li>
+<li>SD card slot</li>
 <li>A momentary Input button</li>
 <li>Color LED</li>
 </ul>
 <h3>ST7735 based display</h3>
-<p><img src="lilygo-t-dongle-s3-display.jpg" alt="Display of the dongle"></p>
 <p>The built-in display based on the ST7735 chip has a 80 * 160 resolution and is using the following pins:</p>
 <table>
 <thead>
@@ -83,8 +167,7 @@ column offset of 26 and a row offset of 1 must be configured.</p>
 <p>This display is supported by the Arduino_GFX library mentioned as “096-ips-lcd-80x160”.</p>
 <p>The complete configuration of the DisplayST7735 Element can be found below.</p>
 <p>See also <a href="https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160">https://github.com/moononournation/Arduino_GFX/wiki/Display-Class#096-ips-lcd-80x160</a></p>
-<h3>SD Card</h3>
-<p><img src="lilygo-t-dongle-s3-sd.jpg" alt="SD-Card slot the dongle"></p>
+<h3>Faster SD Card</h3>
 <p>The SD Card inside the USB connector is connected directly to the ESP32-S3 processor
 using the MMC interface.
 As the ESP32-S3 processor offers flexibility in using custom defined pins
@@ -141,7 +224,8 @@ a pin configuration (see below) must be given:</p>
 </table>
 <p>Don’t configure this button in the device configuration to start the config mode as it is set to active LOW</p>
 <h3>Color LED</h3>
-<p>APA102 LED</p>
+<p>The color LED on the backside is a APA102 LED supported by the <a href="/elements/light/apa102.htm">APA102 Element</a>.</p>
+<p>Data and Clock lines are connected on these pins:</p>
 <table>
 <thead>
 <tr>
@@ -160,7 +244,6 @@ a pin configuration (see below) must be given:</p>
 </tr>
 </tbody>
 </table>
-<p>APA102 LEDs are currently not supported by the HomeDing Library.</p>
 <h2>Arduino Board Configuration</h2>
 <p>To compile for this board in Arduino the following settings for the board can be used:</p>
 <ul>
@@ -172,23 +255,11 @@ a pin configuration (see below) must be given:</p>
 <li>USB Mode Hardware CDC and JTAG</li>
 <li>USB CDC On Boot: Enabled</li>
 </ul>
-<h3>Diag output</h3>
-<pre class="language-txt"><code class="language-txt">I2C pins sda=-1 scl=-1
-Reset Reason: 12
- Free Heap: 310160
- Mac-address: F4:12:FA:41:38:18
-Chip-Info:
-  model: ESP32-S3(9)
-  features: 00000012
-    2.4GHz WiFi
-    Bluetooth LE
-  cores: 2
-  revision: 0
-ChipModel: ESP32-S3
-Flash:
-  Size: 16777216
-  Mode: QIO(0)
-  Speed: 80000000</code></pre>
+<p>For the Arduino-CLI the following boardname and build properties can be used:</p>
+<pre class="language-bash"><code class="language-bash">fqbn <span class="token operator">=</span> <span class="token string">"esp32:esp32:esp32s3"</span>
+properties <span class="token operator">=</span> <span class="token string">"JTAGAdapter=default,PSRAM=disabled,FlashMode=qio,FlashSize=16M,
+  LoopCore=1,EventsCore=1,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,
+  UploadMode=default,PartitionScheme=default,CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none"</span></code></pre>
 <h2>Board configuration</h2>
 <p>The following <code>env.json</code> configuration can be used for this board and contains settings for</p>
 <ul>
@@ -208,15 +279,16 @@ Flash:
       <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"38"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
   <span class="token property">"DisplayST7735"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display"</span><span class="token punctuation">,</span>
-      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
       <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"80"</span><span class="token punctuation">,</span>
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"160"</span><span class="token punctuation">,</span>
       <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token number">270</span><span class="token punctuation">,</span>
       <span class="token property">"colOffset"</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
       <span class="token property">"rowOffset"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"ips"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
 
       <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"spi"</span><span class="token punctuation">,</span>
       <span class="token property">"spiClk"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
@@ -225,36 +297,40 @@ Flash:
       <span class="token property">"spiCS"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
       <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
 
-      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"x001020"</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"black"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
   <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Momentary button"</span><span class="token punctuation">,</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
       <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
       <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token number">1</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
   <span class="token property">"pwmout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"displayled"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display Backlight"</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Backlight LED dimming"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Backlight"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display Backlight"</span><span class="token punctuation">,</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"38"</span><span class="token punctuation">,</span>
       <span class="token property">"range"</span><span class="token operator">:</span> <span class="token string">"255"</span><span class="token punctuation">,</span>
       <span class="token property">"inverse"</span><span class="token operator">:</span> <span class="token string">"1"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
   <span class="token property">"apa102"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"RGB color LED"</span><span class="token punctuation">,</span>
       <span class="token property">"datapin"</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
       <span class="token property">"clockpin"</span><span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span>
       <span class="token property">"count"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
       <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span>
-      <span class="token property">"xbrightness"</span><span class="token operator">:</span> <span class="token string">"30"</span><span class="token punctuation">,</span>
-      <span class="token property">"xvalue"</span><span class="token operator">:</span> <span class="token string">"x203050"</span>
+      <span class="token property">"duration"</span><span class="token operator">:</span> <span class="token string">"4s"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
   <span class="token property">"sdmmc"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"mmcD0"</span><span class="token operator">:</span> <span class="token string">"14"</span><span class="token punctuation">,</span>
@@ -266,33 +342,32 @@ Flash:
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h2>Board test config</h2>
-<p>For first testing purpose the following configuration in <code>config.json</code> can be used:</p>
-<ul>
-<li>Dispay the current time on the display</li>
-</ul>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"clock"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"onminute"</span><span class="token operator">:</span> <span class="token string">"displaytext/time?value=$v"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"displaytext"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"time"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
-      <span class="token property">"fontsize"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the time"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<h3>Diag and chipinfo output</h3>
+<pre class="language-txt"><code class="language-txt">**Info**
+DeviceName: dongle-s3
+Build Date &amp; Time: Jan 26 2024T08:09:56
+State: []
+Mac-address: F4:12:FA:41:xx:xx
+
+no i2c bus.</code></pre>
+<pre class="language-txt"><code class="language-txt">Chip Infos:
+  model: esp32s3(9)
+  features: 00000012
+    2.4GHz WiFi
+    Bluetooth LE
+  cores: 2
+  revision: 0
+
+Flash:  Size: 16384 kByte
+  Mode: QIO(0)
+  Speed: 80000000
+
+PSRAM:  Size: 0 kByte</code></pre>
 <h2>See also</h2>
 <ul>
+<li><a href="/elements/display/st7735.htm">Color Display based on ST7735</a></li>
+<li><a href="/elements/light/apa102.htm">APA102 Element</a></li>
+<li><a href="/elements/sdmmc.htm">SD Card</a></li>
 <li><a href="https://www.lilygo.cc/products/t-dongle-s3">https://www.lilygo.cc/products/t-dongle-s3</a></li>
 <li><a href="https://github.com/Xinyuan-LilyGO/T-Dongle-S3">https://github.com/Xinyuan-LilyGO/T-Dongle-S3</a></li>
 </ul>

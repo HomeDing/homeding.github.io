@@ -74,11 +74,16 @@ on AliExpress. On the web site you find documentation but be they seem not to fi
 drivers and this example may be adapted to other configurations when required.</p>
 <p>Download of files is available at <a href="http://www.jczn1688.com/zlxz">http://www.jczn1688.com/zlxz</a>, Download passwort: jczn1688<br>
 <a href="https://pan.jczn1688.com/pd/1/ESP32%20module/4.3inch_ESP32-8048S043.zip">https://pan.jczn1688.com/pd/1/ESP32 module/4.3inch_ESP32-8048S043.zip</a></p>
+<p>For the Arduino-CLI the following boardname and build properties can be used:</p>
+<pre class="language-bash"><code class="language-bash">fqbn <span class="token operator">=</span> <span class="token string">"esp32:esp32:esp32s3"</span>
+properties <span class="token operator">=</span> <span class="token string">"JTAGAdapter=default,PSRAM=opi,FlashMode=qio,FlashSize=16M,LoopCore=1,EventsCore=1,USBMode=hwcdc,
+  CDCOnBoot=default,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,PartitionScheme=fatflash,
+  CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none"</span></code></pre>
 <h2>env.json configuration</h2>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"panel"</span><span class="token punctuation">,</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"panel80"</span><span class="token punctuation">,</span>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Panel 800*480"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Panel with 800 px"</span><span class="token punctuation">,</span>
       <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
@@ -101,19 +106,22 @@ drivers and this example may be adapted to other configurations when required.</
 
   <span class="token property">"DisplayEsp32panel"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"RGBPanel"</span><span class="token punctuation">,</span>
+      <span class="token property">"buspins"</span><span class="token operator">:</span> <span class="token string">"45,48,47,21,14,5,6,7,15,16,4,8,3,46,9,1"</span><span class="token punctuation">,</span>
       <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
       <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"x000000"</span><span class="token punctuation">,</span>
-      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"xbbbbbb"</span><span class="token punctuation">,</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"#bbbbbb"</span><span class="token punctuation">,</span>
       <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">2</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
+
   <span class="token property">"DisplayTouchGT911"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"0x5D"</span><span class="token punctuation">,</span>
-      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"1200"</span><span class="token punctuation">,</span>
-      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"880"</span><span class="token punctuation">,</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
       <span class="token property">"rotation"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
       <span class="token property">"interruptpin"</span><span class="token operator">:</span> <span class="token string">"-1"</span><span class="token punctuation">,</span>
       <span class="token property">"resetpin"</span><span class="token operator">:</span> <span class="token string">"38"</span>
@@ -132,7 +140,6 @@ drivers and this example may be adapted to other configurations when required.</
       <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-
 <span class="token punctuation">}</span></code></pre>
 <h2>Boot Button</h2>
 <p>The Boot button is connected to GPIO0 and is used to start the ESP32 into the sketch download mode.

@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
     <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
     <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <title>Color Display based on ST7735</title>
+    <title>Color Displays using the ESP32-S3 16-bit panel interface</title>
     <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/pages.js"></script>
@@ -25,54 +25,30 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>Color Display based on ST7735</h1>
+      <h1>Color Displays using the ESP32-S3 16-bit panel interface</h1>
       
         
             <div class="plaincard">
             
-            The DisplayST7735Element enables using ST7735 based TFT color displays.
+            The DisplayESP32PanelElement enables using displays connected with the ESP32 Panel interface.
 
           </div>
         
-        <p>The support of colorful LCD / TFT displays like the ST7735 based displays
-is done with the help of the Adafruit GFX library.</p>
-<p>The Adafruit libraries for displays support a broad range of displays that all share a common
-graphics library to draw graphic primitives called [Adafruit GFX] that supports 16 bit values
-per pixel. Colors are coded using a 565 bit color scheme, enough for text and graphics with
-selected colors.</p>
-<p>Displaying pictures with rich color depth is somehow limited by this design decision but may LCD
-displays anyway do not support more tha this.</p>
+        <!-- ![xxxx display](/elements/display/xxxx.jpg) -->
+<p>Some chips supports the 16-bit graphics display bus from the esp32-s3 processor to transfer in-memory graphics data to the display.</p>
+<p>It is used in the <a href="/boards/esp32s3/panel-8048S043.htm">Panel ESP32-8048S043C</a>.</p>
 <h2>Configuration</h2>
-<p>The Display ST7735 Element supports all parameters to configure all displays. The DisplayConfig
-structure is used to bundle these and pass them to the dedicated Dispay Adapter. While adopting
-color displays the set of parameters was extended to support the background color andthe SPI
-interface. A system wide SPI configuration was also added to the Device Element.</p>
-<p>By default and during system startup a white draw/text color is used.</p>
-<h2>Reset pin</h2>
-<p>Some displays support a hardware based reset signal that can be controlled by a distinct GPIO
-output signal. The resetpin can be configured and will be used by the display adapter or driver
-to initialize the display.</p>
-<h2>Dimming the display</h2>
-<p>Some displays support to control the background light by using a distinct GPIO output signal.
-The brightness pin can be configured and will be used by the display adapter or driver to
-control the brightness of the display.</p>
-<p>Displays based on TFT technology need a background light. This is often available on a GPIO pin
-and may be dimmed using PWM output.</p>
+<p>The <strong>busmode</strong> must be set to “RGBPanel”.</p>
+<p>The <strong>buspins</strong> is the list of the 16 GPIO pins used for the data transfer.</p>
+<h2>Display Brightness Control</h2>
+<p>TFT displays need a background lightning that is controlled by a GPIO pin configured in
+the parameter <code>lightpin</code>.
+The <code>brightness</code> can be adjusted from 0 to 100.</p>
 <h2>Rotating the Display</h2>
-<p>Displays are often part of boards and are used in various rotations.</p>
-<p>The rotation can be configured using the values 0, 90, 180 and 270 and will be used to
-initialize the display adapter or driver.</p>
-<h2>Display Resolutions</h2>
-<p>All resolutions supported by the Arduino_GFX library can be used.</p>
-<p>The ST7735 display chip is used by the following boards:</p>
-<ul>
-<li><a href="/boards/esp32c3/core.htm">CORE-ESP32C3 development board</a></li>
-<li><a href="/boards/esp32/lilygo-t-dongle-s3.htm">LilyGO T-Dongle S3</a></li>
-</ul>
+<p>The Display driver may be used in different scenarios with different rotations. The rotation <code>0</code> is defined by the default
+implementation of the display hardware and may be portrait or landscape. The rotation can be changed to 0, 90, 180 or 270.</p>
 <h2>See also</h2>
 <ul>
-<li><a href="/boards/esp32s3/lilygo-t-dongle-s3.htm">LilyGO T-Dongle S3</a></li>
-<li></li>
 <li><a href="/elements/display/index.htm">Displays</a></li>
 <li><a href="/elements/display/fonts.htm">Fonts</a></li>
 </ul>
