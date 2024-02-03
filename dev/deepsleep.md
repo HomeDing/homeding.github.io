@@ -220,6 +220,7 @@ Everything else woks exactly the same as before but the whole sequence is execut
 * [Watchdog timers](/boards/watchdog.md)
 * <https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/>
 
+* <https://github.com/esp8266/Arduino/issues/6007#issuecomment-1915555805>
 
 <!-- script: <https://lazyzero.de/elektronik/esp8266/dht_deepsleep/start>
 With ATtin13 as watchdog: <https://homecircuits.eu/blog/battery-powered-esp8266-iot-logger/>

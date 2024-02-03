@@ -1,6 +1,6 @@
 ---
 title: LilyGO T-Display-S3
-tags: ["Board", "WIP"]
+tags: ["Board"]
 layout: "page.njk"
 description: ESP32-S3 board with integrated TFT color display.
 excerpt: > 
@@ -65,6 +65,17 @@ SCL and SDA pins must be specified in the [device element](/elements/device.md) 
 The touch controller goes beyond the graphics surface and when touching the soft button marked with a circle below the display
 the touch controller reports a touch event on location ???
 
+## Buttons
+
+The board is equipped with 3 momentary buttons:
+
+* The reset button is reachable at the side of the main board.
+* The Boot button is connected to GPIO0 as usual. It is located **???** left to the USB-C port.
+* THe Key Button is connected to GPIO14 and is located **???** left to the USB-C port.
+
+The Key button and the Boot button can be used for functional purpose when the device has booted.
+
+
 ## Power
 
 The board can be powered through the USB-C connector. It does not support the complete USB-C specification, especially not the
@@ -78,26 +89,28 @@ consuming part of the device this is switched off on battery mode (no power prov
 
 The battery mode can be controlled by 2 pins:
 
-**GPI15** -- This pin can enable the power to the display on battery. When the pin is pulled high the 3.3 volt is given to the
-display and the green LED on the board.
-A [Digital Output Element](/elements/digitalout.md) can be used to control this signal.
+**GPIO15** -- This pin can enable the power to the display on battery. When the pin is pulled high the 3.3 volt is given to the
+display and the green LED on the board. A [Digital Output Element](/elements/digitalout.md) can be used to control this signal.
+It takes a few milliseconds until the display is really on.
 
-There is a recipe below that uses the menu touch button to trigger a timer so the display is on for some seconds when needed. 
+There is a recipe below that uses the menu touch button to trigger a timer so the display is on for some seconds when needed.
 
-**GPIO4** -- This pin can be used to messure the current battery voltage and calculate the remaining battery capacity from this.
-  
+**GPIO4** -- This pin can be used to messure the current battery voltage. When in battery mode and GPIO is not enabling the
+display power the voltage is not enable. This is in contrast to the existing board schema.
 
-
-## Buttons
-
-The board is equipped with 3 momentary buttons:
-
-* The reset button is reachable at the side of the main board.
-* The Boot button is connected to GPIO0 as usual. It is located **???** left to the USB-C port.
-* THe Key Button is connected to GPIO14 and is located **???** left to the USB-C port.
-
-The Key button and the Boot button can be used for functional purpose when the device has booted.
-
+```json
+{
+  "analog": {
+    "bat": {
+      "pin": "4",
+      "title": "Battery power",
+      "readtime": "1s",
+      "hysteresis": "1",
+      "onvalue": "device/0?log=bat-$v"
+    }
+  }
+}
+```
 
 ## Example env.json Device Configuration
 
@@ -118,9 +131,8 @@ The Key button and the Boot button can be used for functional purpose when the d
       "battery_volt": "4"
     }
   },
-  "ota": {
-    "0": {}
-  },
+
+  "ota": { "0": {} },
 
   "DisplayST7789": {
     "0": {
@@ -158,11 +170,63 @@ The Key button and the Boot button can be used for functional purpose when the d
 }
 ```
 
-## Enable the display when touching the menu button
+
+## Enable the display on Battery mode
+
+On battery mode the display will not get the VCC automaticall.
+The GPIO15 port can be used to enable power for some time to save energy while not in use.
+
+Here the touch event from the touch element that is triggered on any touch will start the timer that enables GPIO15 for 8 seconds.
+
 
 ```json
-
+{
+  "DisplayTouchCST816": {
+    "0": {
+      ...
+      "ontouch": "timer/lcd?start=1"
+    }
+  },
+  "timer": {
+    "lcd": {
+      "loglevel": "2",
+      "title": "Display Power timer",
+      "pulsetime": "8s",
+      "title": "timer/lcd",
+      "onvalue": "digitalout/lcd?value=$v"
+    }
+  },
+  "digitalout": {
+    "lcd": {
+      "pin": "15",
+      "title": "Display Power control",
+      "value": "1"
+    }
+  }
+}
 ```
+
+
+## Use the Menu touch button
+
+Below the display there is a circle drawn on the display that can be touched. This creates a touch event at position 85/-40. When the display and touch is rotated, the coordinates must be adapted.
+
+A displaybutton outside the visible display box can be declared to capture these touch events to trigger an action:
+
+```json
+{
+  "displaybutton": {
+    "menu": {
+      "x": "85",
+      "y": "-40",
+      "w": 1,
+      "h": 1,
+      "onclick": "device/0?log=menu"
+    }
+  }
+}
+```
+
 
 ## See Also
 
@@ -178,112 +242,3 @@ The Key button and the Boot button can be used for functional purpose when the d
 * <http://www.lilygo.cn/prod_view.aspx?TypeId=50062&Id=1400&FId=t3:50062:3>
 * <https://github.com/Xinyuan-LilyGO/TTGO-T-Display>
 
-
----
-
-```
-#include "Arduino.h"
-#include "TFT_eSPI.h" /* Please use the TFT library provided in the library. */
-#include <esp_adc_cal.h>
-
-#if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5,0,0)
-#error  "The current version is not supported for the time being, please use a version below Arduino ESP32 3.0"
-#endif
-
-/* The product now has two screens, and the initialization code needs a small change in the new version. The LCD_MODULE_CMD_1 is used to define the
- * switch macro. */
-#define LCD_MODULE_CMD_1
-#define PIN_POWER_ON                 15
-#define PIN_BAT_VOLT                 4
-#define PIN_LCD_BL                   38
-
-TFT_eSPI tft = TFT_eSPI();
-unsigned long targetTime = 0;
-
-
-#if defined(LCD_MODULE_CMD_1)
-typedef struct {
-    uint8_t cmd;
-    uint8_t data[14];
-    uint8_t len;
-} lcd_cmd_t;
-
-lcd_cmd_t lcd_st7789v[] = {
-    {0x11, {0}, 0 | 0x80},
-    {0x3A, {0X05}, 1},
-    {0xB2, {0X0B, 0X0B, 0X00, 0X33, 0X33}, 5},
-    {0xB7, {0X75}, 1},
-    {0xBB, {0X28}, 1},
-    {0xC0, {0X2C}, 1},
-    {0xC2, {0X01}, 1},
-    {0xC3, {0X1F}, 1},
-    {0xC6, {0X13}, 1},
-    {0xD0, {0XA7}, 1},
-    {0xD0, {0XA4, 0XA1}, 2},
-    {0xD6, {0XA1}, 1},
-    {0xE0, {0XF0, 0X05, 0X0A, 0X06, 0X06, 0X03, 0X2B, 0X32, 0X43, 0X36, 0X11, 0X10, 0X2B, 0X32}, 14},
-    {0xE1, {0XF0, 0X08, 0X0C, 0X0B, 0X09, 0X24, 0X2B, 0X22, 0X43, 0X38, 0X15, 0X16, 0X2F, 0X37}, 14},
-};
-#endif
-
-void setup()
-{
-
-    // This IO15 must be set to HIGH, otherwise nothing will be displayed when USB is not connected.
-    pinMode(PIN_POWER_ON, OUTPUT);
-    digitalWrite(PIN_POWER_ON, HIGH);
-
-    Serial.begin(115200);
-
-    tft.begin();
-    tft.setRotation(3);
-    tft.setTextSize(1);
-    tft.fillScreen(TFT_BLACK);
-    tft.setTextColor(TFT_GREEN, TFT_BLACK);
-
-#if defined(LCD_MODULE_CMD_1)
-    for (uint8_t i = 0; i < (sizeof(lcd_st7789v) / sizeof(lcd_cmd_t)); i++) {
-        tft.writecommand(lcd_st7789v[i].cmd);
-        for (int j = 0; j < lcd_st7789v[i].len & 0x7f; j++) {
-            tft.writedata(lcd_st7789v[i].data[j]);
-        }
-
-        if (lcd_st7789v[i].len & 0x80) {
-            delay(120);
-        }
-    }
-#endif
-
-    // Turn on backlight
-    ledcSetup(0, 2000, 8);
-    ledcAttachPin(PIN_LCD_BL, 0);
-    ledcWrite(0, 255);
-
-}
-
-void loop()
-{
-    if (millis() > targetTime) {
-        esp_adc_cal_characteristics_t adc_chars;
-
-        // Get the internal calibration value of the chip
-        esp_adc_cal_value_t val_type = esp_adc_cal_characterize(ADC_UNIT_1, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_12, 1100, &adc_chars);
-        uint32_t raw = analogRead(PIN_BAT_VOLT);
-        uint32_t v1 = esp_adc_cal_raw_to_voltage(raw, &adc_chars) * 2; //The partial pressure is one-half
-
-        tft.fillScreen(TFT_BLACK);
-        tft.setCursor(0, 0);
-
-        // If the battery is not connected, the ADC detects the charging voltage of TP4056, which is inaccurate.
-        // Can judge whether it is greater than 4300mV. If it is less than this value, it means the battery exists.
-        if (v1 > 4300) {
-            tft.print("No battery connect!");
-        } else {
-            tft.print(v1);
-            tft.print("mV");
-        }
-        targetTime = millis() + 1000;
-    }
-    delay(20);
-}
-```
