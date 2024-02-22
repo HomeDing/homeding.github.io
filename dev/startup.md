@@ -7,6 +7,32 @@ excerpt: >
   configured and the operating mode is chosen based on counting reset cycles.
 ---
 
+Many things may happen when a device is staring and even a given configuration can fail.
+The startup sequence of a device actually is the critical part of the implementation
+to avoid loosing a device in a unrecoverable state.
+
+## The Normal Startup
+
+In a full configured device the startup is using the following steps:
+
+* The root file system is initialized.
+* The env.json configuration file is used to create the device specific elements.
+* The config.json configuration file is used to create the application specific elements.
+* The elements marked with startup=sys are started. This usually includes the display.
+* Some Greeting information is given to the display and Serial logging.
+
+* The network connection is started (see below)
+* The elements marked with startup=net are started. This usually includes most of the elements.
+
+When there is a time giving element present:
+
+* The network time is retrieved.
+* The elements marked with startup=time are started when a valid time is given. This includes e.g. alarm elements.
+
+Then the "normal" operation mode is reached, the loop() function is called on the elements one-by-one and upcomming actions are dispatched to their target element.
+
+
+
 [ ] 5 minutes startup timeout to restart
 [ ] 60 seconds runtime to set the reset counter to 0
 
@@ -94,7 +120,6 @@ Captive mode described above.
 
 When the Captive mode is unused for 5 minutes or ended by configuring a new network connectivity
 the reset counter is set to 0 and a restart is executed.
-
 
 
 ## Startup logging output

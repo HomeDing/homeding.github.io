@@ -31,17 +31,17 @@ When the display supports pixel level control also DisplayLine Element can be us
 | **Text displays** |            |                            |                 |
 | [Liquid Chrystal] | LCD        | 8/16/20 chars in 2/4 lines | character based |
 | **Monochrome**    |            |                            |                 |
-| [SH1106]          | OLED       | 128\*32, 128\*64           |                 |
-| [SSD1306]         | OLED       | 128\*32, 128\*64           |                 |
-| [SSD1309]         | OLED       | compatible with SSD1306    |                 |
-| [DisplayMAX7219]  | LED        | Chained LED matrix modules |                 |
-| **Color**         |            |                            |                 |
-| [ST7789]          | TFT LCD    | up to 320\*240             | 16-bit color    |
-| [ST7796]          | TFT LCD    | 320\*480                   | 16-bit color    | *2 |
-| [ST7735]          | TFT LCD    | up to 132\*160             | 16-bit color    | *2 | [b1](/boards/esp32s3/lilygo-t-dongle-s3.md) |
-| ST7262            |            |                            |                 |    | [b0](/boards/esp32s3/panel-8048S043.md)     |
-| [ESP32Panel]      | TFT LCD    | using the 16-bit panel bus |                 |
-| [ST7701]          | TFT LCD    | using the 16-bit panel bus |                 |
+| [SH1106]          | OLED       | 128\*32, 128\*64           | [GFX] based     |
+| [SSD1306]         | OLED       | 128\*32, 128\*64           | [GFX] based     |
+| [SSD1309]         | OLED       | compatible with SSD1306    | [GFX] based     |
+| [DisplayMAX7219]  | LED        | Chained LED matrix modules | [GFX] based     |
+| **16-bit Color**  |            |                            |                 |
+| [ST7789]          | TFT LCD    | up to 320\*240             | [GFX] based     |
+| [ST7796]          | TFT LCD    | 320\*480                   | [GFX] based     |
+| [ST7735]          | TFT LCD    | up to 132\*160             | [GFX] based     |
+| ST7262            |            |                            |                 |
+| [ESP32Panel]      | TFT LCD    | using the 16-bit panel bus | [GFX] based     |
+| [ST7701]          | TFT LCD    | using the 16-bit panel bus | [GFX] based     |
 
 
 The DisplayButton Element can be used when a touch control is available within the display
@@ -150,6 +150,7 @@ on the configured display:
 * [Display Text Element](/elements/display/text.md) used for text and numbers
 * [Display a dot](/elements/display/dot.md) used for boolean values
 * [Display a line](/elements/display/line.md)
+* [Display a rect](/elements/display/rect.md)
 <!-- * [displaybar](/elements/displaybar.md) -->
 
 ## Web UI for displays
@@ -205,6 +206,7 @@ On startup, when a display is configured, some system information is displayed b
 
 ## See also
 
+* [GFX based displays](/elements/display/gfx.md)
 * [Using the I2C bus](/dev/i2c.md)
 * [Using the SPI bus](/dev/spi.md)
 * [Drawing with GFX](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-gfx-graphics-library.pdf)
@@ -220,3 +222,4 @@ On startup, when a display is configured, some system information is displayed b
 [st7735]: /elements/display/st7735.md
 [ESP32Panel]: /elements/display/panel.md
 [ST7701]: /elements/display/st7701.md
+[GFX]: /elements/display/gfx.md

@@ -157,6 +157,7 @@ On the displays several Elements can be used to display data, text and visuals:
 {{ elemCard("dot", "displaydot") }}
 <!-- { { elemCard("bar", "displaybar") }} -->
 {{ elemCard("line", "displayline") }}
+{{ elemCard("rect", "displayrect") }}
 
 More detailed information on displays and related elements can be found in [displays](/elements/display/index.md).
 
