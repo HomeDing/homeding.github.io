@@ -162,8 +162,21 @@ display power the voltage is not enable. This is in contrast to the existing boa
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h2>Enable the display on Battery mode</h2>
-<p>On battery mode the display will not get the VCC automaticall.
+<p>On battery mode the display will not get the VCC automatically.
 The GPIO15 port can be used to enable power for some time to save energy while not in use.</p>
+<p>To enable the display even on startup the “digitalout/lcd” element must be configured before the display by using the system
+startup.</p>
+<pre class="language-JSON"><code class="language-JSON">{
+  "digitalout": {
+    "lcd": {
+      "pin": "15",
+      "startup": "sys",
+      "title": "Display Power control",
+      "value": "1"
+    }
+  }
+}</code></pre>
+<p>The touch controller element</p>
 <p>Here the touch event from the touch element that is triggered on any touch will start the timer that enables GPIO15 for 8 seconds.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"DisplayTouchCST816"</span><span class="token operator">:</span> <span class="token punctuation">{</span>

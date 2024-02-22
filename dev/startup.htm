@@ -34,7 +34,41 @@
 
           </div>
         
-        <p>[ ] 5 minutes startup timeout to restart
+        <p>Many things may happen when a device is staring and even a given configuration can fail.
+The startup sequence of a device actually is the critical part of the implementation
+to avoid loosing a device in a unrecoverable state.</p>
+<h2>The Normal Startup</h2>
+<p>In a full configured device the startup is using the following steps:</p>
+<ul>
+<li>
+<p>The root file system is initialized.</p>
+</li>
+<li>
+<p>The env.json configuration file is used to create the device specific elements.</p>
+</li>
+<li>
+<p>The config.json configuration file is used to create the application specific elements.</p>
+</li>
+<li>
+<p>The elements marked with startup=sys are started. This usually includes the display.</p>
+</li>
+<li>
+<p>Some Greeting information is given to the display and Serial logging.</p>
+</li>
+<li>
+<p>The network connection is started (see below)</p>
+</li>
+<li>
+<p>The elements marked with startup=net are started. This usually includes most of the elements.</p>
+</li>
+</ul>
+<p>When there is a time giving element present:</p>
+<ul>
+<li>The network time is retrieved.</li>
+<li>The elements marked with startup=time are started when a valid time is given. This includes e.g. alarm elements.</li>
+</ul>
+<p>Then the “normal” operation mode is reached, the loop() function is called on the elements one-by-one and upcomming actions are dispatched to their target element.</p>
+<p>[ ] 5 minutes startup timeout to restart
 [ ] 60 seconds runtime to set the reset counter to 0</p>
 <p>There are several operating modes implemented that help in network and device configurations and allow even
 starting a device without or with a wrong configuration. This is based on the available network configuration

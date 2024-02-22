@@ -8,7 +8,7 @@
     <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
     <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
     <title>DisplayDot Element</title>
-    <meta name='description' content='Displaying boolean values.'>
+    <meta name='description' content='Displaying a circle boolean values.'>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/pages.js"></script>
     <script src="/story.js" type="module"></script>
@@ -33,45 +33,44 @@
               <use href="/icons.svg#displaydot"></use>
             </svg>
           
-            The DisplayDot Element allows sending a boolean value to the display and show it at a specified position as a shallow or filled dot/circle. The value can be changed by using an action.
+            The DisplayDot Element allows showing a circle with a border and background color. This can be used to visualize a boolean value on the display and show it at a specified position as a shallow or filled dot/circle. The value can be changed by using an action.
 
           </div>
         
-        <p>Because there may be more values presented on a display at the same time the
-DisplayDotElement may exist multiple times in the configuration by using different positions.</p>
-<p>It is not required for all displays to support all these Elements and when a device only has a simple LCD
-attached maybe only using the DisplayTextElements is appropriate.</p>
-<p>You can even use the DisplayDotElement without having an actual Display attached that supports it.</p>
-<p>The DisplayDotElement is included in the collection of core elements.</p>
+        <p>This element is supported on all GFX based displays but also as a boolean indicator on the text based LCD display.</p>
+<p>The DisplayDotElement is included in the collection of core Display elements.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?displaydot" type="image/svg+xml"></object></p>
-<p>From the base Display Output Element implementation the following properties are available for
-configuration:</p>
+<p>From the base <code>DisplayOutputElement</code> implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>x</strong> – Specifies the x position of the Element.</p>
 <p><strong>y</strong> – Specifies the y position of the Element.</p>
-<p><strong>width</strong> – Specifies the width of the Element.</p>
-<p><strong>height</strong> – Specifies the height of the Element.</p>
+<p><strong>w</strong> or <strong>width</strong> – Specifies the width of the Element.</p>
+<p><strong>h</strong> or <strong>height</strong> – Specifies the height of the Element.</p>
 <p><strong>color</strong> – Specifies the draw color of the Element. When no color is specified on the
 element the default color from the display is used.</p>
-</blockquote>
-<blockquote>
 <p><strong>background</strong> – Specifies the background color of the Element. When no color is specified on
 the element the default color from the display is used.</p>
+<p><strong>border</strong> – Specifies the border color of the Element. When no color is specified on
+the element the default color from the display is used.</p>
+<p><strong>value</strong> – Specifies a value for the Element. This is used for some Output Elements only.</p>
+<p><strong>clear</strong> – The value is cleared.</p>
 </blockquote>
+<p>The DisplayDot Element is using the <code>value</code> as a boolean value
+to enable drawing the background of the circle. This enables using the DisplayDot Element to be used for visualizing boolean values.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
 <p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> – The location of the device.</p>
 <p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
+Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
 </blockquote>
 <h2>Element Actions</h2>
 <p>The following actions can be sent to the element:</p>
 <blockquote>
-<p><strong>value</strong> – This boolean interpreted value is sent to the display.</p>
-<p><strong>clear</strong> – The value is set to false and the display is updated.</p>
 <p><strong>redraw</strong> – The display is updated.</p>
 </blockquote>
 <h3>Configuration Example</h3>
@@ -79,9 +78,13 @@ the element the default color from the display is used.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"displaydot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"b"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display the state of relais"</span><span class="token punctuation">,</span>
       <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
       <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display a blinking dot"</span>
+      <span class="token property">"w"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+      <span class="token property">"h"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+      <span class="token property">"border"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"yellow"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
@@ -111,6 +114,8 @@ the element the default color from the display is used.</p>
           <div class="taglist">
             
               <a href="/tag/element.htm">Element</a>
+            
+              <a href="/tag/display.htm">Display</a>
             
           </div>
         

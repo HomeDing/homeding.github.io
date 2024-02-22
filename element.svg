@@ -8,12 +8,12 @@
       <rect width="112" height="12" class="prop block"/>
       <text width="112" height="12" x="3" y="9"/>
     </g>
-    <g id="eventTemplate" class="block" transform="translate(0,24)">
+    <g id="actionTemplate" class="block" transform="translate(0,24)">
       <rect width="112" height="12" class="block event"/>
       <path d="M -4 2 L -4 10 L 3 6 Z" class="in"/>
       <text width="112" height="12" x="3" y="9"/>
     </g>
-    <g id="actionTemplate" class="block" transform="translate(0,36)">
+    <g id="eventTemplate" class="block" transform="translate(0,36)">
       <rect width="112" height="12" class="block action"/>
       <path d="M -4 2 L -4 10 L 3 6 Z" class="in" transform="translate(113, 0)"/>
       <text width="112" height="12" x="3" y="9"/>

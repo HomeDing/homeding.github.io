@@ -58,6 +58,8 @@ This can be used to initialize the display until a valid value is passed by a va
 <p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> – The location of the device.</p>
 <p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
+Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
 </blockquote>
 <h3>Configuration Example</h3>
 <p>A configuration for a <strong>ESP8266</strong> based board can use the GPIO pins D6 and D7:</p>

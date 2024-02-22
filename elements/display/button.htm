@@ -43,19 +43,20 @@ should be captured.</p>
 <p><strong>text</strong> – the text that is displayed on the button</p>
 <p><strong>onclick</strong> – List of actions to be created on a click event</p>
 </blockquote>
-<p>From the base Display Output Element implementation the following properties are available for
-configuration:</p>
+<p>From the base <code>DisplayOutputElement</code> implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>x</strong> – Specifies the x position of the Element.</p>
 <p><strong>y</strong> – Specifies the y position of the Element.</p>
-<p><strong>width</strong> – Specifies the width of the Element.</p>
-<p><strong>height</strong> – Specifies the height of the Element.</p>
+<p><strong>w</strong> or <strong>width</strong> – Specifies the width of the Element.</p>
+<p><strong>h</strong> or <strong>height</strong> – Specifies the height of the Element.</p>
 <p><strong>color</strong> – Specifies the draw color of the Element. When no color is specified on the
 element the default color from the display is used.</p>
-</blockquote>
-<blockquote>
 <p><strong>background</strong> – Specifies the background color of the Element. When no color is specified on
 the element the default color from the display is used.</p>
+<p><strong>border</strong> – Specifies the border color of the Element. When no color is specified on
+the element the default color from the display is used.</p>
+<p><strong>value</strong> – Specifies a value for the Element. This is used for some Output Elements only.</p>
+<p><strong>clear</strong> – The value is cleared.</p>
 </blockquote>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
@@ -63,6 +64,8 @@ the element the default color from the display is used.</p>
 <p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
 <p><strong>room</strong> – The location of the device.</p>
 <p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
+Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
 </blockquote>
 <!-- TODO: documentation
 
