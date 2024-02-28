@@ -19,4 +19,6 @@ microsvg.js
 panel.htm
 panel.js
 site.webmanifest
+u-toast.css
+u-toast.js
 updateicons.htm
