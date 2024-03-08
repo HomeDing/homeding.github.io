@@ -49,6 +49,10 @@ To wake up after a deep sleep the sleep timer that is implemented in low-power h
 
 This connection is not available on nodeMCU and many other boards and must be connected externally.
 
+It is maybe required to add a additional 10k PullUp between SD0(MISO) and 3.3V in addition to the bridging of GPIO16/D0 and RST.
+
+See <https://github.com/esp8266/Arduino/issues/6007>
+
 
 ## Reset after Deep Sleep
 

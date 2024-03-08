@@ -1,5 +1,9 @@
 # T-Display-S3
 
+
+## Using the display sleep mode on battery
+
+
 <https://github.com/Xinyuan-LilyGO/T-Display-S3>
 
 https://github.com/Xinyuan-LilyGO/T-Display-S3/blob/main/lib/TouchLib/README.md
