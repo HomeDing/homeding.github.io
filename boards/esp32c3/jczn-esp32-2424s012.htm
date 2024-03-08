@@ -55,6 +55,19 @@ It can be used with the following settings:</p>
 <li>Erase All Flash: Disabled</li>
 <li>JTAG Adapter: Integrated USB JTAG</li>
 </ul>
+<p>The ESP32 Upload function is trying to upload a sketch even when the size is too big.
+If you see fast repeated log output like below build a smaller ketch by removing un-required elements.</p>
+<pre><code>ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403cf91a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5810,len:0x438
+load:0x403cc710,len:0x90c
+load:0x403ce710,len:0x25f4
+entry 0x403cc710
+</code></pre>
 <h2>Device configuration</h2>
 <p>The SPI pins are used internally for connecting the display.</p>
 <p>“spi-scl”: “6”,
