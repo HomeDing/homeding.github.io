@@ -42,13 +42,17 @@ The display is supported by the “GFX Library for Arduino”.</li>
 <li>Touch Sensor: FT6336U on I2C, Address 0x38</li>
 <li>ESP32-S3 processor</li>
 <li>16 MByte Flash in QIO mode</li>
-<li>2 MByte PSRAM (OPI)</li>
+<li>2 MByte PSRAM (QSPI)</li>
 <li>I2C bus using SDA=6, CLK=5</li>
 <li>USB-C connector connected to the processor</li>
 <li>SD Card slot</li>
 </ul>
 <p>There are connectors on the board supporting RS485, Speaker and GPIO.</p>
 <p>The Board is manufacured by Smart Panlee with id ZX3D50CE08S-USRC-4832.</p>
+<pre class="language-txt"><code class="language-txt">"board": "esp32:esp32:esp32s3"
+"configuration": "JTAGAdapter=default,PSRAM=enabled,FlashMode=qio,FlashSize=16M,LoopCore=1,EventsCore=1,
+  USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,PartitionScheme=fatflash,
+  CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none"</code></pre>
 <h2>LCD Display</h2>
 <p>The ST7796UI based Display can be used by configuring the <a href="/elements/display/st7796.htm">DisplayST7796 Element</a>.</p>
 <p>The configuration is provided below.</p>
