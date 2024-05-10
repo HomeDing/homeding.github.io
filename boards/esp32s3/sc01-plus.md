@@ -17,7 +17,7 @@ This board is equipped with:
 * Touch Sensor: FT6336U on I2C, Address 0x38
 * ESP32-S3 processor
 * 16 MByte Flash in QIO mode
-* 2 MByte PSRAM (OPI)
+* 2 MByte PSRAM (QSPI)
 * I2C bus using SDA=6, CLK=5
 * USB-C connector connected to the processor
 * SD Card slot
@@ -26,6 +26,12 @@ There are connectors on the board supporting RS485, Speaker and GPIO.
 
 The Board is manufacured by Smart Panlee with id ZX3D50CE08S-USRC-4832.
 
+```txt
+"board": "esp32:esp32:esp32s3"
+"configuration": "JTAGAdapter=default,PSRAM=enabled,FlashMode=qio,FlashSize=16M,LoopCore=1,EventsCore=1,
+  USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,PartitionScheme=fatflash,
+  CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none"
+```
 
 ## LCD Display
 
