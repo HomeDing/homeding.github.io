@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <title>NO-TITLE</title>
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <script src="/pages.js"></script>
+</head>
+
+<body scroll="0" style="padding:0;">
+  <div class="u-navbar" style="margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    </svg>
+
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+
+  <nav></nav>
+
+  <main style="padding:1rem;max-width: 800px;">
+    <h1>Waveshare ESP32-S3 Touch 4.3</h1>
+<p>WIP ???</p>
+<p>ESP32-S3-Touch-LCD-4.3 is a microcontroller development board based on the <a href="/boards/esp32s3/index.htm">ESP32-S3 chip</a> supporting
+large-capacity Flash and PSRAM, a touch screen and various connectors for external components.</p>
+<ul>
+<li>
+<p>Onboard 4.3-inch LCD screen, 800x480 resolution, 65K color.</p>
+</li>
+<li>
+<p>capacitive touch, 5-point display touch controller</p>
+</li>
+<li>
+<p>SD Card</p>
+</li>
+<li>
+<p>512 KB static RAM</p>
+</li>
+<li>
+<p>384 KB ROM, gestapelter</p>
+</li>
+<li>
+<p>8 MB Flash und</p>
+</li>
+<li>
+<p>8 MB PSRAM</p>
+</li>
+<li>
+<p><strong>UART Port</strong> – Use CH343P chip for USB to UART for connecting the UART_TXD(GPIO43) and UART_RXD(GPIO44) pin of the ESP32-S3. which is for firmware programming and log printing.</p>
+</li>
+<li>
+<p><strong>USB Connector</strong> – GPIO19(DP) and GPIO20(DN) are the USB pins of ESP32-S3, which can be connected the cameras with UVC protocol. For more details about the UVC driver, you can refer to this link.</p>
+</li>
+<li>
+<p><strong>Sensor interface</strong> – This interface is connected to GPIO6 as ADC, which can be connected to Sensor kit.</p>
+</li>
+<li>
+<p><strong>CAN Interface</strong> – can be used as a USB interface too, you can switch CAN/USB with the FSUSB42UMX chip. The USB interface is used by default (when the USB_SEL pin of FSUSB42UMX is set to LOW).</p>
+</li>
+<li>
+<p><strong>I2C interface</strong> – ESP32-S3 provides multi-lane hardware, currently uses GPIO8(SDA) and GPIO9(SCL) pins as I2C bus for loading IO expansion chip, touch interface and I2C interface.</p>
+</li>
+<li>
+<p><strong>RS485 interface</strong> – the development board onboard RS485 interface circuits for directly connecting to RS485 device communication, and support automatic switching of RS485 circuit transceiver mode.</p>
+</li>
+<li>
+<p><strong>PH2.0 battery header</strong> – The development board utilizes the efficient charge and discharge management chip CS8501. It can boost a single-cell lithium battery to 5V. Currently, the charging current is set at 580mA, and users can modify the charging current by replacing the R45 resistor. For more details, you can refer to Schematic diagram.</p>
+</li>
+</ul>
+<h2>Display driver</h2>
+<p><a href="https://github.com/moononournation/Arduino_GFX">text</a></p>
+<p>Arduino_ESP32RGBPanel</p>
+<p><a href="https://esphome.io/components/display/rpi_dpi_rgb#waveshare-esp32-s3-touch-4-3">text</a></p>
+<h2>Display Touch Controller</h2>
+<p>Touch is controlled by a GT911, and works well with the bb_captouch library.</p>
+<p>SDA=8, SCL=9, IRQ=4</p>
+<h1>See Also</h1>
+<ul>
+<li><a href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-4.3">waveshare Product Page</a></li>
+<li><a href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-4.3">waveshare wiki</a></li>
+<li><a href="https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino">text</a></li>
+</ul>
+
+  </main>
+
+  <script>
+    const param = {
+      MENU_MIN_WIDTH: 1030
+    };
+
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+
+   if (window.innerWidth > param.MENU_MIN_WIDTH) {
+      // menu is inside the page
+      navObj.classList.add('open');
+      navObj.classList.add('inpage');
+    }
+
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+  
+  </body>
+
+</html>

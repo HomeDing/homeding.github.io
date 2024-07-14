@@ -62,12 +62,10 @@ The display is supported by the “GFX Library for Arduino”.</li>
 <p>This FT6x36 variant supports up to 2 touch points.</p>
 <p>The configuration is provided below.</p>
 <h2>SD Card</h2>
-<p>[4] SD Card Interface (Tab.4)
-Description Module Pin Remark
-SD_CS GPIO 41 SD card chip selection
-SD_DI（MOSI） GPIO 40 SD card data input
-SD_CLK GPIO 39 SD card clock
-SD_DO（MISO） GPIO 38 SD card data</p>
+<p>The onboard SD card slot using standard SPI data transfer is supported by the
+<a href="/elements/sd.htm">SD Card Element</a></p>
+<p>The specific chip-select pin is attached to GPIO41.</p>
+<p>The configuration is provided below.</p>
 <h2>Configuration</h2>
 <p>The configuration in the <strong>env.json</strong> file setting up all integrated hardware and common elements:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
@@ -118,6 +116,12 @@ SD_DO（MISO） GPIO 38 SD card data</p>
 <span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
+<li>
+<p><a href="index.md">ESP32-S3 Boards</a></p>
+</li>
+<li>
+<p><a href="../../elements/sd.md">SD Card Element</a></p>
+</li>
 <li>
 <p><a href="http://en.wireless-tag.com/">http://en.wireless-tag.com/</a></p>
 </li>

@@ -49,6 +49,46 @@ e.g. for recording sensor data or serving additional files on the web frontend.<
 It provides a fast 4-bit bus implementation for SD cards.</p>
 <p>See <a href="/elements/sd.htm">SD Element</a> that is available on ESP32 and ESP8266 boards offers
 a slower alternative using SPI access to SD Cards.</p>
+<pre class="language-txt"><code class="language-txt">  From Arduino SDMMC examples:
+
+ * pin 1 - D2                |  Micro SD card     |
+ * pin 2 - D3                |                   /
+ * pin 3 - CMD               |                  |__
+ * pin 4 - VDD (3.3V)        |                    |
+ * pin 5 - CLK               | 8 7 6 5 4 3 2 1   /
+ * pin 6 - VSS (GND)         | ▄ ▄ ▄ ▄ ▄ ▄ ▄ ▄  /
+ * pin 7 - D0                | ▀ ▀ █ ▀ █ ▀ ▀ ▀ |
+ * pin 8 - D1                |_________________|
+ *                             ║ ║ ║ ║ ║ ║ ║ ║
+ *                     ╔═══════╝ ║ ║ ║ ║ ║ ║ ╚═════════╗
+ *                     ║         ║ ║ ║ ║ ║ ╚══════╗    ║
+ *                     ║   ╔═════╝ ║ ║ ║ ╚═════╗  ║    ║
+ * Connections for     ║   ║   ╔═══╩═║═║═══╗   ║  ║    ║
+ * full-sized          ║   ║   ║   ╔═╝ ║   ║   ║  ║    ║
+ * SD card             ║   ║   ║   ║   ║   ║   ║  ║    ║
+ * ESP32-S3 DevKit  | 21  47  GND  39 3V3 GND  40 41  42  |
+ * ESP32-S3-USB-OTG | 38  37  GND  36 3V3 GND  35 34  33  |
+ * ESP32            |  4   2  GND  14 3V3 GND  15 13  12  |
+ * Pin name         | D1  D0  VSS CLK VDD VSS CMD D3  D2  |
+ * SD pin number    |  8   7   6   5   4   3   2   1   9 /
+ *                  |                                  █/
+ *                  |__▍___▊___█___█___█___█___█___█___/
+ * WARNING: ALL data pins must be pulled up to 3.3V with an external 10k Ohm resistor!
+ * Note to ESP32 pin 2 (D0): Add a 1K Ohm pull-up resistor to 3.3V after flashing
+ *
+ * SD Card | ESP32
+ *    D2       12
+ *    D3       13
+ *    CMD      15
+ *    VSS      GND
+ *    VDD      3.3V
+ *    CLK      14
+ *    VSS      GND
+ *    D0       2  (add 1K pull up after flashing)
+ *    D1       4
+ *
+ *    For more info see file README.md in this library or on URL:
+ *    https://github.com/espressif/arduino-esp32/tree/master/libraries/SD_MMC</code></pre>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element:</p>
 <blockquote>

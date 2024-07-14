@@ -30,16 +30,52 @@
         
             <div class="plaincard">
             
-            This is a ESP32 based board based on ESP-WROVER-B module designed by Microsoft as a reference IoT Kit Azure. It is no more supported.
+            This is a ESP32 based board based on ESP-WROVER-B module designed by espressif and Microsoft as a reference IoT Kit Azure.  It is no more manufactured.
 
           </div>
         
         <p>This is <strong>Work in progress</strong></p>
+<p>This board is no longer manufactured but in case you have it arround here you find details.</p>
 <p><img src="/boards/esp32/azureiotkit.jpg" alt="ESP32 Azure IoT Kit"></p>
-<p><a href="https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf</a></p>
-<p><a href="https://github.com/lzyms/ESP32IoTCentral">https://github.com/lzyms/ESP32IoTCentral</a></p>
-<p><a href="https://github.com/ewertons/esp32-azureiotkit-sensors">https://github.com/ewertons/esp32-azureiotkit-sensors</a></p>
-<p><a href="https://iotexpert.com/debugging-ssd1306-display-problems/">https://iotexpert.com/debugging-ssd1306-display-problems/</a></p>
+<p>The ESP32 based board is equipped with some interesting sensors, buttons, leds and a display and can easily be used for development.</p>
+<h2>I2C bus</h2>
+<p>The sensors and the display are reachable on the I2C bus
+using the signals (sda=25, scl=26).</p>
+<p>The env.json configuration includes these settings in the <a href="/elements/device.htm">Device Element</a>.</p>
+<table>
+<thead>
+<tr>
+<th>I2c Address</th>
+<th>Sensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0e</td>
+<td>Magnetometer MAG3110</td>
+</tr>
+<tr>
+<td>0x23</td>
+<td>Ambient Light Sensor BH1750</td>
+</tr>
+<tr>
+<td>0x3c</td>
+<td>Display SSD1306</td>
+</tr>
+<tr>
+<td>0x5f</td>
+<td>Humidity and Temperature Sensor HTS221</td>
+</tr>
+<tr>
+<td>0x68</td>
+<td>(RTC,DS1307)</td>
+</tr>
+<tr>
+<td>0x6d</td>
+<td>Barometer FBM320</td>
+</tr>
+</tbody>
+</table>
 <h2>LEDs</h2>
 <p>There are 2 green LEDs available:</p>
 <ul>
@@ -68,24 +104,15 @@
 <li>The right button is available on GPIO pin 0.</li>
 </ul>
 <p>The right button is pulling the input level to LOW when pressed.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<p>The env.json configuration includes the settings using the <a href="/elements/digitalin.htm">Digitalin Element</a>.</p>
 <h2>Buzzer</h2>
-<p>pin 27</p>
-<h2>I2C bus</h2>
-<p>The sensors and the display are reachable on the I2C bus
-using the signals (sda=25, scl=26).</p>
-<h2>Barometer FBM320</h2>
-<p>0x6D</p>
+<p>The buzzer on board is connected to pin 27. This is a passive speaker that can be used with the
+<a href="/elements/audio/tone.htm">Tone Element</a> to make some noise.</p>
+<p>The env.json configuration includes these settings in the <a href="/elements/audio/tone.htm">Tone Element</a>.</p>
 <h2>Ambient Light Sensor BH1750</h2>
 <p>This sensor is available on the i2c bus on address 0x23 (default).</p>
-<p>In the description of the <a href="elements%5Cbh1750.md">BH1750 Element</a>
-you can find more details.</p>
+<p>In the description of the <a href="/elements/bh1750.htm">BH1750 Element</a> you can find more details.</p>
+<p>The env.json configuration includes these settings in the <a href="/elements/bh1750.htm">BH1750 Element</a>.</p>
 <h2>Motion Sensor MPU6050</h2>
 <p>3-axis gyroscope, 3-axis accelerometer</p>
 <p>This sensor is available on the i2c bus on address 0x68.</p>
@@ -93,26 +120,37 @@ you can find more details.</p>
 <li><a href="https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/">https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/</a></li>
 <li><a href="https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf">https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf</a></li>
 </ul>
+<h2>Barometer FBM320</h2>
+<p>0x6D</p>
 <h2>Magnetometer MAG3110</h2>
 <p>0x0E</p>
 <!-- <https://www.nxp.com/docs/en/data-sheet/MAG3110.pdf> -->
 <h2>Humidity and Temperature Sensor HTS221</h2>
 <p>0x5F</p>
 <!-- <https://www.st.com/resource/en/datasheet/hts221.pdf> -->
-<pre><code>**Info**
-DeviceName: azurekit
-Build Date &amp; Time: Mar 22 2023T13:23:03
-
-Scan i2c (sda=25, scl=26)...
-* 0x0e: ()
-* 0x23: ()
-* 0x3c: (SH1106,SSD1306,SSD1309)
-* 0x5f: ()
-* 0x68: (RTC,DS1307)
-* 0x6d: ()
-127 adresses scanned.
-  6 devices found.
-</code></pre>
+<h2>Battery charging</h2>
+<h2>SD Card</h2>
+<p>The SD card is available at the standard SPI bus of ESP32. The
+<a href="/elements/sd.htm">SD Card Element</a> can be used to extend the filesystem
+and to mount the sd card file system on the <code>/sd</code> folder.</p>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>ESP32 pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS</td>
+<td>GPIO13</td>
+</tr>
+<tr>
+<td>SPI-bus</td>
+<td>VSPI</td>
+</tr>
+</tbody>
+</table>
 <h2>Device Configuration</h2>
 <p>This is a device specific configuration for this board :</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
@@ -151,7 +189,21 @@ Scan i2c (sda=25, scl=26)...
       <span class="token property">"width"</span><span class="token operator">:</span> <span class="token number">128</span><span class="token punctuation">,</span>
       <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">64</span>
     <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"0"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"tone"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"27"</span><span class="token punctuation">,</span>
+      <span class="token property">"tones"</span><span class="token operator">:</span> <span class="token string">"fifth:d=4,o=4,b=80:8p,8g,8g,8g,2d#,8p,8f,8f,8f,1d"</span>
+    <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
+
 <span class="token punctuation">}</span>
 </code></pre>
 <h2>ESP32 WROVER Module</h2>
@@ -159,41 +211,26 @@ Scan i2c (sda=25, scl=26)...
 <h2>OLED Display</h2>
 <p>SSD1306</p>
 <ul>
-<li>0x3c: (SH1106,SSD1306,SSD1309)</li>
-</ul>
-<h2>SD Card</h2>
-<p>The SD card is available at the standard SPI bus of ESP32. The
-<a href="/elements/sd.htm">SD Card Element</a> can be used to extend the filesystem
-and to mount the sd card file system on the <code>/sd</code> folder.</p>
-<table>
-<thead>
-<tr>
-<th>function</th>
-<th>ESP32 pin</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CS</td>
-<td>GPIO13</td>
-</tr>
-<tr>
-<td>SPI-bus</td>
-<td>VSPI</td>
-</tr>
-</tbody>
-</table>
-<h2>Critics</h2>
-<ul>
+<li>
+<p>0x3c: (SH1106,SSD1306,SSD1309)</p>
+</li>
 <li>
 <p>The SSD1306 based display requires a reset line for some cases but the RST signal is not connected to any GPIO.</p>
 </li>
-<li></li>
 </ul>
 <p><a href="https://forum.arduino.cc/t/how-to-best-configure-esp32-arduino-vs-code-debug/698140">https://forum.arduino.cc/t/how-to-best-configure-esp32-arduino-vs-code-debug/698140</a></p>
 <p><a href="https://www.esp32.com/viewtopic.php?t=23393">https://www.esp32.com/viewtopic.php?t=23393</a></p>
 <h2>See also</h2>
 <ul>
+<li>
+<p><a href="https://github.com/Azure-Samples/iot-middleware-freertos-samples">Microsoft IoT Azure-Samples</a></p>
+</li>
+<li>
+<p><a href="https://github.com/lzyms/ESP32IoTCentral">ESP32IoTCentral</a></p>
+</li>
+<li>
+<p><a href="https://www.digikey.de/de/products/detail/espressif-systems/ESP32-AZURE-IOT-KIT/10259357">https://www.digikey.de/de/products/detail/espressif-systems/ESP32-AZURE-IOT-KIT/10259357</a></p>
+</li>
 <li>
 <p><a href="https://www.espressif.com/en/products/devkits/esp32-azure-kit/resources">https://www.espressif.com/en/products/devkits/esp32-azure-kit/resources</a></p>
 </li>
@@ -226,6 +263,11 @@ and to mount the sd card file system on the <code>/sd</code> folder.</p>
 <p><a href="https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf</a></p>
 </li>
 </ul>
+<p><a href="https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-azure_iot_kit_hardware_design_guide__en.pdf</a></p>
+<p><a href="https://github.com/lzyms/ESP32IoTCentral">https://github.com/lzyms/ESP32IoTCentral</a></p>
+<p><a href="https://github.com/ewertons/esp32-azureiotkit-sensors">https://github.com/ewertons/esp32-azureiotkit-sensors</a></p>
+<p><a href="https://iotexpert.com/debugging-ssd1306-display-problems/">https://iotexpert.com/debugging-ssd1306-display-problems/</a></p>
+<p><a href="https://learn.microsoft.com/en-us/azure/iot/tutorial-devkit-espressif-esp32-freertos-iot-hub">Microsoft Tutorial: Connect an ESPRESSIF ESP32-Azure IoT Kit to IoT Hub</a></p>
 
         
           <h2>Tags</h2>
