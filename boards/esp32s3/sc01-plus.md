@@ -52,12 +52,12 @@ The configuration is provided below.
 
 ## SD Card
 
-[4] SD Card Interface (Tab.4)
-Description Module Pin Remark
-SD_CS GPIO 41 SD card chip selection
-SD_DI（MOSI） GPIO 40 SD card data input
-SD_CLK GPIO 39 SD card clock
-SD_DO（MISO） GPIO 38 SD card data
+The onboard SD card slot using standard SPI data transfer is supported by the
+[SD Card Element](/elements/sd.md)
+
+The specific chip-select pin is attached to GPIO41.
+
+The configuration is provided below.
 
 
 ## Configuration
@@ -116,9 +116,13 @@ The configuration in the **env.json** file setting up all integrated hardware an
 
 ## See also
 
+* [ESP32-S3 Boards](index.md)
+* [SD Card Element](../../elements/sd.md)
+
 * <http://en.wireless-tag.com/>
 * <http://en.wireless-tag.com/product-item-26.html>
 * <https://img01.71360.com/file/read/www2/M00/4E/C6/rBwBEmRl7OaAW78bABKfZLYNMv4194.pdf?dl=1&dlf=WT32-SC01+PLUS+Datasheet-V1.5+EN.pdf>
 
 * <https://99tech.com.au/product/lcd-wt32-sc01-plus>
 * <https://99tech.com.au/mx-m/lcd/lcd-wt32-sc01-plus_datasheet.pdf>
+

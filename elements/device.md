@@ -76,6 +76,8 @@ More hints on the I2C bus implementation see [I2C](/dev/i2c.md)
 > The default cache header is `"no-cache"` that is good while developing and configuring.
 > But when have a stable configuration caching can be switched on using a value like `"max-age=120"` or `"etag"`
 
+See also [Optimize Caching](/dev/cache.md)
+
 
 ### Deep Sleep mode
 
@@ -113,8 +115,6 @@ This example shows how to configure this element:
       "room": "Cellar",
       "reboottime": "24h",
       "sleeptime": 600,
-      "led": "D0",
-      "button": "D3",
       "homepage": "ding-info.htm",
       "logfile": 1,
       "I2C-SDA" : "D4",

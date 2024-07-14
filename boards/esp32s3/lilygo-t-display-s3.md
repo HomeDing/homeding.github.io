@@ -251,6 +251,8 @@ A displaybutton outside the visible display box can be declared to capture these
 * <https://www.lilygo.cc/products/t-display-s3>
 * <https://github.com/Xinyuan-LilyGO/T-Display-S3>
 * <https://github.com/teastainGit/LilyGO-T-display-S3-setup-and-examples>
+* [T Dongle S3 at spotpear](https://spotpear.com/index/product/detail/id/1235.html)
+
 
 * [Display Elements](/elements/display/index.md)
 * [Display ST7789 Element](/elements/display/st7789.md)

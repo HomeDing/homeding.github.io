@@ -105,7 +105,7 @@ The data pin is attached to pin 19 that is usually used for SPI data input (MISO
 The Backlight can be dimmed by using a GPIO 4 and can be used to adjust the brightness.
 
 
-## Example env.json Device Configuration 
+## Example env.json Device Configuration
 
 ``` json
 {

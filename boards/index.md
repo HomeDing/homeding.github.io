@@ -17,9 +17,9 @@ IoT devices off-the-shelf and even complete kits that use these chips.
 Here you find some common species and bare processors described in detail that you may consider to use
 including hints for configuration and programming.
 
-* [ESP32 boards](/boards/esp32/index.htm)
-* [ESP32-C3 boards](/boards/esp32c3/index.htm)
-* [ESP32-S3 boards](/boards/esp32s3/index.htm)
+* [ESP32 boards](/boards/esp32/index.md)
+* [ESP32-C3 boards](/boards/esp32c3/index.md)
+* [ESP32-S3 boards](/boards/esp32s3/index.md)
 
 
 ## DIY development boards

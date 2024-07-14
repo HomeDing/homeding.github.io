@@ -33,6 +33,12 @@ To compile for this board in Arduino the following settings for the board can be
 * USB Mode Hardware CDC and JTAG
 * USB CDC On Boot: Enabled
 
+[Arduino Nano ESP32 Cheat Sheet](https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet/)
+
+... comes with a special bootloader.
+
+If you need to reflash the bootloader, you can follow the steps of a
+[Help Center article](https://support.arduino.cc/hc/en-us/articles/9810414060188-Reset-the-Arduino-bootloader-on-the-Nano-ESP32)
 
 ## See Also
 

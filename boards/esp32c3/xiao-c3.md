@@ -49,9 +49,7 @@ This **env.json** file can be used as a starting point for configuring this boar
       "title": "XIAO ESP32C3",
       "description": "XIAO_ESP32C3 board",
       "loglevel": "2",
-      "logFile": "1",
-      "xi2c-scl": "5",
-      "xci2c-sda": "4"
+      "logFile": "1"
     }
   },
   "ota": {
