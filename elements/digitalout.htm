@@ -42,36 +42,28 @@
 <p><img src="/elements/digitaloutui.png" alt="DigitalOut Web UI"></p>
 <p>The boolean value indicator is showing the actual output level using red(0) and green(1) color.</p>
 <h2>Element Configuration</h2>
-<p>This element implements the following properties and actions:</p>
 <p><object data="/element.svg?digitalout" type="image/svg+xml"></object></p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>pin</code>*</td>
-<td>Specifies the hardware number of the pin.</td>
-</tr>
-<tr>
-<td><code>invert</code></td>
-<td>set to ‘true’ for invert mode. Normal mode is default.</td>
-</tr>
-<tr>
-<td><code>value</code></td>
-<td>The initial value of the output.</td>
-</tr>
-</tbody>
-</table>
+<p>The following properties are available for configuration of the element.</p>
+<blockquote>
+<p><strong>pin</strong>*  – Specifies the hardware number of the pin.</p>
+<p><strong>invert</strong> – set to ‘true’ for invert mode. Normal mode is default.</p>
+<p><strong>value</strong>  – The initial value of the output.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> – The location of the device.</p>
+<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
+Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
+</blockquote>
 <p>* This parameter must be specified.</p>
 <p>The physical output level can differ from the logical output value because some external components require am active HIGH and other active LOW signal.</p>
-<p>This can be configured by using the <code>invert</code> property.
-In normal mode (<code>invert</code>: “false”) a HIGH output level is created on value 1.
-In <code>invert</code> mode (<code>invert</code>: “true”) a LOW output level is created on value 1. Normal mode is default.</p>
-<p>There are some GPIO pins it the ESP8266 that require to be HIGH when booting. Here the invert mode is recommended for the output signal.</p>
+<p>This can be configured by using the <code>invert</code> property.</p>
+<p>In normal mode (<code>invert</code>: “false”) a HIGH output level is created on value 1.</p>
+<p>In <code>invert</code> mode (<code>invert</code>: “true”) a LOW output level is created on value 1. Normal mode is default.</p>
+<p>There are some GPIO pins it the ESP8266 and ESP32 that require to be HIGH when booting. Here the invert mode is recommended for the output signal.</p>
 <h2>Element Actions</h2>
 <p>The following actions are available to change the output level:</p>
 <table>
