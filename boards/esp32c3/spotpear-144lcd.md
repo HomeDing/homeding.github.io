@@ -6,9 +6,17 @@ excerpt: >
   
 ---
 
+{% from 'macros.njk' import carousel %}
+
 The Spotpear ESP32C3 board with 1.44 inch LCD display is a very compact version of a LCD + ESP32C3 combination.
 
-![ESP32C3 board with 1.44 inch LCD display](spotpear-144lcd.jpg)
+{{ carousel([
+  { "file": "./spotpear-144lcd.jpg", "text": "ESP32C3 board with 1.44 inch LCD display"},
+  { "file": "./spotpear-144lcd-2.jpg", "text": "ESP32C3 board top view"},
+  { "file": "./spotpear-144lcd-1.jpg", "text": "ESP32C3 board from side"},
+  { "file": "./spotpear-144lcd-3.jpg", "text": "ESP32C3 board connectors and back"}
+]) }}
+
 
 ## Features
 

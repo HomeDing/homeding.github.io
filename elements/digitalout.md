@@ -20,25 +20,29 @@ The boolean value indicator is showing the actual output level using red(0) and 
 
 ## Element Configuration
 
-This element implements the following properties and actions:
-
 <object data="/element.svg?digitalout" type="image/svg+xml"></object>
 
-| Property  | Description                                             |
-| --------- | ------------------------------------------------------- |
-| `pin`*    | Specifies the hardware number of the pin.               |
-| `invert` | set to 'true' for invert mode. Normal mode is default. |
-| `value`   | The initial value of the output.                        |
+The following properties are available for configuration of the element.
+
+> **pin**\*  -- Specifies the hardware number of the pin.
+>
+> **invert** -- set to 'true' for invert mode. Normal mode is default.
+>
+> **value**  -- The initial value of the output.
+
+{% include "./elementproperties.md" %}
 
 \* This parameter must be specified.
 
 The physical output level can differ from the logical output value because some external components require am active HIGH and other active LOW signal.
 
 This can be configured by using the `invert` property.
+
 In normal mode (`invert`: "false") a HIGH output level is created on value 1.
+
 In `invert` mode (`invert`: "true") a LOW output level is created on value 1. Normal mode is default.
 
-There are some GPIO pins it the ESP8266 that require to be HIGH when booting. Here the invert mode is recommended for the output signal.
+There are some GPIO pins it the ESP8266 and ESP32 that require to be HIGH when booting. Here the invert mode is recommended for the output signal.
 
 
 ## Element Actions
