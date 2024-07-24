@@ -34,32 +34,35 @@
 
           </div>
         
-        <p>The XIAO ESP32 C3 board using the ESP32-C3 processor is a very small board that can easily be
+        <p>The XIAO ESP32 C3 board using the ESP32-C3 processor is a very small sized board that can easily be
 flashed and comes with a connector for an external antenna.</p>
 <p><img src="xiao-c3.jpg" alt="XIAO ESP32C3 board"></p>
-<p>The ESP32-C3 processor has a 32-bit single core RISC-V cpu running at max. 160MHz and
+<p>The ESP32-C3 processor has a 32-bit single core RISC-V CPU running at max. 160MHz and
 400KB SRAM memory. Bluetooth LE is supported.</p>
-<p>As there are no additional power consuming components on this board is fits good for
-un-powered/battery based use cases. It has a onboard lithium battery charging chip to recharge
+<p>There is no antenna on this board and the external antenna that is shipped with the board or any other 2.4 GHz WiFi antenna with a common I-PEX connector must be connected for using any WiFi or Bluetooth functionality. An external antenna usually provides outstanding RF performance compared to on-board antenna solutions.</p>
+<p>As there are no additional power consuming components on this board
+it fits good for
+battery based use cases. It has a onboard lithium battery charging chip to recharge
 using the USB-C connector.</p>
-<ul>
-<li>$5 low price</li>
-<li>An external antenna must be connected. There is no antenna on board but a I-PEX connector.</li>
-<li>On board LiPo battery charger chip for a battery connected at the bottom side with solder pads.</li>
-<li>Very small size</li>
-<li>The OnBoard LED is a charging indicator</li>
-</ul>
-<p>A Battery connector is on the bottom available on solder pads.</p>
+<h2>LiPo charging</h2>
+<p>There is a battery connector using solder pads available on the bottom of the board to attach a Li-Ion Battery. The charging using the USB power. A on-board LED will indicate the charging mode.
+There is no further interface or API for control.
+.</p>
 <h2>Arduino Board configuration</h2>
-<p>The ESP32 board Manager in the Arduino environment has a dedicated board type
-<code>XIAO_ESP32C3 (esp32)</code> that fits to this board.</p>
+<p>The ESP32 Board Manager in the Arduino environment has a dedicated board type
+<code>XIAO_ESP32C3 (esp32)</code> that fits to this board. No further setting is required.</p>
 <ul>
 <li>Flash Mode is QIO</li>
 <li>Flash Size 4MByte (32Mbit)</li>
 <li>400KB SRAM Memory</li>
 </ul>
+<p>For compiling with the Arduino CLI the following board settings can be used:</p>
+<pre class="language-txt"><code class="language-txt">"board": "esp32:esp32:XIAO_ESP32C3"
+"configuration": "CDCOnBoot=default,PartitionScheme=default,CPUFreq=160,FlashMode=qio,
+  FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none,EraseFlash=none",
+}</code></pre>
 <h2>System configuration</h2>
-<p>This <strong>env.json</strong> file can be used as a starting point for configuring this board type:</p>
+<p>The following <strong>env.json</strong> file can be used as a starting point for the configuration of this board and includes all definitions for the on-board hardware:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -102,6 +105,8 @@ using the USB-C connector.</p>
 <span class="token punctuation">}</span></code></pre>
 <h2>See Also</h2>
 <ul>
+<li><a href="/boards/index.htm">Boards overview</a></li>
+<li><a href="/boards/esp32c3/index.htm">ESP32-C3 Boards</a></li>
 <li>Manufacurer and Shop: <a href="https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html">https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html</a></li>
 <li><a href="https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/">https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/</a></li>
 <li><a href="https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html">https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html</a></li>

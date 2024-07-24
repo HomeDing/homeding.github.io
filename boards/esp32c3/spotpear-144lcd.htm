@@ -27,6 +27,13 @@
     <main style="padding:1rem;max-width: 800px;">
       <h1>Spotpear ESP32C3 1.44 LCD</h1>
       
+        
+            <div class="plaincard">
+            
+            The Spotpear ESP32C3 1.44 LCD board combines a ESP32-C3 with a display and LIPO charging with a compact design.
+
+          </div>
+        
         <p>The Spotpear ESP32C3 board with 1.44 inch LCD display is a very compact version of a LCD + ESP32C3 combination.</p>
 <style>
 u-carousel {
@@ -120,6 +127,25 @@ u-carousel {
 <li>LiPo charger</li>
 <li>USB bust directly connected to ESP32C3</li>
 </ul>
+<h2>Arduino Board Configuration</h2>
+<p>The Arduino Board Manager supports this board by installing the <code>esp32 by espressif</code> package and using the following settings:</p>
+<ul>
+<li>Board: <strong>ESP32C3 Dev Module</strong></li>
+<li>Upload Speed: 921600</li>
+<li>USB CDC On Boot: Enabled</li>
+<li>CPU Frequency: 160 MHz</li>
+<li>Flash Frequency: 80MHz</li>
+<li>Flash Mode: QIO</li>
+<li>Flash Size: 4MByte (32Mbit)</li>
+<li>Partition Scheme: Default 4MB with spiffs (1.2MB App/1.5MB SPIFFS)</li>
+<li>Core Debug Level: None</li>
+<li>Erase All Flash: Disabled</li>
+<li>JTAG Adapter: Integrated USB JTAG</li>
+</ul>
+<p>For compiling with the Arduino CLI the following board settings can be used:</p>
+<pre class="language-txt"><code class="language-txt">"board": "esp32:esp32:esp32c3",
+"configuration": "JTAGAdapter=default,CDCOnBoot=cdc,PartitionScheme=default,CPUFreq=160,
+  FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none,EraseFlash=all"</code></pre>
 <h2>Display</h2>
 <p>The display is driven by a ST7735 chip and can be used within the Homeding library by including the
 <a href="/elements/display/st7735.htm">Display ST7735 Element</a></p>
@@ -178,9 +204,10 @@ voltage from the USB connector.</p>
 <p>There is a LED connected to the GPIO pin # 11 next to the reset button.</p>
 <p>However this pin cannot be freely used and is connected to the VCC for the internal SPI flash. It will turn off when the board goes into the deep sleep mode.</p>
 <h2>LiPo charging</h2>
-<p>BAT : PL4054</p>
+<p>There is a PL4054 chip on the board that charges a connected LiPo battery using the USB power.</p>
+<p>The PL4054 is a linear Li-Ion Battery Charger that has no further interface or API for control.</p>
 <h2>System configuration</h2>
-<p>This <strong>env.json</strong> file can be used as a starting point for configuring this board type and includes all on-board hardware definitions:</p>
+<p>The following <strong>env.json</strong> file can be used as a starting point for the configuration of this board and includes all definitions for the on-board hardware:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -242,12 +269,12 @@ voltage from the USB connector.</p>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<hr>
-<p>“C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\tools\esptool_py\4.5.1/esptool.exe” --chip esp32s3 --port “COM7” --baud 921600  --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 “C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bootloader.bin” 0x8000 “C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.partitions.bin” 0xe000 “C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.17/tools/partitions/boot_app0.bin” 0x10000 “C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bin”</p>
-<p>“board”: “esp32:esp32:esp32c3”,
-“configuration”: “JTAGAdapter=default,CDCOnBoot=cdc,PartitionScheme=default,CPUFreq=160,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none,EraseFlash=all”,</p>
+<!-- "C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\tools\esptool_py\4.5.1/esptool.exe" --chip esp32s3 --port "COM7" --baud 921600  --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bootloader.bin" 0x8000 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.partitions.bin" 0xe000 "C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.17/tools/partitions/boot_app0.bin" 0x10000 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bin"
+-->
 <h2>See also</h2>
 <ul>
+<li><a href="/boards/index.htm">Boards overview</a></li>
+<li><a href="/boards/esp32c3/index.htm">ESP32-C3 Boards</a></li>
 <li><a href="https://spotpear.com/index/product/detail/id/1354.html">ESP32-C3 1.44 LCD at spotpear</a></li>
 <li><a href="https://spotpear.com/index/study/detail/id/1121.html">ESP32-C3 1.44 LCD User Guide @ spotspear</a></li>
 <li><a href="https://github.com/Spotpear/ESP32C3_1.44inch">GitHub Project</a></li>
@@ -258,8 +285,6 @@ voltage from the USB connector.</p>
           <div class="taglist">
             
               <a href="/tag/board.htm">Board</a>
-            
-              <a href="/tag/wip.htm">Wip</a>
             
           </div>
         

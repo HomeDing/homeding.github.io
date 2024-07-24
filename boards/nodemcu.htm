@@ -30,11 +30,98 @@
         
             <div class="plaincard">
             
-            The NodeMCU boards are one of the most common development boards. They offer an easy start into the ESP8266 development. The have all you need for programming, offer 4MByte flash memory and a LED on-board.
+            The NodeMCU boards are one of the most common development boards using ESP8266 modules. They offer an easy start into the ESP8266 development as they have all you need for programming, offer 4MByte flash memory and a LED on-board.
 
           </div>
         
-        <ul>
+        <p>There are variants of this board available.
+I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 regulator that are slim enough to fit on a breadboard.</p>
+<style>
+u-carousel {
+  timeline-scope: --carousel;
+
+  display:block;
+  width: 600px;
+  height: auto;
+
+  position: relative;
+  margin: 1em auto;
+  background: white;
+
+  .prev, .next {
+    position: absolute;
+    top:0;
+    top: 50%; transform: translateY(-50%);
+    width:4rem;height:4rem;
+    border-radius:50%;
+    border:0;
+
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  	transition-property: opacity;
+    K  	transition-duration: 0.2s;
+  }
+
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+
+  .prev { left:0; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M34,44l-28,-20l28,-20Z' /></svg>");
+  }
+  
+  .next { right:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M14,44l28,-20l-28,-20Z' /></svg>");
+ }
+
+  .entries {
+    scroll-timeline-name: --carousel;
+    scroll-timeline-axis: x;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 0;
+
+    > li {
+      scroll-snap-align: center;
+      flex: 100% 0 0;
+
+      display: grid;
+      place-content: center;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 600px;
+    }
+  }
+}
+
+</style>
+<u-carousel>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
+  <ul class="entries" tabindex="0">
+  <li><img src="/boards/nodemcu-03.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="/boards/nodemcu-00.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="/boards/nodemcu-01.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="/boards/nodemcu-02.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="/boards/nodemcu-04.jpg" alt="w200" title="" draggable="false"></li>
+  </ul>
+</u-carousel>
+<h2>Features</h2>
+<ul>
 <li>Based on ESP-12 or ESP-12E</li>
 <li>4 Mbyte Flash ROM</li>
 <li>USB to serial adapter</li>
@@ -54,13 +141,6 @@ If you upload sketches using more than 115200 baud or have problems finding USB 
 When you have sensors or other peripherals that use the 3.3V from the board be sure you have a regulator that can drive the required current and that doesn’t get too hot.</li>
 <li>There are multiple  versions with different sizes. If you can choose take the smaller (right) one when used on a breadboard still offers space for using jumpers. The bigger (left) one leaves no place because it consumes the whole available breadboard width</li>
 </ul>
-<p>Here is a collection of pictures of known boards:</p>
-<p><img src="/boards/nodemcu-00.jpg" alt="node-00" title="w200">
-<img src="/boards/nodemcu-01.jpg" alt="node-01" title="w200">
-<img src="/boards/nodemcu-02.jpg" alt="node-02" title="w200">
-<img src="/boards/nodemcu-03.jpg" alt="node-03" title="w200">
-<img src="/boards/nodemcu-04.jpg" alt="node-04" title="w200"></p>
-<p>I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 regulator.</p>
 <h2>Overview table</h2>
 <table>
 <thead>
@@ -95,8 +175,7 @@ When you have sensors or other peripherals that use the 3.3V from the board be s
 </table>
 <h2>Onboard Momentary Buttons</h2>
 <p>There are 2 Buttons on the Boards:</p>
-<p><strong>Reset</strong> –
-This button pulls the reset pin down to GND.</p>
+<p><strong>Reset</strong> – This button pulls the reset pin down to GND.</p>
 <p><strong>Flash</strong> – This button pulls the GPIO0(D3) pin down to GND.
 It can be used to manually start the program upload mode when is it pushed while resetting or powering up.
 Later it can be used for any input purpose as long it is leaving the pin in HIGH input when not used.</p>
@@ -104,31 +183,35 @@ Later it can be used for any input purpose as long it is leaving the pin in HIGH
 <p>There are two LEDs that can be used without any external components:</p>
 <p><a href="/boards/nodemcu-compare-led.jpg">NodeMCU LEDs</a></p>
 <h2>Vin / VUSB</h2>
-<p>There is a subtile difference in the nodeMCU bards from vendors regarding the availability and the usage of the 5V power supply.</p>
-<p><strong>Vin</strong></p>
+<p>There is a subtile difference in the nodeMCU bards from vendors regarding the availability and the usage of the 5V power
+supply.</p>
+<h3>Vin</h3>
 <ul>
-<li>Some boards directly make the 5V power from the USB bus available on th Vin pin. This can then be used as a power output to drive 5V components like displays.</li>
-<li>Other boards us a diode to protect the board when this pin is really used as a power supply. Here the Vin pin cannot be used for output 5V power.</li>
+<li>Some boards directly make the 5V power from the USB bus available on th Vin pin.  This can then be used as a power
+output to drive 5V components like displays.</li>
+<li>Other boards us a diode to protect the board when this pin is really used as a power supply.  Here the Vin pin cannot
+be used for output 5V power.</li>
 </ul>
-<p><strong>VU</strong></p>
+<h3>VU</h3>
 <ul>
-<li>Some boards use the 2 reserved pins next to A0 to offer a dedicated pin attached to the 5V USB power supply and an additional GND pin.
-This can be used to power external chips and displays.</li>
+<li>Some boards use the 2 reserved pins next to A0 to offer a dedicated pin attached to the 5V USB power supply and an
+additional GND pin.  This can be used to power external chips and displays.</li>
 </ul>
 <h2>More to know</h2>
-<p>If you are most sure what characteristics a board has, try to find pictures and web sites that focus on describing the differences. Most of the boards behave the same.</p>
+<p>If you are most sure what characteristics a board has, try to find pictures and web sites that focus on describing the
+differences.  Most of the boards behave the same.</p>
 <p>There are boards that have a bigger PCB board that doesn’t work well with breadboards.</p>
 <h2>Burned boards</h2>
-<p>A overload of the 3.3 V output provided by the nodeMCU boards or a temporary shortcut between the GND and 3.3V pins can damage the onboard regulator or the board itself.
-It happened to me several times.</p>
-<p>When only the regulator is damaged you can often cut off the one on the board and use still it by supplying 3.3 volts from an external power source.</p>
+<p>A overload of the 3.3 V output provided by the nodeMCU boards or a temporary shortcut between the GND and 3.3V pins can
+damage the onboard regulator or the board itself.  It happened to me several times.</p>
+<p>When only the regulator is damaged you can often cut off the one on the board and use still it by supplying 3.3 volts
+from an external power source.</p>
 <p>After cutting the regulator the USB to serial chip may still work.</p>
 <p>Some boards have a diode between the USB 5V line and the onboard regulator that is burned down and can be replaced.</p>
 <p>Those boards may also be used by applying external power on +5V and +3.3V pins.</p>
 <p>A multi purpose voltmeter is helpful.</p>
 <h2>System configuration</h2>
-<p>The following env.json file can be used on these boards:</p>
-<p><strong>env.json</strong></p>
+<p>This <strong>env.json</strong> file can be used as a starting point for configuring this board type and includes all on-board hardware definitions:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"main"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -159,7 +242,7 @@ It happened to me several times.</p>
 
   <span class="token property">"ssdp"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"manufacturer"</span><span class="token operator">:</span> <span class="token string">"Matthias Hertel"</span>
+      <span class="token property">"manufacturer"</span><span class="token operator">:</span> <span class="token string">"nodemcu"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
