@@ -61,7 +61,10 @@ configuration for the USB features in the ESP32-c3 SoC must have:
 
 ## CAN bus Support
 
-available but never tested with HomeDing library.
+The CAN bus interface and protocol also known as Two-Wire Automotive Interface (TWAI) is very popular in automotive
+domain.  The ESP32C3 chip supports the CAN bus with some restrictions by using an external transiver.
+
+This interface was not yet tested with HomeDing library.
 
 
 ## Bluetooth LE
@@ -96,12 +99,17 @@ This results in faster secure (https) network requests.
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32c3/pico') }}
+
 {{ imgCard(collections.all, item = '/boards/esp32c3/weact-core-c3') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/super-mini-c3') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/xiao-c3') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32c3/spotpear-144lcd') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32c3/esp32c3-01') }}
 
 ## Board ESP32-C3 ESP-01
 

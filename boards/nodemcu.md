@@ -4,9 +4,25 @@ tags: ["Board"]
 layout: "page.njk"
 description: ESP8266 General purpose development boards
 excerpt: >
-  The NodeMCU boards are one of the most common development boards.
-  They offer an easy start into the ESP8266 development. The have all you need for programming, offer 4MByte flash memory and a LED on-board.
+  The NodeMCU boards are one of the most common development boards using ESP8266 modules.
+  They offer an easy start into the ESP8266 development as they have all you need for programming, offer 4MByte flash memory and a LED on-board.
 ---
+
+{% from 'macros.njk' import carousel %}
+
+There are variants of this board available.
+I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 regulator that are slim enough to fit on a breadboard.
+
+{{ carousel([
+  { "file": "/boards/nodemcu-03.jpg", "text": "w200"},
+  { "file": "/boards/nodemcu-00.jpg", "text": "w200"},
+  { "file": "/boards/nodemcu-01.jpg", "text": "w200"},
+  { "file": "/boards/nodemcu-02.jpg", "text": "w200"},
+  { "file": "/boards/nodemcu-04.jpg", "text": "w200"}
+]) }}
+
+
+## Features
 
 * Based on ESP-12 or ESP-12E
 * 4 Mbyte Flash ROM
@@ -29,16 +45,6 @@ If you upload sketches using more than 115200 baud or have problems finding USB 
 When you have sensors or other peripherals that use the 3.3V from the board be sure you have a regulator that can drive the required current and that doesn't get too hot.
 * There are multiple  versions with different sizes. If you can choose take the smaller (right) one when used on a breadboard still offers space for using jumpers. The bigger (left) one leaves no place because it consumes the whole available breadboard width
 
-Here is a collection of pictures of known boards:
-
-![node-00](/boards/nodemcu-00.jpg "w200")
-![node-01](/boards/nodemcu-01.jpg "w200")
-![node-02](/boards/nodemcu-02.jpg "w200")
-![node-03](/boards/nodemcu-03.jpg "w200")
-![node-04](/boards/nodemcu-04.jpg "w200")
-
-I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 regulator.
-
 
 ## Overview table
 
@@ -54,8 +60,7 @@ I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 r
 
 There are 2 Buttons on the Boards:
 
-**Reset** -- 
-This button pulls the reset pin down to GND.
+**Reset** -- This button pulls the reset pin down to GND.
 
 **Flash** -- This button pulls the GPIO0(D3) pin down to GND.
 It can be used to manually start the program upload mode when is it pushed while resetting or powering up.
@@ -71,31 +76,36 @@ There are two LEDs that can be used without any external components:
 
 ## Vin / VUSB
 
-There is a subtile difference in the nodeMCU bards from vendors regarding the availability and the usage of the 5V power supply.
+There is a subtile difference in the nodeMCU bards from vendors regarding the availability and the usage of the 5V power
+supply.
 
-**Vin**
+### Vin
 
-* Some boards directly make the 5V power from the USB bus available on th Vin pin. This can then be used as a power output to drive 5V components like displays.
-* Other boards us a diode to protect the board when this pin is really used as a power supply. Here the Vin pin cannot be used for output 5V power.
+* Some boards directly make the 5V power from the USB bus available on th Vin pin.  This can then be used as a power
+  output to drive 5V components like displays.
+* Other boards us a diode to protect the board when this pin is really used as a power supply.  Here the Vin pin cannot
+  be used for output 5V power.
 
-**VU**
+### VU
 
-* Some boards use the 2 reserved pins next to A0 to offer a dedicated pin attached to the 5V USB power supply and an additional GND pin.
-  This can be used to power external chips and displays.
+* Some boards use the 2 reserved pins next to A0 to offer a dedicated pin attached to the 5V USB power supply and an
+  additional GND pin.  This can be used to power external chips and displays.
 
 ## More to know
 
-If you are most sure what characteristics a board has, try to find pictures and web sites that focus on describing the differences. Most of the boards behave the same.
+If you are most sure what characteristics a board has, try to find pictures and web sites that focus on describing the
+differences.  Most of the boards behave the same.
 
 There are boards that have a bigger PCB board that doesn't work well with breadboards.
 
 
 ## Burned boards
 
-A overload of the 3.3 V output provided by the nodeMCU boards or a temporary shortcut between the GND and 3.3V pins can damage the onboard regulator or the board itself.
-It happened to me several times.
+A overload of the 3.3 V output provided by the nodeMCU boards or a temporary shortcut between the GND and 3.3V pins can
+damage the onboard regulator or the board itself.  It happened to me several times.
 
-When only the regulator is damaged you can often cut off the one on the board and use still it by supplying 3.3 volts from an external power source.
+When only the regulator is damaged you can often cut off the one on the board and use still it by supplying 3.3 volts
+from an external power source.
 
 After cutting the regulator the USB to serial chip may still work.
 
@@ -108,9 +118,7 @@ A multi purpose voltmeter is helpful.
 
 ## System configuration
 
-The following env.json file can be used on these boards:
-
-**env.json**
+This **env.json** file can be used as a starting point for configuring this board type and includes all on-board hardware definitions:
 
 ``` json
 {
@@ -143,7 +151,7 @@ The following env.json file can be used on these boards:
 
   "ssdp": {
     "0": {
-      "manufacturer": "Matthias Hertel"
+      "manufacturer": "nodemcu"
     }
   }
 }
@@ -158,5 +166,4 @@ The following env.json file can be used on these boards:
 * <https://www.nodemcu.com/index_en.html>
 * <https://github.com/nodemcu/nodemcu-devkit-v1.0/blob/master/README.md>
 * ESP8266 board adoption for Arduino: <https://arduino-esp8266.readthedocs.io/en/latest/index.html>
-
 

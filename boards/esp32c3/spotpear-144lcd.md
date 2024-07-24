@@ -1,9 +1,9 @@
 ---
 title: Spotpear ESP32C3 1.44 LCD
-tags: ["Board", "WIP"]
+tags: ["Board"]
 layout: "page.njk"
 excerpt: >
-  
+  The Spotpear ESP32C3 1.44 LCD board combines a ESP32-C3 with a display and LIPO charging with a compact design.
 ---
 
 {% from 'macros.njk' import carousel %}
@@ -26,6 +26,32 @@ The Spotpear ESP32C3 board with 1.44 inch LCD display is a very compact version 
 * LED
 * LiPo charger
 * USB bust directly connected to ESP32C3
+
+## Arduino Board Configuration
+
+The Arduino Board Manager supports this board by installing the `esp32 by espressif` package and using the following settings:
+
+* Board: **ESP32C3 Dev Module**
+* Upload Speed: 921600
+* USB CDC On Boot: Enabled
+* CPU Frequency: 160 MHz
+* Flash Frequency: 80MHz
+* Flash Mode: QIO
+* Flash Size: 4MByte (32Mbit)
+* Partition Scheme: Default 4MB with spiffs (1.2MB App/1.5MB SPIFFS)
+* Core Debug Level: None
+* Erase All Flash: Disabled
+* JTAG Adapter: Integrated USB JTAG
+
+
+For compiling with the Arduino CLI the following board settings can be used:
+
+``` txt
+"board": "esp32:esp32:esp32c3",
+"configuration": "JTAGAdapter=default,CDCOnBoot=cdc,PartitionScheme=default,CPUFreq=160,
+  FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none,EraseFlash=all"
+```
+
 
 ## Display
 
@@ -78,12 +104,14 @@ However this pin cannot be freely used and is connected to the VCC for the inter
 
 ## LiPo charging
 
-BAT : PL4054
+There is a PL4054 chip on the board that charges a connected LiPo battery using the USB power.
+
+The PL4054 is a linear Li-Ion Battery Charger that has no further interface or API for control.
 
 
 ## System configuration
 
-This **env.json** file can be used as a starting point for configuring this board type and includes all on-board hardware definitions:
+The following **env.json** file can be used as a starting point for the configuration of this board and includes all definitions for the on-board hardware:
 
 ```json
 {
@@ -149,17 +177,14 @@ This **env.json** file can be used as a starting point for configuring this boar
 }
 ```
 
----
-
-"C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\tools\esptool_py\4.5.1/esptool.exe" --chip esp32s3 --port "COM7" --baud 921600  --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bootloader.bin" 0x8000 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.partitions.bin" 0xe000 "C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.17/tools/partitions/boot_app0.bin" 0x10000 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bin"
-
-
-    "board": "esp32:esp32:esp32c3",
-    "configuration": "JTAGAdapter=default,CDCOnBoot=cdc,PartitionScheme=default,CPUFreq=160,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none,EraseFlash=all",
+<!-- "C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\tools\esptool_py\4.5.1/esptool.exe" --chip esp32s3 --port "COM7" --baud 921600  --before default_reset --after hard_reset write_flash  -z --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bootloader.bin" 0x8000 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.partitions.bin" 0xe000 "C:\Users\Matthias\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.17/tools/partitions/boot_app0.bin" 0x10000 "C:\Users\Matthias\AppData\Local\Temp\arduino\sketches\4674C825DA1B04228EA2E0E8F53E9C1D/BigDisplay.ino.bin"
+-->
 
 
 ## See also
 
+* [Boards overview](/boards/index.md)
+* [ESP32-C3 Boards](/boards/esp32c3/index.md)
 * [ESP32-C3 1.44 LCD at spotpear](https://spotpear.com/index/product/detail/id/1354.html)
 * [ESP32-C3 1.44 LCD User Guide @ spotspear](https://spotpear.com/index/study/detail/id/1121.html)
 * [GitHub Project](https://github.com/Spotpear/ESP32C3_1.44inch)

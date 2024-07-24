@@ -131,18 +131,23 @@ and by the HomeDing library.
 
 Some boards have been tested:
 
+<!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
+
 {{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/pico') }}
 
+{{ imgCard(collections.all, item = '/boards/esp32c3/weact-core-c3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32c3/super-mini-c3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32c3/xiao-c3') }}
+
+{{ imgCard(collections.all, item = '/boards/esp32c3/spotpear-144lcd') }}
+
 {{ imgCard(collections.all, item = '/boards/esp32c3/esp32c3-01') }}
-
-
-<!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
-
-
 
 ## Devices based on Esp8266
 

@@ -1,6 +1,6 @@
 ---
 title: Logging
-tags: ["Implementation", "Board", "WIP"]
+tags: ["Implementation"]
 layout: "page.njk"
 ---
 

@@ -7,39 +7,51 @@ excerpt: >
   The XIAO ESP32 C3 is a thumb-size board with external antenna.
 ---
 
-The XIAO ESP32 C3 board using the ESP32-C3 processor is a very small board that can easily be
+The XIAO ESP32 C3 board using the ESP32-C3 processor is a very small sized board that can easily be
 flashed and comes with a connector for an external antenna.
 
 ![XIAO ESP32C3 board](xiao-c3.jpg)
 
-The ESP32-C3 processor has a 32-bit single core RISC-V cpu running at max. 160MHz and
+The ESP32-C3 processor has a 32-bit single core RISC-V CPU running at max. 160MHz and
 400KB SRAM memory. Bluetooth LE is supported.
 
-As there are no additional power consuming components on this board is fits good for
-un-powered/battery based use cases. It has a onboard lithium battery charging chip to recharge
+There is no antenna on this board and the external antenna that is shipped with the board or any other 2.4 GHz WiFi antenna with a common I-PEX connector must be connected for using any WiFi or Bluetooth functionality. An external antenna usually provides outstanding RF performance compared to on-board antenna solutions.
+
+As there are no additional power consuming components on this board
+it fits good for
+battery based use cases. It has a onboard lithium battery charging chip to recharge
 using the USB-C connector.
 
-* $5 low price
-* An external antenna must be connected. There is no antenna on board but a I-PEX connector.
-* On board LiPo battery charger chip for a battery connected at the bottom side with solder pads.
-* Very small size
-* The OnBoard LED is a charging indicator
 
-A Battery connector is on the bottom available on solder pads.
+## LiPo charging
+
+There is a battery connector using solder pads available on the bottom of the board to attach a Li-Ion Battery. The charging using the USB power. A on-board LED will indicate the charging mode.
+There is no further interface or API for control.
+.
 
 
 ## Arduino Board configuration
 
-The ESP32 board Manager in the Arduino environment has a dedicated board type
-`XIAO_ESP32C3 (esp32)` that fits to this board.
+The ESP32 Board Manager in the Arduino environment has a dedicated board type
+`XIAO_ESP32C3 (esp32)` that fits to this board. No further setting is required.
 
 * Flash Mode is QIO
 * Flash Size 4MByte (32Mbit)
-* 400KB SRAM Memory 
+* 400KB SRAM Memory
+
+
+For compiling with the Arduino CLI the following board settings can be used:
+
+``` txt
+"board": "esp32:esp32:XIAO_ESP32C3"
+"configuration": "CDCOnBoot=default,PartitionScheme=default,CPUFreq=160,FlashMode=qio,
+  FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none,EraseFlash=none",
+}
+```
 
 ## System configuration
 
-This **env.json** file can be used as a starting point for configuring this board type:
+The following **env.json** file can be used as a starting point for the configuration of this board and includes all definitions for the on-board hardware:
 
 ```json
 {
@@ -92,8 +104,9 @@ This **env.json** file can be used as a starting point for configuring this boar
 
 ## See Also
 
+* [Boards overview](/boards/index.md)
+* [ESP32-C3 Boards](/boards/esp32c3/index.md)
 * Manufacurer and Shop: <https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html>
 * <https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/>
 * <https://sigmdel.ca/michel/ha/xiao/xiao_esp32c3_intro_en.html>
-
 

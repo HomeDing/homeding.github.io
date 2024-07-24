@@ -42,14 +42,11 @@ If you need to reflash the bootloader, you can follow the steps of a
 
 ## See Also
 
-* Arduino Getting Started with Nano ESP32: <https://docs.arduino.cc/tutorials/nano-esp32/getting-started-nano-esp32>
-* Cheat Sheet: <https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet>
-* Data sheet <https://docs.arduino.cc/static/b8af299e4c00e7220396e2c4c528c12a/ABX00083-datasheet.pdf>
-* Full pin diagram: <https://docs.arduino.cc/static/f712042dfc42b75d6745293a60d6cd4a/ABX00083-full-pinout.pdf>
-* Full pin schematics: <https://docs.arduino.cc/static/ba720d742e9db4f65d217a422f155695/ABX00083-schematics.pdf>
-
-
-
+* [Arduino Nano ESP32](https://docs.arduino.cc/hardware/nano-esp32/)
+* Arduino Getting Started with Nano ESP32: <https://docs.arduino.cc/tutorials/nano-esp32/getting-started-nano-esp32/>
+* Data sheet <https://docs.arduino.cc/resources/datasheets/ABX00083-datasheet.pdf>
+* Full pin diagram: <https://docs.arduino.cc/resources/pinouts/ABX00083-full-pinout.pdf>
+* Full schematics: <https://docs.arduino.cc/resources/schematics/ABX00083-schematics.pdf>
 
 static const int8_t TO_GPIO_NUMBER[NUM_DIGITAL_PINS] = {
     [D0]        = 44, // RX

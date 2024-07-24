@@ -26,6 +26,11 @@ There are connectors on the board supporting RS485, Speaker and GPIO.
 
 The Board is manufacured by Smart Panlee with id ZX3D50CE08S-USRC-4832.
 
+
+## Arduino CLI Configuration
+
+For compiling with the Arduino CLI the following board settings can be used:
+
 ```txt
 "board": "esp32:esp32:esp32s3"
 "configuration": "JTAGAdapter=default,PSRAM=enabled,FlashMode=qio,FlashSize=16M,LoopCore=1,EventsCore=1,
