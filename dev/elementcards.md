@@ -9,15 +9,15 @@ excerpt: >
   by using a card design available.
 ---
 
-These templates are included manually or automatically into the pages when a corresponding element is configured.
+By accessing the Web UI of a HomeDing device all relevant and configured Elements are displayed by using a copy of the corresponding HTML template and feeding all configured and current attributes into the placeholders..
 
 There are 2 versions of these templates available:
 
 * Inside the file `ding.htm` all implemented templates can be found that support visualization and configuration
-  of the elements that are part of the minimal example
-  and usually used in 1M flash devices.
+  of the elements that are part of the minimal examples plug and bulb
+  and usually used in ESP8266 1M flash devices.
 * Inside the fie `board-templates.htm` all existing templates can be found that visualize all kind of elements.
-  They support configuration of the elements using the configuration dialogs.
+  They also support configuration of the elements using the configuration dialogs.
 
 
 ## Implementing a Template

@@ -1,6 +1,6 @@
 ---
 title: ESP32-S3 Boards
-tags: ["Board" , "WIP"]
+tags: ["Board"]
 layout: "page.njk"
 description: ESP32-S3 based boards
 excerpt: >

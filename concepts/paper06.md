@@ -8,7 +8,7 @@ description: Insights into the design of an IoT device,
 Today there are many proprietary approaches how "Things" are built. Many of them cannot be integrated or connected and standardization is required to create flexibility in combining devices to create solutions.
 
 The HomeDing library in contrast
-uses standard Web based communication like REST services and is Open Source to be extendable to include new protocols.
+uses standard Web based communication like REST services, is Open Source and can be extended with new components and new protocols.
 
 ## Using Standards
 
