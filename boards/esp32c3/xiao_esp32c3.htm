@@ -36,7 +36,88 @@
         
         <p>The XIAO ESP32 C3 board using the ESP32-C3 processor is a very small sized board that can easily be
 flashed and comes with a connector for an external antenna.</p>
-<p><img src="xiao-c3.jpg" alt="XIAO ESP32C3 board"></p>
+<style>
+u-carousel {
+  timeline-scope: --carousel;
+
+  display:block;
+  width: 600px;
+  height: auto;
+
+  position: relative;
+  margin: 1em auto;
+  background: white;
+
+  .prev, .next {
+    position: absolute;
+    top:0;
+    top: 50%; transform: translateY(-50%);
+    width:4rem;height:4rem;
+    border-radius:50%;
+    border:0;
+
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  	transition-property: opacity;
+    K  	transition-duration: 0.2s;
+  }
+
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+
+  .prev { left:0; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M34,44l-28,-20l28,-20Z' /></svg>");
+  }
+  
+  .next { right:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M14,44l28,-20l-28,-20Z' /></svg>");
+ }
+
+  .entries {
+    scroll-timeline-name: --carousel;
+    scroll-timeline-axis: x;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 0;
+
+    > li {
+      scroll-snap-align: center;
+      flex: 100% 0 0;
+
+      display: grid;
+      place-content: center;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 600px;
+    }
+  }
+}
+
+</style>
+<u-carousel>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
+  <ul class="entries" tabindex="0">
+  <li><img src="./xiao_esp32c3.jpg" alt="XIAO ESP32C3 board" title="" draggable="false"></li>
+  <li><img src="./xiao_esp32c3-1.jpg" alt="XIAO ESP32C3 board" title="" draggable="false"></li>
+  <li><img src="./xiao_esp32c3-2.jpg" alt="XIAO ESP32C3 back view" title="" draggable="false"></li>
+  </ul>
+</u-carousel>
 <p>The ESP32-C3 processor has a 32-bit single core RISC-V CPU running at max. 160MHz and
 400KB SRAM memory. Bluetooth LE is supported.</p>
 <p>There is no antenna on this board and the external antenna that is shipped with the board or any other 2.4 GHz WiFi antenna with a common I-PEX connector must be connected for using any WiFi or Bluetooth functionality. An external antenna usually provides outstanding RF performance compared to on-board antenna solutions.</p>
@@ -92,17 +173,22 @@ There is no further interface or API for control.
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h3>config.json</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"value"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"sw"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Stateful Value"</span><span class="token punctuation">,</span>
-      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
-      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
-      <span class="token property">"useState"</span><span class="token operator">:</span> <span class="token string">"true"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<!---
+### config.json
+
+```json
+{
+  "value": {
+    "sw": {
+      "title": "Stateful Value",
+      "min": "0",
+      "max": "100",
+      "useState": "true"
+    }
+  }
+}
+```
+-->
 <h2>See Also</h2>
 <ul>
 <li><a href="/boards/index.htm">Boards overview</a></li>
@@ -117,8 +203,6 @@ There is no further interface or API for control.
           <div class="taglist">
             
               <a href="/tag/board.htm">Board</a>
-            
-              <a href="/tag/wip.htm">Wip</a>
             
           </div>
         

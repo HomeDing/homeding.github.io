@@ -52,14 +52,46 @@ following settings:</p>
 <li>Erase All Flash: Disabled</li>
 <li>JTAG Adapter: Integrated USB JTAG</li>
 </ul>
-<h2>Feature X</h2>
-<h2>Device</h2>
-<h2>Display</h2>
-<h2>Display Touch (CST816D) Controller</h2>
-<h2>Battery Management</h2>
+<h2>Momentary Buttons</h2>
+<p>There are 2 momentary buttons on the board.
+1 of them is pulling the BOOT GPIO09 pin to ground and one is connected to the EN and will reset the processor.</p>
+<p>Boot = IO9
+Reset = Chip_EN</p>
+<p>There is no external pull-up resistors on the board so the  internal pullup resistors of the ESP32-C3 must be enabled.</p>
 <h2>System configuration</h2>
 <p>This <strong>env.json</strong> file can be used as a starting point for configuring this board type.</p>
-<pre class="language-json"><code class="language-json"></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"weactc3"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"WeAct ESP32-C3"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"WeAct Studio ESP32-C3 Core"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"logFile"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+
+  <span class="token property">"state"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"savedelay"</span><span class="token operator">:</span> <span class="token string">"8s"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"boot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Boot button signal"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"9"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See Also</h2>
 <ul>
 <li><a href="/boards/index.htm">Boards overview</a></li>
