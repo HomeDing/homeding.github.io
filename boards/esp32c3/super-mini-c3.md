@@ -12,7 +12,7 @@ architecture.
 
 ![ESP32-C3 Super Mini](super-mini-c3.jpg)
 
-It has almost the same size as the [XIAO ESP32 C3](/boards/esp32c3/xiao-c3.md) but comes with an onboard antenna.
+It has almost the same size as the [XIAO ESP32 C3](/boards/esp32c3/xiao_esp32c3.md) but comes with an onboard antenna.
 Caused by this very small antenna the weak WiFi and BLE RF signal strength may limit the usability.
 
 

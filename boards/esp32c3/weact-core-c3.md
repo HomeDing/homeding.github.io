@@ -12,6 +12,7 @@ The [ESP32-C3 processor](index.md) is a single-core SoC based on the open-source
 
 ![WeAct Studio ESP32-C3 Core](weact-core-c3.jpg)
 
+
 ## Arduino Board Configuration
 
 The Arduino Board Manager supports this board by installing the `esp32 by espressif` package.  It can be used with the
@@ -30,21 +31,53 @@ following settings:
 * JTAG Adapter: Integrated USB JTAG
 
 
-## Feature X
+## Momentary Buttons
 
-## Device
+There are 2 momentary buttons on the board.
+1 of them is pulling the BOOT GPIO09 pin to ground and one is connected to the EN and will reset the processor.
+
+Boot = IO9
+Reset = Chip_EN
 
-## Display
+There is no external pull-up resistors on the board so the  internal pullup resistors of the ESP32-C3 must be enabled.
 
-## Display Touch (CST816D) Controller
-
-## Battery Management
 
 ## System configuration
 
 This **env.json** file can be used as a starting point for configuring this board type.
 
 ```json
+{
+  "device": {
+    "0": {
+      "name": "weactc3",
+      "title": "WeAct ESP32-C3",
+      "description": "WeAct Studio ESP32-C3 Core",
+      "loglevel": "2",
+      "logFile": "1"
+    }
+  },
+  "ota": {
+    "0": {}
+  },
+  "ntptime": {
+    "0": {
+      "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+    }
+  },
+
+  "state": {
+    "0": { "savedelay": "8s" }
+  },
+  "digitalin": {
+    "boot": {
+      "title": "Boot button signal",
+      "pin": "9",
+      "invert": "true",
+      "pullup": "1"
+    }
+  }
+}
 ```
 
 ## See Also

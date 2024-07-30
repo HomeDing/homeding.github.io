@@ -1,16 +1,22 @@
 ---
 title: XIAO ESP32 C3
-tags: ["Board", "WIP"]
+tags: ["Board"]
 layout: "page.njk"
 description: ESP32-C3 thumb-size board with external antenna.
 excerpt: >
   The XIAO ESP32 C3 is a thumb-size board with external antenna.
 ---
 
+{% from 'macros.njk' import carousel %}
+
 The XIAO ESP32 C3 board using the ESP32-C3 processor is a very small sized board that can easily be
 flashed and comes with a connector for an external antenna.
 
-![XIAO ESP32C3 board](xiao-c3.jpg)
+{{ carousel([
+  { "file": "./xiao_esp32c3.jpg", "text": "XIAO ESP32C3 board"},
+  { "file": "./xiao_esp32c3-1.jpg", "text": "XIAO ESP32C3 board"},
+  { "file": "./xiao_esp32c3-2.jpg", "text": "XIAO ESP32C3 back view"}
+]) }}
 
 The ESP32-C3 processor has a 32-bit single core RISC-V CPU running at max. 160MHz and
 400KB SRAM memory. Bluetooth LE is supported.
@@ -85,7 +91,7 @@ The following **env.json** file can be used as a starting point for the configur
 }
 ```
 
-
+<!---
 ### config.json
 
 ```json
@@ -100,7 +106,7 @@ The following **env.json** file can be used as a starting point for the configur
   }
 }
 ```
-
+-->
 
 ## See Also
 
