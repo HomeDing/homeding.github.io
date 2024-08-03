@@ -1,0 +1,262 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini modules and Shields</title>
+    <script src="/pages.js"></script>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/story.js" type="module"></script>
+    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+    <meta name='description' content='Several Boards in the &#39;mini&#39; layout'>
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
+    </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>Mini modules and Shields</h1>
+      
+        
+            <div class="plaincard">
+            
+            The HomeDing library can be used with these Boards that offer a selection of processor modules and shield.
+
+          </div>
+        
+        <p>The D1 mini format for boards and shield was created by the <a href="https://www.wemos.cc/">wemos.cc</a>
+company and is a good base for starting with DIY devices.</p>
+<p>There are many different mini boards available also with differend ESP processors. They all
+share the position of 2 connectors with 8 pins that are compatible to a certain degree and can
+be combined with the available shields.</p>
+<style>
+u-carousel {
+  timeline-scope: --carousel;
+
+  display:block;
+  width: 600px;
+  height: auto;
+
+  position: relative;
+  margin: 1em auto;
+  background: white;
+
+  .prev, .next {
+    position: absolute;
+    top:0;
+    top: 50%; transform: translateY(-50%);
+    width:4rem;height:4rem;
+    border-radius:50%;
+    border:0;
+
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  	transition-property: opacity;
+    K  	transition-duration: 0.2s;
+  }
+
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+
+  .prev { left:0; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M34,44l-28,-20l28,-20Z' /></svg>");
+  }
+  
+  .next { right:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M14,44l28,-20l-28,-20Z' /></svg>");
+ }
+
+  .entries {
+    scroll-timeline-name: --carousel;
+    scroll-timeline-axis: x;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 0;
+
+    > li {
+      scroll-snap-align: center;
+      flex: 100% 0 0;
+
+      display: grid;
+      place-content: center;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 600px;
+    }
+  }
+}
+
+</style>
+<u-carousel>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
+  <ul class="entries" tabindex="0">
+  <li><img src="d1mini.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1miniv4.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="v4.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="v4-back.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1miniesp32.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1miniesp32-1.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1minipins.png" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1miniesp32.png" alt="w200" title="" draggable="false"></li>
+  <li><img src="stacked.jpg" alt="w200" title="" draggable="false"></li>
+  </ul>
+</u-carousel>
+<h2>Pins</h2>
+<p>All the ESP8266 based boards above use the same pin assignments and are interchangeable.</p>
+<p>Scroll the pictures above to find the pin layout for boards.</p>
+<p>All the ESP32 offers similar pins to be used with the shields and in some cases also some additional pins outside.</p>
+<h2>ESP8266 boards</h2>
+<p>The ESP8266 versions have been out first offering</p>
+<ul>
+<li>11 digital input/output pins</li>
+<li>1 analog input(3.2V max input)</li>
+<li>3V3, 5V, GND and RST are always in the same position</li>
+<li>RST momentary button</li>
+</ul>
+<p>Some boards offer i2c connectors.</p>
+<div class="imgcard"><img src="/boards/mini/d1mini.jpg">
+<p><strong><a href="/boards/mini/d1mini.htm">D1 Mini Boards (ESP8266 and ESP32)</a></strong></p>
+<p>There are many different mini boards available with differend ESP processors that share the same form factor and connector pin assignments.</p>
+</div>
+<div class="imgcard"><img src="/boards/mini/d1miniv4.jpg">
+<p>The D1 mini board labeld with <strong>v4</strong> uses a ESP8266 MCU and 4 MByte flash memory chip
+and includes:</p>
+<ul>
+<li>USB-C connector</li>
+<li>i2c connector using the Qwiic standard JST SH 4-pin (1mm)</li>
+<li>A solder-bridge for deep sleep mode is available on the back</li>
+</ul>
+</div>
+<div class="imgcard"><img src="/boards/mini/d1minipro.jpg">
+<p>The <strong>D1 mini pro</strong> board is based on the ESP8266 MCU and 4 MByte flash memory chip
+and includes:</p>
+<ul>
+<li>Built-in PCB antenna and External antenna connector</li>
+<li>Lithium battery interface, 500mA Max charging current with a PH 2.0 connector</li>
+<li>i2c connector using the Qwiic standard JST SH 4-pin (1mm)</li>
+<li>RST and GPIO16 can be connected using a solder spot on the back to support deep sleep mode.</li>
+</ul>
+</div>
+<h2>ESP32 boards</h2>
+<p>There are ESP32 based boards that use the same form factor but may not be completely compatible.</p>
+<h3>D1 mini ESP32</h3>
+<div class="imgcard"><a href="/boards/mini/d1miniesp32.htm"><img src=""></a>
+<p><img src="./d1miniesp32-1.jpg" alt="D1 mini ESP32 board">
+A similar <a href="/boards/mini/d1miniesp32.htm">D1 mini ESP32 board</a> exists
+using a ESP32  MCU and 4 MByte flash memory chip.</p>
+</div>
+<h2>Shields</h2>
+<p>There are some shields for the board form-factor available. Here some examples:</p>
+<div class="imgcard"><img src="">
+<p><img src="shield-dht.jpg" alt="Mini Shield with DHT sensor">
+The DHT shield with a digital temperature and humidity sensor.</p>
+<p>This shield can be used with the <a href="/elements/dht.htm">DHT Element</a>.</p>
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield-sht30.jpg" alt="Mini Shield with SHT30 sensor">
+The SHT30 shield with a digital temperature and humidity sensor
+can be stacked upon a board or can be attached by using a Qwiic connector cable.</p>
+<!-- to be used with the [SHT30 Element](/elements/sht20.md) -->
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield-sd18b20.jpg" alt="Mini Shield with DS18B20 / Dallas sensor">
+The SD18B20 Shield has a Dallas / DS18B20 sensor that can be used with the
+<a href="/elements/dallas.htm">Dallas Element</a> to retrieve the local temperature.</p>
+<p>The Data pin of the sensor is connected to D2.</p>
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield_neo.jpg" alt="Mini Shield with WS2812">
+The WS2812 Shield has one WS2812 LEDs that
+can be addressed using the <a href="/elements/light/neo.htm">Neo Element</a>.</p>
+<!-- The data signal for the chain of WS2812 LEDs is bound to D4. -->
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield-8x8rgb.jpg" alt="Mini Shield with 8*8 Neo pixels">
+The D1 Mini 8x8 RGB Shield has 64 WS2812 LEDs that
+can be addressed using the <a href="/elements/light/neo.htm">Neo Element</a>.
+using the configuration <code>&quot;config&quot;: &quot;rgb&quot;</code>.</p>
+<p>The data signal for the chain of WS2812 LEDs is bound to D4.</p>
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield-free.jpg" alt="Shield for self-assembled components">
+This is a shield you can use to create and apply special configurations by soldering
+components on the free grid.</p>
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield-sd.jpg" alt="alt text"> The <a href="/boards/mini/shield-sd.htm">D1-Mini SD Card shield</a> adds a sd card
+slot for min sd cards to the standard SPI bus to be used with the
+<a href="/elements/sd.htm">SD Element</a>.</p>
+<p>The CS assignment can be changed on the back of the shield by cutting
+the default (D4) wiring and soldering a bridge for another pin.</p>
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield-buzzer.jpg" alt="Mini Shield with buzzer">
+The Buzzer Shield has a passive speaker that can be used with the
+<a href="/elements/audio/tone.htm">Tone Element</a> to make some noise.</p>
+<p>The buzzer can be connected to various pins by closing one of the solder pads.</p>
+</div>
+<div class="imgcard"><img src="">
+<p><img src="shield_lipo.jpg" alt="Mini Shield for LiPo powering">
+The LiPo Shield enables powering a Mini board and shields using a LiPo batery.
+The shield supports chaging.</p>
+</div>
+
+        
+          <h2>Tags</h2>
+          <div class="taglist">
+            
+              <a href="/tag/board.htm">Board</a>
+            
+          </div>
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
+    </body>
+  </body>
+</html>

@@ -4,12 +4,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D1 Mini SD Card shield</title>
+    <title>D1 Mini Boards (ESP8266 and ESP32)</title>
     <script src="/pages.js"></script>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/story.js" type="module"></script>
     <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+    <meta name='description' content='ESP8266 General purpose development boards with same form factor.'>
     <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
     <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
   </head>
@@ -25,69 +25,57 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>D1 Mini SD Card shield</h1>
+      <h1>D1 Mini Boards (ESP8266 and ESP32)</h1>
       
         
             <div class="plaincard">
             
-            The SD Card shield for the D1 Mini sized boards using 1wire SPI for data transfer.
+            There are many different mini boards available with differend ESP processors that share the same form factor and connector pin assignments.
 
           </div>
         
-        <p>The SD Card shield adds a SD card slot to the <a href="/dev/spi.htm">SPI bus</a> that can extend the file system of a
-HomeDing device using the <a href="/elements/sd.htm">SD Element</a>.</p>
-<p>This shield is made for the <a href="/boards/d1mini.htm">D1 mini boards</a> that are available in many variations and different processors.</p>
-<p><img src="/boards/d1mini-sdshield.jpg" alt="d1mini-sd"></p>
-<h2>Pins in use</h2>
-<p>The SD card is using the SPI bus for data transfer. The following pins are used:</p>
-<table>
-<thead>
-<tr>
-<th>D1 mini</th>
-<th>ESP8266</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>D5</td>
-<td>GPIO14</td>
-<td>CLK</td>
-</tr>
-<tr>
-<td>D6</td>
-<td>GPIO12</td>
-<td>MISO</td>
-</tr>
-<tr>
-<td>D7</td>
-<td>GPIO13</td>
-<td>MOSI</td>
-</tr>
-<tr>
-<td>D4</td>
-<td>GPIO00</td>
-<td>CS</td>
-</tr>
-</tbody>
-</table>
-<p>The CS assignment can be changed on the back of the shield to avoid conflicts with other shields
-by cutting the default (D4) wiring and soldering a bridge for another pin.</p>
-<h2>Configuration</h2>
-<p>This example shows how to configure the SD element to use this shield on a ESP8266:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> 
-  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D4"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+        <h3>D1 mini ESP8266</h3>
+<p><img src="d1mini.jpg" alt="D1 mini ESP8266 board"></p>
+<p>The D1 mini board uses a ESP8266 MCU and 4 MByte flash memory chip.</p>
+<p>A board configuration (env.json)</p>
+<pre class="language-JSON"><code class="language-JSON">{
+  "device": {
+    "0": {
+      "name": "d1mini",
+      "title": "D1 mini",
+      "loglevel": 2,
+      "description": "D1 mini board with ESP8266",
+      "logfile": 1,
+      "safemode": "false",
+      "homepage": "/index.htm",
+      "led": "D4",
+      "cache": "etag"
+    }
+  },
+  "ota": {
+    "0": { }
+  },
+  "ntptime": {
+    "0": {
+      "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+    }
+  }
+}</code></pre>
+<h3>D1 mini ESP32-C3</h3>
+<div class="imgcard"><img src="/boards/esp32c3/mini.jpg">
+<p><strong><a href="/boards/esp32c3/mini.htm">Board C3 Mini</a></strong></p>
+<p>This is D1 mini compatible board based on the EPS32-C3 MCU.</p>
+</div>
+<div class="imgcard"><img src="/boards/esp32c3/pico.jpg">
+<p><strong><a href="/boards/esp32c3/pico.htm">Board C3 pico</a></strong></p>
+<p>The C3 pico is a board compatible to the D1 Mini boards and shields  using a ESP32-C3 processor and equipped with some special features like a RGB LED, I2C Port and LiPo charging.</p>
+</div>
 <h2>See also</h2>
 <ul>
-<li><a href="/boards/d1mini.htm">D1 mini boards</a></li>
-<li><a href="/elements/sd.htm">SD Element</a></li>
-<li><a href="/dev/spi.htm">SPI bus</a></li>
-<li><a href="https://www.wemos.cc/en/latest/d1_mini_shield/micro_sd.html">https://www.wemos.cc/en/latest/d1_mini_shield/micro_sd.html</a></li>
+<li>WeMos D1 Boards: <a href="https://www.wemos.cc/en/latest/d1/index.html">https://www.wemos.cc/en/latest/d1/index.html</a></li>
+<li>WeMos Shields: <a href="https://www.wemos.cc/en/latest/d1_mini_shield/index.html">https://www.wemos.cc/en/latest/d1_mini_shield/index.html</a></li>
+<li><a href="https://wolles-elektronikkiste.de/wemos-d1-mini-boards">https://wolles-elektronikkiste.de/wemos-d1-mini-boards</a></li>
+<li><a href="https://homeding.github.io/dev/i2c.htm">https://homeding.github.io/dev/i2c.htm</a></li>
 </ul>
 
         
@@ -95,6 +83,8 @@ by cutting the default (D4) wiring and soldering a bridge for another pin.</p>
           <div class="taglist">
             
               <a href="/tag/board.htm">Board</a>
+            
+              <a href="/tag/wip.htm">Wip</a>
             
           </div>
         

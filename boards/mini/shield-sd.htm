@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board D1 Mini ESP32</title>
+    <title>D1 Mini SD Card shield</title>
     <script src="/pages.js"></script>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/story.js" type="module"></script>
@@ -25,20 +25,70 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>Board D1 Mini ESP32</h1>
+      <h1>D1 Mini SD Card shield</h1>
       
-        <p>The D1 mini ESP32 boards use a ESP32 MCU and 4 MByte flash memory chip.</p>
-<p>A similar board the <a href="/boards/d1mini.htm">D1 mini (ESP8266)</a> exists
-using the ESP8266 and 4 MByte flash memory chip.</p>
-<p>There are several shields available for these boards.</p>
+        
+            <div class="plaincard">
+            
+            The SD Card shield for the D1 Mini sized boards using 1wire SPI for data transfer.
+
+          </div>
+        
+        <p>The SD Card shield adds a SD card slot to the <a href="/dev/spi.htm">SPI bus</a> that can extend the file system of a
+HomeDing device using the <a href="/elements/sd.htm">SD Element</a>.</p>
+<p>This shield is made for the <a href="/boards/mini/d1mini.htm">D1 mini boards</a> that are available in many variations and different processors.</p>
+<p><img src="/boards/d1mini-sdshield.jpg" alt="d1mini-sd"></p>
+<h2>Pins in use</h2>
+<p>The SD card is using the SPI bus for data transfer. The following pins are used:</p>
+<table>
+<thead>
+<tr>
+<th>D1 mini</th>
+<th>ESP8266</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D5</td>
+<td>GPIO14</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>GPIO12</td>
+<td>MISO</td>
+</tr>
+<tr>
+<td>D7</td>
+<td>GPIO13</td>
+<td>MOSI</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>GPIO00</td>
+<td>CS</td>
+</tr>
+</tbody>
+</table>
+<p>The CS assignment can be changed on the back of the shield to avoid conflicts with other shields
+by cutting the default (D4) wiring and soldering a bridge for another pin.</p>
+<h2>Configuration</h2>
+<p>This example shows how to configure the SD element to use this shield on a ESP8266:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> 
+  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D4"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
-<li>Schematic: <a href="https://github.com/artofcircuits/Store/blob/main/WeMOS%20D1%20Mini%20ESP32/WEMOS-D1-MINI-ESP32-SCH.jpg">https://github.com/artofcircuits/Store/blob/main/WeMOS D1 Mini ESP32/WEMOS-D1-MINI-ESP32-SCH.jpg</a></li>
-<li><a href="https://iotspace.dev/category/wemos-d1-mini/">https://iotspace.dev/category/wemos-d1-mini/</a></li>
+<li><a href="/boards/mini/d1mini.htm">D1 mini boards</a></li>
+<li><a href="/elements/sd.htm">SD Element</a></li>
+<li><a href="/dev/spi.htm">SPI bus</a></li>
+<li><a href="https://www.wemos.cc/en/latest/d1_mini_shield/micro_sd.html">https://www.wemos.cc/en/latest/d1_mini_shield/micro_sd.html</a></li>
 </ul>
-<!-- ![d1mini pins](/boards/d1minipins.png) -->
-<p>power led: red
-Blue LED on IO2 (active low)</p>
 
         
           <h2>Tags</h2>

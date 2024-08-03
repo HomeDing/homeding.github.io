@@ -1,0 +1,163 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board D1 Mini ESP32</title>
+    <script src="/pages.js"></script>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/story.js" type="module"></script>
+    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+    <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
+    </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>Board D1 Mini ESP32</h1>
+      
+        <p>The D1 mini ESP32 boards use a ESP32 MCU and 4 MByte flash memory chip.</p>
+<style>
+u-carousel {
+  timeline-scope: --carousel;
+
+  display:block;
+  width: 600px;
+  height: auto;
+
+  position: relative;
+  margin: 1em auto;
+  background: white;
+
+  .prev, .next {
+    position: absolute;
+    top:0;
+    top: 50%; transform: translateY(-50%);
+    width:4rem;height:4rem;
+    border-radius:50%;
+    border:0;
+
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  	transition-property: opacity;
+    K  	transition-duration: 0.2s;
+  }
+
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+
+  .prev { left:0; 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M34,44l-28,-20l28,-20Z' /></svg>");
+  }
+  
+  .next { right:0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='currentColor'><path d='M14,44l28,-20l-28,-20Z' /></svg>");
+ }
+
+  .entries {
+    scroll-timeline-name: --carousel;
+    scroll-timeline-axis: x;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 0;
+
+    > li {
+      scroll-snap-align: center;
+      flex: 100% 0 0;
+
+      display: grid;
+      place-content: center;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 600px;
+    }
+  }
+}
+
+</style>
+<u-carousel>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
+  <ul class="entries" tabindex="0">
+  <li><img src="d1miniesp32.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1miniesp32.png" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1miniesp32-1.jpg" alt="w200" title="" draggable="false"></li>
+  </ul>
+</u-carousel>
+<p>A similar board the <a href="/boards/mini/d1mini.htm">D1 mini (ESP8266)</a> exists
+using the ESP8266 and 4 MByte flash memory chip.</p>
+<p>There are several shields available for these boards.</p>
+<h2>WIP</h2>
+<ul>
+<li>power led: red</li>
+<li>Blue LED on IO2 (active low)</li>
+</ul>
+<h2>See also</h2>
+<p><a href="index.md">Mini modules and Shields</a></p>
+<ul>
+<li>Schematic: <a href="https://github.com/artofcircuits/Store/blob/main/WeMOS%20D1%20Mini%20ESP32/WEMOS-D1-MINI-ESP32-SCH.jpg">https://github.com/artofcircuits/Store/blob/main/WeMOS D1 Mini ESP32/WEMOS-D1-MINI-ESP32-SCH.jpg</a></li>
+<li><a href="https://iotspace.dev/category/wemos-d1-mini/">https://iotspace.dev/category/wemos-d1-mini/</a></li>
+</ul>
+<!-- ![d1mini pins](/boards/d1minipins.png) -->
+
+        
+          <h2>Tags</h2>
+          <div class="taglist">
+            
+              <a href="/tag/board.htm">Board</a>
+            
+              <a href="/tag/wip.htm">Wip</a>
+            
+          </div>
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
+    </body>
+  </body>
+</html>
