@@ -64,7 +64,7 @@ Specific to ESP8266 are the following features:
 
 {{ imgCard(collections.all, item = '/boards/nodemcu') }}
 
-{{ imgCard(collections.all, item = '/boards/d1mini') }}
+{{ imgCard(collections.all, item = '/boards/mini/d1mini') }}
 
 {{ imgCard(collections.all, item = '/boards/wifikit8') }}
 
@@ -143,7 +143,7 @@ Some boards have been tested:
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/super-mini-c3') }}
 
-{{ imgCard(collections.all, item = '/boards/esp32c3/xiao-c3') }}
+{{ imgCard(collections.all, item = '/boards/esp32c3/xiao_esp32c3') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/spotpear-144lcd') }}
 

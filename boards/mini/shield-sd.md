@@ -51,6 +51,6 @@ This example shows how to configure the SD element to use this shield on a ESP82
 * <https://www.wemos.cc/en/latest/d1_mini_shield/micro_sd.html>
 
 
-[D1 mini boards]:/boards/d1mini.md
+[D1 mini boards]:/boards/mini/d1mini.md
 [SPI bus]:/dev/spi.md
 [SD Element]:/elements/sd.md

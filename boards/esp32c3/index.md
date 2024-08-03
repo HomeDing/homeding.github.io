@@ -105,7 +105,7 @@ This results in faster secure (https) network requests.
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/super-mini-c3') }}
 
-{{ imgCard(collections.all, item = '/boards/esp32c3/xiao-c3') }}
+{{ imgCard(collections.all, item = '/boards/esp32c3/xiao_esp32c3') }}
 
 {{ imgCard(collections.all, item = '/boards/esp32c3/spotpear-144lcd') }}
 
