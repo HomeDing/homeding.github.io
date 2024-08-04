@@ -35,6 +35,12 @@ You can find these in the Arduino Store, at resellers and eBay :
 
 {{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
 
+Using pre-build panels that combine processor, memory and display in a single board.  There are several Elements
+available to display information and interact with touch displays.
+
+{{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
+
+
 The ESP8266 development board descriptions, hints and more references
 can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
 
@@ -47,7 +53,7 @@ many off-the-shell devices can be identified using a espressif processor.
 ## ESP8266 boards
 
 The HomeDing library is compatible to the Arduino environment using the ESP8266 board package.
-Most boards offer 4 MByte flash memory. Some boards and devices with less flash memory are supported as well. See below. 
+Most boards offer 4 MByte flash memory. Some boards and devices with less flash memory are supported as well. See below.
 
 Specific to ESP8266 are the following features:
 
