@@ -34,64 +34,311 @@
 
           </div>
         
-        <p>This board can be bought from the Arduino Store. <a href="https://store.arduino.cc/products/nano-esp32">https://store.arduino.cc/products/nano-esp32</a></p>
+        <p>This board can be bought from the Arduino Store. <a href="https://store.arduino.cc/products/nano-esp32">https://store.arduino.cc/products/nano-esp32</a>.</p>
 <p><img src="arduino-nano-esp32.jpg" alt="Arduino Nano ESP32"></p>
-<p>NORA-W106-10B: <a href="https://www.u-blox.com/en/product/nora-w10-series">https://www.u-blox.com/en/product/nora-w10-series</a>
-DataSheet: <a href="https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf">https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf</a></p>
-<p>MCU: Xtensa LX7, 240 MHz dual-core
-RAM: 512 kByte
-PSRAM 8192 kByte
-Flash: 16 MByte</p>
+<p>The Arduino Nano ESP32 is a development board using the ESP32-S3 based module NORA-W106-10B from
+<a href="https://www.u-blox.com/">u-blox</a> providing the Arduino Nano form factor.</p>
+<p>It is a good board for development and fits good on top of a breadboard or the Nano Adapters.</p>
+<p>This board is equipped with:</p>
+<ul>
+<li><a href="/boards/esp32s3/index.htm">ESP32-S3 processor</a></li>
+<li>Flash: 16 MByte (external Flash chip GD25B128EWIGR)</li>
+<li>PSRAM: 8 MB (inside the NORA-W106 module)</li>
+<li>Built-In Led</li>
+<li>RGB Led</li>
+<li>24 GPIO Pins (See below)</li>
+<li>Reset button</li>
+</ul>
+<p>The board comes with its special bootloader that uses Arduino Upload procedure instead of the Standard espressif procedure. (see below)</p>
+<p>The <a href="https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet/">Arduino Nano ESP32 Cheat Sheet</a> gives new details.</p>
+<h2>Arduino Bootloader</h2>
+<p>The board comes with a bootloader especially made for the Arduino environment that starts first before the sketch
+starts.</p>
+<p>When pressing the Reseet Button the bootloader will create a rainbow light effect on the on-board RGB Led that takes
+about a second and then automatically starts the sketch.</p>
+<p>While the rainbow light effect is running you can again press (effective a double-click) the Reset button to keep the
+bootloader in programming mode and wait for the new binary to be uploaded.  This is illumnated by slowly pulsing green.</p>
+<p>You can also upload sketches using the standard esptool to gain some additional space but the Arduino then will loose
+the bootloader.</p>
+<p>To start the Native Boot mode (firmware download mode) you have to connect B1 to GND and press the Reset button.</p>
+<p>It can be re-applied using following the steps of this Help Center article:
+<a href="https://support.arduino.cc/hc/en-us/articles/9810414060188-Reset-the-Arduino-bootloader-on-the-Nano-ESP32">Reset the Arduino bootloader on the Nano ESP32</a></p>
+<h2>Buttons</h2>
+<p>The Reset Button (RST) is the only button on the board that can be used to re-start the uploaded sketch and also can be
+used to start in programming mode.</p>
+<h2>On-Board LEDs</h2>
+<p>There is a green LED next to the USB connector that is permanently on while VCC is available.</p>
+<p>The yellow LED on the opposite site can be switched on by providing HIGH on GPIO48.  The LED_BUILTIN definition is
+available.</p>
+<h2>On-Board RGB LED</h2>
+<p>The RGB led on the board next to the Reset button can be switched on by pulling the GPIO lines to LOW:</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>pin</th>
+<th>Define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>GPIO46</td>
+<td>LED_RED</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>GPIO0</td>
+<td>LED_GREEN</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>GPIO45</td>
+<td>LED_BLUE</td>
+</tr>
+</tbody>
+</table>
+<h2>ESP32 Pin Map</h2>
+<p>The board has the Arduino typical pin descriptions D0 - D13 and A0 - A7. Also B0 and B1 is available.</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>GPIO</th>
+<th>available C Defines</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RX0 / D0</td>
+<td>44</td>
+<td>D0, RX</td>
+<td></td>
+</tr>
+<tr>
+<td>TX1 / D1</td>
+<td>43</td>
+<td>D1, TX</td>
+<td></td>
+</tr>
+<tr>
+<td>D2</td>
+<td>5</td>
+<td>D2,</td>
+<td></td>
+</tr>
+<tr>
+<td>D3</td>
+<td>6</td>
+<td>D3, CTS</td>
+<td></td>
+</tr>
+<tr>
+<td>D4</td>
+<td>7</td>
+<td>D4, DSR</td>
+<td></td>
+</tr>
+<tr>
+<td>D5</td>
+<td>8</td>
+<td>D5,</td>
+<td></td>
+</tr>
+<tr>
+<td>D6</td>
+<td>9</td>
+<td>D6,</td>
+<td></td>
+</tr>
+<tr>
+<td>D7</td>
+<td>10</td>
+<td>D7, PIN_I2S_SCK</td>
+<td></td>
+</tr>
+<tr>
+<td>D8</td>
+<td>17</td>
+<td>D8, PIN_I2S_FS</td>
+<td></td>
+</tr>
+<tr>
+<td>D9</td>
+<td>18</td>
+<td>D9, PIN_I2S_SD, PIN_I2S_SD_OUT</td>
+<td></td>
+</tr>
+<tr>
+<td>D10</td>
+<td>21</td>
+<td>D10, PIN_I2S_SD_IN, SS</td>
+<td></td>
+</tr>
+<tr>
+<td>D11</td>
+<td>38</td>
+<td>D11, MOSI</td>
+<td>SPI-COPI</td>
+</tr>
+<tr>
+<td>D12</td>
+<td>47</td>
+<td>D12, MISO</td>
+<td>SPI-CIPO</td>
+</tr>
+<tr>
+<td>D13</td>
+<td>48</td>
+<td>D13, SCK, LED_BUILTIN</td>
+<td>SPI-SCK</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A0</td>
+<td>1</td>
+<td>A0, DTR</td>
+<td>DTR</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>2</td>
+<td>A1,</td>
+<td></td>
+</tr>
+<tr>
+<td>A2</td>
+<td>3</td>
+<td>A2,</td>
+<td></td>
+</tr>
+<tr>
+<td>A3</td>
+<td>4</td>
+<td>A3,</td>
+<td></td>
+</tr>
+<tr>
+<td>A4</td>
+<td>11</td>
+<td>A4, SDA</td>
+<td>I2C-SDA</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>12</td>
+<td>A5, SCL</td>
+<td>I2C-SCL</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>13</td>
+<td>A6,</td>
+<td></td>
+</tr>
+<tr>
+<td>A7</td>
+<td>14</td>
+<td>A7,</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B0</td>
+<td>46</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B1</td>
+<td>0</td>
+<td>LED_GREEN</td>
+<td>RGB green color, ROM boot</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>46</td>
+<td>LED_RED</td>
+<td>RGB red color</td>
+</tr>
+<tr>
+<td></td>
+<td>45</td>
+<td>LED_BLUE, RTS</td>
+<td>RGB blue color</td>
+</tr>
+</tbody>
+</table>
+<p>There is a board option to use the printed Arduino numbering or the native GPIO numbering.</p>
 <h2>Arduino Board Configuration</h2>
-<p>To compile for this board in Arduino the following settings for the board can be used:</p>
+<p>To compile for this board in Arduino using the esp32 implementation from espressif the following settings for the board can be used:</p>
 <ul>
 <li>ESP32S3 Dev Module</li>
 <li>JTAG Adapter disabled</li>
-<li>PSRam disabled</li>
+<li>PSRam enabled</li>
 <li>Flash Mode QIO 80 MHz</li>
-<li>Flash Size: 4MB</li>
+<li>Flash Size: 16MB</li>
 <li>USB Mode Hardware CDC and JTAG</li>
 <li>USB CDC On Boot: Enabled</li>
 </ul>
-<p><a href="https://docs.arduino.cc/tutorials/nano-esp32/cheat-sheet/">Arduino Nano ESP32 Cheat Sheet</a></p>
-<p>… comes with a special bootloader.</p>
-<p>If you need to reflash the bootloader, you can follow the steps of a
-<a href="https://support.arduino.cc/hc/en-us/articles/9810414060188-Reset-the-Arduino-bootloader-on-the-Nano-ESP32">Help Center article</a></p>
+<h2>Board configuration</h2>
+<p>The following <code>env.json</code> configuration can be used for this board and contains settings for</p>
+<ul>
+<li>The device in general</li>
+<li>The ST7735 based display</li>
+<li>A value and pwm output to control the display brightness</li>
+<li>The digital input signal definition for the button on the back.</li>
+</ul>
+<!-- <http://dongle-s3/env.json> -->
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"nano"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Arduino Nano ESP32"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Arduino Nano ESP32 Original board."</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"led"</span><span class="token operator">:</span> <span class="token string">"13"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"light"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"rgb led"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"14,15,16"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"x203050"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
 <h2>See Also</h2>
 <ul>
+<li><a href="https://store.arduino.cc/products/nano-esp32">Arduino Store nano-esp32</a></li>
 <li><a href="https://docs.arduino.cc/hardware/nano-esp32/">Arduino Nano ESP32</a></li>
 <li>Arduino Getting Started with Nano ESP32: <a href="https://docs.arduino.cc/tutorials/nano-esp32/getting-started-nano-esp32/">https://docs.arduino.cc/tutorials/nano-esp32/getting-started-nano-esp32/</a></li>
 <li>Data sheet <a href="https://docs.arduino.cc/resources/datasheets/ABX00083-datasheet.pdf">https://docs.arduino.cc/resources/datasheets/ABX00083-datasheet.pdf</a></li>
 <li>Full pin diagram: <a href="https://docs.arduino.cc/resources/pinouts/ABX00083-full-pinout.pdf">https://docs.arduino.cc/resources/pinouts/ABX00083-full-pinout.pdf</a></li>
 <li>Full schematics: <a href="https://docs.arduino.cc/resources/schematics/ABX00083-schematics.pdf">https://docs.arduino.cc/resources/schematics/ABX00083-schematics.pdf</a></li>
+<li>NORA-W106-10B: <a href="https://www.u-blox.com/en/product/nora-w10-series">https://www.u-blox.com/en/product/nora-w10-series</a></li>
+<li>NORA-W106-10B DataSheet: <a href="https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf">https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf</a></li>
 </ul>
-<p>static const int8_t TO_GPIO_NUMBER[NUM_DIGITAL_PINS] = {
-[D0]        = 44, // RX
-[D1]        = 43, // TX
-[D2]        = 5,
-[D3]        = 6,  // CTS
-[D4]        = 7,  // DSR
-[D5]        = 8,
-[D6]        = 9,
-[D7]        = 10,
-[D8]        = 17,
-[D9]        = 18,
-[D10]       = 21, // SS
-[D11]       = 38, // MOSI
-[D12]       = 47, // MISO
-[D13]       = 48, // SCK, LED_BUILTIN
-[LED_RED]   = 46,
-[LED_GREEN] = 0,
-[LED_BLUE]  = 45, // RTS
-[A0]        = 1,  // DTR
-[A1]        = 2,
-[A2]        = 3,
-[A3]        = 4,
-[A4]        = 11, // SDA
-[A5]        = 12, // SCL
-[A6]        = 13,
-[A7]        = 14,
-};</p>
 
         
           <h2>Tags</h2>
