@@ -190,7 +190,7 @@ module.exports = function(eleventyConfig) {
     link = link.replace(/\.md$/, ".htm");
     let out = `<div class="imgcard">`;
     if (link) out += `<a href="${link}">`;
-    out += `<img src="${img}">`;
+    if (img) out += `<img src="${img}">`;
     if (link) out += `</a>\n`;
     out += `\n${content}\n</div>\n`;
     return (out);

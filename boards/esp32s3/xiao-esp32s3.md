@@ -42,6 +42,11 @@ Size: 21 x 17.5mm
 
 ```
 
+[text](https://github.com/limengdu/SeeedStudio-XIAO-ESP32S3-Sense-camera)
+
+[text](https://www.hackster.io/pradeeplogu0/getting-started-with-xiao-esp32-s3-sense-ad12a0)
+
+
 ## See Also
 
 * Product at SeeedStudio <https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html>
