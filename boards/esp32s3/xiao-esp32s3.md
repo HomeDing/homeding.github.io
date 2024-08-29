@@ -10,10 +10,10 @@ excerpt: >
 The Seeed Studio XIAO ESP32S3 board offers a Xtensa 32-bit LX7 dual-core processor, WiFi, Bluetooth LE 5.0
 and lithium battery charging management in a thumb-sized compact design.
 The antenna is connected using a IPEX connector.  
- 
+
 The small size of 21 * 17.5 mm and the design for low power makes this board ideal to be embedded in IoT devices.
 
-```
+```txt
 Product parameters:
 Model: Seed Studio XIAO ESP32S3
 Main control chip: ESP32-S3

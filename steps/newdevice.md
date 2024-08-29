@@ -7,18 +7,18 @@ excerpt: >
   This is a step by step instruction to bring a device based on the HomeDing library to work.
 ---
 
-- [Get a (brand new) EPS8266 board](#get-a-brand-new-eps8266-board)
-- [Upload the appropriate sketch](#upload-the-appropriate-sketch)
-- [Register the device on the local WiFi network](#register-the-device-on-the-local-wifi-network)
-- [Find the new device on the network](#find-the-new-device-on-the-network)
-- [Upload the Web UI files to the onboard file system](#upload-the-web-ui-files-to-the-onboard-file-system)
-  - [File Upload Utility](#file-upload-utility)
-  - [Web based Update](#web-based-update)
-  - [File Upload in IDE](#file-upload-in-ide)
-  - [File Save in IDE](#file-save-in-ide)
-  - [Using Upload tools like cUrl](#using-upload-tools-like-curl)
-- [Choose an icon](#choose-an-icon)
-- [See also](#see-also)
+* [Get a (brand new) EPS8266 board](#get-a-brand-new-eps8266-board)
+* [Upload the appropriate sketch](#upload-the-appropriate-sketch)
+* [Register the device on the local WiFi network](#register-the-device-on-the-local-wifi-network)
+* [Find the new device on the network](#find-the-new-device-on-the-network)
+* [Upload the Web UI files to the onboard file system](#upload-the-web-ui-files-to-the-onboard-file-system)
+  * [File Upload Utility](#file-upload-utility)
+  * [Web based Update](#web-based-update)
+  * [File Upload in IDE](#file-upload-in-ide)
+  * [File Save in IDE](#file-save-in-ide)
+  * [Using Upload tools like cUrl](#using-upload-tools-like-curl)
+* [Choose an icon](#choose-an-icon)
+* [See also](#see-also)
 
 ## Get a (brand new) EPS8266 board
 
@@ -135,7 +135,7 @@ This is available at <http://homeding/$update>.
 
 By pressing the start button all files from the homeding documentation website are transferred to the device.
 
-The list of files and files for download are available at: <https://homeding.github.io/v03/list.txt>.
+The list of files and files for download are available at: <https://homeding.github.io/v09/list.txt>.
 
 This method is useful when updating a standard firmware by a new version and the UI files need to be updated
 or when starting with a new board.

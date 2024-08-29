@@ -39,14 +39,14 @@ CR1220 taste batterie; versorgung power zu uhr schaltung nach dem ausschalten
 UART programm download-schnittstelle: IO0 und GND sind kurzgeschlossen wenn das herunterladen, 3V3, TXD, RXD, GND sind jeweils Verbinden zu 3V3, RXD, TXD, GND von externe TTL serial port modul (wie FT232 modul), download
 
 
-https://ae01.alicdn.com/kf/H4dc0fe4f6201499ab7794701e6d76630T.png
+<https://ae01.alicdn.com/kf/H4dc0fe4f6201499ab7794701e6d76630T.png>
 
 
 ## PCF8563T clock chip
 
 Interrupt out not connected.
 
-via i2c bus 
+via i2c bus
 address : read A3h and write A2h
 
 readTime = function (self)

@@ -21,7 +21,7 @@ Open <http://homeding/$update> <sup>*1</sup> to use this upload utility:
 ![Automatic Web Update](/steps/updatewebboot.png)
 
 This is a builtin upload and update tool for the web files from the documentation web site.
-The files are contained in the directory <https://homeding.github.io/v03> and a list of the files can be found <https://homeding.github.io/v03/list.txt>
+The files are contained in the repository directory `/v09` and a list of the files can be found <https://homeding.github.io/v09/list.txt>
 
 From this file all files are fetched and uploaded to the device one-by-one when pressing the start button.
 
@@ -30,7 +30,7 @@ There may be multiple versions at the same time.
 This method doesn't overwrite the config files on the device so it can be used on configured devices without wiping the configuration.
 
 
-## Drag & Drop uploading 
+## Drag & Drop uploading
 
 This method works even when the file system is empty.
 It can be used for an initial upload.
@@ -41,16 +41,16 @@ Open <http://homeding/$upload> <sup>*1</sup> to use the drag & drop upload utili
 
 The HomeDing device has an embedded web server that offers this simple upload functionality that is built-in the firmware from the sketch.
 
-You can reach it on a un-configured device using the url http://ESP-xxxxxx/$upload.htm.
+You can reach it on a un-configured device using the url <http://ESP-xxxxxx/$upload.htm>.
 The real server name or the ip-address of an un-configured device can be found in the serial output.
 
 **Examples:**
 
-* <http://ESP-123456/$upload.htm> - the generic name is used as long as there is no configuration of the [Device Element](/elements/device.md). 
+* <http://ESP-123456/$upload.htm> - the generic name is used as long as there is no configuration of the [Device Element](/elements/device.md).
 * <http://192.168.2.170/$upload.htm> - The IP address can always be used. It is shown in the serial output.
 
 The files that need to be uploaded to implement the Web UI can be found
-in the data folder of the [Standard Example](/examples/standard.md). 
+in the data folder of the [Standard Example](/examples/standard.md).
 
 There are 2 upload sets required:
 
@@ -69,13 +69,14 @@ so it cannot be used for an initial upload.
 In the right upper corner you can find a drop area similar to the one above. It can only be used to upload files into the root file system.
 
 
-## Uploading using the SPIFFS filesystem uploader 
+## Uploading using the SPIFFS filesystem uploader
 
-If you have the ESP8266 Upload tool installed you can also use this approach to upload the initial files. 
+If you have the ESP8266 Upload tool installed you can also use this approach to upload the initial files.
 
 As this method will always upload all files at once you probably will overwrite the configuration files so another method needs to be used when uploading to a configured device.
 
 To verify that the uploaded file are present you can request the list of existing files using
+
 * <http://homeding/$list>
 
 See: <https://github.com/esp8266/arduino-esp8266fs-plugin>

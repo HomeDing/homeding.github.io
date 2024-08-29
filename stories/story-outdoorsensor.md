@@ -13,8 +13,8 @@ Some weather parameters are interesting to be measured by using an outside senso
 
 This is how to build a device that simply captures the air temperature and humidity parameters
 from a DHT22 sensor by using the low-code [Homeding library].
-There are many [sensor elements](/elements/sensors.md) supported by the library 
-so it is easy to used a different sensor or add other sensors as this is just done by configuration. 
+There are many [sensor elements](/elements/sensors.md) supported by the library
+so it is easy to used a different sensor or add other sensors as this is just done by configuration.
 
 This project is a good starter project as well to explore the possibilities for building sensors gadgets yourself.
 
@@ -45,6 +45,7 @@ Just open the Board page to see the HTML UI of the element:
 ![outdoor sensor web ui](/stories/outdoorsensor03.png "w400")
 
 This project shows the basic of building an outdoor sensor. There are possible extensions that can be added by configuration:
+
 * a [Log Element](/elements/log.md) that can capture the values and display as a line chart.
 * using a solar panel and LiPo batteries and run the sensor on low power mode.
 
@@ -66,8 +67,8 @@ To build the software you need a working Arduino environment for ESP8266:
 
 1. Install latest version of Arduino IDE (currently version 1.8.13).
 
-2. Use Board Manager to install the install the esp8266 support. 
-   
+2. Use Board Manager to install the install the esp8266 support.
+
    A detailed instruction can be found here: <https://arduino-esp8266.readthedocs.io/en/latest/installing.html#boards-manager>
 
 3. Setup the board options for a NodeMCU 1.0 with 1MByte SPIFFS File System
@@ -80,14 +81,14 @@ To build the software you need a working Arduino environment for ESP8266:
 To install the HomeDing library use the Arduino Library Manager and search for `HomeDing`.
 
 When you install the HomeDing library you will see a popup with some required libraries that can be installed automatically
-as the HomeDing library relies on some common extra libraries for sensors and displays to work. 
+as the HomeDing library relies on some common extra libraries for sensors and displays to work.
 
 ![Install libraries](/stories/arduino-libraryinstall.png)
 
 Sometimes (with unknown reasons) the installation of the libraries fails so all the required libraries need to be installed manually.
 
-More details about the required libraries can be found on the documentation website at 
-<https://homeding.github.io/#page=/elements/index.md>.
+More details about the required libraries can be found on the documentation website at
+<https://homeding.github.io/elements/index.htm>.
 
 
 ## Upload the standard example sketch
@@ -106,7 +107,7 @@ But you can also use the built-in WiFi Manager to add the device to the network 
 
 Now everything regarding implementation of the sketch is done and the firmware can be compiled and uploaded.
 
-When the device boots with the new firmware for the first time you can use the Serial Monitor to inspect the 
+When the device boots with the new firmware for the first time you can use the Serial Monitor to inspect the
 output during booting.
 
 Here you can see the information about the interim name of the device, the IP address and the network it connected to:
@@ -116,7 +117,7 @@ Here you can see the information about the interim name of the device, the IP ad
 00:00:10 sys:i Connected to DEVNET unsafe
 ```
 
-Here the temporary devicename is **ESP-5D2122** and **DEVNET** is the network joined. 
+Here the temporary devicename is **ESP-5D2122** and **DEVNET** is the network joined.
 
 
 ## Joining the WiFi Network using the WiFi Manager
@@ -151,13 +152,13 @@ When navigating to the next step the embedded IDE will be started.
 
 2 configuration files must be used to configure the sensor. To do this we can used the built-in micro IDE to create these 2 files.
 
-The embedded IDE can be opened from the homepage using the IDE menu item. 
+The embedded IDE can be opened from the homepage using the IDE menu item.
 
 
 ### env.json
 
 The `env.json` contains only the system settings that do not change while configuring a specific functionality.
- 
+
 To create a `env.json` file on the device just open the IDE from the menu
 and copy the following configuration into the right text area and then click the save button.
 
@@ -165,7 +166,7 @@ When requested enter `/env.json` into the filename field.
 
 When you reboot the device either by pressing the reset button on the board or in the UI the device will register itself
 on the network using the name specified in the env.json file (here: outdoor).
-Opening the url `http://outdoor` will redirect directly to the built-in dashboard. 
+Opening the url `http://outdoor` will redirect directly to the built-in dashboard.
 
 
 ``` json
@@ -227,7 +228,7 @@ The principle wiring of a DHT22 sensor can be seen in this picture:
 
 ![DHTWiring](/elements/dhtwires.png "w400")
 
-As you can see in the config.json file the data pin that was configured on the software side is the D5 GPIO pin so data from the sensor chip must be connected here. 
+As you can see in the config.json file the data pin that was configured on the software side is the D5 GPIO pin so data from the sensor chip must be connected here.
 
 | ESP board | Sensor | Signal                             |
 | --------- | ------ | ---------------------------------- |
@@ -259,7 +260,7 @@ The dht element gets the additional configuration to send the current value to t
 
 Actions are the way the elements inside a device can communicate and the source element is sending actions
 most of the time to all consumers.
-Actions can also be sent across the network to other devices. 
+Actions can also be sent across the network to other devices.
 
 An accurate time is required for logging.
 Therefore we use the ntptime element to get the current time from a ntp server with adjustments to the timezone you are living in.
@@ -385,7 +386,7 @@ The HomeDing library offers a lot of options that can be used to create more val
 ## See also
 
 * [DHT Element](/elements/dht.md)
-* [DS18B20 Element](/elements/ds18b20.md) temperature
+* [Dallas Element](/elements/dallas.md) temperature
 * [BMP280 Element](/elements/bmp280.md) temperature and air pressure
 * [BME680 Element](/elements/bme680.md) temperature, humidity, air pressure and air resistance.
 * [Story - Outdoor Sensor with Solar Panel](/stories/story-outdoorsensorsolar.md)

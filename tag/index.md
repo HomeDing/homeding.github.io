@@ -14,6 +14,7 @@ excerpt: >
 * [Light](/tag/light.md)
 * [Recipe](/tag/recipe.md)
 * [Sensor](/tag/sensor.md)
+* [Story](/tag/story.md)
 * [System](/tag/system.md)
 * [Time](/tag/time.md)
 

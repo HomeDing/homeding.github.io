@@ -1,7 +1,7 @@
 ---
 title: SD MMC card Element
 icon: sdcard
-tags: ["Element", "FS"]
+tags: ["Element"]
 layout: "page.njk"
 description: Using SD MMC cards for storing local files on ESP32.
 excerpt: >

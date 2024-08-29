@@ -1,7 +1,7 @@
 ---
 title: SD Card Element
 icon: no
-tags: ["Element", "WIP"]
+tags: ["Element"]
 layout: "page.njk"
 description: Support of the ... chip 
 excerpt: >

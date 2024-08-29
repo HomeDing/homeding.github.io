@@ -8,18 +8,18 @@ layout: "page.njk"
 
 **Table of Contents**
 
-- [Intro](#intro)
-- [Use the browser as a remote information panel](#use-the-browser-as-a-remote-information-panel)
-- [Supplies](#supplies)
-- [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
-- [Install the HomeDing Library](#install-the-homeding-library)
-- [Customize the standard example sketch](#customize-the-standard-example-sketch)
-- [Allow network access](#allow-network-access)
-- [Web based Upload of the web UI Files](#web-based-upload-of-the-web-ui-files)
-- [Create the system and display configuration](#create-the-system-and-display-configuration)
-- [Register at openweathermap ???](#register-at-openweathermap-)
-- [Create the configuration for a weather display](#create-the-configuration-for-a-weather-display)
-- [Links and references](#links-and-references)
+* [Intro](#intro)
+* [Use the browser as a remote information panel](#use-the-browser-as-a-remote-information-panel)
+* [Supplies](#supplies)
+* [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
+* [Install the HomeDing Library](#install-the-homeding-library)
+* [Customize the standard example sketch](#customize-the-standard-example-sketch)
+* [Allow network access](#allow-network-access)
+* [Web based Upload of the web UI Files](#web-based-upload-of-the-web-ui-files)
+* [Create the system and display configuration](#create-the-system-and-display-configuration)
+* [Register at openweathermap ???](#register-at-openweathermap-)
+* [Create the configuration for a weather display](#create-the-configuration-for-a-weather-display)
+* [Links and references](#links-and-references)
 
 ## Intro
 
@@ -59,7 +59,7 @@ The Homeding library provides a web version when opening the http://<devicename>
 
 The hardware parts you need to build this project and used in this story are:
 
-* A [nodemcu](https://homeding.github.io/#page=/boards/nodemcu.md) or compatible board with the ESP8266 processor and USB interface.
+* A [nodemcu](/boards/nodemcu.md) or compatible board with the ESP8266 processor and USB interface.
 * A OLED display based on a SH1106, SSD1306 or SSD1309 controller chip.
 * 1 USB plug and a micro-usb cable for power supply.
 
@@ -130,11 +130,14 @@ This implementation also required the special [WeatherFeed Element] for accessin
 
 ![Network Secrets in Code](/stories/sketch-secrets.png)
 
-For simplicity on adding the new device to your home wifi network you may add the SSID and passphrase of your home WiFi in the `secrets.h` file next to the `standard.ino` sketch file. But you can also use the built-in WiFi Manager to add the device to the network without this hard-coded configuration.
+For simplicity on adding the new device to your home wifi network you may add the SSID and passphrase of your home WiFi
+in the `secrets.h` file next to the `standard.ino` sketch file.  But you can also use the built-in WiFi Manager to add
+the device to the network without this hard-coded configuration.
 
 ![Network Secrets in Code](/stories/sketch-secrets.png)
 
-If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description at [Step by Step Bring your device to work](https://homeding.github.io/#page=/newdevice.md) <https://homeding.github.io/#page=/newdevice.md>.
+If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description
+at [Step by Step Bring your device to work](/steps/newdevice.md) .
 
 ![WiFi Manager UI](/dev/wifimanager.png)
 
@@ -143,7 +146,9 @@ Now everything regarding implementation of the sketch is done and the firmware c
 
 ## Web based Upload of the web UI Files
 
-The standard example comes with a `data` folder that contains all file for the web UI. These files are also available in the HomeDing documentation web site and can be transferred by opening the page `/$boot.htm`. Use http://\<devicename\>/$boot.htm and use the devicename or ip address of your board.
+The standard example comes with a `data` folder that contains all file for the web UI.  These files are also available
+in the HomeDing documentation web site and can be transferred by opening the page `/$boot.htm`.  Use
+http://\<devicename\>/$boot.htm and use the devicename or ip address of your board.
 
 ??? devicename example of a fresh device.
 
@@ -299,17 +304,15 @@ The `displayText` elements are used to display the information given by the acti
 
 * HomeDing Source Code Repository: <https://github.com/HomeDing/HomeDing>
 * HomeDing Documentation: <https://homeding.github.io/>
-* About the Standard Example: <https://homeding.github.io/#page=/examples/standard.md>
-* The DHT Element: <https://homeding.github.io/#page=/elements/dht.md>
-* WeatherFeed Element: <https://homeding.github.io/#page=/elements/WeatherFeed.md>
-
-Display
-DisplayText
-
-* PMS Element: <https://homeding.github.io/#page=/elements/pms.md>
-* Log element: <https://homeding.github.io/#page=/elements/log.md>
-* NPTTime Element: <https://homeding.github.io/#page=/elements/ntptime.md>
+* [Standard Example]
+* [The DHT Element](/elements/dht.md)
+* [WeatherFeed Element]
+* [PMS Element](/elements/pms.md)
+* [Log Element](/elements/log.md)
+* [NPTTime Element](/elements/ntptime.md)
+* Display
+* DisplayText
 
 
-[Standard Example]: https://homeding.github.io/#page=/examples/standard.md
-[WeatherFeed Element]: <https://homeding.github.io/#page=/elements/WeatherFeed.md>
+[Standard Example]: /examples/standard.md
+[WeatherFeed Element]: /elements/WeatherFeed.md

@@ -225,7 +225,7 @@ SSD1306
 * <https://www.digikey.de/de/products/detail/espressif-systems/ESP32-AZURE-IOT-KIT/10259357>
 * <https://www.espressif.com/en/products/devkits/esp32-azure-kit/resources>
 
-* [Hardwware Design Kit](esp32-azure_iot_kit_hardware_design_guide.pdf)
+<!-- * [Hardwware Design Kit](esp32-azure_iot_kit_hardware_design_guide.pdf) -->
 
 * <https://docs.microsoft.com/en-us/samples/azure-samples/esp32-iot-devkit-get-started/sample/>
 

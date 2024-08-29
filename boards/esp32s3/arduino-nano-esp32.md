@@ -168,7 +168,6 @@ The following `env.json` configuration can be used for this board and contains s
 ## See Also
 
 
-
 * [Arduino Store nano-esp32](https://store.arduino.cc/products/nano-esp32)
 * [Arduino Nano ESP32](https://docs.arduino.cc/hardware/nano-esp32/)
 * Arduino Getting Started with Nano ESP32: <https://docs.arduino.cc/tutorials/nano-esp32/getting-started-nano-esp32/>

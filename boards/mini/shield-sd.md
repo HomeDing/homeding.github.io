@@ -11,7 +11,7 @@ HomeDing device using the [SD Element].
 
 This shield is made for the [D1 mini boards] that are available in many variations and different processors.
 
-![d1mini-sd](/boards/d1mini-sdshield.jpg)
+![d1mini-sd](/boards/mini/shield-sd.jpg)
 
 ## Pins in use
 

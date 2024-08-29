@@ -4,23 +4,24 @@ tags: ["Story"]
 layout: "page.njk"
 ---
 
-**Table of Contents**
+## Table of Content
 
-- [Intro](#intro)
-- [Supplies](#supplies)
-- [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
-- [Include required libraries](#include-required-libraries)
-- [Customize the standard example sketch](#customize-the-standard-example-sketch)
-- [Upload the web UI](#upload-the-web-ui)
-- [Add the BME680 Sensor](#add-the-bme680-sensor)
-- [Add the PMS5003 Sensor](#add-the-pms5003-sensor)
-- [Adding some network features](#adding-some-network-features)
-- [Adding some logging](#adding-some-logging)
-- [Actions](#actions)
-- [Configuration Files](#configuration-files)
-  - [env.json](#envjson)
-  - [config.json](#configjson)
-- [Links and references](#links-and-references)
+* [Table of Content](#table-of-content)
+* [Intro](#intro)
+* [Supplies](#supplies)
+* [Prepare Arduino Environment for ESP8266](#prepare-arduino-environment-for-esp8266)
+* [Include required libraries](#include-required-libraries)
+* [Customize the standard example sketch](#customize-the-standard-example-sketch)
+* [Upload the web UI](#upload-the-web-ui)
+* [Add the BME680 Sensor](#add-the-bme680-sensor)
+* [Add the PMS5003 Sensor](#add-the-pms5003-sensor)
+* [Adding some network features](#adding-some-network-features)
+* [Adding some logging](#adding-some-logging)
+* [Actions](#actions)
+* [Configuration Files](#configuration-files)
+  * [env.json](#envjson)
+  * [config.json](#configjson)
+* [Links and references](#links-and-references)
 
 ## Intro
 
@@ -47,7 +48,7 @@ It also brings a complete solution for hosting a web side inside device instead 
 
 ![AirDing picture](/stories/airding04.jpg)
 
- 
+
 ## Supplies
 
 All you need to build this project is a ESP8266 based board like the nodemcu board
@@ -67,8 +68,8 @@ It is easy to swap the BME680 sensor with a DHT22 sensor as they are also suppor
 
 1. Install latest version of Arduino IDE (currently version 1.8.2).
 
-2. Use Board Manager to install the install the esp8266 support. 
-   
+2. Use Board Manager to install the install the esp8266 support.
+
    A detailed instruction can be found here: <https://arduino-esp8266.readthedocs.io/en/latest/installing.html#boards-manager>
 
 3. Install the Arduino ESP8266 filesystem upload utility.  
@@ -82,7 +83,7 @@ It is easy to swap the BME680 sensor with a DHT22 sensor as they are also suppor
 
 ## Include required libraries
 
-The HomeDing library relies on some common extra libraries for sensors and displays to work. 
+The HomeDing library relies on some common extra libraries for sensors and displays to work.
 
 When you install the HomeDing library you will see a popup with these required libraries that can be installed automatically.
 
@@ -90,8 +91,8 @@ When you install the HomeDing library you will see a popup with these required l
 
 Sometimes (with unknown reasons) the installation of the libraries fails so all the required libraries need to be installed manually.
 
-More details about the required libraries can be found on the documentation website at 
-<https://homeding.github.io/#page=/elements/index.md>.
+More details about the required libraries can be found on the documentation website at
+<https://homeding.github.io/elements/index.htm>.
 
 This is the list of current required libraries:
 
@@ -103,7 +104,7 @@ This is the list of current required libraries:
 * OneWire
 
 The PMS5003 air particle laser sensor communicates using a 9600 baud serial line signal. This signal is captured by using the SoftwareSerial library that comes with the installation of the ESP8266 tools.
-Be sure not to have an older version installed as a library. 
+Be sure not to have an older version installed as a library.
 
 
 ## Customize the standard example sketch
@@ -156,7 +157,9 @@ On the breadboard you can see the connection cables to the sensor:
 
 ![bme680-connection](/stories/air-bme680-connection.jpg)
 
-    3.3V=red, GND=black, SCL=yellow, SDA=blue
+```txt
+3.3V=red, GND=black, SCL=yellow, SDA=blue
+```
 
 The configuration for BME680 can be used in config.json:
 
@@ -168,9 +171,10 @@ The configuration for BME680 can be used in config.json:
   }
 }
 ```
+
 We will add the actions later.
 
-To test the setup just use a browser and open http://airding/board.htm and you will see the actual values of the sensor displayed and they will be updated about every 10 seconds:
+To test the setup just use a browser and open <http://airding/board.htm> and you will see the actual values of the sensor displayed and they will be updated about every 10 seconds:
 
 ![bme680 UI](/stories/air-bme680ui.png)
 
@@ -196,7 +200,7 @@ The data from the sensor is transferred in a standard 9600 baud serial format so
 
 We will add the actions later.
 
-To test the setup again just reboot the device and use a browser and open http://airding/board.htm and you will see the actual pm35 value of the sensor displayed and they will be updated about every 10 seconds but this value is normally not changing often.
+To test the setup again just reboot the device and use a browser and open <http://airding/board.htm> and you will see the actual pm35 value of the sensor displayed and they will be updated about every 10 seconds but this value is normally not changing often.
 
 ![PMS UI](/stories/air-pmsui.png)
 
@@ -208,6 +212,7 @@ Now you can put everything in a nice housing because all the other configuration
 ## Adding some network features
 
 The following configuration extract in env.json is enabling
+
 * updating the firmware over the air
 * allows detecting the network using the SSDP network protocol and retrieves the current time from an ntp server.
 
@@ -235,10 +240,11 @@ The following configuration extract in env.json is enabling
 }
 ```
 
-You should adjust the timezone to your location. If you are in doubt you can use the web site https://www.timeanddate.com/ to get the offset from UTC/GMT. "2" is right for Germany summertime.
+You should adjust the timezone to your location.  If you are in doubt you can use the web site
+<https://www.timeanddate.com/> to get the offset from UTC/GMT.  "2" is right for Germany summertime.
 
-You may also adjust the ota password after reading the instructions regarding the save mode in the documentation at 
-<https://homeding.github.io/index.htm#page=/safemode.md>.
+You may also adjust the ota password after reading the instructions regarding the save mode in the documentation at
+[safemode](/dev/safemode.md) .
 
 After a restart you may find the airding device on the network and after getting a reply from the ntp server the local time is available.
 
@@ -379,15 +385,15 @@ Now all the elements are configured like this:
 
 * HomeDing Source Code Repository: <https://github.com/HomeDing/HomeDing>
 * HomeDing Documentation: <https://homeding.github.io/>
-* Standard Example: <https://homeding.github.io/#page=/examples/standard.md>
-* BME680 Element: <https://homeding.github.io/#page=/elements/bme680.md>
-* PMS Element: <https://homeding.github.io/#page=/elements/pms.md>
-* Log element: <https://homeding.github.io/#page=/elements/log.md>
-* NPTTime Element: <https://homeding.github.io/#page=/elements/ntptime.md>
+* [Standard Example]
+* [BME680 Element]
+* [PMS Element]
+* [Log element]
+* [NPTTime Element]
 
 
-[Standard Example]: https://homeding.github.io/#page=/examples/standard.md
-[BME680 Element]: https://homeding.github.io/#page=/elements/bme680.md
-[PMS Element]: https://homeding.github.io/#page=/elements/pms.md
-[Log element]: https://homeding.github.io/#page=/elements/log.md
-[NPTTime Element]: https://homeding.github.io/#page=/elements/ntptime.md
+[Standard Example]: /examples/standard.md
+[BME680 Element]: /elements/bme680.md
+[PMS Element]: /elements/pms.md
+[Log element]: /elements/log.md
+[NPTTime Element]: /elements/ntptime.md
