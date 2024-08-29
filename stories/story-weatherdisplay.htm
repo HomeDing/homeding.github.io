@@ -67,7 +67,7 @@ The library also supports looking into the display of the device remotely using 
 <h2>Supplies</h2>
 <p>The hardware parts you need to build this project and used in this story are:</p>
 <ul>
-<li>A <a href="https://homeding.github.io/#page=/boards/nodemcu.md">nodemcu</a> or compatible board with the ESP8266 processor and USB interface.</li>
+<li>A <a href="/boards/nodemcu.htm">nodemcu</a> or compatible board with the ESP8266 processor and USB interface.</li>
 <li>A OLED display based on a SH1106, SSD1306 or SSD1309 controller chip.</li>
 <li>1 USB plug and a micro-usb cable for power supply.</li>
 </ul>
@@ -117,8 +117,8 @@ and find entry <strong>esp8266 by ESP8266 Community</strong> and install the lat
 <p><img src="/stories/arduino-libraryinstall.png" alt="Install libraries"></p>
 <p>Now the library implementation and the examples are available to be used.</p>
 <h2>Customize the standard example sketch</h2>
-<p>The <a href="https://homeding.github.io/#page=/examples/standard.md">Standard Example</a> already includes the most common elements for sensors, services, general IO and displays so only some configuration will be required.</p>
-<p>This implementation also required the special <a href="https://homeding.github.io/#page=/elements/WeatherFeed.md">WeatherFeed Element</a> for accessing the WeatherFeed service. Therefore the standard example needs to be extended to include this element in the firmware by defining the following constant in the standard.ino sketch file just above the <code>#include &lt;Arduino.h&gt;</code>:</p>
+<p>The <a href="/examples/standard.htm">Standard Example</a> already includes the most common elements for sensors, services, general IO and displays so only some configuration will be required.</p>
+<p>This implementation also required the special <a href="/elements/WeatherFeed.htm">WeatherFeed Element</a> for accessing the WeatherFeed service. Therefore the standard example needs to be extended to include this element in the firmware by defining the following constant in the standard.ino sketch file just above the <code>#include &lt;Arduino.h&gt;</code>:</p>
 <pre class="language-cpp"><code class="language-cpp"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_WEATHERFEED</span></span>
 
@@ -126,13 +126,18 @@ and find entry <strong>esp8266 by ESP8266 Community</strong> and install the lat
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre>
 <h2>Allow network access</h2>
 <p><img src="/stories/sketch-secrets.png" alt="Network Secrets in Code"></p>
-<p>For simplicity on adding the new device to your home wifi network you may add the SSID and passphrase of your home WiFi in the <code>secrets.h</code> file next to the <code>standard.ino</code> sketch file. But you can also use the built-in WiFi Manager to add the device to the network without this hard-coded configuration.</p>
+<p>For simplicity on adding the new device to your home wifi network you may add the SSID and passphrase of your home WiFi
+in the <code>secrets.h</code> file next to the <code>standard.ino</code> sketch file.  But you can also use the built-in WiFi Manager to add
+the device to the network without this hard-coded configuration.</p>
 <p><img src="/stories/sketch-secrets.png" alt="Network Secrets in Code"></p>
-<p>If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description at <a href="https://homeding.github.io/#page=/newdevice.md">Step by Step Bring your device to work</a> <a href="https://homeding.github.io/#page=/newdevice.md">https://homeding.github.io/#page=/newdevice.md</a>.</p>
+<p>If you like to configure the network credentials using the built-in wifi manager you can find a step-by-step description
+at <a href="/steps/newdevice.htm">Step by Step Bring your device to work</a> .</p>
 <p><img src="/dev/wifimanager.png" alt="WiFi Manager UI"></p>
 <p>Now everything regarding implementation of the sketch is done and the firmware can be compiled and uploaded.</p>
 <h2>Web based Upload of the web UI Files</h2>
-<p>The standard example comes with a <code>data</code> folder that contains all file for the web UI. These files are also available in the HomeDing documentation web site and can be transferred by opening the page <code>/$boot.htm</code>. Use http://&lt;devicename&gt;/$boot.htm and use the devicename or ip address of your board.</p>
+<p>The standard example comes with a <code>data</code> folder that contains all file for the web UI.  These files are also available
+in the HomeDing documentation web site and can be transferred by opening the page <code>/$boot.htm</code>.  Use
+http://&lt;devicename&gt;/$boot.htm and use the devicename or ip address of your board.</p>
 <p>??? devicename example of a fresh device.</p>
 <p>The press <code>start</code> and you see the UI files transferred from the web site to the device.</p>
 <p>This method is useful when starting with a new board or to update to a new version of the UI files.</p>
@@ -266,16 +271,14 @@ and find entry <strong>esp8266 by ESP8266 Community</strong> and install the lat
 <ul>
 <li>HomeDing Source Code Repository: <a href="https://github.com/HomeDing/HomeDing">https://github.com/HomeDing/HomeDing</a></li>
 <li>HomeDing Documentation: <a href="https://homeding.github.io/">https://homeding.github.io/</a></li>
-<li>About the Standard Example: <a href="https://homeding.github.io/#page=/examples/standard.md">https://homeding.github.io/#page=/examples/standard.md</a></li>
-<li>The DHT Element: <a href="https://homeding.github.io/#page=/elements/dht.md">https://homeding.github.io/#page=/elements/dht.md</a></li>
-<li>WeatherFeed Element: <a href="https://homeding.github.io/#page=/elements/WeatherFeed.md">https://homeding.github.io/#page=/elements/WeatherFeed.md</a></li>
-</ul>
-<p>Display
-DisplayText</p>
-<ul>
-<li>PMS Element: <a href="https://homeding.github.io/#page=/elements/pms.md">https://homeding.github.io/#page=/elements/pms.md</a></li>
-<li>Log element: <a href="https://homeding.github.io/#page=/elements/log.md">https://homeding.github.io/#page=/elements/log.md</a></li>
-<li>NPTTime Element: <a href="https://homeding.github.io/#page=/elements/ntptime.md">https://homeding.github.io/#page=/elements/ntptime.md</a></li>
+<li><a href="/examples/standard.htm">Standard Example</a></li>
+<li><a href="/elements/dht.htm">The DHT Element</a></li>
+<li><a href="/elements/WeatherFeed.htm">WeatherFeed Element</a></li>
+<li><a href="/elements/pms.htm">PMS Element</a></li>
+<li><a href="/elements/log.htm">Log Element</a></li>
+<li><a href="/elements/ntptime.htm">NPTTime Element</a></li>
+<li>Display</li>
+<li>DisplayText</li>
 </ul>
 
         

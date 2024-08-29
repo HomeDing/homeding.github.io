@@ -27,8 +27,9 @@
     <main style="padding:1rem;max-width: 800px;">
       <h1>Build a Inhouse IoT Air Quality sensor no cloud required</h1>
       
-        <p><strong>Table of Contents</strong></p>
+        <h2>Table of Content</h2>
 <ul>
+<li><a href="#table-of-content">Table of Content</a></li>
 <li><a href="#intro">Intro</a></li>
 <li><a href="#supplies">Supplies</a></li>
 <li><a href="#prepare-arduino-environment-for-esp8266">Prepare Arduino Environment for ESP8266</a></li>
@@ -101,7 +102,7 @@ Here the BMP680 chip is used.</p>
 <p><img src="/stories/arduino-libraryinstall.png" alt="Install libraries"></p>
 <p>Sometimes (with unknown reasons) the installation of the libraries fails so all the required libraries need to be installed manually.</p>
 <p>More details about the required libraries can be found on the documentation website at
-<a href="https://homeding.github.io/#page=/elements/index.md">https://homeding.github.io/#page=/elements/index.md</a>.</p>
+<a href="https://homeding.github.io/elements/index.htm">https://homeding.github.io/elements/index.htm</a>.</p>
 <p>This is the list of current required libraries:</p>
 <ul>
 <li>Adafruit NeoPixel</li>
@@ -114,9 +115,9 @@ Here the BMP680 chip is used.</p>
 <p>The PMS5003 air particle laser sensor communicates using a 9600 baud serial line signal. This signal is captured by using the SoftwareSerial library that comes with the installation of the ESP8266 tools.
 Be sure not to have an older version installed as a library.</p>
 <h2>Customize the standard example sketch</h2>
-<p>The <a href="https://homeding.github.io/#page=/examples/standard.md">Standard Example</a> already includes some of the more common sensors as elements so only some configuration will be required.</p>
-<p>This applies to the BME680 sensor that is supported by the <a href="https://homeding.github.io/#page=/elements/bme680.md">BME680 Element</a>.</p>
-<p>The PMS5003 sensor is less common and needs to be activated by including the <a href="https://homeding.github.io/#page=/elements/pms.md">PMS Element</a> into the firmware. This is done by by defining <code>#define HOMEDING_INCLUDE_PMS</code> in the element register section of the sketch.</p>
+<p>The <a href="/examples/standard.htm">Standard Example</a> already includes some of the more common sensors as elements so only some configuration will be required.</p>
+<p>This applies to the BME680 sensor that is supported by the <a href="/elements/bme680.htm">BME680 Element</a>.</p>
+<p>The PMS5003 sensor is less common and needs to be activated by including the <a href="/elements/pms.htm">PMS Element</a> into the firmware. This is done by by defining <code>#define HOMEDING_INCLUDE_PMS</code> in the element register section of the sketch.</p>
 <p>For simplicity on adding the new device to the network you may add the SSID and passphrase of your home WiFi in the <code>secrets.h</code> file next to the <code>standard.ino</code> sketch file. But you can also use the built-in WiFi Manager to add the device to the network without this hard-coded configuration.</p>
 <p><img src="/stories/sketch-secrets.png" alt="Network Secrets in Code"></p>
 <p>Now everything regarding implementation of the sketch is done and the firmware can be compiled and uploaded.</p>
@@ -141,7 +142,7 @@ It needs a reboot to activate the configuration.</p>
 <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <p>On the breadboard you can see the connection cables to the sensor:</p>
 <p><img src="/stories/air-bme680-connection.jpg" alt="bme680-connection"></p>
-<p>3.3V=red, GND=black, SCL=yellow, SDA=blue</p>
+<pre class="language-txt"><code class="language-txt">3.3V=red, GND=black, SCL=yellow, SDA=blue</code></pre>
 <p>The configuration for BME680 can be used in config.json:</p>
 <pre class="language-json"><code class="language-json"><span class="token property">"bme680"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
   <span class="token property">"bd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -196,13 +197,14 @@ It needs a reboot to activate the configuration.</p>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<p>You should adjust the timezone to your location. If you are in doubt you can use the web site <a href="https://www.timeanddate.com/">https://www.timeanddate.com/</a> to get the offset from UTC/GMT. “2” is right for Germany summertime.</p>
+<p>You should adjust the timezone to your location.  If you are in doubt you can use the web site
+<a href="https://www.timeanddate.com/">https://www.timeanddate.com/</a> to get the offset from UTC/GMT.  “2” is right for Germany summertime.</p>
 <p>You may also adjust the ota password after reading the instructions regarding the save mode in the documentation at
-<a href="https://homeding.github.io/index.htm#page=/safemode.md">https://homeding.github.io/index.htm#page=/safemode.md</a>.</p>
+<a href="/dev/safemode.htm">safemode</a> .</p>
 <p>After a restart you may find the airding device on the network and after getting a reply from the ntp server the local time is available.</p>
 <h2>Adding some logging</h2>
 <p>Just the actual values may not give enough so some more elements can be used.</p>
-<p>For this story the <a href="https://homeding.github.io/#page=/elements/log.md">Log element</a> and the <a href="https://homeding.github.io/#page=/elements/ntptime.md">NPTTime Element</a> are used to record the history of sensor values in a log file and the Web UI card for this element can display it as a graph.</p>
+<p>For this story the <a href="/elements/log.htm">Log element</a> and the <a href="/elements/ntptime.htm">NPTTime Element</a> are used to record the history of sensor values in a log file and the Web UI card for this element can display it as a graph.</p>
 <p>The following configuration creates the 2 log elements for gas and particles:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"log"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -310,11 +312,11 @@ It needs a reboot to activate the configuration.</p>
 <ul>
 <li>HomeDing Source Code Repository: <a href="https://github.com/HomeDing/HomeDing">https://github.com/HomeDing/HomeDing</a></li>
 <li>HomeDing Documentation: <a href="https://homeding.github.io/">https://homeding.github.io/</a></li>
-<li>Standard Example: <a href="https://homeding.github.io/#page=/examples/standard.md">https://homeding.github.io/#page=/examples/standard.md</a></li>
-<li>BME680 Element: <a href="https://homeding.github.io/#page=/elements/bme680.md">https://homeding.github.io/#page=/elements/bme680.md</a></li>
-<li>PMS Element: <a href="https://homeding.github.io/#page=/elements/pms.md">https://homeding.github.io/#page=/elements/pms.md</a></li>
-<li>Log element: <a href="https://homeding.github.io/#page=/elements/log.md">https://homeding.github.io/#page=/elements/log.md</a></li>
-<li>NPTTime Element: <a href="https://homeding.github.io/#page=/elements/ntptime.md">https://homeding.github.io/#page=/elements/ntptime.md</a></li>
+<li><a href="/examples/standard.htm">Standard Example</a></li>
+<li><a href="/elements/bme680.htm">BME680 Element</a></li>
+<li><a href="/elements/pms.htm">PMS Element</a></li>
+<li><a href="/elements/log.htm">Log element</a></li>
+<li><a href="/elements/ntptime.htm">NPTTime Element</a></li>
 </ul>
 
         
