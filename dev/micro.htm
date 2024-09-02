@@ -63,10 +63,8 @@ They are implemented in SVG format that results in minimal size while supporting
 <p>This functionality or at least a part of it is required even for even small HomeDing based devices and needs to be hosted in the available memory of the available boards.</p>
 <p>The way how the web server is implemented is based on avoiding consuming server resources as much as possible and using the browser resources where possible.</p>
 <blockquote>
-<p>Implementing minimal javascript and CSS libraries is also part of the strategy of many web interfaces that must run smoothly on mobile devices because the network bandwidth is the most restricted resource for these use-cases as well.</p>
-</blockquote>
-<blockquote>
-<p>Some <em><strong>“micro”</strong></em> implementations are available on the internet that just offer basic features with the focus on size.
+<p>Implementing minimal javascript and CSS libraries is also part of the strategy of many web interfaces that must run smoothly on mobile devices because the network bandwidth is the most restricted resource for these use-cases as well.
+Some <em><strong>“micro”</strong></em> implementations are available on the internet that just offer basic features with the focus on size.
 More on this can be found in links provided below.</p>
 </blockquote>
 <h3>Implementing the web files</h3>
@@ -102,10 +100,9 @@ that allows modifying text based files using any browser.</p>
 It was created by extending the original OpenAjax Hub idea and implementation that the OpenAjax Alliance published around 2007 as a minimal implementation of a publish and subscribe mechanism to exchange messages between libraries.</p>
 <p>At these days a dedicated store was not part of the specification and is now added into the micro hub implementation.
 This allows replaying data messages to the components based on the actual data in the store.</p>
-<pre><code>actions -(publish)- &gt; [data store] -&gt; [filter] -&gt; [library/component]
+<pre class="language-txt"><code class="language-txt">actions -(publish)- > [data store] -> [filter] -> [library/component]
                           |                               |
-                          +  &lt;----- (subscribe) --------- +
-</code></pre>
+                          +  &lt;----- (subscribe) --------- +</code></pre>
 <p>The data store here is a native javascript structured data object representing a tree of nodes and key-values.</p>
 <p>All data changes are serialized and passed through a filter that only forwards relevant changes to the component.
 It is focusing on a one way data flow but updates initiated by the components can be processed as well.</p>
