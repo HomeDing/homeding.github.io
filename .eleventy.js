@@ -20,7 +20,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.ignores.add("_site/**");
   eleventyConfig.ignores.add(".vscode/**");
-
+  eleventyConfig.ignores.add("**/_*");
+  eleventyConfig.ignores.add("**/_*.*");
+  
   const contentFolders = ["boards", "boards", "concepts", "dev", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
   const assetFolders = ["i", "v09", "v09m", "home"];
 

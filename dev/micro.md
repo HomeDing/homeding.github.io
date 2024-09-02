@@ -58,7 +58,6 @@ This functionality or at least a part of it is required even for even small Home
 The way how the web server is implemented is based on avoiding consuming server resources as much as possible and using the browser resources where possible.
 
 > Implementing minimal javascript and CSS libraries is also part of the strategy of many web interfaces that must run smoothly on mobile devices because the network bandwidth is the most restricted resource for these use-cases as well.
-
 > Some ***"micro"*** implementations are available on the internet that just offer basic features with the focus on size.
 > More on this can be found in links provided below.
 
@@ -83,6 +82,7 @@ For Details see [Micro-IDE](/dev/microide.md).
 The minimalist JavaScript implementation that implements templates, function and data binding and is available to the HomeDing devices.
 
 The functionality offers
+
 * to create new controls from given templates into the web page
 * load data given in a JSON format
 * fill data into placeholders
@@ -116,7 +116,7 @@ At these days a dedicated store was not part of the specification and is now add
 This allows replaying data messages to the components based on the actual data in the store.
 
 
-```
+``` txt
 actions -(publish)- > [data store] -> [filter] -> [library/component]
                           |                               |
                           +  <----- (subscribe) --------- +
@@ -130,7 +130,6 @@ It is focusing on a one way data flow but updates initiated by the components ca
 A component that wants to participate in the data flows needs to register a callback function to the
 
 The filter gets all data changes
-
 
 
 ## More reading material

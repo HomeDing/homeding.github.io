@@ -21,6 +21,8 @@ SI473xx -- radio chips from Silicon.
 
 ## Amplifiers
 
+to come...
+
 <!-- 
 The TPA2016Element can control a TPA2016 chip that contains a stereo amplifier for analog audio signals with a I2C bus based volume control.
 

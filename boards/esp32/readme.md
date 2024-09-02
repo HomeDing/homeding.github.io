@@ -1,6 +1,6 @@
 ---
 title: About using the ESP32 with HomeDing
-tags: ["Board", "WIP", "TODO"]
+tags: ["Board", "WIP"]
 layout: "page.njk"
 description: Links, material and tips for using ESP32 based boards with the HomeDing library.
 excerpt: >

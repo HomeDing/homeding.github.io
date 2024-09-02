@@ -2,11 +2,10 @@
 title: Radio Example
 layout: "page.njk"
 tags: ["Example"]
+excerpt: >
+  The **radio example** can be used with any board that has a 4MByte Flash memory, a FM radio receiving board,
+  a display and a rotary encoder with button.
 ---
-
-:::excerpt
-The **radio example** can be used with any board that has a 4MByte Flash memory, a FM radio receiving board, a display and a rotary encoder with button. 
-:::
 
 In addition some wiring for amplifier and speaker or headphone connectors are required to create a full functional and remote controllable radio.
 
@@ -20,7 +19,7 @@ There are some options in uploading the required software and registration on th
 
 [Step by Step Bring your device to work](/steps/newdevice.md)
 
-This includes: 
+This includes:
 
 * Upload the sketch and Web UI
 * Connect to the network
@@ -55,20 +54,20 @@ The following table contains all signal lines including the pin numbers:
 
 | Signal    | ESP8266 | LCD  | Radio | Amp |
 | --------- | ------- | ---- | ----- | --- |
-| I2C Data  | D2      | Data |
+| I2C Data  | D2      | Data |       |     |
 | I2C Clock | D3      | CLK  | #4    | #5  |
-| VCC 3.3   |
-| VCC 5     |
+| VCC 3.3   |         |      |       |     |
+| VCC 5     |         |      |       |     |
 | GND       | GND     | GND  | #4    | #5  |
 
 
 ## Pictures
 
-  * The board and other hardware required for this example. 
+* The board and other hardware required for this example.
     ![radio](/examples/radio.jpg)
-  * The unconnected main board and amplifier board.
+* The unconnected main board and amplifier board.
     ![radio](/examples/radio2.jpg)
-  * Closer picture of the FM chip.
+* Closer picture of the FM chip.
     ![radio](/examples/radio3.jpg)
 
 ## Board and Hardware to build the example
@@ -102,7 +101,7 @@ The elements that come with the example code are
 * radio element
 * TPA2016 element
 
-These elements also show how elements can be implemented together with the sketch and are extending the capabilities of the device without the need to include them into the library. 
+These elements also show how elements can be implemented together with the sketch and are extending the capabilities of the device without the need to include them into the library.
 
 
 ## Using a Rotary encoder
@@ -121,7 +120,7 @@ When using the closing to ground approach the builtin pull up resistors of the c
 * push-button => D7
 * rotary1 => D6
 * ground => GND
-* rotary2 => D5 
+* rotary2 => D5
 
 When the turn is in the wrong direction you just have to switch the two rotary signals.
 
@@ -133,17 +132,17 @@ Long press the buttons to create repeated up and down actions.
 
 ???
 
-## Using the LCD 
+## Using the LCD
 
 The LCD is one of the standard display types that is used in many Arduino solutions. Here a backpack is added to allow using the LCD display on the I2C bus.
 
-The LCD uses 5V power but accepts 3.3 V signals in the I2C bus. 
+The LCD uses 5V power but accepts 3.3 V signals in the I2C bus.
 
 ![LCD](/examples/lcd.jpg)
 ![LCD](/examples/lcdback.jpg)
 
 * GND => GND (black)
-* VCC => VIN (red) (the 5V directly connected to the USB adapter) 
+* VCC => VIN (red) (the 5V directly connected to the USB adapter)
 * SDA => D2 (blue)
 * SCL => D1 (yellow)
 

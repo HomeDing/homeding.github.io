@@ -6,20 +6,26 @@ excerpt: >
   All tags used in this documentation.
 ---
 
-* [Audio](/tag/audio.md)
-* [Board](/tag/board.md)
+## Elements
+
 * [Element](/tag/element.md)
-* [Example](/tag/example.md)
-* [Implementation](/tag/implementation.md)
-* [Light](/tag/light.md)
-* [Recipe](/tag/recipe.md)
+* [Input](/tag/input.md)
 * [Sensor](/tag/sensor.md)
-* [Story](/tag/story.md)
+* [Audio](/tag/audio.md)
+* [Display](/tag/display.md)
+* [Light](/tag/light.md)
+* [Network](/tag/network.md)
 * [System](/tag/system.md)
 * [Time](/tag/time.md)
 
-Temporary Tags
+## Documentation
 
-* [todo](/tag/todo.md)
+* [Board Descriptions](/tag/board.md)
+* [Examples](/tag/example.md)
+* [Implementation Topics](/tag/implementation.md)
+* [Recipes](/tag/recipe.md)
+* [Stories](/tag/story.md)
+
+## Temporary Tags
+
 * [Work in Progress](/tag/wip.md)
-

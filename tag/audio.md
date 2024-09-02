@@ -4,13 +4,13 @@ layout: "page.njk"
 description: All pages explaining Audio features of the HomeDing Library.
 ---
 
-{%- for post in collections.Audio | sort(false, true, 'data.title')  -%}
-<p><a href="{{ post.url | url }}">{{ post.data.title }}</a> -- {{ post.data.excerpt }}
-{%- endfor -%}
+{% for post in collections.Audio | sort(false, true, 'data.title')  %}
+
+* [{{ post.data.title }}]({{ post.url | url }}) -- {{ post.data.excerpt }}
+
+{% endfor %}
 
 
-<h2> See also</h2>
+## See also
 
-<ul>
-  <li><a href="/tag/index.htm">All Tags</a></li>
-</ul>
+* [All Tags](/tag/index.md)

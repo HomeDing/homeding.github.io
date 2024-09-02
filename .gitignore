@@ -2,9 +2,7 @@
 *.code-workspace
 node_modules
 build
-_articles
-_site
-_back
+_*
 _*.*
 *.ppt*
 *.pdf

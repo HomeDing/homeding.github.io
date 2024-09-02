@@ -131,7 +131,7 @@ and to mount the sd card file system on the `/sd` folder.
 
 | function | ESP32 pin |
 | -------- | --------- |
-| CS       | GPIO13    | ??? TODO: to be verified ! |
+| CS       | GPIO13    |
 | SPI-bus  | VSPI      |
 
 
@@ -208,8 +208,6 @@ SSD1306
 * 0x3c: (SH1106,SSD1306,SSD1309)
 
 * The SSD1306 based display requires a reset line for some cases but the RST signal is not connected to any GPIO.
-
-
 
 
 <https://forum.arduino.cc/t/how-to-best-configure-esp32-arduino-vs-code-debug/698140>
