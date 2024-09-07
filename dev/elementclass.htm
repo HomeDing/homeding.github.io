@@ -75,11 +75,13 @@ and before the first configuration property is passed to the Element implementat
 (e.g. see <a href="https://stackoverflow.com/questions/18806141/move-object-creation-to-setup-function-of-arduino">https://stackoverflow.com/questions/18806141/move-object-creation-to-setup-function-of-arduino</a>).</p>
 <p>This method is implemented in the base Element class and stores the passed board class reference to the common <code>_board</code> member variable
 to enable participating in sending actions and other board functionality.</p>
-<h3>set() - setting properties and receiving actions</h3>
+<h3>set(key, value) - setting properties and receiving actions</h3>
 <p>When the Element is crated and even later when a action is send to the Element a key and value is passed in the <code>set</code> function.
 This is the the only function that needs to process incoming data.
 It checks the passed key and then takes the data or executes the action.</p>
 <p>Some Element implementations will only require to implement the setting parameters given from the configuration and others also may react to actions to trigger a functionality or to modify a dynamic property of the Element.</p>
+<p>The key parameter is passed as a const char pointer and is always converted to lowercase.</p>
+<p>When  it is one of the most used keys the char pointer can be used for pointer comparison as it is looked up in the actions set. This speeds up the overall processing of actions.</p>
 <p>The set function must return <code>true</code> when a property is known to the element and was handled.</p>
 <h4>Examples</h4>
 <ul>
