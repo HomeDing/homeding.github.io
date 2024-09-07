@@ -44,6 +44,7 @@ some common implementation to allow gathering values on a regular basis and upda
 {{ elemCard("pms") }}
 {{ elemCard("bmp280") }}
 {{ elemCard("bl0937", "no") }}
+{{ elemCard("scd4x", "no") }}
 
 <!-- TODO: element bme280 bme280 -->
 

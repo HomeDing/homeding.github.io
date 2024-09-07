@@ -70,13 +70,17 @@ This method is implemented in the base Element class and stores the passed board
 to enable participating in sending actions and other board functionality.
 
 
-### set() - setting properties and receiving actions
+### set(key, value) - setting properties and receiving actions
 
 When the Element is crated and even later when a action is send to the Element a key and value is passed in the `set` function.
 This is the the only function that needs to process incoming data.
 It checks the passed key and then takes the data or executes the action.
 
 Some Element implementations will only require to implement the setting parameters given from the configuration and others also may react to actions to trigger a functionality or to modify a dynamic property of the Element.
+
+The key parameter is passed as a const char pointer and is always converted to lowercase.
+
+When  it is one of the most used keys the char pointer can be used for pointer comparison as it is looked up in the actions set. This speeds up the overall processing of actions.
 
 The set function must return `true` when a property is known to the element and was handled.
 

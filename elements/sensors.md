@@ -24,6 +24,7 @@ The HomeDing library supports a collection of common sensor chips:
 * [PMS Element](/elements/pms.md) supports the PMS5003 sensor by plantdata to count micro particles in the air.
 * [INA219 Element](/elements/ina219.md) using the INA219 power consumption chip.
 * [INA226 Element](/elements/ina226.md) using the INA219 power consumption chip.
+* [SCD4x Element](/elements/scd4x.md) supports the scd4x CO2 Sensors.
 
 
 ## Common Sensor Implementation
