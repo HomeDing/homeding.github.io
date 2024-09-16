@@ -44,8 +44,8 @@ from the configuration.</p>
 Other Elements like sensors have no obvious use case for this.</p>
 <p>As the value element is also supporting saving the current value as a state it can be used to
 even save a last known sensor value.</p>
-<p>All Elements can save any values by calling the function <code>saveState(key, value)</code> implemented by
-the Element base class. in the element configuration the property <code>persist</code></p>
+<p>All Elements can save any values by calling the function <code>saveState(key, value)</code> available in the Element base class.
+To enable saving the current state the property <code>usestate</code> must be set to <code>true</code>.</p>
 <p>This information will be used to create an action <code>type/id?{key}={value}</code> on the next element
 restart before starting the element. This action will then overwrite the configuration or value
 from the element configuration.</p>

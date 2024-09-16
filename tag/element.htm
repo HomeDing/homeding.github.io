@@ -44,7 +44,7 @@
 <p><a href="/elements/light/apa102.htm">APA102 Element</a> – The APA102 Element implements using LED Stripes and LED panels based on the apa102 chip and protocol and provides some color animations and transitions.</p>
 </li>
 <li>
-<p><a href="/elements/alarm.htm">Alarm Element</a> – The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.</p>
+<p><a href="/elements/alarm.htm">Alarm Element</a> – The AlarmElement creates a single action  when reaching a defined time of day. This can be used e.g. for wakeup signals.</p>
 </li>
 <li>
 <p><a href="/elements/analog.htm">Analog Element</a> – The AnalogElement is used to capture the voltage level from the Analog Input pin with the integrated ADC and to emit corresponding events. It also handles some of the often occurring problems around capturing analog values.</p>
@@ -104,10 +104,10 @@
 <p><a href="/elements/dallas.htm">Dallas Element</a> – The DallasElement allows retrieving temperature values from DS18B20 aka. Dallas Temperature sensors and creates actions when new values are available.</p>
 </li>
 <li>
-<p><a href="/elements/device.htm">Device Element</a> – The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.</p>
+<p><a href="/elements/device.htm">Device Element</a> – The DeviceElement allows configuration of the behavior at the device level and conbfigures features offered by the board class.</p>
 </li>
 <li>
-<p><a href="/elements/diag.htm">Diag Element</a> – The DiagElement is part of the DevDing Example  and offers some additional diagnose information.</p>
+<p><a href="/elements/diag.htm">Diag Element</a> – The DiagElement offers web endpoints to get access to internal operating data and additional diagnose information.</p>
 </li>
 <li>
 <p><a href="/elements/digitalin.htm">Digital Input Element</a> – The DigitalInElement is used to capture digital input signal and create actions based on level changes. This can e.g. be used to capture actively from buttons and switches but also some sensors offer a digital output as a 0 / 1 value.</p>
@@ -197,13 +197,13 @@
 <p><a href="/elements/map.htm">Map Element</a> – The MapElement creates actions based on an in-bound value and range definitions.</p>
 </li>
 <li>
-<p><a href="/elements/menu.htm">Menu Element</a> – The MenuElement allows controlling multiple values or switches by using a single rotary encoder.</p>
+<p><a href="/elements/menu.htm">Menu Element</a> – The MenuElement allows controlling multiple values or switches by using joystick inputs and rotary encoder.</p>
 </li>
 <li>
 <p><a href="/elements/mdns.htm">Multicast DNS Service</a> – The mDNS service is used as the standard device discovery mechanism for HomeDing devices. This allows finding all devices in the home network.</p>
 </li>
 <li>
-<p><a href="/elements/ntptime.htm">NTPTime Element</a> – The NTPTimeElement can retrieve the local time from an external ntp server on the internet.</p>
+<p><a href="/elements/ntptime.htm">NTPTime Element</a> – The NTPTimeElement can retrieve the local time from an external NTP server using the ntp protocol on the internet.</p>
 </li>
 <li>
 <p><a href="/elements/light/neo.htm">Neo Element</a> – The Neo Element implements using LED Stripes and LED panels based on the ws2812 chip and protocol and provides some color animations and transitions. Neopixels is a brand name for LED stripes with the ws2812 chips.</p>
@@ -230,7 +230,7 @@
 <p><a href="/elements/state.htm">Persisting Current State of Elements</a> – Enable devices to restart with the values and the current state after a reboot or deep sleep.</p>
 </li>
 <li>
-<p><a href="/elements/rfcodes.htm">RFCodes Element</a> – The RFCodes Element is used send and receive RF signals to switching and dimming devices using RF protocols like RF433 or RF315.</p>
+<p><a href="/elements/rfcodes.htm">RFCodes Element</a> – The RFCodes Element is used for sending and receiving RF signals to switching and dimming devices using RF protocols like 433 or 315 MHz.</p>
 </li>
 <li>
 <p><a href="/elements/audio/radio.htm">Radio Element</a> – The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.</p>
@@ -260,7 +260,7 @@
 <p><a href="/elements/scene.htm">Scene Element</a> – The Scene Element sends a series of actions triggered by a single incoming action. They can be send out step by step using a defined delay or by actions.</p>
 </li>
 <li>
-<p><a href="/elements/schedule.htm">Schedule Element</a> – The ScheduleElement creates events based on the current time.</p>
+<p><a href="/elements/schedule.htm">Schedule Element</a> – The ScheduleElement creates on and off events based on the current local time.</p>
 </li>
 <li>
 <p><a href="/elements/select.htm">Select Element</a> – The SelectElement is used to choose one of many options with keys and a values. When selecting one of the options a key action and a value action is dispatched.</p>
@@ -275,7 +275,7 @@
 <p><a href="/elements/light/stripe.htm">Stripe Element</a> – The StripeElement is used as a base class to control a series of lights, typically LEDs by WRGB Value and Brightness. It is used as a base class for other light elements using a specific chip or protocol.</p>
 </li>
 <li>
-<p><a href="/elements/switch.htm">Switch Element</a> – The SwitchElement is used to toggle the state of a boolean value to on or off by a single action.</p>
+<p><a href="/elements/switch.htm">Switch Element</a> – The SwitchElement switches a boolean output value and is used to toggle the state of a boolean values to on/off values by a single action.</p>
 </li>
 <li>
 <p><a href="/elements/tm1637.htm">TM1637 Element</a> – The TM1637 is a chip that allows using 7-segment displays up to 6 digits.</p>
@@ -293,10 +293,13 @@
 <p><a href="/elements/touch.htm">Touch Element</a> – The TouchElement enables creating Actions by using touch input feature of the ESP32 than detects changes in the capacity e.g. when a finger is nearby.</p>
 </li>
 <li>
-<p><a href="/elements/value.htm">Value Element</a> – The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value. This can e.g. be used to drive a LED or a relay.</p>
+<p><a href="/elements/value.htm">Value Element</a> – The ValueElement combines receiving modifying actions for a numeric integer value and sending actions on changing the value. This can also be used as a base class for more specific elements like the switch or calc element.</p>
 </li>
 <li>
-<p><a href="/elements/weatherfeed.htm">WeatherFeed Element</a> –</p>
+<p><a href="/elements/weatherfeed.htm">WeatherFeed Element</a> – The WeatherFeedElement pulls information on the weather forecasts for a specific location from the internet and dispatches actions with specific data items.</p>
+</li>
+<li>
+<p><a href="/elements/webbutton.htm">WebButton Element</a> – The WebButton Element  adds a button the Web UI of the board and allows sending actions directly from the web UI without a corresponding active element in the device.</p>
 </li>
 <li>
 <p><a href="/elements/wot.htm">WoT Element</a> – The Element enables …</p>

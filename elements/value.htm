@@ -33,21 +33,24 @@
               <use href="/icons.svg#value"></use>
             </svg>
           
-            The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value. This can e.g. be used to drive a LED or a relay.
+            The ValueElement combines receiving modifying actions for a numeric integer value and sending actions on changing the value. This can also be used as a base class for more specific elements like the switch or calc element.
 
           </div>
         
-        <h2>Web UI</h2>
-<p>On the board page this element is presented by using a specialized widget that visualizes and enables controlling the actual value:</p>
+        <p>The ValueElement is often used as the internal state element of a parameter or value of other elements like the
+brightness of a display.  that can be changed by a specific action.  Also this Element can directy sen its value to a
+pwm output to control a LED.</p>
+<p>The ValueElement can persist the current value using the state Element that will be reused after a power down/up cycle.</p>
+<h2>Web UI</h2>
+<p>On the board page this element is presented by using a specialized widget that visualizes and enables controlling the
+actual value:</p>
 <p><img src="/elements/valueui.png" alt="Value Widget"></p>
 <p>The slider can be used to adjust the value interactively and the arrows allow single step changes.</p>
 <p>The setup icon opens a dialog to change the configuration properties.</p>
 <h2>Value Properties and actions</h2>
-<p>The Value Element is used to implement a property or parameter as a single value independent from a specific Element. The Value Element can send actions to other Elements whenever the value changes.</p>
+<p>The Value Element is used to implement a property or parameter as a single value independent from a specific Element.
+The Value Element can send actions to other Elements whenever the value changes.</p>
 <p>The values itself can be modified by other Elements using several modifying actions and by the corresponding web UI.</p>
-<!-- 
-ToDo: A default value can be specified in the configuration but can be saved to  survive restarting the device.
-  -->
 <h3>Example</h3>
 <p>Two Buttons should be used to increment and decrement the brightness of an attached LED.</p>
 <h3>Solution</h3>
@@ -122,6 +125,8 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 <span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
+<li><a href="/elements/switch.htm">Switch Element</a></li>
+<li><a href="/elements/calc.htm">Calc Element</a></li>
 <li><a href="/elements/state.htm">Persisting Current State of Elements</a></li>
 <li><a href="/elements/rotary.htm">Rotary Element</a></li>
 <li><a href="/elements/menu.htm">Menu Element</a></li>

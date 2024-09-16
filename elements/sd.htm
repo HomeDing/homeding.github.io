@@ -30,7 +30,7 @@
         
           <div class="iconcard">
             <svg class="icon">
-              <use href="/icons.svg#no"></use>
+              <use href="/icons.svg#sdcard"></use>
             </svg>
           
             The SDElement  uses the SPI bus to connect a SD card and makes the files available for reading and writing in the `/sd` folder.
@@ -48,7 +48,40 @@ e.g. for recording sensor data or serving additional files on the web frontend.<
 <p>The SD Element uses the system wide SPI bus for data transfer and is available on ESP8266 and ESP32 boards.</p>
 <p>The pins that are used by the SPI bus in general can be configured in the Device Element.</p>
 <p>Only the SPI Chip Select signal for the SD card has to be configured in the SD Element configuration.</p>
-<p>Micro SD Card SPI Mode</p>
+<h2>Element Configuration</h2>
+<p>The following properties are available for configuration of the element:</p>
+<blockquote>
+<p><strong>csPin</strong> – this is the GPIO pin for the cs (chip select) signal of the sd card.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> – The location of the device.</p>
+<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
+Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
+</blockquote>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> 
+  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D4"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Element State</h2>
+<p>The following properties are available with the current values at runtime</p>
+<p><strong>active</strong> - Is set to true when the element is active.</p>
+<h3>Example State</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"sd/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span>
+    ...
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Micro SD Card connections for SPI Mode</h2>
 <table>
 <thead>
 <tr>
@@ -95,40 +128,6 @@ e.g. for recording sensor data or serving additional files on the web frontend.<
 </tr>
 </tbody>
 </table>
-<h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element:</p>
-<blockquote>
-<p><strong>csPin</strong> – this is the GPIO pin for the cs (chip select) signal of the sd card.</p>
-</blockquote>
-<p>From the base element implementation the following properties are available for configuration:</p>
-<blockquote>
-<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
-<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
-<p><strong>room</strong> – The location of the device.</p>
-<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
-<p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
-Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
-</blockquote>
-<h3>Configuration Example</h3>
-<p>This example shows how to configure this element:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> 
-  <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"cspin"</span><span class="token operator">:</span> <span class="token string">"D4"</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h2>Element State</h2>
-<p>The following properties are available with the current values at runtime</p>
-<p><strong>active</strong> - Is set to true when the element is active.</p>
-<h3>Example State</h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"sd/0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span>
-    ...
-    "
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
 <h2>See Also</h2>
 <ul>
 <li><a href="/elements/sdmmc.htm">SD MMC Element</a></li>
