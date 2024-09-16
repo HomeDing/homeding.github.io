@@ -1,7 +1,9 @@
 ---
 title: DHT Element
 icon: dht
-tags: ["Element", "Sensor"]
+tags:
+  - "Element"
+  - "Sensor"
 layout: "page.njk"
 description: Support of the DHT air temperature and humidity sensor chips.
 excerpt: >

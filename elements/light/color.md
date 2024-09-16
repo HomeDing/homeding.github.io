@@ -1,7 +1,9 @@
 ---
 title: Color Element
 icon: color
-tags: ["Element", "Light"]
+tags:
+  - "Element"
+  - "Light"
 layout: "page.njk"
 description: Support Color values for light controlling elements. 
 excerpt: >

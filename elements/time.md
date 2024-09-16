@@ -1,7 +1,9 @@
 ---
 title: Time Element
 icon: time
-tags: ["Element", "Time"]
+tags:
+  - "Element"
+  - "Time"
 layout: "page.njk"
 excerpt: >
   The time element creates actions with the current local time as value.

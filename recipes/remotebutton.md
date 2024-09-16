@@ -1,6 +1,8 @@
 ---
 title: Remote button
-tags: ["Recipe", "WIP"]
+tags:
+  - "Recipe"
+  - "WIP"
 layout: "page.njk"
 ---
 

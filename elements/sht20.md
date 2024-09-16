@@ -1,7 +1,9 @@
 ---
 title: SHT20 Element
 icon: dht
-tags: ["Element", "Input"]
+tags:
+  - "Element"
+  - "Input"
 layout: "page.njk"
 excerpt: >
   The SHT2x sensors provide some high precision temperature and humidity sensors that communicate on the I2C bus.

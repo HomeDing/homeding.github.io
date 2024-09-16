@@ -1,11 +1,13 @@
 ---
 title: Device Element
 icon: device
-tags: ["Element", "System"]
+tags:
+  - "Element"
+  - "System"
 layout: "page.njk"
 description: Support global device settings. 
 excerpt: >
-  The DeviceElement allows configuration of the behavior of the device and the features offered by the board class.
+  The DeviceElement allows configuration of the behavior at the device level and conbfigures features offered by the board class.
 ---
 
 By specifying the configuration for the `device` element the general settings for the device can be controlled.

@@ -1,7 +1,8 @@
 ---
 title: AND Element
 icon: and
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Calculate when all input values are true
 excerpt: >

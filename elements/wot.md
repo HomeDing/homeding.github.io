@@ -1,7 +1,9 @@
 ---
 title: WoT Element
 icon: wot
-tags: ["Element", "WIP"]
+tags:
+  - "Element"
+  - "WIP"
 layout: "page.njk"
 # description: ...
 excerpt: >

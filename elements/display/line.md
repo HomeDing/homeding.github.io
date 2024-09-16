@@ -1,7 +1,8 @@
 ---
 title: DisplayLine Element
 icon: displayline
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Displaying a static line.
 excerpt: >

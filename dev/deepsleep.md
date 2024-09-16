@@ -1,6 +1,8 @@
 ---
 title: Using the deep sleep mode
-tags: ["Implementation", "System"]
+tags:
+  - "Implementation"
+  - "System"
 layout: "page.njk"
 excerpt: >
   The deep sleep mode allows saving energy consumption by powering down the device for a defined time

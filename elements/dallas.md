@@ -1,7 +1,9 @@
 ---
 title: Dallas Element
 icon: dallas
-tags: ["Element", "Sensor"]
+tags:
+  - "Element"
+  - "Sensor"
 layout: "page.njk"
 description: Support of the Dallas / DS18B20 based sensors.
 excerpt: >

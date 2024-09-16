@@ -1,6 +1,8 @@
 ---
 title: Boards and Processor modules
-tags: ["Board", "Implementation"]
+tags:
+  - "Board"
+  - "Implementation"
 layout: "page.njk"
 description: Boards supported by the HomeDing library
 excerpt: >

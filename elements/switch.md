@@ -1,13 +1,16 @@
 ---
 title: Switch Element
-icon: switch
-tags: ["Element"]
-excerpt: >
-  The SwitchElement is used to toggle the state of a boolean value to on or off by a single action.
 layout: "page.njk"
+icon: switch
+tags:
+  - "Element"
+excerpt: >
+  The SwitchElement switches a boolean output value and is used to toggle the state of a boolean values to on/off values
+  by a single action.
 ---
 
-It is implemented as a special value element using the range 0 to 1 and can be used with the menu element.
+The Switch Element can be triggered from a [DigitalIn Element](/elements/digitalin.md) with a momentary button and
+the Web UI also allows toggeling using the web frontend.
 
 
 ## Web UI for the Switch Element

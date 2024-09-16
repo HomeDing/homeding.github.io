@@ -1,6 +1,10 @@
 ---
 title: Display TouchCST816 Element
-tags: ["Element", "Display", "Input", "WIP"]
+tags:
+  - "Element"
+  - "Display"
+  - "Input"
+  - "WIP"
 layout: "page.njk"
 excerpt: >
   The DisplayTouchCST816 Element enables retrieving one point touch events

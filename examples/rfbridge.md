@@ -1,6 +1,8 @@
 ---
 title: RF Bridge Example
-tags: ["Example", "WIP"]
+tags:
+  - "Example"
+  - "WIP"
 layout: "page.njk"
 description: --
 excerpt: >

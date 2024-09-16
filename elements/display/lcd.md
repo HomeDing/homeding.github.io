@@ -1,7 +1,9 @@
 ---
 title: Display LCD Element
 icon: displaylcd
-tags: ["Element", "Display"]
+tags:
+  - "Element"
+  - "Display"
 layout: "page.njk"
 description: Using LCD displays with a HD44780 controller chip.
 excerpt: >

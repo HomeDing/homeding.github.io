@@ -1,7 +1,8 @@
 ---
 title: PMS Element
 icon: pms
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Support of the PMS5003 air quality sensors.
 excerpt: >

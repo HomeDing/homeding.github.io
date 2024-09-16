@@ -1,7 +1,9 @@
 ---
 title: Neopixel board for ESP-01
 icon: neo
-tags: ["Element", "Light"]
+tags:
+  - "Element"
+  - "Light"
 layout: "page.njk"
 excerpt: >
   The neo board is a very specific adapter to drive a Neopixel based

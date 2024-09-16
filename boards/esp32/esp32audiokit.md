@@ -1,6 +1,8 @@
 ---
 title: Ai-Thinker ESP32 Audio Kit
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP32 Board with Audio features
 excerpt: >

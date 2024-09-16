@@ -1,7 +1,9 @@
 ---
 title: Light Element
 icon: light
-tags: ["Element", "Light"]
+tags:
+  - "Element"
+  - "Light"
 layout: "page.njk"
 description: Support GPIO output pins for controlling lights with multiple color channels.
 excerpt: >

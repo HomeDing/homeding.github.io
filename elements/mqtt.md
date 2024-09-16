@@ -1,7 +1,9 @@
 ---
 title: MQTT Element
 icon: mqtt
-tags: ["Element", "Network"]
+tags:
+  - "Element"
+  - "Network"
 layout: "page.njk"
 description: publishing values to a MQTT Sever
 excerpt: >

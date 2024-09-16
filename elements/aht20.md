@@ -1,7 +1,9 @@
 ---
 title: AHT20 Element
 icon: dht
-tags: ["Element", "Sensor"]
+tags:
+  - "Element"
+  - "Sensor"
 layout: "page.njk"
 description: Support of the AHT20 air temperature and humidity sensor chips.
 excerpt: >

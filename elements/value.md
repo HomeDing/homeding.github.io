@@ -1,16 +1,25 @@
 ---
 title: Value Element
 icon: value
-tags: ["Element"]
+tags: 
+  - "Element"
 layout: "page.njk"
 excerpt: >
-  The ValueElement combines receiving modifying actions for an internal state value and sending actions on changing the value.
-  This can e.g. be used to drive a LED or a relay.
+  The ValueElement combines receiving modifying actions for a numeric integer value and sending actions on changing the value.
+  This can also be used as a base class for more specific elements like the switch or calc element.
 ---
+
+The ValueElement is often used as the internal state element of a parameter or value of other elements like the
+brightness of a display.  that can be changed by a specific action.  Also this Element can directy sen its value to a
+pwm output to control a LED.
+
+The ValueElement can persist the current value using the state Element that will be reused after a power down/up cycle.
+
 
 ## Web UI
 
-On the board page this element is presented by using a specialized widget that visualizes and enables controlling the actual value:
+On the board page this element is presented by using a specialized widget that visualizes and enables controlling the
+actual value:
 
 ![Value Widget](/elements/valueui.png)
 
@@ -21,18 +30,16 @@ The setup icon opens a dialog to change the configuration properties.
 
 ## Value Properties and actions
 
-The Value Element is used to implement a property or parameter as a single value independent from a specific Element. The Value Element can send actions to other Elements whenever the value changes.
+The Value Element is used to implement a property or parameter as a single value independent from a specific Element.
+The Value Element can send actions to other Elements whenever the value changes.
 
 The values itself can be modified by other Elements using several modifying actions and by the corresponding web UI.
-
-<!-- 
-ToDo: A default value can be specified in the configuration but can be saved to  survive restarting the device.
-  -->
 
 
 ### Example
 
 Two Buttons should be used to increment and decrement the brightness of an attached LED.
+
 
 ### Solution
 
@@ -57,20 +64,20 @@ Here the ValueElement can help. It allows
 The following properties are available for configuration of the element.
 
 > **min** -- Defines the minimum of the value.
-> 
+>
 > **max** -- Defines the maximum of the value.
-> 
+>
 > **step** -- The value will be incremented / decremented by the multiple of the step value
 > when using the up / down actions.
-> 
+>
 > **value** -- An initial/default value can be set using the configuration.
-> 
+>
 > **onValue** -- These actions will be emitted whenever the value has changed.
-> 
+>
 > **up** -- the value can be incremented by the passed value. Negative values are allowed.
-> 
+>
 > **down** -- the value can be decremented by the passed value.
-> 
+>
 > **label** -- The label is used together with the menu element to show the current selected value.
 
 {% include "./elementproperties.md" %}
@@ -119,9 +126,10 @@ The current value is reported as the state of a value element.
 
 ## See also
 
+* [Switch Element](/elements/switch.md)
+* [Calc Element](/elements/calc.md)
 * [Persisting Current State of Elements](/elements/state.md)
 * [Rotary Element](/elements/rotary.md)
 * [Menu Element](/elements/menu.md)
 * [Dimmable LED recipe](/recipes/leddim.md)
-
 

@@ -1,7 +1,8 @@
 ---
 title: Log Element
 icon: log
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Support logging of values into a file in the filesystem.
 excerpt: >

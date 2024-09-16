@@ -1,7 +1,9 @@
 ---
 title: Digital Input Element
 icon: digitalin
-tags: ["Element", "Input"]
+tags:
+  - "Element"
+  - "Input"
 layout: "page.njk"
 description: Support digital input signals to create actions. 
 excerpt: >

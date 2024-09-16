@@ -1,7 +1,8 @@
 ---
 title: Button Element
 icon: button
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Create actions based on digital input gestures.
 excerpt: The ButtonElement allows detecting multiple button press gestures like single short click, double click and long press.

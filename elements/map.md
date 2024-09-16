@@ -1,7 +1,9 @@
 ---
 title: Map Element
 icon: map
-tags: ["Element", "WIP"]
+tags:
+  - "Element"
+  - "WIP"
 layout: "page.njk"
 excerpt: >
   The MapElement creates actions based on an in-bound value and range definitions.

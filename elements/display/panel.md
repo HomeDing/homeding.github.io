@@ -1,6 +1,8 @@
 ---
 title: Color Displays using the ESP32-S3 16-bit panel interface
-tags: ["Element", "Display"]
+tags:
+  - "Element"
+  - "Display"
 layout: "page.njk"
 excerpt: >
   The DisplayESP32PanelElement enables using displays connected with the ESP32 Panel interface.

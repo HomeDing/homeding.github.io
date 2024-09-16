@@ -1,6 +1,8 @@
 ---
 title: Board C3 pico 
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 excerpt: >
   The C3 pico is a board compatible to the D1 Mini boards and shields 

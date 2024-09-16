@@ -1,7 +1,8 @@
 ---
 title: Audio Element
 icon: audio
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Audio processing on ESP32
 excerpt: >

@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add(".vscode/**");
   eleventyConfig.ignores.add("**/_*");
   eleventyConfig.ignores.add("**/_*.*");
-  
+
   const contentFolders = ["boards", "boards", "concepts", "dev", "elements", "examples", "portal", "recipes", "sensors", "steps", "stories"];
   const assetFolders = ["i", "v09", "v09m", "home"];
 
@@ -176,7 +176,10 @@ module.exports = function(eleventyConfig) {
       console.error("dataOf: no collection given.")
     }
     if (Array.isArray(col)) {
-      const page = col.find(e => e.url.includes(name + '.htm'));
+      let page = col.find(e => e.url.includes('/' + name + '.htm'));
+      if (!page) {
+        page = col.find(e => e.url.includes(name + '.htm'));
+      }
       if (page) {
         return (page.data[item]);
       }
@@ -208,7 +211,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(myMarkdown);
   eleventyConfig.addPlugin(pluginMermaid);
-  
+
   // console.log(eleventyConfig.ignores);
 
   return {

@@ -1,7 +1,9 @@
 ---
 title: DisplayText Element
 icon: displaytext
-tags: ["Element", "Display"]
+tags:
+  - "Element"
+  - "Display"
 layout: "page.njk"
 description: Displaying text values.
 excerpt: >

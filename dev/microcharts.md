@@ -1,6 +1,9 @@
 ---
 title: Micro Charts
-tags: ["Implementation", "System", "WIP"]
+tags:
+  - "Implementation"
+  - "System"
+  - "WIP"
 layout: "page.njk"
 ---
 

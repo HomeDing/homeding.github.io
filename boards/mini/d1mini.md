@@ -1,6 +1,8 @@
 ---
 title: D1 Mini Boards (ESP8266 and ESP32)
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP8266 General purpose development boards with same form factor.
 excerpt: >

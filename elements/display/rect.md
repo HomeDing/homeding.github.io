@@ -1,7 +1,9 @@
 ---
 title: DisplayRect Element
 icon: displayrect
-tags: ["Element", "Display"]
+tags:
+  - "Element"
+  - "Display"
 layout: "page.njk"
 description: Displaying a circle boolean values.
 excerpt: >

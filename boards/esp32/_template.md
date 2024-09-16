@@ -1,6 +1,8 @@
 ---
 title:
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP32 based board with ...
 excerpt: >

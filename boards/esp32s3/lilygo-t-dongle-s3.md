@@ -1,6 +1,8 @@
 ---
 title: LilyGO T-Dongle S3
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: USB stick board with display and ESP32-S3.
 excerpt: >

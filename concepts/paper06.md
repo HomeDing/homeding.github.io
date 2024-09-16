@@ -1,6 +1,8 @@
 ---
 title: The Web of Things (WoT)
-tags: ["Implementation", "WIP"]
+tags:
+  - "Implementation"
+  - "WIP"
 layout: "page.njk"
 description: Insights into the design of an IoT device,
 ---

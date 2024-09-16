@@ -1,7 +1,10 @@
 ---
 title: Analog Element
 icon: analog
-tags: ["Element", "Input", "Sensor"]
+tags:
+  - "Element"
+  - "Input"
+  - "Sensor"
 layout: "page.njk"
 description: Trigger events based on input voltage
 excerpt: >

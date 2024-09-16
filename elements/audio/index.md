@@ -1,6 +1,8 @@
 ---
 title: Audio Elements Overview
-tags: ["Element", "Audio"]
+tags:
+  - "Element"
+  - "Audio"
 layout: "page.njk"
 excerpt:
   These Audio related components and elements are supported

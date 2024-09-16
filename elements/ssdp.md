@@ -1,7 +1,9 @@
 ---
 title: Simple Service Discovery Protocol (SSDP) Element
 icon: ssdp
-tags: ["Element", "System"]
+tags:
+  - "Element"
+  - "System"
 excerpt: >
   The SSDPElement allows specifying the properties to send SSDP messages to the local network so the device can be discovered by Plug & Play Services.
 layout: "page.njk"

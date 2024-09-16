@@ -1,7 +1,8 @@
 ---
 title: Tone Element
 icon: tone
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 excerpt: >
   The Tone Element allows creating sound using the Arduino tone function.

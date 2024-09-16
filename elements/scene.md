@@ -1,7 +1,8 @@
 ---
 title: Scene Element
 icon: scene
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 excerpt: >
   The Scene Element sends a series of actions triggered by a single incoming action.

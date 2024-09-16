@@ -1,6 +1,8 @@
 ---
 title: Seeed Studio XIAO ESP32C6
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: Small ESP32C6 Board
 excerpt: ...

@@ -1,11 +1,13 @@
 ---
 title: Schedule Element
 icon: schedule
-tags: ["Element", "Time"]
+tags:
+  - "Element"
+  - "Time"
 layout: "page.njk"
 description: Create events started on time.
 excerpt: >
-  The ScheduleElement creates events based on the current time.
+  The ScheduleElement creates on and off events based on the current local time.
 ---
 
 When using this element a real time retrieving element must be configured as well

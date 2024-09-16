@@ -1,9 +1,10 @@
 ---
 title: Menu Element
 icon: menu
-tags: ["Element"]
+tags:
+  - "Element"
 excerpt: >
-  The MenuElement allows controlling multiple values or switches by using a single rotary encoder.
+  The MenuElement allows controlling multiple values or switches by using joystick inputs and rotary encoder.
 layout: "page.njk"
 ---
 

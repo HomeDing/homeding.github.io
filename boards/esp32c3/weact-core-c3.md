@@ -1,6 +1,8 @@
 ---
 title: WeAct Studio ESP32-C3 Core
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP32-C3 based board with ...
 excerpt: >
@@ -35,7 +37,8 @@ following settings:
 
 There are 2 momentary buttons on the board.
 1 of them is pulling the BOOT GPIO09 pin to ground and one is connected to the EN and will reset the processor.
-
+
+
 Boot = IO9
 Reset = Chip_EN
 
@@ -65,7 +68,8 @@ This **env.json** file can be used as a starting point for configuring this boar
       "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
     }
   },
-
+
+
   "state": {
     "0": { "savedelay": "8s" }
   },

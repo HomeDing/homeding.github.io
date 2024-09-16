@@ -1,7 +1,9 @@
 ---
 title: DSTime Element
 icon: dstime
-tags: ["Element", "Time"]
+tags:
+  - "Element"
+  - "Time"
 layout: "page.njk"
 description: Support getting local time from a DS3231 chip.
 excerpt: >

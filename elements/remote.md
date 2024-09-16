@@ -1,7 +1,8 @@
 ---
 title: Remote Element
 icon: remote
-tags: ["Element"]
+tags:
+  - "Element"
 excerpt: >
   The Remote Element allows sending actions over the network to other elements in
   HomeDing devices using http GET requests.

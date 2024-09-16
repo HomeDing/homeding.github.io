@@ -1,7 +1,10 @@
 ---
 title: Stripe Element
 icon: stripe
-tags: ["Element", "Light", "WIP"]
+tags:
+  - "Element"
+  - "Light"
+  - "WIP"
 layout: "page.njk"
 description: Support LED stripes with individually addressable multiple colorful LEDs.
 excerpt: >

@@ -1,7 +1,10 @@
 ---
 title: SCD4x Element for CO2 Sensors
 icon: no
-tags: ["Element", "Sensor", "WIP"]
+tags:
+  - "Element"
+  - "Sensor"
+  - "WIP"
 layout: "page.njk"
 excerpt: >
   The SCD40 and SCD41 sensors from sensirion are available on breakout boards to meassure the CO2 in the air by providing values in ppm units.

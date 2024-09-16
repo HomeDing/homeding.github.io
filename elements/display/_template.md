@@ -1,6 +1,9 @@
 ---
 title: Color Displays based on xxxx
-tags: ["Element", "Display", "WIP"]
+tags:
+  - "Element"
+  - "Display"
+  - "WIP"
 layout: "page.njk"
 description: xxxx
 excerpt: >

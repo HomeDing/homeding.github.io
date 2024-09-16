@@ -1,7 +1,8 @@
 ---
 title: ADD Element
 icon: add
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Calculate sum of values
 excerpt: The ADD Element sums up multiple input values to create a single output value.

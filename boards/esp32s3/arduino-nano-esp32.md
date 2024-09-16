@@ -1,6 +1,8 @@
 ---
 title: Arduino Nano ESP32
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: Arduino Nano ESP32
 excerpt: >

@@ -1,6 +1,7 @@
 ---
 title: CALC Abstract Element
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Base Element implementation for calculation supporting elements.
 excerpt: >

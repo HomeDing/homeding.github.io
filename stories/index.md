@@ -1,6 +1,8 @@
 ---
 title: Examples and Stories
-tags: ["Example", "Story"]
+tags:
+  - "Example"
+  - "Story"
 layout: "page.njk"
 excerpt: >
   The Homeding library comes with some example sketches but also with some more

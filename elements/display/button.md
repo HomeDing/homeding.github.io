@@ -1,6 +1,10 @@
 ---
 title: Display Button Element
-tags: ["Element", "Display", "Input", "WIP"]
+tags:
+  - "Element"
+  - "Display"
+  - "Input"
+  - "WIP"
 layout: "page.njk"
 excerpt: >
   The Display Button Element enables creating Actions by touching a specific area

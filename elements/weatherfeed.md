@@ -1,12 +1,14 @@
 ---
 title: WeatherFeed Element
 icon: no
-tags: ["Element", "Input"]
+tags:
+  - "Element"
+  - "Input"
 layout: "page.njk"
+excerpt: >
+  The WeatherFeedElement pulls information on the weather forecasts for a specific location from the internet
+  and dispatches actions with specific data items.
 ---
-
-The WeatherFeedElement pulls information on the weather forecasts for a specific location from the internet
-and dispatches actions with specific data items.
 
 The Element in general can load information from and URL that is using http protocol and a simple GET call.
 As for now the weather service from <https://openweathermap.org> is tested and working.

@@ -1,7 +1,9 @@
 ---
 title: Rotary Element
 icon: rotary
-tags: ["Element", "Input"]
+tags:
+  - "Element"
+  - "Input"
 layout: "page.njk"
 excerpt: >
   The RotaryElement is used to capture increments and decrements for values using a rotary encoder.

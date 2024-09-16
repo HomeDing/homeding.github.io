@@ -1,6 +1,8 @@
 ---
 title: Board C3 Mini 
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 excerpt: >
   This is D1 mini compatible board based on the EPS32-C3 MCU.

@@ -1,7 +1,8 @@
 ---
 title: OR Element
 icon: or
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Calculate when at least one of the input values is true.
 excerpt: >

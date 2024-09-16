@@ -1,6 +1,9 @@
 ---
 title: Display TouchFT6336U Element
-tags: ["Display", "Element", "WIP"]
+tags:
+  - "Display"
+  - "Element"
+  - "WIP"
 layout: "page.njk"
 ---
 

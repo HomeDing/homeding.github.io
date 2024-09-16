@@ -1,7 +1,9 @@
 ---
 title: DisplayBar Element
 icon: displaybar
-tags: ["Element", "WIP"]
+tags:
+  - "Element"
+  - "WIP"
 layout: "page.njk"
 description: Displaying progress values. 
 excerpt: >

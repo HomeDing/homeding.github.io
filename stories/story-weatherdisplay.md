@@ -1,6 +1,8 @@
 ---
 title: Build a Weather forecast display
-tags: ["Story", "WIP"]
+tags:
+  - "Story"
+  - "WIP"
 layout: "page.njk"
 ---
 

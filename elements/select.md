@@ -1,7 +1,8 @@
 ---
 title: Select Element
 no-icon: select
-tags: ["Element"]
+tags:
+  - "Element"
 excerpt: >
   The SelectElement is used to choose one of many options with keys and a values.
   When selecting one of the options a key action and a value action is dispatched.

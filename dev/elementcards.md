@@ -1,6 +1,8 @@
 ---
 title: HTML Templates for Elements
-tags: ["Implementation", "WIP"]
+tags:
+  - "Implementation"
+  - "WIP"
 layout: "page.njk"
 description: Element specific UI templates.
 excerpt: >

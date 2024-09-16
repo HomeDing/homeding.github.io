@@ -1,6 +1,8 @@
 ---
 title: XIAO ESP32 S3
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP32-S3 board
 excerpt: >

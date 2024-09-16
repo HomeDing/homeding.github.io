@@ -1,6 +1,9 @@
 ---
 title: Display Touch Element
-tags: ["Element", "Display", "Input"]
+tags:
+  - "Element"
+  - "Display"
+  - "Input"
 layout: "page.njk"
 excerpt: >
   The Display Touch Elements enables detecting touch events by touching a specific area on a

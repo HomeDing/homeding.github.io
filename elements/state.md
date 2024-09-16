@@ -1,6 +1,7 @@
 ---
 title: Persisting Current State of Elements
-tags: ["Element"]
+tags: 
+  - "Element"
 layout: "page.njk"
 excerpt: >
   Enable devices to restart with the values and the current state after a reboot or deep sleep.
@@ -20,8 +21,8 @@ Other Elements like sensors have no obvious use case for this.
 As the value element is also supporting saving the current value as a state it can be used to
 even save a last known sensor value.
 
-All Elements can save any values by calling the function `saveState(key, value)` implemented by
-the Element base class. in the element configuration the property `persist`
+All Elements can save any values by calling the function `saveState(key, value)` available in the Element base class.
+To enable saving the current state the property `usestate` must be set to `true`.
 
 This information will be used to create an action `type/id?{key}={value}` on the next element
 restart before starting the element. This action will then overwrite the configuration or value
@@ -70,7 +71,7 @@ configured:
 >
 > **clear** -- This action will clear out any state values from elements.
 
-In the Element the configuration of the persist property 
+In the Element the configuration of the persist property
 
 To avoid too much and too frequent storing these key+values the the state mechanism
 must be configured on the global and the element level.

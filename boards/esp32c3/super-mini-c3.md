@@ -1,6 +1,8 @@
 ---
 title: ESP32-C3 Super Mini
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP32-C3 thumb-size board with integrated antenna.
 excerpt: >

@@ -1,13 +1,13 @@
 ---
 title: RFCodes Element
-icon: no
-tags: ["Element"]
+icon: rfsend
+tags:
+  - "Element"
 excerpt: >
-  The RFCodes Element is used send and receive RF signals to switching and dimming devices
-  using RF protocols like RF433 or RF315.
+  The RFCodes Element is used for sending and receiving RF signals to switching and dimming devices
+  using RF protocols like 433 or 315 MHz.
 layout: "page.njk"
 ---
-
 
 ## About using RF 433 based communication
 

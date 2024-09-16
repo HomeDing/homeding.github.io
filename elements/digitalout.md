@@ -1,7 +1,8 @@
 ---
 title: Digital Output Element
 icon: digitalout
-tags: ["Element"]
+tags:
+  - "Element"
 layout: "page.njk"
 description: Support digital output signals based on actions.
 excerpt: >

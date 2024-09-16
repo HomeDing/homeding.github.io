@@ -1,7 +1,8 @@
 ---
 title: Reference Element
 icon: reference
-tags: ["Element"]
+tags:
+  - "Element"
 excerpt: >
   The ReferenceElement allows creating actions by comparing an incoming value with a reference value.
 layout: "page.njk"

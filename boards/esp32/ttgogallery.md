@@ -1,6 +1,8 @@
 ---
 title: TTGO Gallery (T14)
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP32 Wrover-B board with integrated TFT color display and audio.
 excerpt: >

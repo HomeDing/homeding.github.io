@@ -1,7 +1,9 @@
 ---
 title: Sensor Element Implementation
 icon: sensor
-tags: ["Element", "Implementation"]
+tags:
+  - "Element"
+  - "Implementation"
 layout: "page.njk"
 excerpt: >
   Many Element implementations for sensors require the same functionality regarding

@@ -1,11 +1,12 @@
 ---
 title: Diag Element
-tags: ["Implementation", "Element"]
+tags:
+  - "Implementation"
+  - "Element"
 layout: "page.njk"
 description: Make some diagnose information available.
 excerpt: >
-  The DiagElement is part of the DevDing Example 
-  and offers some additional diagnose information.
+  The DiagElement offers web endpoints to get access to internal operating data and additional diagnose information.
 ---
 
 

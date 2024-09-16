@@ -1,6 +1,8 @@
 ---
 title: Line Microchart
-tags: ["Implementation", "System"]
+tags:
+  - "Implementation"
+  - "System"
 layout: "page.njk"
 ---
 

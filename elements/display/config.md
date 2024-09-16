@@ -1,6 +1,8 @@
 ---
 title: Display Configuration
-tags: ["Element", "Display"]
+tags:
+  - "Element"
+  - "Display"
 layout: "page.njk"
 description: Parameters to configure display support.
 excerpt: >

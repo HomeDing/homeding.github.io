@@ -1,7 +1,9 @@
 ---
 title: Multicast DNS Service
 icon: mdns
-tags: ["Element", "System"]
+tags:
+  - "Element"
+  - "System"
 excerpt: >
   The mDNS service is used as the standard device discovery mechanism for HomeDing devices.
   This allows finding all devices in the home network.

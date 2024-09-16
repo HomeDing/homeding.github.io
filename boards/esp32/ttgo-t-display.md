@@ -1,6 +1,8 @@
 ---
 title: LilyGO TTGO T-Display
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 description: ESP32 board with integrated TFT color display.
 excerpt: >

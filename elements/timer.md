@@ -1,7 +1,9 @@
 ---
 title: Timer Element
 icon: timer
-tags: ["Element", "Time"]
+tags:
+  - "Element"
+  - "Time"
 description: Create repeating events.
 excerpt: The TimerElement creates events based on a one-time or cyclic timing pattern.
 layout: "page.njk"

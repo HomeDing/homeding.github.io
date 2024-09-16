@@ -1,6 +1,8 @@
 ---
 title: Touch Element
-tags: ["Element", "Input"]
+tags:
+  - "Element"
+  - "Input"
 layout: "page.njk"
 excerpt: >
   The TouchElement enables creating Actions by using touch input feature of

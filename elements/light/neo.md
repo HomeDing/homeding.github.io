@@ -1,7 +1,9 @@
 ---
 title: Neo Element
 icon: neo
-tags: ["Element", "Light"]
+tags:
+  - "Element"
+  - "Light"
 layout: "page.njk"
 excerpt: >
   The Neo Element implements using LED Stripes and LED panels based on the ws2812 chip

@@ -1,9 +1,14 @@
 ---
 title: Alarm Element
-tags: ["Element", "Time"]
+tags:
+  - "Element"
+  - "Time"
 layout: "page.njk"
 description: Create Alarm events.
-excerpt: The AlarmElement creates a single action at a specific time that can be used e.g. for wakeup signals.
+excerpt: >
+  The AlarmElement creates a single action 
+  when reaching a defined time of day.
+  This can be used e.g. for wakeup signals.
 ---
 
 <!-- ## Web UI for the Timer Element -->

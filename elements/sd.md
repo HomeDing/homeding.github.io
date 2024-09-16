@@ -1,7 +1,8 @@
 ---
 title: SD Card Element
-icon: no
-tags: ["Element"]
+icon: sdcard
+tags:
+  - "Element"
 layout: "page.njk"
 description: Support of the ... chip 
 excerpt: >
@@ -25,20 +26,6 @@ The SD Element uses the system wide SPI bus for data transfer and is available o
 The pins that are used by the SPI bus in general can be configured in the Device Element.
 
 Only the SPI Chip Select signal for the SD card has to be configured in the SD Element configuration.
-
-Micro SD Card SPI Mode
-
-| Pin | Description         |
-| --- | ------------------- |
-| 1   | Chip Select (CS)    |
-| 2   |   |
-| 3   | SPI-MISO (Data in)                 |
-| 4   | VDD                 |
-| 5   | SPI-CLK             |
-| 6   | GND                 |
-| 7   | SPI-MOSO (Data out) |
-| 8   |                     |
-| 9   |                     |
 
 ## Element Configuration
 
@@ -80,10 +67,24 @@ The following properties are available with the current values at runtime
   "sd/0": {
     "active":"true"
     ...
-    "
   }
 }
 ```
+
+
+## Micro SD Card connections for SPI Mode
+
+| Pin | Description         |
+| --- | ------------------- |
+| 1   | Chip Select (CS)    |
+| 2   |                     |
+| 3   | SPI-MISO (Data in)  |
+| 4   | VDD                 |
+| 5   | SPI-CLK             |
+| 6   | GND                 |
+| 7   | SPI-MOSO (Data out) |
+| 8   |                     |
+| 9   |                     |
 
 
 ## See Also

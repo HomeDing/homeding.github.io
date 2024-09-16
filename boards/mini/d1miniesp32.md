@@ -1,6 +1,8 @@
 ---
 title: Board D1 Mini ESP32
-tags: ["Board", "WIP"]
+tags:
+  - "Board"
+  - "WIP"
 layout: "page.njk"
 ---
 
