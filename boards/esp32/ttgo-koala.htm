@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTGO Koala Board</title>
+    <script src="/pages.js"></script>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/story.js" type="module"></script>
+    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+    <meta name='description' content='ESP32 Development board that fits on breadboards based on the ESP32 WROVER - B mdoule with integrated LiPo 3.7V battery management.
+'>
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
+    </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>TTGO Koala Board</h1>
+      
+        
+            <div class="plaincard">
+            
+            The TTGO T-Koala ESP32 board offers an good breadboard for development of ESP32 based solutions with battery powering.
+
+          </div>
+        
+        <p>There is a version of the board available that is based on the ESP32-WROOM-32 module.
+The difference is the PSRAM that is not available in the WROOM module</p>
+<p>This board is equipped with:</p>
+<ul>
+<li>ESP	ESP32 Wrover-B module</li>
+<li>3.7V battery charging circuit</li>
+<li>Supply voltage: 3.3V DC or 5V DC</li>
+<li>Flash memory: 4MByte in QIO Mode</li>
+<li>SRAM: 520KB</li>
+<li>PSRAM: 8MB, integrated in the Wrover module</li>
+<li>PCB dimensions: 51.4 x 25.2mm</li>
+<li>Momentary button for RST</li>
+<li>JST Connector: 2Pin 1.25mmx</li>
+<li>USB: Type-C connector</li>
+<li>USB-Bridge: CH340C chip</li>
+<li>LiPo Connector: JST-PH 2.0, 2 pins</li>
+<li>LiPo Loading Control chip TP4054</li>
+<li>3 LEDS (see below)</li>
+</ul>
+<p>There is a 3-pin connector to add a power switch. This allows for swithing a battery powered device on/off without
+detaching the LiPo.</p>
+<p>To use the connector the nearby 0-Ohm resistor must be desoldered.</p>
+<h2>LEDs</h2>
+<p>There are 3 LEDs on the board.</p>
+<ul>
+<li>
+<p>Red LED is Power</p>
+</li>
+<li>
+<p>Blue LED is charging indicator</p>
+</li>
+<li>
+<p>Green LED can be switched on / off by the GPIO5 pin.</p>
+</li>
+<li>
+<p>PIN 25</p>
+</li>
+<li>
+<p>PIN 35</p>
+</li>
+</ul>
+<p>(Noch nicht ganz sicher) *	25
+Nicht nutzbar wegen PSRam	16/17</p>
+<ul>
+<li>I2C</li>
+</ul>
+<p>SDA/SCL	21/22</p>
+<p><img src="ttgo-koala.webp" alt="alt text"></p>
+<h2>LEDs</h2>
+<p>IO5 : GREEN LED</p>
+<p>Blue LED: LiPo charge chip TP4054</p>
+<p>RED LED: 3.3V Power</p>
+<h2>Example env.json Device Configuration</h2>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"tkoala"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"T-Koala"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"LilyGO TTGO T-Koala"</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/index.htm"</span><span class="token punctuation">,</span>
+      <span class="token property">"cache"</span><span class="token operator">:</span> <span class="token string">"etag"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"diag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"green led"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"onboard green led"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"onvalue"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"switch/led"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="https://github.com/LilyGO/T-Koala">github.com LilyGO/T-Koala</a></li>
+<li><a href="https://de.aliexpress.com/item/1005002483438130.html">https://de.aliexpress.com/item/1005002483438130.html</a></li>
+<li><a href="https://www.fambach.net/ttgo-koala-esp32/">https://www.fambach.net/ttgo-koala-esp32/</a></li>
+</ul>
+
+        
+          <h2>Tags</h2>
+          <div class="taglist">
+            
+              <a href="/tag/board.htm">Board</a>
+            
+              <a href="/tag/wip.htm">Wip</a>
+            
+          </div>
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
+    </body>
+  </body>
+</html>
