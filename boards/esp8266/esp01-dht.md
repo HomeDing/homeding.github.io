@@ -9,7 +9,7 @@ This little board has a DHT22 sensor and power regulator for a ESP-01 module.
 :::
 
 
-![ESP-01 base board with DHT22](/boards/esp01-dht.jpg)
+![ESP-01 base board with DHT22](/boards/esp8266/esp01-dht.jpg)
 
 The ESP-01 only offers only small flash sizes so it is recommended to load the minimal sketch with added support for the DHTElement on the ESP-01 by using one of the adapter options.
 See general [ESP-01 board](/boards/esp8266/esp01.md) description.

@@ -108,5 +108,5 @@ See also <https://electronics.stackexchange.com/questions/569788/how-esp32-auto-
 
 * [esp32 DevKits](esp32_devkit.md) 30, 36 and 38 pin versions with WROOM module
 * [ESP32 Camera Module](esp32_cam.md)
-* [esp32 azure iot kit](esp32_azure_iot_kit.md)
+* [esp32 azure iot kit](azureiotkit.md)
 

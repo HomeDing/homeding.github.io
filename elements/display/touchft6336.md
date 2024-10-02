@@ -42,5 +42,5 @@ The following properties are available for configuration of the element:
 
 * [Display Touch Elements](/elements/display/touch.md)
 * [i2c bus](/dev/i2c.md)
-* [ESP32S3 SC01 Plus Panel](boards\esp32s3\sc01-plus.md)
+* [ESP32S3 SC01 Plus Panel](/boards/esp32s3/sc01-plus.md)
 

@@ -88,7 +88,7 @@ manually, recompile and upload the extended sketch.
 This will result in recoding the time consumed by the loop() function of elements to identify
 non-cooperative elements.
 
-The [Diag Element](/elements/diag.htm) provides a simple web page showing the current recorded
+The [Diag Element](/elements/diag.md) provides a simple web page showing the current recorded
 times using `http://devicename/profile` :
 
 ```txt
