@@ -29,10 +29,46 @@
 
   <main style="padding:1rem;max-width: 800px;">
     <h1>Displays using a GFX Library</h1>
-<p>The display drivers for pixel based displays in the HomeDing Library
-are using drivers based on a GFX library.</p>
-<p>The functionality of the GFX library is used to “draw” all kind of simple things to the displays like pixels, lines, rectangles
-and pure text. This is often done by having a equivalent of the display memory in a main memory buffer.</p>
+<p>The display drivers for pixel based displays in the HomeDing Library are using display driver implementation based on a GFX library.</p>
+<p>The typical functionality of a GFX library is to “draw” all kind of simple things to the displays like pixels, lines,
+rectangles and pure text.  This is often done by having a equivalent of the display memory in a main memory buffer but
+sometimes the drawn pixel are sent to the device as they are drawn.</p>
+<p>However the drawing functions directly use the driver implementation and therefore lack of some possibilities required for several cases:</p>
+<ul>
+<li>When only a part of a widget is required to be drawn a clipping area or rectlangle cannot be applied to avoid drawing on same pixels.</li>
+<li>ome drivers always send the whole display memory to the display requiring a lot of CPU cycles and time.</li>
+<li>Drawing primitives can use solid colors only.</li>
+</ul>
+<p>The HomeDing library includes several Elements for Widget implementations that draw by using callback functions as
+described in the <a href="https://github.com/mathertel/gfxDraw">gfxDraw Library</a>.</p>
+<p>The GFX library that includes the display specific output routines and bus drivers must only support a setPixel function.</p>
+<p>To display multiple elements / Widgets on one display 2 different drawing modes are implemented:</p>
+<h2>Simple drawing mode</h2>
+<p>This drawing implementation fits good into devives with limited cpu and memory capacities.</p>
+<p>It is optimized for drawing simple graphic elements on the device without the need to buffer the current display in memory.</p>
+<p>Drawing a graphic element is assuming the following situation:</p>
+<ul>
+<li>None of the elements do overlap with their drawing areas / bounding boxes.</li>
+<li>There is a common background color for all elements.</li>
+<li>Elements can „erase“ any previous drawing by simply filling the full drawing area with the background color and do a full redraw.</li>
+</ul>
+<p>With these conditions drawing widgets may do their internal optimization to avoid full drawing sequences.</p>
+<ul>
+<li>All elements that are marked for redraw are drawn in any order.</li>
+<li>When a new logical page is displayed the surface is erased with the background color and all widgets on the page are drawn.</li>
+</ul>
+<h2>Full drawing mode</h2>
+<p>This drawing implementation fits good for devices that offer enough resources for complex graphical elements.</p>
+<p>This includes drawing overlapping elements with the support of current clipping areas and dynamic bounding boxes.</p>
+<ul>
+<li>All elements that are marked for redraw will trigger the redraw of all objects covering the area in the order defined by the configuration.</li>
+<li>The display implementation offering the getColor(x,y) functionality can be used.</li>
+<li>The clipping box will be set ao widgets will be able to optimise drawing by only setting pixels within the clipping area.</li>
+<li>Any drawing outside the clipping area will not be effective.</li>
+</ul>
+<p>SetPixel</p>
+<p>GetPixel
+Set clipping area</p>
 <h2>How drawing is implemented</h2>
 <p>To show information on a display a set of widgets aka. DisplayOutputElements is available.</p>
 <p>By setting the properties or values of these Elements they are marked to be drawn on the display and the DisplayAdapter implementation has also been flagged for redraw.</p>
