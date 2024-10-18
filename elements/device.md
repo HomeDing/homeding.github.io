@@ -38,7 +38,7 @@ The following properties are available for configuration of the element.
 >
 > **sd** - The mDNS based service discovery can be switched off by setting this property to `false`.
 >
-> **safemode** (boolean) - This value can be set to 0/false to not use the safemode. See [safemode description](/dev/> safemode.md).
+> **safemode** (boolean) - This value can be set to 0/false to not use the safemode. See [safemode description](/dev/safemode.md).
 
 {% include "./elementproperties.md" %}
 

@@ -271,12 +271,6 @@ In this example the configured pin and the interval values are shown.
 </div>
 ```
 
-## See also
-
-* [template example](/examples/template.md)
-
-
-
 [^hostname]: replace `homeding` with the network name of your device to use this link.
 
 [Element class]: /dev/elementclass.md

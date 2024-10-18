@@ -1,29 +1,77 @@
 # Displays using a GFX Library
 
-The display drivers for pixel based displays in the HomeDing Library
-are using drivers based on a GFX library.
+The display drivers for pixel based displays in the HomeDing Library are using display driver implementation based on a GFX library.
 
-The functionality of the GFX library is used to "draw" all kind of simple things to the displays like pixels, lines, rectangles
-and pure text. This is often done by having a equivalent of the display memory in a main memory buffer.
+The typical functionality of a GFX library is to "draw" all kind of simple things to the displays like pixels, lines,
+rectangles and pure text.  This is often done by having a equivalent of the display memory in a main memory buffer but
+sometimes the drawn pixel are sent to the device as they are drawn.
+
+However the drawing functions directly use the driver implementation and therefore lack of some possibilities required for several cases:
+
+* When only a part of a widget is required to be drawn a clipping area or rectlangle cannot be applied to avoid drawing on same pixels.
+* ome drivers always send the whole display memory to the display requiring a lot of CPU cycles and time.
+* Drawing primitives can use solid colors only.
+
+The HomeDing library includes several Elements for Widget implementations that draw by using callback functions as
+described in the [gfxDraw Library](https://github.com/mathertel/gfxDraw).
+
+The GFX library that includes the display specific output routines and bus drivers must only support a setPixel function.
+
+To display multiple elements / Widgets on one display 2 different drawing modes are implemented:
+
+## Simple drawing mode
+
+This drawing implementation fits good into devives with limited cpu and memory capacities.
+
+It is optimized for drawing simple graphic elements on the device without the need to buffer the current display in memory.
+
+Drawing a graphic element is assuming the following situation:
+
+* None of the elements do overlap with their drawing areas / bounding boxes.
+* There is a common background color for all elements.
+* Elements can „erase“ any previous drawing by simply filling the full drawing area with the background color and do a full redraw.
+
+With these conditions drawing widgets may do their internal optimization to avoid full drawing sequences.
+
+* All elements that are marked for redraw are drawn in any order.
+* When a new logical page is displayed the surface is erased with the background color and all widgets on the page are drawn.
+
+## Full drawing mode
+
+This drawing implementation fits good for devices that offer enough resources for complex graphical elements.
+
+This includes drawing overlapping elements with the support of current clipping areas and dynamic bounding boxes.
+
+* All elements that are marked for redraw will trigger the redraw of all objects covering the area in the order defined by the configuration.
+* The display implementation offering the getColor(x,y) functionality can be used.
+* The clipping box will be set ao widgets will be able to optimise drawing by only setting pixels within the clipping area.
+* Any drawing outside the clipping area will not be effective.
+
+
+SetPixel
+
+GetPixel
+Set clipping area
 
 
 ## How drawing is implemented
 
 To show information on a display a set of widgets aka. DisplayOutputElements is available.
 
-By setting the properties or values of these Elements they are marked to be drawn on the display and the DisplayAdapter implementation has also been flagged for redraw. 
+By setting the properties or values of these Elements they are marked to be drawn on the display and the DisplayAdapter implementation has also been flagged for redraw.
 
-This allows changing multiple properties at the same time without intermediate draw activity and especially helps combining changes 
+This allows changing multiple properties at the same time without intermediate draw activity and especially helps combining changes
 on slow displays like E-Paper displays.
 
 Drawing starts when no action is queued in the board and the loop function of all elements has been called.
-
+
 
 ```mermaid
 flowchart LR
   DisplayOutputElement["Display#60;Output#62;Element"]
   ChangeValue --> DisplayOutputElement --> |set needRedraw| DisplayOutputElement
-```
+```
+
 
 Some display chip specific implementations directly change the memory of the display, some will update an internal copy of the display memory.
 
@@ -81,8 +129,6 @@ height. This is unified by the adapter drawing functions.
 * The signature of the drawing functions use a boundingBox parameter where applicable.
 
 
-
-
 ## Using Display Output Elements
 
 The DisplayItems are the Elements to configure what should be drawn on the display.
@@ -103,7 +149,8 @@ The [Display Text Element] and [Display Dot Element] can also be used with the c
 The Display Output Elements can be configured with 3 color properties: `color`, `background` and `border`. These are used as default values for all
 configured Output Elements.
 
-The color "none" can be used to remove the color value.
+The color "none" can be used to remove the color value.
+
 
 | Output Element | "color":   | "background":    | "border":    |
 | -------------- | ---------- | ---------------- | ------------ |
@@ -147,9 +194,7 @@ rendering using a clipping rectangle.
 Especially the rect Element can be used as a background for text Elements.
 
 
-When drawing an Element 
-
-
+When drawing an Element
 
 
 ## Flush data to a display

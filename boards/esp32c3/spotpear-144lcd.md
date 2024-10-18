@@ -60,7 +60,7 @@ The display is driven by a ST7735 chip and can be used within the Homeding libra
 [Display ST7735 Element](/elements/display/st7735.md)
 
 It is driven by the standard SPI interface that is configured in the
-[Device Element](/elements/display/device.md).
+[Device Element](/elements/device.md).
 
 You can find the full settings in the system configuration below.
 

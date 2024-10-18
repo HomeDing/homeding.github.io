@@ -14,7 +14,7 @@ The HomeDing library is compatible to the ESP32 Arduino environment.
 Specific to ESP32 are the following features:
 
 * Usually there are no other names for the GPIO pins and GPIO numbers from the processor descriptions are used.
-* An exception is the [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32) having printed
+* An exception is the [Arduino Nano ESP32](/boards/esp32s3/arduino-nano-esp32.md) having printed
   pin numbers that differ from the GPIO numbers.
 
 * The [Touch Element](/elements/touch.md) allows using the ESP32 built-in touch features on the GPIO pins.
@@ -106,7 +106,7 @@ See also <https://electronics.stackexchange.com/questions/569788/how-esp32-auto-
 
 ## Modules
 
-* [esp32 DevKits](esp32_devkit.md) 30, 36 and 38 pin versions with WROOM module
+* [esp32 DevKits](devkit.md) 30, 36 and 38 pin versions with WROOM module
 * [ESP32 Camera Module](esp32_cam.md)
 * [esp32 azure iot kit](azureiotkit.md)
 

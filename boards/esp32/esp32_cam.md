@@ -26,7 +26,6 @@ Board details: <https://github.com/m5stack/M5Stack-Camera>
 
  MPU6050
 
-
 ## See also
 
 * <https://create.arduino.cc/projecthub/noah_arduino/using-esp32-cam-with-arduino-b4f12c>
@@ -35,3 +34,6 @@ Board details: <https://github.com/m5stack/M5Stack-Camera>
 * <https://www.fambach.net/esp32-cam-modul/>
 * Datasheet & Schema: <https://github.com/m5stack/esp32-cam-demo/blob/m5cam/M5CAM-ESP32-A1-POWER.pdf>
 * <https://sandervandevelde.wordpress.com/2020/07/02/turn-your-m5cam-into-a-webcam-exposing-rtsp-stream/>
+
+[text](https://www.instructables.com/Simple-ESP32-CAM-Object-Detection-Using-Open-CV/?utm_source=newsletter&utm_medium=email)
+

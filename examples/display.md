@@ -42,7 +42,7 @@ and can be activated by configuration.
 
 ### Display and Touch Elements
 
-* [Touch](/elements/)
+* [Touch](/elements/display/touch.md)
 
 * DISPLAYGC9A01
 * DISPLAYST7796

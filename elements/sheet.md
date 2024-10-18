@@ -65,7 +65,7 @@ The "set" column shows the collections of elements that can be activated by a si
 | [sd](/elements/sd.md)                          |             |    x     |   x   |       |       |               |
 | [menu](/elements/menu.md)                      | DISPLAY     |    x     |   x   |       |       |               |
 | [ssdp](/elements/ssdp.md)                      | SYSTEM-FULL |    x     |   x   |       |       |               |
-| [my9291](/elements/my9291.md)                  |             |    x     |       |   x   |       |               |
+| [my9291](/elements/light/my9291.md)            |             |    x     |       |   x   |       |               |
 | [tone](/elements/audio/tone.md)                |             |    x     |       |       |       |               |
 | [radio](/elements/audio/radio.md)              |             |    x     |       |       |       |               |
 | [bl0937](/elements/bl0937.md)                  |             |          |       |       |   x   |               |

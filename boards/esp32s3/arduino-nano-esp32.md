@@ -179,3 +179,52 @@ The following `env.json` configuration can be used for this board and contains s
 * NORA-W106-10B: <https://www.u-blox.com/en/product/nora-w10-series>
 * NORA-W106-10B DataSheet: <https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf>
 
+<!--
+
+## Debugging
+
+https://docs.arduino.cc/tutorials/nano-esp32/debugging/
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "configId": "arduino:esp32:nano_nora:programmer=esptool",
+      "cwd": "${workspaceRoot}",
+      "request": "launch",
+      "type": "cortex-debug",
+      "executable": "C:\\Users\\Matthias\\AppData\\Local\\Temp\\arduino\\sketches\\3713994C7AC5E101C0161FFCF28CD4A7/gdoc-get.ino.elf",
+      "toolchainPrefix": "xtensa-esp32s3-elf",
+      "name": "Arduino Nano ESP32 (esptool)",
+      "serverpath": "C:\\Users\\Matthias\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\openocd-esp32\\v0.11.0-esp32-20221026/bin/openocd",
+      "servertype": "openocd",
+      "armToolchainPath": "C:\\Users\\Matthias\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\xtensa-esp-elf-gdb\\11.2_20220823/bin/",
+      "configFiles": [
+        "debug.cfg"
+      ]
+    }
+  ]
+}
+
+
+
+{
+	"name":"Arduino on ESP32-S3",
+	"toolchainPrefix":"xtensa-esp32s3-elf",
+	"svdFile":"debug.svd",
+	"request":"attach",
+	"overrideAttachCommands":[
+		"set remote hardware-watchpoint-limit 2",
+		"monitor reset halt",
+		"monitor gdb_sync",
+		"thb setup",
+		"interrupt"
+	],
+	"overrideRestartCommands":[
+		"monitor reset halt",
+		"monitor gdb_sync",
+		"interrupt"
+	]
+}
+
+ -->

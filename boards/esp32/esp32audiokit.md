@@ -9,7 +9,7 @@ excerpt: >
   This is an ESP32 based board using the ESP-WROVER-B module supporting audio processing.
 ---
 
-![ESP32 Audio Kit Board](/boards/esp32/esp32audiokit.png)
+![ESP32 Audio Kit Board](/boards/esp32/esp32audiokit.jpg)
 
 ESP32-A1S Module
 <https://docs.ai-thinker.com/en/esp32-audio-kit>

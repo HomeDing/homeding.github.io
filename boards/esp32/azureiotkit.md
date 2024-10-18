@@ -223,8 +223,6 @@ SSD1306
 * <https://www.digikey.de/de/products/detail/espressif-systems/ESP32-AZURE-IOT-KIT/10259357>
 * <https://www.espressif.com/en/products/devkits/esp32-azure-kit/resources>
 
-<!-- * [Hardwware Design Kit](esp32-azure_iot_kit_hardware_design_guide.pdf) -->
-
 * <https://docs.microsoft.com/en-us/samples/azure-samples/esp32-iot-devkit-get-started/sample/>
 
 * <https://www.bing.com/aclk?ld=e84j1SJUdrrMrkgMfjTDnMvjVUCUwkCsE4dWcgS9pQq1t7lxzMiLJZsrlrkH7Yl5Vko_nFddX8x9Re3CJJJyBl9i1n_se_rY4iVSzRUsWck47IXclY7tu6rVGkRyKRrG6g2yLFlEI2po4MOFSkAx42hnNFZ42usVhyS2kStKWdk1tOcz8GFBGOjlciMOryC02iJRHvoA&u=aHR0cHMlM2ElMmYlMmZhenVyZS5taWNyb3NvZnQuY29tJTJmZGUtZGUlMmZzZXJ2aWNlcyUyZmlvdC1odWIlMmYlM2ZPQ0lEJTNkQUlEMjEwMDA0OV9TRU1fMTZlY2NkYjMxYzIyMTliZjhhYzRhZGY1MDE1M2Q0ZTIlM2FHJTNhcyUyNmVmX2lkJTNkMTZlY2NkYjMxYzIyMTliZjhhYzRhZGY1MDE1M2Q0ZTIlM2FHJTNhcyUyNm1zY2xraWQlM2QxNmVjY2RiMzFjMjIxOWJmOGFjNGFkZjUwMTUzZDRlMg&rlid=16eccdb31c2219bf8ac4adf50153d4e2&ntb=1>

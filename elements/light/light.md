@@ -23,7 +23,7 @@ This class also offers some basic patterns for brightness and color animations.
 
 Other Elements for controlling single value lights are:
 
-* [MY9291 Element](/elements/light/my9291.htm)
+* [MY9291 Element](/elements/light/my9291.md)
 
 The LED stripes with individual controllable LEDs are based on the [Stripe Element](/elements/light/stripe.md)
 that
