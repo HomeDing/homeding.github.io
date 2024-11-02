@@ -1,8 +1,31 @@
-Display
+# Graphical Displays
+
+???
+
+The HomeDing Library facilitates the connection of displays, enabling the realization of numerous use cases where
+information must be displayed or visualized.  When combined with touch inputs or other input elements, it allows the
+development of solutions that enable both local interactions and access to the browser interface.
+
+Especially some ESP32 boards are available that combine display, touch screen and processor for implementing panels.
+
+The HomeDing library uses the [GFX library for Arduino](https://github.com/moononournation/Arduino_GFX) that can work
+with many different displays like OLED or LCDs that can be connected via different busses like I2C, SPI or 16-bit.
+
+Other libraries can be used too as the only functionality required is setting pixels to the output color.
+
+The drawing functionality of graphical elements is implemented by using the
+[gfxDraw Arduino library](https://github.com/mathertel/gfxDraw) that works on top of the GFX interface.
+The gfxDraw library and supports more than simple drawings like lines and circles.
+By using paths  from the SVG drawing standard complex areas can be defined, scaled, rotated and colored and
+can be adjusted in their dimensions to values.
+
+![alt text](display.drawio.svg)
 
 
-Some ESP32 boards are available that combine display, touch screen and processor for
-implementing panels.
+## Display Boards and Display Example
+
+The display elements that use the gfxDraw Library can be found inside the Display Example.
+
 
 The Display example shows how to implement devices that take advantage of the
 touch screens and has some additional elements implemented especially for this scenario.
@@ -56,16 +79,25 @@ and can be activated by configuration.
 // #define HOMEDING_INCLUDE_DISPLAYTOUCHCST816
 
 // Enable Elements for LIGHT control
+
 # define HOMEDING_INCLUDE_COLOR
+
 # define HOMEDING_INCLUDE_LIGHT
+
 # define HOMEDING_INCLUDE_NEOPIXEL
+
 # define HOMEDING_INCLUDE_APA102
+
 # define HOMEDING_INCLUDE_MY9291
 
 // Network Services
+
 # define HOMEDING_INCLUDE_MQTT
+
 # define HOMEDING_INCLUDE_WEATHERFEED
+
 # define HOMEDING_INCLUDE_SDMMC
+
 # define HOMEDING_INCLUDE_SD
 
 ### Sensors
@@ -90,4 +122,4 @@ configured it will draw an analog clock at the specified location on the screen 
 For more information on the supported configuration properties see
 [AnalogClock Element].
 
-### 
+###

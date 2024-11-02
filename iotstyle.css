@@ -11,7 +11,7 @@
   :root {
     --color: #eeeeee;
     --back: #111111;
-    --card-back: #373737;
+    --card-back: rgb(55.25, 55.25, 55.25);
     --card-head: hsl(220, 20%, 30%);
     --card-head-active: hsl(220, 80%, 30%);
   }
