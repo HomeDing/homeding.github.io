@@ -28,9 +28,23 @@
   <nav></nav>
 
   <main style="padding:1rem;max-width: 800px;">
-    <p>Display</p>
-<p>Some ESP32 boards are available that combine display, touch screen and processor for
-implementing panels.</p>
+    <h1>Graphical Displays</h1>
+<p>???</p>
+<p>The HomeDing Library facilitates the connection of displays, enabling the realization of numerous use cases where
+information must be displayed or visualized.  When combined with touch inputs or other input elements, it allows the
+development of solutions that enable both local interactions and access to the browser interface.</p>
+<p>Especially some ESP32 boards are available that combine display, touch screen and processor for implementing panels.</p>
+<p>The HomeDing library uses the <a href="https://github.com/moononournation/Arduino_GFX">GFX library for Arduino</a> that can work
+with many different displays like OLED or LCDs that can be connected via different busses like I2C, SPI or 16-bit.</p>
+<p>Other libraries can be used too as the only functionality required is setting pixels to the output color.</p>
+<p>The drawing functionality of graphical elements is implemented by using the
+<a href="https://github.com/mathertel/gfxDraw">gfxDraw Arduino library</a> that works on top of the GFX interface.
+The gfxDraw library and supports more than simple drawings like lines and circles.
+By using paths  from the SVG drawing standard complex areas can be defined, scaled, rotated and colored and
+can be adjusted in their dimensions to values.</p>
+<p><img src="display.drawio.svg" alt="alt text"></p>
+<h2>Display Boards and Display Example</h2>
+<p>The display elements that use the gfxDraw Library can be found inside the Display Example.</p>
 <p>The Display example shows how to implement devices that take advantage of the
 touch screens and has some additional elements implemented especially for this scenario.</p>
 <p>As the final sketch file will exceed the memory available in ESP8266 and ESP32C3 processors they
