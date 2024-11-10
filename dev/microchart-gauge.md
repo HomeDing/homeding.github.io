@@ -59,8 +59,8 @@ chartAPI.draw(12.8);
 
 Based on this value the needle of the gauge will be adjusted to the corresponding position of the value.
 
-When no value or a value less than the minimum is given the needle will be below the start point.
-When a value more than the maximum is given the needle will be below the end  point.
+When no value or a value less than the minimum is given the needle will be below the start point.  When a value more
+than the maximum is given the needle will be below the end point.
 
 
 ### Clear the data

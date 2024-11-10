@@ -44,7 +44,7 @@ Here is the connector / function Overview. Be aware hat the SCL and SDA labels a
 
 There are 2 pin diagrams on this site. Be sure to get the right one. (see Links).
 
-![wifikit8  pins](/boards/wifikit8pins.png)
+![wifikit8 pins](/boards/wifikit8pins.png)
 
 
 ## OLED Display

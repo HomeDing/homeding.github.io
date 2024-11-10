@@ -5,7 +5,7 @@ tags:
   - "Element"
 layout: "page.njk"
 excerpt: >
-  The WebButton Element  adds a button the Web UI of the board and allows sending actions directly from the web UI without a corresponding active element in the device.
+  The WebButton Element adds a button the Web UI of the board and allows sending actions directly from the web UI without a corresponding active element in the device.
 ---
 
 The element is displayed as a single button by using the caption given by the description property.

@@ -9,7 +9,8 @@ excerpt: >
 
 ## Why we need a registry
 
-This allows specifying the `known elements` at compile time to optimize the programs size  to the available flash memory on the smaller boards but can include all elements for bigger boards.
+This allows specifying the `known elements` at compile time to optimize the programs size to the available flash memory
+on the smaller boards but can include all elements for bigger boards.
 
 At runtime the elements not in use will not consume dynamic memory leaving this rare space for the active elements.
 

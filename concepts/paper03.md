@@ -165,7 +165,7 @@ There are services on the internet that offer interesting data or services that 
 
 In contrast to actions where changes are dispatched using actions to the receiving elements the information must be polled from the service provider on the internet.
 
-The `HttpClientElement` takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific  url.
+The `HttpClientElement` takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific url.
 
 Implementing a specific service can now be done using this base class like implementing the `WeatherFeedElement` that can retrieve weather from openweathermap.org.
 

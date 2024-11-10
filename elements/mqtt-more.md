@@ -163,7 +163,7 @@ This can take 20-30 minutes on the slower Pi versions - please wait.
   Add shortcut commands               ✔
   Update systemd script               ✔
 
-You can now start Node-RED with the command  node-red-start
+You can now start Node-RED with the command node-red-start
   or using the icon under   Menu / Programming / Node-RED
 Then point your browser to localhost:1880 or <http://{your_pi_ip-address}:1880>
 
@@ -179,7 +179,7 @@ On Pi Node-RED works better with the Firefox or Chrome browser
 Use   node-red-stop                          to stop Node-RED
 Use   node-red-start                         to start Node-RED again
 Use   node-red-log                           to view the recent log output
-Use   sudo systemctl enable nodered.service  to autostart Node-RED at every boot
+Use   sudo systemctl enable nodered.service to autostart Node-RED at every boot
 Use   sudo systemctl disable nodered.service to disable autostart on boot
 
 To find more nodes and example flows - go to <http://flows.nodered.org>

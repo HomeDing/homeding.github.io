@@ -57,7 +57,7 @@ The following properties are available for configuration of the element.
 
 **pulseTime** - time between "on" and "off" action.
 
-**cycleTime** - time of a complete timer cycle. When  not specified or too low the cycletime gets adjusted to waittime+pulsetime.
+**cycleTime** - time of a complete timer cycle. When not specified or too low the cycletime gets adjusted to waittime+pulsetime.
 
 **onOn** - These actions are dispatched when the pulse time starts.
 

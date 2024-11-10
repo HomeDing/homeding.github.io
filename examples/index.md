@@ -71,7 +71,8 @@ Some elements that require a specific external library that are disables in the 
 
 ### Implement local elements.
 
-In the folder of the script you can add  some elements that are not part of the library but will also be compiled together with the sketch and therefore are also available for configuration.
+In the folder of the script you can add some elements that are not part of the library but will also be compiled
+together with the sketch and therefore are also available for configuration.
 
 The [Probe Example](/examples/probe.md) and the [Radio Example](/examples/radio.md) show how to include a very specific elements into the sketch folder.
 

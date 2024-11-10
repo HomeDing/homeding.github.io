@@ -13,7 +13,7 @@ This board is not based on a ESP32 module but is using the ESP32-D0WD-Q6 process
 
 ![TTGO T-Display](/boards/esp32/ttgo-t-display.jpg)
 
-* ESP32-D0WD-Q6 Processor (Dual core, 240Mhz  processor)
+* ESP32-D0WD-Q6 Processor (Dual core, 240Mhz processor)
 * Display: IPS ST7789V 1.14 Inch display, 135 * 240 pixels, 64k colors
 * 3.7V battery charging circuit
 * Supply voltage: 3.3V DC or 5V DC

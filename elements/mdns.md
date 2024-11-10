@@ -34,7 +34,7 @@ The WebFiles project <https://github.com/HomeDing/WebFiles> that implements a ce
 
 ## mDNS implementation
 
-In the devices the mDNS implementation is covered by the ESP8266mDNS/ESPmDNS library provided by the Arduino board base  firmware.
+In the devices the mDNS implementation is covered by the ESP8266mDNS/ESPmDNS library provided by the Arduino board base firmware.
 
 In the portal and the CLI tool the mDNS implementation is covered by the `multicast-dns` javascript library.
 

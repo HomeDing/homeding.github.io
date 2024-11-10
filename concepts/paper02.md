@@ -83,7 +83,7 @@ The configuration of the HomeDing device is using in 2 files:
 
   There is no real need to change this file frequently and it stays the same for a specific board. In the documentation about the boards I know you can find samples for typical env.json files.
 
-* The configuration of other elements is  placed in the `config.json` file. This file can be updated to change the behavior of the device.
+* The configuration of other elements is placed in the `config.json` file. This file can be updated to change the behavior of the device.
 
 * The web based configuration features will update the `config.json` file only.
 

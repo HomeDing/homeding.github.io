@@ -2,7 +2,7 @@
 title: DevDing Example 
 layout: "page.njk"
 excerpt: >
-  This Example can be used for development of new Elements and functionaliy as there is much debug information given to the Serial ouput.
+  This Example can be used for development of new Elements and functionality as there is much debug information given to the Serial output.
 ---
 
 :::excerpt

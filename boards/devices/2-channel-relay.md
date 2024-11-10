@@ -107,7 +107,7 @@ Many shades or blinds can be controlled with a motor.
 To control the direction there is usually a motor that has 2 power connections, one for each direction of rotation.
 It must be ensured, that only one of them is actually connected.
 
-This  board with 2 relays can be used with the following wiring where the first relay controls the first power line and the second relay only can forward power to the second power line when the first relay is in off state.
+This board with 2 relays can be used with the following wiring where the first relay controls the first power line and the second relay only can forward power to the second power line when the first relay is in off state.
 
 Picture ???
 

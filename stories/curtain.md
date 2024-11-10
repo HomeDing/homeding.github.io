@@ -4,7 +4,8 @@ tags: ["Story"]
 layout: "page.njk"
 ---
 
-The purpose of this smart device implementation is to automate existing shades  to bring them in on several conditions. This can also used to control curtains or blinds that are typically controlled by 2 momentary switches.
+The purpose of this smart device implementation is to automate existing shades to bring them in on several conditions.
+This can also used to control curtains or blinds that are typically controlled by 2 momentary switches.
 
 The possibilities are 
 

@@ -42,7 +42,7 @@ There are 2 momentary buttons on the board.
 Boot = IO9
 Reset = Chip_EN
 
-There is no external pull-up resistors on the board so the  internal pullup resistors of the ESP32-C3 must be enabled.
+There is no external pull-up resistors on the board so the internal pullup resistors of the ESP32-C3 must be enabled.
 
 
 ## System configuration

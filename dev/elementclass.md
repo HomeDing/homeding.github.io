@@ -80,7 +80,7 @@ Some Element implementations will only require to implement the setting paramete
 
 The key parameter is passed as a const char pointer and is always converted to lowercase.
 
-When  it is one of the most used keys the char pointer can be used for pointer comparison as it is looked up in the actions set. This speeds up the overall processing of actions.
+When it is one of the most used keys the char pointer can be used for pointer comparison as it is looked up in the actions set. This speeds up the overall processing of actions.
 
 The set function must return `true` when a property is known to the element and was handled.
 
