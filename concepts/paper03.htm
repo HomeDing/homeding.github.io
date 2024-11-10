@@ -121,7 +121,7 @@ Displays, Logging and also elements on remote devices are connected this way.</p
 <h2>Consuming internet based services</h2>
 <p>There are services on the internet that offer interesting data or services that can be consumed by calling the external website. These services sometimes require a registration to get an access key but still are called without using an inbound communication and open incoming boards.</p>
 <p>In contrast to actions where changes are dispatched using actions to the receiving elements the information must be polled from the service provider on the internet.</p>
-<p>The <code>HttpClientElement</code> takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific  url.</p>
+<p>The <code>HttpClientElement</code> takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific url.</p>
 <p>Implementing a specific service can now be done using this base class like implementing the <code>WeatherFeedElement</code> that can retrieve weather from <a href="http://openweathermap.org">openweathermap.org</a>.</p>
 <h2>The Life Cycle of the Board and Elements</h2>
 <p>The implementation of the Board class is the part of the HomeDing Library that organizes all created Elements and dispatches the actions.</p>
