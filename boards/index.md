@@ -54,8 +54,8 @@ many off-the-shell devices can be identified using a espressif processor.
 
 ## ESP8266 boards
 
-The HomeDing library is compatible to the Arduino environment using the ESP8266 board package.
-Most boards offer 4 MByte flash memory. Some boards and devices with less flash memory are supported as well. See below.
+The HomeDing library is compatible to the Arduino environment using the ESP8266 board package.  Most boards offer 4
+MByte flash memory.  Some boards and devices with less flash memory are supported as well.  See below.
 
 Specific to ESP8266 are the following features:
 
@@ -274,7 +274,7 @@ to run a neopixel stripe, wheel or array using a ESP8266 ESP-01 board.
 
 :::board esp8266/esp01-dht
 The [ESP-01 with DHT22 board](/boards/esp8266/esp01-dht.md) is a very specific adapter
-to run a DHT22 sensor using  a ESP8266 ESP-01 board.
+to run a DHT22 sensor using a ESP8266 ESP-01 board.
 :::
 
 

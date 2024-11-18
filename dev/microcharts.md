@@ -11,7 +11,7 @@ Some visuals on the board and index implementation are not based on HTML but on 
 
 SVG is not a pure graphic format that can be used for icons, it also offers a DOM and APIs on the elements that can be used almost like HTML objects.
 
-The micro-charts in the HomeDing UI are a set for SVG and JavaScript files that can be embedded into a HTML page and offer a High Level API that is implemented in  javascript.
+The micro-charts in the HomeDing UI are a set for SVG and JavaScript files that can be embedded into a HTML page and offer a High Level API that is implemented in javascript.
 
 ![LineChart Screenshot](/dev/microchart-line.png "w200")
 ![PieChart Screenshot](/dev/microchart-pie.png "w200")

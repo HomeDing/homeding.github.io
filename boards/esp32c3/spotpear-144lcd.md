@@ -73,7 +73,7 @@ Pins used: IO8, IO10,
 Boot = IO9,
 Reset = Chip_EN
 
-There are no external pull-up resistors on the board so the  internal pullup resistors of the ESP32-C3 must be enabled.
+There are no external pull-up resistors on the board so the internal pullup resistors of the ESP32-C3 must be enabled.
 
 ## Connector
 

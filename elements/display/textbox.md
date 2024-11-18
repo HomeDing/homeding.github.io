@@ -1,5 +1,5 @@
 ---
-title: DisplayText Element
+title: DisplayTextBox Element
 icon: displaytext
 tags:
   - "Element"
@@ -7,20 +7,23 @@ tags:
 layout: "page.njk"
 description: Displaying text values.
 excerpt: >
-  The DisplayTextElement allows sending a value to the display
-  and show it at a specified position as text including a prefix and postfix.
+  The DisplayTextBoxElement allows showing a text on the display in a rectange area
+  at a specified position as text including a prefix and postfix.
   The value can be changed by using an action.
 ---
 
-The DisplayTextElement is included in the collection of **Display Output** elements and can be used with text only and
-pixel based displays.
+In contrast to the DisplayTextElement the DisplayTextBoxElement can draw a specific fill color and border
+and also allows right and center aligned text on the configuration by using different positions and fontsize.
+
+The DisplayTextBox is included in the collection of **Display-Draw** elements and can be used on pixel based
+displays only.
 
 
 ## Element Configuration
 
 The following properties are available for configuration of the element.
 
-<object data="/element.svg?displaytext" type="image/svg+xml"></object>
+<object data="/element.svg?displaytextbox" type="image/svg+xml"></object>
 
 > **clear** -- This property set to any value will remove the text from the display.
 >
@@ -55,7 +58,7 @@ This example shows how to configure this element:
 
 ``` json
 {
-  "displaytext": {
+  "displaytextbox": {
     "val": {
       "x": 0,
       "y": 1,
@@ -67,7 +70,7 @@ This example shows how to configure this element:
 }
 ```
 
-The `value` property can be used to make the displaytext to be visible. Using the browser you can set the value using <http://homeding/$board/displaytext/val?value=hello>
+The `value` property corresponds to the shown text. Using the browser you can set the value using <http://homeding/$board/displaytext/val?value=hello>
 
 The `clear` property can be used to remove the text. <http://homeding/$board/displaytext/val?clear=1>
 
@@ -85,7 +88,7 @@ The following properties are available with the current values at runtime
 
 ``` json
 {
-  "displaytext/val": {
+  "displaytextbox/val": {
     "active":"true",
     "value":"10"
   }
@@ -94,8 +97,7 @@ The following properties are available with the current values at runtime
 
 ## See also
 
-<!-- * [DisplayText Element](/elements/display/text.md) -->
-* [DisplayTextBox Element](/elements/display/textbox.md)
+* [DisplayText Element](/elements/display/text.md)
 * [DisplayLine Element](/elements/display/line.md)
 * [DisplayRect Element](/elements/display/rect.md)
 * [DisplayCircle Element](/elements/display/circle.md)

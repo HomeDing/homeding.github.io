@@ -148,8 +148,8 @@ This is why there are some elements implemented that will put a specific type of
 on the configured display:
 
 * [Display Text Element](/elements/display/text.md) used for text and numbers
-* [Display a dot](/elements/display/dot.md) used for boolean values
 * [Display a line](/elements/display/line.md)
+* [Display a circle](/elements/display/circle.md) used to display boolean values
 * [Display a rect](/elements/display/rect.md)
 <!-- * [displaybar](/elements/displaybar.md) -->
 

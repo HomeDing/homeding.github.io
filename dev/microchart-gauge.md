@@ -37,11 +37,11 @@ including the colors of the arc in the background.
 }
 ```
 
-* **title** - This text will be displayed on top of the gauge. 
-* **units** - This text will be displayed below the actual value. 
-* **minimum** - This text will be displayed at the start point of the gauge.
-* **maximum** - This text will be displayed at the end point of the gauge.
-* **segments** - This array contains upper value and color of gauge segments. The last segment requires on value as the maximum value is used.
+* **title** -- This text will be displayed on top of the gauge.
+* **units** -- This text will be displayed below the actual value.
+* **minimum** -- This text will be displayed at the start point of the gauge.
+* **maximum** -- This text will be displayed at the end point of the gauge.
+* **segments** -- This array contains upper value and color of gauge segments. The last segment requires on value as the maximum value is used.
 
 
 ### Add additional elements

@@ -2,18 +2,21 @@
 title: DisplayLine Element
 icon: displayline
 tags:
+  - "Display"
   - "Element"
 layout: "page.njk"
 description: Displaying a static line.
 excerpt: >
-  The DisplayLineElement allows drawing a simple fixed line on the display
-  when the display supports pixel drawing.
+  The DisplayLineElement enables drawing a simple fixed line on a display supporting pixel based graphics.
 ---
 
-It is not required for all displays to support all these Elements and when a device only has a simple LCD
-attached maybe only using the DisplayTextElements is appropriate.
+Displays that do not support pixel based drawings may not include this Element into the sketch.
 
-The DisplayLineElement is included in the collection of core elements.
+The DisplayLineElement is included in the collection of **Display-Draw** elements and can be used on pixel based
+displays only.
+
+It is possible to draw a line in any direction.  The Bounding Box of the Element will be adjusted to used the correct
+order where (x <= x1) and (y <= y1).
 
 
 ## Element Configuration
@@ -45,8 +48,8 @@ This example shows how to configure this element:
 {
   "displayline": {
     "l": {
-      "x0": 0,
-      "y0": 12,
+      "x": 0,
+      "y": 12,
       "x1": 127,
       "y1": 12,
       "description": "Display a line"
@@ -75,6 +78,8 @@ The following properties are available with the current values at runtime
 ## See also
 
 * [DisplayText Element](/elements/display/text.md)
-* [DisplayDot Element](/elements/display/dot.md)
-* [DisplayLine Element](/elements/display/line.md)
+* [DisplayTextBox Element](/elements/display/textbox.md)
+<!-- * [DisplayLine Element](/elements/display/line.md) -->
+* [DisplayRect Element](/elements/display/rect.md)
+* [DisplayCircle Element](/elements/display/circle.md)
 * [DisplayButton Element](/elements/display/button.md)

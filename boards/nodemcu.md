@@ -43,7 +43,7 @@ There are many derivate versions on the market but usually they follow the publi
 If you upload sketches using more than 115200 baud or have problems finding USB adapter firmware this may be of interest.
 * There is an onboard 3.3 V power regulator.
 When you have sensors or other peripherals that use the 3.3V from the board be sure you have a regulator that can drive the required current and that doesn't get too hot.
-* There are multiple  versions with different sizes. If you can choose take the smaller (right) one when used on a breadboard still offers space for using jumpers. The bigger (left) one leaves no place because it consumes the whole available breadboard width
+* There are multiple versions with different sizes. If you can choose take the smaller (right) one when used on a breadboard still offers space for using jumpers. The bigger (left) one leaves no place because it consumes the whole available breadboard width
 
 
 ## Overview table

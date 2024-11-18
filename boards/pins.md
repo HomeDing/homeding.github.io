@@ -130,7 +130,7 @@ See also: <https://www.esp8266.com/viewtopic.php?t=4890>
 * Using the I2C bus is a good idea. It is possible to use extension chips.
 * Preferring the IO lines GPIO4(D2), GPIO5(D1), GPIO12(D6), GPIO13(D7) and     |
 GPIO14(D5) for digital input and output signals is a good ideas as long as they are available on the board.
-* Using GPIO0(D3) and GPIO2(D4) as output with inverted logic (LOW as ACTIVE) is without problems  and a need for using ESP-1 based devices.
+* Using GPIO0(D3) and GPIO2(D4) as output with inverted logic (LOW as ACTIVE) is without problems and a need for using ESP-1 based devices.
 * GPIO0(D3) will already have momentary switch on many boards and can be used after booting for any purpose.
 
 ## See also

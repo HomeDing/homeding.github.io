@@ -56,8 +56,7 @@ The following properties are available for configuration of the element:
 
 The initialization of the I2C bus uses the SDA and SCL pins defined in the device configuration.
 
-To show some output on the display use the [DisplayText Element](/elements/display/text.md)
-and the [DisplayDot Element](/elements/display/dot.md)
+To show some output on the display use the [DisplayText Element](/elements/display/text.md).
 
 
 ## Configuration
@@ -99,6 +98,7 @@ postfix text using the 16-bit UTC notation like `"postfix": "\u00dfC"`.
 
 However the WebUI will use the standard unicode codes as expected in the browser so the special character may look different in the Web UI.
 
+[text](https://www.martyncurrey.com/arduino-with-hd44780-based-lcds/)
 
 ## See also
 
