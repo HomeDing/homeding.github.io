@@ -33,13 +33,15 @@
               <use href="/icons.svg#displayline"></use>
             </svg>
           
-            The DisplayLineElement allows drawing a simple fixed line on the display when the display supports pixel drawing.
+            The DisplayLineElement enables drawing a simple fixed line on a display supporting pixel based graphics.
 
           </div>
         
-        <p>It is not required for all displays to support all these Elements and when a device only has a simple LCD
-attached maybe only using the DisplayTextElements is appropriate.</p>
-<p>The DisplayLineElement is included in the collection of core elements.</p>
+        <p>Displays that do not support pixel based drawings may not include this Element into the sketch.</p>
+<p>The DisplayLineElement is included in the collection of <strong>Display-Draw</strong> elements and can be used on pixel based
+displays only.</p>
+<p>It is possible to draw a line in any direction.  The Bounding Box of the Element will be adjusted to used the correct
+order where (x &lt;= x1) and (y &lt;= y1).</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?displayline" type="image/svg+xml"></object></p>
@@ -47,16 +49,22 @@ attached maybe only using the DisplayTextElements is appropriate.</p>
 <p><strong>x1</strong> – Specifies the ending x position of the line.</p>
 <p><strong>y1</strong> – Specifies the ending y position of the line.</p>
 </blockquote>
-<p>From the base <code>DisplayOutputElement</code> implementation the following properties are available for configuration:</p>
+<p>The <code>DisplayOutputElement</code> captures the parameters for defining a visual Element on the display.  Tis is common for
+multiple Elements even when they are not used by the element.</p>
+<p>The following properties are available for configuration:</p>
 <blockquote>
 <p><strong>x</strong> – Specifies the x position of the Element.</p>
 <p><strong>y</strong> – Specifies the y position of the Element.</p>
 <p><strong>w</strong> or <strong>width</strong> – Specifies the width of the Element.</p>
 <p><strong>h</strong> or <strong>height</strong> – Specifies the height of the Element.</p>
-<p><strong>color</strong> – Specifies the draw color of the Element. When no color is specified on the
-element the default color from the display is used.</p>
-<p><strong>background</strong> – Specifies the background color of the Element. When no color is specified on
-the element the default color from the display is used.</p>
+<p><strong>align</strong> – The alignment of the text.  Possible values are “left” (default), “center” and “right”.
+This configuration is used by the <a href="/elements/display/textbox.htm">DisplayTextBox Element</a> only</p>
+<p><strong>fontsize</strong> – Specifies the size of the text used for drawing the Element.
+This configuration is used by the <a href="/elements/display/textbox.htm">DisplayTextBox Element</a> only</p>
+<p><strong>stroke</strong> or <strong>color</strong> – Specifies the stroke color of the Element. When no color is specified on the
+element the default stroke color from the display is used.</p>
+<p><strong>fill</strong> or <strong>background</strong> – Specifies the background color of the Element. When no color is specified on
+the element the default fill color from the display is used.</p>
 <p><strong>border</strong> – Specifies the border color of the Element. When no color is specified on
 the element the default color from the display is used.</p>
 <p><strong>value</strong> – Specifies a value for the Element. This is used for some Output Elements only.</p>
@@ -79,8 +87,8 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"displayline"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"l"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"x0"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-      <span class="token property">"y0"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
       <span class="token property">"x1"</span><span class="token operator">:</span> <span class="token number">127</span><span class="token punctuation">,</span>
       <span class="token property">"y1"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display a line"</span>
@@ -99,14 +107,20 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/display/text.htm">DisplayText Element</a></li>
-<li><a href="/elements/display/dot.htm">DisplayDot Element</a></li>
-<li><a href="/elements/display/line.htm">DisplayLine Element</a></li>
+<li><a href="/elements/display/textbox.htm">DisplayTextBox Element</a></li>
+</ul>
+<!-- * [DisplayLine Element](/elements/display/line.md) -->
+<ul>
+<li><a href="/elements/display/rect.htm">DisplayRect Element</a></li>
+<li><a href="/elements/display/circle.htm">DisplayCircle Element</a></li>
 <li><a href="/elements/display/button.htm">DisplayButton Element</a></li>
 </ul>
 
         
           <h2>Tags</h2>
           <div class="taglist">
+            
+              <a href="/tag/display.htm">Display</a>
             
               <a href="/tag/element.htm">Element</a>
             

@@ -95,8 +95,7 @@
 <p><strong>address</strong> the address of the display on the I2C bus. Defaults to 0x3C.</p>
 <p><strong>height</strong> the number of lines the display supports.</p>
 <p>The initialization of the I2C bus uses the SDA and SCL pins defined in the device configuration.</p>
-<p>To show some output on the display use the <a href="/elements/display/text.htm">DisplayText Element</a>
-and the <a href="/elements/display/dot.htm">DisplayDot Element</a></p>
+<p>To show some output on the display use the <a href="/elements/display/text.htm">DisplayText Element</a>.</p>
 <h2>Configuration</h2>
 <p>The DisplayLCD Element can be used to configure the LCDDisplayAdapter.</p>
 <p>This should be done in the <code>env.json</code> file:</p>
@@ -127,6 +126,7 @@ and the <a href="/elements/display/dot.htm">DisplayDot Element</a></p>
 <p>The HD44780 displays do have a special character set that is explained in the datasheet. These characters e.g. can be used in the
 postfix text using the 16-bit UTC notation like <code>&quot;postfix&quot;: &quot;\u00dfC&quot;</code>.</p>
 <p>However the WebUI will use the standard unicode codes as expected in the browser so the special character may look different in the Web UI.</p>
+<p><a href="https://www.martyncurrey.com/arduino-with-hd44780-based-lcds/">text</a></p>
 <h2>See also</h2>
 <ul>
 <li><a href="/dev/i2c.htm">Using the I2C bus</a></li>

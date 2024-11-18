@@ -4,12 +4,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DisplayDot Element</title>
+    <title>DisplayTextBox Element</title>
     <script src="/pages.js"></script>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/story.js" type="module"></script>
     <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <meta name='description' content='Displaying a circle boolean values.'>
+    <meta name='description' content='Displaying text values.'>
     <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
     <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
   </head>
@@ -25,40 +25,54 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>DisplayDot Element</h1>
+      <h1>DisplayTextBox Element</h1>
       
         
           <div class="iconcard">
             <svg class="icon">
-              <use href="/icons.svg#displaydot"></use>
+              <use href="/icons.svg#displaytext"></use>
             </svg>
           
-            The DisplayDot Element allows showing a circle with a border and background color. This can be used to visualize a boolean value on the display and show it at a specified position as a shallow or filled dot/circle. The value can be changed by using an action.
+            The DisplayTextBoxElement allows showing a text on the display in a rectange area at a specified position as text including a prefix and postfix. The value can be changed by using an action.
 
           </div>
         
-        <p>This element is supported on all GFX based displays but also as a boolean indicator on the text based LCD display.</p>
-<p>The DisplayDotElement is included in the collection of core Display elements.</p>
+        <p>In contrast to the DisplayTextElement the DisplayTextBoxElement can draw a specific fill color and border
+and also allows right and center aligned text on the configuration by using different positions and fontsize.</p>
+<p>The DisplayTextBox is included in the collection of <strong>Display-Draw</strong> elements and can be used on pixel based
+displays only.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
-<p><object data="/element.svg?displaydot" type="image/svg+xml"></object></p>
-<p>From the base <code>DisplayOutputElement</code> implementation the following properties are available for configuration:</p>
+<p><object data="/element.svg?displaytextbox" type="image/svg+xml"></object></p>
+<blockquote>
+<p><strong>clear</strong> – This property set to any value will remove the text from the display.</p>
+<p><strong>prefix</strong> – This text is always send to the display as a prefix to the value.</p>
+<p><strong>postfix</strong> – This text is always send to the display as a postfix to the value.</p>
+<p><strong>fontsize</strong> – This is the fontsize to be used. Do not specify or use 0 to get the
+default/smallest fontsize. For the OLED drivers the font sizes 10, 16 and 24 are supported.</p>
+<p>Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.</p>
+</blockquote>
+<p>The <code>DisplayOutputElement</code> captures the parameters for defining a visual Element on the display.  Tis is common for
+multiple Elements even when they are not used by the element.</p>
+<p>The following properties are available for configuration:</p>
 <blockquote>
 <p><strong>x</strong> – Specifies the x position of the Element.</p>
 <p><strong>y</strong> – Specifies the y position of the Element.</p>
 <p><strong>w</strong> or <strong>width</strong> – Specifies the width of the Element.</p>
 <p><strong>h</strong> or <strong>height</strong> – Specifies the height of the Element.</p>
-<p><strong>color</strong> – Specifies the draw color of the Element. When no color is specified on the
-element the default color from the display is used.</p>
-<p><strong>background</strong> – Specifies the background color of the Element. When no color is specified on
-the element the default color from the display is used.</p>
+<p><strong>align</strong> – The alignment of the text.  Possible values are “left” (default), “center” and “right”.
+This configuration is used by the <a href="/elements/display/textbox.htm">DisplayTextBox Element</a> only</p>
+<p><strong>fontsize</strong> – Specifies the size of the text used for drawing the Element.
+This configuration is used by the <a href="/elements/display/textbox.htm">DisplayTextBox Element</a> only</p>
+<p><strong>stroke</strong> or <strong>color</strong> – Specifies the stroke color of the Element. When no color is specified on the
+element the default stroke color from the display is used.</p>
+<p><strong>fill</strong> or <strong>background</strong> – Specifies the background color of the Element. When no color is specified on
+the element the default fill color from the display is used.</p>
 <p><strong>border</strong> – Specifies the border color of the Element. When no color is specified on
 the element the default color from the display is used.</p>
 <p><strong>value</strong> – Specifies a value for the Element. This is used for some Output Elements only.</p>
 <p><strong>clear</strong> – The value is cleared.</p>
 </blockquote>
-<p>The DisplayDot Element is using the <code>value</code> as a boolean value
-to enable drawing the background of the circle. This enables using the DisplayDot Element to be used for visualizing boolean values.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
@@ -70,42 +84,41 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 </blockquote>
 <h2>Element Actions</h2>
 <p>The following actions can be sent to the element:</p>
-<blockquote>
-<p><strong>redraw</strong> – The display is updated.</p>
-</blockquote>
+<p><strong>value</strong> – This value is sent to the display including prefix and postfix texts.</p>
+<p><strong>clear</strong> – The value is cleared and the display is updated by sending prefix and postfix texts.</p>
+<p><strong>redraw</strong> – The value is sent to the display including prefix and postfix texts.</p>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"displaydot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"b"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Display the state of relais"</span><span class="token punctuation">,</span>
-      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
-      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-      <span class="token property">"w"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-      <span class="token property">"h"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-      <span class="token property">"border"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
-      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"yellow"</span>
+  <span class="token property">"displaytextbox"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"val"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"val="</span><span class="token punctuation">,</span>
+      <span class="token property">"postfix"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Display the value"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<p>The <code>value</code> property corresponds to the shown text. Using the browser you can set the value using <a href="http://homeding/$board/displaytext/val?value=hello">http://homeding/$board/displaytext/val?value=hello</a></p>
+<p>The <code>clear</code> property can be used to remove the text. <a href="http://homeding/$board/displaytext/val?clear=1">http://homeding/$board/displaytext/val?clear=1</a></p>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
-<blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
 <p><strong>value</strong> - Current output value of the element.</p>
-</blockquote>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"displaydot/b"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
-    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+  <span class="token property">"displaytextbox/val"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span><span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span><span class="token string">"10"</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/display/text.htm">DisplayText Element</a></li>
-<li><a href="/elements/display/dot.htm">DisplayDot Element</a></li>
 <li><a href="/elements/display/line.htm">DisplayLine Element</a></li>
+<li><a href="/elements/display/rect.htm">DisplayRect Element</a></li>
+<li><a href="/elements/display/circle.htm">DisplayCircle Element</a></li>
 <li><a href="/elements/display/button.htm">DisplayButton Element</a></li>
 </ul>
 

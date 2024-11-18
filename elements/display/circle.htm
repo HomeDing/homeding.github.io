@@ -4,12 +4,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Button Element</title>
+    <title>DisplayCircle Element</title>
     <script src="/pages.js"></script>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/story.js" type="module"></script>
     <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <meta name='description' content='Display a button'>
+    <meta name='description' content='Displaying a circle boolean values.'>
     <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
     <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
   </head>
@@ -25,26 +25,24 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>Display Button Element</h1>
+      <h1>DisplayCircle Element</h1>
       
         
-            <div class="plaincard">
-            
-            The DisplayButtonElement enables creating Actions by touching a visual button on a display supporting pixel based graphics.
+          <div class="iconcard">
+            <svg class="icon">
+              <use href="/icons.svg#displaycircle"></use>
+            </svg>
+          
+            The DisplayCircle Element allows showing a circle with a stroke and fill color. This can be used to visualize a boolean value on the display and show it at a specified position as a shallow or filled circle. The value can be changed by using an action.
 
           </div>
         
-        <p>The <strong>DisplayButtonElement</strong> draws a button at the configured position where click events should be captured.</p>
-<p>Displays that do not support pixel based drawings or touch events may not include this Element into the sketch.</p>
-<p>The DisplayLineElement is included in the collection of <strong>Display-Draw</strong> elements and can be used on pixel based
+        <p>Displays that do not support pixel based drawings may not include this Element into the sketch.</p>
+<p>The DisplayCircle is included in the collection of <strong>Display-Draw</strong> elements and can be used on pixel based
 displays only.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
-<p><object data="/element.svg?displaybutton" type="image/svg+xml"></object></p>
-<blockquote>
-<p><strong>text</strong> – the text that is displayed on the button</p>
-<p><strong>onclick</strong> – List of actions to be created on a click event</p>
-</blockquote>
+<p><object data="/element.svg?displaycircle" type="image/svg+xml"></object></p>
 <p>The <code>DisplayOutputElement</code> captures the parameters for defining a visual Element on the display.  Tis is common for
 multiple Elements even when they are not used by the element.</p>
 <p>The following properties are available for configuration:</p>
@@ -66,6 +64,8 @@ the element the default color from the display is used.</p>
 <p><strong>value</strong> – Specifies a value for the Element. This is used for some Output Elements only.</p>
 <p><strong>clear</strong> – The value is cleared.</p>
 </blockquote>
+<p>The DisplayCircle Element is using the <code>value</code> as a boolean value to enable drawing the background of the circle.
+This enables using the DisplayDot Element to be used for visualizing boolean values.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
 <p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
@@ -75,22 +75,46 @@ the element the default color from the display is used.</p>
 <p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
 Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
 </blockquote>
-<!-- TODO: documentation
-
-
-==> + DisplayOutput properties
-
- -->
+<h2>Element Actions</h2>
+<p>The following actions can be sent to the element:</p>
+<blockquote>
+<p><strong>redraw</strong> – The display is updated.</p>
+<p><strong>value</strong> – when a false or 0 value is given the fillcolor of the rectangle will not be used and the display background will be shown.</p>
+</blockquote>
+<h3>Configuration Example</h3>
+<p>This example shows how to configure this element:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"displayCircle"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"flag"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Show the state of the digital output value"</span><span class="token punctuation">,</span>
+      <span class="token property">"fill"</span><span class="token operator">:</span> <span class="token string">"#FD2222"</span><span class="token punctuation">,</span>
+      <span class="token property">"border"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+      <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">"w"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+      <span class="token property">"h"</span><span class="token operator">:</span> <span class="token number">32</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>Element State</h2>
 <p>The following properties are available with the current values at runtime</p>
+<blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
+<p><strong>value</strong> - Current value of the element.</p>
+</blockquote>
+<h3>Example State</h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"displaycircle/r0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"active"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2>See also</h2>
 <ul>
-<li><a href="/elements/display/touch.htm">Display Touch Elements</a></li>
 <li><a href="/elements/display/text.htm">DisplayText Element</a></li>
 <li><a href="/elements/display/textbox.htm">DisplayTextBox Element</a></li>
-<li><a href="/elements/display/circle.htm">DisplayCircle Element</a></li>
 <li><a href="/elements/display/line.htm">DisplayLine Element</a></li>
+<li><a href="/elements/display/rect.htm">DisplayRect Element</a></li>
 <li><a href="/elements/display/button.htm">DisplayButton Element</a></li>
 </ul>
 
@@ -101,10 +125,6 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
               <a href="/tag/element.htm">Element</a>
             
               <a href="/tag/display.htm">Display</a>
-            
-              <a href="/tag/input.htm">Input</a>
-            
-              <a href="/tag/wip.htm">Wip</a>
             
           </div>
         

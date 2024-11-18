@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Classes</title>
+    <title>Display Implementation</title>
     <script src="/pages.js"></script>
     <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
     <script src="/story.js" type="module"></script>
@@ -25,16 +25,86 @@
     </div>
     <nav></nav>
     <main style="padding:1rem;max-width: 800px;">
-      <h1>Display Classes</h1>
+      <h1>Display Implementation</h1>
       
         
             <div class="plaincard">
             
-            The C++ Classes used for displays and their dependencies.
+            The Elements and C++ Classes used for implementing Displays and their dependencies.
 
           </div>
         
-        <p>The C++ Classes used for display drivers for specific chips and the display item shown on the
+        <p>The Element implementations provided with the code in the library support display chips to create display solutions that
+are text based.  The capability to display text is the minimum requirement for displays that also will be used to show
+some Information during booting the device.</p>
+<p>Beyond this minimal display support the Display Example contains more Elements that also can display various graphic al
+objects and widgets but require a strong processor and more memory for drawing.</p>
+<h2>Text only displays</h2>
+<p>Displays like the Monochrome LCDs based on the HD44780 chips are can display text characters
+only. There are versions of single and multi-line displays.</p>
+<p>See <a href="/elements/display/lcd.htm">Display LCD Element</a></p>
+<p>The display configuration is given to the display adapter by the display element and the drawing
+function for text has to be implemented by the display adapter or the appropriate GFX library.</p>
+<p><img src="displays-text.drawio.svg" alt="alt text"></p>
+<p>The DisplayAdapter interface is common to all displays.  Some displays like the simple LCD displays need no GFX but a
+display specific library and must implement the start and drawText as a minimum.</p>
+<p>The character width and height will be 1 for these displays and the displayBox width and height is reporting how many
+characters can be shown.</p>
+<p>The default implementations in the DisplayAdapter class will calculate all characters with 1 unit for width and height
+So they must not be overwritten for pure text displays.</p>
+<p>A specific display adapter implementation must derive from the <code>DisplayAdapter</code> class and override at minimum the funcions:</p>
+<ul>
+<li><code>fillRect()</code> – used for clearing the text on the display.</li>
+<li><code>drawText()</code> – print some text on the display.</li>
+</ul>
+<p>You can override to gain some speed:</p>
+<ul>
+<li><code>clear()</code> – to clear the complete display with the background color.</li>
+</ul>
+<h2>Pixel based displays</h2>
+<p>Pixel based displays work different and need more CPU and memory.  Most of the displays today are pixel oriented.  This
+requires at minimum a standard font for the characters in use.</p>
+<p>In addition to the functions required for text only displays the functions <code>setPixel()</code> and <code>getPixel()</code> must be
+supported. Some GFX implementations offer drawing of simple rectangles and lines but these funcions are not used by the HomeDing Library.
+Instad the GFXDraw library is used to draw even complex objects.</p>
+<p>The following methods have to been implemented for Pixel based displays:</p>
+<ul>
+<li>
+<p><code>fillRect()</code> – used for clearing regions on the display.</p>
+</li>
+<li>
+<p><code>textBox()</code> – to return the size of a text on the screen.</p>
+</li>
+<li>
+<p><code>drawText()</code> – print some text on the display.</p>
+</li>
+<li>
+<p><code>startWrite()</code> – to be called once before calling <code>writePixel()</code></p>
+</li>
+<li>
+<p><code>writePixel()</code> – set the color of a pixel. Position must be guaranteed to be on the screen.</p>
+</li>
+<li>
+<p><code>endWrite()</code> – to be called once after calling <code>writePixel()</code></p>
+</li>
+</ul>
+<h3>Text font support</h3>
+<p>At a minimum these displays have to support the drawText function with a standard font to act as a display that can be
+used showing the welcome messages at startup. The specific display adapter may also include multiple fonts to fit best to the required text height.
+With text height 0 the default height (usually the smallest) should be used.</p>
+<h3>Color Support</h3>
+<p>Colors in the interface to a displayAdapter are always 32 bit 0xxrrggbb color values.  The first byte (xx) is not used.</p>
+<p>To support colors or at least black or white backgrounds the display configuration can capture settings for a default
+foreground and background color.</p>
+<p>Black/white displays usually use the colors 0x00FFFFFF (white) and 0x00000000 (black) only.  For other displays it is
+the DisplayAdapter implementation that can decide the best real color for drawing.</p>
+<p>In case the display doesn’t allow to read back the current color of a pixel the <code>getPixel()</code> will return the background
+color as defined in the configuration.</p>
+<!-- These colors can be retrieved by using the functions `getColor()` and `getBackgroundColor()`. -->
+<p>For drawing anything to the screen the stroke and fill colors always have to be passed in the function parameter.</p>
+<hr>
+<h2>Implementations</h2>
+<p>The C++ Classes used for display drivers for specific chips and the display item shown on the
 display are illustrated in the following class diagram:</p>
 <pre class="mermaid">flowchart TD&#10;&#10;  DisplayChipAdapter[&quot;Display#60;Chip#62;Adapter&quot;]&#10;  DisplayAGFXAdapter&#10;  DisplayItemElement[&quot;Display#60;Item#62;Element&quot;]&#10;  DisplayOutputElement&#10;  DisplayChipElement[&quot;Display#60;Chip#62;Element&quot;]&#10;  DisplayElement&#10;  Element&#10;&#10;&#10;  subgraph Implementation of displays&#10;    DisplayChipElement -- implements--&gt; DisplayElement&#10;  end&#10;&#10;  subgraph Implementation of display items&#10;    DisplayItemElement --implements--&gt; DisplayOutputElement&#10;  end&#10;&#10;  subgraph Implementation of draw operations&#10;    DisplayChipAdapter --&gt;|implements| DisplayAGFXAdapter&#10;    DisplayAGFXAdapter --&gt;|implements| DisplayAdapter&#10;  end&#10;&#10;&#10;    DisplayElement --implements--&gt; Element&#10;&#10;    DisplayOutputElement --implements--&gt; Element&#10;&#10;  DisplayItemElement -.draws with.-&gt; DisplayChipAdapter&#10;  DisplayChipElement -.creates.-&gt; DisplayChipAdapter&#10;</pre>
 <p>The <code>Display&lt;Chip&gt;Adapter</code> implementations include using various display types. They are
@@ -48,6 +118,10 @@ created and initialized by the corresponding <code>Display&lt;Chip&gt;Element</c
           <div class="taglist">
             
               <a href="/tag/implementation.htm">Implementation</a>
+            
+              <a href="/tag/display.htm">Display</a>
+            
+              <a href="/tag/wip.htm">Wip</a>
             
           </div>
         

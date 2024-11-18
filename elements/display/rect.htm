@@ -33,31 +33,38 @@
               <use href="/icons.svg#displayrect"></use>
             </svg>
           
-            The DisplayRect Element allows showing a rectangular with a border and background color. This can be used to visualize a boolean value on the display and show it at a specified position as a shallow or filled rectangle. The value can be changed by using an action.
+            The DisplayRect Element allows showing a rectangular with a stroke and fill color. This can be used to visualize a boolean value on the display and show it at a specified position as a shallow or filled rectangle. The value can be changed by using an action.
 
           </div>
         
-        <p>This element is supported on all GFX based displays. It can be used as a background giving object e.g. for text elements.</p>
-<p>The DisplayRectElement is included in the collection of core Display elements.</p>
+        <p>Displays that do not support pixel based drawings may not include this Element into the sketch.</p>
+<p>The DisplayRect is included in the collection of <strong>Display-Draw</strong> elements and can be used on pixel based
+displays only.</p>
 <h2>Element Configuration</h2>
 <p>The following properties are available for configuration of the element.</p>
 <p><object data="/element.svg?displayrect" type="image/svg+xml"></object></p>
-<p>From the base <code>DisplayOutputElement</code> implementation the following properties are available for configuration:</p>
+<p>The <code>DisplayOutputElement</code> captures the parameters for defining a visual Element on the display.  Tis is common for
+multiple Elements even when they are not used by the element.</p>
+<p>The following properties are available for configuration:</p>
 <blockquote>
 <p><strong>x</strong> – Specifies the x position of the Element.</p>
 <p><strong>y</strong> – Specifies the y position of the Element.</p>
 <p><strong>w</strong> or <strong>width</strong> – Specifies the width of the Element.</p>
 <p><strong>h</strong> or <strong>height</strong> – Specifies the height of the Element.</p>
-<p><strong>color</strong> – Specifies the draw color of the Element. When no color is specified on the
-element the default color from the display is used.</p>
-<p><strong>background</strong> – Specifies the background color of the Element. When no color is specified on
-the element the default color from the display is used.</p>
+<p><strong>align</strong> – The alignment of the text.  Possible values are “left” (default), “center” and “right”.
+This configuration is used by the <a href="/elements/display/textbox.htm">DisplayTextBox Element</a> only</p>
+<p><strong>fontsize</strong> – Specifies the size of the text used for drawing the Element.
+This configuration is used by the <a href="/elements/display/textbox.htm">DisplayTextBox Element</a> only</p>
+<p><strong>stroke</strong> or <strong>color</strong> – Specifies the stroke color of the Element. When no color is specified on the
+element the default stroke color from the display is used.</p>
+<p><strong>fill</strong> or <strong>background</strong> – Specifies the background color of the Element. When no color is specified on
+the element the default fill color from the display is used.</p>
 <p><strong>border</strong> – Specifies the border color of the Element. When no color is specified on
 the element the default color from the display is used.</p>
 <p><strong>value</strong> – Specifies a value for the Element. This is used for some Output Elements only.</p>
 <p><strong>clear</strong> – The value is cleared.</p>
 </blockquote>
-<p>The DisplayDot Element is using the <code>value</code> as a boolean value to enable drawing the background of the circle.
+<p>The DisplayRect Element is using the <code>value</code> as a boolean value to enable drawing the background of the circle.
 This enables using the DisplayDot Element to be used for visualizing boolean values.</p>
 <p>From the base element implementation the following properties are available for configuration:</p>
 <blockquote>
@@ -72,6 +79,7 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 <p>The following actions can be sent to the element:</p>
 <blockquote>
 <p><strong>redraw</strong> – The display is updated.</p>
+<p><strong>value</strong> – when a false or 0 value is given the fillcolor of the rectangle will not be used and the display background will be shown.</p>
 </blockquote>
 <h3>Configuration Example</h3>
 <p>This example shows how to configure this element:</p>
@@ -84,7 +92,7 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
       <span class="token property">"x"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
       <span class="token property">"y"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
       <span class="token property">"w"</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
-      <span class="token property">"h"</span><span class="token operator">:</span> <span class="token number">36</span><span class="token punctuation">,</span>
+      <span class="token property">"h"</span><span class="token operator">:</span> <span class="token number">36</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
@@ -92,7 +100,7 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 <p>The following properties are available with the current values at runtime</p>
 <blockquote>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
-<p><strong>value</strong> - Current output value of the element.</p>
+<p><strong>value</strong> - Current value of the element.</p>
 </blockquote>
 <h3>Example State</h3>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
@@ -104,8 +112,9 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 <h2>See also</h2>
 <ul>
 <li><a href="/elements/display/text.htm">DisplayText Element</a></li>
-<li><a href="/elements/display/dot.htm">DisplayDot Element</a></li>
+<li><a href="/elements/display/textbox.htm">DisplayTextBox Element</a></li>
 <li><a href="/elements/display/line.htm">DisplayLine Element</a></li>
+<li><a href="/elements/display/circle.htm">DisplayCircle Element</a></li>
 <li><a href="/elements/display/button.htm">DisplayButton Element</a></li>
 </ul>
 
