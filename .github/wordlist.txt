@@ -35,6 +35,7 @@ atotime
 auth
 autostart
 averageTime
+azureiotkit
 backEnd
 bassboost
 bastelgarage
@@ -146,11 +147,11 @@ digitalin
 DigitalInElement
 DigitalInput
 DigitalInputElement
-DigitalSignal
 digitalout
 DigitalOutElement
 digitaloutui
 digitalsignal
+DigitalSignal
 digitalWrite
 DisplayAdapter
 DisplayBar
@@ -185,6 +186,7 @@ ESP8266
 esphome
 espota
 Espressif
+espwroom
 ESPx  
 ETRACE
 events
@@ -232,6 +234,7 @@ inverse
 invert
 IoT
 iotstyle
+IPEX
 ir
 irObstacle
 irRecv
@@ -247,6 +250,7 @@ LEDs
 light
 lightElement
 lightness
+lilygo
 linebreak
 lineChart
 LiquidCrystal
@@ -354,6 +358,7 @@ p9813Element
 page
 passwd
 path
+pico
 pin
 pin1
 pin2
@@ -475,6 +480,8 @@ toggle
 toolchain
 TRÅDFRI
 TSOP4838
+ttgo
+ttgogallery
 tttapa
 Tuya
 type
@@ -496,6 +503,7 @@ voltageadjust
 voltagefactor
 waittime
 warmuptime
+weact
 WeatherFeed
 WeatherFeedElement
 webbutton
@@ -512,6 +520,7 @@ WLAN
 WRGB
 wroom
 xFormat
+xiao
 xrrggbb
 xwwrrggbb
 yFormat
