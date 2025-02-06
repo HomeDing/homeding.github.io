@@ -6,6 +6,11 @@
   --card-head-active: hsl(220, 80%, 70%);
   --focus: hsl(220, 50%, 50%);
   --code: rgb(255 255 185);
+  --sidebar-width: 200px;
+  --content-width: 1168px;
+  --layout-gap: 16px;
+  --doc-body-width: calc(var(--content-width) + var(--sidebar-width) + 2 * var(--layout-gap));
+  --content-back: #f8f8f8;
   color-scheme: dark light;
 }
 @media (prefers-color-scheme: dark) {
@@ -405,6 +410,12 @@ main {
   border: 2px solid #00cc00 !important;
   background-color: #ccffcc !important;
   color: #111111;
+}
+
+@media print {
+  .noprint {
+    display: none !important;
+  }
 }
 
 :root {

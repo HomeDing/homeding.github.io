@@ -98,6 +98,9 @@
 <p><a href="/elements/dht.htm">DHT Element</a> – The DHT Element allows retrieving temperature and humidity values from the DHT11, DHT22 and AM2302 sensors and creates actions when new values are available.</p>
 </li>
 <li>
+<p><a href="/elements/dmx.htm">DMX Element</a> –</p>
+</li>
+<li>
 <p><a href="/elements/dstime.htm">DSTime Element</a> – The DSTime Element gets the local time from a DS3231 chip that contains a high accurate clock running independently from the main board and processor.</p>
 </li>
 <li>
@@ -126,6 +129,9 @@
 </li>
 <li>
 <p><a href="/elements/display/config.htm">Display Configuration</a> – The displays in the HomeDing library are configured by a unified set of parameters.</p>
+</li>
+<li>
+<p><a href="/elements/display/index.htm">Display Elements</a> – The HomeDing library supports local displays attached via SPI and I2C bus to show values from the activated elements.</p>
 </li>
 <li>
 <p><a href="/elements/display/lcd.htm">Display LCD Element</a> – The DisplayLCD Element implements the display using Monochrome LCDs based on HD44780 chips. The display is connected by using the PCF8574 I2C chip to control the direct input lines of the display.</p>
@@ -167,13 +173,16 @@
 <p><a href="/elements/display/rect.htm">DisplayRect Element</a> – The DisplayRect Element allows showing a rectangular with a stroke and fill color. This can be used to visualize a boolean value on the display and show it at a specified position as a shallow or filled rectangle. The value can be changed by using an action.</p>
 </li>
 <li>
-<p><a href="/elements/display/text.htm">DisplayText Element</a> – The DisplayTextElement allows sending a value to the display and show it at a specified position as text including a prefix and postfix. The value can be changed by using an action.</p>
+<p><a href="/elements/display/text.htm">DisplayText Element</a> – The DisplayTextElement allows sending a pure text value to the display and show it at a specified position as text including a prefix and postfix. The value can be changed by using an action.</p>
 </li>
 <li>
 <p><a href="/elements/display/textbox.htm">DisplayTextBox Element</a> – The DisplayTextBoxElement allows showing a text on the display in a rectange area at a specified position as text including a prefix and postfix. The value can be changed by using an action.</p>
 </li>
 <li>
 <p><a href="/elements/index.htm">Elements Overview</a> – Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like Sensors, Displays, Light, I/O control and internal control logic. Elements are implemented in the HomeDing library as Components that can be controlled using setup configuration and runtime actions.</p>
+</li>
+<li>
+<p><a href="/elements/display/fonts.htm">Fonts for pixel based displays</a> –</p>
 </li>
 <li>
 <p><a href="/elements/ina219.htm">INA219 Element</a> – The INA219 is a current and voltage sensor that uses the I2C bus for communication that can measure voltages up to 26V and current in various ranges.</p>
@@ -206,6 +215,39 @@
 <p><a href="/elements/mdns.htm">Multicast DNS Service</a> – The mDNS service is used as the standard device discovery mechanism for HomeDing devices. This allows finding all devices in the home network.</p>
 </li>
 <li>
+<p><a href="/elements/calcproperties.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/check.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/display/gc9a01.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/display/gfx.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/display/ili9341.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/display/outputproperties.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/elementproperties.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/light/stripeproperties.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/mqtt-more.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/sensorproperties.htm">NO-TITLE</a> –</p>
+</li>
+<li>
+<p><a href="/elements/sheet.htm">NO-TITLE</a> –</p>
+</li>
+<li>
 <p><a href="/elements/ntptime.htm">NTPTime Element</a> – The NTPTimeElement can retrieve the local time from an external NTP server using the ntp protocol on the internet.</p>
 </li>
 <li>
@@ -218,7 +260,7 @@
 <p><a href="/elements/or.htm">OR Element</a> – The OR Element combines multiple logic input values to a single output value. The output value will be true only when at least one of the input values is true.</p>
 </li>
 <li>
-<p><a href="/elements/ota.htm">OTA Element</a> – The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA). <strong>The update doesn't work in safemode</strong> see <a href="/dev/safemode.htm">safemode</a>;</p>
+<p><a href="/elements/ota.htm">OTA Element</a> – The OTA Element allows to upload new firmware using the wireless network - Over The Air (OTA). <strong>The update doesn't work in safemode</strong>.</p>
 </li>
 <li>
 <p><a href="/elements/light/p9813.htm">P9813 Element</a> – The P9813Element implements the protocol to control the P9813 LED driver chip also known as Groove chainable LED.</p>
@@ -233,10 +275,13 @@
 <p><a href="/elements/state.htm">Persisting Current State of Elements</a> – Enable devices to restart with the values and the current state after a reboot or deep sleep.</p>
 </li>
 <li>
+<p><a href="/elements/audio/rda5807.htm">RDA 5807 FM Radio Tuner</a> – The RDA5807 is a radio chip for receiving FM stereo radio signals and RDS information.</p>
+</li>
+<li>
 <p><a href="/elements/rfcodes.htm">RFCodes Element</a> – The RFCodes Element is used for sending and receiving RF signals to switching and dimming devices using RF protocols like 433 or 315 MHz.</p>
 </li>
 <li>
-<p><a href="/elements/audio/radio.htm">Radio Element</a> – The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.</p>
+<p><a href="/elements/audio/radio.htm">Radio Element</a> – The Radio Element allows to control FM radio chips that are connected to the board via i2c bus. The Radio Element is part of the Radio Example.</p>
 </li>
 <li>
 <p><a href="/elements/reference.htm">Reference Element</a> – The ReferenceElement allows creating actions by comparing an incoming value with a reference value.</p>
@@ -258,6 +303,12 @@
 </li>
 <li>
 <p><a href="/elements/sht20.htm">SHT20 Element</a> – The SHT2x sensors provide some high precision temperature and humidity sensors that communicate on the I2C bus.</p>
+</li>
+<li>
+<p><a href="/elements/audio/si4703.htm">SI4703 FM Radio Tuner</a> – The SI4703 created by Silicon Labs and now owned by SkyWorks is a radio chip for receiving FM stereo radio signals and RDS information.</p>
+</li>
+<li>
+<p><a href="/elements/audio/si4730.htm">SI47xx FM / Multiband Radio Tuner</a> – The SI47xx is a series of radio chip from SiliconSilicon Labs, now Skyworks for receiving and transmitting FM stereo radio signals and other Bands.</p>
 </li>
 <li>
 <p><a href="/elements/scene.htm">Scene Element</a> – The Scene Element sends a series of actions triggered by a single incoming action. They can be send out step by step using a defined delay or by actions.</p>
@@ -285,6 +336,9 @@
 </li>
 <li>
 <p><a href="/elements/time.htm">Time Element</a> – The time element creates actions with the current local time as value.</p>
+</li>
+<li>
+<p><a href="/elements/timeelements.htm">Time Elements</a> –</p>
 </li>
 <li>
 <p><a href="/elements/timer.htm">Timer Element</a> – The TimerElement creates events based on a one-time or cyclic timing pattern.</p>

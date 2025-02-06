@@ -60,7 +60,7 @@
 <p><a href="/boards/esp32c3/esp32c3-01.htm">Board ESP32-C3 ESP-01</a> – The ESP32-C3 processor is now also available in a ESP01 form factor board including 4MByte flash and an external antenna connector.</p>
 </li>
 <li>
-<p><a href="/boards/esp8266/esp01.htm">Board ESP8266 ESP-01</a> –</p>
+<p><a href="/boards/esp8266/esp01.htm">Board ESP8266 ESP-01</a> – The ESP-01 is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used. There are variants of this board with different antenna and different flash sizes.</p>
 </li>
 <li>
 <p><a href="/boards/wemosoled.htm">Board Review ESP8266 with OLED</a> – This WeMos labeled board has a OLED display using the SSD1306 chip on a ESP-12E module based ESP8266 board.</p>
@@ -69,7 +69,7 @@
 <p><a href="/boards/index.htm">Boards and Processor modules</a> – The HomeDing library can be used with Boards and Processor modules using the the ESP8266 and ESP32 chips from Espressif. In this overview some boards and devices can be found that are supported by the HomeDing library.</p>
 </li>
 <li>
-<p><a href="/boards/devices/bulb.htm">Bulb Devices</a> –</p>
+<p><a href="/boards/devices/bulb.htm">Bulb Devices</a> – Bulb devices using the ESP8266 chip are supported by the minimal sketch and can be controlled by the color and switch elements.</p>
 </li>
 <li>
 <p><a href="/boards/esp32c3/core.htm">CORE-ESP32C3 development board</a> – The CORE-ESP32 core board is based on Espressif ESP32-C3 SoC that fits good on a breadboard and has the option for a LCD + digital joystick shield on top. The ESP32-C3 variant is supported by the HomeDing library.</p>
@@ -81,7 +81,10 @@
 <p><a href="/boards/mini/shield-sd.htm">D1 Mini SD Card shield</a> – The SD Card shield for the D1 Mini sized boards using 1wire SPI for data transfer.</p>
 </li>
 <li>
-<p><a href="/boards/esp8266/esp01-dht.htm">ESP-01board with DHT22</a> –</p>
+<p><a href="/boards/esp8266/esp01-dht.htm">ESP-01board with DHT22</a> – This little board is a very specific adapter that has a DHT22 sensor and power regulator for a ESP-01 module.</p>
+</li>
+<li>
+<p><a href="/boards/adapter2.htm">ESP-12 Adapter</a> – This adapter for the ESP-12 type boards is including space for soldering components.</p>
 </li>
 <li>
 <p><a href="/boards/esp32/azureiotkit.htm">ESP32 Azure IoT Kit</a> – This is a ESP32 based board based on ESP-WROVER-B module designed by espressif and Microsoft as a reference IoT Kit Azure.  It is no more manufactured.</p>
@@ -108,13 +111,13 @@
 <p><a href="/boards/esp32s3/index.htm">ESP32-S3 Boards</a> – There are several boards available using the ESP32-S3 chip. Boards based on the ESP32-S3 variant offer a high performance dual core SoC with vector hardware acceleration and special display interfaces.</p>
 </li>
 <li>
-<p><a href="/boards/esp32s3/sc01-plus.htm">ESP32S3 SC01 Plus Panel</a> – This touch display panel with a 320 * 480 LCD display based on a ESP32-S3 processor. This panel is supported by the [HomeDing BigDisplay Example].</p>
+<p><a href="/boards/esp32s3/sc01-plus.htm">ESP32S3 SC01 Plus Panel</a> – This touch display panel with a 320 * 480 LCD display based on a ESP32-S3 processor. This panel is supported by the <a href="/examples/display.htm">HomeDing BigDisplay Example</a>.</p>
 </li>
 <li>
 <p><a href="/boards/nodemcu.htm">ESP8266 NodeMCU development boards</a> – The NodeMCU boards are one of the most common development boards using ESP8266 modules. They offer an easy start into the ESP8266 development as they have all you need for programming, offer 4MByte flash memory and a LED on-board.</p>
 </li>
 <li>
-<p><a href="/boards/esp8266/esp12dev.htm">Esp-12 development board</a> –</p>
+<p><a href="/boards/esp8266/esp12dev.htm">Esp-12 development board</a> – This is an adapter board that can be used to flash ESP-12 modules before adding them to a device. This solution is especially helpful for creating devices that run on battery or low power conditions and therefore do not need USB chips.</p>
 </li>
 <li>
 <p><a href="/boards/esp32s3/lilygo-t-display-s3.htm">LilyGO T-Display-S3</a> – The LilyGO T-Display-S3 board has an integrated TFT color display <strong>with</strong> optional capacitive touch and a USB-C type connector.</p>
@@ -138,16 +141,16 @@
 <p><a href="/boards/esp32s3/panel-8048S043.htm">Panel ESP32-8048S043C</a> – This is a bare panel device based on a ESP32-S3 processor with 16M Flash and 8M PSRAM Memory in combination with a 800*480px 16 bit color display and touch controller. This panel is supported by the [HomeDing BigDisplay Example]</p>
 </li>
 <li>
-<p><a href="/boards/sockets.htm">Retail Plug and Socket Devices</a> – There are many devices on the market that use the ESP8266 chip to control main power by internal relays. The <a href="/examples/minimal.htm">Minimal Sketch</a> supports these use cases.</p>
+<p><a href="/boards/sockets.htm">Retail Plug and Socket Devices</a> – There are many devices on the market that use the ESP8266 chip to switch main power by internal relays. Some of them also support monitoring the power consumption. The <a href="/examples/minimal.htm">Minimal Sketch</a> supports these use cases.</p>
 </li>
 <li>
 <p><a href="/boards/esp32c6/xiao-esp32C6.htm">Seeed Studio XIAO ESP32C6</a> – …</p>
 </li>
 <li>
-<p><a href="/boards/sonoffbasic.htm">Sonoff Basic (R1)</a> – The Sonoff Basic is a smart relay off-the-shelf product using a ESP8266 with 1MByte Flash.</p>
+<p><a href="/boards/sonoffbasic.htm">Sonoff Basic (R1)</a> – The Sonoff Basic is a off-the-shelf smart relay to switch main power consumers. It is using the ESP8266 CPU and 1 MByte Flash and can be used with the Minimal Example.</p>
 </li>
 <li>
-<p><a href="/boards/sonoffs20.htm">Sonoff S20</a> – The Sonoff S20 is a smart socket off-the-shelf product using a ESP8266 with 1MByte Flash.</p>
+<p><a href="/boards/sonoffs20.htm">Sonoff S20</a> – The Sonoff S20 is a smart socket off-the-shelf product to switch main power consumers. It is using the ESP8266 CPU and 1 MByte Flash and can be used with the Minimal Example.</p>
 </li>
 <li>
 <p><a href="/boards/esp32c3/spotpear-144lcd.htm">Spotpear ESP32C3 1.44 LCD</a> – The Spotpear ESP32C3 1.44 LCD board combines a ESP32-C3 with a display and LIPO charging with a compact design.</p>
@@ -160,6 +163,9 @@
 </li>
 <li>
 <p><a href="/boards/pins.htm">Using IO pins of the ESP8266 based boards</a> –</p>
+</li>
+<li>
+<p><a href="/boards/esp32s3/waveshare-s3-touch-43.htm">Waveshare Panel ESP32-S3-LCD-4.3</a> – This is a ESP32-S3 based board including a 4.3 inch Capacitive Touch Display with 800×480 pixels, 5-point Touch and 16 MByte Flash Memory.  with a 800*480px 16 bit color display and touch controller.  This panel is supported by the [HomeDing BigDisplay Example]</p>
 </li>
 <li>
 <p><a href="/boards/esp32c3/weact-core-c3.htm">WeAct Studio ESP32-C3 Core</a> – The WeAct Studio ESP32-C3 Core board offers breadboard compatible connectors and is a good for development purpose.</p>

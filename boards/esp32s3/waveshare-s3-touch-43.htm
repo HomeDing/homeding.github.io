@@ -1,0 +1,325 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waveshare Panel ESP32-S3-LCD-4.3</title>
+    <script src="/pages.js"></script>
+    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+    <script src="/story.js" type="module"></script>
+    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+    <meta name='description' content='ESP32-S3 board with fast 800 * 480 px, 16 bit LCD color touch display'>
+    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  </head>
+  <body scroll="0" style="padding:0;">
+    <div class="u-navbar" style="margin-bottom: 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+      </svg>
+      <a href="/index.htm" class="button">Home</a>
+      <a href="/elements/index.htm" class="button">Elements</a>
+      <a href="/boards/index.htm" class="button">Boards</a>
+      <a href="/recipes/index.htm" class="button">Recipes</a>
+    </div>
+    <nav></nav>
+    <main style="padding:1rem;max-width: 800px;">
+      <h1>Waveshare Panel ESP32-S3-LCD-4.3</h1>
+      
+        
+            <div class="plaincard">
+            
+            This is a ESP32-S3 based board including a 4.3 inch Capacitive Touch Display with 800×480 pixels, 5-point Touch and 16 MByte Flash Memory.  with a 800*480px 16 bit color display and touch controller.  This panel is supported by the [HomeDing BigDisplay Example]
+
+          </div>
+        
+        <p><a href="https://atctwo.net/about/">text</a></p>
+<p><a href="https://www.waveshare.com/esp32-s3-touch-lcd-4.3.htm">text</a>
+<a href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-4.3">text</a></p>
+<p><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/partition-tables.html">text</a></p>
+<p><img src="waveshare-s3-touch-43.jpg" alt="waveshare ESP32-S3-LCD-4.3 board"></p>
+<p>This board is equipped with:</p>
+<ul>
+<li>
+<p>4.3 inch, 800 * 480 px Display based on ST7796UI supporting 16 bit parallel panel interface
+The display is supported by the “GFX Library for Arduino”.</p>
+</li>
+<li>
+<p>ESP32-S3 processor in ESP32-S3-Wroom-1 module</p>
+</li>
+<li>
+<p>8 MByte Flash</p>
+</li>
+<li>
+<p>8 MByte PSRAM</p>
+</li>
+<li>
+<p>Touch Sensor: FT6336U on I2C, Address 0x38</p>
+</li>
+<li>
+<p>I2C bus using SDA=6, CLK=5</p>
+</li>
+<li>
+<p>USB-C connector connected to the processor</p>
+</li>
+<li>
+<p>SD Card slot</p>
+</li>
+<li>
+<p>TF card slot</p>
+</li>
+<li>
+<p>Connector for I2C</p>
+</li>
+<li>
+<p>Connector and adaption for CAN bus</p>
+</li>
+<li>
+<p>Connector for Sensor with 3.3V power and 1 data/analog IO line.</p>
+</li>
+<li>
+<p>Connector and adaption for RS485 bus</p>
+</li>
+<li>
+<p>PH2.0 Connector for 3.7V lithium battery</p>
+</li>
+<li>
+<p>Boot button</p>
+</li>
+<li>
+<p>Reset button</p>
+</li>
+</ul>
+<p>Label: ESP32-s3-LCD-4.3</p>
+<h2>Partition</h2>
+<p><a href="https://atctwo.net/projects/">text</a></p>
+<h1>Name,   Type, SubType, Offset,  Size, Flags</h1>
+<p>nvs,      data, nvs,     0x9000,  0x5000,
+otadata,  data, ota,     0xe000,  0x2000,
+app0,     app,  ota_0,   0x10000, 0x330000,
+app1,     app,  ota_1,   0x340000,0x330000,
+ffat,     data, fat,     0x670000,0x180000,
+coredump, data, coredump,0x7F0000,0x10000,</p>
+<pre><code>&quot;board&quot;: &quot;esp32:esp32:esp32s3&quot;,
+&quot;configuration&quot;: &quot;JTAGAdapter=default,PSRAM=opi,FlashMode=qio120,FlashSize=8M,LoopCore=1,EventsCore=1,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,PartitionScheme=default_8MB,CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none,ZigbeeMode=default&quot;,
+</code></pre>
+<p>CH422G IO expansion chip</p>
+<h2>Arduino Configuration</h2>
+<p>The ESP32S3 Dev Module (esp32) can be used with the following settings:</p>
+<p>Dev Board selects ESP32S3 DEV Module</p>
+<p>There are 2 USB-C connetors available. This configuration uses the one labeled with USB (not UART).</p>
+<ul>
+<li>JTAG Adapter: Disbled</li>
+<li>PSRAM: OPI PSRAM</li>
+<li>Flash Mode: QIO 80MHz</li>
+<li>Flash Size: 8MByte (64Mb)</li>
+<li>Arduino Runs On: Core 1</li>
+<li>Events Runs On: Core 1</li>
+<li>USB Mode: Hardware CDC amd JTAG</li>
+<li>USB CDC On Boot: Disabled</li>
+<li>USB Firmware MSC on Boot: Disabled</li>
+<li>Upload Mode: UAT0 / Hardware CDC</li>
+<li>Partition Scheme: ___</li>
+<li>CPU Frequency: 240MHz</li>
+<li>Upload Speed: 921600</li>
+<li>Core Debug Level: None</li>
+<li>Erase All Flash: Disabled</li>
+</ul>
+<h2>env.json configuration</h2>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Waveshare"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Panel 800*480"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Panel with 800 px"</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+      <span class="token property">"cache"</span><span class="token operator">:</span> <span class="token string">"etag"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"on"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token property">"DisplayEsp32panel"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"busmode"</span><span class="token operator">:</span> <span class="token string">"RGBPanel"</span><span class="token punctuation">,</span>
+      <span class="token property">"buspins"</span><span class="token operator">:</span> <span class="token string">"14,38,18,17,10,39,0,45,48,47,21,1,2,42,41,40"</span><span class="token punctuation">,</span>
+      <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
+      <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+      <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"x000000"</span><span class="token punctuation">,</span>
+      <span class="token property">"background"</span><span class="token operator">:</span> <span class="token string">"#bbbbbb"</span><span class="token punctuation">,</span>
+      <span class="token property">"lightpin"</span><span class="token operator">:</span> <span class="token number">45</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> </code></pre>
+<h2>See also</h2>
+<ul>
+<li><a href="https://www.waveshare.com/esp32-s3-touch-lcd-4.3.htm">WaveShare Shop</a></li>
+<li><a href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-4.3">Overview by WaveShare</a></li>
+</ul>
+<p>“C:\Users\Matthias\Documents\Arduino\ESP32Waveshare\lvgl_Porting\ESP_Panel_Board_Custom.h”</p>
+<h1>define ESP_PANEL_LCD_NAME          ST7262</h1>
+<h1>define ESP_PANEL_LCD_WIDTH         (800)</h1>
+<h1>define ESP_PANEL_LCD_HEIGHT        (480)</h1>
+<h1>define ESP_PANEL_LCD_BUS_SKIP_INIT_HOST    (1)     // 0/1</h1>
+<h1>define ESP_PANEL_LCD_BUS_TYPE      (ESP_PANEL_BUS_TYPE_RGB)</h1>
+<h1>elif ESP_PANEL_LCD_BUS_TYPE == ESP_PANEL_BUS_TYPE_RGB</h1>
+<p>#define ESP_PANEL_LCD_RGB_CLK_HZ            (16 * 1000 * 1000)
+#define ESP_PANEL_LCD_RGB_HPW               (4)
+#define ESP_PANEL_LCD_RGB_HBP               (8)
+#define ESP_PANEL_LCD_RGB_HFP               (8)
+#define ESP_PANEL_LCD_RGB_VPW               (4)
+#define ESP_PANEL_LCD_RGB_VBP               (16)
+#define ESP_PANEL_LCD_RGB_VFP               (16)
+#define ESP_PANEL_LCD_RGB_PCLK_ACTIVE_NEG   (1)     // 0: rising edge, 1: falling edge
+#define ESP_PANEL_LCD_RGB_DATA_WIDTH        (16)    //  8 | 16
+#define ESP_PANEL_LCD_RGB_PIXEL_BITS        (16)    // 24 | 16
+#define ESP_PANEL_LCD_RGB_FRAME_BUF_NUM     (1)     // 1/2/3
+#define ESP_PANEL_LCD_RGB_BOUNCE_BUF_SIZE   (0)     // Bounce buffer size in bytes. This function is used to avoid screen drift.
+// To enable the bounce buffer, set it to a non-zero value. Typically set to <code>ESP_PANEL_LCD_WIDTH * 10</code>
+// The size of the Bounce Buffer must satisfy <code>width_of_lcd * height_of_lcd = size_of_buffer * N</code>,
+// where N is an even number.</p>
+<p>#define ESP_PANEL_LCD_RGB_IO_HSYNC          (46)
+#define ESP_PANEL_LCD_RGB_IO_VSYNC          (3)
+#define ESP_PANEL_LCD_RGB_IO_DE             (5)   // -1 if not used
+#define ESP_PANEL_LCD_RGB_IO_PCLK           (7)
+#define ESP_PANEL_LCD_RGB_IO_DISP           (-1)    // -1 if not used</p>
+<p>#define ESP_PANEL_LCD_RGB_IO_DATA0          (14)
+#define ESP_PANEL_LCD_RGB_IO_DATA1          (38)
+#define ESP_PANEL_LCD_RGB_IO_DATA2          (18)
+#define ESP_PANEL_LCD_RGB_IO_DATA3          (17)
+#define ESP_PANEL_LCD_RGB_IO_DATA4          (10)
+#define ESP_PANEL_LCD_RGB_IO_DATA5          (39)
+#define ESP_PANEL_LCD_RGB_IO_DATA6          (0)
+#define ESP_PANEL_LCD_RGB_IO_DATA7          (45)
+#define ESP_PANEL_LCD_RGB_IO_DATA8          (48)
+#define ESP_PANEL_LCD_RGB_IO_DATA9          (47)
+#define ESP_PANEL_LCD_RGB_IO_DATA10         (21)
+#define ESP_PANEL_LCD_RGB_IO_DATA11         (1)
+#define ESP_PANEL_LCD_RGB_IO_DATA12         (2)
+#define ESP_PANEL_LCD_RGB_IO_DATA13         (42)
+#define ESP_PANEL_LCD_RGB_IO_DATA14         (41)
+#define ESP_PANEL_LCD_RGB_IO_DATA15         (40)</p>
+<h1>define ESP_PANEL_LCD_COLOR_BITS    (16)        // 8/16/18/24</h1>
+<h1>define ESP_PANEL_LCD_BGR_ORDER     (0)         // 0=RGB 1=BGR</h1>
+<h1>define ESP_PANEL_LCD_INEVRT_COLOR  (0)         // 0/1</h1>
+<h1>define ESP_PANEL_LCD_SWAP_XY       (0)         // 0/1</h1>
+<h1>define ESP_PANEL_LCD_MIRROR_X      (0)         // 0/1</h1>
+<h1>define ESP_PANEL_LCD_MIRROR_Y      (0)         // 0/1</h1>
+<h1>define ESP_PANEL_LCD_IO_RST        (-1)</h1>
+<h1>define ESP_PANEL_LCD_RST_LEVEL     (0)         // 0: low level, 1: high level</h1>
+<p>===</p>
+<h1>define ESP_PANEL_USE_TOUCH         (1)         // 0/1</h1>
+<h1>define ESP_PANEL_TOUCH_NAME        GT911</h1>
+<h1>define ESP_PANEL_TOUCH_H_RES       (ESP_PANEL_LCD_WIDTH)</h1>
+<h1>define ESP_PANEL_TOUCH_V_RES       (ESP_PANEL_LCD_HEIGHT)</h1>
+<p>/<em>Touch Panel Bus Settings</em>/</p>
+<h1>define ESP_PANEL_TOUCH_BUS_TYPE            (ESP_PANEL_BUS_TYPE_I2C)</h1>
+<p>/<em>Touch panel bus parameters</em>/</p>
+<h1>if ESP_PANEL_TOUCH_BUS_TYPE == ESP_PANEL_BUS_TYPE_I2C</h1>
+<p>#define ESP_PANEL_TOUCH_I2C_ADDRESS     (0)<br>
+#define ESP_PANEL_TOUCH_I2C_CLK_HZ      (400 * 1000)
+// Typically set to 400K
+#define ESP_PANEL_TOUCH_I2C_SCL_PULLUP  (1)     // 0/1
+#define ESP_PANEL_TOUCH_I2C_SDA_PULLUP  (1)     // 0/1
+#define ESP_PANEL_TOUCH_I2C_IO_SCL      (9)
+#define ESP_PANEL_TOUCH_I2C_IO_SDA      (8)</p>
+<h1>define ESP_PANEL_USE_BACKLIGHT         (0)         // 0/1</h1>
+<h1>if ESP_PANEL_USE_BACKLIGHT</h1>
+<p>/<em>IO num of backlight pin</em>/</p>
+<h1>define ESP_PANEL_BACKLIGHT_IO          (45)</h1>
+<h1>define ESP_PANEL_BACKLIGHT_ON_LEVEL    (1)         // 0: low level, 1: high level</h1>
+<p>/<em>Set to 1 if you want to turn off the backlight after initializing the panel; otherwise, set it to turn on</em>/</p>
+<h1>define ESP_PANEL_BACKLIGHT_IDLE_OFF    (0)         // 0: on, 1: off</h1>
+<p>/<em>Set to 1 if use PWM for brightness control</em>/</p>
+<h1>define ESP_PANEL_LCD_BL_USE_PWM        (1)         // 0/1</h1>
+<h1>endif /<em>ESP_PANEL_USE_BACKLIGHT</em>/</h1>
+<p>/<em>Set to 0 if not using IO Expander</em>/</p>
+<p>////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////// Please utilize the following macros to execute any additional code if required. //////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// #define ESP_PANEL_BEGIN_START_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_EXPANDER_START_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_EXPANDER_END_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_LCD_START_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_LCD_END_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_TOUCH_START_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_TOUCH_END_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_BACKLIGHT_START_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_BACKLIGHT_END_FUNCTION( panel )
+// #define ESP_PANEL_BEGIN_END_FUNCTION( panel )</p>
+<p>/**</p>
+<ul>
+<li>Do not change the following versions, they are used to check if the configurations in this file are compatible with</li>
+<li>the current version of <code>ESP_Panel_Board_Custom.h</code> in the library. The detailed rules are as follows:</li>
+<li></li>
+<li>
+<ol>
+<li>If the major version is not consistent, then the configurations in this file are incompatible with the library</li>
+</ol>
+</li>
+<li>and must be replaced with the file from the library.</li>
+<li>
+<ol start="2">
+<li>If the minor version is not consistent, this file might be missing some new configurations, which will be set to</li>
+</ol>
+</li>
+<li>default values. It is recommended to replace it with the file from the library.</li>
+<li>
+<ol start="3">
+<li>Even if the patch version is not consistent, it will not affect normal functionality.</li>
+</ol>
+</li>
+<li></li>
+</ul>
+<p>*/</p>
+<h1>define ESP_PANEL_BOARD_CUSTOM_FILE_VERSION_MAJOR 0</h1>
+<h1>define ESP_PANEL_BOARD_CUSTOM_FILE_VERSION_MINOR 1</h1>
+<h1>define ESP_PANEL_BOARD_CUSTOM_FILE_VERSION_PATCH 1</h1>
+<h1>endif /<em>ESP_PANEL_USE_CUSTOM_BOARD</em>/</h1>
+<p>// <em>INDENT-OFF</em></p>
+
+        
+          <h2>Tags</h2>
+          <div class="taglist">
+            
+              <a href="/tag/board.htm">Board</a>
+            
+              <a href="/tag/wip.htm">Wip</a>
+            
+          </div>
+        
+      </main>
+      <script>
+        const param = {
+          MENU_MIN_WIDTH: 1030
+        };
+        var mbObj = document.querySelector('#menuButton');
+        var navObj = document.querySelector('nav');
+        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
+          navObj.classList.add('open');
+          navObj.classList.add('inpage');
+        }
+        mbObj.addEventListener('click', function (e) {
+          navObj.classList.toggle('open');
+        });
+        lazyLoadHTM('nav', '/toc.htm');
+      </script>
+
+      <script type="module" async>
+        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+      </script>
+
+    </body>
+  </body>
+</html>

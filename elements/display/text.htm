@@ -33,7 +33,7 @@
               <use href="/icons.svg#displaytext"></use>
             </svg>
           
-            The DisplayTextElement allows sending a value to the display and show it at a specified position as text including a prefix and postfix. The value can be changed by using an action.
+            The DisplayTextElement allows sending a pure text value to the display and show it at a specified position as text including a prefix and postfix. The value can be changed by using an action.
 
           </div>
         
@@ -47,7 +47,7 @@ pixel based displays.</p>
 <p><strong>prefix</strong> – This text is always send to the display as a prefix to the value.</p>
 <p><strong>postfix</strong> – This text is always send to the display as a postfix to the value.</p>
 <p><strong>fontsize</strong> – This is the fontsize to be used. Do not specify or use 0 to get the
-default/smallest fontsize. For the OLED drivers the font sizes 10, 16 and 24 are supported.</p>
+default/smallest fontsize. For the pixel based displays the supported font sizes correspond to the registered fonts.</p>
 <p>Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.</p>
 </blockquote>
 <p>The <code>DisplayOutputElement</code> captures the parameters for defining a visual Element on the display.  Tis is common for
@@ -124,6 +124,8 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
         
           <h2>Tags</h2>
           <div class="taglist">
+            
+              <a href="/tag/element.htm">Element</a>
             
               <a href="/tag/element.htm">Element</a>
             
