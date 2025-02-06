@@ -11,7 +11,7 @@ excerpt: >
   In this overview some boards and devices can be found that are supported by the HomeDing library.
 ---
 
-{% from 'macros.njk' import imgCard, elemCard with context %}
+{% from 'macros.njk' import imageCards with context %}
 
 On the market you find a lot of solutions like bare chip adapters, development boards,
 IoT devices off-the-shelf and even complete kits that use these chips.
@@ -31,17 +31,12 @@ The NodeMCU boards for ESP8266 and the DevKit Boards for ESP32, ESP32-C3 and ESP
 There are good options to start a DIY project with breadboard friendly boards.
 You can find these in the Arduino Store, at resellers and eBay :
 
-{{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
-
-{{ imgCard(collections.all, item = '/boards/nodemcu') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
+{{ imageCards(["arduino-nano-esp32", "nodemcu", "esp32/devkit"]) }}
 
 Using pre-build panels that combine processor, memory and display in a single board.  There are several Elements
 available to display information and interact with touch displays.
 
-{{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
-
+{{ imageCards(["esp32s3/sc01-plus"]) }}
 
 The ESP8266 development board descriptions, hints and more references
 can be found at <https://arduino-esp8266.readthedocs.io/en/latest/boards.html>.
@@ -69,18 +64,7 @@ Specific to ESP8266 are the following features:
   a battery based power source will only result in a short lifetime maybe a few hours or days.
 * These devices have enough flash capacity to be updated over the network by using the OTA method.
 
-
-{{ imgCard(collections.all, item = '/boards/nodemcu') }}
-
-{{ imgCard(collections.all, item = '/boards/mini/d1mini') }}
-
-{{ imgCard(collections.all, item = '/boards/wifikit8') }}
-
-{{ imgCard(collections.all, item = '/boards/witty') }}
-
-{{ imgCard(collections.all, item = '/boards/wemosoled') }}
-
-{{ imgCard(collections.all, item = '/boards/esp8266/wemos18650') }}
+{{ imageCards(["nodemcu", "mini/d1mini", "wifikit8", "witty", "wemosoled", "esp8266/wemos18650"]) }}
 
 
 ## ESP32 boards
@@ -100,15 +84,7 @@ There are official boards from espressif
 
 Some boards have been tested:
 
-{{ imgCard(collections.all, item = '/boards/esp32/devkit') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32/azureiotkit') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32/esp32audiokit') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32/ttgo-t-display') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32/ttgogallery') }}
+{{ imageCards(["esp32/devkit", "esp32/azureiotkit", "esp32/esp32audiokit", "esp32/ttgo-t-display", "esp32/ttgogallery"]) }}
 
 
 ## ESP32-S3 boards
@@ -118,19 +94,9 @@ Framework and by the HomeDing library. There is an official [Arduino Nano ESP32]
 
 Some boards have been tested:
 
-{{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
+{{ imageCards(["esp32s3/arduino-nano-esp32", "esp32s3/lilygo-t-dongle-s3", "esp32s3/lilygo-t-display-s3",
+"esp32s3/xiao-esp32s3", "esp32s3/sc01-plus", "esp32s3/panel-8048S043", "esp32s3/panel-4848S040"]) }}
 
-{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-dongle-s3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-display-s3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/xiao-esp32s3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/panel-8048S043') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/panel-4848S040') }}
 
 ## ESP32-C3 boards
 
@@ -141,52 +107,15 @@ Some boards have been tested:
 
 <!-- https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/ -->
 
-{{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
+{{ imageCards([ "esp32c3/core", "esp32c3/micro", "esp32c3/pico", "esp32c3/weact-core-c3", "esp32c3/super-mini-c3",
+"esp32c3/xiao_esp32c3", "esp32c3/spotpear-144lcd", "esp32c3/esp32c3-01"]) }}
 
-{{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/pico') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/weact-core-c3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/super-mini-c3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/xiao_esp32c3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/spotpear-144lcd') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/esp32c3-01') }}
 
 ## Devices based on Esp8266
 
 ESP8266 is also used as CPU in various retail devices like sockets and switches but also WiFi lights.
 
-:::board sonoffbasic
-The **[Sonoff Basic](/boards/sonoffbasic.md)** is a off-the-shelf solution to switch main power consumers.
-
-It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
-:::
-
-:::board sonoffs20
-The **[Sonoff S20](/boards/sonoffs20.md)** is a off-the-shelf plug available for different plug types.
-
-It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md).
-:::
-
-:::board sockets
-The **[Gosund or Blitzwolf Sockets](/boards/sockets.md)** can switch on/off and can meassure power consumption
-of the plugged-in load.
-
-It is using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md)
-and the [BL0937 chip](/elements/bl0937.md).
-:::
-
-:::board devices/bulb
-**[Bulb devices](/boards/devices/bulb.md)** build on base of the ESP8266 chip are supported by the minimal sketch.
-
-They are using the ESP8266 CPU and 1 MByte Flash and can be used with the [Minimal Example](/examples/minimal.md) using
-the [Color Element](/elements/light/color.md) and [Switch Element](/elements/switch.md) for control.
-:::
+{{ imageCards(["sonoffbasic", "sonoffs20", "sockets", "bulb"]) }}
 
 <!-- ESP8266 Module Series
 ESP-07S	 Pin compatible with esp-12, IPEX connector to get greater signal
@@ -202,18 +131,7 @@ ESP-14
 These boards help implementing things using the ESP-12 boards directly.
 When used alone an external power supply and some minimal wiring is required.
 
-:::board esp8266/esp12dev
-The **[Esp-12 development boards](/boards/esp8266/esp12dev.md)** is an adapter board that can be used to program a ESP-12 boards before adding it to a device.
-This solution is especially suitable for creating devices that run on battery or low power conditions and therefore do not need USB chips.
-:::
-
-:::board whiteadapter
-The **[White ESP-12 adapter](/boards/whiteadapter.md)** enables using ESP-12 type boards on a breadboard and includes some resistors and a power regulator option.
-:::
-
-:::board adapter2
-Another adapter for the ESP-12 type boards including space for soldering components.
-:::
+{{ imageCards(["esp8266/esp12dev", "whiteadapter", "adapter2"]) }}
 
 
 ## ESP-12 module types
@@ -259,23 +177,7 @@ The [minimal example](/examples/minimal.md) can be flashed onto these boards by 
 
 The following are boards and solutions with 1 MBytes flash memory chips.
 
-:::board esp8266/esp01
-The [ESP-01](/boards/esp8266/esp01.md) is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.
-
-There are variants of this board with different antenna and different flash sizes.
-:::
-
-
-:::board esp8266/neo
-The [neo board](/boards/esp8266/neo.md) is a very specific adapter
-to run a neopixel stripe, wheel or array using a ESP8266 ESP-01 board.
-:::
-
-
-:::board esp8266/esp01-dht
-The [ESP-01 with DHT22 board](/boards/esp8266/esp01-dht.md) is a very specific adapter
-to run a DHT22 sensor using a ESP8266 ESP-01 board.
-:::
+{{ imageCards(["esp8266/esp01", "esp8266/neo", "esp8266/esp01-dht"]) }}
 
 
 ## ESP8285 based boards

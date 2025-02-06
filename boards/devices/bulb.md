@@ -5,6 +5,9 @@ tags:
   - "Light"
 layout: "page.njk"
 description: Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.
+excerpt: >
+  Bulb devices using the ESP8266 chip are supported by the minimal sketch
+  and can be controlled by the color and switch elements.
 ---
 
 :::excerpt bulb

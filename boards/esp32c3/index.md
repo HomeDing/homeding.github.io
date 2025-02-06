@@ -9,7 +9,7 @@ excerpt: >
   RISC-V based SoC that can replace ESP8266 boards.
 ---
 
-{% from 'macros.njk' import imgCard %}
+{% from 'macros.njk' import imageCards with context %}
 
 The ESP32-C3 variant of the ESP32 is supported by the espressif ESP32 Board package and by the
 Homeding library.
@@ -95,35 +95,8 @@ This results in faster secure (https) network requests.
 
 ## Boards with ESP32-C3
 
-{{ imgCard(collections.all, item = '/boards/esp32c3/core') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/micro') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/pico') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/weact-core-c3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/super-mini-c3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/xiao_esp32c3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/spotpear-144lcd') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/esp32c3-01') }}
-
-## Board ESP32-C3 ESP-01
-
-{{ imgCard(collections.all, item = '/boards/esp32c3/esp32c3-01') }}
-
-The ESP32-C3 processor is now also available in a ESP01 form factor board.
-
-More details, see [Board ESP32-C3 ESP-01](/boards/esp32c3/esp32c3-01.md).
-
-The ESP01 form factor was initially used for the ESP8266 processor on the [Board ESP8266 ESP-01](/boards/esp8266/esp01.md).
-The original version has limited Flash memory (512kByte).
-
-As of it's popularity there are variants using the ESP8266 and ESP8285 (= ESP8266 + 1M Flash in the same chip)
-and more flash memory.
+{{ imageCards(["esp32c3/core", "esp32c3/micro", "esp32c3/pico", "esp32c3/weact-core-c3", "esp32c3/super-mini-c3",
+"esp32c3/xiao_esp32c3", "esp32c3/spotpear-144lcd", "esp32c3/esp32c3-01"]) }}
 
 
 ## Log info from the [DIAG Element](/elements/diag.md)

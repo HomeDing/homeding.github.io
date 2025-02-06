@@ -1,7 +1,9 @@
 // file: docstyle.scss
 
-@import "./css/base";
-@import "./css/doc";
+@use "./css/base";
+@use "./css/doc";
+// @import './css/prism-okaidia'
+@use "./css/prism-coy";
 
 
 // GPIO coloring in documentation
@@ -63,5 +65,3 @@ main h2 {
   }
 }
 
-// @import './css/prism-okaidia'
-@import "./css/prism-coy";

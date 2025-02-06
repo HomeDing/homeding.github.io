@@ -43,7 +43,7 @@ The "set" column shows the collections of elements that can be activated by a si
 | [DisplayST7735](/elements/display/st7735.md)   |             |    x     |   x   |       |       |               |
 | [DisplayST7789](/elements/display/st7789.md)   |             |    x     |   x   |       |       |               |
 | [displaytext](/elements/display/text.md)       | DISPLAY     |    x     |   x   |       |       |               |
-| [displaydot](/elements/display/dot.md)         | DISPLAY     |    x     |   x   |       |       |               |
+| [displaycircle](/elements/display/circle.md)   | DISPLAY     |    x     |   x   |       |       |               |
 | [displayline](/elements/display/line.md)       | DISPLAY     |    x     |   x   |       |       |               |
 | [displaybutton](/elements/display/button.md)   |             |          |   x   |       |       |               |
 | [tm1637](/elements/tm1637.md)                  |             |    x     |   x   |       |       |               |

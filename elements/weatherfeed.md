@@ -1,6 +1,6 @@
 ---
 title: WeatherFeed Element
-icon: no
+icon: weatherfeed
 tags:
   - "Element"
   - "Input"

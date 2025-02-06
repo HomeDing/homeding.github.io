@@ -10,7 +10,7 @@ excerpt: >
   that share the same form factor and connector pin assignments.
 ---
 
-{% from 'macros.njk' import imgCard, elemCard with context %}
+{% from 'macros.njk' import imgCard with context %}
 
 ### D1 mini ESP8266
 

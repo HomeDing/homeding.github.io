@@ -10,7 +10,13 @@ excerpt: >
   devices with a pixel based display like LCDs or LEDs.
 ---
 
-Many Elements that can be used on displays are bundled in this example sketch and folder.
+The HomeDing Library supports to connect displays, enabling the realization of numerous use cases where
+information must be displayed or visualized.  When combined with touch inputs or other input elements, it allows the
+development of solutions that enable both local interactions and access to the browser interface.
+
+There are some ESP32 boards available that combine display, touch screen and processor for implementing panels.
+
+Many displayable Elements that can be used on displays are bundled in this example sketch and folder.
 The Sketch provides a meaningful set of core Elements that are extended by Elements in the src subfolder of the example.
 
 Configurations for display enabled devices can be found in
@@ -42,14 +48,7 @@ As the final sketch file will exceed the memory available in ESP8266 and ESP32C3
 should be avoided. The size of the sketch can be reduced by disabling elements that are not used
 for a specific board.
 
-
-???
-
-The HomeDing Library facilitates the connection of displays, enabling the realization of numerous use cases where
-information must be displayed or visualized.  When combined with touch inputs or other input elements, it allows the
-development of solutions that enable both local interactions and access to the browser interface.
-
-Especially some ESP32 boards are available that combine display, touch screen and processor for implementing panels.
+
 
 ## Display Software Stack
 

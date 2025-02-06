@@ -22,7 +22,7 @@ module.exports = {
   configFunction: function(eleventyConfig, options = {}) {
     console.log("myMarkdown setup...");
 
-    let markdownLib = markdownIt({
+    let markdown = markdownIt({
       html: true,
       breaks: false,
       linkify: true,
@@ -34,11 +34,17 @@ module.exports = {
       }
     });
 
-    markdownLib.use(mdReplaceLink);
-    markdownLib.use(mdTaskLists, { enabled: true, label: true });
-    markdownLib.use(mdItAttrs);
-    markdownLib.use(mdFootnotes, { backref: false });
+    markdown.use(mdReplaceLink);
+    markdown.use(mdTaskLists, { enabled: true, label: true });
+    markdown.use(mdItAttrs);
+    markdown.use(mdFootnotes, { backref: false });
 
+    eleventyConfig.addFilter("markdown", (content) => {
+      let r = '';
+      if (content) r = markdown.render(content.trim());
+      return r;
+    });
+  
     function renderIconCard(icon, title, linkFolder, link) {
       var div = '<div class="iconcard">';
       var img = '<svg class="icon"><use href="/icons.svg#' + icon + '"></use></svg>';
@@ -67,7 +73,7 @@ module.exports = {
 
 
     // ::: excerpt [icon]
-    markdownLib.use(mdContainer, 'excerpt', {
+    markdown.use(mdContainer, 'excerpt', {
       render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
@@ -85,7 +91,7 @@ module.exports = {
 
     // card for boards in boards folder
     // ::: board image
-    markdownLib.use(mdContainer, 'board', {
+    markdown.use(mdContainer, 'board', {
       render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
@@ -100,7 +106,7 @@ module.exports = {
 
     // card for elements in elements folder
     // :::element title [icon]
-    markdownLib.use(mdContainer, 'element', {
+    markdown.use(mdContainer, 'element', {
       render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
@@ -115,7 +121,7 @@ module.exports = {
 
     // card for sensors in sensors folder
     // ::: sensor image
-    markdownLib.use(mdContainer, 'sensor', {
+    markdown.use(mdContainer, 'sensor', {
       render: function(tokens, idx) {
         var t = tokens[idx];
         if (t.nesting === 1) {
@@ -127,7 +133,7 @@ module.exports = {
       }
     });
 
-    eleventyConfig.setLibrary("md", markdownLib);
+    eleventyConfig.setLibrary("md", markdown);
   }
 
 }

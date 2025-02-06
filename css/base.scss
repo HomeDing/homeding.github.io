@@ -72,6 +72,13 @@ $u-font-sans-serif: arial, ui-sans-serif, sans-serif;
   --focus: #{hsl($u-hue, 50%, 50%)};
   --code: rgb(255 255 185);
 
+  --sidebar-width: 200px;
+  --content-width: 1168px;
+  --layout-gap: 16px;
+  --doc-body-width: calc(var(--content-width) + var(--sidebar-width) + 2 * var(--layout-gap));
+  --content-back: #f8f8f8;
+
+
   color-scheme: dark light;
 
   @media (prefers-color-scheme: dark) {
@@ -93,6 +100,8 @@ body {
   color: var(--color);
   background-color: var(--back);
 }
+
+
 
 @media (width > 800px) {
   body {
@@ -455,4 +464,10 @@ main {
   border: 2px solid #00cc00 !important;
   background-color: #ccffcc !important;
   color: $u-text;
+}
+
+.noprint {
+  @media print {
+    display: none !important;
+  }
 }

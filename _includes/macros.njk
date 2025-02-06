@@ -1,3 +1,45 @@
+
+{# list of cards off elements #}
+{% macro elementCards(elementTypes = []) %}
+<div class="card-container horizontal" style="--card-image-size:7.2rem;--card-radius:1em;margin-top:0.5em">
+
+{% for type in elementTypes %}
+{% set item = findItem(collections.Element, type) %}
+
+<div class="card autolink">
+  <svg><use href="/icons.svg#{{ item.data.icon }}"></use></svg>
+  <div class="body">
+    <h3><a href="{{ item.url }}">{{ item.data.title }}</a> ({{type}})</h3>
+{{- item.data.excerpt | markdown | safe}}
+  </div>
+</div>
+{% endfor %}
+
+</div>
+{% endmacro %}
+
+
+{# list of cards with image #}
+{% macro imageCards(items = []) %}
+<div class="card-container horizontal" style="--card-image-size:9.6rem;--card-radius:1em;margin-top:0.5em">
+
+{% for i in items %}
+{% set item = findItem(collections.all, i) %}
+
+<div class="card autolink">
+  <img src="{{ item.url.replace(".htm", ".jpg") }}">
+
+  <div class="body">
+    <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+{{- item.data.excerpt | markdown | safe}}
+  </div>
+</div>
+{% endfor %}
+
+</div>
+{% endmacro %}
+
+
 {% macro imgCard(coll, item = 'div') %}
 
 <div class="imgcard"><img src="{{item}}.jpg">
@@ -10,16 +52,6 @@
 {% endmacro %}
 
 
-{% macro elemCard(name, icon) %}
-{% if not icon %}{% set icon = name %}{% endif %}
-<div class="iconcard">
-  <a href="{% urlOf collections.Element, name %}"><svg class="icon"><use href="/icons.svg#{{icon}}"></use></svg></a>
-  <h3><a href="{% urlOf collections.Element, name %}">{% dataOf collections.Element, name, "title" %}</a> ({{name}})</h3>
-
-{% dataOf collections.Element, name, "excerpt" %}
-
-</div>
-{% endmacro %}
 
 {% macro carousel(images) %}
 <style>

@@ -119,6 +119,25 @@ module.exports = function(eleventyConfig) {
 
   // ===== Shortcodes =====
 
+  function findItem(col, name) {
+    let item = undefined;
+
+    if (!col) {
+      console.error("findItem: no collection given.")
+
+    } else if (!Array.isArray(col)) {
+      console.error("findItem: bad collection given.")
+
+    } else {
+      item = col.find(e => e.url.includes('/' + name + '.'));
+    }
+    if (!item) {
+      console.error(`findItem: entry ${name} not found.`)
+    }
+    return (item);
+  }
+
+
   // include excerpt text by using: {% excerptOf collections, "map" %}
   eleventyConfig.addShortcode("excerptOf", function(col, name) {
     if (!col) {
@@ -169,6 +188,10 @@ module.exports = function(eleventyConfig) {
   }
   );
 
+
+  eleventyConfig.addNunjucksGlobal("findItem", function(col, name) {
+    return findItem(col, name);
+  });
 
   // include excerpt text by using: {% dataOf collections.Board, "map" %}
   eleventyConfig.addShortcode("dataOf", function(col, name, item) {

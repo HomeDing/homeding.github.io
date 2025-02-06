@@ -2,6 +2,10 @@
 title: Board ESP8266 ESP-01
 tags: ["Board"]
 layout: "page.njk"
+excerpt: >
+  The ESP-01 is the cheapest bare minimum ESP8266 board available. The connector only supports few GPIO pins but it is small and enough for simple sensors and relay appliances. Only 2-4 GPIO signals can be used.
+  There are variants of this board with different antenna and different flash sizes.
+
 ---
 
 The ESP-­01 and ESP-­01S modules contain a ESP8266 MCU and a up to 1 MByte flash memory chip.

@@ -7,6 +7,7 @@ tags:
 layout: "page.njk"
 excerpt: >
   The Radio Element allows to control FM radio chips that are connected to the board via i2c bus.
+  The Radio Element is part of the Radio Example.
 ---
 
 <div style="background-color: #ffe87c">

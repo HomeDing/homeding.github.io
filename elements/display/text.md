@@ -7,7 +7,7 @@ tags:
 layout: "page.njk"
 description: Displaying text values.
 excerpt: >
-  The DisplayTextElement allows sending a value to the display
+  The DisplayTextElement allows sending a pure text value to the display
   and show it at a specified position as text including a prefix and postfix.
   The value can be changed by using an action.
 ---
@@ -29,7 +29,7 @@ The following properties are available for configuration of the element.
 > **postfix** -- This text is always send to the display as a postfix to the value.
 >
 > **fontsize** -- This is the fontsize to be used. Do not specify or use 0 to get the
-> default/smallest fontsize. For the OLED drivers the font sizes 10, 16 and 24 are supported.
+> default/smallest fontsize. For the pixel based displays the supported font sizes correspond to the registered fonts.
 >
 > Be aware that the positions and fontsize of the configurations must match to the capabilities existing display.
 

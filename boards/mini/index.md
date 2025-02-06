@@ -7,7 +7,7 @@ excerpt: >
   The HomeDing library can be used with these Boards that offer a selection of processor modules and shield.
 ---
 
-{% from 'macros.njk' import imgCard, elemCard with context %}
+{% from 'macros.njk' import imgCard with context %}
 {% from 'macros.njk' import carousel %}
 
 The D1 mini format for boards and shield was created by the [wemos.cc](https://www.wemos.cc/)

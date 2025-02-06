@@ -2,11 +2,9 @@
 title: ESP-01board with DHT22
 tags: ["Board"]
 layout: "page.njk"
+excerpt: >
+  This little board is a very specific adapter that has a DHT22 sensor and power regulator for a ESP-01 module.
 ---
-
-:::excerpt
-This little board has a DHT22 sensor and power regulator for a ESP-01 module.
-:::
 
 
 ![ESP-01 base board with DHT22](/boards/esp8266/esp01-dht.jpg)

@@ -3,6 +3,7 @@ title: Alarm Element
 tags:
   - "Element"
   - "Time"
+icon: "schedule"
 layout: "page.njk"
 description: Create Alarm events.
 excerpt: >

@@ -1,6 +1,6 @@
 ---
 title: Digital Signal Element
-icon: digitalsignal
+icon: digitalin
 tags:
   - "Element"
   - "Input"

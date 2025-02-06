@@ -5,7 +5,7 @@ layout: "page.njk"
 description: ESP32-S3 Board with touch display
 excerpt: >
   This touch display panel with a 320 * 480 LCD display based on a ESP32-S3 processor.
-  This panel is supported by the [HomeDing BigDisplay Example].
+  This panel is supported by the [HomeDing BigDisplay Example](/examples/display.md).
 ---
 
 ![sc01-plus.jpg](/boards/esp32s3/sc01-plus.jpg "w600")
@@ -74,13 +74,13 @@ The configuration in the **env.json** file setting up all integrated hardware an
   "device": {
     "0": {
       "name": "sc01panel",
-      "title": "SC01-Panel",
+      "title": "SC01-Plus",
       "description": "SC01 Plus Panel",
       "loglevel": "2",
       "logfile": 1,
       "safemode": "false",
       "homepage": "/board.htm",
-      "xcache": "etag",
+      "cache": "etag",
       "i2c-SDA": "6",
       "i2c-SCL": "5",
       "spi-scl": "39",

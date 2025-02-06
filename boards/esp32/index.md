@@ -8,8 +8,6 @@ excerpt: >
   Boards based on the ESP32 variant offer a high performance dual core SoC.
 ---
 
-{% from 'macros.njk' import imgCard %}
-
 The ESP32 was the initial version of the ESP32 processors based on a Xtensa® 32-bit LX6 single
 or dual-core that operates at up to 240 MHz.
 
