@@ -2,8 +2,9 @@
 *.code-workspace
 node_modules
 build
+_site
 _*
-_*.*
+!_includes
 *.ppt*
 *.pdf
 *.docx

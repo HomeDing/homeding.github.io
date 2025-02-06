@@ -33,8 +33,8 @@ $u-card-border: none;
   /* horizontal cards have fixed height and are stretched to the total width of the card-container. See below */
 
   /* Design of cards, colors borders, paddings,  */
-  --card-head: hsl(220deg  20%  85%);
-  --card-head-active: hsl(220deg  80%  70%);
+  --card-head: hsl(220deg 20% 85%);
+  --card-head-active: hsl(220deg 80% 70%);
   --card-back: #f2f2f2;
   --card-padding: 0.5em;
   --card-image-size: 120px;
@@ -71,21 +71,20 @@ $u-card-border: none;
 
     >svg:first-of-type,
     >img:first-of-type {
+      display: block;
       float: left;
       margin-right: var(--card-padding);
       width: var(--card-image-size);
       height: 100%;
+      object-fit: cover;
     }
   }
 
 
-  /* Cards with a defined, fixed width can be placed multiple times on one row when the with is giving enough space. */
-
-  /* For these cases the card-container implements the layout allowing centering the card collection in the center of the main content. */
-
-  /* Marking the card-container with class='col280' to provide multiple columns with width 280px. */
-
-  /* As css variables cannot be used in the css selectors they are hard-calculated here (with the help of sass if you like) */
+  // Cards with a defined, fixed width can be placed multiple times on one row when the with is giving enough space.
+  // For these cases the card-container implements the layout allowing centering the card collection in the center of the main content.
+  // Marking the card-container with class='col280' to provide multiple columns with width 280px.
+  // As css variables cannot be used in the css selectors they are hard-calculated here (with the help of sass if you like)
 
 
   &.col280 {
@@ -144,7 +143,6 @@ $u-card-border: none;
     height: calc((var(--card-height) - var(--card-gap)) / 2);
   }
 
-  >svg:first-of-type,
   >img:first-of-type {
     display: block;
     width: 100%;
