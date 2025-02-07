@@ -47,9 +47,9 @@ permalink: "{{ page.filePathStem }}.htm"
         {% if tags %}
           <h2>Tags</h2>
           <div class="taglist">
-            {% for tag in tags %}
+            {%- for tag in tags | unique -%}
               <a href="/tag/{{ tag  | lower }}.htm">{{ tag | capitalize }}</a>
-            {% endfor %}
+            {%- endfor -%}
           </div>
         {% endif %}
       </main>

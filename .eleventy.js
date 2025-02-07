@@ -117,6 +117,11 @@ module.exports = function(eleventyConfig) {
 
   });
 
+  eleventyConfig.addFilter('unique', (list) => {
+    const map = new Map(list.map((x) => [x, x]));
+    return [...map.values()]
+  })
+  
   // ===== Shortcodes =====
 
   function findItem(col, name) {
