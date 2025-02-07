@@ -89,20 +89,6 @@ module.exports = {
       }
     });
 
-    // card for boards in boards folder
-    // ::: board image
-    markdown.use(mdContainer, 'board', {
-      render: function(tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*board\s+(.*)$/);
-          return renderImageCard(m[1], undefined, 'boards', m[1]);
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
 
     // card for elements in elements folder
     // :::element title [icon]

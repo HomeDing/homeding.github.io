@@ -140,23 +140,7 @@ ON the ESP-12 with 4 GByte Flash the [standard example](/examples/standard.md) c
 
 The ESP-12 format is a common format but there are different sub-versions available. The all use the ESP8266 SoC but flash size and available pins differ:
 
-:::board esp8266/esp12e
-The **ESP-12** (old) and **ESP-12E** modules offer 8+8 pins at the sides where most of the interesting pins from the ESP8266 SoC chips are available.
-
-They are manufactured by different vendors.
-:::
-
-:::board esp8266/esp12f
-On the **ESP-12F**, in addition to the ESP-12E some more pins are available on the "bottom" side that are th signals to the FLASH memory. They are not of much use in most scenarios but in the case you want to add some SPI RAM.
-:::
-
-:::board esp8266/esp12s
-The **ESP-12S** is an optimized version from esp-12f with a better antenna signal. FLASH SPI signals are not available.
-:::
-
-:::board esp8266/espwroom
-The **ESP-WROOM-02** is not strictly the same form factor this module is directly made by espressif as a reference implementation. The SPI Flash has only 2 MByte. I found it mounted on a wider board including battery based power management.
-:::
+{{ imageCards(["esp8266/esp12e", "esp8266/esp12f", "esp8266/esp12s", "esp8266/espwroom"]) }}
 
 
 ## Esp8266 boards with 1 MByte flash memory
