@@ -1,33 +1,38 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial Example</title>
-    <script src="/pages.js"></script>
-    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
-    <script src="/story.js" type="module"></script>
-    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
-  </head>
-  <body scroll="0" style="padding:0;">
-    <div class="u-navbar" style="margin-bottom: 0;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-      </svg>
-      <a href="/index.htm" class="button">Home</a>
-      <a href="/elements/index.htm" class="button">Elements</a>
-      <a href="/boards/index.htm" class="button">Boards</a>
-      <a href="/recipes/index.htm" class="button">Recipes</a>
-    </div>
-    <nav></nav>
-    <main style="padding:1rem;max-width: 800px;">
-      <h1>Tutorial Example</h1>
-      
-        <div class="plaincard"><p>This examples in the HomeDing library contains the source codes and snippets explained in detail in the documentation
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial Example</title>
+  <script src="/pages.js"></script>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <script src="/story.js" type="module"></script>
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+</head>
+
+<body class="sitelayout" style="--content-width:800px">
+  <div class="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+    </svg>
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  
+  <nav style="background-color:white"></nav>
+
+  <main>
+    <h1>Tutorial Example</h1>
+
+    
+
+    <div class="plaincard"><p>This examples in the HomeDing library contains the source codes and snippets explained in detail in the documentation
 about <a href="/steps/newelement.htm">How to create and extend a new Element</a>.</p>
 </div>
 <p>To setup the development environment and using a ESP8266 board in general please look into the description of the <a href="/examples/standard.htm">Standard Example</a>. Here the add-on featured for supporting development are described.</p>
@@ -42,32 +47,26 @@ about <a href="/steps/newelement.htm">How to create and extend a new Element</a>
 <li><a href="/recipes/index.htm">Recipes</a></li>
 </ul>
 
-        
-          <h2>Tags</h2>
-          <div class="taglist"><a href="/tag/example.htm">Example</a></div>
-        
-      </main>
-      <script>
-        const param = {
-          MENU_MIN_WIDTH: 1030
-        };
-        var mbObj = document.querySelector('#menuButton');
-        var navObj = document.querySelector('nav');
-        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
-          navObj.classList.add('open');
-          navObj.classList.add('inpage');
-        }
-        mbObj.addEventListener('click', function (e) {
-          navObj.classList.toggle('open');
-        });
-        lazyLoadHTM('nav', '/toc.htm');
-      </script>
 
-      <script type="module" async>
-        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
-        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
-      </script>
+      
+        <h2>Tags</h2>
+        <div class="taglist"><a href="/tag/example.htm">Example</a></div>
+      
+  </main>
 
-    </body>
-  </body>
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+
+  <script type="module" async>
+    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+  </script>
+
+</body>
 </html>

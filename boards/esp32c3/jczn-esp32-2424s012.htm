@@ -1,40 +1,48 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP32-C3 micro board with a round Touch Display</title>
-    <script src="/pages.js"></script>
-    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
-    <script src="/story.js" type="module"></script>
-    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <meta name='description' content='ESP32-C3 based board with a round LCD Touch Display and'>
-    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
-  </head>
-  <body scroll="0" style="padding:0;">
-    <div class="u-navbar" style="margin-bottom: 0;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-      </svg>
-      <a href="/index.htm" class="button">Home</a>
-      <a href="/elements/index.htm" class="button">Elements</a>
-      <a href="/boards/index.htm" class="button">Boards</a>
-      <a href="/recipes/index.htm" class="button">Recipes</a>
-    </div>
-    <nav></nav>
-    <main style="padding:1rem;max-width: 800px;">
-      <h1>ESP32-C3 micro board with a round Touch Display</h1>
-      
-        
-            <div class="plaincard">
-            
-            This board uses a ESP32-C3 processor and has a built-in  1.28 inch LCD Display, a Touch controller and Battery Management.
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32-C3 micro board with a round Touch Display</title>
+  <script src="/pages.js"></script>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <script src="/story.js" type="module"></script>
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <meta name='description' content='ESP32-C3 based board with a round LCD Touch Display and'>
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+</head>
+
+<body class="sitelayout" style="--content-width:800px">
+  <div class="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+    </svg>
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  
+  <nav style="background-color:white"></nav>
+
+  <main>
+    <h1>ESP32-C3 micro board with a round Touch Display</h1>
+
+    
+      <div class="card-container horizontal text" style="--card-height:5rem;--card-image-size:5rem;">
+        <div class="card">
+          
+          <div class="body">
+            <p>This board uses a ESP32-C3 processor and has a built-in  1.28 inch LCD Display, a Touch controller and Battery Management.</p>
 
           </div>
-        
-        <p>The <a href="index.md">ESP32-C3 processor</a> is a single-core SoC based on the open-source 32-bit RISC-V
+        </div>
+      </div>
+    
+
+    <p>The <a href="index.md">ESP32-C3 processor</a> is a single-core SoC based on the open-source 32-bit RISC-V
 architecture.</p>
 <p>The module is made by Shenzhen Jingcai Intelligent Co. &lt;<a href="http://www.jczn1688.com">www.jczn1688.com</a>&gt; with the number
 <code>ESP32-2424S012</code> using the ESP32-C3-MINI-1U module by espressif offering 4MB Flash Memory and
@@ -166,32 +174,26 @@ rst = 1</p>
 <li><a href="https://www.tindie.com/products/adz1122/esp32-c3-arduino-lvgl-128-inch-lcd-smart-display">https://www.tindie.com/products/adz1122/esp32-c3-arduino-lvgl-128-inch-lcd-smart-display</a></li>
 </ul>
 
-        
-          <h2>Tags</h2>
-          <div class="taglist"><a href="/tag/board.htm">Board</a></div>
-        
-      </main>
-      <script>
-        const param = {
-          MENU_MIN_WIDTH: 1030
-        };
-        var mbObj = document.querySelector('#menuButton');
-        var navObj = document.querySelector('nav');
-        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
-          navObj.classList.add('open');
-          navObj.classList.add('inpage');
-        }
-        mbObj.addEventListener('click', function (e) {
-          navObj.classList.toggle('open');
-        });
-        lazyLoadHTM('nav', '/toc.htm');
-      </script>
 
-      <script type="module" async>
-        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
-        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
-      </script>
+      
+        <h2>Tags</h2>
+        <div class="taglist"><a href="/tag/board.htm">Board</a></div>
+      
+  </main>
 
-    </body>
-  </body>
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+
+  <script type="module" async>
+    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+  </script>
+
+</body>
 </html>

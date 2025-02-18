@@ -1,43 +1,48 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elements Overview</title>
-    <script src="/pages.js"></script>
-    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
-    <script src="/story.js" type="module"></script>
-    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
-  </head>
-  <body scroll="0" style="padding:0;">
-    <div class="u-navbar" style="margin-bottom: 0;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-      </svg>
-      <a href="/index.htm" class="button">Home</a>
-      <a href="/elements/index.htm" class="button">Elements</a>
-      <a href="/boards/index.htm" class="button">Boards</a>
-      <a href="/recipes/index.htm" class="button">Recipes</a>
-    </div>
-    <nav></nav>
-    <main style="padding:1rem;max-width: 800px;">
-      <h1>Elements Overview</h1>
-      
-        
-          <div class="iconcard">
-            <svg class="icon">
-              <use href="/icons.svg#no"></use>
-            </svg>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elements Overview</title>
+  <script src="/pages.js"></script>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <script src="/story.js" type="module"></script>
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+</head>
+
+<body class="sitelayout" style="--content-width:800px">
+  <div class="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+    </svg>
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  
+  <nav style="background-color:white"></nav>
+
+  <main>
+    <h1>Elements Overview</h1>
+
+    
+      <div class="card-container horizontal text" style="--card-height:5rem;--card-image-size:5rem;">
+        <div class="card">
           
-            Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like Sensors, Displays, Light, I/O control and internal control logic. Elements are implemented in the HomeDing library as Components that can be controlled using setup configuration and runtime actions.
+          <div class="body">
+            <p>Elements are implementations of a specific input, output or compute functionality that corresponds to a specific functionality like Sensors, Displays, Light, I/O control and internal control logic. Elements are implemented in the HomeDing library as Components that can be controlled using setup configuration and runtime actions.</p>
 
           </div>
-        
-        <ul>
+        </div>
+      </div>
+    
+
+    <ul>
 <li><a href="/elements/sensors.htm">Sensor Elements</a> and <a href="/sensors/sensors.htm">Sensor components</a></li>
 <li><a href="/elements/light/light.htm">Light Elements</a></li>
 <li><a href="/elements/audio/index.htm">Audio Elements</a></li>
@@ -73,7 +78,7 @@
   </div>
 </div>
 <div class="card autolink">
-  <svg><use href="/icons.svg#no"></use></svg>
+  <svg><use href="/icons.svg#"></use></svg>
   <div class="body">
     <h3><a href="/elements/display/touch.htm">Display Touch Element</a> (touch)</h3><p>The Display Touch Elements enables detecting touch events by touching a specific area on a display.</p>
   </div>
@@ -126,7 +131,7 @@ some common implementation to allow gathering values on a regular basis and upda
   </div>
 </div>
 <div class="card autolink">
-  <svg><use href="/icons.svg#no"></use></svg>
+  <svg><use href="/icons.svg#"></use></svg>
   <div class="body">
     <h3><a href="/elements/bl0937.htm">BL0937 Element</a> (bl0937)</h3><p>The BL0937Element has been implemented to support single phase energy monitoring using BL0937, HLW8012 or HJL-01 chips that are used in some retail plugs and switches.</p>
   </div>
@@ -221,7 +226,7 @@ to control on/off and the brightness of LEDs using <a href="/elements/pwmout.htm
 <p>Light Sensors enable retrieving the intensity and other parameters from environmental light.</p>
 <div class="card-container text horizontal" style="--card-image-size:7.2rem;--card-radius:1em">
 <div class="card autolink">
-  <svg><use href="/icons.svg#no"></use></svg>
+  <svg><use href="/icons.svg#"></use></svg>
   <div class="body">
     <h3><a href="/elements/bh1750.htm">BH1750 Element</a> (bh1750)</h3><p>The BH1750Element allows retrieving the environment light intensity from BH1750 Ambient Light based sensors using the i2c bus for communication</p>
   </div>
@@ -299,7 +304,7 @@ to control on/off and the brightness of LEDs using <a href="/elements/pwmout.htm
   </div>
 </div>
 <div class="card autolink">
-  <svg><use href="/icons.svg#no"></use></svg>
+  <svg><use href="/icons.svg#"></use></svg>
   <div class="body">
     <h3><a href="/elements/select.htm">Select Element</a> (select)</h3><p>The SelectElement is used to choose one of many options with keys and a values. When selecting one of the options a key action and a value action is dispatched.</p>
   </div>
@@ -516,7 +521,7 @@ restricted functionality.  These element are part of the <a href="/examples/devd
 <a href="/examples/probe.htm">Probe example</a>.</p>
 <div class="card-container text horizontal" style="--card-image-size:7.2rem;--card-radius:1em">
 <div class="card autolink">
-  <svg><use href="/icons.svg#no"></use></svg>
+  <svg><use href="/icons.svg#"></use></svg>
   <div class="body">
     <h3><a href="/elements/diag.htm">Diag Element</a> (diag)</h3><p>The DiagElement offers web endpoints to get access to internal operating data and additional diagnose information.</p>
   </div>
@@ -550,32 +555,26 @@ of the firmware- The intention is to enrich and customize the Web UI dashboard w
 <li><a href="/dev/elementclass.htm">Element implementation details</a></li>
 </ul>
 
-        
-          <h2>Tags</h2>
-          <div class="taglist"><a href="/tag/element.htm">Element</a></div>
-        
-      </main>
-      <script>
-        const param = {
-          MENU_MIN_WIDTH: 1030
-        };
-        var mbObj = document.querySelector('#menuButton');
-        var navObj = document.querySelector('nav');
-        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
-          navObj.classList.add('open');
-          navObj.classList.add('inpage');
-        }
-        mbObj.addEventListener('click', function (e) {
-          navObj.classList.toggle('open');
-        });
-        lazyLoadHTM('nav', '/toc.htm');
-      </script>
 
-      <script type="module" async>
-        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
-        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
-      </script>
+      
+        <h2>Tags</h2>
+        <div class="taglist"><a href="/tag/element.htm">Element</a></div>
+      
+  </main>
 
-    </body>
-  </body>
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+
+  <script type="module" async>
+    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+  </script>
+
+</body>
 </html>

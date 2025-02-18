@@ -1,43 +1,52 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switch Element</title>
-    <script src="/pages.js"></script>
-    <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
-    <script src="/story.js" type="module"></script>
-    <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-    <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-    <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-    <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
-  </head>
-  <body scroll="0" style="padding:0;">
-    <div class="u-navbar" style="margin-bottom: 0;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-      </svg>
-      <a href="/index.htm" class="button">Home</a>
-      <a href="/elements/index.htm" class="button">Elements</a>
-      <a href="/boards/index.htm" class="button">Boards</a>
-      <a href="/recipes/index.htm" class="button">Recipes</a>
-    </div>
-    <nav></nav>
-    <main style="padding:1rem;max-width: 800px;">
-      <h1>Switch Element</h1>
-      
-        
-          <div class="iconcard">
-            <svg class="icon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Element</title>
+  <script src="/pages.js"></script>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <script src="/story.js" type="module"></script>
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+</head>
+
+<body class="sitelayout" style="--content-width:800px">
+  <div class="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
+    </svg>
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+  </div>
+  
+  <nav style="background-color:white"></nav>
+
+  <main>
+    <h1>Switch Element</h1>
+
+    
+      <div class="card-container horizontal text" style="--card-height:5rem;--card-image-size:5rem;">
+        <div class="card">
+          
+            <svg>
               <use href="/icons.svg#switch"></use>
             </svg>
           
-            The SwitchElement switches a boolean output value and is used to toggle the state of a boolean values to on/off values by a single action.
+          <div class="body">
+            <p>The SwitchElement switches a boolean output value and is used to toggle the state of a boolean values to on/off values by a single action.</p>
 
           </div>
-        
-        <p>The Switch Element can be triggered from a <a href="/elements/digitalin.htm">DigitalIn Element</a> with a momentary button and
+        </div>
+      </div>
+    
+
+    <p>The Switch Element can be triggered from a <a href="/elements/digitalin.htm">DigitalIn Element</a> with a momentary button and
 the Web UI also allows toggeling using the web frontend.</p>
 <h2>Web UI for the Switch Element</h2>
 <p>There is a dedicated card for this element available that will be used for the web server config and landing pages:</p>
@@ -143,32 +152,26 @@ The value given in the actions is <code>0</code> or <code>1</code>.</p>
 <li><a href="/recipes/led.htm">LED On/OFF Recipe</a></li>
 </ul>
 
-        
-          <h2>Tags</h2>
-          <div class="taglist"><a href="/tag/element.htm">Element</a></div>
-        
-      </main>
-      <script>
-        const param = {
-          MENU_MIN_WIDTH: 1030
-        };
-        var mbObj = document.querySelector('#menuButton');
-        var navObj = document.querySelector('nav');
-        if (window.innerWidth > param.MENU_MIN_WIDTH) { // menu is inside the page
-          navObj.classList.add('open');
-          navObj.classList.add('inpage');
-        }
-        mbObj.addEventListener('click', function (e) {
-          navObj.classList.toggle('open');
-        });
-        lazyLoadHTM('nav', '/toc.htm');
-      </script>
 
-      <script type="module" async>
-        import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
-        document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
-      </script>
+      
+        <h2>Tags</h2>
+        <div class="taglist"><a href="/tag/element.htm">Element</a></div>
+      
+  </main>
 
-    </body>
-  </body>
+  <script>
+    var mbObj = document.querySelector('#menuButton');
+    var navObj = document.querySelector('nav');
+    mbObj.addEventListener('click', function (e) {
+      navObj.classList.toggle('open');
+    });
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+
+  <script type="module" async>
+    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+  </script>
+
+</body>
 </html>
