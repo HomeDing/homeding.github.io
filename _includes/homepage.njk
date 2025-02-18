@@ -22,22 +22,11 @@ permalink: "{{ page.filePathStem }}.htm"
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://homeding.github.io/">
   <meta property="og:image" content="homeding.png">
-
-  <style>
-  .gpio { 
-    display:inline-block;
-    padding: 0 4px;
-    border-radius: 4px;
-    }
-  .gpio.yellow {background-color: #FF0;}
-  .gpio.red {background-color: #F22; color:white}
-  .gpio.black {background-color: #111; color:white}
-  .gpio.blue {background-color: #22F; color:white}
-  </style>
 </head>
 
-<body scroll="0" style="padding:0;">
-  <div class="u-navbar" style="margin-bottom: 0;">
+<body class="sitelayout" style="--content-width:800px">
+
+  <div class="navbar">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
       <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
     </svg>
@@ -48,48 +37,47 @@ permalink: "{{ page.filePathStem }}.htm"
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
 
-  <nav></nav>
+  <nav style="background-color:white"></nav>
 
-  <main style="padding:1rem;max-width: 800px;">
+  <main>
     <h1>{{title}}</h1>
 
     {% if excerpt %}
-    {% if icon %}
-      <div class="iconcard"><svg class="icon"><use href="/icons.svg#{{icon}}"></use></svg>
-    {% else %}
-      <div class="plaincard">
+      <div class="card-container horizontal text" style="--card-height:5rem;--card-image-size:5rem;">
+        <div class="card">
+          {% if icon %}
+            <svg>
+              <use href="/icons.svg#{{ icon }}"></use>
+            </svg>
+          {% endif %}
+          <div class="body">
+            {{ excerpt | markdown | safe }}
+          </div>
+        </div>
+      </div>
     {% endif %}
-    {{excerpt}}</div>{% endif %}
+
       
     {{ content | safe }}
 
     {% if tags %}
-    <h2>Tags</h2>
-    <div class="taglist">{% for tag in tags %}<a href="/tag/{{ tag  | lower }}.htm">{{ tag | capitalize }}</a>{% endfor %}</div>
+      <h2>Tags</h2>
+      <div class="taglist">
+        {%- for tag in tags %}
+        <a href="/tag/{{ tag  | lower }}.htm">{{ tag | capitalize }}</a>
+        {%- endfor %}
+      </div>
     {% endif %}
   </main>
 
   <script>
-    const param = {
-      MENU_MIN_WIDTH: 1030
-    };
-
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
-
-   if (window.innerWidth > param.MENU_MIN_WIDTH) {
-      // menu is inside the page
-      navObj.classList.add('open');
-      navObj.classList.add('inpage');
-    }
-
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-
     lazyLoadHTM('nav', '/toc.htm');
   </script>
-  
-  </body>
+</body>
 
 </html>

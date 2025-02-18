@@ -1,6 +1,5 @@
 ---
 title: Sensor Element Implementation
-icon: sensor
 tags:
   - "Element"
   - "Implementation"
