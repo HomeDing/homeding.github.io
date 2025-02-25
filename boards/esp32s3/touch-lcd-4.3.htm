@@ -1,34 +1,37 @@
+
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
-  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <title>NO-TITLE-DEFAULT</title>
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <title>NO-TITLE-PAGE</title>
   <script src="/pages.js"></script>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <script src="/story.js" type="module"></script>
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
 </head>
 
-  <body class="sitelayout" style="--content-width:800px">
-  
+<body class="sitelayout" style="--content-width:800px">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
+      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
     </svg>
-
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
-
   
+  <nav class="menu"></nav>
 
   <main>
+    <h1>NO-TITLE-PAGE</h1>
+
+    
+
     <h1>Waveshare ESP32-S3 Touch 4.3</h1>
 <p>WIP ???</p>
 <p>ESP32-S3-Touch-LCD-4.3 is a microcontroller development board based on the <a href="/boards/esp32s3/index.htm">ESP32-S3 chip</a> supporting
@@ -91,29 +94,23 @@ large-capacity Flash and PSRAM, a touch screen and various connectors for extern
 <li><a href="https://github.com/Westcott1/Waveshare-ESP32-S3-Touch-LCD-4.3-and-Arduino">text</a></li>
 </ul>
 
+
+      
   </main>
 
   <script>
-    const param = {
-      MENU_MIN_WIDTH: 1030
-    };
-
     var mbObj = document.querySelector('#menuButton');
     var navObj = document.querySelector('nav');
-
-   if (window.innerWidth > param.MENU_MIN_WIDTH) {
-      // menu is inside the page
-      navObj.classList.add('open');
-      navObj.classList.add('inpage');
-    }
-
     mbObj.addEventListener('click', function (e) {
       navObj.classList.toggle('open');
     });
-
     lazyLoadHTM('nav', '/toc.htm');
   </script>
-  
-  </body>
 
+  <script type="module" async>
+    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+  </script>
+
+</body>
 </html>

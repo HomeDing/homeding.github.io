@@ -25,7 +25,7 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
   
-  <nav style="background-color:white"></nav>
+  <nav class="menu"></nav>
 
   <main>
     <h1>Using the I2C bus</h1>
@@ -116,12 +116,13 @@ to also enable/disable the display and controlling power consumption before usin
 when data is ready instead of polling for state.</li>
 </ul>
 <h2>Wire Library and supporting utilities</h2>
-<p>The WireUtil Class in the HomeDing library helps implementing I2C bus data transfers using a data buffer. This class implements some of the common procedures that help implementing I2C based communication to sensors and other chips
-by using local byte buffers for sending and receiving data.</p>
+<p>The WireUtil Class in the HomeDing library helps implementing I2C bus data transfers using a data buffer.  This class
+implements some of the common procedures that help implementing I2C based communication to sensors and other chips by
+using local byte buffers for sending and receiving data.</p>
 <p>It also offers a possibility of dumping the data into the Serial Debug Output for analysis.</p>
-<p>Often I2C adaptions are using a (logical) register based access pattern.
-Here a data centric access is implemented that separates reading / writing data to a buffer from interpretation of the data in the buffer.
-That fits well to those processor implementations that support I2C data exchange through dma implementations.</p>
+<p>Often I2C adaptions are using a (logical) register based access pattern.  Here a data centric access is implemented that
+separates reading / writing data to a buffer from interpretation of the data in the buffer.  That fits well to those
+processor implementations that support I2C data exchange through dma implementations.</p>
 <h2>I2C addresses and chips using them</h2>
 <p>Some addresses used by the chips of HomeDing Elements:</p>
 <table>

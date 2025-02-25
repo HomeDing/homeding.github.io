@@ -25,7 +25,7 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
   
-  <nav style="background-color:white"></nav>
+  <nav class="menu"></nav>
 
   <main>
     <h1>BMP280 Element</h1>
@@ -46,7 +46,8 @@
       </div>
     
 
-    <p>Bosch is developing advanced integrated environmental chips sind several years. Some of them are available on breakout boards and can easily be used together with the ESP CPU chips.</p>
+    <p>Bosch is developing advanced integrated environmental chips sind several years.  Some of them are available on breakout
+boards and can easily be used together with the ESP CPU chips.</p>
 <ul>
 <li><a href="/elements/bmp280.htm">BMP280</a> (temp and pressure) in 2012</li>
 <li>BME280 (temp, humidity and pressure) in 2013</li>
@@ -55,9 +56,10 @@
 <p>The have similar but not identical interfaces so each needs a special library and element to be used in the HomeDing library.</p>
 <p>For BMP280 and BME680 no external library is required.</p>
 <h2>Interface</h2>
-<p>The physical communication is done via the I2C bus to read raw data values
-as well as some correction factors to calculate the temperature in celsius and pressure in pascal</p>
-<p>This sensor element uses the base functionality of the <a href="/elements/sensors.htm">sensor class</a> to implement timing of taking probes and uses the WireUtil class for I2C data communication.</p>
+<p>The physical communication is done via the I2C bus to read raw data values as well as some correction factors to
+calculate the temperature in celsius and pressure in pascal</p>
+<p>This sensor element uses the base functionality of the <a href="/elements/sensors.htm">sensor class</a> to implement timing of
+taking probes and uses the WireUtil class for I2C data communication.</p>
 <p>The calculation procedures are documented in the datasheet and taken unchanged into the BMP280Element implementation.</p>
 <p>The sensor is very similar to the <a href="/elements/bme680.htm">BME680 Sensor</a> that offers 2 more sensor values.</p>
 <!-- ## Web UI for the BMP280 Element
@@ -68,11 +70,12 @@ There is a dedicated card for this element available that shows the actual tempe
 TODO: Picture for is bmp280ui missing
 -->
 <h2>Using the BMP280 Element</h2>
-<p>The BMP280 Element is not part of the core set of elements but it can be added to the sketch and firmware by defining the macro <code>HOMEDING_INCLUDE_BMP280</code>.
-This adds about 2100 bytes to the firmware but doesn’t need any external library.</p>
+<p>The BMP280 Element is not part of the core set of elements but it can be added to the sketch and firmware by defining
+the macro <code>HOMEDING_INCLUDE_BMP280</code>.  This adds about 2100 bytes to the firmware but doesn’t need any external library.</p>
 <pre class="language-cpp"><code class="language-cpp"><span class="token comment">// Use some more optional Elements.</span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">HOMEDING_INCLUDE_BMP280</span></span></code></pre>
-<p>The Sensor recipe shows how to configure a sensor device and log an actual value to get insight on passed values using a graphical output.</p>
+<p>The Sensor recipe shows how to configure a sensor device and log an actual value to get insight on passed values using a
+graphical output.</p>
 <p>A complete story about using sensors with the HomeDing library is available here:
 <a href="/stories/story-airquality.htm">Air Quality Monitoring Story</a></p>
 <h2>Connecting a Sensor</h2>
@@ -119,8 +122,8 @@ This adds about 2100 bytes to the firmware but doesn’t need any external libra
 </tr>
 </tbody>
 </table>
-<p>The common i2c bus is configured in the <a href="/elements/device.htm">device element</a>.
-For more details on using the i2c bus and specifying pins see <a href="/dev/i2c.htm">I2C bus</a>.</p>
+<p>The common i2c bus is configured in the <a href="/elements/device.htm">device element</a>.  For more details on using the i2c bus
+and specifying pins see <a href="/dev/i2c.htm">I2C bus</a>.</p>
 <h2>Element Configuration</h2>
 <p><object data="/element.svg?bmp280" type="image/svg+xml"></object></p>
 <p>The following properties are available for configuration of the element:</p>

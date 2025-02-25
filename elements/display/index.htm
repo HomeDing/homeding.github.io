@@ -25,7 +25,7 @@
     <a href="/recipes/index.htm" class="button">Recipes</a>
   </div>
   
-  <nav style="background-color:white"></nav>
+  <nav class="menu"></nav>
 
   <main>
     <h1>Display Elements</h1>
@@ -191,24 +191,29 @@ to allow click based activities.</p>
 </tr>
 </tbody>
 </table>
-<div class="imgcard"><img src="/sensors/lcd.jpg"><p>The <a href="/elements/display/lcd.htm">Liquid Chrystal</a> displays based on the HD44780 chip are common in the Arduino framework.</p>
-<p>To control them a I2C adapter with a PCF8574 chip must be used as the ESP8266 / ESP32 has not enough GPIOs to control it directly.</p>
-</div>
-<div class="imgcard"><img src="/sensors/max7219.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
+<p>::: sensor lcd
+The <a href="/elements/display/lcd.htm">Liquid Chrystal</a> displays based on the HD44780 chip are common in the Arduino framework.</p>
+<p>To control them a I2C adapter with a PCF8574 chip must be used as the ESP8266 / ESP32 has not enough GPIOs to control it directly.
+:::</p>
+<p>::: sensor max7219
+<strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x8 matrix of LEDs.
 Multiple displays can be chained to form a bigger matrix.</p>
-<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.</p>
-</div>
-<div class="imgcard"><img src="/sensors/max7219n.jpg"><p><strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x 7-segment LEDs.</p>
-<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.</p>
-</div>
-<div class="imgcard"><img src="/sensors/tm1637.jpg"><p><strong>TM1637</strong> is a LED driver for up to 6 7-segment LEDs.</p>
-<p>The 4 digit displays are supported by the <a href="/elements/tm1637.htm">TM1637 Element</a>.</p>
-</div>
+<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.
+:::</p>
+<p>::: sensor max7219n
+<strong>MAX7219</strong> is a LED driver for the I2C bus that can be used to control a 8x 7-segment LEDs.</p>
+<p>The special <a href="/elements/max7219.htm">MAX7219 Element</a> supports this chip.
+:::</p>
+<p>::: sensor tm1637
+<strong>TM1637</strong> is a LED driver for up to 6 7-segment LEDs.</p>
+<p>The 4 digit displays are supported by the <a href="/elements/tm1637.htm">TM1637 Element</a>.
+:::</p>
 <h2>Pixel Based Monochrome Displays</h2>
-<div class="imgcard"><img src="/sensors/oled.jpg"><p>There are many OLED displays available using similar chips and drivers.
+<p>::: sensor oled
+There are many OLED displays available using similar chips and drivers.
 They are controlled using the I2C or SPI bus.</p>
-<p>Supported are the driver chips: <a href="/elements/display/sh1106.htm">SH1106</a>, <a href="/elements/display/ssd1306.htm">SSD1306</a>, <a href="/elements/display/ssd1309.htm">SSD1309</a></p>
-</div>
+<p>Supported are the driver chips: <a href="/elements/display/sh1106.htm">SH1106</a>, <a href="/elements/display/ssd1306.htm">SSD1306</a>, <a href="/elements/display/ssd1309.htm">SSD1309</a>
+:::</p>
 <div class="imgcard"><a href="/elements/display/max7219.htm"><img src="/elements/display/max7219.jpg"></a>
 <p>The <a href="/elements/display/max7219.htm">DisplayMAX7219Element</a> uses LED matrixes as displays
 using the MAX7219 chip that can chain multiple 8x8 led displays.</p>
