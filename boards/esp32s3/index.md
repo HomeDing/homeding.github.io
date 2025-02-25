@@ -1,15 +1,14 @@
 ---
 title: ESP32-S3 Boards
-tags: ["Board"]
-layout: "page.njk"
 description: ESP32-S3 based boards
+tags: ["Board"]
 excerpt: >
   There are several boards available using the ESP32-S3 chip.
   Boards based on the ESP32-S3 variant offer a high performance dual core SoC
   with vector hardware acceleration and special display interfaces.
 ---
 
-{% from 'macros.njk' import imgCard %}
+{% from 'macros.njk' import imgCard, elementCards, imageCards with context %}
 
 The ESP32-S3 variant of the ESP32 is supported by the espressif ESP32 Board package and by the
 Homeding library.
@@ -123,20 +122,9 @@ This results in faster secure (https) network requests.
 
 ## Boards with ESP32-S3
 
-{{ imgCard(collections.all, item = '/boards/esp32s3/arduino-nano-esp32') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-dongle-s3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/lilygo-t-display-s3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/xiao-esp32s3') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/sc01-plus') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/panel-8048S043') }}
-
-{{ imgCard(collections.all, item = '/boards/esp32s3/panel-4848S040') }}
-
+{{ imageCards(["arduino-nano-esp32",
+  "lilygo-t-dongle-s3", "lilygo-t-display-s3",
+  "xiao-esp32s3", "sc01-plus", "panel-8048S043", "panel-4848S040" ]) }}
 
 ## See also
 

@@ -31,7 +31,7 @@ Enable the ESP-01 compatible board to be used with the HomeDing environment by f
 Using a ESP8266 some details on this can be found in the [ESP-01 board](/boards/esp8266/esp01.md) description.
 As the minimal sketch includes many elements for implementing switches this can be used for relay very well.
 
-Using a [ESP32-C3 ESP-01](/boards/esp32c3/esp01c3.md) is a option without low flash memory limitations.
+Using a [ESP32-C3 ESP-01](/boards/esp32c3/esp32c3-01.md) is a option without low flash memory limitations.
 
 
 ## System Configuration

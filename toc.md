@@ -1,6 +1,7 @@
 ---
 title: Table Of Content
 layout: toc.njk
+permalink: /toc.htm
 ---
 ### [The HomeDing Library](/index.md)
 

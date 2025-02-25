@@ -1,8 +1,8 @@
 ---
 title: ESP32-C3 micro board with OLED display
-tags: ["Board"]
-layout: "page.njk"
 description: Very small ESP32-C3 Board with OLED display.
+image: "/boards/esp32C3/micro.jpg"
+tags: ["Board"]
 excerpt: >
   This is very small board based on EPS32-C3 with an 0.42" onboard OLED display
   and a single NeoPixel.

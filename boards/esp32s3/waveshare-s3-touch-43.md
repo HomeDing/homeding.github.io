@@ -3,7 +3,6 @@ title: Waveshare Panel ESP32-S3-LCD-4.3
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
 description: ESP32-S3 board with fast 800 * 480 px, 16 bit LCD color touch display
 excerpt: >
   This is a ESP32-S3 based board including a 4.3 inch Capacitive Touch Display with 800×480 pixels, 5-point Touch and 16

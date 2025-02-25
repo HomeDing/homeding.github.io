@@ -58,20 +58,6 @@ module.exports = {
       }
     }
 
-    function renderImageCard(image, title, linkFolder, link) {
-      var div = '<div class="imgcard">';
-      var img = `<img src="/${linkFolder}/${image}.jpg">`;
-
-      if ((title) && (linkFolder) && (link)) {
-        return (div
-          + `<a href="/${linkFolder}/${link}.htm">`
-          + img + '<h3>' + title + '</h3>' + '</a>');
-      } else {
-        return (div + img);
-      }
-    }
-
-
     // ::: excerpt [icon]
     markdown.use(mdContainer, 'excerpt', {
       render: function(tokens, idx) {
@@ -105,19 +91,6 @@ module.exports = {
       }
     });
 
-    // card for sensors in sensors folder
-    // ::: sensor image
-    markdown.use(mdContainer, 'sensor', {
-      render: function(tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*sensor\s+(\S+)/);
-          return renderImageCard(m[1], undefined, 'sensors', m[1]);
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
 
     eleventyConfig.setLibrary("md", markdown);
   }

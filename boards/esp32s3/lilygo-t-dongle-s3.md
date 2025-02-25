@@ -1,10 +1,10 @@
 ---
 title: LilyGO T-Dongle S3
+description: USB stick board with display and ESP32-S3.
+image: "/boards/esp32s3/lilygo-t-dongle-s3.jpg"
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
-description: USB stick board with display and ESP32-S3.
 excerpt: >
   The LilyGO T-Dongle-S3 board has a USB stick layout including a TFT color display,
   a APA102 LED, a input button and SD card slot.

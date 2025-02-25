@@ -70,14 +70,15 @@ These are not connected using the 4 core signals and need to be connected by add
 
 ## Wire Library and supporting utilities
 
-The WireUtil Class in the HomeDing library helps implementing I2C bus data transfers using a data buffer. This class implements some of the common procedures that help implementing I2C based communication to sensors and other chips
-by using local byte buffers for sending and receiving data.
+The WireUtil Class in the HomeDing library helps implementing I2C bus data transfers using a data buffer.  This class
+implements some of the common procedures that help implementing I2C based communication to sensors and other chips by
+using local byte buffers for sending and receiving data.
 
 It also offers a possibility of dumping the data into the Serial Debug Output for analysis.
 
-Often I2C adaptions are using a (logical) register based access pattern.
-Here a data centric access is implemented that separates reading / writing data to a buffer from interpretation of the data in the buffer.
-That fits well to those processor implementations that support I2C data exchange through dma implementations.
+Often I2C adaptions are using a (logical) register based access pattern.  Here a data centric access is implemented that
+separates reading / writing data to a buffer from interpretation of the data in the buffer.  That fits well to those
+processor implementations that support I2C data exchange through dma implementations.
 
 
 ## I2C addresses and chips using them

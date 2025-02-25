@@ -1,7 +1,8 @@
 ---
 title: Spotpear ESP32C3 1.44 LCD
+description: "Small stacked boards based on ESP32C3 with Display"
+image: "/boards/esp32C3/spotpear-144lcd.jpg"
 tags: ["Board"]
-layout: "page.njk"
 excerpt: >
   The Spotpear ESP32C3 1.44 LCD board combines a ESP32-C3 with a display and LIPO charging with a compact design.
 ---

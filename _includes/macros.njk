@@ -10,7 +10,7 @@
   <svg><use href="/icons.svg#{{ item.data.icon }}"></use></svg>
   <div class="body">
     <h3><a href="{{ item.url }}">{{ item.data.title }}</a> ({{type}})</h3>
-{{- item.data.excerpt | markdown | safe}}
+{{- item.data.excerpt | markdown | safe -}}
   </div>
 </div>
 {% endfor %}
@@ -27,11 +27,15 @@
 {% set item = findItem(collections.all, i) %}
 
 <div class="card autolink">
+{% if item.data.image %}
+  <img src="{{ item.data.image }}" alt="{{ item.data.title }}">
+{% else %}
   <img src="{{ item.url.replace(".htm", ".jpg") }}">
+{% endif %}
 
   <div class="body">
     <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
-{{- item.data.excerpt | markdown | safe}}
+    {{- item.data.excerpt | markdown | safe -}}
   </div>
 </div>
 {% endfor %}

@@ -1,8 +1,8 @@
 ---
 title: LilyGO T-Display-S3
-tags: ["Board"]
-layout: "page.njk"
 description: ESP32-S3 board with integrated TFT color display.
+image: "/boards/esp32s3/lilygo-t-display-s3.jpg"
+tags: ["Board"]
 excerpt: > 
   The LilyGO T-Display-S3 board has an integrated TFT color display **with**
   optional capacitive touch and a USB-C type connector.

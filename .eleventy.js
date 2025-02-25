@@ -50,8 +50,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./homeding.png");
 
   // https://www.11ty.dev/docs/data-global-custom/
-  eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.htm");
-  eleventyConfig.addGlobalData("layout", "default.njk");
+  eleventyConfig.addGlobalData("layout", "page.njk");
 
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
@@ -74,7 +73,8 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("stringify", function(value) {
-    return JSON.stringify(value);
+    console.log(value);
+    return "logged";
   });
 
   eleventyConfig.addFilter("keys", function(value) {
@@ -217,6 +217,14 @@ module.exports = function(eleventyConfig) {
   }
   );
 
+
+  // include excerpt text by using: {% excerptOf collections, "map" %}
+  eleventyConfig.addPairedShortcode("card", function(content, img) {
+    let out = `<div class="card autolink">`;
+    if (img) out += `<img src="${img}">`;
+    out += `<div class="body">\n${content}\n</div></div>\n`;
+    return (out);
+  });
 
   // include excerpt text by using: {% excerptOf collections, "map" %}
   eleventyConfig.addPairedShortcode("imgcard", function(content, img, link) {

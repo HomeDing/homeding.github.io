@@ -1,10 +1,10 @@
 ---
 title: XIAO ESP32 S3
+description: ESP32-S3 board
+image: "/boards/esp32s3/xiao-esp32s3.jpg"
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
-description: ESP32-S3 board
 excerpt: >
   The XIAO ESP32 S3 is a thumb-size board with external antenna designed for low power consumption.
 ---

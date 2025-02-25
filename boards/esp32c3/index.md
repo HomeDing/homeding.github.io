@@ -1,7 +1,6 @@
 ---
 title: ESP32-C3 Boards
 tags: ["Board"]
-layout: "page.njk"
 description: ESP32-C3 based boards
 excerpt: >
   There are several boards available using the ESP32-C3 chip.
@@ -97,7 +96,6 @@ This results in faster secure (https) network requests.
 
 {{ imageCards(["esp32c3/core", "esp32c3/micro", "esp32c3/pico", "esp32c3/weact-core-c3", "esp32c3/super-mini-c3",
 "esp32c3/xiao_esp32c3", "esp32c3/spotpear-144lcd", "esp32c3/esp32c3-01"]) }}
-
 
 ## Log info from the [DIAG Element](/elements/diag.md)
 

@@ -1,10 +1,10 @@
 ---
 title: WeAct Studio ESP32-C3 Core
+description: Bare ESP32-C3 based board.
+image: "/boards/esp32C3/weact-core-c3.jpg"
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
-description: ESP32-C3 based board with ...
 excerpt: >
   The WeAct Studio ESP32-C3 Core board offers breadboard compatible connectors
   and is a good for development purpose.

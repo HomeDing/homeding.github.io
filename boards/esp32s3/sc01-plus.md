@@ -1,8 +1,8 @@
 ---
 title: ESP32S3 SC01 Plus Panel
-tags: ["Board"]
-layout: "page.njk"
 description: ESP32-S3 Board with touch display
+image: "/boards/esp32s3/sc01-plus.jpg"
+tags: ["Board"]
 excerpt: >
   This touch display panel with a 320 * 480 LCD display based on a ESP32-S3 processor.
   This panel is supported by the [HomeDing BigDisplay Example](/examples/display.md).

@@ -1,10 +1,10 @@
 ---
 title:
+description: ESP32-C3 based board with ...
+image: "/boards/esp32C3/"
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
-description: ESP32-C3 based board with ...
 excerpt: >
   This board uses a ESP32-C3 processor ...
 ---

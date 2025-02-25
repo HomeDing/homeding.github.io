@@ -1,4 +1,15 @@
-# Displays using a GFX Library
+---
+title: Displays using a GFX Library
+tags:
+  - "Element"
+  - "Display"
+  - "GFX"
+  - "WIP"
+layout: "page.njk"
+description: Parameters to configure display support.
+excerpt: >
+  Using GFX library
+---
 
 The display drivers for pixel based displays in the HomeDing Library are using display driver implementation based on a GFX library.
 

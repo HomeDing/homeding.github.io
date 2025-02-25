@@ -7,12 +7,6 @@
 // Element and card rules for iot dashboards
 // This is part of the micro css implementation.
 
-// <nav> is a vertical menu that can slide in and out by using some scripting.
-// <nav> is used together with <main> for content
-// `inpage` class: nav is beside main content, not overlap
-// open class: nav is visible, maybe main needs to shift
-
-
 
 // ===== Cards layout =====
 
@@ -343,7 +337,7 @@ input.switch[type='range'] {
     background-color: transparent;
 
     &.text {
-      color: base.$u-text;
+      color: var(--color);
     }
 
     &.dot {
@@ -366,7 +360,7 @@ input.switch[type='range'] {
     height: 10px;
     overflow: hidden;
     background-color: pink;
-    color: base.$u-text;
+    color: var(--color);
     border-radius: 0.4em;
   }
 

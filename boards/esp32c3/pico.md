@@ -1,9 +1,10 @@
 ---
 title: Board C3 pico 
+description: Very small ESP32-C3 Board with OLED display.
+image: "/boards/esp32C3/pico.jpg"
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
 excerpt: >
   The C3 pico is a board compatible to the D1 Mini boards and shields 
   using a ESP32-C3 processor and equipped with some special features

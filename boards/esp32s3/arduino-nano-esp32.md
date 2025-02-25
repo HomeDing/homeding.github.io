@@ -3,7 +3,7 @@ title: Arduino Nano ESP32
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
+image: "/boards/esp32s3/arduino-nano-esp32.jpg"
 description: Arduino Nano ESP32
 excerpt: >
   This board is an official Arduino board with the ESP32-S3 chip

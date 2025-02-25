@@ -10,8 +10,8 @@
     "start:clean": "npm run clean && npm run start",
     "build": "npx @11ty/eleventy",
     "build:clean": "npm run clean && npm run build",
-    "build:css": "sass docstyle.scss docstyle.css --style=compressed --no-source-map",
-    "build:css-watch": "sass docstyle.scss docstyle.css --style=compressed --no-source-map --watch",
+    "build:css": "sass docstyle.scss:docstyle.css --style=compressed --no-source-map",
+    "build:css-watch": "sass docstyle.scss:docstyle.css --style=compressed --no-source-map --watch",
     "test": "npm outdated"
   },
   "keywords": [],
@@ -21,10 +21,10 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@kevingimbel/eleventy-plugin-mermaid": "^2.1.1",
-    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
     "browser-sync": "^3.0.2",
     "debug": "^4.3.1",
-    "eslint": "^9.12.0",
+    "eslint": "^9.20",
     "eslint-plugin-html": "^8.1.2",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-container": "^4.0.0",
@@ -32,6 +32,6 @@
     "markdown-it-replace-link": "^1.1.0",
     "markdown-it-task-lists": "^2.1.1",
     "mermaid": "11.4",
-    "sass": "^1.69.5"
+    "sass": "^1.85"
   }
 }
