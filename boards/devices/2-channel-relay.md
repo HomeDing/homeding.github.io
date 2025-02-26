@@ -10,7 +10,7 @@ excerpt: >
 
 2-channel relay is required for some use cases where devices like fans offer multiple speed
 modes or curtain / shade control. It requires an ESP01 compatible board like the
-[ESP8266 ESP-01](/boards/esp8266/esp01.md) or [ESP32-C3 ESP-01](/boards/esp32c3/esp01c3.md).
+[ESP8266 ESP-01](/boards/esp8266/esp01.md) or [ESP32-C3 ESP-01](/boards/esp32c3/esp32c3-01.md).
 
 This board itself offers some options that may be found at other boards too:
 
