@@ -1,7 +1,7 @@
 ---
 title: WeAct Studio ESP32-C3 Core
 description: Bare ESP32-C3 based board.
-image: "/boards/esp32C3/weact-core-c3.jpg"
+image: "/boards/esp32c3/weact-core-c3.jpg"
 tags:
   - "Board"
   - "WIP"

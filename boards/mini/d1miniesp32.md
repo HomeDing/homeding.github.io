@@ -3,7 +3,6 @@ title: Board D1 Mini ESP32
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
 ---
 
 {% from 'macros.njk' import carousel %}

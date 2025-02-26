@@ -1,7 +1,6 @@
 ---
 title: ESP-12f Module
 tags: ["Board"]
-layout: "page.njk"
 description: ESP-12f Module.
 excerpt: >
   On the **ESP-12F**, in addition to the ESP-12E some more pins are available on the "bottom" side that are th signals

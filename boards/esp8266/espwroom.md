@@ -1,7 +1,6 @@
 ---
 title: ESP-WROOM Module
 tags: ["Board"]
-layout: "page.njk"
 description: ESP-WROOM Module.
 excerpt: >
   The **ESP-WROOM-02** is not strictly the same form factor this module is directly made by espressif

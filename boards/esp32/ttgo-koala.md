@@ -3,7 +3,6 @@ title: TTGO Koala Board
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
 description: >
   ESP32 Development board that fits on breadboards based on the ESP32 WROVER - B mdoule
   with integrated LiPo 3.7V battery management.

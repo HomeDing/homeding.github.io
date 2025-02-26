@@ -1,7 +1,6 @@
 ---
 title: Board Review ESP8266 with OLED
 tags: ["Board"]
-layout: "page.njk"
 description: ESP8266 with OLED display
 excerpt: >
   This WeMos labeled board has a OLED display using the SSD1306 chip

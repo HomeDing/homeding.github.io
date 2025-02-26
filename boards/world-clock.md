@@ -1,7 +1,6 @@
 ---
 title: Word Clock Example 
 tags: ["Board"]
-layout: "page.njk"
 ---
 
 <https://www.ebay.de/itm/274588288050>

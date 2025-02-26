@@ -1,7 +1,7 @@
 ---
 title:
 description: ESP32-C3 based board with ...
-image: "/boards/esp32C3/"
+image: "/boards/esp32c3/"
 tags:
   - "Board"
   - "WIP"

@@ -1,7 +1,6 @@
 ---
 title: ESP32 Boards
 tags: ["Board" , "WIP"]
-layout: "page.njk"
 description: ESP32 based boards
 excerpt: >
   There are several boards available using the ESP32 chip.

@@ -1,7 +1,6 @@
 ---
 title: ESP32 Azure IoT Kit
 tags: ["Board"]
-layout: "page.njk"
 description: ESP32 based IoT Kit designed by Microsoft for Azure
 excerpt: >
   This is a ESP32 based board based on ESP-WROVER-B module designed by espressif and Microsoft as a reference IoT Kit

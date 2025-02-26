@@ -1,7 +1,6 @@
 ---
 title: Witty-Board
 tags: ["Board"]
-layout: "page.njk"
 description: ESP8266 General purpose development boards with LDR and RGB led.
 excerpt: >
   The Witty board offers a ESP8266-12F solution with a RGB LED, a LDR sensor and an input button. It can be used on a breadboard.

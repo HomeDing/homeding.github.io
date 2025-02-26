@@ -1,7 +1,6 @@
 ---
 title: Retail Plug and Socket Devices
 tags: ["Board"]
-layout: "page.njk"
 excerpt: >
   There are many devices on the market that use the ESP8266 chip to switch main power by internal relays.
   Some of them also support monitoring the power consumption.

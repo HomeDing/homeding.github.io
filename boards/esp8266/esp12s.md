@@ -1,7 +1,6 @@
 ---
 title: ESP-12s Module
 tags: ["Board"]
-layout: "page.njk"
 description: ESP-12 modules.
 excerpt: >
   The **ESP-12S** is an optimized version from esp-12f with a better antenna signal. FLASH SPI signals are not available.

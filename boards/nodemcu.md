@@ -1,7 +1,6 @@
 ---
 title: ESP8266 NodeMCU development boards
 tags: ["Board"]
-layout: "page.njk"
 description: ESP8266 General purpose development boards
 excerpt: >
   The NodeMCU boards are one of the most common development boards using ESP8266 modules.

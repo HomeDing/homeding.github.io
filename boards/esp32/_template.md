@@ -3,7 +3,6 @@ title:
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
 description: ESP32 based board with ...
 excerpt: >
   This board uses a ESP32 processor ...

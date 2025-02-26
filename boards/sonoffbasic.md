@@ -1,7 +1,6 @@
 ---
 title: Sonoff Basic (R1)
 tags: ["Board"]
-layout: "page.njk"
 excerpt: >
   The Sonoff Basic is a off-the-shelf smart relay to switch main power consumers.
   It is using the ESP8266 CPU and 1 MByte Flash and can be used with the Minimal Example.

@@ -3,7 +3,6 @@ title: TTGO Gallery (T14)
 tags:
   - "Board"
   - "WIP"
-layout: "page.njk"
 description: ESP32 Wrover-B board with integrated TFT color display and audio.
 excerpt: >
   The LilyGO TTGO Gallery (T14) board offers an integrated TFT color display, SD Card, 4 buttons and Audio DAC output with amplifier.

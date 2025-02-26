@@ -1,7 +1,7 @@
 ---
 title: XIAO ESP32 C3
 tags: ["Board"]
-image: "/boards/esp32C3/xiao_esp32c3.jpg"
+image: "/boards/esp32c3/xiao_esp32c3.jpg"
 description: ESP32-C3 thumb-size board with external antenna.
 excerpt: >
   The XIAO ESP32 C3 is a thumb-size board with external antenna.

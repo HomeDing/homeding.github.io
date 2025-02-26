@@ -1,7 +1,6 @@
 ---
 title: ESP32 DevKit Boards
 tags: ["Board"]
-layout: "page.njk"
 description: ESP32 General purpose development boards
 excerpt: >
   The ESP32 DevKit Boards come in various formats and sizes with WROOM modules and USB adapter.

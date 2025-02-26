@@ -1,7 +1,6 @@
 ---
 title: ESP-12e Module
 tags: ["Board"]
-layout: "page.njk"
 description: ESP-12e modules.
 excerpt: >
   The **ESP-12** (old) and **ESP-12E** modules offer 8+8 pins at the sides

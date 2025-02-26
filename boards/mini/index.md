@@ -1,7 +1,6 @@
 ---
 title: Mini modules and Shields
 tags: ["Board"]
-layout: "page.njk"
 description: Several Boards in the 'mini' layout
 excerpt: >
   The HomeDing library can be used with these Boards that offer a selection of processor modules and shield.

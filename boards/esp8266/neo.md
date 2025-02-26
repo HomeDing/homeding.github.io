@@ -4,7 +4,6 @@ icon: neo
 tags:
   - "Element"
   - "Light"
-layout: "page.njk"
 excerpt: >
   The neo board is a very specific adapter to drive a Neopixel based
   stripe, wheel or array using a ESP-01 board.

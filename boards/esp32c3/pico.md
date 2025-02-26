@@ -1,7 +1,7 @@
 ---
 title: Board C3 pico 
 description: Very small ESP32-C3 Board with OLED display.
-image: "/boards/esp32C3/pico.jpg"
+image: "/boards/esp32c3/pico.jpg"
 tags:
   - "Board"
   - "WIP"
