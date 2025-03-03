@@ -61,7 +61,7 @@ Using the built-in WiFi Manager is the preferred method for connecting to a netw
   Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
   automatically open the network configuration page.
 
-  ![WiFi Manager UI](/dev/wifimanager.png "w400")
+  ![WiFi Manager UI](/dev/wifimanager.png){ style="width: 400px" }
 
 * If the WiFi Manager UI is not starting after joining the network please open <http://192.168.4.1/> or <http://192.168.4.1/$setup> manually.
 
@@ -131,7 +131,7 @@ Upload works by using drag&drop:
 The firmware offers an update interface as part of the embedded web server.
 This is available at <http://homeding/$update>.
 
-![Builtin Upload Utility](/steps/boot.png "w400")
+![Builtin Upload Utility](/steps/boot.png){ style="width: 400px" }
 
 By pressing the start button all files from the homeding documentation website are transferred to the device.
 
@@ -163,7 +163,7 @@ The [Micro IDE](/dev/microide.md) can create new files and can update existing f
 
 ## Choose an icon
 
-![Select Icon](/steps/stepupdateicon.png "w400")
+![Select Icon](/steps/stepupdateicon.png){ style="width: 400px" }
 
 Every device can have a special icon that you will recognize in the shortcut or link.
 

@@ -17,11 +17,7 @@ $u-border-color: #555555;
 $u-border-color-active: hsl($u-hue 100% 30%);
 
 $u-disabled: gray; // disabled objects
-$u-heading: $u-primary; // any headlines
 $u-connect: #00cc00; // connectivity / net
-
-$u-on: color.scale(green, $lightness: 10%);
-$u-off: red;
 
 $u-padding-text: 4px;
 $u-padding-block: calc(2 * $u-padding-text);
@@ -30,7 +26,6 @@ $u-border-size: 1px;
 $u-border: $u-border-size solid $u-border-color;
 $u-border-none: $u-border-size solid transparent;
 $u-border-active: $u-border-size solid $u-border-color-active;
-
 
 
 // ===== Content Box Sizes =====
@@ -76,6 +71,7 @@ $u-font-sans-serif: arial, ui-sans-serif, sans-serif;
   --focus: #{hsl($u-hue, 50%, 50%)};
 
   --text-spacing: #{$u-text-spacing};
+  --transition: 0.3s ease;
 }
 
 html,

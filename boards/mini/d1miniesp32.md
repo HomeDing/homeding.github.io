@@ -10,9 +10,9 @@ tags:
 The D1 mini ESP32 boards use a ESP32 MCU and 4 MByte flash memory chip.
 
 {{ carousel([
-  { "file": "d1miniesp32.jpg", "text": "w200"},
-  { "file": "d1miniesp32.png", "text": "w200"},
-  { "file": "d1miniesp32-1.jpg", "text": "w200"}
+  { "file": "d1miniesp32.jpg"},
+  { "file": "d1miniesp32.png"},
+  { "file": "d1miniesp32-1.jpg"}
 ]) }}
 
 A similar board the [D1 mini (ESP8266)](/boards/mini/d1mini.md) exists

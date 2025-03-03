@@ -39,18 +39,6 @@ table {
 }
 
 
-img[title='w200'] {
-  width: 200px;
-}
-
-img[title='w400'] {
-  width: 400px;
-}
-
-img[title='w600'] {
-  width: 600px;
-}
-
 .warning {
   margin: 0.2rem;
   padding: 0.4rem;
@@ -82,7 +70,7 @@ h3,
 h4,
 .text {
   margin: 0;
-  min-height: 1rem;
+  min-height: 1em;
 
   >img,
   >svg {

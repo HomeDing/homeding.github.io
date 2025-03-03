@@ -64,6 +64,30 @@ module.exports = function(eleventyConfig) {
     "css" // css is not yet a recognized template extension in Eleventy
   ]);
 
+  
+  // Modify all URLs pointing to .md files in all .htm output in your project
+  eleventyConfig.htmlTransformer.addUrlTransform(
+    "htm",
+   
+    /**
+     * transform internal links to markdown fils to the final url using the htm format.
+     * @this {object}
+     * @param {string} url given url in the document
+     */
+    (url) => {
+      let lUrl = url.toLowerCase();
+      if ((! lUrl.startsWith('http')) && (lUrl.endsWith('.md'))) {
+        return(url.substring(0, url.length-2) + 'htm');
+      }  
+      return (url);
+    },
+
+    {
+    	priority: -1, // run last (especially after PathToUrl transform)
+    }
+  );
+
+
   eleventyConfig.addTransform("insp", function(content) {
     // console.log( this.inputPath, this.outputPath );
     // note that this.outputPath is `false` for serverless templates

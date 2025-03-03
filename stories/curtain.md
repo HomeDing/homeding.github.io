@@ -27,7 +27,7 @@ Here you see the picture of a **LoraTap SC500W** that comes with some helpful de
 how to wire the motor and switch. The official product web site is here:
 <https://www.loratap.com/sc500w-p0108.html>
 
-![LoraTap SC500W](/stories/curtain.jpg "w400")
+![LoraTap SC500W](/stories/curtain.jpg){ style="width: 400px" }
 
 > #### Important node
 >
@@ -58,8 +58,8 @@ processor + 1MByte Flash integrated.
 
 Here is a picture on the board with attached wires for uploading:
 
-![SC500W with wires-01](/stories/curtain-wired01.jpg "w200")
-![SC500W with wires-02](/stories/curtain-wired02.jpg "w200")
+![SC500W with wires-01](/stories/curtain-wired01.jpg){ style="width: 200px" }
+![SC500W with wires-02](/stories/curtain-wired02.jpg){ style="width: 200px" }
 
 
 ## GPIO Usage

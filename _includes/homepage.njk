@@ -24,20 +24,25 @@ permalink: "{{ page.filePathStem }}.htm"
   <meta property="og:image" content="homeding.png">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
 
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
-    </svg>
-
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    {# <span class="gap"></span>
+    <svg id="themebutton" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+      <path fill="white" d="M24 1c-13 0-23 10-23 23s10 23 23 23s23-11 23-23s-11-23-23-23z M24 43V5c10 0 19 10 19 19s-9 19-19 19z" />
+    </svg> #}
   </div>
 
-  <nav class="menu"></nav>
+  <nav popover='auto' id='my-menu' class='menu'></nav>
 
   <main>
     <h1>{{title}}</h1>
@@ -71,13 +76,24 @@ permalink: "{{ page.filePathStem }}.htm"
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    {# function setTheme(lightMode) {
+      const theme = lightMode ? 'light' : 'dark';
+      document.querySelector(':root').style.colorScheme = theme;
+    }
+
+    let isLightTheme = window.matchMedia('(prefers-color-scheme: light)').matches;
+    console.log('prefersLightTheme', isLightTheme);
+    setTheme(isLightTheme);
+
+    document.querySelector('#themebutton').addEventListener('click', function(e) {
+      isLightTheme = !isLightTheme;
+      setTheme(isLightTheme);
+    }); #}
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
+
 </body>
 
 </html>

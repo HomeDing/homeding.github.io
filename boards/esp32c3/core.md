@@ -153,8 +153,8 @@ The following configuration can be used for the Shield:
 
 ## Pictures
 
-![core-esp32c3 board with pins](/boards/esp32c3/core-soldered.jpg "w200")
-![core-esp32c3 on breadboard](/boards/esp32c3/core-stacked.jpg "w200")
+![core-esp32c3 board with pins](/boards/esp32c3/core-soldered.jpg){ style="width: 200px" }
+![core-esp32c3 on breadboard](/boards/esp32c3/core-stacked.jpg){ style="width: 200px" }
 
 
 ## See also

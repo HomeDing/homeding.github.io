@@ -7,6 +7,8 @@
 // Element and card rules for iot dashboards
 // This is part of the micro css implementation.
 
+$u-on: color.scale(green, $lightness: 10%);
+$u-off: red;
 
 // ===== Cards layout =====
 
@@ -254,11 +256,11 @@ input.switch[type='range'] {
 }
 
 .u-bool[value='1'] {
-  background-image: linear-gradient(145deg, color.adjust(base.$u-on, $lightness: 30%), base.$u-on);
+  background-image: linear-gradient(145deg, color.adjust($u-on, $lightness: 30%), $u-on);
 }
 
 .u-bool[value='0'] {
-  background-image: linear-gradient(145deg, color.adjust(base.$u-off, $lightness: 30%), base.$u-off);
+  background-image: linear-gradient(145deg, color.adjust($u-off, $lightness: 30%), $u-off);
 }
 
 // visualizing the output level 0...max

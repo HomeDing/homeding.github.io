@@ -1,7 +1,8 @@
 ---
 title: Mini modules and Shields
-tags: ["Board"]
 description: Several Boards in the 'mini' layout
+tags: 
+  - "Board"
 excerpt: >
   The HomeDing library can be used with these Boards that offer a selection of processor modules and shield.
 ---
@@ -17,15 +18,15 @@ share the position of 2 connectors with 8 pins that are compatible to a certain 
 be combined with the available shields.
 
 {{ carousel([
-  { "file": "d1mini.jpg", "text": "w200"},
-  { "file": "d1miniv4.jpg", "text": "w200"},
-  { "file": "v4.jpg", "text": "w200"},
-  { "file": "v4-back.jpg", "text": "w200"},
-  { "file": "d1miniesp32.jpg", "text": "w200"},
-  { "file": "d1miniesp32-1.jpg", "text": "w200"},
-  { "file": "d1minipins.png", "text": "w200"},
-  { "file": "d1miniesp32.png", "text": "w200"},
-  { "file": "stacked.jpg", "text": "w200"}
+  { "file": "d1mini.jpg"},
+  { "file": "d1miniv4.jpg"},
+  { "file": "v4.jpg"},
+  { "file": "v4-back.jpg"},
+  { "file": "d1miniesp32.jpg"},
+  { "file": "d1miniesp32-1.jpg"},
+  { "file": "d1minipins.png"},
+  { "file": "d1miniesp32.png"},
+  { "file": "stacked.jpg"}
 ]) }}
 
 ## Pins

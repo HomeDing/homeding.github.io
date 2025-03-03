@@ -13,9 +13,9 @@ SVG is not a pure graphic format that can be used for icons, it also offers a DO
 
 The micro-charts in the HomeDing UI are a set for SVG and JavaScript files that can be embedded into a HTML page and offer a High Level API that is implemented in javascript.
 
-![LineChart Screenshot](/dev/microchart-line.png "w200")
-![PieChart Screenshot](/dev/microchart-pie.png "w200")
-![GaugeChart Screenshot](/dev/microchart-gauge.png "w200")
+![LineChart Screenshot](/dev/microchart-line.png){ style="width: 200px" }
+![PieChart Screenshot](/dev/microchart-pie.png){ style="width: 200px" }
+![GaugeChart Screenshot](/dev/microchart-gauge.png){ style="width: 200px" }
 
 
 ## Embed a Micro Chart

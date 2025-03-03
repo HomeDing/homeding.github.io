@@ -34,15 +34,15 @@ Only the USB power line and the sensor wires are going out.
 This sensor is placed in a location where direct rain and sunlight could not reach it so there was no need for special shielding.
 Also USB power is available and the device can be powered all the time.
 
-![outdoor sensor](/stories/outdoorsensor01.png "w200")
-![outdoor sensor](/stories/outdoorsensor02.png "w200")
+![outdoor sensor](/stories/outdoorsensor01.png){ style="width: 200px" }
+![outdoor sensor](/stories/outdoorsensor02.png){ style="width: 200px" }
 
 To inspect the current values the devices is connected to the local WiFi and has a built-in web server,
 also provided by the [Homeding library] that shows both values of the sensor on a tile.
 
 Just open the Board page to see the HTML UI of the element:
 
-![outdoor sensor web ui](/stories/outdoorsensor03.png "w400")
+![outdoor sensor web ui](/stories/outdoorsensor03.png){ style="width: 400px" }
 
 This project shows the basic of building an outdoor sensor. There are possible extensions that can be added by configuration:
 
@@ -226,7 +226,7 @@ When requested enter `/config.json` into the filename field.
 
 The principle wiring of a DHT22 sensor can be seen in this picture:
 
-![DHTWiring](/elements/dhtwires.png "w400")
+![DHTWiring](/elements/dhtwires.png){ style="width: 400px" }
 
 As you can see in the config.json file the data pin that was configured on the software side is the D5 GPIO pin so data from the sensor chip must be connected here.
 

@@ -27,8 +27,6 @@ They have all you need built-in:
 * A page to view data and control the device.
 
 
-##
-
 {% include "./home/story.md" %}
 
 

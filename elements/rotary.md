@@ -11,7 +11,7 @@ excerpt: >
 
 It can be used in combination with a [Value Element](/elements/value.md) to define a logical or numeric value that can be changed using the rotary encoder.
 
-![Rotary Encoder](/sensors/rotary.jpg "w200")
+![Rotary Encoder](/sensors/rotary.jpg){ style="width: 200px" }
 
 This element uses the RotaryEncoder library available in the Arduino Library Manager.
 

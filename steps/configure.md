@@ -17,7 +17,7 @@ For JSON files there is a special support for syntax validating.
 
 The IDE can be found on all the HomeDing based devices using the url <http://homeding/microide.htm> [^hostname].
 
-![Micro IDE screenshot](/dev/microide.png "w400")
+![Micro IDE screenshot](/dev/microide.png){ style="width: 400px" }
 
 On the left side all existing files can be seen.
 

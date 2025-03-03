@@ -13,11 +13,11 @@ There are variants of this board available.
 I prefer and recommend those with a CP2102 USB-to-USART chip and with a DS1117 regulator that are slim enough to fit on a breadboard.
 
 {{ carousel([
-  { "file": "/boards/nodemcu-03.jpg", "text": "w200"},
-  { "file": "/boards/nodemcu-00.jpg", "text": "w200"},
-  { "file": "/boards/nodemcu-01.jpg", "text": "w200"},
-  { "file": "/boards/nodemcu-02.jpg", "text": "w200"},
-  { "file": "/boards/nodemcu-04.jpg", "text": "w200"}
+  { "file": "/boards/nodemcu-03.jpg"},
+  { "file": "/boards/nodemcu-00.jpg"},
+  { "file": "/boards/nodemcu-01.jpg"},
+  { "file": "/boards/nodemcu-02.jpg"},
+  { "file": "/boards/nodemcu-04.jpg"}
 ]) }}
 
 

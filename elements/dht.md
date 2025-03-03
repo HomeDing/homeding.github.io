@@ -13,8 +13,8 @@ excerpt: >
 
 The current values are also sent out to other elements using actions when they stay the same for some time to allow remote devices to resume to the current values after reboot or network outages.
 
-![DHT22 pins](/elements/dht22pins.jpg "w400")
-![DHT22 on Breadboard](/elements/dht22board.jpg "w200")
+![DHT22 pins](/elements/dht22pins.jpg){ style="width: 400px" }
+![DHT22 on Breadboard](/elements/dht22board.jpg){ style="width: 200px" }
 
 
 ## Web UI for the DHT Element

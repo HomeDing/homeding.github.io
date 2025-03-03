@@ -138,7 +138,7 @@ u-carousel {
   <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
   <ul class="entries" tabindex="0">
 {% for i in images %}
-  <li><img src="{{i.file}}" alt="{{i.text}}" title="" draggable="false"></li>
+  <li><img src="{{i.file}}" title="" draggable="false"></li>
 {% endfor %}
   </ul>
 </u-carousel>

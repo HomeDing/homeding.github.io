@@ -7,7 +7,7 @@ It can be supplied by 5V to 36V DC.
 
 The espressif module uses the same processor from the EPS8266 and includes an integrated 2 MByte Flash rom on the chip.
 
-![sinilink-fet picture](sinilink-fet.jpg "w200")
+![sinilink-fet picture](sinilink-fet.jpg){ style="width: 200px" }
 
 
 ## Pins in use

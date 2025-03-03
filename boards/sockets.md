@@ -14,10 +14,10 @@ The TASMOTA firmware implementation is one with constant support to even new dev
 
 ## Gosund SP111 also from Blitzwolf
 
-![sp111 socket](/boards/sockets.jpg "w200")
-![sp111 socket](/boards/socket-sp111-01.jpg "w200")
-![sp111 socket](/boards/socket-sp111-02.jpg "w200")
-![sp111 socket](/boards/socket-sp111-03.jpg "w200")
+![sp111 socket](/boards/sockets.jpg){ style="width: 200px" }
+![sp111 socket](/boards/socket-sp111-01.jpg){ style="width: 200px" }
+![sp111 socket](/boards/socket-sp111-02.jpg){ style="width: 200px" }
+![sp111 socket](/boards/socket-sp111-03.jpg){ style="width: 200px" }
 
 The documentation on the devices to flash the TASMOTA firmware also has some hints on the GPIO functionality and the supported features and a picture for identification.
 

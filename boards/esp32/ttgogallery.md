@@ -14,9 +14,9 @@ It is built using a ESP32 Wrover-B Module, digital audio output using the I2S bu
 
 The [WebRadio example](/examples/webradio.md) is based on using this board.
 
-![ttogallery front](/boards/esp32/ttgogallery.jpg "w400")
+![ttogallery front](/boards/esp32/ttgogallery.jpg){ style="width: 400px" }
 
-![ttogallery back](/boards/esp32/ttgogallery-back.jpg "w400")
+![ttogallery back](/boards/esp32/ttgogallery-back.jpg){ style="width: 400px" }
 
 
 ## Sketch uploading

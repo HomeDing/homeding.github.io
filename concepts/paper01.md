@@ -27,7 +27,7 @@ To explore the Arduino and microprocessor processor world the [examples](/exampl
 
 As an example it is possible to use the [standard example](/examples/standard.md) with a simple environment sensor to build a temperature probing and monitoring solution in a few minutes.
 
-![esp8266+dht sensor on breadboard](/concepts/breadboard.jpg "w400")
+![esp8266+dht sensor on breadboard](/concepts/breadboard.jpg){ style="width: 400px" }
 
 The library provides an integrated web server with html, javascript and css files to show a full functional dashboard to display the current probe values and the historical values using a chart.
 

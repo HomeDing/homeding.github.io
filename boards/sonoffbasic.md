@@ -6,7 +6,7 @@ excerpt: >
   It is using the ESP8266 CPU and 1 MByte Flash and can be used with the Minimal Example.
 ---
 
-![Sonoff Basic](/boards/sonoffbasic.jpg "w200")
+![Sonoff Basic](/boards/sonoffbasic.jpg){ style="width: 200px" }
 
 Sonoff ITEAD is a brand for several off-the-shelf Smart Home WLAN devices like switches that use the ESP8266 chip.
 They were one of the first companies selling these type of devices to the market that were usable for uploading custom firmware.
@@ -87,7 +87,7 @@ This configuration allows switching the relay using the button and showing the r
 
 ## How to flash
 
-![Sonoff Basic Flash](/boards/sonoffflash.jpg "w200")
+![Sonoff Basic Flash](/boards/sonoffflash.jpg){ style="width: 200px" }
 
 | Adapter | S20           |
 | ------- | ------------- |

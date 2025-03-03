@@ -1,17 +1,14 @@
 // .myMarkdown.js
 // local plugin implementation to enrich the markdown with
-// - replace-link -- patch all internal *.md links
 // - containers: excerpt, board, element, sensor
 
 // https://v0-5-1.11ty.dev/docs/languages/markdown/
 // https://www.11ty.dev/docs/languages/markdown/
-// https://www.npmjs.com/package/markdown-it-replace-link5
 // https://github.com/markdown-it/markdown-it-footnote
 
 
 const markdownIt = require('markdown-it');
 const mdContainer = require('markdown-it-container');
-const mdReplaceLink = require('markdown-it-replace-link');
 const mdFootnotes = require('markdown-it-footnote');
 const mdTaskLists = require('markdown-it-task-lists');
 const mdItAttrs = require('markdown-it-attrs');
@@ -26,15 +23,9 @@ module.exports = {
       html: true,
       breaks: false,
       linkify: true,
-      typographer: true,
-      replaceLink: function(link, env) {
-        // console.log("--", link);
-        link = link.replace(/(^\/[^.]*)\.md$/, "$1.htm");
-        return (link);
-      }
+      typographer: true
     });
 
-    markdown.use(mdReplaceLink);
     markdown.use(mdTaskLists, { enabled: true, label: true });
     markdown.use(mdItAttrs);
     markdown.use(mdFootnotes, { backref: false });

@@ -1,0 +1,7 @@
+macros.njk -- macros
+
+homepage.njk -- used for /index.md only
+toc.njk -- used for toc only i partial page only.
+page.njk -- used for all other content
+
+default.njk -- removed.
