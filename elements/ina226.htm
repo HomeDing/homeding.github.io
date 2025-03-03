@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>INA226 Element</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='Support of the INA226 current and voltage sensor chips.'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="Support of the INA226 current and voltage sensor chips.">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>INA226 Element</h1>
@@ -168,15 +171,13 @@ These also must be connected to the INA226 board.</p>
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

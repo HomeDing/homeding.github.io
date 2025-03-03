@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ESP32-C3 Super Mini</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='ESP32-C3 thumb-size board with integrated antenna.'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="ESP32-C3 thumb-size board with integrated antenna.">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>ESP32-C3 Super Mini</h1>
@@ -42,7 +45,7 @@
       </div>
     
 
-    <p>The <a href="index.md">ESP32-C3 processor</a> is a single-core SoC based on the open-source 32-bit RISC-V
+    <p>The <a href="index.htm">ESP32-C3 processor</a> is a single-core SoC based on the open-source 32-bit RISC-V
 architecture.</p>
 <p><img src="super-mini-c3.jpg" alt="ESP32-C3 Super Mini"></p>
 <p>It has almost the same size as the <a href="/boards/esp32c3/xiao_esp32c3.htm">XIAO ESP32 C3</a> but comes with an onboard antenna.
@@ -73,7 +76,7 @@ It can be used with the following settings:</p>
 <pre class="language-json"><code class="language-json"></code></pre>
 <h2>See Also</h2>
 <ul>
-<li><a href="index.md">ESP32-C3 processor</a></li>
+<li><a href="index.htm">ESP32-C3 processor</a></li>
 <li><a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf</a></li>
 </ul>
 
@@ -85,15 +88,13 @@ It can be used with the following settings:</p>
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

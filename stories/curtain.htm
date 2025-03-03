@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart control for shades, blinds and curtains</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="Examples and documentation for the HomeDing IoT Library">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>Smart control for shades, blinds and curtains</h1>
@@ -50,7 +53,7 @@ AC Power, very useful to keep a local switch functional.</p>
 <p>Here you see the picture of a <strong>LoraTap SC500W</strong> that comes with some helpful descriptions on
 how to wire the motor and switch. The official product web site is here:
 <a href="https://www.loratap.com/sc500w-p0108.html">https://www.loratap.com/sc500w-p0108.html</a></p>
-<p><img src="/stories/curtain.jpg" alt="LoraTap SC500W" title="w400"></p>
+<p><img src="/stories/curtain.jpg" alt="LoraTap SC500W" style="width: 400px"></p>
 <blockquote>
 <h4>Important node</h4>
 <p>On the first sight the implementation seems to be more complex than required.
@@ -84,8 +87,8 @@ documented on <a href="https://developer.tuya.com/en/docs/iot/tywe2s?id=K9hhi0xr
 program it like a ‘Generic ESP8285 Module’ module. It uses a ESP8285 chip that has a ESP8266
 processor + 1MByte Flash integrated.</p>
 <p>Here is a picture on the board with attached wires for uploading:</p>
-<p><img src="/stories/curtain-wired01.jpg" alt="SC500W with wires-01" title="w200">
-<img src="/stories/curtain-wired02.jpg" alt="SC500W with wires-02" title="w200"></p>
+<p><img src="/stories/curtain-wired01.jpg" alt="SC500W with wires-01" style="width: 200px">
+<img src="/stories/curtain-wired02.jpg" alt="SC500W with wires-02" style="width: 200px"></p>
 <h2>GPIO Usage</h2>
 <p>The description for Tasmota at <a href="https://templates.blakadder.com/loratap_SC500W.html">https://templates.blakadder.com/loratap_SC500W.html</a> is helpful to check what GPIOs are in use for what function</p>
 <table>
@@ -219,15 +222,13 @@ processor + 1MByte Flash integrated.</p>
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

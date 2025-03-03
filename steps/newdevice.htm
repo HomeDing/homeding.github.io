@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Step by Step Bring your device to work</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="Examples and documentation for the HomeDing IoT Library">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>Step by Step Bring your device to work</h1>
@@ -95,7 +98,7 @@ and then reboot the board.</p>
 <p>Connect any laptop or mobile phone to the unsecured WiFi network called “HomeDingXXXX”.</p>
 <p>Now you have a direct connectivity to this device and can start configuration. Some mobile devices or computer will
 automatically open the network configuration page.</p>
-<p><img src="/dev/wifimanager.png" alt="WiFi Manager UI" title="w400"></p>
+<p><img src="/dev/wifimanager.png" alt="WiFi Manager UI" style="width: 400px"></p>
 </li>
 <li>
 <p>If the WiFi Manager UI is not starting after joining the network please open <a href="http://192.168.4.1/">http://192.168.4.1/</a> or <a href="http://192.168.4.1/$setup">http://192.168.4.1/$setup</a> manually.</p>
@@ -152,7 +155,7 @@ This UI is implemented with minimal size (looks plain ugly) but is part of the f
 <h3>Web based Update</h3>
 <p>The firmware offers an update interface as part of the embedded web server.
 This is available at <a href="http://homeding/$update">http://homeding/$update</a>.</p>
-<p><img src="/steps/boot.png" alt="Builtin Upload Utility" title="w400"></p>
+<p><img src="/steps/boot.png" alt="Builtin Upload Utility" style="width: 400px"></p>
 <p>By pressing the start button all files from the homeding documentation website are transferred to the device.</p>
 <p>The list of files and files for download are available at: <a href="https://homeding.github.io/v09/list.txt">https://homeding.github.io/v09/list.txt</a>.</p>
 <p>This method is useful when updating a standard firmware by a new version and the UI files need to be updated
@@ -171,7 +174,7 @@ It has a upload area that can be used to upload files into the filesystem like i
 </li>
 </ul>
 <h2>Choose an icon</h2>
-<p><img src="/steps/stepupdateicon.png" alt="Select Icon" title="w400"></p>
+<p><img src="/steps/stepupdateicon.png" alt="Select Icon" style="width: 400px"></p>
 <p>Every device can have a special icon that you will recognize in the shortcut or link.</p>
 <h2>See also</h2>
 <ul>
@@ -188,15 +191,13 @@ It has a upload area that can be used to upload files into the filesystem like i
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

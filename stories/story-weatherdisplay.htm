@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Build a Weather forecast display</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="Examples and documentation for the HomeDing IoT Library">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>Build a Weather forecast display</h1>
@@ -67,7 +70,7 @@ The library also supports looking into the display of the device remotely using 
 <p>It also brings a complete solution for hosting a web side inside device instead of using a cloud based solution to display the sensor data and interact with the device.</p>
 <h2>Use the browser as a remote information panel</h2>
 <p>The display content is also available when using a browser and open the Web UI of the device.</p>
-<p>The Homeding library provides a web version when opening the http://<devicename>/board.htm:</p>
+<p>The Homeding library provides a web version when opening the http://<devicename>/board.htm:</devicename></p>
 <p><img src="/stories/weatherboard.png" alt="Weather board screenshot"></p>
 <h2>Supplies</h2>
 <p>The hardware parts you need to build this project and used in this story are:</p>
@@ -294,15 +297,13 @@ http://&lt;devicename&gt;/$boot.htm and use the devicename or ip address of your
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

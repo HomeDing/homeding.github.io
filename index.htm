@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The HomeDing Library</title>
   <script src="/pages.js"></script>
-  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet" />
+  <link Content-Type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
 
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc" />
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353" />
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
 
   <meta name="description" content="An Arduino Library that makes IoT devices building easy.">
@@ -19,20 +19,22 @@
   <meta property="og:image" content="homeding.png">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
 
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z" />
-    </svg>
-
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
 
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>The HomeDing Library</h1>
@@ -63,7 +65,6 @@ Make your own by using the Arduino development environment.</p>
 <li>A editor for configuration</li>
 <li>A page to view data and control the device.</li>
 </ul>
-<h2></h2>
 <style>
 .page {
 position: relative;
@@ -73,6 +74,7 @@ padding: 2em 3em;
 margin-bottom: 1em;
 border-radius: 2em;
 background-color: #f8f8f8;
+scroll-snap-type: both proximity;
 }
 
 .page>.row {
@@ -171,7 +173,7 @@ very useful for attaching sensors, lights, displays or motors.</p>
 <p>The free Arduino programing environment has all the tools to create and upload the program
 into the microprocessor, easy to learn for beginners and feature rich for professionals.</p>
 </div>
-<div is="story-svg-show" ref="#hds:#tProgram" dur="400ms" dur="2s"></div>
+<div is="story-svg-show" ref="#hds:#tProgram" dur="400ms"></div>
 </div>
 </div>
 <div id="q1" is="story-animate" dur="2s" s-from="opacity:0;font-size:50%" style="font-size:200%">
@@ -364,13 +366,12 @@ as well as defining how the interact with each other and to the outer world over
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
+
 </body>
 
 </html>

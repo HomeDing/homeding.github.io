@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bulb Devices</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>Bulb Devices</h1>
@@ -46,7 +49,7 @@
 </div>
 <p>There are many different bulb devices that use RGB and white LED variants. The bulbs that use GPIOs with PWM or the chips
 like MY9231, MY9291.</p>
-<p><img src="/boards/devices/bulb.jpg" alt="WiFi Bulb" title="w200"></p>
+<p><img src="/boards/devices/bulb.jpg" alt="WiFi Bulb" style="width: 400px"></p>
 <p>The biggest challenge with these bulbs is that there is usually no easy way to get to the serial port without destroying the housing.</p>
 <p>Therefore bulbs are used here, that can also be flashed with a new software via the network. This is done by the program <strong>tuya-convert</strong> that runs on a Raspberry pi.</p>
 <p>The <a href="/examples/minimal.htm">Minimal Example</a> can be used in bulbs and other light devices.</p>
@@ -152,12 +155,12 @@ The <a href="/elements/light/my9291.htm">MY9291 Element</a> can create the 4-cha
 <li><a href="https://templates.blakadder.com/lyasi_pt-bw09.html">https://templates.blakadder.com/lyasi_pt-bw09.html</a></li>
 </ul>
 <p>Here are some picture from a disassembly of a bulb:</p>
-<p><img src="/boards/devices/bulb.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulbparts.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulb01.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulb02.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulb03.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulb04.jpg" alt="bulb" title="w200"></p>
+<p><img src="/boards/devices/bulb.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulbparts.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulb01.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulb02.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulb03.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulb04.jpg" alt="bulb" style="width: 200px"></p>
 <p>It is almost impossible to open this kind of a bulb and get access to the programming signals without breaking the housing.</p>
 <p>I used a programming setup for ESP-01 boards with some wires that can be soldered easily to the connectors of the module with the ESP8266.</p>
 <p>On the bottom side the signals VCC(3.3V), GND, RX and TX are available.
@@ -166,7 +169,7 @@ The RESET and FLASH signals are available on 2 connectors on the bottom side.</p
 <p>Many bulbs are using the PWM signals from the ESP8266 chip with some power switching mosfets to drive the LEDs.
 These can be controlled using the <a href="/elements/light/light.htm">Light Element</a> that can create 4-channels of PWM signals from a color value.
 It supports RGB and WRGB color values, a general brightness and enable switch.</p>
-<p><img src="/boards/devices/bulbrgb.jpg" alt="bulb" title="w200"></p>
+<p><img src="/boards/devices/bulbrgb.jpg" alt="bulb" style="width: 200px"></p>
 <p><strong>config.json</strong></p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"switch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -202,11 +205,11 @@ It supports RGB and WRGB color values, a general brightness and enable switch.</
 <p>These bulbs are internally of this type:</p>
 <p><a href="https://templates.blakadder.com/blitzwolf_BW-LT21.html">https://templates.blakadder.com/blitzwolf_BW-LT21.html</a></p>
 <p>Here are some picture from a disassembly of a broken bulb:</p>
-<p><img src="/boards/devices/bulbrgb01.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulbrgb02.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulbrgb03.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulbrgb04.jpg" alt="bulb" title="w200">
-<img src="/boards/devices/bulbrgb05.jpg" alt="bulb" title="w200"></p>
+<p><img src="/boards/devices/bulbrgb01.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulbrgb02.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulbrgb03.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulbrgb04.jpg" alt="bulb" style="width: 200px">
+<img src="/boards/devices/bulbrgb05.jpg" alt="bulb" style="width: 200px"></p>
 <p>It is possible to open this bulb by gently pulling off the transparent cap. There are 2 small boards visible.
 The one with the processor has some good soldering pads for RX, TX and GPIO0. The VCC and GND signals are available on the connectors.</p>
 <p>Soldering is a little bit tricky but can be managed.</p>
@@ -231,15 +234,13 @@ The one with the processor has some good soldering pads for RX, TX and GPIO0. Th
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

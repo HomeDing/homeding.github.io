@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Retail Plug and Socket Devices</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="Examples and documentation for the HomeDing IoT Library">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>Retail Plug and Socket Devices</h1>
@@ -45,10 +48,10 @@
     <p><strong>Tuya</strong> is a manufacturer and provider of IoT devices using the ESP8266 chip. This company is the manufacturer of many IoT devices.</p>
 <p>The TASMOTA firmware implementation is one with constant support to even new devices from other brands and when TASMOTA supports the device it likely has a ESP8266 inside.</p>
 <h2>Gosund SP111 also from Blitzwolf</h2>
-<p><img src="/boards/sockets.jpg" alt="sp111 socket" title="w200">
-<img src="/boards/socket-sp111-01.jpg" alt="sp111 socket" title="w200">
-<img src="/boards/socket-sp111-02.jpg" alt="sp111 socket" title="w200">
-<img src="/boards/socket-sp111-03.jpg" alt="sp111 socket" title="w200"></p>
+<p><img src="/boards/sockets.jpg" alt="sp111 socket" style="width: 200px">
+<img src="/boards/socket-sp111-01.jpg" alt="sp111 socket" style="width: 200px">
+<img src="/boards/socket-sp111-02.jpg" alt="sp111 socket" style="width: 200px">
+<img src="/boards/socket-sp111-03.jpg" alt="sp111 socket" style="width: 200px"></p>
 <p>The documentation on the devices to flash the TASMOTA firmware also has some hints on the GPIO functionality and the supported features and a picture for identification.</p>
 <p>There is a input button, 2 LEDs in red and blue, a relay and a power measurement chip included in this device. The input button, LEDs and the relay can directly be used by digital in and out to create a remote switch.</p>
 <p>The power measurement chip is from type <a href="/elements/bl0937.htm">BL0937</a> that can be found in many plug devices.</p>
@@ -259,15 +262,13 @@ https://www.heise.de/newsticker/meldung/Smart-Home-Hack-Tuya-veroeffentlicht-Sic
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Board D1 Mini ESP32</title>
   <script src="/pages.js"></script>
-  <link content-type="text/css" href="/docstyle.css" rel="stylesheet"/>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name='description' content='Examples and documentation for the HomeDing IoT Library'>
-  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc"/>
-  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353"/>
+  <meta name="description" content="Examples and documentation for the HomeDing IoT Library">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
 
-<body class="sitelayout" style="--content-width:800px">
+<body class="sitelayout">
   <div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48" id="menuButton" class="button" style="height:1.4rem">
-      <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"/>
-    </svg>
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
     <a href="/index.htm" class="button">Home</a>
     <a href="/elements/index.htm" class="button">Elements</a>
     <a href="/boards/index.htm" class="button">Boards</a>
     <a href="/recipes/index.htm" class="button">Recipes</a>
+    
   </div>
   
-  <nav class="menu"></nav>
+  <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
     <h1>Board D1 Mini ESP32</h1>
@@ -107,12 +110,12 @@ u-carousel {
 
 </style>
 <u-carousel>
-  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)" ></button>
-  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)" ></button>
+  <button class="prev" onclick="document.querySelector('.entries').scrollBy(-100, 0)"></button>
+  <button class="next" onclick="document.querySelector('.entries').scrollBy(100, 0)"></button>
   <ul class="entries" tabindex="0">
-  <li><img src="d1miniesp32.jpg" alt="w200" title="" draggable="false"></li>
-  <li><img src="d1miniesp32.png" alt="w200" title="" draggable="false"></li>
-  <li><img src="d1miniesp32-1.jpg" alt="w200" title="" draggable="false"></li>
+  <li><img src="d1miniesp32.jpg" title="" draggable="false"></li>
+  <li><img src="d1miniesp32.png" title="" draggable="false"></li>
+  <li><img src="d1miniesp32-1.jpg" title="" draggable="false"></li>
   </ul>
 </u-carousel>
 <p>A similar board the <a href="/boards/mini/d1mini.htm">D1 mini (ESP8266)</a> exists
@@ -124,7 +127,7 @@ using the ESP8266 and 4 MByte flash memory chip.</p>
 <li>Blue LED on IO2 (active low)</li>
 </ul>
 <h2>See also</h2>
-<p><a href="index.md">Mini modules and Shields</a></p>
+<p><a href="index.htm">Mini modules and Shields</a></p>
 <ul>
 <li>Schematic: <a href="https://github.com/artofcircuits/Store/blob/main/WeMOS%20D1%20Mini%20ESP32/WEMOS-D1-MINI-ESP32-SCH.jpg">https://github.com/artofcircuits/Store/blob/main/WeMOS D1 Mini ESP32/WEMOS-D1-MINI-ESP32-SCH.jpg</a></li>
 <li><a href="https://iotspace.dev/category/wemos-d1-mini/">https://iotspace.dev/category/wemos-d1-mini/</a></li>
@@ -139,15 +142,13 @@ using the ESP8266 and 4 MByte flash memory chip.</p>
   </main>
 
   <script>
-    var mbObj = document.querySelector('#menuButton');
+    
+
     var navObj = document.querySelector('nav');
-    mbObj.addEventListener('click', function (e) {
-      navObj.classList.toggle('open');
-    });
     lazyLoadHTM('nav', '/toc.htm');
   </script>
 
-  <script type="module" async>
+  <script type="module" async="">
     import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
     document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>

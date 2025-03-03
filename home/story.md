@@ -8,6 +8,7 @@ padding: 2em 3em;
 margin-bottom: 1em;
 border-radius: 2em;
 background-color: #f8f8f8;
+scroll-snap-type: both proximity;
 }
 
 .page>.row {

@@ -15,6 +15,7 @@
   --error-color: color;
   --focus: hsl(220, 50%, 50%);
   --text-spacing: 0.5rem;
+  --transition: 0.3s ease;
 }
 
 html,
@@ -213,7 +214,7 @@ dialog::before {
   --footer-back: var(--back);
   --footer-color: var(--color);
   --menu-back: light-dark(white, black);
-  --menu-color: light-dark(black, white );
+  --menu-color: light-dark(black, white);
   --menu-top: 0;
   --menu-width: 14em;
   --menu-padding: var(--layout-padding);
@@ -323,6 +324,7 @@ body.sitelayout .navbar > a:hover {
   border-color: var(--focus);
   background-color: var(--focus);
 }
+body.sitelayout .navbar > button,
 body.sitelayout .navbar > img,
 body.sitelayout .navbar > svg {
   padding: 0;
@@ -364,31 +366,51 @@ body.sitelayout footer {
   color: var(--main-color);
   padding: var(--layout-padding);
 }
-body.sitelayout .menu {
+
+.menu {
   position: absolute;
+  display: block;
+  border: 1px solid var(--menu-color);
   background-color: var(--menu-back);
   color: var(--menu-color);
   width: var(--menu-width);
   min-height: 360px;
   z-index: 1;
   top: 6.2rem;
-  left: calc(0px - var(--menu-width));
-  transition: all 0.2s;
-  padding: var(--menu-padding);
-}
-body.sitelayout .menu.open {
   left: 0;
+  transition: all var(--transition);
+  padding: var(--menu-padding);
+  margin: 0;
+  transform: translateX(calc(0px - var(--menu-width)));
 }
-body.sitelayout .menu a,
-body.sitelayout .menu a:hover {
+.menu:popover-open {
+  transform: translateX(0);
+}
+.menu::backdrop {
+  background-color: rgba(200, 200, 200, 0.7);
+}
+.menu a,
+.menu a:hover {
   text-decoration: none;
 }
 @media print {
-  body.sitelayout .menu {
+  .menu {
     display: none;
   }
 }
 
+@media (width > 1200px) {
+  .menu {
+    transform: translateX(0);
+  }
+  :root {
+    padding-left: var(--menu-width);
+    transition: padding-left var(--transition);
+  }
+  button[popovertarget] {
+    display: none;
+  }
+}
 :root {
   /* pixel units are preferred to create exact card sizes. */
   --card-width: 280px;
