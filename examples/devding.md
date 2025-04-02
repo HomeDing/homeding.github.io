@@ -2,16 +2,14 @@
 title: DevDing Example 
 layout: "page.njk"
 excerpt: >
-  This Example can be used for development of new Elements and functionality as there is much debug information given to the Serial output.
+  The DevDing example can be used for development of new Elements and functionality as there is much debug information given to the Serial output.
 ---
 
-:::excerpt
 The examples in the HomeDing library are used to compile a firmware that provides the base functionality
 combined with a set of elements that can be used in the configuration of the device.
 
 The **DevDing example** can be used with any board that has a 4MByte Flash memory like the [nodemcu boards](/boards/nodemcu.md).
 It is very like the [standard example](/examples/standard.md) but has some add-ons that help during development.
-:::
 
 To setup the development environment and using a ESP8266 board in general please look into the description of the [Standard Example](/examples/standard.md). Here the add-on featured for supporting development are described.
 

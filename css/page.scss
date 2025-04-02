@@ -60,7 +60,7 @@ $u-layout-gap: 1em;
 body.sitelayout {
   display: grid;
   gap: 0; // don't use gap, use margin
-  width: $u-main-width;
+  width: var(--main-width);
   margin: 0 auto;
   padding: $u-layout-gap 0 0 0;
   grid-template-columns: 1fr;
@@ -279,7 +279,7 @@ body.sitelayout {
     transform: translateX(0);
   }
 
-  :root {
+  :root:has(.menu) {
     padding-left: var(--menu-width);
     transition: padding-left var(--transition);
   }

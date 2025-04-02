@@ -2,18 +2,12 @@
 title: Standard Example
 layout: "page.njk"
 tags: ["Example"]
+excerpt: >
+  The Standard Example is used to compile a firmware that provides the base functionality
+  combined with a set of elements that can be used in the configuration of the device.
 ---
 
-:::excerpt
-The examples in the HomeDing library are used to compile a firmware that provides the base functionality
-combined with a set of elements that can be used in the configuration of the device.
-
-The **standard example** can be used with any board that has a 4MByte Flash memory and is a good jumpstart for any project you may have.
-This example e.G. runs on all the [nodemcu boards](/boards/nodemcu.md).
-:::
-
 No additional hardware is required to start this example and the Serial interface is used to transfer some internal actions and infos.
-
 
 ## Setup the development environment and board
 

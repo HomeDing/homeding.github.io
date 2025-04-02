@@ -261,12 +261,6 @@ module.exports = function(eleventyConfig) {
     return (out);
   });
 
-  eleventyConfig.addPairedShortcode("iconcard", function(content, icon, link) {
-    link = link.replace(/\.md$/, ".htm");
-    var out = `<div class="iconcard"><a href="${link}"><svg class="icon"><use href="/icons.svg#${icon}"></use></svg></a>\n${content}\n</div>\n`;
-    return (out);
-  });
-
   // ===== Markdown configuration =====
 
   eleventyConfig.addPlugin(myMarkdown);

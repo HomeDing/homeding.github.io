@@ -2,12 +2,10 @@
 title: Tutorial Example 
 layout: "page.njk"
 tags: ["Example"]
+excerpt: >
+  This examples in the HomeDing library contains the source codes and snippets explained in detail in the documentation
+  about [How to create and extend a new Element](/steps/newelement.md).
 ---
-
-:::excerpt
-This examples in the HomeDing library contains the source codes and snippets explained in detail in the documentation
-about [How to create and extend a new Element](/steps/newelement.md).
-:::
 
 To setup the development environment and using a ESP8266 board in general please look into the description of the [Standard Example](/examples/standard.md). Here the add-on featured for supporting development are described.
 

@@ -2,9 +2,11 @@
 title: Embedded Web Site for IoT Devices
 layout: "page.njk"
 description: Dashboard and Configuration Editor for IoT devices.
+excerpt: >
+  The main interface to devices using the HomeDing library is hosted as a web application on the built-in web server.
+  It can be directly reached by using a standard browser.
 ---
 
-:::excerpt
 Every device using the HomeDing library has an embedded web site and a built-in web server
 so it can be directly reached by using a standard browser.
 
@@ -12,7 +14,6 @@ The files available through the web server are available for devices with 4MByte
 providing the full functionality.
 
 A subset of the files fit into 128k file space to support even devices with small flash sizes.
-:::
 
 Implementing a web site that fits into the very limited space of the flash memory is a challenge on its own but can be solved by using the power of the current browsers.
 

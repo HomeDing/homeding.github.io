@@ -8,7 +8,6 @@
 
 
 const markdownIt = require('markdown-it');
-const mdContainer = require('markdown-it-container');
 const mdFootnotes = require('markdown-it-footnote');
 const mdTaskLists = require('markdown-it-task-lists');
 const mdItAttrs = require('markdown-it-attrs');
@@ -36,53 +35,6 @@ module.exports = {
       return r;
     });
   
-    function renderIconCard(icon, title, linkFolder, link) {
-      var div = '<div class="iconcard">';
-      var img = '<svg class="icon"><use href="/icons.svg#' + icon + '"></use></svg>';
-
-      if ((title) && (linkFolder) && (link)) {
-        return (div
-          + `<a href="/${linkFolder}/${link}.htm">`
-          + img + '<h3>' + title + '</h3>' + '</a>');
-      } else {
-        return (div + img);
-      }
-    }
-
-    // ::: excerpt [icon]
-    markdown.use(mdContainer, 'excerpt', {
-      render: function(tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*excerpt\s+(.*)$/);
-          if (m) {
-            return renderIconCard(m[1]);
-          } else {
-            return '<div class="plaincard">';
-          }
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-
-    // card for elements in elements folder
-    // :::element title [icon]
-    markdown.use(mdContainer, 'element', {
-      render: function(tokens, idx) {
-        var t = tokens[idx];
-        if (t.nesting === 1) {
-          var m = t.info.trim().match(/^\s*element\s+(\S+)\s*(\S*)/);
-          return renderIconCard(m[2] ? m[2] : m[1].replace(/\//g, ""), m[1], 'elements', m[1]);
-
-        } else {
-          return '</div>\n';
-        }
-      }
-    });
-
-
     eleventyConfig.setLibrary("md", markdown);
   }
 

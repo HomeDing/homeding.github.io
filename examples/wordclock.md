@@ -2,12 +2,10 @@
 title: WordClock Example
 layout: "page.njk"
 tags: ["Example"]
+excerpt: >
+  The WordClock Example contains a wordclock implementations (Germany layout). It also illustrates how to implement something special
+  using the HomeDing Library and selected standard Elements but to add a new functionality.
 ---
-
-:::excerpt default
-This folder contains an example for a wordclock implementations (Germany layout). It also illustrates how to implement something special
-using the HomeDing Library and selected standard Elements but to add a new functionality.
-:::
 
 ![WordClock Image](/examples/wordclock.jpg)
 

@@ -9,10 +9,6 @@ excerpt: >
   and can be controlled by the color and switch elements.
 ---
 
-:::excerpt bulb
-Light emitting devices like bulbs with ESP chip are supported by the HomeDing library.
-:::
-
 There are many different bulb devices that use RGB and white LED variants. The bulbs that use GPIOs with PWM or the chips
 like MY9231, MY9291.
 

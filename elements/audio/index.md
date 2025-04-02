@@ -9,6 +9,8 @@ excerpt:
   by the HomeDing library.
 ---
 
+{% from 'macros.njk' import elementCards with context %}
+
 Building IoT Devices that have audio capabilities is possible with the HomeDing library.
 
 ## FM Radio Tuner chips
@@ -57,18 +59,14 @@ https://www.hackster.io/dilshan-jayakody/5-1-channel-analog-audio-processor-a785
 
 ## Elements
 
-:::element audio/audio no
-{% excerptOf collections.Element, "audio" %}
-:::
+{{ elementCards(["audio/audio"]) }}
 
 
 ## Web UI Elements
 
 These elements starting with **web** in their name are only known to the Web UI implementation but are not part of the firmware- The intention is to enrich and customize the Web UI dashboard with elements like presets and macros.
 
-:::element webbutton button
-  This element adds a button the Web UI of the board. The button can be used to trigger actions by clicking.
-:::
+{{ elementCards(["webbutton"]) }}
 
 
 ## See also
