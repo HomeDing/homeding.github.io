@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gdrive elements</title>
+  <script src="/pages.js"></script>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
+  <script src="/story.js" type="module"></script>
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <meta name="description" content="...">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
+</head>
+
+<body class="sitelayout">
+  <div class="navbar">
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+    
+  </div>
+  
+  <nav popover="auto" id="my-menu" class="menu"></nav>
+
+  <main>
+    <h1>gdrive elements</h1>
+
+    
+      <div class="card-container horizontal text" style="--card-height:5rem;--card-image-size:5rem;">
+        <div class="card">
+          
+          <div class="body">
+            <p>…</p>
+
+          </div>
+        </div>
+      </div>
+    
+
+    <p>The gdrive elements enables communication with a Google Spreadsheets by using scripted services on the sheets…</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GDriveLog</strong></td>
+<td>append data to a Google Spreadsheet</td>
+</tr>
+<tr>
+<td><strong>GDriveState</strong></td>
+<td>save the latest data or status information in a Google Spreadsheet</td>
+</tr>
+<tr>
+<td><strong>GDriveAction</strong></td>
+<td>read actions from a Google spreadsheet that will be executed on a device.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Https Get or post command to retrieve the next action from the sheet for a specific device.</li>
+</ul>
+<h2>Log data into spreadsheet</h2>
+<ul>
+<li>
+<p><a href="https://docs.google.com/spreadsheets">link</a></p>
+</li>
+<li></li>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/d/1PLf0unpU1SC8m-Hfpd4zvSkDhhy8CuEfPn38xoGPuOY/edit?gid=630293481#gid=630293481">link</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/d/1PLf0unpU1SC8m-Hfpd4zvSkDhhy8CuEfPn38xoGPuOY/edit?gid=0#gid=0">text</a></p>
+</li>
+<li>
+<p>Sheet name: “Log”</p>
+</li>
+<li>
+<p>Columns: “time”, “device”, “text”</p>
+</li>
+<li>
+<p><a href="https://script.google.com/macros/s/AKfycbzI3AAmB6XZNegXsS_EGSu_6-CbSGG3G6XR59A_wrbhtpcOfFIp4-udbalAjP5V1NZcwA/exec">text</a></p>
+</li>
+<li>
+<p><a href="https://script.google.com/macros/s/AKfycbyDoNBtRA2M6Qz70eqLA4U0859FZu2nNIS1bXIezoN1/dev">text</a></p>
+</li>
+<li>
+<p><a href="https://script.google.com/macros/s/AKfycbyDoNBtRA2M6Qz70eqLA4U0859FZu2nNIS1bXIezoN1/dev?time=1&amp;device=devding&amp;text=Hello">text</a></p>
+</li>
+</ul>
+<pre class="language-cmd"><code class="language-cmd">curl -L https://script.google.com/macros/s/AKfycbwFzGN7xwsATEigwcxOts63uYJWLVvmWyBI8sm0nU1FhoneTOi_JEu8MedJ2Ze_GFCmRw/exec?time=24.09.2024+07:08:09&device=devding&log=HelloFromCurl</code></pre>
+<p><a href="https://script.google.com/macros/s/AKfycbymZ8-MO6uwv3TO-hMgMEK7jwHibLYl1QZXTYJ_iavFzksyTayD-6Wy0R34NzoWQx7YZA/exec">text</a>
+AKfycbymZ8-MO6uwv3TO-hMgMEK7jwHibLYl1QZXTYJ_iavFzksyTayD-6Wy0R34NzoWQx7YZA</p>
+<p><a href="https://developers.google.com/apps-script/guides/web">guide</a></p>
+<h3>Head Links</h3>
+<p>// Head version (only in browser, not in CURL)
+<a href="https://script.google.com/macros/s/AKfycbyDoNBtRA2M6Qz70eqLA4U0859FZu2nNIS1bXIezoN1/dev">https://script.google.com/macros/s/AKfycbyDoNBtRA2M6Qz70eqLA4U0859FZu2nNIS1bXIezoN1/dev</a></p>
+<p>?device=devding&amp;log=HelloCU</p>
+<p><a href="https://script.google.com/macros/s/AKfycbyDoNBtRA2M6Qz70eqLA4U0859FZu2nNIS1bXIezoN1/dev?device=devding/dht&amp;data=12.5">https://script.google.com/macros/s/AKfycbyDoNBtRA2M6Qz70eqLA4U0859FZu2nNIS1bXIezoN1/dev?device=devding/dht&amp;data=12.5</a></p>
+<h3>Deployed Links</h3>
+<p>// a deployed version (anonymous, in browser and CURL)
+<a href="https://script.google.com/macros/s/AKfycbwezP1pKBKnRtC44_4uLVKMZIB68WH0NrN8ZcUrE2MPx3345XOJrZYt9IOyVt2s0ey5MA/exec">https://script.google.com/macros/s/AKfycbwezP1pKBKnRtC44_4uLVKMZIB68WH0NrN8ZcUrE2MPx3345XOJrZYt9IOyVt2s0ey5MA/exec</a></p>
+<p><a href="https://script.google.com/macros/s/AKfycbwezP1pKBKnRtC44_4uLVKMZIB68WH0NrN8ZcUrE2MPx3345XOJrZYt9IOyVt2s0ey5MA/exec?device=devding&amp;log=HelloCU">https://script.google.com/macros/s/AKfycbwezP1pKBKnRtC44_4uLVKMZIB68WH0NrN8ZcUrE2MPx3345XOJrZYt9IOyVt2s0ey5MA/exec?device=devding&amp;log=HelloCU</a></p>
+<p><a href="https://script.google.com/macros/s/AKfycbwezP1pKBKnRtC44_4uLVKMZIB68WH0NrN8ZcUrE2MPx3345XOJrZYt9IOyVt2s0ey5MA/exec?device=devding/dht&amp;data=12.7">https://script.google.com/macros/s/AKfycbwezP1pKBKnRtC44_4uLVKMZIB68WH0NrN8ZcUrE2MPx3345XOJrZYt9IOyVt2s0ey5MA/exec?device=devding/dht&amp;data=12.7</a></p>
+<p>To log any probe or status data values the gdrivelog element can be configured to send data over the network to a google spreadsheet.</p>
+<p>On the device the gdrivelog element will receive values by actions from sensors or other elements.
+The timestamp for the data is automatically provided and the sensor type and local id can be given an an option or inside the action.</p>
+<h2>Element Configuration</h2>
+<ul>
+<li>sourceName – //devicename/sourcename</li>
+<li>url – full qualified url including the ? for parameters</li>
+<li>Same as log</li>
+<li>retry</li>
+</ul>
+<h2>Google Sheet implementation and configuration</h2>
+<p>With some help of a embedded script the data will be added to the end of a table in the sheet
+by passing the given parameters and limitting the number of rows to avoid ever growing files.</p>
+<p>These parameters can be canged in the script.</p>
+<p>The sheet must be confirming to the following structure:</p>
+<p>First line sets the names of the colums</p>
+<ul>
+<li><strong>ts</strong> – the timestamp of the data.</li>
+<li><strong>id</strong> – the full name of the device+sensor+localID using the format for addressing elements.</li>
+<li><strong>d</strong> – the captured data.</li>
+</ul>
+<p>Example URL:</p>
+<p>ID, ts, data1, data2,…4
+?ts=20240201-12:54:30&amp;id=//device/type/id&amp;d=d1,d2,d3,d4</p>
+<h2>See Also</h2>
+<p>[[log]]</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://iotdesignpro.com/articles/esp32-data-logging-to-google-sheets-with-google-scripts">esp32-data-logging-to-google-sheets-with-google-scripts</a></li>
+</ul>
+
+
+      
+        <h2>Tags</h2>
+        <div class="taglist"><a href="/tag/element.htm">Element</a><a href="/tag/network.htm">Network</a><a href="/tag/wip.htm">Wip</a></div>
+      
+  </main>
+
+  <script>
+    
+
+    var navObj = document.querySelector('nav');
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+
+  <script type="module" async="">
+    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
+    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
+  </script>
+
+</body>
+</html>
