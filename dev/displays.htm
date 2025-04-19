@@ -117,7 +117,40 @@ color as defined in the configuration.</p>
 <h2>Implementations</h2>
 <p>The C++ Classes used for display drivers for specific chips and the display item shown on the
 display are illustrated in the following class diagram:</p>
-<pre class="mermaid">flowchart TD&#10;&#10;  DisplayChipAdapter[&quot;Display#60;Chip#62;Adapter&quot;]&#10;  DisplayAGFXAdapter&#10;  DisplayItemElement[&quot;Display#60;Item#62;Element&quot;]&#10;  DisplayOutputElement&#10;  DisplayChipElement[&quot;Display#60;Chip#62;Element&quot;]&#10;  DisplayElement&#10;  Element&#10;&#10;&#10;  subgraph Implementation of displays&#10;    DisplayChipElement -- implements--&gt; DisplayElement&#10;  end&#10;&#10;  subgraph Implementation of display items&#10;    DisplayItemElement --implements--&gt; DisplayOutputElement&#10;  end&#10;&#10;  subgraph Implementation of draw operations&#10;    DisplayChipAdapter --&gt;|implements| DisplayAGFXAdapter&#10;    DisplayAGFXAdapter --&gt;|implements| DisplayAdapter&#10;  end&#10;&#10;&#10;    DisplayElement --implements--&gt; Element&#10;&#10;    DisplayOutputElement --implements--&gt; Element&#10;&#10;  DisplayItemElement -.draws with.-&gt; DisplayChipAdapter&#10;  DisplayChipElement -.creates.-&gt; DisplayChipAdapter&#10;</pre>
+<!-- ```mermaid
+flowchart TD
+
+  DisplayChipAdapter["Display#60;Chip#62;Adapter"]
+  DisplayAGFXAdapter
+  DisplayItemElement["Display#60;Item#62;Element"]
+  DisplayOutputElement
+  DisplayChipElement["Display#60;Chip#62;Element"]
+  DisplayElement
+  Element 
+
+
+  subgraph Implementation of displays
+    DisplayChipElement -- implements -- > DisplayElement
+  end
+
+  subgraph Implementation of display items
+    DisplayItemElement --implements-- > DisplayOutputElement
+  end
+
+  subgraph Implementation of draw operations
+    DisplayChipAdapter -- >|implements| DisplayAGFXAdapter
+    DisplayAGFXAdapter -- >|implements| DisplayAdapter
+  end
+
+
+    DisplayElement --implements-- > Element
+
+    DisplayOutputElement --implements-- > Element
+
+  DisplayItemElement -.draws with.-> DisplayChipAdapter
+  DisplayChipElement -.creates.-> DisplayChipAdapter
+```
+-->
 <p>The <code>Display&lt;Chip&gt;Adapter</code> implementations include using various display types. They are
 created and initialized by the corresponding <code>Display&lt;Chip&gt;Element</code> class.</p>
 <p>The <code>DisplayAGFXAdapter</code> is a base implementation for display drivers from the Arduino_GFX library. This library supports various chips and is very similar to the Adafruit GFX library.</p>
@@ -136,11 +169,6 @@ created and initialized by the corresponding <code>Display&lt;Chip&gt;Element</c
 
     var navObj = document.querySelector('nav');
     lazyLoadHTM('nav', '/toc.htm');
-  </script>
-
-  <script type="module" async="">
-    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
-    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>
 
 </body>

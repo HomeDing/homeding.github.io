@@ -86,19 +86,32 @@ described in the <a href="https://github.com/mathertel/gfxDraw">gfxDraw Library<
 <p>GetPixel
 Set clipping area</p>
 <h2>How drawing is implemented</h2>
-<p>To show information on a display a set of widgets aka. DisplayOutputElements is available.</p>
-<p>By setting the properties or values of these Elements they are marked to be drawn on the display and the DisplayAdapter implementation has also been flagged for redraw.</p>
-<p>This allows changing multiple properties at the same time without intermediate draw activity and especially helps combining changes
-on slow displays like E-Paper displays.</p>
+<h3>Changing DisplayOutputElements</h3>
+<p>To display anything on a display the DisplayOutputElements (widgets) have been implemented.
+When changing properties or values of these Elements</p>
+<ul>
+<li>The DisplayOutputElements is marked with <code>needsDraw</code> to be drawn</li>
+<li>The DisplayAdapter is marked to start a redraw next time.</li>
+</ul>
+<p>This allows changing multiple properties at the same time without triggering immediate draw activity and especially
+helps combining changes on slow displays like E-Paper displays.</p>
+<h3>Redraw Procedure</h3>
 <p>Drawing starts when no action is queued in the board and the loop function of all elements has been called.</p>
-<pre class="mermaid">flowchart LR&#10;  DisplayOutputElement[&quot;Display#60;Output#62;Element&quot;]&#10;  ChangeValue --&gt; DisplayOutputElement --&gt; |set needRedraw| DisplayOutputElement&#10;</pre>
-<p>Some display chip specific implementations directly change the memory of the display, some will update an internal copy of the display memory.</p>
-<pre class="mermaid">flowchart LR&#10;  DisplayOutputElement[&quot;Display#60;Output#62;Element&quot;]&#10;  Base([Base-Loop]) --&gt; |startFlush| DisplayAdapter&#10;  DisplayAdapter --&gt;|draw| DisplayOutputElement&#10;  DisplayOutputElement --&gt; |draw| GFX([GFX]) --&gt; Memory&#10;</pre>
-<p>After all Output Elements are drawn the flush() is initiated from the Display Adapter to send the buffered copy to the display for the displays using a display memory copy.</p>
-<pre class="mermaid">flowchart LR&#10;  DisplayChipAdapter[&quot;Display#60;Chip#62;Adapter&quot;]&#10;  Bus([&quot;Bus&quot;])&#10;&#10;  Base([Base-Loop]) --&gt; |startFlush| DisplayAdapter&#10;  DisplayAdapter --&gt; |flush| DisplayChipAdapter --&gt; Bus --&gt; Chip&#10;  DisplayChipAdapter -.-&gt; |read| Memory &#10;</pre>
-<p>The communication to the Display Chip
-uses a
-bus like I2C, SPI or 16-bit data to flush the updated memory into the chip.</p>
+<p>In the base class of the DisplayAdapter 2 approaches of drawing the marked and potential additional elements are implemented:</p>
+<p>The simpler way will only draw those DisplayOutputElements that are marked with <code>needsDraw</code> in the defined order.  The
+DisplayOutputElements that are marked with <code>isOpaque</code> will also trigger that the display background is drawn before the
+element itself gets drawn.</p>
+<p>The additional available algorithm will detect overlapping elements and triggers the drawing also on those elements that have a overlap with the marked elements.
+This may result in more drawing activity.</p>
+<h3>Redraw Flush</h3>
+<p>There are 2 approaches to draw on a display</p>
+<ul>
+<li>Some driver implementations directly change the memory of the display</li>
+<li>Some driver implementations draw on an internal copy of the display memory and flush it out when drawing is completed.</li>
+</ul>
+<p>After all Output Elements are drawn, the <code>flush()</code> method is called on the DisplayAdapter to send the buffered copy to
+the display for the displays using a display memory copy.  The <code>flush()</code> will always be called on the DisplayAdapter
+even when no flush activity needs to be executed.</p>
 <h2>GFX Libraries</h2>
 <p>There are several GFX library implementions for Arduino available that are used to draw text, lines
 and fill rectangles.</p>
@@ -220,11 +233,6 @@ possible to delay the data transfer even further by using the <code>delayflush</
 
     var navObj = document.querySelector('nav');
     lazyLoadHTM('nav', '/toc.htm');
-  </script>
-
-  <script type="module" async="">
-    import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";
-    document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad: true}));
   </script>
 
 </body>
