@@ -1,7 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const myMarkdown = require("./.myMarkdown");
-const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 
 module.exports = function(eleventyConfig) {
@@ -264,8 +263,6 @@ module.exports = function(eleventyConfig) {
   // ===== Markdown configuration =====
 
   eleventyConfig.addPlugin(myMarkdown);
-  eleventyConfig.addPlugin(pluginMermaid);
-
   // console.log(eleventyConfig.ignores);
 
   return {

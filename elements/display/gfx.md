@@ -67,48 +67,43 @@ Set clipping area
 
 ## How drawing is implemented
 
-To show information on a display a set of widgets aka. DisplayOutputElements is available.
 
-By setting the properties or values of these Elements they are marked to be drawn on the display and the DisplayAdapter implementation has also been flagged for redraw.
+### Changing DisplayOutputElements
 
-This allows changing multiple properties at the same time without intermediate draw activity and especially helps combining changes
-on slow displays like E-Paper displays.
+To display anything on a display the DisplayOutputElements (widgets) have been implemented.
+When changing properties or values of these Elements
+
+* The DisplayOutputElements is marked with `needsDraw` to be drawn
+* The DisplayAdapter is marked to start a redraw next time.
+
+This allows changing multiple properties at the same time without triggering immediate draw activity and especially
+helps combining changes on slow displays like E-Paper displays.
+
+
+### Redraw Procedure
 
 Drawing starts when no action is queued in the board and the loop function of all elements has been called.
 
+In the base class of the DisplayAdapter 2 approaches of drawing the marked and potential additional elements are implemented:
+ 
+The simpler way will only draw those DisplayOutputElements that are marked with `needsDraw` in the defined order.  The
+DisplayOutputElements that are marked with `isOpaque` will also trigger that the display background is drawn before the
+element itself gets drawn.
 
-```mermaid
-flowchart LR
-  DisplayOutputElement["Display#60;Output#62;Element"]
-  ChangeValue --> DisplayOutputElement --> |set needRedraw| DisplayOutputElement
-```
+The additional available algorithm will detect overlapping elements and triggers the drawing also on those elements that have a overlap with the marked elements.
+This may result in more drawing activity.
 
 
-Some display chip specific implementations directly change the memory of the display, some will update an internal copy of the display memory.
+### Redraw Flush
 
-```mermaid
-flowchart LR
-  DisplayOutputElement["Display#60;Output#62;Element"]
-  Base([Base-Loop]) --> |startFlush| DisplayAdapter
-  DisplayAdapter -->|draw| DisplayOutputElement
-  DisplayOutputElement --> |draw| GFX([GFX]) --> Memory
-```
+There are 2 approaches to draw on a display
 
-After all Output Elements are drawn the flush() is initiated from the Display Adapter to send the buffered copy to the display for the displays using a display memory copy.
+* Some driver implementations directly change the memory of the display
+* Some driver implementations draw on an internal copy of the display memory and flush it out when drawing is completed.
 
-```mermaid
-flowchart LR
-  DisplayChipAdapter["Display#60;Chip#62;Adapter"]
-  Bus(["Bus"])
-
-  Base([Base-Loop]) --> |startFlush| DisplayAdapter
-  DisplayAdapter --> |flush| DisplayChipAdapter --> Bus --> Chip
-  DisplayChipAdapter -.-> |read| Memory 
-```
-
-The communication to the Display Chip
-uses a
-bus like I2C, SPI or 16-bit data to flush the updated memory into the chip.
+After all Output Elements are drawn, the `flush()` method is called on the DisplayAdapter to send the buffered copy to
+the display for the displays using a display memory copy.  The `flush()` will always be called on the DisplayAdapter
+even when no flush activity needs to be executed.
 
 
 ## GFX Libraries
