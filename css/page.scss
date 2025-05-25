@@ -14,7 +14,7 @@
 
 // The width of the page level elements must be known for the @media queries.
 $u-menu-width: 14em;
-$u-main-width: 56em;
+$u-main-width: 42em;
 $u-sidebar-width: 14em;
 $u-menu-width: 14em;
 $u-layout-gap: 1em;
@@ -36,7 +36,7 @@ $u-layout-gap: 1em;
   --header-color: var (--color);
 
   // --main-back: light-dark(white, black);
-  --main-back: var (--back); // light-dark(hsl(#{base.$u-hue} 0 90%), hsl(#{base.$u-hue} 0 10%));
+  --main-back: light-dark(hsl(#{base.$u-hue} 0 90%), hsl(#{base.$u-hue} 0 10%));
   --main-color: var(--color);
   --main-width: #{$u-main-width};
 
