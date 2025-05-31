@@ -38,7 +38,7 @@
         <div class="card">
           
           <div class="body">
-            <p>The ESP32-C3 Super Mini is a thumb-size board with integrated antenna.</p>
+            <p>The ESP32-C3 Super Mini is a thumb-size board with integrated antenna .</p>
 
           </div>
         </div>
@@ -48,6 +48,16 @@
     <p>The <a href="index.htm">ESP32-C3 processor</a> is a single-core SoC based on the open-source 32-bit RISC-V
 architecture.</p>
 <p><img src="super-mini-c3.jpg" alt="ESP32-C3 Super Mini"></p>
+<h2>Features</h2>
+<ul>
+<li>SoC: <a href="index.htm">ESP32-C3</a></li>
+<li>4 MByte Flash</li>
+<li>USB-C bus directly connected to ESP32C3</li>
+<li>Blue LED on GPIO8 ,inverted</li>
+<li>Boot button at GPIO9</li>
+<li>Reset button at CHIP_EN</li>
+<li>GPIO Connectors: GPIO0-GPIO10, GPIO20, GPIO21</li>
+</ul>
 <p>It has almost the same size as the <a href="/boards/esp32c3/xiao_esp32c3.htm">XIAO ESP32 C3</a> but comes with an onboard antenna.
 Caused by this very small antenna the weak WiFi and BLE RF signal strength may limit the usability.</p>
 <h2>Arduino Board Configuration</h2>
@@ -66,18 +76,59 @@ It can be used with the following settings:</p>
 <li>Erase All Flash: Disabled</li>
 <li>JTAG Adapter: Integrated USB JTAG</li>
 </ul>
-<h2>Feature X</h2>
-<h2>Device</h2>
-<h2>Display</h2>
-<h2>Display Touch (CST816D) Controller</h2>
-<h2>Battery Management</h2>
+<h2>Antenna</h2>
+<p>The SMD antenna on the board is very small and therefore limiting the signal.  This can be improved by some
+modifications using a simple 31mm wire.  See
+<a href="https://peterneufeld.wordpress.com/2025/03/04/esp32-c3-supermini-antenna-modification/">esp32-c3 supermini antenna modification</a></p>
 <h2>System configuration</h2>
 <p>This <strong>env.json</strong> file can be used as a starting point for configuring this board type.</p>
-<pre class="language-json"><code class="language-json"></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"device"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"superminic3"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"super mini c3 board."</span><span class="token punctuation">,</span>
+      <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+      <span class="token property">"button"</span><span class="token operator">:</span> <span class="token string">"9"</span><span class="token punctuation">,</span>
+      <span class="token property">"logfile"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"false"</span><span class="token punctuation">,</span>
+      <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"/board.htm"</span><span class="token punctuation">,</span>
+      <span class="token property">"cache"</span><span class="token operator">:</span> <span class="token string">"max-age=600"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SDA"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-SCL"</span><span class="token operator">:</span> <span class="token string">"6"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"ntptime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"boot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Boot button signal"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"9"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Builtin blue LED GPIO8"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"8"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"0"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2>See Also</h2>
 <ul>
 <li><a href="index.htm">ESP32-C3 processor</a></li>
-<li><a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf</a></li>
+<li><a href="https://www.espressif.com/en/products/socs/esp32-c3">https://www.espressif.com/en/products/socs/esp32-c3</a></li>
+<li><a href="https://www.sudo.is/docs/esphome/boards/esp32c3supermini/">https://www.sudo.is/docs/esphome/boards/esp32c3supermini/</a></li>
+<li><a href="https://microsoft.github.io/devicescript/devices/esp32/esp32c3-supermini">text</a></li>
 </ul>
 
 
