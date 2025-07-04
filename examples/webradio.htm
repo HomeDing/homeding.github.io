@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NO-TITLE-PAGE</title>
+  <title>WebRadio Example</title>
   <script src="/pages.js"></script>
   <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
@@ -31,14 +31,50 @@
   <nav popover="auto" id="my-menu" class="menu"></nav>
 
   <main>
-    <h1>NO-TITLE-PAGE</h1>
+    <h1>WebRadio Example</h1>
 
     
+      <div class="card-container horizontal text" style="--card-height:5rem;--card-image-size:5rem;">
+        <div class="card">
+          
+          <div class="body">
+            <p>This example in the HomeDing library contains the source code to implement a web radio receiving audio streams over the internet and playing it on a i2s based hardware.   This example can be used on ESP32 systems.</p>
 
-    <h1>Web Radio</h1>
-<p>t.b.d.</p>
+          </div>
+        </div>
+      </div>
+    
+
+    <p>This example was build using the board:</p>
+<ul>
+<li><a href="https://homeding.github.io/boards/esp32/ttgogallery.htm">TTGO Gallery (T14) board</a></li>
+</ul>
+<p>Configuration is supported by the env.json and config.json within this folder.</p>
+<p>This example implements an audio element based on the ESP32 specific audio library from
+<a href="https://github.com/schreibfaul1/ESP32-audioI2S">https://github.com/schreibfaul1/ESP32-audioI2S</a>. This library is not available through the Arduino Library Manager
+so it must be installed by downloading or git-checkout directly from github.</p>
+<p>The AudioElement just adds a thin wrapper to configure and control the library. The Audio processing is moved to another ESP32 FreeRTOS Task and runs in the background.</p>
+<p>There can only be one AudioElement created per device.</p>
+<h2>Further development</h2>
+<p>This is a starting example to further support audio configurations with the HomeDing library and is planned to be extended with</p>
+<ul>
+<li>Split audio element into multiple elements to support more flexible configurations.</li>
+<li>Bluetooth receiving and sending</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="https://homeding.github.io/elements/audio.htm">Audio Element</a></li>
+<li><a href="https://homeding.github.io/boards/esp32/ttgogallery.htm">https://homeding.github.io/boards/esp32/ttgogallery.htm</a></li>
+</ul>
+<p>Find radio streams on <a href="https://rrradio.de/radiosender/">https://rrradio.de/radiosender/</a> and <a href="https://wiki.ubuntuusers.de/Internetradio/Stationen/">https://wiki.ubuntuusers.de/Internetradio/Stationen/</a></p>
+<ul>
+<li>Other audio library: <a href="https://github.com/pschatzmann/arduino-audio-tools">https://github.com/pschatzmann/arduino-audio-tools</a></li>
+</ul>
 
 
+      
+        <h2>Tags</h2>
+        <div class="taglist"><a href="/tag/example.htm">Example</a></div>
       
   </main>
 
