@@ -15,11 +15,11 @@ excerpt: >
 * USB for Power only
 * connectors for serial programming
 * no other PINs directly available to connect
- 
- 
+
+
 ## See also
 
 * [ESP-12f Module](/boards/esp8266/esp12f.md)
   
-*  <https://github.com/green5/esp8266_oled_clock>
-*  <https://de.aliexpress.com/item/1005001727122947.html>
+* <https://github.com/green5/esp8266_oled_clock>
+* <https://de.aliexpress.com/item/1005001727122947.html>

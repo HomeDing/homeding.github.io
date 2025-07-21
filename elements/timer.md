@@ -4,8 +4,8 @@ icon: timer
 tags:
   - "Element"
   - "Time"
-description: Create repeating events.
-excerpt: The TimerElement creates events based on a one-time or cyclic timing pattern.
+description: Create one-time or repeating events.
+excerpt: The TimerElement can be triggered to start a timing pattern that sends out events after defined times.
 layout: "page.njk"
 ---
 
@@ -23,14 +23,21 @@ The buttons allow restarting the cycle or advancing to the `on` or `off` time or
 
 This diagram shows the state, value and actions based on the settings:
 
-```
-        events: +--> "on"         +--> "off"
-                +--> "value=1"    +--> "value=0"  +--> "end"
-                |                 |               |
-________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\_______________
+``` txt
+Time Definitions:
 
-<-- waitTime --> <-- pulseTime -->
-<------------- cycleTime ------------------------>|
+|<-- waittime -->|<-- pulsetime -->|
+|<------------- cycletime ------------------->|
+
+When "cycletime" is not set it is automatically adjusted to "waittime" + "pulsetime".
+
+Actions:
+
+                 +--> "High"       +--> "Low"
+|                |                            |
+|________________/^^^^^^^^^^^^^^^^^\__________|
+|                |                            |
+                                              +--> "End"
 ```
 
 When started and the specified wait time has passed the output value is set to one for the specified time.
@@ -41,31 +48,32 @@ An action is emitted every time the output value changes and when the timer has 
 
 ## Element Configuration
 
-The following properties are available for configuration of the element.
+The following properties are available for configuration of the element:
 
 <object data="/element.svg?timer" type="image/svg+xml"></object>
 
-**title** - Caption text for the element. Used in the boards.
+> **waitTime** -- time before "on" action
+>
+> **pulseTime** -- time between "on" and "off" action.
+>
+> **cycleTime** -- time of a complete timer cycle.  When not specified or too low the cycletime gets adjusted to
+waittime+pulsetime.
+>
+> **mode** -- The element supports 3 modes: **"on"** for always on, **"off"** for always off and **"timer**" for
+> switching the value using the timer settings.
+>
+> **restart** -- When set to "true" or "1" the timer restarts automatically when cycleTime is over.
+>
+> **onHigh** -- These actions are dispatched when the pulse time starts.
+> 
+> **onLow** -- These actions are dispatched when the pulse time ends.
+> 
+> **onValue** -- These actions are dispatched when the pulse time starts or ends
+> 
+> **onEnd** -- These actions are dispatched when a timer ends by finishing the whole cycle and may restart.
 
-**description** - A line of text that gives a short description of the device used in the web UI.
 
-**mode** - The element supports 3 modes: **"on"** for always on, **"off"** for always off and **"timer**" for switching the value using the timer settings.
-
-**restart** - When set to "true" or "1" the timer restarts automatically when cycleTime is over.
-
-**waitTime** - time before "on" action
-
-**pulseTime** - time between "on" and "off" action.
-
-**cycleTime** - time of a complete timer cycle. When not specified or too low the cycletime gets adjusted to waittime+pulsetime.
-
-**onOn** - These actions are dispatched when the pulse time starts.
-
-**onOff** - These actions are dispatched when the pulse time ends.
-
-**onValue** - These actions are dispatched when the pulse time starts or ends
-
-**onEnd** - These actions are dispatched when a timer ends by using the `stop` action or when a `once` timer has finished the cycle. |
+{% include "./elementproperties.md" %}
 
 
 ## Control the Element
@@ -91,11 +99,28 @@ The timer element can run on it's own but can also be controlled by the followin
       "waittime": "4s",
       "pulsetime": "8s",
       "cycletime": "20s",
-      "onon": "digitalout/led?on",
-      "onoff": "digitalout/led?off"
+      "onHigh": "digitalout/led?on",
+      "onLow": "digitalout/led?off"
     }
   }
 }
+
+{
+  "timer": {
+    "led": {
+      "mode": "timer",
+      "restart": "1",
+      "waittime": "4s",
+      "pulsetime": "8s",
+      "cycletime": "20s",
+      "onHigh": "device/0?log=onHigh",
+      "onLow": "device/0?log=onLow",
+      "onValue": "device/0?log=onValue %v",
+      "onEnd": "device/0?log=onEnd",
+    }
+  }
+}
+
 ```
 
 ## State

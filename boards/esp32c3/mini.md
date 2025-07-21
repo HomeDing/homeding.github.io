@@ -12,9 +12,9 @@ excerpt: >
 ## Features
 
 * based ESP32-C3 WIFI & Bluetooth LE RISC-V Single-Core CPU
-* Type-C USB
-* 4MB Flash
-* 12x IO
+* USB-C connector, directly connected to ESP32-C3 processor.
+* 4MB Flash Memory
+* 12x GPIO on connector pins
 * 1x WS2812B RGB LED
 * ADC, I2C, SPI, UART
 * Compatible with LOLIN D1 mini shields

@@ -4,7 +4,7 @@ tags: ["Board"]
 image: "/boards/esp32c3/xiao_esp32c3.jpg"
 description: ESP32-C3 thumb-size board with external antenna.
 excerpt: >
-  The XIAO ESP32 C3 is a thumb-size board with external antenna.
+  The XIAO ESP32 C3 is a thumb-size board with an I-PEX connector for an external antenna.
 ---
 
 {% from 'macros.njk' import carousel %}
@@ -18,22 +18,33 @@ flashed and comes with a connector for an external antenna.
   { "file": "./xiao_esp32c3-2.jpg", "text": "XIAO ESP32C3 back view"}
 ]) }}
 
+This board comes with
+
+* ESP32-C3 WIFI & Bluetooth LE RISC-V Single-Core CPU
+* USB-C connector, directly connected to ESP32-C3 processor.
+* 4MB Flash
+* Boot and Reset Button
+* GPIO 2 - 10 and 20 on connector pins
+* somehow compatible to other XIAO boards and shields
+* I-PEX connector for an external antenna
+* LiPo charging (battery connector pads on the back)
+* JTag signals (through connector pads on the back)
+* 5V to 3.3V regulator on board.
+* Board size: 18 * 21 mm
+
 The ESP32-C3 processor has a 32-bit single core RISC-V CPU running at max. 160MHz and
-400KB SRAM memory. Bluetooth LE is supported.
+400KB SRAM memory. Bluetooth LE is supported. See [ESP32-C3 Boards](/boards/esp32c3/index.md)
 
 There is no antenna on this board and the external antenna that is shipped with the board or any other 2.4 GHz WiFi antenna with a common I-PEX connector must be connected for using any WiFi or Bluetooth functionality. An external antenna usually provides outstanding RF performance compared to on-board antenna solutions.
 
-As there are no additional power consuming components on this board
-it fits good for
-battery based use cases. It has a onboard lithium battery charging chip to recharge
-using the USB-C connector.
+As there are no additional power consuming components on this board it fits good for battery based use cases.  It has a
+onboard lithium battery charging chip to recharge using the USB-C connector.
 
 
 ## LiPo charging
 
 There is a battery connector using solder pads available on the bottom of the board to attach a Li-Ion Battery. The charging using the USB power. A on-board LED will indicate the charging mode.
 There is no further interface or API for control.
-.
 
 
 ## Arduino Board configuration

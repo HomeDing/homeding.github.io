@@ -6,7 +6,6 @@
   "scripts": {
     "clean": "rmdir _site /Q /S",
     "start": "npx @11ty/eleventy --incremental --serve",
-    "start:verbose": "npx @11ty/eleventy --incremental --serve",
     "start:clean": "npm run clean && npm run start",
     "build": "npx @11ty/eleventy",
     "build:clean": "npm run clean && npm run build",
@@ -20,7 +19,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
     "browser-sync": "^3.0.3",
     "debug": "^4.3.1",
     "eslint": "^9.20",
@@ -28,6 +27,6 @@
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-task-lists": "^2.1.1",
-    "sass": "1.86"
+    "sass": "^1.89.2"
   }
 }

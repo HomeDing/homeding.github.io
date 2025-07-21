@@ -9,8 +9,6 @@ excerpt: >
   The ESP32-C3 Super Mini is a thumb-size board with integrated antenna .
 ---
 
-
-
 The [ESP32-C3 processor](index.md) is a single-core SoC based on the open-source 32-bit RISC-V
 architecture.
 
