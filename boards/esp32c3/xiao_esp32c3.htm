@@ -38,7 +38,7 @@
         <div class="card">
           
           <div class="body">
-            <p>The XIAO ESP32 C3 is a thumb-size board with external antenna.</p>
+            <p>The XIAO ESP32 C3 is a thumb-size board with an I-PEX connector for an external antenna.</p>
 
           </div>
         </div>
@@ -129,17 +129,28 @@ u-carousel {
   <li><img src="./xiao_esp32c3-2.jpg" title="" draggable="false"></li>
   </ul>
 </u-carousel>
+<p>This board comes with</p>
+<ul>
+<li>ESP32-C3 WIFI &amp; Bluetooth LE RISC-V Single-Core CPU</li>
+<li>USB-C connector, directly connected to ESP32-C3 processor.</li>
+<li>4MB Flash</li>
+<li>Boot and Reset Button</li>
+<li>GPIO 2 - 10 and 20 on connector pins</li>
+<li>somehow compatible to other XIAO boards and shields</li>
+<li>I-PEX connector for an external antenna</li>
+<li>LiPo charging (battery connector pads on the back)</li>
+<li>JTag signals (through connector pads on the back)</li>
+<li>5V to 3.3V regulator on board.</li>
+<li>Board size: 18 * 21 mm</li>
+</ul>
 <p>The ESP32-C3 processor has a 32-bit single core RISC-V CPU running at max. 160MHz and
-400KB SRAM memory. Bluetooth LE is supported.</p>
+400KB SRAM memory. Bluetooth LE is supported. See <a href="/boards/esp32c3/index.htm">ESP32-C3 Boards</a></p>
 <p>There is no antenna on this board and the external antenna that is shipped with the board or any other 2.4 GHz WiFi antenna with a common I-PEX connector must be connected for using any WiFi or Bluetooth functionality. An external antenna usually provides outstanding RF performance compared to on-board antenna solutions.</p>
-<p>As there are no additional power consuming components on this board
-it fits good for
-battery based use cases. It has a onboard lithium battery charging chip to recharge
-using the USB-C connector.</p>
+<p>As there are no additional power consuming components on this board it fits good for battery based use cases.  It has a
+onboard lithium battery charging chip to recharge using the USB-C connector.</p>
 <h2>LiPo charging</h2>
 <p>There is a battery connector using solder pads available on the bottom of the board to attach a Li-Ion Battery. The charging using the USB power. A on-board LED will indicate the charging mode.
-There is no further interface or API for control.
-.</p>
+There is no further interface or API for control.</p>
 <h2>Arduino Board configuration</h2>
 <p>The ESP32 Board Manager in the Arduino environment has a dedicated board type
 <code>XIAO_ESP32C3 (esp32)</code> that fits to this board. No further setting is required.</p>

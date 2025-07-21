@@ -9,7 +9,7 @@
   <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
   <script src="/story.js" type="module"></script>
   <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
-  <meta name="description" content="Create repeating events.">
+  <meta name="description" content="Create one-time or repeating events.">
   <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
   <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
 </head>
@@ -42,7 +42,7 @@
             </svg>
           
           <div class="body">
-            <p>The TimerElement creates events based on a one-time or cyclic timing pattern.</p>
+            <p>The TimerElement can be triggered to start a timing pattern that sends out events after defined times.</p>
 
           </div>
         </div>
@@ -56,31 +56,48 @@
 <p>The web ui for the timer element show the pulseTime of the cycleTime using the green bar and the actual passed part of the cycleTime using the red bar.</p>
 <p>The buttons allow restarting the cycle or advancing to the <code>on</code> or <code>off</code> time or stopping the timer.</p>
 <p>This diagram shows the state, value and actions based on the settings:</p>
-<pre><code>        events: +--&gt; &quot;on&quot;         +--&gt; &quot;off&quot;
-                +--&gt; &quot;value=1&quot;    +--&gt; &quot;value=0&quot;  +--&gt; &quot;end&quot;
-                |                 |               |
-________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\_______________
+<pre class="language-txt"><code class="language-txt">Time Definitions:
 
-&lt;-- waitTime --&gt; &lt;-- pulseTime --&gt;
-&lt;------------- cycleTime ------------------------&gt;|
-</code></pre>
+|&lt;-- waittime -->|&lt;-- pulsetime -->|
+|&lt;------------- cycletime ------------------->|
+
+When "cycletime" is not set it is automatically adjusted to "waittime" + "pulsetime".
+
+Actions:
+
+                 +--> "High"       +--> "Low"
+|                |                            |
+|________________/^^^^^^^^^^^^^^^^^\__________|
+|                |                            |
+                                              +--> "End"</code></pre>
 <p>When started and the specified wait time has passed the output value is set to one for the specified time.</p>
 <p>The cycle time and the type LOOP can be specified to restart the timer automatically.</p>
 <p>An action is emitted every time the output value changes and when the timer has ended.</p>
 <h2>Element Configuration</h2>
-<p>The following properties are available for configuration of the element.</p>
+<p>The following properties are available for configuration of the element:</p>
 <p><object data="/element.svg?timer" type="image/svg+xml"></object></p>
-<p><strong>title</strong> - Caption text for the element. Used in the boards.</p>
-<p><strong>description</strong> - A line of text that gives a short description of the device used in the web UI.</p>
-<p><strong>mode</strong> - The element supports 3 modes: <strong>“on”</strong> for always on, <strong>“off”</strong> for always off and <strong>&quot;timer</strong>&quot; for switching the value using the timer settings.</p>
-<p><strong>restart</strong> - When set to “true” or “1” the timer restarts automatically when cycleTime is over.</p>
-<p><strong>waitTime</strong> - time before “on” action</p>
-<p><strong>pulseTime</strong> - time between “on” and “off” action.</p>
-<p><strong>cycleTime</strong> - time of a complete timer cycle. When not specified or too low the cycletime gets adjusted to waittime+pulsetime.</p>
-<p><strong>onOn</strong> - These actions are dispatched when the pulse time starts.</p>
-<p><strong>onOff</strong> - These actions are dispatched when the pulse time ends.</p>
-<p><strong>onValue</strong> - These actions are dispatched when the pulse time starts or ends</p>
-<p><strong>onEnd</strong> - These actions are dispatched when a timer ends by using the <code>stop</code> action or when a <code>once</code> timer has finished the cycle. |</p>
+<blockquote>
+<p><strong>waitTime</strong> – time before “on” action</p>
+<p><strong>pulseTime</strong> – time between “on” and “off” action.</p>
+<p><strong>cycleTime</strong> – time of a complete timer cycle.  When not specified or too low the cycletime gets adjusted to
+waittime+pulsetime.</p>
+<p><strong>mode</strong> – The element supports 3 modes: <strong>“on”</strong> for always on, <strong>“off”</strong> for always off and <strong>&quot;timer</strong>&quot; for
+switching the value using the timer settings.</p>
+<p><strong>restart</strong> – When set to “true” or “1” the timer restarts automatically when cycleTime is over.</p>
+<p><strong>onHigh</strong> – These actions are dispatched when the pulse time starts.</p>
+<p><strong>onLow</strong> – These actions are dispatched when the pulse time ends.</p>
+<p><strong>onValue</strong> – These actions are dispatched when the pulse time starts or ends</p>
+<p><strong>onEnd</strong> – These actions are dispatched when a timer ends by finishing the whole cycle and may restart.</p>
+</blockquote>
+<p>From the base element implementation the following properties are available for configuration:</p>
+<blockquote>
+<p><strong>title</strong> – Caption text for the element. Used by the element specific cards on the dash boards.</p>
+<p><strong>description</strong> – A line of text that gives a short description of the device used in the web UI.</p>
+<p><strong>room</strong> – The location of the device.</p>
+<p><strong>loglevel</strong> – This property holds the element specific log level. The default value is LOGGER_LEVEL_ERR == 1.</p>
+<p><strong>startup</strong> – This property can be used to start the element using a different initialization phase.
+Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.htm">The Startup sequence</a>.</p>
+</blockquote>
 <h2>Control the Element</h2>
 <p>The timer element can run on it’s own but can also be controlled by the following incomming actions:</p>
 <p><strong>start</strong> - Receiving this action starts the timer from the beginning.</p>
@@ -95,11 +112,28 @@ ________________/‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
       <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span>
       <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"8s"</span><span class="token punctuation">,</span>
       <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"20s"</span><span class="token punctuation">,</span>
-      <span class="token property">"onon"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?on"</span><span class="token punctuation">,</span>
-      <span class="token property">"onoff"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?off"</span>
+      <span class="token property">"onHigh"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?on"</span><span class="token punctuation">,</span>
+      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"digitalout/led?off"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span>
+  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"timer"</span><span class="token punctuation">,</span>
+      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"4s"</span><span class="token punctuation">,</span>
+      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"8s"</span><span class="token punctuation">,</span>
+      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"20s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onHigh"</span><span class="token operator">:</span> <span class="token string">"device/0?log=onHigh"</span><span class="token punctuation">,</span>
+      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"device/0?log=onLow"</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"device/0?log=onValue %v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onEnd"</span><span class="token operator">:</span> <span class="token string">"device/0?log=onEnd"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2>State</h2>
 <p>The state of the timer element includes:</p>
 <p><strong>active</strong> - Is set to true when the element is active.</p>
