@@ -78,7 +78,12 @@ The following **env.json** file can be used as a starting point for the configur
       "title": "XIAO ESP32C3",
       "description": "XIAO_ESP32C3 board",
       "loglevel": "2",
-      "logFile": "1"
+      "logFile": "1",
+      "connecttime": "20s",
+      "safemode": "0",
+      "sd": "1",
+      "i2c-scl": "7",
+      "i2c-sda": "6"
     }
   },
   "ota": {
@@ -89,14 +94,12 @@ The following **env.json** file can be used as a starting point for the configur
       "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
     }
   },
-  "state": {
-    "0": { "savedelay": "8s" }
-  },
   "digitalin": {
     "boot": {
       "title": "Boot button signal",
       "pin": "9",
-      "invert": "true"
+      "invert": "true",
+      "pullup": "1"
     }
   }
 }

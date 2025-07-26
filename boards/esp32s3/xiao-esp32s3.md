@@ -41,12 +41,51 @@ BLE Enable Power Consumption: Active Model:~85 mA
 Working temperature: -40 ° C~65 ° C
 Size: 21 x 17.5mm
 
-
 ```
 
 [text](https://github.com/limengdu/SeeedStudio-XIAO-ESP32S3-Sense-camera)
 
 [text](https://www.hackster.io/pradeeplogu0/getting-started-with-xiao-esp32-s3-sense-ad12a0)
+
+``` JSON
+{
+  "device": {
+    "0": {
+      "name": "xiaos3",
+      "description": "XIAO_ESP32S3 board",
+      "title": "XIAO ESP32S3",
+      "button": "9",
+      "loglevel": "2",
+      "logFile": "1",
+      "connecttime": "20s",
+      "safemode": "0",
+      "sd": "1",
+      "i2c-scl": "7",
+      "i2c-sda": "6"
+    }
+  },
+  "ota": {
+    "0": {}
+  },
+  "ntptime": {
+    "0": {
+      "zone": "CET-1CEST,M3.5.0,M10.5.0/3"
+    }
+  },
+  "diag": {
+    "0": {}
+  },
+  "digitalin": {
+    "boot": {
+      "title": "Boot button signal",
+      "pin": "9",
+      "invert": "true",
+      "pullup": "1"
+    }
+  }
+}
+
+```
 
 
 ## See Also
