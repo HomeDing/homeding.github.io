@@ -173,7 +173,12 @@ There is no further interface or API for control.</p>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"XIAO ESP32C3"</span><span class="token punctuation">,</span>
       <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"XIAO_ESP32C3 board"</span><span class="token punctuation">,</span>
       <span class="token property">"loglevel"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
-      <span class="token property">"logFile"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+      <span class="token property">"logFile"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"connecttime"</span><span class="token operator">:</span> <span class="token string">"20s"</span><span class="token punctuation">,</span>
+      <span class="token property">"safemode"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+      <span class="token property">"sd"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-scl"</span><span class="token operator">:</span> <span class="token string">"7"</span><span class="token punctuation">,</span>
+      <span class="token property">"i2c-sda"</span><span class="token operator">:</span> <span class="token string">"6"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"ota"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -184,14 +189,12 @@ There is no further interface or API for control.</p>
       <span class="token property">"zone"</span><span class="token operator">:</span> <span class="token string">"CET-1CEST,M3.5.0,M10.5.0/3"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"state"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"savedelay"</span><span class="token operator">:</span> <span class="token string">"8s"</span> <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token property">"digitalin"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"boot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Boot button signal"</span><span class="token punctuation">,</span>
       <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"9"</span><span class="token punctuation">,</span>
-      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+      <span class="token property">"pullup"</span><span class="token operator">:</span> <span class="token string">"1"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
