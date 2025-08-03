@@ -1,0 +1,124 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NO-TITLE-PAGE</title>
+  <script src="/pages.js"></script>
+  <link content-type="text/css" href="/docstyle.css" rel="stylesheet">
+  <script src="/story.js" type="module"></script>
+  <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48">
+  <meta name="description" content="Examples and documentation for the HomeDing IoT Library">
+  <meta name="google-site-verification" content="7tTF0t5uCMnyE6X31OIOQpcOf4QxWuODtyZLoVsKCEc">
+  <meta name="msvalidate.01" content="7FC9C7BCD4002EBD89AAC2EF63D7B353">
+</head>
+
+<body class="sitelayout">
+  <div class="navbar">
+    <button id="menu" popovertarget="my-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="white" d="M0 8h48v6H0zm0 13h48v6H0zm0 13h48v6H0z"></path>
+      </svg>
+    </button>
+    <a href="/index.htm" class="button">Home</a>
+    <a href="/elements/index.htm" class="button">Elements</a>
+    <a href="/boards/index.htm" class="button">Boards</a>
+    <a href="/recipes/index.htm" class="button">Recipes</a>
+    
+  </div>
+  
+  <nav popover="auto" id="my-menu" class="menu"></nav>
+
+  <main>
+    <h1>NO-TITLE-PAGE</h1>
+
+    
+
+    <h1>Bathroom Climate control</h1>
+<p>–</p>
+<p>This example demonstrates how to implement an IoT device for controlling a bathroom or cellar fan with the help of the HomeDing library.</p>
+<h2>Situation</h2>
+<p>In many residential buildings, there are rooms where water usage leads to increased air humidity.
+Also after using the toilet you may want some fresh air in the room.</p>
+<p>High humidity levels can cause various problems, including mold growth, unpleasant odors, and damage to walls or
+furniture.  Extended exposure to high humidity can also adversely affect health and comfort.</p>
+<p>To reduce humidity, you can either open a window (if available) or use a fan to exhaust the moist air.  This example
+focuses on controlling such a fan using an IoT device with built-in rules that apply to this situation.</p>
+<h2>Rules for the fan</h2>
+<p>In conventional installations, bathroom fans are typically controlled by the light switch, continuing to run for a
+preset time after the light is turned off.  This approach can be inefficient when using the room without generating
+excess humidity.</p>
+<p>Some more modern devices also have sensors for humidity and adjust their activity when humidity reaches a threshold.</p>
+<p>This IoT device offers a smarter solution by combining two sensors and a pushbutton and can implement some more smart rules that can be adjusted
+using the remote web interface. This example uses this approach and provides the following features:</p>
+<ul>
+<li>A light sensor is capturing the light situation. The light switch is not used.
+Instead a simple light sensor is used to trigger fan activity. No need to capture a signal from a high voltage line.</li>
+<li>A Humidity sensor is capturing the light situation.</li>
+<li></li>
+<li>The fan doesn’t start when the light is switched on for a few seconds only.</li>
+<li>The fan will be started for a few minutes after the light has been switched off.</li>
+<li>When the humidity sensor signals a humidity higher than 80 % the fan will start.</li>
+<li>When the humidity has fallen under 60 % the fan will be switched off.</li>
+<li>When pressing the push button the fan will be activated for 60 seconds per push.</li>
+<li>When long pressing the push button the device will go into off mode.</li>
+<li>When long pressing the push button again the device will start again in normal mode.</li>
+</ul>
+<p>You can change all the threshold and time values in the configuration of the device
+and adapt or extend the configuration to your special needs.</p>
+<p>There are some rules implemented that cover the above ideas that can be switched on/off using the web user interface.
+They are running independently and the fan will be activated whenever one of the triggers wants it.</p>
+<p>Analog in with LDR -&gt; <a href="/elements/reference.htm">Reference Element</a> onHigh -&gt; Start Light <a href="/elements/timer.htm">Timer Element</a>
+Analog in with LDR -&gt; <a href="/elements/reference.htm">Reference Element</a> onLow -&gt; Stop Light <a href="/elements/timer.htm">Timer Element</a></p>
+<p>When the light is detected only for a short time this timer will not reach the end before stopped and onEnd Event
+will not be triggered.</p>
+<p>Light Timer onEnd -&gt; Start Fan <a href="/elements/timer.htm">Timer Element</a></p>
+<p>The Light Trigger part of the configuration</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"digitalout"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"relay"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"relay"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"3"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"led"</span><span class="token punctuation">,</span>
+      <span class="token property">"pin"</span><span class="token operator">:</span> <span class="token string">"8"</span><span class="token punctuation">,</span>
+      <span class="token property">"invert"</span><span class="token operator">:</span> <span class="token string">"1"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"timer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"led"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"timer"</span><span class="token punctuation">,</span>
+      <span class="token property">"restart"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+      <span class="token property">"waittime"</span><span class="token operator">:</span> <span class="token string">"8s"</span><span class="token punctuation">,</span>
+      <span class="token property">"pulsetime"</span><span class="token operator">:</span> <span class="token string">"20s"</span><span class="token punctuation">,</span>
+      <span class="token property">"cycletime"</span><span class="token operator">:</span> <span class="token string">"80s"</span><span class="token punctuation">,</span>
+      <span class="token property">"onHigh"</span><span class="token operator">:</span> <span class="token string">"device/0?log=onHigh"</span><span class="token punctuation">,</span>
+      <span class="token property">"onLow"</span><span class="token operator">:</span> <span class="token string">"device/0?log=onLow"</span><span class="token punctuation">,</span>
+      <span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"digitalout/relay?value=$v"</span><span class="token punctuation">,</span>
+      <span class="token property">"onEnd"</span><span class="token operator">:</span> <span class="token string">"device/0?log=onEnd"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"timer/led"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"bh1750"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lux"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"light"</span><span class="token punctuation">,</span>
+      <span class="token property">"readtime"</span><span class="token operator">:</span> <span class="token string">"2s"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+      
+  </main>
+
+  <script>
+    
+
+    var navObj = document.querySelector('nav');
+    lazyLoadHTM('nav', '/toc.htm');
+  </script>
+
+</body>
+</html>
