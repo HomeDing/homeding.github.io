@@ -76,44 +76,45 @@ giving access to the required pins.</p>
 <table>
 <thead>
 <tr>
-<th>Signal</th>
+<th>Pin</th>
+<th>Sensor Signal</th>
 <th>ESP8266</th>
 <th>ESP32</th>
-<th>Sensor</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="gpio black">GND</span></td>
-<td>GND</td>
-<td>GND</td>
-<td>3 GND</td>
-<td>Ground for I2C and Power Supply</td>
-</tr>
-<tr>
-<td><span class="gpio red">VCC</span></td>
+<td>1</td>
+<td><span class="gpio red">VCC/VDD</span></td>
 <td>3.3v</td>
 <td>3.3v</td>
-<td>1 VCC/VDD</td>
 <td>Power Supply</td>
 </tr>
 <tr>
+<td>2</td>
 <td><span class="gpio blue">SDA</span></td>
 <td>GPIO4(D2)</td>
 <td>IO21</td>
-<td>2 SDA</td>
 <td>I2C Data Signal</td>
 </tr>
 <tr>
+<td>3</td>
+<td><span class="gpio black">GND</span></td>
+<td>GND</td>
+<td>GND</td>
+<td>Ground for I2C and Power Supply</td>
+</tr>
+<tr>
+<td>4</td>
 <td><span class="gpio yellow">SCL</span></td>
 <td>GPIO5(D1)</td>
 <td>IO22</td>
-<td>4 SCL</td>
 <td>I2C Clock Signal</td>
 </tr>
 </tbody>
 </table>
+<p><img src="am2320-pins.png" alt="alt text"></p>
 <p>The required power for the sensor is low and the 3.3V from most CPU boards can be used.</p>
 <p>For more details on using the i2c bus and specifying pins in the <a href="/elements/device.htm">Device Element</a> see <a href="/dev/i2c.htm">I2C bus</a>.</p>
 <h2>Element Configuration</h2>
@@ -172,6 +173,7 @@ Possible values are “sys”, “net”, “time”. See <a href="/dev/startup.
 <ul>
 <li><a href="http://www.aosong.com/en/products-41.html">http://www.aosong.com/en/products-41.html</a></li>
 <li><a href="https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors">https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors</a></li>
+<li><a href="https://learn.adafruit.com/adafruit-am2320-temperature-humidity-i2c-sensor/overview">https://learn.adafruit.com/adafruit-am2320-temperature-humidity-i2c-sensor/overview</a></li>
 </ul>
 
 

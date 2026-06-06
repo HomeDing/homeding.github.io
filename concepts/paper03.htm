@@ -57,12 +57,18 @@
 <li><a href="http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor">http://letitcrash.com/post/20964174345/carl-hewitt-explains-the-essence-of-the-actor</a></li>
 </ul>
 <h2>Elements</h2>
-<p>Like in the Actor Model the functionality is encapsulated inside the components that have a unified interface
-to the outer world but differ in the inner implementation.
-This is the concept of the Elements you find in the HomeDing library.</p>
+<p>Like in the Actor Model the functionality is encapsulated inside the components that
+have a unified interface to the outer world but differ in the inner implementation. This
+is the concept of the Elements you find in the HomeDing library.</p>
 <p>See <a href="/elements/index.htm">Elements</a> for the list of available element implementations
-and <a href="/sensors/sensors.htm">Sensors</a> for the list of supported sensors.</p>
-<p>The common interface is about supporting the life cycle:</p>
+that can act as senders and receivers of Actions:</p>
+<ul>
+<li><a href="/sensors/sensors.htm">Sensors</a> that can meassure a physical values</li>
+<li><a href="/elements/light/light.htm">Light Elements</a> that can control color and brightness of light like LEDs</li>
+<li><a href="/elements/audio/index.htm">Audio Elements</a> to can create a sound or play audio</li>
+<li><a href="/elements/display/index.htm">Displays</a> to show information on displays</li>
+</ul>
+<p>All Elements share a common interface to support the life cycle:</p>
 <ul>
 <li>creating new elements - static <code>create()</code> method, constructor and <code>init()</code></li>
 <li>configure elements by setting properties - <code>set()</code> method</li>
@@ -76,48 +82,72 @@ and <a href="/sensors/sensors.htm">Sensors</a> for the list of supported sensors
 <p><img src="/concepts/elementapi.png" alt="Members of Element implementations"></p>
 <p>A detailed description of the common Element Interface can be found in <a href="/dev/elementinterface.htm">ElementInterface</a>.</p>
 <h2>Configure and Interact with Elements</h2>
-<p>Every element can be described by its properties, actions and events. They define the API for the specific Element.</p>
+<p>Every element can be described by its properties, actions and events. They define the
+API for the specific Element.</p>
 <h3>Properties</h3>
 <p>Properties are there to configure the Element to define the behavior of the element.</p>
 <p>This is done by using the configuration files that control what elements are created
 including their specific setup.</p>
 <h2>Events and Actions</h2>
 <h3>Events</h3>
-<p>An Event is what happens inside an element like a new sensor value is available or a timing condition has occurred. <strong>On</strong> this <strong>Event</strong> one or multiple actions can be created.</p>
-<p>Event configurations therefore typically start with a <code>on</code> prefix.</p>
+<p>An Event is what happens inside an element like a new sensor value is available or a
+timing condition has occurred. <strong>On</strong> this <strong>Event</strong> one or multiple actions can be
+created.</p>
+<p>Event configurations therefore typically start with a <code>on</code> prefix like the “onValue”
+event that occurs when a digital input signal changes the level. Example:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"onValue"</span><span class="token operator">:</span> <span class="token string">"(actions here)"</span></code></pre>
 <h3>Actions</h3>
 <p>An Action is the data (key and value) that is passed over to the target element mentioned in the action notation.</p>
 <p>The notation for Actions used within the HomeDing library is taken from the URL syntax using</p>
-<pre class="language-txt"><code class="language-txt">&lt;type>/&lt;id>?&lt;key>=&lt;value></code></pre>
-<p>like:</p>
-<pre class="language-txt"><code class="language-txt">digitalOut/D5?value=$v</code></pre>
-<h3>Configuration Examples</h3>
-<p>What you can see in the configuration is to setup this interaction by specifying the event on the origin element and the actions that will be sent. Here are some examples:</p>
-<pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1"
-"onValue" : "digitalOut/D5?value=$v"
-"onValue" : "device/0?log=value:$v"</code></pre>
-<p>In the configuration you can specify multiple, comma separated actions on the same event:</p>
-<pre class="language-txt"><code class="language-txt">"onValue" : "digitalOut/D5?value=1,device/0?log=value:$v"</code></pre>
-<h2>dispatching Actions in the device</h2>
-<p>The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.</p>
-<p>When an Element is active the <code>loop()</code> function is called periodically so the Element can so something meaningful.</p>
-<p>Some elements will retrieve sensor values, check the state of GPIO pins or will calculate something.</p>
-<p>Then they might create actions like <code>displaytext/info?value=22.50</code> and hand it over to the action dispatcher in the board class.</p>
-<p>This action that will be dispatched to the element <code>displaytext/info</code> and will trigger the action <code>value</code> with then parameter <code>22.50</code>.</p>
-<p>Inside the board class the action dispatcher is available.
-Actions are collected in a queue in memory and will be dispatched to the target element shortly after they have been handed over.</p>
-<p>Calling the loop() function / executing the element code is prioritized over sending a message.
-This is why the board implements a store and forward mechanism with a queue.
-The order of the messages is guaranteed to be stable as long as they are not send via network.</p>
-<h2>sending Actions by using URLs</h2>
+<pre class="language-txt"><code class="language-txt">[host:]&lt;type>/&lt;id>?&lt;key>=&lt;value></code></pre>
+<h3>Examples for Actions</h3>
+<p>What you can see in the configuration is to setup this interaction by specifying the
+event on the origin element and the actions that will be sent.</p>
+<p>The notation and syntax of Actions is using the well-known URL scheme with server side
+parameters. It is used internally when Elements in the same device interact but also on
+the network when devices interact with each other.</p>
+<p>Here are some examples:</p>
+<ul>
+<li><code>digitalout/led?value=$v</code></li>
+<li><code>device/0?log=level:$v</code></li>
+</ul>
+<p>It is possible to trigger multiple multiple, comma separated actions on the same event:</p>
+<ul>
+<li><code>digitalout/led?value=$v,digitalout/relais?value=$v</code></li>
+</ul>
+<p>It is possible to address a element on a remote device by using the extended syntax:</p>
+<ul>
+<li><code>mypanel:displaytext/temp=$v</code></li>
+</ul>
+<h2>Dispatching Actions In The Device</h2>
+<p>All actions that are triggered by an event or received over the network are not
+immediately given to the target element but are kept in an internal buffer and an
+<em>Action Dispatcher</em> and will be delivered one by one.</p>
+<p>When an Element is active the <code>loop()</code> function is called periodically so the Element
+can so something meaningful.</p>
+<p>Some elements will retrieve sensor values, check the state of GPIO pins or will
+calculate something.</p>
+<p>Then they might create actions like <code>displaytext/info?value=22.50</code> and hand it over to
+the action dispatcher in the board class.</p>
+<p>This action that will be dispatched to the element <code>displaytext/info</code> and will trigger
+the action <code>value</code> with then parameter <code>22.50</code>.</p>
+<p>Inside the board class the action dispatcher is available. Actions are collected in a
+queue in memory and will be dispatched to the target element shortly after they have
+been handed over.</p>
+<p>Calling the <code>loop()</code> function / executing the element code is prioritized over sending a
+message. This is why the board implements a store and forward mechanism with a queue.</p>
+<p>The order of the messages is guaranteed to be stable as long as they are not send via
+network.</p>
+<h2>Sending Actions by using URLs</h2>
 <p>By using the notation and syntax of Actions you can use a URL to pass an action into a device manually
-e.g. by using
-<code>http://homeding/api/state/digitalOut/D5?value=1</code>.</p>
+e.g. by using <code>http://(devicename)/api/state/digitalOut/D5?value=1</code>.</p>
 <p>To send an Action to an element over the network the http GET requests can be created using</p>
 <ul>
 <li>open the url in the browser: <code>http://(devicename)/$board/displaytext/info?value=22.50</code></li>
 <li>use a command line tool like: <code>curl http://(devicename)/$board/displaytext/info?value=22.50</code></li>
 <li>use the <a href="/elements/remote.htm">Remote Element</a> in another HomeDing based device.</li>
+<li>use the extended action syntax like <code>devicename:displaytext/info?value=22.50</code> that
+will create a <a href="/elements/remote.htm">Remote Element</a> on the fly.</li>
 </ul>
 <h2>Chip specific Elements</h2>
 <p>A device may include special chips that can retrieve some environment parameters like temperature, humidity but also power consumption and voltage level.</p>
@@ -127,12 +157,19 @@ Other hardware based protocols are supported by directly or by including specifi
 <p>When new sensor values are found the Element will send out a configurable action to inform other elements about it.
 Displays, Logging and also elements on remote devices are connected this way.</p>
 <h2>Consuming internet based services</h2>
-<p>There are services on the internet that offer interesting data or services that can be consumed by calling the external website. These services sometimes require a registration to get an access key but still are called without using an inbound communication and open incoming boards.</p>
-<p>In contrast to actions where changes are dispatched using actions to the receiving elements the information must be polled from the service provider on the internet.</p>
-<p>The <code>HttpClientElement</code> takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific url.</p>
-<p>Implementing a specific service can now be done using this base class like implementing the <code>WeatherFeedElement</code> that can retrieve weather from <a href="http://openweathermap.org">openweathermap.org</a>.</p>
-<h2>The Life Cycle of the Board and Elements</h2>
-<p>The implementation of the Board class is the part of the HomeDing Library that organizes all created Elements and dispatches the actions.</p>
+<p>There are services on the internet that offer interesting data or services that can be
+consumed by calling the external website. These services sometimes require a
+registration to get an access key but still are called without using an inbound
+communication and open incoming boards.</p>
+<p>In contrast to actions where changes are dispatched using actions to the receiving
+elements the information must be polled from the service provider on the internet.</p>
+<p>The <code>HttpClientElement</code> takes this role and instead of retrieving sensor values it
+issues a http-get request to a specific host with a specific url.</p>
+<p>Implementing a specific service can now be done using this base class like implementing
+the <code>WeatherFeedElement</code> that can retrieve weather from <a href="http://openweathermap.org">openweathermap.org</a>.</p>
+<h2>The Lifecycle of the Board and Elements</h2>
+<p>The implementation of the Board class is the part of the HomeDing Library that organizes
+all created Elements and dispatches the actions.</p>
 <h3>Initialization Phase</h3>
 <ul>
 <li>
@@ -141,8 +178,11 @@ and the web server available by initializing them.</p>
 </li>
 <li>
 <p>Parse the env.json file.</p>
-<p>Here the system elements like the <a href="/elements/device.htm">Device</a>, the <a href="/elements/display/index.htm">displays</a> and network related elements like <a href="/elements/ntptime.htm">ntptime</a>, <a href="/elements/ota.htm">OTA</a> and <a href="/elements/ssdp.htm">SSDP</a> defined.</p>
-<p>These elements will be created.</p>
+<p>Here the system elements like the <a href="/elements/device.htm">Device</a>, the
+<a href="/elements/display/index.htm">displays</a> and network related elements like
+<a href="/elements/ntptime.htm">ntptime</a>, <a href="/elements/ota.htm">OTA</a> and <a href="/elements/ssdp.htm">SSDP</a>
+defined.</p>
+<p>These elements will be created and the properties will be configured accordingly.</p>
 </li>
 <li>
 <p>Parse the config.json file.</p>
@@ -150,41 +190,53 @@ and the web server available by initializing them.</p>
 <p>These elements will be created too.</p>
 </li>
 <li>
-<p>Create all Elements as defined by the configuration.</p>
-<p>Every time a 2. level in the config.json file is found a Element with this type and id will be created.</p>
-<p>All configuration properties of the Elements as defined by the configuration.</p>
-</li>
-<li>
 <p>Start all Elements</p>
 <p>All <code>system</code> elements will be started/activated at this time.</p>
 <p>Now the show can begin.</p>
-<p>When a network (other than board manager) is available the ‘network’ elements will be started and when a local time is defined the <code>time</code> elements are started too.</p>
+<p>When a network (other than board manager) is available the ‘network’ elements will be
+started.</p>
+<p>When a local time is defined the <code>time</code> elements are started too.</p>
 </li>
 </ul>
 <h3>Working Phase</h3>
 <ul>
 <li>
 <p>Run all Elements and dispatch all actions among them.</p>
-<p>The <code>loop()</code> function of all active Elements is called and when Actions should be passed the board will dispatch them to the right Element.</p>
+<p>The <code>loop()</code> function of all active Elements is called and when Actions should be
+passed the board will dispatch them to the right Element.</p>
 </li>
 </ul>
 <h2>Restarting and Reconfiguration</h2>
-<p>When a configuration change is required the configuration file in the SPIFFS needs to be updated.</p>
-<p>The new configuration will not be effective immediately but only by restarting the whole thing.</p>
-<p>However, it is possible to change properties of the current active Elements be using the REST methods of the web server. These changes will be effective immediately but are not saved to the configuration file.</p>
+<p>When a configuration change is required the configuration file in the SPIFFS needs to be
+updated.</p>
+<p>The new configuration will not be effective immediately but only by restarting the whole
+thing.</p>
+<p>However, it is possible to change properties of the current active Elements be using the
+REST methods of the web server. These changes will be effective immediately but are not
+saved to the configuration file.</p>
 <h2>Compile time vs runtime configuration</h2>
-<p>The standard board already includes a lot of Elements when being compiled. Therefore, it is possible to use them in a configuration without recompiling the program itself.</p>
-<p>Other Elements require a specific library. These Elements must be activated in the sketch and the sketch will only compile properly when you have installed the required library in the Arduino Environment.</p>
-<p>Examples are <a href="/elements/dht.htm">DHT Element</a>, <a href="/elements/rfcodes.htm">RFCodes Element</a> or <a href="/elements/dcftime.htm">DCFTime Element</a>.</p>
-<p>As the ESP8266 chips offer a lot of program memory this approach works fine when boards have a 4MByte Flash memory.
-The <a href="/examples/standard.htm">Standard Example</a> includes the most common elements of the library and can be used to flash many boards and hardware setups.</p>
-<p>For compiling to different memory setups, like the ESP-01 board it is possible to compile with a reduced set of elements so to make the program fit into memory.
-See example <a href="/examples/minimal.htm">minimal footprint example</a>.</p>
-<p>Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for the classes and variables.</p>
+<p>The standard board already includes a lot of Elements when being compiled. Therefore, it
+is possible to use them in a configuration without recompiling the program itself.</p>
+<p>Other Elements require a specific library. These Elements must be activated in the
+sketch and the sketch will only compile properly when you have installed the required
+library in the Arduino Environment.</p>
+<p>Examples are <a href="/elements/dht.htm">DHT Element</a>, <a href="/elements/rfcodes.htm">RFCodes Element</a> or
+<a href="/elements/dcftime.htm">DCFTime Element</a>.</p>
+<p>As the ESP8266 chips offer a lot of program memory this approach works fine when boards
+have a 4MByte Flash memory. The <a href="/examples/standard.htm">Standard Example</a> includes the
+most common elements of the library and can be used to flash many boards and hardware
+setups.</p>
+<p>For compiling to different memory setups, like the ESP-01 board it is possible to
+compile with a reduced set of elements so to make the program fit into memory. See
+example <a href="/examples/minimal.htm">minimal footprint example</a>.</p>
+<p>Be aware that the number of configured elements is also a limiting factor because every
+Element not only needs program space but also memory for the classes and variables.</p>
 <h2>Addressing Elements, properties and actions</h2>
-<p>When technically addressing an active element, an element property or sending an action to an element
-the same 2-level syntax and parameters of addressing is used as it is known from the URL syntax.</p>
-<p>The usual notation is using lowercase characters only. The comparison is internally case-insensitive by comparing always the lowercase variants.</p>
+<p>When technically addressing an active element, an element property or sending an action
+to an element the same 2-level syntax and parameters of addressing is used as it is
+known from the URL syntax.</p>
+<p>The usual notation is using lowercase characters only. The comparison is internally
+case-insensitive by comparing always the lowercase variants.</p>
 <p>Examples are:</p>
 <ul>
 <li><code>digitalout/relay?value=1</code></li>
