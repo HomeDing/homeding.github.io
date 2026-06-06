@@ -33,14 +33,19 @@ Some good readings about this general interaction model can be found at
 
 ## Elements
 
-Like in the Actor Model the functionality is encapsulated inside the components that have a unified interface
-to the outer world but differ in the inner implementation.
-This is the concept of the Elements you find in the HomeDing library.
+Like in the Actor Model the functionality is encapsulated inside the components that
+have a unified interface to the outer world but differ in the inner implementation. This
+is the concept of the Elements you find in the HomeDing library.
 
-See [Elements](/elements/index.md) for the list of available element implementations
-and [Sensors](/sensors/sensors.md) for the list of supported sensors.
+See [Elements](/elements/index.md) for the list of available element implementations 
+that can act as senders and receivers of Actions:
 
-The common interface is about supporting the life cycle:
+* [Sensors](/sensors/sensors.md) that can meassure a physical values 
+* [Light Elements](/elements/light/light.md) that can control color and brightness of light like LEDs
+* [Audio Elements](/elements/audio/index.md) to can create a sound or play audio
+* [Displays](/elements/display/index.md) to show information on displays
+
+All Elements share a common interface to support the life cycle:
 
 * creating new elements - static `create()` method, constructor and `init()`
 * configure elements by setting properties - `set()` method
@@ -60,7 +65,8 @@ A detailed description of the common Element Interface can be found in [ElementI
 
 ## Configure and Interact with Elements
 
-Every element can be described by its properties, actions and events. They define the API for the specific Element.
+Every element can be described by its properties, actions and events. They define the
+API for the specific Element.
 
 
 ### Properties
@@ -75,10 +81,16 @@ including their specific setup.
 
 ### Events
 
-An Event is what happens inside an element like a new sensor value is available or a timing condition has occurred. **On** this **Event** one or multiple actions can be created.
+An Event is what happens inside an element like a new sensor value is available or a
+timing condition has occurred. **On** this **Event** one or multiple actions can be
+created.
 
-Event configurations therefore typically start with a `on` prefix.
+Event configurations therefore typically start with a `on` prefix like the "onValue"
+event that occurs when a digital input signal changes the level. Example:
 
+``` json
+"onValue": "(actions here)"
+```
 
 ### Actions
 
@@ -86,64 +98,74 @@ An Action is the data (key and value) that is passed over to the target element 
 
 The notation for Actions used within the HomeDing library is taken from the URL syntax using
 
-```txt
-<type>/<id>?<key>=<value>
-```
-
-like:
-
-```txt
-digitalOut/D5?value=$v
-```
-
-### Configuration Examples
-
-What you can see in the configuration is to setup this interaction by specifying the event on the origin element and the actions that will be sent. Here are some examples:
-
 ``` txt
-"onValue" : "digitalOut/D5?value=1"
-"onValue" : "digitalOut/D5?value=$v"
-"onValue" : "device/0?log=value:$v"
+[host:]<type>/<id>?<key>=<value>
 ```
 
-In the configuration you can specify multiple, comma separated actions on the same event:
+### Examples for Actions
 
-``` txt
-"onValue" : "digitalOut/D5?value=1,device/0?log=value:$v"
-```
+What you can see in the configuration is to setup this interaction by specifying the
+event on the origin element and the actions that will be sent.
 
+The notation and syntax of Actions is using the well-known URL scheme with server side
+parameters. It is used internally when Elements in the same device interact but also on
+the network when devices interact with each other.
 
-## dispatching Actions in the device
+Here are some examples:
 
-The notation and syntax of Actions is using the well-known URL scheme with server side parameters. It is used internally when Elements in the same device interact but also on the network when devices interact with each other.
+* `digitalout/led?value=$v`
+* `device/0?log=level:$v`
 
-When an Element is active the `loop()` function is called periodically so the Element can so something meaningful.
+It is possible to trigger multiple multiple, comma separated actions on the same event:
 
-Some elements will retrieve sensor values, check the state of GPIO pins or will calculate something.
+* `digitalout/led?value=$v,digitalout/relais?value=$v`
 
-Then they might create actions like `displaytext/info?value=22.50` and hand it over to the action dispatcher in the board class.
+It is possible to address a element on a remote device by using the extended syntax:
 
-This action that will be dispatched to the element `displaytext/info` and will trigger the action `value` with then parameter `22.50`.
-
-Inside the board class the action dispatcher is available.
-Actions are collected in a queue in memory and will be dispatched to the target element shortly after they have been handed over.
-
-Calling the loop() function / executing the element code is prioritized over sending a message.
-This is why the board implements a store and forward mechanism with a queue.
-The order of the messages is guaranteed to be stable as long as they are not send via network.
+* `mypanel:displaytext/temp=$v`
 
 
-## sending Actions by using URLs
+## Dispatching Actions In The Device
+
+All actions that are triggered by an event or received over the network are not
+immediately given to the target element but are kept in an internal buffer and an
+*Action Dispatcher* and will be delivered one by one.
+
+When an Element is active the `loop()` function is called periodically so the Element
+can so something meaningful.
+
+Some elements will retrieve sensor values, check the state of GPIO pins or will
+calculate something.
+
+Then they might create actions like `displaytext/info?value=22.50` and hand it over to
+the action dispatcher in the board class.
+
+This action that will be dispatched to the element `displaytext/info` and will trigger
+the action `value` with then parameter `22.50`.
+
+Inside the board class the action dispatcher is available. Actions are collected in a
+queue in memory and will be dispatched to the target element shortly after they have
+been handed over.
+
+Calling the `loop()` function / executing the element code is prioritized over sending a
+message. This is why the board implements a store and forward mechanism with a queue.
+
+The order of the messages is guaranteed to be stable as long as they are not send via
+network.
+
+
+## Sending Actions by using URLs
 
 By using the notation and syntax of Actions you can use a URL to pass an action into a device manually
-e.g. by using
-`http://homeding/api/state/digitalOut/D5?value=1`.
+e.g. by using `http://(devicename)/api/state/digitalOut/D5?value=1`.
 
 To send an Action to an element over the network the http GET requests can be created using
 
 * open the url in the browser: `http://(devicename)/$board/displaytext/info?value=22.50`
 * use a command line tool like: `curl http://(devicename)/$board/displaytext/info?value=22.50`
 * use the [Remote Element](/elements/remote.md) in another HomeDing based device.
+* use the extended action syntax like `devicename:displaytext/info?value=22.50` that
+  will create a [Remote Element](/elements/remote.md) on the fly.
 
 
 ## Chip specific Elements
@@ -161,18 +183,25 @@ Displays, Logging and also elements on remote devices are connected this way.
 
 ## Consuming internet based services
 
-There are services on the internet that offer interesting data or services that can be consumed by calling the external website. These services sometimes require a registration to get an access key but still are called without using an inbound communication and open incoming boards.
+There are services on the internet that offer interesting data or services that can be
+consumed by calling the external website. These services sometimes require a
+registration to get an access key but still are called without using an inbound
+communication and open incoming boards.
 
-In contrast to actions where changes are dispatched using actions to the receiving elements the information must be polled from the service provider on the internet.
+In contrast to actions where changes are dispatched using actions to the receiving
+elements the information must be polled from the service provider on the internet.
 
-The `HttpClientElement` takes this role and instead of retrieving sensor values it issues a http-get request to a specific host with a specific url.
+The `HttpClientElement` takes this role and instead of retrieving sensor values it
+issues a http-get request to a specific host with a specific url.
 
-Implementing a specific service can now be done using this base class like implementing the `WeatherFeedElement` that can retrieve weather from openweathermap.org.
+Implementing a specific service can now be done using this base class like implementing
+the `WeatherFeedElement` that can retrieve weather from openweathermap.org.
 
 
-## The Life Cycle of the Board and Elements
+## The Lifecycle of the Board and Elements
 
-The implementation of the Board class is the part of the HomeDing Library that organizes all created Elements and dispatches the actions.
+The implementation of the Board class is the part of the HomeDing Library that organizes
+all created Elements and dispatches the actions.
 
 ### Initialization Phase
 
@@ -181,9 +210,12 @@ The implementation of the Board class is the part of the HomeDing Library that o
 
 * Parse the env.json file.
 
-  Here the system elements like the [Device](/elements/device.md), the [displays](/elements/display/index.md) and network related elements like [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md) defined.
+  Here the system elements like the [Device](/elements/device.md), the
+  [displays](/elements/display/index.md) and network related elements like
+  [ntptime](/elements/ntptime.md), [OTA](/elements/ota.md) and [SSDP](/elements/ssdp.md)
+  defined.
 
-  These elements will be created.
+  These elements will be created and the properties will be configured accordingly.
 
 * Parse the config.json file.
 
@@ -191,59 +223,72 @@ The implementation of the Board class is the part of the HomeDing Library that o
   
   These elements will be created too.
 
-* Create all Elements as defined by the configuration.
-
-  Every time a 2. level in the config.json file is found a Element with this type and id will be created.
-
-  All configuration properties of the Elements as defined by the configuration.
-
 * Start all Elements
 
   All `system` elements will be started/activated at this time.
 
   Now the show can begin.
 
-  When a network (other than board manager) is available the 'network' elements will be started and when a local time is defined the `time` elements are started too.
+  When a network (other than board manager) is available the 'network' elements will be
+  started.
+  
+  When a local time is defined the `time` elements are started too.
 
 
 ### Working Phase
 
 * Run all Elements and dispatch all actions among them.
 
-  The `loop()` function of all active Elements is called and when Actions should be passed the board will dispatch them to the right Element.
+  The `loop()` function of all active Elements is called and when Actions should be
+  passed the board will dispatch them to the right Element.
 
 
 ## Restarting and Reconfiguration
 
-When a configuration change is required the configuration file in the SPIFFS needs to be updated.
+When a configuration change is required the configuration file in the SPIFFS needs to be
+updated.
 
-The new configuration will not be effective immediately but only by restarting the whole thing.
+The new configuration will not be effective immediately but only by restarting the whole
+thing.
 
-However, it is possible to change properties of the current active Elements be using the REST methods of the web server. These changes will be effective immediately but are not saved to the configuration file.
+However, it is possible to change properties of the current active Elements be using the
+REST methods of the web server. These changes will be effective immediately but are not
+saved to the configuration file.
 
 
 ## Compile time vs runtime configuration
 
-The standard board already includes a lot of Elements when being compiled. Therefore, it is possible to use them in a configuration without recompiling the program itself.
+The standard board already includes a lot of Elements when being compiled. Therefore, it
+is possible to use them in a configuration without recompiling the program itself.
 
-Other Elements require a specific library. These Elements must be activated in the sketch and the sketch will only compile properly when you have installed the required library in the Arduino Environment.
+Other Elements require a specific library. These Elements must be activated in the
+sketch and the sketch will only compile properly when you have installed the required
+library in the Arduino Environment.
 
-Examples are [DHT Element](/elements/dht.md), [RFCodes Element](/elements/rfcodes.md) or [DCFTime Element](/elements/dcftime.md).
+Examples are [DHT Element](/elements/dht.md), [RFCodes Element](/elements/rfcodes.md) or
+[DCFTime Element](/elements/dcftime.md).
 
-As the ESP8266 chips offer a lot of program memory this approach works fine when boards have a 4MByte Flash memory.
-The [Standard Example](/examples/standard.md) includes the most common elements of the library and can be used to flash many boards and hardware setups.
+As the ESP8266 chips offer a lot of program memory this approach works fine when boards
+have a 4MByte Flash memory. The [Standard Example](/examples/standard.md) includes the
+most common elements of the library and can be used to flash many boards and hardware
+setups.
 
-For compiling to different memory setups, like the ESP-01 board it is possible to compile with a reduced set of elements so to make the program fit into memory.
-See example [minimal footprint example](/examples/minimal.md).
+For compiling to different memory setups, like the ESP-01 board it is possible to
+compile with a reduced set of elements so to make the program fit into memory. See
+example [minimal footprint example](/examples/minimal.md).
 
-Be aware that the number of configured elements is also a limiting factor because every Element not only needs program space but also memory for the classes and variables.
+Be aware that the number of configured elements is also a limiting factor because every
+Element not only needs program space but also memory for the classes and variables.
+
 
 ## Addressing Elements, properties and actions
 
-When technically addressing an active element, an element property or sending an action to an element
-the same 2-level syntax and parameters of addressing is used as it is known from the URL syntax.
+When technically addressing an active element, an element property or sending an action
+to an element the same 2-level syntax and parameters of addressing is used as it is
+known from the URL syntax.
 
-The usual notation is using lowercase characters only. The comparison is internally case-insensitive by comparing always the lowercase variants.
+The usual notation is using lowercase characters only. The comparison is internally
+case-insensitive by comparing always the lowercase variants.
 
 Examples are:
 
