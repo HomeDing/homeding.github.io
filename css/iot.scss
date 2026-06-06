@@ -56,6 +56,7 @@ $u-off: red;
 button,
 .button {
   display: inline-block;
+  height:1.6em;
   min-width: 6.5ch;
 
   // height: 1.4em;
@@ -83,8 +84,25 @@ button,
   }
 
   &.secondary {
-    background-color: #777777;
-    border-color: #777777;
+    background-color: base.$u-secondary;
+    border-color: base.$u-secondary-text;
+  }
+
+  >svg {
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: text-top;
+    margin-right: 0.2em;
+  }
+
+  &.icon {
+    width: 1.6em;
+    min-width: unset;
+    padding: 2px;
+
+    >svg {
+      margin: 0;
+    }
   }
 }
 
@@ -158,7 +176,7 @@ input.switch[type='range'] {
 .form-grid {
   display: grid;
   grid-template-columns: 12.6ch auto;
-  grid-gap: 5px;
+  gap: 5px;
   margin-bottom: 0.5rem;
 
   >* {
@@ -175,8 +193,8 @@ input.switch[type='range'] {
   }
 
   .icon {
-    width: 1.2em;
-    height: 1.2em;
+    width: 1em;
+    height: 1em;
     margin: 0.2em;
   }
 }
@@ -187,6 +205,18 @@ input.switch[type='range'] {
   >* {
     vertical-align: top;
   }
+
+  >*:not(:first-child) {
+    margin-left: 3px;
+  }
+
+  >button {
+    padding: 0;
+    border: 0;
+    min-width: 0;
+    height: 1.4rem;
+  }
+
 }
 
 .form-actions {
@@ -273,7 +303,7 @@ input.switch[type='range'] {
 .ux-value {
   position: absolute;
   right: 0.5rem;
-  top: 0.5rem;
+  top: 2rem;
 }
 
 // Timer-bar

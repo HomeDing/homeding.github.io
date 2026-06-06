@@ -25,7 +25,7 @@ body {
   padding: 0;
   font-family: arial, ui-sans-serif, sans-serif;
   font-size: 1rem;
-  line-height: 1.2rem;
+  line-height: 1.2;
   color: var(--color);
   background-color: var(--back);
 }
@@ -143,6 +143,13 @@ dialog {
   padding: 1rem;
   background-color: canvas;
   border: 0;
+}
+dialog h2 {
+  margin: 0 0 var(--text-spacing) 0;
+}
+dialog h3,
+dialog h4 {
+  margin: 0;
 }
 dialog .u-close {
   position: absolute;
@@ -489,7 +496,7 @@ body.sitelayout footer {
   gap: 0;
   margin: 0;
   padding: 0;
-  page-break-inside: avoid;
+  break-inside: avoid;
   overflow: hidden;
   background-color: var(--card-back);
   border: var(--card-border);
@@ -507,6 +514,13 @@ body.sitelayout footer {
   width: calc((var(--card-width) - var(--card-gap)) / 2);
   height: calc((var(--card-height) - var(--card-gap)) / 2);
 }
+.card.small .header {
+  min-height: calc(1em + 2 * var(--card-padding));
+}
+.card.small .header > svg:first-child,
+.card.small .header > img:first-child {
+  height: 1.2em;
+}
 .card.shadow {
   box-shadow: var(--dropshadow);
 }
@@ -517,11 +531,6 @@ body.sitelayout footer {
   height: var(--card-image-size);
   object-fit: cover;
 }
-.card > svg:first-child.xicon,
-.card > img:first-child.xicon {
-  width: 2.75em;
-  height: 2.75em;
-}
 .card .header {
   grid-area: header;
   background-color: var(--card-head);
@@ -531,8 +540,8 @@ body.sitelayout footer {
 }
 .card .header h3,
 .card .header h4 {
-  display: inline-block;
   margin: 0;
+  clear: none;
 }
 .card .header > svg:first-child,
 .card .header > img:first-child {
@@ -574,7 +583,7 @@ body.sitelayout footer {
   width: 100%;
   max-width: 100%;
   background-color: var(--card-back);
-  page-break-inside: avoid;
+  break-inside: avoid;
   padding: 0.25rem 0.25rem 0 9.85rem;
   min-height: 7.2rem;
 }
@@ -619,6 +628,7 @@ body.sitelayout footer {
 button,
 .button {
   display: inline-block;
+  height: 1.6em;
   min-width: 6.5ch;
   padding: 2px 4px;
   border-radius: 4px;
@@ -645,8 +655,25 @@ button.active,
 }
 button.secondary,
 .button.secondary {
-  background-color: #777777;
-  border-color: #777777;
+  background-color: #aaaaaa;
+  border-color: black;
+}
+button > svg,
+.button > svg {
+  height: 1.2em;
+  width: 1.2em;
+  vertical-align: text-top;
+  margin-right: 0.2em;
+}
+button.icon,
+.button.icon {
+  width: 1.6em;
+  min-width: unset;
+  padding: 2px;
+}
+button.icon > svg,
+.button.icon > svg {
+  margin: 0;
 }
 
 option[disabled] {
@@ -707,7 +734,7 @@ input.switch[type=range] {
 .form-grid {
   display: grid;
   grid-template-columns: 12.6ch auto;
-  grid-gap: 5px;
+  gap: 5px;
   margin-bottom: 0.5rem;
 }
 .form-grid > * {
@@ -721,8 +748,8 @@ input.switch[type=range] {
   grid-column: 1/-1;
 }
 .form-grid .icon {
-  width: 1.2em;
-  height: 1.2em;
+  width: 1em;
+  height: 1em;
   margin: 0.2em;
 }
 
@@ -731,6 +758,15 @@ input.switch[type=range] {
 }
 .form-inline > * {
   vertical-align: top;
+}
+.form-inline > *:not(:first-child) {
+  margin-left: 3px;
+}
+.form-inline > button {
+  padding: 0;
+  border: 0;
+  min-width: 0;
+  height: 1.4rem;
 }
 
 .form-actions {
@@ -804,7 +840,7 @@ input.switch[type=range] {
 .ux-value {
   position: absolute;
   right: 0.5rem;
-  top: 0.5rem;
+  top: 2rem;
 }
 
 .u-bar {
